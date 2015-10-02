@@ -1239,6 +1239,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_broadcast_rate_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_bucket_dup(
         of_object_t *src);
 
@@ -1363,6 +1367,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_known_multicast_rate_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_l2_multicast_lookup_dup(
         of_object_t *src);
 
@@ -1451,6 +1459,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_rate_unit_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_reference_dup(
         of_object_t *src);
 
@@ -1536,6 +1548,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_unicast_query_timeout_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_unicast_rate_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_unknown_multicast_rate_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5839,6 +5859,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_bucket_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -5963,6 +5987,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6051,6 +6079,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_rate_unit_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_reference_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6136,6 +6168,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_unicast_rate_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8255,6 +8295,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_bucket_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8379,6 +8423,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8467,6 +8515,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_rate_unit_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_reference_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8552,6 +8604,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_unicast_rate_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

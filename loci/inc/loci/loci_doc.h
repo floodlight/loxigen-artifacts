@@ -6397,6 +6397,17 @@ typedef struct of_bsn_tlv_anchor_s of_bsn_tlv_anchor_t;
 typedef struct of_bsn_tlv_broadcast_query_timeout_s of_bsn_tlv_broadcast_query_timeout_t;
 
 /**
+ * Structure for of_bsn_tlv_broadcast_rate object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_broadcast_rate_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_broadcast_rate_s of_bsn_tlv_broadcast_rate_t;
+
+/**
  * Structure for of_bsn_tlv_bucket object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6730,6 +6741,17 @@ typedef struct of_bsn_tlv_ipv4_src_s of_bsn_tlv_ipv4_src_t;
 typedef struct of_bsn_tlv_ipv6_s of_bsn_tlv_ipv6_t;
 
 /**
+ * Structure for of_bsn_tlv_known_multicast_rate object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_known_multicast_rate_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_known_multicast_rate_s of_bsn_tlv_known_multicast_rate_t;
+
+/**
  * Structure for of_bsn_tlv_l2_multicast_lookup object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6960,6 +6982,17 @@ typedef struct of_bsn_tlv_queue_id_s of_bsn_tlv_queue_id_t;
 typedef struct of_bsn_tlv_queue_weight_s of_bsn_tlv_queue_weight_t;
 
 /**
+ * Structure for of_bsn_tlv_rate_unit object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_rate_unit_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_rate_unit_s of_bsn_tlv_rate_unit_t;
+
+/**
  * Structure for of_bsn_tlv_reference object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7188,6 +7221,28 @@ typedef struct of_bsn_tlv_udp_src_s of_bsn_tlv_udp_src_t;
  *
  */
 typedef struct of_bsn_tlv_unicast_query_timeout_s of_bsn_tlv_unicast_query_timeout_t;
+
+/**
+ * Structure for of_bsn_tlv_unicast_rate object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_unicast_rate_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_unicast_rate_s of_bsn_tlv_unicast_rate_t;
+
+/**
+ * Structure for of_bsn_tlv_unknown_multicast_rate object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_unknown_multicast_rate_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_unknown_multicast_rate_s of_bsn_tlv_unknown_multicast_rate_t;
 
 /**
  * Structure for of_bsn_tlv_vlan_pcp object.  Get/set

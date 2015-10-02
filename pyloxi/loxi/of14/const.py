@@ -461,6 +461,15 @@ ofp_bsn_port_vxlan_mode_map = {
     1: 'OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE',
 }
 
+# Identifiers from group ofp_bsn_rate_unit
+OFP_BSN_RATE_UNIT_PPS = 0
+OFP_BSN_RATE_UNIT_KBITPS = 1
+
+ofp_bsn_rate_unit_map = {
+    0: 'OFP_BSN_RATE_UNIT_PPS',
+    1: 'OFP_BSN_RATE_UNIT_KBITPS',
+}
+
 # Identifiers from group ofp_bsn_tcp_flag
 OFP_BSN_TCP_FLAG_FIN = 1
 OFP_BSN_TCP_FLAG_SYN = 2

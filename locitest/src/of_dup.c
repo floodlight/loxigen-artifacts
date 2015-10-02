@@ -26861,6 +26861,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_BROADCAST_RATE) {
+        return of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
         return of_bsn_tlv_udf_length_OF_VERSION_1_3_dup(src);
     }
@@ -26871,6 +26875,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC) {
         return of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RATE_UNIT) {
+        return of_bsn_tlv_rate_unit_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_VLAN_VID) {
@@ -26903,6 +26911,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_ACTOR_PORT_NUM) {
         return of_bsn_tlv_actor_port_num_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_KNOWN_MULTICAST_RATE) {
+        return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ANCHOR) {
@@ -27069,6 +27081,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_UNICAST_RATE) {
+        return of_bsn_tlv_unicast_rate_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UDF_OFFSET) {
         return of_bsn_tlv_udf_offset_OF_VERSION_1_3_dup(src);
     }
@@ -27135,6 +27151,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
         return of_bsn_tlv_partner_state_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UNKNOWN_MULTICAST_RATE) {
+        return of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PARTNER_KEY) {
@@ -27384,6 +27404,31 @@ of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_broadcast_query_timeout_value_get(src, &val32);
     of_bsn_tlv_broadcast_query_timeout_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_broadcast_rate
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_broadcast_rate.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_broadcast_rate_t *
+of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dup(
+    of_bsn_tlv_broadcast_rate_t *src)
+{
+    of_bsn_tlv_broadcast_rate_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_broadcast_rate_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_broadcast_rate_value_get(src, &val32);
+    of_bsn_tlv_broadcast_rate_value_set(dst, val32);
 
     return dst;
 }
@@ -28165,6 +28210,31 @@ of_bsn_tlv_ipv6_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_known_multicast_rate
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_known_multicast_rate.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_known_multicast_rate_t *
+of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dup(
+    of_bsn_tlv_known_multicast_rate_t *src)
+{
+    of_bsn_tlv_known_multicast_rate_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_known_multicast_rate_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_known_multicast_rate_value_get(src, &val32);
+    of_bsn_tlv_known_multicast_rate_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_l2_multicast_lookup
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -28698,6 +28768,31 @@ of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_queue_weight_value_get(src, &val32);
     of_bsn_tlv_queue_weight_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_rate_unit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_rate_unit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_rate_unit_t *
+of_bsn_tlv_rate_unit_OF_VERSION_1_3_dup(
+    of_bsn_tlv_rate_unit_t *src)
+{
+    of_bsn_tlv_rate_unit_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_rate_unit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_rate_unit_value_get(src, &val8);
+    of_bsn_tlv_rate_unit_value_set(dst, val8);
 
     return dst;
 }
@@ -29245,6 +29340,56 @@ of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_unicast_query_timeout_value_get(src, &val32);
     of_bsn_tlv_unicast_query_timeout_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_unicast_rate
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_unicast_rate.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_unicast_rate_t *
+of_bsn_tlv_unicast_rate_OF_VERSION_1_3_dup(
+    of_bsn_tlv_unicast_rate_t *src)
+{
+    of_bsn_tlv_unicast_rate_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_unicast_rate_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_unicast_rate_value_get(src, &val32);
+    of_bsn_tlv_unicast_rate_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_unknown_multicast_rate
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_unknown_multicast_rate.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_unknown_multicast_rate_t *
+of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_dup(
+    of_bsn_tlv_unknown_multicast_rate_t *src)
+{
+    of_bsn_tlv_unknown_multicast_rate_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_unknown_multicast_rate_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_unknown_multicast_rate_value_get(src, &val32);
+    of_bsn_tlv_unknown_multicast_rate_value_set(dst, val32);
 
     return dst;
 }
@@ -47170,6 +47315,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_BROADCAST_RATE) {
+        return of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
         return of_bsn_tlv_udf_length_OF_VERSION_1_4_dup(src);
     }
@@ -47180,6 +47329,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC) {
         return of_bsn_tlv_external_gateway_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RATE_UNIT) {
+        return of_bsn_tlv_rate_unit_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_VLAN_VID) {
@@ -47212,6 +47365,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_ACTOR_PORT_NUM) {
         return of_bsn_tlv_actor_port_num_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_KNOWN_MULTICAST_RATE) {
+        return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ANCHOR) {
@@ -47378,6 +47535,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_partner_port_priority_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_UNICAST_RATE) {
+        return of_bsn_tlv_unicast_rate_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UDF_OFFSET) {
         return of_bsn_tlv_udf_offset_OF_VERSION_1_4_dup(src);
     }
@@ -47444,6 +47605,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
         return of_bsn_tlv_partner_state_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UNKNOWN_MULTICAST_RATE) {
+        return of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PARTNER_KEY) {
@@ -47693,6 +47858,31 @@ of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_broadcast_query_timeout_value_get(src, &val32);
     of_bsn_tlv_broadcast_query_timeout_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_broadcast_rate
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_broadcast_rate.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_broadcast_rate_t *
+of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dup(
+    of_bsn_tlv_broadcast_rate_t *src)
+{
+    of_bsn_tlv_broadcast_rate_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_broadcast_rate_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_broadcast_rate_value_get(src, &val32);
+    of_bsn_tlv_broadcast_rate_value_set(dst, val32);
 
     return dst;
 }
@@ -48474,6 +48664,31 @@ of_bsn_tlv_ipv6_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_known_multicast_rate
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_known_multicast_rate.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_known_multicast_rate_t *
+of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dup(
+    of_bsn_tlv_known_multicast_rate_t *src)
+{
+    of_bsn_tlv_known_multicast_rate_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_known_multicast_rate_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_known_multicast_rate_value_get(src, &val32);
+    of_bsn_tlv_known_multicast_rate_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_l2_multicast_lookup
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -49007,6 +49222,31 @@ of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_queue_weight_value_get(src, &val32);
     of_bsn_tlv_queue_weight_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_rate_unit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_rate_unit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_rate_unit_t *
+of_bsn_tlv_rate_unit_OF_VERSION_1_4_dup(
+    of_bsn_tlv_rate_unit_t *src)
+{
+    of_bsn_tlv_rate_unit_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_rate_unit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_rate_unit_value_get(src, &val8);
+    of_bsn_tlv_rate_unit_value_set(dst, val8);
 
     return dst;
 }
@@ -49554,6 +49794,56 @@ of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_unicast_query_timeout_value_get(src, &val32);
     of_bsn_tlv_unicast_query_timeout_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_unicast_rate
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_unicast_rate.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_unicast_rate_t *
+of_bsn_tlv_unicast_rate_OF_VERSION_1_4_dup(
+    of_bsn_tlv_unicast_rate_t *src)
+{
+    of_bsn_tlv_unicast_rate_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_unicast_rate_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_unicast_rate_value_get(src, &val32);
+    of_bsn_tlv_unicast_rate_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_unknown_multicast_rate
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_unknown_multicast_rate.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_unknown_multicast_rate_t *
+of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_dup(
+    of_bsn_tlv_unknown_multicast_rate_t *src)
+{
+    of_bsn_tlv_unknown_multicast_rate_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_unknown_multicast_rate_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_unknown_multicast_rate_value_get(src, &val32);
+    of_bsn_tlv_unknown_multicast_rate_value_set(dst, val32);
 
     return dst;
 }
@@ -65083,6 +65373,23 @@ of_bsn_tlv_broadcast_query_timeout_dup(
 }
 
 of_object_t *
+of_bsn_tlv_broadcast_rate_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_bucket_dup(
     of_object_t *src)
 {
@@ -65610,6 +65917,23 @@ of_bsn_tlv_ipv6_dup(
 }
 
 of_object_t *
+of_bsn_tlv_known_multicast_rate_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_l2_multicast_lookup_dup(
     of_object_t *src)
 {
@@ -65984,6 +66308,23 @@ of_bsn_tlv_queue_weight_dup(
 }
 
 of_object_t *
+of_bsn_tlv_rate_unit_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_rate_unit_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_rate_unit_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_reference_dup(
     of_object_t *src)
 {
@@ -66351,6 +66692,40 @@ of_bsn_tlv_unicast_query_timeout_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_unicast_rate_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_unicast_rate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_unicast_rate_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_unknown_multicast_rate_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

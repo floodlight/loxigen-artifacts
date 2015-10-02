@@ -1473,6 +1473,11 @@ enum_v4_ofp_table_mod_failed_code = {
     [2] = "OFPTMFC_EPERM",
 }
 
+enum_v4_ofp_bsn_rate_unit = {
+    [0] = "OFP_BSN_RATE_UNIT_PPS",
+    [1] = "OFP_BSN_RATE_UNIT_KBITPS",
+}
+
 enum_v4_ofp_queue_properties = {
     [1] = "OFPQT_MIN_RATE",
     [2] = "OFPQT_MAX_RATE",
@@ -2206,6 +2211,11 @@ enum_v5_ofp_table_mod_failed_code = {
     [0] = "OFPTMFC_BAD_TABLE",
     [1] = "OFPTMFC_BAD_CONFIG",
     [2] = "OFPTMFC_EPERM",
+}
+
+enum_v5_ofp_bsn_rate_unit = {
+    [0] = "OFP_BSN_RATE_UNIT_PPS",
+    [1] = "OFP_BSN_RATE_UNIT_KBITPS",
 }
 
 enum_v5_ofp_port_stats_optical_flags = {
@@ -6782,6 +6792,9 @@ fields['of13.bsn_tlv_anchor.value'] = ProtoField.uint32("of13.bsn_tlv_anchor.val
 fields['of13.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_broadcast_rate.type'] = ProtoField.uint16("of13.bsn_tlv_broadcast_rate.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_broadcast_rate.length'] = ProtoField.uint16("of13.bsn_tlv_broadcast_rate.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_broadcast_rate.value'] = ProtoField.uint32("of13.bsn_tlv_broadcast_rate.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_bucket.type'] = ProtoField.uint16("of13.bsn_tlv_bucket.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_bucket.length'] = ProtoField.uint16("of13.bsn_tlv_bucket.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_bucket.value'] = ProtoField.bytes("of13.bsn_tlv_bucket.value", "value")
@@ -6873,6 +6886,9 @@ fields['of13.bsn_tlv_ipv4_src.value'] = ProtoField.ipv4("of13.bsn_tlv_ipv4_src.v
 fields['of13.bsn_tlv_ipv6.type'] = ProtoField.uint16("of13.bsn_tlv_ipv6.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ipv6.length'] = ProtoField.uint16("of13.bsn_tlv_ipv6.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_ipv6.value'] = ProtoField.ipv6("of13.bsn_tlv_ipv6.value", "value")
+fields['of13.bsn_tlv_known_multicast_rate.type'] = ProtoField.uint16("of13.bsn_tlv_known_multicast_rate.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_known_multicast_rate.length'] = ProtoField.uint16("of13.bsn_tlv_known_multicast_rate.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_known_multicast_rate.value'] = ProtoField.uint32("of13.bsn_tlv_known_multicast_rate.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_l2_multicast_lookup.type'] = ProtoField.uint16("of13.bsn_tlv_l2_multicast_lookup.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_l2_multicast_lookup.length'] = ProtoField.uint16("of13.bsn_tlv_l2_multicast_lookup.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_mac.type'] = ProtoField.uint16("of13.bsn_tlv_mac.type", "type", base.DEC, nil)
@@ -6936,6 +6952,9 @@ fields['of13.bsn_tlv_queue_id.value'] = ProtoField.uint32("of13.bsn_tlv_queue_id
 fields['of13.bsn_tlv_queue_weight.type'] = ProtoField.uint16("of13.bsn_tlv_queue_weight.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_queue_weight.length'] = ProtoField.uint16("of13.bsn_tlv_queue_weight.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_queue_weight.value'] = ProtoField.uint32("of13.bsn_tlv_queue_weight.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_rate_unit.type'] = ProtoField.uint16("of13.bsn_tlv_rate_unit.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_rate_unit.length'] = ProtoField.uint16("of13.bsn_tlv_rate_unit.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_rate_unit.value'] = ProtoField.uint32("of13.bsn_tlv_rate_unit.value", "value", base.DEC, enum_v4_ofp_bsn_rate_unit)
 fields['of13.bsn_tlv_reference.type'] = ProtoField.uint16("of13.bsn_tlv_reference.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_reference.length'] = ProtoField.uint16("of13.bsn_tlv_reference.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_reference.table_id'] = ProtoField.uint16("of13.bsn_tlv_reference.table_id", "table_id", base.DEC, nil)
@@ -6999,6 +7018,12 @@ fields['of13.bsn_tlv_udp_src.value'] = ProtoField.uint16("of13.bsn_tlv_udp_src.v
 fields['of13.bsn_tlv_unicast_query_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_unicast_query_timeout.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_unicast_query_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_unicast_query_timeout.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_unicast_query_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_unicast_query_timeout.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_unicast_rate.type'] = ProtoField.uint16("of13.bsn_tlv_unicast_rate.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_unicast_rate.length'] = ProtoField.uint16("of13.bsn_tlv_unicast_rate.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_unicast_rate.value'] = ProtoField.uint32("of13.bsn_tlv_unicast_rate.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_unknown_multicast_rate.type'] = ProtoField.uint16("of13.bsn_tlv_unknown_multicast_rate.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_unknown_multicast_rate.length'] = ProtoField.uint16("of13.bsn_tlv_unknown_multicast_rate.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_unknown_multicast_rate.value'] = ProtoField.uint32("of13.bsn_tlv_unknown_multicast_rate.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_pcp.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_pcp.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_pcp.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_pcp.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_pcp.value'] = ProtoField.uint8("of13.bsn_tlv_vlan_pcp.value", "value", base.DEC, nil)
@@ -9415,6 +9440,9 @@ fields['of14.bsn_tlv_anchor.value'] = ProtoField.uint32("of14.bsn_tlv_anchor.val
 fields['of14.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of14.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of14.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of14.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_broadcast_rate.type'] = ProtoField.uint16("of14.bsn_tlv_broadcast_rate.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_broadcast_rate.length'] = ProtoField.uint16("of14.bsn_tlv_broadcast_rate.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_broadcast_rate.value'] = ProtoField.uint32("of14.bsn_tlv_broadcast_rate.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_bucket.type'] = ProtoField.uint16("of14.bsn_tlv_bucket.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_bucket.length'] = ProtoField.uint16("of14.bsn_tlv_bucket.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_bucket.value'] = ProtoField.bytes("of14.bsn_tlv_bucket.value", "value")
@@ -9506,6 +9534,9 @@ fields['of14.bsn_tlv_ipv4_src.value'] = ProtoField.ipv4("of14.bsn_tlv_ipv4_src.v
 fields['of14.bsn_tlv_ipv6.type'] = ProtoField.uint16("of14.bsn_tlv_ipv6.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_ipv6.length'] = ProtoField.uint16("of14.bsn_tlv_ipv6.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_ipv6.value'] = ProtoField.ipv6("of14.bsn_tlv_ipv6.value", "value")
+fields['of14.bsn_tlv_known_multicast_rate.type'] = ProtoField.uint16("of14.bsn_tlv_known_multicast_rate.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_known_multicast_rate.length'] = ProtoField.uint16("of14.bsn_tlv_known_multicast_rate.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_known_multicast_rate.value'] = ProtoField.uint32("of14.bsn_tlv_known_multicast_rate.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_l2_multicast_lookup.type'] = ProtoField.uint16("of14.bsn_tlv_l2_multicast_lookup.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_l2_multicast_lookup.length'] = ProtoField.uint16("of14.bsn_tlv_l2_multicast_lookup.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_mac.type'] = ProtoField.uint16("of14.bsn_tlv_mac.type", "type", base.DEC, nil)
@@ -9569,6 +9600,9 @@ fields['of14.bsn_tlv_queue_id.value'] = ProtoField.uint32("of14.bsn_tlv_queue_id
 fields['of14.bsn_tlv_queue_weight.type'] = ProtoField.uint16("of14.bsn_tlv_queue_weight.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_queue_weight.length'] = ProtoField.uint16("of14.bsn_tlv_queue_weight.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_queue_weight.value'] = ProtoField.uint32("of14.bsn_tlv_queue_weight.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_rate_unit.type'] = ProtoField.uint16("of14.bsn_tlv_rate_unit.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_rate_unit.length'] = ProtoField.uint16("of14.bsn_tlv_rate_unit.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_rate_unit.value'] = ProtoField.uint32("of14.bsn_tlv_rate_unit.value", "value", base.DEC, enum_v5_ofp_bsn_rate_unit)
 fields['of14.bsn_tlv_reference.type'] = ProtoField.uint16("of14.bsn_tlv_reference.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_reference.length'] = ProtoField.uint16("of14.bsn_tlv_reference.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_reference.table_id'] = ProtoField.uint16("of14.bsn_tlv_reference.table_id", "table_id", base.DEC, nil)
@@ -9632,6 +9666,12 @@ fields['of14.bsn_tlv_udp_src.value'] = ProtoField.uint16("of14.bsn_tlv_udp_src.v
 fields['of14.bsn_tlv_unicast_query_timeout.type'] = ProtoField.uint16("of14.bsn_tlv_unicast_query_timeout.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_unicast_query_timeout.length'] = ProtoField.uint16("of14.bsn_tlv_unicast_query_timeout.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_unicast_query_timeout.value'] = ProtoField.uint32("of14.bsn_tlv_unicast_query_timeout.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_unicast_rate.type'] = ProtoField.uint16("of14.bsn_tlv_unicast_rate.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_unicast_rate.length'] = ProtoField.uint16("of14.bsn_tlv_unicast_rate.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_unicast_rate.value'] = ProtoField.uint32("of14.bsn_tlv_unicast_rate.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_unknown_multicast_rate.type'] = ProtoField.uint16("of14.bsn_tlv_unknown_multicast_rate.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_unknown_multicast_rate.length'] = ProtoField.uint16("of14.bsn_tlv_unknown_multicast_rate.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_unknown_multicast_rate.value'] = ProtoField.uint32("of14.bsn_tlv_unknown_multicast_rate.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_pcp.type'] = ProtoField.uint16("of14.bsn_tlv_vlan_pcp.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_pcp.length'] = ProtoField.uint16("of14.bsn_tlv_vlan_pcp.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_pcp.value'] = ProtoField.uint8("of14.bsn_tlv_vlan_pcp.value", "value", base.DEC, nil)
@@ -15240,6 +15280,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_broadcast_query_timeout.type'],
     fields['of13.bsn_tlv_broadcast_query_timeout.length'],
     fields['of13.bsn_tlv_broadcast_query_timeout.value'],
+    fields['of13.bsn_tlv_broadcast_rate.type'],
+    fields['of13.bsn_tlv_broadcast_rate.length'],
+    fields['of13.bsn_tlv_broadcast_rate.value'],
     fields['of13.bsn_tlv_bucket.type'],
     fields['of13.bsn_tlv_bucket.length'],
     fields['of13.bsn_tlv_bucket.value'],
@@ -15331,6 +15374,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_ipv6.type'],
     fields['of13.bsn_tlv_ipv6.length'],
     fields['of13.bsn_tlv_ipv6.value'],
+    fields['of13.bsn_tlv_known_multicast_rate.type'],
+    fields['of13.bsn_tlv_known_multicast_rate.length'],
+    fields['of13.bsn_tlv_known_multicast_rate.value'],
     fields['of13.bsn_tlv_l2_multicast_lookup.type'],
     fields['of13.bsn_tlv_l2_multicast_lookup.length'],
     fields['of13.bsn_tlv_mac.type'],
@@ -15394,6 +15440,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_queue_weight.type'],
     fields['of13.bsn_tlv_queue_weight.length'],
     fields['of13.bsn_tlv_queue_weight.value'],
+    fields['of13.bsn_tlv_rate_unit.type'],
+    fields['of13.bsn_tlv_rate_unit.length'],
+    fields['of13.bsn_tlv_rate_unit.value'],
     fields['of13.bsn_tlv_reference.type'],
     fields['of13.bsn_tlv_reference.length'],
     fields['of13.bsn_tlv_reference.table_id'],
@@ -15457,6 +15506,12 @@ p_of.fields = {
     fields['of13.bsn_tlv_unicast_query_timeout.type'],
     fields['of13.bsn_tlv_unicast_query_timeout.length'],
     fields['of13.bsn_tlv_unicast_query_timeout.value'],
+    fields['of13.bsn_tlv_unicast_rate.type'],
+    fields['of13.bsn_tlv_unicast_rate.length'],
+    fields['of13.bsn_tlv_unicast_rate.value'],
+    fields['of13.bsn_tlv_unknown_multicast_rate.type'],
+    fields['of13.bsn_tlv_unknown_multicast_rate.length'],
+    fields['of13.bsn_tlv_unknown_multicast_rate.value'],
     fields['of13.bsn_tlv_vlan_pcp.type'],
     fields['of13.bsn_tlv_vlan_pcp.length'],
     fields['of13.bsn_tlv_vlan_pcp.value'],
@@ -17873,6 +17928,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_broadcast_query_timeout.type'],
     fields['of14.bsn_tlv_broadcast_query_timeout.length'],
     fields['of14.bsn_tlv_broadcast_query_timeout.value'],
+    fields['of14.bsn_tlv_broadcast_rate.type'],
+    fields['of14.bsn_tlv_broadcast_rate.length'],
+    fields['of14.bsn_tlv_broadcast_rate.value'],
     fields['of14.bsn_tlv_bucket.type'],
     fields['of14.bsn_tlv_bucket.length'],
     fields['of14.bsn_tlv_bucket.value'],
@@ -17964,6 +18022,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_ipv6.type'],
     fields['of14.bsn_tlv_ipv6.length'],
     fields['of14.bsn_tlv_ipv6.value'],
+    fields['of14.bsn_tlv_known_multicast_rate.type'],
+    fields['of14.bsn_tlv_known_multicast_rate.length'],
+    fields['of14.bsn_tlv_known_multicast_rate.value'],
     fields['of14.bsn_tlv_l2_multicast_lookup.type'],
     fields['of14.bsn_tlv_l2_multicast_lookup.length'],
     fields['of14.bsn_tlv_mac.type'],
@@ -18027,6 +18088,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_queue_weight.type'],
     fields['of14.bsn_tlv_queue_weight.length'],
     fields['of14.bsn_tlv_queue_weight.value'],
+    fields['of14.bsn_tlv_rate_unit.type'],
+    fields['of14.bsn_tlv_rate_unit.length'],
+    fields['of14.bsn_tlv_rate_unit.value'],
     fields['of14.bsn_tlv_reference.type'],
     fields['of14.bsn_tlv_reference.length'],
     fields['of14.bsn_tlv_reference.table_id'],
@@ -18090,6 +18154,12 @@ p_of.fields = {
     fields['of14.bsn_tlv_unicast_query_timeout.type'],
     fields['of14.bsn_tlv_unicast_query_timeout.length'],
     fields['of14.bsn_tlv_unicast_query_timeout.value'],
+    fields['of14.bsn_tlv_unicast_rate.type'],
+    fields['of14.bsn_tlv_unicast_rate.length'],
+    fields['of14.bsn_tlv_unicast_rate.value'],
+    fields['of14.bsn_tlv_unknown_multicast_rate.type'],
+    fields['of14.bsn_tlv_unknown_multicast_rate.length'],
+    fields['of14.bsn_tlv_unknown_multicast_rate.value'],
     fields['of14.bsn_tlv_vlan_pcp.type'],
     fields['of14.bsn_tlv_vlan_pcp.length'],
     fields['of14.bsn_tlv_vlan_pcp.value'],
@@ -28980,6 +29050,16 @@ function dissect_of_bsn_tlv_broadcast_query_timeout_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[10] = dissect_of_bsn_tlv_broadcast_query_timeout_v4
 
+-- child class of_bsn_tlv_broadcast_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_broadcast_rate_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_broadcast_rate.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_broadcast_rate.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_broadcast_rate.value')
+    return 'of_bsn_tlv_broadcast_rate'
+end
+of_bsn_tlv_v4_dissectors[90] = dissect_of_bsn_tlv_broadcast_rate_v4
+
 -- child class of_bsn_tlv_bucket
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_bucket_v4(reader, subtree)
@@ -29297,6 +29377,16 @@ function dissect_of_bsn_tlv_ipv6_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[84] = dissect_of_bsn_tlv_ipv6_v4
 
+-- child class of_bsn_tlv_known_multicast_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_known_multicast_rate_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_known_multicast_rate.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_known_multicast_rate.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_known_multicast_rate.value')
+    return 'of_bsn_tlv_known_multicast_rate'
+end
+of_bsn_tlv_v4_dissectors[91] = dissect_of_bsn_tlv_known_multicast_rate_v4
+
 -- child class of_bsn_tlv_l2_multicast_lookup
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_l2_multicast_lookup_v4(reader, subtree)
@@ -29517,6 +29607,16 @@ function dissect_of_bsn_tlv_queue_weight_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[21] = dissect_of_bsn_tlv_queue_weight_v4
 
+-- child class of_bsn_tlv_rate_unit
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_rate_unit_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_rate_unit.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_rate_unit.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_rate_unit.value')
+    return 'of_bsn_tlv_rate_unit'
+end
+of_bsn_tlv_v4_dissectors[89] = dissect_of_bsn_tlv_rate_unit_v4
+
 -- child class of_bsn_tlv_reference
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_reference_v4(reader, subtree)
@@ -29736,6 +29836,26 @@ function dissect_of_bsn_tlv_unicast_query_timeout_v4(reader, subtree)
     return 'of_bsn_tlv_unicast_query_timeout'
 end
 of_bsn_tlv_v4_dissectors[9] = dissect_of_bsn_tlv_unicast_query_timeout_v4
+
+-- child class of_bsn_tlv_unicast_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_unicast_rate_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_unicast_rate.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_unicast_rate.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_unicast_rate.value')
+    return 'of_bsn_tlv_unicast_rate'
+end
+of_bsn_tlv_v4_dissectors[93] = dissect_of_bsn_tlv_unicast_rate_v4
+
+-- child class of_bsn_tlv_unknown_multicast_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_unknown_multicast_rate_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_unknown_multicast_rate.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_unknown_multicast_rate.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_unknown_multicast_rate.value')
+    return 'of_bsn_tlv_unknown_multicast_rate'
+end
+of_bsn_tlv_v4_dissectors[92] = dissect_of_bsn_tlv_unknown_multicast_rate_v4
 
 -- child class of_bsn_tlv_vlan_pcp
 -- Child of of_bsn_tlv
@@ -35907,6 +36027,16 @@ function dissect_of_bsn_tlv_broadcast_query_timeout_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[10] = dissect_of_bsn_tlv_broadcast_query_timeout_v5
 
+-- child class of_bsn_tlv_broadcast_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_broadcast_rate_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_broadcast_rate.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_broadcast_rate.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_broadcast_rate.value')
+    return 'of_bsn_tlv_broadcast_rate'
+end
+of_bsn_tlv_v5_dissectors[90] = dissect_of_bsn_tlv_broadcast_rate_v5
+
 -- child class of_bsn_tlv_bucket
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_bucket_v5(reader, subtree)
@@ -36224,6 +36354,16 @@ function dissect_of_bsn_tlv_ipv6_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[84] = dissect_of_bsn_tlv_ipv6_v5
 
+-- child class of_bsn_tlv_known_multicast_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_known_multicast_rate_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_known_multicast_rate.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_known_multicast_rate.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_known_multicast_rate.value')
+    return 'of_bsn_tlv_known_multicast_rate'
+end
+of_bsn_tlv_v5_dissectors[91] = dissect_of_bsn_tlv_known_multicast_rate_v5
+
 -- child class of_bsn_tlv_l2_multicast_lookup
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_l2_multicast_lookup_v5(reader, subtree)
@@ -36444,6 +36584,16 @@ function dissect_of_bsn_tlv_queue_weight_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[21] = dissect_of_bsn_tlv_queue_weight_v5
 
+-- child class of_bsn_tlv_rate_unit
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_rate_unit_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_rate_unit.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_rate_unit.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_rate_unit.value')
+    return 'of_bsn_tlv_rate_unit'
+end
+of_bsn_tlv_v5_dissectors[89] = dissect_of_bsn_tlv_rate_unit_v5
+
 -- child class of_bsn_tlv_reference
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_reference_v5(reader, subtree)
@@ -36663,6 +36813,26 @@ function dissect_of_bsn_tlv_unicast_query_timeout_v5(reader, subtree)
     return 'of_bsn_tlv_unicast_query_timeout'
 end
 of_bsn_tlv_v5_dissectors[9] = dissect_of_bsn_tlv_unicast_query_timeout_v5
+
+-- child class of_bsn_tlv_unicast_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_unicast_rate_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_unicast_rate.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_unicast_rate.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_unicast_rate.value')
+    return 'of_bsn_tlv_unicast_rate'
+end
+of_bsn_tlv_v5_dissectors[93] = dissect_of_bsn_tlv_unicast_rate_v5
+
+-- child class of_bsn_tlv_unknown_multicast_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_unknown_multicast_rate_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_unknown_multicast_rate.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_unknown_multicast_rate.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_unknown_multicast_rate.value')
+    return 'of_bsn_tlv_unknown_multicast_rate'
+end
+of_bsn_tlv_v5_dissectors[92] = dissect_of_bsn_tlv_unknown_multicast_rate_v5
 
 -- child class of_bsn_tlv_vlan_pcp
 -- Child of of_bsn_tlv

@@ -813,6 +813,8 @@ void of_bsn_tlv_anchor_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_anchor_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_broadcast_query_timeout_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_broadcast_query_timeout_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_broadcast_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_broadcast_rate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_bucket_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_bucket_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_circuit_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -875,6 +877,8 @@ void of_bsn_tlv_ipv4_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_bsn_tlv_ipv4_src_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv6_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ipv6_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_known_multicast_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_known_multicast_rate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_l2_multicast_lookup_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_l2_multicast_lookup_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -919,6 +923,8 @@ void of_bsn_tlv_queue_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_bsn_tlv_queue_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_queue_weight_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_queue_weight_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_rate_unit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_rate_unit_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_reference_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_reference_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_reply_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -963,6 +969,10 @@ void of_bsn_tlv_udp_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
 void of_bsn_tlv_udp_src_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_unicast_query_timeout_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_unicast_query_timeout_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_unicast_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_unicast_rate_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_unknown_multicast_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_unknown_multicast_rate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vlan_pcp_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vlan_pcp_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vlan_vid_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1618,6 +1628,7 @@ typedef of_object_t of_bsn_tlv_actor_system_mac_t;
 typedef of_object_t of_bsn_tlv_actor_system_priority_t;
 typedef of_object_t of_bsn_tlv_anchor_t;
 typedef of_object_t of_bsn_tlv_broadcast_query_timeout_t;
+typedef of_object_t of_bsn_tlv_broadcast_rate_t;
 typedef of_object_t of_bsn_tlv_bucket_t;
 typedef of_object_t of_bsn_tlv_circuit_id_t;
 typedef of_object_t of_bsn_tlv_convergence_status_t;
@@ -1649,6 +1660,7 @@ typedef of_object_t of_bsn_tlv_ipv4_dst_t;
 typedef of_object_t of_bsn_tlv_ipv4_netmask_t;
 typedef of_object_t of_bsn_tlv_ipv4_src_t;
 typedef of_object_t of_bsn_tlv_ipv6_t;
+typedef of_object_t of_bsn_tlv_known_multicast_rate_t;
 typedef of_object_t of_bsn_tlv_l2_multicast_lookup_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_mac_mask_t;
@@ -1671,6 +1683,7 @@ typedef of_object_t of_bsn_tlv_port_vxlan_mode_t;
 typedef of_object_t of_bsn_tlv_priority_t;
 typedef of_object_t of_bsn_tlv_queue_id_t;
 typedef of_object_t of_bsn_tlv_queue_weight_t;
+typedef of_object_t of_bsn_tlv_rate_unit_t;
 typedef of_object_t of_bsn_tlv_reference_t;
 typedef of_object_t of_bsn_tlv_reply_packets_t;
 typedef of_object_t of_bsn_tlv_request_packets_t;
@@ -1693,6 +1706,8 @@ typedef of_object_t of_bsn_tlv_udf_offset_t;
 typedef of_object_t of_bsn_tlv_udp_dst_t;
 typedef of_object_t of_bsn_tlv_udp_src_t;
 typedef of_object_t of_bsn_tlv_unicast_query_timeout_t;
+typedef of_object_t of_bsn_tlv_unicast_rate_t;
+typedef of_object_t of_bsn_tlv_unknown_multicast_rate_t;
 typedef of_object_t of_bsn_tlv_vlan_pcp_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_mask_t;
@@ -3574,6 +3589,11 @@ extern void of_bsn_tlv_broadcast_query_timeout_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_broadcast_rate_new(of_version_t version);
+extern void of_bsn_tlv_broadcast_rate_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_bucket_new(of_version_t version);
 extern void of_bsn_tlv_bucket_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3729,6 +3749,11 @@ extern void of_bsn_tlv_ipv6_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_known_multicast_rate_new(of_version_t version);
+extern void of_bsn_tlv_known_multicast_rate_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_l2_multicast_lookup_new(of_version_t version);
 extern void of_bsn_tlv_l2_multicast_lookup_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3839,6 +3864,11 @@ extern void of_bsn_tlv_queue_weight_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_rate_unit_new(of_version_t version);
+extern void of_bsn_tlv_rate_unit_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_reference_new(of_version_t version);
 extern void of_bsn_tlv_reference_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3946,6 +3976,16 @@ extern void of_bsn_tlv_udp_src_init(
 extern of_object_t *
     of_bsn_tlv_unicast_query_timeout_new(of_version_t version);
 extern void of_bsn_tlv_unicast_query_timeout_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_unicast_rate_new(of_version_t version);
+extern void of_bsn_tlv_unicast_rate_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_unknown_multicast_rate_new(of_version_t version);
+extern void of_bsn_tlv_unknown_multicast_rate_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -8952,6 +8992,17 @@ of_bsn_tlv_broadcast_query_timeout_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_broadcast_rate_t
+ * @param obj An instance of type of_bsn_tlv_broadcast_rate_t
+ *
+ * \ingroup of_bsn_tlv_broadcast_rate
+ */
+static inline void
+of_bsn_tlv_broadcast_rate_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_bucket_t
  * @param obj An instance of type of_bsn_tlv_bucket_t
  *
@@ -9293,6 +9344,17 @@ of_bsn_tlv_ipv6_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_known_multicast_rate_t
+ * @param obj An instance of type of_bsn_tlv_known_multicast_rate_t
+ *
+ * \ingroup of_bsn_tlv_known_multicast_rate
+ */
+static inline void
+of_bsn_tlv_known_multicast_rate_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_l2_multicast_lookup_t
  * @param obj An instance of type of_bsn_tlv_l2_multicast_lookup_t
  *
@@ -9535,6 +9597,17 @@ of_bsn_tlv_queue_weight_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_rate_unit_t
+ * @param obj An instance of type of_bsn_tlv_rate_unit_t
+ *
+ * \ingroup of_bsn_tlv_rate_unit
+ */
+static inline void
+of_bsn_tlv_rate_unit_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_reference_t
  * @param obj An instance of type of_bsn_tlv_reference_t
  *
@@ -9773,6 +9846,28 @@ of_bsn_tlv_udp_src_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_unicast_query_timeout_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_unicast_rate_t
+ * @param obj An instance of type of_bsn_tlv_unicast_rate_t
+ *
+ * \ingroup of_bsn_tlv_unicast_rate
+ */
+static inline void
+of_bsn_tlv_unicast_rate_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_unknown_multicast_rate_t
+ * @param obj An instance of type of_bsn_tlv_unknown_multicast_rate_t
+ *
+ * \ingroup of_bsn_tlv_unknown_multicast_rate
+ */
+static inline void
+of_bsn_tlv_unknown_multicast_rate_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -21063,6 +21158,15 @@ extern void of_bsn_tlv_broadcast_query_timeout_value_get(
     of_bsn_tlv_broadcast_query_timeout_t *obj,
     uint32_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_broadcast_rate */
+
+extern void of_bsn_tlv_broadcast_rate_value_set(
+    of_bsn_tlv_broadcast_rate_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_broadcast_rate_value_get(
+    of_bsn_tlv_broadcast_rate_t *obj,
+    uint32_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_bucket */
 
 extern int WARN_UNUSED_RESULT of_bsn_tlv_bucket_value_set(
@@ -21330,6 +21434,15 @@ extern void of_bsn_tlv_ipv6_value_get(
     of_bsn_tlv_ipv6_t *obj,
     of_ipv6_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_known_multicast_rate */
+
+extern void of_bsn_tlv_known_multicast_rate_value_set(
+    of_bsn_tlv_known_multicast_rate_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_known_multicast_rate_value_get(
+    of_bsn_tlv_known_multicast_rate_t *obj,
+    uint32_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_l2_multicast_lookup */
 
 /* Unified accessor functions for of_bsn_tlv_mac */
@@ -21506,6 +21619,15 @@ extern void of_bsn_tlv_queue_weight_value_set(
 extern void of_bsn_tlv_queue_weight_value_get(
     of_bsn_tlv_queue_weight_t *obj,
     uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_rate_unit */
+
+extern void of_bsn_tlv_rate_unit_value_set(
+    of_bsn_tlv_rate_unit_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_rate_unit_value_get(
+    of_bsn_tlv_rate_unit_t *obj,
+    uint8_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_reference */
 
@@ -21684,6 +21806,24 @@ extern void of_bsn_tlv_unicast_query_timeout_value_set(
     uint32_t value);
 extern void of_bsn_tlv_unicast_query_timeout_value_get(
     of_bsn_tlv_unicast_query_timeout_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_unicast_rate */
+
+extern void of_bsn_tlv_unicast_rate_value_set(
+    of_bsn_tlv_unicast_rate_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_unicast_rate_value_get(
+    of_bsn_tlv_unicast_rate_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_unknown_multicast_rate */
+
+extern void of_bsn_tlv_unknown_multicast_rate_value_set(
+    of_bsn_tlv_unknown_multicast_rate_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_unknown_multicast_rate_value_get(
+    of_bsn_tlv_unknown_multicast_rate_t *obj,
     uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_vlan_pcp */

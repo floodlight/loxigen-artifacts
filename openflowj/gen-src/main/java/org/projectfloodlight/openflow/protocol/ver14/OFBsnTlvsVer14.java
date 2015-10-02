@@ -105,6 +105,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvBroadcastRate.Builder buildBroadcastRate() {
+        return new OFBsnTlvBroadcastRateVer14.Builder();
+    }
+    public OFBsnTlvBroadcastRate broadcastRate(long value) {
+        return new OFBsnTlvBroadcastRateVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvBucket.Builder buildBucket() {
         return new OFBsnTlvBucketVer14.Builder();
     }
@@ -374,6 +383,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvKnownMulticastRate.Builder buildKnownMulticastRate() {
+        return new OFBsnTlvKnownMulticastRateVer14.Builder();
+    }
+    public OFBsnTlvKnownMulticastRate knownMulticastRate(long value) {
+        return new OFBsnTlvKnownMulticastRateVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
         return OFBsnTlvL2MulticastLookupVer14.INSTANCE;
     }
@@ -557,6 +575,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvRateUnit.Builder buildRateUnit() {
+        return new OFBsnTlvRateUnitVer14.Builder();
+    }
+    public OFBsnTlvRateUnit rateUnit(OFBsnRateUnit value) {
+        return new OFBsnTlvRateUnitVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvReference.Builder buildReference() {
         return new OFBsnTlvReferenceVer14.Builder();
     }
@@ -732,6 +759,24 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
     }
     public OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value) {
         return new OFBsnTlvUnicastQueryTimeoutVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvUnicastRate.Builder buildUnicastRate() {
+        return new OFBsnTlvUnicastRateVer14.Builder();
+    }
+    public OFBsnTlvUnicastRate unicastRate(long value) {
+        return new OFBsnTlvUnicastRateVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvUnknownMulticastRate.Builder buildUnknownMulticastRate() {
+        return new OFBsnTlvUnknownMulticastRateVer14.Builder();
+    }
+    public OFBsnTlvUnknownMulticastRate unknownMulticastRate(long value) {
+        return new OFBsnTlvUnknownMulticastRateVer14(
                 value
                     );
     }

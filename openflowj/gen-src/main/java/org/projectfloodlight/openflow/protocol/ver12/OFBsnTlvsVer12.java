@@ -89,6 +89,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.2");
     }
 
+    public OFBsnTlvBroadcastRate.Builder buildBroadcastRate() {
+        throw new UnsupportedOperationException("OFBsnTlvBroadcastRate not supported in version 1.2");
+    }
+    public OFBsnTlvBroadcastRate broadcastRate(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvBroadcastRate not supported in version 1.2");
+    }
+
     public OFBsnTlvBucket.Builder buildBucket() {
         throw new UnsupportedOperationException("OFBsnTlvBucket not supported in version 1.2");
     }
@@ -300,6 +307,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvIpv6 not supported in version 1.2");
     }
 
+    public OFBsnTlvKnownMulticastRate.Builder buildKnownMulticastRate() {
+        throw new UnsupportedOperationException("OFBsnTlvKnownMulticastRate not supported in version 1.2");
+    }
+    public OFBsnTlvKnownMulticastRate knownMulticastRate(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvKnownMulticastRate not supported in version 1.2");
+    }
+
     public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
         throw new UnsupportedOperationException("OFBsnTlvL2MulticastLookup not supported in version 1.2");
     }
@@ -445,6 +459,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvQueueWeight not supported in version 1.2");
     }
 
+    public OFBsnTlvRateUnit.Builder buildRateUnit() {
+        throw new UnsupportedOperationException("OFBsnTlvRateUnit not supported in version 1.2");
+    }
+    public OFBsnTlvRateUnit rateUnit(OFBsnRateUnit value) {
+        throw new UnsupportedOperationException("OFBsnTlvRateUnit not supported in version 1.2");
+    }
+
     public OFBsnTlvReference.Builder buildReference() {
         throw new UnsupportedOperationException("OFBsnTlvReference not supported in version 1.2");
     }
@@ -585,6 +606,20 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value) {
         throw new UnsupportedOperationException("OFBsnTlvUnicastQueryTimeout not supported in version 1.2");
+    }
+
+    public OFBsnTlvUnicastRate.Builder buildUnicastRate() {
+        throw new UnsupportedOperationException("OFBsnTlvUnicastRate not supported in version 1.2");
+    }
+    public OFBsnTlvUnicastRate unicastRate(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvUnicastRate not supported in version 1.2");
+    }
+
+    public OFBsnTlvUnknownMulticastRate.Builder buildUnknownMulticastRate() {
+        throw new UnsupportedOperationException("OFBsnTlvUnknownMulticastRate not supported in version 1.2");
+    }
+    public OFBsnTlvUnknownMulticastRate unknownMulticastRate(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvUnknownMulticastRate not supported in version 1.2");
     }
 
     public OFBsnTlvVlanPcp.Builder buildVlanPcp() {

@@ -6638,6 +6638,15 @@ extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_broadcast_query_timeout_t *obj, int value);
 
+extern int of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_populate(
+    of_bsn_tlv_broadcast_rate_t *obj, int value);
+extern int of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_check(
+    of_bsn_tlv_broadcast_rate_t *obj, int value);
+extern int of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_broadcast_rate_t *obj, int value);
+extern int of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_broadcast_rate_t *obj, int value);
+
 extern int of_bsn_tlv_bucket_OF_VERSION_1_3_populate(
     of_bsn_tlv_bucket_t *obj, int value);
 extern int of_bsn_tlv_bucket_OF_VERSION_1_3_check(
@@ -6917,6 +6926,15 @@ extern int of_bsn_tlv_ipv6_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_ipv6_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_ipv6_t *obj, int value);
 
+extern int of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_populate(
+    of_bsn_tlv_known_multicast_rate_t *obj, int value);
+extern int of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_check(
+    of_bsn_tlv_known_multicast_rate_t *obj, int value);
+extern int of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_known_multicast_rate_t *obj, int value);
+extern int of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_known_multicast_rate_t *obj, int value);
+
 extern int of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_populate(
     of_bsn_tlv_l2_multicast_lookup_t *obj, int value);
 extern int of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_check(
@@ -7115,6 +7133,15 @@ extern int of_bsn_tlv_queue_weight_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_queue_weight_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_queue_weight_t *obj, int value);
 
+extern int of_bsn_tlv_rate_unit_OF_VERSION_1_3_populate(
+    of_bsn_tlv_rate_unit_t *obj, int value);
+extern int of_bsn_tlv_rate_unit_OF_VERSION_1_3_check(
+    of_bsn_tlv_rate_unit_t *obj, int value);
+extern int of_bsn_tlv_rate_unit_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_rate_unit_t *obj, int value);
+extern int of_bsn_tlv_rate_unit_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_rate_unit_t *obj, int value);
+
 extern int of_bsn_tlv_reference_OF_VERSION_1_3_populate(
     of_bsn_tlv_reference_t *obj, int value);
 extern int of_bsn_tlv_reference_OF_VERSION_1_3_check(
@@ -7312,6 +7339,24 @@ extern int of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_unicast_query_timeout_t *obj, int value);
 extern int of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_unicast_query_timeout_t *obj, int value);
+
+extern int of_bsn_tlv_unicast_rate_OF_VERSION_1_3_populate(
+    of_bsn_tlv_unicast_rate_t *obj, int value);
+extern int of_bsn_tlv_unicast_rate_OF_VERSION_1_3_check(
+    of_bsn_tlv_unicast_rate_t *obj, int value);
+extern int of_bsn_tlv_unicast_rate_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_unicast_rate_t *obj, int value);
+extern int of_bsn_tlv_unicast_rate_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_unicast_rate_t *obj, int value);
+
+extern int of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_populate(
+    of_bsn_tlv_unknown_multicast_rate_t *obj, int value);
+extern int of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_check(
+    of_bsn_tlv_unknown_multicast_rate_t *obj, int value);
+extern int of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_unknown_multicast_rate_t *obj, int value);
+extern int of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_unknown_multicast_rate_t *obj, int value);
 
 extern int of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_populate(
     of_bsn_tlv_vlan_pcp_t *obj, int value);
@@ -11957,6 +12002,15 @@ extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_broadcast_query_timeout_t *obj, int value);
 
+extern int of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_populate(
+    of_bsn_tlv_broadcast_rate_t *obj, int value);
+extern int of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_check(
+    of_bsn_tlv_broadcast_rate_t *obj, int value);
+extern int of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_broadcast_rate_t *obj, int value);
+extern int of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_broadcast_rate_t *obj, int value);
+
 extern int of_bsn_tlv_bucket_OF_VERSION_1_4_populate(
     of_bsn_tlv_bucket_t *obj, int value);
 extern int of_bsn_tlv_bucket_OF_VERSION_1_4_check(
@@ -12236,6 +12290,15 @@ extern int of_bsn_tlv_ipv6_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_ipv6_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_ipv6_t *obj, int value);
 
+extern int of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_populate(
+    of_bsn_tlv_known_multicast_rate_t *obj, int value);
+extern int of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_check(
+    of_bsn_tlv_known_multicast_rate_t *obj, int value);
+extern int of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_known_multicast_rate_t *obj, int value);
+extern int of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_known_multicast_rate_t *obj, int value);
+
 extern int of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_populate(
     of_bsn_tlv_l2_multicast_lookup_t *obj, int value);
 extern int of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_check(
@@ -12434,6 +12497,15 @@ extern int of_bsn_tlv_queue_weight_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_queue_weight_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_queue_weight_t *obj, int value);
 
+extern int of_bsn_tlv_rate_unit_OF_VERSION_1_4_populate(
+    of_bsn_tlv_rate_unit_t *obj, int value);
+extern int of_bsn_tlv_rate_unit_OF_VERSION_1_4_check(
+    of_bsn_tlv_rate_unit_t *obj, int value);
+extern int of_bsn_tlv_rate_unit_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_rate_unit_t *obj, int value);
+extern int of_bsn_tlv_rate_unit_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_rate_unit_t *obj, int value);
+
 extern int of_bsn_tlv_reference_OF_VERSION_1_4_populate(
     of_bsn_tlv_reference_t *obj, int value);
 extern int of_bsn_tlv_reference_OF_VERSION_1_4_check(
@@ -12631,6 +12703,24 @@ extern int of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_unicast_query_timeout_t *obj, int value);
 extern int of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_unicast_query_timeout_t *obj, int value);
+
+extern int of_bsn_tlv_unicast_rate_OF_VERSION_1_4_populate(
+    of_bsn_tlv_unicast_rate_t *obj, int value);
+extern int of_bsn_tlv_unicast_rate_OF_VERSION_1_4_check(
+    of_bsn_tlv_unicast_rate_t *obj, int value);
+extern int of_bsn_tlv_unicast_rate_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_unicast_rate_t *obj, int value);
+extern int of_bsn_tlv_unicast_rate_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_unicast_rate_t *obj, int value);
+
+extern int of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_populate(
+    of_bsn_tlv_unknown_multicast_rate_t *obj, int value);
+extern int of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_check(
+    of_bsn_tlv_unknown_multicast_rate_t *obj, int value);
+extern int of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_unknown_multicast_rate_t *obj, int value);
+extern int of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_unknown_multicast_rate_t *obj, int value);
 
 extern int of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_populate(
     of_bsn_tlv_vlan_pcp_t *obj, int value);

@@ -67,6 +67,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0xa:
                    // discriminator value 0xa=0xa for class OFBsnTlvBroadcastQueryTimeoutVer13
                    return OFBsnTlvBroadcastQueryTimeoutVer13.READER.readFrom(bb);
+               case (short) 0x5a:
+                   // discriminator value 0x5a=0x5a for class OFBsnTlvBroadcastRateVer13
+                   return OFBsnTlvBroadcastRateVer13.READER.readFrom(bb);
                case (short) 0x40:
                    // discriminator value 0x40=0x40 for class OFBsnTlvBucketVer13
                    return OFBsnTlvBucketVer13.READER.readFrom(bb);
@@ -160,6 +163,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x54:
                    // discriminator value 0x54=0x54 for class OFBsnTlvIpv6Ver13
                    return OFBsnTlvIpv6Ver13.READER.readFrom(bb);
+               case (short) 0x5b:
+                   // discriminator value 0x5b=0x5b for class OFBsnTlvKnownMulticastRateVer13
+                   return OFBsnTlvKnownMulticastRateVer13.READER.readFrom(bb);
                case (short) 0x4f:
                    // discriminator value 0x4f=0x4f for class OFBsnTlvL2MulticastLookupVer13
                    return OFBsnTlvL2MulticastLookupVer13.READER.readFrom(bb);
@@ -226,6 +232,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x15:
                    // discriminator value 0x15=0x15 for class OFBsnTlvQueueWeightVer13
                    return OFBsnTlvQueueWeightVer13.READER.readFrom(bb);
+               case (short) 0x59:
+                   // discriminator value 0x59=0x59 for class OFBsnTlvRateUnitVer13
+                   return OFBsnTlvRateUnitVer13.READER.readFrom(bb);
                case (short) 0x3b:
                    // discriminator value 0x3b=0x3b for class OFBsnTlvReferenceVer13
                    return OFBsnTlvReferenceVer13.READER.readFrom(bb);
@@ -292,6 +301,12 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x9:
                    // discriminator value 0x9=0x9 for class OFBsnTlvUnicastQueryTimeoutVer13
                    return OFBsnTlvUnicastQueryTimeoutVer13.READER.readFrom(bb);
+               case (short) 0x5d:
+                   // discriminator value 0x5d=0x5d for class OFBsnTlvUnicastRateVer13
+                   return OFBsnTlvUnicastRateVer13.READER.readFrom(bb);
+               case (short) 0x5c:
+                   // discriminator value 0x5c=0x5c for class OFBsnTlvUnknownMulticastRateVer13
+                   return OFBsnTlvUnknownMulticastRateVer13.READER.readFrom(bb);
                case (short) 0x48:
                    // discriminator value 0x48=0x48 for class OFBsnTlvVlanPcpVer13
                    return OFBsnTlvVlanPcpVer13.READER.readFrom(bb);

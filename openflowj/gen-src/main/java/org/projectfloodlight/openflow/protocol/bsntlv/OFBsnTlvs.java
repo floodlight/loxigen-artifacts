@@ -45,6 +45,8 @@ public interface OFBsnTlvs {
     OFBsnTlvAnchor anchor(OFBsnAnchor value);
     OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() throws UnsupportedOperationException;
     OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value);
+    OFBsnTlvBroadcastRate.Builder buildBroadcastRate() throws UnsupportedOperationException;
+    OFBsnTlvBroadcastRate broadcastRate(long value);
     OFBsnTlvBucket.Builder buildBucket() throws UnsupportedOperationException;
     OFBsnTlvBucket bucket(List<OFBsnTlv> value);
     OFBsnTlvCircuitId.Builder buildCircuitId() throws UnsupportedOperationException;
@@ -105,6 +107,8 @@ public interface OFBsnTlvs {
     OFBsnTlvIpv4Src ipv4Src(IPv4Address value);
     OFBsnTlvIpv6.Builder buildIpv6() throws UnsupportedOperationException;
     OFBsnTlvIpv6 ipv6(IPv6Address value);
+    OFBsnTlvKnownMulticastRate.Builder buildKnownMulticastRate() throws UnsupportedOperationException;
+    OFBsnTlvKnownMulticastRate knownMulticastRate(long value);
     OFBsnTlvL2MulticastLookup l2MulticastLookup();
     OFBsnTlvMac.Builder buildMac() throws UnsupportedOperationException;
     OFBsnTlvMac mac(MacAddress value);
@@ -146,6 +150,8 @@ public interface OFBsnTlvs {
     OFBsnTlvQueueId queueId(long value);
     OFBsnTlvQueueWeight.Builder buildQueueWeight() throws UnsupportedOperationException;
     OFBsnTlvQueueWeight queueWeight(long value);
+    OFBsnTlvRateUnit.Builder buildRateUnit() throws UnsupportedOperationException;
+    OFBsnTlvRateUnit rateUnit(OFBsnRateUnit value);
     OFBsnTlvReference.Builder buildReference() throws UnsupportedOperationException;
     OFBsnTlvReference reference(int tableId, List<OFBsnTlv> key);
     OFBsnTlvReplyPackets.Builder buildReplyPackets() throws UnsupportedOperationException;
@@ -186,6 +192,10 @@ public interface OFBsnTlvs {
     OFBsnTlvUdpSrc udpSrc(int value);
     OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() throws UnsupportedOperationException;
     OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value);
+    OFBsnTlvUnicastRate.Builder buildUnicastRate() throws UnsupportedOperationException;
+    OFBsnTlvUnicastRate unicastRate(long value);
+    OFBsnTlvUnknownMulticastRate.Builder buildUnknownMulticastRate() throws UnsupportedOperationException;
+    OFBsnTlvUnknownMulticastRate unknownMulticastRate(long value);
     OFBsnTlvVlanPcp.Builder buildVlanPcp() throws UnsupportedOperationException;
     OFBsnTlvVlanPcp vlanPcp(short value);
     OFBsnTlvVlanVid.Builder buildVlanVid() throws UnsupportedOperationException;
