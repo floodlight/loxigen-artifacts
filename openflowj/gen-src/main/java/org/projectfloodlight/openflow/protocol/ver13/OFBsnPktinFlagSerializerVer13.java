@@ -47,6 +47,8 @@ public class OFBsnPktinFlagSerializerVer13 {
     public final static long BSN_PKTIN_FLAG_SFLOW_VAL = 0x800L;
     public final static long BSN_PKTIN_FLAG_ARP_CACHE_VAL = 0x1000L;
     public final static long BSN_PKTIN_FLAG_ARP_TARGET_VAL = 0x2000L;
+    public final static long BSN_PKTIN_FLAG_IGMP_VAL = 0x4000L;
+    public final static long BSN_PKTIN_FLAG_PIM_VAL = 0x8000L;
 
     public static Set<OFBsnPktinFlag> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -96,6 +98,10 @@ public class OFBsnPktinFlagSerializerVer13 {
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_ARP_CACHE);
         if((val & BSN_PKTIN_FLAG_ARP_TARGET_VAL) != 0)
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_ARP_TARGET);
+        if((val & BSN_PKTIN_FLAG_IGMP_VAL) != 0)
+            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_IGMP);
+        if((val & BSN_PKTIN_FLAG_PIM_VAL) != 0)
+            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_PIM);
         return Collections.unmodifiableSet(set);
     }
 
@@ -145,6 +151,12 @@ public class OFBsnPktinFlagSerializerVer13 {
                     break;
                 case BSN_PKTIN_FLAG_ARP_TARGET:
                     wireValue |= BSN_PKTIN_FLAG_ARP_TARGET_VAL;
+                    break;
+                case BSN_PKTIN_FLAG_IGMP:
+                    wireValue |= BSN_PKTIN_FLAG_IGMP_VAL;
+                    break;
+                case BSN_PKTIN_FLAG_PIM:
+                    wireValue |= BSN_PKTIN_FLAG_PIM_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnPktinFlag in version 1.3: " + e);
