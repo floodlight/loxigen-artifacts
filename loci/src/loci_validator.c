@@ -763,6 +763,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_label_OF_VERSIO
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_name_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_negate_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_offset_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_key_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_port_num_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1344,6 +1345,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_label_OF_VERSIO
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_name_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_negate_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_offset_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_key_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_port_num_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -20151,6 +20153,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_name_OF_VERSION_1_3(data, len, out_len);
     case 0x53:
         return loci_validate_of_bsn_tlv_negate_OF_VERSION_1_3(data, len, out_len);
+    case 0x5e:
+        return loci_validate_of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3(data, len, out_len);
     case 0x52:
         return loci_validate_of_bsn_tlv_offset_OF_VERSION_1_3(data, len, out_len);
     case 0x33:
@@ -21353,6 +21357,28 @@ loci_validate_of_bsn_tlv_name_OF_VERSION_1_3(uint8_t *data, int len, int *out_le
 
 static int
 loci_validate_of_bsn_tlv_negate_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 4) {
         return -1;
@@ -34640,6 +34666,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_name_OF_VERSION_1_4(data, len, out_len);
     case 0x53:
         return loci_validate_of_bsn_tlv_negate_OF_VERSION_1_4(data, len, out_len);
+    case 0x5e:
+        return loci_validate_of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4(data, len, out_len);
     case 0x52:
         return loci_validate_of_bsn_tlv_offset_OF_VERSION_1_4(data, len, out_len);
     case 0x33:
@@ -35842,6 +35870,28 @@ loci_validate_of_bsn_tlv_name_OF_VERSION_1_4(uint8_t *data, int len, int *out_le
 
 static int
 loci_validate_of_bsn_tlv_negate_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 4) {
         return -1;

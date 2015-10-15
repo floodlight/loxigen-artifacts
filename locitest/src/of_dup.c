@@ -27025,8 +27025,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_UDP_SRC) {
-        return of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_NEXTHOP_TYPE_VXLAN) {
+        return of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_MCG_TYPE_VXLAN) {
@@ -27091,6 +27091,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
         return of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDP_SRC) {
+        return of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
@@ -28466,6 +28470,27 @@ of_bsn_tlv_negate_OF_VERSION_1_3_dup(
     of_bsn_tlv_negate_t *dst;
 
     if ((dst = of_bsn_tlv_negate_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_nexthop_type_vxlan
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_nexthop_type_vxlan.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_nexthop_type_vxlan_t *
+of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3_dup(
+    of_bsn_tlv_nexthop_type_vxlan_t *src)
+{
+    of_bsn_tlv_nexthop_type_vxlan_t *dst;
+
+    if ((dst = of_bsn_tlv_nexthop_type_vxlan_new(src->version)) == NULL) {
         return NULL;
     }
 
@@ -47479,8 +47504,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_UDP_SRC) {
-        return of_bsn_tlv_udp_src_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_NEXTHOP_TYPE_VXLAN) {
+        return of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_MCG_TYPE_VXLAN) {
@@ -47545,6 +47570,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
         return of_bsn_tlv_actor_port_priority_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDP_SRC) {
+        return of_bsn_tlv_udp_src_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
@@ -48920,6 +48949,27 @@ of_bsn_tlv_negate_OF_VERSION_1_4_dup(
     of_bsn_tlv_negate_t *dst;
 
     if ((dst = of_bsn_tlv_negate_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_nexthop_type_vxlan
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_nexthop_type_vxlan.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_nexthop_type_vxlan_t *
+of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4_dup(
+    of_bsn_tlv_nexthop_type_vxlan_t *src)
+{
+    of_bsn_tlv_nexthop_type_vxlan_t *dst;
+
+    if ((dst = of_bsn_tlv_nexthop_type_vxlan_new(src->version)) == NULL) {
         return NULL;
     }
 
@@ -66097,6 +66147,23 @@ of_bsn_tlv_negate_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_negate_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_nexthop_type_vxlan_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

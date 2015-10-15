@@ -126,6 +126,7 @@ public interface OFBsnTlvs {
     OFBsnTlvName.Builder buildName() throws UnsupportedOperationException;
     OFBsnTlvName name(byte[] value);
     OFBsnTlvNegate negate();
+    OFBsnTlvNexthopTypeVxlan nexthopTypeVxlan();
     OFBsnTlvOffset.Builder buildOffset() throws UnsupportedOperationException;
     OFBsnTlvOffset offset(int value);
     OFBsnTlvPartnerKey.Builder buildPartnerKey() throws UnsupportedOperationException;

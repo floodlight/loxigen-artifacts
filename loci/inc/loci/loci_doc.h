@@ -6850,6 +6850,13 @@ typedef struct of_bsn_tlv_name_s of_bsn_tlv_name_t;
 typedef struct of_bsn_tlv_negate_s of_bsn_tlv_negate_t;
 
 /**
+ * Structure for of_bsn_tlv_nexthop_type_vxlan object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_nexthop_type_vxlan_s of_bsn_tlv_nexthop_type_vxlan_t;
+
+/**
  * Structure for of_bsn_tlv_offset object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

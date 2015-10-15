@@ -375,6 +375,10 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvNegate not supported in version 1.0");
     }
 
+    public OFBsnTlvNexthopTypeVxlan nexthopTypeVxlan() {
+        throw new UnsupportedOperationException("OFBsnTlvNexthopTypeVxlan not supported in version 1.0");
+    }
+
     public OFBsnTlvOffset.Builder buildOffset() {
         throw new UnsupportedOperationException("OFBsnTlvOffset not supported in version 1.0");
     }

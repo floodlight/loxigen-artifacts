@@ -467,6 +467,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return OFBsnTlvNegateVer13.INSTANCE;
     }
 
+    public OFBsnTlvNexthopTypeVxlan nexthopTypeVxlan() {
+        return OFBsnTlvNexthopTypeVxlanVer13.INSTANCE;
+    }
+
     public OFBsnTlvOffset.Builder buildOffset() {
         return new OFBsnTlvOffsetVer13.Builder();
     }

@@ -5910,13 +5910,13 @@ of_bsn_tlv_negate_init(of_object_t *obj,
 #include "loci_int.h"
 
 void
-of_bsn_tlv_offset_push_wire_types(of_object_t *obj)
+of_bsn_tlv_nexthop_type_vxlan_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x52); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x5e); /* type */
         break;
     default:
         UNREACHABLE();
@@ -5926,11 +5926,11 @@ of_bsn_tlv_offset_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_bsn_tlv_offset of_bsn_tlv_offset
+ * \defgroup of_bsn_tlv_nexthop_type_vxlan of_bsn_tlv_nexthop_type_vxlan
  */
 
 /**
- * Create a new of_bsn_tlv_offset object
+ * Create a new of_bsn_tlv_nexthop_type_vxlan object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -5938,30 +5938,30 @@ of_bsn_tlv_offset_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_bsn_tlv_offset
+ * \ingroup of_bsn_tlv_nexthop_type_vxlan
  */
 
 of_object_t *
-of_bsn_tlv_offset_new(of_version_t version)
+of_bsn_tlv_nexthop_type_vxlan_new(of_version_t version)
 {
     of_object_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_OFFSET];
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_NEXTHOP_TYPE_VXLAN];
 
     if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_bsn_tlv_offset_init(obj, version, bytes, 0);
-    of_bsn_tlv_offset_push_wire_types(obj);
+    of_bsn_tlv_nexthop_type_vxlan_init(obj, version, bytes, 0);
+    of_bsn_tlv_nexthop_type_vxlan_push_wire_types(obj);
     of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
 
 /**
- * Initialize an object of type of_bsn_tlv_offset.
+ * Initialize an object of type of_bsn_tlv_nexthop_type_vxlan.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -5978,19 +5978,19 @@ of_bsn_tlv_offset_new(of_version_t version)
  */
 
 void
-of_bsn_tlv_offset_init(of_object_t *obj,
+of_bsn_tlv_nexthop_type_vxlan_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_OFFSET] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_NEXTHOP_TYPE_VXLAN] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_OFFSET];
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_NEXTHOP_TYPE_VXLAN];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_OFFSET;
+    obj->object_id = OF_BSN_TLV_NEXTHOP_TYPE_VXLAN;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -5999,84 +5999,4 @@ of_bsn_tlv_offset_init(of_object_t *obj,
         tot_bytes = bytes + obj->obj_offset;
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
-}
-
-/**
- * Get value from an object of type of_bsn_tlv_offset.
- * @param obj Pointer to an object of type of_bsn_tlv_offset.
- * @param value Pointer to the child object of type
- * uint16_t to be filled out.
- *
- */
-void
-of_bsn_tlv_offset_value_get(
-    of_bsn_tlv_offset_t *obj,
-    uint16_t *value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_OFFSET);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_get(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set value in an object of type of_bsn_tlv_offset.
- * @param obj Pointer to an object of type of_bsn_tlv_offset.
- * @param value The value to write into the object
- */
-void
-of_bsn_tlv_offset_value_set(
-    of_bsn_tlv_offset_t *obj,
-    uint16_t value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_OFFSET);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_set(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
 }
