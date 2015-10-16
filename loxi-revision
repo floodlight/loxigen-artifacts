@@ -1,1 +1,1 @@
-e9ce4ebe1a9d86fbeb308c91cc5ad6fa8b30c95c Merge into master from pull request #433: add nexthop_type_vxlan tlv for ecmp gentable (https://github.com/floodlight/loxigen/pull/433)
+0e761f71aaccd4d4e41a49838b80575e4cf91157 Merge into master from pull request #432: Refactor MacAddress class to handle other string formats (https://github.com/floodlight/loxigen/pull/432)
