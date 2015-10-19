@@ -1330,6 +1330,7 @@ enum_v4_ofp_bsn_pktin_flag = {
     [8192] = "OFP_BSN_PKTIN_FLAG_ARP_TARGET",
     [16384] = "OFP_BSN_PKTIN_FLAG_IGMP",
     [32768] = "OFP_BSN_PKTIN_FLAG_PIM",
+    [65536] = "OFP_BSN_PKTIN_FLAG_VXLAN_SIP_MISS",
 }
 
 enum_v4_ofp_bad_instruction_code = {
@@ -2057,6 +2058,7 @@ enum_v5_ofp_bsn_pktin_flag = {
     [8192] = "OFP_BSN_PKTIN_FLAG_ARP_TARGET",
     [16384] = "OFP_BSN_PKTIN_FLAG_IGMP",
     [32768] = "OFP_BSN_PKTIN_FLAG_PIM",
+    [65536] = "OFP_BSN_PKTIN_FLAG_VXLAN_SIP_MISS",
 }
 
 enum_v5_ofp_bad_instruction_code = {
