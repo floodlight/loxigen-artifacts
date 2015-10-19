@@ -6832,6 +6832,17 @@ typedef struct of_bsn_tlv_mpls_label_s of_bsn_tlv_mpls_label_t;
 typedef struct of_bsn_tlv_mpls_sequenced_s of_bsn_tlv_mpls_sequenced_t;
 
 /**
+ * Structure for of_bsn_tlv_multicast_interface_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_multicast_interface_id_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_multicast_interface_id_s of_bsn_tlv_multicast_interface_id_t;
+
+/**
  * Structure for of_bsn_tlv_name object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

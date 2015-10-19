@@ -123,6 +123,8 @@ public interface OFBsnTlvs {
     OFBsnTlvMplsLabel mplsLabel(long value);
     OFBsnTlvMplsSequenced.Builder buildMplsSequenced() throws UnsupportedOperationException;
     OFBsnTlvMplsSequenced mplsSequenced(short value);
+    OFBsnTlvMulticastInterfaceId.Builder buildMulticastInterfaceId() throws UnsupportedOperationException;
+    OFBsnTlvMulticastInterfaceId multicastInterfaceId(long value);
     OFBsnTlvName.Builder buildName() throws UnsupportedOperationException;
     OFBsnTlvName name(byte[] value);
     OFBsnTlvNegate negate();

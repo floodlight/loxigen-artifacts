@@ -190,6 +190,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x3f:
                    // discriminator value 0x3f=0x3f for class OFBsnTlvMplsSequencedVer14
                    return OFBsnTlvMplsSequencedVer14.READER.readFrom(bb);
+               case (short) 0x5f:
+                   // discriminator value 0x5f=0x5f for class OFBsnTlvMulticastInterfaceIdVer14
+                   return OFBsnTlvMulticastInterfaceIdVer14.READER.readFrom(bb);
                case (short) 0x34:
                    // discriminator value 0x34=0x34 for class OFBsnTlvNameVer14
                    return OFBsnTlvNameVer14.READER.readFrom(bb);

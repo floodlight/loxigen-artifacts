@@ -356,6 +356,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_mpls_control_word",
     "of_bsn_tlv_mpls_label",
     "of_bsn_tlv_mpls_sequenced",
+    "of_bsn_tlv_multicast_interface_id",
     "of_bsn_tlv_name",
     "of_bsn_tlv_negate",
     "of_bsn_tlv_nexthop_type_vxlan",

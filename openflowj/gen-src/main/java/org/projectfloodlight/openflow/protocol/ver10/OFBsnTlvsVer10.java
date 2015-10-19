@@ -364,6 +364,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvMplsSequenced not supported in version 1.0");
     }
 
+    public OFBsnTlvMulticastInterfaceId.Builder buildMulticastInterfaceId() {
+        throw new UnsupportedOperationException("OFBsnTlvMulticastInterfaceId not supported in version 1.0");
+    }
+    public OFBsnTlvMulticastInterfaceId multicastInterfaceId(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvMulticastInterfaceId not supported in version 1.0");
+    }
+
     public OFBsnTlvName.Builder buildName() {
         throw new UnsupportedOperationException("OFBsnTlvName not supported in version 1.0");
     }

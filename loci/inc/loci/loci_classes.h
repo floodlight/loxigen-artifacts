@@ -895,6 +895,8 @@ void of_bsn_tlv_mpls_label_wire_object_id_get(of_object_t *obj, of_object_id_t *
 void of_bsn_tlv_mpls_label_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mpls_sequenced_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mpls_sequenced_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_multicast_interface_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_multicast_interface_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_name_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_name_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_negate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1671,6 +1673,7 @@ typedef of_object_t of_bsn_tlv_miss_packets_t;
 typedef of_object_t of_bsn_tlv_mpls_control_word_t;
 typedef of_object_t of_bsn_tlv_mpls_label_t;
 typedef of_object_t of_bsn_tlv_mpls_sequenced_t;
+typedef of_object_t of_bsn_tlv_multicast_interface_id_t;
 typedef of_object_t of_bsn_tlv_name_t;
 typedef of_object_t of_bsn_tlv_negate_t;
 typedef of_object_t of_bsn_tlv_nexthop_type_vxlan_t;
@@ -3794,6 +3797,11 @@ extern void of_bsn_tlv_mpls_label_init(
 extern of_object_t *
     of_bsn_tlv_mpls_sequenced_new(of_version_t version);
 extern void of_bsn_tlv_mpls_sequenced_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_multicast_interface_id_new(of_version_t version);
+extern void of_bsn_tlv_multicast_interface_id_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9447,6 +9455,17 @@ of_bsn_tlv_mpls_label_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_mpls_sequenced_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_multicast_interface_id_t
+ * @param obj An instance of type of_bsn_tlv_multicast_interface_id_t
+ *
+ * \ingroup of_bsn_tlv_multicast_interface_id
+ */
+static inline void
+of_bsn_tlv_multicast_interface_id_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -21519,6 +21538,15 @@ extern void of_bsn_tlv_mpls_sequenced_value_set(
 extern void of_bsn_tlv_mpls_sequenced_value_get(
     of_bsn_tlv_mpls_sequenced_t *obj,
     uint8_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_multicast_interface_id */
+
+extern void of_bsn_tlv_multicast_interface_id_value_set(
+    of_bsn_tlv_multicast_interface_id_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_multicast_interface_id_value_get(
+    of_bsn_tlv_multicast_interface_id_t *obj,
+    uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_name */
 

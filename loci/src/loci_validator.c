@@ -761,6 +761,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_miss_packets_OF_VERS
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_control_word_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_label_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_name_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_negate_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1343,6 +1344,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_miss_packets_OF_VERS
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_control_word_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_label_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_name_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_negate_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -20149,6 +20151,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_mpls_label_OF_VERSION_1_3(data, len, out_len);
     case 0x3f:
         return loci_validate_of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3(data, len, out_len);
+    case 0x5f:
+        return loci_validate_of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3(data, len, out_len);
     case 0x34:
         return loci_validate_of_bsn_tlv_name_OF_VERSION_1_3(data, len, out_len);
     case 0x53:
@@ -21322,6 +21326,28 @@ loci_validate_of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3(uint8_t *data, int len, i
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 5) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 8) {
         return -1;
     }
 
@@ -34662,6 +34688,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_mpls_label_OF_VERSION_1_4(data, len, out_len);
     case 0x3f:
         return loci_validate_of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4(data, len, out_len);
+    case 0x5f:
+        return loci_validate_of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4(data, len, out_len);
     case 0x34:
         return loci_validate_of_bsn_tlv_name_OF_VERSION_1_4(data, len, out_len);
     case 0x53:
@@ -35835,6 +35863,28 @@ loci_validate_of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4(uint8_t *data, int len, i
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 5) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 8) {
         return -1;
     }
 

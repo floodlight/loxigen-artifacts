@@ -1403,6 +1403,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_multicast_interface_id_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_name_dup(
         of_object_t *src);
 
@@ -6027,6 +6031,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_name_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8464,6 +8472,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

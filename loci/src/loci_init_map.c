@@ -359,6 +359,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_mpls_control_word_init,
     (of_object_init_f)of_bsn_tlv_mpls_label_init,
     (of_object_init_f)of_bsn_tlv_mpls_sequenced_init,
+    (of_object_init_f)of_bsn_tlv_multicast_interface_id_init,
     (of_object_init_f)of_bsn_tlv_name_init,
     (of_object_init_f)of_bsn_tlv_negate_init,
     (of_object_init_f)of_bsn_tlv_nexthop_type_vxlan_init,

@@ -454,6 +454,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvMulticastInterfaceId.Builder buildMulticastInterfaceId() {
+        return new OFBsnTlvMulticastInterfaceIdVer13.Builder();
+    }
+    public OFBsnTlvMulticastInterfaceId multicastInterfaceId(long value) {
+        return new OFBsnTlvMulticastInterfaceIdVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvName.Builder buildName() {
         return new OFBsnTlvNameVer13.Builder();
     }

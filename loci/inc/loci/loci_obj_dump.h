@@ -775,6 +775,7 @@ int of_bsn_tlv_miss_packets_OF_VERSION_1_3_dump(loci_writer_f writer, void* cook
 int of_bsn_tlv_mpls_control_word_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_mpls_label_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_name_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_negate_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1328,6 +1329,7 @@ int of_bsn_tlv_miss_packets_OF_VERSION_1_4_dump(loci_writer_f writer, void* cook
 int of_bsn_tlv_mpls_control_word_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_mpls_label_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_name_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_negate_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);

@@ -6915,6 +6915,9 @@ fields['of13.bsn_tlv_mpls_label.value'] = ProtoField.uint32("of13.bsn_tlv_mpls_l
 fields['of13.bsn_tlv_mpls_sequenced.type'] = ProtoField.uint16("of13.bsn_tlv_mpls_sequenced.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_mpls_sequenced.length'] = ProtoField.uint16("of13.bsn_tlv_mpls_sequenced.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_mpls_sequenced.value'] = ProtoField.uint8("of13.bsn_tlv_mpls_sequenced.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_multicast_interface_id.type'] = ProtoField.uint16("of13.bsn_tlv_multicast_interface_id.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_multicast_interface_id.length'] = ProtoField.uint16("of13.bsn_tlv_multicast_interface_id.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_multicast_interface_id.value'] = ProtoField.uint32("of13.bsn_tlv_multicast_interface_id.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_name.type'] = ProtoField.uint16("of13.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_name.length'] = ProtoField.uint16("of13.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_name.value'] = ProtoField.bytes("of13.bsn_tlv_name.value", "value")
@@ -9565,6 +9568,9 @@ fields['of14.bsn_tlv_mpls_label.value'] = ProtoField.uint32("of14.bsn_tlv_mpls_l
 fields['of14.bsn_tlv_mpls_sequenced.type'] = ProtoField.uint16("of14.bsn_tlv_mpls_sequenced.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_mpls_sequenced.length'] = ProtoField.uint16("of14.bsn_tlv_mpls_sequenced.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_mpls_sequenced.value'] = ProtoField.uint8("of14.bsn_tlv_mpls_sequenced.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_multicast_interface_id.type'] = ProtoField.uint16("of14.bsn_tlv_multicast_interface_id.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_multicast_interface_id.length'] = ProtoField.uint16("of14.bsn_tlv_multicast_interface_id.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_multicast_interface_id.value'] = ProtoField.uint32("of14.bsn_tlv_multicast_interface_id.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_name.type'] = ProtoField.uint16("of14.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_name.length'] = ProtoField.uint16("of14.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_name.value'] = ProtoField.bytes("of14.bsn_tlv_name.value", "value")
@@ -15407,6 +15413,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_mpls_sequenced.type'],
     fields['of13.bsn_tlv_mpls_sequenced.length'],
     fields['of13.bsn_tlv_mpls_sequenced.value'],
+    fields['of13.bsn_tlv_multicast_interface_id.type'],
+    fields['of13.bsn_tlv_multicast_interface_id.length'],
+    fields['of13.bsn_tlv_multicast_interface_id.value'],
     fields['of13.bsn_tlv_name.type'],
     fields['of13.bsn_tlv_name.length'],
     fields['of13.bsn_tlv_name.value'],
@@ -18057,6 +18066,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_mpls_sequenced.type'],
     fields['of14.bsn_tlv_mpls_sequenced.length'],
     fields['of14.bsn_tlv_mpls_sequenced.value'],
+    fields['of14.bsn_tlv_multicast_interface_id.type'],
+    fields['of14.bsn_tlv_multicast_interface_id.length'],
+    fields['of14.bsn_tlv_multicast_interface_id.value'],
     fields['of14.bsn_tlv_name.type'],
     fields['of14.bsn_tlv_name.length'],
     fields['of14.bsn_tlv_name.value'],
@@ -29477,6 +29489,16 @@ function dissect_of_bsn_tlv_mpls_sequenced_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[63] = dissect_of_bsn_tlv_mpls_sequenced_v4
 
+-- child class of_bsn_tlv_multicast_interface_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_multicast_interface_id_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_multicast_interface_id.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_multicast_interface_id.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_multicast_interface_id.value')
+    return 'of_bsn_tlv_multicast_interface_id'
+end
+of_bsn_tlv_v4_dissectors[95] = dissect_of_bsn_tlv_multicast_interface_id_v4
+
 -- child class of_bsn_tlv_name
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_name_v4(reader, subtree)
@@ -36462,6 +36484,16 @@ function dissect_of_bsn_tlv_mpls_sequenced_v5(reader, subtree)
     return 'of_bsn_tlv_mpls_sequenced'
 end
 of_bsn_tlv_v5_dissectors[63] = dissect_of_bsn_tlv_mpls_sequenced_v5
+
+-- child class of_bsn_tlv_multicast_interface_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_multicast_interface_id_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_multicast_interface_id.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_multicast_interface_id.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_multicast_interface_id.value')
+    return 'of_bsn_tlv_multicast_interface_id'
+end
+of_bsn_tlv_v5_dissectors[95] = dissect_of_bsn_tlv_multicast_interface_id_v5
 
 -- child class of_bsn_tlv_name
 -- Child of of_bsn_tlv
