@@ -1,1 +1,1 @@
-4d767431da6a92023a3db1c77f380451033fc7e0 Merge into master from pull request #435: add vxlan src ip lookup failure pktin reason (https://github.com/floodlight/loxigen/pull/435)
+8b8ac26edf425e61e34ec4a2e05f6505034569e2 Merge into master from pull request #437: Added IPAddress#toInetAddress() convenience method (https://github.com/floodlight/loxigen/pull/437)
