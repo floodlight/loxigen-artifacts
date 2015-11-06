@@ -262,6 +262,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x4a:
                    // discriminator value 0x4a=0x4a for class OFBsnTlvSetLoopbackModeVer13
                    return OFBsnTlvSetLoopbackModeVer13.READER.readFrom(bb);
+               case (short) 0x61:
+                   // discriminator value 0x61=0x61 for class OFBsnTlvStatusVer13
+                   return OFBsnTlvStatusVer13.READER.readFrom(bb);
                case (short) 0x4b:
                    // discriminator value 0x4b=0x4b for class OFBsnTlvStripMplsL2OnIngressVer13
                    return OFBsnTlvStripMplsL2OnIngressVer13.READER.readFrom(bb);

@@ -380,6 +380,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_rx_packets",
     "of_bsn_tlv_sampling_rate",
     "of_bsn_tlv_set_loopback_mode",
+    "of_bsn_tlv_status",
     "of_bsn_tlv_strip_mpls_l2_on_ingress",
     "of_bsn_tlv_strip_mpls_l3_on_ingress",
     "of_bsn_tlv_strip_vlan_on_egress",

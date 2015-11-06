@@ -943,6 +943,8 @@ void of_bsn_tlv_sampling_rate_wire_object_id_get(of_object_t *obj, of_object_id_
 void of_bsn_tlv_sampling_rate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_set_loopback_mode_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_set_loopback_mode_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_status_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_status_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_strip_mpls_l2_on_ingress_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_strip_mpls_l2_on_ingress_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_strip_mpls_l3_on_ingress_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1699,6 +1701,7 @@ typedef of_object_t of_bsn_tlv_rx_bytes_t;
 typedef of_object_t of_bsn_tlv_rx_packets_t;
 typedef of_object_t of_bsn_tlv_sampling_rate_t;
 typedef of_object_t of_bsn_tlv_set_loopback_mode_t;
+typedef of_object_t of_bsn_tlv_status_t;
 typedef of_object_t of_bsn_tlv_strip_mpls_l2_on_ingress_t;
 typedef of_object_t of_bsn_tlv_strip_mpls_l3_on_ingress_t;
 typedef of_object_t of_bsn_tlv_strip_vlan_on_egress_t;
@@ -3920,6 +3923,11 @@ extern void of_bsn_tlv_sampling_rate_init(
 extern of_object_t *
     of_bsn_tlv_set_loopback_mode_new(of_version_t version);
 extern void of_bsn_tlv_set_loopback_mode_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_status_new(of_version_t version);
+extern void of_bsn_tlv_status_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9727,6 +9735,17 @@ of_bsn_tlv_sampling_rate_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_set_loopback_mode_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_status_t
+ * @param obj An instance of type of_bsn_tlv_status_t
+ *
+ * \ingroup of_bsn_tlv_status
+ */
+static inline void
+of_bsn_tlv_status_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -21761,6 +21780,15 @@ extern void of_bsn_tlv_sampling_rate_value_get(
     uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_set_loopback_mode */
+
+/* Unified accessor functions for of_bsn_tlv_status */
+
+extern void of_bsn_tlv_status_value_set(
+    of_bsn_tlv_status_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_status_value_get(
+    of_bsn_tlv_status_t *obj,
+    uint8_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_strip_mpls_l2_on_ingress */
 

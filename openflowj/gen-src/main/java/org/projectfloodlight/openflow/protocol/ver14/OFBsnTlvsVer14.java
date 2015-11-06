@@ -656,6 +656,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
         return OFBsnTlvSetLoopbackModeVer14.INSTANCE;
     }
 
+    public OFBsnTlvStatus.Builder buildStatus() {
+        return new OFBsnTlvStatusVer14.Builder();
+    }
+    public OFBsnTlvStatus status(OFBsnStatus value) {
+        return new OFBsnTlvStatusVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvStripMplsL2OnIngress stripMplsL2OnIngress() {
         return OFBsnTlvStripMplsL2OnIngressVer14.INSTANCE;
     }

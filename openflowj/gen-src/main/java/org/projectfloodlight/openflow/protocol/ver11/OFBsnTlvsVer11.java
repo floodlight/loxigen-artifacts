@@ -523,6 +523,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvSetLoopbackMode not supported in version 1.1");
     }
 
+    public OFBsnTlvStatus.Builder buildStatus() {
+        throw new UnsupportedOperationException("OFBsnTlvStatus not supported in version 1.1");
+    }
+    public OFBsnTlvStatus status(OFBsnStatus value) {
+        throw new UnsupportedOperationException("OFBsnTlvStatus not supported in version 1.1");
+    }
+
     public OFBsnTlvStripMplsL2OnIngress stripMplsL2OnIngress() {
         throw new UnsupportedOperationException("OFBsnTlvStripMplsL2OnIngress not supported in version 1.1");
     }

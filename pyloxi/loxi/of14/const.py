@@ -476,6 +476,15 @@ ofp_bsn_rate_unit_map = {
     1: 'OFP_BSN_RATE_UNIT_KBITPS',
 }
 
+# Identifiers from group ofp_bsn_status
+OFP_BSN_STATUS_DISABLE = 0
+OFP_BSN_STATUS_ENABLE = 1
+
+ofp_bsn_status_map = {
+    0: 'OFP_BSN_STATUS_DISABLE',
+    1: 'OFP_BSN_STATUS_ENABLE',
+}
+
 # Identifiers from group ofp_bsn_tcp_flag
 OFP_BSN_TCP_FLAG_FIN = 1
 OFP_BSN_TCP_FLAG_SYN = 2

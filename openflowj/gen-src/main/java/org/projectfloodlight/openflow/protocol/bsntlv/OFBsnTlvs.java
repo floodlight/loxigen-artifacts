@@ -168,6 +168,8 @@ public interface OFBsnTlvs {
     OFBsnTlvSamplingRate.Builder buildSamplingRate() throws UnsupportedOperationException;
     OFBsnTlvSamplingRate samplingRate(long value);
     OFBsnTlvSetLoopbackMode setLoopbackMode();
+    OFBsnTlvStatus.Builder buildStatus() throws UnsupportedOperationException;
+    OFBsnTlvStatus status(OFBsnStatus value);
     OFBsnTlvStripMplsL2OnIngress stripMplsL2OnIngress();
     OFBsnTlvStripMplsL3OnIngress stripMplsL3OnIngress();
     OFBsnTlvStripVlanOnEgress stripVlanOnEgress();
