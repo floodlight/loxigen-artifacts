@@ -794,6 +794,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvUsePacketState.Builder buildUsePacketState() {
+        return new OFBsnTlvUsePacketStateVer13.Builder();
+    }
+    public OFBsnTlvUsePacketState usePacketState(short value) {
+        return new OFBsnTlvUsePacketStateVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvVlanPcp.Builder buildVlanPcp() {
         return new OFBsnTlvVlanPcpVer13.Builder();
     }

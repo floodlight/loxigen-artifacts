@@ -633,6 +633,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvUnknownMulticastRate not supported in version 1.2");
     }
 
+    public OFBsnTlvUsePacketState.Builder buildUsePacketState() {
+        throw new UnsupportedOperationException("OFBsnTlvUsePacketState not supported in version 1.2");
+    }
+    public OFBsnTlvUsePacketState usePacketState(short value) {
+        throw new UnsupportedOperationException("OFBsnTlvUsePacketState not supported in version 1.2");
+    }
+
     public OFBsnTlvVlanPcp.Builder buildVlanPcp() {
         throw new UnsupportedOperationException("OFBsnTlvVlanPcp not supported in version 1.2");
     }

@@ -5072,6 +5072,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x5f:
             *id = OF_BSN_TLV_MULTICAST_INTERFACE_ID;
             break;
+        case 0x60:
+            *id = OF_BSN_TLV_USE_PACKET_STATE;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -5365,6 +5368,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x5f:
             *id = OF_BSN_TLV_MULTICAST_INTERFACE_ID;
+            break;
+        case 0x60:
+            *id = OF_BSN_TLV_USE_PACKET_STATE;
             break;
         default:
             *id = OF_BSN_TLV;

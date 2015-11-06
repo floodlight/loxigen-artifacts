@@ -7376,6 +7376,15 @@ extern int of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_unknown_multicast_rate_t *obj, int value);
 
+extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_3_populate(
+    of_bsn_tlv_use_packet_state_t *obj, int value);
+extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_3_check(
+    of_bsn_tlv_use_packet_state_t *obj, int value);
+extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_use_packet_state_t *obj, int value);
+extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_use_packet_state_t *obj, int value);
+
 extern int of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_populate(
     of_bsn_tlv_vlan_pcp_t *obj, int value);
 extern int of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_check(
@@ -12757,6 +12766,15 @@ extern int of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_unknown_multicast_rate_t *obj, int value);
 extern int of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_unknown_multicast_rate_t *obj, int value);
+
+extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_4_populate(
+    of_bsn_tlv_use_packet_state_t *obj, int value);
+extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_4_check(
+    of_bsn_tlv_use_packet_state_t *obj, int value);
+extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_use_packet_state_t *obj, int value);
+extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_use_packet_state_t *obj, int value);
 
 extern int of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_populate(
     of_bsn_tlv_vlan_pcp_t *obj, int value);

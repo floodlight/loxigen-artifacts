@@ -27093,6 +27093,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_USE_PACKET_STATE) {
+        return of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UDP_SRC) {
         return of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(src);
     }
@@ -29444,6 +29448,31 @@ of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_unknown_multicast_rate_value_get(src, &val32);
     of_bsn_tlv_unknown_multicast_rate_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_use_packet_state
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_use_packet_state.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_use_packet_state_t *
+of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dup(
+    of_bsn_tlv_use_packet_state_t *src)
+{
+    of_bsn_tlv_use_packet_state_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_use_packet_state_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_use_packet_state_value_get(src, &val8);
+    of_bsn_tlv_use_packet_state_value_set(dst, val8);
 
     return dst;
 }
@@ -47601,6 +47630,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_actor_port_priority_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_USE_PACKET_STATE) {
+        return of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UDP_SRC) {
         return of_bsn_tlv_udp_src_OF_VERSION_1_4_dup(src);
     }
@@ -49952,6 +49985,31 @@ of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_unknown_multicast_rate_value_get(src, &val32);
     of_bsn_tlv_unknown_multicast_rate_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_use_packet_state
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_use_packet_state.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_use_packet_state_t *
+of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(
+    of_bsn_tlv_use_packet_state_t *src)
+{
+    of_bsn_tlv_use_packet_state_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_use_packet_state_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_use_packet_state_value_get(src, &val8);
+    of_bsn_tlv_use_packet_state_value_set(dst, val8);
 
     return dst;
 }
@@ -66868,6 +66926,23 @@ of_bsn_tlv_unknown_multicast_rate_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_use_packet_state_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

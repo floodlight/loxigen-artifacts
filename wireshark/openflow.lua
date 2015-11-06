@@ -7035,6 +7035,9 @@ fields['of13.bsn_tlv_unicast_rate.value'] = ProtoField.uint32("of13.bsn_tlv_unic
 fields['of13.bsn_tlv_unknown_multicast_rate.type'] = ProtoField.uint16("of13.bsn_tlv_unknown_multicast_rate.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_unknown_multicast_rate.length'] = ProtoField.uint16("of13.bsn_tlv_unknown_multicast_rate.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_unknown_multicast_rate.value'] = ProtoField.uint32("of13.bsn_tlv_unknown_multicast_rate.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_use_packet_state.type'] = ProtoField.uint16("of13.bsn_tlv_use_packet_state.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_use_packet_state.length'] = ProtoField.uint16("of13.bsn_tlv_use_packet_state.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of13.bsn_tlv_use_packet_state.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_pcp.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_pcp.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_pcp.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_pcp.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_pcp.value'] = ProtoField.uint8("of13.bsn_tlv_vlan_pcp.value", "value", base.DEC, nil)
@@ -9688,6 +9691,9 @@ fields['of14.bsn_tlv_unicast_rate.value'] = ProtoField.uint32("of14.bsn_tlv_unic
 fields['of14.bsn_tlv_unknown_multicast_rate.type'] = ProtoField.uint16("of14.bsn_tlv_unknown_multicast_rate.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_unknown_multicast_rate.length'] = ProtoField.uint16("of14.bsn_tlv_unknown_multicast_rate.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_unknown_multicast_rate.value'] = ProtoField.uint32("of14.bsn_tlv_unknown_multicast_rate.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_use_packet_state.type'] = ProtoField.uint16("of14.bsn_tlv_use_packet_state.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_use_packet_state.length'] = ProtoField.uint16("of14.bsn_tlv_use_packet_state.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of14.bsn_tlv_use_packet_state.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_pcp.type'] = ProtoField.uint16("of14.bsn_tlv_vlan_pcp.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_pcp.length'] = ProtoField.uint16("of14.bsn_tlv_vlan_pcp.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_pcp.value'] = ProtoField.uint8("of14.bsn_tlv_vlan_pcp.value", "value", base.DEC, nil)
@@ -15533,6 +15539,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_unknown_multicast_rate.type'],
     fields['of13.bsn_tlv_unknown_multicast_rate.length'],
     fields['of13.bsn_tlv_unknown_multicast_rate.value'],
+    fields['of13.bsn_tlv_use_packet_state.type'],
+    fields['of13.bsn_tlv_use_packet_state.length'],
+    fields['of13.bsn_tlv_use_packet_state.value'],
     fields['of13.bsn_tlv_vlan_pcp.type'],
     fields['of13.bsn_tlv_vlan_pcp.length'],
     fields['of13.bsn_tlv_vlan_pcp.value'],
@@ -18186,6 +18195,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_unknown_multicast_rate.type'],
     fields['of14.bsn_tlv_unknown_multicast_rate.length'],
     fields['of14.bsn_tlv_unknown_multicast_rate.value'],
+    fields['of14.bsn_tlv_use_packet_state.type'],
+    fields['of14.bsn_tlv_use_packet_state.length'],
+    fields['of14.bsn_tlv_use_packet_state.value'],
     fields['of14.bsn_tlv_vlan_pcp.type'],
     fields['of14.bsn_tlv_vlan_pcp.length'],
     fields['of14.bsn_tlv_vlan_pcp.value'],
@@ -29902,6 +29914,16 @@ function dissect_of_bsn_tlv_unknown_multicast_rate_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[92] = dissect_of_bsn_tlv_unknown_multicast_rate_v4
 
+-- child class of_bsn_tlv_use_packet_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_use_packet_state_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_use_packet_state.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_use_packet_state.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_use_packet_state.value')
+    return 'of_bsn_tlv_use_packet_state'
+end
+of_bsn_tlv_v4_dissectors[96] = dissect_of_bsn_tlv_use_packet_state_v4
+
 -- child class of_bsn_tlv_vlan_pcp
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_vlan_pcp_v4(reader, subtree)
@@ -36897,6 +36919,16 @@ function dissect_of_bsn_tlv_unknown_multicast_rate_v5(reader, subtree)
     return 'of_bsn_tlv_unknown_multicast_rate'
 end
 of_bsn_tlv_v5_dissectors[92] = dissect_of_bsn_tlv_unknown_multicast_rate_v5
+
+-- child class of_bsn_tlv_use_packet_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_use_packet_state_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_use_packet_state.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_use_packet_state.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_use_packet_state.value')
+    return 'of_bsn_tlv_use_packet_state'
+end
+of_bsn_tlv_v5_dissectors[96] = dissect_of_bsn_tlv_use_packet_state_v5
 
 -- child class of_bsn_tlv_vlan_pcp
 -- Child of of_bsn_tlv
