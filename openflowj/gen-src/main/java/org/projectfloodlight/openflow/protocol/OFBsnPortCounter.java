@@ -52,7 +52,9 @@ public enum OFBsnPortCounter {
      BSN_PORT_COUNTER_RX_LENGTH_ERRORS((byte) 0x18),
      BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS((byte) 0x19),
      BSN_PORT_COUNTER_TX_CARRIER_ERRORS((byte) 0x1a),
-     BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN((byte) 0x1b);
+     BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN((byte) 0x1b),
+     BSN_PORT_COUNTER_LINK_UP((byte) 0x1c),
+     BSN_PORT_COUNTER_LINK_DOWN((byte) 0x1d);
 
      private final byte stableValue;
 

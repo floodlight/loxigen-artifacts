@@ -57,6 +57,8 @@ public class OFBsnPortCounterSerializerVer14 {
     public final static byte BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS_VAL = (byte) 0x19;
     public final static byte BSN_PORT_COUNTER_TX_CARRIER_ERRORS_VAL = (byte) 0x1a;
     public final static byte BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN_VAL = (byte) 0x1b;
+    public final static byte BSN_PORT_COUNTER_LINK_UP_VAL = (byte) 0x1c;
+    public final static byte BSN_PORT_COUNTER_LINK_DOWN_VAL = (byte) 0x1d;
 
     public static OFBsnPortCounter readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -132,6 +134,10 @@ public class OFBsnPortCounterSerializerVer14 {
                 return OFBsnPortCounter.BSN_PORT_COUNTER_TX_CARRIER_ERRORS;
             case BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN_VAL:
                 return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN;
+            case BSN_PORT_COUNTER_LINK_UP_VAL:
+                return OFBsnPortCounter.BSN_PORT_COUNTER_LINK_UP;
+            case BSN_PORT_COUNTER_LINK_DOWN_VAL:
+                return OFBsnPortCounter.BSN_PORT_COUNTER_LINK_DOWN;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFBsnPortCounter in version 1.4: " + val);
         }
@@ -196,6 +202,10 @@ public class OFBsnPortCounterSerializerVer14 {
                 return BSN_PORT_COUNTER_TX_CARRIER_ERRORS_VAL;
             case BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN:
                 return BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN_VAL;
+            case BSN_PORT_COUNTER_LINK_UP:
+                return BSN_PORT_COUNTER_LINK_UP_VAL;
+            case BSN_PORT_COUNTER_LINK_DOWN:
+                return BSN_PORT_COUNTER_LINK_DOWN_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFBsnPortCounter in version 1.4: " + e);
         }

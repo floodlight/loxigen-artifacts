@@ -1807,6 +1807,8 @@ enum_v4_ofp_bsn_port_counter = {
     [25] = "OFP_BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS",
     [26] = "OFP_BSN_PORT_COUNTER_TX_CARRIER_ERRORS",
     [27] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN",
+    [28] = "OFP_BSN_PORT_COUNTER_LINK_UP",
+    [29] = "OFP_BSN_PORT_COUNTER_LINK_DOWN",
 }
 
 enum_v4_ofp_packet_in_reason = {
@@ -2280,6 +2282,8 @@ enum_v5_ofp_bsn_port_counter = {
     [25] = "OFP_BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS",
     [26] = "OFP_BSN_PORT_COUNTER_TX_CARRIER_ERRORS",
     [27] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN",
+    [28] = "OFP_BSN_PORT_COUNTER_LINK_UP",
+    [29] = "OFP_BSN_PORT_COUNTER_LINK_DOWN",
 }
 
 enum_v5_ofp_packet_in_reason = {
