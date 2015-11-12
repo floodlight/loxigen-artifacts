@@ -1,1 +1,1 @@
-56666f9ed43c8623901166eb659a44e9bd20ad89 Merge into master from pull request #445: Add link_up and link_down counters to ofp_bsn_port_counter. (https://github.com/floodlight/loxigen/pull/445)
+0ba42d48ae4714ea0022906e74819d1ed556c4a7 Merge into master from pull request #446: Modified EUI-64 format interface identifier utilities in IPv6Address LOXI-74 (https://github.com/floodlight/loxigen/pull/446)
