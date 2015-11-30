@@ -50,6 +50,7 @@ public class OFBsnPktinFlagSerializerVer14 {
     public final static long BSN_PKTIN_FLAG_IGMP_VAL = 0x4000L;
     public final static long BSN_PKTIN_FLAG_PIM_VAL = 0x8000L;
     public final static long BSN_PKTIN_FLAG_VXLAN_SIP_MISS_VAL = 0x10000L;
+    public final static long BSN_PKTIN_FLAG_MC_RESERVED_VAL = 0x20000L;
 
     public static Set<OFBsnPktinFlag> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -105,6 +106,8 @@ public class OFBsnPktinFlagSerializerVer14 {
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_PIM);
         if((val & BSN_PKTIN_FLAG_VXLAN_SIP_MISS_VAL) != 0)
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_VXLAN_SIP_MISS);
+        if((val & BSN_PKTIN_FLAG_MC_RESERVED_VAL) != 0)
+            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_MC_RESERVED);
         return Collections.unmodifiableSet(set);
     }
 
@@ -163,6 +166,9 @@ public class OFBsnPktinFlagSerializerVer14 {
                     break;
                 case BSN_PKTIN_FLAG_VXLAN_SIP_MISS:
                     wireValue |= BSN_PKTIN_FLAG_VXLAN_SIP_MISS_VAL;
+                    break;
+                case BSN_PKTIN_FLAG_MC_RESERVED:
+                    wireValue |= BSN_PKTIN_FLAG_MC_RESERVED_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnPktinFlag in version 1.4: " + e);
