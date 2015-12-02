@@ -1,1 +1,1 @@
-09462b29cd92c807e7c7776702efec6f26afadf6 Merge into master from pull request #448: Packet-in reason for reserved multicast packets. (https://github.com/floodlight/loxigen/pull/448)
+d593d0135fc000a63fcd4faf840817778f2448d8 Merge into master from pull request #449: java: generate setters for unwriteable fields LOXI-76 (https://github.com/floodlight/loxigen/pull/449)
