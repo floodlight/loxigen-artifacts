@@ -76,12 +76,12 @@ public class OFErrorMsgsVer11 implements OFErrorMsgs {
         return new OFTableModFailedErrorMsgVer11.Builder().setXid(nextXid());
     }
 
-    public OFExperimenterErrorMsg.Builder buildExperimenterErrorMsg() {
-        throw new UnsupportedOperationException("OFExperimenterErrorMsg not supported in version 1.1");
-    }
-
     public OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() {
         throw new UnsupportedOperationException("OFRoleRequestFailedErrorMsg not supported in version 1.1");
+    }
+
+    public OFBsnError.Builder buildBsnError() {
+        throw new UnsupportedOperationException("OFBsnError not supported in version 1.1");
     }
 
     public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {

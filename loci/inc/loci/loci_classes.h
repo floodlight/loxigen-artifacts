@@ -651,6 +651,8 @@ void of_async_set_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_async_set_push_wire_types(of_object_t *obj);
 void of_bsn_arp_idle_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_arp_idle_push_wire_types(of_object_t *obj);
+void of_bsn_base_error_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_base_error_push_wire_types(of_object_t *obj);
 void of_bsn_controller_connection_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_controller_connection_push_wire_types(of_object_t *obj);
 void of_bsn_controller_connections_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -669,6 +671,8 @@ void of_bsn_debug_counter_stats_reply_wire_object_id_get(of_object_t *obj, of_ob
 void of_bsn_debug_counter_stats_reply_push_wire_types(of_object_t *obj);
 void of_bsn_debug_counter_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_debug_counter_stats_request_push_wire_types(of_object_t *obj);
+void of_bsn_error_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_error_push_wire_types(of_object_t *obj);
 void of_bsn_flow_checksum_bucket_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_flow_checksum_bucket_stats_entry_push_wire_types(of_object_t *obj);
 void of_bsn_flow_checksum_bucket_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1344,6 +1348,7 @@ typedef of_object_t of_bad_request_error_msg_t;
 typedef of_object_t of_barrier_reply_t;
 typedef of_object_t of_barrier_request_t;
 typedef of_object_t of_bsn_arp_idle_t;
+typedef of_object_t of_bsn_base_error_t;
 typedef of_object_t of_bsn_bw_clear_data_reply_t;
 typedef of_object_t of_bsn_bw_clear_data_request_t;
 typedef of_object_t of_bsn_bw_enable_get_reply_t;
@@ -1356,6 +1361,7 @@ typedef of_object_t of_bsn_debug_counter_desc_stats_reply_t;
 typedef of_object_t of_bsn_debug_counter_desc_stats_request_t;
 typedef of_object_t of_bsn_debug_counter_stats_reply_t;
 typedef of_object_t of_bsn_debug_counter_stats_request_t;
+typedef of_object_t of_bsn_error_t;
 typedef of_object_t of_bsn_flow_checksum_bucket_stats_reply_t;
 typedef of_object_t of_bsn_flow_checksum_bucket_stats_request_t;
 typedef of_object_t of_bsn_flow_idle_t;
@@ -2141,6 +2147,11 @@ extern void of_bsn_arp_idle_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_base_error_new(of_version_t version);
+extern void of_bsn_base_error_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_bw_clear_data_reply_new(of_version_t version);
 extern void of_bsn_bw_clear_data_reply_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -2198,6 +2209,11 @@ extern void of_bsn_debug_counter_stats_reply_init(
 extern of_object_t *
     of_bsn_debug_counter_stats_request_new(of_version_t version);
 extern void of_bsn_debug_counter_stats_request_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_error_new(of_version_t version);
+extern void of_bsn_error_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -5812,6 +5828,17 @@ of_bsn_arp_idle_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_base_error_t
+ * @param obj An instance of type of_bsn_base_error_t
+ *
+ * \ingroup of_bsn_base_error
+ */
+static inline void
+of_bsn_base_error_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_bw_clear_data_reply_t
  * @param obj An instance of type of_bsn_bw_clear_data_reply_t
  *
@@ -5940,6 +5967,17 @@ of_bsn_debug_counter_stats_reply_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_debug_counter_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_error_t
+ * @param obj An instance of type of_bsn_error_t
+ *
+ * \ingroup of_bsn_error
+ */
+static inline void
+of_bsn_error_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -14384,6 +14422,43 @@ extern void of_bsn_debug_counter_stats_request_subtype_get(
     of_bsn_debug_counter_stats_request_t *obj,
     uint32_t *subtype);
 
+/* Unified accessor functions for of_bsn_error */
+
+extern void of_bsn_error_xid_set(
+    of_bsn_error_t *obj,
+    uint32_t xid);
+extern void of_bsn_error_xid_get(
+    of_bsn_error_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_error_subtype_set(
+    of_bsn_error_t *obj,
+    uint16_t subtype);
+extern void of_bsn_error_subtype_get(
+    of_bsn_error_t *obj,
+    uint16_t *subtype);
+
+extern void of_bsn_error_experimenter_set(
+    of_bsn_error_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_error_experimenter_get(
+    of_bsn_error_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_error_err_msg_set(
+    of_bsn_error_t *obj,
+    of_desc_str_t err_msg);
+extern void of_bsn_error_err_msg_get(
+    of_bsn_error_t *obj,
+    of_desc_str_t *err_msg);
+
+extern int WARN_UNUSED_RESULT of_bsn_error_data_set(
+    of_bsn_error_t *obj,
+    of_octets_t *data);
+extern void of_bsn_error_data_get(
+    of_bsn_error_t *obj,
+    of_octets_t *data);
+
 /* Unified accessor functions for of_bsn_flow_checksum_bucket_stats_reply */
 
 extern void of_bsn_flow_checksum_bucket_stats_reply_xid_set(
@@ -17811,36 +17886,6 @@ extern int WARN_UNUSED_RESULT of_echo_request_data_set(
     of_octets_t *data);
 extern void of_echo_request_data_get(
     of_echo_request_t *obj,
-    of_octets_t *data);
-
-/* Unified accessor functions for of_experimenter_error_msg */
-
-extern void of_experimenter_error_msg_xid_set(
-    of_experimenter_error_msg_t *obj,
-    uint32_t xid);
-extern void of_experimenter_error_msg_xid_get(
-    of_experimenter_error_msg_t *obj,
-    uint32_t *xid);
-
-extern void of_experimenter_error_msg_subtype_set(
-    of_experimenter_error_msg_t *obj,
-    uint16_t subtype);
-extern void of_experimenter_error_msg_subtype_get(
-    of_experimenter_error_msg_t *obj,
-    uint16_t *subtype);
-
-extern void of_experimenter_error_msg_experimenter_set(
-    of_experimenter_error_msg_t *obj,
-    uint32_t experimenter);
-extern void of_experimenter_error_msg_experimenter_get(
-    of_experimenter_error_msg_t *obj,
-    uint32_t *experimenter);
-
-extern int WARN_UNUSED_RESULT of_experimenter_error_msg_data_set(
-    of_experimenter_error_msg_t *obj,
-    of_octets_t *data);
-extern void of_experimenter_error_msg_data_get(
-    of_experimenter_error_msg_t *obj,
     of_octets_t *data);
 
 /* Unified accessor functions for of_features_reply */

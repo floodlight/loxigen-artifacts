@@ -2633,15 +2633,6 @@ extern int of_echo_request_OF_VERSION_1_2_populate_scalars(
 extern int of_echo_request_OF_VERSION_1_2_check_scalars(
     of_echo_request_t *obj, int value);
 
-extern int of_experimenter_error_msg_OF_VERSION_1_2_populate(
-    of_experimenter_error_msg_t *obj, int value);
-extern int of_experimenter_error_msg_OF_VERSION_1_2_check(
-    of_experimenter_error_msg_t *obj, int value);
-extern int of_experimenter_error_msg_OF_VERSION_1_2_populate_scalars(
-    of_experimenter_error_msg_t *obj, int value);
-extern int of_experimenter_error_msg_OF_VERSION_1_2_check_scalars(
-    of_experimenter_error_msg_t *obj, int value);
-
 extern int of_features_reply_OF_VERSION_1_2_populate(
     of_features_reply_t *obj, int value);
 extern int of_features_reply_OF_VERSION_1_2_check(
@@ -4820,6 +4811,15 @@ extern int of_bsn_debug_counter_stats_request_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_debug_counter_stats_request_OF_VERSION_1_3_check_scalars(
     of_bsn_debug_counter_stats_request_t *obj, int value);
 
+extern int of_bsn_error_OF_VERSION_1_3_populate(
+    of_bsn_error_t *obj, int value);
+extern int of_bsn_error_OF_VERSION_1_3_check(
+    of_bsn_error_t *obj, int value);
+extern int of_bsn_error_OF_VERSION_1_3_populate_scalars(
+    of_bsn_error_t *obj, int value);
+extern int of_bsn_error_OF_VERSION_1_3_check_scalars(
+    of_bsn_error_t *obj, int value);
+
 extern int of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_populate(
     of_bsn_flow_checksum_bucket_stats_reply_t *obj, int value);
 extern int of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_check(
@@ -5512,15 +5512,6 @@ extern int of_echo_request_OF_VERSION_1_3_populate_scalars(
     of_echo_request_t *obj, int value);
 extern int of_echo_request_OF_VERSION_1_3_check_scalars(
     of_echo_request_t *obj, int value);
-
-extern int of_experimenter_error_msg_OF_VERSION_1_3_populate(
-    of_experimenter_error_msg_t *obj, int value);
-extern int of_experimenter_error_msg_OF_VERSION_1_3_check(
-    of_experimenter_error_msg_t *obj, int value);
-extern int of_experimenter_error_msg_OF_VERSION_1_3_populate_scalars(
-    of_experimenter_error_msg_t *obj, int value);
-extern int of_experimenter_error_msg_OF_VERSION_1_3_check_scalars(
-    of_experimenter_error_msg_t *obj, int value);
 
 extern int of_features_reply_OF_VERSION_1_3_populate(
     of_features_reply_t *obj, int value);
@@ -10004,6 +9995,15 @@ extern int of_bsn_debug_counter_stats_request_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_debug_counter_stats_request_OF_VERSION_1_4_check_scalars(
     of_bsn_debug_counter_stats_request_t *obj, int value);
 
+extern int of_bsn_error_OF_VERSION_1_4_populate(
+    of_bsn_error_t *obj, int value);
+extern int of_bsn_error_OF_VERSION_1_4_check(
+    of_bsn_error_t *obj, int value);
+extern int of_bsn_error_OF_VERSION_1_4_populate_scalars(
+    of_bsn_error_t *obj, int value);
+extern int of_bsn_error_OF_VERSION_1_4_check_scalars(
+    of_bsn_error_t *obj, int value);
+
 extern int of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_4_populate(
     of_bsn_flow_checksum_bucket_stats_reply_t *obj, int value);
 extern int of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_4_check(
@@ -10732,15 +10732,6 @@ extern int of_echo_request_OF_VERSION_1_4_populate_scalars(
     of_echo_request_t *obj, int value);
 extern int of_echo_request_OF_VERSION_1_4_check_scalars(
     of_echo_request_t *obj, int value);
-
-extern int of_experimenter_error_msg_OF_VERSION_1_4_populate(
-    of_experimenter_error_msg_t *obj, int value);
-extern int of_experimenter_error_msg_OF_VERSION_1_4_check(
-    of_experimenter_error_msg_t *obj, int value);
-extern int of_experimenter_error_msg_OF_VERSION_1_4_populate_scalars(
-    of_experimenter_error_msg_t *obj, int value);
-extern int of_experimenter_error_msg_OF_VERSION_1_4_check_scalars(
-    of_experimenter_error_msg_t *obj, int value);
 
 extern int of_features_reply_OF_VERSION_1_4_populate(
     of_features_reply_t *obj, int value);

@@ -2368,23 +2368,49 @@ of_action_set_field_field_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
+
 void
-of_experimenter_error_msg_push_wire_types(of_object_t *obj)
+of_experimenter_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
-    case OF_VERSION_1_2:
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        *(uint8_t *)(buf + 0) = obj->version; /* version */
-        *(uint8_t *)(buf + 1) = 0x1; /* type */
-        *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* err_type */
+    case OF_VERSION_1_2: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        switch (value) {
+        default:
+            *id = OF_EXPERIMENTER_ERROR_MSG;
+            break;
+        }
         break;
+    }
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        switch (value) {
+        case 0x5c16c7:
+            of_bsn_base_error_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER_ERROR_MSG;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_4: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        switch (value) {
+        case 0x5c16c7:
+            of_bsn_base_error_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER_ERROR_MSG;
+            break;
+        }
+        break;
+    }
     default:
-        UNREACHABLE();
+        LOCI_ASSERT(0);
     }
 }
-
 
 
 /**
@@ -2416,8 +2442,6 @@ of_experimenter_error_msg_new(of_version_t version)
     }
 
     of_experimenter_error_msg_init(obj, version, bytes, 0);
-    of_experimenter_error_msg_push_wire_types(obj);
-    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }

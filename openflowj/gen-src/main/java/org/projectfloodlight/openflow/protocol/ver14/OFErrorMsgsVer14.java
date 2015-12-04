@@ -76,12 +76,12 @@ public class OFErrorMsgsVer14 implements OFErrorMsgs {
         return new OFTableModFailedErrorMsgVer14.Builder().setXid(nextXid());
     }
 
-    public OFExperimenterErrorMsg.Builder buildExperimenterErrorMsg() {
-        return new OFExperimenterErrorMsgVer14.Builder().setXid(nextXid());
-    }
-
     public OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() {
         return new OFRoleRequestFailedErrorMsgVer14.Builder().setXid(nextXid());
+    }
+
+    public OFBsnError.Builder buildBsnError() {
+        return new OFBsnErrorVer14.Builder().setXid(nextXid());
     }
 
     public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {

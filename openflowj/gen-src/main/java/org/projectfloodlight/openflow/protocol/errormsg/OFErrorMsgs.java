@@ -38,8 +38,8 @@ public interface OFErrorMsgs extends XidGenerator {
     OFGroupModFailedErrorMsg.Builder buildGroupModFailedErrorMsg() throws UnsupportedOperationException;
     OFSwitchConfigFailedErrorMsg.Builder buildSwitchConfigFailedErrorMsg() throws UnsupportedOperationException;
     OFTableModFailedErrorMsg.Builder buildTableModFailedErrorMsg() throws UnsupportedOperationException;
-    OFExperimenterErrorMsg.Builder buildExperimenterErrorMsg() throws UnsupportedOperationException;
     OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() throws UnsupportedOperationException;
+    OFBsnError.Builder buildBsnError() throws UnsupportedOperationException;
     OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() throws UnsupportedOperationException;
     OFTableFeaturesFailedErrorMsg.Builder buildTableFeaturesFailedErrorMsg() throws UnsupportedOperationException;
     OFAsyncConfigFailedErrorMsg.Builder buildAsyncConfigFailedErrorMsg() throws UnsupportedOperationException;

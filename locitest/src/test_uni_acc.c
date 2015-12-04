@@ -9969,44 +9969,6 @@ test_of_echo_request_OF_VERSION_1_2(void)
 }
 
 static int
-test_of_experimenter_error_msg_OF_VERSION_1_2(void)
-{
-    of_experimenter_error_msg_t *obj;
-    obj = of_experimenter_error_msg_new(OF_VERSION_1_2);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_2);
-    TEST_ASSERT(obj->length == 16);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_EXPERIMENTER_ERROR_MSG);
-
-    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
-        int length;
-
-        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
-        of_object_id_t obj_id;
-
-        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
-        TEST_ASSERT(obj_id == OF_EXPERIMENTER_ERROR_MSG);
-    }
-
-    /* Set up incrementing values for members */
-    TEST_ASSERT(of_experimenter_error_msg_OF_VERSION_1_2_populate(
-        obj, 1) != 0);
-
-    /* Check values just set */
-    TEST_ASSERT(of_experimenter_error_msg_OF_VERSION_1_2_check(
-        obj, 1) != 0);
-
-    of_experimenter_error_msg_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
 test_of_features_reply_OF_VERSION_1_2(void)
 {
     of_features_reply_t *obj;
@@ -18633,6 +18595,44 @@ test_of_bsn_debug_counter_stats_request_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_error_OF_VERSION_1_3(void)
+{
+    of_bsn_error_t *obj;
+    obj = of_bsn_error_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 272);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_ERROR);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 272);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_ERROR);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_error_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_error_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_error_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3(void)
 {
     of_bsn_flow_checksum_bucket_stats_reply_t *obj;
@@ -21553,44 +21553,6 @@ test_of_echo_request_OF_VERSION_1_3(void)
         obj, 1) != 0);
 
     of_echo_request_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
-test_of_experimenter_error_msg_OF_VERSION_1_3(void)
-{
-    of_experimenter_error_msg_t *obj;
-    obj = of_experimenter_error_msg_new(OF_VERSION_1_3);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 16);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_EXPERIMENTER_ERROR_MSG);
-
-    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
-        int length;
-
-        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
-        of_object_id_t obj_id;
-
-        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
-        TEST_ASSERT(obj_id == OF_EXPERIMENTER_ERROR_MSG);
-    }
-
-    /* Set up incrementing values for members */
-    TEST_ASSERT(of_experimenter_error_msg_OF_VERSION_1_3_populate(
-        obj, 1) != 0);
-
-    /* Check values just set */
-    TEST_ASSERT(of_experimenter_error_msg_OF_VERSION_1_3_check(
-        obj, 1) != 0);
-
-    of_experimenter_error_msg_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -38849,6 +38811,44 @@ test_of_bsn_debug_counter_stats_request_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bsn_error_OF_VERSION_1_4(void)
+{
+    of_bsn_error_t *obj;
+    obj = of_bsn_error_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 272);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_ERROR);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 272);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_ERROR);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_error_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_error_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_error_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_4(void)
 {
     of_bsn_flow_checksum_bucket_stats_reply_t *obj;
@@ -41921,44 +41921,6 @@ test_of_echo_request_OF_VERSION_1_4(void)
         obj, 1) != 0);
 
     of_echo_request_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
-test_of_experimenter_error_msg_OF_VERSION_1_4(void)
-{
-    of_experimenter_error_msg_t *obj;
-    obj = of_experimenter_error_msg_new(OF_VERSION_1_4);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 16);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_EXPERIMENTER_ERROR_MSG);
-
-    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
-        int length;
-
-        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
-        of_object_id_t obj_id;
-
-        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
-        TEST_ASSERT(obj_id == OF_EXPERIMENTER_ERROR_MSG);
-    }
-
-    /* Set up incrementing values for members */
-    TEST_ASSERT(of_experimenter_error_msg_OF_VERSION_1_4_populate(
-        obj, 1) != 0);
-
-    /* Check values just set */
-    TEST_ASSERT(of_experimenter_error_msg_OF_VERSION_1_4_check(
-        obj, 1) != 0);
-
-    of_experimenter_error_msg_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -59595,7 +59557,6 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_desc_stats_request_OF_VERSION_1_2);
     RUN_TEST(of_echo_reply_OF_VERSION_1_2);
     RUN_TEST(of_echo_request_OF_VERSION_1_2);
-    RUN_TEST(of_experimenter_error_msg_OF_VERSION_1_2);
     RUN_TEST(of_features_reply_OF_VERSION_1_2);
     RUN_TEST(of_features_request_OF_VERSION_1_2);
     RUN_TEST(of_flow_add_OF_VERSION_1_2);
@@ -59823,6 +59784,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_3);
     RUN_TEST(of_bsn_debug_counter_stats_reply_OF_VERSION_1_3);
     RUN_TEST(of_bsn_debug_counter_stats_request_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_error_OF_VERSION_1_3);
     RUN_TEST(of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3);
     RUN_TEST(of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3);
     RUN_TEST(of_bsn_flow_idle_OF_VERSION_1_3);
@@ -59900,7 +59862,6 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_desc_stats_request_OF_VERSION_1_3);
     RUN_TEST(of_echo_reply_OF_VERSION_1_3);
     RUN_TEST(of_echo_request_OF_VERSION_1_3);
-    RUN_TEST(of_experimenter_error_msg_OF_VERSION_1_3);
     RUN_TEST(of_features_reply_OF_VERSION_1_3);
     RUN_TEST(of_features_request_OF_VERSION_1_3);
     RUN_TEST(of_flow_add_OF_VERSION_1_3);
@@ -60355,6 +60316,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_4);
     RUN_TEST(of_bsn_debug_counter_stats_reply_OF_VERSION_1_4);
     RUN_TEST(of_bsn_debug_counter_stats_request_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_error_OF_VERSION_1_4);
     RUN_TEST(of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_4);
     RUN_TEST(of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_4);
     RUN_TEST(of_bsn_flow_idle_OF_VERSION_1_4);
@@ -60436,7 +60398,6 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_desc_stats_request_OF_VERSION_1_4);
     RUN_TEST(of_echo_reply_OF_VERSION_1_4);
     RUN_TEST(of_echo_request_OF_VERSION_1_4);
-    RUN_TEST(of_experimenter_error_msg_OF_VERSION_1_4);
     RUN_TEST(of_features_reply_OF_VERSION_1_4);
     RUN_TEST(of_features_request_OF_VERSION_1_4);
     RUN_TEST(of_flow_add_OF_VERSION_1_4);

@@ -365,6 +365,33 @@ typedef struct of_barrier_request_s of_barrier_request_t;
 typedef struct of_bsn_arp_idle_s of_bsn_arp_idle_t;
 
 /**
+ * Structure for of_bsn_base_error object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_base_error_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint16.  Functions
+ *   are of type of_bsn_base_error_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_base_error_uint32_get_f and _set_f.
+ *
+ * @param err_msg_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for err_msg, a variable of type of_desc_str.  Functions
+ *   are of type of_bsn_base_error_of_desc_str_get_f and _set_f.
+ *
+ * @param data_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for data, a variable of type of_octets.  Functions
+ *   are of type of_bsn_base_error_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_base_error_s of_bsn_base_error_t;
+
+/**
  * Structure for of_bsn_bw_clear_data_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -639,6 +666,33 @@ typedef struct of_bsn_debug_counter_stats_reply_s of_bsn_debug_counter_stats_rep
  *
  */
 typedef struct of_bsn_debug_counter_stats_request_s of_bsn_debug_counter_stats_request_t;
+
+/**
+ * Structure for of_bsn_error object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_error_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint16.  Functions
+ *   are of type of_bsn_error_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_error_uint32_get_f and _set_f.
+ *
+ * @param err_msg_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for err_msg, a variable of type of_desc_str.  Functions
+ *   are of type of_bsn_error_of_desc_str_get_f and _set_f.
+ *
+ * @param data_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for data, a variable of type of_octets.  Functions
+ *   are of type of_bsn_error_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_error_s of_bsn_error_t;
 
 /**
  * Structure for of_bsn_flow_checksum_bucket_stats_reply object.  Get/set

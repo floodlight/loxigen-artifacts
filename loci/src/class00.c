@@ -8953,7 +8953,7 @@ of_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             *id = OF_ROLE_REQUEST_FAILED_ERROR_MSG;
             break;
         case 0xffff:
-            *id = OF_EXPERIMENTER_ERROR_MSG;
+            of_experimenter_error_msg_wire_object_id_get(obj, id);
             break;
         default:
             *id = OF_ERROR_MSG;
@@ -9007,7 +9007,7 @@ of_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             *id = OF_TABLE_FEATURES_FAILED_ERROR_MSG;
             break;
         case 0xffff:
-            *id = OF_EXPERIMENTER_ERROR_MSG;
+            of_experimenter_error_msg_wire_object_id_get(obj, id);
             break;
         default:
             *id = OF_ERROR_MSG;
@@ -9073,7 +9073,7 @@ of_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             *id = OF_BUNDLE_FAILED_ERROR_MSG;
             break;
         case 0xffff:
-            *id = OF_EXPERIMENTER_ERROR_MSG;
+            of_experimenter_error_msg_wire_object_id_get(obj, id);
             break;
         default:
             *id = OF_ERROR_MSG;

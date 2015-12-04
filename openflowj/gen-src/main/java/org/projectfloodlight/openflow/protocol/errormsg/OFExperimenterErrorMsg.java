@@ -48,7 +48,6 @@ public interface OFExperimenterErrorMsg extends OFObject, OFErrorMsg {
         int getSubtype();
         Builder setSubtype(int subtype);
         long getExperimenter();
-        Builder setExperimenter(long experimenter);
         OFErrorCauseData getData();
         Builder setData(OFErrorCauseData data);
     }

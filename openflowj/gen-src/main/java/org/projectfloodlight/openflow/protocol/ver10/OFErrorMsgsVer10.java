@@ -76,12 +76,12 @@ public class OFErrorMsgsVer10 implements OFErrorMsgs {
         throw new UnsupportedOperationException("OFTableModFailedErrorMsg not supported in version 1.0");
     }
 
-    public OFExperimenterErrorMsg.Builder buildExperimenterErrorMsg() {
-        throw new UnsupportedOperationException("OFExperimenterErrorMsg not supported in version 1.0");
-    }
-
     public OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() {
         throw new UnsupportedOperationException("OFRoleRequestFailedErrorMsg not supported in version 1.0");
+    }
+
+    public OFBsnError.Builder buildBsnError() {
+        throw new UnsupportedOperationException("OFBsnError not supported in version 1.0");
     }
 
     public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {

@@ -6070,6 +6070,23 @@ fields['of13.bsn_arp_idle.experimenter'] = ProtoField.uint32("of13.bsn_arp_idle.
 fields['of13.bsn_arp_idle.subtype'] = ProtoField.uint32("of13.bsn_arp_idle.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_arp_idle.vlan_vid'] = ProtoField.uint16("of13.bsn_arp_idle.vlan_vid", "vlan_vid", base.DEC, nil)
 fields['of13.bsn_arp_idle.ipv4_addr'] = ProtoField.ipv4("of13.bsn_arp_idle.ipv4_addr", "ipv4_addr")
+fields['of13.experimenter_error_msg.version'] = ProtoField.uint8("of13.experimenter_error_msg.version", "version", base.DEC, nil)
+fields['of13.experimenter_error_msg.type'] = ProtoField.uint8("of13.experimenter_error_msg.type", "type", base.DEC, nil)
+fields['of13.experimenter_error_msg.length'] = ProtoField.uint16("of13.experimenter_error_msg.length", "length", base.DEC, nil)
+fields['of13.experimenter_error_msg.xid'] = ProtoField.uint32("of13.experimenter_error_msg.xid", "xid", base.DEC, nil)
+fields['of13.experimenter_error_msg.err_type'] = ProtoField.uint16("of13.experimenter_error_msg.err_type", "err_type", base.DEC, nil)
+fields['of13.experimenter_error_msg.subtype'] = ProtoField.uint16("of13.experimenter_error_msg.subtype", "subtype", base.DEC, nil)
+fields['of13.experimenter_error_msg.experimenter'] = ProtoField.uint32("of13.experimenter_error_msg.experimenter", "experimenter", base.DEC, nil)
+fields['of13.experimenter_error_msg.data'] = ProtoField.bytes("of13.experimenter_error_msg.data", "data")
+fields['of13.bsn_base_error.version'] = ProtoField.uint8("of13.bsn_base_error.version", "version", base.DEC, nil)
+fields['of13.bsn_base_error.type'] = ProtoField.uint8("of13.bsn_base_error.type", "type", base.DEC, nil)
+fields['of13.bsn_base_error.length'] = ProtoField.uint16("of13.bsn_base_error.length", "length", base.DEC, nil)
+fields['of13.bsn_base_error.xid'] = ProtoField.uint32("of13.bsn_base_error.xid", "xid", base.DEC, nil)
+fields['of13.bsn_base_error.err_type'] = ProtoField.uint16("of13.bsn_base_error.err_type", "err_type", base.DEC, nil)
+fields['of13.bsn_base_error.subtype'] = ProtoField.uint16("of13.bsn_base_error.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_base_error.experimenter'] = ProtoField.uint32("of13.bsn_base_error.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_base_error.err_msg'] = ProtoField.stringz("of13.bsn_base_error.err_msg", "err_msg")
+fields['of13.bsn_base_error.data'] = ProtoField.bytes("of13.bsn_base_error.data", "data")
 fields['of13.bsn_bw_clear_data_reply.version'] = ProtoField.uint8("of13.bsn_bw_clear_data_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_bw_clear_data_reply.type'] = ProtoField.uint8("of13.bsn_bw_clear_data_reply.type", "type", base.DEC, nil)
 fields['of13.bsn_bw_clear_data_reply.length'] = ProtoField.uint16("of13.bsn_bw_clear_data_reply.length", "length", base.DEC, nil)
@@ -6199,6 +6216,15 @@ fields['of13.bsn_debug_counter_stats_request.stats_type'] = ProtoField.uint16("o
 fields['of13.bsn_debug_counter_stats_request.flags'] = ProtoField.uint32("of13.bsn_debug_counter_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
 fields['of13.bsn_debug_counter_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_debug_counter_stats_request.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_debug_counter_stats_request.subtype'] = ProtoField.uint32("of13.bsn_debug_counter_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_error.version'] = ProtoField.uint8("of13.bsn_error.version", "version", base.DEC, nil)
+fields['of13.bsn_error.type'] = ProtoField.uint8("of13.bsn_error.type", "type", base.DEC, nil)
+fields['of13.bsn_error.length'] = ProtoField.uint16("of13.bsn_error.length", "length", base.DEC, nil)
+fields['of13.bsn_error.xid'] = ProtoField.uint32("of13.bsn_error.xid", "xid", base.DEC, nil)
+fields['of13.bsn_error.err_type'] = ProtoField.uint16("of13.bsn_error.err_type", "err_type", base.DEC, nil)
+fields['of13.bsn_error.subtype'] = ProtoField.uint16("of13.bsn_error.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_error.experimenter'] = ProtoField.uint32("of13.bsn_error.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_error.err_msg'] = ProtoField.stringz("of13.bsn_error.err_msg", "err_msg")
+fields['of13.bsn_error.data'] = ProtoField.bytes("of13.bsn_error.data", "data")
 fields['of13.bsn_flow_checksum_bucket_stats_entry.checksum'] = ProtoField.uint64("of13.bsn_flow_checksum_bucket_stats_entry.checksum", "checksum", base.DEC, nil)
 fields['of13.bsn_flow_checksum_bucket_stats_reply.version'] = ProtoField.uint8("of13.bsn_flow_checksum_bucket_stats_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_flow_checksum_bucket_stats_reply.type'] = ProtoField.uint8("of13.bsn_flow_checksum_bucket_stats_reply.type", "type", base.DEC, nil)
@@ -7208,14 +7234,6 @@ fields['of13.echo_request.type'] = ProtoField.uint32("of13.echo_request.type", "
 fields['of13.echo_request.length'] = ProtoField.uint16("of13.echo_request.length", "length", base.DEC, nil)
 fields['of13.echo_request.xid'] = ProtoField.uint32("of13.echo_request.xid", "xid", base.DEC, nil)
 fields['of13.echo_request.data'] = ProtoField.bytes("of13.echo_request.data", "data")
-fields['of13.experimenter_error_msg.version'] = ProtoField.uint8("of13.experimenter_error_msg.version", "version", base.DEC, nil)
-fields['of13.experimenter_error_msg.type'] = ProtoField.uint8("of13.experimenter_error_msg.type", "type", base.DEC, nil)
-fields['of13.experimenter_error_msg.length'] = ProtoField.uint16("of13.experimenter_error_msg.length", "length", base.DEC, nil)
-fields['of13.experimenter_error_msg.xid'] = ProtoField.uint32("of13.experimenter_error_msg.xid", "xid", base.DEC, nil)
-fields['of13.experimenter_error_msg.err_type'] = ProtoField.uint16("of13.experimenter_error_msg.err_type", "err_type", base.DEC, nil)
-fields['of13.experimenter_error_msg.subtype'] = ProtoField.uint16("of13.experimenter_error_msg.subtype", "subtype", base.DEC, nil)
-fields['of13.experimenter_error_msg.experimenter'] = ProtoField.uint32("of13.experimenter_error_msg.experimenter", "experimenter", base.DEC, nil)
-fields['of13.experimenter_error_msg.data'] = ProtoField.bytes("of13.experimenter_error_msg.data", "data")
 fields['of13.features_reply.version'] = ProtoField.uint8("of13.features_reply.version", "version", base.DEC, nil)
 fields['of13.features_reply.type'] = ProtoField.uint32("of13.features_reply.type", "type", base.DEC, enum_v4_ofp_type)
 fields['of13.features_reply.length'] = ProtoField.uint16("of13.features_reply.length", "length", base.DEC, nil)
@@ -8724,6 +8742,23 @@ fields['of14.bsn_arp_idle.experimenter'] = ProtoField.uint32("of14.bsn_arp_idle.
 fields['of14.bsn_arp_idle.subtype'] = ProtoField.uint32("of14.bsn_arp_idle.subtype", "subtype", base.DEC, nil)
 fields['of14.bsn_arp_idle.vlan_vid'] = ProtoField.uint16("of14.bsn_arp_idle.vlan_vid", "vlan_vid", base.DEC, nil)
 fields['of14.bsn_arp_idle.ipv4_addr'] = ProtoField.ipv4("of14.bsn_arp_idle.ipv4_addr", "ipv4_addr")
+fields['of14.experimenter_error_msg.version'] = ProtoField.uint8("of14.experimenter_error_msg.version", "version", base.DEC, nil)
+fields['of14.experimenter_error_msg.type'] = ProtoField.uint8("of14.experimenter_error_msg.type", "type", base.DEC, nil)
+fields['of14.experimenter_error_msg.length'] = ProtoField.uint16("of14.experimenter_error_msg.length", "length", base.DEC, nil)
+fields['of14.experimenter_error_msg.xid'] = ProtoField.uint32("of14.experimenter_error_msg.xid", "xid", base.DEC, nil)
+fields['of14.experimenter_error_msg.err_type'] = ProtoField.uint16("of14.experimenter_error_msg.err_type", "err_type", base.DEC, nil)
+fields['of14.experimenter_error_msg.subtype'] = ProtoField.uint16("of14.experimenter_error_msg.subtype", "subtype", base.DEC, nil)
+fields['of14.experimenter_error_msg.experimenter'] = ProtoField.uint32("of14.experimenter_error_msg.experimenter", "experimenter", base.DEC, nil)
+fields['of14.experimenter_error_msg.data'] = ProtoField.bytes("of14.experimenter_error_msg.data", "data")
+fields['of14.bsn_base_error.version'] = ProtoField.uint8("of14.bsn_base_error.version", "version", base.DEC, nil)
+fields['of14.bsn_base_error.type'] = ProtoField.uint8("of14.bsn_base_error.type", "type", base.DEC, nil)
+fields['of14.bsn_base_error.length'] = ProtoField.uint16("of14.bsn_base_error.length", "length", base.DEC, nil)
+fields['of14.bsn_base_error.xid'] = ProtoField.uint32("of14.bsn_base_error.xid", "xid", base.DEC, nil)
+fields['of14.bsn_base_error.err_type'] = ProtoField.uint16("of14.bsn_base_error.err_type", "err_type", base.DEC, nil)
+fields['of14.bsn_base_error.subtype'] = ProtoField.uint16("of14.bsn_base_error.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_base_error.experimenter'] = ProtoField.uint32("of14.bsn_base_error.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_base_error.err_msg'] = ProtoField.stringz("of14.bsn_base_error.err_msg", "err_msg")
+fields['of14.bsn_base_error.data'] = ProtoField.bytes("of14.bsn_base_error.data", "data")
 fields['of14.bsn_bw_clear_data_reply.version'] = ProtoField.uint8("of14.bsn_bw_clear_data_reply.version", "version", base.DEC, nil)
 fields['of14.bsn_bw_clear_data_reply.type'] = ProtoField.uint8("of14.bsn_bw_clear_data_reply.type", "type", base.DEC, nil)
 fields['of14.bsn_bw_clear_data_reply.length'] = ProtoField.uint16("of14.bsn_bw_clear_data_reply.length", "length", base.DEC, nil)
@@ -8853,6 +8888,15 @@ fields['of14.bsn_debug_counter_stats_request.stats_type'] = ProtoField.uint16("o
 fields['of14.bsn_debug_counter_stats_request.flags'] = ProtoField.uint32("of14.bsn_debug_counter_stats_request.flags", "flags", base.HEX, enum_v5_ofp_stats_request_flags)
 fields['of14.bsn_debug_counter_stats_request.experimenter'] = ProtoField.uint32("of14.bsn_debug_counter_stats_request.experimenter", "experimenter", base.DEC, nil)
 fields['of14.bsn_debug_counter_stats_request.subtype'] = ProtoField.uint32("of14.bsn_debug_counter_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_error.version'] = ProtoField.uint8("of14.bsn_error.version", "version", base.DEC, nil)
+fields['of14.bsn_error.type'] = ProtoField.uint8("of14.bsn_error.type", "type", base.DEC, nil)
+fields['of14.bsn_error.length'] = ProtoField.uint16("of14.bsn_error.length", "length", base.DEC, nil)
+fields['of14.bsn_error.xid'] = ProtoField.uint32("of14.bsn_error.xid", "xid", base.DEC, nil)
+fields['of14.bsn_error.err_type'] = ProtoField.uint16("of14.bsn_error.err_type", "err_type", base.DEC, nil)
+fields['of14.bsn_error.subtype'] = ProtoField.uint16("of14.bsn_error.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_error.experimenter'] = ProtoField.uint32("of14.bsn_error.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_error.err_msg'] = ProtoField.stringz("of14.bsn_error.err_msg", "err_msg")
+fields['of14.bsn_error.data'] = ProtoField.bytes("of14.bsn_error.data", "data")
 fields['of14.bsn_flow_checksum_bucket_stats_entry.checksum'] = ProtoField.uint64("of14.bsn_flow_checksum_bucket_stats_entry.checksum", "checksum", base.DEC, nil)
 fields['of14.bsn_flow_checksum_bucket_stats_reply.version'] = ProtoField.uint8("of14.bsn_flow_checksum_bucket_stats_reply.version", "version", base.DEC, nil)
 fields['of14.bsn_flow_checksum_bucket_stats_reply.type'] = ProtoField.uint8("of14.bsn_flow_checksum_bucket_stats_reply.type", "type", base.DEC, nil)
@@ -9895,14 +9939,6 @@ fields['of14.echo_request.type'] = ProtoField.uint32("of14.echo_request.type", "
 fields['of14.echo_request.length'] = ProtoField.uint16("of14.echo_request.length", "length", base.DEC, nil)
 fields['of14.echo_request.xid'] = ProtoField.uint32("of14.echo_request.xid", "xid", base.DEC, nil)
 fields['of14.echo_request.data'] = ProtoField.bytes("of14.echo_request.data", "data")
-fields['of14.experimenter_error_msg.version'] = ProtoField.uint8("of14.experimenter_error_msg.version", "version", base.DEC, nil)
-fields['of14.experimenter_error_msg.type'] = ProtoField.uint8("of14.experimenter_error_msg.type", "type", base.DEC, nil)
-fields['of14.experimenter_error_msg.length'] = ProtoField.uint16("of14.experimenter_error_msg.length", "length", base.DEC, nil)
-fields['of14.experimenter_error_msg.xid'] = ProtoField.uint32("of14.experimenter_error_msg.xid", "xid", base.DEC, nil)
-fields['of14.experimenter_error_msg.err_type'] = ProtoField.uint16("of14.experimenter_error_msg.err_type", "err_type", base.DEC, nil)
-fields['of14.experimenter_error_msg.subtype'] = ProtoField.uint16("of14.experimenter_error_msg.subtype", "subtype", base.DEC, nil)
-fields['of14.experimenter_error_msg.experimenter'] = ProtoField.uint32("of14.experimenter_error_msg.experimenter", "experimenter", base.DEC, nil)
-fields['of14.experimenter_error_msg.data'] = ProtoField.bytes("of14.experimenter_error_msg.data", "data")
 fields['of14.features_reply.version'] = ProtoField.uint8("of14.features_reply.version", "version", base.DEC, nil)
 fields['of14.features_reply.type'] = ProtoField.uint32("of14.features_reply.type", "type", base.DEC, enum_v5_ofp_type)
 fields['of14.features_reply.length'] = ProtoField.uint16("of14.features_reply.length", "length", base.DEC, nil)
@@ -14580,6 +14616,23 @@ p_of.fields = {
     fields['of13.bsn_arp_idle.subtype'],
     fields['of13.bsn_arp_idle.vlan_vid'],
     fields['of13.bsn_arp_idle.ipv4_addr'],
+    fields['of13.experimenter_error_msg.version'],
+    fields['of13.experimenter_error_msg.type'],
+    fields['of13.experimenter_error_msg.length'],
+    fields['of13.experimenter_error_msg.xid'],
+    fields['of13.experimenter_error_msg.err_type'],
+    fields['of13.experimenter_error_msg.subtype'],
+    fields['of13.experimenter_error_msg.experimenter'],
+    fields['of13.experimenter_error_msg.data'],
+    fields['of13.bsn_base_error.version'],
+    fields['of13.bsn_base_error.type'],
+    fields['of13.bsn_base_error.length'],
+    fields['of13.bsn_base_error.xid'],
+    fields['of13.bsn_base_error.err_type'],
+    fields['of13.bsn_base_error.subtype'],
+    fields['of13.bsn_base_error.experimenter'],
+    fields['of13.bsn_base_error.err_msg'],
+    fields['of13.bsn_base_error.data'],
     fields['of13.bsn_bw_clear_data_reply.version'],
     fields['of13.bsn_bw_clear_data_reply.type'],
     fields['of13.bsn_bw_clear_data_reply.length'],
@@ -14709,6 +14762,15 @@ p_of.fields = {
     fields['of13.bsn_debug_counter_stats_request.flags'],
     fields['of13.bsn_debug_counter_stats_request.experimenter'],
     fields['of13.bsn_debug_counter_stats_request.subtype'],
+    fields['of13.bsn_error.version'],
+    fields['of13.bsn_error.type'],
+    fields['of13.bsn_error.length'],
+    fields['of13.bsn_error.xid'],
+    fields['of13.bsn_error.err_type'],
+    fields['of13.bsn_error.subtype'],
+    fields['of13.bsn_error.experimenter'],
+    fields['of13.bsn_error.err_msg'],
+    fields['of13.bsn_error.data'],
     fields['of13.bsn_flow_checksum_bucket_stats_entry.checksum'],
     fields['of13.bsn_flow_checksum_bucket_stats_reply.version'],
     fields['of13.bsn_flow_checksum_bucket_stats_reply.type'],
@@ -15718,14 +15780,6 @@ p_of.fields = {
     fields['of13.echo_request.length'],
     fields['of13.echo_request.xid'],
     fields['of13.echo_request.data'],
-    fields['of13.experimenter_error_msg.version'],
-    fields['of13.experimenter_error_msg.type'],
-    fields['of13.experimenter_error_msg.length'],
-    fields['of13.experimenter_error_msg.xid'],
-    fields['of13.experimenter_error_msg.err_type'],
-    fields['of13.experimenter_error_msg.subtype'],
-    fields['of13.experimenter_error_msg.experimenter'],
-    fields['of13.experimenter_error_msg.data'],
     fields['of13.features_reply.version'],
     fields['of13.features_reply.type'],
     fields['of13.features_reply.length'],
@@ -17234,6 +17288,23 @@ p_of.fields = {
     fields['of14.bsn_arp_idle.subtype'],
     fields['of14.bsn_arp_idle.vlan_vid'],
     fields['of14.bsn_arp_idle.ipv4_addr'],
+    fields['of14.experimenter_error_msg.version'],
+    fields['of14.experimenter_error_msg.type'],
+    fields['of14.experimenter_error_msg.length'],
+    fields['of14.experimenter_error_msg.xid'],
+    fields['of14.experimenter_error_msg.err_type'],
+    fields['of14.experimenter_error_msg.subtype'],
+    fields['of14.experimenter_error_msg.experimenter'],
+    fields['of14.experimenter_error_msg.data'],
+    fields['of14.bsn_base_error.version'],
+    fields['of14.bsn_base_error.type'],
+    fields['of14.bsn_base_error.length'],
+    fields['of14.bsn_base_error.xid'],
+    fields['of14.bsn_base_error.err_type'],
+    fields['of14.bsn_base_error.subtype'],
+    fields['of14.bsn_base_error.experimenter'],
+    fields['of14.bsn_base_error.err_msg'],
+    fields['of14.bsn_base_error.data'],
     fields['of14.bsn_bw_clear_data_reply.version'],
     fields['of14.bsn_bw_clear_data_reply.type'],
     fields['of14.bsn_bw_clear_data_reply.length'],
@@ -17363,6 +17434,15 @@ p_of.fields = {
     fields['of14.bsn_debug_counter_stats_request.flags'],
     fields['of14.bsn_debug_counter_stats_request.experimenter'],
     fields['of14.bsn_debug_counter_stats_request.subtype'],
+    fields['of14.bsn_error.version'],
+    fields['of14.bsn_error.type'],
+    fields['of14.bsn_error.length'],
+    fields['of14.bsn_error.xid'],
+    fields['of14.bsn_error.err_type'],
+    fields['of14.bsn_error.subtype'],
+    fields['of14.bsn_error.experimenter'],
+    fields['of14.bsn_error.err_msg'],
+    fields['of14.bsn_error.data'],
     fields['of14.bsn_flow_checksum_bucket_stats_entry.checksum'],
     fields['of14.bsn_flow_checksum_bucket_stats_reply.version'],
     fields['of14.bsn_flow_checksum_bucket_stats_reply.type'],
@@ -18405,14 +18485,6 @@ p_of.fields = {
     fields['of14.echo_request.length'],
     fields['of14.echo_request.xid'],
     fields['of14.echo_request.data'],
-    fields['of14.experimenter_error_msg.version'],
-    fields['of14.experimenter_error_msg.type'],
-    fields['of14.experimenter_error_msg.length'],
-    fields['of14.experimenter_error_msg.xid'],
-    fields['of14.experimenter_error_msg.err_type'],
-    fields['of14.experimenter_error_msg.subtype'],
-    fields['of14.experimenter_error_msg.experimenter'],
-    fields['of14.experimenter_error_msg.data'],
     fields['of14.features_reply.version'],
     fields['of14.features_reply.type'],
     fields['of14.features_reply.length'],
@@ -19815,6 +19887,7 @@ of_bsn_stats_reply_v3_dissectors = {}
 of_experimenter_stats_request_v3_dissectors = {}
 of_bsn_stats_request_v3_dissectors = {}
 of_bsn_vport_v3_dissectors = {}
+of_experimenter_error_msg_v3_dissectors = {}
 of_flow_mod_v3_dissectors = {}
 of_group_mod_v3_dissectors = {}
 of_instruction_v3_dissectors = {}
@@ -19837,6 +19910,8 @@ of_stats_request_v4_dissectors = {}
 of_error_msg_v4_dissectors = {}
 of_experimenter_v4_dissectors = {}
 of_bsn_header_v4_dissectors = {}
+of_experimenter_error_msg_v4_dissectors = {}
+of_bsn_base_error_v4_dissectors = {}
 of_experimenter_stats_reply_v4_dissectors = {}
 of_bsn_stats_reply_v4_dissectors = {}
 of_experimenter_stats_request_v4_dissectors = {}
@@ -19875,6 +19950,8 @@ of_error_msg_v5_dissectors = {}
 of_async_config_prop_v5_dissectors = {}
 of_experimenter_v5_dissectors = {}
 of_bsn_header_v5_dissectors = {}
+of_experimenter_error_msg_v5_dissectors = {}
+of_bsn_base_error_v5_dissectors = {}
 of_experimenter_stats_reply_v5_dissectors = {}
 of_bsn_stats_reply_v5_dissectors = {}
 of_experimenter_stats_request_v5_dissectors = {}
@@ -24588,21 +24665,11 @@ function dissect_of_echo_request_v3(reader, subtree)
 end
 of_header_v3_dissectors[2] = dissect_of_echo_request_v3
 
--- child class of_experimenter_error_msg
+-- virtual child class of_experimenter_error_msg
 -- Child of of_error_msg
+-- Discriminator is experimenter
 function dissect_of_experimenter_error_msg_v3(reader, subtree)
-    local _length = reader.peek(2, 2):uint()
-    local orig_reader = reader
-    reader = orig_reader.slice(_length)
-    read_uint8_t(reader, 3, subtree, 'of12.experimenter_error_msg.version')
-    read_uint8_t(reader, 3, subtree, 'of12.experimenter_error_msg.type')
-    read_uint16_t(reader, 3, subtree, 'of12.experimenter_error_msg.length')
-    read_uint32_t(reader, 3, subtree, 'of12.experimenter_error_msg.xid')
-    read_uint16_t(reader, 3, subtree, 'of12.experimenter_error_msg.err_type')
-    read_uint16_t(reader, 3, subtree, 'of12.experimenter_error_msg.subtype')
-    read_uint32_t(reader, 3, subtree, 'of12.experimenter_error_msg.experimenter')
-    read_of_octets_t(reader, 3, subtree, 'of12.experimenter_error_msg.data')
-    return 'of_experimenter_error_msg'
+    return of_experimenter_error_msg_v3_dissectors[reader.peek(12,4):uint()](reader, subtree)
 end
 of_error_msg_v3_dissectors[65535] = dissect_of_experimenter_error_msg_v3
 
@@ -27576,6 +27643,22 @@ function dissect_of_bsn_arp_idle_v4(reader, subtree)
 end
 of_bsn_header_v4_dissectors[60] = dissect_of_bsn_arp_idle_v4
 
+-- virtual child class of_experimenter_error_msg
+-- Child of of_error_msg
+-- Discriminator is experimenter
+function dissect_of_experimenter_error_msg_v4(reader, subtree)
+    return of_experimenter_error_msg_v4_dissectors[reader.peek(12,4):uint()](reader, subtree)
+end
+of_error_msg_v4_dissectors[65535] = dissect_of_experimenter_error_msg_v4
+
+-- virtual child class of_bsn_base_error
+-- Child of of_experimenter_error_msg
+-- Discriminator is subtype
+function dissect_of_bsn_base_error_v4(reader, subtree)
+    return of_bsn_base_error_v4_dissectors[reader.peek(10,2):uint()](reader, subtree)
+end
+of_experimenter_error_msg_v4_dissectors[6035143] = dissect_of_bsn_base_error_v4
+
 -- child class of_bsn_bw_clear_data_reply
 -- Child of of_bsn_header
 function dissect_of_bsn_bw_clear_data_reply_v4(reader, subtree)
@@ -27814,6 +27897,25 @@ function dissect_of_bsn_debug_counter_stats_request_v4(reader, subtree)
     return 'of_bsn_debug_counter_stats_request'
 end
 of_bsn_stats_request_v4_dissectors[12] = dissect_of_bsn_debug_counter_stats_request_v4
+
+-- child class of_bsn_error
+-- Child of of_bsn_base_error
+function dissect_of_bsn_error_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_error.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_error.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_error.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_error.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_error.err_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_error.subtype')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_error.experimenter')
+    read_of_desc_str_t(reader, 4, subtree, 'of13.bsn_error.err_msg')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_error.data')
+    return 'of_bsn_error'
+end
+of_bsn_base_error_v4_dissectors[1] = dissect_of_bsn_error_v4
 
 -- top-level class of_bsn_flow_checksum_bucket_stats_entry
 function dissect_of_bsn_flow_checksum_bucket_stats_entry_v4(reader, subtree)
@@ -30305,24 +30407,6 @@ function dissect_of_echo_request_v4(reader, subtree)
     return 'of_echo_request'
 end
 of_header_v4_dissectors[2] = dissect_of_echo_request_v4
-
--- child class of_experimenter_error_msg
--- Child of of_error_msg
-function dissect_of_experimenter_error_msg_v4(reader, subtree)
-    local _length = reader.peek(2, 2):uint()
-    local orig_reader = reader
-    reader = orig_reader.slice(_length)
-    read_uint8_t(reader, 4, subtree, 'of13.experimenter_error_msg.version')
-    read_uint8_t(reader, 4, subtree, 'of13.experimenter_error_msg.type')
-    read_uint16_t(reader, 4, subtree, 'of13.experimenter_error_msg.length')
-    read_uint32_t(reader, 4, subtree, 'of13.experimenter_error_msg.xid')
-    read_uint16_t(reader, 4, subtree, 'of13.experimenter_error_msg.err_type')
-    read_uint16_t(reader, 4, subtree, 'of13.experimenter_error_msg.subtype')
-    read_uint32_t(reader, 4, subtree, 'of13.experimenter_error_msg.experimenter')
-    read_of_octets_t(reader, 4, subtree, 'of13.experimenter_error_msg.data')
-    return 'of_experimenter_error_msg'
-end
-of_error_msg_v4_dissectors[65535] = dissect_of_experimenter_error_msg_v4
 
 -- child class of_features_reply
 -- Child of of_header
@@ -34578,6 +34662,22 @@ function dissect_of_bsn_arp_idle_v5(reader, subtree)
 end
 of_bsn_header_v5_dissectors[60] = dissect_of_bsn_arp_idle_v5
 
+-- virtual child class of_experimenter_error_msg
+-- Child of of_error_msg
+-- Discriminator is experimenter
+function dissect_of_experimenter_error_msg_v5(reader, subtree)
+    return of_experimenter_error_msg_v5_dissectors[reader.peek(12,4):uint()](reader, subtree)
+end
+of_error_msg_v5_dissectors[65535] = dissect_of_experimenter_error_msg_v5
+
+-- virtual child class of_bsn_base_error
+-- Child of of_experimenter_error_msg
+-- Discriminator is subtype
+function dissect_of_bsn_base_error_v5(reader, subtree)
+    return of_bsn_base_error_v5_dissectors[reader.peek(10,2):uint()](reader, subtree)
+end
+of_experimenter_error_msg_v5_dissectors[6035143] = dissect_of_bsn_base_error_v5
+
 -- child class of_bsn_bw_clear_data_reply
 -- Child of of_bsn_header
 function dissect_of_bsn_bw_clear_data_reply_v5(reader, subtree)
@@ -34816,6 +34916,25 @@ function dissect_of_bsn_debug_counter_stats_request_v5(reader, subtree)
     return 'of_bsn_debug_counter_stats_request'
 end
 of_bsn_stats_request_v5_dissectors[12] = dissect_of_bsn_debug_counter_stats_request_v5
+
+-- child class of_bsn_error
+-- Child of of_bsn_base_error
+function dissect_of_bsn_error_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_error.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_error.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_error.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_error.xid')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_error.err_type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_error.subtype')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_error.experimenter')
+    read_of_desc_str_t(reader, 5, subtree, 'of14.bsn_error.err_msg')
+    read_of_octets_t(reader, 5, subtree, 'of14.bsn_error.data')
+    return 'of_bsn_error'
+end
+of_bsn_base_error_v5_dissectors[1] = dissect_of_bsn_error_v5
 
 -- top-level class of_bsn_flow_checksum_bucket_stats_entry
 function dissect_of_bsn_flow_checksum_bucket_stats_entry_v5(reader, subtree)
@@ -37387,24 +37506,6 @@ function dissect_of_echo_request_v5(reader, subtree)
     return 'of_echo_request'
 end
 of_header_v5_dissectors[2] = dissect_of_echo_request_v5
-
--- child class of_experimenter_error_msg
--- Child of of_error_msg
-function dissect_of_experimenter_error_msg_v5(reader, subtree)
-    local _length = reader.peek(2, 2):uint()
-    local orig_reader = reader
-    reader = orig_reader.slice(_length)
-    read_uint8_t(reader, 5, subtree, 'of14.experimenter_error_msg.version')
-    read_uint8_t(reader, 5, subtree, 'of14.experimenter_error_msg.type')
-    read_uint16_t(reader, 5, subtree, 'of14.experimenter_error_msg.length')
-    read_uint32_t(reader, 5, subtree, 'of14.experimenter_error_msg.xid')
-    read_uint16_t(reader, 5, subtree, 'of14.experimenter_error_msg.err_type')
-    read_uint16_t(reader, 5, subtree, 'of14.experimenter_error_msg.subtype')
-    read_uint32_t(reader, 5, subtree, 'of14.experimenter_error_msg.experimenter')
-    read_of_octets_t(reader, 5, subtree, 'of14.experimenter_error_msg.data')
-    return 'of_experimenter_error_msg'
-end
-of_error_msg_v5_dissectors[65535] = dissect_of_experimenter_error_msg_v5
 
 -- child class of_features_reply
 -- Child of of_header

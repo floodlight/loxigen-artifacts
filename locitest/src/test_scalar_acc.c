@@ -9599,43 +9599,6 @@ test_of_echo_request_OF_VERSION_1_2_scalar(void)
 }
 
 static int
-test_of_experimenter_error_msg_OF_VERSION_1_2_scalar(void)
-{
-    of_experimenter_error_msg_t *obj;
-
-    obj = of_experimenter_error_msg_new(OF_VERSION_1_2);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_2);
-    TEST_ASSERT(obj->length == 16);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_EXPERIMENTER_ERROR_MSG);
-
-    {
-        of_object_id_t object_id;
-        of_header_wire_object_id_get(obj, &object_id);
-        TEST_ASSERT(object_id == OF_EXPERIMENTER_ERROR_MSG);
-    }
-
-    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
-        int length;
-
-        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_experimenter_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_experimenter_error_msg_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
-
-    of_experimenter_error_msg_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
 test_of_features_reply_OF_VERSION_1_2_scalar(void)
 {
     of_features_reply_t *obj;
@@ -17967,6 +17930,43 @@ test_of_bsn_debug_counter_stats_request_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_error_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_error_t *obj;
+
+    obj = of_bsn_error_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 272);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_ERROR);
+
+    {
+        of_object_id_t object_id;
+        of_header_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_ERROR);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 272);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_error_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_error_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_error_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_scalar(void)
 {
     of_bsn_flow_checksum_bucket_stats_reply_t *obj;
@@ -20810,43 +20810,6 @@ test_of_echo_request_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_echo_request_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_echo_request_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
-test_of_experimenter_error_msg_OF_VERSION_1_3_scalar(void)
-{
-    of_experimenter_error_msg_t *obj;
-
-    obj = of_experimenter_error_msg_new(OF_VERSION_1_3);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 16);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_EXPERIMENTER_ERROR_MSG);
-
-    {
-        of_object_id_t object_id;
-        of_header_wire_object_id_get(obj, &object_id);
-        TEST_ASSERT(object_id == OF_EXPERIMENTER_ERROR_MSG);
-    }
-
-    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
-        int length;
-
-        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_experimenter_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_experimenter_error_msg_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
-
-    of_experimenter_error_msg_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -37439,6 +37402,43 @@ test_of_bsn_debug_counter_stats_request_OF_VERSION_1_4_scalar(void)
 }
 
 static int
+test_of_bsn_error_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_error_t *obj;
+
+    obj = of_bsn_error_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 272);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_ERROR);
+
+    {
+        of_object_id_t object_id;
+        of_header_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_ERROR);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 272);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_error_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_error_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_error_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_4_scalar(void)
 {
     of_bsn_flow_checksum_bucket_stats_reply_t *obj;
@@ -40430,43 +40430,6 @@ test_of_echo_request_OF_VERSION_1_4_scalar(void)
     TEST_ASSERT(of_echo_request_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
 
     of_echo_request_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
-test_of_experimenter_error_msg_OF_VERSION_1_4_scalar(void)
-{
-    of_experimenter_error_msg_t *obj;
-
-    obj = of_experimenter_error_msg_new(OF_VERSION_1_4);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 16);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_EXPERIMENTER_ERROR_MSG);
-
-    {
-        of_object_id_t object_id;
-        of_header_wire_object_id_get(obj, &object_id);
-        TEST_ASSERT(object_id == OF_EXPERIMENTER_ERROR_MSG);
-    }
-
-    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
-        int length;
-
-        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_experimenter_error_msg_OF_VERSION_1_4_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_experimenter_error_msg_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
-
-    of_experimenter_error_msg_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -57406,7 +57369,6 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_desc_stats_request_OF_VERSION_1_2_scalar);
     RUN_TEST(of_echo_reply_OF_VERSION_1_2_scalar);
     RUN_TEST(of_echo_request_OF_VERSION_1_2_scalar);
-    RUN_TEST(of_experimenter_error_msg_OF_VERSION_1_2_scalar);
     RUN_TEST(of_features_reply_OF_VERSION_1_2_scalar);
     RUN_TEST(of_features_request_OF_VERSION_1_2_scalar);
     RUN_TEST(of_flow_add_OF_VERSION_1_2_scalar);
@@ -57634,6 +57596,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_debug_counter_stats_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_debug_counter_stats_request_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_error_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_flow_idle_OF_VERSION_1_3_scalar);
@@ -57711,7 +57674,6 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_desc_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_echo_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_echo_request_OF_VERSION_1_3_scalar);
-    RUN_TEST(of_experimenter_error_msg_OF_VERSION_1_3_scalar);
     RUN_TEST(of_features_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_features_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_flow_add_OF_VERSION_1_3_scalar);
@@ -58166,6 +58128,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_debug_counter_stats_reply_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_debug_counter_stats_request_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_error_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_flow_idle_OF_VERSION_1_4_scalar);
@@ -58247,7 +58210,6 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_desc_stats_request_OF_VERSION_1_4_scalar);
     RUN_TEST(of_echo_reply_OF_VERSION_1_4_scalar);
     RUN_TEST(of_echo_request_OF_VERSION_1_4_scalar);
-    RUN_TEST(of_experimenter_error_msg_OF_VERSION_1_4_scalar);
     RUN_TEST(of_features_reply_OF_VERSION_1_4_scalar);
     RUN_TEST(of_features_request_OF_VERSION_1_4_scalar);
     RUN_TEST(of_flow_add_OF_VERSION_1_4_scalar);

@@ -1003,7 +1003,7 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_get=of_object_message_wire_length_get,
         .wire_length_set=of_object_message_wire_length_set,
         .wire_type_get=NULL,
-        .wire_type_set=of_experimenter_error_msg_push_wire_types,
+        .wire_type_set=NULL,
     },
     [OF_GROUP_FEATURES_STATS_REPLY] = {
         .wire_length_get=of_object_message_wire_length_get,
@@ -1953,6 +1953,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=NULL,
         .wire_type_set=of_bsn_arp_idle_push_wire_types,
     },
+    [OF_BSN_BASE_ERROR] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=NULL,
+    },
     [OF_BSN_CONTROLLER_CONNECTION] = {
         .wire_length_get=NULL,
         .wire_length_set=NULL,
@@ -2006,6 +2012,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_object_message_wire_length_set,
         .wire_type_get=NULL,
         .wire_type_set=of_bsn_debug_counter_stats_request_push_wire_types,
+    },
+    [OF_BSN_ERROR] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bsn_error_push_wire_types,
     },
     [OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_ENTRY] = {
         .wire_length_get=NULL,

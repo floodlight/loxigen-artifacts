@@ -616,6 +616,8 @@ static int __attribute__((unused)) loci_validate_of_barrier_request_OF_VERSION_1
 static int __attribute__((unused)) loci_validate_of_experimenter_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_header_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_arp_idle_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_experimenter_error_msg_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_base_error_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_bw_clear_data_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_bw_clear_data_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_bw_enable_get_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -635,6 +637,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_debug_counter_desc_stats
 static int __attribute__((unused)) loci_validate_of_bsn_debug_counter_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_debug_counter_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_debug_counter_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_error_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -829,7 +832,6 @@ static int __attribute__((unused)) loci_validate_of_desc_stats_reply_OF_VERSION_
 static int __attribute__((unused)) loci_validate_of_desc_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_echo_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_echo_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
-static int __attribute__((unused)) loci_validate_of_experimenter_error_msg_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_features_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_features_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_flow_mod_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1200,6 +1202,8 @@ static int __attribute__((unused)) loci_validate_of_barrier_request_OF_VERSION_1
 static int __attribute__((unused)) loci_validate_of_experimenter_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_header_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_arp_idle_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_experimenter_error_msg_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_base_error_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_bw_clear_data_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_bw_clear_data_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_bw_enable_get_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -1219,6 +1223,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_debug_counter_desc_stats
 static int __attribute__((unused)) loci_validate_of_bsn_debug_counter_stats_entry_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_debug_counter_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_debug_counter_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_error_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -1419,7 +1424,6 @@ static int __attribute__((unused)) loci_validate_of_desc_stats_reply_OF_VERSION_
 static int __attribute__((unused)) loci_validate_of_desc_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_echo_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_echo_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
-static int __attribute__((unused)) loci_validate_of_experimenter_error_msg_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_features_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_features_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_flow_mod_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -11265,6 +11269,10 @@ loci_validate_of_experimenter_error_msg_OF_VERSION_1_2(uint8_t *data, int len, i
     len = wire_len;
 
 
+    uint32_t wire_type;
+    buf_u32_get(data + 12, &wire_type);
+    switch (wire_type) {
+    }
 
 
     *out_len = len;
@@ -17758,6 +17766,64 @@ loci_validate_of_bsn_arp_idle_OF_VERSION_1_3(uint8_t *data, int len, int *out_le
 }
 
 static int
+loci_validate_of_experimenter_error_msg_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+    uint32_t wire_type;
+    buf_u32_get(data + 12, &wire_type);
+    switch (wire_type) {
+    case 0x5c16c7:
+        return loci_validate_of_bsn_base_error_OF_VERSION_1_3(data, len, out_len);
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_base_error_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 272) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 272) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+    uint16_t wire_type;
+    buf_u16_get(data + 10, &wire_type);
+    switch (wire_type) {
+    case 0x1:
+        return loci_validate_of_bsn_error_OF_VERSION_1_3(data, len, out_len);
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_bsn_bw_clear_data_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 20) {
@@ -18255,6 +18321,29 @@ loci_validate_of_bsn_debug_counter_stats_request_OF_VERSION_1_3(uint8_t *data, i
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_error_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 272) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 272) {
+        return -1;
+    }
+
+    len = wire_len;
 
 
 
@@ -22872,29 +22961,6 @@ loci_validate_of_echo_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_le
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 8) {
-        return -1;
-    }
-
-    len = wire_len;
-
-
-
-
-    *out_len = len;
-    return 0;
-}
-
-static int
-loci_validate_of_experimenter_error_msg_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
-{
-    if (len < 16) {
-        return -1;
-    }
-
-
-    uint16_t wire_len;
-    buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 16) {
         return -1;
     }
 
@@ -31462,10 +31528,10 @@ loci_validate_of_error_msg_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bad_property_error_msg_OF_VERSION_1_4(data, len, out_len);
     case 0x1:
         return loci_validate_of_bad_request_error_msg_OF_VERSION_1_4(data, len, out_len);
-    case 0x11:
-        return loci_validate_of_bundle_failed_error_msg_OF_VERSION_1_4(data, len, out_len);
     case 0xffff:
         return loci_validate_of_experimenter_error_msg_OF_VERSION_1_4(data, len, out_len);
+    case 0x11:
+        return loci_validate_of_bundle_failed_error_msg_OF_VERSION_1_4(data, len, out_len);
     case 0x5:
         return loci_validate_of_flow_mod_failed_error_msg_OF_VERSION_1_4(data, len, out_len);
     case 0x10:
@@ -32315,6 +32381,64 @@ loci_validate_of_bsn_arp_idle_OF_VERSION_1_4(uint8_t *data, int len, int *out_le
 }
 
 static int
+loci_validate_of_experimenter_error_msg_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+    uint32_t wire_type;
+    buf_u32_get(data + 12, &wire_type);
+    switch (wire_type) {
+    case 0x5c16c7:
+        return loci_validate_of_bsn_base_error_OF_VERSION_1_4(data, len, out_len);
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_base_error_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 272) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 272) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+    uint16_t wire_type;
+    buf_u16_get(data + 10, &wire_type);
+    switch (wire_type) {
+    case 0x1:
+        return loci_validate_of_bsn_error_OF_VERSION_1_4(data, len, out_len);
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_bsn_bw_clear_data_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 20) {
@@ -32812,6 +32936,29 @@ loci_validate_of_bsn_debug_counter_stats_request_OF_VERSION_1_4(uint8_t *data, i
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_error_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 272) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 272) {
+        return -1;
+    }
+
+    len = wire_len;
 
 
 
@@ -37587,29 +37734,6 @@ loci_validate_of_echo_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_le
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 8) {
-        return -1;
-    }
-
-    len = wire_len;
-
-
-
-
-    *out_len = len;
-    return 0;
-}
-
-static int
-loci_validate_of_experimenter_error_msg_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
-{
-    if (len < 16) {
-        return -1;
-    }
-
-
-    uint16_t wire_len;
-    buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 16) {
         return -1;
     }
 

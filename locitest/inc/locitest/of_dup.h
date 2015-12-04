@@ -71,6 +71,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_base_error_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_bw_clear_data_reply_dup(
         of_object_t *src);
 
@@ -116,6 +120,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_debug_counter_stats_request_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_error_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -4055,10 +4063,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_experimenter_error_msg_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_features_reply_OF_VERSION_1_2_dup(
         of_object_t *src);
 
@@ -5051,6 +5055,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_error_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -5356,10 +5364,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_echo_request_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_error_msg_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7403,6 +7407,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_error_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -7724,10 +7732,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_echo_request_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_error_msg_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
