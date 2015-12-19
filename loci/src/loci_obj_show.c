@@ -13172,36 +13172,6 @@ of_async_get_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
     out += LOCI_SHOW_x32(writer, cookie, val32);
     out += writer(cookie, " ");
 
-    of_async_get_request_packet_in_mask_equal_master_get(obj, &val32);
-    out += writer(cookie, "packet_in_mask_equal_master=");
-    out += LOCI_SHOW_x32(writer, cookie, val32);
-    out += writer(cookie, " ");
-
-    of_async_get_request_packet_in_mask_slave_get(obj, &val32);
-    out += writer(cookie, "packet_in_mask_slave=");
-    out += LOCI_SHOW_x32(writer, cookie, val32);
-    out += writer(cookie, " ");
-
-    of_async_get_request_port_status_mask_equal_master_get(obj, &val32);
-    out += writer(cookie, "port_status_mask_equal_master=");
-    out += LOCI_SHOW_x32(writer, cookie, val32);
-    out += writer(cookie, " ");
-
-    of_async_get_request_port_status_mask_slave_get(obj, &val32);
-    out += writer(cookie, "port_status_mask_slave=");
-    out += LOCI_SHOW_x32(writer, cookie, val32);
-    out += writer(cookie, " ");
-
-    of_async_get_request_flow_removed_mask_equal_master_get(obj, &val32);
-    out += writer(cookie, "flow_removed_mask_equal_master=");
-    out += LOCI_SHOW_x32(writer, cookie, val32);
-    out += writer(cookie, " ");
-
-    of_async_get_request_flow_removed_mask_slave_get(obj, &val32);
-    out += writer(cookie, "flow_removed_mask_slave=");
-    out += LOCI_SHOW_x32(writer, cookie, val32);
-    out += writer(cookie, " ");
-
     return out;
 }
 
@@ -25237,21 +25207,10 @@ of_async_get_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
     int out = 0;
     uint32_t val32;
 
-    of_list_async_config_prop_t list;
-    of_object_t elt;
-    int rv;
-
     of_async_get_request_xid_get(obj, &val32);
     out += writer(cookie, "xid=");
     out += LOCI_SHOW_x32(writer, cookie, val32);
     out += writer(cookie, " ");
-
-    out += writer(cookie, "of_async_config_prop_t={ ");
-    of_async_get_request_properties_bind(obj, &list);
-    OF_LIST_ASYNC_CONFIG_PROP_ITER(&list, &elt, rv) {
-        of_object_show(writer, cookie, (of_object_t *)&elt);
-    }
-    out += writer(cookie, "} ");
 
     return out;
 }

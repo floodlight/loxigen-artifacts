@@ -648,6 +648,11 @@ public class OFFactoryVer14 implements OFFactory {
     public OFAsyncGetRequest.Builder buildAsyncGetRequest() {
         return new OFAsyncGetRequestVer14.Builder().setXid(nextXid());
     }
+    public OFAsyncGetRequest asyncGetRequest() {
+        return new OFAsyncGetRequestVer14(
+                nextXid()
+                    );
+    }
 
     public OFAsyncSet.Builder buildAsyncSet() {
         return new OFAsyncSetVer14.Builder().setXid(nextXid());

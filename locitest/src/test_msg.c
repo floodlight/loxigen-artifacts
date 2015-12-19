@@ -10129,7 +10129,7 @@ test_of_async_get_request_create_OF_VERSION_1_3(void)
     obj = of_async_get_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 32);
+    TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ASYNC_GET_REQUEST);
 

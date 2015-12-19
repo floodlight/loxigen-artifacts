@@ -17803,7 +17803,7 @@ test_of_async_get_request_OF_VERSION_1_3(void)
     obj = of_async_get_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 32);
+    TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ASYNC_GET_REQUEST);
 
@@ -17811,7 +17811,7 @@ test_of_async_get_request_OF_VERSION_1_3(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 32);
+        TEST_ASSERT(length == 8);
     }
     if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
         of_object_id_t obj_id;

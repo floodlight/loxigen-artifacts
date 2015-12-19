@@ -17343,15 +17343,15 @@ loci_validate_of_async_get_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out
 static int
 loci_validate_of_async_get_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
-    if (len < 32) {
+    if (len < 8) {
         return -1;
     }
 
-    len = 32;
+    len = 8;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 32) {
+    if (wire_len > len || wire_len < 8) {
         return -1;
     }
 
@@ -31982,6 +31982,7 @@ loci_validate_of_async_get_request_OF_VERSION_1_4(uint8_t *data, int len, int *o
         return -1;
     }
 
+    len = 8;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
@@ -31989,14 +31990,7 @@ loci_validate_of_async_get_request_OF_VERSION_1_4(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
 
-
-
-    int wire_len_properties = len - 8;
-    if (loci_validate_of_list_async_config_prop_OF_VERSION_1_4(data + 8, wire_len_properties, out_len) < 0) {
-        return -1;
-    }
 
 
     *out_len = len;

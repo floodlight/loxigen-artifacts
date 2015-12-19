@@ -645,6 +645,9 @@ public class OFFactoryVer11 implements OFFactory {
     public OFAsyncGetRequest.Builder buildAsyncGetRequest() {
         throw new UnsupportedOperationException("OFAsyncGetRequest not supported in version 1.1");
     }
+    public OFAsyncGetRequest asyncGetRequest() {
+        throw new UnsupportedOperationException("OFAsyncGetRequest not supported in version 1.1");
+    }
 
     public OFAsyncSet.Builder buildAsyncSet() {
         throw new UnsupportedOperationException("OFAsyncSet not supported in version 1.1");

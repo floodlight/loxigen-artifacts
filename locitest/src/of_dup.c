@@ -18691,24 +18691,6 @@ of_async_get_request_OF_VERSION_1_3_dup(
     of_async_get_request_xid_get(src, &val32);
     of_async_get_request_xid_set(dst, val32);
 
-    of_async_get_request_packet_in_mask_equal_master_get(src, &val32);
-    of_async_get_request_packet_in_mask_equal_master_set(dst, val32);
-
-    of_async_get_request_packet_in_mask_slave_get(src, &val32);
-    of_async_get_request_packet_in_mask_slave_set(dst, val32);
-
-    of_async_get_request_port_status_mask_equal_master_get(src, &val32);
-    of_async_get_request_port_status_mask_equal_master_set(dst, val32);
-
-    of_async_get_request_port_status_mask_slave_get(src, &val32);
-    of_async_get_request_port_status_mask_slave_set(dst, val32);
-
-    of_async_get_request_flow_removed_mask_equal_master_get(src, &val32);
-    of_async_get_request_flow_removed_mask_equal_master_set(dst, val32);
-
-    of_async_get_request_flow_removed_mask_slave_get(src, &val32);
-    of_async_get_request_flow_removed_mask_slave_set(dst, val32);
-
     return dst;
 }
 
@@ -38396,25 +38378,12 @@ of_async_get_request_OF_VERSION_1_4_dup(
     of_async_get_request_t *dst;
     uint32_t val32;
 
-    of_list_async_config_prop_t src_list;
-    of_list_async_config_prop_t *dst_list;
-
     if ((dst = of_async_get_request_new(src->version)) == NULL) {
         return NULL;
     }
 
     of_async_get_request_xid_get(src, &val32);
     of_async_get_request_xid_set(dst, val32);
-
-    of_async_get_request_properties_bind(
-        src, &src_list);
-    dst_list = of_list_async_config_prop_OF_VERSION_1_4_dup(&src_list);
-    if (dst_list == NULL) {
-        of_async_get_request_delete(dst);
-        return NULL;
-    }
-    of_async_get_request_properties_set(dst, dst_list);
-    of_list_async_config_prop_delete(dst_list);
 
     return dst;
 }

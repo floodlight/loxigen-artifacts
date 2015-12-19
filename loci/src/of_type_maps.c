@@ -2195,7 +2195,7 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     56,   /* 2: of_aggregate_stats_request */
     -1,   /* 3: of_async_config_failed_error_msg */
     32,   /* 4: of_async_get_reply */
-    32,   /* 5: of_async_get_request */
+    8,    /* 5: of_async_get_request */
     32,   /* 6: of_async_set */
     12,   /* 7: of_bad_action_error_msg */
     12,   /* 8: of_bad_instruction_error_msg */

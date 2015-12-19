@@ -5992,12 +5992,6 @@ fields['of13.async_get_request.version'] = ProtoField.uint8("of13.async_get_requ
 fields['of13.async_get_request.type'] = ProtoField.uint32("of13.async_get_request.type", "type", base.DEC, enum_v4_ofp_type)
 fields['of13.async_get_request.length'] = ProtoField.uint16("of13.async_get_request.length", "length", base.DEC, nil)
 fields['of13.async_get_request.xid'] = ProtoField.uint32("of13.async_get_request.xid", "xid", base.DEC, nil)
-fields['of13.async_get_request.packet_in_mask_equal_master'] = ProtoField.uint32("of13.async_get_request.packet_in_mask_equal_master", "packet_in_mask_equal_master", base.DEC, nil)
-fields['of13.async_get_request.packet_in_mask_slave'] = ProtoField.uint32("of13.async_get_request.packet_in_mask_slave", "packet_in_mask_slave", base.DEC, nil)
-fields['of13.async_get_request.port_status_mask_equal_master'] = ProtoField.uint32("of13.async_get_request.port_status_mask_equal_master", "port_status_mask_equal_master", base.DEC, nil)
-fields['of13.async_get_request.port_status_mask_slave'] = ProtoField.uint32("of13.async_get_request.port_status_mask_slave", "port_status_mask_slave", base.DEC, nil)
-fields['of13.async_get_request.flow_removed_mask_equal_master'] = ProtoField.uint32("of13.async_get_request.flow_removed_mask_equal_master", "flow_removed_mask_equal_master", base.DEC, nil)
-fields['of13.async_get_request.flow_removed_mask_slave'] = ProtoField.uint32("of13.async_get_request.flow_removed_mask_slave", "flow_removed_mask_slave", base.DEC, nil)
 fields['of13.async_set.version'] = ProtoField.uint8("of13.async_set.version", "version", base.DEC, nil)
 fields['of13.async_set.type'] = ProtoField.uint8("of13.async_set.type", "type", base.DEC, nil)
 fields['of13.async_set.length'] = ProtoField.uint16("of13.async_set.length", "length", base.DEC, nil)
@@ -8672,7 +8666,6 @@ fields['of14.async_get_request.version'] = ProtoField.uint8("of14.async_get_requ
 fields['of14.async_get_request.type'] = ProtoField.uint32("of14.async_get_request.type", "type", base.DEC, enum_v5_ofp_type)
 fields['of14.async_get_request.length'] = ProtoField.uint16("of14.async_get_request.length", "length", base.DEC, nil)
 fields['of14.async_get_request.xid'] = ProtoField.uint32("of14.async_get_request.xid", "xid", base.DEC, nil)
-fields['of14.async_get_request.properties'] = ProtoField.bytes("of14.async_get_request.properties", "properties")
 fields['of14.async_set.version'] = ProtoField.uint8("of14.async_set.version", "version", base.DEC, nil)
 fields['of14.async_set.type'] = ProtoField.uint8("of14.async_set.type", "type", base.DEC, nil)
 fields['of14.async_set.length'] = ProtoField.uint16("of14.async_set.length", "length", base.DEC, nil)
@@ -14538,12 +14531,6 @@ p_of.fields = {
     fields['of13.async_get_request.type'],
     fields['of13.async_get_request.length'],
     fields['of13.async_get_request.xid'],
-    fields['of13.async_get_request.packet_in_mask_equal_master'],
-    fields['of13.async_get_request.packet_in_mask_slave'],
-    fields['of13.async_get_request.port_status_mask_equal_master'],
-    fields['of13.async_get_request.port_status_mask_slave'],
-    fields['of13.async_get_request.flow_removed_mask_equal_master'],
-    fields['of13.async_get_request.flow_removed_mask_slave'],
     fields['of13.async_set.version'],
     fields['of13.async_set.type'],
     fields['of13.async_set.length'],
@@ -17218,7 +17205,6 @@ p_of.fields = {
     fields['of14.async_get_request.type'],
     fields['of14.async_get_request.length'],
     fields['of14.async_get_request.xid'],
-    fields['of14.async_get_request.properties'],
     fields['of14.async_set.version'],
     fields['of14.async_set.type'],
     fields['of14.async_set.length'],
@@ -27486,12 +27472,6 @@ function dissect_of_async_get_request_v4(reader, subtree)
     read_uint8_t(reader, 4, subtree, 'of13.async_get_request.type')
     read_uint16_t(reader, 4, subtree, 'of13.async_get_request.length')
     read_uint32_t(reader, 4, subtree, 'of13.async_get_request.xid')
-    read_uint32_t(reader, 4, subtree, 'of13.async_get_request.packet_in_mask_equal_master')
-    read_uint32_t(reader, 4, subtree, 'of13.async_get_request.packet_in_mask_slave')
-    read_uint32_t(reader, 4, subtree, 'of13.async_get_request.port_status_mask_equal_master')
-    read_uint32_t(reader, 4, subtree, 'of13.async_get_request.port_status_mask_slave')
-    read_uint32_t(reader, 4, subtree, 'of13.async_get_request.flow_removed_mask_equal_master')
-    read_uint32_t(reader, 4, subtree, 'of13.async_get_request.flow_removed_mask_slave')
     return 'of_async_get_request'
 end
 of_header_v4_dissectors[26] = dissect_of_async_get_request_v4
@@ -34496,14 +34476,10 @@ of_header_v5_dissectors[27] = dissect_of_async_get_reply_v5
 -- child class of_async_get_request
 -- Child of of_header
 function dissect_of_async_get_request_v5(reader, subtree)
-    local _length = reader.peek(2, 2):uint()
-    local orig_reader = reader
-    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 5, subtree, 'of14.async_get_request.version')
     read_uint8_t(reader, 5, subtree, 'of14.async_get_request.type')
     read_uint16_t(reader, 5, subtree, 'of14.async_get_request.length')
     read_uint32_t(reader, 5, subtree, 'of14.async_get_request.xid')
-    read_list(reader, dissect_of_async_config_prop_v5, subtree, 'of_async_config_prop')
     return 'of_async_get_request'
 end
 of_header_v5_dissectors[26] = dissect_of_async_get_request_v5

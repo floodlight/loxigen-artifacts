@@ -150,34 +150,6 @@ typedef struct of_async_get_reply_s of_async_get_reply_t;
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_async_get_request_uint32_get_f and _set_f.
  *
- * @param properties_get/set ( OF_1_4).
- *   Accessors for properties, a variable of type of_list_async_config_prop.  Functions
- *   are of type of_async_get_request_of_list_async_config_prop_get_f and _set_f.
- *
- * @param packet_in_mask_equal_master_get/set ( OF_1_3).
- *   Accessors for packet_in_mask_equal_master, a variable of type uint32.  Functions
- *   are of type of_async_get_request_uint32_get_f and _set_f.
- *
- * @param packet_in_mask_slave_get/set ( OF_1_3).
- *   Accessors for packet_in_mask_slave, a variable of type uint32.  Functions
- *   are of type of_async_get_request_uint32_get_f and _set_f.
- *
- * @param port_status_mask_equal_master_get/set ( OF_1_3).
- *   Accessors for port_status_mask_equal_master, a variable of type uint32.  Functions
- *   are of type of_async_get_request_uint32_get_f and _set_f.
- *
- * @param port_status_mask_slave_get/set ( OF_1_3).
- *   Accessors for port_status_mask_slave, a variable of type uint32.  Functions
- *   are of type of_async_get_request_uint32_get_f and _set_f.
- *
- * @param flow_removed_mask_equal_master_get/set ( OF_1_3).
- *   Accessors for flow_removed_mask_equal_master, a variable of type uint32.  Functions
- *   are of type of_async_get_request_uint32_get_f and _set_f.
- *
- * @param flow_removed_mask_slave_get/set ( OF_1_3).
- *   Accessors for flow_removed_mask_slave, a variable of type uint32.  Functions
- *   are of type of_async_get_request_uint32_get_f and _set_f.
- *
  */
 typedef struct of_async_get_request_s of_async_get_request_t;
 
