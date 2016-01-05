@@ -188,6 +188,8 @@ class OFTableFeaturePropInstructionsMissVer14 implements OFTableFeaturePropInstr
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             List<OFInstructionId> instructionIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFInstructionIdVer14.READER);
+            // align message to 8 bytes (length does not contain alignment)
+            bb.skipBytes(((length + 7)/8 * 8 ) - length );
 
             OFTableFeaturePropInstructionsMissVer14 tableFeaturePropInstructionsMissVer14 = new OFTableFeaturePropInstructionsMissVer14(
                     instructionIds
@@ -234,7 +236,10 @@ class OFTableFeaturePropInstructionsMissVer14 implements OFTableFeaturePropInstr
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            int alignedLength = ((length + 7)/8 * 8);
             bb.setShort(lengthIndex, length);
+            // align message to 8 bytes
+            bb.writeZero(alignedLength - length);
 
         }
     }

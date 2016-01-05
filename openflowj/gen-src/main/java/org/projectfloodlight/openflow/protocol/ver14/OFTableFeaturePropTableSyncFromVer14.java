@@ -188,6 +188,8 @@ class OFTableFeaturePropTableSyncFromVer14 implements OFTableFeaturePropTableSyn
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             List<U8> tableIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), U8.READER);
+            // align message to 8 bytes (length does not contain alignment)
+            bb.skipBytes(((length + 7)/8 * 8 ) - length );
 
             OFTableFeaturePropTableSyncFromVer14 tableFeaturePropTableSyncFromVer14 = new OFTableFeaturePropTableSyncFromVer14(
                     tableIds
@@ -234,7 +236,10 @@ class OFTableFeaturePropTableSyncFromVer14 implements OFTableFeaturePropTableSyn
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            int alignedLength = ((length + 7)/8 * 8);
             bb.setShort(lengthIndex, length);
+            // align message to 8 bytes
+            bb.writeZero(alignedLength - length);
 
         }
     }
