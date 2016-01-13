@@ -1,1 +1,1 @@
-883c022922f254601be36ccb15dc0364d72a6870 Merge into master from pull request #453: Fix doc syntax, Java 8 does not like it (https://github.com/floodlight/loxigen/pull/453)
+ddc79f76083b3e8373920f5cf92137ddc9374b5f Merge into master from pull request #455: java: bump POM version to 2.1.0 (https://github.com/floodlight/loxigen/pull/455)
