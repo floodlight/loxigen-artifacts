@@ -436,6 +436,7 @@ class OFFlowAddVer13 implements OFFlowAdd {
         this.instructionsSet = true;
         return this;
     }
+
     @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.3");
@@ -710,6 +711,7 @@ class OFFlowAddVer13 implements OFFlowAdd {
         this.instructionsSet = true;
         return this;
     }
+
     @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.3");

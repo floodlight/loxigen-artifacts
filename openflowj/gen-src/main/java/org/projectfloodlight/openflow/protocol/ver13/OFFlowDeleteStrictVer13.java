@@ -29,7 +29,6 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import java.util.Collections;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -199,17 +198,11 @@ class OFFlowDeleteStrictVer13 implements OFFlowDeleteStrict {
         return instructions;
     }
 
-
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
-        for (OFInstruction inst : this.instructions) {
-            if (inst instanceof OFInstructionApplyActions) {
-                OFInstructionApplyActions iap = (OFInstructionApplyActions)inst;
-                return iap.getActions();
-            }
-        }
-        return Collections.emptyList();
+        throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
+
     @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.3");
@@ -414,27 +407,14 @@ class OFFlowDeleteStrictVer13 implements OFFlowDeleteStrict {
         this.instructionsSet = true;
         return this;
     }
-
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
-        if (!this.instructionsSet)
-            return parentMessage.getActions();
-        for (OFInstruction inst : this.instructions) {
-            if (inst instanceof OFInstructionApplyActions) {
-                OFInstructionApplyActions iap = (OFInstructionApplyActions)inst;
-                return iap.getActions();
-            }
-        }
-        return Collections.emptyList();
+        throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
 
     @Override
     public OFFlowDeleteStrict.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-        OFInstructionApplyActionsVer13.Builder builder = new OFInstructionApplyActionsVer13.Builder();
-        builder.setActions(actions);
-        this.instructions = Collections.singletonList((OFInstruction)builder.build());
-        this.instructionsSet = true;
-        return this;
+            throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
     public int getImportance()throws UnsupportedOperationException {
@@ -688,27 +668,14 @@ class OFFlowDeleteStrictVer13 implements OFFlowDeleteStrict {
         this.instructionsSet = true;
         return this;
     }
-
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
-        if (!this.instructionsSet)
-            return Collections.emptyList();
-        for (OFInstruction inst : this.instructions) {
-            if (inst instanceof OFInstructionApplyActions) {
-                OFInstructionApplyActions iap = (OFInstructionApplyActions)inst;
-                return iap.getActions();
-            }
-        }
-        return Collections.emptyList();
+        throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
 
     @Override
     public OFFlowDeleteStrict.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-        OFInstructionApplyActionsVer13.Builder builder = new OFInstructionApplyActionsVer13.Builder();
-        builder.setActions(actions);
-        this.instructions = Collections.singletonList((OFInstruction)builder.build());
-        this.instructionsSet = true;
-        return this;
+            throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
     public int getImportance()throws UnsupportedOperationException {

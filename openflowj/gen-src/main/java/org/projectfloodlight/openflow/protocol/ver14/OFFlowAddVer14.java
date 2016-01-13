@@ -29,6 +29,7 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
+import java.util.Collections;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -417,10 +418,16 @@ class OFFlowAddVer14 implements OFFlowAdd {
         throw new UnsupportedOperationException("Property actions not supported in version 1.4");
     }
 
+
     @Override
     public OFFlowAdd.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.4");
+        OFInstructionApplyActionsVer14.Builder builder = new OFInstructionApplyActionsVer14.Builder();
+        builder.setActions(actions);
+        this.instructions = Collections.singletonList((OFInstruction)builder.build());
+        this.instructionsSet = true;
+        return this;
     }
+
     @Override
     public int getImportance() {
         return importance;
@@ -684,10 +691,16 @@ class OFFlowAddVer14 implements OFFlowAdd {
         throw new UnsupportedOperationException("Property actions not supported in version 1.4");
     }
 
+
     @Override
     public OFFlowAdd.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.4");
+        OFInstructionApplyActionsVer14.Builder builder = new OFInstructionApplyActionsVer14.Builder();
+        builder.setActions(actions);
+        this.instructions = Collections.singletonList((OFInstruction)builder.build());
+        this.instructionsSet = true;
+        return this;
     }
+
     @Override
     public int getImportance() {
         return importance;
