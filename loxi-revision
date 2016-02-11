@@ -1,1 +1,1 @@
-ccc86f2f5a7bc47fe7055eb7b63fd9da458c80fa Merge into master from pull request #458: Upgrade Guava Version to 19.0 (https://github.com/floodlight/loxigen/pull/458)
+3feb5a95a50c4d1ac7c90b2a34e5436920f0693d Merge into master from pull request #460: loci: fix mask size when parsing OXMs into of_match_t (SWL-2669) (https://github.com/floodlight/loxigen/pull/460)
