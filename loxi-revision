@@ -1,1 +1,1 @@
-3feb5a95a50c4d1ac7c90b2a34e5436920f0693d Merge into master from pull request #460: loci: fix mask size when parsing OXMs into of_match_t (SWL-2669) (https://github.com/floodlight/loxigen/pull/460)
+850995bf19c7b0e6d768ec58d7bbba447da24d24 Merge into master from pull request #461: Add vfi tlv for VXLAN VPN (https://github.com/floodlight/loxigen/pull/461)

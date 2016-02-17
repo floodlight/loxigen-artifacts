@@ -647,6 +647,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvUsePacketState not supported in version 1.1");
     }
 
+    public OFBsnTlvVfi.Builder buildVfi() {
+        throw new UnsupportedOperationException("OFBsnTlvVfi not supported in version 1.1");
+    }
+    public OFBsnTlvVfi vfi(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvVfi not supported in version 1.1");
+    }
+
     public OFBsnTlvVlanPcp.Builder buildVlanPcp() {
         throw new UnsupportedOperationException("OFBsnTlvVlanPcp not supported in version 1.1");
     }

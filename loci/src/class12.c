@@ -6530,6 +6530,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x61:
             *id = OF_BSN_TLV_STATUS;
             break;
+        case 0x63:
+            *id = OF_BSN_TLV_VFI;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -6829,6 +6832,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x61:
             *id = OF_BSN_TLV_STATUS;
+            break;
+        case 0x63:
+            *id = OF_BSN_TLV_VFI;
             break;
         default:
             *id = OF_BSN_TLV;

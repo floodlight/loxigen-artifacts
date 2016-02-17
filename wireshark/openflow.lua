@@ -7077,6 +7077,9 @@ fields['of13.bsn_tlv_unknown_multicast_rate.value'] = ProtoField.uint32("of13.bs
 fields['of13.bsn_tlv_use_packet_state.type'] = ProtoField.uint16("of13.bsn_tlv_use_packet_state.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_use_packet_state.length'] = ProtoField.uint16("of13.bsn_tlv_use_packet_state.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of13.bsn_tlv_use_packet_state.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_vfi.type'] = ProtoField.uint16("of13.bsn_tlv_vfi.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_vfi.length'] = ProtoField.uint16("of13.bsn_tlv_vfi.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_vfi.value'] = ProtoField.uint16("of13.bsn_tlv_vfi.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_pcp.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_pcp.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_pcp.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_pcp.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_pcp.value'] = ProtoField.uint8("of13.bsn_tlv_vlan_pcp.value", "value", base.DEC, nil)
@@ -9753,6 +9756,9 @@ fields['of14.bsn_tlv_unknown_multicast_rate.value'] = ProtoField.uint32("of14.bs
 fields['of14.bsn_tlv_use_packet_state.type'] = ProtoField.uint16("of14.bsn_tlv_use_packet_state.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_use_packet_state.length'] = ProtoField.uint16("of14.bsn_tlv_use_packet_state.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of14.bsn_tlv_use_packet_state.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_vfi.type'] = ProtoField.uint16("of14.bsn_tlv_vfi.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_vfi.length'] = ProtoField.uint16("of14.bsn_tlv_vfi.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_vfi.value'] = ProtoField.uint16("of14.bsn_tlv_vfi.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_pcp.type'] = ProtoField.uint16("of14.bsn_tlv_vlan_pcp.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_pcp.length'] = ProtoField.uint16("of14.bsn_tlv_vlan_pcp.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_pcp.value'] = ProtoField.uint8("of14.bsn_tlv_vlan_pcp.value", "value", base.DEC, nil)
@@ -15616,6 +15622,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_use_packet_state.type'],
     fields['of13.bsn_tlv_use_packet_state.length'],
     fields['of13.bsn_tlv_use_packet_state.value'],
+    fields['of13.bsn_tlv_vfi.type'],
+    fields['of13.bsn_tlv_vfi.length'],
+    fields['of13.bsn_tlv_vfi.value'],
     fields['of13.bsn_tlv_vlan_pcp.type'],
     fields['of13.bsn_tlv_vlan_pcp.length'],
     fields['of13.bsn_tlv_vlan_pcp.value'],
@@ -18292,6 +18301,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_use_packet_state.type'],
     fields['of14.bsn_tlv_use_packet_state.length'],
     fields['of14.bsn_tlv_use_packet_state.value'],
+    fields['of14.bsn_tlv_vfi.type'],
+    fields['of14.bsn_tlv_vfi.length'],
+    fields['of14.bsn_tlv_vfi.value'],
     fields['of14.bsn_tlv_vlan_pcp.type'],
     fields['of14.bsn_tlv_vlan_pcp.length'],
     fields['of14.bsn_tlv_vlan_pcp.value'],
@@ -30044,6 +30056,16 @@ function dissect_of_bsn_tlv_use_packet_state_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[96] = dissect_of_bsn_tlv_use_packet_state_v4
 
+-- child class of_bsn_tlv_vfi
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vfi_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vfi.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vfi.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vfi.value')
+    return 'of_bsn_tlv_vfi'
+end
+of_bsn_tlv_v4_dissectors[99] = dissect_of_bsn_tlv_vfi_v4
+
 -- child class of_bsn_tlv_vlan_pcp
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_vlan_pcp_v4(reader, subtree)
@@ -37072,6 +37094,16 @@ function dissect_of_bsn_tlv_use_packet_state_v5(reader, subtree)
     return 'of_bsn_tlv_use_packet_state'
 end
 of_bsn_tlv_v5_dissectors[96] = dissect_of_bsn_tlv_use_packet_state_v5
+
+-- child class of_bsn_tlv_vfi
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vfi_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vfi.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vfi.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vfi.value')
+    return 'of_bsn_tlv_vfi'
+end
+of_bsn_tlv_v5_dissectors[99] = dissect_of_bsn_tlv_vfi_v5
 
 -- child class of_bsn_tlv_vlan_pcp
 -- Child of of_bsn_tlv

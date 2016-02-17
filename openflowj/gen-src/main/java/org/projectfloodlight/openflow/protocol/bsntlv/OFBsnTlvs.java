@@ -203,6 +203,8 @@ public interface OFBsnTlvs {
     OFBsnTlvUnknownMulticastRate unknownMulticastRate(long value);
     OFBsnTlvUsePacketState.Builder buildUsePacketState() throws UnsupportedOperationException;
     OFBsnTlvUsePacketState usePacketState(short value);
+    OFBsnTlvVfi.Builder buildVfi() throws UnsupportedOperationException;
+    OFBsnTlvVfi vfi(int value);
     OFBsnTlvVlanPcp.Builder buildVlanPcp() throws UnsupportedOperationException;
     OFBsnTlvVlanPcp vlanPcp(short value);
     OFBsnTlvVlanVid.Builder buildVlanVid() throws UnsupportedOperationException;
