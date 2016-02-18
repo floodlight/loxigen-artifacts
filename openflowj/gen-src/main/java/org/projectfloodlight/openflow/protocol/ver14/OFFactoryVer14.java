@@ -1128,6 +1128,15 @@ public class OFFactoryVer14 implements OFFactory {
                     );
     }
 
+    public OFBsnTlvVlanMacList.Builder buildBsnTlvVlanMacList() {
+        return new OFBsnTlvVlanMacListVer14.Builder();
+    }
+    public OFBsnTlvVlanMacList bsnTlvVlanMacList(List<OFBsnVlanMac> key) {
+        return new OFBsnTlvVlanMacListVer14(
+                key
+                    );
+    }
+
     public OFBsnVlanCounterClear.Builder buildBsnVlanCounterClear() {
         return new OFBsnVlanCounterClearVer14.Builder().setXid(nextXid());
     }
@@ -1154,6 +1163,16 @@ public class OFFactoryVer14 implements OFFactory {
 
     public OFBsnVlanCounterStatsRequest.Builder buildBsnVlanCounterStatsRequest() {
         return new OFBsnVlanCounterStatsRequestVer14.Builder().setXid(nextXid());
+    }
+
+    public OFBsnVlanMac.Builder buildBsnVlanMac() {
+        return new OFBsnVlanMacVer14.Builder();
+    }
+    public OFBsnVlanMac bsnVlanMac(int vlanVid, MacAddress mac) {
+        return new OFBsnVlanMacVer14(
+                vlanVid,
+                      mac
+                    );
     }
 
     public OFBsnVrfCounterStatsEntry.Builder buildBsnVrfCounterStatsEntry() {
@@ -1518,6 +1537,10 @@ public class OFFactoryVer14 implements OFFactory {
 
     public OFBsnGenericAsync.Builder buildBsnGenericAsync() {
         return new OFBsnGenericAsyncVer14.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGenericCommand.Builder buildBsnGenericCommand() {
+        return new OFBsnGenericCommandVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnTakeover.Builder buildBsnTakeover() {

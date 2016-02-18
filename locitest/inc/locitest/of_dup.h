@@ -159,6 +159,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_generic_command_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_generic_stats_reply_dup(
         of_object_t *src);
 
@@ -1587,6 +1591,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_vlan_mac_list_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_vlan_pcp_dup(
         of_object_t *src);
 
@@ -1608,6 +1616,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_vlan_counter_stats_entry_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_vlan_mac_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2748,6 +2760,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_list_bsn_vlan_counter_stats_entry_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_list_bsn_vlan_mac_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6223,6 +6239,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6244,6 +6264,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_vlan_mac_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7211,6 +7235,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_list_bsn_vlan_mac_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -7448,6 +7476,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_generic_async_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_generic_command_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8679,6 +8711,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8700,6 +8736,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_vlan_mac_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9748,6 +9788,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_list_bsn_vlan_mac_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

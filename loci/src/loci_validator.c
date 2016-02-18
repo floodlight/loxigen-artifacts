@@ -808,6 +808,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_unicast_rate_OF_VERS
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_use_packet_state_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vfi_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_pcp_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_vid_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -822,6 +823,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_clear_OF_VE
 static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_vlan_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vport_q_in_q_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1234,6 +1236,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_flow_idle_enable_get_req
 static int __attribute__((unused)) loci_validate_of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_generic_async_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_generic_command_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_generic_stats_entry_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_generic_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_generic_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -1396,6 +1399,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_unicast_rate_OF_VERS
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_use_packet_state_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vfi_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_pcp_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_vid_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -1410,6 +1414,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_clear_OF_VE
 static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_vlan_mac_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vport_q_in_q_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vrf_counter_stats_entry_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -15144,6 +15149,21 @@ loci_validate_of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_3(uint8_t *dat
 }
 
 static int __attribute__((unused))
+loci_validate_of_list_bsn_vlan_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    while (len > 0) {
+        int cur_len = 0xffff;
+        if (loci_validate_of_bsn_vlan_mac_OF_VERSION_1_3(data, len, &cur_len) < 0) {
+            return -1;
+        }
+        len -= cur_len;
+        data += cur_len;
+    }
+
+    return 0;
+}
+
+static int __attribute__((unused))
 loci_validate_of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     while (len > 0) {
@@ -22415,6 +22435,34 @@ loci_validate_of_bsn_tlv_vfi_OF_VERSION_1_3(uint8_t *data, int len, int *out_len
 }
 
 static int
+loci_validate_of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+    int wire_len_key = len - 4;
+    if (loci_validate_of_list_bsn_vlan_mac_OF_VERSION_1_3(data + 4, wire_len_key, out_len) < 0) {
+        return -1;
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_bsn_tlv_vlan_pcp_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 5) {
@@ -22737,6 +22785,22 @@ loci_validate_of_bsn_vlan_counter_stats_request_OF_VERSION_1_3(uint8_t *data, in
     if (wire_len > len || wire_len < 26) {
         return -1;
     }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_vlan_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
 
 
 
@@ -29205,6 +29269,21 @@ loci_validate_of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_4(uint8_t *dat
 }
 
 static int __attribute__((unused))
+loci_validate_of_list_bsn_vlan_mac_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    while (len > 0) {
+        int cur_len = 0xffff;
+        if (loci_validate_of_bsn_vlan_mac_OF_VERSION_1_4(data, len, &cur_len) < 0) {
+            return -1;
+        }
+        len -= cur_len;
+        data += cur_len;
+    }
+
+    return 0;
+}
+
+static int __attribute__((unused))
 loci_validate_of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     while (len > 0) {
@@ -32297,6 +32376,8 @@ loci_validate_of_bsn_header_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4(data, len, out_len);
     case 0x44:
         return loci_validate_of_bsn_generic_async_OF_VERSION_1_4(data, len, out_len);
+    case 0x47:
+        return loci_validate_of_bsn_generic_command_OF_VERSION_1_4(data, len, out_len);
     case 0x31:
         return loci_validate_of_bsn_gentable_clear_reply_OF_VERSION_1_4(data, len, out_len);
     case 0x30:
@@ -33173,6 +33254,34 @@ loci_validate_of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4(uint8_t *data, 
 
 static int
 loci_validate_of_bsn_generic_async_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 80) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 80) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+    int wire_len_tlvs = len - 80;
+    if (loci_validate_of_list_bsn_tlv_OF_VERSION_1_4(data + 80, wire_len_tlvs, out_len) < 0) {
+        return -1;
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_generic_command_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 80) {
         return -1;
@@ -37080,6 +37189,34 @@ loci_validate_of_bsn_tlv_vfi_OF_VERSION_1_4(uint8_t *data, int len, int *out_len
 }
 
 static int
+loci_validate_of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+    int wire_len_key = len - 4;
+    if (loci_validate_of_list_bsn_vlan_mac_OF_VERSION_1_4(data + 4, wire_len_key, out_len) < 0) {
+        return -1;
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_bsn_tlv_vlan_pcp_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 5) {
@@ -37402,6 +37539,22 @@ loci_validate_of_bsn_vlan_counter_stats_request_OF_VERSION_1_4(uint8_t *data, in
     if (wire_len > len || wire_len < 26) {
         return -1;
     }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_vlan_mac_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
 
 
 

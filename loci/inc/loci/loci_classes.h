@@ -987,6 +987,8 @@ void of_bsn_tlv_use_packet_state_wire_object_id_get(of_object_t *obj, of_object_
 void of_bsn_tlv_use_packet_state_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vfi_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vfi_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_vlan_mac_list_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_vlan_mac_list_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vlan_pcp_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vlan_pcp_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vlan_vid_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1005,6 +1007,8 @@ void of_bsn_vlan_counter_stats_reply_wire_object_id_get(of_object_t *obj, of_obj
 void of_bsn_vlan_counter_stats_reply_push_wire_types(of_object_t *obj);
 void of_bsn_vlan_counter_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_vlan_counter_stats_request_push_wire_types(of_object_t *obj);
+void of_bsn_vlan_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_vlan_mac_push_wire_types(of_object_t *obj);
 void of_bsn_vrf_counter_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_vrf_counter_stats_entry_push_wire_types(of_object_t *obj);
 void of_bsn_vrf_counter_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1241,6 +1245,8 @@ void of_bad_property_error_msg_wire_object_id_get(of_object_t *obj, of_object_id
 void of_bad_property_error_msg_push_wire_types(of_object_t *obj);
 void of_bsn_generic_async_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_generic_async_push_wire_types(of_object_t *obj);
+void of_bsn_generic_command_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_generic_command_push_wire_types(of_object_t *obj);
 void of_bsn_takeover_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_takeover_push_wire_types(of_object_t *obj);
 void of_bundle_add_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1372,6 +1378,7 @@ typedef of_object_t of_bsn_flow_idle_enable_get_request_t;
 typedef of_object_t of_bsn_flow_idle_enable_set_reply_t;
 typedef of_object_t of_bsn_flow_idle_enable_set_request_t;
 typedef of_object_t of_bsn_generic_async_t;
+typedef of_object_t of_bsn_generic_command_t;
 typedef of_object_t of_bsn_generic_stats_reply_t;
 typedef of_object_t of_bsn_generic_stats_request_t;
 typedef of_object_t of_bsn_gentable_bucket_stats_reply_t;
@@ -1729,12 +1736,14 @@ typedef of_object_t of_bsn_tlv_unicast_rate_t;
 typedef of_object_t of_bsn_tlv_unknown_multicast_rate_t;
 typedef of_object_t of_bsn_tlv_use_packet_state_t;
 typedef of_object_t of_bsn_tlv_vfi_t;
+typedef of_object_t of_bsn_tlv_vlan_mac_list_t;
 typedef of_object_t of_bsn_tlv_vlan_pcp_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_mask_t;
 typedef of_object_t of_bsn_tlv_vni_t;
 typedef of_object_t of_bsn_tlv_vrf_t;
 typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
+typedef of_object_t of_bsn_vlan_mac_t;
 typedef of_object_t of_bsn_vport_t;
 typedef of_object_t of_bsn_vport_l2gre_t;
 typedef of_object_t of_bsn_vport_q_in_q_t;
@@ -2020,6 +2029,7 @@ typedef of_object_t of_list_bsn_switch_pipeline_stats_entry_t;
 typedef of_object_t of_list_bsn_table_checksum_stats_entry_t;
 typedef of_object_t of_list_bsn_tlv_t;
 typedef of_object_t of_list_bsn_vlan_counter_stats_entry_t;
+typedef of_object_t of_list_bsn_vlan_mac_t;
 typedef of_object_t of_list_bsn_vrf_counter_stats_entry_t;
 typedef of_object_t of_list_bucket_t;
 typedef of_object_t of_list_bucket_counter_t;
@@ -2257,6 +2267,11 @@ extern void of_bsn_flow_idle_enable_set_request_init(
 extern of_object_t *
     of_bsn_generic_async_new(of_version_t version);
 extern void of_bsn_generic_async_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_generic_command_new(of_version_t version);
+extern void of_bsn_generic_command_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -4045,6 +4060,11 @@ extern void of_bsn_tlv_vfi_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_vlan_mac_list_new(of_version_t version);
+extern void of_bsn_tlv_vlan_mac_list_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_vlan_pcp_new(of_version_t version);
 extern void of_bsn_tlv_vlan_pcp_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4072,6 +4092,11 @@ extern void of_bsn_tlv_vrf_init(
 extern of_object_t *
     of_bsn_vlan_counter_stats_entry_new(of_version_t version);
 extern void of_bsn_vlan_counter_stats_entry_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_vlan_mac_new(of_version_t version);
+extern void of_bsn_vlan_mac_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -5500,6 +5525,11 @@ extern void of_list_bsn_vlan_counter_stats_entry_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_list_bsn_vlan_mac_new(of_version_t version);
+extern void of_list_bsn_vlan_mac_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_list_bsn_vrf_counter_stats_entry_new(of_version_t version);
 extern void of_list_bsn_vrf_counter_stats_entry_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -6074,6 +6104,17 @@ of_bsn_flow_idle_enable_set_request_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_generic_async_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_generic_command_t
+ * @param obj An instance of type of_bsn_generic_command_t
+ *
+ * \ingroup of_bsn_generic_command
+ */
+static inline void
+of_bsn_generic_command_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -10005,6 +10046,17 @@ of_bsn_tlv_vfi_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_vlan_mac_list_t
+ * @param obj An instance of type of_bsn_tlv_vlan_mac_list_t
+ *
+ * \ingroup of_bsn_tlv_vlan_mac_list
+ */
+static inline void
+of_bsn_tlv_vlan_mac_list_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_vlan_pcp_t
  * @param obj An instance of type of_bsn_tlv_vlan_pcp_t
  *
@@ -10067,6 +10119,17 @@ of_bsn_tlv_vrf_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_vlan_counter_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_vlan_mac_t
+ * @param obj An instance of type of_bsn_vlan_mac_t
+ *
+ * \ingroup of_bsn_vlan_mac
+ */
+static inline void
+of_bsn_vlan_mac_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -13206,6 +13269,17 @@ of_list_bsn_vlan_counter_stats_entry_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_list_bsn_vlan_mac_t
+ * @param obj An instance of type of_list_bsn_vlan_mac_t
+ *
+ * \ingroup of_list_bsn_vlan_mac
+ */
+static inline void
+of_list_bsn_vlan_mac_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_list_bsn_vrf_counter_stats_entry_t
  * @param obj An instance of type of_list_bsn_vrf_counter_stats_entry_t
  *
@@ -14712,6 +14786,45 @@ extern void of_bsn_generic_async_tlvs_bind(
     of_list_bsn_tlv_t *tlvs);
 extern of_list_bsn_tlv_t *of_bsn_generic_async_tlvs_get(
     of_bsn_generic_async_t *obj);
+
+/* Unified accessor functions for of_bsn_generic_command */
+
+extern void of_bsn_generic_command_xid_set(
+    of_bsn_generic_command_t *obj,
+    uint32_t xid);
+extern void of_bsn_generic_command_xid_get(
+    of_bsn_generic_command_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_generic_command_experimenter_set(
+    of_bsn_generic_command_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_generic_command_experimenter_get(
+    of_bsn_generic_command_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_generic_command_subtype_set(
+    of_bsn_generic_command_t *obj,
+    uint32_t subtype);
+extern void of_bsn_generic_command_subtype_get(
+    of_bsn_generic_command_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_generic_command_name_set(
+    of_bsn_generic_command_t *obj,
+    of_str64_t name);
+extern void of_bsn_generic_command_name_get(
+    of_bsn_generic_command_t *obj,
+    of_str64_t *name);
+
+extern int WARN_UNUSED_RESULT of_bsn_generic_command_tlvs_set(
+    of_bsn_generic_command_t *obj,
+    of_list_bsn_tlv_t *tlvs);
+extern void of_bsn_generic_command_tlvs_bind(
+    of_bsn_generic_command_t *obj,
+    of_list_bsn_tlv_t *tlvs);
+extern of_list_bsn_tlv_t *of_bsn_generic_command_tlvs_get(
+    of_bsn_generic_command_t *obj);
 
 /* Unified accessor functions for of_bsn_generic_stats_reply */
 
@@ -21953,6 +22066,17 @@ extern void of_bsn_tlv_vfi_value_get(
     of_bsn_tlv_vfi_t *obj,
     uint16_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_vlan_mac_list */
+
+extern int WARN_UNUSED_RESULT of_bsn_tlv_vlan_mac_list_key_set(
+    of_bsn_tlv_vlan_mac_list_t *obj,
+    of_list_bsn_vlan_mac_t *key);
+extern void of_bsn_tlv_vlan_mac_list_key_bind(
+    of_bsn_tlv_vlan_mac_list_t *obj,
+    of_list_bsn_vlan_mac_t *key);
+extern of_list_bsn_vlan_mac_t *of_bsn_tlv_vlan_mac_list_key_get(
+    of_bsn_tlv_vlan_mac_list_t *obj);
+
 /* Unified accessor functions for of_bsn_tlv_vlan_pcp */
 
 extern void of_bsn_tlv_vlan_pcp_value_set(
@@ -22015,6 +22139,22 @@ extern void of_bsn_vlan_counter_stats_entry_values_bind(
     of_list_uint64_t *values);
 extern of_list_uint64_t *of_bsn_vlan_counter_stats_entry_values_get(
     of_bsn_vlan_counter_stats_entry_t *obj);
+
+/* Unified accessor functions for of_bsn_vlan_mac */
+
+extern void of_bsn_vlan_mac_vlan_vid_set(
+    of_bsn_vlan_mac_t *obj,
+    uint16_t vlan_vid);
+extern void of_bsn_vlan_mac_vlan_vid_get(
+    of_bsn_vlan_mac_t *obj,
+    uint16_t *vlan_vid);
+
+extern void of_bsn_vlan_mac_mac_set(
+    of_bsn_vlan_mac_t *obj,
+    of_mac_addr_t mac);
+extern void of_bsn_vlan_mac_mac_get(
+    of_bsn_vlan_mac_t *obj,
+    of_mac_addr_t *mac);
 
 /* Unified accessor functions for of_bsn_vport_l2gre */
 
@@ -26570,6 +26710,29 @@ extern int of_list_bsn_vlan_counter_stats_entry_append(
     for ((rv) = of_list_bsn_vlan_counter_stats_entry_first((list), (elt));   \
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_bsn_vlan_counter_stats_entry_next((list), (elt)))
+
+/* Unified accessor functions for of_list_bsn_vlan_mac */
+
+extern int of_list_bsn_vlan_mac_first(
+    of_list_bsn_vlan_mac_t *list, of_object_t *iter);
+extern int of_list_bsn_vlan_mac_next(
+    of_list_bsn_vlan_mac_t *list, of_object_t *iter);
+extern int of_list_bsn_vlan_mac_append_bind(
+    of_list_bsn_vlan_mac_t *list, of_object_t *iter);
+extern int of_list_bsn_vlan_mac_append(
+    of_list_bsn_vlan_mac_t *list, of_object_t *iter);
+
+/**
+ * Iteration macro for list of type of_list_bsn_vlan_mac
+ * @param list Pointer to the list being iterated over of
+ * type of_list_bsn_vlan_mac
+ * @param elt Pointer to an element of type of_bsn_vlan_mac
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_BSN_VLAN_MAC_ITER(list, elt, rv)  \
+    for ((rv) = of_list_bsn_vlan_mac_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_bsn_vlan_mac_next((list), (elt)))
 
 /* Unified accessor functions for of_list_bsn_vrf_counter_stats_entry */
 

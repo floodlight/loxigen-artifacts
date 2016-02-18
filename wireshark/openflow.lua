@@ -7080,6 +7080,9 @@ fields['of13.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of13.bsn_tlv_u
 fields['of13.bsn_tlv_vfi.type'] = ProtoField.uint16("of13.bsn_tlv_vfi.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vfi.length'] = ProtoField.uint16("of13.bsn_tlv_vfi.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vfi.value'] = ProtoField.uint16("of13.bsn_tlv_vfi.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_vlan_mac_list.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_mac_list.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_vlan_mac_list.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_mac_list.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_vlan_mac_list.key'] = ProtoField.bytes("of13.bsn_tlv_vlan_mac_list.key", "key")
 fields['of13.bsn_tlv_vlan_pcp.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_pcp.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_pcp.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_pcp.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_pcp.value'] = ProtoField.uint8("of13.bsn_tlv_vlan_pcp.value", "value", base.DEC, nil)
@@ -7154,6 +7157,8 @@ fields['of13.bsn_vlan_counter_stats_request.flags'] = ProtoField.uint32("of13.bs
 fields['of13.bsn_vlan_counter_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_vlan_counter_stats_request.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_vlan_counter_stats_request.subtype'] = ProtoField.uint32("of13.bsn_vlan_counter_stats_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_vlan_counter_stats_request.vlan_vid'] = ProtoField.uint16("of13.bsn_vlan_counter_stats_request.vlan_vid", "vlan_vid", base.DEC, nil)
+fields['of13.bsn_vlan_mac.vlan_vid'] = ProtoField.uint16("of13.bsn_vlan_mac.vlan_vid", "vlan_vid", base.DEC, nil)
+fields['of13.bsn_vlan_mac.mac'] = ProtoField.ether("of13.bsn_vlan_mac.mac", "mac")
 fields['of13.bsn_vport_l2gre.type'] = ProtoField.uint16("of13.bsn_vport_l2gre.type", "type", base.DEC, nil)
 fields['of13.bsn_vport_l2gre.length'] = ProtoField.uint16("of13.bsn_vport_l2gre.length", "length", base.DEC, nil)
 fields['of13.bsn_vport_l2gre.flags'] = ProtoField.uint32("of13.bsn_vport_l2gre.flags", "flags", base.HEX, enum_v4_ofp_bsn_vport_l2gre_flags)
@@ -8958,6 +8963,14 @@ fields['of14.bsn_generic_async.experimenter'] = ProtoField.uint32("of14.bsn_gene
 fields['of14.bsn_generic_async.subtype'] = ProtoField.uint32("of14.bsn_generic_async.subtype", "subtype", base.DEC, nil)
 fields['of14.bsn_generic_async.name'] = ProtoField.stringz("of14.bsn_generic_async.name", "name")
 fields['of14.bsn_generic_async.tlvs'] = ProtoField.bytes("of14.bsn_generic_async.tlvs", "tlvs")
+fields['of14.bsn_generic_command.version'] = ProtoField.uint8("of14.bsn_generic_command.version", "version", base.DEC, nil)
+fields['of14.bsn_generic_command.type'] = ProtoField.uint8("of14.bsn_generic_command.type", "type", base.DEC, nil)
+fields['of14.bsn_generic_command.length'] = ProtoField.uint16("of14.bsn_generic_command.length", "length", base.DEC, nil)
+fields['of14.bsn_generic_command.xid'] = ProtoField.uint32("of14.bsn_generic_command.xid", "xid", base.DEC, nil)
+fields['of14.bsn_generic_command.experimenter'] = ProtoField.uint32("of14.bsn_generic_command.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_generic_command.subtype'] = ProtoField.uint32("of14.bsn_generic_command.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_generic_command.name'] = ProtoField.stringz("of14.bsn_generic_command.name", "name")
+fields['of14.bsn_generic_command.tlvs'] = ProtoField.bytes("of14.bsn_generic_command.tlvs", "tlvs")
 fields['of14.bsn_generic_stats_entry.length'] = ProtoField.uint16("of14.bsn_generic_stats_entry.length", "length", base.DEC, nil)
 fields['of14.bsn_generic_stats_entry.tlvs'] = ProtoField.bytes("of14.bsn_generic_stats_entry.tlvs", "tlvs")
 fields['of14.bsn_generic_stats_reply.version'] = ProtoField.uint8("of14.bsn_generic_stats_reply.version", "version", base.DEC, nil)
@@ -9759,6 +9772,9 @@ fields['of14.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of14.bsn_tlv_u
 fields['of14.bsn_tlv_vfi.type'] = ProtoField.uint16("of14.bsn_tlv_vfi.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vfi.length'] = ProtoField.uint16("of14.bsn_tlv_vfi.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vfi.value'] = ProtoField.uint16("of14.bsn_tlv_vfi.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_vlan_mac_list.type'] = ProtoField.uint16("of14.bsn_tlv_vlan_mac_list.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_vlan_mac_list.length'] = ProtoField.uint16("of14.bsn_tlv_vlan_mac_list.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_vlan_mac_list.key'] = ProtoField.bytes("of14.bsn_tlv_vlan_mac_list.key", "key")
 fields['of14.bsn_tlv_vlan_pcp.type'] = ProtoField.uint16("of14.bsn_tlv_vlan_pcp.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_pcp.length'] = ProtoField.uint16("of14.bsn_tlv_vlan_pcp.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_pcp.value'] = ProtoField.uint8("of14.bsn_tlv_vlan_pcp.value", "value", base.DEC, nil)
@@ -9833,6 +9849,8 @@ fields['of14.bsn_vlan_counter_stats_request.flags'] = ProtoField.uint32("of14.bs
 fields['of14.bsn_vlan_counter_stats_request.experimenter'] = ProtoField.uint32("of14.bsn_vlan_counter_stats_request.experimenter", "experimenter", base.DEC, nil)
 fields['of14.bsn_vlan_counter_stats_request.subtype'] = ProtoField.uint32("of14.bsn_vlan_counter_stats_request.subtype", "subtype", base.DEC, nil)
 fields['of14.bsn_vlan_counter_stats_request.vlan_vid'] = ProtoField.uint16("of14.bsn_vlan_counter_stats_request.vlan_vid", "vlan_vid", base.DEC, nil)
+fields['of14.bsn_vlan_mac.vlan_vid'] = ProtoField.uint16("of14.bsn_vlan_mac.vlan_vid", "vlan_vid", base.DEC, nil)
+fields['of14.bsn_vlan_mac.mac'] = ProtoField.ether("of14.bsn_vlan_mac.mac", "mac")
 fields['of14.bsn_vport_l2gre.type'] = ProtoField.uint16("of14.bsn_vport_l2gre.type", "type", base.DEC, nil)
 fields['of14.bsn_vport_l2gre.length'] = ProtoField.uint16("of14.bsn_vport_l2gre.length", "length", base.DEC, nil)
 fields['of14.bsn_vport_l2gre.flags'] = ProtoField.uint32("of14.bsn_vport_l2gre.flags", "flags", base.HEX, enum_v5_ofp_bsn_vport_l2gre_flags)
@@ -15630,6 +15648,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_vfi.type'],
     fields['of13.bsn_tlv_vfi.length'],
     fields['of13.bsn_tlv_vfi.value'],
+    fields['of13.bsn_tlv_vlan_mac_list.type'],
+    fields['of13.bsn_tlv_vlan_mac_list.length'],
+    fields['of13.bsn_tlv_vlan_mac_list.key'],
     fields['of13.bsn_tlv_vlan_pcp.type'],
     fields['of13.bsn_tlv_vlan_pcp.length'],
     fields['of13.bsn_tlv_vlan_pcp.value'],
@@ -15704,6 +15725,8 @@ p_of.fields = {
     fields['of13.bsn_vlan_counter_stats_request.experimenter'],
     fields['of13.bsn_vlan_counter_stats_request.subtype'],
     fields['of13.bsn_vlan_counter_stats_request.vlan_vid'],
+    fields['of13.bsn_vlan_mac.vlan_vid'],
+    fields['of13.bsn_vlan_mac.mac'],
     fields['of13.bsn_vport_l2gre.type'],
     fields['of13.bsn_vport_l2gre.length'],
     fields['of13.bsn_vport_l2gre.flags'],
@@ -17508,6 +17531,14 @@ p_of.fields = {
     fields['of14.bsn_generic_async.subtype'],
     fields['of14.bsn_generic_async.name'],
     fields['of14.bsn_generic_async.tlvs'],
+    fields['of14.bsn_generic_command.version'],
+    fields['of14.bsn_generic_command.type'],
+    fields['of14.bsn_generic_command.length'],
+    fields['of14.bsn_generic_command.xid'],
+    fields['of14.bsn_generic_command.experimenter'],
+    fields['of14.bsn_generic_command.subtype'],
+    fields['of14.bsn_generic_command.name'],
+    fields['of14.bsn_generic_command.tlvs'],
     fields['of14.bsn_generic_stats_entry.length'],
     fields['of14.bsn_generic_stats_entry.tlvs'],
     fields['of14.bsn_generic_stats_reply.version'],
@@ -18309,6 +18340,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_vfi.type'],
     fields['of14.bsn_tlv_vfi.length'],
     fields['of14.bsn_tlv_vfi.value'],
+    fields['of14.bsn_tlv_vlan_mac_list.type'],
+    fields['of14.bsn_tlv_vlan_mac_list.length'],
+    fields['of14.bsn_tlv_vlan_mac_list.key'],
     fields['of14.bsn_tlv_vlan_pcp.type'],
     fields['of14.bsn_tlv_vlan_pcp.length'],
     fields['of14.bsn_tlv_vlan_pcp.value'],
@@ -18383,6 +18417,8 @@ p_of.fields = {
     fields['of14.bsn_vlan_counter_stats_request.experimenter'],
     fields['of14.bsn_vlan_counter_stats_request.subtype'],
     fields['of14.bsn_vlan_counter_stats_request.vlan_vid'],
+    fields['of14.bsn_vlan_mac.vlan_vid'],
+    fields['of14.bsn_vlan_mac.mac'],
     fields['of14.bsn_vport_l2gre.type'],
     fields['of14.bsn_vport_l2gre.length'],
     fields['of14.bsn_vport_l2gre.flags'],
@@ -30076,6 +30112,16 @@ function dissect_of_bsn_tlv_vfi_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[99] = dissect_of_bsn_tlv_vfi_v4
 
+-- top-level class of_bsn_tlv_vlan_mac_list
+function dissect_of_bsn_tlv_vlan_mac_list_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vlan_mac_list.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vlan_mac_list.length')
+    read_list(reader, dissect_of_bsn_vlan_mac_v4, subtree, 'of_bsn_vlan_mac')
+    return 'of_bsn_tlv_vlan_mac_list'
+end
 -- child class of_bsn_tlv_vlan_pcp
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_vlan_pcp_v4(reader, subtree)
@@ -30253,6 +30299,12 @@ function dissect_of_bsn_vlan_counter_stats_request_v4(reader, subtree)
 end
 of_bsn_stats_request_v4_dissectors[9] = dissect_of_bsn_vlan_counter_stats_request_v4
 
+-- top-level class of_bsn_vlan_mac
+function dissect_of_bsn_vlan_mac_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_mac.vlan_vid')
+    read_of_mac_addr_t(reader, 4, subtree, 'of13.bsn_vlan_mac.mac')
+    return 'of_bsn_vlan_mac'
+end
 -- child class of_bsn_vport_l2gre
 -- Child of of_bsn_vport
 function dissect_of_bsn_vport_l2gre_v4(reader, subtree)
@@ -35081,6 +35133,24 @@ function dissect_of_bsn_generic_async_v5(reader, subtree)
 end
 of_bsn_header_v5_dissectors[68] = dissect_of_bsn_generic_async_v5
 
+-- child class of_bsn_generic_command
+-- Child of of_bsn_header
+function dissect_of_bsn_generic_command_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_generic_command.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_generic_command.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_generic_command.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_generic_command.xid')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_generic_command.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_generic_command.subtype')
+    read_of_str64_t(reader, 5, subtree, 'of14.bsn_generic_command.name')
+    read_list(reader, dissect_of_bsn_tlv_v5, subtree, 'of_bsn_tlv')
+    return 'of_bsn_generic_command'
+end
+of_bsn_header_v5_dissectors[71] = dissect_of_bsn_generic_command_v5
+
 -- top-level class of_bsn_generic_stats_entry
 function dissect_of_bsn_generic_stats_entry_v5(reader, subtree)
     local _length = reader.peek(0, 2):uint()
@@ -37115,6 +37185,16 @@ function dissect_of_bsn_tlv_vfi_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[99] = dissect_of_bsn_tlv_vfi_v5
 
+-- top-level class of_bsn_tlv_vlan_mac_list
+function dissect_of_bsn_tlv_vlan_mac_list_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vlan_mac_list.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vlan_mac_list.length')
+    read_list(reader, dissect_of_bsn_vlan_mac_v5, subtree, 'of_bsn_vlan_mac')
+    return 'of_bsn_tlv_vlan_mac_list'
+end
 -- child class of_bsn_tlv_vlan_pcp
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_vlan_pcp_v5(reader, subtree)
@@ -37292,6 +37372,12 @@ function dissect_of_bsn_vlan_counter_stats_request_v5(reader, subtree)
 end
 of_bsn_stats_request_v5_dissectors[9] = dissect_of_bsn_vlan_counter_stats_request_v5
 
+-- top-level class of_bsn_vlan_mac
+function dissect_of_bsn_vlan_mac_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_vlan_mac.vlan_vid')
+    read_of_mac_addr_t(reader, 5, subtree, 'of14.bsn_vlan_mac.mac')
+    return 'of_bsn_vlan_mac'
+end
 -- child class of_bsn_vport_l2gre
 -- Child of of_bsn_vport
 function dissect_of_bsn_vport_l2gre_v5(reader, subtree)

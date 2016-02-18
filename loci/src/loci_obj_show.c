@@ -20875,6 +20875,25 @@ of_bsn_tlv_vfi_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object
 }
 
 int
+of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    of_list_bsn_vlan_mac_t list;
+    of_object_t elt;
+    int rv;
+
+    out += writer(cookie, "of_bsn_vlan_mac_t={ ");
+    of_bsn_tlv_vlan_mac_list_key_bind(obj, &list);
+    OF_LIST_BSN_VLAN_MAC_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -20965,6 +20984,26 @@ of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* 
         of_object_show(writer, cookie, (of_object_t *)&elt);
     }
     out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
+of_bsn_vlan_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+    of_mac_addr_t mac_addr;
+
+    of_bsn_vlan_mac_vlan_vid_get(obj, &val16);
+    out += writer(cookie, "vlan_vid=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_vlan_mac_mac_get(obj, &mac_addr);
+    out += writer(cookie, "mac=");
+    out += LOCI_SHOW_mac(writer, cookie, mac_addr);
+    out += writer(cookie, " ");
 
     return out;
 }
@@ -26129,6 +26168,47 @@ of_bsn_generic_async_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 
     out += writer(cookie, "of_bsn_tlv_t={ ");
     of_bsn_generic_async_tlvs_bind(obj, &list);
+    OF_LIST_BSN_TLV_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
+of_bsn_generic_command_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_str64_t str64;
+
+    of_list_bsn_tlv_t list;
+    of_object_t elt;
+    int rv;
+
+    of_bsn_generic_command_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_command_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_command_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_command_name_get(obj, &str64);
+    out += writer(cookie, "name=");
+    out += LOCI_SHOW_str64(writer, cookie, str64);
+    out += writer(cookie, " ");
+
+    out += writer(cookie, "of_bsn_tlv_t={ ");
+    of_bsn_generic_command_tlvs_bind(obj, &list);
     OF_LIST_BSN_TLV_ITER(&list, &elt, rv) {
         of_object_show(writer, cookie, (of_object_t *)&elt);
     }
@@ -33458,6 +33538,25 @@ of_bsn_tlv_vfi_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object
 }
 
 int
+of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    of_list_bsn_vlan_mac_t list;
+    of_object_t elt;
+    int rv;
+
+    out += writer(cookie, "of_bsn_vlan_mac_t={ ");
+    of_bsn_tlv_vlan_mac_list_key_bind(obj, &list);
+    OF_LIST_BSN_VLAN_MAC_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -33548,6 +33647,26 @@ of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* 
         of_object_show(writer, cookie, (of_object_t *)&elt);
     }
     out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
+of_bsn_vlan_mac_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+    of_mac_addr_t mac_addr;
+
+    of_bsn_vlan_mac_vlan_vid_get(obj, &val16);
+    out += writer(cookie, "vlan_vid=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_vlan_mac_mac_get(obj, &mac_addr);
+    out += writer(cookie, "mac=");
+    out += LOCI_SHOW_mac(writer, cookie, mac_addr);
+    out += writer(cookie, " ");
 
     return out;
 }
@@ -38590,6 +38709,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_get_interfaces_reply_OF_VERSION_1_0_show,
     of_bsn_get_interfaces_request_OF_VERSION_1_0_show,
     of_bsn_get_ip_mask_reply_OF_VERSION_1_0_show,
@@ -38832,6 +38952,8 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_bsn_interface_OF_VERSION_1_0_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -39255,6 +39377,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     unknown_show
 };
 
@@ -39282,6 +39405,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_bsn_bw_enable_get_request_OF_VERSION_1_1_show,
     of_bsn_bw_enable_set_reply_OF_VERSION_1_1_show,
     of_bsn_bw_enable_set_request_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -39556,6 +39680,8 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_bsn_interface_OF_VERSION_1_1_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -39979,6 +40105,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     unknown_show
 };
 
@@ -40006,6 +40133,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     of_bsn_bw_enable_get_request_OF_VERSION_1_2_show,
     of_bsn_bw_enable_set_reply_OF_VERSION_1_2_show,
     of_bsn_bw_enable_set_request_OF_VERSION_1_2_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -40280,6 +40408,8 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_bsn_interface_OF_VERSION_1_2_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -40703,6 +40833,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     unknown_show
 };
 
@@ -40744,6 +40875,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_show,
     of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3_show,
     of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_show,
+    unknown_show,
     unknown_show,
     of_bsn_generic_stats_reply_OF_VERSION_1_3_show,
     of_bsn_generic_stats_request_OF_VERSION_1_3_show,
@@ -41102,12 +41234,14 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_show,
     of_bsn_tlv_use_packet_state_OF_VERSION_1_3_show,
     of_bsn_tlv_vfi_OF_VERSION_1_3_show,
+    of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_show,
     of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_show,
     of_bsn_tlv_vlan_vid_OF_VERSION_1_3_show,
     of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_show,
     of_bsn_tlv_vni_OF_VERSION_1_3_show,
     of_bsn_tlv_vrf_OF_VERSION_1_3_show,
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_show,
+    of_bsn_vlan_mac_OF_VERSION_1_3_show,
     unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_3_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_3_show,
@@ -41427,6 +41561,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     unknown_show
 };
 
@@ -41469,6 +41604,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_4_show,
     of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_show,
     of_bsn_generic_async_OF_VERSION_1_4_show,
+    of_bsn_generic_command_OF_VERSION_1_4_show,
     of_bsn_generic_stats_reply_OF_VERSION_1_4_show,
     of_bsn_generic_stats_request_OF_VERSION_1_4_show,
     of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_4_show,
@@ -41826,12 +41962,14 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_show,
     of_bsn_tlv_use_packet_state_OF_VERSION_1_4_show,
     of_bsn_tlv_vfi_OF_VERSION_1_4_show,
+    of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_show,
     of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_show,
     of_bsn_tlv_vlan_vid_OF_VERSION_1_4_show,
     of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_show,
     of_bsn_tlv_vni_OF_VERSION_1_4_show,
     of_bsn_tlv_vrf_OF_VERSION_1_4_show,
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_show,
+    of_bsn_vlan_mac_OF_VERSION_1_4_show,
     unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_4_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_4_show,
@@ -42097,6 +42235,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_uint32_OF_VERSION_1_4_show,
     of_uint64_OF_VERSION_1_4_show,
     of_uint8_OF_VERSION_1_4_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,

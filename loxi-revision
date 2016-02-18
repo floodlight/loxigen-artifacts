@@ -1,1 +1,1 @@
-2cc26f280b4afb46b2e27c740e8537e539f907a3 Merge into master from pull request #463: Support bsn_l2_cache_hit tlv in 1.4. (https://github.com/floodlight/loxigen/pull/463)
+83314edfecd0085d04e948ec9ddeb37780ccf175 Merge into master from pull request #464: add gencmd extension and of_bsn_tlv_vlan_mac_list (https://github.com/floodlight/loxigen/pull/464)

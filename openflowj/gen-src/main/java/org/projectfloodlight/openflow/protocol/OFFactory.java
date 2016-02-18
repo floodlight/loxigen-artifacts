@@ -279,12 +279,16 @@ public interface OFFactory extends XidGenerator {
     OFBsnTimeReply bsnTimeReply(U64 timeMs);
     OFBsnTimeRequest.Builder buildBsnTimeRequest() throws UnsupportedOperationException;
     OFBsnTimeRequest bsnTimeRequest();
+    OFBsnTlvVlanMacList.Builder buildBsnTlvVlanMacList() throws UnsupportedOperationException;
+    OFBsnTlvVlanMacList bsnTlvVlanMacList(List<OFBsnVlanMac> key);
     OFBsnVlanCounterClear.Builder buildBsnVlanCounterClear() throws UnsupportedOperationException;
     OFBsnVlanCounterClear bsnVlanCounterClear(int vlanVid);
     OFBsnVlanCounterStatsEntry.Builder buildBsnVlanCounterStatsEntry() throws UnsupportedOperationException;
     OFBsnVlanCounterStatsEntry bsnVlanCounterStatsEntry(int vlanVid, List<U64> values);
     OFBsnVlanCounterStatsReply.Builder buildBsnVlanCounterStatsReply() throws UnsupportedOperationException;
     OFBsnVlanCounterStatsRequest.Builder buildBsnVlanCounterStatsRequest() throws UnsupportedOperationException;
+    OFBsnVlanMac.Builder buildBsnVlanMac() throws UnsupportedOperationException;
+    OFBsnVlanMac bsnVlanMac(int vlanVid, MacAddress mac);
     OFBsnVrfCounterStatsEntry.Builder buildBsnVrfCounterStatsEntry() throws UnsupportedOperationException;
     OFBsnVrfCounterStatsEntry bsnVrfCounterStatsEntry(long vrf, List<U64> values);
     OFBsnVrfCounterStatsReply.Builder buildBsnVrfCounterStatsReply() throws UnsupportedOperationException;
@@ -367,6 +371,7 @@ public interface OFFactory extends XidGenerator {
     OFAsyncConfigPropTableStatusSlave.Builder buildAsyncConfigPropTableStatusSlave() throws UnsupportedOperationException;
     OFAsyncConfigPropTableStatusSlave asyncConfigPropTableStatusSlave(long mask);
     OFBsnGenericAsync.Builder buildBsnGenericAsync() throws UnsupportedOperationException;
+    OFBsnGenericCommand.Builder buildBsnGenericCommand() throws UnsupportedOperationException;
     OFBsnTakeover.Builder buildBsnTakeover() throws UnsupportedOperationException;
     OFBsnTakeover bsnTakeover();
     OFBundleAddMsg.Builder buildBundleAddMsg() throws UnsupportedOperationException;

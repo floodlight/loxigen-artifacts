@@ -875,6 +875,33 @@ typedef struct of_bsn_flow_idle_enable_set_request_s of_bsn_flow_idle_enable_set
 typedef struct of_bsn_generic_async_s of_bsn_generic_async_t;
 
 /**
+ * Structure for of_bsn_generic_command object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_command_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_command_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_4).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_command_uint32_get_f and _set_f.
+ *
+ * @param name_get/set ( OF_1_4).
+ *   Accessors for name, a variable of type of_str64.  Functions
+ *   are of type of_bsn_generic_command_of_str64_get_f and _set_f.
+ *
+ * @param tlvs_get/set ( OF_1_4).
+ *   Accessors for tlvs, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_generic_command_of_list_bsn_tlv_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_generic_command_s of_bsn_generic_command_t;
+
+/**
  * Structure for of_bsn_generic_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7322,6 +7349,17 @@ typedef struct of_bsn_tlv_use_packet_state_s of_bsn_tlv_use_packet_state_t;
 typedef struct of_bsn_tlv_vfi_s of_bsn_tlv_vfi_t;
 
 /**
+ * Structure for of_bsn_tlv_vlan_mac_list object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param key_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for key, a variable of type of_list_bsn_vlan_mac.  Functions
+ *   are of type of_bsn_tlv_vlan_mac_list_of_list_bsn_vlan_mac_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_vlan_mac_list_s of_bsn_tlv_vlan_mac_list_t;
+
+/**
  * Structure for of_bsn_tlv_vlan_pcp object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7390,6 +7428,21 @@ typedef struct of_bsn_tlv_vrf_s of_bsn_tlv_vrf_t;
  *
  */
 typedef struct of_bsn_vlan_counter_stats_entry_s of_bsn_vlan_counter_stats_entry_t;
+
+/**
+ * Structure for of_bsn_vlan_mac object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param vlan_vid_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for vlan_vid, a variable of type uint16.  Functions
+ *   are of type of_bsn_vlan_mac_uint16_get_f and _set_f.
+ *
+ * @param mac_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for mac, a variable of type of_mac_addr.  Functions
+ *   are of type of_bsn_vlan_mac_of_mac_addr_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_vlan_mac_s of_bsn_vlan_mac_t;
 
 /**
  * Structure for of_bsn_vport object.  Get/set
@@ -11713,6 +11766,21 @@ typedef struct of_list_bsn_tlv_s of_list_bsn_tlv_t;
  * Copy an item to the end of a list
  */
 typedef struct of_list_bsn_vlan_counter_stats_entry_s of_list_bsn_vlan_counter_stats_entry_t;
+
+/**
+ * Structure for of_list_bsn_vlan_mac object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_bsn_vlan_mac_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_bsn_vlan_mac_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_bsn_vlan_mac_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_bsn_vlan_mac_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_bsn_vlan_mac_s of_list_bsn_vlan_mac_t;
 
 /**
  * Structure for of_list_bsn_vrf_counter_stats_entry object.  Get/set

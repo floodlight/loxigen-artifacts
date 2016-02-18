@@ -11674,6 +11674,9 @@ of_bsn_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x46:
             *id = OF_BSN_VLAN_COUNTER_CLEAR;
             break;
+        case 0x47:
+            *id = OF_BSN_GENERIC_COMMAND;
+            break;
         default:
             *id = OF_BSN_HEADER;
             break;

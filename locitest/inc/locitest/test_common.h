@@ -7394,6 +7394,15 @@ extern int of_bsn_tlv_vfi_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_vfi_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_vfi_t *obj, int value);
 
+extern int of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_populate(
+    of_bsn_tlv_vlan_mac_list_t *obj, int value);
+extern int of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_check(
+    of_bsn_tlv_vlan_mac_list_t *obj, int value);
+extern int of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_vlan_mac_list_t *obj, int value);
+extern int of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_vlan_mac_list_t *obj, int value);
+
 extern int of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_populate(
     of_bsn_tlv_vlan_pcp_t *obj, int value);
 extern int of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_check(
@@ -7447,6 +7456,15 @@ extern int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_populate_scalars(
     of_bsn_vlan_counter_stats_entry_t *obj, int value);
 extern int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_check_scalars(
     of_bsn_vlan_counter_stats_entry_t *obj, int value);
+
+extern int of_bsn_vlan_mac_OF_VERSION_1_3_populate(
+    of_bsn_vlan_mac_t *obj, int value);
+extern int of_bsn_vlan_mac_OF_VERSION_1_3_check(
+    of_bsn_vlan_mac_t *obj, int value);
+extern int of_bsn_vlan_mac_OF_VERSION_1_3_populate_scalars(
+    of_bsn_vlan_mac_t *obj, int value);
+extern int of_bsn_vlan_mac_OF_VERSION_1_3_check_scalars(
+    of_bsn_vlan_mac_t *obj, int value);
 
 extern int of_bsn_vport_l2gre_OF_VERSION_1_3_populate(
     of_bsn_vport_l2gre_t *obj, int value);
@@ -9545,6 +9563,15 @@ extern int of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_populate_scalars(
 extern int of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_check_scalars(
     of_list_bsn_vlan_counter_stats_entry_t *obj, int value);
 
+extern int of_list_bsn_vlan_mac_OF_VERSION_1_3_populate(
+    of_list_bsn_vlan_mac_t *obj, int value);
+extern int of_list_bsn_vlan_mac_OF_VERSION_1_3_check(
+    of_list_bsn_vlan_mac_t *obj, int value);
+extern int of_list_bsn_vlan_mac_OF_VERSION_1_3_populate_scalars(
+    of_list_bsn_vlan_mac_t *obj, int value);
+extern int of_list_bsn_vlan_mac_OF_VERSION_1_3_check_scalars(
+    of_list_bsn_vlan_mac_t *obj, int value);
+
 extern int of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_populate(
     of_list_bsn_vrf_counter_stats_entry_t *obj, int value);
 extern int of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_check(
@@ -10084,6 +10111,15 @@ extern int of_bsn_generic_async_OF_VERSION_1_4_populate_scalars(
     of_bsn_generic_async_t *obj, int value);
 extern int of_bsn_generic_async_OF_VERSION_1_4_check_scalars(
     of_bsn_generic_async_t *obj, int value);
+
+extern int of_bsn_generic_command_OF_VERSION_1_4_populate(
+    of_bsn_generic_command_t *obj, int value);
+extern int of_bsn_generic_command_OF_VERSION_1_4_check(
+    of_bsn_generic_command_t *obj, int value);
+extern int of_bsn_generic_command_OF_VERSION_1_4_populate_scalars(
+    of_bsn_generic_command_t *obj, int value);
+extern int of_bsn_generic_command_OF_VERSION_1_4_check_scalars(
+    of_bsn_generic_command_t *obj, int value);
 
 extern int of_bsn_generic_stats_reply_OF_VERSION_1_4_populate(
     of_bsn_generic_stats_reply_t *obj, int value);
@@ -12803,6 +12839,15 @@ extern int of_bsn_tlv_vfi_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_vfi_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_vfi_t *obj, int value);
 
+extern int of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_populate(
+    of_bsn_tlv_vlan_mac_list_t *obj, int value);
+extern int of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_check(
+    of_bsn_tlv_vlan_mac_list_t *obj, int value);
+extern int of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_vlan_mac_list_t *obj, int value);
+extern int of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_vlan_mac_list_t *obj, int value);
+
 extern int of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_populate(
     of_bsn_tlv_vlan_pcp_t *obj, int value);
 extern int of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_check(
@@ -12856,6 +12901,15 @@ extern int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_populate_scalars(
     of_bsn_vlan_counter_stats_entry_t *obj, int value);
 extern int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_check_scalars(
     of_bsn_vlan_counter_stats_entry_t *obj, int value);
+
+extern int of_bsn_vlan_mac_OF_VERSION_1_4_populate(
+    of_bsn_vlan_mac_t *obj, int value);
+extern int of_bsn_vlan_mac_OF_VERSION_1_4_check(
+    of_bsn_vlan_mac_t *obj, int value);
+extern int of_bsn_vlan_mac_OF_VERSION_1_4_populate_scalars(
+    of_bsn_vlan_mac_t *obj, int value);
+extern int of_bsn_vlan_mac_OF_VERSION_1_4_check_scalars(
+    of_bsn_vlan_mac_t *obj, int value);
 
 extern int of_bsn_vport_l2gre_OF_VERSION_1_4_populate(
     of_bsn_vport_l2gre_t *obj, int value);
@@ -15061,6 +15115,15 @@ extern int of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_populate_scalars(
     of_list_bsn_vlan_counter_stats_entry_t *obj, int value);
 extern int of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_check_scalars(
     of_list_bsn_vlan_counter_stats_entry_t *obj, int value);
+
+extern int of_list_bsn_vlan_mac_OF_VERSION_1_4_populate(
+    of_list_bsn_vlan_mac_t *obj, int value);
+extern int of_list_bsn_vlan_mac_OF_VERSION_1_4_check(
+    of_list_bsn_vlan_mac_t *obj, int value);
+extern int of_list_bsn_vlan_mac_OF_VERSION_1_4_populate_scalars(
+    of_list_bsn_vlan_mac_t *obj, int value);
+extern int of_list_bsn_vlan_mac_OF_VERSION_1_4_check_scalars(
+    of_list_bsn_vlan_mac_t *obj, int value);
 
 extern int of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_4_populate(
     of_list_bsn_vrf_counter_stats_entry_t *obj, int value);

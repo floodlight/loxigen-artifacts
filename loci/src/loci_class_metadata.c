@@ -2961,6 +2961,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_vfi_push_wire_types,
     },
+    [OF_BSN_TLV_VLAN_MAC_LIST] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bsn_tlv_vlan_mac_list_push_wire_types,
+    },
     [OF_BSN_TLV_VLAN_PCP] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -3014,6 +3020,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_object_message_wire_length_set,
         .wire_type_get=NULL,
         .wire_type_set=of_bsn_vlan_counter_stats_request_push_wire_types,
+    },
+    [OF_BSN_VLAN_MAC] = {
+        .wire_length_get=NULL,
+        .wire_length_set=NULL,
+        .wire_type_get=NULL,
+        .wire_type_set=NULL,
     },
     [OF_BSN_VRF_COUNTER_STATS_ENTRY] = {
         .wire_length_get=of_u16_len_wire_length_get,
@@ -3722,6 +3734,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_object_message_wire_length_set,
         .wire_type_get=NULL,
         .wire_type_set=of_bsn_generic_async_push_wire_types,
+    },
+    [OF_BSN_GENERIC_COMMAND] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bsn_generic_command_push_wire_types,
     },
     [OF_BSN_TAKEOVER] = {
         .wire_length_get=of_object_message_wire_length_get,

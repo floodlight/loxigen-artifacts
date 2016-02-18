@@ -1051,6 +1051,13 @@ public class OFFactoryVer10 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnTimeRequest not supported in version 1.0");
     }
 
+    public OFBsnTlvVlanMacList.Builder buildBsnTlvVlanMacList() {
+        throw new UnsupportedOperationException("OFBsnTlvVlanMacList not supported in version 1.0");
+    }
+    public OFBsnTlvVlanMacList bsnTlvVlanMacList(List<OFBsnVlanMac> key) {
+        throw new UnsupportedOperationException("OFBsnTlvVlanMacList not supported in version 1.0");
+    }
+
     public OFBsnVlanCounterClear.Builder buildBsnVlanCounterClear() {
         throw new UnsupportedOperationException("OFBsnVlanCounterClear not supported in version 1.0");
     }
@@ -1071,6 +1078,13 @@ public class OFFactoryVer10 implements OFFactory {
 
     public OFBsnVlanCounterStatsRequest.Builder buildBsnVlanCounterStatsRequest() {
         throw new UnsupportedOperationException("OFBsnVlanCounterStatsRequest not supported in version 1.0");
+    }
+
+    public OFBsnVlanMac.Builder buildBsnVlanMac() {
+        throw new UnsupportedOperationException("OFBsnVlanMac not supported in version 1.0");
+    }
+    public OFBsnVlanMac bsnVlanMac(int vlanVid, MacAddress mac) {
+        throw new UnsupportedOperationException("OFBsnVlanMac not supported in version 1.0");
     }
 
     public OFBsnVrfCounterStatsEntry.Builder buildBsnVrfCounterStatsEntry() {
@@ -1367,6 +1381,10 @@ public class OFFactoryVer10 implements OFFactory {
 
     public OFBsnGenericAsync.Builder buildBsnGenericAsync() {
         throw new UnsupportedOperationException("OFBsnGenericAsync not supported in version 1.0");
+    }
+
+    public OFBsnGenericCommand.Builder buildBsnGenericCommand() {
+        throw new UnsupportedOperationException("OFBsnGenericCommand not supported in version 1.0");
     }
 
     public OFBsnTakeover.Builder buildBsnTakeover() {

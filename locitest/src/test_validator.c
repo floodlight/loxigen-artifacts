@@ -4864,6 +4864,15 @@ test_validate_all(void)
     }
 
     {
+        of_bsn_generic_command_t *obj = of_bsn_generic_command_new(OF_VERSION_1_4);
+        of_message_t msg;
+        of_bsn_generic_command_OF_VERSION_1_4_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_generic_command_delete(obj);
+    }
+
+    {
         of_bsn_generic_async_t *obj = of_bsn_generic_async_new(OF_VERSION_1_4);
         of_message_t msg;
         of_bsn_generic_async_OF_VERSION_1_4_populate(obj, 1);

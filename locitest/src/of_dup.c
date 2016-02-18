@@ -29486,6 +29486,40 @@ of_bsn_tlv_vfi_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_vlan_mac_list
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_vlan_mac_list.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_vlan_mac_list_t *
+of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_dup(
+    of_bsn_tlv_vlan_mac_list_t *src)
+{
+    of_bsn_tlv_vlan_mac_list_t *dst;
+
+    of_list_bsn_vlan_mac_t src_list;
+    of_list_bsn_vlan_mac_t *dst_list;
+
+    if ((dst = of_bsn_tlv_vlan_mac_list_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_vlan_mac_list_key_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_vlan_mac_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_tlv_vlan_mac_list_delete(dst);
+        return NULL;
+    }
+    of_bsn_tlv_vlan_mac_list_key_set(dst, dst_list);
+    of_list_bsn_vlan_mac_delete(dst_list);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_vlan_pcp
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -29644,6 +29678,35 @@ of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
     }
     of_bsn_vlan_counter_stats_entry_values_set(dst, dst_list);
     of_list_uint64_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_vlan_mac
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_vlan_mac.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_vlan_mac_t *
+of_bsn_vlan_mac_OF_VERSION_1_3_dup(
+    of_bsn_vlan_mac_t *src)
+{
+    of_bsn_vlan_mac_t *dst;
+    uint16_t val16;
+    of_mac_addr_t mac_addr;
+
+    if ((dst = of_bsn_vlan_mac_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_vlan_mac_vlan_vid_get(src, &val16);
+    of_bsn_vlan_mac_vlan_vid_set(dst, val16);
+
+    of_bsn_vlan_mac_mac_get(src, &mac_addr);
+    of_bsn_vlan_mac_mac_set(dst, mac_addr);
 
     return dst;
 }
@@ -37382,6 +37445,40 @@ of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate a list of type of_list_bsn_vlan_mac
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_bsn_vlan_mac.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_bsn_vlan_mac_t *
+of_list_bsn_vlan_mac_OF_VERSION_1_3_dup(
+    of_list_bsn_vlan_mac_t *src)
+{
+    of_object_t src_elt;
+    of_object_t *dst_elt;
+    int rv;
+    of_list_bsn_vlan_mac_t *dst;
+
+    if ((dst = of_list_bsn_vlan_mac_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_BSN_VLAN_MAC_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_bsn_vlan_mac_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_bsn_vlan_mac_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
  * Duplicate a list of type of_list_bsn_vrf_counter_stats_entry
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -39504,6 +39601,54 @@ of_bsn_generic_async_OF_VERSION_1_4_dup(
         return NULL;
     }
     of_bsn_generic_async_tlvs_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_generic_command
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_generic_command.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_generic_command_t *
+of_bsn_generic_command_OF_VERSION_1_4_dup(
+    of_bsn_generic_command_t *src)
+{
+    of_bsn_generic_command_t *dst;
+    uint32_t val32;
+    of_str64_t str64;
+
+    of_list_bsn_tlv_t src_list;
+    of_list_bsn_tlv_t *dst_list;
+
+    if ((dst = of_bsn_generic_command_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_generic_command_xid_get(src, &val32);
+    of_bsn_generic_command_xid_set(dst, val32);
+
+    of_bsn_generic_command_experimenter_get(src, &val32);
+    of_bsn_generic_command_experimenter_set(dst, val32);
+
+    of_bsn_generic_command_subtype_get(src, &val32);
+    of_bsn_generic_command_subtype_set(dst, val32);
+
+    of_bsn_generic_command_name_get(src, &str64);
+    of_bsn_generic_command_name_set(dst, str64);
+
+    of_bsn_generic_command_tlvs_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_4_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_generic_command_delete(dst);
+        return NULL;
+    }
+    of_bsn_generic_command_tlvs_set(dst, dst_list);
     of_list_bsn_tlv_delete(dst_list);
 
     return dst;
@@ -50072,6 +50217,40 @@ of_bsn_tlv_vfi_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_vlan_mac_list
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_vlan_mac_list.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_vlan_mac_list_t *
+of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_dup(
+    of_bsn_tlv_vlan_mac_list_t *src)
+{
+    of_bsn_tlv_vlan_mac_list_t *dst;
+
+    of_list_bsn_vlan_mac_t src_list;
+    of_list_bsn_vlan_mac_t *dst_list;
+
+    if ((dst = of_bsn_tlv_vlan_mac_list_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_vlan_mac_list_key_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_vlan_mac_OF_VERSION_1_4_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_tlv_vlan_mac_list_delete(dst);
+        return NULL;
+    }
+    of_bsn_tlv_vlan_mac_list_key_set(dst, dst_list);
+    of_list_bsn_vlan_mac_delete(dst_list);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_vlan_pcp
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -50230,6 +50409,35 @@ of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dup(
     }
     of_bsn_vlan_counter_stats_entry_values_set(dst, dst_list);
     of_list_uint64_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_vlan_mac
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_vlan_mac.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_vlan_mac_t *
+of_bsn_vlan_mac_OF_VERSION_1_4_dup(
+    of_bsn_vlan_mac_t *src)
+{
+    of_bsn_vlan_mac_t *dst;
+    uint16_t val16;
+    of_mac_addr_t mac_addr;
+
+    if ((dst = of_bsn_vlan_mac_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_vlan_mac_vlan_vid_get(src, &val16);
+    of_bsn_vlan_mac_vlan_vid_set(dst, val16);
+
+    of_bsn_vlan_mac_mac_get(src, &mac_addr);
+    of_bsn_vlan_mac_mac_set(dst, mac_addr);
 
     return dst;
 }
@@ -58579,6 +58787,40 @@ of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate a list of type of_list_bsn_vlan_mac
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_bsn_vlan_mac.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_bsn_vlan_mac_t *
+of_list_bsn_vlan_mac_OF_VERSION_1_4_dup(
+    of_list_bsn_vlan_mac_t *src)
+{
+    of_object_t src_elt;
+    of_object_t *dst_elt;
+    int rv;
+    of_list_bsn_vlan_mac_t *dst;
+
+    if ((dst = of_list_bsn_vlan_mac_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_BSN_VLAN_MAC_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_bsn_vlan_mac_OF_VERSION_1_4_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_bsn_vlan_mac_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
  * Duplicate a list of type of_list_bsn_vrf_counter_stats_entry
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -60480,6 +60722,19 @@ of_bsn_generic_async_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_generic_async_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_generic_command_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_generic_command_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -67116,6 +67371,23 @@ of_bsn_tlv_vfi_dup(
 }
 
 of_object_t *
+of_bsn_tlv_vlan_mac_list_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_vlan_pcp_dup(
     of_object_t *src)
 {
@@ -67211,6 +67483,23 @@ of_bsn_vlan_counter_stats_entry_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_vlan_mac_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_vlan_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_vlan_mac_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -72516,6 +72805,23 @@ of_list_bsn_vlan_counter_stats_entry_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_list_bsn_vlan_mac_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_bsn_vlan_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_list_bsn_vlan_mac_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
