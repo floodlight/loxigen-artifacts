@@ -1,1 +1,1 @@
-850995bf19c7b0e6d768ec58d7bbba447da24d24 Merge into master from pull request #461: Add vfi tlv for VXLAN VPN (https://github.com/floodlight/loxigen/pull/461)
+2cc26f280b4afb46b2e27c740e8537e539f907a3 Merge into master from pull request #463: Support bsn_l2_cache_hit tlv in 1.4. (https://github.com/floodlight/loxigen/pull/463)

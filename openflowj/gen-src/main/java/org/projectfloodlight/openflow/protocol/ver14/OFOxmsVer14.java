@@ -217,17 +217,22 @@ public class OFOxmsVer14 implements OFOxms {
     }
 
     public OFOxmBsnL2CacheHit.Builder buildBsnL2CacheHit() {
-        throw new UnsupportedOperationException("OFOxmBsnL2CacheHit not supported in version 1.4");
+        return new OFOxmBsnL2CacheHitVer14.Builder();
     }
     public OFOxmBsnL2CacheHit bsnL2CacheHit(OFBooleanValue value) {
-        throw new UnsupportedOperationException("OFOxmBsnL2CacheHit not supported in version 1.4");
+        return new OFOxmBsnL2CacheHitVer14(
+                value
+                    );
     }
 
     public OFOxmBsnL2CacheHitMasked.Builder buildBsnL2CacheHitMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnL2CacheHitMasked not supported in version 1.4");
+        return new OFOxmBsnL2CacheHitMaskedVer14.Builder();
     }
     public OFOxmBsnL2CacheHitMasked bsnL2CacheHitMasked(OFBooleanValue value, OFBooleanValue mask) {
-        throw new UnsupportedOperationException("OFOxmBsnL2CacheHitMasked not supported in version 1.4");
+        return new OFOxmBsnL2CacheHitMaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnL3DstClassId.Builder buildBsnL3DstClassId() {

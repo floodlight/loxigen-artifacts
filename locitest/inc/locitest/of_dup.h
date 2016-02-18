@@ -9047,6 +9047,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_oxm_bsn_l2_cache_hit_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_dup(
         of_object_t *src);
 

@@ -35193,6 +35193,39 @@ of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_show(loci_writer_f writer, void*
 }
 
 int
+of_oxm_bsn_l2_cache_hit_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_oxm_bsn_l2_cache_hit_value_get(obj, &val8);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_oxm_bsn_l2_cache_hit_masked_value_get(obj, &val8);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_oxm_bsn_l2_cache_hit_masked_value_mask_get(obj, &val8);
+    out += writer(cookie, "value_mask=");
+    out += LOCI_SHOW_x8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -41896,8 +41929,8 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_4_show,
     of_oxm_bsn_inner_vlan_vid_OF_VERSION_1_4_show,
     of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_show,
-    unknown_show,
-    unknown_show,
+    of_oxm_bsn_l2_cache_hit_OF_VERSION_1_4_show,
+    of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_4_show,
     unknown_show,
     unknown_show,
     of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_show,

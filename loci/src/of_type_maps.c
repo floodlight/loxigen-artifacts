@@ -3414,8 +3414,8 @@ of_object_fixed_len_v5[OF_OBJECT_COUNT] = {
     16,   /* 494: of_oxm_bsn_inner_eth_src_masked */
     6,    /* 495: of_oxm_bsn_inner_vlan_vid */
     8,    /* 496: of_oxm_bsn_inner_vlan_vid_masked */
-    -1,   /* 497: of_oxm_bsn_l2_cache_hit */
-    -1,   /* 498: of_oxm_bsn_l2_cache_hit_masked */
+    5,    /* 497: of_oxm_bsn_l2_cache_hit */
+    6,    /* 498: of_oxm_bsn_l2_cache_hit_masked */
     -1,   /* 499: of_oxm_bsn_l3_dst_class_id */
     -1,   /* 500: of_oxm_bsn_l3_dst_class_id_masked */
     8,    /* 501: of_oxm_bsn_l3_interface_class_id */

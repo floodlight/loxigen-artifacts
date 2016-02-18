@@ -8962,7 +8962,7 @@ typedef struct of_oxm_bsn_inner_vlan_vid_masked_s of_oxm_bsn_inner_vlan_vid_mask
  * Structure for of_oxm_bsn_l2_cache_hit object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_bsn_l2_cache_hit_uint8_get_f and _set_f.
  *
@@ -8973,11 +8973,11 @@ typedef struct of_oxm_bsn_l2_cache_hit_s of_oxm_bsn_l2_cache_hit_t;
  * Structure for of_oxm_bsn_l2_cache_hit_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_bsn_l2_cache_hit_masked_uint8_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint8.  Functions
  *   are of type of_oxm_bsn_l2_cache_hit_masked_uint8_get_f and _set_f.
  *

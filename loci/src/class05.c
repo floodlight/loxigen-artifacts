@@ -1706,6 +1706,12 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x32308:
             *id = OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED;
             break;
+        case 0x32401:
+            *id = OF_OXM_BSN_L2_CACHE_HIT;
+            break;
+        case 0x32502:
+            *id = OF_OXM_BSN_L2_CACHE_HIT_MASKED;
+            break;
         case 0x32640:
             *id = OF_OXM_BSN_IN_PORTS_512;
             break;
@@ -9429,6 +9435,7 @@ of_oxm_bsn_l2_cache_hit_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x32401); /* type_len */
         break;
     default:
@@ -9539,6 +9546,7 @@ of_oxm_bsn_l2_cache_hit_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9578,6 +9586,7 @@ of_oxm_bsn_l2_cache_hit_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9630,6 +9639,7 @@ of_oxm_bsn_l2_cache_hit_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x32502); /* type_len */
         break;
     default:
@@ -9740,6 +9750,7 @@ of_oxm_bsn_l2_cache_hit_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9779,6 +9790,7 @@ of_oxm_bsn_l2_cache_hit_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9820,6 +9832,7 @@ of_oxm_bsn_l2_cache_hit_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -9859,6 +9872,7 @@ of_oxm_bsn_l2_cache_hit_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
