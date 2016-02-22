@@ -31804,6 +31804,10 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_BSN_VFI_MASKED) {
+        return of_oxm_bsn_vfi_masked_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_INNER_VLAN_VID) {
         return of_oxm_bsn_inner_vlan_vid_OF_VERSION_1_3_dup(src);
     }
@@ -32210,6 +32214,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_UDP_DST_MASKED) {
         return of_oxm_udp_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VFI) {
+        return of_oxm_bsn_vfi_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_ARP_SPA) {
@@ -33726,6 +33734,59 @@ of_oxm_bsn_udf7_masked_OF_VERSION_1_3_dup(
 
     of_oxm_bsn_udf7_masked_value_mask_get(src, &val32);
     of_oxm_bsn_udf7_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_vfi
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_vfi.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_vfi_t *
+of_oxm_bsn_vfi_OF_VERSION_1_3_dup(
+    of_oxm_bsn_vfi_t *src)
+{
+    of_oxm_bsn_vfi_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_bsn_vfi_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_vfi_value_get(src, &val16);
+    of_oxm_bsn_vfi_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_vfi_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_vfi_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_vfi_masked_t *
+of_oxm_bsn_vfi_masked_OF_VERSION_1_3_dup(
+    of_oxm_bsn_vfi_masked_t *src)
+{
+    of_oxm_bsn_vfi_masked_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_bsn_vfi_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_vfi_masked_value_get(src, &val16);
+    of_oxm_bsn_vfi_masked_value_set(dst, val16);
+
+    of_oxm_bsn_vfi_masked_value_mask_get(src, &val16);
+    of_oxm_bsn_vfi_masked_value_mask_set(dst, val16);
 
     return dst;
 }
@@ -52485,6 +52546,10 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_egr_port_group_id_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_BSN_VFI_MASKED) {
+        return of_oxm_bsn_vfi_masked_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_INNER_VLAN_VID) {
         return of_oxm_bsn_inner_vlan_vid_OF_VERSION_1_4_dup(src);
     }
@@ -52883,6 +52948,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_UDP_DST_MASKED) {
         return of_oxm_udp_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_VFI) {
+        return of_oxm_bsn_vfi_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_ARP_SPA) {
@@ -54297,6 +54366,59 @@ of_oxm_bsn_udf7_masked_OF_VERSION_1_4_dup(
 
     of_oxm_bsn_udf7_masked_value_mask_get(src, &val32);
     of_oxm_bsn_udf7_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_vfi
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_vfi.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_vfi_t *
+of_oxm_bsn_vfi_OF_VERSION_1_4_dup(
+    of_oxm_bsn_vfi_t *src)
+{
+    of_oxm_bsn_vfi_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_bsn_vfi_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_vfi_value_get(src, &val16);
+    of_oxm_bsn_vfi_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_vfi_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_vfi_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_vfi_masked_t *
+of_oxm_bsn_vfi_masked_OF_VERSION_1_4_dup(
+    of_oxm_bsn_vfi_masked_t *src)
+{
+    of_oxm_bsn_vfi_masked_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_bsn_vfi_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_vfi_masked_value_get(src, &val16);
+    of_oxm_bsn_vfi_masked_value_set(dst, val16);
+
+    of_oxm_bsn_vfi_masked_value_mask_get(src, &val16);
+    of_oxm_bsn_vfi_masked_value_mask_set(dst, val16);
 
     return dst;
 }
@@ -69877,6 +69999,40 @@ of_oxm_bsn_udf7_masked_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_oxm_bsn_udf7_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_bsn_vfi_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_bsn_vfi_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_bsn_vfi_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_bsn_vfi_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_bsn_vfi_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_bsn_vfi_masked_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

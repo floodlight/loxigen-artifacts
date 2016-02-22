@@ -115,6 +115,10 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_TUNNEL_ID_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_BSN_IN_PORTS_512_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -139,7 +143,7 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
-    if (OF_MATCH_MASK_TUNNEL_ID_ACTIVE_TEST(match)) {
+    if (OF_MATCH_MASK_BSN_VFI_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -452,6 +456,10 @@ of_match_v2_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_TUNNEL_ID_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_BSN_IN_PORTS_512_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -476,7 +484,7 @@ of_match_v2_compat_check(of_match_t *match)
         return 0;
     }
 
-    if (OF_MATCH_MASK_TUNNEL_ID_ACTIVE_TEST(match)) {
+    if (OF_MATCH_MASK_BSN_VFI_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -1875,6 +1883,22 @@ populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
             of_oxm_bsn_inner_vlan_vid_value_set(&elt, src->fields.bsn_inner_vlan_vid);
         }
     }
+    if (OF_MATCH_MASK_BSN_VFI_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_BSN_VFI_EXACT_TEST(src)) {
+            of_oxm_bsn_vfi_masked_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_vfi_masked_value_set(&elt,
+                   src->fields.bsn_vfi);
+            of_oxm_bsn_vfi_masked_value_mask_set(&elt,
+                   src->masks.bsn_vfi);
+        } else {  /* Active, but not masked */
+            of_oxm_bsn_vfi_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_vfi_value_set(&elt, src->fields.bsn_vfi);
+        }
+    }
 
     return OF_ERROR_NONE;
 }
@@ -2334,6 +2358,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
                 &dst->fields.icmpv6_code);
             break;
 
+        case OF_OXM_TUNNEL_ID_MASKED:
+            of_oxm_tunnel_id_masked_value_mask_get(
+                &oxm_entry,
+                &dst->masks.tunnel_id);
+            of_oxm_tunnel_id_masked_value_get(
+                &oxm_entry,
+                &dst->fields.tunnel_id);
+            of_memmask(&dst->fields.tunnel_id, &dst->masks.tunnel_id, sizeof(dst->fields.tunnel_id));
+            break;
+        case OF_OXM_TUNNEL_ID:
+            OF_MATCH_MASK_TUNNEL_ID_EXACT_SET(dst);
+            of_oxm_tunnel_id_value_get(
+                &oxm_entry,
+                &dst->fields.tunnel_id);
+            break;
+
         case OF_OXM_BSN_IN_PORTS_512_MASKED:
             of_oxm_bsn_in_ports_512_masked_value_mask_get(
                 &oxm_entry,
@@ -2462,20 +2502,20 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
                 &dst->fields.ipv6_nd_tll);
             break;
 
-        case OF_OXM_TUNNEL_ID_MASKED:
-            of_oxm_tunnel_id_masked_value_mask_get(
+        case OF_OXM_BSN_VFI_MASKED:
+            of_oxm_bsn_vfi_masked_value_mask_get(
                 &oxm_entry,
-                &dst->masks.tunnel_id);
-            of_oxm_tunnel_id_masked_value_get(
+                &dst->masks.bsn_vfi);
+            of_oxm_bsn_vfi_masked_value_get(
                 &oxm_entry,
-                &dst->fields.tunnel_id);
-            of_memmask(&dst->fields.tunnel_id, &dst->masks.tunnel_id, sizeof(dst->fields.tunnel_id));
+                &dst->fields.bsn_vfi);
+            of_memmask(&dst->fields.bsn_vfi, &dst->masks.bsn_vfi, sizeof(dst->fields.bsn_vfi));
             break;
-        case OF_OXM_TUNNEL_ID:
-            OF_MATCH_MASK_TUNNEL_ID_EXACT_SET(dst);
-            of_oxm_tunnel_id_value_get(
+        case OF_OXM_BSN_VFI:
+            OF_MATCH_MASK_BSN_VFI_EXACT_SET(dst);
+            of_oxm_bsn_vfi_value_get(
                 &oxm_entry,
-                &dst->fields.tunnel_id);
+                &dst->fields.bsn_vfi);
             break;
 
         case OF_OXM_SCTP_SRC_MASKED:

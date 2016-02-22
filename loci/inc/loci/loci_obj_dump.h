@@ -937,6 +937,8 @@ int of_oxm_bsn_udf6_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_o
 int of_oxm_bsn_udf6_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_udf7_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_udf7_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_vfi_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_vfi_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_vrf_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1491,6 +1493,8 @@ int of_oxm_bsn_udf6_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_o
 int of_oxm_bsn_udf6_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_udf7_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_udf7_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_vfi_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_vfi_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_vrf_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);

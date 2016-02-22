@@ -985,6 +985,8 @@ static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf6_OF_VERSION_1_3(
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf6_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf7_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_vfi_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_vfi_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1576,6 +1578,8 @@ static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf6_OF_VERSION_1_4(
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf6_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf7_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_vfi_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_vfi_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -16755,6 +16759,10 @@ loci_validate_of_oxm_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_bsn_udf7_OF_VERSION_1_3(data, len, out_len);
     case 0x31f08:
         return loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x33202:
+        return loci_validate_of_oxm_bsn_vfi_OF_VERSION_1_3(data, len, out_len);
+    case 0x33304:
+        return loci_validate_of_oxm_bsn_vfi_masked_OF_VERSION_1_3(data, len, out_len);
     case 0x32204:
         return loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3(data, len, out_len);
     case 0x32308:
@@ -26339,6 +26347,38 @@ loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_3(uint8_t *data, int len, int 
 }
 
 static int
+loci_validate_of_oxm_bsn_vfi_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_vfi_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 8) {
@@ -31002,6 +31042,10 @@ loci_validate_of_oxm_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_bsn_udf7_OF_VERSION_1_4(data, len, out_len);
     case 0x31f08:
         return loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x33202:
+        return loci_validate_of_oxm_bsn_vfi_OF_VERSION_1_4(data, len, out_len);
+    case 0x33304:
+        return loci_validate_of_oxm_bsn_vfi_masked_OF_VERSION_1_4(data, len, out_len);
     case 0x32204:
         return loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_4(data, len, out_len);
     case 0x32308:
@@ -41125,6 +41169,38 @@ loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_4(uint8_t *data, int len, int 
     }
 
     len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_vfi_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_vfi_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
 
 
 

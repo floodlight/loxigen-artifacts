@@ -1,1 +1,1 @@
-351e6a7d45c934a57b537f69bb7d91c59b86e8a7 Merge into master from pull request #462: Add a new Virtual Forwarding Instance (VFI) type to the openflow library (https://github.com/floodlight/loxigen/pull/462)
+d9b4242a3e84a24fc2d496e05bbcc58d17211953 Merge into master from pull request #465: define new bsn_vfi match oxm (https://github.com/floodlight/loxigen/pull/465)

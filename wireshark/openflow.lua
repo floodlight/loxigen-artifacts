@@ -7930,6 +7930,11 @@ fields['of13.oxm_bsn_udf7.value'] = ProtoField.uint32("of13.oxm_bsn_udf7.value",
 fields['of13.oxm_bsn_udf7_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf7_masked.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_bsn_udf7_masked.value'] = ProtoField.uint32("of13.oxm_bsn_udf7_masked.value", "value", base.DEC, nil)
 fields['of13.oxm_bsn_udf7_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_udf7_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_bsn_vfi.type_len'] = ProtoField.uint32("of13.oxm_bsn_vfi.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_vfi.value'] = ProtoField.uint16("of13.oxm_bsn_vfi.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_vfi_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_vfi_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_vfi_masked.value'] = ProtoField.uint16("of13.oxm_bsn_vfi_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_vfi_masked.value_mask'] = ProtoField.uint16("of13.oxm_bsn_vfi_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of13.oxm_bsn_vlan_xlate_port_group_id.type_len'] = ProtoField.uint32("of13.oxm_bsn_vlan_xlate_port_group_id.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_bsn_vlan_xlate_port_group_id.value'] = ProtoField.uint32("of13.oxm_bsn_vlan_xlate_port_group_id.value", "value", base.DEC, nil)
 fields['of13.oxm_bsn_vlan_xlate_port_group_id_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_vlan_xlate_port_group_id_masked.type_len", "type_len", base.DEC, nil)
@@ -10645,6 +10650,11 @@ fields['of14.oxm_bsn_udf7.value'] = ProtoField.uint32("of14.oxm_bsn_udf7.value",
 fields['of14.oxm_bsn_udf7_masked.type_len'] = ProtoField.uint32("of14.oxm_bsn_udf7_masked.type_len", "type_len", base.DEC, nil)
 fields['of14.oxm_bsn_udf7_masked.value'] = ProtoField.uint32("of14.oxm_bsn_udf7_masked.value", "value", base.DEC, nil)
 fields['of14.oxm_bsn_udf7_masked.value_mask'] = ProtoField.uint32("of14.oxm_bsn_udf7_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of14.oxm_bsn_vfi.type_len'] = ProtoField.uint32("of14.oxm_bsn_vfi.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_bsn_vfi.value'] = ProtoField.uint16("of14.oxm_bsn_vfi.value", "value", base.DEC, nil)
+fields['of14.oxm_bsn_vfi_masked.type_len'] = ProtoField.uint32("of14.oxm_bsn_vfi_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_bsn_vfi_masked.value'] = ProtoField.uint16("of14.oxm_bsn_vfi_masked.value", "value", base.DEC, nil)
+fields['of14.oxm_bsn_vfi_masked.value_mask'] = ProtoField.uint16("of14.oxm_bsn_vfi_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of14.oxm_bsn_vlan_xlate_port_group_id.type_len'] = ProtoField.uint32("of14.oxm_bsn_vlan_xlate_port_group_id.type_len", "type_len", base.DEC, nil)
 fields['of14.oxm_bsn_vlan_xlate_port_group_id.value'] = ProtoField.uint32("of14.oxm_bsn_vlan_xlate_port_group_id.value", "value", base.DEC, nil)
 fields['of14.oxm_bsn_vlan_xlate_port_group_id_masked.type_len'] = ProtoField.uint32("of14.oxm_bsn_vlan_xlate_port_group_id_masked.type_len", "type_len", base.DEC, nil)
@@ -16498,6 +16508,11 @@ p_of.fields = {
     fields['of13.oxm_bsn_udf7_masked.type_len'],
     fields['of13.oxm_bsn_udf7_masked.value'],
     fields['of13.oxm_bsn_udf7_masked.value_mask'],
+    fields['of13.oxm_bsn_vfi.type_len'],
+    fields['of13.oxm_bsn_vfi.value'],
+    fields['of13.oxm_bsn_vfi_masked.type_len'],
+    fields['of13.oxm_bsn_vfi_masked.value'],
+    fields['of13.oxm_bsn_vfi_masked.value_mask'],
     fields['of13.oxm_bsn_vlan_xlate_port_group_id.type_len'],
     fields['of13.oxm_bsn_vlan_xlate_port_group_id.value'],
     fields['of13.oxm_bsn_vlan_xlate_port_group_id_masked.type_len'],
@@ -19213,6 +19228,11 @@ p_of.fields = {
     fields['of14.oxm_bsn_udf7_masked.type_len'],
     fields['of14.oxm_bsn_udf7_masked.value'],
     fields['of14.oxm_bsn_udf7_masked.value_mask'],
+    fields['of14.oxm_bsn_vfi.type_len'],
+    fields['of14.oxm_bsn_vfi.value'],
+    fields['of14.oxm_bsn_vfi_masked.type_len'],
+    fields['of14.oxm_bsn_vfi_masked.value'],
+    fields['of14.oxm_bsn_vfi_masked.value_mask'],
     fields['of14.oxm_bsn_vlan_xlate_port_group_id.type_len'],
     fields['of14.oxm_bsn_vlan_xlate_port_group_id.value'],
     fields['of14.oxm_bsn_vlan_xlate_port_group_id_masked.type_len'],
@@ -32283,6 +32303,25 @@ function dissect_of_oxm_bsn_udf7_masked_v4(reader, subtree)
 end
 of_oxm_v4_dissectors[204552] = dissect_of_oxm_bsn_udf7_masked_v4
 
+-- child class of_oxm_bsn_vfi
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vfi_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_vfi.type_len')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_bsn_vfi.value')
+    return 'of_oxm_bsn_vfi'
+end
+of_oxm_v4_dissectors[209410] = dissect_of_oxm_bsn_vfi_v4
+
+-- child class of_oxm_bsn_vfi_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vfi_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_vfi_masked.type_len')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_bsn_vfi_masked.value')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_bsn_vfi_masked.value_mask')
+    return 'of_oxm_bsn_vfi_masked'
+end
+of_oxm_v4_dissectors[209668] = dissect_of_oxm_bsn_vfi_masked_v4
+
 -- child class of_oxm_bsn_vlan_xlate_port_group_id
 -- Child of of_oxm
 function dissect_of_oxm_bsn_vlan_xlate_port_group_id_v4(reader, subtree)
@@ -39378,6 +39417,25 @@ function dissect_of_oxm_bsn_udf7_masked_v5(reader, subtree)
     return 'of_oxm_bsn_udf7_masked'
 end
 of_oxm_v5_dissectors[204552] = dissect_of_oxm_bsn_udf7_masked_v5
+
+-- child class of_oxm_bsn_vfi
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vfi_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_bsn_vfi.type_len')
+    read_uint16_t(reader, 5, subtree, 'of14.oxm_bsn_vfi.value')
+    return 'of_oxm_bsn_vfi'
+end
+of_oxm_v5_dissectors[209410] = dissect_of_oxm_bsn_vfi_v5
+
+-- child class of_oxm_bsn_vfi_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vfi_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_bsn_vfi_masked.type_len')
+    read_uint16_t(reader, 5, subtree, 'of14.oxm_bsn_vfi_masked.value')
+    read_uint16_t(reader, 5, subtree, 'of14.oxm_bsn_vfi_masked.value_mask')
+    return 'of_oxm_bsn_vfi_masked'
+end
+of_oxm_v5_dissectors[209668] = dissect_of_oxm_bsn_vfi_masked_v5
 
 -- child class of_oxm_bsn_vlan_xlate_port_group_id
 -- Child of of_oxm

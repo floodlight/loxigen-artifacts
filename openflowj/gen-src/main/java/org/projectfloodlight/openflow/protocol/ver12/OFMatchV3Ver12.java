@@ -135,6 +135,7 @@ class OFMatchV3Ver12 implements OFMatchV3 {
             case BSN_UDF5:
             case BSN_UDF6:
             case BSN_UDF7:
+            case BSN_VFI:
             case BSN_VLAN_XLATE_PORT_GROUP_ID:
             case BSN_VRF:
             case BSN_VXLAN_NETWORK_ID:

@@ -3423,6 +3423,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_oxm_wire_object_id_get,
         .wire_type_set=of_oxm_bsn_inner_vlan_vid_masked_push_wire_types,
     },
+    [OF_OXM_BSN_VFI] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_vfi_push_wire_types,
+    },
+    [OF_OXM_BSN_VFI_MASKED] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_vfi_masked_push_wire_types,
+    },
     [OF_OXM_BSN_VXLAN_NETWORK_ID] = {
         .wire_length_get=of_oxm_wire_length_get,
         .wire_length_set=NULL,

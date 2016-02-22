@@ -275,6 +275,10 @@ public interface OFOxms {
     OFOxmBsnInnerVlanVid bsnInnerVlanVid(OFVlanVidMatch value);
     OFOxmBsnInnerVlanVidMasked.Builder buildBsnInnerVlanVidMasked() throws UnsupportedOperationException;
     OFOxmBsnInnerVlanVidMasked bsnInnerVlanVidMasked(OFVlanVidMatch value, OFVlanVidMatch mask);
+    OFOxmBsnVfi.Builder buildBsnVfi() throws UnsupportedOperationException;
+    OFOxmBsnVfi bsnVfi(VFI value);
+    OFOxmBsnVfiMasked.Builder buildBsnVfiMasked() throws UnsupportedOperationException;
+    OFOxmBsnVfiMasked bsnVfiMasked(VFI value, VFI mask);
     OFOxmBsnVxlanNetworkId.Builder buildBsnVxlanNetworkId() throws UnsupportedOperationException;
     OFOxmBsnVxlanNetworkId bsnVxlanNetworkId(VxlanNI value);
     OFOxmBsnVxlanNetworkIdMasked.Builder buildBsnVxlanNetworkIdMasked() throws UnsupportedOperationException;

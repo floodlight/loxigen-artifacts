@@ -8465,6 +8465,24 @@ extern int of_oxm_bsn_udf7_masked_OF_VERSION_1_3_populate_scalars(
 extern int of_oxm_bsn_udf7_masked_OF_VERSION_1_3_check_scalars(
     of_oxm_bsn_udf7_masked_t *obj, int value);
 
+extern int of_oxm_bsn_vfi_OF_VERSION_1_3_populate(
+    of_oxm_bsn_vfi_t *obj, int value);
+extern int of_oxm_bsn_vfi_OF_VERSION_1_3_check(
+    of_oxm_bsn_vfi_t *obj, int value);
+extern int of_oxm_bsn_vfi_OF_VERSION_1_3_populate_scalars(
+    of_oxm_bsn_vfi_t *obj, int value);
+extern int of_oxm_bsn_vfi_OF_VERSION_1_3_check_scalars(
+    of_oxm_bsn_vfi_t *obj, int value);
+
+extern int of_oxm_bsn_vfi_masked_OF_VERSION_1_3_populate(
+    of_oxm_bsn_vfi_masked_t *obj, int value);
+extern int of_oxm_bsn_vfi_masked_OF_VERSION_1_3_check(
+    of_oxm_bsn_vfi_masked_t *obj, int value);
+extern int of_oxm_bsn_vfi_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_bsn_vfi_masked_t *obj, int value);
+extern int of_oxm_bsn_vfi_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_bsn_vfi_masked_t *obj, int value);
+
 extern int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_populate(
     of_oxm_bsn_vlan_xlate_port_group_id_t *obj, int value);
 extern int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_check(
@@ -13855,6 +13873,24 @@ extern int of_oxm_bsn_udf7_masked_OF_VERSION_1_4_populate_scalars(
     of_oxm_bsn_udf7_masked_t *obj, int value);
 extern int of_oxm_bsn_udf7_masked_OF_VERSION_1_4_check_scalars(
     of_oxm_bsn_udf7_masked_t *obj, int value);
+
+extern int of_oxm_bsn_vfi_OF_VERSION_1_4_populate(
+    of_oxm_bsn_vfi_t *obj, int value);
+extern int of_oxm_bsn_vfi_OF_VERSION_1_4_check(
+    of_oxm_bsn_vfi_t *obj, int value);
+extern int of_oxm_bsn_vfi_OF_VERSION_1_4_populate_scalars(
+    of_oxm_bsn_vfi_t *obj, int value);
+extern int of_oxm_bsn_vfi_OF_VERSION_1_4_check_scalars(
+    of_oxm_bsn_vfi_t *obj, int value);
+
+extern int of_oxm_bsn_vfi_masked_OF_VERSION_1_4_populate(
+    of_oxm_bsn_vfi_masked_t *obj, int value);
+extern int of_oxm_bsn_vfi_masked_OF_VERSION_1_4_check(
+    of_oxm_bsn_vfi_masked_t *obj, int value);
+extern int of_oxm_bsn_vfi_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_bsn_vfi_masked_t *obj, int value);
+extern int of_oxm_bsn_vfi_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_bsn_vfi_masked_t *obj, int value);
 
 extern int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_4_populate(
     of_oxm_bsn_vlan_xlate_port_group_id_t *obj, int value);

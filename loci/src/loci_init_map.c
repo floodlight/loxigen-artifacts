@@ -539,6 +539,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_oxm_bsn_udf6_masked_init,
     (of_object_init_f)of_oxm_bsn_udf7_init,
     (of_object_init_f)of_oxm_bsn_udf7_masked_init,
+    (of_object_init_f)of_oxm_bsn_vfi_init,
+    (of_object_init_f)of_oxm_bsn_vfi_masked_init,
     (of_object_init_f)of_oxm_bsn_vlan_xlate_port_group_id_init,
     (of_object_init_f)of_oxm_bsn_vlan_xlate_port_group_id_masked_init,
     (of_object_init_f)of_oxm_bsn_vrf_init,

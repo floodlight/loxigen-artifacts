@@ -1209,6 +1209,25 @@ public class OFOxmsVer13 implements OFOxms {
                     );
     }
 
+    public OFOxmBsnVfi.Builder buildBsnVfi() {
+        return new OFOxmBsnVfiVer13.Builder();
+    }
+    public OFOxmBsnVfi bsnVfi(VFI value) {
+        return new OFOxmBsnVfiVer13(
+                value
+                    );
+    }
+
+    public OFOxmBsnVfiMasked.Builder buildBsnVfiMasked() {
+        return new OFOxmBsnVfiMaskedVer13.Builder();
+    }
+    public OFOxmBsnVfiMasked bsnVfiMasked(VFI value, VFI mask) {
+        return new OFOxmBsnVfiMaskedVer13(
+                value,
+                      mask
+                    );
+    }
+
     public OFOxmBsnVxlanNetworkId.Builder buildBsnVxlanNetworkId() {
         return new OFOxmBsnVxlanNetworkIdVer13.Builder();
     }
@@ -1430,6 +1449,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInnerEthSrc((MacAddress)((Object)value)));
             case BSN_INNER_VLAN_VID:
                 return (OFOxm<F>)((Object)bsnInnerVlanVid((OFVlanVidMatch)((Object)value)));
+            case BSN_VFI:
+                return (OFOxm<F>)((Object)bsnVfi((VFI)((Object)value)));
             case BSN_VXLAN_NETWORK_ID:
                 return (OFOxm<F>)((Object)bsnVxlanNetworkId((VxlanNI)((Object)value)));
             case IPV6_EXTHDR:
@@ -1572,6 +1593,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
             case BSN_INNER_VLAN_VID:
                 return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
+            case BSN_VFI:
+                return (OFOxm<F>)((Object)bsnVfiMasked((VFI)((Object)value), (VFI)((Object)mask)));
             case BSN_VXLAN_NETWORK_ID:
                 return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((VxlanNI)((Object)value), (VxlanNI)((Object)mask)));
             case IPV6_EXTHDR:
@@ -1714,6 +1737,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
             case BSN_INNER_VLAN_VID:
                 return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
+            case BSN_VFI:
+                return (OFOxm<F>)((Object)bsnVfiMasked((VFI)((Object)(masked.getValue())), (VFI)((Object)(masked.getMask()))));
             case BSN_VXLAN_NETWORK_ID:
                 return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((VxlanNI)((Object)(masked.getValue())), (VxlanNI)((Object)(masked.getMask()))));
             case IPV6_EXTHDR:

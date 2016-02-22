@@ -536,6 +536,8 @@ const char *const of_object_id_str[] = {
     "of_oxm_bsn_udf6_masked",
     "of_oxm_bsn_udf7",
     "of_oxm_bsn_udf7_masked",
+    "of_oxm_bsn_vfi",
+    "of_oxm_bsn_vfi_masked",
     "of_oxm_bsn_vlan_xlate_port_group_id",
     "of_oxm_bsn_vlan_xlate_port_group_id_masked",
     "of_oxm_bsn_vrf",

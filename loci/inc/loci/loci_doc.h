@@ -9376,6 +9376,32 @@ typedef struct of_oxm_bsn_udf7_s of_oxm_bsn_udf7_t;
 typedef struct of_oxm_bsn_udf7_masked_s of_oxm_bsn_udf7_masked_t;
 
 /**
+ * Structure for of_oxm_bsn_vfi object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_oxm_bsn_vfi_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_vfi_s of_oxm_bsn_vfi_t;
+
+/**
+ * Structure for of_oxm_bsn_vfi_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_oxm_bsn_vfi_masked_uint16_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value_mask, a variable of type uint16.  Functions
+ *   are of type of_oxm_bsn_vfi_masked_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_vfi_masked_s of_oxm_bsn_vfi_masked_t;
+
+/**
  * Structure for of_oxm_bsn_vlan_xlate_port_group_id object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

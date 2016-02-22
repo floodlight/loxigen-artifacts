@@ -1141,6 +1141,10 @@ void of_oxm_bsn_inner_vlan_vid_wire_object_id_get(of_object_t *obj, of_object_id
 void of_oxm_bsn_inner_vlan_vid_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_inner_vlan_vid_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_inner_vlan_vid_masked_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_vfi_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_vfi_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_vfi_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_vfi_masked_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_vxlan_network_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_vxlan_network_id_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_vxlan_network_id_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1869,6 +1873,8 @@ typedef of_object_t of_oxm_bsn_udf6_t;
 typedef of_object_t of_oxm_bsn_udf6_masked_t;
 typedef of_object_t of_oxm_bsn_udf7_t;
 typedef of_object_t of_oxm_bsn_udf7_masked_t;
+typedef of_object_t of_oxm_bsn_vfi_t;
+typedef of_object_t of_oxm_bsn_vfi_masked_t;
 typedef of_object_t of_oxm_bsn_vlan_xlate_port_group_id_t;
 typedef of_object_t of_oxm_bsn_vlan_xlate_port_group_id_masked_t;
 typedef of_object_t of_oxm_bsn_vrf_t;
@@ -4722,6 +4728,16 @@ extern void of_oxm_bsn_udf7_init(
 extern of_object_t *
     of_oxm_bsn_udf7_masked_new(of_version_t version);
 extern void of_oxm_bsn_udf7_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_bsn_vfi_new(of_version_t version);
+extern void of_oxm_bsn_vfi_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_bsn_vfi_masked_new(of_version_t version);
+extern void of_oxm_bsn_vfi_masked_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11505,6 +11521,28 @@ of_oxm_bsn_udf7_delete(of_object_t *obj) {
  */
 static inline void
 of_oxm_bsn_udf7_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_vfi_t
+ * @param obj An instance of type of_oxm_bsn_vfi_t
+ *
+ * \ingroup of_oxm_bsn_vfi
+ */
+static inline void
+of_oxm_bsn_vfi_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_vfi_masked_t
+ * @param obj An instance of type of_oxm_bsn_vfi_masked_t
+ *
+ * \ingroup of_oxm_bsn_vfi_masked
+ */
+static inline void
+of_oxm_bsn_vfi_masked_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24190,6 +24228,31 @@ extern void of_oxm_bsn_udf7_masked_value_mask_set(
 extern void of_oxm_bsn_udf7_masked_value_mask_get(
     of_oxm_bsn_udf7_masked_t *obj,
     uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_vfi */
+
+extern void of_oxm_bsn_vfi_value_set(
+    of_oxm_bsn_vfi_t *obj,
+    uint16_t value);
+extern void of_oxm_bsn_vfi_value_get(
+    of_oxm_bsn_vfi_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_vfi_masked */
+
+extern void of_oxm_bsn_vfi_masked_value_set(
+    of_oxm_bsn_vfi_masked_t *obj,
+    uint16_t value);
+extern void of_oxm_bsn_vfi_masked_value_get(
+    of_oxm_bsn_vfi_masked_t *obj,
+    uint16_t *value);
+
+extern void of_oxm_bsn_vfi_masked_value_mask_set(
+    of_oxm_bsn_vfi_masked_t *obj,
+    uint16_t value_mask);
+extern void of_oxm_bsn_vfi_masked_value_mask_get(
+    of_oxm_bsn_vfi_masked_t *obj,
+    uint16_t *value_mask);
 
 /* Unified accessor functions for of_oxm_bsn_vlan_xlate_port_group_id */
 
