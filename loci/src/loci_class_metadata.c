@@ -2541,6 +2541,30 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_generation_id_push_wire_types,
     },
+    [OF_BSN_TLV_HASH_PACKET_FIELD] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_hash_packet_field_push_wire_types,
+    },
+    [OF_BSN_TLV_HASH_PACKET_TYPE] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_hash_packet_type_push_wire_types,
+    },
+    [OF_BSN_TLV_HASH_SEED] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_hash_seed_push_wire_types,
+    },
+    [OF_BSN_TLV_HASH_TYPE] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_hash_type_push_wire_types,
+    },
     [OF_BSN_TLV_HEADER_SIZE] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,

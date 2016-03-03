@@ -6764,6 +6764,42 @@ extern int of_bsn_tlv_generation_id_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_generation_id_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_generation_id_t *obj, int value);
 
+extern int of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_populate(
+    of_bsn_tlv_hash_packet_field_t *obj, int value);
+extern int of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_check(
+    of_bsn_tlv_hash_packet_field_t *obj, int value);
+extern int of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_hash_packet_field_t *obj, int value);
+extern int of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_hash_packet_field_t *obj, int value);
+
+extern int of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_populate(
+    of_bsn_tlv_hash_packet_type_t *obj, int value);
+extern int of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_check(
+    of_bsn_tlv_hash_packet_type_t *obj, int value);
+extern int of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_hash_packet_type_t *obj, int value);
+extern int of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_hash_packet_type_t *obj, int value);
+
+extern int of_bsn_tlv_hash_seed_OF_VERSION_1_3_populate(
+    of_bsn_tlv_hash_seed_t *obj, int value);
+extern int of_bsn_tlv_hash_seed_OF_VERSION_1_3_check(
+    of_bsn_tlv_hash_seed_t *obj, int value);
+extern int of_bsn_tlv_hash_seed_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_hash_seed_t *obj, int value);
+extern int of_bsn_tlv_hash_seed_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_hash_seed_t *obj, int value);
+
+extern int of_bsn_tlv_hash_type_OF_VERSION_1_3_populate(
+    of_bsn_tlv_hash_type_t *obj, int value);
+extern int of_bsn_tlv_hash_type_OF_VERSION_1_3_check(
+    of_bsn_tlv_hash_type_t *obj, int value);
+extern int of_bsn_tlv_hash_type_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_hash_type_t *obj, int value);
+extern int of_bsn_tlv_hash_type_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_hash_type_t *obj, int value);
+
 extern int of_bsn_tlv_header_size_OF_VERSION_1_3_populate(
     of_bsn_tlv_header_size_t *obj, int value);
 extern int of_bsn_tlv_header_size_OF_VERSION_1_3_check(
@@ -12226,6 +12262,42 @@ extern int of_bsn_tlv_generation_id_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_generation_id_t *obj, int value);
 extern int of_bsn_tlv_generation_id_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_generation_id_t *obj, int value);
+
+extern int of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_populate(
+    of_bsn_tlv_hash_packet_field_t *obj, int value);
+extern int of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_check(
+    of_bsn_tlv_hash_packet_field_t *obj, int value);
+extern int of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_hash_packet_field_t *obj, int value);
+extern int of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_hash_packet_field_t *obj, int value);
+
+extern int of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_populate(
+    of_bsn_tlv_hash_packet_type_t *obj, int value);
+extern int of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_check(
+    of_bsn_tlv_hash_packet_type_t *obj, int value);
+extern int of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_hash_packet_type_t *obj, int value);
+extern int of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_hash_packet_type_t *obj, int value);
+
+extern int of_bsn_tlv_hash_seed_OF_VERSION_1_4_populate(
+    of_bsn_tlv_hash_seed_t *obj, int value);
+extern int of_bsn_tlv_hash_seed_OF_VERSION_1_4_check(
+    of_bsn_tlv_hash_seed_t *obj, int value);
+extern int of_bsn_tlv_hash_seed_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_hash_seed_t *obj, int value);
+extern int of_bsn_tlv_hash_seed_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_hash_seed_t *obj, int value);
+
+extern int of_bsn_tlv_hash_type_OF_VERSION_1_4_populate(
+    of_bsn_tlv_hash_type_t *obj, int value);
+extern int of_bsn_tlv_hash_type_OF_VERSION_1_4_check(
+    of_bsn_tlv_hash_type_t *obj, int value);
+extern int of_bsn_tlv_hash_type_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_hash_type_t *obj, int value);
+extern int of_bsn_tlv_hash_type_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_hash_type_t *obj, int value);
 
 extern int of_bsn_tlv_header_size_OF_VERSION_1_4_populate(
     of_bsn_tlv_header_size_t *obj, int value);

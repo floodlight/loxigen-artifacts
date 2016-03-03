@@ -6533,6 +6533,18 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x63:
             *id = OF_BSN_TLV_VFI;
             break;
+        case 0x64:
+            *id = OF_BSN_TLV_HASH_SEED;
+            break;
+        case 0x65:
+            *id = OF_BSN_TLV_HASH_TYPE;
+            break;
+        case 0x66:
+            *id = OF_BSN_TLV_HASH_PACKET_TYPE;
+            break;
+        case 0x67:
+            *id = OF_BSN_TLV_HASH_PACKET_FIELD;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -6835,6 +6847,18 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x63:
             *id = OF_BSN_TLV_VFI;
+            break;
+        case 0x64:
+            *id = OF_BSN_TLV_HASH_SEED;
+            break;
+        case 0x65:
+            *id = OF_BSN_TLV_HASH_TYPE;
+            break;
+        case 0x66:
+            *id = OF_BSN_TLV_HASH_PACKET_TYPE;
+            break;
+        case 0x67:
+            *id = OF_BSN_TLV_HASH_PACKET_FIELD;
             break;
         default:
             *id = OF_BSN_TLV;

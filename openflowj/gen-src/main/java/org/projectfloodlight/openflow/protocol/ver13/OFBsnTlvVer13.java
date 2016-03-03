@@ -112,6 +112,18 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x50:
                    // discriminator value 0x50=0x50 for class OFBsnTlvGenerationIdVer13
                    return OFBsnTlvGenerationIdVer13.READER.readFrom(bb);
+               case (short) 0x67:
+                   // discriminator value 0x67=0x67 for class OFBsnTlvHashPacketFieldVer13
+                   return OFBsnTlvHashPacketFieldVer13.READER.readFrom(bb);
+               case (short) 0x66:
+                   // discriminator value 0x66=0x66 for class OFBsnTlvHashPacketTypeVer13
+                   return OFBsnTlvHashPacketTypeVer13.READER.readFrom(bb);
+               case (short) 0x64:
+                   // discriminator value 0x64=0x64 for class OFBsnTlvHashSeedVer13
+                   return OFBsnTlvHashSeedVer13.READER.readFrom(bb);
+               case (short) 0x65:
+                   // discriminator value 0x65=0x65 for class OFBsnTlvHashTypeVer13
+                   return OFBsnTlvHashTypeVer13.READER.readFrom(bb);
                case (short) 0x1f:
                    // discriminator value 0x1f=0x1f for class OFBsnTlvHeaderSizeVer13
                    return OFBsnTlvHeaderSizeVer13.READER.readFrom(bb);

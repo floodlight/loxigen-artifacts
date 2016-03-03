@@ -1142,6 +1142,204 @@ class generation_id(bsn_tlv):
 
 bsn_tlv.subtypes[80] = generation_id
 
+class hash_packet_field(bsn_tlv):
+    type = 103
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!Q", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = hash_packet_field()
+        _type = reader.read("!H")[0]
+        assert(_type == 103)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!Q")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("hash_packet_field {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[103] = hash_packet_field
+
+class hash_packet_type(bsn_tlv):
+    type = 102
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = hash_packet_type()
+        _type = reader.read("!H")[0]
+        assert(_type == 102)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("hash_packet_type {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[102] = hash_packet_type
+
+class hash_seed(bsn_tlv):
+    type = 100
+
+    def __init__(self, seed1=None, seed2=None):
+        if seed1 != None:
+            self.seed1 = seed1
+        else:
+            self.seed1 = 0
+        if seed2 != None:
+            self.seed2 = seed2
+        else:
+            self.seed2 = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.seed1))
+        packed.append(struct.pack("!L", self.seed2))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = hash_seed()
+        _type = reader.read("!H")[0]
+        assert(_type == 100)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.seed1 = reader.read("!L")[0]
+        obj.seed2 = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.seed1 != other.seed1: return False
+        if self.seed2 != other.seed2: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("hash_seed {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("seed1 = ");
+                q.text("%#x" % self.seed1)
+                q.text(","); q.breakable()
+                q.text("seed2 = ");
+                q.text("%#x" % self.seed2)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[100] = hash_seed
+
+class hash_type(bsn_tlv):
+    type = 101
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = hash_type()
+        _type = reader.read("!H")[0]
+        assert(_type == 101)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("hash_type {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[101] = hash_type
+
 class header_size(bsn_tlv):
     type = 31
 

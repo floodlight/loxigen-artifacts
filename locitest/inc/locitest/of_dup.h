@@ -1311,6 +1311,22 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_hash_packet_field_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_hash_packet_type_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_hash_seed_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_hash_type_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_header_size_dup(
         of_object_t *src);
 
@@ -5967,6 +5983,22 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_hash_seed_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_hash_type_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_header_size_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8444,6 +8476,22 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_hash_seed_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_hash_type_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

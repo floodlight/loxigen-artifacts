@@ -240,6 +240,43 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvHashPacketField.Builder buildHashPacketField() {
+        return new OFBsnTlvHashPacketFieldVer14.Builder();
+    }
+    public OFBsnTlvHashPacketField hashPacketField(Set<OFBsnHashPacketField> value) {
+        return new OFBsnTlvHashPacketFieldVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvHashPacketType.Builder buildHashPacketType() {
+        return new OFBsnTlvHashPacketTypeVer14.Builder();
+    }
+    public OFBsnTlvHashPacketType hashPacketType(OFBsnHashPacketType value) {
+        return new OFBsnTlvHashPacketTypeVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvHashSeed.Builder buildHashSeed() {
+        return new OFBsnTlvHashSeedVer14.Builder();
+    }
+    public OFBsnTlvHashSeed hashSeed(long seed1, long seed2) {
+        return new OFBsnTlvHashSeedVer14(
+                seed1,
+                      seed2
+                    );
+    }
+
+    public OFBsnTlvHashType.Builder buildHashType() {
+        return new OFBsnTlvHashTypeVer14.Builder();
+    }
+    public OFBsnTlvHashType hashType(OFBsnHashType value) {
+        return new OFBsnTlvHashTypeVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvHeaderSize.Builder buildHeaderSize() {
         return new OFBsnTlvHeaderSizeVer14.Builder();
     }

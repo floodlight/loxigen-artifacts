@@ -6615,6 +6615,54 @@ typedef struct of_bsn_tlv_external_netmask_s of_bsn_tlv_external_netmask_t;
 typedef struct of_bsn_tlv_generation_id_s of_bsn_tlv_generation_id_t;
 
 /**
+ * Structure for of_bsn_tlv_hash_packet_field object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_hash_packet_field_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_hash_packet_field_s of_bsn_tlv_hash_packet_field_t;
+
+/**
+ * Structure for of_bsn_tlv_hash_packet_type object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_hash_packet_type_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_hash_packet_type_s of_bsn_tlv_hash_packet_type_t;
+
+/**
+ * Structure for of_bsn_tlv_hash_seed object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param seed1_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for seed1, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_hash_seed_uint32_get_f and _set_f.
+ *
+ * @param seed2_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for seed2, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_hash_seed_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_hash_seed_s of_bsn_tlv_hash_seed_t;
+
+/**
+ * Structure for of_bsn_tlv_hash_type object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_hash_type_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_hash_type_s of_bsn_tlv_hash_type_t;
+
+/**
  * Structure for of_bsn_tlv_header_size object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

@@ -194,6 +194,34 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvGenerationId not supported in version 1.2");
     }
 
+    public OFBsnTlvHashPacketField.Builder buildHashPacketField() {
+        throw new UnsupportedOperationException("OFBsnTlvHashPacketField not supported in version 1.2");
+    }
+    public OFBsnTlvHashPacketField hashPacketField(Set<OFBsnHashPacketField> value) {
+        throw new UnsupportedOperationException("OFBsnTlvHashPacketField not supported in version 1.2");
+    }
+
+    public OFBsnTlvHashPacketType.Builder buildHashPacketType() {
+        throw new UnsupportedOperationException("OFBsnTlvHashPacketType not supported in version 1.2");
+    }
+    public OFBsnTlvHashPacketType hashPacketType(OFBsnHashPacketType value) {
+        throw new UnsupportedOperationException("OFBsnTlvHashPacketType not supported in version 1.2");
+    }
+
+    public OFBsnTlvHashSeed.Builder buildHashSeed() {
+        throw new UnsupportedOperationException("OFBsnTlvHashSeed not supported in version 1.2");
+    }
+    public OFBsnTlvHashSeed hashSeed(long seed1, long seed2) {
+        throw new UnsupportedOperationException("OFBsnTlvHashSeed not supported in version 1.2");
+    }
+
+    public OFBsnTlvHashType.Builder buildHashType() {
+        throw new UnsupportedOperationException("OFBsnTlvHashType not supported in version 1.2");
+    }
+    public OFBsnTlvHashType hashType(OFBsnHashType value) {
+        throw new UnsupportedOperationException("OFBsnTlvHashType not supported in version 1.2");
+    }
+
     public OFBsnTlvHeaderSize.Builder buildHeaderSize() {
         throw new UnsupportedOperationException("OFBsnTlvHeaderSize not supported in version 1.2");
     }

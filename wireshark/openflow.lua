@@ -1266,13 +1266,14 @@ enum_v4_ofp_type = {
     [29] = "OFPT_METER_MOD",
 }
 
-enum_v4_ofp_flow_mod_flags = {
-    [1] = "OFPFF_SEND_FLOW_REM",
-    [2] = "OFPFF_CHECK_OVERLAP",
-    [4] = "OFPFF_RESET_COUNTS",
-    [8] = "OFPFF_NO_PKT_COUNTS",
-    [16] = "OFPFF_NO_BYT_COUNTS",
-    [128] = "OFPFF_BSN_SEND_IDLE",
+enum_v4_of_bsn_hash_packet_type = {
+    [0] = "OF_BSN_HASH_PACKET_L2",
+    [1] = "OF_BSN_HASH_PACKET_L2GRE",
+    [3] = "OF_BSN_HASH_PACKET_IPV4",
+    [4] = "OF_BSN_HASH_PACKET_IPV6",
+    [5] = "OF_BSN_HASH_PACKET_GTP",
+    [6] = "OF_BSN_HASH_PACKET_MPLS",
+    [7] = "OF_BSN_HASH_PACKET_SYMMETRIC",
 }
 
 enum_v4_ofp_controller_role = {
@@ -1446,6 +1447,28 @@ enum_v4_ofp_table = {
     [255] = "OFPTT_ALL",
 }
 
+enum_v4_of_bsn_hash_packet_field = {
+    [1] = "OFP_BSN_HASH_FIELD_DISABLE",
+    [2] = "OFP_BSN_HASH_FIELD_DST_MAC",
+    [4] = "OFP_BSN_HASH_FIELD_SRC_MAC",
+    [8] = "OFP_BSN_HASH_FIELD_ETH_TYPE",
+    [16] = "OFP_BSN_HASH_FIELD_VLAN_ID",
+    [32] = "OFP_BSN_HASH_FIELD_INNER_L2",
+    [64] = "OFP_BSN_HASH_FIELD_INNER_L3",
+    [128] = "OFP_BSN_HASH_FIELD_SRC_IP",
+    [256] = "OFP_BSN_HASH_FIELD_DST_IP",
+    [512] = "OFP_BSN_HASH_FIELD_IP_PROTO",
+    [1024] = "OFP_BSN_HASH_FIELD_SRC_L4_PORT",
+    [2048] = "OFP_BSN_HASH_FIELD_DST_L4_PORT",
+    [4096] = "OFP_BSN_HASH_FIELD_MPLS_LABEL1",
+    [8192] = "OFP_BSN_HASH_FIELD_MPLS_LABEL2",
+    [16384] = "OFP_BSN_HASH_FIELD_MPLS_LABEL3",
+    [32768] = "OFP_BSN_HASH_FIELD_MPLS_LABEL_HI_BITS",
+    [65536] = "OFP_BSN_HASH_FIELD_MPLS_PAYLOAD_SRC_IP",
+    [131072] = "OFP_BSN_HASH_FIELD_MPLS_PAYLOAD_DST_IP",
+    [262144] = "OFP_BSN_HASH_FIELD_SYMMETRIC",
+}
+
 enum_v4_ofp_switch_config_failed_code = {
     [0] = "OFPSCFC_BAD_FLAGS",
     [1] = "OFPSCFC_BAD_LEN",
@@ -1576,6 +1599,15 @@ enum_v4_ofp_flow_mod_command = {
     [4] = "OFPFC_DELETE_STRICT",
 }
 
+enum_v4_ofp_flow_mod_flags = {
+    [1] = "OFPFF_SEND_FLOW_REM",
+    [2] = "OFPFF_CHECK_OVERLAP",
+    [4] = "OFPFF_RESET_COUNTS",
+    [8] = "OFPFF_NO_PKT_COUNTS",
+    [16] = "OFPFF_NO_BYT_COUNTS",
+    [128] = "OFPFF_BSN_SEND_IDLE",
+}
+
 enum_v4_ofp_meter_flags = {
     [1] = "OFPMF_KBPS",
     [2] = "OFPMF_PKTPS",
@@ -1615,8 +1647,10 @@ enum_v4_ofp_vlan_id = {
     [4096] = "OFPVID_PRESENT",
 }
 
-enum_v4_ofp_stats_reply_flags = {
-    [1] = "OFPSF_REPLY_MORE",
+enum_v4_of_bsn_hash_type = {
+    [0] = "OFP_BSN_HASH_TYPE_L2",
+    [1] = "OFP_BSN_HASH_TYPE_L3",
+    [2] = "OFP_BSN_HASH_TYPE_ENHANCED",
 }
 
 enum_v4_ofp_stats_request_flags = {
@@ -1882,6 +1916,10 @@ enum_v4_ofp_table_features_failed_code = {
     [5] = "OFPTFFC_EPERM",
 }
 
+enum_v4_ofp_stats_reply_flags = {
+    [1] = "OFPSF_REPLY_MORE",
+}
+
 enum_v4_ofp_port_features = {
     [1] = "OFPPF_10MB_HD",
     [2] = "OFPPF_10MB_FD",
@@ -2143,9 +2181,11 @@ enum_v5_ofp_config_flags = {
     [3] = "OFPC_FRAG_MASK",
 }
 
-enum_v5_of_bsn_vrf_counter = {
-    [0] = "OFP_BSN_VRF_COUNTER_BYTES",
-    [1] = "OFP_BSN_VRF_COUNTER_PACKETS",
+enum_v5_of_bsn_vlan_counter = {
+    [0] = "OFP_BSN_VLAN_COUNTER_RX_BYTES",
+    [1] = "OFP_BSN_VLAN_COUNTER_RX_PACKETS",
+    [2] = "OFP_BSN_VLAN_COUNTER_TX_BYTES",
+    [3] = "OFP_BSN_VLAN_COUNTER_TX_PACKETS",
 }
 
 enum_v5_ofp_hello_failed_code = {
@@ -2167,6 +2207,28 @@ enum_v5_ofp_capabilities = {
     [32] = "OFPC_IP_REASM",
     [64] = "OFPC_QUEUE_STATS",
     [256] = "OFPC_PORT_BLOCKED",
+}
+
+enum_v5_of_bsn_hash_packet_field = {
+    [1] = "OFP_BSN_HASH_FIELD_DISABLE",
+    [2] = "OFP_BSN_HASH_FIELD_DST_MAC",
+    [4] = "OFP_BSN_HASH_FIELD_SRC_MAC",
+    [8] = "OFP_BSN_HASH_FIELD_ETH_TYPE",
+    [16] = "OFP_BSN_HASH_FIELD_VLAN_ID",
+    [32] = "OFP_BSN_HASH_FIELD_INNER_L2",
+    [64] = "OFP_BSN_HASH_FIELD_INNER_L3",
+    [128] = "OFP_BSN_HASH_FIELD_SRC_IP",
+    [256] = "OFP_BSN_HASH_FIELD_DST_IP",
+    [512] = "OFP_BSN_HASH_FIELD_IP_PROTO",
+    [1024] = "OFP_BSN_HASH_FIELD_SRC_L4_PORT",
+    [2048] = "OFP_BSN_HASH_FIELD_DST_L4_PORT",
+    [4096] = "OFP_BSN_HASH_FIELD_MPLS_LABEL1",
+    [8192] = "OFP_BSN_HASH_FIELD_MPLS_LABEL2",
+    [16384] = "OFP_BSN_HASH_FIELD_MPLS_LABEL3",
+    [32768] = "OFP_BSN_HASH_FIELD_MPLS_LABEL_HI_BITS",
+    [65536] = "OFP_BSN_HASH_FIELD_MPLS_PAYLOAD_SRC_IP",
+    [131072] = "OFP_BSN_HASH_FIELD_MPLS_PAYLOAD_DST_IP",
+    [262144] = "OFP_BSN_HASH_FIELD_SYMMETRIC",
 }
 
 enum_v5_ofp_bsn_rate_unit = {
@@ -2337,6 +2399,16 @@ enum_v5_ofp_flow_removed_reason = {
     [3] = "OFPRR_GROUP_DELETE",
     [4] = "OFPRR_METER_DELETE",
     [5] = "OFPRR_EVICTION",
+}
+
+enum_v5_of_bsn_hash_packet_type = {
+    [0] = "OF_BSN_HASH_PACKET_L2",
+    [1] = "OF_BSN_HASH_PACKET_L2GRE",
+    [3] = "OF_BSN_HASH_PACKET_IPV4",
+    [4] = "OF_BSN_HASH_PACKET_IPV6",
+    [5] = "OF_BSN_HASH_PACKET_GTP",
+    [6] = "OF_BSN_HASH_PACKET_MPLS",
+    [7] = "OF_BSN_HASH_PACKET_SYMMETRIC",
 }
 
 enum_v5_ofp_port_config = {
@@ -2539,6 +2611,12 @@ enum_v5_ofp_bsn_udf_anchor = {
     [2] = "OFP_BSN_UDF_ANCHOR_L4_HEADER_START",
 }
 
+enum_v5_of_bsn_hash_type = {
+    [0] = "OFP_BSN_HASH_TYPE_L2",
+    [1] = "OFP_BSN_HASH_TYPE_L3",
+    [2] = "OFP_BSN_HASH_TYPE_ENHANCED",
+}
+
 enum_v5_ofp_bad_request_code = {
     [0] = "OFPBRC_BAD_VERSION",
     [1] = "OFPBRC_BAD_TYPE",
@@ -2597,11 +2675,9 @@ enum_v5_ofp_controller_max_len = {
     [65535] = "OFPCML_NO_BUFFER",
 }
 
-enum_v5_of_bsn_vlan_counter = {
-    [0] = "OFP_BSN_VLAN_COUNTER_RX_BYTES",
-    [1] = "OFP_BSN_VLAN_COUNTER_RX_PACKETS",
-    [2] = "OFP_BSN_VLAN_COUNTER_TX_BYTES",
-    [3] = "OFP_BSN_VLAN_COUNTER_TX_PACKETS",
+enum_v5_of_bsn_vrf_counter = {
+    [0] = "OFP_BSN_VRF_COUNTER_BYTES",
+    [1] = "OFP_BSN_VRF_COUNTER_PACKETS",
 }
 
 enum_v5_ofp_bsn_vrf_counter_constants = {
@@ -6879,6 +6955,19 @@ fields['of13.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of13.bsn_tlv_ex
 fields['of13.bsn_tlv_generation_id.type'] = ProtoField.uint16("of13.bsn_tlv_generation_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_generation_id.length'] = ProtoField.uint16("of13.bsn_tlv_generation_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_generation_id.value'] = ProtoField.uint64("of13.bsn_tlv_generation_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_hash_packet_field.type'] = ProtoField.uint16("of13.bsn_tlv_hash_packet_field.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_hash_packet_field.length'] = ProtoField.uint16("of13.bsn_tlv_hash_packet_field.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_hash_packet_field.value'] = ProtoField.uint32("of13.bsn_tlv_hash_packet_field.value", "value", base.HEX, enum_v4_of_bsn_hash_packet_field)
+fields['of13.bsn_tlv_hash_packet_type.type'] = ProtoField.uint16("of13.bsn_tlv_hash_packet_type.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_hash_packet_type.length'] = ProtoField.uint16("of13.bsn_tlv_hash_packet_type.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_hash_packet_type.value'] = ProtoField.uint32("of13.bsn_tlv_hash_packet_type.value", "value", base.DEC, enum_v4_of_bsn_hash_packet_type)
+fields['of13.bsn_tlv_hash_seed.type'] = ProtoField.uint16("of13.bsn_tlv_hash_seed.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_hash_seed.length'] = ProtoField.uint16("of13.bsn_tlv_hash_seed.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_hash_seed.seed1'] = ProtoField.uint32("of13.bsn_tlv_hash_seed.seed1", "seed1", base.DEC, nil)
+fields['of13.bsn_tlv_hash_seed.seed2'] = ProtoField.uint32("of13.bsn_tlv_hash_seed.seed2", "seed2", base.DEC, nil)
+fields['of13.bsn_tlv_hash_type.type'] = ProtoField.uint16("of13.bsn_tlv_hash_type.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_hash_type.length'] = ProtoField.uint16("of13.bsn_tlv_hash_type.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_hash_type.value'] = ProtoField.uint32("of13.bsn_tlv_hash_type.value", "value", base.DEC, enum_v4_of_bsn_hash_type)
 fields['of13.bsn_tlv_header_size.type'] = ProtoField.uint16("of13.bsn_tlv_header_size.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_header_size.length'] = ProtoField.uint16("of13.bsn_tlv_header_size.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_header_size.value'] = ProtoField.uint32("of13.bsn_tlv_header_size.value", "value", base.DEC, nil)
@@ -9576,6 +9665,19 @@ fields['of14.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of14.bsn_tlv_ex
 fields['of14.bsn_tlv_generation_id.type'] = ProtoField.uint16("of14.bsn_tlv_generation_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_generation_id.length'] = ProtoField.uint16("of14.bsn_tlv_generation_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_generation_id.value'] = ProtoField.uint64("of14.bsn_tlv_generation_id.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_hash_packet_field.type'] = ProtoField.uint16("of14.bsn_tlv_hash_packet_field.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_hash_packet_field.length'] = ProtoField.uint16("of14.bsn_tlv_hash_packet_field.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_hash_packet_field.value'] = ProtoField.uint32("of14.bsn_tlv_hash_packet_field.value", "value", base.HEX, enum_v5_of_bsn_hash_packet_field)
+fields['of14.bsn_tlv_hash_packet_type.type'] = ProtoField.uint16("of14.bsn_tlv_hash_packet_type.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_hash_packet_type.length'] = ProtoField.uint16("of14.bsn_tlv_hash_packet_type.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_hash_packet_type.value'] = ProtoField.uint32("of14.bsn_tlv_hash_packet_type.value", "value", base.DEC, enum_v5_of_bsn_hash_packet_type)
+fields['of14.bsn_tlv_hash_seed.type'] = ProtoField.uint16("of14.bsn_tlv_hash_seed.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_hash_seed.length'] = ProtoField.uint16("of14.bsn_tlv_hash_seed.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_hash_seed.seed1'] = ProtoField.uint32("of14.bsn_tlv_hash_seed.seed1", "seed1", base.DEC, nil)
+fields['of14.bsn_tlv_hash_seed.seed2'] = ProtoField.uint32("of14.bsn_tlv_hash_seed.seed2", "seed2", base.DEC, nil)
+fields['of14.bsn_tlv_hash_type.type'] = ProtoField.uint16("of14.bsn_tlv_hash_type.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_hash_type.length'] = ProtoField.uint16("of14.bsn_tlv_hash_type.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_hash_type.value'] = ProtoField.uint32("of14.bsn_tlv_hash_type.value", "value", base.DEC, enum_v5_of_bsn_hash_type)
 fields['of14.bsn_tlv_header_size.type'] = ProtoField.uint16("of14.bsn_tlv_header_size.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_header_size.length'] = ProtoField.uint16("of14.bsn_tlv_header_size.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_header_size.value'] = ProtoField.uint32("of14.bsn_tlv_header_size.value", "value", base.DEC, nil)
@@ -15457,6 +15559,19 @@ p_of.fields = {
     fields['of13.bsn_tlv_generation_id.type'],
     fields['of13.bsn_tlv_generation_id.length'],
     fields['of13.bsn_tlv_generation_id.value'],
+    fields['of13.bsn_tlv_hash_packet_field.type'],
+    fields['of13.bsn_tlv_hash_packet_field.length'],
+    fields['of13.bsn_tlv_hash_packet_field.value'],
+    fields['of13.bsn_tlv_hash_packet_type.type'],
+    fields['of13.bsn_tlv_hash_packet_type.length'],
+    fields['of13.bsn_tlv_hash_packet_type.value'],
+    fields['of13.bsn_tlv_hash_seed.type'],
+    fields['of13.bsn_tlv_hash_seed.length'],
+    fields['of13.bsn_tlv_hash_seed.seed1'],
+    fields['of13.bsn_tlv_hash_seed.seed2'],
+    fields['of13.bsn_tlv_hash_type.type'],
+    fields['of13.bsn_tlv_hash_type.length'],
+    fields['of13.bsn_tlv_hash_type.value'],
     fields['of13.bsn_tlv_header_size.type'],
     fields['of13.bsn_tlv_header_size.length'],
     fields['of13.bsn_tlv_header_size.value'],
@@ -18154,6 +18269,19 @@ p_of.fields = {
     fields['of14.bsn_tlv_generation_id.type'],
     fields['of14.bsn_tlv_generation_id.length'],
     fields['of14.bsn_tlv_generation_id.value'],
+    fields['of14.bsn_tlv_hash_packet_field.type'],
+    fields['of14.bsn_tlv_hash_packet_field.length'],
+    fields['of14.bsn_tlv_hash_packet_field.value'],
+    fields['of14.bsn_tlv_hash_packet_type.type'],
+    fields['of14.bsn_tlv_hash_packet_type.length'],
+    fields['of14.bsn_tlv_hash_packet_type.value'],
+    fields['of14.bsn_tlv_hash_seed.type'],
+    fields['of14.bsn_tlv_hash_seed.length'],
+    fields['of14.bsn_tlv_hash_seed.seed1'],
+    fields['of14.bsn_tlv_hash_seed.seed2'],
+    fields['of14.bsn_tlv_hash_type.type'],
+    fields['of14.bsn_tlv_hash_type.length'],
+    fields['of14.bsn_tlv_hash_type.value'],
     fields['of14.bsn_tlv_header_size.type'],
     fields['of14.bsn_tlv_header_size.length'],
     fields['of14.bsn_tlv_header_size.value'],
@@ -29435,6 +29563,47 @@ function dissect_of_bsn_tlv_generation_id_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[80] = dissect_of_bsn_tlv_generation_id_v4
 
+-- child class of_bsn_tlv_hash_packet_field
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_packet_field_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_packet_field.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_packet_field.length')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_tlv_hash_packet_field.value')
+    return 'of_bsn_tlv_hash_packet_field'
+end
+of_bsn_tlv_v4_dissectors[103] = dissect_of_bsn_tlv_hash_packet_field_v4
+
+-- child class of_bsn_tlv_hash_packet_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_packet_type_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_packet_type.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_packet_type.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_hash_packet_type.value')
+    return 'of_bsn_tlv_hash_packet_type'
+end
+of_bsn_tlv_v4_dissectors[102] = dissect_of_bsn_tlv_hash_packet_type_v4
+
+-- child class of_bsn_tlv_hash_seed
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_seed_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_seed.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_seed.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_hash_seed.seed1')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_hash_seed.seed2')
+    return 'of_bsn_tlv_hash_seed'
+end
+of_bsn_tlv_v4_dissectors[100] = dissect_of_bsn_tlv_hash_seed_v4
+
+-- child class of_bsn_tlv_hash_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_type_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_type.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_type.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_hash_type.value')
+    return 'of_bsn_tlv_hash_type'
+end
+of_bsn_tlv_v4_dissectors[101] = dissect_of_bsn_tlv_hash_type_v4
+
 -- child class of_bsn_tlv_header_size
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_header_size_v4(reader, subtree)
@@ -36526,6 +36695,47 @@ function dissect_of_bsn_tlv_generation_id_v5(reader, subtree)
     return 'of_bsn_tlv_generation_id'
 end
 of_bsn_tlv_v5_dissectors[80] = dissect_of_bsn_tlv_generation_id_v5
+
+-- child class of_bsn_tlv_hash_packet_field
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_packet_field_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_packet_field.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_packet_field.length')
+    read_uint64_t(reader, 5, subtree, 'of14.bsn_tlv_hash_packet_field.value')
+    return 'of_bsn_tlv_hash_packet_field'
+end
+of_bsn_tlv_v5_dissectors[103] = dissect_of_bsn_tlv_hash_packet_field_v5
+
+-- child class of_bsn_tlv_hash_packet_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_packet_type_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_packet_type.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_packet_type.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_hash_packet_type.value')
+    return 'of_bsn_tlv_hash_packet_type'
+end
+of_bsn_tlv_v5_dissectors[102] = dissect_of_bsn_tlv_hash_packet_type_v5
+
+-- child class of_bsn_tlv_hash_seed
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_seed_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_seed.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_seed.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_hash_seed.seed1')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_hash_seed.seed2')
+    return 'of_bsn_tlv_hash_seed'
+end
+of_bsn_tlv_v5_dissectors[100] = dissect_of_bsn_tlv_hash_seed_v5
+
+-- child class of_bsn_tlv_hash_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_type_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_type.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_type.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_hash_type.value')
+    return 'of_bsn_tlv_hash_type'
+end
+of_bsn_tlv_v5_dissectors[101] = dissect_of_bsn_tlv_hash_type_v5
 
 -- child class of_bsn_tlv_header_size
 -- Child of of_bsn_tlv

@@ -75,6 +75,14 @@ public interface OFBsnTlvs {
     OFBsnTlvExternalNetmask externalNetmask(IPv4Address value);
     OFBsnTlvGenerationId.Builder buildGenerationId() throws UnsupportedOperationException;
     OFBsnTlvGenerationId generationId(U64 value);
+    OFBsnTlvHashPacketField.Builder buildHashPacketField() throws UnsupportedOperationException;
+    OFBsnTlvHashPacketField hashPacketField(Set<OFBsnHashPacketField> value);
+    OFBsnTlvHashPacketType.Builder buildHashPacketType() throws UnsupportedOperationException;
+    OFBsnTlvHashPacketType hashPacketType(OFBsnHashPacketType value);
+    OFBsnTlvHashSeed.Builder buildHashSeed() throws UnsupportedOperationException;
+    OFBsnTlvHashSeed hashSeed(long seed1, long seed2);
+    OFBsnTlvHashType.Builder buildHashType() throws UnsupportedOperationException;
+    OFBsnTlvHashType hashType(OFBsnHashType value);
     OFBsnTlvHeaderSize.Builder buildHeaderSize() throws UnsupportedOperationException;
     OFBsnTlvHeaderSize headerSize(long value);
     OFBsnTlvIcmpCode.Builder buildIcmpCode() throws UnsupportedOperationException;

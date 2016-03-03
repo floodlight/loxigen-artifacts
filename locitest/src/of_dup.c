@@ -26883,8 +26883,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_UDF_ID) {
-        return of_bsn_tlv_udf_id_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_REPLY_PACKETS) {
+        return of_bsn_tlv_reply_packets_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
@@ -26915,6 +26915,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_HASH_SEED) {
+        return of_bsn_tlv_hash_seed_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MISS_PACKETS) {
         return of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(src);
     }
@@ -26943,6 +26947,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_negate_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
+        return of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_IP_PROTO) {
         return of_bsn_tlv_ip_proto_OF_VERSION_1_3_dup(src);
     }
@@ -26951,8 +26959,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_actor_state_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_REPLY_PACKETS) {
-        return of_bsn_tlv_reply_packets_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_UDF_ID) {
+        return of_bsn_tlv_udf_id_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
@@ -27035,8 +27043,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_PRIORITY) {
-        return of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_HASH_PACKET_TYPE) {
+        return of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UNICAST_RATE) {
@@ -27067,6 +27075,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_icmp_type_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_HASH_TYPE) {
+        return of_bsn_tlv_hash_type_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MULTICAST_INTERFACE_ID) {
         return of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_dup(src);
     }
@@ -27077,6 +27089,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_ICMP_ID) {
         return of_bsn_tlv_icmp_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_PRIORITY) {
+        return of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ETH_DST) {
@@ -27111,8 +27127,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
-        return of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_HASH_PACKET_FIELD) {
+        return of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC) {
@@ -27758,6 +27774,109 @@ of_bsn_tlv_generation_id_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_generation_id_value_get(src, &val64);
     of_bsn_tlv_generation_id_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_hash_packet_field
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_hash_packet_field.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_hash_packet_field_t *
+of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_dup(
+    of_bsn_tlv_hash_packet_field_t *src)
+{
+    of_bsn_tlv_hash_packet_field_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_hash_packet_field_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_hash_packet_field_value_get(src, &val64);
+    of_bsn_tlv_hash_packet_field_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_hash_packet_type
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_hash_packet_type.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_hash_packet_type_t *
+of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_dup(
+    of_bsn_tlv_hash_packet_type_t *src)
+{
+    of_bsn_tlv_hash_packet_type_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_hash_packet_type_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_hash_packet_type_value_get(src, &val8);
+    of_bsn_tlv_hash_packet_type_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_hash_seed
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_hash_seed.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_hash_seed_t *
+of_bsn_tlv_hash_seed_OF_VERSION_1_3_dup(
+    of_bsn_tlv_hash_seed_t *src)
+{
+    of_bsn_tlv_hash_seed_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_hash_seed_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_hash_seed_seed1_get(src, &val32);
+    of_bsn_tlv_hash_seed_seed1_set(dst, val32);
+
+    of_bsn_tlv_hash_seed_seed2_get(src, &val32);
+    of_bsn_tlv_hash_seed_seed2_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_hash_type
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_hash_type.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_hash_type_t *
+of_bsn_tlv_hash_type_OF_VERSION_1_3_dup(
+    of_bsn_tlv_hash_type_t *src)
+{
+    of_bsn_tlv_hash_type_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_hash_type_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_hash_type_value_get(src, &val8);
+    of_bsn_tlv_hash_type_value_set(dst, val8);
 
     return dst;
 }
@@ -47675,8 +47794,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_UDF_ID) {
-        return of_bsn_tlv_udf_id_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_REPLY_PACKETS) {
+        return of_bsn_tlv_reply_packets_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
@@ -47707,6 +47826,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_rx_packets_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_HASH_SEED) {
+        return of_bsn_tlv_hash_seed_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MISS_PACKETS) {
         return of_bsn_tlv_miss_packets_OF_VERSION_1_4_dup(src);
     }
@@ -47735,6 +47858,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_negate_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
+        return of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_IP_PROTO) {
         return of_bsn_tlv_ip_proto_OF_VERSION_1_4_dup(src);
     }
@@ -47743,8 +47870,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_actor_state_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_REPLY_PACKETS) {
-        return of_bsn_tlv_reply_packets_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_UDF_ID) {
+        return of_bsn_tlv_udf_id_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
@@ -47827,8 +47954,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_PRIORITY) {
-        return of_bsn_tlv_partner_port_priority_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_HASH_PACKET_TYPE) {
+        return of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UNICAST_RATE) {
@@ -47859,6 +47986,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_icmp_type_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_HASH_TYPE) {
+        return of_bsn_tlv_hash_type_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MULTICAST_INTERFACE_ID) {
         return of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_dup(src);
     }
@@ -47869,6 +48000,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_ICMP_ID) {
         return of_bsn_tlv_icmp_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_PRIORITY) {
+        return of_bsn_tlv_partner_port_priority_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ETH_DST) {
@@ -47903,8 +48038,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
-        return of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_HASH_PACKET_FIELD) {
+        return of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC) {
@@ -48550,6 +48685,109 @@ of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_generation_id_value_get(src, &val64);
     of_bsn_tlv_generation_id_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_hash_packet_field
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_hash_packet_field.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_hash_packet_field_t *
+of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_dup(
+    of_bsn_tlv_hash_packet_field_t *src)
+{
+    of_bsn_tlv_hash_packet_field_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_hash_packet_field_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_hash_packet_field_value_get(src, &val64);
+    of_bsn_tlv_hash_packet_field_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_hash_packet_type
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_hash_packet_type.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_hash_packet_type_t *
+of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_dup(
+    of_bsn_tlv_hash_packet_type_t *src)
+{
+    of_bsn_tlv_hash_packet_type_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_hash_packet_type_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_hash_packet_type_value_get(src, &val8);
+    of_bsn_tlv_hash_packet_type_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_hash_seed
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_hash_seed.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_hash_seed_t *
+of_bsn_tlv_hash_seed_OF_VERSION_1_4_dup(
+    of_bsn_tlv_hash_seed_t *src)
+{
+    of_bsn_tlv_hash_seed_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_hash_seed_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_hash_seed_seed1_get(src, &val32);
+    of_bsn_tlv_hash_seed_seed1_set(dst, val32);
+
+    of_bsn_tlv_hash_seed_seed2_get(src, &val32);
+    of_bsn_tlv_hash_seed_seed2_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_hash_type
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_hash_type.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_hash_type_t *
+of_bsn_tlv_hash_type_OF_VERSION_1_4_dup(
+    of_bsn_tlv_hash_type_t *src)
+{
+    of_bsn_tlv_hash_type_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_hash_type_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_hash_type_value_get(src, &val8);
+    of_bsn_tlv_hash_type_value_set(dst, val8);
 
     return dst;
 }
@@ -66296,6 +66534,74 @@ of_bsn_tlv_generation_id_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_hash_packet_field_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_hash_packet_type_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_hash_seed_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_hash_seed_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_hash_seed_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_hash_type_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_hash_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_hash_type_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
