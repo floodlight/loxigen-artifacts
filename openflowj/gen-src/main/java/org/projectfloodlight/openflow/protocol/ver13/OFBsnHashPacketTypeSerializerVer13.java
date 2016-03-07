@@ -33,9 +33,8 @@ public class OFBsnHashPacketTypeSerializerVer13 {
     public final static byte BSN_HASH_PACKET_L2GRE_VAL = (byte) 0x1;
     public final static byte BSN_HASH_PACKET_IPV4_VAL = (byte) 0x3;
     public final static byte BSN_HASH_PACKET_IPV6_VAL = (byte) 0x4;
-    public final static byte BSN_HASH_PACKET_GTP_VAL = (byte) 0x5;
-    public final static byte BSN_HASH_PACKET_MPLS_VAL = (byte) 0x6;
-    public final static byte BSN_HASH_PACKET_SYMMETRIC_VAL = (byte) 0x7;
+    public final static byte BSN_HASH_PACKET_MPLS_VAL = (byte) 0x5;
+    public final static byte BSN_HASH_PACKET_SYMMETRIC_VAL = (byte) 0x6;
 
     public static OFBsnHashPacketType readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -63,8 +62,6 @@ public class OFBsnHashPacketTypeSerializerVer13 {
                 return OFBsnHashPacketType.BSN_HASH_PACKET_IPV4;
             case BSN_HASH_PACKET_IPV6_VAL:
                 return OFBsnHashPacketType.BSN_HASH_PACKET_IPV6;
-            case BSN_HASH_PACKET_GTP_VAL:
-                return OFBsnHashPacketType.BSN_HASH_PACKET_GTP;
             case BSN_HASH_PACKET_MPLS_VAL:
                 return OFBsnHashPacketType.BSN_HASH_PACKET_MPLS;
             case BSN_HASH_PACKET_SYMMETRIC_VAL:
@@ -85,8 +82,6 @@ public class OFBsnHashPacketTypeSerializerVer13 {
                 return BSN_HASH_PACKET_IPV4_VAL;
             case BSN_HASH_PACKET_IPV6:
                 return BSN_HASH_PACKET_IPV6_VAL;
-            case BSN_HASH_PACKET_GTP:
-                return BSN_HASH_PACKET_GTP_VAL;
             case BSN_HASH_PACKET_MPLS:
                 return BSN_HASH_PACKET_MPLS_VAL;
             case BSN_HASH_PACKET_SYMMETRIC:

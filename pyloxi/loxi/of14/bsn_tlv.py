@@ -1142,6 +1142,130 @@ class generation_id(bsn_tlv):
 
 bsn_tlv.subtypes[80] = generation_id
 
+class hash_gtp_header_match(bsn_tlv):
+    type = 104
+
+    def __init__(self, first_header_byte=None, first_header_mask=None):
+        if first_header_byte != None:
+            self.first_header_byte = first_header_byte
+        else:
+            self.first_header_byte = 0
+        if first_header_mask != None:
+            self.first_header_mask = first_header_mask
+        else:
+            self.first_header_mask = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.first_header_byte))
+        packed.append(struct.pack("!B", self.first_header_mask))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = hash_gtp_header_match()
+        _type = reader.read("!H")[0]
+        assert(_type == 104)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.first_header_byte = reader.read("!B")[0]
+        obj.first_header_mask = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.first_header_byte != other.first_header_byte: return False
+        if self.first_header_mask != other.first_header_mask: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("hash_gtp_header_match {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("first_header_byte = ");
+                q.text("%#x" % self.first_header_byte)
+                q.text(","); q.breakable()
+                q.text("first_header_mask = ");
+                q.text("%#x" % self.first_header_mask)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[104] = hash_gtp_header_match
+
+class hash_gtp_port_match(bsn_tlv):
+    type = 105
+
+    def __init__(self, match=None, src_port=None, dst_port=None):
+        if match != None:
+            self.match = match
+        else:
+            self.match = 0
+        if src_port != None:
+            self.src_port = src_port
+        else:
+            self.src_port = 0
+        if dst_port != None:
+            self.dst_port = dst_port
+        else:
+            self.dst_port = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.match))
+        packed.append(struct.pack("!H", self.src_port))
+        packed.append(struct.pack("!H", self.dst_port))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = hash_gtp_port_match()
+        _type = reader.read("!H")[0]
+        assert(_type == 105)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.match = reader.read("!B")[0]
+        obj.src_port = reader.read("!H")[0]
+        obj.dst_port = reader.read("!H")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.match != other.match: return False
+        if self.src_port != other.src_port: return False
+        if self.dst_port != other.dst_port: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("hash_gtp_port_match {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("match = ");
+                q.text("%#x" % self.match)
+                q.text(","); q.breakable()
+                q.text("src_port = ");
+                q.text("%#x" % self.src_port)
+                q.text(","); q.breakable()
+                q.text("dst_port = ");
+                q.text("%#x" % self.dst_port)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[105] = hash_gtp_port_match
+
 class hash_packet_field(bsn_tlv):
     type = 103
 

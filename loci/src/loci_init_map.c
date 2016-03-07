@@ -336,6 +336,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_external_mac_init,
     (of_object_init_f)of_bsn_tlv_external_netmask_init,
     (of_object_init_f)of_bsn_tlv_generation_id_init,
+    (of_object_init_f)of_bsn_tlv_hash_gtp_header_match_init,
+    (of_object_init_f)of_bsn_tlv_hash_gtp_port_match_init,
     (of_object_init_f)of_bsn_tlv_hash_packet_field_init,
     (of_object_init_f)of_bsn_tlv_hash_packet_type_init,
     (of_object_init_f)of_bsn_tlv_hash_seed_init,

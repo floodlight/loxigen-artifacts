@@ -19944,6 +19944,50 @@ of_bsn_tlv_generation_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
+of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_bsn_tlv_hash_gtp_header_match_first_header_byte_get(obj, &val8);
+    out += writer(cookie, "first_header_byte=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_bsn_tlv_hash_gtp_header_match_first_header_mask_get(obj, &val8);
+    out += writer(cookie, "first_header_mask=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+    uint16_t val16;
+
+    of_bsn_tlv_hash_gtp_port_match_match_get(obj, &val8);
+    out += writer(cookie, "match=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_bsn_tlv_hash_gtp_port_match_src_port_get(obj, &val16);
+    out += writer(cookie, "src_port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_tlv_hash_gtp_port_match_dst_port_get(obj, &val16);
+    out += writer(cookie, "dst_port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -32701,6 +32745,50 @@ of_bsn_tlv_generation_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
+of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_bsn_tlv_hash_gtp_header_match_first_header_byte_get(obj, &val8);
+    out += writer(cookie, "first_header_byte=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_bsn_tlv_hash_gtp_header_match_first_header_mask_get(obj, &val8);
+    out += writer(cookie, "first_header_mask=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+    uint16_t val16;
+
+    of_bsn_tlv_hash_gtp_port_match_match_get(obj, &val8);
+    out += writer(cookie, "match=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_bsn_tlv_hash_gtp_port_match_src_port_get(obj, &val16);
+    out += writer(cookie, "src_port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_tlv_hash_gtp_port_match_dst_port_get(obj, &val16);
+    out += writer(cookie, "dst_port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -39259,6 +39347,8 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_0_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_show,
     unknown_show,
@@ -39882,6 +39972,8 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_bsn_interface_OF_VERSION_1_1_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -40727,6 +40819,8 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_2_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_show,
     unknown_show,
@@ -41378,6 +41472,8 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_external_mac_OF_VERSION_1_3_show,
     of_bsn_tlv_external_netmask_OF_VERSION_1_3_show,
     of_bsn_tlv_generation_id_OF_VERSION_1_3_show,
+    of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_show,
+    of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_show,
     of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_show,
     of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_show,
     of_bsn_tlv_hash_seed_OF_VERSION_1_3_show,
@@ -42112,6 +42208,8 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_external_mac_OF_VERSION_1_4_show,
     of_bsn_tlv_external_netmask_OF_VERSION_1_4_show,
     of_bsn_tlv_generation_id_OF_VERSION_1_4_show,
+    of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4_show,
+    of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_show,
     of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_show,
     of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_show,
     of_bsn_tlv_hash_seed_OF_VERSION_1_4_show,

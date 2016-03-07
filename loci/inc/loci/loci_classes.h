@@ -847,6 +847,10 @@ void of_bsn_tlv_external_netmask_wire_object_id_get(of_object_t *obj, of_object_
 void of_bsn_tlv_external_netmask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_generation_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_generation_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_hash_gtp_header_match_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_hash_gtp_header_match_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_hash_gtp_port_match_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_hash_gtp_port_match_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_hash_packet_field_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_hash_packet_field_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_hash_packet_type_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1678,6 +1682,8 @@ typedef of_object_t of_bsn_tlv_external_ip_t;
 typedef of_object_t of_bsn_tlv_external_mac_t;
 typedef of_object_t of_bsn_tlv_external_netmask_t;
 typedef of_object_t of_bsn_tlv_generation_id_t;
+typedef of_object_t of_bsn_tlv_hash_gtp_header_match_t;
+typedef of_object_t of_bsn_tlv_hash_gtp_port_match_t;
 typedef of_object_t of_bsn_tlv_hash_packet_field_t;
 typedef of_object_t of_bsn_tlv_hash_packet_type_t;
 typedef of_object_t of_bsn_tlv_hash_seed_t;
@@ -3725,6 +3731,16 @@ extern void of_bsn_tlv_external_netmask_init(
 extern of_object_t *
     of_bsn_tlv_generation_id_new(of_version_t version);
 extern void of_bsn_tlv_generation_id_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_hash_gtp_header_match_new(of_version_t version);
+extern void of_bsn_tlv_hash_gtp_header_match_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_hash_gtp_port_match_new(of_version_t version);
+extern void of_bsn_tlv_hash_gtp_port_match_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9320,6 +9336,28 @@ of_bsn_tlv_external_netmask_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_generation_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_hash_gtp_header_match_t
+ * @param obj An instance of type of_bsn_tlv_hash_gtp_header_match_t
+ *
+ * \ingroup of_bsn_tlv_hash_gtp_header_match
+ */
+static inline void
+of_bsn_tlv_hash_gtp_header_match_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_hash_gtp_port_match_t
+ * @param obj An instance of type of_bsn_tlv_hash_gtp_port_match_t
+ *
+ * \ingroup of_bsn_tlv_hash_gtp_port_match
+ */
+static inline void
+of_bsn_tlv_hash_gtp_port_match_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -21610,6 +21648,45 @@ extern void of_bsn_tlv_generation_id_value_set(
 extern void of_bsn_tlv_generation_id_value_get(
     of_bsn_tlv_generation_id_t *obj,
     uint64_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_hash_gtp_header_match */
+
+extern void of_bsn_tlv_hash_gtp_header_match_first_header_byte_set(
+    of_bsn_tlv_hash_gtp_header_match_t *obj,
+    uint8_t first_header_byte);
+extern void of_bsn_tlv_hash_gtp_header_match_first_header_byte_get(
+    of_bsn_tlv_hash_gtp_header_match_t *obj,
+    uint8_t *first_header_byte);
+
+extern void of_bsn_tlv_hash_gtp_header_match_first_header_mask_set(
+    of_bsn_tlv_hash_gtp_header_match_t *obj,
+    uint8_t first_header_mask);
+extern void of_bsn_tlv_hash_gtp_header_match_first_header_mask_get(
+    of_bsn_tlv_hash_gtp_header_match_t *obj,
+    uint8_t *first_header_mask);
+
+/* Unified accessor functions for of_bsn_tlv_hash_gtp_port_match */
+
+extern void of_bsn_tlv_hash_gtp_port_match_match_set(
+    of_bsn_tlv_hash_gtp_port_match_t *obj,
+    uint8_t match);
+extern void of_bsn_tlv_hash_gtp_port_match_match_get(
+    of_bsn_tlv_hash_gtp_port_match_t *obj,
+    uint8_t *match);
+
+extern void of_bsn_tlv_hash_gtp_port_match_src_port_set(
+    of_bsn_tlv_hash_gtp_port_match_t *obj,
+    uint16_t src_port);
+extern void of_bsn_tlv_hash_gtp_port_match_src_port_get(
+    of_bsn_tlv_hash_gtp_port_match_t *obj,
+    uint16_t *src_port);
+
+extern void of_bsn_tlv_hash_gtp_port_match_dst_port_set(
+    of_bsn_tlv_hash_gtp_port_match_t *obj,
+    uint16_t dst_port);
+extern void of_bsn_tlv_hash_gtp_port_match_dst_port_get(
+    of_bsn_tlv_hash_gtp_port_match_t *obj,
+    uint16_t *dst_port);
 
 /* Unified accessor functions for of_bsn_tlv_hash_packet_field */
 

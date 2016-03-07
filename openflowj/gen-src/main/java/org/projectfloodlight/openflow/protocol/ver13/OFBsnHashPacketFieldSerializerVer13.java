@@ -33,7 +33,6 @@ import java.util.Collections;
 
 public class OFBsnHashPacketFieldSerializerVer13 {
 
-    public final static long BSN_HASH_FIELD_DISABLE_VAL = 0x1L;
     public final static long BSN_HASH_FIELD_DST_MAC_VAL = 0x2L;
     public final static long BSN_HASH_FIELD_SRC_MAC_VAL = 0x4L;
     public final static long BSN_HASH_FIELD_ETH_TYPE_VAL = 0x8L;
@@ -73,8 +72,6 @@ public class OFBsnHashPacketFieldSerializerVer13 {
     public static Set<OFBsnHashPacketField> ofWireValue(long val) {
         EnumSet<OFBsnHashPacketField> set = EnumSet.noneOf(OFBsnHashPacketField.class);
 
-        if((val & BSN_HASH_FIELD_DISABLE_VAL) != 0)
-            set.add(OFBsnHashPacketField.BSN_HASH_FIELD_DISABLE);
         if((val & BSN_HASH_FIELD_DST_MAC_VAL) != 0)
             set.add(OFBsnHashPacketField.BSN_HASH_FIELD_DST_MAC);
         if((val & BSN_HASH_FIELD_SRC_MAC_VAL) != 0)
@@ -119,9 +116,6 @@ public class OFBsnHashPacketFieldSerializerVer13 {
 
         for(OFBsnHashPacketField e: set) {
             switch(e) {
-                case BSN_HASH_FIELD_DISABLE:
-                    wireValue |= BSN_HASH_FIELD_DISABLE_VAL;
-                    break;
                 case BSN_HASH_FIELD_DST_MAC:
                     wireValue |= BSN_HASH_FIELD_DST_MAC_VAL;
                     break;

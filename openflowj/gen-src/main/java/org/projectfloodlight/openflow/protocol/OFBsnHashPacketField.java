@@ -25,7 +25,6 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 
 public enum OFBsnHashPacketField {
-     BSN_HASH_FIELD_DISABLE,
      BSN_HASH_FIELD_DST_MAC,
      BSN_HASH_FIELD_SRC_MAC,
      BSN_HASH_FIELD_ETH_TYPE,

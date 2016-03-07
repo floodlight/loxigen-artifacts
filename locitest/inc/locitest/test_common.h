@@ -6764,6 +6764,24 @@ extern int of_bsn_tlv_generation_id_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_generation_id_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_generation_id_t *obj, int value);
 
+extern int of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_populate(
+    of_bsn_tlv_hash_gtp_header_match_t *obj, int value);
+extern int of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_check(
+    of_bsn_tlv_hash_gtp_header_match_t *obj, int value);
+extern int of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_hash_gtp_header_match_t *obj, int value);
+extern int of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_hash_gtp_header_match_t *obj, int value);
+
+extern int of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_populate(
+    of_bsn_tlv_hash_gtp_port_match_t *obj, int value);
+extern int of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_check(
+    of_bsn_tlv_hash_gtp_port_match_t *obj, int value);
+extern int of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_hash_gtp_port_match_t *obj, int value);
+extern int of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_hash_gtp_port_match_t *obj, int value);
+
 extern int of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_populate(
     of_bsn_tlv_hash_packet_field_t *obj, int value);
 extern int of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_check(
@@ -12262,6 +12280,24 @@ extern int of_bsn_tlv_generation_id_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_generation_id_t *obj, int value);
 extern int of_bsn_tlv_generation_id_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_generation_id_t *obj, int value);
+
+extern int of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4_populate(
+    of_bsn_tlv_hash_gtp_header_match_t *obj, int value);
+extern int of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4_check(
+    of_bsn_tlv_hash_gtp_header_match_t *obj, int value);
+extern int of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_hash_gtp_header_match_t *obj, int value);
+extern int of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_hash_gtp_header_match_t *obj, int value);
+
+extern int of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_populate(
+    of_bsn_tlv_hash_gtp_port_match_t *obj, int value);
+extern int of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_check(
+    of_bsn_tlv_hash_gtp_port_match_t *obj, int value);
+extern int of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_hash_gtp_port_match_t *obj, int value);
+extern int of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_hash_gtp_port_match_t *obj, int value);
 
 extern int of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_populate(
     of_bsn_tlv_hash_packet_field_t *obj, int value);

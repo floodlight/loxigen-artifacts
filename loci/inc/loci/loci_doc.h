@@ -6615,6 +6615,40 @@ typedef struct of_bsn_tlv_external_netmask_s of_bsn_tlv_external_netmask_t;
 typedef struct of_bsn_tlv_generation_id_s of_bsn_tlv_generation_id_t;
 
 /**
+ * Structure for of_bsn_tlv_hash_gtp_header_match object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first_header_byte_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for first_header_byte, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_hash_gtp_header_match_uint8_get_f and _set_f.
+ *
+ * @param first_header_mask_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for first_header_mask, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_hash_gtp_header_match_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_hash_gtp_header_match_s of_bsn_tlv_hash_gtp_header_match_t;
+
+/**
+ * Structure for of_bsn_tlv_hash_gtp_port_match object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param match_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for match, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_hash_gtp_port_match_uint8_get_f and _set_f.
+ *
+ * @param src_port_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for src_port, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_hash_gtp_port_match_uint16_get_f and _set_f.
+ *
+ * @param dst_port_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for dst_port, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_hash_gtp_port_match_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_hash_gtp_port_match_s of_bsn_tlv_hash_gtp_port_match_t;
+
+/**
  * Structure for of_bsn_tlv_hash_packet_field object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

@@ -1271,9 +1271,8 @@ enum_v4_of_bsn_hash_packet_type = {
     [1] = "OF_BSN_HASH_PACKET_L2GRE",
     [3] = "OF_BSN_HASH_PACKET_IPV4",
     [4] = "OF_BSN_HASH_PACKET_IPV6",
-    [5] = "OF_BSN_HASH_PACKET_GTP",
-    [6] = "OF_BSN_HASH_PACKET_MPLS",
-    [7] = "OF_BSN_HASH_PACKET_SYMMETRIC",
+    [5] = "OF_BSN_HASH_PACKET_MPLS",
+    [6] = "OF_BSN_HASH_PACKET_SYMMETRIC",
 }
 
 enum_v4_ofp_controller_role = {
@@ -1448,7 +1447,6 @@ enum_v4_ofp_table = {
 }
 
 enum_v4_of_bsn_hash_packet_field = {
-    [1] = "OFP_BSN_HASH_FIELD_DISABLE",
     [2] = "OFP_BSN_HASH_FIELD_DST_MAC",
     [4] = "OFP_BSN_HASH_FIELD_SRC_MAC",
     [8] = "OFP_BSN_HASH_FIELD_ETH_TYPE",
@@ -1739,6 +1737,13 @@ enum_v4_ofp_meter_mod_command = {
     [0] = "OFPMC_ADD",
     [1] = "OFPMC_MODIFY",
     [2] = "OFPMC_DELETE",
+}
+
+enum_v4_of_bsn_hash_gtp_port_match = {
+    [1] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC",
+    [2] = "OF_BSN_HASH_GTP_PORT_MATCH_DST",
+    [3] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC_OR_DST",
+    [4] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC_AND_DST",
 }
 
 enum_v4_ofp_table_feature_prop_type = {
@@ -2210,7 +2215,6 @@ enum_v5_ofp_capabilities = {
 }
 
 enum_v5_of_bsn_hash_packet_field = {
-    [1] = "OFP_BSN_HASH_FIELD_DISABLE",
     [2] = "OFP_BSN_HASH_FIELD_DST_MAC",
     [4] = "OFP_BSN_HASH_FIELD_SRC_MAC",
     [8] = "OFP_BSN_HASH_FIELD_ETH_TYPE",
@@ -2316,6 +2320,13 @@ enum_v5_ofp_instruction_type = {
     [65535] = "OFPIT_EXPERIMENTER",
 }
 
+enum_v5_of_bsn_hash_gtp_port_match = {
+    [1] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC",
+    [2] = "OF_BSN_HASH_GTP_PORT_MATCH_DST",
+    [3] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC_OR_DST",
+    [4] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC_AND_DST",
+}
+
 enum_v5_ofp_bsn_port_counter = {
     [0] = "OFP_BSN_PORT_COUNTER_RX_BYTES",
     [1] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST",
@@ -2406,9 +2417,8 @@ enum_v5_of_bsn_hash_packet_type = {
     [1] = "OF_BSN_HASH_PACKET_L2GRE",
     [3] = "OF_BSN_HASH_PACKET_IPV4",
     [4] = "OF_BSN_HASH_PACKET_IPV6",
-    [5] = "OF_BSN_HASH_PACKET_GTP",
-    [6] = "OF_BSN_HASH_PACKET_MPLS",
-    [7] = "OF_BSN_HASH_PACKET_SYMMETRIC",
+    [5] = "OF_BSN_HASH_PACKET_MPLS",
+    [6] = "OF_BSN_HASH_PACKET_SYMMETRIC",
 }
 
 enum_v5_ofp_port_config = {
@@ -6955,6 +6965,15 @@ fields['of13.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of13.bsn_tlv_ex
 fields['of13.bsn_tlv_generation_id.type'] = ProtoField.uint16("of13.bsn_tlv_generation_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_generation_id.length'] = ProtoField.uint16("of13.bsn_tlv_generation_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_generation_id.value'] = ProtoField.uint64("of13.bsn_tlv_generation_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_hash_gtp_header_match.type'] = ProtoField.uint16("of13.bsn_tlv_hash_gtp_header_match.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_hash_gtp_header_match.length'] = ProtoField.uint16("of13.bsn_tlv_hash_gtp_header_match.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_hash_gtp_header_match.first_header_byte'] = ProtoField.uint8("of13.bsn_tlv_hash_gtp_header_match.first_header_byte", "first_header_byte", base.DEC, nil)
+fields['of13.bsn_tlv_hash_gtp_header_match.first_header_mask'] = ProtoField.uint8("of13.bsn_tlv_hash_gtp_header_match.first_header_mask", "first_header_mask", base.DEC, nil)
+fields['of13.bsn_tlv_hash_gtp_port_match.type'] = ProtoField.uint16("of13.bsn_tlv_hash_gtp_port_match.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_hash_gtp_port_match.length'] = ProtoField.uint16("of13.bsn_tlv_hash_gtp_port_match.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_hash_gtp_port_match.match'] = ProtoField.uint32("of13.bsn_tlv_hash_gtp_port_match.match", "match", base.DEC, enum_v4_of_bsn_hash_gtp_port_match)
+fields['of13.bsn_tlv_hash_gtp_port_match.src_port'] = ProtoField.uint16("of13.bsn_tlv_hash_gtp_port_match.src_port", "src_port", base.DEC, nil)
+fields['of13.bsn_tlv_hash_gtp_port_match.dst_port'] = ProtoField.uint16("of13.bsn_tlv_hash_gtp_port_match.dst_port", "dst_port", base.DEC, nil)
 fields['of13.bsn_tlv_hash_packet_field.type'] = ProtoField.uint16("of13.bsn_tlv_hash_packet_field.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_hash_packet_field.length'] = ProtoField.uint16("of13.bsn_tlv_hash_packet_field.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_hash_packet_field.value'] = ProtoField.uint32("of13.bsn_tlv_hash_packet_field.value", "value", base.HEX, enum_v4_of_bsn_hash_packet_field)
@@ -9665,6 +9684,15 @@ fields['of14.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of14.bsn_tlv_ex
 fields['of14.bsn_tlv_generation_id.type'] = ProtoField.uint16("of14.bsn_tlv_generation_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_generation_id.length'] = ProtoField.uint16("of14.bsn_tlv_generation_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_generation_id.value'] = ProtoField.uint64("of14.bsn_tlv_generation_id.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_hash_gtp_header_match.type'] = ProtoField.uint16("of14.bsn_tlv_hash_gtp_header_match.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_hash_gtp_header_match.length'] = ProtoField.uint16("of14.bsn_tlv_hash_gtp_header_match.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_hash_gtp_header_match.first_header_byte'] = ProtoField.uint8("of14.bsn_tlv_hash_gtp_header_match.first_header_byte", "first_header_byte", base.DEC, nil)
+fields['of14.bsn_tlv_hash_gtp_header_match.first_header_mask'] = ProtoField.uint8("of14.bsn_tlv_hash_gtp_header_match.first_header_mask", "first_header_mask", base.DEC, nil)
+fields['of14.bsn_tlv_hash_gtp_port_match.type'] = ProtoField.uint16("of14.bsn_tlv_hash_gtp_port_match.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_hash_gtp_port_match.length'] = ProtoField.uint16("of14.bsn_tlv_hash_gtp_port_match.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_hash_gtp_port_match.match'] = ProtoField.uint32("of14.bsn_tlv_hash_gtp_port_match.match", "match", base.DEC, enum_v5_of_bsn_hash_gtp_port_match)
+fields['of14.bsn_tlv_hash_gtp_port_match.src_port'] = ProtoField.uint16("of14.bsn_tlv_hash_gtp_port_match.src_port", "src_port", base.DEC, nil)
+fields['of14.bsn_tlv_hash_gtp_port_match.dst_port'] = ProtoField.uint16("of14.bsn_tlv_hash_gtp_port_match.dst_port", "dst_port", base.DEC, nil)
 fields['of14.bsn_tlv_hash_packet_field.type'] = ProtoField.uint16("of14.bsn_tlv_hash_packet_field.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_hash_packet_field.length'] = ProtoField.uint16("of14.bsn_tlv_hash_packet_field.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_hash_packet_field.value'] = ProtoField.uint32("of14.bsn_tlv_hash_packet_field.value", "value", base.HEX, enum_v5_of_bsn_hash_packet_field)
@@ -15559,6 +15587,15 @@ p_of.fields = {
     fields['of13.bsn_tlv_generation_id.type'],
     fields['of13.bsn_tlv_generation_id.length'],
     fields['of13.bsn_tlv_generation_id.value'],
+    fields['of13.bsn_tlv_hash_gtp_header_match.type'],
+    fields['of13.bsn_tlv_hash_gtp_header_match.length'],
+    fields['of13.bsn_tlv_hash_gtp_header_match.first_header_byte'],
+    fields['of13.bsn_tlv_hash_gtp_header_match.first_header_mask'],
+    fields['of13.bsn_tlv_hash_gtp_port_match.type'],
+    fields['of13.bsn_tlv_hash_gtp_port_match.length'],
+    fields['of13.bsn_tlv_hash_gtp_port_match.match'],
+    fields['of13.bsn_tlv_hash_gtp_port_match.src_port'],
+    fields['of13.bsn_tlv_hash_gtp_port_match.dst_port'],
     fields['of13.bsn_tlv_hash_packet_field.type'],
     fields['of13.bsn_tlv_hash_packet_field.length'],
     fields['of13.bsn_tlv_hash_packet_field.value'],
@@ -18269,6 +18306,15 @@ p_of.fields = {
     fields['of14.bsn_tlv_generation_id.type'],
     fields['of14.bsn_tlv_generation_id.length'],
     fields['of14.bsn_tlv_generation_id.value'],
+    fields['of14.bsn_tlv_hash_gtp_header_match.type'],
+    fields['of14.bsn_tlv_hash_gtp_header_match.length'],
+    fields['of14.bsn_tlv_hash_gtp_header_match.first_header_byte'],
+    fields['of14.bsn_tlv_hash_gtp_header_match.first_header_mask'],
+    fields['of14.bsn_tlv_hash_gtp_port_match.type'],
+    fields['of14.bsn_tlv_hash_gtp_port_match.length'],
+    fields['of14.bsn_tlv_hash_gtp_port_match.match'],
+    fields['of14.bsn_tlv_hash_gtp_port_match.src_port'],
+    fields['of14.bsn_tlv_hash_gtp_port_match.dst_port'],
     fields['of14.bsn_tlv_hash_packet_field.type'],
     fields['of14.bsn_tlv_hash_packet_field.length'],
     fields['of14.bsn_tlv_hash_packet_field.value'],
@@ -29563,6 +29609,29 @@ function dissect_of_bsn_tlv_generation_id_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[80] = dissect_of_bsn_tlv_generation_id_v4
 
+-- child class of_bsn_tlv_hash_gtp_header_match
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_gtp_header_match_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_gtp_header_match.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_gtp_header_match.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_hash_gtp_header_match.first_header_byte')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_hash_gtp_header_match.first_header_mask')
+    return 'of_bsn_tlv_hash_gtp_header_match'
+end
+of_bsn_tlv_v4_dissectors[104] = dissect_of_bsn_tlv_hash_gtp_header_match_v4
+
+-- child class of_bsn_tlv_hash_gtp_port_match
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_gtp_port_match_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_gtp_port_match.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_gtp_port_match.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_hash_gtp_port_match.match')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_gtp_port_match.src_port')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_hash_gtp_port_match.dst_port')
+    return 'of_bsn_tlv_hash_gtp_port_match'
+end
+of_bsn_tlv_v4_dissectors[105] = dissect_of_bsn_tlv_hash_gtp_port_match_v4
+
 -- child class of_bsn_tlv_hash_packet_field
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_hash_packet_field_v4(reader, subtree)
@@ -36695,6 +36764,29 @@ function dissect_of_bsn_tlv_generation_id_v5(reader, subtree)
     return 'of_bsn_tlv_generation_id'
 end
 of_bsn_tlv_v5_dissectors[80] = dissect_of_bsn_tlv_generation_id_v5
+
+-- child class of_bsn_tlv_hash_gtp_header_match
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_gtp_header_match_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_gtp_header_match.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_gtp_header_match.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_hash_gtp_header_match.first_header_byte')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_hash_gtp_header_match.first_header_mask')
+    return 'of_bsn_tlv_hash_gtp_header_match'
+end
+of_bsn_tlv_v5_dissectors[104] = dissect_of_bsn_tlv_hash_gtp_header_match_v5
+
+-- child class of_bsn_tlv_hash_gtp_port_match
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_gtp_port_match_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_gtp_port_match.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_gtp_port_match.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_hash_gtp_port_match.match')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_gtp_port_match.src_port')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_hash_gtp_port_match.dst_port')
+    return 'of_bsn_tlv_hash_gtp_port_match'
+end
+of_bsn_tlv_v5_dissectors[105] = dissect_of_bsn_tlv_hash_gtp_port_match_v5
 
 -- child class of_bsn_tlv_hash_packet_field
 -- Child of of_bsn_tlv

@@ -194,6 +194,17 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvGenerationId not supported in version 1.1");
     }
 
+    public OFBsnTlvHashGtpHeaderMatch.Builder buildHashGtpHeaderMatch() {
+        throw new UnsupportedOperationException("OFBsnTlvHashGtpHeaderMatch not supported in version 1.1");
+    }
+    public OFBsnTlvHashGtpHeaderMatch hashGtpHeaderMatch(short firstHeaderByte, short firstHeaderMask) {
+        throw new UnsupportedOperationException("OFBsnTlvHashGtpHeaderMatch not supported in version 1.1");
+    }
+
+    public OFBsnTlvHashGtpPortMatch.Builder buildHashGtpPortMatch() {
+        throw new UnsupportedOperationException("OFBsnTlvHashGtpPortMatch not supported in version 1.1");
+    }
+
     public OFBsnTlvHashPacketField.Builder buildHashPacketField() {
         throw new UnsupportedOperationException("OFBsnTlvHashPacketField not supported in version 1.1");
     }

@@ -333,6 +333,8 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_external_mac",
     "of_bsn_tlv_external_netmask",
     "of_bsn_tlv_generation_id",
+    "of_bsn_tlv_hash_gtp_header_match",
+    "of_bsn_tlv_hash_gtp_port_match",
     "of_bsn_tlv_hash_packet_field",
     "of_bsn_tlv_hash_packet_type",
     "of_bsn_tlv_hash_seed",

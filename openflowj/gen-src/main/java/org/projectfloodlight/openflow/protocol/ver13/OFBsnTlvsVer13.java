@@ -240,6 +240,20 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvHashGtpHeaderMatch.Builder buildHashGtpHeaderMatch() {
+        return new OFBsnTlvHashGtpHeaderMatchVer13.Builder();
+    }
+    public OFBsnTlvHashGtpHeaderMatch hashGtpHeaderMatch(short firstHeaderByte, short firstHeaderMask) {
+        return new OFBsnTlvHashGtpHeaderMatchVer13(
+                firstHeaderByte,
+                      firstHeaderMask
+                    );
+    }
+
+    public OFBsnTlvHashGtpPortMatch.Builder buildHashGtpPortMatch() {
+        return new OFBsnTlvHashGtpPortMatchVer13.Builder();
+    }
+
     public OFBsnTlvHashPacketField.Builder buildHashPacketField() {
         return new OFBsnTlvHashPacketFieldVer13.Builder();
     }
