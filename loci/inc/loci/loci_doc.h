@@ -7409,6 +7409,13 @@ typedef struct of_bsn_tlv_unicast_rate_s of_bsn_tlv_unicast_rate_t;
 typedef struct of_bsn_tlv_unknown_multicast_rate_s of_bsn_tlv_unknown_multicast_rate_t;
 
 /**
+ * Structure for of_bsn_tlv_untagged object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_untagged_s of_bsn_tlv_untagged_t;
+
+/**
  * Structure for of_bsn_tlv_use_packet_state object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7429,6 +7436,17 @@ typedef struct of_bsn_tlv_use_packet_state_s of_bsn_tlv_use_packet_state_t;
  *
  */
 typedef struct of_bsn_tlv_vfi_s of_bsn_tlv_vfi_t;
+
+/**
+ * Structure for of_bsn_tlv_vfp_class_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_vfp_class_id_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_vfp_class_id_s of_bsn_tlv_vfp_class_id_t;
 
 /**
  * Structure for of_bsn_tlv_vlan_mac_list object.  Get/set

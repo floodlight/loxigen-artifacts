@@ -212,10 +212,13 @@ public interface OFBsnTlvs {
     OFBsnTlvUnicastRate unicastRate(long value);
     OFBsnTlvUnknownMulticastRate.Builder buildUnknownMulticastRate() throws UnsupportedOperationException;
     OFBsnTlvUnknownMulticastRate unknownMulticastRate(long value);
+    OFBsnTlvUntagged untagged();
     OFBsnTlvUsePacketState.Builder buildUsePacketState() throws UnsupportedOperationException;
     OFBsnTlvUsePacketState usePacketState(short value);
     OFBsnTlvVfi.Builder buildVfi() throws UnsupportedOperationException;
     OFBsnTlvVfi vfi(int value);
+    OFBsnTlvVfpClassId.Builder buildVfpClassId() throws UnsupportedOperationException;
+    OFBsnTlvVfpClassId vfpClassId(long value);
     OFBsnTlvVlanPcp.Builder buildVlanPcp() throws UnsupportedOperationException;
     OFBsnTlvVlanPcp vlanPcp(short value);
     OFBsnTlvVlanVid.Builder buildVlanVid() throws UnsupportedOperationException;

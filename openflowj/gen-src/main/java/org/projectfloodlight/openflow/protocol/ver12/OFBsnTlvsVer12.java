@@ -679,6 +679,10 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvUnknownMulticastRate not supported in version 1.2");
     }
 
+    public OFBsnTlvUntagged untagged() {
+        throw new UnsupportedOperationException("OFBsnTlvUntagged not supported in version 1.2");
+    }
+
     public OFBsnTlvUsePacketState.Builder buildUsePacketState() {
         throw new UnsupportedOperationException("OFBsnTlvUsePacketState not supported in version 1.2");
     }
@@ -691,6 +695,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvVfi vfi(int value) {
         throw new UnsupportedOperationException("OFBsnTlvVfi not supported in version 1.2");
+    }
+
+    public OFBsnTlvVfpClassId.Builder buildVfpClassId() {
+        throw new UnsupportedOperationException("OFBsnTlvVfpClassId not supported in version 1.2");
+    }
+    public OFBsnTlvVfpClassId vfpClassId(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvVfpClassId not supported in version 1.2");
     }
 
     public OFBsnTlvVlanPcp.Builder buildVlanPcp() {

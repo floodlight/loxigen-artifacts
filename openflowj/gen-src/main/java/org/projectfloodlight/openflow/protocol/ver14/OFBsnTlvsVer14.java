@@ -854,6 +854,10 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvUntagged untagged() {
+        return OFBsnTlvUntaggedVer14.INSTANCE;
+    }
+
     public OFBsnTlvUsePacketState.Builder buildUsePacketState() {
         return new OFBsnTlvUsePacketStateVer14.Builder();
     }
@@ -868,6 +872,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
     }
     public OFBsnTlvVfi vfi(int value) {
         return new OFBsnTlvVfiVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvVfpClassId.Builder buildVfpClassId() {
+        return new OFBsnTlvVfpClassIdVer14.Builder();
+    }
+    public OFBsnTlvVfpClassId vfpClassId(long value) {
+        return new OFBsnTlvVfpClassIdVer14(
                 value
                     );
     }

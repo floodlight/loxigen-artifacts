@@ -7182,12 +7182,17 @@ fields['of13.bsn_tlv_unicast_rate.value'] = ProtoField.uint32("of13.bsn_tlv_unic
 fields['of13.bsn_tlv_unknown_multicast_rate.type'] = ProtoField.uint16("of13.bsn_tlv_unknown_multicast_rate.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_unknown_multicast_rate.length'] = ProtoField.uint16("of13.bsn_tlv_unknown_multicast_rate.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_unknown_multicast_rate.value'] = ProtoField.uint32("of13.bsn_tlv_unknown_multicast_rate.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_untagged.type'] = ProtoField.uint16("of13.bsn_tlv_untagged.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_untagged.length'] = ProtoField.uint16("of13.bsn_tlv_untagged.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_use_packet_state.type'] = ProtoField.uint16("of13.bsn_tlv_use_packet_state.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_use_packet_state.length'] = ProtoField.uint16("of13.bsn_tlv_use_packet_state.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of13.bsn_tlv_use_packet_state.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_vfi.type'] = ProtoField.uint16("of13.bsn_tlv_vfi.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vfi.length'] = ProtoField.uint16("of13.bsn_tlv_vfi.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vfi.value'] = ProtoField.uint16("of13.bsn_tlv_vfi.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_vfp_class_id.type'] = ProtoField.uint16("of13.bsn_tlv_vfp_class_id.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_vfp_class_id.length'] = ProtoField.uint16("of13.bsn_tlv_vfp_class_id.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_vfp_class_id.value'] = ProtoField.uint32("of13.bsn_tlv_vfp_class_id.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_mac_list.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_mac_list.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_mac_list.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_mac_list.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_mac_list.key'] = ProtoField.bytes("of13.bsn_tlv_vlan_mac_list.key", "key")
@@ -9901,12 +9906,17 @@ fields['of14.bsn_tlv_unicast_rate.value'] = ProtoField.uint32("of14.bsn_tlv_unic
 fields['of14.bsn_tlv_unknown_multicast_rate.type'] = ProtoField.uint16("of14.bsn_tlv_unknown_multicast_rate.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_unknown_multicast_rate.length'] = ProtoField.uint16("of14.bsn_tlv_unknown_multicast_rate.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_unknown_multicast_rate.value'] = ProtoField.uint32("of14.bsn_tlv_unknown_multicast_rate.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_untagged.type'] = ProtoField.uint16("of14.bsn_tlv_untagged.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_untagged.length'] = ProtoField.uint16("of14.bsn_tlv_untagged.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_use_packet_state.type'] = ProtoField.uint16("of14.bsn_tlv_use_packet_state.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_use_packet_state.length'] = ProtoField.uint16("of14.bsn_tlv_use_packet_state.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of14.bsn_tlv_use_packet_state.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_vfi.type'] = ProtoField.uint16("of14.bsn_tlv_vfi.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vfi.length'] = ProtoField.uint16("of14.bsn_tlv_vfi.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vfi.value'] = ProtoField.uint16("of14.bsn_tlv_vfi.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_vfp_class_id.type'] = ProtoField.uint16("of14.bsn_tlv_vfp_class_id.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_vfp_class_id.length'] = ProtoField.uint16("of14.bsn_tlv_vfp_class_id.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_vfp_class_id.value'] = ProtoField.uint32("of14.bsn_tlv_vfp_class_id.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_mac_list.type'] = ProtoField.uint16("of14.bsn_tlv_vlan_mac_list.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_mac_list.length'] = ProtoField.uint16("of14.bsn_tlv_vlan_mac_list.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_mac_list.key'] = ProtoField.bytes("of14.bsn_tlv_vlan_mac_list.key", "key")
@@ -15804,12 +15814,17 @@ p_of.fields = {
     fields['of13.bsn_tlv_unknown_multicast_rate.type'],
     fields['of13.bsn_tlv_unknown_multicast_rate.length'],
     fields['of13.bsn_tlv_unknown_multicast_rate.value'],
+    fields['of13.bsn_tlv_untagged.type'],
+    fields['of13.bsn_tlv_untagged.length'],
     fields['of13.bsn_tlv_use_packet_state.type'],
     fields['of13.bsn_tlv_use_packet_state.length'],
     fields['of13.bsn_tlv_use_packet_state.value'],
     fields['of13.bsn_tlv_vfi.type'],
     fields['of13.bsn_tlv_vfi.length'],
     fields['of13.bsn_tlv_vfi.value'],
+    fields['of13.bsn_tlv_vfp_class_id.type'],
+    fields['of13.bsn_tlv_vfp_class_id.length'],
+    fields['of13.bsn_tlv_vfp_class_id.value'],
     fields['of13.bsn_tlv_vlan_mac_list.type'],
     fields['of13.bsn_tlv_vlan_mac_list.length'],
     fields['of13.bsn_tlv_vlan_mac_list.key'],
@@ -18523,12 +18538,17 @@ p_of.fields = {
     fields['of14.bsn_tlv_unknown_multicast_rate.type'],
     fields['of14.bsn_tlv_unknown_multicast_rate.length'],
     fields['of14.bsn_tlv_unknown_multicast_rate.value'],
+    fields['of14.bsn_tlv_untagged.type'],
+    fields['of14.bsn_tlv_untagged.length'],
     fields['of14.bsn_tlv_use_packet_state.type'],
     fields['of14.bsn_tlv_use_packet_state.length'],
     fields['of14.bsn_tlv_use_packet_state.value'],
     fields['of14.bsn_tlv_vfi.type'],
     fields['of14.bsn_tlv_vfi.length'],
     fields['of14.bsn_tlv_vfi.value'],
+    fields['of14.bsn_tlv_vfp_class_id.type'],
+    fields['of14.bsn_tlv_vfp_class_id.length'],
+    fields['of14.bsn_tlv_vfp_class_id.value'],
     fields['of14.bsn_tlv_vlan_mac_list.type'],
     fields['of14.bsn_tlv_vlan_mac_list.length'],
     fields['of14.bsn_tlv_vlan_mac_list.key'],
@@ -30350,6 +30370,15 @@ function dissect_of_bsn_tlv_unknown_multicast_rate_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[92] = dissect_of_bsn_tlv_unknown_multicast_rate_v4
 
+-- child class of_bsn_tlv_untagged
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_untagged_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_untagged.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_untagged.length')
+    return 'of_bsn_tlv_untagged'
+end
+of_bsn_tlv_v4_dissectors[106] = dissect_of_bsn_tlv_untagged_v4
+
 -- child class of_bsn_tlv_use_packet_state
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_use_packet_state_v4(reader, subtree)
@@ -30369,6 +30398,16 @@ function dissect_of_bsn_tlv_vfi_v4(reader, subtree)
     return 'of_bsn_tlv_vfi'
 end
 of_bsn_tlv_v4_dissectors[99] = dissect_of_bsn_tlv_vfi_v4
+
+-- child class of_bsn_tlv_vfp_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vfp_class_id_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vfp_class_id.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vfp_class_id.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_vfp_class_id.value')
+    return 'of_bsn_tlv_vfp_class_id'
+end
+of_bsn_tlv_v4_dissectors[107] = dissect_of_bsn_tlv_vfp_class_id_v4
 
 -- top-level class of_bsn_tlv_vlan_mac_list
 function dissect_of_bsn_tlv_vlan_mac_list_v4(reader, subtree)
@@ -37506,6 +37545,15 @@ function dissect_of_bsn_tlv_unknown_multicast_rate_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[92] = dissect_of_bsn_tlv_unknown_multicast_rate_v5
 
+-- child class of_bsn_tlv_untagged
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_untagged_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_untagged.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_untagged.length')
+    return 'of_bsn_tlv_untagged'
+end
+of_bsn_tlv_v5_dissectors[106] = dissect_of_bsn_tlv_untagged_v5
+
 -- child class of_bsn_tlv_use_packet_state
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_use_packet_state_v5(reader, subtree)
@@ -37525,6 +37573,16 @@ function dissect_of_bsn_tlv_vfi_v5(reader, subtree)
     return 'of_bsn_tlv_vfi'
 end
 of_bsn_tlv_v5_dissectors[99] = dissect_of_bsn_tlv_vfi_v5
+
+-- child class of_bsn_tlv_vfp_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vfp_class_id_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vfp_class_id.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vfp_class_id.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_vfp_class_id.value')
+    return 'of_bsn_tlv_vfp_class_id'
+end
+of_bsn_tlv_v5_dissectors[107] = dissect_of_bsn_tlv_vfp_class_id_v5
 
 -- top-level class of_bsn_tlv_vlan_mac_list
 function dissect_of_bsn_tlv_vlan_mac_list_v5(reader, subtree)

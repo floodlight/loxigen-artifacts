@@ -1,1 +1,1 @@
-3326f0d2e76232c454c2966529a8c602a378a920 Merge into master from pull request #467: Add TLVs for GTP match in the context of port-channel hashing (https://github.com/floodlight/loxigen/pull/467)
+3767c61e2998cce3775c76d6e4d2cf46c92d6cbd Merge into master from pull request #469: Add new tlv's for vxlan and dcbx feature vfp entries (https://github.com/floodlight/loxigen/pull/469)

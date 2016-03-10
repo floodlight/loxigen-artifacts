@@ -334,12 +334,18 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x5c:
                    // discriminator value 0x5c=0x5c for class OFBsnTlvUnknownMulticastRateVer13
                    return OFBsnTlvUnknownMulticastRateVer13.READER.readFrom(bb);
+               case (short) 0x6a:
+                   // discriminator value 0x6a=0x6a for class OFBsnTlvUntaggedVer13
+                   return OFBsnTlvUntaggedVer13.READER.readFrom(bb);
                case (short) 0x60:
                    // discriminator value 0x60=0x60 for class OFBsnTlvUsePacketStateVer13
                    return OFBsnTlvUsePacketStateVer13.READER.readFrom(bb);
                case (short) 0x63:
                    // discriminator value 0x63=0x63 for class OFBsnTlvVfiVer13
                    return OFBsnTlvVfiVer13.READER.readFrom(bb);
+               case (short) 0x6b:
+                   // discriminator value 0x6b=0x6b for class OFBsnTlvVfpClassIdVer13
+                   return OFBsnTlvVfpClassIdVer13.READER.readFrom(bb);
                case (short) 0x48:
                    // discriminator value 0x48=0x48 for class OFBsnTlvVlanPcpVer13
                    return OFBsnTlvVlanPcpVer13.READER.readFrom(bb);
