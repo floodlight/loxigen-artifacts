@@ -495,6 +495,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPriority not supported in version 1.0");
     }
 
+    public OFBsnTlvQosPriority.Builder buildQosPriority() {
+        throw new UnsupportedOperationException("OFBsnTlvQosPriority not supported in version 1.0");
+    }
+    public OFBsnTlvQosPriority qosPriority(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvQosPriority not supported in version 1.0");
+    }
+
     public OFBsnTlvQueueId.Builder buildQueueId() {
         throw new UnsupportedOperationException("OFBsnTlvQueueId not supported in version 1.0");
     }

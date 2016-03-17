@@ -939,6 +939,8 @@ void of_bsn_tlv_port_vxlan_mode_wire_object_id_get(of_object_t *obj, of_object_i
 void of_bsn_tlv_port_vxlan_mode_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_priority_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_qos_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_qos_priority_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_queue_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_queue_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_queue_weight_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1732,6 +1734,7 @@ typedef of_object_t of_bsn_tlv_partner_system_priority_t;
 typedef of_object_t of_bsn_tlv_port_t;
 typedef of_object_t of_bsn_tlv_port_vxlan_mode_t;
 typedef of_object_t of_bsn_tlv_priority_t;
+typedef of_object_t of_bsn_tlv_qos_priority_t;
 typedef of_object_t of_bsn_tlv_queue_id_t;
 typedef of_object_t of_bsn_tlv_queue_weight_t;
 typedef of_object_t of_bsn_tlv_rate_unit_t;
@@ -3967,6 +3970,11 @@ extern void of_bsn_tlv_port_vxlan_mode_init(
 extern of_object_t *
     of_bsn_tlv_priority_new(of_version_t version);
 extern void of_bsn_tlv_priority_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_qos_priority_new(of_version_t version);
+extern void of_bsn_tlv_qos_priority_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9858,6 +9866,17 @@ of_bsn_tlv_port_vxlan_mode_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_priority_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_qos_priority_t
+ * @param obj An instance of type of_bsn_tlv_qos_priority_t
+ *
+ * \ingroup of_bsn_tlv_qos_priority
+ */
+static inline void
+of_bsn_tlv_qos_priority_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22085,6 +22104,15 @@ extern void of_bsn_tlv_priority_value_set(
     uint32_t value);
 extern void of_bsn_tlv_priority_value_get(
     of_bsn_tlv_priority_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_qos_priority */
+
+extern void of_bsn_tlv_qos_priority_value_set(
+    of_bsn_tlv_qos_priority_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_qos_priority_value_get(
+    of_bsn_tlv_qos_priority_t *obj,
     uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_queue_id */

@@ -621,6 +621,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvQosPriority.Builder buildQosPriority() {
+        return new OFBsnTlvQosPriorityVer13.Builder();
+    }
+    public OFBsnTlvQosPriority qosPriority(long value) {
+        return new OFBsnTlvQosPriorityVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvQueueId.Builder buildQueueId() {
         return new OFBsnTlvQueueIdVer13.Builder();
     }

@@ -6557,6 +6557,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x6b:
             *id = OF_BSN_TLV_VFP_CLASS_ID;
             break;
+        case 0x6c:
+            *id = OF_BSN_TLV_QOS_PRIORITY;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -6883,6 +6886,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x6b:
             *id = OF_BSN_TLV_VFP_CLASS_ID;
+            break;
+        case 0x6c:
+            *id = OF_BSN_TLV_QOS_PRIORITY;
             break;
         default:
             *id = OF_BSN_TLV;

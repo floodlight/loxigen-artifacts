@@ -7101,6 +7101,9 @@ fields['of13.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of13.bsn_tlv_p
 fields['of13.bsn_tlv_priority.type'] = ProtoField.uint16("of13.bsn_tlv_priority.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_priority.length'] = ProtoField.uint16("of13.bsn_tlv_priority.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_priority.value'] = ProtoField.uint32("of13.bsn_tlv_priority.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_qos_priority.type'] = ProtoField.uint16("of13.bsn_tlv_qos_priority.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_qos_priority.length'] = ProtoField.uint16("of13.bsn_tlv_qos_priority.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_qos_priority.value'] = ProtoField.uint32("of13.bsn_tlv_qos_priority.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_queue_id.type'] = ProtoField.uint16("of13.bsn_tlv_queue_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_queue_id.length'] = ProtoField.uint16("of13.bsn_tlv_queue_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_queue_id.value'] = ProtoField.uint32("of13.bsn_tlv_queue_id.value", "value", base.DEC, nil)
@@ -9825,6 +9828,9 @@ fields['of14.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of14.bsn_tlv_p
 fields['of14.bsn_tlv_priority.type'] = ProtoField.uint16("of14.bsn_tlv_priority.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_priority.length'] = ProtoField.uint16("of14.bsn_tlv_priority.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_priority.value'] = ProtoField.uint32("of14.bsn_tlv_priority.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_qos_priority.type'] = ProtoField.uint16("of14.bsn_tlv_qos_priority.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_qos_priority.length'] = ProtoField.uint16("of14.bsn_tlv_qos_priority.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_qos_priority.value'] = ProtoField.uint32("of14.bsn_tlv_qos_priority.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_queue_id.type'] = ProtoField.uint16("of14.bsn_tlv_queue_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_queue_id.length'] = ProtoField.uint16("of14.bsn_tlv_queue_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_queue_id.value'] = ProtoField.uint32("of14.bsn_tlv_queue_id.value", "value", base.DEC, nil)
@@ -15733,6 +15739,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_priority.type'],
     fields['of13.bsn_tlv_priority.length'],
     fields['of13.bsn_tlv_priority.value'],
+    fields['of13.bsn_tlv_qos_priority.type'],
+    fields['of13.bsn_tlv_qos_priority.length'],
+    fields['of13.bsn_tlv_qos_priority.value'],
     fields['of13.bsn_tlv_queue_id.type'],
     fields['of13.bsn_tlv_queue_id.length'],
     fields['of13.bsn_tlv_queue_id.value'],
@@ -18457,6 +18466,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_priority.type'],
     fields['of14.bsn_tlv_priority.length'],
     fields['of14.bsn_tlv_priority.value'],
+    fields['of14.bsn_tlv_qos_priority.type'],
+    fields['of14.bsn_tlv_qos_priority.length'],
+    fields['of14.bsn_tlv_qos_priority.value'],
     fields['of14.bsn_tlv_queue_id.type'],
     fields['of14.bsn_tlv_queue_id.length'],
     fields['of14.bsn_tlv_queue_id.value'],
@@ -30090,6 +30102,16 @@ function dissect_of_bsn_tlv_priority_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[57] = dissect_of_bsn_tlv_priority_v4
 
+-- child class of_bsn_tlv_qos_priority
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_qos_priority_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_qos_priority.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_qos_priority.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_qos_priority.value')
+    return 'of_bsn_tlv_qos_priority'
+end
+of_bsn_tlv_v4_dissectors[108] = dissect_of_bsn_tlv_qos_priority_v4
+
 -- child class of_bsn_tlv_queue_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_queue_id_v4(reader, subtree)
@@ -37264,6 +37286,16 @@ function dissect_of_bsn_tlv_priority_v5(reader, subtree)
     return 'of_bsn_tlv_priority'
 end
 of_bsn_tlv_v5_dissectors[57] = dissect_of_bsn_tlv_priority_v5
+
+-- child class of_bsn_tlv_qos_priority
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_qos_priority_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_qos_priority.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_qos_priority.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_qos_priority.value')
+    return 'of_bsn_tlv_qos_priority'
+end
+of_bsn_tlv_v5_dissectors[108] = dissect_of_bsn_tlv_qos_priority_v5
 
 -- child class of_bsn_tlv_queue_id
 -- Child of of_bsn_tlv

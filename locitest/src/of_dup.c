@@ -27019,6 +27019,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_QOS_PRIORITY) {
+        return of_bsn_tlv_qos_priority_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
         return of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(src);
     }
@@ -28929,6 +28933,31 @@ of_bsn_tlv_priority_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_priority_value_get(src, &val32);
     of_bsn_tlv_priority_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_qos_priority
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_qos_priority.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_qos_priority_t *
+of_bsn_tlv_qos_priority_OF_VERSION_1_3_dup(
+    of_bsn_tlv_qos_priority_t *src)
+{
+    of_bsn_tlv_qos_priority_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_qos_priority_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_qos_priority_value_get(src, &val32);
+    of_bsn_tlv_qos_priority_value_set(dst, val32);
 
     return dst;
 }
@@ -48052,6 +48081,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_QOS_PRIORITY) {
+        return of_bsn_tlv_qos_priority_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
         return of_bsn_tlv_tx_packets_OF_VERSION_1_4_dup(src);
     }
@@ -49962,6 +49995,31 @@ of_bsn_tlv_priority_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_priority_value_get(src, &val32);
     of_bsn_tlv_priority_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_qos_priority
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_qos_priority.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_qos_priority_t *
+of_bsn_tlv_qos_priority_OF_VERSION_1_4_dup(
+    of_bsn_tlv_qos_priority_t *src)
+{
+    of_bsn_tlv_qos_priority_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_qos_priority_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_qos_priority_value_get(src, &val32);
+    of_bsn_tlv_qos_priority_value_set(dst, val32);
 
     return dst;
 }
@@ -67560,6 +67618,23 @@ of_bsn_tlv_priority_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_priority_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_qos_priority_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_qos_priority_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_qos_priority_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

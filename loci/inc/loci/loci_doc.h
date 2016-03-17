@@ -7113,6 +7113,17 @@ typedef struct of_bsn_tlv_port_vxlan_mode_s of_bsn_tlv_port_vxlan_mode_t;
 typedef struct of_bsn_tlv_priority_s of_bsn_tlv_priority_t;
 
 /**
+ * Structure for of_bsn_tlv_qos_priority object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_qos_priority_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_qos_priority_s of_bsn_tlv_qos_priority_t;
+
+/**
  * Structure for of_bsn_tlv_queue_id object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

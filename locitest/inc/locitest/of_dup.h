@@ -1495,6 +1495,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_qos_priority_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_queue_id_dup(
         of_object_t *src);
 
@@ -6183,6 +6187,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_qos_priority_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_queue_id_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8692,6 +8700,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_priority_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_qos_priority_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
