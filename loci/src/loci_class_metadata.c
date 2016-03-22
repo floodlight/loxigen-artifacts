@@ -2493,6 +2493,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_decap_push_wire_types,
     },
+    [OF_BSN_TLV_DSCP] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_dscp_push_wire_types,
+    },
     [OF_BSN_TLV_ETH_DST] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -2691,6 +2697,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_l2_multicast_lookup_push_wire_types,
     },
+    [OF_BSN_TLV_LOOPBACK_PORT] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_loopback_port_push_wire_types,
+    },
     [OF_BSN_TLV_MAC] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -2751,6 +2763,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_negate_push_wire_types,
     },
+    [OF_BSN_TLV_NEXT_HOP_IPV4] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_next_hop_ipv4_push_wire_types,
+    },
+    [OF_BSN_TLV_NEXT_HOP_MAC] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_next_hop_mac_push_wire_types,
+    },
     [OF_BSN_TLV_NEXTHOP_TYPE_VXLAN] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -2762,6 +2786,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_offset_push_wire_types,
+    },
+    [OF_BSN_TLV_PARENT_PORT] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_parent_port_push_wire_types,
     },
     [OF_BSN_TLV_PARTNER_KEY] = {
         .wire_length_get=of_tlv16_wire_length_get,
@@ -2834,6 +2864,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_queue_weight_push_wire_types,
+    },
+    [OF_BSN_TLV_RATE_LIMIT] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_rate_limit_push_wire_types,
     },
     [OF_BSN_TLV_RATE_UNIT] = {
         .wire_length_get=of_tlv16_wire_length_get,
@@ -2924,6 +2960,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_tcp_src_push_wire_types,
+    },
+    [OF_BSN_TLV_TTL] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_ttl_push_wire_types,
     },
     [OF_BSN_TLV_TX_BYTES] = {
         .wire_length_get=of_tlv16_wire_length_get,
@@ -3044,6 +3086,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_vni_push_wire_types,
+    },
+    [OF_BSN_TLV_VPN_KEY] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_vpn_key_push_wire_types,
     },
     [OF_BSN_TLV_VRF] = {
         .wire_length_get=of_tlv16_wire_length_get,

@@ -88,6 +88,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x55:
                    // discriminator value 0x55=0x55 for class OFBsnTlvDecapVer13
                    return OFBsnTlvDecapVer13.READER.readFrom(bb);
+               case (short) 0x70:
+                   // discriminator value 0x70=0x70 for class OFBsnTlvDscpVer13
+                   return OFBsnTlvDscpVer13.READER.readFrom(bb);
                case (short) 0x21:
                    // discriminator value 0x21=0x21 for class OFBsnTlvEthDstVer13
                    return OFBsnTlvEthDstVer13.READER.readFrom(bb);
@@ -187,6 +190,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x4f:
                    // discriminator value 0x4f=0x4f for class OFBsnTlvL2MulticastLookupVer13
                    return OFBsnTlvL2MulticastLookupVer13.READER.readFrom(bb);
+               case (short) 0x6e:
+                   // discriminator value 0x6e=0x6e for class OFBsnTlvLoopbackPortVer13
+                   return OFBsnTlvLoopbackPortVer13.READER.readFrom(bb);
                case (short) 0x1:
                    // discriminator value 0x1=0x1 for class OFBsnTlvMacVer13
                    return OFBsnTlvMacVer13.READER.readFrom(bb);
@@ -217,12 +223,21 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x53:
                    // discriminator value 0x53=0x53 for class OFBsnTlvNegateVer13
                    return OFBsnTlvNegateVer13.READER.readFrom(bb);
+               case (short) 0x73:
+                   // discriminator value 0x73=0x73 for class OFBsnTlvNextHopIpv4Ver13
+                   return OFBsnTlvNextHopIpv4Ver13.READER.readFrom(bb);
+               case (short) 0x72:
+                   // discriminator value 0x72=0x72 for class OFBsnTlvNextHopMacVer13
+                   return OFBsnTlvNextHopMacVer13.READER.readFrom(bb);
                case (short) 0x5e:
                    // discriminator value 0x5e=0x5e for class OFBsnTlvNexthopTypeVxlanVer13
                    return OFBsnTlvNexthopTypeVxlanVer13.READER.readFrom(bb);
                case (short) 0x52:
                    // discriminator value 0x52=0x52 for class OFBsnTlvOffsetVer13
                    return OFBsnTlvOffsetVer13.READER.readFrom(bb);
+               case (short) 0x6d:
+                   // discriminator value 0x6d=0x6d for class OFBsnTlvParentPortVer13
+                   return OFBsnTlvParentPortVer13.READER.readFrom(bb);
                case (short) 0x33:
                    // discriminator value 0x33=0x33 for class OFBsnTlvPartnerKeyVer13
                    return OFBsnTlvPartnerKeyVer13.READER.readFrom(bb);
@@ -259,6 +274,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x15:
                    // discriminator value 0x15=0x15 for class OFBsnTlvQueueWeightVer13
                    return OFBsnTlvQueueWeightVer13.READER.readFrom(bb);
+               case (short) 0x74:
+                   // discriminator value 0x74=0x74 for class OFBsnTlvRateLimitVer13
+                   return OFBsnTlvRateLimitVer13.READER.readFrom(bb);
                case (short) 0x59:
                    // discriminator value 0x59=0x59 for class OFBsnTlvRateUnitVer13
                    return OFBsnTlvRateUnitVer13.READER.readFrom(bb);
@@ -304,6 +322,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x41:
                    // discriminator value 0x41=0x41 for class OFBsnTlvTcpSrcVer13
                    return OFBsnTlvTcpSrcVer13.READER.readFrom(bb);
+               case (short) 0x71:
+                   // discriminator value 0x71=0x71 for class OFBsnTlvTtlVer13
+                   return OFBsnTlvTtlVer13.READER.readFrom(bb);
                case (short) 0x27:
                    // discriminator value 0x27=0x27 for class OFBsnTlvTxBytesVer13
                    return OFBsnTlvTxBytesVer13.READER.readFrom(bb);
@@ -361,6 +382,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x56:
                    // discriminator value 0x56=0x56 for class OFBsnTlvVniVer13
                    return OFBsnTlvVniVer13.READER.readFrom(bb);
+               case (short) 0x6f:
+                   // discriminator value 0x6f=0x6f for class OFBsnTlvVpnKeyVer13
+                   return OFBsnTlvVpnKeyVer13.READER.readFrom(bb);
                case (short) 0x13:
                    // discriminator value 0x13=0x13 for class OFBsnTlvVrfVer13
                    return OFBsnTlvVrfVer13.READER.readFrom(bb);

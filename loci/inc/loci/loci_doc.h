@@ -6527,6 +6527,17 @@ typedef struct of_bsn_tlv_data_s of_bsn_tlv_data_t;
 typedef struct of_bsn_tlv_decap_s of_bsn_tlv_decap_t;
 
 /**
+ * Structure for of_bsn_tlv_dscp object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_dscp_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_dscp_s of_bsn_tlv_dscp_t;
+
+/**
  * Structure for of_bsn_tlv_eth_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6894,6 +6905,17 @@ typedef struct of_bsn_tlv_known_multicast_rate_s of_bsn_tlv_known_multicast_rate
 typedef struct of_bsn_tlv_l2_multicast_lookup_s of_bsn_tlv_l2_multicast_lookup_t;
 
 /**
+ * Structure for of_bsn_tlv_loopback_port object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_port_no.  Functions
+ *   are of type of_bsn_tlv_loopback_port_of_port_no_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_loopback_port_s of_bsn_tlv_loopback_port_t;
+
+/**
  * Structure for of_bsn_tlv_mac object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6996,6 +7018,28 @@ typedef struct of_bsn_tlv_name_s of_bsn_tlv_name_t;
 typedef struct of_bsn_tlv_negate_s of_bsn_tlv_negate_t;
 
 /**
+ * Structure for of_bsn_tlv_next_hop_ipv4 object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_ipv4.  Functions
+ *   are of type of_bsn_tlv_next_hop_ipv4_of_ipv4_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_next_hop_ipv4_s of_bsn_tlv_next_hop_ipv4_t;
+
+/**
+ * Structure for of_bsn_tlv_next_hop_mac object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_mac_addr.  Functions
+ *   are of type of_bsn_tlv_next_hop_mac_of_mac_addr_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_next_hop_mac_s of_bsn_tlv_next_hop_mac_t;
+
+/**
  * Structure for of_bsn_tlv_nexthop_type_vxlan object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7012,6 +7056,17 @@ typedef struct of_bsn_tlv_nexthop_type_vxlan_s of_bsn_tlv_nexthop_type_vxlan_t;
  *
  */
 typedef struct of_bsn_tlv_offset_s of_bsn_tlv_offset_t;
+
+/**
+ * Structure for of_bsn_tlv_parent_port object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_port_no.  Functions
+ *   are of type of_bsn_tlv_parent_port_of_port_no_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_parent_port_s of_bsn_tlv_parent_port_t;
 
 /**
  * Structure for of_bsn_tlv_partner_key object.  Get/set
@@ -7144,6 +7199,17 @@ typedef struct of_bsn_tlv_queue_id_s of_bsn_tlv_queue_id_t;
  *
  */
 typedef struct of_bsn_tlv_queue_weight_s of_bsn_tlv_queue_weight_t;
+
+/**
+ * Structure for of_bsn_tlv_rate_limit object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_rate_limit_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_rate_limit_s of_bsn_tlv_rate_limit_t;
 
 /**
  * Structure for of_bsn_tlv_rate_unit object.  Get/set
@@ -7297,6 +7363,17 @@ typedef struct of_bsn_tlv_tcp_dst_s of_bsn_tlv_tcp_dst_t;
  *
  */
 typedef struct of_bsn_tlv_tcp_src_s of_bsn_tlv_tcp_src_t;
+
+/**
+ * Structure for of_bsn_tlv_ttl object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_ttl_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_ttl_s of_bsn_tlv_ttl_t;
 
 /**
  * Structure for of_bsn_tlv_tx_bytes object.  Get/set
@@ -7513,6 +7590,17 @@ typedef struct of_bsn_tlv_vlan_vid_mask_s of_bsn_tlv_vlan_vid_mask_t;
  *
  */
 typedef struct of_bsn_tlv_vni_s of_bsn_tlv_vni_t;
+
+/**
+ * Structure for of_bsn_tlv_vpn_key object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_vpn_key_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_vpn_key_s of_bsn_tlv_vpn_key_t;
 
 /**
  * Structure for of_bsn_tlv_vrf object.  Get/set

@@ -59,6 +59,8 @@ public interface OFBsnTlvs {
     OFBsnTlvData data(byte[] value);
     OFBsnTlvDecap.Builder buildDecap() throws UnsupportedOperationException;
     OFBsnTlvDecap decap(OFBsnDecap value);
+    OFBsnTlvDscp.Builder buildDscp() throws UnsupportedOperationException;
+    OFBsnTlvDscp dscp(int value);
     OFBsnTlvEthDst.Builder buildEthDst() throws UnsupportedOperationException;
     OFBsnTlvEthDst ethDst(MacAddress value);
     OFBsnTlvEthSrc.Builder buildEthSrc() throws UnsupportedOperationException;
@@ -121,6 +123,8 @@ public interface OFBsnTlvs {
     OFBsnTlvKnownMulticastRate.Builder buildKnownMulticastRate() throws UnsupportedOperationException;
     OFBsnTlvKnownMulticastRate knownMulticastRate(long value);
     OFBsnTlvL2MulticastLookup l2MulticastLookup();
+    OFBsnTlvLoopbackPort.Builder buildLoopbackPort() throws UnsupportedOperationException;
+    OFBsnTlvLoopbackPort loopbackPort(OFPort value);
     OFBsnTlvMac.Builder buildMac() throws UnsupportedOperationException;
     OFBsnTlvMac mac(MacAddress value);
     OFBsnTlvMacMask.Builder buildMacMask() throws UnsupportedOperationException;
@@ -139,9 +143,15 @@ public interface OFBsnTlvs {
     OFBsnTlvName.Builder buildName() throws UnsupportedOperationException;
     OFBsnTlvName name(byte[] value);
     OFBsnTlvNegate negate();
+    OFBsnTlvNextHopIpv4.Builder buildNextHopIpv4() throws UnsupportedOperationException;
+    OFBsnTlvNextHopIpv4 nextHopIpv4(IPv4Address value);
+    OFBsnTlvNextHopMac.Builder buildNextHopMac() throws UnsupportedOperationException;
+    OFBsnTlvNextHopMac nextHopMac(MacAddress value);
     OFBsnTlvNexthopTypeVxlan nexthopTypeVxlan();
     OFBsnTlvOffset.Builder buildOffset() throws UnsupportedOperationException;
     OFBsnTlvOffset offset(int value);
+    OFBsnTlvParentPort.Builder buildParentPort() throws UnsupportedOperationException;
+    OFBsnTlvParentPort parentPort(OFPort value);
     OFBsnTlvPartnerKey.Builder buildPartnerKey() throws UnsupportedOperationException;
     OFBsnTlvPartnerKey partnerKey(int value);
     OFBsnTlvPartnerPortNum.Builder buildPartnerPortNum() throws UnsupportedOperationException;
@@ -166,6 +176,8 @@ public interface OFBsnTlvs {
     OFBsnTlvQueueId queueId(long value);
     OFBsnTlvQueueWeight.Builder buildQueueWeight() throws UnsupportedOperationException;
     OFBsnTlvQueueWeight queueWeight(long value);
+    OFBsnTlvRateLimit.Builder buildRateLimit() throws UnsupportedOperationException;
+    OFBsnTlvRateLimit rateLimit(long value);
     OFBsnTlvRateUnit.Builder buildRateUnit() throws UnsupportedOperationException;
     OFBsnTlvRateUnit rateUnit(OFBsnRateUnit value);
     OFBsnTlvReference.Builder buildReference() throws UnsupportedOperationException;
@@ -192,6 +204,8 @@ public interface OFBsnTlvs {
     OFBsnTlvTcpDst tcpDst(int value);
     OFBsnTlvTcpSrc.Builder buildTcpSrc() throws UnsupportedOperationException;
     OFBsnTlvTcpSrc tcpSrc(int value);
+    OFBsnTlvTtl.Builder buildTtl() throws UnsupportedOperationException;
+    OFBsnTlvTtl ttl(int value);
     OFBsnTlvTxBytes.Builder buildTxBytes() throws UnsupportedOperationException;
     OFBsnTlvTxBytes txBytes(U64 value);
     OFBsnTlvTxPackets.Builder buildTxPackets() throws UnsupportedOperationException;
@@ -229,6 +243,8 @@ public interface OFBsnTlvs {
     OFBsnTlvVlanVidMask vlanVidMask(int value);
     OFBsnTlvVni.Builder buildVni() throws UnsupportedOperationException;
     OFBsnTlvVni vni(long value);
+    OFBsnTlvVpnKey.Builder buildVpnKey() throws UnsupportedOperationException;
+    OFBsnTlvVpnKey vpnKey(long value);
     OFBsnTlvVrf.Builder buildVrf() throws UnsupportedOperationException;
     OFBsnTlvVrf vrf(long value);
 

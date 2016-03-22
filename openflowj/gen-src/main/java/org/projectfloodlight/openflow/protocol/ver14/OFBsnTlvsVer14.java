@@ -168,6 +168,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvDscp.Builder buildDscp() {
+        return new OFBsnTlvDscpVer14.Builder();
+    }
+    public OFBsnTlvDscp dscp(int value) {
+        return new OFBsnTlvDscpVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         return new OFBsnTlvEthDstVer14.Builder();
     }
@@ -447,6 +456,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
         return OFBsnTlvL2MulticastLookupVer14.INSTANCE;
     }
 
+    public OFBsnTlvLoopbackPort.Builder buildLoopbackPort() {
+        return new OFBsnTlvLoopbackPortVer14.Builder();
+    }
+    public OFBsnTlvLoopbackPort loopbackPort(OFPort value) {
+        return new OFBsnTlvLoopbackPortVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvMac.Builder buildMac() {
         return new OFBsnTlvMacVer14.Builder();
     }
@@ -527,6 +545,24 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
         return OFBsnTlvNegateVer14.INSTANCE;
     }
 
+    public OFBsnTlvNextHopIpv4.Builder buildNextHopIpv4() {
+        return new OFBsnTlvNextHopIpv4Ver14.Builder();
+    }
+    public OFBsnTlvNextHopIpv4 nextHopIpv4(IPv4Address value) {
+        return new OFBsnTlvNextHopIpv4Ver14(
+                value
+                    );
+    }
+
+    public OFBsnTlvNextHopMac.Builder buildNextHopMac() {
+        return new OFBsnTlvNextHopMacVer14.Builder();
+    }
+    public OFBsnTlvNextHopMac nextHopMac(MacAddress value) {
+        return new OFBsnTlvNextHopMacVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvNexthopTypeVxlan nexthopTypeVxlan() {
         return OFBsnTlvNexthopTypeVxlanVer14.INSTANCE;
     }
@@ -536,6 +572,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
     }
     public OFBsnTlvOffset offset(int value) {
         return new OFBsnTlvOffsetVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvParentPort.Builder buildParentPort() {
+        return new OFBsnTlvParentPortVer14.Builder();
+    }
+    public OFBsnTlvParentPort parentPort(OFPort value) {
+        return new OFBsnTlvParentPortVer14(
                 value
                     );
     }
@@ -644,6 +689,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
     }
     public OFBsnTlvQueueWeight queueWeight(long value) {
         return new OFBsnTlvQueueWeightVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvRateLimit.Builder buildRateLimit() {
+        return new OFBsnTlvRateLimitVer14.Builder();
+    }
+    public OFBsnTlvRateLimit rateLimit(long value) {
+        return new OFBsnTlvRateLimitVer14(
                 value
                     );
     }
@@ -760,6 +814,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
     }
     public OFBsnTlvTcpSrc tcpSrc(int value) {
         return new OFBsnTlvTcpSrcVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvTtl.Builder buildTtl() {
+        return new OFBsnTlvTtlVer14.Builder();
+    }
+    public OFBsnTlvTtl ttl(int value) {
+        return new OFBsnTlvTtlVer14(
                 value
                     );
     }
@@ -926,6 +989,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
     }
     public OFBsnTlvVni vni(long value) {
         return new OFBsnTlvVniVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvVpnKey.Builder buildVpnKey() {
+        return new OFBsnTlvVpnKeyVer14.Builder();
+    }
+    public OFBsnTlvVpnKey vpnKey(long value) {
+        return new OFBsnTlvVpnKeyVer14(
                 value
                     );
     }

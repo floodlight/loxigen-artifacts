@@ -138,6 +138,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvDecap not supported in version 1.2");
     }
 
+    public OFBsnTlvDscp.Builder buildDscp() {
+        throw new UnsupportedOperationException("OFBsnTlvDscp not supported in version 1.2");
+    }
+    public OFBsnTlvDscp dscp(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvDscp not supported in version 1.2");
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         throw new UnsupportedOperationException("OFBsnTlvEthDst not supported in version 1.2");
     }
@@ -357,6 +364,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvL2MulticastLookup not supported in version 1.2");
     }
 
+    public OFBsnTlvLoopbackPort.Builder buildLoopbackPort() {
+        throw new UnsupportedOperationException("OFBsnTlvLoopbackPort not supported in version 1.2");
+    }
+    public OFBsnTlvLoopbackPort loopbackPort(OFPort value) {
+        throw new UnsupportedOperationException("OFBsnTlvLoopbackPort not supported in version 1.2");
+    }
+
     public OFBsnTlvMac.Builder buildMac() {
         throw new UnsupportedOperationException("OFBsnTlvMac not supported in version 1.2");
     }
@@ -421,6 +435,20 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvNegate not supported in version 1.2");
     }
 
+    public OFBsnTlvNextHopIpv4.Builder buildNextHopIpv4() {
+        throw new UnsupportedOperationException("OFBsnTlvNextHopIpv4 not supported in version 1.2");
+    }
+    public OFBsnTlvNextHopIpv4 nextHopIpv4(IPv4Address value) {
+        throw new UnsupportedOperationException("OFBsnTlvNextHopIpv4 not supported in version 1.2");
+    }
+
+    public OFBsnTlvNextHopMac.Builder buildNextHopMac() {
+        throw new UnsupportedOperationException("OFBsnTlvNextHopMac not supported in version 1.2");
+    }
+    public OFBsnTlvNextHopMac nextHopMac(MacAddress value) {
+        throw new UnsupportedOperationException("OFBsnTlvNextHopMac not supported in version 1.2");
+    }
+
     public OFBsnTlvNexthopTypeVxlan nexthopTypeVxlan() {
         throw new UnsupportedOperationException("OFBsnTlvNexthopTypeVxlan not supported in version 1.2");
     }
@@ -430,6 +458,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvOffset offset(int value) {
         throw new UnsupportedOperationException("OFBsnTlvOffset not supported in version 1.2");
+    }
+
+    public OFBsnTlvParentPort.Builder buildParentPort() {
+        throw new UnsupportedOperationException("OFBsnTlvParentPort not supported in version 1.2");
+    }
+    public OFBsnTlvParentPort parentPort(OFPort value) {
+        throw new UnsupportedOperationException("OFBsnTlvParentPort not supported in version 1.2");
     }
 
     public OFBsnTlvPartnerKey.Builder buildPartnerKey() {
@@ -514,6 +549,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvQueueWeight queueWeight(long value) {
         throw new UnsupportedOperationException("OFBsnTlvQueueWeight not supported in version 1.2");
+    }
+
+    public OFBsnTlvRateLimit.Builder buildRateLimit() {
+        throw new UnsupportedOperationException("OFBsnTlvRateLimit not supported in version 1.2");
+    }
+    public OFBsnTlvRateLimit rateLimit(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvRateLimit not supported in version 1.2");
     }
 
     public OFBsnTlvRateUnit.Builder buildRateUnit() {
@@ -607,6 +649,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvTcpSrc tcpSrc(int value) {
         throw new UnsupportedOperationException("OFBsnTlvTcpSrc not supported in version 1.2");
+    }
+
+    public OFBsnTlvTtl.Builder buildTtl() {
+        throw new UnsupportedOperationException("OFBsnTlvTtl not supported in version 1.2");
+    }
+    public OFBsnTlvTtl ttl(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvTtl not supported in version 1.2");
     }
 
     public OFBsnTlvTxBytes.Builder buildTxBytes() {
@@ -737,6 +786,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvVni vni(long value) {
         throw new UnsupportedOperationException("OFBsnTlvVni not supported in version 1.2");
+    }
+
+    public OFBsnTlvVpnKey.Builder buildVpnKey() {
+        throw new UnsupportedOperationException("OFBsnTlvVpnKey not supported in version 1.2");
+    }
+    public OFBsnTlvVpnKey vpnKey(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvVpnKey not supported in version 1.2");
     }
 
     public OFBsnTlvVrf.Builder buildVrf() {

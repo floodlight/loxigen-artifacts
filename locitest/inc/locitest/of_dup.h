@@ -1279,6 +1279,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_dscp_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_eth_dst_dup(
         of_object_t *src);
 
@@ -1411,6 +1415,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_loopback_port_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_mac_dup(
         of_object_t *src);
 
@@ -1451,11 +1459,23 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_next_hop_ipv4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_next_hop_mac_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_nexthop_type_vxlan_dup(
         of_object_t *src);
 
 extern of_object_t *
     of_bsn_tlv_offset_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_parent_port_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1504,6 +1524,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_queue_weight_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_rate_limit_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1564,6 +1588,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_tcp_src_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ttl_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1644,6 +1672,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_vni_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_vpn_key_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5971,6 +6003,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_dscp_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6103,6 +6139,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_loopback_port_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_mac_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6143,11 +6183,23 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_next_hop_mac_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
     of_bsn_tlv_offset_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_parent_port_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6196,6 +6248,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_rate_limit_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6256,6 +6312,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_tcp_src_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ttl_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6336,6 +6396,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_vni_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_vpn_key_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8487,6 +8551,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_dscp_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_eth_dst_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8619,6 +8687,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_loopback_port_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_mac_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8659,11 +8731,23 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_next_hop_mac_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
     of_bsn_tlv_offset_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_parent_port_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8712,6 +8796,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_rate_limit_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8772,6 +8860,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ttl_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8852,6 +8944,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_vni_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_vpn_key_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

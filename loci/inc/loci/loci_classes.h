@@ -831,6 +831,8 @@ void of_bsn_tlv_data_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_data_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_decap_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_decap_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_dscp_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_dscp_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_eth_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_eth_dst_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_eth_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -897,6 +899,8 @@ void of_bsn_tlv_known_multicast_rate_wire_object_id_get(of_object_t *obj, of_obj
 void of_bsn_tlv_known_multicast_rate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_l2_multicast_lookup_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_l2_multicast_lookup_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_loopback_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_loopback_port_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mac_mask_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -917,10 +921,16 @@ void of_bsn_tlv_name_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_name_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_negate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_negate_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_next_hop_ipv4_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_next_hop_ipv4_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_next_hop_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_next_hop_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_nexthop_type_vxlan_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_nexthop_type_vxlan_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_offset_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_offset_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_parent_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_parent_port_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_partner_key_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_partner_key_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_partner_port_num_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -945,6 +955,8 @@ void of_bsn_tlv_queue_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_bsn_tlv_queue_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_queue_weight_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_queue_weight_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_rate_limit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_rate_limit_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_rate_unit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_rate_unit_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_reference_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -975,6 +987,8 @@ void of_bsn_tlv_tcp_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
 void of_bsn_tlv_tcp_dst_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tcp_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_tcp_src_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_ttl_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_ttl_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tx_bytes_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_tx_bytes_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tx_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1015,6 +1029,8 @@ void of_bsn_tlv_vlan_vid_mask_wire_object_id_get(of_object_t *obj, of_object_id_
 void of_bsn_tlv_vlan_vid_mask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vni_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vni_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_vpn_key_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_vpn_key_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vrf_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vrf_push_wire_types(of_object_t *obj);
 void of_bsn_vlan_counter_clear_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1680,6 +1696,7 @@ typedef of_object_t of_bsn_tlv_convergence_status_t;
 typedef of_object_t of_bsn_tlv_crc_enabled_t;
 typedef of_object_t of_bsn_tlv_data_t;
 typedef of_object_t of_bsn_tlv_decap_t;
+typedef of_object_t of_bsn_tlv_dscp_t;
 typedef of_object_t of_bsn_tlv_eth_dst_t;
 typedef of_object_t of_bsn_tlv_eth_src_t;
 typedef of_object_t of_bsn_tlv_external_gateway_ip_t;
@@ -1713,6 +1730,7 @@ typedef of_object_t of_bsn_tlv_ipv4_src_t;
 typedef of_object_t of_bsn_tlv_ipv6_t;
 typedef of_object_t of_bsn_tlv_known_multicast_rate_t;
 typedef of_object_t of_bsn_tlv_l2_multicast_lookup_t;
+typedef of_object_t of_bsn_tlv_loopback_port_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_mac_mask_t;
 typedef of_object_t of_bsn_tlv_mcg_type_vxlan_t;
@@ -1723,8 +1741,11 @@ typedef of_object_t of_bsn_tlv_mpls_sequenced_t;
 typedef of_object_t of_bsn_tlv_multicast_interface_id_t;
 typedef of_object_t of_bsn_tlv_name_t;
 typedef of_object_t of_bsn_tlv_negate_t;
+typedef of_object_t of_bsn_tlv_next_hop_ipv4_t;
+typedef of_object_t of_bsn_tlv_next_hop_mac_t;
 typedef of_object_t of_bsn_tlv_nexthop_type_vxlan_t;
 typedef of_object_t of_bsn_tlv_offset_t;
+typedef of_object_t of_bsn_tlv_parent_port_t;
 typedef of_object_t of_bsn_tlv_partner_key_t;
 typedef of_object_t of_bsn_tlv_partner_port_num_t;
 typedef of_object_t of_bsn_tlv_partner_port_priority_t;
@@ -1737,6 +1758,7 @@ typedef of_object_t of_bsn_tlv_priority_t;
 typedef of_object_t of_bsn_tlv_qos_priority_t;
 typedef of_object_t of_bsn_tlv_queue_id_t;
 typedef of_object_t of_bsn_tlv_queue_weight_t;
+typedef of_object_t of_bsn_tlv_rate_limit_t;
 typedef of_object_t of_bsn_tlv_rate_unit_t;
 typedef of_object_t of_bsn_tlv_reference_t;
 typedef of_object_t of_bsn_tlv_reply_packets_t;
@@ -1752,6 +1774,7 @@ typedef of_object_t of_bsn_tlv_strip_vlan_on_egress_t;
 typedef of_object_t of_bsn_tlv_sub_agent_id_t;
 typedef of_object_t of_bsn_tlv_tcp_dst_t;
 typedef of_object_t of_bsn_tlv_tcp_src_t;
+typedef of_object_t of_bsn_tlv_ttl_t;
 typedef of_object_t of_bsn_tlv_tx_bytes_t;
 typedef of_object_t of_bsn_tlv_tx_packets_t;
 typedef of_object_t of_bsn_tlv_udf_anchor_t;
@@ -1772,6 +1795,7 @@ typedef of_object_t of_bsn_tlv_vlan_pcp_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_mask_t;
 typedef of_object_t of_bsn_tlv_vni_t;
+typedef of_object_t of_bsn_tlv_vpn_key_t;
 typedef of_object_t of_bsn_tlv_vrf_t;
 typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_bsn_vlan_mac_t;
@@ -3703,6 +3727,11 @@ extern void of_bsn_tlv_decap_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_dscp_new(of_version_t version);
+extern void of_bsn_tlv_dscp_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_eth_dst_new(of_version_t version);
 extern void of_bsn_tlv_eth_dst_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3868,6 +3897,11 @@ extern void of_bsn_tlv_l2_multicast_lookup_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_loopback_port_new(of_version_t version);
+extern void of_bsn_tlv_loopback_port_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_mac_new(of_version_t version);
 extern void of_bsn_tlv_mac_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3918,6 +3952,16 @@ extern void of_bsn_tlv_negate_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_next_hop_ipv4_new(of_version_t version);
+extern void of_bsn_tlv_next_hop_ipv4_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_next_hop_mac_new(of_version_t version);
+extern void of_bsn_tlv_next_hop_mac_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_nexthop_type_vxlan_new(of_version_t version);
 extern void of_bsn_tlv_nexthop_type_vxlan_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3925,6 +3969,11 @@ extern void of_bsn_tlv_nexthop_type_vxlan_init(
 extern of_object_t *
     of_bsn_tlv_offset_new(of_version_t version);
 extern void of_bsn_tlv_offset_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_parent_port_new(of_version_t version);
+extern void of_bsn_tlv_parent_port_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -3985,6 +4034,11 @@ extern void of_bsn_tlv_queue_id_init(
 extern of_object_t *
     of_bsn_tlv_queue_weight_new(of_version_t version);
 extern void of_bsn_tlv_queue_weight_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_rate_limit_new(of_version_t version);
+extern void of_bsn_tlv_rate_limit_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -4060,6 +4114,11 @@ extern void of_bsn_tlv_tcp_dst_init(
 extern of_object_t *
     of_bsn_tlv_tcp_src_new(of_version_t version);
 extern void of_bsn_tlv_tcp_src_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_ttl_new(of_version_t version);
+extern void of_bsn_tlv_ttl_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -4160,6 +4219,11 @@ extern void of_bsn_tlv_vlan_vid_mask_init(
 extern of_object_t *
     of_bsn_tlv_vni_new(of_version_t version);
 extern void of_bsn_tlv_vni_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_vpn_key_new(of_version_t version);
+extern void of_bsn_tlv_vpn_key_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9276,6 +9340,17 @@ of_bsn_tlv_decap_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_dscp_t
+ * @param obj An instance of type of_bsn_tlv_dscp_t
+ *
+ * \ingroup of_bsn_tlv_dscp
+ */
+static inline void
+of_bsn_tlv_dscp_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_eth_dst_t
  * @param obj An instance of type of_bsn_tlv_eth_dst_t
  *
@@ -9639,6 +9714,17 @@ of_bsn_tlv_l2_multicast_lookup_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_loopback_port_t
+ * @param obj An instance of type of_bsn_tlv_loopback_port_t
+ *
+ * \ingroup of_bsn_tlv_loopback_port
+ */
+static inline void
+of_bsn_tlv_loopback_port_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_mac_t
  * @param obj An instance of type of_bsn_tlv_mac_t
  *
@@ -9749,6 +9835,28 @@ of_bsn_tlv_negate_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_next_hop_ipv4_t
+ * @param obj An instance of type of_bsn_tlv_next_hop_ipv4_t
+ *
+ * \ingroup of_bsn_tlv_next_hop_ipv4
+ */
+static inline void
+of_bsn_tlv_next_hop_ipv4_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_next_hop_mac_t
+ * @param obj An instance of type of_bsn_tlv_next_hop_mac_t
+ *
+ * \ingroup of_bsn_tlv_next_hop_mac
+ */
+static inline void
+of_bsn_tlv_next_hop_mac_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_nexthop_type_vxlan_t
  * @param obj An instance of type of_bsn_tlv_nexthop_type_vxlan_t
  *
@@ -9767,6 +9875,17 @@ of_bsn_tlv_nexthop_type_vxlan_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_offset_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_parent_port_t
+ * @param obj An instance of type of_bsn_tlv_parent_port_t
+ *
+ * \ingroup of_bsn_tlv_parent_port
+ */
+static inline void
+of_bsn_tlv_parent_port_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -9899,6 +10018,17 @@ of_bsn_tlv_queue_id_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_queue_weight_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_rate_limit_t
+ * @param obj An instance of type of_bsn_tlv_rate_limit_t
+ *
+ * \ingroup of_bsn_tlv_rate_limit
+ */
+static inline void
+of_bsn_tlv_rate_limit_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -10064,6 +10194,17 @@ of_bsn_tlv_tcp_dst_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_tcp_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_ttl_t
+ * @param obj An instance of type of_bsn_tlv_ttl_t
+ *
+ * \ingroup of_bsn_tlv_ttl
+ */
+static inline void
+of_bsn_tlv_ttl_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -10284,6 +10425,17 @@ of_bsn_tlv_vlan_vid_mask_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_vni_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_vpn_key_t
+ * @param obj An instance of type of_bsn_tlv_vpn_key_t
+ *
+ * \ingroup of_bsn_tlv_vpn_key
+ */
+static inline void
+of_bsn_tlv_vpn_key_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -21634,6 +21786,15 @@ extern void of_bsn_tlv_decap_value_get(
     of_bsn_tlv_decap_t *obj,
     uint16_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_dscp */
+
+extern void of_bsn_tlv_dscp_value_set(
+    of_bsn_tlv_dscp_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_dscp_value_get(
+    of_bsn_tlv_dscp_t *obj,
+    uint16_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_eth_dst */
 
 extern void of_bsn_tlv_eth_dst_value_set(
@@ -21938,6 +22099,15 @@ extern void of_bsn_tlv_known_multicast_rate_value_get(
 
 /* Unified accessor functions for of_bsn_tlv_l2_multicast_lookup */
 
+/* Unified accessor functions for of_bsn_tlv_loopback_port */
+
+extern void of_bsn_tlv_loopback_port_value_set(
+    of_bsn_tlv_loopback_port_t *obj,
+    of_port_no_t value);
+extern void of_bsn_tlv_loopback_port_value_get(
+    of_bsn_tlv_loopback_port_t *obj,
+    of_port_no_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_mac */
 
 extern void of_bsn_tlv_mac_value_set(
@@ -22014,6 +22184,24 @@ extern void of_bsn_tlv_name_value_get(
 
 /* Unified accessor functions for of_bsn_tlv_negate */
 
+/* Unified accessor functions for of_bsn_tlv_next_hop_ipv4 */
+
+extern void of_bsn_tlv_next_hop_ipv4_value_set(
+    of_bsn_tlv_next_hop_ipv4_t *obj,
+    of_ipv4_t value);
+extern void of_bsn_tlv_next_hop_ipv4_value_get(
+    of_bsn_tlv_next_hop_ipv4_t *obj,
+    of_ipv4_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_next_hop_mac */
+
+extern void of_bsn_tlv_next_hop_mac_value_set(
+    of_bsn_tlv_next_hop_mac_t *obj,
+    of_mac_addr_t value);
+extern void of_bsn_tlv_next_hop_mac_value_get(
+    of_bsn_tlv_next_hop_mac_t *obj,
+    of_mac_addr_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_nexthop_type_vxlan */
 
 /* Unified accessor functions for of_bsn_tlv_offset */
@@ -22024,6 +22212,15 @@ extern void of_bsn_tlv_offset_value_set(
 extern void of_bsn_tlv_offset_value_get(
     of_bsn_tlv_offset_t *obj,
     uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_parent_port */
+
+extern void of_bsn_tlv_parent_port_value_set(
+    of_bsn_tlv_parent_port_t *obj,
+    of_port_no_t value);
+extern void of_bsn_tlv_parent_port_value_get(
+    of_bsn_tlv_parent_port_t *obj,
+    of_port_no_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_partner_key */
 
@@ -22131,6 +22328,15 @@ extern void of_bsn_tlv_queue_weight_value_set(
     uint32_t value);
 extern void of_bsn_tlv_queue_weight_value_get(
     of_bsn_tlv_queue_weight_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_rate_limit */
+
+extern void of_bsn_tlv_rate_limit_value_set(
+    of_bsn_tlv_rate_limit_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_rate_limit_value_get(
+    of_bsn_tlv_rate_limit_t *obj,
     uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_rate_unit */
@@ -22247,6 +22453,15 @@ extern void of_bsn_tlv_tcp_src_value_set(
     uint16_t value);
 extern void of_bsn_tlv_tcp_src_value_get(
     of_bsn_tlv_tcp_src_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_ttl */
+
+extern void of_bsn_tlv_ttl_value_set(
+    of_bsn_tlv_ttl_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_ttl_value_get(
+    of_bsn_tlv_ttl_t *obj,
     uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_tx_bytes */
@@ -22422,6 +22637,15 @@ extern void of_bsn_tlv_vni_value_set(
     uint32_t value);
 extern void of_bsn_tlv_vni_value_get(
     of_bsn_tlv_vni_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_vpn_key */
+
+extern void of_bsn_tlv_vpn_key_value_set(
+    of_bsn_tlv_vpn_key_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_vpn_key_value_get(
+    of_bsn_tlv_vpn_key_t *obj,
     uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_vrf */

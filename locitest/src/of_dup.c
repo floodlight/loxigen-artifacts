@@ -26815,8 +26815,16 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
+        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
         return of_bsn_tlv_udf_length_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_LOOPBACK_PORT) {
+        return of_bsn_tlv_loopback_port_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_HASH_GTP_HEADER_MATCH) {
@@ -26995,6 +27003,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_actor_key_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_VPN_KEY) {
+        return of_bsn_tlv_vpn_key_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS) {
         return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_dup(src);
     }
@@ -27059,6 +27071,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_NEXT_HOP_MAC) {
+        return of_bsn_tlv_next_hop_mac_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UNICAST_RATE) {
         return of_bsn_tlv_unicast_rate_OF_VERSION_1_3_dup(src);
     }
@@ -27107,6 +27123,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_TTL) {
+        return of_bsn_tlv_ttl_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ETH_DST) {
         return of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(src);
     }
@@ -27119,8 +27139,12 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_mac_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_BUCKET) {
-        return of_bsn_tlv_bucket_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
+        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RATE_LIMIT) {
+        return of_bsn_tlv_rate_limit_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_TX_BYTES) {
@@ -27149,6 +27173,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
         return of_bsn_tlv_partner_state_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DSCP) {
+        return of_bsn_tlv_dscp_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UNKNOWN_MULTICAST_RATE) {
@@ -27187,6 +27215,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_PARENT_PORT) {
+        return of_bsn_tlv_parent_port_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_PRIORITY) {
         return of_bsn_tlv_priority_OF_VERSION_1_3_dup(src);
     }
@@ -27199,8 +27231,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_reference_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
-        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_BUCKET) {
+        return of_bsn_tlv_bucket_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
@@ -27594,6 +27626,31 @@ of_bsn_tlv_decap_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_decap_value_get(src, &val16);
     of_bsn_tlv_decap_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_dscp
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_dscp.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_dscp_t *
+of_bsn_tlv_dscp_OF_VERSION_1_3_dup(
+    of_bsn_tlv_dscp_t *src)
+{
+    of_bsn_tlv_dscp_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_dscp_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_dscp_value_get(src, &val16);
+    of_bsn_tlv_dscp_value_set(dst, val16);
 
     return dst;
 }
@@ -28425,6 +28482,31 @@ of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_loopback_port
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_loopback_port.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_loopback_port_t *
+of_bsn_tlv_loopback_port_OF_VERSION_1_3_dup(
+    of_bsn_tlv_loopback_port_t *src)
+{
+    of_bsn_tlv_loopback_port_t *dst;
+    of_port_no_t port_no;
+
+    if ((dst = of_bsn_tlv_loopback_port_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_loopback_port_value_get(src, &port_no);
+    of_bsn_tlv_loopback_port_value_set(dst, port_no);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_mac
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -28667,6 +28749,56 @@ of_bsn_tlv_negate_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_next_hop_ipv4
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_next_hop_ipv4.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_next_hop_ipv4_t *
+of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_dup(
+    of_bsn_tlv_next_hop_ipv4_t *src)
+{
+    of_bsn_tlv_next_hop_ipv4_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_bsn_tlv_next_hop_ipv4_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_next_hop_ipv4_value_get(src, &ipv4);
+    of_bsn_tlv_next_hop_ipv4_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_next_hop_mac
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_next_hop_mac.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_next_hop_mac_t *
+of_bsn_tlv_next_hop_mac_OF_VERSION_1_3_dup(
+    of_bsn_tlv_next_hop_mac_t *src)
+{
+    of_bsn_tlv_next_hop_mac_t *dst;
+    of_mac_addr_t mac_addr;
+
+    if ((dst = of_bsn_tlv_next_hop_mac_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_next_hop_mac_value_get(src, &mac_addr);
+    of_bsn_tlv_next_hop_mac_value_set(dst, mac_addr);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_nexthop_type_vxlan
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -28708,6 +28840,31 @@ of_bsn_tlv_offset_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_offset_value_get(src, &val16);
     of_bsn_tlv_offset_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_parent_port
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_parent_port.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_parent_port_t *
+of_bsn_tlv_parent_port_OF_VERSION_1_3_dup(
+    of_bsn_tlv_parent_port_t *src)
+{
+    of_bsn_tlv_parent_port_t *dst;
+    of_port_no_t port_no;
+
+    if ((dst = of_bsn_tlv_parent_port_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_parent_port_value_get(src, &port_no);
+    of_bsn_tlv_parent_port_value_set(dst, port_no);
 
     return dst;
 }
@@ -29008,6 +29165,31 @@ of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_queue_weight_value_get(src, &val32);
     of_bsn_tlv_queue_weight_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_rate_limit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_rate_limit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_rate_limit_t *
+of_bsn_tlv_rate_limit_OF_VERSION_1_3_dup(
+    of_bsn_tlv_rate_limit_t *src)
+{
+    of_bsn_tlv_rate_limit_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_rate_limit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_rate_limit_value_get(src, &val32);
+    of_bsn_tlv_rate_limit_value_set(dst, val32);
 
     return dst;
 }
@@ -29380,6 +29562,31 @@ of_bsn_tlv_tcp_src_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_tcp_src_value_get(src, &val16);
     of_bsn_tlv_tcp_src_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_ttl
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_ttl.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_ttl_t *
+of_bsn_tlv_ttl_OF_VERSION_1_3_dup(
+    of_bsn_tlv_ttl_t *src)
+{
+    of_bsn_tlv_ttl_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_ttl_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_ttl_value_get(src, &val16);
+    of_bsn_tlv_ttl_value_set(dst, val16);
 
     return dst;
 }
@@ -29885,6 +30092,31 @@ of_bsn_tlv_vni_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_vni_value_get(src, &val32);
     of_bsn_tlv_vni_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_vpn_key
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_vpn_key.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_vpn_key_t *
+of_bsn_tlv_vpn_key_OF_VERSION_1_3_dup(
+    of_bsn_tlv_vpn_key_t *src)
+{
+    of_bsn_tlv_vpn_key_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_vpn_key_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_vpn_key_value_get(src, &val32);
+    of_bsn_tlv_vpn_key_value_set(dst, val32);
 
     return dst;
 }
@@ -47877,8 +48109,16 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
+        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
         return of_bsn_tlv_udf_length_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_LOOPBACK_PORT) {
+        return of_bsn_tlv_loopback_port_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_HASH_GTP_HEADER_MATCH) {
@@ -48057,6 +48297,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_actor_key_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_VPN_KEY) {
+        return of_bsn_tlv_vpn_key_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS) {
         return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_dup(src);
     }
@@ -48121,6 +48365,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_NEXT_HOP_MAC) {
+        return of_bsn_tlv_next_hop_mac_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UNICAST_RATE) {
         return of_bsn_tlv_unicast_rate_OF_VERSION_1_4_dup(src);
     }
@@ -48169,6 +48417,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_partner_port_priority_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_TTL) {
+        return of_bsn_tlv_ttl_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ETH_DST) {
         return of_bsn_tlv_eth_dst_OF_VERSION_1_4_dup(src);
     }
@@ -48181,8 +48433,12 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_mac_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_BUCKET) {
-        return of_bsn_tlv_bucket_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
+        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RATE_LIMIT) {
+        return of_bsn_tlv_rate_limit_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_TX_BYTES) {
@@ -48211,6 +48467,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
         return of_bsn_tlv_partner_state_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DSCP) {
+        return of_bsn_tlv_dscp_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UNKNOWN_MULTICAST_RATE) {
@@ -48249,6 +48509,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_crc_enabled_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_PARENT_PORT) {
+        return of_bsn_tlv_parent_port_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_PRIORITY) {
         return of_bsn_tlv_priority_OF_VERSION_1_4_dup(src);
     }
@@ -48261,8 +48525,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_reference_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
-        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_BUCKET) {
+        return of_bsn_tlv_bucket_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
@@ -48656,6 +48920,31 @@ of_bsn_tlv_decap_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_decap_value_get(src, &val16);
     of_bsn_tlv_decap_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_dscp
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_dscp.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_dscp_t *
+of_bsn_tlv_dscp_OF_VERSION_1_4_dup(
+    of_bsn_tlv_dscp_t *src)
+{
+    of_bsn_tlv_dscp_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_dscp_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_dscp_value_get(src, &val16);
+    of_bsn_tlv_dscp_value_set(dst, val16);
 
     return dst;
 }
@@ -49487,6 +49776,31 @@ of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_loopback_port
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_loopback_port.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_loopback_port_t *
+of_bsn_tlv_loopback_port_OF_VERSION_1_4_dup(
+    of_bsn_tlv_loopback_port_t *src)
+{
+    of_bsn_tlv_loopback_port_t *dst;
+    of_port_no_t port_no;
+
+    if ((dst = of_bsn_tlv_loopback_port_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_loopback_port_value_get(src, &port_no);
+    of_bsn_tlv_loopback_port_value_set(dst, port_no);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_mac
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -49729,6 +50043,56 @@ of_bsn_tlv_negate_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_next_hop_ipv4
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_next_hop_ipv4.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_next_hop_ipv4_t *
+of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_dup(
+    of_bsn_tlv_next_hop_ipv4_t *src)
+{
+    of_bsn_tlv_next_hop_ipv4_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_bsn_tlv_next_hop_ipv4_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_next_hop_ipv4_value_get(src, &ipv4);
+    of_bsn_tlv_next_hop_ipv4_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_next_hop_mac
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_next_hop_mac.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_next_hop_mac_t *
+of_bsn_tlv_next_hop_mac_OF_VERSION_1_4_dup(
+    of_bsn_tlv_next_hop_mac_t *src)
+{
+    of_bsn_tlv_next_hop_mac_t *dst;
+    of_mac_addr_t mac_addr;
+
+    if ((dst = of_bsn_tlv_next_hop_mac_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_next_hop_mac_value_get(src, &mac_addr);
+    of_bsn_tlv_next_hop_mac_value_set(dst, mac_addr);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_nexthop_type_vxlan
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -49770,6 +50134,31 @@ of_bsn_tlv_offset_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_offset_value_get(src, &val16);
     of_bsn_tlv_offset_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_parent_port
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_parent_port.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_parent_port_t *
+of_bsn_tlv_parent_port_OF_VERSION_1_4_dup(
+    of_bsn_tlv_parent_port_t *src)
+{
+    of_bsn_tlv_parent_port_t *dst;
+    of_port_no_t port_no;
+
+    if ((dst = of_bsn_tlv_parent_port_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_parent_port_value_get(src, &port_no);
+    of_bsn_tlv_parent_port_value_set(dst, port_no);
 
     return dst;
 }
@@ -50070,6 +50459,31 @@ of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_queue_weight_value_get(src, &val32);
     of_bsn_tlv_queue_weight_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_rate_limit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_rate_limit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_rate_limit_t *
+of_bsn_tlv_rate_limit_OF_VERSION_1_4_dup(
+    of_bsn_tlv_rate_limit_t *src)
+{
+    of_bsn_tlv_rate_limit_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_rate_limit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_rate_limit_value_get(src, &val32);
+    of_bsn_tlv_rate_limit_value_set(dst, val32);
 
     return dst;
 }
@@ -50442,6 +50856,31 @@ of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_tcp_src_value_get(src, &val16);
     of_bsn_tlv_tcp_src_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_ttl
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_ttl.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_ttl_t *
+of_bsn_tlv_ttl_OF_VERSION_1_4_dup(
+    of_bsn_tlv_ttl_t *src)
+{
+    of_bsn_tlv_ttl_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_ttl_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_ttl_value_get(src, &val16);
+    of_bsn_tlv_ttl_value_set(dst, val16);
 
     return dst;
 }
@@ -50947,6 +51386,31 @@ of_bsn_tlv_vni_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_vni_value_get(src, &val32);
     of_bsn_tlv_vni_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_vpn_key
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_vpn_key.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_vpn_key_t *
+of_bsn_tlv_vpn_key_OF_VERSION_1_4_dup(
+    of_bsn_tlv_vpn_key_t *src)
+{
+    of_bsn_tlv_vpn_key_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_vpn_key_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_vpn_key_value_get(src, &val32);
+    of_bsn_tlv_vpn_key_value_set(dst, val32);
 
     return dst;
 }
@@ -66707,6 +67171,23 @@ of_bsn_tlv_decap_dup(
 }
 
 of_object_t *
+of_bsn_tlv_dscp_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_dscp_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_dscp_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_eth_dst_dup(
     of_object_t *src)
 {
@@ -67268,6 +67749,23 @@ of_bsn_tlv_l2_multicast_lookup_dup(
 }
 
 of_object_t *
+of_bsn_tlv_loopback_port_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_loopback_port_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_loopback_port_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_mac_dup(
     of_object_t *src)
 {
@@ -67438,6 +67936,40 @@ of_bsn_tlv_negate_dup(
 }
 
 of_object_t *
+of_bsn_tlv_next_hop_ipv4_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_next_hop_mac_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_next_hop_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_next_hop_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_nexthop_type_vxlan_dup(
     of_object_t *src)
 {
@@ -67465,6 +67997,23 @@ of_bsn_tlv_offset_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_offset_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_parent_port_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_parent_port_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_parent_port_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -67669,6 +68218,23 @@ of_bsn_tlv_queue_weight_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_rate_limit_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_rate_limit_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_rate_limit_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -67924,6 +68490,23 @@ of_bsn_tlv_tcp_src_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_ttl_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_ttl_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_ttl_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -68264,6 +68847,23 @@ of_bsn_tlv_vni_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_vni_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_vpn_key_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_vpn_key_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_vpn_key_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

@@ -1,1 +1,1 @@
-93392d0a26f5a73d6e47c2fb838f30c3e04c3d92 Merge into master from pull request #470: Add gentable entry-priority tlv (https://github.com/floodlight/loxigen/pull/470)
+7743b122bb78e4752430e534a20e8f4090ce8794 Merge into master from pull request #471: Added new TLVs for GRE tunnel gen table (https://github.com/floodlight/loxigen/pull/471)
