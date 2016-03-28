@@ -1,1 +1,1 @@
-7743b122bb78e4752430e534a20e8f4090ce8794 Merge into master from pull request #471: Added new TLVs for GRE tunnel gen table (https://github.com/floodlight/loxigen/pull/471)
+3c24219a38dddc25bb15252c4dce0585ebff6d9b Merge into master from pull request #473: Make Bundle-Add inherit the XID of the nested message #loxigen/454 (https://github.com/floodlight/loxigen/pull/473)
