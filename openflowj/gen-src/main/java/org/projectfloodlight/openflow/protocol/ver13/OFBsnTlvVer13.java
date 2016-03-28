@@ -79,6 +79,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x2d:
                    // discriminator value 0x2d=0x2d for class OFBsnTlvConvergenceStatusVer13
                    return OFBsnTlvConvergenceStatusVer13.READER.readFrom(bb);
+               case (short) 0x76:
+                   // discriminator value 0x76=0x76 for class OFBsnTlvCpuLagVer13
+                   return OFBsnTlvCpuLagVer13.READER.readFrom(bb);
                case (short) 0x16:
                    // discriminator value 0x16=0x16 for class OFBsnTlvCrcEnabledVer13
                    return OFBsnTlvCrcEnabledVer13.READER.readFrom(bb);
@@ -388,6 +391,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x13:
                    // discriminator value 0x13=0x13 for class OFBsnTlvVrfVer13
                    return OFBsnTlvVrfVer13.READER.readFrom(bb);
+               case (short) 0x75:
+                   // discriminator value 0x75=0x75 for class OFBsnTlvVxlanEgressLagVer13
+                   return OFBsnTlvVxlanEgressLagVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator type of class OFBsnTlvVer13: " + type);
             }

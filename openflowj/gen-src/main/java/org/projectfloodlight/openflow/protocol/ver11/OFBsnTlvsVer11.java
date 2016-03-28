@@ -117,6 +117,10 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvConvergenceStatus not supported in version 1.1");
     }
 
+    public OFBsnTlvCpuLag cpuLag() {
+        throw new UnsupportedOperationException("OFBsnTlvCpuLag not supported in version 1.1");
+    }
+
     public OFBsnTlvCrcEnabled.Builder buildCrcEnabled() {
         throw new UnsupportedOperationException("OFBsnTlvCrcEnabled not supported in version 1.1");
     }
@@ -800,6 +804,10 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvVrf vrf(long value) {
         throw new UnsupportedOperationException("OFBsnTlvVrf not supported in version 1.1");
+    }
+
+    public OFBsnTlvVxlanEgressLag vxlanEgressLag() {
+        throw new UnsupportedOperationException("OFBsnTlvVxlanEgressLag not supported in version 1.1");
     }
 
     public OFMessageReader<OFBsnTlv> getReader() {

@@ -2475,6 +2475,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_convergence_status_push_wire_types,
     },
+    [OF_BSN_TLV_CPU_LAG] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_cpu_lag_push_wire_types,
+    },
     [OF_BSN_TLV_CRC_ENABLED] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -3098,6 +3104,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_vrf_push_wire_types,
+    },
+    [OF_BSN_TLV_VXLAN_EGRESS_LAG] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_vxlan_egress_lag_push_wire_types,
     },
     [OF_BSN_VLAN_COUNTER_CLEAR] = {
         .wire_length_get=of_object_message_wire_length_get,

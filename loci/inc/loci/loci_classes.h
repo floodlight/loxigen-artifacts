@@ -825,6 +825,8 @@ void of_bsn_tlv_circuit_id_wire_object_id_get(of_object_t *obj, of_object_id_t *
 void of_bsn_tlv_circuit_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_convergence_status_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_convergence_status_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_cpu_lag_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_cpu_lag_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_crc_enabled_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_crc_enabled_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_data_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1033,6 +1035,8 @@ void of_bsn_tlv_vpn_key_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
 void of_bsn_tlv_vpn_key_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vrf_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vrf_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_vxlan_egress_lag_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_vxlan_egress_lag_push_wire_types(of_object_t *obj);
 void of_bsn_vlan_counter_clear_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_vlan_counter_clear_push_wire_types(of_object_t *obj);
 void of_bsn_vlan_counter_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1693,6 +1697,7 @@ typedef of_object_t of_bsn_tlv_broadcast_rate_t;
 typedef of_object_t of_bsn_tlv_bucket_t;
 typedef of_object_t of_bsn_tlv_circuit_id_t;
 typedef of_object_t of_bsn_tlv_convergence_status_t;
+typedef of_object_t of_bsn_tlv_cpu_lag_t;
 typedef of_object_t of_bsn_tlv_crc_enabled_t;
 typedef of_object_t of_bsn_tlv_data_t;
 typedef of_object_t of_bsn_tlv_decap_t;
@@ -1797,6 +1802,7 @@ typedef of_object_t of_bsn_tlv_vlan_vid_mask_t;
 typedef of_object_t of_bsn_tlv_vni_t;
 typedef of_object_t of_bsn_tlv_vpn_key_t;
 typedef of_object_t of_bsn_tlv_vrf_t;
+typedef of_object_t of_bsn_tlv_vxlan_egress_lag_t;
 typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_bsn_vlan_mac_t;
 typedef of_object_t of_bsn_vport_t;
@@ -3712,6 +3718,11 @@ extern void of_bsn_tlv_convergence_status_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_cpu_lag_new(of_version_t version);
+extern void of_bsn_tlv_cpu_lag_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_crc_enabled_new(of_version_t version);
 extern void of_bsn_tlv_crc_enabled_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4229,6 +4240,11 @@ extern void of_bsn_tlv_vpn_key_init(
 extern of_object_t *
     of_bsn_tlv_vrf_new(of_version_t version);
 extern void of_bsn_tlv_vrf_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_vxlan_egress_lag_new(of_version_t version);
+extern void of_bsn_tlv_vxlan_egress_lag_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9307,6 +9323,17 @@ of_bsn_tlv_convergence_status_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_cpu_lag_t
+ * @param obj An instance of type of_bsn_tlv_cpu_lag_t
+ *
+ * \ingroup of_bsn_tlv_cpu_lag
+ */
+static inline void
+of_bsn_tlv_cpu_lag_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_crc_enabled_t
  * @param obj An instance of type of_bsn_tlv_crc_enabled_t
  *
@@ -10447,6 +10474,17 @@ of_bsn_tlv_vpn_key_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_vrf_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_vxlan_egress_lag_t
+ * @param obj An instance of type of_bsn_tlv_vxlan_egress_lag_t
+ *
+ * \ingroup of_bsn_tlv_vxlan_egress_lag
+ */
+static inline void
+of_bsn_tlv_vxlan_egress_lag_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -21759,6 +21797,8 @@ extern void of_bsn_tlv_convergence_status_value_get(
     of_bsn_tlv_convergence_status_t *obj,
     uint8_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_cpu_lag */
+
 /* Unified accessor functions for of_bsn_tlv_crc_enabled */
 
 extern void of_bsn_tlv_crc_enabled_value_set(
@@ -22656,6 +22696,8 @@ extern void of_bsn_tlv_vrf_value_set(
 extern void of_bsn_tlv_vrf_value_get(
     of_bsn_tlv_vrf_t *obj,
     uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_vxlan_egress_lag */
 
 /* Unified accessor functions for of_bsn_vlan_counter_stats_entry */
 

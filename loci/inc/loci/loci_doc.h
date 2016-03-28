@@ -6494,6 +6494,13 @@ typedef struct of_bsn_tlv_circuit_id_s of_bsn_tlv_circuit_id_t;
 typedef struct of_bsn_tlv_convergence_status_s of_bsn_tlv_convergence_status_t;
 
 /**
+ * Structure for of_bsn_tlv_cpu_lag object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_cpu_lag_s of_bsn_tlv_cpu_lag_t;
+
+/**
  * Structure for of_bsn_tlv_crc_enabled object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7612,6 +7619,13 @@ typedef struct of_bsn_tlv_vpn_key_s of_bsn_tlv_vpn_key_t;
  *
  */
 typedef struct of_bsn_tlv_vrf_s of_bsn_tlv_vrf_t;
+
+/**
+ * Structure for of_bsn_tlv_vxlan_egress_lag object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_vxlan_egress_lag_s of_bsn_tlv_vxlan_egress_lag_t;
 
 /**
  * Structure for of_bsn_vlan_counter_stats_entry object.  Get/set

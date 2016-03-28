@@ -26903,12 +26903,12 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
-        return of_bsn_tlv_generation_id_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_CPU_LAG) {
+        return of_bsn_tlv_cpu_lag_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
-        return of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
+        return of_bsn_tlv_generation_id_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
@@ -26987,8 +26987,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_mpls_control_word_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VLAN_PCP) {
-        return of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
+        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PORT) {
@@ -27131,8 +27131,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
-        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
+        return of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_MAC) {
@@ -27219,8 +27219,16 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_parent_port_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_VXLAN_EGRESS_LAG) {
+        return of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_PRIORITY) {
         return of_bsn_tlv_priority_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_PCP) {
+        return of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ICMP_CODE) {
@@ -27551,6 +27559,27 @@ of_bsn_tlv_convergence_status_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_convergence_status_value_get(src, &val8);
     of_bsn_tlv_convergence_status_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_cpu_lag
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_cpu_lag.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_cpu_lag_t *
+of_bsn_tlv_cpu_lag_OF_VERSION_1_3_dup(
+    of_bsn_tlv_cpu_lag_t *src)
+{
+    of_bsn_tlv_cpu_lag_t *dst;
+
+    if ((dst = of_bsn_tlv_cpu_lag_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -30142,6 +30171,27 @@ of_bsn_tlv_vrf_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_vrf_value_get(src, &val32);
     of_bsn_tlv_vrf_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_vxlan_egress_lag
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_vxlan_egress_lag.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_vxlan_egress_lag_t *
+of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_3_dup(
+    of_bsn_tlv_vxlan_egress_lag_t *src)
+{
+    of_bsn_tlv_vxlan_egress_lag_t *dst;
+
+    if ((dst = of_bsn_tlv_vxlan_egress_lag_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -48197,12 +48247,12 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
-        return of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_CPU_LAG) {
+        return of_bsn_tlv_cpu_lag_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
-        return of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
+        return of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
@@ -48281,8 +48331,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_mpls_control_word_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VLAN_PCP) {
-        return of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
+        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PORT) {
@@ -48425,8 +48475,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_eth_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
-        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
+        return of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_MAC) {
@@ -48513,8 +48563,16 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_parent_port_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_VXLAN_EGRESS_LAG) {
+        return of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_PRIORITY) {
         return of_bsn_tlv_priority_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_PCP) {
+        return of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ICMP_CODE) {
@@ -48845,6 +48903,27 @@ of_bsn_tlv_convergence_status_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_convergence_status_value_get(src, &val8);
     of_bsn_tlv_convergence_status_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_cpu_lag
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_cpu_lag.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_cpu_lag_t *
+of_bsn_tlv_cpu_lag_OF_VERSION_1_4_dup(
+    of_bsn_tlv_cpu_lag_t *src)
+{
+    of_bsn_tlv_cpu_lag_t *dst;
+
+    if ((dst = of_bsn_tlv_cpu_lag_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -51436,6 +51515,27 @@ of_bsn_tlv_vrf_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_vrf_value_get(src, &val32);
     of_bsn_tlv_vrf_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_vxlan_egress_lag
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_vxlan_egress_lag.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_vxlan_egress_lag_t *
+of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_dup(
+    of_bsn_tlv_vxlan_egress_lag_t *src)
+{
+    of_bsn_tlv_vxlan_egress_lag_t *dst;
+
+    if ((dst = of_bsn_tlv_vxlan_egress_lag_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -67120,6 +67220,23 @@ of_bsn_tlv_convergence_status_dup(
 }
 
 of_object_t *
+of_bsn_tlv_cpu_lag_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_cpu_lag_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_cpu_lag_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_crc_enabled_dup(
     of_object_t *src)
 {
@@ -68881,6 +68998,23 @@ of_bsn_tlv_vrf_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_vrf_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_vxlan_egress_lag_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

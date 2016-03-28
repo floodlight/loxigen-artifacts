@@ -1,1 +1,1 @@
-3c24219a38dddc25bb15252c4dce0585ebff6d9b Merge into master from pull request #473: Make Bundle-Add inherit the XID of the nested message #loxigen/454 (https://github.com/floodlight/loxigen/pull/473)
+08655579fd741c5a8378d0859204ea9a750a4138 Merge into master from pull request #472: Add new vxlan-egress and cpu lag indicator tlvs (https://github.com/floodlight/loxigen/pull/472)

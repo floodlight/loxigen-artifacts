@@ -625,6 +625,44 @@ class convergence_status(bsn_tlv):
 
 bsn_tlv.subtypes[45] = convergence_status
 
+class cpu_lag(bsn_tlv):
+    type = 118
+
+    def __init__(self):
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = cpu_lag()
+        _type = reader.read("!H")[0]
+        assert(_type == 118)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("cpu_lag {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[118] = cpu_lag
+
 class crc_enabled(bsn_tlv):
     type = 22
 
@@ -5416,5 +5454,43 @@ class vrf(bsn_tlv):
         q.text('}')
 
 bsn_tlv.subtypes[19] = vrf
+
+class vxlan_egress_lag(bsn_tlv):
+    type = 117
+
+    def __init__(self):
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = vxlan_egress_lag()
+        _type = reader.read("!H")[0]
+        assert(_type == 117)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("vxlan_egress_lag {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[117] = vxlan_egress_lag
 
 

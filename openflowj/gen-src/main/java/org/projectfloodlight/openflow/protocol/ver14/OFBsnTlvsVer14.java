@@ -141,6 +141,10 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvCpuLag cpuLag() {
+        return OFBsnTlvCpuLagVer14.INSTANCE;
+    }
+
     public OFBsnTlvCrcEnabled.Builder buildCrcEnabled() {
         return new OFBsnTlvCrcEnabledVer14.Builder();
     }
@@ -1009,6 +1013,10 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
         return new OFBsnTlvVrfVer14(
                 value
                     );
+    }
+
+    public OFBsnTlvVxlanEgressLag vxlanEgressLag() {
+        return OFBsnTlvVxlanEgressLagVer14.INSTANCE;
     }
 
     public OFMessageReader<OFBsnTlv> getReader() {

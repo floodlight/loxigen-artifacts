@@ -53,6 +53,7 @@ public interface OFBsnTlvs {
     OFBsnTlvCircuitId circuitId(byte[] value);
     OFBsnTlvConvergenceStatus.Builder buildConvergenceStatus() throws UnsupportedOperationException;
     OFBsnTlvConvergenceStatus convergenceStatus(short value);
+    OFBsnTlvCpuLag cpuLag();
     OFBsnTlvCrcEnabled.Builder buildCrcEnabled() throws UnsupportedOperationException;
     OFBsnTlvCrcEnabled crcEnabled(short value);
     OFBsnTlvData.Builder buildData() throws UnsupportedOperationException;
@@ -247,6 +248,7 @@ public interface OFBsnTlvs {
     OFBsnTlvVpnKey vpnKey(long value);
     OFBsnTlvVrf.Builder buildVrf() throws UnsupportedOperationException;
     OFBsnTlvVrf vrf(long value);
+    OFBsnTlvVxlanEgressLag vxlanEgressLag();
 
     OFMessageReader<OFBsnTlv> getReader();
     OFVersion getVersion();

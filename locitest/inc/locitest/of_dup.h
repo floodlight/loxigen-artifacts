@@ -1267,6 +1267,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_cpu_lag_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_crc_enabled_dup(
         of_object_t *src);
 
@@ -1680,6 +1684,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_vrf_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_vxlan_egress_lag_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5991,6 +5999,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_cpu_lag_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6404,6 +6416,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_vrf_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8539,6 +8555,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_cpu_lag_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_crc_enabled_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8952,6 +8972,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_vrf_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

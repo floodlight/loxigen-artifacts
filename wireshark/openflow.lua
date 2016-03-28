@@ -6932,6 +6932,8 @@ fields['of13.bsn_tlv_circuit_id.value'] = ProtoField.bytes("of13.bsn_tlv_circuit
 fields['of13.bsn_tlv_convergence_status.type'] = ProtoField.uint16("of13.bsn_tlv_convergence_status.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_convergence_status.length'] = ProtoField.uint16("of13.bsn_tlv_convergence_status.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_convergence_status.value'] = ProtoField.uint8("of13.bsn_tlv_convergence_status.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_cpu_lag.type'] = ProtoField.uint16("of13.bsn_tlv_cpu_lag.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_cpu_lag.length'] = ProtoField.uint16("of13.bsn_tlv_cpu_lag.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_crc_enabled.type'] = ProtoField.uint16("of13.bsn_tlv_crc_enabled.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_crc_enabled.length'] = ProtoField.uint16("of13.bsn_tlv_crc_enabled.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_crc_enabled.value'] = ProtoField.uint8("of13.bsn_tlv_crc_enabled.value", "value", base.DEC, nil)
@@ -7238,6 +7240,8 @@ fields['of13.bsn_tlv_vpn_key.value'] = ProtoField.uint32("of13.bsn_tlv_vpn_key.v
 fields['of13.bsn_tlv_vrf.type'] = ProtoField.uint16("of13.bsn_tlv_vrf.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vrf.length'] = ProtoField.uint16("of13.bsn_tlv_vrf.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vrf.value'] = ProtoField.uint32("of13.bsn_tlv_vrf.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_vxlan_egress_lag.type'] = ProtoField.uint16("of13.bsn_tlv_vxlan_egress_lag.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_vxlan_egress_lag.length'] = ProtoField.uint16("of13.bsn_tlv_vxlan_egress_lag.length", "length", base.DEC, nil)
 fields['of13.bsn_virtual_port_create_reply.version'] = ProtoField.uint8("of13.bsn_virtual_port_create_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_virtual_port_create_reply.type'] = ProtoField.uint8("of13.bsn_virtual_port_create_reply.type", "type", base.DEC, nil)
 fields['of13.bsn_virtual_port_create_reply.length'] = ProtoField.uint16("of13.bsn_virtual_port_create_reply.length", "length", base.DEC, nil)
@@ -9683,6 +9687,8 @@ fields['of14.bsn_tlv_circuit_id.value'] = ProtoField.bytes("of14.bsn_tlv_circuit
 fields['of14.bsn_tlv_convergence_status.type'] = ProtoField.uint16("of14.bsn_tlv_convergence_status.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_convergence_status.length'] = ProtoField.uint16("of14.bsn_tlv_convergence_status.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_convergence_status.value'] = ProtoField.uint8("of14.bsn_tlv_convergence_status.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_cpu_lag.type'] = ProtoField.uint16("of14.bsn_tlv_cpu_lag.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_cpu_lag.length'] = ProtoField.uint16("of14.bsn_tlv_cpu_lag.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_crc_enabled.type'] = ProtoField.uint16("of14.bsn_tlv_crc_enabled.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_crc_enabled.length'] = ProtoField.uint16("of14.bsn_tlv_crc_enabled.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_crc_enabled.value'] = ProtoField.uint8("of14.bsn_tlv_crc_enabled.value", "value", base.DEC, nil)
@@ -9989,6 +9995,8 @@ fields['of14.bsn_tlv_vpn_key.value'] = ProtoField.uint32("of14.bsn_tlv_vpn_key.v
 fields['of14.bsn_tlv_vrf.type'] = ProtoField.uint16("of14.bsn_tlv_vrf.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vrf.length'] = ProtoField.uint16("of14.bsn_tlv_vrf.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vrf.value'] = ProtoField.uint32("of14.bsn_tlv_vrf.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_vxlan_egress_lag.type'] = ProtoField.uint16("of14.bsn_tlv_vxlan_egress_lag.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_vxlan_egress_lag.length'] = ProtoField.uint16("of14.bsn_tlv_vxlan_egress_lag.length", "length", base.DEC, nil)
 fields['of14.bsn_virtual_port_create_reply.version'] = ProtoField.uint8("of14.bsn_virtual_port_create_reply.version", "version", base.DEC, nil)
 fields['of14.bsn_virtual_port_create_reply.type'] = ProtoField.uint8("of14.bsn_virtual_port_create_reply.type", "type", base.DEC, nil)
 fields['of14.bsn_virtual_port_create_reply.length'] = ProtoField.uint16("of14.bsn_virtual_port_create_reply.length", "length", base.DEC, nil)
@@ -15618,6 +15626,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_convergence_status.type'],
     fields['of13.bsn_tlv_convergence_status.length'],
     fields['of13.bsn_tlv_convergence_status.value'],
+    fields['of13.bsn_tlv_cpu_lag.type'],
+    fields['of13.bsn_tlv_cpu_lag.length'],
     fields['of13.bsn_tlv_crc_enabled.type'],
     fields['of13.bsn_tlv_crc_enabled.length'],
     fields['of13.bsn_tlv_crc_enabled.value'],
@@ -15924,6 +15934,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_vrf.type'],
     fields['of13.bsn_tlv_vrf.length'],
     fields['of13.bsn_tlv_vrf.value'],
+    fields['of13.bsn_tlv_vxlan_egress_lag.type'],
+    fields['of13.bsn_tlv_vxlan_egress_lag.length'],
     fields['of13.bsn_virtual_port_create_reply.version'],
     fields['of13.bsn_virtual_port_create_reply.type'],
     fields['of13.bsn_virtual_port_create_reply.length'],
@@ -18369,6 +18381,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_convergence_status.type'],
     fields['of14.bsn_tlv_convergence_status.length'],
     fields['of14.bsn_tlv_convergence_status.value'],
+    fields['of14.bsn_tlv_cpu_lag.type'],
+    fields['of14.bsn_tlv_cpu_lag.length'],
     fields['of14.bsn_tlv_crc_enabled.type'],
     fields['of14.bsn_tlv_crc_enabled.length'],
     fields['of14.bsn_tlv_crc_enabled.value'],
@@ -18675,6 +18689,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_vrf.type'],
     fields['of14.bsn_tlv_vrf.length'],
     fields['of14.bsn_tlv_vrf.value'],
+    fields['of14.bsn_tlv_vxlan_egress_lag.type'],
+    fields['of14.bsn_tlv_vxlan_egress_lag.length'],
     fields['of14.bsn_virtual_port_create_reply.version'],
     fields['of14.bsn_virtual_port_create_reply.type'],
     fields['of14.bsn_virtual_port_create_reply.length'],
@@ -29624,6 +29640,15 @@ function dissect_of_bsn_tlv_convergence_status_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[45] = dissect_of_bsn_tlv_convergence_status_v4
 
+-- child class of_bsn_tlv_cpu_lag
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_cpu_lag_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_cpu_lag.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_cpu_lag.length')
+    return 'of_bsn_tlv_cpu_lag'
+end
+of_bsn_tlv_v4_dissectors[118] = dissect_of_bsn_tlv_cpu_lag_v4
+
 -- child class of_bsn_tlv_crc_enabled
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_crc_enabled_v4(reader, subtree)
@@ -30666,6 +30691,15 @@ function dissect_of_bsn_tlv_vrf_v4(reader, subtree)
     return 'of_bsn_tlv_vrf'
 end
 of_bsn_tlv_v4_dissectors[19] = dissect_of_bsn_tlv_vrf_v4
+
+-- child class of_bsn_tlv_vxlan_egress_lag
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vxlan_egress_lag_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vxlan_egress_lag.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vxlan_egress_lag.length')
+    return 'of_bsn_tlv_vxlan_egress_lag'
+end
+of_bsn_tlv_v4_dissectors[117] = dissect_of_bsn_tlv_vxlan_egress_lag_v4
 
 -- child class of_bsn_virtual_port_create_reply
 -- Child of of_bsn_header
@@ -36889,6 +36923,15 @@ function dissect_of_bsn_tlv_convergence_status_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[45] = dissect_of_bsn_tlv_convergence_status_v5
 
+-- child class of_bsn_tlv_cpu_lag
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_cpu_lag_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_cpu_lag.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_cpu_lag.length')
+    return 'of_bsn_tlv_cpu_lag'
+end
+of_bsn_tlv_v5_dissectors[118] = dissect_of_bsn_tlv_cpu_lag_v5
+
 -- child class of_bsn_tlv_crc_enabled
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_crc_enabled_v5(reader, subtree)
@@ -37931,6 +37974,15 @@ function dissect_of_bsn_tlv_vrf_v5(reader, subtree)
     return 'of_bsn_tlv_vrf'
 end
 of_bsn_tlv_v5_dissectors[19] = dissect_of_bsn_tlv_vrf_v5
+
+-- child class of_bsn_tlv_vxlan_egress_lag
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vxlan_egress_lag_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vxlan_egress_lag.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vxlan_egress_lag.length')
+    return 'of_bsn_tlv_vxlan_egress_lag'
+end
+of_bsn_tlv_v5_dissectors[117] = dissect_of_bsn_tlv_vxlan_egress_lag_v5
 
 -- child class of_bsn_virtual_port_create_reply
 -- Child of of_bsn_header
