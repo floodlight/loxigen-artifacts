@@ -7471,6 +7471,17 @@ typedef struct of_bsn_tlv_udp_dst_s of_bsn_tlv_udp_dst_t;
 typedef struct of_bsn_tlv_udp_src_s of_bsn_tlv_udp_src_t;
 
 /**
+ * Structure for of_bsn_tlv_uint64_list object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_list_uint64.  Functions
+ *   are of type of_bsn_tlv_uint64_list_of_list_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_uint64_list_s of_bsn_tlv_uint64_list_t;
+
+/**
  * Structure for of_bsn_tlv_unicast_query_timeout object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

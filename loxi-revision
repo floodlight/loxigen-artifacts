@@ -1,1 +1,1 @@
-08655579fd741c5a8378d0859204ea9a750a4138 Merge into master from pull request #472: Add new vxlan-egress and cpu lag indicator tlvs (https://github.com/floodlight/loxigen/pull/472)
+ac80bfc59512725e983ca9011f88d13ea1ff3cb5 Merge into master from pull request #474: add of_bsn_tlv_uint64_list and fix of_bsn_tlv_vlan_mac_list (https://github.com/floodlight/loxigen/pull/474)

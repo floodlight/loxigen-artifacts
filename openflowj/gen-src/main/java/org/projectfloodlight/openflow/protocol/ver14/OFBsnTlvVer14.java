@@ -25,6 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 import java.util.Set;
+import java.util.List;
 
 abstract class OFBsnTlvVer14 {
     // version: 1.4
@@ -352,6 +353,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x24:
                    // discriminator value 0x24=0x24 for class OFBsnTlvUdpSrcVer14
                    return OFBsnTlvUdpSrcVer14.READER.readFrom(bb);
+               case (short) 0x77:
+                   // discriminator value 0x77=0x77 for class OFBsnTlvUint64ListVer14
+                   return OFBsnTlvUint64ListVer14.READER.readFrom(bb);
                case (short) 0x9:
                    // discriminator value 0x9=0x9 for class OFBsnTlvUnicastQueryTimeoutVer14
                    return OFBsnTlvUnicastQueryTimeoutVer14.READER.readFrom(bb);
@@ -373,6 +377,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x6b:
                    // discriminator value 0x6b=0x6b for class OFBsnTlvVfpClassIdVer14
                    return OFBsnTlvVfpClassIdVer14.READER.readFrom(bb);
+               case (short) 0x62:
+                   // discriminator value 0x62=0x62 for class OFBsnTlvVlanMacListVer14
+                   return OFBsnTlvVlanMacListVer14.READER.readFrom(bb);
                case (short) 0x48:
                    // discriminator value 0x48=0x48 for class OFBsnTlvVlanPcpVer14
                    return OFBsnTlvVlanPcpVer14.READER.readFrom(bb);

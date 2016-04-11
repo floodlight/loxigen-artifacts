@@ -223,6 +223,8 @@ public interface OFBsnTlvs {
     OFBsnTlvUdpDst udpDst(int value);
     OFBsnTlvUdpSrc.Builder buildUdpSrc() throws UnsupportedOperationException;
     OFBsnTlvUdpSrc udpSrc(int value);
+    OFBsnTlvUint64List.Builder buildUint64List() throws UnsupportedOperationException;
+    OFBsnTlvUint64List uint64List(List<U64> value);
     OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() throws UnsupportedOperationException;
     OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value);
     OFBsnTlvUnicastRate.Builder buildUnicastRate() throws UnsupportedOperationException;
@@ -236,6 +238,8 @@ public interface OFBsnTlvs {
     OFBsnTlvVfi vfi(int value);
     OFBsnTlvVfpClassId.Builder buildVfpClassId() throws UnsupportedOperationException;
     OFBsnTlvVfpClassId vfpClassId(long value);
+    OFBsnTlvVlanMacList.Builder buildVlanMacList() throws UnsupportedOperationException;
+    OFBsnTlvVlanMacList vlanMacList(List<OFBsnVlanMac> key);
     OFBsnTlvVlanPcp.Builder buildVlanPcp() throws UnsupportedOperationException;
     OFBsnTlvVlanPcp vlanPcp(short value);
     OFBsnTlvVlanVid.Builder buildVlanVid() throws UnsupportedOperationException;

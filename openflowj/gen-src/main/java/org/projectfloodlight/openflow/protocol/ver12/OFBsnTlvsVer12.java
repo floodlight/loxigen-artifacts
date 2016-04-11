@@ -718,6 +718,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvUdpSrc not supported in version 1.2");
     }
 
+    public OFBsnTlvUint64List.Builder buildUint64List() {
+        throw new UnsupportedOperationException("OFBsnTlvUint64List not supported in version 1.2");
+    }
+    public OFBsnTlvUint64List uint64List(List<U64> value) {
+        throw new UnsupportedOperationException("OFBsnTlvUint64List not supported in version 1.2");
+    }
+
     public OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() {
         throw new UnsupportedOperationException("OFBsnTlvUnicastQueryTimeout not supported in version 1.2");
     }
@@ -762,6 +769,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvVfpClassId vfpClassId(long value) {
         throw new UnsupportedOperationException("OFBsnTlvVfpClassId not supported in version 1.2");
+    }
+
+    public OFBsnTlvVlanMacList.Builder buildVlanMacList() {
+        throw new UnsupportedOperationException("OFBsnTlvVlanMacList not supported in version 1.2");
+    }
+    public OFBsnTlvVlanMacList vlanMacList(List<OFBsnVlanMac> key) {
+        throw new UnsupportedOperationException("OFBsnTlvVlanMacList not supported in version 1.2");
     }
 
     public OFBsnTlvVlanPcp.Builder buildVlanPcp() {

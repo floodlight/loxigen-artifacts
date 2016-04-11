@@ -279,8 +279,6 @@ public interface OFFactory extends XidGenerator {
     OFBsnTimeReply bsnTimeReply(U64 timeMs);
     OFBsnTimeRequest.Builder buildBsnTimeRequest() throws UnsupportedOperationException;
     OFBsnTimeRequest bsnTimeRequest();
-    OFBsnTlvVlanMacList.Builder buildBsnTlvVlanMacList() throws UnsupportedOperationException;
-    OFBsnTlvVlanMacList bsnTlvVlanMacList(List<OFBsnVlanMac> key);
     OFBsnVlanCounterClear.Builder buildBsnVlanCounterClear() throws UnsupportedOperationException;
     OFBsnVlanCounterClear bsnVlanCounterClear(int vlanVid);
     OFBsnVlanCounterStatsEntry.Builder buildBsnVlanCounterStatsEntry() throws UnsupportedOperationException;

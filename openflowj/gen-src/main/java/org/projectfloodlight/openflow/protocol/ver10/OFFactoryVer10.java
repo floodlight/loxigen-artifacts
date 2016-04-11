@@ -1051,13 +1051,6 @@ public class OFFactoryVer10 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnTimeRequest not supported in version 1.0");
     }
 
-    public OFBsnTlvVlanMacList.Builder buildBsnTlvVlanMacList() {
-        throw new UnsupportedOperationException("OFBsnTlvVlanMacList not supported in version 1.0");
-    }
-    public OFBsnTlvVlanMacList bsnTlvVlanMacList(List<OFBsnVlanMac> key) {
-        throw new UnsupportedOperationException("OFBsnTlvVlanMacList not supported in version 1.0");
-    }
-
     public OFBsnVlanCounterClear.Builder buildBsnVlanCounterClear() {
         throw new UnsupportedOperationException("OFBsnVlanCounterClear not supported in version 1.0");
     }

@@ -1007,6 +1007,8 @@ void of_bsn_tlv_udp_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
 void of_bsn_tlv_udp_dst_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_udp_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_udp_src_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_uint64_list_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_uint64_list_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_unicast_query_timeout_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_unicast_query_timeout_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_unicast_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1788,6 +1790,7 @@ typedef of_object_t of_bsn_tlv_udf_length_t;
 typedef of_object_t of_bsn_tlv_udf_offset_t;
 typedef of_object_t of_bsn_tlv_udp_dst_t;
 typedef of_object_t of_bsn_tlv_udp_src_t;
+typedef of_object_t of_bsn_tlv_uint64_list_t;
 typedef of_object_t of_bsn_tlv_unicast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_unicast_rate_t;
 typedef of_object_t of_bsn_tlv_unknown_multicast_rate_t;
@@ -4170,6 +4173,11 @@ extern void of_bsn_tlv_udp_dst_init(
 extern of_object_t *
     of_bsn_tlv_udp_src_new(of_version_t version);
 extern void of_bsn_tlv_udp_src_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_uint64_list_new(of_version_t version);
+extern void of_bsn_tlv_uint64_list_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10320,6 +10328,17 @@ of_bsn_tlv_udp_dst_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_udp_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_uint64_list_t
+ * @param obj An instance of type of_bsn_tlv_uint64_list_t
+ *
+ * \ingroup of_bsn_tlv_uint64_list
+ */
+static inline void
+of_bsn_tlv_uint64_list_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22575,6 +22594,17 @@ extern void of_bsn_tlv_udp_src_value_set(
 extern void of_bsn_tlv_udp_src_value_get(
     of_bsn_tlv_udp_src_t *obj,
     uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_uint64_list */
+
+extern int WARN_UNUSED_RESULT of_bsn_tlv_uint64_list_value_set(
+    of_bsn_tlv_uint64_list_t *obj,
+    of_list_uint64_t *value);
+extern void of_bsn_tlv_uint64_list_value_bind(
+    of_bsn_tlv_uint64_list_t *obj,
+    of_list_uint64_t *value);
+extern of_list_uint64_t *of_bsn_tlv_uint64_list_value_get(
+    of_bsn_tlv_uint64_list_t *obj);
 
 /* Unified accessor functions for of_bsn_tlv_unicast_query_timeout */
 

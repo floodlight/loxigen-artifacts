@@ -413,6 +413,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_udf_offset",
     "of_bsn_tlv_udp_dst",
     "of_bsn_tlv_udp_src",
+    "of_bsn_tlv_uint64_list",
     "of_bsn_tlv_unicast_query_timeout",
     "of_bsn_tlv_unicast_rate",
     "of_bsn_tlv_unknown_multicast_rate",

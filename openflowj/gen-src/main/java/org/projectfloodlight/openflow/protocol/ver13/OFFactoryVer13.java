@@ -1131,15 +1131,6 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
-    public OFBsnTlvVlanMacList.Builder buildBsnTlvVlanMacList() {
-        return new OFBsnTlvVlanMacListVer13.Builder();
-    }
-    public OFBsnTlvVlanMacList bsnTlvVlanMacList(List<OFBsnVlanMac> key) {
-        return new OFBsnTlvVlanMacListVer13(
-                key
-                    );
-    }
-
     public OFBsnVlanCounterClear.Builder buildBsnVlanCounterClear() {
         return new OFBsnVlanCounterClearVer13.Builder().setXid(nextXid());
     }

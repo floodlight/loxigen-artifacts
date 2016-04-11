@@ -26807,6 +26807,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_partner_port_num_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_UINT64_LIST) {
+        return of_bsn_tlv_uint64_list_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS) {
         return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_dup(src);
     }
@@ -27249,6 +27253,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_UNTAGGED) {
         return of_bsn_tlv_untagged_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_MAC_LIST) {
+        return of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -29816,6 +29824,40 @@ of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_udp_src_value_get(src, &val16);
     of_bsn_tlv_udp_src_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_uint64_list
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_uint64_list.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_uint64_list_t *
+of_bsn_tlv_uint64_list_OF_VERSION_1_3_dup(
+    of_bsn_tlv_uint64_list_t *src)
+{
+    of_bsn_tlv_uint64_list_t *dst;
+
+    of_list_uint64_t src_list;
+    of_list_uint64_t *dst_list;
+
+    if ((dst = of_bsn_tlv_uint64_list_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_uint64_list_value_bind(
+        src, &src_list);
+    dst_list = of_list_uint64_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_tlv_uint64_list_delete(dst);
+        return NULL;
+    }
+    of_bsn_tlv_uint64_list_value_set(dst, dst_list);
+    of_list_uint64_delete(dst_list);
 
     return dst;
 }
@@ -48151,6 +48193,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_partner_port_num_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_UINT64_LIST) {
+        return of_bsn_tlv_uint64_list_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS) {
         return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_dup(src);
     }
@@ -48593,6 +48639,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_UNTAGGED) {
         return of_bsn_tlv_untagged_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_MAC_LIST) {
+        return of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -51160,6 +51210,40 @@ of_bsn_tlv_udp_src_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_udp_src_value_get(src, &val16);
     of_bsn_tlv_udp_src_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_uint64_list
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_uint64_list.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_uint64_list_t *
+of_bsn_tlv_uint64_list_OF_VERSION_1_4_dup(
+    of_bsn_tlv_uint64_list_t *src)
+{
+    of_bsn_tlv_uint64_list_t *dst;
+
+    of_list_uint64_t src_list;
+    of_list_uint64_t *dst_list;
+
+    if ((dst = of_bsn_tlv_uint64_list_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_uint64_list_value_bind(
+        src, &src_list);
+    dst_list = of_list_uint64_OF_VERSION_1_4_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_tlv_uint64_list_delete(dst);
+        return NULL;
+    }
+    of_bsn_tlv_uint64_list_value_set(dst, dst_list);
+    of_list_uint64_delete(dst_list);
 
     return dst;
 }
@@ -68760,6 +68844,23 @@ of_bsn_tlv_udp_src_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_udp_src_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_uint64_list_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_uint64_list_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_uint64_list_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

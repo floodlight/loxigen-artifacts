@@ -6530,6 +6530,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x61:
             *id = OF_BSN_TLV_STATUS;
             break;
+        case 0x62:
+            *id = OF_BSN_TLV_VLAN_MAC_LIST;
+            break;
         case 0x63:
             *id = OF_BSN_TLV_VFI;
             break;
@@ -6589,6 +6592,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x76:
             *id = OF_BSN_TLV_CPU_LAG;
+            break;
+        case 0x77:
+            *id = OF_BSN_TLV_UINT64_LIST;
             break;
         default:
             *id = OF_BSN_TLV;
@@ -6890,6 +6896,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x61:
             *id = OF_BSN_TLV_STATUS;
             break;
+        case 0x62:
+            *id = OF_BSN_TLV_VLAN_MAC_LIST;
+            break;
         case 0x63:
             *id = OF_BSN_TLV_VFI;
             break;
@@ -6949,6 +6958,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x76:
             *id = OF_BSN_TLV_CPU_LAG;
+            break;
+        case 0x77:
+            *id = OF_BSN_TLV_UINT64_LIST;
             break;
         default:
             *id = OF_BSN_TLV;

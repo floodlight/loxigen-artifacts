@@ -903,6 +903,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvUint64List.Builder buildUint64List() {
+        return new OFBsnTlvUint64ListVer13.Builder();
+    }
+    public OFBsnTlvUint64List uint64List(List<U64> value) {
+        return new OFBsnTlvUint64ListVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() {
         return new OFBsnTlvUnicastQueryTimeoutVer13.Builder();
     }
@@ -958,6 +967,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     public OFBsnTlvVfpClassId vfpClassId(long value) {
         return new OFBsnTlvVfpClassIdVer13(
                 value
+                    );
+    }
+
+    public OFBsnTlvVlanMacList.Builder buildVlanMacList() {
+        return new OFBsnTlvVlanMacListVer13.Builder();
+    }
+    public OFBsnTlvVlanMacList vlanMacList(List<OFBsnVlanMac> key) {
+        return new OFBsnTlvVlanMacListVer13(
+                key
                     );
     }
 

@@ -7199,6 +7199,9 @@ fields['of13.bsn_tlv_udp_dst.value'] = ProtoField.uint16("of13.bsn_tlv_udp_dst.v
 fields['of13.bsn_tlv_udp_src.type'] = ProtoField.uint16("of13.bsn_tlv_udp_src.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_udp_src.length'] = ProtoField.uint16("of13.bsn_tlv_udp_src.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_udp_src.value'] = ProtoField.uint16("of13.bsn_tlv_udp_src.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_uint64_list.type'] = ProtoField.uint16("of13.bsn_tlv_uint64_list.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_uint64_list.length'] = ProtoField.uint16("of13.bsn_tlv_uint64_list.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_uint64_list.value'] = ProtoField.bytes("of13.bsn_tlv_uint64_list.value", "value")
 fields['of13.bsn_tlv_unicast_query_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_unicast_query_timeout.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_unicast_query_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_unicast_query_timeout.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_unicast_query_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_unicast_query_timeout.value", "value", base.DEC, nil)
@@ -9954,6 +9957,9 @@ fields['of14.bsn_tlv_udp_dst.value'] = ProtoField.uint16("of14.bsn_tlv_udp_dst.v
 fields['of14.bsn_tlv_udp_src.type'] = ProtoField.uint16("of14.bsn_tlv_udp_src.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_udp_src.length'] = ProtoField.uint16("of14.bsn_tlv_udp_src.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_udp_src.value'] = ProtoField.uint16("of14.bsn_tlv_udp_src.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_uint64_list.type'] = ProtoField.uint16("of14.bsn_tlv_uint64_list.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_uint64_list.length'] = ProtoField.uint16("of14.bsn_tlv_uint64_list.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_uint64_list.value'] = ProtoField.bytes("of14.bsn_tlv_uint64_list.value", "value")
 fields['of14.bsn_tlv_unicast_query_timeout.type'] = ProtoField.uint16("of14.bsn_tlv_unicast_query_timeout.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_unicast_query_timeout.length'] = ProtoField.uint16("of14.bsn_tlv_unicast_query_timeout.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_unicast_query_timeout.value'] = ProtoField.uint32("of14.bsn_tlv_unicast_query_timeout.value", "value", base.DEC, nil)
@@ -15893,6 +15899,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_udp_src.type'],
     fields['of13.bsn_tlv_udp_src.length'],
     fields['of13.bsn_tlv_udp_src.value'],
+    fields['of13.bsn_tlv_uint64_list.type'],
+    fields['of13.bsn_tlv_uint64_list.length'],
+    fields['of13.bsn_tlv_uint64_list.value'],
     fields['of13.bsn_tlv_unicast_query_timeout.type'],
     fields['of13.bsn_tlv_unicast_query_timeout.length'],
     fields['of13.bsn_tlv_unicast_query_timeout.value'],
@@ -18648,6 +18657,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_udp_src.type'],
     fields['of14.bsn_tlv_udp_src.length'],
     fields['of14.bsn_tlv_udp_src.value'],
+    fields['of14.bsn_tlv_uint64_list.type'],
+    fields['of14.bsn_tlv_uint64_list.length'],
+    fields['of14.bsn_tlv_uint64_list.value'],
     fields['of14.bsn_tlv_unicast_query_timeout.type'],
     fields['of14.bsn_tlv_unicast_query_timeout.length'],
     fields['of14.bsn_tlv_unicast_query_timeout.value'],
@@ -30553,6 +30565,19 @@ function dissect_of_bsn_tlv_udp_src_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[36] = dissect_of_bsn_tlv_udp_src_v4
 
+-- child class of_bsn_tlv_uint64_list
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_uint64_list_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_uint64_list.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_uint64_list.length')
+    read_list(reader, dissect_of_uint64_v4, subtree, 'of_uint64')
+    return 'of_bsn_tlv_uint64_list'
+end
+of_bsn_tlv_v4_dissectors[119] = dissect_of_bsn_tlv_uint64_list_v4
+
 -- child class of_bsn_tlv_unicast_query_timeout
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_unicast_query_timeout_v4(reader, subtree)
@@ -30622,7 +30647,8 @@ function dissect_of_bsn_tlv_vfp_class_id_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[107] = dissect_of_bsn_tlv_vfp_class_id_v4
 
--- top-level class of_bsn_tlv_vlan_mac_list
+-- child class of_bsn_tlv_vlan_mac_list
+-- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_vlan_mac_list_v4(reader, subtree)
     local _length = reader.peek(2, 2):uint()
     local orig_reader = reader
@@ -30632,6 +30658,8 @@ function dissect_of_bsn_tlv_vlan_mac_list_v4(reader, subtree)
     read_list(reader, dissect_of_bsn_vlan_mac_v4, subtree, 'of_bsn_vlan_mac')
     return 'of_bsn_tlv_vlan_mac_list'
 end
+of_bsn_tlv_v4_dissectors[98] = dissect_of_bsn_tlv_vlan_mac_list_v4
+
 -- child class of_bsn_tlv_vlan_pcp
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_vlan_pcp_v4(reader, subtree)
@@ -37836,6 +37864,19 @@ function dissect_of_bsn_tlv_udp_src_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[36] = dissect_of_bsn_tlv_udp_src_v5
 
+-- child class of_bsn_tlv_uint64_list
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_uint64_list_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_uint64_list.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_uint64_list.length')
+    read_list(reader, dissect_of_uint64_v5, subtree, 'of_uint64')
+    return 'of_bsn_tlv_uint64_list'
+end
+of_bsn_tlv_v5_dissectors[119] = dissect_of_bsn_tlv_uint64_list_v5
+
 -- child class of_bsn_tlv_unicast_query_timeout
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_unicast_query_timeout_v5(reader, subtree)
@@ -37905,7 +37946,8 @@ function dissect_of_bsn_tlv_vfp_class_id_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[107] = dissect_of_bsn_tlv_vfp_class_id_v5
 
--- top-level class of_bsn_tlv_vlan_mac_list
+-- child class of_bsn_tlv_vlan_mac_list
+-- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_vlan_mac_list_v5(reader, subtree)
     local _length = reader.peek(2, 2):uint()
     local orig_reader = reader
@@ -37915,6 +37957,8 @@ function dissect_of_bsn_tlv_vlan_mac_list_v5(reader, subtree)
     read_list(reader, dissect_of_bsn_vlan_mac_v5, subtree, 'of_bsn_vlan_mac')
     return 'of_bsn_tlv_vlan_mac_list'
 end
+of_bsn_tlv_v5_dissectors[98] = dissect_of_bsn_tlv_vlan_mac_list_v5
+
 -- child class of_bsn_tlv_vlan_pcp
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_vlan_pcp_v5(reader, subtree)
