@@ -658,6 +658,8 @@ const char *const of_object_id_str[] = {
     "of_port_stats_prop_optical",
     "of_queue_desc",
     "of_queue_desc_prop",
+    "of_queue_desc_prop_bsn",
+    "of_queue_desc_prop_bsn_queue_name",
     "of_queue_desc_prop_experimenter",
     "of_queue_desc_prop_max_rate",
     "of_queue_desc_prop_min_rate",

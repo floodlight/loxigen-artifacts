@@ -23502,7 +23502,7 @@ test_of_queue_desc_stats_request_create_OF_VERSION_1_4(void)
     obj = of_queue_desc_stats_request_new(OF_VERSION_1_4);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_DESC_STATS_REQUEST);
 

@@ -1597,6 +1597,15 @@ public class OFFactoryVer14 implements OFFactory {
         return new OFQueueDescVer14.Builder();
     }
 
+    public OFQueueDescPropBsnQueueName.Builder buildQueueDescPropBsnQueueName() {
+        return new OFQueueDescPropBsnQueueNameVer14.Builder();
+    }
+    public OFQueueDescPropBsnQueueName queueDescPropBsnQueueName(byte[] name) {
+        return new OFQueueDescPropBsnQueueNameVer14(
+                name
+                    );
+    }
+
     public OFQueueDescPropMaxRate.Builder buildQueueDescPropMaxRate() {
         return new OFQueueDescPropMaxRateVer14.Builder();
     }
@@ -1621,12 +1630,6 @@ public class OFFactoryVer14 implements OFFactory {
 
     public OFQueueDescStatsRequest.Builder buildQueueDescStatsRequest() {
         return new OFQueueDescStatsRequestVer14.Builder().setXid(nextXid());
-    }
-    public OFQueueDescStatsRequest queueDescStatsRequest(Set<OFStatsRequestFlags> flags) {
-        return new OFQueueDescStatsRequestVer14(
-                nextXid(),
-                      flags
-                    );
     }
 
     public OFRequestforward.Builder buildRequestforward() {

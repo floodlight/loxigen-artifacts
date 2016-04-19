@@ -45225,6 +45225,7 @@ of_queue_desc_stats_request_OF_VERSION_1_4_dup(
     of_queue_desc_stats_request_t *dst;
     uint32_t val32;
     uint16_t val16;
+    of_port_no_t port_no;
 
     if ((dst = of_queue_desc_stats_request_new(src->version)) == NULL) {
         return NULL;
@@ -45235,6 +45236,12 @@ of_queue_desc_stats_request_OF_VERSION_1_4_dup(
 
     of_queue_desc_stats_request_flags_get(src, &val16);
     of_queue_desc_stats_request_flags_set(dst, val16);
+
+    of_queue_desc_stats_request_port_no_get(src, &port_no);
+    of_queue_desc_stats_request_port_no_set(dst, port_no);
+
+    of_queue_desc_stats_request_queue_id_get(src, &val32);
+    of_queue_desc_stats_request_queue_id_set(dst, val32);
 
     return dst;
 }
@@ -58331,11 +58338,47 @@ of_queue_desc_prop_OF_VERSION_1_4_dup(
         return of_queue_desc_prop_min_rate_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME) {
+        return of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_QUEUE_DESC_PROP_MAX_RATE) {
         return of_queue_desc_prop_max_rate_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
+}
+
+/**
+ * Duplicate an object of type of_queue_desc_prop_bsn_queue_name
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_queue_desc_prop_bsn_queue_name.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_queue_desc_prop_bsn_queue_name_t *
+of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_dup(
+    of_queue_desc_prop_bsn_queue_name_t *src)
+{
+    of_queue_desc_prop_bsn_queue_name_t *dst;
+    uint32_t val32;
+    of_octets_t octets;
+
+    if ((dst = of_queue_desc_prop_bsn_queue_name_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_queue_desc_prop_bsn_queue_name_experimenter_get(src, &val32);
+    of_queue_desc_prop_bsn_queue_name_experimenter_set(dst, val32);
+
+    of_queue_desc_prop_bsn_queue_name_exp_type_get(src, &val32);
+    of_queue_desc_prop_bsn_queue_name_exp_type_set(dst, val32);
+
+    of_queue_desc_prop_bsn_queue_name_name_get(src, &octets);
+    of_queue_desc_prop_bsn_queue_name_name_set(dst, &octets);
+
+    return dst;
 }
 
 /**
@@ -73485,6 +73528,28 @@ of_queue_desc_prop_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_queue_desc_prop_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_queue_desc_prop_bsn_dup(
+    of_object_t *src)
+{
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_queue_desc_prop_bsn_queue_name_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

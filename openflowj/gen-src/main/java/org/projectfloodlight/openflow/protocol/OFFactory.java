@@ -385,13 +385,14 @@ public interface OFFactory extends XidGenerator {
     OFPortStatsPropEthernet.Builder buildPortStatsPropEthernet() throws UnsupportedOperationException;
     OFPortStatsPropOptical.Builder buildPortStatsPropOptical() throws UnsupportedOperationException;
     OFQueueDesc.Builder buildQueueDesc() throws UnsupportedOperationException;
+    OFQueueDescPropBsnQueueName.Builder buildQueueDescPropBsnQueueName() throws UnsupportedOperationException;
+    OFQueueDescPropBsnQueueName queueDescPropBsnQueueName(byte[] name);
     OFQueueDescPropMaxRate.Builder buildQueueDescPropMaxRate() throws UnsupportedOperationException;
     OFQueueDescPropMaxRate queueDescPropMaxRate(int rate);
     OFQueueDescPropMinRate.Builder buildQueueDescPropMinRate() throws UnsupportedOperationException;
     OFQueueDescPropMinRate queueDescPropMinRate(int rate);
     OFQueueDescStatsReply.Builder buildQueueDescStatsReply() throws UnsupportedOperationException;
     OFQueueDescStatsRequest.Builder buildQueueDescStatsRequest() throws UnsupportedOperationException;
-    OFQueueDescStatsRequest queueDescStatsRequest(Set<OFStatsRequestFlags> flags);
     OFRequestforward.Builder buildRequestforward() throws UnsupportedOperationException;
     OFRoleStatus.Builder buildRoleStatus() throws UnsupportedOperationException;
     OFTableDesc.Builder buildTableDesc() throws UnsupportedOperationException;

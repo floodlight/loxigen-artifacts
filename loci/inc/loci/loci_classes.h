@@ -1345,6 +1345,10 @@ void of_queue_desc_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
 void of_queue_desc_prop_push_wire_types(of_object_t *obj);
 void of_queue_desc_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_queue_desc_prop_experimenter_push_wire_types(of_object_t *obj);
+void of_queue_desc_prop_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_queue_desc_prop_bsn_push_wire_types(of_object_t *obj);
+void of_queue_desc_prop_bsn_queue_name_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_queue_desc_prop_bsn_queue_name_push_wire_types(of_object_t *obj);
 void of_queue_desc_prop_max_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_queue_desc_prop_max_rate_push_wire_types(of_object_t *obj);
 void of_queue_desc_prop_min_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2035,6 +2039,8 @@ typedef of_object_t of_port_stats_prop_experimenter_t;
 typedef of_object_t of_port_stats_prop_optical_t;
 typedef of_object_t of_queue_desc_t;
 typedef of_object_t of_queue_desc_prop_t;
+typedef of_object_t of_queue_desc_prop_bsn_t;
+typedef of_object_t of_queue_desc_prop_bsn_queue_name_t;
 typedef of_object_t of_queue_desc_prop_experimenter_t;
 typedef of_object_t of_queue_desc_prop_max_rate_t;
 typedef of_object_t of_queue_desc_prop_min_rate_t;
@@ -5398,6 +5404,16 @@ extern void of_queue_desc_init(
 extern of_object_t *
     of_queue_desc_prop_new(of_version_t version);
 extern void of_queue_desc_prop_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_queue_desc_prop_bsn_new(of_version_t version);
+extern void of_queue_desc_prop_bsn_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_queue_desc_prop_bsn_queue_name_new(of_version_t version);
+extern void of_queue_desc_prop_bsn_queue_name_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -13027,6 +13043,28 @@ of_queue_desc_prop_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_queue_desc_prop_bsn_t
+ * @param obj An instance of type of_queue_desc_prop_bsn_t
+ *
+ * \ingroup of_queue_desc_prop_bsn
+ */
+static inline void
+of_queue_desc_prop_bsn_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_queue_desc_prop_bsn_queue_name_t
+ * @param obj An instance of type of_queue_desc_prop_bsn_queue_name_t
+ *
+ * \ingroup of_queue_desc_prop_bsn_queue_name
+ */
+static inline void
+of_queue_desc_prop_bsn_queue_name_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_queue_desc_prop_experimenter_t
  * @param obj An instance of type of_queue_desc_prop_experimenter_t
  *
@@ -20219,6 +20257,20 @@ extern void of_queue_desc_stats_request_flags_get(
     of_queue_desc_stats_request_t *obj,
     uint16_t *flags);
 
+extern void of_queue_desc_stats_request_port_no_set(
+    of_queue_desc_stats_request_t *obj,
+    of_port_no_t port_no);
+extern void of_queue_desc_stats_request_port_no_get(
+    of_queue_desc_stats_request_t *obj,
+    of_port_no_t *port_no);
+
+extern void of_queue_desc_stats_request_queue_id_set(
+    of_queue_desc_stats_request_t *obj,
+    uint32_t queue_id);
+extern void of_queue_desc_stats_request_queue_id_get(
+    of_queue_desc_stats_request_t *obj,
+    uint32_t *queue_id);
+
 /* Unified accessor functions for of_queue_get_config_reply */
 
 extern void of_queue_get_config_reply_xid_set(
@@ -26379,6 +26431,29 @@ extern void of_queue_desc_properties_bind(
     of_list_queue_desc_prop_t *properties);
 extern of_list_queue_desc_prop_t *of_queue_desc_properties_get(
     of_queue_desc_t *obj);
+
+/* Unified accessor functions for of_queue_desc_prop_bsn_queue_name */
+
+extern void of_queue_desc_prop_bsn_queue_name_experimenter_set(
+    of_queue_desc_prop_bsn_queue_name_t *obj,
+    uint32_t experimenter);
+extern void of_queue_desc_prop_bsn_queue_name_experimenter_get(
+    of_queue_desc_prop_bsn_queue_name_t *obj,
+    uint32_t *experimenter);
+
+extern void of_queue_desc_prop_bsn_queue_name_exp_type_set(
+    of_queue_desc_prop_bsn_queue_name_t *obj,
+    uint32_t exp_type);
+extern void of_queue_desc_prop_bsn_queue_name_exp_type_get(
+    of_queue_desc_prop_bsn_queue_name_t *obj,
+    uint32_t *exp_type);
+
+extern int WARN_UNUSED_RESULT of_queue_desc_prop_bsn_queue_name_name_set(
+    of_queue_desc_prop_bsn_queue_name_t *obj,
+    of_octets_t *name);
+extern void of_queue_desc_prop_bsn_queue_name_name_get(
+    of_queue_desc_prop_bsn_queue_name_t *obj,
+    of_octets_t *name);
 
 /* Unified accessor functions for of_queue_desc_prop_max_rate */
 

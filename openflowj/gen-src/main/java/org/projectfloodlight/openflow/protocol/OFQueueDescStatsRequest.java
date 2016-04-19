@@ -32,6 +32,8 @@ public interface OFQueueDescStatsRequest extends OFObject, OFStatsRequest<OFQueu
     long getXid();
     OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
+    OFPort getPortNo();
+    long getQueueId();
 
 
     void writeTo(ByteBuf channelBuffer);
@@ -46,5 +48,9 @@ public interface OFQueueDescStatsRequest extends OFObject, OFStatsRequest<OFQueu
         OFStatsType getStatsType();
         Set<OFStatsRequestFlags> getFlags();
         Builder setFlags(Set<OFStatsRequestFlags> flags);
+        OFPort getPortNo();
+        Builder setPortNo(OFPort portNo);
+        long getQueueId();
+        Builder setQueueId(long queueId);
     }
 }

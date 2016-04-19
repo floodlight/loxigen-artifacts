@@ -33033,6 +33033,7 @@ of_queue_desc_stats_request_OF_VERSION_1_4_dump(loci_writer_f writer, void* cook
     int out = 0;
     uint32_t val32;
     uint16_t val16;
+    of_port_no_t port_no;
 
     out += writer(cookie, "Object of type of_queue_desc_stats_request\n");
 
@@ -33044,6 +33045,16 @@ of_queue_desc_stats_request_OF_VERSION_1_4_dump(loci_writer_f writer, void* cook
     of_queue_desc_stats_request_flags_get(obj, &val16);
     out += writer(cookie, "  flags (uint16_t):  ");
     out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_queue_desc_stats_request_port_no_get(obj, &port_no);
+    out += writer(cookie, "  port_no (of_port_no_t):  ");
+    out += LOCI_DUMP_port_no(writer, cookie, port_no);
+    out += writer(cookie, "\n");
+
+    of_queue_desc_stats_request_queue_id_get(obj, &val32);
+    out += writer(cookie, "  queue_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
     return out;
@@ -41109,6 +41120,33 @@ of_queue_desc_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_
 }
 
 int
+of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_octets_t octets;
+
+    out += writer(cookie, "Object of type of_queue_desc_prop_bsn_queue_name\n");
+
+    of_queue_desc_prop_bsn_queue_name_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_queue_desc_prop_bsn_queue_name_exp_type_get(obj, &val32);
+    out += writer(cookie, "  exp_type (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_queue_desc_prop_bsn_queue_name_name_get(obj, &octets);
+    out += writer(cookie, "  name (of_octets_t):  ");
+    out += LOCI_DUMP_octets(writer, cookie, octets);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_queue_desc_prop_max_rate_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -42943,6 +42981,8 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_queue_prop_min_rate_OF_VERSION_1_0_dump,
     of_queue_stats_entry_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -43681,6 +43721,8 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_port_stats_entry_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -44442,6 +44484,8 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_queue_prop_max_rate_OF_VERSION_1_2_dump,
     of_queue_prop_min_rate_OF_VERSION_1_2_dump,
     of_queue_stats_entry_OF_VERSION_1_2_dump,
@@ -45181,6 +45225,8 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_port_stats_entry_OF_VERSION_1_3_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -45937,6 +45983,8 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_port_stats_prop_optical_OF_VERSION_1_4_dump,
     of_queue_desc_OF_VERSION_1_4_dump,
     unknown_dump,
+    unknown_dump,
+    of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_dump,
     unknown_dump,
     of_queue_desc_prop_max_rate_OF_VERSION_1_4_dump,
     of_queue_desc_prop_min_rate_OF_VERSION_1_4_dump,

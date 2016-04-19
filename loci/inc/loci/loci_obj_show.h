@@ -1627,6 +1627,7 @@ int of_port_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, 
 int of_port_stats_prop_ethernet_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_stats_prop_optical_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_queue_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_queue_desc_prop_max_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_queue_desc_prop_min_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_queue_prop_max_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);

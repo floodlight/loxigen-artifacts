@@ -1730,6 +1730,8 @@ static int __attribute__((unused)) loci_validate_of_port_status_OF_VERSION_1_4(u
 static int __attribute__((unused)) loci_validate_of_queue_desc_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_queue_desc_prop_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_queue_desc_prop_experimenter_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_queue_desc_prop_bsn_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_queue_desc_prop_max_rate_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_queue_desc_prop_min_rate_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_queue_desc_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -44291,7 +44293,61 @@ loci_validate_of_queue_desc_prop_experimenter_OF_VERSION_1_4(uint8_t *data, int 
     uint32_t wire_type;
     buf_u32_get(data + 4, &wire_type);
     switch (wire_type) {
+    case 0x5c16c7:
+        return loci_validate_of_queue_desc_prop_bsn_OF_VERSION_1_4(data, len, out_len);
     }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_queue_desc_prop_bsn_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 12) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+    uint32_t wire_type;
+    buf_u32_get(data + 8, &wire_type);
+    switch (wire_type) {
+    case 0x0:
+        return loci_validate_of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4(data, len, out_len);
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 12) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
 
 
     *out_len = len;
@@ -44373,15 +44429,15 @@ loci_validate_of_queue_desc_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, i
 static int
 loci_validate_of_queue_desc_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
-    if (len < 16) {
+    if (len < 24) {
         return -1;
     }
 
-    len = 16;
+    len = 24;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 16) {
+    if (wire_len > len || wire_len < 24) {
         return -1;
     }
 

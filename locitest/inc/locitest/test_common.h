@@ -15080,6 +15080,15 @@ extern int of_queue_desc_OF_VERSION_1_4_populate_scalars(
 extern int of_queue_desc_OF_VERSION_1_4_check_scalars(
     of_queue_desc_t *obj, int value);
 
+extern int of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_populate(
+    of_queue_desc_prop_bsn_queue_name_t *obj, int value);
+extern int of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_check(
+    of_queue_desc_prop_bsn_queue_name_t *obj, int value);
+extern int of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_populate_scalars(
+    of_queue_desc_prop_bsn_queue_name_t *obj, int value);
+extern int of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_check_scalars(
+    of_queue_desc_prop_bsn_queue_name_t *obj, int value);
+
 extern int of_queue_desc_prop_max_rate_OF_VERSION_1_4_populate(
     of_queue_desc_prop_max_rate_t *obj, int value);
 extern int of_queue_desc_prop_max_rate_OF_VERSION_1_4_check(

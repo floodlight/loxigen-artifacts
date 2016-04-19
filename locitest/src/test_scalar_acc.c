@@ -43027,7 +43027,7 @@ test_of_queue_desc_stats_request_OF_VERSION_1_4_scalar(void)
     obj = of_queue_desc_stats_request_new(OF_VERSION_1_4);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_DESC_STATS_REQUEST);
 
@@ -43041,7 +43041,7 @@ test_of_queue_desc_stats_request_OF_VERSION_1_4_scalar(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
+        TEST_ASSERT(length == 24);
     }
 
     /* Set up incrementing values for scalar members */
@@ -58072,6 +58072,43 @@ test_of_queue_desc_OF_VERSION_1_4_scalar(void)
 }
 
 static int
+test_of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_scalar(void)
+{
+    of_queue_desc_prop_bsn_queue_name_t *obj;
+
+    obj = of_queue_desc_prop_bsn_queue_name_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME);
+
+    {
+        of_object_id_t object_id;
+        of_queue_desc_prop_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_queue_desc_prop_bsn_queue_name_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_queue_desc_prop_max_rate_OF_VERSION_1_4_scalar(void)
 {
     of_queue_desc_prop_max_rate_t *obj;
@@ -60641,6 +60678,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_port_stats_prop_ethernet_OF_VERSION_1_4_scalar);
     RUN_TEST(of_port_stats_prop_optical_OF_VERSION_1_4_scalar);
     RUN_TEST(of_queue_desc_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_scalar);
     RUN_TEST(of_queue_desc_prop_max_rate_OF_VERSION_1_4_scalar);
     RUN_TEST(of_queue_desc_prop_min_rate_OF_VERSION_1_4_scalar);
     RUN_TEST(of_queue_prop_max_rate_OF_VERSION_1_4_scalar);

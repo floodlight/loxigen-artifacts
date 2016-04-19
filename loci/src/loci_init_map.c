@@ -661,6 +661,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_port_stats_prop_optical_init,
     (of_object_init_f)of_queue_desc_init,
     (of_object_init_f)of_queue_desc_prop_init,
+    (of_object_init_f)of_queue_desc_prop_bsn_init,
+    (of_object_init_f)of_queue_desc_prop_bsn_queue_name_init,
     (of_object_init_f)of_queue_desc_prop_experimenter_init,
     (of_object_init_f)of_queue_desc_prop_max_rate_init,
     (of_object_init_f)of_queue_desc_prop_min_rate_init,

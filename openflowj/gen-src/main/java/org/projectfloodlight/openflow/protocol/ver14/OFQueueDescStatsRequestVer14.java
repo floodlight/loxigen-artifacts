@@ -35,27 +35,36 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
     private static final Logger logger = LoggerFactory.getLogger(OFQueueDescStatsRequestVer14.class);
     // version: 1.4
     final static byte WIRE_VERSION = 5;
-    final static int LENGTH = 16;
+    final static int LENGTH = 24;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static Set<OFStatsRequestFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsRequestFlags>of();
+        private final static OFPort DEFAULT_PORT_NO = OFPort.ANY;
+        private final static long DEFAULT_QUEUE_ID = 0x0L;
 
     // OF message fields
     private final long xid;
     private final Set<OFStatsRequestFlags> flags;
+    private final OFPort portNo;
+    private final long queueId;
 //
     // Immutable default instance
     final static OFQueueDescStatsRequestVer14 DEFAULT = new OFQueueDescStatsRequestVer14(
-        DEFAULT_XID, DEFAULT_FLAGS
+        DEFAULT_XID, DEFAULT_FLAGS, DEFAULT_PORT_NO, DEFAULT_QUEUE_ID
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFQueueDescStatsRequestVer14(long xid, Set<OFStatsRequestFlags> flags) {
+    OFQueueDescStatsRequestVer14(long xid, Set<OFStatsRequestFlags> flags, OFPort portNo, long queueId) {
         if(flags == null) {
             throw new NullPointerException("OFQueueDescStatsRequestVer14: property flags cannot be null");
         }
+        if(portNo == null) {
+            throw new NullPointerException("OFQueueDescStatsRequestVer14: property portNo cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
+        this.portNo = portNo;
+        this.queueId = queueId;
     }
 
     // Accessors for OF message fields
@@ -84,6 +93,16 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
         return flags;
     }
 
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public long getQueueId() {
+        return queueId;
+    }
+
 
 
     public OFQueueDescStatsRequest.Builder createBuilder() {
@@ -98,6 +117,10 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
         private long xid;
         private boolean flagsSet;
         private Set<OFStatsRequestFlags> flags;
+        private boolean portNoSet;
+        private OFPort portNo;
+        private boolean queueIdSet;
+        private long queueId;
 
         BuilderWithParent(OFQueueDescStatsRequestVer14 parentMessage) {
             this.parentMessage = parentMessage;
@@ -140,6 +163,28 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
         this.flagsSet = true;
         return this;
     }
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFQueueDescStatsRequest.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public long getQueueId() {
+        return queueId;
+    }
+
+    @Override
+    public OFQueueDescStatsRequest.Builder setQueueId(long queueId) {
+        this.queueId = queueId;
+        this.queueIdSet = true;
+        return this;
+    }
 
 
         @Override
@@ -148,11 +193,17 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
                 Set<OFStatsRequestFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
                 if(flags == null)
                     throw new NullPointerException("Property flags must not be null");
+                OFPort portNo = this.portNoSet ? this.portNo : parentMessage.portNo;
+                if(portNo == null)
+                    throw new NullPointerException("Property portNo must not be null");
+                long queueId = this.queueIdSet ? this.queueId : parentMessage.queueId;
 
                 //
                 return new OFQueueDescStatsRequestVer14(
                     xid,
-                    flags
+                    flags,
+                    portNo,
+                    queueId
                 );
         }
 
@@ -164,6 +215,10 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
         private long xid;
         private boolean flagsSet;
         private Set<OFStatsRequestFlags> flags;
+        private boolean portNoSet;
+        private OFPort portNo;
+        private boolean queueIdSet;
+        private long queueId;
 
     @Override
     public OFVersion getVersion() {
@@ -202,6 +257,28 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
         this.flagsSet = true;
         return this;
     }
+    @Override
+    public OFPort getPortNo() {
+        return portNo;
+    }
+
+    @Override
+    public OFQueueDescStatsRequest.Builder setPortNo(OFPort portNo) {
+        this.portNo = portNo;
+        this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public long getQueueId() {
+        return queueId;
+    }
+
+    @Override
+    public OFQueueDescStatsRequest.Builder setQueueId(long queueId) {
+        this.queueId = queueId;
+        this.queueIdSet = true;
+        return this;
+    }
 //
         @Override
         public OFQueueDescStatsRequest build() {
@@ -209,11 +286,17 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
             Set<OFStatsRequestFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
             if(flags == null)
                 throw new NullPointerException("Property flags must not be null");
+            OFPort portNo = this.portNoSet ? this.portNo : DEFAULT_PORT_NO;
+            if(portNo == null)
+                throw new NullPointerException("Property portNo must not be null");
+            long queueId = this.queueIdSet ? this.queueId : DEFAULT_QUEUE_ID;
 
 
             return new OFQueueDescStatsRequestVer14(
                     xid,
-                    flags
+                    flags,
+                    portNo,
+                    queueId
                 );
         }
 
@@ -234,8 +317,8 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
             if(type != (byte) 0x12)
                 throw new OFParseError("Wrong type: Expected=OFType.STATS_REQUEST(18), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 16)
-                throw new OFParseError("Wrong length: Expected=16(16), got="+length);
+            if(length != 24)
+                throw new OFParseError("Wrong length: Expected=24(24), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -251,10 +334,14 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
             Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer14.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
+            OFPort portNo = OFPort.read4Bytes(bb);
+            long queueId = U32.f(bb.readInt());
 
             OFQueueDescStatsRequestVer14 queueDescStatsRequestVer14 = new OFQueueDescStatsRequestVer14(
                     xid,
-                      flags
+                      flags,
+                      portNo,
+                      queueId
                     );
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - read={}", queueDescStatsRequestVer14);
@@ -275,13 +362,15 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
             sink.putByte((byte) 0x5);
             // fixed value property type = 18
             sink.putByte((byte) 0x12);
-            // fixed value property length = 16
-            sink.putShort((short) 0x10);
+            // fixed value property length = 24
+            sink.putShort((short) 0x18);
             sink.putLong(message.xid);
             // fixed value property statsType = 15
             sink.putShort((short) 0xf);
             OFStatsRequestFlagsSerializerVer14.putTo(message.flags, sink);
             // skip pad (4 bytes)
+            message.portNo.putTo(sink);
+            sink.putLong(message.queueId);
         }
     }
 
@@ -298,14 +387,16 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
             bb.writeByte((byte) 0x5);
             // fixed value property type = 18
             bb.writeByte((byte) 0x12);
-            // fixed value property length = 16
-            bb.writeShort((short) 0x10);
+            // fixed value property length = 24
+            bb.writeShort((short) 0x18);
             bb.writeInt(U32.t(message.xid));
             // fixed value property statsType = 15
             bb.writeShort((short) 0xf);
             OFStatsRequestFlagsSerializerVer14.writeTo(bb, message.flags);
             // pad: 4 bytes
             bb.writeZero(4);
+            message.portNo.write4Bytes(bb);
+            bb.writeInt(U32.t(message.queueId));
 
 
         }
@@ -317,6 +408,10 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
         b.append("xid=").append(xid);
         b.append(", ");
         b.append("flags=").append(flags);
+        b.append(", ");
+        b.append("portNo=").append(portNo);
+        b.append(", ");
+        b.append("queueId=").append(queueId);
         b.append(")");
         return b.toString();
     }
@@ -338,6 +433,13 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
                 return false;
         } else if (!flags.equals(other.flags))
             return false;
+        if (portNo == null) {
+            if (other.portNo != null)
+                return false;
+        } else if (!portNo.equals(other.portNo))
+            return false;
+        if( queueId != other.queueId)
+            return false;
         return true;
     }
 
@@ -348,6 +450,8 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
 
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
+        result = prime *  (int) (queueId ^ (queueId >>> 32));
         return result;
     }
 

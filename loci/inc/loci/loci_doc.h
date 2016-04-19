@@ -4757,6 +4757,14 @@ typedef struct of_queue_desc_stats_reply_s of_queue_desc_stats_reply_t;
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_queue_desc_stats_request_uint16_get_f and _set_f.
  *
+ * @param port_no_get/set ( OF_1_4).
+ *   Accessors for port_no, a variable of type of_port_no.  Functions
+ *   are of type of_queue_desc_stats_request_of_port_no_get_f and _set_f.
+ *
+ * @param queue_id_get/set ( OF_1_4).
+ *   Accessors for queue_id, a variable of type uint32.  Functions
+ *   are of type of_queue_desc_stats_request_uint32_get_f and _set_f.
+ *
  */
 typedef struct of_queue_desc_stats_request_s of_queue_desc_stats_request_t;
 
@@ -11136,6 +11144,40 @@ typedef struct of_queue_desc_s of_queue_desc_t;
  *
  */
 typedef struct of_queue_desc_prop_s of_queue_desc_prop_t;
+
+/**
+ * Structure for of_queue_desc_prop_bsn object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_queue_desc_prop_bsn_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_queue_desc_prop_bsn_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_queue_desc_prop_bsn_s of_queue_desc_prop_bsn_t;
+
+/**
+ * Structure for of_queue_desc_prop_bsn_queue_name object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_queue_desc_prop_bsn_queue_name_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_queue_desc_prop_bsn_queue_name_uint32_get_f and _set_f.
+ *
+ * @param name_get/set ( OF_1_4).
+ *   Accessors for name, a variable of type of_octets.  Functions
+ *   are of type of_queue_desc_prop_bsn_queue_name_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_queue_desc_prop_bsn_queue_name_s of_queue_desc_prop_bsn_queue_name_t;
 
 /**
  * Structure for of_queue_desc_prop_experimenter object.  Get/set

@@ -30882,6 +30882,7 @@ of_queue_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
     int out = 0;
     uint32_t val32;
     uint16_t val16;
+    of_port_no_t port_no;
 
     of_queue_desc_stats_request_xid_get(obj, &val32);
     out += writer(cookie, "xid=");
@@ -30891,6 +30892,16 @@ of_queue_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
     of_queue_desc_stats_request_flags_get(obj, &val16);
     out += writer(cookie, "flags=");
     out += LOCI_SHOW_x16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_queue_desc_stats_request_port_no_get(obj, &port_no);
+    out += writer(cookie, "port_no=");
+    out += LOCI_SHOW_port_no(writer, cookie, port_no);
+    out += writer(cookie, " ");
+
+    of_queue_desc_stats_request_queue_id_get(obj, &val32);
+    out += writer(cookie, "queue_id=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
     out += writer(cookie, " ");
 
     return out;
@@ -38168,6 +38179,31 @@ of_queue_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_
 }
 
 int
+of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_octets_t octets;
+
+    of_queue_desc_prop_bsn_queue_name_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_queue_desc_prop_bsn_queue_name_exp_type_get(obj, &val32);
+    out += writer(cookie, "exp_type=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_queue_desc_prop_bsn_queue_name_name_get(obj, &octets);
+    out += writer(cookie, "name=");
+    out += LOCI_SHOW_octets(writer, cookie, octets);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_queue_desc_prop_max_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -39961,6 +39997,8 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_queue_prop_min_rate_OF_VERSION_1_0_show,
     of_queue_stats_entry_OF_VERSION_1_0_show,
     unknown_show,
@@ -40699,6 +40737,8 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_port_stats_entry_OF_VERSION_1_1_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -41460,6 +41500,8 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_queue_prop_max_rate_OF_VERSION_1_2_show,
     of_queue_prop_min_rate_OF_VERSION_1_2_show,
     of_queue_stats_entry_OF_VERSION_1_2_show,
@@ -42199,6 +42241,8 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_port_stats_entry_OF_VERSION_1_3_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -42955,6 +42999,8 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_port_stats_prop_optical_OF_VERSION_1_4_show,
     of_queue_desc_OF_VERSION_1_4_show,
     unknown_show,
+    unknown_show,
+    of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_show,
     unknown_show,
     of_queue_desc_prop_max_rate_OF_VERSION_1_4_show,
     of_queue_desc_prop_min_rate_OF_VERSION_1_4_show,

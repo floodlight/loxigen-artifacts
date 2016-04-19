@@ -4035,6 +4035,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_queue_desc_prop_wire_object_id_get,
         .wire_type_set=NULL,
     },
+    [OF_QUEUE_DESC_PROP_BSN] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_queue_desc_prop_wire_object_id_get,
+        .wire_type_set=NULL,
+    },
+    [OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_queue_desc_prop_wire_object_id_get,
+        .wire_type_set=of_queue_desc_prop_bsn_queue_name_push_wire_types,
+    },
     [OF_QUEUE_DESC_PROP_MAX_RATE] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,

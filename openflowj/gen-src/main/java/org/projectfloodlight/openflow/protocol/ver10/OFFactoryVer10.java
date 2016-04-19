@@ -1437,6 +1437,13 @@ public class OFFactoryVer10 implements OFFactory {
         throw new UnsupportedOperationException("OFQueueDesc not supported in version 1.0");
     }
 
+    public OFQueueDescPropBsnQueueName.Builder buildQueueDescPropBsnQueueName() {
+        throw new UnsupportedOperationException("OFQueueDescPropBsnQueueName not supported in version 1.0");
+    }
+    public OFQueueDescPropBsnQueueName queueDescPropBsnQueueName(byte[] name) {
+        throw new UnsupportedOperationException("OFQueueDescPropBsnQueueName not supported in version 1.0");
+    }
+
     public OFQueueDescPropMaxRate.Builder buildQueueDescPropMaxRate() {
         throw new UnsupportedOperationException("OFQueueDescPropMaxRate not supported in version 1.0");
     }
@@ -1456,9 +1463,6 @@ public class OFFactoryVer10 implements OFFactory {
     }
 
     public OFQueueDescStatsRequest.Builder buildQueueDescStatsRequest() {
-        throw new UnsupportedOperationException("OFQueueDescStatsRequest not supported in version 1.0");
-    }
-    public OFQueueDescStatsRequest queueDescStatsRequest(Set<OFStatsRequestFlags> flags) {
         throw new UnsupportedOperationException("OFQueueDescStatsRequest not supported in version 1.0");
     }
 

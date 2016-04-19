@@ -11245,6 +11245,15 @@ fields['of14.queue_desc_prop_experimenter.type'] = ProtoField.uint16("of14.queue
 fields['of14.queue_desc_prop_experimenter.length'] = ProtoField.uint16("of14.queue_desc_prop_experimenter.length", "length", base.DEC, nil)
 fields['of14.queue_desc_prop_experimenter.experimenter'] = ProtoField.uint32("of14.queue_desc_prop_experimenter.experimenter", "experimenter", base.DEC, nil)
 fields['of14.queue_desc_prop_experimenter.exp_type'] = ProtoField.uint32("of14.queue_desc_prop_experimenter.exp_type", "exp_type", base.DEC, nil)
+fields['of14.queue_desc_prop_bsn.type'] = ProtoField.uint16("of14.queue_desc_prop_bsn.type", "type", base.DEC, nil)
+fields['of14.queue_desc_prop_bsn.length'] = ProtoField.uint16("of14.queue_desc_prop_bsn.length", "length", base.DEC, nil)
+fields['of14.queue_desc_prop_bsn.experimenter'] = ProtoField.uint32("of14.queue_desc_prop_bsn.experimenter", "experimenter", base.DEC, nil)
+fields['of14.queue_desc_prop_bsn.exp_type'] = ProtoField.uint32("of14.queue_desc_prop_bsn.exp_type", "exp_type", base.DEC, nil)
+fields['of14.queue_desc_prop_bsn_queue_name.type'] = ProtoField.uint16("of14.queue_desc_prop_bsn_queue_name.type", "type", base.DEC, nil)
+fields['of14.queue_desc_prop_bsn_queue_name.length'] = ProtoField.uint16("of14.queue_desc_prop_bsn_queue_name.length", "length", base.DEC, nil)
+fields['of14.queue_desc_prop_bsn_queue_name.experimenter'] = ProtoField.uint32("of14.queue_desc_prop_bsn_queue_name.experimenter", "experimenter", base.DEC, nil)
+fields['of14.queue_desc_prop_bsn_queue_name.exp_type'] = ProtoField.uint32("of14.queue_desc_prop_bsn_queue_name.exp_type", "exp_type", base.DEC, nil)
+fields['of14.queue_desc_prop_bsn_queue_name.name'] = ProtoField.bytes("of14.queue_desc_prop_bsn_queue_name.name", "name")
 fields['of14.queue_desc_prop_max_rate.type'] = ProtoField.uint16("of14.queue_desc_prop_max_rate.type", "type", base.DEC, nil)
 fields['of14.queue_desc_prop_max_rate.length'] = ProtoField.uint16("of14.queue_desc_prop_max_rate.length", "length", base.DEC, nil)
 fields['of14.queue_desc_prop_max_rate.rate'] = ProtoField.uint16("of14.queue_desc_prop_max_rate.rate", "rate", base.DEC, nil)
@@ -11264,6 +11273,8 @@ fields['of14.queue_desc_stats_request.length'] = ProtoField.uint16("of14.queue_d
 fields['of14.queue_desc_stats_request.xid'] = ProtoField.uint32("of14.queue_desc_stats_request.xid", "xid", base.DEC, nil)
 fields['of14.queue_desc_stats_request.stats_type'] = ProtoField.uint16("of14.queue_desc_stats_request.stats_type", "stats_type", base.DEC, nil)
 fields['of14.queue_desc_stats_request.flags'] = ProtoField.uint32("of14.queue_desc_stats_request.flags", "flags", base.HEX, enum_v5_ofp_stats_request_flags)
+fields['of14.queue_desc_stats_request.port_no'] = ProtoField.uint32("of14.queue_desc_stats_request.port_no", "port_no", base.DEC, nil)
+fields['of14.queue_desc_stats_request.queue_id'] = ProtoField.uint32("of14.queue_desc_stats_request.queue_id", "queue_id", base.DEC, nil)
 fields['of14.queue_op_failed_error_msg.version'] = ProtoField.uint8("of14.queue_op_failed_error_msg.version", "version", base.DEC, nil)
 fields['of14.queue_op_failed_error_msg.type'] = ProtoField.uint8("of14.queue_op_failed_error_msg.type", "type", base.DEC, nil)
 fields['of14.queue_op_failed_error_msg.length'] = ProtoField.uint16("of14.queue_op_failed_error_msg.length", "length", base.DEC, nil)
@@ -19945,6 +19956,15 @@ p_of.fields = {
     fields['of14.queue_desc_prop_experimenter.length'],
     fields['of14.queue_desc_prop_experimenter.experimenter'],
     fields['of14.queue_desc_prop_experimenter.exp_type'],
+    fields['of14.queue_desc_prop_bsn.type'],
+    fields['of14.queue_desc_prop_bsn.length'],
+    fields['of14.queue_desc_prop_bsn.experimenter'],
+    fields['of14.queue_desc_prop_bsn.exp_type'],
+    fields['of14.queue_desc_prop_bsn_queue_name.type'],
+    fields['of14.queue_desc_prop_bsn_queue_name.length'],
+    fields['of14.queue_desc_prop_bsn_queue_name.experimenter'],
+    fields['of14.queue_desc_prop_bsn_queue_name.exp_type'],
+    fields['of14.queue_desc_prop_bsn_queue_name.name'],
     fields['of14.queue_desc_prop_max_rate.type'],
     fields['of14.queue_desc_prop_max_rate.length'],
     fields['of14.queue_desc_prop_max_rate.rate'],
@@ -19964,6 +19984,8 @@ p_of.fields = {
     fields['of14.queue_desc_stats_request.xid'],
     fields['of14.queue_desc_stats_request.stats_type'],
     fields['of14.queue_desc_stats_request.flags'],
+    fields['of14.queue_desc_stats_request.port_no'],
+    fields['of14.queue_desc_stats_request.queue_id'],
     fields['of14.queue_op_failed_error_msg.version'],
     fields['of14.queue_op_failed_error_msg.type'],
     fields['of14.queue_op_failed_error_msg.length'],
@@ -20374,6 +20396,7 @@ of_port_stats_prop_v5_dissectors = {}
 of_port_stats_prop_experimenter_v5_dissectors = {}
 of_queue_desc_prop_v5_dissectors = {}
 of_queue_desc_prop_experimenter_v5_dissectors = {}
+of_queue_desc_prop_bsn_v5_dissectors = {}
 of_queue_prop_v5_dissectors = {}
 of_queue_prop_experimenter_v5_dissectors = {}
 of_queue_stats_prop_v5_dissectors = {}
@@ -41343,6 +41366,29 @@ function dissect_of_queue_desc_prop_experimenter_v5(reader, subtree)
 end
 of_queue_desc_prop_v5_dissectors[65535] = dissect_of_queue_desc_prop_experimenter_v5
 
+-- virtual child class of_queue_desc_prop_bsn
+-- Child of of_queue_desc_prop_experimenter
+-- Discriminator is exp_type
+function dissect_of_queue_desc_prop_bsn_v5(reader, subtree)
+    return of_queue_desc_prop_bsn_v5_dissectors[reader.peek(8,4):uint()](reader, subtree)
+end
+of_queue_desc_prop_experimenter_v5_dissectors[6035143] = dissect_of_queue_desc_prop_bsn_v5
+
+-- child class of_queue_desc_prop_bsn_queue_name
+-- Child of of_queue_desc_prop_bsn
+function dissect_of_queue_desc_prop_bsn_queue_name_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 5, subtree, 'of14.queue_desc_prop_bsn_queue_name.type')
+    read_uint16_t(reader, 5, subtree, 'of14.queue_desc_prop_bsn_queue_name.length')
+    read_uint32_t(reader, 5, subtree, 'of14.queue_desc_prop_bsn_queue_name.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.queue_desc_prop_bsn_queue_name.exp_type')
+    read_of_octets_t(reader, 5, subtree, 'of14.queue_desc_prop_bsn_queue_name.name')
+    return 'of_queue_desc_prop_bsn_queue_name'
+end
+of_queue_desc_prop_bsn_v5_dissectors[0] = dissect_of_queue_desc_prop_bsn_queue_name_v5
+
 -- child class of_queue_desc_prop_max_rate
 -- Child of of_queue_desc_prop
 function dissect_of_queue_desc_prop_max_rate_v5(reader, subtree)
@@ -41393,6 +41439,8 @@ function dissect_of_queue_desc_stats_request_v5(reader, subtree)
     read_uint16_t(reader, 5, subtree, 'of14.queue_desc_stats_request.stats_type')
     read_uint16_t(reader, 5, subtree, 'of14.queue_desc_stats_request.flags')
     reader.skip(4)
+    read_of_port_no_t(reader, 5, subtree, 'of14.queue_desc_stats_request.port_no')
+    read_uint32_t(reader, 5, subtree, 'of14.queue_desc_stats_request.queue_id')
     return 'of_queue_desc_stats_request'
 end
 of_stats_request_v5_dissectors[15] = dissect_of_queue_desc_stats_request_v5

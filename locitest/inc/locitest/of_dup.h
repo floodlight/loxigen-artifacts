@@ -2611,6 +2611,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_queue_desc_prop_bsn_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_queue_desc_prop_bsn_queue_name_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_queue_desc_prop_experimenter_dup(
         of_object_t *src);
 
@@ -9836,6 +9844,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_queue_desc_prop_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

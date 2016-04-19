@@ -10850,6 +10850,9 @@ of_queue_desc_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_i
     case OF_VERSION_1_4: {
         uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
         switch (value) {
+        case 0x5c16c7:
+            of_queue_desc_prop_bsn_wire_object_id_get(obj, id);
+            break;
         default:
             *id = OF_QUEUE_DESC_PROP_EXPERIMENTER;
             break;
@@ -11122,27 +11125,36 @@ of_queue_desc_prop_experimenter_exp_type_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
+
 void
-of_queue_desc_prop_max_rate_push_wire_types(of_object_t *obj)
+of_queue_desc_prop_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
-    case OF_VERSION_1_4:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x2); /* type */
+    case OF_VERSION_1_4: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* exp_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME;
+            break;
+        default:
+            *id = OF_QUEUE_DESC_PROP_BSN;
+            break;
+        }
         break;
+    }
     default:
-        UNREACHABLE();
+        LOCI_ASSERT(0);
     }
 }
 
 
-
 /**
- * \defgroup of_queue_desc_prop_max_rate of_queue_desc_prop_max_rate
+ * \defgroup of_queue_desc_prop_bsn of_queue_desc_prop_bsn
  */
 
 /**
- * Create a new of_queue_desc_prop_max_rate object
+ * Create a new of_queue_desc_prop_bsn object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -11150,30 +11162,28 @@ of_queue_desc_prop_max_rate_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_queue_desc_prop_max_rate
+ * \ingroup of_queue_desc_prop_bsn
  */
 
 of_object_t *
-of_queue_desc_prop_max_rate_new(of_version_t version)
+of_queue_desc_prop_bsn_new(of_version_t version)
 {
     of_object_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_QUEUE_DESC_PROP_MAX_RATE];
+    bytes = of_object_fixed_len[version][OF_QUEUE_DESC_PROP_BSN];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
-    of_queue_desc_prop_max_rate_init(obj, version, bytes, 0);
-    of_queue_desc_prop_max_rate_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+    of_queue_desc_prop_bsn_init(obj, version, bytes, 0);
 
     return obj;
 }
 
 /**
- * Initialize an object of type of_queue_desc_prop_max_rate.
+ * Initialize an object of type of_queue_desc_prop_bsn.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -11190,19 +11200,19 @@ of_queue_desc_prop_max_rate_new(of_version_t version)
  */
 
 void
-of_queue_desc_prop_max_rate_init(of_object_t *obj,
+of_queue_desc_prop_bsn_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    LOCI_ASSERT(of_object_fixed_len[version][OF_QUEUE_DESC_PROP_MAX_RATE] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_QUEUE_DESC_PROP_BSN] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_QUEUE_DESC_PROP_MAX_RATE];
+        bytes = of_object_fixed_len[version][OF_QUEUE_DESC_PROP_BSN];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_QUEUE_DESC_PROP_MAX_RATE;
+    obj->object_id = OF_QUEUE_DESC_PROP_BSN;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -11214,23 +11224,23 @@ of_queue_desc_prop_max_rate_init(of_object_t *obj,
 }
 
 /**
- * Get rate from an object of type of_queue_desc_prop_max_rate.
- * @param obj Pointer to an object of type of_queue_desc_prop_max_rate.
- * @param rate Pointer to the child object of type
- * uint16_t to be filled out.
+ * Get experimenter from an object of type of_queue_desc_prop_bsn.
+ * @param obj Pointer to an object of type of_queue_desc_prop_bsn.
+ * @param experimenter Pointer to the child object of type
+ * uint32_t to be filled out.
  *
  */
 void
-of_queue_desc_prop_max_rate_rate_get(
-    of_queue_desc_prop_max_rate_t *obj,
-    uint16_t *rate)
+of_queue_desc_prop_bsn_experimenter_get(
+    of_queue_desc_prop_bsn_t *obj,
+    uint32_t *experimenter)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_MAX_RATE);
+    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_BSN);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -11246,7 +11256,7 @@ of_queue_desc_prop_max_rate_rate_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_get(wbuf, abs_offset, rate);
+    of_wire_buffer_u32_get(wbuf, abs_offset, experimenter);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -11254,21 +11264,21 @@ of_queue_desc_prop_max_rate_rate_get(
 }
 
 /**
- * Set rate in an object of type of_queue_desc_prop_max_rate.
- * @param obj Pointer to an object of type of_queue_desc_prop_max_rate.
- * @param rate The value to write into the object
+ * Set experimenter in an object of type of_queue_desc_prop_bsn.
+ * @param obj Pointer to an object of type of_queue_desc_prop_bsn.
+ * @param experimenter The value to write into the object
  */
 void
-of_queue_desc_prop_max_rate_rate_set(
-    of_queue_desc_prop_max_rate_t *obj,
-    uint16_t rate)
+of_queue_desc_prop_bsn_experimenter_set(
+    of_queue_desc_prop_bsn_t *obj,
+    uint32_t experimenter)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_MAX_RATE);
+    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_BSN);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -11284,7 +11294,85 @@ of_queue_desc_prop_max_rate_rate_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_set(wbuf, abs_offset, rate);
+    of_wire_buffer_u32_set(wbuf, abs_offset, experimenter);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Get exp_type from an object of type of_queue_desc_prop_bsn.
+ * @param obj Pointer to an object of type of_queue_desc_prop_bsn.
+ * @param exp_type Pointer to the child object of type
+ * uint32_t to be filled out.
+ *
+ */
+void
+of_queue_desc_prop_bsn_exp_type_get(
+    of_queue_desc_prop_bsn_t *obj,
+    uint32_t *exp_type)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_BSN);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_4:
+        offset = 8;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_get(wbuf, abs_offset, exp_type);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set exp_type in an object of type of_queue_desc_prop_bsn.
+ * @param obj Pointer to an object of type of_queue_desc_prop_bsn.
+ * @param exp_type The value to write into the object
+ */
+void
+of_queue_desc_prop_bsn_exp_type_set(
+    of_queue_desc_prop_bsn_t *obj,
+    uint32_t exp_type)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_BSN);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_4:
+        offset = 8;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_set(wbuf, abs_offset, exp_type);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -11322,12 +11410,14 @@ of_queue_desc_prop_max_rate_rate_set(
 #include "loci_int.h"
 
 void
-of_queue_desc_prop_min_rate_push_wire_types(of_object_t *obj)
+of_queue_desc_prop_bsn_queue_name_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_4:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x1); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
+        *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x0); /* exp_type */
         break;
     default:
         UNREACHABLE();
@@ -11337,11 +11427,11 @@ of_queue_desc_prop_min_rate_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_queue_desc_prop_min_rate of_queue_desc_prop_min_rate
+ * \defgroup of_queue_desc_prop_bsn_queue_name of_queue_desc_prop_bsn_queue_name
  */
 
 /**
- * Create a new of_queue_desc_prop_min_rate object
+ * Create a new of_queue_desc_prop_bsn_queue_name object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -11349,30 +11439,30 @@ of_queue_desc_prop_min_rate_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_queue_desc_prop_min_rate
+ * \ingroup of_queue_desc_prop_bsn_queue_name
  */
 
 of_object_t *
-of_queue_desc_prop_min_rate_new(of_version_t version)
+of_queue_desc_prop_bsn_queue_name_new(of_version_t version)
 {
     of_object_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_QUEUE_DESC_PROP_MIN_RATE];
+    bytes = of_object_fixed_len[version][OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
-    of_queue_desc_prop_min_rate_init(obj, version, bytes, 0);
-    of_queue_desc_prop_min_rate_push_wire_types(obj);
+    of_queue_desc_prop_bsn_queue_name_init(obj, version, bytes, 0);
+    of_queue_desc_prop_bsn_queue_name_push_wire_types(obj);
     of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
 
 /**
- * Initialize an object of type of_queue_desc_prop_min_rate.
+ * Initialize an object of type of_queue_desc_prop_bsn_queue_name.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -11389,19 +11479,19 @@ of_queue_desc_prop_min_rate_new(of_version_t version)
  */
 
 void
-of_queue_desc_prop_min_rate_init(of_object_t *obj,
+of_queue_desc_prop_bsn_queue_name_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    LOCI_ASSERT(of_object_fixed_len[version][OF_QUEUE_DESC_PROP_MIN_RATE] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_QUEUE_DESC_PROP_MIN_RATE];
+        bytes = of_object_fixed_len[version][OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_QUEUE_DESC_PROP_MIN_RATE;
+    obj->object_id = OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -11413,23 +11503,23 @@ of_queue_desc_prop_min_rate_init(of_object_t *obj,
 }
 
 /**
- * Get rate from an object of type of_queue_desc_prop_min_rate.
- * @param obj Pointer to an object of type of_queue_desc_prop_min_rate.
- * @param rate Pointer to the child object of type
- * uint16_t to be filled out.
+ * Get experimenter from an object of type of_queue_desc_prop_bsn_queue_name.
+ * @param obj Pointer to an object of type of_queue_desc_prop_bsn_queue_name.
+ * @param experimenter Pointer to the child object of type
+ * uint32_t to be filled out.
  *
  */
 void
-of_queue_desc_prop_min_rate_rate_get(
-    of_queue_desc_prop_min_rate_t *obj,
-    uint16_t *rate)
+of_queue_desc_prop_bsn_queue_name_experimenter_get(
+    of_queue_desc_prop_bsn_queue_name_t *obj,
+    uint32_t *experimenter)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_MIN_RATE);
+    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -11445,7 +11535,7 @@ of_queue_desc_prop_min_rate_rate_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_get(wbuf, abs_offset, rate);
+    of_wire_buffer_u32_get(wbuf, abs_offset, experimenter);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -11453,21 +11543,21 @@ of_queue_desc_prop_min_rate_rate_get(
 }
 
 /**
- * Set rate in an object of type of_queue_desc_prop_min_rate.
- * @param obj Pointer to an object of type of_queue_desc_prop_min_rate.
- * @param rate The value to write into the object
+ * Set experimenter in an object of type of_queue_desc_prop_bsn_queue_name.
+ * @param obj Pointer to an object of type of_queue_desc_prop_bsn_queue_name.
+ * @param experimenter The value to write into the object
  */
 void
-of_queue_desc_prop_min_rate_rate_set(
-    of_queue_desc_prop_min_rate_t *obj,
-    uint16_t rate)
+of_queue_desc_prop_bsn_queue_name_experimenter_set(
+    of_queue_desc_prop_bsn_queue_name_t *obj,
+    uint32_t experimenter)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_MIN_RATE);
+    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -11483,9 +11573,183 @@ of_queue_desc_prop_min_rate_rate_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_set(wbuf, abs_offset, rate);
+    of_wire_buffer_u32_set(wbuf, abs_offset, experimenter);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
     return ;
+}
+
+/**
+ * Get exp_type from an object of type of_queue_desc_prop_bsn_queue_name.
+ * @param obj Pointer to an object of type of_queue_desc_prop_bsn_queue_name.
+ * @param exp_type Pointer to the child object of type
+ * uint32_t to be filled out.
+ *
+ */
+void
+of_queue_desc_prop_bsn_queue_name_exp_type_get(
+    of_queue_desc_prop_bsn_queue_name_t *obj,
+    uint32_t *exp_type)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_4:
+        offset = 8;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_get(wbuf, abs_offset, exp_type);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set exp_type in an object of type of_queue_desc_prop_bsn_queue_name.
+ * @param obj Pointer to an object of type of_queue_desc_prop_bsn_queue_name.
+ * @param exp_type The value to write into the object
+ */
+void
+of_queue_desc_prop_bsn_queue_name_exp_type_set(
+    of_queue_desc_prop_bsn_queue_name_t *obj,
+    uint32_t exp_type)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_4:
+        offset = 8;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_set(wbuf, abs_offset, exp_type);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Get name from an object of type of_queue_desc_prop_bsn_queue_name.
+ * @param obj Pointer to an object of type of_queue_desc_prop_bsn_queue_name.
+ * @param name Pointer to the child object of type
+ * of_octets_t to be filled out.
+ *
+ */
+void
+of_queue_desc_prop_bsn_queue_name_name_get(
+    of_queue_desc_prop_bsn_queue_name_t *obj,
+    of_octets_t *name)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+    int cur_len = 0; /* Current length of object data */
+
+    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_4:
+        offset = 12;
+        cur_len = _END_LEN(obj, offset);
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    LOCI_ASSERT(cur_len + abs_offset <= WBUF_CURRENT_BYTES(wbuf));
+    name->bytes = cur_len;
+    name->data = OF_WIRE_BUFFER_INDEX(wbuf, abs_offset);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set name in an object of type of_queue_desc_prop_bsn_queue_name.
+ * @param obj Pointer to an object of type of_queue_desc_prop_bsn_queue_name.
+ * @param name The value to write into the object
+ */
+int WARN_UNUSED_RESULT
+of_queue_desc_prop_bsn_queue_name_name_set(
+    of_queue_desc_prop_bsn_queue_name_t *obj,
+    of_octets_t *name)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+    int cur_len = 0; /* Current length of object data */
+    int new_len, delta; /* For set, need new length and delta */
+
+    LOCI_ASSERT(obj->object_id == OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_4:
+        offset = 12;
+        cur_len = _END_LEN(obj, offset);
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    new_len = name->bytes;
+    of_wire_buffer_grow(wbuf, abs_offset + (new_len - cur_len));
+    of_wire_buffer_octets_data_set(wbuf, abs_offset, name, cur_len);
+
+    /* Not scalar, update lengths if needed */
+    delta = new_len - cur_len;
+    if (delta != 0) {
+        /* Update parent(s) */
+        of_object_parent_length_update((of_object_t *)obj, delta);
+    }
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return OF_ERROR_NONE;
 }
