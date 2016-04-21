@@ -1,1 +1,1 @@
-b49e148ff613fd8bfd347d1ef05e851cdfe20f27 Merge into master from pull request #477: push-artifacts: add support to specify new target branch to be created (https://github.com/floodlight/loxigen/pull/477)
+91b5ba0a2343f95e22ee26b7de81818faf5c39a2 Merge into master from pull request #478: Dockerized build environment for loxigen (https://github.com/floodlight/loxigen/pull/478)
