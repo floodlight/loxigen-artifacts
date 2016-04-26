@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -188,8 +190,6 @@ class OFTableFeaturePropInstructionsVer14 implements OFTableFeaturePropInstructi
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             List<OFInstructionId> instructionIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFInstructionIdVer14.READER);
-            // align message to 8 bytes (length does not contain alignment)
-            bb.skipBytes(((length + 7)/8 * 8 ) - length );
 
             OFTableFeaturePropInstructionsVer14 tableFeaturePropInstructionsVer14 = new OFTableFeaturePropInstructionsVer14(
                     instructionIds
@@ -236,10 +236,7 @@ class OFTableFeaturePropInstructionsVer14 implements OFTableFeaturePropInstructi
 
             // update length field
             int length = bb.writerIndex() - startIndex;
-            int alignedLength = ((length + 7)/8 * 8);
             bb.setShort(lengthIndex, length);
-            // align message to 8 bytes
-            bb.writeZero(alignedLength - length);
 
         }
     }

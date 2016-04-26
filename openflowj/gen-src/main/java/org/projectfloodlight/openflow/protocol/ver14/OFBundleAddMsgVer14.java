@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -27,6 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
+import java.util.List;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -88,6 +91,16 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
     @Override
     public Set<OFBundleFlags> getFlags() {
         return flags;
+    }
+
+    @Override
+    public OFMessage getMessage()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property message not supported in version 1.4");
+    }
+
+    @Override
+    public List<OFBundleProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
     }
 
     @Override
@@ -160,6 +173,24 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         this.flags = flags;
         this.flagsSet = true;
         return this;
+    }
+    @Override
+    public OFMessage getMessage()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property message not supported in version 1.4");
+    }
+
+    @Override
+    public OFBundleAddMsg.Builder setMessage(OFMessage message) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property message not supported in version 1.4");
+    }
+    @Override
+    public List<OFBundleProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
+    }
+
+    @Override
+    public OFBundleAddMsg.Builder setProperties(List<OFBundleProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.4");
     }
     @Override
     public OFMessage getData() {
@@ -261,6 +292,24 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         this.flags = flags;
         this.flagsSet = true;
         return this;
+    }
+    @Override
+    public OFMessage getMessage()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property message not supported in version 1.4");
+    }
+
+    @Override
+    public OFBundleAddMsg.Builder setMessage(OFMessage message) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property message not supported in version 1.4");
+    }
+    @Override
+    public List<OFBundleProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
+    }
+
+    @Override
+    public OFBundleAddMsg.Builder setProperties(List<OFBundleProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.4");
     }
     @Override
     public OFMessage getData() {

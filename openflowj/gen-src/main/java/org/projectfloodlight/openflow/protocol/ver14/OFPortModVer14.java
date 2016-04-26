@@ -18,16 +18,19 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.Set;
+import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import java.util.Set;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -41,16 +44,16 @@ class OFPortModVer14 implements OFPortMod {
         private final static long DEFAULT_XID = 0x0L;
         private final static OFPort DEFAULT_PORT_NO = OFPort.ANY;
         private final static MacAddress DEFAULT_HW_ADDR = MacAddress.NONE;
-        private final static long DEFAULT_CONFIG = 0x0L;
-        private final static long DEFAULT_MASK = 0x0L;
+        private final static Set<OFPortConfig> DEFAULT_CONFIG = ImmutableSet.<OFPortConfig>of();
+        private final static Set<OFPortConfig> DEFAULT_MASK = ImmutableSet.<OFPortConfig>of();
         private final static List<OFPortModProp> DEFAULT_PROPERTIES = ImmutableList.<OFPortModProp>of();
 
     // OF message fields
     private final long xid;
     private final OFPort portNo;
     private final MacAddress hwAddr;
-    private final long config;
-    private final long mask;
+    private final Set<OFPortConfig> config;
+    private final Set<OFPortConfig> mask;
     private final List<OFPortModProp> properties;
 //
     // Immutable default instance
@@ -59,12 +62,18 @@ class OFPortModVer14 implements OFPortMod {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFPortModVer14(long xid, OFPort portNo, MacAddress hwAddr, long config, long mask, List<OFPortModProp> properties) {
+    OFPortModVer14(long xid, OFPort portNo, MacAddress hwAddr, Set<OFPortConfig> config, Set<OFPortConfig> mask, List<OFPortModProp> properties) {
         if(portNo == null) {
             throw new NullPointerException("OFPortModVer14: property portNo cannot be null");
         }
         if(hwAddr == null) {
             throw new NullPointerException("OFPortModVer14: property hwAddr cannot be null");
+        }
+        if(config == null) {
+            throw new NullPointerException("OFPortModVer14: property config cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFPortModVer14: property mask cannot be null");
         }
         if(properties == null) {
             throw new NullPointerException("OFPortModVer14: property properties cannot be null");
@@ -104,12 +113,12 @@ class OFPortModVer14 implements OFPortMod {
     }
 
     @Override
-    public long getConfig() {
+    public Set<OFPortConfig> getConfig() {
         return config;
     }
 
     @Override
-    public long getMask() {
+    public Set<OFPortConfig> getMask() {
         return mask;
     }
 
@@ -140,9 +149,9 @@ class OFPortModVer14 implements OFPortMod {
         private boolean hwAddrSet;
         private MacAddress hwAddr;
         private boolean configSet;
-        private long config;
+        private Set<OFPortConfig> config;
         private boolean maskSet;
-        private long mask;
+        private Set<OFPortConfig> mask;
         private boolean propertiesSet;
         private List<OFPortModProp> properties;
 
@@ -194,23 +203,23 @@ class OFPortModVer14 implements OFPortMod {
         return this;
     }
     @Override
-    public long getConfig() {
+    public Set<OFPortConfig> getConfig() {
         return config;
     }
 
     @Override
-    public OFPortMod.Builder setConfig(long config) {
+    public OFPortMod.Builder setConfig(Set<OFPortConfig> config) {
         this.config = config;
         this.configSet = true;
         return this;
     }
     @Override
-    public long getMask() {
+    public Set<OFPortConfig> getMask() {
         return mask;
     }
 
     @Override
-    public OFPortMod.Builder setMask(long mask) {
+    public OFPortMod.Builder setMask(Set<OFPortConfig> mask) {
         this.mask = mask;
         this.maskSet = true;
         return this;
@@ -246,8 +255,12 @@ class OFPortModVer14 implements OFPortMod {
                 MacAddress hwAddr = this.hwAddrSet ? this.hwAddr : parentMessage.hwAddr;
                 if(hwAddr == null)
                     throw new NullPointerException("Property hwAddr must not be null");
-                long config = this.configSet ? this.config : parentMessage.config;
-                long mask = this.maskSet ? this.mask : parentMessage.mask;
+                Set<OFPortConfig> config = this.configSet ? this.config : parentMessage.config;
+                if(config == null)
+                    throw new NullPointerException("Property config must not be null");
+                Set<OFPortConfig> mask = this.maskSet ? this.mask : parentMessage.mask;
+                if(mask == null)
+                    throw new NullPointerException("Property mask must not be null");
                 List<OFPortModProp> properties = this.propertiesSet ? this.properties : parentMessage.properties;
                 if(properties == null)
                     throw new NullPointerException("Property properties must not be null");
@@ -274,9 +287,9 @@ class OFPortModVer14 implements OFPortMod {
         private boolean hwAddrSet;
         private MacAddress hwAddr;
         private boolean configSet;
-        private long config;
+        private Set<OFPortConfig> config;
         private boolean maskSet;
-        private long mask;
+        private Set<OFPortConfig> mask;
         private boolean propertiesSet;
         private List<OFPortModProp> properties;
 
@@ -324,23 +337,23 @@ class OFPortModVer14 implements OFPortMod {
         return this;
     }
     @Override
-    public long getConfig() {
+    public Set<OFPortConfig> getConfig() {
         return config;
     }
 
     @Override
-    public OFPortMod.Builder setConfig(long config) {
+    public OFPortMod.Builder setConfig(Set<OFPortConfig> config) {
         this.config = config;
         this.configSet = true;
         return this;
     }
     @Override
-    public long getMask() {
+    public Set<OFPortConfig> getMask() {
         return mask;
     }
 
     @Override
-    public OFPortMod.Builder setMask(long mask) {
+    public OFPortMod.Builder setMask(Set<OFPortConfig> mask) {
         this.mask = mask;
         this.maskSet = true;
         return this;
@@ -375,8 +388,12 @@ class OFPortModVer14 implements OFPortMod {
             MacAddress hwAddr = this.hwAddrSet ? this.hwAddr : DEFAULT_HW_ADDR;
             if(hwAddr == null)
                 throw new NullPointerException("Property hwAddr must not be null");
-            long config = this.configSet ? this.config : DEFAULT_CONFIG;
-            long mask = this.maskSet ? this.mask : DEFAULT_MASK;
+            Set<OFPortConfig> config = this.configSet ? this.config : DEFAULT_CONFIG;
+            if(config == null)
+                throw new NullPointerException("Property config must not be null");
+            Set<OFPortConfig> mask = this.maskSet ? this.mask : DEFAULT_MASK;
+            if(mask == null)
+                throw new NullPointerException("Property mask must not be null");
             List<OFPortModProp> properties = this.propertiesSet ? this.properties : DEFAULT_PROPERTIES;
             if(properties == null)
                 throw new NullPointerException("Property properties must not be null");
@@ -425,8 +442,8 @@ class OFPortModVer14 implements OFPortMod {
             MacAddress hwAddr = MacAddress.read6Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
-            long config = U32.f(bb.readInt());
-            long mask = U32.f(bb.readInt());
+            Set<OFPortConfig> config = OFPortConfigSerializerVer14.readFrom(bb);
+            Set<OFPortConfig> mask = OFPortConfigSerializerVer14.readFrom(bb);
             List<OFPortModProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFPortModPropVer14.READER);
 
             OFPortModVer14 portModVer14 = new OFPortModVer14(
@@ -462,8 +479,8 @@ class OFPortModVer14 implements OFPortMod {
             // skip pad (4 bytes)
             message.hwAddr.putTo(sink);
             // skip pad (2 bytes)
-            sink.putLong(message.config);
-            sink.putLong(message.mask);
+            OFPortConfigSerializerVer14.putTo(message.config, sink);
+            OFPortConfigSerializerVer14.putTo(message.mask, sink);
             FunnelUtils.putList(message.properties, sink);
         }
     }
@@ -493,8 +510,8 @@ class OFPortModVer14 implements OFPortMod {
             message.hwAddr.write6Bytes(bb);
             // pad: 2 bytes
             bb.writeZero(2);
-            bb.writeInt(U32.t(message.config));
-            bb.writeInt(U32.t(message.mask));
+            OFPortConfigSerializerVer14.writeTo(bb, message.config);
+            OFPortConfigSerializerVer14.writeTo(bb, message.mask);
             ChannelUtils.writeList(bb, message.properties);
 
             // update length field
@@ -544,9 +561,15 @@ class OFPortModVer14 implements OFPortMod {
                 return false;
         } else if (!hwAddr.equals(other.hwAddr))
             return false;
-        if( config != other.config)
+        if (config == null) {
+            if (other.config != null)
+                return false;
+        } else if (!config.equals(other.config))
             return false;
-        if( mask != other.mask)
+        if (mask == null) {
+            if (other.mask != null)
+                return false;
+        } else if (!mask.equals(other.mask))
             return false;
         if (properties == null) {
             if (other.properties != null)
@@ -564,8 +587,8 @@ class OFPortModVer14 implements OFPortMod {
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
         result = prime * result + ((hwAddr == null) ? 0 : hwAddr.hashCode());
-        result = prime *  (int) (config ^ (config >>> 32));
-        result = prime *  (int) (mask ^ (mask >>> 32));
+        result = prime * result + ((config == null) ? 0 : config.hashCode());
+        result = prime * result + ((mask == null) ? 0 : mask.hashCode());
         result = prime * result + ((properties == null) ? 0 : properties.hashCode());
         return result;
     }

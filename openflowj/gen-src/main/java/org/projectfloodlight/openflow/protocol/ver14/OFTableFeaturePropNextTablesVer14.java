@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -188,8 +190,6 @@ class OFTableFeaturePropNextTablesVer14 implements OFTableFeaturePropNextTables 
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             List<U8> nextTableIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), U8.READER);
-            // align message to 8 bytes (length does not contain alignment)
-            bb.skipBytes(((length + 7)/8 * 8 ) - length );
 
             OFTableFeaturePropNextTablesVer14 tableFeaturePropNextTablesVer14 = new OFTableFeaturePropNextTablesVer14(
                     nextTableIds
@@ -236,10 +236,7 @@ class OFTableFeaturePropNextTablesVer14 implements OFTableFeaturePropNextTables 
 
             // update length field
             int length = bb.writerIndex() - startIndex;
-            int alignedLength = ((length + 7)/8 * 8);
             bb.setShort(lengthIndex, length);
-            // align message to 8 bytes
-            bb.writeZero(alignedLength - length);
 
         }
     }

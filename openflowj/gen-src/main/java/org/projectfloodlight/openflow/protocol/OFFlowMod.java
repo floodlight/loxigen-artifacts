@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -45,6 +47,7 @@ public interface OFFlowMod extends OFObject, OFMessage {
     Match getMatch();
     List<OFInstruction> getInstructions() throws UnsupportedOperationException;
     List<OFAction> getActions() throws UnsupportedOperationException;
+    int getImportance() throws UnsupportedOperationException;
 
 
     void writeTo(ByteBuf channelBuffer);
@@ -83,5 +86,7 @@ public interface OFFlowMod extends OFObject, OFMessage {
         Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException;
         List<OFAction> getActions() throws UnsupportedOperationException;
         Builder setActions(List<OFAction> actions) throws UnsupportedOperationException;
+        int getImportance() throws UnsupportedOperationException;
+        Builder setImportance(int importance) throws UnsupportedOperationException;
     }
 }

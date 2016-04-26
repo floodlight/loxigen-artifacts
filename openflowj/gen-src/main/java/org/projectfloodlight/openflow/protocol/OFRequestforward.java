@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -29,8 +31,9 @@ public interface OFRequestforward extends OFObject, OFMessage {
     OFVersion getVersion();
     OFType getType();
     long getXid();
-    long getRole();
-    byte[] getData();
+    OFMessage getRequest() throws UnsupportedOperationException;
+    long getRole() throws UnsupportedOperationException;
+    byte[] getData() throws UnsupportedOperationException;
 
 
     void writeTo(ByteBuf channelBuffer);
@@ -42,9 +45,11 @@ public interface OFRequestforward extends OFObject, OFMessage {
         OFType getType();
         long getXid();
         Builder setXid(long xid);
-        long getRole();
-        Builder setRole(long role);
-        byte[] getData();
-        Builder setData(byte[] data);
+        OFMessage getRequest() throws UnsupportedOperationException;
+        Builder setRequest(OFMessage request) throws UnsupportedOperationException;
+        long getRole() throws UnsupportedOperationException;
+        Builder setRole(long role) throws UnsupportedOperationException;
+        byte[] getData() throws UnsupportedOperationException;
+        Builder setData(byte[] data) throws UnsupportedOperationException;
     }
 }

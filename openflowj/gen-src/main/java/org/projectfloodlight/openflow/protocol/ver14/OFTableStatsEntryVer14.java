@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -76,18 +78,38 @@ class OFTableStatsEntryVer14 implements OFTableStatsEntry {
     }
 
     @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
     public String getName()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property name not supported in version 1.4");
     }
 
     @Override
-    public OFMatchBmap getMatch()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property match not supported in version 1.4");
+    public int getWildcards()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property wildcards not supported in version 1.4");
     }
 
     @Override
-    public int getWildcards()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property wildcards not supported in version 1.4");
+    public long getMaxEntries()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property maxEntries not supported in version 1.4");
+    }
+
+    @Override
+    public OFMatchBmap getMatch()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property match not supported in version 1.4");
     }
 
     @Override
@@ -131,26 +153,6 @@ class OFTableStatsEntryVer14 implements OFTableStatsEntry {
     }
 
     @Override
-    public long getMaxEntries()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property maxEntries not supported in version 1.4");
-    }
-
-    @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
     }
@@ -190,6 +192,39 @@ class OFTableStatsEntryVer14 implements OFTableStatsEntry {
         return this;
     }
     @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
+        this.activeCount = activeCount;
+        this.activeCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
+        this.lookupCount = lookupCount;
+        this.lookupCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
+        this.matchedCount = matchedCount;
+        this.matchedCountSet = true;
+        return this;
+    }
+    @Override
     public String getName()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property name not supported in version 1.4");
     }
@@ -199,15 +234,6 @@ class OFTableStatsEntryVer14 implements OFTableStatsEntry {
             throw new UnsupportedOperationException("Property name not supported in version 1.4");
     }
     @Override
-    public OFMatchBmap getMatch()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property match not supported in version 1.4");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property match not supported in version 1.4");
-    }
-    @Override
     public int getWildcards()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property wildcards not supported in version 1.4");
     }
@@ -215,6 +241,24 @@ class OFTableStatsEntryVer14 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setWildcards(int wildcards) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property wildcards not supported in version 1.4");
+    }
+    @Override
+    public long getMaxEntries()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property maxEntries not supported in version 1.4");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property maxEntries not supported in version 1.4");
+    }
+    @Override
+    public OFMatchBmap getMatch()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property match not supported in version 1.4");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property match not supported in version 1.4");
     }
     @Override
     public long getWriteActions()throws UnsupportedOperationException {
@@ -287,48 +331,6 @@ class OFTableStatsEntryVer14 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setConfig(long config) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property config not supported in version 1.4");
-    }
-    @Override
-    public long getMaxEntries()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property maxEntries not supported in version 1.4");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property maxEntries not supported in version 1.4");
-    }
-    @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
-        this.activeCount = activeCount;
-        this.activeCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
-        this.lookupCount = lookupCount;
-        this.lookupCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
-        this.matchedCount = matchedCount;
-        this.matchedCountSet = true;
-        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -384,6 +386,39 @@ class OFTableStatsEntryVer14 implements OFTableStatsEntry {
         return this;
     }
     @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
+        this.activeCount = activeCount;
+        this.activeCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
+        this.lookupCount = lookupCount;
+        this.lookupCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
+        this.matchedCount = matchedCount;
+        this.matchedCountSet = true;
+        return this;
+    }
+    @Override
     public String getName()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property name not supported in version 1.4");
     }
@@ -393,15 +428,6 @@ class OFTableStatsEntryVer14 implements OFTableStatsEntry {
             throw new UnsupportedOperationException("Property name not supported in version 1.4");
     }
     @Override
-    public OFMatchBmap getMatch()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property match not supported in version 1.4");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property match not supported in version 1.4");
-    }
-    @Override
     public int getWildcards()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property wildcards not supported in version 1.4");
     }
@@ -409,6 +435,24 @@ class OFTableStatsEntryVer14 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setWildcards(int wildcards) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property wildcards not supported in version 1.4");
+    }
+    @Override
+    public long getMaxEntries()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property maxEntries not supported in version 1.4");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property maxEntries not supported in version 1.4");
+    }
+    @Override
+    public OFMatchBmap getMatch()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property match not supported in version 1.4");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property match not supported in version 1.4");
     }
     @Override
     public long getWriteActions()throws UnsupportedOperationException {
@@ -481,48 +525,6 @@ class OFTableStatsEntryVer14 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setConfig(long config) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property config not supported in version 1.4");
-    }
-    @Override
-    public long getMaxEntries()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property maxEntries not supported in version 1.4");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property maxEntries not supported in version 1.4");
-    }
-    @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
-        this.activeCount = activeCount;
-        this.activeCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
-        this.lookupCount = lookupCount;
-        this.lookupCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
-        this.matchedCount = matchedCount;
-        this.matchedCountSet = true;
-        return this;
     }
     @Override
     public OFVersion getVersion() {

@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -84,6 +86,11 @@ class OFRoleRequestVer13 implements OFRoleRequest {
         return generationId;
     }
 
+    @Override
+    public int getShortId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property shortId not supported in version 1.3");
+    }
+
 
 
     public OFRoleRequest.Builder createBuilder() {
@@ -147,6 +154,15 @@ class OFRoleRequestVer13 implements OFRoleRequest {
         this.generationId = generationId;
         this.generationIdSet = true;
         return this;
+    }
+    @Override
+    public int getShortId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property shortId not supported in version 1.3");
+    }
+
+    @Override
+    public OFRoleRequest.Builder setShortId(int shortId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property shortId not supported in version 1.3");
     }
 
 
@@ -221,6 +237,15 @@ class OFRoleRequestVer13 implements OFRoleRequest {
         this.generationId = generationId;
         this.generationIdSet = true;
         return this;
+    }
+    @Override
+    public int getShortId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property shortId not supported in version 1.3");
+    }
+
+    @Override
+    public OFRoleRequest.Builder setShortId(int shortId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property shortId not supported in version 1.3");
     }
 //
         @Override

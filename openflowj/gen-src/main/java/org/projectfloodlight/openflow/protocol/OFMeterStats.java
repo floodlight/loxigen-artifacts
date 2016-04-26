@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,12 +30,13 @@ import io.netty.buffer.ByteBuf;
 
 public interface OFMeterStats extends OFObject {
     long getMeterId();
-    long getFlowCount();
+    long getFlowCount() throws UnsupportedOperationException;
     U64 getPacketInCount();
     U64 getByteInCount();
     long getDurationSec();
     long getDurationNsec();
     List<OFMeterBandStats> getBandStats();
+    long getRefCount() throws UnsupportedOperationException;
     OFVersion getVersion();
 
 
@@ -44,8 +47,8 @@ public interface OFMeterStats extends OFObject {
         OFMeterStats build();
         long getMeterId();
         Builder setMeterId(long meterId);
-        long getFlowCount();
-        Builder setFlowCount(long flowCount);
+        long getFlowCount() throws UnsupportedOperationException;
+        Builder setFlowCount(long flowCount) throws UnsupportedOperationException;
         U64 getPacketInCount();
         Builder setPacketInCount(U64 packetInCount);
         U64 getByteInCount();
@@ -56,6 +59,8 @@ public interface OFMeterStats extends OFObject {
         Builder setDurationNsec(long durationNsec);
         List<OFMeterBandStats> getBandStats();
         Builder setBandStats(List<OFMeterBandStats> bandStats);
+        long getRefCount() throws UnsupportedOperationException;
+        Builder setRefCount(long refCount) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -29,9 +31,9 @@ public interface OFTableStatus extends OFObject, OFMessage {
     OFVersion getVersion();
     OFType getType();
     long getXid();
-    long getRole();
     OFTableReason getReason();
     OFTableDesc getTable();
+    long getRole() throws UnsupportedOperationException;
 
 
     void writeTo(ByteBuf channelBuffer);
@@ -43,11 +45,11 @@ public interface OFTableStatus extends OFObject, OFMessage {
         OFType getType();
         long getXid();
         Builder setXid(long xid);
-        long getRole();
-        Builder setRole(long role);
         OFTableReason getReason();
         Builder setReason(OFTableReason reason);
         OFTableDesc getTable();
         Builder setTable(OFTableDesc table);
+        long getRole() throws UnsupportedOperationException;
+        Builder setRole(long role) throws UnsupportedOperationException;
     }
 }

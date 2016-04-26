@@ -687,11 +687,15 @@ class async_get_request(message):
     version = 5
     type = 26
 
-    def __init__(self, xid=None):
+    def __init__(self, xid=None, properties=None):
         if xid != None:
             self.xid = xid
         else:
             self.xid = None
+        if properties != None:
+            self.properties = properties
+        else:
+            self.properties = []
         return
 
     def pack(self):
@@ -700,6 +704,7 @@ class async_get_request(message):
         packed.append(struct.pack("!B", self.type))
         packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
         packed.append(struct.pack("!L", self.xid))
+        packed.append(loxi.generic_util.pack_list(self.properties))
         length = sum([len(x) for x in packed])
         packed[2] = struct.pack("!H", length)
         return ''.join(packed)
@@ -715,11 +720,13 @@ class async_get_request(message):
         orig_reader = reader
         reader = orig_reader.slice(_length, 4)
         obj.xid = reader.read("!L")[0]
+        obj.properties = loxi.generic_util.unpack_list(reader, ofp.async_config_prop.async_config_prop.unpack)
         return obj
 
     def __eq__(self, other):
         if type(self) != type(other): return False
         if self.xid != other.xid: return False
+        if self.properties != other.properties: return False
         return True
 
     def pretty_print(self, q):
@@ -732,6 +739,9 @@ class async_get_request(message):
                     q.text("%#x" % self.xid)
                 else:
                     q.text('None')
+                q.text(","); q.breakable()
+                q.text("properties = ");
+                q.pp(self.properties)
             q.breakable()
         q.text('}')
 

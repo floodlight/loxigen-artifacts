@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -39,20 +41,22 @@ class OFRoleStatusVer14 implements OFRoleStatus {
     final static int MINIMUM_LENGTH = 24;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static long DEFAULT_ROLE = 0x0L;
         private final static U64 DEFAULT_GENERATION_ID = U64.ZERO;
         private final static List<OFRoleProp> DEFAULT_PROPERTIES = ImmutableList.<OFRoleProp>of();
 
     // OF message fields
     private final long xid;
-    private final long role;
+    private final OFControllerRole role;
     private final OFControllerRoleReason reason;
     private final U64 generationId;
     private final List<OFRoleProp> properties;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFRoleStatusVer14(long xid, long role, OFControllerRoleReason reason, U64 generationId, List<OFRoleProp> properties) {
+    OFRoleStatusVer14(long xid, OFControllerRole role, OFControllerRoleReason reason, U64 generationId, List<OFRoleProp> properties) {
+        if(role == null) {
+            throw new NullPointerException("OFRoleStatusVer14: property role cannot be null");
+        }
         if(reason == null) {
             throw new NullPointerException("OFRoleStatusVer14: property reason cannot be null");
         }
@@ -86,7 +90,7 @@ class OFRoleStatusVer14 implements OFRoleStatus {
     }
 
     @Override
-    public long getRole() {
+    public OFControllerRole getRole() {
         return role;
     }
 
@@ -118,7 +122,7 @@ class OFRoleStatusVer14 implements OFRoleStatus {
         private boolean xidSet;
         private long xid;
         private boolean roleSet;
-        private long role;
+        private OFControllerRole role;
         private boolean reasonSet;
         private OFControllerRoleReason reason;
         private boolean generationIdSet;
@@ -152,12 +156,12 @@ class OFRoleStatusVer14 implements OFRoleStatus {
         return this;
     }
     @Override
-    public long getRole() {
+    public OFControllerRole getRole() {
         return role;
     }
 
     @Override
-    public OFRoleStatus.Builder setRole(long role) {
+    public OFRoleStatus.Builder setRole(OFControllerRole role) {
         this.role = role;
         this.roleSet = true;
         return this;
@@ -200,7 +204,9 @@ class OFRoleStatusVer14 implements OFRoleStatus {
         @Override
         public OFRoleStatus build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
-                long role = this.roleSet ? this.role : parentMessage.role;
+                OFControllerRole role = this.roleSet ? this.role : parentMessage.role;
+                if(role == null)
+                    throw new NullPointerException("Property role must not be null");
                 OFControllerRoleReason reason = this.reasonSet ? this.reason : parentMessage.reason;
                 if(reason == null)
                     throw new NullPointerException("Property reason must not be null");
@@ -228,7 +234,7 @@ class OFRoleStatusVer14 implements OFRoleStatus {
         private boolean xidSet;
         private long xid;
         private boolean roleSet;
-        private long role;
+        private OFControllerRole role;
         private boolean reasonSet;
         private OFControllerRoleReason reason;
         private boolean generationIdSet;
@@ -258,12 +264,12 @@ class OFRoleStatusVer14 implements OFRoleStatus {
         return this;
     }
     @Override
-    public long getRole() {
+    public OFControllerRole getRole() {
         return role;
     }
 
     @Override
-    public OFRoleStatus.Builder setRole(long role) {
+    public OFRoleStatus.Builder setRole(OFControllerRole role) {
         this.role = role;
         this.roleSet = true;
         return this;
@@ -305,7 +311,10 @@ class OFRoleStatusVer14 implements OFRoleStatus {
         @Override
         public OFRoleStatus build() {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
-            long role = this.roleSet ? this.role : DEFAULT_ROLE;
+            if(!this.roleSet)
+                throw new IllegalStateException("Property role doesn't have default value -- must be set");
+            if(role == null)
+                throw new NullPointerException("Property role must not be null");
             if(!this.reasonSet)
                 throw new IllegalStateException("Property reason doesn't have default value -- must be set");
             if(reason == null)
@@ -354,7 +363,7 @@ class OFRoleStatusVer14 implements OFRoleStatus {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            long role = U32.f(bb.readInt());
+            OFControllerRole role = OFControllerRoleSerializerVer14.readFrom(bb);
             OFControllerRoleReason reason = OFControllerRoleReasonSerializerVer14.readFrom(bb);
             // pad: 3 bytes
             bb.skipBytes(3);
@@ -389,7 +398,7 @@ class OFRoleStatusVer14 implements OFRoleStatus {
             sink.putByte((byte) 0x1e);
             // FIXME: skip funnel of length
             sink.putLong(message.xid);
-            sink.putLong(message.role);
+            OFControllerRoleSerializerVer14.putTo(message.role, sink);
             OFControllerRoleReasonSerializerVer14.putTo(message.reason, sink);
             // skip pad (3 bytes)
             message.generationId.putTo(sink);
@@ -416,7 +425,7 @@ class OFRoleStatusVer14 implements OFRoleStatus {
             bb.writeShort(U16.t(0));
 
             bb.writeInt(U32.t(message.xid));
-            bb.writeInt(U32.t(message.role));
+            OFControllerRoleSerializerVer14.writeTo(bb, message.role);
             OFControllerRoleReasonSerializerVer14.writeTo(bb, message.reason);
             // pad: 3 bytes
             bb.writeZero(3);
@@ -458,7 +467,10 @@ class OFRoleStatusVer14 implements OFRoleStatus {
 
         if( xid != other.xid)
             return false;
-        if( role != other.role)
+        if (role == null) {
+            if (other.role != null)
+                return false;
+        } else if (!role.equals(other.role))
             return false;
         if (reason == null) {
             if (other.reason != null)
@@ -484,7 +496,7 @@ class OFRoleStatusVer14 implements OFRoleStatus {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime *  (int) (role ^ (role >>> 32));
+        result = prime * result + ((role == null) ? 0 : role.hashCode());
         result = prime * result + ((reason == null) ? 0 : reason.hashCode());
         result = prime * result + ((generationId == null) ? 0 : generationId.hashCode());
         result = prime * result + ((properties == null) ? 0 : properties.hashCode());

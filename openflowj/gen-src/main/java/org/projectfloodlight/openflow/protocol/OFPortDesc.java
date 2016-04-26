@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -55,7 +57,7 @@ public interface OFPortDesc extends OFObject {
      * Returns the current generation ID of this port.
      *
      * The generationId is reported by the switch as a @{link OFPortDescProp} in
-     * {@link OFPortDescStatsReply} and {@link OFPortStatus} messages. If the
+     * @link{OFPortDescStatsReply} and @link{OFPortStatus} messages. If the
      * current OFPortDesc does not contain a generation Id, returns U64.ZERO;
      *
      * For OpenFlow versions earlier than 1.4, always returns U64.ZERO;

@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -39,7 +41,6 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
         private final static long DEFAULT_XID = 0x0L;
         private final static U64 DEFAULT_COOKIE = U64.ZERO;
         private final static int DEFAULT_PRIORITY = 0x0;
-        private final static short DEFAULT_REASON = (short) 0x0;
         private final static TableId DEFAULT_TABLE_ID = TableId.ALL;
         private final static long DEFAULT_DURATION_SEC = 0x0L;
         private final static long DEFAULT_DURATION_NSEC = 0x0L;
@@ -53,7 +54,7 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
     private final long xid;
     private final U64 cookie;
     private final int priority;
-    private final short reason;
+    private final OFFlowRemovedReason reason;
     private final TableId tableId;
     private final long durationSec;
     private final long durationNsec;
@@ -63,15 +64,14 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
     private final U64 byteCount;
     private final Match match;
 //
-    // Immutable default instance
-    final static OFFlowRemovedVer14 DEFAULT = new OFFlowRemovedVer14(
-        DEFAULT_XID, DEFAULT_COOKIE, DEFAULT_PRIORITY, DEFAULT_REASON, DEFAULT_TABLE_ID, DEFAULT_DURATION_SEC, DEFAULT_DURATION_NSEC, DEFAULT_IDLE_TIMEOUT, DEFAULT_HARD_TIMEOUT, DEFAULT_PACKET_COUNT, DEFAULT_BYTE_COUNT, DEFAULT_MATCH
-    );
 
     // package private constructor - used by readers, builders, and factory
-    OFFlowRemovedVer14(long xid, U64 cookie, int priority, short reason, TableId tableId, long durationSec, long durationNsec, int idleTimeout, int hardTimeout, U64 packetCount, U64 byteCount, Match match) {
+    OFFlowRemovedVer14(long xid, U64 cookie, int priority, OFFlowRemovedReason reason, TableId tableId, long durationSec, long durationNsec, int idleTimeout, int hardTimeout, U64 packetCount, U64 byteCount, Match match) {
         if(cookie == null) {
             throw new NullPointerException("OFFlowRemovedVer14: property cookie cannot be null");
+        }
+        if(reason == null) {
+            throw new NullPointerException("OFFlowRemovedVer14: property reason cannot be null");
         }
         if(tableId == null) {
             throw new NullPointerException("OFFlowRemovedVer14: property tableId cannot be null");
@@ -126,7 +126,7 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
     }
 
     @Override
-    public short getReason() {
+    public OFFlowRemovedReason getReason() {
         return reason;
     }
 
@@ -170,6 +170,11 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
         return match;
     }
 
+    @Override
+    public Stat getStats()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property stats not supported in version 1.4");
+    }
+
 
 
     public OFFlowRemoved.Builder createBuilder() {
@@ -187,7 +192,7 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
         private boolean prioritySet;
         private int priority;
         private boolean reasonSet;
-        private short reason;
+        private OFFlowRemovedReason reason;
         private boolean tableIdSet;
         private TableId tableId;
         private boolean durationSecSet;
@@ -253,12 +258,12 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public short getReason() {
+    public OFFlowRemovedReason getReason() {
         return reason;
     }
 
     @Override
-    public OFFlowRemoved.Builder setReason(short reason) {
+    public OFFlowRemoved.Builder setReason(OFFlowRemovedReason reason) {
         this.reason = reason;
         this.reasonSet = true;
         return this;
@@ -351,6 +356,15 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
         this.matchSet = true;
         return this;
     }
+    @Override
+    public Stat getStats()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property stats not supported in version 1.4");
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setStats(Stat stats) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property stats not supported in version 1.4");
+    }
 
 
         @Override
@@ -360,7 +374,9 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
                 if(cookie == null)
                     throw new NullPointerException("Property cookie must not be null");
                 int priority = this.prioritySet ? this.priority : parentMessage.priority;
-                short reason = this.reasonSet ? this.reason : parentMessage.reason;
+                OFFlowRemovedReason reason = this.reasonSet ? this.reason : parentMessage.reason;
+                if(reason == null)
+                    throw new NullPointerException("Property reason must not be null");
                 TableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
                 if(tableId == null)
                     throw new NullPointerException("Property tableId must not be null");
@@ -406,7 +422,7 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
         private boolean prioritySet;
         private int priority;
         private boolean reasonSet;
-        private short reason;
+        private OFFlowRemovedReason reason;
         private boolean tableIdSet;
         private TableId tableId;
         private boolean durationSecSet;
@@ -468,12 +484,12 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public short getReason() {
+    public OFFlowRemovedReason getReason() {
         return reason;
     }
 
     @Override
-    public OFFlowRemoved.Builder setReason(short reason) {
+    public OFFlowRemoved.Builder setReason(OFFlowRemovedReason reason) {
         this.reason = reason;
         this.reasonSet = true;
         return this;
@@ -566,6 +582,15 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
         this.matchSet = true;
         return this;
     }
+    @Override
+    public Stat getStats()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property stats not supported in version 1.4");
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setStats(Stat stats) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property stats not supported in version 1.4");
+    }
 //
         @Override
         public OFFlowRemoved build() {
@@ -574,7 +599,10 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
             if(cookie == null)
                 throw new NullPointerException("Property cookie must not be null");
             int priority = this.prioritySet ? this.priority : DEFAULT_PRIORITY;
-            short reason = this.reasonSet ? this.reason : DEFAULT_REASON;
+            if(!this.reasonSet)
+                throw new IllegalStateException("Property reason doesn't have default value -- must be set");
+            if(reason == null)
+                throw new NullPointerException("Property reason must not be null");
             TableId tableId = this.tableIdSet ? this.tableId : DEFAULT_TABLE_ID;
             if(tableId == null)
                 throw new NullPointerException("Property tableId must not be null");
@@ -638,7 +666,7 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
             long xid = U32.f(bb.readInt());
             U64 cookie = U64.ofRaw(bb.readLong());
             int priority = U16.f(bb.readShort());
-            short reason = U8.f(bb.readByte());
+            OFFlowRemovedReason reason = OFFlowRemovedReasonSerializerVer14.readFrom(bb);
             TableId tableId = TableId.readByte(bb);
             long durationSec = U32.f(bb.readInt());
             long durationNsec = U32.f(bb.readInt());
@@ -685,7 +713,7 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
             sink.putLong(message.xid);
             message.cookie.putTo(sink);
             sink.putInt(message.priority);
-            sink.putShort(message.reason);
+            OFFlowRemovedReasonSerializerVer14.putTo(message.reason, sink);
             message.tableId.putTo(sink);
             sink.putLong(message.durationSec);
             sink.putLong(message.durationNsec);
@@ -718,7 +746,7 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
             bb.writeInt(U32.t(message.xid));
             bb.writeLong(message.cookie.getValue());
             bb.writeShort(U16.t(message.priority));
-            bb.writeByte(U8.t(message.reason));
+            OFFlowRemovedReasonSerializerVer14.writeTo(bb, message.reason);
             message.tableId.writeByte(bb);
             bb.writeInt(U32.t(message.durationSec));
             bb.writeInt(U32.t(message.durationNsec));
@@ -784,7 +812,10 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
             return false;
         if( priority != other.priority)
             return false;
-        if( reason != other.reason)
+        if (reason == null) {
+            if (other.reason != null)
+                return false;
+        } else if (!reason.equals(other.reason))
             return false;
         if (tableId == null) {
             if (other.tableId != null)
@@ -825,7 +856,7 @@ class OFFlowRemovedVer14 implements OFFlowRemoved {
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + priority;
-        result = prime * result + reason;
+        result = prime * result + ((reason == null) ? 0 : reason.hashCode());
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime *  (int) (durationSec ^ (durationSec >>> 32));
         result = prime *  (int) (durationNsec ^ (durationNsec >>> 32));
