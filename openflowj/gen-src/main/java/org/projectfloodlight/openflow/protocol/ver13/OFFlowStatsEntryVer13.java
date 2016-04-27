@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -140,6 +142,11 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     }
 
     @Override
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -170,13 +177,13 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     }
 
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.3");
     }
 
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    public Stat getStats()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property stats not supported in version 1.3");
     }
 
     @Override
@@ -290,6 +297,17 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         return this;
     }
     @Override
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -354,17 +372,6 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.3");
     }
@@ -372,6 +379,15 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     @Override
     public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    }
+    @Override
+    public Stat getStats()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property stats not supported in version 1.3");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property stats not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {
@@ -522,6 +538,17 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         return this;
     }
     @Override
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -586,17 +613,6 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.3");
     }
@@ -604,6 +620,15 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     @Override
     public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    }
+    @Override
+    public Stat getStats()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property stats not supported in version 1.3");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property stats not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {

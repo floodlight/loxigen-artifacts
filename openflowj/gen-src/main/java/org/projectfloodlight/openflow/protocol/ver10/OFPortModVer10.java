@@ -18,15 +18,18 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.List;
 import java.util.Set;
+import com.google.common.collect.ImmutableSet;
+import java.util.List;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -40,16 +43,16 @@ class OFPortModVer10 implements OFPortMod {
         private final static long DEFAULT_XID = 0x0L;
         private final static OFPort DEFAULT_PORT_NO = OFPort.ANY;
         private final static MacAddress DEFAULT_HW_ADDR = MacAddress.NONE;
-        private final static long DEFAULT_CONFIG = 0x0L;
-        private final static long DEFAULT_MASK = 0x0L;
+        private final static Set<OFPortConfig> DEFAULT_CONFIG = ImmutableSet.<OFPortConfig>of();
+        private final static Set<OFPortConfig> DEFAULT_MASK = ImmutableSet.<OFPortConfig>of();
         private final static long DEFAULT_ADVERTISE = 0x0L;
 
     // OF message fields
     private final long xid;
     private final OFPort portNo;
     private final MacAddress hwAddr;
-    private final long config;
-    private final long mask;
+    private final Set<OFPortConfig> config;
+    private final Set<OFPortConfig> mask;
     private final long advertise;
 //
     // Immutable default instance
@@ -58,12 +61,18 @@ class OFPortModVer10 implements OFPortMod {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFPortModVer10(long xid, OFPort portNo, MacAddress hwAddr, long config, long mask, long advertise) {
+    OFPortModVer10(long xid, OFPort portNo, MacAddress hwAddr, Set<OFPortConfig> config, Set<OFPortConfig> mask, long advertise) {
         if(portNo == null) {
             throw new NullPointerException("OFPortModVer10: property portNo cannot be null");
         }
         if(hwAddr == null) {
             throw new NullPointerException("OFPortModVer10: property hwAddr cannot be null");
+        }
+        if(config == null) {
+            throw new NullPointerException("OFPortModVer10: property config cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFPortModVer10: property mask cannot be null");
         }
         this.xid = xid;
         this.portNo = portNo;
@@ -100,12 +109,12 @@ class OFPortModVer10 implements OFPortMod {
     }
 
     @Override
-    public long getConfig() {
+    public Set<OFPortConfig> getConfig() {
         return config;
     }
 
     @Override
-    public long getMask() {
+    public Set<OFPortConfig> getMask() {
         return mask;
     }
 
@@ -136,9 +145,9 @@ class OFPortModVer10 implements OFPortMod {
         private boolean hwAddrSet;
         private MacAddress hwAddr;
         private boolean configSet;
-        private long config;
+        private Set<OFPortConfig> config;
         private boolean maskSet;
-        private long mask;
+        private Set<OFPortConfig> mask;
         private boolean advertiseSet;
         private long advertise;
 
@@ -190,23 +199,23 @@ class OFPortModVer10 implements OFPortMod {
         return this;
     }
     @Override
-    public long getConfig() {
+    public Set<OFPortConfig> getConfig() {
         return config;
     }
 
     @Override
-    public OFPortMod.Builder setConfig(long config) {
+    public OFPortMod.Builder setConfig(Set<OFPortConfig> config) {
         this.config = config;
         this.configSet = true;
         return this;
     }
     @Override
-    public long getMask() {
+    public Set<OFPortConfig> getMask() {
         return mask;
     }
 
     @Override
-    public OFPortMod.Builder setMask(long mask) {
+    public OFPortMod.Builder setMask(Set<OFPortConfig> mask) {
         this.mask = mask;
         this.maskSet = true;
         return this;
@@ -242,8 +251,12 @@ class OFPortModVer10 implements OFPortMod {
                 MacAddress hwAddr = this.hwAddrSet ? this.hwAddr : parentMessage.hwAddr;
                 if(hwAddr == null)
                     throw new NullPointerException("Property hwAddr must not be null");
-                long config = this.configSet ? this.config : parentMessage.config;
-                long mask = this.maskSet ? this.mask : parentMessage.mask;
+                Set<OFPortConfig> config = this.configSet ? this.config : parentMessage.config;
+                if(config == null)
+                    throw new NullPointerException("Property config must not be null");
+                Set<OFPortConfig> mask = this.maskSet ? this.mask : parentMessage.mask;
+                if(mask == null)
+                    throw new NullPointerException("Property mask must not be null");
                 long advertise = this.advertiseSet ? this.advertise : parentMessage.advertise;
 
                 //
@@ -268,9 +281,9 @@ class OFPortModVer10 implements OFPortMod {
         private boolean hwAddrSet;
         private MacAddress hwAddr;
         private boolean configSet;
-        private long config;
+        private Set<OFPortConfig> config;
         private boolean maskSet;
-        private long mask;
+        private Set<OFPortConfig> mask;
         private boolean advertiseSet;
         private long advertise;
 
@@ -318,23 +331,23 @@ class OFPortModVer10 implements OFPortMod {
         return this;
     }
     @Override
-    public long getConfig() {
+    public Set<OFPortConfig> getConfig() {
         return config;
     }
 
     @Override
-    public OFPortMod.Builder setConfig(long config) {
+    public OFPortMod.Builder setConfig(Set<OFPortConfig> config) {
         this.config = config;
         this.configSet = true;
         return this;
     }
     @Override
-    public long getMask() {
+    public Set<OFPortConfig> getMask() {
         return mask;
     }
 
     @Override
-    public OFPortMod.Builder setMask(long mask) {
+    public OFPortMod.Builder setMask(Set<OFPortConfig> mask) {
         this.mask = mask;
         this.maskSet = true;
         return this;
@@ -369,8 +382,12 @@ class OFPortModVer10 implements OFPortMod {
             MacAddress hwAddr = this.hwAddrSet ? this.hwAddr : DEFAULT_HW_ADDR;
             if(hwAddr == null)
                 throw new NullPointerException("Property hwAddr must not be null");
-            long config = this.configSet ? this.config : DEFAULT_CONFIG;
-            long mask = this.maskSet ? this.mask : DEFAULT_MASK;
+            Set<OFPortConfig> config = this.configSet ? this.config : DEFAULT_CONFIG;
+            if(config == null)
+                throw new NullPointerException("Property config must not be null");
+            Set<OFPortConfig> mask = this.maskSet ? this.mask : DEFAULT_MASK;
+            if(mask == null)
+                throw new NullPointerException("Property mask must not be null");
             long advertise = this.advertiseSet ? this.advertise : DEFAULT_ADVERTISE;
 
 
@@ -413,8 +430,8 @@ class OFPortModVer10 implements OFPortMod {
             long xid = U32.f(bb.readInt());
             OFPort portNo = OFPort.read2Bytes(bb);
             MacAddress hwAddr = MacAddress.read6Bytes(bb);
-            long config = U32.f(bb.readInt());
-            long mask = U32.f(bb.readInt());
+            Set<OFPortConfig> config = OFPortConfigSerializerVer10.readFrom(bb);
+            Set<OFPortConfig> mask = OFPortConfigSerializerVer10.readFrom(bb);
             long advertise = U32.f(bb.readInt());
             // pad: 4 bytes
             bb.skipBytes(4);
@@ -451,8 +468,8 @@ class OFPortModVer10 implements OFPortMod {
             sink.putLong(message.xid);
             message.portNo.putTo(sink);
             message.hwAddr.putTo(sink);
-            sink.putLong(message.config);
-            sink.putLong(message.mask);
+            OFPortConfigSerializerVer10.putTo(message.config, sink);
+            OFPortConfigSerializerVer10.putTo(message.mask, sink);
             sink.putLong(message.advertise);
             // skip pad (4 bytes)
         }
@@ -476,8 +493,8 @@ class OFPortModVer10 implements OFPortMod {
             bb.writeInt(U32.t(message.xid));
             message.portNo.write2Bytes(bb);
             message.hwAddr.write6Bytes(bb);
-            bb.writeInt(U32.t(message.config));
-            bb.writeInt(U32.t(message.mask));
+            OFPortConfigSerializerVer10.writeTo(bb, message.config);
+            OFPortConfigSerializerVer10.writeTo(bb, message.mask);
             bb.writeInt(U32.t(message.advertise));
             // pad: 4 bytes
             bb.writeZero(4);
@@ -526,9 +543,15 @@ class OFPortModVer10 implements OFPortMod {
                 return false;
         } else if (!hwAddr.equals(other.hwAddr))
             return false;
-        if( config != other.config)
+        if (config == null) {
+            if (other.config != null)
+                return false;
+        } else if (!config.equals(other.config))
             return false;
-        if( mask != other.mask)
+        if (mask == null) {
+            if (other.mask != null)
+                return false;
+        } else if (!mask.equals(other.mask))
             return false;
         if( advertise != other.advertise)
             return false;
@@ -543,8 +566,8 @@ class OFPortModVer10 implements OFPortMod {
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
         result = prime * result + ((hwAddr == null) ? 0 : hwAddr.hashCode());
-        result = prime *  (int) (config ^ (config >>> 32));
-        result = prime *  (int) (mask ^ (mask >>> 32));
+        result = prime * result + ((config == null) ? 0 : config.hashCode());
+        result = prime * result + ((mask == null) ? 0 : mask.hashCode());
         result = prime *  (int) (advertise ^ (advertise >>> 32));
         return result;
     }

@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -37,5 +39,6 @@ public enum OFFlowModFailedCode {
      BAD_TIMEOUT,
      BAD_FLAGS,
      CANT_SYNC,
-     BAD_PRIORITY;
+     BAD_PRIORITY,
+     IS_SYNC;
 }

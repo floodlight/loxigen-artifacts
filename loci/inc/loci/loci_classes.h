@@ -14324,6 +14324,57 @@ extern void of_async_get_request_xid_get(
     of_async_get_request_t *obj,
     uint32_t *xid);
 
+extern int WARN_UNUSED_RESULT of_async_get_request_properties_set(
+    of_async_get_request_t *obj,
+    of_list_async_config_prop_t *properties);
+extern void of_async_get_request_properties_bind(
+    of_async_get_request_t *obj,
+    of_list_async_config_prop_t *properties);
+extern of_list_async_config_prop_t *of_async_get_request_properties_get(
+    of_async_get_request_t *obj);
+
+extern void of_async_get_request_packet_in_mask_equal_master_set(
+    of_async_get_request_t *obj,
+    uint32_t packet_in_mask_equal_master);
+extern void of_async_get_request_packet_in_mask_equal_master_get(
+    of_async_get_request_t *obj,
+    uint32_t *packet_in_mask_equal_master);
+
+extern void of_async_get_request_packet_in_mask_slave_set(
+    of_async_get_request_t *obj,
+    uint32_t packet_in_mask_slave);
+extern void of_async_get_request_packet_in_mask_slave_get(
+    of_async_get_request_t *obj,
+    uint32_t *packet_in_mask_slave);
+
+extern void of_async_get_request_port_status_mask_equal_master_set(
+    of_async_get_request_t *obj,
+    uint32_t port_status_mask_equal_master);
+extern void of_async_get_request_port_status_mask_equal_master_get(
+    of_async_get_request_t *obj,
+    uint32_t *port_status_mask_equal_master);
+
+extern void of_async_get_request_port_status_mask_slave_set(
+    of_async_get_request_t *obj,
+    uint32_t port_status_mask_slave);
+extern void of_async_get_request_port_status_mask_slave_get(
+    of_async_get_request_t *obj,
+    uint32_t *port_status_mask_slave);
+
+extern void of_async_get_request_flow_removed_mask_equal_master_set(
+    of_async_get_request_t *obj,
+    uint32_t flow_removed_mask_equal_master);
+extern void of_async_get_request_flow_removed_mask_equal_master_get(
+    of_async_get_request_t *obj,
+    uint32_t *flow_removed_mask_equal_master);
+
+extern void of_async_get_request_flow_removed_mask_slave_set(
+    of_async_get_request_t *obj,
+    uint32_t flow_removed_mask_slave);
+extern void of_async_get_request_flow_removed_mask_slave_get(
+    of_async_get_request_t *obj,
+    uint32_t *flow_removed_mask_slave);
+
 /* Unified accessor functions for of_async_set */
 
 extern void of_async_set_xid_set(

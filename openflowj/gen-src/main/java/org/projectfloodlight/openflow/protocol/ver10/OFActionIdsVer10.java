@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -114,6 +116,10 @@ public class OFActionIdsVer10 implements OFActionIds {
 
     public OFActionIdSetQueue setQueue() {
         throw new UnsupportedOperationException("OFActionIdSetQueue not supported in version 1.0");
+    }
+
+    public OFActionIdMeter meter() {
+        throw new UnsupportedOperationException("OFActionIdMeter not supported in version 1.0");
     }
 
     public OFMessageReader<OFActionId> getReader() {

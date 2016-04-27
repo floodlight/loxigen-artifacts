@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -41,6 +43,7 @@ public interface OFPortDescPropBsnGenerationId extends OFObject, OFPortDescPropB
         int getType();
         long getExperimenter();
         long getExpType();
+        Builder setExpType(long expType);
         U64 getGenerationId();
         Builder setGenerationId(U64 generationId);
         OFVersion getVersion();

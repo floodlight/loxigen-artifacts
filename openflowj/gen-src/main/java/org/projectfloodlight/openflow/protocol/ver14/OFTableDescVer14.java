@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -27,6 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
+import java.util.List;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -70,6 +73,11 @@ class OFTableDescVer14 implements OFTableDesc {
     @Override
     public Set<OFTableConfig> getConfig() {
         return config;
+    }
+
+    @Override
+    public List<OFTableModProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
     }
 
     @Override
@@ -117,6 +125,15 @@ class OFTableDescVer14 implements OFTableDesc {
         this.config = config;
         this.configSet = true;
         return this;
+    }
+    @Override
+    public List<OFTableModProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
+    }
+
+    @Override
+    public OFTableDesc.Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.4");
     }
     @Override
     public OFVersion getVersion() {
@@ -171,6 +188,15 @@ class OFTableDescVer14 implements OFTableDesc {
         this.config = config;
         this.configSet = true;
         return this;
+    }
+    @Override
+    public List<OFTableModProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
+    }
+
+    @Override
+    public OFTableDesc.Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.4");
     }
     @Override
     public OFVersion getVersion() {
