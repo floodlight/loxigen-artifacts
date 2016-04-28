@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -31,9 +33,10 @@ public interface OFPacketOut extends OFObject, OFMessage {
     OFType getType();
     long getXid();
     OFBufferId getBufferId();
-    OFPort getInPort();
+    OFPort getInPort() throws UnsupportedOperationException;
     List<OFAction> getActions();
     byte[] getData();
+    Match getMatch() throws UnsupportedOperationException;
 
 
     void writeTo(ByteBuf channelBuffer);
@@ -47,11 +50,13 @@ public interface OFPacketOut extends OFObject, OFMessage {
         Builder setXid(long xid);
         OFBufferId getBufferId();
         Builder setBufferId(OFBufferId bufferId);
-        OFPort getInPort();
-        Builder setInPort(OFPort inPort);
+        OFPort getInPort() throws UnsupportedOperationException;
+        Builder setInPort(OFPort inPort) throws UnsupportedOperationException;
         List<OFAction> getActions();
         Builder setActions(List<OFAction> actions);
         byte[] getData();
         Builder setData(byte[] data);
+        Match getMatch() throws UnsupportedOperationException;
+        Builder setMatch(Match match) throws UnsupportedOperationException;
     }
 }

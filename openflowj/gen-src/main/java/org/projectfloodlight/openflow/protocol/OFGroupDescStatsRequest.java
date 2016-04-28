@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -32,6 +34,7 @@ public interface OFGroupDescStatsRequest extends OFObject, OFStatsRequest<OFGrou
     long getXid();
     OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
+    OFGroup getGroup() throws UnsupportedOperationException;
 
 
     void writeTo(ByteBuf channelBuffer);
@@ -46,5 +49,7 @@ public interface OFGroupDescStatsRequest extends OFObject, OFStatsRequest<OFGrou
         OFStatsType getStatsType();
         Set<OFStatsRequestFlags> getFlags();
         Builder setFlags(Set<OFStatsRequestFlags> flags);
+        OFGroup getGroup() throws UnsupportedOperationException;
+        Builder setGroup(OFGroup group) throws UnsupportedOperationException;
     }
 }

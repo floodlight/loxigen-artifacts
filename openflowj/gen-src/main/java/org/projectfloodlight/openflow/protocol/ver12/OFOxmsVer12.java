@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -1278,6 +1280,48 @@ public class OFOxmsVer12 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmPbbUcaMasked not supported in version 1.2");
     }
 
+    public OFOxmActsetOutput.Builder buildActsetOutput() {
+        throw new UnsupportedOperationException("OFOxmActsetOutput not supported in version 1.2");
+    }
+    public OFOxmActsetOutput actsetOutput(TransportPort value) {
+        throw new UnsupportedOperationException("OFOxmActsetOutput not supported in version 1.2");
+    }
+
+    public OFOxmActsetOutputMasked.Builder buildActsetOutputMasked() {
+        throw new UnsupportedOperationException("OFOxmActsetOutputMasked not supported in version 1.2");
+    }
+    public OFOxmActsetOutputMasked actsetOutputMasked(TransportPort value, TransportPort mask) {
+        throw new UnsupportedOperationException("OFOxmActsetOutputMasked not supported in version 1.2");
+    }
+
+    public OFOxmPacketType.Builder buildPacketType() {
+        throw new UnsupportedOperationException("OFOxmPacketType not supported in version 1.2");
+    }
+    public OFOxmPacketType packetType(PacketType value) {
+        throw new UnsupportedOperationException("OFOxmPacketType not supported in version 1.2");
+    }
+
+    public OFOxmPacketTypeMasked.Builder buildPacketTypeMasked() {
+        throw new UnsupportedOperationException("OFOxmPacketTypeMasked not supported in version 1.2");
+    }
+    public OFOxmPacketTypeMasked packetTypeMasked(PacketType value, PacketType mask) {
+        throw new UnsupportedOperationException("OFOxmPacketTypeMasked not supported in version 1.2");
+    }
+
+    public OFOxmTcpFlags.Builder buildTcpFlags() {
+        throw new UnsupportedOperationException("OFOxmTcpFlags not supported in version 1.2");
+    }
+    public OFOxmTcpFlags tcpFlags(U16 value) {
+        throw new UnsupportedOperationException("OFOxmTcpFlags not supported in version 1.2");
+    }
+
+    public OFOxmTcpFlagsMasked.Builder buildTcpFlagsMasked() {
+        throw new UnsupportedOperationException("OFOxmTcpFlagsMasked not supported in version 1.2");
+    }
+    public OFOxmTcpFlagsMasked tcpFlagsMasked(U16 value, U16 mask) {
+        throw new UnsupportedOperationException("OFOxmTcpFlagsMasked not supported in version 1.2");
+    }
+
     public OFMessageReader<OFOxm<?>> getReader() {
         return OFOxmVer12.READER;
     }
@@ -1421,6 +1465,12 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)tunnelId((U64)((Object)value)));
             case PBB_UCA:
                 return (OFOxm<F>)((Object)pbbUca((OFBooleanValue)((Object)value)));
+            case ACTSET_OUTPUT:
+                return (OFOxm<F>)((Object)actsetOutput((TransportPort)((Object)value)));
+            case PACKET_TYPE:
+                return (OFOxm<F>)((Object)packetType((PacketType)((Object)value)));
+            case TCP_FLAGS:
+                return (OFOxm<F>)((Object)tcpFlags((U16)((Object)value)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1565,6 +1615,12 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)value), (U64)((Object)mask)));
             case PBB_UCA:
                 return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
+            case ACTSET_OUTPUT:
+                return (OFOxm<F>)((Object)actsetOutputMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
+            case PACKET_TYPE:
+                return (OFOxm<F>)((Object)packetTypeMasked((PacketType)((Object)value), (PacketType)((Object)mask)));
+            case TCP_FLAGS:
+                return (OFOxm<F>)((Object)tcpFlagsMasked((U16)((Object)value), (U16)((Object)mask)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1709,6 +1765,12 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)(masked.getValue())), (U64)((Object)(masked.getMask()))));
             case PBB_UCA:
                 return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
+            case ACTSET_OUTPUT:
+                return (OFOxm<F>)((Object)actsetOutputMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
+            case PACKET_TYPE:
+                return (OFOxm<F>)((Object)packetTypeMasked((PacketType)((Object)(masked.getValue())), (PacketType)((Object)(masked.getMask()))));
+            case TCP_FLAGS:
+                return (OFOxm<F>)((Object)tcpFlagsMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             default:
                 return null;
         }

@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -114,6 +116,11 @@ class OFMeterStatsVer14 implements OFMeterStats {
     @Override
     public List<OFMeterBandStats> getBandStats() {
         return bandStats;
+    }
+
+    @Override
+    public long getRefCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property refCount not supported in version 1.4");
     }
 
     @Override
@@ -226,6 +233,15 @@ class OFMeterStatsVer14 implements OFMeterStats {
         this.bandStats = bandStats;
         this.bandStatsSet = true;
         return this;
+    }
+    @Override
+    public long getRefCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property refCount not supported in version 1.4");
+    }
+
+    @Override
+    public OFMeterStats.Builder setRefCount(long refCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property refCount not supported in version 1.4");
     }
     @Override
     public OFVersion getVersion() {
@@ -357,6 +373,15 @@ class OFMeterStatsVer14 implements OFMeterStats {
         this.bandStats = bandStats;
         this.bandStatsSet = true;
         return this;
+    }
+    @Override
+    public long getRefCount()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property refCount not supported in version 1.4");
+    }
+
+    @Override
+    public OFMeterStats.Builder setRefCount(long refCount) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property refCount not supported in version 1.4");
     }
     @Override
     public OFVersion getVersion() {

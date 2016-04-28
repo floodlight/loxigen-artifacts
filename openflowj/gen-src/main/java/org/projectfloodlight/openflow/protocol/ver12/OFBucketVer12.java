@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -93,6 +95,16 @@ class OFBucketVer12 implements OFBucket {
     }
 
     @Override
+    public OFGroupBucket getBucketId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property bucketId not supported in version 1.2");
+    }
+
+    @Override
+    public List<OFGroupBucketProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
+    }
+
+    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_12;
     }
@@ -163,6 +175,24 @@ class OFBucketVer12 implements OFBucket {
         this.actions = actions;
         this.actionsSet = true;
         return this;
+    }
+    @Override
+    public OFGroupBucket getBucketId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property bucketId not supported in version 1.2");
+    }
+
+    @Override
+    public OFBucket.Builder setBucketId(OFGroupBucket bucketId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property bucketId not supported in version 1.2");
+    }
+    @Override
+    public List<OFGroupBucketProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
+    }
+
+    @Override
+    public OFBucket.Builder setProperties(List<OFGroupBucketProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
     @Override
     public OFVersion getVersion() {
@@ -249,6 +279,24 @@ class OFBucketVer12 implements OFBucket {
         this.actions = actions;
         this.actionsSet = true;
         return this;
+    }
+    @Override
+    public OFGroupBucket getBucketId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property bucketId not supported in version 1.2");
+    }
+
+    @Override
+    public OFBucket.Builder setBucketId(OFGroupBucket bucketId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property bucketId not supported in version 1.2");
+    }
+    @Override
+    public List<OFGroupBucketProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
+    }
+
+    @Override
+    public OFBucket.Builder setProperties(List<OFGroupBucketProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
     @Override
     public OFVersion getVersion() {

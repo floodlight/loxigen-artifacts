@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -299,6 +301,18 @@ public interface OFOxms {
     OFOxmPbbUca pbbUca(OFBooleanValue value);
     OFOxmPbbUcaMasked.Builder buildPbbUcaMasked() throws UnsupportedOperationException;
     OFOxmPbbUcaMasked pbbUcaMasked(OFBooleanValue value, OFBooleanValue mask);
+    OFOxmActsetOutput.Builder buildActsetOutput() throws UnsupportedOperationException;
+    OFOxmActsetOutput actsetOutput(TransportPort value);
+    OFOxmActsetOutputMasked.Builder buildActsetOutputMasked() throws UnsupportedOperationException;
+    OFOxmActsetOutputMasked actsetOutputMasked(TransportPort value, TransportPort mask);
+    OFOxmPacketType.Builder buildPacketType() throws UnsupportedOperationException;
+    OFOxmPacketType packetType(PacketType value);
+    OFOxmPacketTypeMasked.Builder buildPacketTypeMasked() throws UnsupportedOperationException;
+    OFOxmPacketTypeMasked packetTypeMasked(PacketType value, PacketType mask);
+    OFOxmTcpFlags.Builder buildTcpFlags() throws UnsupportedOperationException;
+    OFOxmTcpFlags tcpFlags(U16 value);
+    OFOxmTcpFlagsMasked.Builder buildTcpFlagsMasked() throws UnsupportedOperationException;
+    OFOxmTcpFlagsMasked tcpFlagsMasked(U16 value, U16 mask);
 
     OFMessageReader<OFOxm<?>> getReader();
     OFVersion getVersion();

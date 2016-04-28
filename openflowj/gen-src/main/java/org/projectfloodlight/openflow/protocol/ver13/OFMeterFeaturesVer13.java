@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -87,6 +89,11 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
     @Override
     public short getMaxColor() {
         return maxColor;
+    }
+
+    @Override
+    public long getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.3");
     }
 
     @Override
@@ -173,6 +180,15 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
         this.maxColor = maxColor;
         this.maxColorSet = true;
         return this;
+    }
+    @Override
+    public long getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    }
+
+    @Override
+    public OFMeterFeatures.Builder setFeatures(long features) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property features not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {
@@ -268,6 +284,15 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
         this.maxColor = maxColor;
         this.maxColorSet = true;
         return this;
+    }
+    @Override
+    public long getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    }
+
+    @Override
+    public OFMeterFeatures.Builder setFeatures(long features) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property features not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {

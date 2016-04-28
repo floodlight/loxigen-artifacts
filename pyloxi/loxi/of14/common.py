@@ -3417,7 +3417,6 @@ class table_feature_prop_instructions(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.instruction_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
-        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -3429,7 +3428,6 @@ class table_feature_prop_instructions(table_feature_prop):
         orig_reader = reader
         reader = orig_reader.slice(_length, 4)
         obj.instruction_ids = loxi.generic_util.unpack_list(reader, ofp.instruction_id.instruction_id.unpack)
-        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):

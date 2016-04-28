@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -123,6 +125,11 @@ class OFPacketInVer11 implements OFPacketIn {
     }
 
     @Override
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
+    }
+
+    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.1");
     }
@@ -140,11 +147,6 @@ class OFPacketInVer11 implements OFPacketIn {
     @Override
     public OFPort getInPhyPort() {
         return inPhyPort;
-    }
-
-    @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
     }
 
 
@@ -244,6 +246,15 @@ class OFPacketInVer11 implements OFPacketIn {
         return this;
     }
     @Override
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
+    }
+
+    @Override
+    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
+    }
+    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.1");
     }
@@ -284,15 +295,6 @@ class OFPacketInVer11 implements OFPacketIn {
         this.inPhyPort = inPhyPort;
         this.inPhyPortSet = true;
         return this;
-    }
-    @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
-    }
-
-    @Override
-    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
     }
 
 
@@ -419,6 +421,15 @@ class OFPacketInVer11 implements OFPacketIn {
         return this;
     }
     @Override
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
+    }
+
+    @Override
+    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
+    }
+    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.1");
     }
@@ -459,15 +470,6 @@ class OFPacketInVer11 implements OFPacketIn {
         this.inPhyPort = inPhyPort;
         this.inPhyPortSet = true;
         return this;
-    }
-    @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
-    }
-
-    @Override
-    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookie not supported in version 1.1");
     }
 //
         @Override

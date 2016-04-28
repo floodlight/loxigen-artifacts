@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -108,6 +110,7 @@ class OFMatchV3Ver13 implements OFMatchV3 {
 
     private static boolean supportsField(MatchField<?> field) {
         switch (field.id) {
+            case ACTSET_OUTPUT:
             case ARP_OP:
             case ARP_SHA:
             case ARP_SPA:
@@ -164,10 +167,12 @@ class OFMatchV3Ver13 implements OFMatchV3 {
             case MPLS_BOS:
             case MPLS_LABEL:
             case MPLS_TC:
+            case PACKET_TYPE:
             case PBB_UCA:
             case SCTP_DST:
             case SCTP_SRC:
             case TCP_DST:
+            case TCP_FLAGS:
             case TCP_SRC:
             case TUNNEL_ID:
             case TUNNEL_IPV4_DST:

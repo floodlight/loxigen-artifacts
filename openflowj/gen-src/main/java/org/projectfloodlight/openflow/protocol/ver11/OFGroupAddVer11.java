@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -102,6 +104,16 @@ class OFGroupAddVer11 implements OFGroupAdd {
         return buckets;
     }
 
+    @Override
+    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.1");
+    }
+
+    @Override
+    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    }
+
 
 
     public OFGroupAdd.Builder createBuilder() {
@@ -183,6 +195,24 @@ class OFGroupAddVer11 implements OFGroupAdd {
         this.buckets = buckets;
         this.bucketsSet = true;
         return this;
+    }
+    @Override
+    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.1");
+    }
+
+    @Override
+    public OFGroupAdd.Builder setCommandBucketId(OFGroupBucket commandBucketId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.1");
+    }
+    @Override
+    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    }
+
+    @Override
+    public OFGroupAdd.Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.1");
     }
 
 
@@ -279,6 +309,24 @@ class OFGroupAddVer11 implements OFGroupAdd {
         this.buckets = buckets;
         this.bucketsSet = true;
         return this;
+    }
+    @Override
+    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.1");
+    }
+
+    @Override
+    public OFGroupAdd.Builder setCommandBucketId(OFGroupBucket commandBucketId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.1");
+    }
+    @Override
+    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    }
+
+    @Override
+    public OFGroupAdd.Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.1");
     }
 //
         @Override

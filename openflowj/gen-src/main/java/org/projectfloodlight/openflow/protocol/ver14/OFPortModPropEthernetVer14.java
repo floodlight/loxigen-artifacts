@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,6 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
+import com.google.common.collect.ImmutableSet;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -36,10 +39,10 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
     final static byte WIRE_VERSION = 5;
     final static int LENGTH = 8;
 
-        private final static long DEFAULT_ADVERTISE = 0x0L;
+        private final static Set<OFPortFeatures> DEFAULT_ADVERTISE = ImmutableSet.<OFPortFeatures>of();
 
     // OF message fields
-    private final long advertise;
+    private final Set<OFPortFeatures> advertise;
 //
     // Immutable default instance
     final static OFPortModPropEthernetVer14 DEFAULT = new OFPortModPropEthernetVer14(
@@ -47,7 +50,10 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFPortModPropEthernetVer14(long advertise) {
+    OFPortModPropEthernetVer14(Set<OFPortFeatures> advertise) {
+        if(advertise == null) {
+            throw new NullPointerException("OFPortModPropEthernetVer14: property advertise cannot be null");
+        }
         this.advertise = advertise;
     }
 
@@ -58,7 +64,7 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
     }
 
     @Override
-    public long getAdvertise() {
+    public Set<OFPortFeatures> getAdvertise() {
         return advertise;
     }
 
@@ -78,7 +84,7 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
 
         // OF message fields
         private boolean advertiseSet;
-        private long advertise;
+        private Set<OFPortFeatures> advertise;
 
         BuilderWithParent(OFPortModPropEthernetVer14 parentMessage) {
             this.parentMessage = parentMessage;
@@ -90,12 +96,12 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
     }
 
     @Override
-    public long getAdvertise() {
+    public Set<OFPortFeatures> getAdvertise() {
         return advertise;
     }
 
     @Override
-    public OFPortModPropEthernet.Builder setAdvertise(long advertise) {
+    public OFPortModPropEthernet.Builder setAdvertise(Set<OFPortFeatures> advertise) {
         this.advertise = advertise;
         this.advertiseSet = true;
         return this;
@@ -109,7 +115,9 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
 
         @Override
         public OFPortModPropEthernet build() {
-                long advertise = this.advertiseSet ? this.advertise : parentMessage.advertise;
+                Set<OFPortFeatures> advertise = this.advertiseSet ? this.advertise : parentMessage.advertise;
+                if(advertise == null)
+                    throw new NullPointerException("Property advertise must not be null");
 
                 //
                 return new OFPortModPropEthernetVer14(
@@ -122,7 +130,7 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
     static class Builder implements OFPortModPropEthernet.Builder {
         // OF message fields
         private boolean advertiseSet;
-        private long advertise;
+        private Set<OFPortFeatures> advertise;
 
     @Override
     public int getType() {
@@ -130,12 +138,12 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
     }
 
     @Override
-    public long getAdvertise() {
+    public Set<OFPortFeatures> getAdvertise() {
         return advertise;
     }
 
     @Override
-    public OFPortModPropEthernet.Builder setAdvertise(long advertise) {
+    public OFPortModPropEthernet.Builder setAdvertise(Set<OFPortFeatures> advertise) {
         this.advertise = advertise;
         this.advertiseSet = true;
         return this;
@@ -148,7 +156,9 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
 //
         @Override
         public OFPortModPropEthernet build() {
-            long advertise = this.advertiseSet ? this.advertise : DEFAULT_ADVERTISE;
+            Set<OFPortFeatures> advertise = this.advertiseSet ? this.advertise : DEFAULT_ADVERTISE;
+            if(advertise == null)
+                throw new NullPointerException("Property advertise must not be null");
 
 
             return new OFPortModPropEthernetVer14(
@@ -178,7 +188,7 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            long advertise = U32.f(bb.readInt());
+            Set<OFPortFeatures> advertise = OFPortFeaturesSerializerVer14.readFrom(bb);
 
             OFPortModPropEthernetVer14 portModPropEthernetVer14 = new OFPortModPropEthernetVer14(
                     advertise
@@ -202,7 +212,7 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
             sink.putShort((short) 0x0);
             // fixed value property length = 8
             sink.putShort((short) 0x8);
-            sink.putLong(message.advertise);
+            OFPortFeaturesSerializerVer14.putTo(message.advertise, sink);
         }
     }
 
@@ -219,7 +229,7 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
             bb.writeShort((short) 0x0);
             // fixed value property length = 8
             bb.writeShort((short) 0x8);
-            bb.writeInt(U32.t(message.advertise));
+            OFPortFeaturesSerializerVer14.writeTo(bb, message.advertise);
 
 
         }
@@ -243,7 +253,10 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
             return false;
         OFPortModPropEthernetVer14 other = (OFPortModPropEthernetVer14) obj;
 
-        if( advertise != other.advertise)
+        if (advertise == null) {
+            if (other.advertise != null)
+                return false;
+        } else if (!advertise.equals(other.advertise))
             return false;
         return true;
     }
@@ -253,7 +266,7 @@ class OFPortModPropEthernetVer14 implements OFPortModPropEthernet {
         final int prime = 31;
         int result = 1;
 
-        result = prime *  (int) (advertise ^ (advertise >>> 32));
+        result = prime * result + ((advertise == null) ? 0 : advertise.hashCode());
         return result;
     }
 

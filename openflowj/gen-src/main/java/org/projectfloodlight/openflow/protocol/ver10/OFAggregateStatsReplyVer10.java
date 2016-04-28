@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -112,6 +114,11 @@ class OFAggregateStatsReplyVer10 implements OFAggregateStatsReply {
     @Override
     public long getFlowCount() {
         return flowCount;
+    }
+
+    @Override
+    public Stat getStats()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property stats not supported in version 1.0");
     }
 
 
@@ -208,6 +215,15 @@ class OFAggregateStatsReplyVer10 implements OFAggregateStatsReply {
         this.flowCount = flowCount;
         this.flowCountSet = true;
         return this;
+    }
+    @Override
+    public Stat getStats()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property stats not supported in version 1.0");
+    }
+
+    @Override
+    public OFAggregateStatsReply.Builder setStats(Stat stats) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property stats not supported in version 1.0");
     }
 
 
@@ -319,6 +335,15 @@ class OFAggregateStatsReplyVer10 implements OFAggregateStatsReply {
         this.flowCount = flowCount;
         this.flowCountSet = true;
         return this;
+    }
+    @Override
+    public Stat getStats()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property stats not supported in version 1.0");
+    }
+
+    @Override
+    public OFAggregateStatsReply.Builder setStats(Stat stats) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property stats not supported in version 1.0");
     }
 //
         @Override

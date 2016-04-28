@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -116,6 +118,11 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
     }
 
     @Override
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
+    }
+
+    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
     }
@@ -126,18 +133,13 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
     }
 
     @Override
-    public List<OFPortDesc> getPorts() {
-        return ports;
-    }
-
-    @Override
     public Set<OFActionType> getActions() {
         return actions;
     }
 
     @Override
-    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
+    public List<OFPortDesc> getPorts() {
+        return ports;
     }
 
 
@@ -224,6 +226,15 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         return this;
     }
     @Override
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
+    }
+    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
     }
@@ -244,17 +255,6 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
             throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
     }
     @Override
-    public List<OFPortDesc> getPorts() {
-        return ports;
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) {
-        this.ports = ports;
-        this.portsSet = true;
-        return this;
-    }
-    @Override
     public Set<OFActionType> getActions() {
         return actions;
     }
@@ -266,13 +266,15 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
+    public List<OFPortDesc> getPorts() {
+        return ports;
     }
 
     @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
+    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) {
+        this.ports = ports;
+        this.portsSet = true;
+        return this;
     }
 
 
@@ -380,6 +382,15 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         return this;
     }
     @Override
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
+    }
+    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
     }
@@ -400,17 +411,6 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
             throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
     }
     @Override
-    public List<OFPortDesc> getPorts() {
-        return ports;
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) {
-        this.ports = ports;
-        this.portsSet = true;
-        return this;
-    }
-    @Override
     public Set<OFActionType> getActions() {
         return actions;
     }
@@ -422,13 +422,15 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
+    public List<OFPortDesc> getPorts() {
+        return ports;
     }
 
     @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
+    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) {
+        this.ports = ports;
+        this.portsSet = true;
+        return this;
     }
 //
         @Override
