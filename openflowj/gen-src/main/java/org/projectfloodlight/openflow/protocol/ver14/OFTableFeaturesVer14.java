@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -120,6 +122,21 @@ class OFTableFeaturesVer14 implements OFTableFeatures {
     @Override
     public List<OFTableFeatureProp> getProperties() {
         return properties;
+    }
+
+    @Override
+    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property command not supported in version 1.4");
+    }
+
+    @Override
+    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.4");
+    }
+
+    @Override
+    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property capabilities not supported in version 1.4");
     }
 
     @Override
@@ -232,6 +249,33 @@ class OFTableFeaturesVer14 implements OFTableFeatures {
         this.properties = properties;
         this.propertiesSet = true;
         return this;
+    }
+    @Override
+    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property command not supported in version 1.4");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property command not supported in version 1.4");
+    }
+    @Override
+    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.4");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property features not supported in version 1.4");
+    }
+    @Override
+    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property capabilities not supported in version 1.4");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property capabilities not supported in version 1.4");
     }
     @Override
     public OFVersion getVersion() {
@@ -367,6 +411,33 @@ class OFTableFeaturesVer14 implements OFTableFeatures {
         this.properties = properties;
         this.propertiesSet = true;
         return this;
+    }
+    @Override
+    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property command not supported in version 1.4");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property command not supported in version 1.4");
+    }
+    @Override
+    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.4");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property features not supported in version 1.4");
+    }
+    @Override
+    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property capabilities not supported in version 1.4");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property capabilities not supported in version 1.4");
     }
     @Override
     public OFVersion getVersion() {

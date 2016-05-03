@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -114,6 +116,11 @@ class OFPacketOutVer10 implements OFPacketOut {
         return data;
     }
 
+    @Override
+    public Match getMatch()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+
 
 
     public OFPacketOut.Builder createBuilder() {
@@ -203,6 +210,15 @@ class OFPacketOutVer10 implements OFPacketOut {
         this.data = data;
         this.dataSet = true;
         return this;
+    }
+    @Override
+    public Match getMatch()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+
+    @Override
+    public OFPacketOut.Builder setMatch(Match match) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
 
 
@@ -311,6 +327,15 @@ class OFPacketOutVer10 implements OFPacketOut {
         this.data = data;
         this.dataSet = true;
         return this;
+    }
+    @Override
+    public Match getMatch()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property match not supported in version 1.0");
+    }
+
+    @Override
+    public OFPacketOut.Builder setMatch(Match match) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
 //
         @Override

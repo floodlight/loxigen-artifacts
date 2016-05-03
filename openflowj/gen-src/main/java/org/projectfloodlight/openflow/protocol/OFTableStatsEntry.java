@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,9 +30,13 @@ import io.netty.buffer.ByteBuf;
 
 public interface OFTableStatsEntry extends OFObject {
     TableId getTableId();
+    long getActiveCount();
+    U64 getLookupCount();
+    U64 getMatchedCount();
     String getName() throws UnsupportedOperationException;
-    OFMatchBmap getMatch() throws UnsupportedOperationException;
     int getWildcards() throws UnsupportedOperationException;
+    long getMaxEntries() throws UnsupportedOperationException;
+    OFMatchBmap getMatch() throws UnsupportedOperationException;
     long getWriteActions() throws UnsupportedOperationException;
     long getApplyActions() throws UnsupportedOperationException;
     U64 getWriteSetfields() throws UnsupportedOperationException;
@@ -39,10 +45,6 @@ public interface OFTableStatsEntry extends OFObject {
     U64 getMetadataWrite() throws UnsupportedOperationException;
     long getInstructions() throws UnsupportedOperationException;
     long getConfig() throws UnsupportedOperationException;
-    long getMaxEntries() throws UnsupportedOperationException;
-    long getActiveCount();
-    U64 getLookupCount();
-    U64 getMatchedCount();
     OFVersion getVersion();
 
 
@@ -53,12 +55,20 @@ public interface OFTableStatsEntry extends OFObject {
         OFTableStatsEntry build();
         TableId getTableId();
         Builder setTableId(TableId tableId);
+        long getActiveCount();
+        Builder setActiveCount(long activeCount);
+        U64 getLookupCount();
+        Builder setLookupCount(U64 lookupCount);
+        U64 getMatchedCount();
+        Builder setMatchedCount(U64 matchedCount);
         String getName() throws UnsupportedOperationException;
         Builder setName(String name) throws UnsupportedOperationException;
-        OFMatchBmap getMatch() throws UnsupportedOperationException;
-        Builder setMatch(OFMatchBmap match) throws UnsupportedOperationException;
         int getWildcards() throws UnsupportedOperationException;
         Builder setWildcards(int wildcards) throws UnsupportedOperationException;
+        long getMaxEntries() throws UnsupportedOperationException;
+        Builder setMaxEntries(long maxEntries) throws UnsupportedOperationException;
+        OFMatchBmap getMatch() throws UnsupportedOperationException;
+        Builder setMatch(OFMatchBmap match) throws UnsupportedOperationException;
         long getWriteActions() throws UnsupportedOperationException;
         Builder setWriteActions(long writeActions) throws UnsupportedOperationException;
         long getApplyActions() throws UnsupportedOperationException;
@@ -75,14 +85,6 @@ public interface OFTableStatsEntry extends OFObject {
         Builder setInstructions(long instructions) throws UnsupportedOperationException;
         long getConfig() throws UnsupportedOperationException;
         Builder setConfig(long config) throws UnsupportedOperationException;
-        long getMaxEntries() throws UnsupportedOperationException;
-        Builder setMaxEntries(long maxEntries) throws UnsupportedOperationException;
-        long getActiveCount();
-        Builder setActiveCount(long activeCount);
-        U64 getLookupCount();
-        Builder setLookupCount(U64 lookupCount);
-        U64 getMatchedCount();
-        Builder setMatchedCount(U64 matchedCount);
         OFVersion getVersion();
     }
 }

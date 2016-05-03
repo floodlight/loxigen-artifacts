@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -78,6 +80,11 @@ class OFRequestforwardVer14 implements OFRequestforward {
     }
 
     @Override
+    public OFMessage getRequest()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property request not supported in version 1.4");
+    }
+
+    @Override
     public long getRole() {
         return role;
     }
@@ -128,6 +135,15 @@ class OFRequestforwardVer14 implements OFRequestforward {
         this.xid = xid;
         this.xidSet = true;
         return this;
+    }
+    @Override
+    public OFMessage getRequest()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property request not supported in version 1.4");
+    }
+
+    @Override
+    public OFRequestforward.Builder setRequest(OFMessage request) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property request not supported in version 1.4");
     }
     @Override
     public long getRole() {
@@ -200,6 +216,15 @@ class OFRequestforwardVer14 implements OFRequestforward {
         this.xid = xid;
         this.xidSet = true;
         return this;
+    }
+    @Override
+    public OFMessage getRequest()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property request not supported in version 1.4");
+    }
+
+    @Override
+    public OFRequestforward.Builder setRequest(OFMessage request) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property request not supported in version 1.4");
     }
     @Override
     public long getRole() {

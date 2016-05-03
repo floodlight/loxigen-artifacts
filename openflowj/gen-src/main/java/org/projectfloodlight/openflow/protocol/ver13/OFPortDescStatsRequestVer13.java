@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -84,6 +86,11 @@ class OFPortDescStatsRequestVer13 implements OFPortDescStatsRequest {
         return flags;
     }
 
+    @Override
+    public OFPort getPortNo()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property portNo not supported in version 1.3");
+    }
+
 
 
     public OFPortDescStatsRequest.Builder createBuilder() {
@@ -139,6 +146,15 @@ class OFPortDescStatsRequestVer13 implements OFPortDescStatsRequest {
         this.flags = flags;
         this.flagsSet = true;
         return this;
+    }
+    @Override
+    public OFPort getPortNo()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property portNo not supported in version 1.3");
+    }
+
+    @Override
+    public OFPortDescStatsRequest.Builder setPortNo(OFPort portNo) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property portNo not supported in version 1.3");
     }
 
 
@@ -201,6 +217,15 @@ class OFPortDescStatsRequestVer13 implements OFPortDescStatsRequest {
         this.flags = flags;
         this.flagsSet = true;
         return this;
+    }
+    @Override
+    public OFPort getPortNo()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property portNo not supported in version 1.3");
+    }
+
+    @Override
+    public OFPortDescStatsRequest.Builder setPortNo(OFPort portNo) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property portNo not supported in version 1.3");
     }
 //
         @Override

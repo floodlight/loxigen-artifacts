@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -113,6 +115,10 @@ class OFPortDescPropBsnGenerationIdVer14 implements OFPortDescPropBsnGenerationI
     }
 
     @Override
+    public OFPortDescPropBsnGenerationId.Builder setExpType(long expType) {
+            throw new UnsupportedOperationException("Property expType is not writeable");
+    }
+    @Override
     public U64 getGenerationId() {
         return generationId;
     }
@@ -164,6 +170,10 @@ class OFPortDescPropBsnGenerationIdVer14 implements OFPortDescPropBsnGenerationI
         return 0x1L;
     }
 
+    @Override
+    public OFPortDescPropBsnGenerationId.Builder setExpType(long expType) {
+            throw new UnsupportedOperationException("Property expType is not writeable");
+    }
     @Override
     public U64 getGenerationId() {
         return generationId;
