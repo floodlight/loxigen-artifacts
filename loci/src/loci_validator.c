@@ -731,6 +731,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_cpu_lag_OF_VERSION_1
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_crc_enabled_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_data_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_decap_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_dscp_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1344,6 +1345,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_cpu_lag_OF_VERSION_1
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_crc_enabled_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_data_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_decap_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_dscp_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -20252,6 +20254,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_data_OF_VERSION_1_3(data, len, out_len);
     case 0x55:
         return loci_validate_of_bsn_tlv_decap_OF_VERSION_1_3(data, len, out_len);
+    case 0x78:
+        return loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3(data, len, out_len);
     case 0x70:
         return loci_validate_of_bsn_tlv_dscp_OF_VERSION_1_3(data, len, out_len);
     case 0x21:
@@ -20815,6 +20819,28 @@ loci_validate_of_bsn_tlv_decap_OF_VERSION_1_3(uint8_t *data, int len, int *out_l
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
         return -1;
     }
 
@@ -35536,6 +35562,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_data_OF_VERSION_1_4(data, len, out_len);
     case 0x55:
         return loci_validate_of_bsn_tlv_decap_OF_VERSION_1_4(data, len, out_len);
+    case 0x78:
+        return loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4(data, len, out_len);
     case 0x70:
         return loci_validate_of_bsn_tlv_dscp_OF_VERSION_1_4(data, len, out_len);
     case 0x21:
@@ -36099,6 +36127,28 @@ loci_validate_of_bsn_tlv_decap_OF_VERSION_1_4(uint8_t *data, int len, int *out_l
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
         return -1;
     }
 

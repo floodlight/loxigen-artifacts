@@ -144,6 +144,10 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvDecap not supported in version 1.1");
     }
 
+    public OFBsnTlvDisableSrcMacCheck disableSrcMacCheck() {
+        throw new UnsupportedOperationException("OFBsnTlvDisableSrcMacCheck not supported in version 1.1");
+    }
+
     public OFBsnTlvDscp.Builder buildDscp() {
         throw new UnsupportedOperationException("OFBsnTlvDscp not supported in version 1.1");
     }

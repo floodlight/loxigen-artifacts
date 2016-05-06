@@ -329,6 +329,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_crc_enabled_init,
     (of_object_init_f)of_bsn_tlv_data_init,
     (of_object_init_f)of_bsn_tlv_decap_init,
+    (of_object_init_f)of_bsn_tlv_disable_src_mac_check_init,
     (of_object_init_f)of_bsn_tlv_dscp_init,
     (of_object_init_f)of_bsn_tlv_eth_dst_init,
     (of_object_init_f)of_bsn_tlv_eth_src_init,

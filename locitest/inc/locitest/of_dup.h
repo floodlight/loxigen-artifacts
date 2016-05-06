@@ -1283,6 +1283,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_disable_src_mac_check_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_dscp_dup(
         of_object_t *src);
 
@@ -6027,6 +6031,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_dscp_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8584,6 +8592,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_decap_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

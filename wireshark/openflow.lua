@@ -7888,6 +7888,8 @@ fields['of13.bsn_tlv_data.value'] = ProtoField.bytes("of13.bsn_tlv_data.value", 
 fields['of13.bsn_tlv_decap.type'] = ProtoField.uint16("of13.bsn_tlv_decap.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_decap.length'] = ProtoField.uint16("of13.bsn_tlv_decap.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_decap.value'] = ProtoField.uint32("of13.bsn_tlv_decap.value", "value", base.DEC, enum_v4_ofp_bsn_decap)
+fields['of13.bsn_tlv_disable_src_mac_check.type'] = ProtoField.uint16("of13.bsn_tlv_disable_src_mac_check.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_disable_src_mac_check.length'] = ProtoField.uint16("of13.bsn_tlv_disable_src_mac_check.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_dscp.type'] = ProtoField.uint16("of13.bsn_tlv_dscp.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_dscp.length'] = ProtoField.uint16("of13.bsn_tlv_dscp.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_dscp.value'] = ProtoField.uint16("of13.bsn_tlv_dscp.value", "value", base.DEC, nil)
@@ -10647,6 +10649,8 @@ fields['of14.bsn_tlv_data.value'] = ProtoField.bytes("of14.bsn_tlv_data.value", 
 fields['of14.bsn_tlv_decap.type'] = ProtoField.uint16("of14.bsn_tlv_decap.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_decap.length'] = ProtoField.uint16("of14.bsn_tlv_decap.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_decap.value'] = ProtoField.uint32("of14.bsn_tlv_decap.value", "value", base.DEC, enum_v5_ofp_bsn_decap)
+fields['of14.bsn_tlv_disable_src_mac_check.type'] = ProtoField.uint16("of14.bsn_tlv_disable_src_mac_check.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_disable_src_mac_check.length'] = ProtoField.uint16("of14.bsn_tlv_disable_src_mac_check.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_dscp.type'] = ProtoField.uint16("of14.bsn_tlv_dscp.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_dscp.length'] = ProtoField.uint16("of14.bsn_tlv_dscp.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_dscp.value'] = ProtoField.uint16("of14.bsn_tlv_dscp.value", "value", base.DEC, nil)
@@ -18568,6 +18572,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_decap.type'],
     fields['of13.bsn_tlv_decap.length'],
     fields['of13.bsn_tlv_decap.value'],
+    fields['of13.bsn_tlv_disable_src_mac_check.type'],
+    fields['of13.bsn_tlv_disable_src_mac_check.length'],
     fields['of13.bsn_tlv_dscp.type'],
     fields['of13.bsn_tlv_dscp.length'],
     fields['of13.bsn_tlv_dscp.value'],
@@ -21327,6 +21333,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_decap.type'],
     fields['of14.bsn_tlv_decap.length'],
     fields['of14.bsn_tlv_decap.value'],
+    fields['of14.bsn_tlv_disable_src_mac_check.type'],
+    fields['of14.bsn_tlv_disable_src_mac_check.length'],
     fields['of14.bsn_tlv_dscp.type'],
     fields['of14.bsn_tlv_dscp.length'],
     fields['of14.bsn_tlv_dscp.value'],
@@ -34661,6 +34669,15 @@ function dissect_of_bsn_tlv_decap_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[85] = dissect_of_bsn_tlv_decap_v4
 
+-- child class of_bsn_tlv_disable_src_mac_check
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_disable_src_mac_check_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_disable_src_mac_check.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_disable_src_mac_check.length')
+    return 'of_bsn_tlv_disable_src_mac_check'
+end
+of_bsn_tlv_v4_dissectors[120] = dissect_of_bsn_tlv_disable_src_mac_check_v4
+
 -- child class of_bsn_tlv_dscp
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_dscp_v4(reader, subtree)
@@ -41963,6 +41980,15 @@ function dissect_of_bsn_tlv_decap_v5(reader, subtree)
     return 'of_bsn_tlv_decap'
 end
 of_bsn_tlv_v5_dissectors[85] = dissect_of_bsn_tlv_decap_v5
+
+-- child class of_bsn_tlv_disable_src_mac_check
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_disable_src_mac_check_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_disable_src_mac_check.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_disable_src_mac_check.length')
+    return 'of_bsn_tlv_disable_src_mac_check'
+end
+of_bsn_tlv_v5_dissectors[120] = dissect_of_bsn_tlv_disable_src_mac_check_v5
 
 -- child class of_bsn_tlv_dscp
 -- Child of of_bsn_tlv

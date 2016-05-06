@@ -62,6 +62,7 @@ public interface OFBsnTlvs {
     OFBsnTlvData data(byte[] value);
     OFBsnTlvDecap.Builder buildDecap() throws UnsupportedOperationException;
     OFBsnTlvDecap decap(OFBsnDecap value);
+    OFBsnTlvDisableSrcMacCheck disableSrcMacCheck();
     OFBsnTlvDscp.Builder buildDscp() throws UnsupportedOperationException;
     OFBsnTlvDscp dscp(int value);
     OFBsnTlvEthDst.Builder buildEthDst() throws UnsupportedOperationException;
