@@ -2876,28 +2876,27 @@ enum_v5_ofp_port_features = {
 }
 
 
-enum_v6_ofp_stats_type = {
-    [0] = "OFPST_DESC",
-    [1] = "OFPST_FLOW_DESC",
-    [2] = "OFPST_AGGREGATE_STATS",
-    [3] = "OFPST_TABLE_STATS",
-    [4] = "OFPST_PORT_STATS",
-    [5] = "OFPST_QUEUE_STATS",
-    [6] = "OFPST_GROUP_STATS",
-    [7] = "OFPST_GROUP_DESC",
-    [8] = "OFPST_GROUP_FEATURES",
-    [9] = "OFPST_METER_STATS",
-    [10] = "OFPST_METER_DESC",
-    [11] = "OFPST_METER_FEATURES",
-    [12] = "OFPST_TABLE_FEATURES",
-    [13] = "OFPST_PORT_DESC",
-    [14] = "OFPMP_TABLE_DESC",
-    [15] = "OFPMP_QUEUE_DESC",
-    [16] = "OFPMP_FLOW_MONITOR",
-    [17] = "OFPMP_FLOW_STATS",
-    [18] = "OFPMP_CONTROLLER_STATUS",
-    [19] = "OFPMP_BUNDLE_FEATURES",
-    [65535] = "OFPST_EXPERIMENTER",
+enum_v6_macro_definitions = {
+    [32] = "OFP_MAX_TABLE_NAME_LEN",
+    [16] = "OFP_MAX_PORT_NAME_LEN",
+    [6653] = "OFP_TCP_PORT",
+    [6653] = "OFP_SSL_PORT",
+    [6] = "OFP_ETH_ALEN",
+    [128] = "OFP_DEFAULT_MISS_SEND_LEN",
+    [0] = "OFP_VLAN_NONE",
+    [0] = "OFP_FLOW_PERMANENT",
+    [32768] = "OFP_DEFAULT_PRIORITY",
+    [4294967295] = "OFP_NO_BUFFER",
+    [256] = "DESC_STR_LEN",
+    [32] = "SERIAL_NUM_LEN",
+    [4294967295] = "OFPQ_ALL",
+    [65535] = "OFPQ_MAX_RATE_UNCFG",
+    [65535] = "OFPQ_MIN_RATE_UNCFG",
+}
+
+enum_v6_ofp_hello_failed_code = {
+    [0] = "OFPHFC_INCOMPATIBLE",
+    [1] = "OFPHFC_EPERM",
 }
 
 enum_v6_ofp_flow_mod_flags = {
@@ -2915,8 +2914,11 @@ enum_v6_ofp_controller_role_reason = {
     [2] = "OFPCRR_EXPERIMENTER",
 }
 
-enum_v6_ofp_stats_reply_flags = {
-    [1] = "OFPSF_REPLY_MORE",
+enum_v6_ofp_bsn_anchor = {
+    [0] = "OFP_BSN_ANCHOR_PACKET_START",
+    [1] = "OFP_BSN_ANCHOR_L3_HEADER_START",
+    [2] = "OFP_BSN_ANCHOR_L4_HEADER_START",
+    [3] = "OFP_BSN_ANCHOR_L4_PAYLOAD_START",
 }
 
 enum_v6_ofp_oxm_class = {
@@ -2958,6 +2960,11 @@ enum_v6_ofp_port_mod_prop_type = {
     [65535] = "OFPPMPT_EXPERIMENTER",
 }
 
+enum_v6_ofp_bsn_port_vxlan_mode = {
+    [0] = "OFP_BSN_PORT_VXLAN_RECIRCULATION_ENABLE",
+    [1] = "OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE",
+}
+
 enum_v6_ofp_controller_status_reason = {
     [0] = "OFPCSR_REQUEST",
     [1] = "OFPCSR_CHANNEL_STATUS",
@@ -2983,10 +2990,6 @@ enum_v6_ofp_bad_match_code = {
     [11] = "OFPBMC_EPERM",
 }
 
-enum_v6_ofp_role_prop_type = {
-    [65535] = "OFPRPT_EXPERIMENTER",
-}
-
 enum_v6_ofp_ipv6exthdr_flags = {
     [1] = "OFPIEH_NONEXT",
     [2] = "OFPIEH_ESP",
@@ -3005,9 +3008,19 @@ enum_v6_ofp_table_mod_failed_code = {
     [2] = "OFPTMFC_EPERM",
 }
 
+enum_v6_ofp_bsn_status = {
+    [0] = "OFP_BSN_STATUS_DISABLE",
+    [1] = "OFP_BSN_STATUS_ENABLE",
+}
+
 enum_v6_ofp_table = {
     [254] = "OFPTT_MAX",
     [255] = "OFPTT_ALL",
+}
+
+enum_v6_ofp_bsn_lua_upload_flags = {
+    [1] = "OFP_BSN_LUA_UPLOAD_MORE",
+    [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
 }
 
 enum_v6_ofp_group = {
@@ -3023,9 +3036,39 @@ enum_v6_ofp_meter_flags = {
     [8] = "OFPMF_STATS",
 }
 
+enum_v6_ofp_error_type = {
+    [0] = "OFPET_HELLO_FAILED",
+    [1] = "OFPET_BAD_REQUEST",
+    [2] = "OFPET_BAD_ACTION",
+    [3] = "OFPET_BAD_INSTRUCTION",
+    [4] = "OFPET_BAD_MATCH",
+    [5] = "OFPET_FLOW_MOD_FAILED",
+    [6] = "OFPET_GROUP_MOD_FAILED",
+    [7] = "OFPET_PORT_MOD_FAILED",
+    [8] = "OFPET_TABLE_MOD_FAILED",
+    [9] = "OFPET_QUEUE_OP_FAILED",
+    [10] = "OFPET_SWITCH_CONFIG_FAILED",
+    [11] = "OFPET_ROLE_REQUEST_FAILED",
+    [12] = "OFPET_METER_MOD_FAILED",
+    [13] = "OFPET_TABLE_FEATURES_FAILED",
+    [14] = "OFPET_BAD_PROPERTY",
+    [15] = "OFPET_ASYNC_CONFIG_FAILED",
+    [16] = "OFPET_FLOW_MONITOR_FAILED",
+    [17] = "OFPET_BUNDLE_FAILED",
+    [65535] = "OFPET_EXPERIMENTER",
+}
+
+enum_v6_ofp_bsn_vlan_counter_constants = {
+    [65535] = "OFP_BSN_VLAN_ALL",
+}
+
 enum_v6_ofp_match_type = {
     [0] = "OFPMT_STANDARD",
     [1] = "OFPMT_OXM",
+}
+
+enum_v6_ofp_stats_reply_flags = {
+    [1] = "OFPSF_REPLY_MORE",
 }
 
 enum_v6_ofp_table_features_failed_code = {
@@ -3090,6 +3133,15 @@ enum_v6_ofp_bad_action_code = {
     [17] = "OFPBAC_BAD_METER",
 }
 
+enum_v6_ofp_bsn_loglevel = {
+    [0] = "OFP_BSN_LOGLEVEL_MSG",
+    [1] = "OFP_BSN_LOGLEVEL_ERROR",
+    [2] = "OFP_BSN_LOGLEVEL_WARN",
+    [3] = "OFP_BSN_LOGLEVEL_INFO",
+    [4] = "OFP_BSN_LOGLEVEL_VERBOSE",
+    [5] = "OFP_BSN_LOGLEVEL_TRACE",
+}
+
 enum_v6_ofp_bundle_flags = {
     [1] = "OFPBF_ATOMIC",
     [2] = "OFPBF_ORDERED",
@@ -3114,11 +3166,14 @@ enum_v6_ofp_controller_role = {
     [3] = "OFPCR_ROLE_SLAVE",
 }
 
-enum_v6_ofp_optical_port_features = {
-    [1] = "OFPOPF_RX_TUNE",
-    [2] = "OFPOPF_TX_TUNE",
-    [4] = "OFPOPF_TX_PWR",
-    [8] = "OFPOPF_USE_FREQ",
+enum_v6_ofp_flow_monitor_flags = {
+    [1] = "OFPFMF_INITIAL",
+    [2] = "OFPFMF_ADD",
+    [4] = "OFPFMF_REMOVED",
+    [8] = "OFPFMF_MODIFY",
+    [16] = "OFPFMF_INSTRUCTIONS",
+    [32] = "OFPFMF_NO_ABBREV",
+    [64] = "OFPFMF_ONLY_OWN",
 }
 
 enum_v6_ofp_flow_mod_failed_code = {
@@ -3148,29 +3203,11 @@ enum_v6_ofp_config_flags = {
     [3] = "OFPC_FRAG_MASK",
 }
 
-enum_v6_ofp_table_feature_prop_type = {
-    [0] = "OFPTFPT_INSTRUCTIONS",
-    [1] = "OFPTFPT_INSTRUCTIONS_MISS",
-    [2] = "OFPTFPT_NEXT_TABLES",
-    [3] = "OFPTFPT_NEXT_TABLES_MISS",
-    [4] = "OFPTFPT_WRITE_ACTIONS",
-    [5] = "OFPTFPT_WRITE_ACTIONS_MISS",
-    [6] = "OFPTFPT_APPLY_ACTIONS",
-    [7] = "OFPTFPT_APPLY_ACTIONS_MISS",
-    [8] = "OFPTFPT_MATCH",
-    [10] = "OFPTFPT_WILDCARDS",
-    [12] = "OFPTFPT_WRITE_SETFIELD",
-    [13] = "OFPTFPT_WRITE_SETFIELD_MISS",
-    [14] = "OFPTFPT_APPLY_SETFIELD",
-    [15] = "OFPTFPT_APPLY_SETFIELD_MISS",
-    [16] = "OFPTFPT_TABLE_SYNC_FROM",
-    [18] = "OFPTFPT_WRITE_COPYFIELD",
-    [19] = "OFPTFPT_WRITE_COPYFIELD_MISS",
-    [20] = "OFPTFPT_APPLY_COPYFIELD",
-    [21] = "OFPTFPT_APPLY_COPYFIELD_MISS",
-    [22] = "OFPTFPT_PACKET_TYPES",
-    [65534] = "OFPTFPT_EXPERIMENTER",
-    [65535] = "OFPTFPT_EXPERIMENTER_MISS",
+enum_v6_of_bsn_vlan_counter = {
+    [0] = "OFP_BSN_VLAN_COUNTER_RX_BYTES",
+    [1] = "OFP_BSN_VLAN_COUNTER_RX_PACKETS",
+    [2] = "OFP_BSN_VLAN_COUNTER_TX_BYTES",
+    [3] = "OFP_BSN_VLAN_COUNTER_TX_PACKETS",
 }
 
 enum_v6_ofp_header_type_namespace = {
@@ -3181,9 +3218,8 @@ enum_v6_ofp_header_type_namespace = {
     [4] = "OFPHTN_IPV4_OPTION",
 }
 
-enum_v6_ofp_hello_failed_code = {
-    [0] = "OFPHFC_INCOMPATIBLE",
-    [1] = "OFPHFC_EPERM",
+enum_v6_ofp_role_prop_type = {
+    [65535] = "OFPRPT_EXPERIMENTER",
 }
 
 enum_v6_ofp_role_request_failed_code = {
@@ -3202,6 +3238,27 @@ enum_v6_ofp_capabilities = {
     [256] = "OFPC_PORT_BLOCKED",
     [512] = "OFPC_BUNDLES",
     [1024] = "OFPC_FLOW_MONITORING",
+}
+
+enum_v6_of_bsn_hash_packet_field = {
+    [2] = "OFP_BSN_HASH_FIELD_DST_MAC",
+    [4] = "OFP_BSN_HASH_FIELD_SRC_MAC",
+    [8] = "OFP_BSN_HASH_FIELD_ETH_TYPE",
+    [16] = "OFP_BSN_HASH_FIELD_VLAN_ID",
+    [32] = "OFP_BSN_HASH_FIELD_INNER_L2",
+    [64] = "OFP_BSN_HASH_FIELD_INNER_L3",
+    [128] = "OFP_BSN_HASH_FIELD_SRC_IP",
+    [256] = "OFP_BSN_HASH_FIELD_DST_IP",
+    [512] = "OFP_BSN_HASH_FIELD_IP_PROTO",
+    [1024] = "OFP_BSN_HASH_FIELD_SRC_L4_PORT",
+    [2048] = "OFP_BSN_HASH_FIELD_DST_L4_PORT",
+    [4096] = "OFP_BSN_HASH_FIELD_MPLS_LABEL1",
+    [8192] = "OFP_BSN_HASH_FIELD_MPLS_LABEL2",
+    [16384] = "OFP_BSN_HASH_FIELD_MPLS_LABEL3",
+    [32768] = "OFP_BSN_HASH_FIELD_MPLS_LABEL_HI_BITS",
+    [65536] = "OFP_BSN_HASH_FIELD_MPLS_PAYLOAD_SRC_IP",
+    [131072] = "OFP_BSN_HASH_FIELD_MPLS_PAYLOAD_DST_IP",
+    [262144] = "OFP_BSN_HASH_FIELD_SYMMETRIC",
 }
 
 enum_v6_ofp_async_config_prop_type = {
@@ -3223,6 +3280,11 @@ enum_v6_ofp_async_config_prop_type = {
     [15] = "OFPACPT_CONT_STATUS_MASTER",
     [65534] = "OFPACPT_EXPERIMENTER_SLAVE",
     [65535] = "OFPACPT_EXPERIMENTER_MASTER",
+}
+
+enum_v6_ofp_bsn_rate_unit = {
+    [0] = "OFP_BSN_RATE_UNIT_PPS",
+    [1] = "OFP_BSN_RATE_UNIT_KBITPS",
 }
 
 enum_v6_ofp_bundle_ctrl_type = {
@@ -3271,6 +3333,12 @@ enum_v6_ofp_table_reason = {
     [4] = "OFPTR_VACANCY_UP",
 }
 
+enum_v6_of_bsn_lacp_convergence_status = {
+    [0] = "LACP_SUCCESS",
+    [1] = "LACP_TIMEDOUT",
+    [2] = "LACP_OUT_OF_SYNC",
+}
+
 enum_v6_ofp_vlan_id = {
     [0] = "OFPVID_NONE",
     [4096] = "OFPVID_PRESENT",
@@ -3305,6 +3373,72 @@ enum_v6_ofp_instruction_type = {
     [6] = "OFPIT_DEPRECATED",
     [7] = "OFPIT_STAT_TRIGGER",
     [65535] = "OFPIT_EXPERIMENTER",
+}
+
+enum_v6_of_bsn_hash_gtp_port_match = {
+    [1] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC",
+    [2] = "OF_BSN_HASH_GTP_PORT_MATCH_DST",
+    [3] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC_OR_DST",
+    [4] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC_AND_DST",
+}
+
+enum_v6_ofp_bsn_port_counter = {
+    [0] = "OFP_BSN_PORT_COUNTER_RX_BYTES",
+    [1] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST",
+    [2] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST",
+    [3] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST",
+    [4] = "OFP_BSN_PORT_COUNTER_RX_DROPPED",
+    [5] = "OFP_BSN_PORT_COUNTER_RX_ERRORS",
+    [6] = "OFP_BSN_PORT_COUNTER_TX_BYTES",
+    [7] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST",
+    [8] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST",
+    [9] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST",
+    [10] = "OFP_BSN_PORT_COUNTER_TX_DROPPED",
+    [11] = "OFP_BSN_PORT_COUNTER_TX_ERRORS",
+    [12] = "OFP_BSN_PORT_COUNTER_RX_RUNTS",
+    [13] = "OFP_BSN_PORT_COUNTER_RX_GIANTS",
+    [14] = "OFP_BSN_PORT_COUNTER_RX_CRC_ERRORS",
+    [15] = "OFP_BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS",
+    [16] = "OFP_BSN_PORT_COUNTER_RX_SYMBOL_ERRORS",
+    [17] = "OFP_BSN_PORT_COUNTER_RX_PAUSE_INPUT",
+    [18] = "OFP_BSN_PORT_COUNTER_TX_COLLISIONS",
+    [19] = "OFP_BSN_PORT_COUNTER_TX_LATE_COLLISIONS",
+    [20] = "OFP_BSN_PORT_COUNTER_TX_DEFERRED",
+    [21] = "OFP_BSN_PORT_COUNTER_TX_PAUSE_OUTPUT",
+    [22] = "OFP_BSN_PORT_COUNTER_RX_PACKETS",
+    [23] = "OFP_BSN_PORT_COUNTER_TX_PACKETS",
+    [24] = "OFP_BSN_PORT_COUNTER_RX_LENGTH_ERRORS",
+    [25] = "OFP_BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS",
+    [26] = "OFP_BSN_PORT_COUNTER_TX_CARRIER_ERRORS",
+    [27] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN",
+    [28] = "OFP_BSN_PORT_COUNTER_LINK_UP",
+    [29] = "OFP_BSN_PORT_COUNTER_LINK_DOWN",
+    [30] = "OFP_BSN_PORT_COUNTER_RX_PFC_CONTROL_FRAME",
+    [31] = "OFP_BSN_PORT_COUNTER_TX_PFC_CONTROL_FRAME",
+    [32] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_0",
+    [33] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_1",
+    [34] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_2",
+    [35] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_3",
+    [36] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_4",
+    [37] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_5",
+    [38] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_6",
+    [39] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_7",
+    [40] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_0",
+    [41] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_1",
+    [42] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_2",
+    [43] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_3",
+    [44] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_4",
+    [45] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_5",
+    [46] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_6",
+    [47] = "OFP_BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_7",
+    [48] = "OFP_BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_0",
+    [49] = "OFP_BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_1",
+    [50] = "OFP_BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_2",
+    [51] = "OFP_BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_3",
+    [52] = "OFP_BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_4",
+    [53] = "OFP_BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_5",
+    [54] = "OFP_BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_6",
+    [55] = "OFP_BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_7",
 }
 
 enum_v6_ofp_packet_in_reason = {
@@ -3348,13 +3482,10 @@ enum_v6_ofp_bad_property_code = {
     [8] = "OFPBPC_EPERM",
 }
 
-enum_v6_ofp_flow_removed_reason = {
-    [0] = "OFPRR_IDLE_TIMEOUT",
-    [1] = "OFPRR_HARD_TIMEOUT",
-    [2] = "OFPRR_DELETE",
-    [3] = "OFPRR_GROUP_DELETE",
-    [4] = "OFPRR_METER_DELETE",
-    [5] = "OFPRR_EVICTION",
+enum_v6_ofp_bsn_udf_anchor = {
+    [0] = "OFP_BSN_UDF_ANCHOR_PACKET_START",
+    [1] = "OFP_BSN_UDF_ANCHOR_L3_HEADER_START",
+    [2] = "OFP_BSN_UDF_ANCHOR_L4_HEADER_START",
 }
 
 enum_v6_ofp_port_mod_failed_code = {
@@ -3369,6 +3500,15 @@ enum_v6_ofp_meter_feature_flags = {
     [1] = "OFPMFF_ACTION_SET",
     [2] = "OFPMFF_ANY_POSITION",
     [4] = "OFPMFF_MULTI_LIST",
+}
+
+enum_v6_of_bsn_hash_packet_type = {
+    [0] = "OF_BSN_HASH_PACKET_L2",
+    [1] = "OF_BSN_HASH_PACKET_L2GRE",
+    [3] = "OF_BSN_HASH_PACKET_IPV4",
+    [4] = "OF_BSN_HASH_PACKET_IPV6",
+    [5] = "OF_BSN_HASH_PACKET_MPLS",
+    [6] = "OF_BSN_HASH_PACKET_SYMMETRIC",
 }
 
 enum_v6_ofp_port_config = {
@@ -3390,6 +3530,18 @@ enum_v6_of_bsn_pdu_slot_num = {
     [255] = "BSN_PDU_SLOT_NUM_ANY",
 }
 
+enum_v6_ofp_bsn_tcp_flag = {
+    [1] = "OFP_BSN_TCP_FLAG_FIN",
+    [2] = "OFP_BSN_TCP_FLAG_SYN",
+    [4] = "OFP_BSN_TCP_FLAG_RST",
+    [8] = "OFP_BSN_TCP_FLAG_PSH",
+    [16] = "OFP_BSN_TCP_FLAG_ACK",
+    [32] = "OFP_BSN_TCP_FLAG_URG",
+    [64] = "OFP_BSN_TCP_FLAG_ECE",
+    [128] = "OFP_BSN_TCP_FLAG_CWR",
+    [256] = "OFP_BSN_TCP_FLAG_NS",
+}
+
 enum_v6_ofp_bsn_vport_l2gre_flags = {
     [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
     [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
@@ -3404,26 +3556,13 @@ enum_v6_ofp_queue_desc_prop_type = {
     [65535] = "OFPQDPT_EXPERIMENTER",
 }
 
-enum_v6_ofp_error_type = {
-    [0] = "OFPET_HELLO_FAILED",
-    [1] = "OFPET_BAD_REQUEST",
-    [2] = "OFPET_BAD_ACTION",
-    [3] = "OFPET_BAD_INSTRUCTION",
-    [4] = "OFPET_BAD_MATCH",
-    [5] = "OFPET_FLOW_MOD_FAILED",
-    [6] = "OFPET_GROUP_MOD_FAILED",
-    [7] = "OFPET_PORT_MOD_FAILED",
-    [8] = "OFPET_TABLE_MOD_FAILED",
-    [9] = "OFPET_QUEUE_OP_FAILED",
-    [10] = "OFPET_SWITCH_CONFIG_FAILED",
-    [11] = "OFPET_ROLE_REQUEST_FAILED",
-    [12] = "OFPET_METER_MOD_FAILED",
-    [13] = "OFPET_TABLE_FEATURES_FAILED",
-    [14] = "OFPET_BAD_PROPERTY",
-    [15] = "OFPET_ASYNC_CONFIG_FAILED",
-    [16] = "OFPET_FLOW_MONITOR_FAILED",
-    [17] = "OFPET_BUNDLE_FAILED",
-    [65535] = "OFPET_EXPERIMENTER",
+enum_v6_ofp_flow_removed_reason = {
+    [0] = "OFPRR_IDLE_TIMEOUT",
+    [1] = "OFPRR_HARD_TIMEOUT",
+    [2] = "OFPRR_DELETE",
+    [3] = "OFPRR_GROUP_DELETE",
+    [4] = "OFPRR_METER_DELETE",
+    [5] = "OFPRR_EVICTION",
 }
 
 enum_v6_ofp_port_stats_optical_flags = {
@@ -3472,11 +3611,85 @@ enum_v6_ofp_meter_mod_failed_code = {
     [11] = "OFPMMFC_OUT_OF_BANDS",
 }
 
+enum_v6_ofp_bsn_controller_connection_state = {
+    [0] = "OFP_BSN_CONTROLLER_CONNECTION_STATE_DISCONNECTED",
+    [1] = "OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED",
+}
+
 enum_v6_ofp_group_capabilities = {
     [1] = "OFPGFC_SELECT_WEIGHT",
     [2] = "OFPGFC_SELECT_LIVENESS",
     [4] = "OFPGFC_CHAINING",
     [8] = "OFPGFC_CHAINING_CHECKS",
+}
+
+enum_v6_ofp_bsn_decap = {
+    [0] = "OFP_BSN_DECAP_VXLAN",
+    [1] = "OFP_BSN_DECAP_ERSPAN",
+    [2] = "OFP_BSN_DECAP_L2_GRE",
+    [3] = "OFP_BSN_DECAP_NVGRE",
+    [4] = "OFP_BSN_DECAP_CAPWAP",
+    [5] = "OFP_BSN_DECAP_L2_MPLS",
+    [6] = "OFP_BSN_DECAP_L3_GRE",
+    [7] = "OFP_BSN_DECAP_GTP",
+    [8] = "OFP_BSN_DECAP_L3_MPLS",
+}
+
+enum_v6_ofp_port_desc_prop_type = {
+    [0] = "OFPPDPT_ETHERNET",
+    [1] = "OFPPDPT_OPTICAL",
+    [2] = "OFPPDPT_PIPELINE_INPUT",
+    [3] = "OFPPDPT_PIPELINE_OUTPUT",
+    [4] = "OFPPDPT_RECIRCULATE",
+    [65535] = "OFPPDPT_EXPERIMENTER",
+}
+
+enum_v6_ofp_queue_op_failed_code = {
+    [0] = "OFPQOFC_BAD_PORT",
+    [1] = "OFPQOFC_BAD_QUEUE",
+    [2] = "OFPQOFC_EPERM",
+}
+
+enum_v6_ofp_stats_type = {
+    [0] = "OFPST_DESC",
+    [1] = "OFPST_FLOW_DESC",
+    [2] = "OFPST_AGGREGATE_STATS",
+    [3] = "OFPST_TABLE_STATS",
+    [4] = "OFPST_PORT_STATS",
+    [5] = "OFPST_QUEUE_STATS",
+    [6] = "OFPST_GROUP_STATS",
+    [7] = "OFPST_GROUP_DESC",
+    [8] = "OFPST_GROUP_FEATURES",
+    [9] = "OFPST_METER_STATS",
+    [10] = "OFPST_METER_DESC",
+    [11] = "OFPST_METER_FEATURES",
+    [12] = "OFPST_TABLE_FEATURES",
+    [13] = "OFPST_PORT_DESC",
+    [14] = "OFPMP_TABLE_DESC",
+    [15] = "OFPMP_QUEUE_DESC",
+    [16] = "OFPMP_FLOW_MONITOR",
+    [17] = "OFPMP_FLOW_STATS",
+    [18] = "OFPMP_CONTROLLER_STATUS",
+    [19] = "OFPMP_BUNDLE_FEATURES",
+    [65535] = "OFPST_EXPERIMENTER",
+}
+
+enum_v6_ofp_bundle_prop_type = {
+    [1] = "OFPBPT_TIME",
+    [65535] = "OFPBPT_EXPERIMENTER",
+}
+
+enum_v6_ofp_meter_mod_command = {
+    [0] = "OFPMC_ADD",
+    [1] = "OFPMC_MODIFY",
+    [2] = "OFPMC_DELETE",
+}
+
+enum_v6_ofp_optical_port_features = {
+    [1] = "OFPOPF_RX_TUNE",
+    [2] = "OFPOPF_TX_TUNE",
+    [4] = "OFPOPF_TX_PWR",
+    [8] = "OFPOPF_USE_FREQ",
 }
 
 enum_v6_ofp_action_type = {
@@ -3501,60 +3714,6 @@ enum_v6_ofp_action_type = {
     [65535] = "OFPAT_EXPERIMENTER",
 }
 
-enum_v6_ofp_port_desc_prop_type = {
-    [0] = "OFPPDPT_ETHERNET",
-    [1] = "OFPPDPT_OPTICAL",
-    [2] = "OFPPDPT_PIPELINE_INPUT",
-    [3] = "OFPPDPT_PIPELINE_OUTPUT",
-    [4] = "OFPPDPT_RECIRCULATE",
-    [65535] = "OFPPDPT_EXPERIMENTER",
-}
-
-enum_v6_ofp_queue_op_failed_code = {
-    [0] = "OFPQOFC_BAD_PORT",
-    [1] = "OFPQOFC_BAD_QUEUE",
-    [2] = "OFPQOFC_EPERM",
-}
-
-enum_v6_macro_definitions = {
-    [32] = "OFP_MAX_TABLE_NAME_LEN",
-    [16] = "OFP_MAX_PORT_NAME_LEN",
-    [6653] = "OFP_TCP_PORT",
-    [6653] = "OFP_SSL_PORT",
-    [6] = "OFP_ETH_ALEN",
-    [128] = "OFP_DEFAULT_MISS_SEND_LEN",
-    [0] = "OFP_VLAN_NONE",
-    [0] = "OFP_FLOW_PERMANENT",
-    [32768] = "OFP_DEFAULT_PRIORITY",
-    [4294967295] = "OFP_NO_BUFFER",
-    [256] = "DESC_STR_LEN",
-    [32] = "SERIAL_NUM_LEN",
-    [4294967295] = "OFPQ_ALL",
-    [65535] = "OFPQ_MAX_RATE_UNCFG",
-    [65535] = "OFPQ_MIN_RATE_UNCFG",
-}
-
-enum_v6_ofp_bundle_prop_type = {
-    [1] = "OFPBPT_TIME",
-    [65535] = "OFPBPT_EXPERIMENTER",
-}
-
-enum_v6_ofp_meter_mod_command = {
-    [0] = "OFPMC_ADD",
-    [1] = "OFPMC_MODIFY",
-    [2] = "OFPMC_DELETE",
-}
-
-enum_v6_ofp_flow_monitor_flags = {
-    [1] = "OFPFMF_INITIAL",
-    [2] = "OFPFMF_ADD",
-    [4] = "OFPFMF_REMOVED",
-    [8] = "OFPFMF_MODIFY",
-    [16] = "OFPFMF_INSTRUCTIONS",
-    [32] = "OFPFMF_NO_ABBREV",
-    [64] = "OFPFMF_ONLY_OWN",
-}
-
 enum_v6_ofp_flow_stats_reason = {
     [0] = "OFPFSR_STATS_REQUEST",
     [1] = "OFPFSR_STAT_TRIGGER",
@@ -3570,6 +3729,12 @@ enum_v6_ofp_group_mod_command = {
 
 enum_v6_ofp_queue_stats_prop_type = {
     [65535] = "OFPQSPT_EXPERIMENTER",
+}
+
+enum_v6_of_bsn_hash_type = {
+    [0] = "OFP_BSN_HASH_TYPE_L2",
+    [1] = "OFP_BSN_HASH_TYPE_L3",
+    [2] = "OFP_BSN_HASH_TYPE_ENHANCED",
 }
 
 enum_v6_ofp_bad_request_code = {
@@ -3592,6 +3757,27 @@ enum_v6_ofp_bad_request_code = {
     [16] = "OFPBRC_MULTIPART_BAD_SCHED",
     [17] = "OFPBRC_PIPELINE_FIELDS_ONLY",
     [18] = "OFPBRC_UNKNOWN",
+}
+
+enum_v6_ofp_bsn_pktin_flag = {
+    [1] = "OFP_BSN_PKTIN_FLAG_PDU",
+    [2] = "OFP_BSN_PKTIN_FLAG_NEW_HOST",
+    [4] = "OFP_BSN_PKTIN_FLAG_STATION_MOVE",
+    [8] = "OFP_BSN_PKTIN_FLAG_ARP",
+    [16] = "OFP_BSN_PKTIN_FLAG_DHCP",
+    [32] = "OFP_BSN_PKTIN_FLAG_L2_CPU",
+    [64] = "OFP_BSN_PKTIN_FLAG_DEBUG",
+    [128] = "OFP_BSN_PKTIN_FLAG_TTL_EXPIRED",
+    [256] = "OFP_BSN_PKTIN_FLAG_L3_MISS",
+    [512] = "OFP_BSN_PKTIN_FLAG_L3_CPU",
+    [1024] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL",
+    [2048] = "OFP_BSN_PKTIN_FLAG_SFLOW",
+    [4096] = "OFP_BSN_PKTIN_FLAG_ARP_CACHE",
+    [8192] = "OFP_BSN_PKTIN_FLAG_ARP_TARGET",
+    [16384] = "OFP_BSN_PKTIN_FLAG_IGMP",
+    [32768] = "OFP_BSN_PKTIN_FLAG_PIM",
+    [65536] = "OFP_BSN_PKTIN_FLAG_VXLAN_SIP_MISS",
+    [131072] = "OFP_BSN_PKTIN_FLAG_MC_RESERVED",
 }
 
 enum_v6_ofp_bad_instruction_code = {
@@ -3632,6 +3818,15 @@ enum_v6_ofp_meter_band_type = {
     [1] = "OFPMBT_DROP",
     [2] = "OFPMBT_DSCP_REMARK",
     [65535] = "OFPMBT_EXPERIMENTER",
+}
+
+enum_v6_of_bsn_vrf_counter = {
+    [0] = "OFP_BSN_VRF_COUNTER_BYTES",
+    [1] = "OFP_BSN_VRF_COUNTER_PACKETS",
+}
+
+enum_v6_ofp_bsn_vrf_counter_constants = {
+    [4294967295] = "OFP_BSN_VRF_ALL",
 }
 
 enum_v6_ofp_bundle_features_prop_type = {
@@ -3682,6 +3877,31 @@ enum_v6_ofp_table_feature_flag = {
     [16] = "OFPTFF_FIRST_EGRESS",
 }
 
+enum_v6_ofp_table_feature_prop_type = {
+    [0] = "OFPTFPT_INSTRUCTIONS",
+    [1] = "OFPTFPT_INSTRUCTIONS_MISS",
+    [2] = "OFPTFPT_NEXT_TABLES",
+    [3] = "OFPTFPT_NEXT_TABLES_MISS",
+    [4] = "OFPTFPT_WRITE_ACTIONS",
+    [5] = "OFPTFPT_WRITE_ACTIONS_MISS",
+    [6] = "OFPTFPT_APPLY_ACTIONS",
+    [7] = "OFPTFPT_APPLY_ACTIONS_MISS",
+    [8] = "OFPTFPT_MATCH",
+    [10] = "OFPTFPT_WILDCARDS",
+    [12] = "OFPTFPT_WRITE_SETFIELD",
+    [13] = "OFPTFPT_WRITE_SETFIELD_MISS",
+    [14] = "OFPTFPT_APPLY_SETFIELD",
+    [15] = "OFPTFPT_APPLY_SETFIELD_MISS",
+    [16] = "OFPTFPT_TABLE_SYNC_FROM",
+    [18] = "OFPTFPT_WRITE_COPYFIELD",
+    [19] = "OFPTFPT_WRITE_COPYFIELD_MISS",
+    [20] = "OFPTFPT_APPLY_COPYFIELD",
+    [21] = "OFPTFPT_APPLY_COPYFIELD_MISS",
+    [22] = "OFPTFPT_PACKET_TYPES",
+    [65534] = "OFPTFPT_EXPERIMENTER",
+    [65535] = "OFPTFPT_EXPERIMENTER_MISS",
+}
+
 enum_v6_ofp_group_bucket_prop_type = {
     [0] = "OFPGBPT_WEIGHT",
     [1] = "OFPGBPT_WATCH_PORT",
@@ -3724,6 +3944,17 @@ enum_v6_ofp_type = {
     [33] = "OFPT_BUNDLE_CONTROL",
     [34] = "OFPT_BUNDLE_ADD_MESSAGE",
     [35] = "OFPT_CONTROLLER_STATUS",
+}
+
+enum_v6_ofp_bsn_lacp_state = {
+    [1] = "OFP_BSN_LACP_STATE_ACTIVITY",
+    [2] = "OFP_BSN_LACP_STATE_TIMEOUT",
+    [4] = "OFP_BSN_LACP_STATE_AGGREGATION",
+    [8] = "OFP_BSN_LACP_STATE_SYNCHRONIZATION",
+    [16] = "OFP_BSN_LACP_STATE_COLLECTING",
+    [32] = "OFP_BSN_LACP_STATE_DISTRIBUTING",
+    [64] = "OFP_BSN_LACP_STATE_DEFAULTED",
+    [128] = "OFP_BSN_LACP_STATE_EXPIRED",
 }
 
 enum_v6_ofp_bsn_vport_q_in_q_untagged = {
@@ -12510,6 +12741,16 @@ fields['of15.action_id_bsn_checksum.type'] = ProtoField.uint16("of15.action_id_b
 fields['of15.action_id_bsn_checksum.len'] = ProtoField.uint16("of15.action_id_bsn_checksum.len", "len", base.DEC, nil)
 fields['of15.action_id_bsn_checksum.experimenter'] = ProtoField.uint32("of15.action_id_bsn_checksum.experimenter", "experimenter", base.DEC, nil)
 fields['of15.action_id_bsn_checksum.subtype'] = ProtoField.uint32("of15.action_id_bsn_checksum.subtype", "subtype", base.DEC, nil)
+fields['of15.action_bsn_gentable.type'] = ProtoField.uint16("of15.action_bsn_gentable.type", "type", base.DEC, nil)
+fields['of15.action_bsn_gentable.len'] = ProtoField.uint16("of15.action_bsn_gentable.len", "len", base.DEC, nil)
+fields['of15.action_bsn_gentable.experimenter'] = ProtoField.uint32("of15.action_bsn_gentable.experimenter", "experimenter", base.DEC, nil)
+fields['of15.action_bsn_gentable.subtype'] = ProtoField.uint32("of15.action_bsn_gentable.subtype", "subtype", base.DEC, nil)
+fields['of15.action_bsn_gentable.table_id'] = ProtoField.uint32("of15.action_bsn_gentable.table_id", "table_id", base.DEC, nil)
+fields['of15.action_bsn_gentable.key'] = ProtoField.bytes("of15.action_bsn_gentable.key", "key")
+fields['of15.action_id_bsn_gentable.type'] = ProtoField.uint16("of15.action_id_bsn_gentable.type", "type", base.DEC, nil)
+fields['of15.action_id_bsn_gentable.len'] = ProtoField.uint16("of15.action_id_bsn_gentable.len", "len", base.DEC, nil)
+fields['of15.action_id_bsn_gentable.experimenter'] = ProtoField.uint32("of15.action_id_bsn_gentable.experimenter", "experimenter", base.DEC, nil)
+fields['of15.action_id_bsn_gentable.subtype'] = ProtoField.uint32("of15.action_id_bsn_gentable.subtype", "subtype", base.DEC, nil)
 fields['of15.action_bsn_mirror.type'] = ProtoField.uint16("of15.action_bsn_mirror.type", "type", base.DEC, nil)
 fields['of15.action_bsn_mirror.len'] = ProtoField.uint16("of15.action_bsn_mirror.len", "len", base.DEC, nil)
 fields['of15.action_bsn_mirror.experimenter'] = ProtoField.uint32("of15.action_bsn_mirror.experimenter", "experimenter", base.DEC, nil)
@@ -12799,6 +13040,31 @@ fields['of15.bsn_header.length'] = ProtoField.uint16("of15.bsn_header.length", "
 fields['of15.bsn_header.xid'] = ProtoField.uint32("of15.bsn_header.xid", "xid", base.DEC, nil)
 fields['of15.bsn_header.experimenter'] = ProtoField.uint32("of15.bsn_header.experimenter", "experimenter", base.DEC, nil)
 fields['of15.bsn_header.subtype'] = ProtoField.uint32("of15.bsn_header.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_arp_idle.version'] = ProtoField.uint8("of15.bsn_arp_idle.version", "version", base.DEC, nil)
+fields['of15.bsn_arp_idle.type'] = ProtoField.uint8("of15.bsn_arp_idle.type", "type", base.DEC, nil)
+fields['of15.bsn_arp_idle.length'] = ProtoField.uint16("of15.bsn_arp_idle.length", "length", base.DEC, nil)
+fields['of15.bsn_arp_idle.xid'] = ProtoField.uint32("of15.bsn_arp_idle.xid", "xid", base.DEC, nil)
+fields['of15.bsn_arp_idle.experimenter'] = ProtoField.uint32("of15.bsn_arp_idle.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_arp_idle.subtype'] = ProtoField.uint32("of15.bsn_arp_idle.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_arp_idle.vlan_vid'] = ProtoField.uint16("of15.bsn_arp_idle.vlan_vid", "vlan_vid", base.DEC, nil)
+fields['of15.bsn_arp_idle.ipv4_addr'] = ProtoField.ipv4("of15.bsn_arp_idle.ipv4_addr", "ipv4_addr")
+fields['of15.experimenter_error_msg.version'] = ProtoField.uint8("of15.experimenter_error_msg.version", "version", base.DEC, nil)
+fields['of15.experimenter_error_msg.type'] = ProtoField.uint8("of15.experimenter_error_msg.type", "type", base.DEC, nil)
+fields['of15.experimenter_error_msg.length'] = ProtoField.uint16("of15.experimenter_error_msg.length", "length", base.DEC, nil)
+fields['of15.experimenter_error_msg.xid'] = ProtoField.uint32("of15.experimenter_error_msg.xid", "xid", base.DEC, nil)
+fields['of15.experimenter_error_msg.err_type'] = ProtoField.uint16("of15.experimenter_error_msg.err_type", "err_type", base.DEC, nil)
+fields['of15.experimenter_error_msg.subtype'] = ProtoField.uint16("of15.experimenter_error_msg.subtype", "subtype", base.DEC, nil)
+fields['of15.experimenter_error_msg.experimenter'] = ProtoField.uint32("of15.experimenter_error_msg.experimenter", "experimenter", base.DEC, nil)
+fields['of15.experimenter_error_msg.data'] = ProtoField.bytes("of15.experimenter_error_msg.data", "data")
+fields['of15.bsn_base_error.version'] = ProtoField.uint8("of15.bsn_base_error.version", "version", base.DEC, nil)
+fields['of15.bsn_base_error.type'] = ProtoField.uint8("of15.bsn_base_error.type", "type", base.DEC, nil)
+fields['of15.bsn_base_error.length'] = ProtoField.uint16("of15.bsn_base_error.length", "length", base.DEC, nil)
+fields['of15.bsn_base_error.xid'] = ProtoField.uint32("of15.bsn_base_error.xid", "xid", base.DEC, nil)
+fields['of15.bsn_base_error.err_type'] = ProtoField.uint16("of15.bsn_base_error.err_type", "err_type", base.DEC, nil)
+fields['of15.bsn_base_error.subtype'] = ProtoField.uint16("of15.bsn_base_error.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_base_error.experimenter'] = ProtoField.uint32("of15.bsn_base_error.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_base_error.err_msg'] = ProtoField.stringz("of15.bsn_base_error.err_msg", "err_msg")
+fields['of15.bsn_base_error.data'] = ProtoField.bytes("of15.bsn_base_error.data", "data")
 fields['of15.bsn_bw_clear_data_reply.version'] = ProtoField.uint8("of15.bsn_bw_clear_data_reply.version", "version", base.DEC, nil)
 fields['of15.bsn_bw_clear_data_reply.type'] = ProtoField.uint8("of15.bsn_bw_clear_data_reply.type", "type", base.DEC, nil)
 fields['of15.bsn_bw_clear_data_reply.length'] = ProtoField.uint16("of15.bsn_bw_clear_data_reply.length", "length", base.DEC, nil)
@@ -12840,6 +13106,352 @@ fields['of15.bsn_bw_enable_set_request.xid'] = ProtoField.uint32("of15.bsn_bw_en
 fields['of15.bsn_bw_enable_set_request.experimenter'] = ProtoField.uint32("of15.bsn_bw_enable_set_request.experimenter", "experimenter", base.DEC, nil)
 fields['of15.bsn_bw_enable_set_request.subtype'] = ProtoField.uint32("of15.bsn_bw_enable_set_request.subtype", "subtype", base.DEC, nil)
 fields['of15.bsn_bw_enable_set_request.enable'] = ProtoField.uint32("of15.bsn_bw_enable_set_request.enable", "enable", base.DEC, nil)
+fields['of15.bsn_controller_connection.state'] = ProtoField.uint32("of15.bsn_controller_connection.state", "state", base.DEC, enum_v6_ofp_bsn_controller_connection_state)
+fields['of15.bsn_controller_connection.auxiliary_id'] = ProtoField.uint8("of15.bsn_controller_connection.auxiliary_id", "auxiliary_id", base.DEC, nil)
+fields['of15.bsn_controller_connection.role'] = ProtoField.uint32("of15.bsn_controller_connection.role", "role", base.DEC, enum_v6_ofp_controller_role)
+fields['of15.bsn_controller_connection.uri'] = ProtoField.stringz("of15.bsn_controller_connection.uri", "uri")
+fields['of15.bsn_controller_connections_reply.version'] = ProtoField.uint8("of15.bsn_controller_connections_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_controller_connections_reply.type'] = ProtoField.uint8("of15.bsn_controller_connections_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_controller_connections_reply.length'] = ProtoField.uint16("of15.bsn_controller_connections_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_controller_connections_reply.xid'] = ProtoField.uint32("of15.bsn_controller_connections_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_controller_connections_reply.experimenter'] = ProtoField.uint32("of15.bsn_controller_connections_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_controller_connections_reply.subtype'] = ProtoField.uint32("of15.bsn_controller_connections_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_controller_connections_reply.connections'] = ProtoField.bytes("of15.bsn_controller_connections_reply.connections", "connections")
+fields['of15.bsn_controller_connections_request.version'] = ProtoField.uint8("of15.bsn_controller_connections_request.version", "version", base.DEC, nil)
+fields['of15.bsn_controller_connections_request.type'] = ProtoField.uint8("of15.bsn_controller_connections_request.type", "type", base.DEC, nil)
+fields['of15.bsn_controller_connections_request.length'] = ProtoField.uint16("of15.bsn_controller_connections_request.length", "length", base.DEC, nil)
+fields['of15.bsn_controller_connections_request.xid'] = ProtoField.uint32("of15.bsn_controller_connections_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_controller_connections_request.experimenter'] = ProtoField.uint32("of15.bsn_controller_connections_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_controller_connections_request.subtype'] = ProtoField.uint32("of15.bsn_controller_connections_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_entry.counter_id'] = ProtoField.uint64("of15.bsn_debug_counter_desc_stats_entry.counter_id", "counter_id", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_entry.name'] = ProtoField.stringz("of15.bsn_debug_counter_desc_stats_entry.name", "name")
+fields['of15.bsn_debug_counter_desc_stats_entry.description'] = ProtoField.stringz("of15.bsn_debug_counter_desc_stats_entry.description", "description")
+fields['of15.experimenter_stats_reply.version'] = ProtoField.uint8("of15.experimenter_stats_reply.version", "version", base.DEC, nil)
+fields['of15.experimenter_stats_reply.type'] = ProtoField.uint8("of15.experimenter_stats_reply.type", "type", base.DEC, nil)
+fields['of15.experimenter_stats_reply.length'] = ProtoField.uint16("of15.experimenter_stats_reply.length", "length", base.DEC, nil)
+fields['of15.experimenter_stats_reply.xid'] = ProtoField.uint32("of15.experimenter_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.experimenter_stats_reply.stats_type'] = ProtoField.uint16("of15.experimenter_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.experimenter_stats_reply.flags'] = ProtoField.uint32("of15.experimenter_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.experimenter_stats_reply.experimenter'] = ProtoField.uint32("of15.experimenter_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.experimenter_stats_reply.subtype'] = ProtoField.uint32("of15.experimenter_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_stats_reply.version'] = ProtoField.uint8("of15.bsn_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_stats_reply.type'] = ProtoField.uint8("of15.bsn_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_stats_reply.length'] = ProtoField.uint16("of15.bsn_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_stats_reply.xid'] = ProtoField.uint32("of15.bsn_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_stats_reply.flags'] = ProtoField.uint32("of15.bsn_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_reply.version'] = ProtoField.uint8("of15.bsn_debug_counter_desc_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_reply.type'] = ProtoField.uint8("of15.bsn_debug_counter_desc_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_reply.length'] = ProtoField.uint16("of15.bsn_debug_counter_desc_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_reply.xid'] = ProtoField.uint32("of15.bsn_debug_counter_desc_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_debug_counter_desc_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_reply.flags'] = ProtoField.uint32("of15.bsn_debug_counter_desc_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_debug_counter_desc_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_debug_counter_desc_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_debug_counter_desc_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_reply.entries'] = ProtoField.bytes("of15.bsn_debug_counter_desc_stats_reply.entries", "entries")
+fields['of15.experimenter_stats_request.version'] = ProtoField.uint8("of15.experimenter_stats_request.version", "version", base.DEC, nil)
+fields['of15.experimenter_stats_request.type'] = ProtoField.uint8("of15.experimenter_stats_request.type", "type", base.DEC, nil)
+fields['of15.experimenter_stats_request.length'] = ProtoField.uint16("of15.experimenter_stats_request.length", "length", base.DEC, nil)
+fields['of15.experimenter_stats_request.xid'] = ProtoField.uint32("of15.experimenter_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.experimenter_stats_request.stats_type'] = ProtoField.uint16("of15.experimenter_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.experimenter_stats_request.flags'] = ProtoField.uint32("of15.experimenter_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.experimenter_stats_request.experimenter'] = ProtoField.uint32("of15.experimenter_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.experimenter_stats_request.subtype'] = ProtoField.uint32("of15.experimenter_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_stats_request.version'] = ProtoField.uint8("of15.bsn_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_stats_request.type'] = ProtoField.uint8("of15.bsn_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_stats_request.length'] = ProtoField.uint16("of15.bsn_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_stats_request.xid'] = ProtoField.uint32("of15.bsn_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_stats_request.flags'] = ProtoField.uint32("of15.bsn_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_stats_request.subtype'] = ProtoField.uint32("of15.bsn_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_request.version'] = ProtoField.uint8("of15.bsn_debug_counter_desc_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_request.type'] = ProtoField.uint8("of15.bsn_debug_counter_desc_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_request.length'] = ProtoField.uint16("of15.bsn_debug_counter_desc_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_request.xid'] = ProtoField.uint32("of15.bsn_debug_counter_desc_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_debug_counter_desc_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_request.flags'] = ProtoField.uint32("of15.bsn_debug_counter_desc_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_debug_counter_desc_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_debug_counter_desc_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_debug_counter_desc_stats_request.subtype'] = ProtoField.uint32("of15.bsn_debug_counter_desc_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_entry.counter_id'] = ProtoField.uint64("of15.bsn_debug_counter_stats_entry.counter_id", "counter_id", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_entry.value'] = ProtoField.uint64("of15.bsn_debug_counter_stats_entry.value", "value", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_reply.version'] = ProtoField.uint8("of15.bsn_debug_counter_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_reply.type'] = ProtoField.uint8("of15.bsn_debug_counter_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_reply.length'] = ProtoField.uint16("of15.bsn_debug_counter_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_reply.xid'] = ProtoField.uint32("of15.bsn_debug_counter_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_debug_counter_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_reply.flags'] = ProtoField.uint32("of15.bsn_debug_counter_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_debug_counter_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_debug_counter_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_debug_counter_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_reply.entries'] = ProtoField.bytes("of15.bsn_debug_counter_stats_reply.entries", "entries")
+fields['of15.bsn_debug_counter_stats_request.version'] = ProtoField.uint8("of15.bsn_debug_counter_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_request.type'] = ProtoField.uint8("of15.bsn_debug_counter_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_request.length'] = ProtoField.uint16("of15.bsn_debug_counter_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_request.xid'] = ProtoField.uint32("of15.bsn_debug_counter_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_debug_counter_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_request.flags'] = ProtoField.uint32("of15.bsn_debug_counter_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_debug_counter_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_debug_counter_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_debug_counter_stats_request.subtype'] = ProtoField.uint32("of15.bsn_debug_counter_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_error.version'] = ProtoField.uint8("of15.bsn_error.version", "version", base.DEC, nil)
+fields['of15.bsn_error.type'] = ProtoField.uint8("of15.bsn_error.type", "type", base.DEC, nil)
+fields['of15.bsn_error.length'] = ProtoField.uint16("of15.bsn_error.length", "length", base.DEC, nil)
+fields['of15.bsn_error.xid'] = ProtoField.uint32("of15.bsn_error.xid", "xid", base.DEC, nil)
+fields['of15.bsn_error.err_type'] = ProtoField.uint16("of15.bsn_error.err_type", "err_type", base.DEC, nil)
+fields['of15.bsn_error.subtype'] = ProtoField.uint16("of15.bsn_error.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_error.experimenter'] = ProtoField.uint32("of15.bsn_error.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_error.err_msg'] = ProtoField.stringz("of15.bsn_error.err_msg", "err_msg")
+fields['of15.bsn_error.data'] = ProtoField.bytes("of15.bsn_error.data", "data")
+fields['of15.bsn_flow_checksum_bucket_stats_entry.checksum'] = ProtoField.uint64("of15.bsn_flow_checksum_bucket_stats_entry.checksum", "checksum", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_reply.version'] = ProtoField.uint8("of15.bsn_flow_checksum_bucket_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_reply.type'] = ProtoField.uint8("of15.bsn_flow_checksum_bucket_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_reply.length'] = ProtoField.uint16("of15.bsn_flow_checksum_bucket_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_reply.xid'] = ProtoField.uint32("of15.bsn_flow_checksum_bucket_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_flow_checksum_bucket_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_reply.flags'] = ProtoField.uint32("of15.bsn_flow_checksum_bucket_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_flow_checksum_bucket_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_flow_checksum_bucket_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_flow_checksum_bucket_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_reply.entries'] = ProtoField.bytes("of15.bsn_flow_checksum_bucket_stats_reply.entries", "entries")
+fields['of15.bsn_flow_checksum_bucket_stats_request.version'] = ProtoField.uint8("of15.bsn_flow_checksum_bucket_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_request.type'] = ProtoField.uint8("of15.bsn_flow_checksum_bucket_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_request.length'] = ProtoField.uint16("of15.bsn_flow_checksum_bucket_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_request.xid'] = ProtoField.uint32("of15.bsn_flow_checksum_bucket_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_flow_checksum_bucket_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_request.flags'] = ProtoField.uint32("of15.bsn_flow_checksum_bucket_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_flow_checksum_bucket_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_flow_checksum_bucket_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_request.subtype'] = ProtoField.uint32("of15.bsn_flow_checksum_bucket_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_flow_checksum_bucket_stats_request.table_id'] = ProtoField.uint8("of15.bsn_flow_checksum_bucket_stats_request.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_flow_idle.version'] = ProtoField.uint8("of15.bsn_flow_idle.version", "version", base.DEC, nil)
+fields['of15.bsn_flow_idle.type'] = ProtoField.uint8("of15.bsn_flow_idle.type", "type", base.DEC, nil)
+fields['of15.bsn_flow_idle.length'] = ProtoField.uint16("of15.bsn_flow_idle.length", "length", base.DEC, nil)
+fields['of15.bsn_flow_idle.xid'] = ProtoField.uint32("of15.bsn_flow_idle.xid", "xid", base.DEC, nil)
+fields['of15.bsn_flow_idle.experimenter'] = ProtoField.uint32("of15.bsn_flow_idle.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_flow_idle.subtype'] = ProtoField.uint32("of15.bsn_flow_idle.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_flow_idle.cookie'] = ProtoField.uint64("of15.bsn_flow_idle.cookie", "cookie", base.DEC, nil)
+fields['of15.bsn_flow_idle.priority'] = ProtoField.uint16("of15.bsn_flow_idle.priority", "priority", base.DEC, nil)
+fields['of15.bsn_flow_idle.table_id'] = ProtoField.uint8("of15.bsn_flow_idle.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_flow_idle.match'] = ProtoField.bytes("of15.bsn_flow_idle.match", "match")
+fields['of15.bsn_flow_idle_enable_get_reply.version'] = ProtoField.uint8("of15.bsn_flow_idle_enable_get_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_get_reply.type'] = ProtoField.uint8("of15.bsn_flow_idle_enable_get_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_get_reply.length'] = ProtoField.uint16("of15.bsn_flow_idle_enable_get_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_get_reply.xid'] = ProtoField.uint32("of15.bsn_flow_idle_enable_get_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_get_reply.experimenter'] = ProtoField.uint32("of15.bsn_flow_idle_enable_get_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_get_reply.subtype'] = ProtoField.uint32("of15.bsn_flow_idle_enable_get_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_get_reply.enabled'] = ProtoField.uint32("of15.bsn_flow_idle_enable_get_reply.enabled", "enabled", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_get_request.version'] = ProtoField.uint8("of15.bsn_flow_idle_enable_get_request.version", "version", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_get_request.type'] = ProtoField.uint8("of15.bsn_flow_idle_enable_get_request.type", "type", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_get_request.length'] = ProtoField.uint16("of15.bsn_flow_idle_enable_get_request.length", "length", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_get_request.xid'] = ProtoField.uint32("of15.bsn_flow_idle_enable_get_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_get_request.experimenter'] = ProtoField.uint32("of15.bsn_flow_idle_enable_get_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_get_request.subtype'] = ProtoField.uint32("of15.bsn_flow_idle_enable_get_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_reply.version'] = ProtoField.uint8("of15.bsn_flow_idle_enable_set_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_reply.type'] = ProtoField.uint8("of15.bsn_flow_idle_enable_set_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_reply.length'] = ProtoField.uint16("of15.bsn_flow_idle_enable_set_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_reply.xid'] = ProtoField.uint32("of15.bsn_flow_idle_enable_set_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_reply.experimenter'] = ProtoField.uint32("of15.bsn_flow_idle_enable_set_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_reply.subtype'] = ProtoField.uint32("of15.bsn_flow_idle_enable_set_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_reply.enable'] = ProtoField.uint32("of15.bsn_flow_idle_enable_set_reply.enable", "enable", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_reply.status'] = ProtoField.uint32("of15.bsn_flow_idle_enable_set_reply.status", "status", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_request.version'] = ProtoField.uint8("of15.bsn_flow_idle_enable_set_request.version", "version", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_request.type'] = ProtoField.uint8("of15.bsn_flow_idle_enable_set_request.type", "type", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_request.length'] = ProtoField.uint16("of15.bsn_flow_idle_enable_set_request.length", "length", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_request.xid'] = ProtoField.uint32("of15.bsn_flow_idle_enable_set_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_request.experimenter'] = ProtoField.uint32("of15.bsn_flow_idle_enable_set_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_request.subtype'] = ProtoField.uint32("of15.bsn_flow_idle_enable_set_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_flow_idle_enable_set_request.enable'] = ProtoField.uint32("of15.bsn_flow_idle_enable_set_request.enable", "enable", base.DEC, nil)
+fields['of15.bsn_generic_async.version'] = ProtoField.uint8("of15.bsn_generic_async.version", "version", base.DEC, nil)
+fields['of15.bsn_generic_async.type'] = ProtoField.uint8("of15.bsn_generic_async.type", "type", base.DEC, nil)
+fields['of15.bsn_generic_async.length'] = ProtoField.uint16("of15.bsn_generic_async.length", "length", base.DEC, nil)
+fields['of15.bsn_generic_async.xid'] = ProtoField.uint32("of15.bsn_generic_async.xid", "xid", base.DEC, nil)
+fields['of15.bsn_generic_async.experimenter'] = ProtoField.uint32("of15.bsn_generic_async.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_generic_async.subtype'] = ProtoField.uint32("of15.bsn_generic_async.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_generic_async.name'] = ProtoField.stringz("of15.bsn_generic_async.name", "name")
+fields['of15.bsn_generic_async.tlvs'] = ProtoField.bytes("of15.bsn_generic_async.tlvs", "tlvs")
+fields['of15.bsn_generic_command.version'] = ProtoField.uint8("of15.bsn_generic_command.version", "version", base.DEC, nil)
+fields['of15.bsn_generic_command.type'] = ProtoField.uint8("of15.bsn_generic_command.type", "type", base.DEC, nil)
+fields['of15.bsn_generic_command.length'] = ProtoField.uint16("of15.bsn_generic_command.length", "length", base.DEC, nil)
+fields['of15.bsn_generic_command.xid'] = ProtoField.uint32("of15.bsn_generic_command.xid", "xid", base.DEC, nil)
+fields['of15.bsn_generic_command.experimenter'] = ProtoField.uint32("of15.bsn_generic_command.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_generic_command.subtype'] = ProtoField.uint32("of15.bsn_generic_command.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_generic_command.name'] = ProtoField.stringz("of15.bsn_generic_command.name", "name")
+fields['of15.bsn_generic_command.tlvs'] = ProtoField.bytes("of15.bsn_generic_command.tlvs", "tlvs")
+fields['of15.bsn_generic_stats_entry.length'] = ProtoField.uint16("of15.bsn_generic_stats_entry.length", "length", base.DEC, nil)
+fields['of15.bsn_generic_stats_entry.tlvs'] = ProtoField.bytes("of15.bsn_generic_stats_entry.tlvs", "tlvs")
+fields['of15.bsn_generic_stats_reply.version'] = ProtoField.uint8("of15.bsn_generic_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_generic_stats_reply.type'] = ProtoField.uint8("of15.bsn_generic_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_generic_stats_reply.length'] = ProtoField.uint16("of15.bsn_generic_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_generic_stats_reply.xid'] = ProtoField.uint32("of15.bsn_generic_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_generic_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_generic_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_generic_stats_reply.flags'] = ProtoField.uint32("of15.bsn_generic_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_generic_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_generic_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_generic_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_generic_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_generic_stats_reply.entries'] = ProtoField.bytes("of15.bsn_generic_stats_reply.entries", "entries")
+fields['of15.bsn_generic_stats_request.version'] = ProtoField.uint8("of15.bsn_generic_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_generic_stats_request.type'] = ProtoField.uint8("of15.bsn_generic_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_generic_stats_request.length'] = ProtoField.uint16("of15.bsn_generic_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_generic_stats_request.xid'] = ProtoField.uint32("of15.bsn_generic_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_generic_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_generic_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_generic_stats_request.flags'] = ProtoField.uint32("of15.bsn_generic_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_generic_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_generic_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_generic_stats_request.subtype'] = ProtoField.uint32("of15.bsn_generic_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_generic_stats_request.name'] = ProtoField.stringz("of15.bsn_generic_stats_request.name", "name")
+fields['of15.bsn_generic_stats_request.tlvs'] = ProtoField.bytes("of15.bsn_generic_stats_request.tlvs", "tlvs")
+fields['of15.bsn_gentable_bucket_stats_entry.checksum'] = ProtoField.bytes("of15.bsn_gentable_bucket_stats_entry.checksum", "checksum")
+fields['of15.bsn_gentable_bucket_stats_reply.version'] = ProtoField.uint8("of15.bsn_gentable_bucket_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_reply.type'] = ProtoField.uint8("of15.bsn_gentable_bucket_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_reply.length'] = ProtoField.uint16("of15.bsn_gentable_bucket_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_reply.xid'] = ProtoField.uint32("of15.bsn_gentable_bucket_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_gentable_bucket_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_reply.flags'] = ProtoField.uint32("of15.bsn_gentable_bucket_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_gentable_bucket_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_gentable_bucket_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_gentable_bucket_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_reply.entries'] = ProtoField.bytes("of15.bsn_gentable_bucket_stats_reply.entries", "entries")
+fields['of15.bsn_gentable_bucket_stats_request.version'] = ProtoField.uint8("of15.bsn_gentable_bucket_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_request.type'] = ProtoField.uint8("of15.bsn_gentable_bucket_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_request.length'] = ProtoField.uint16("of15.bsn_gentable_bucket_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_request.xid'] = ProtoField.uint32("of15.bsn_gentable_bucket_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_gentable_bucket_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_request.flags'] = ProtoField.uint32("of15.bsn_gentable_bucket_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_gentable_bucket_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_gentable_bucket_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_request.subtype'] = ProtoField.uint32("of15.bsn_gentable_bucket_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_bucket_stats_request.table_id'] = ProtoField.uint16("of15.bsn_gentable_bucket_stats_request.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_gentable_clear_reply.version'] = ProtoField.uint8("of15.bsn_gentable_clear_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_clear_reply.type'] = ProtoField.uint8("of15.bsn_gentable_clear_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_clear_reply.length'] = ProtoField.uint16("of15.bsn_gentable_clear_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_clear_reply.xid'] = ProtoField.uint32("of15.bsn_gentable_clear_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_clear_reply.experimenter'] = ProtoField.uint32("of15.bsn_gentable_clear_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_clear_reply.subtype'] = ProtoField.uint32("of15.bsn_gentable_clear_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_clear_reply.table_id'] = ProtoField.uint16("of15.bsn_gentable_clear_reply.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_gentable_clear_reply.deleted_count'] = ProtoField.uint32("of15.bsn_gentable_clear_reply.deleted_count", "deleted_count", base.DEC, nil)
+fields['of15.bsn_gentable_clear_reply.error_count'] = ProtoField.uint32("of15.bsn_gentable_clear_reply.error_count", "error_count", base.DEC, nil)
+fields['of15.bsn_gentable_clear_request.version'] = ProtoField.uint8("of15.bsn_gentable_clear_request.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_clear_request.type'] = ProtoField.uint8("of15.bsn_gentable_clear_request.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_clear_request.length'] = ProtoField.uint16("of15.bsn_gentable_clear_request.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_clear_request.xid'] = ProtoField.uint32("of15.bsn_gentable_clear_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_clear_request.experimenter'] = ProtoField.uint32("of15.bsn_gentable_clear_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_clear_request.subtype'] = ProtoField.uint32("of15.bsn_gentable_clear_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_clear_request.table_id'] = ProtoField.uint16("of15.bsn_gentable_clear_request.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_gentable_clear_request.checksum'] = ProtoField.bytes("of15.bsn_gentable_clear_request.checksum", "checksum")
+fields['of15.bsn_gentable_clear_request.checksum_mask'] = ProtoField.bytes("of15.bsn_gentable_clear_request.checksum_mask", "checksum_mask")
+fields['of15.bsn_gentable_desc_stats_entry.length'] = ProtoField.uint16("of15.bsn_gentable_desc_stats_entry.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_entry.table_id'] = ProtoField.uint16("of15.bsn_gentable_desc_stats_entry.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_entry.name'] = ProtoField.stringz("of15.bsn_gentable_desc_stats_entry.name", "name")
+fields['of15.bsn_gentable_desc_stats_entry.buckets_size'] = ProtoField.uint32("of15.bsn_gentable_desc_stats_entry.buckets_size", "buckets_size", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_entry.max_entries'] = ProtoField.uint32("of15.bsn_gentable_desc_stats_entry.max_entries", "max_entries", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_reply.version'] = ProtoField.uint8("of15.bsn_gentable_desc_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_reply.type'] = ProtoField.uint8("of15.bsn_gentable_desc_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_reply.length'] = ProtoField.uint16("of15.bsn_gentable_desc_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_reply.xid'] = ProtoField.uint32("of15.bsn_gentable_desc_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_gentable_desc_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_reply.flags'] = ProtoField.uint32("of15.bsn_gentable_desc_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_gentable_desc_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_gentable_desc_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_gentable_desc_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_reply.entries'] = ProtoField.bytes("of15.bsn_gentable_desc_stats_reply.entries", "entries")
+fields['of15.bsn_gentable_desc_stats_request.version'] = ProtoField.uint8("of15.bsn_gentable_desc_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_request.type'] = ProtoField.uint8("of15.bsn_gentable_desc_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_request.length'] = ProtoField.uint16("of15.bsn_gentable_desc_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_request.xid'] = ProtoField.uint32("of15.bsn_gentable_desc_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_gentable_desc_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_request.flags'] = ProtoField.uint32("of15.bsn_gentable_desc_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_gentable_desc_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_gentable_desc_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_desc_stats_request.subtype'] = ProtoField.uint32("of15.bsn_gentable_desc_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_entry_add.version'] = ProtoField.uint8("of15.bsn_gentable_entry_add.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_entry_add.type'] = ProtoField.uint8("of15.bsn_gentable_entry_add.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_entry_add.length'] = ProtoField.uint16("of15.bsn_gentable_entry_add.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_entry_add.xid'] = ProtoField.uint32("of15.bsn_gentable_entry_add.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_entry_add.experimenter'] = ProtoField.uint32("of15.bsn_gentable_entry_add.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_entry_add.subtype'] = ProtoField.uint32("of15.bsn_gentable_entry_add.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_entry_add.table_id'] = ProtoField.uint16("of15.bsn_gentable_entry_add.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_gentable_entry_add.key_length'] = ProtoField.uint16("of15.bsn_gentable_entry_add.key_length", "key_length", base.DEC, nil)
+fields['of15.bsn_gentable_entry_add.checksum'] = ProtoField.bytes("of15.bsn_gentable_entry_add.checksum", "checksum")
+fields['of15.bsn_gentable_entry_add.key'] = ProtoField.bytes("of15.bsn_gentable_entry_add.key", "key")
+fields['of15.bsn_gentable_entry_add.value'] = ProtoField.bytes("of15.bsn_gentable_entry_add.value", "value")
+fields['of15.bsn_gentable_entry_delete.version'] = ProtoField.uint8("of15.bsn_gentable_entry_delete.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_entry_delete.type'] = ProtoField.uint8("of15.bsn_gentable_entry_delete.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_entry_delete.length'] = ProtoField.uint16("of15.bsn_gentable_entry_delete.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_entry_delete.xid'] = ProtoField.uint32("of15.bsn_gentable_entry_delete.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_entry_delete.experimenter'] = ProtoField.uint32("of15.bsn_gentable_entry_delete.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_entry_delete.subtype'] = ProtoField.uint32("of15.bsn_gentable_entry_delete.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_entry_delete.table_id'] = ProtoField.uint16("of15.bsn_gentable_entry_delete.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_gentable_entry_delete.key'] = ProtoField.bytes("of15.bsn_gentable_entry_delete.key", "key")
+fields['of15.bsn_gentable_entry_desc_stats_entry.length'] = ProtoField.uint16("of15.bsn_gentable_entry_desc_stats_entry.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_entry.key_length'] = ProtoField.uint16("of15.bsn_gentable_entry_desc_stats_entry.key_length", "key_length", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_entry.checksum'] = ProtoField.bytes("of15.bsn_gentable_entry_desc_stats_entry.checksum", "checksum")
+fields['of15.bsn_gentable_entry_desc_stats_entry.key'] = ProtoField.bytes("of15.bsn_gentable_entry_desc_stats_entry.key", "key")
+fields['of15.bsn_gentable_entry_desc_stats_entry.value'] = ProtoField.bytes("of15.bsn_gentable_entry_desc_stats_entry.value", "value")
+fields['of15.bsn_gentable_entry_desc_stats_reply.version'] = ProtoField.uint8("of15.bsn_gentable_entry_desc_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_reply.type'] = ProtoField.uint8("of15.bsn_gentable_entry_desc_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_reply.length'] = ProtoField.uint16("of15.bsn_gentable_entry_desc_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_reply.xid'] = ProtoField.uint32("of15.bsn_gentable_entry_desc_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_gentable_entry_desc_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_reply.flags'] = ProtoField.uint32("of15.bsn_gentable_entry_desc_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_gentable_entry_desc_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_gentable_entry_desc_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_gentable_entry_desc_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_reply.entries'] = ProtoField.bytes("of15.bsn_gentable_entry_desc_stats_reply.entries", "entries")
+fields['of15.bsn_gentable_entry_desc_stats_request.version'] = ProtoField.uint8("of15.bsn_gentable_entry_desc_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_request.type'] = ProtoField.uint8("of15.bsn_gentable_entry_desc_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_request.length'] = ProtoField.uint16("of15.bsn_gentable_entry_desc_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_request.xid'] = ProtoField.uint32("of15.bsn_gentable_entry_desc_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_gentable_entry_desc_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_request.flags'] = ProtoField.uint32("of15.bsn_gentable_entry_desc_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_gentable_entry_desc_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_gentable_entry_desc_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_request.subtype'] = ProtoField.uint32("of15.bsn_gentable_entry_desc_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_request.table_id'] = ProtoField.uint16("of15.bsn_gentable_entry_desc_stats_request.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_gentable_entry_desc_stats_request.checksum'] = ProtoField.bytes("of15.bsn_gentable_entry_desc_stats_request.checksum", "checksum")
+fields['of15.bsn_gentable_entry_desc_stats_request.checksum_mask'] = ProtoField.bytes("of15.bsn_gentable_entry_desc_stats_request.checksum_mask", "checksum_mask")
+fields['of15.bsn_gentable_entry_stats_entry.length'] = ProtoField.uint16("of15.bsn_gentable_entry_stats_entry.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_entry.key_length'] = ProtoField.uint16("of15.bsn_gentable_entry_stats_entry.key_length", "key_length", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_entry.key'] = ProtoField.bytes("of15.bsn_gentable_entry_stats_entry.key", "key")
+fields['of15.bsn_gentable_entry_stats_entry.stats'] = ProtoField.bytes("of15.bsn_gentable_entry_stats_entry.stats", "stats")
+fields['of15.bsn_gentable_entry_stats_reply.version'] = ProtoField.uint8("of15.bsn_gentable_entry_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_reply.type'] = ProtoField.uint8("of15.bsn_gentable_entry_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_reply.length'] = ProtoField.uint16("of15.bsn_gentable_entry_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_reply.xid'] = ProtoField.uint32("of15.bsn_gentable_entry_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_gentable_entry_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_reply.flags'] = ProtoField.uint32("of15.bsn_gentable_entry_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_gentable_entry_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_gentable_entry_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_gentable_entry_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_reply.entries'] = ProtoField.bytes("of15.bsn_gentable_entry_stats_reply.entries", "entries")
+fields['of15.bsn_gentable_entry_stats_request.version'] = ProtoField.uint8("of15.bsn_gentable_entry_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_request.type'] = ProtoField.uint8("of15.bsn_gentable_entry_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_request.length'] = ProtoField.uint16("of15.bsn_gentable_entry_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_request.xid'] = ProtoField.uint32("of15.bsn_gentable_entry_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_gentable_entry_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_request.flags'] = ProtoField.uint32("of15.bsn_gentable_entry_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_gentable_entry_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_gentable_entry_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_request.subtype'] = ProtoField.uint32("of15.bsn_gentable_entry_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_request.table_id'] = ProtoField.uint16("of15.bsn_gentable_entry_stats_request.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_gentable_entry_stats_request.checksum'] = ProtoField.bytes("of15.bsn_gentable_entry_stats_request.checksum", "checksum")
+fields['of15.bsn_gentable_entry_stats_request.checksum_mask'] = ProtoField.bytes("of15.bsn_gentable_entry_stats_request.checksum_mask", "checksum_mask")
+fields['of15.bsn_gentable_set_buckets_size.version'] = ProtoField.uint8("of15.bsn_gentable_set_buckets_size.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_set_buckets_size.type'] = ProtoField.uint8("of15.bsn_gentable_set_buckets_size.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_set_buckets_size.length'] = ProtoField.uint16("of15.bsn_gentable_set_buckets_size.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_set_buckets_size.xid'] = ProtoField.uint32("of15.bsn_gentable_set_buckets_size.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_set_buckets_size.experimenter'] = ProtoField.uint32("of15.bsn_gentable_set_buckets_size.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_set_buckets_size.subtype'] = ProtoField.uint32("of15.bsn_gentable_set_buckets_size.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_set_buckets_size.table_id'] = ProtoField.uint16("of15.bsn_gentable_set_buckets_size.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_gentable_set_buckets_size.buckets_size'] = ProtoField.uint32("of15.bsn_gentable_set_buckets_size.buckets_size", "buckets_size", base.DEC, nil)
+fields['of15.bsn_gentable_stats_entry.table_id'] = ProtoField.uint16("of15.bsn_gentable_stats_entry.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_gentable_stats_entry.entry_count'] = ProtoField.uint32("of15.bsn_gentable_stats_entry.entry_count", "entry_count", base.DEC, nil)
+fields['of15.bsn_gentable_stats_entry.checksum'] = ProtoField.bytes("of15.bsn_gentable_stats_entry.checksum", "checksum")
+fields['of15.bsn_gentable_stats_reply.version'] = ProtoField.uint8("of15.bsn_gentable_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_stats_reply.type'] = ProtoField.uint8("of15.bsn_gentable_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_stats_reply.length'] = ProtoField.uint16("of15.bsn_gentable_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_stats_reply.xid'] = ProtoField.uint32("of15.bsn_gentable_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_gentable_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_gentable_stats_reply.flags'] = ProtoField.uint32("of15.bsn_gentable_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_gentable_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_gentable_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_gentable_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_stats_reply.entries'] = ProtoField.bytes("of15.bsn_gentable_stats_reply.entries", "entries")
+fields['of15.bsn_gentable_stats_request.version'] = ProtoField.uint8("of15.bsn_gentable_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_stats_request.type'] = ProtoField.uint8("of15.bsn_gentable_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_stats_request.length'] = ProtoField.uint16("of15.bsn_gentable_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_stats_request.xid'] = ProtoField.uint32("of15.bsn_gentable_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_gentable_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_gentable_stats_request.flags'] = ProtoField.uint32("of15.bsn_gentable_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_gentable_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_gentable_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_stats_request.subtype'] = ProtoField.uint32("of15.bsn_gentable_stats_request.subtype", "subtype", base.DEC, nil)
 fields['of15.bsn_get_interfaces_reply.version'] = ProtoField.uint8("of15.bsn_get_interfaces_reply.version", "version", base.DEC, nil)
 fields['of15.bsn_get_interfaces_reply.type'] = ProtoField.uint8("of15.bsn_get_interfaces_reply.type", "type", base.DEC, nil)
 fields['of15.bsn_get_interfaces_reply.length'] = ProtoField.uint16("of15.bsn_get_interfaces_reply.length", "length", base.DEC, nil)
@@ -12867,10 +13479,126 @@ fields['of15.bsn_get_mirroring_request.xid'] = ProtoField.uint32("of15.bsn_get_m
 fields['of15.bsn_get_mirroring_request.experimenter'] = ProtoField.uint32("of15.bsn_get_mirroring_request.experimenter", "experimenter", base.DEC, nil)
 fields['of15.bsn_get_mirroring_request.subtype'] = ProtoField.uint32("of15.bsn_get_mirroring_request.subtype", "subtype", base.DEC, nil)
 fields['of15.bsn_get_mirroring_request.report_mirror_ports'] = ProtoField.uint8("of15.bsn_get_mirroring_request.report_mirror_ports", "report_mirror_ports", base.DEC, nil)
+fields['of15.bsn_get_switch_pipeline_reply.version'] = ProtoField.uint8("of15.bsn_get_switch_pipeline_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_get_switch_pipeline_reply.type'] = ProtoField.uint8("of15.bsn_get_switch_pipeline_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_get_switch_pipeline_reply.length'] = ProtoField.uint16("of15.bsn_get_switch_pipeline_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_get_switch_pipeline_reply.xid'] = ProtoField.uint32("of15.bsn_get_switch_pipeline_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_get_switch_pipeline_reply.experimenter'] = ProtoField.uint32("of15.bsn_get_switch_pipeline_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_get_switch_pipeline_reply.subtype'] = ProtoField.uint32("of15.bsn_get_switch_pipeline_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_get_switch_pipeline_reply.pipeline'] = ProtoField.stringz("of15.bsn_get_switch_pipeline_reply.pipeline", "pipeline")
+fields['of15.bsn_get_switch_pipeline_request.version'] = ProtoField.uint8("of15.bsn_get_switch_pipeline_request.version", "version", base.DEC, nil)
+fields['of15.bsn_get_switch_pipeline_request.type'] = ProtoField.uint8("of15.bsn_get_switch_pipeline_request.type", "type", base.DEC, nil)
+fields['of15.bsn_get_switch_pipeline_request.length'] = ProtoField.uint16("of15.bsn_get_switch_pipeline_request.length", "length", base.DEC, nil)
+fields['of15.bsn_get_switch_pipeline_request.xid'] = ProtoField.uint32("of15.bsn_get_switch_pipeline_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_get_switch_pipeline_request.experimenter'] = ProtoField.uint32("of15.bsn_get_switch_pipeline_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_get_switch_pipeline_request.subtype'] = ProtoField.uint32("of15.bsn_get_switch_pipeline_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_reply.version'] = ProtoField.uint8("of15.bsn_image_desc_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_reply.type'] = ProtoField.uint8("of15.bsn_image_desc_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_reply.length'] = ProtoField.uint16("of15.bsn_image_desc_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_reply.xid'] = ProtoField.uint32("of15.bsn_image_desc_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_image_desc_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_reply.flags'] = ProtoField.uint32("of15.bsn_image_desc_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_image_desc_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_image_desc_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_image_desc_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_reply.image_checksum'] = ProtoField.stringz("of15.bsn_image_desc_stats_reply.image_checksum", "image_checksum")
+fields['of15.bsn_image_desc_stats_reply.startup_config_checksum'] = ProtoField.stringz("of15.bsn_image_desc_stats_reply.startup_config_checksum", "startup_config_checksum")
+fields['of15.bsn_image_desc_stats_request.version'] = ProtoField.uint8("of15.bsn_image_desc_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_request.type'] = ProtoField.uint8("of15.bsn_image_desc_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_request.length'] = ProtoField.uint16("of15.bsn_image_desc_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_request.xid'] = ProtoField.uint32("of15.bsn_image_desc_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_image_desc_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_request.flags'] = ProtoField.uint32("of15.bsn_image_desc_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_image_desc_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_image_desc_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_image_desc_stats_request.subtype'] = ProtoField.uint32("of15.bsn_image_desc_stats_request.subtype", "subtype", base.DEC, nil)
 fields['of15.bsn_interface.hw_addr'] = ProtoField.ether("of15.bsn_interface.hw_addr", "hw_addr")
 fields['of15.bsn_interface.name'] = ProtoField.stringz("of15.bsn_interface.name", "name")
 fields['of15.bsn_interface.ipv4_addr'] = ProtoField.ipv4("of15.bsn_interface.ipv4_addr", "ipv4_addr")
 fields['of15.bsn_interface.ipv4_netmask'] = ProtoField.ipv4("of15.bsn_interface.ipv4_netmask", "ipv4_netmask")
+fields['of15.bsn_lacp_convergence_notif.version'] = ProtoField.uint8("of15.bsn_lacp_convergence_notif.version", "version", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.type'] = ProtoField.uint8("of15.bsn_lacp_convergence_notif.type", "type", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.length'] = ProtoField.uint16("of15.bsn_lacp_convergence_notif.length", "length", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.xid'] = ProtoField.uint32("of15.bsn_lacp_convergence_notif.xid", "xid", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.experimenter'] = ProtoField.uint32("of15.bsn_lacp_convergence_notif.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.subtype'] = ProtoField.uint32("of15.bsn_lacp_convergence_notif.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.convergence_status'] = ProtoField.uint8("of15.bsn_lacp_convergence_notif.convergence_status", "convergence_status", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.port_no'] = ProtoField.uint32("of15.bsn_lacp_convergence_notif.port_no", "port_no", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.actor_sys_priority'] = ProtoField.uint16("of15.bsn_lacp_convergence_notif.actor_sys_priority", "actor_sys_priority", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.actor_sys_mac'] = ProtoField.ether("of15.bsn_lacp_convergence_notif.actor_sys_mac", "actor_sys_mac")
+fields['of15.bsn_lacp_convergence_notif.actor_port_priority'] = ProtoField.uint16("of15.bsn_lacp_convergence_notif.actor_port_priority", "actor_port_priority", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.actor_port_num'] = ProtoField.uint16("of15.bsn_lacp_convergence_notif.actor_port_num", "actor_port_num", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.actor_key'] = ProtoField.uint16("of15.bsn_lacp_convergence_notif.actor_key", "actor_key", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.partner_sys_priority'] = ProtoField.uint16("of15.bsn_lacp_convergence_notif.partner_sys_priority", "partner_sys_priority", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.partner_sys_mac'] = ProtoField.ether("of15.bsn_lacp_convergence_notif.partner_sys_mac", "partner_sys_mac")
+fields['of15.bsn_lacp_convergence_notif.partner_port_priority'] = ProtoField.uint16("of15.bsn_lacp_convergence_notif.partner_port_priority", "partner_port_priority", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.partner_port_num'] = ProtoField.uint16("of15.bsn_lacp_convergence_notif.partner_port_num", "partner_port_num", base.DEC, nil)
+fields['of15.bsn_lacp_convergence_notif.partner_key'] = ProtoField.uint16("of15.bsn_lacp_convergence_notif.partner_key", "partner_key", base.DEC, nil)
+fields['of15.bsn_lacp_stats_entry.port_no'] = ProtoField.uint32("of15.bsn_lacp_stats_entry.port_no", "port_no", base.DEC, nil)
+fields['of15.bsn_lacp_stats_entry.actor_sys_priority'] = ProtoField.uint16("of15.bsn_lacp_stats_entry.actor_sys_priority", "actor_sys_priority", base.DEC, nil)
+fields['of15.bsn_lacp_stats_entry.actor_sys_mac'] = ProtoField.ether("of15.bsn_lacp_stats_entry.actor_sys_mac", "actor_sys_mac")
+fields['of15.bsn_lacp_stats_entry.actor_port_priority'] = ProtoField.uint16("of15.bsn_lacp_stats_entry.actor_port_priority", "actor_port_priority", base.DEC, nil)
+fields['of15.bsn_lacp_stats_entry.actor_port_num'] = ProtoField.uint16("of15.bsn_lacp_stats_entry.actor_port_num", "actor_port_num", base.DEC, nil)
+fields['of15.bsn_lacp_stats_entry.actor_key'] = ProtoField.uint16("of15.bsn_lacp_stats_entry.actor_key", "actor_key", base.DEC, nil)
+fields['of15.bsn_lacp_stats_entry.convergence_status'] = ProtoField.uint8("of15.bsn_lacp_stats_entry.convergence_status", "convergence_status", base.DEC, nil)
+fields['of15.bsn_lacp_stats_entry.partner_sys_priority'] = ProtoField.uint16("of15.bsn_lacp_stats_entry.partner_sys_priority", "partner_sys_priority", base.DEC, nil)
+fields['of15.bsn_lacp_stats_entry.partner_sys_mac'] = ProtoField.ether("of15.bsn_lacp_stats_entry.partner_sys_mac", "partner_sys_mac")
+fields['of15.bsn_lacp_stats_entry.partner_port_priority'] = ProtoField.uint16("of15.bsn_lacp_stats_entry.partner_port_priority", "partner_port_priority", base.DEC, nil)
+fields['of15.bsn_lacp_stats_entry.partner_port_num'] = ProtoField.uint16("of15.bsn_lacp_stats_entry.partner_port_num", "partner_port_num", base.DEC, nil)
+fields['of15.bsn_lacp_stats_entry.partner_key'] = ProtoField.uint16("of15.bsn_lacp_stats_entry.partner_key", "partner_key", base.DEC, nil)
+fields['of15.bsn_lacp_stats_reply.version'] = ProtoField.uint8("of15.bsn_lacp_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_lacp_stats_reply.type'] = ProtoField.uint8("of15.bsn_lacp_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_lacp_stats_reply.length'] = ProtoField.uint16("of15.bsn_lacp_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_lacp_stats_reply.xid'] = ProtoField.uint32("of15.bsn_lacp_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_lacp_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_lacp_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_lacp_stats_reply.flags'] = ProtoField.uint32("of15.bsn_lacp_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_lacp_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_lacp_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_lacp_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_lacp_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_lacp_stats_reply.entries'] = ProtoField.bytes("of15.bsn_lacp_stats_reply.entries", "entries")
+fields['of15.bsn_lacp_stats_request.version'] = ProtoField.uint8("of15.bsn_lacp_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_lacp_stats_request.type'] = ProtoField.uint8("of15.bsn_lacp_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_lacp_stats_request.length'] = ProtoField.uint16("of15.bsn_lacp_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_lacp_stats_request.xid'] = ProtoField.uint32("of15.bsn_lacp_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_lacp_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_lacp_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_lacp_stats_request.flags'] = ProtoField.uint32("of15.bsn_lacp_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_lacp_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_lacp_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_lacp_stats_request.subtype'] = ProtoField.uint32("of15.bsn_lacp_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_log.version'] = ProtoField.uint8("of15.bsn_log.version", "version", base.DEC, nil)
+fields['of15.bsn_log.type'] = ProtoField.uint8("of15.bsn_log.type", "type", base.DEC, nil)
+fields['of15.bsn_log.length'] = ProtoField.uint16("of15.bsn_log.length", "length", base.DEC, nil)
+fields['of15.bsn_log.xid'] = ProtoField.uint32("of15.bsn_log.xid", "xid", base.DEC, nil)
+fields['of15.bsn_log.experimenter'] = ProtoField.uint32("of15.bsn_log.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_log.subtype'] = ProtoField.uint32("of15.bsn_log.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_log.loglevel'] = ProtoField.uint32("of15.bsn_log.loglevel", "loglevel", base.DEC, enum_v6_ofp_bsn_loglevel)
+fields['of15.bsn_log.data'] = ProtoField.bytes("of15.bsn_log.data", "data")
+fields['of15.bsn_lua_command_reply.version'] = ProtoField.uint8("of15.bsn_lua_command_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_lua_command_reply.type'] = ProtoField.uint8("of15.bsn_lua_command_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_lua_command_reply.length'] = ProtoField.uint16("of15.bsn_lua_command_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_lua_command_reply.xid'] = ProtoField.uint32("of15.bsn_lua_command_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_lua_command_reply.experimenter'] = ProtoField.uint32("of15.bsn_lua_command_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_lua_command_reply.subtype'] = ProtoField.uint32("of15.bsn_lua_command_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_lua_command_reply.data'] = ProtoField.bytes("of15.bsn_lua_command_reply.data", "data")
+fields['of15.bsn_lua_command_request.version'] = ProtoField.uint8("of15.bsn_lua_command_request.version", "version", base.DEC, nil)
+fields['of15.bsn_lua_command_request.type'] = ProtoField.uint8("of15.bsn_lua_command_request.type", "type", base.DEC, nil)
+fields['of15.bsn_lua_command_request.length'] = ProtoField.uint16("of15.bsn_lua_command_request.length", "length", base.DEC, nil)
+fields['of15.bsn_lua_command_request.xid'] = ProtoField.uint32("of15.bsn_lua_command_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_lua_command_request.experimenter'] = ProtoField.uint32("of15.bsn_lua_command_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_lua_command_request.subtype'] = ProtoField.uint32("of15.bsn_lua_command_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_lua_command_request.data'] = ProtoField.bytes("of15.bsn_lua_command_request.data", "data")
+fields['of15.bsn_lua_notification.version'] = ProtoField.uint8("of15.bsn_lua_notification.version", "version", base.DEC, nil)
+fields['of15.bsn_lua_notification.type'] = ProtoField.uint8("of15.bsn_lua_notification.type", "type", base.DEC, nil)
+fields['of15.bsn_lua_notification.length'] = ProtoField.uint16("of15.bsn_lua_notification.length", "length", base.DEC, nil)
+fields['of15.bsn_lua_notification.xid'] = ProtoField.uint32("of15.bsn_lua_notification.xid", "xid", base.DEC, nil)
+fields['of15.bsn_lua_notification.experimenter'] = ProtoField.uint32("of15.bsn_lua_notification.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_lua_notification.subtype'] = ProtoField.uint32("of15.bsn_lua_notification.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_lua_notification.data'] = ProtoField.bytes("of15.bsn_lua_notification.data", "data")
+fields['of15.bsn_lua_upload.version'] = ProtoField.uint8("of15.bsn_lua_upload.version", "version", base.DEC, nil)
+fields['of15.bsn_lua_upload.type'] = ProtoField.uint8("of15.bsn_lua_upload.type", "type", base.DEC, nil)
+fields['of15.bsn_lua_upload.length'] = ProtoField.uint16("of15.bsn_lua_upload.length", "length", base.DEC, nil)
+fields['of15.bsn_lua_upload.xid'] = ProtoField.uint32("of15.bsn_lua_upload.xid", "xid", base.DEC, nil)
+fields['of15.bsn_lua_upload.experimenter'] = ProtoField.uint32("of15.bsn_lua_upload.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_lua_upload.subtype'] = ProtoField.uint32("of15.bsn_lua_upload.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_lua_upload.flags'] = ProtoField.uint32("of15.bsn_lua_upload.flags", "flags", base.HEX, enum_v6_ofp_bsn_lua_upload_flags)
+fields['of15.bsn_lua_upload.filename'] = ProtoField.stringz("of15.bsn_lua_upload.filename", "filename")
+fields['of15.bsn_lua_upload.data'] = ProtoField.bytes("of15.bsn_lua_upload.data", "data")
 fields['of15.bsn_pdu_rx_reply.version'] = ProtoField.uint8("of15.bsn_pdu_rx_reply.version", "version", base.DEC, nil)
 fields['of15.bsn_pdu_rx_reply.type'] = ProtoField.uint8("of15.bsn_pdu_rx_reply.type", "type", base.DEC, nil)
 fields['of15.bsn_pdu_rx_reply.length'] = ProtoField.uint16("of15.bsn_pdu_rx_reply.length", "length", base.DEC, nil)
@@ -12917,6 +13645,63 @@ fields['of15.bsn_pdu_tx_request.tx_interval_ms'] = ProtoField.uint32("of15.bsn_p
 fields['of15.bsn_pdu_tx_request.port_no'] = ProtoField.uint32("of15.bsn_pdu_tx_request.port_no", "port_no", base.DEC, nil)
 fields['of15.bsn_pdu_tx_request.slot_num'] = ProtoField.uint8("of15.bsn_pdu_tx_request.slot_num", "slot_num", base.DEC, nil)
 fields['of15.bsn_pdu_tx_request.data'] = ProtoField.bytes("of15.bsn_pdu_tx_request.data", "data")
+fields['of15.bsn_port_counter_stats_entry.length'] = ProtoField.uint16("of15.bsn_port_counter_stats_entry.length", "length", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_entry.port_no'] = ProtoField.uint32("of15.bsn_port_counter_stats_entry.port_no", "port_no", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_entry.values'] = ProtoField.bytes("of15.bsn_port_counter_stats_entry.values", "values")
+fields['of15.bsn_port_counter_stats_reply.version'] = ProtoField.uint8("of15.bsn_port_counter_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_reply.type'] = ProtoField.uint8("of15.bsn_port_counter_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_reply.length'] = ProtoField.uint16("of15.bsn_port_counter_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_reply.xid'] = ProtoField.uint32("of15.bsn_port_counter_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_port_counter_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_reply.flags'] = ProtoField.uint32("of15.bsn_port_counter_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_port_counter_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_port_counter_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_port_counter_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_reply.entries'] = ProtoField.bytes("of15.bsn_port_counter_stats_reply.entries", "entries")
+fields['of15.bsn_port_counter_stats_request.version'] = ProtoField.uint8("of15.bsn_port_counter_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_request.type'] = ProtoField.uint8("of15.bsn_port_counter_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_request.length'] = ProtoField.uint16("of15.bsn_port_counter_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_request.xid'] = ProtoField.uint32("of15.bsn_port_counter_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_port_counter_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_request.flags'] = ProtoField.uint32("of15.bsn_port_counter_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_port_counter_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_port_counter_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_request.subtype'] = ProtoField.uint32("of15.bsn_port_counter_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_port_counter_stats_request.port_no'] = ProtoField.uint32("of15.bsn_port_counter_stats_request.port_no", "port_no", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_reply.version'] = ProtoField.uint8("of15.bsn_set_aux_cxns_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_reply.type'] = ProtoField.uint8("of15.bsn_set_aux_cxns_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_reply.length'] = ProtoField.uint16("of15.bsn_set_aux_cxns_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_reply.xid'] = ProtoField.uint32("of15.bsn_set_aux_cxns_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_reply.experimenter'] = ProtoField.uint32("of15.bsn_set_aux_cxns_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_reply.subtype'] = ProtoField.uint32("of15.bsn_set_aux_cxns_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_reply.num_aux'] = ProtoField.uint32("of15.bsn_set_aux_cxns_reply.num_aux", "num_aux", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_reply.status'] = ProtoField.uint32("of15.bsn_set_aux_cxns_reply.status", "status", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_request.version'] = ProtoField.uint8("of15.bsn_set_aux_cxns_request.version", "version", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_request.type'] = ProtoField.uint8("of15.bsn_set_aux_cxns_request.type", "type", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_request.length'] = ProtoField.uint16("of15.bsn_set_aux_cxns_request.length", "length", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_request.xid'] = ProtoField.uint32("of15.bsn_set_aux_cxns_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_request.experimenter'] = ProtoField.uint32("of15.bsn_set_aux_cxns_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_request.subtype'] = ProtoField.uint32("of15.bsn_set_aux_cxns_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_set_aux_cxns_request.num_aux'] = ProtoField.uint32("of15.bsn_set_aux_cxns_request.num_aux", "num_aux", base.DEC, nil)
+fields['of15.bsn_set_lacp_reply.version'] = ProtoField.uint8("of15.bsn_set_lacp_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_set_lacp_reply.type'] = ProtoField.uint8("of15.bsn_set_lacp_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_set_lacp_reply.length'] = ProtoField.uint16("of15.bsn_set_lacp_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_set_lacp_reply.xid'] = ProtoField.uint32("of15.bsn_set_lacp_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_set_lacp_reply.experimenter'] = ProtoField.uint32("of15.bsn_set_lacp_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_set_lacp_reply.subtype'] = ProtoField.uint32("of15.bsn_set_lacp_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_set_lacp_reply.status'] = ProtoField.uint32("of15.bsn_set_lacp_reply.status", "status", base.DEC, nil)
+fields['of15.bsn_set_lacp_reply.port_no'] = ProtoField.uint32("of15.bsn_set_lacp_reply.port_no", "port_no", base.DEC, nil)
+fields['of15.bsn_set_lacp_request.version'] = ProtoField.uint8("of15.bsn_set_lacp_request.version", "version", base.DEC, nil)
+fields['of15.bsn_set_lacp_request.type'] = ProtoField.uint8("of15.bsn_set_lacp_request.type", "type", base.DEC, nil)
+fields['of15.bsn_set_lacp_request.length'] = ProtoField.uint16("of15.bsn_set_lacp_request.length", "length", base.DEC, nil)
+fields['of15.bsn_set_lacp_request.xid'] = ProtoField.uint32("of15.bsn_set_lacp_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_set_lacp_request.experimenter'] = ProtoField.uint32("of15.bsn_set_lacp_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_set_lacp_request.subtype'] = ProtoField.uint32("of15.bsn_set_lacp_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_set_lacp_request.enabled'] = ProtoField.uint8("of15.bsn_set_lacp_request.enabled", "enabled", base.DEC, nil)
+fields['of15.bsn_set_lacp_request.port_no'] = ProtoField.uint32("of15.bsn_set_lacp_request.port_no", "port_no", base.DEC, nil)
+fields['of15.bsn_set_lacp_request.actor_sys_priority'] = ProtoField.uint16("of15.bsn_set_lacp_request.actor_sys_priority", "actor_sys_priority", base.DEC, nil)
+fields['of15.bsn_set_lacp_request.actor_sys_mac'] = ProtoField.ether("of15.bsn_set_lacp_request.actor_sys_mac", "actor_sys_mac")
+fields['of15.bsn_set_lacp_request.actor_port_priority'] = ProtoField.uint16("of15.bsn_set_lacp_request.actor_port_priority", "actor_port_priority", base.DEC, nil)
+fields['of15.bsn_set_lacp_request.actor_port_num'] = ProtoField.uint16("of15.bsn_set_lacp_request.actor_port_num", "actor_port_num", base.DEC, nil)
+fields['of15.bsn_set_lacp_request.actor_key'] = ProtoField.uint16("of15.bsn_set_lacp_request.actor_key", "actor_key", base.DEC, nil)
 fields['of15.bsn_set_mirroring.version'] = ProtoField.uint8("of15.bsn_set_mirroring.version", "version", base.DEC, nil)
 fields['of15.bsn_set_mirroring.type'] = ProtoField.uint8("of15.bsn_set_mirroring.type", "type", base.DEC, nil)
 fields['of15.bsn_set_mirroring.length'] = ProtoField.uint16("of15.bsn_set_mirroring.length", "length", base.DEC, nil)
@@ -12942,38 +13727,437 @@ fields['of15.bsn_set_pktin_suppression_request.idle_timeout'] = ProtoField.uint1
 fields['of15.bsn_set_pktin_suppression_request.hard_timeout'] = ProtoField.uint16("of15.bsn_set_pktin_suppression_request.hard_timeout", "hard_timeout", base.DEC, nil)
 fields['of15.bsn_set_pktin_suppression_request.priority'] = ProtoField.uint16("of15.bsn_set_pktin_suppression_request.priority", "priority", base.DEC, nil)
 fields['of15.bsn_set_pktin_suppression_request.cookie'] = ProtoField.uint64("of15.bsn_set_pktin_suppression_request.cookie", "cookie", base.DEC, nil)
-fields['of15.experimenter_stats_reply.version'] = ProtoField.uint8("of15.experimenter_stats_reply.version", "version", base.DEC, nil)
-fields['of15.experimenter_stats_reply.type'] = ProtoField.uint8("of15.experimenter_stats_reply.type", "type", base.DEC, nil)
-fields['of15.experimenter_stats_reply.length'] = ProtoField.uint16("of15.experimenter_stats_reply.length", "length", base.DEC, nil)
-fields['of15.experimenter_stats_reply.xid'] = ProtoField.uint32("of15.experimenter_stats_reply.xid", "xid", base.DEC, nil)
-fields['of15.experimenter_stats_reply.stats_type'] = ProtoField.uint16("of15.experimenter_stats_reply.stats_type", "stats_type", base.DEC, nil)
-fields['of15.experimenter_stats_reply.flags'] = ProtoField.uint32("of15.experimenter_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
-fields['of15.experimenter_stats_reply.experimenter'] = ProtoField.uint32("of15.experimenter_stats_reply.experimenter", "experimenter", base.DEC, nil)
-fields['of15.experimenter_stats_reply.subtype'] = ProtoField.uint32("of15.experimenter_stats_reply.subtype", "subtype", base.DEC, nil)
-fields['of15.bsn_stats_reply.version'] = ProtoField.uint8("of15.bsn_stats_reply.version", "version", base.DEC, nil)
-fields['of15.bsn_stats_reply.type'] = ProtoField.uint8("of15.bsn_stats_reply.type", "type", base.DEC, nil)
-fields['of15.bsn_stats_reply.length'] = ProtoField.uint16("of15.bsn_stats_reply.length", "length", base.DEC, nil)
-fields['of15.bsn_stats_reply.xid'] = ProtoField.uint32("of15.bsn_stats_reply.xid", "xid", base.DEC, nil)
-fields['of15.bsn_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_stats_reply.stats_type", "stats_type", base.DEC, nil)
-fields['of15.bsn_stats_reply.flags'] = ProtoField.uint32("of15.bsn_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
-fields['of15.bsn_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_stats_reply.experimenter", "experimenter", base.DEC, nil)
-fields['of15.bsn_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_stats_reply.subtype", "subtype", base.DEC, nil)
-fields['of15.experimenter_stats_request.version'] = ProtoField.uint8("of15.experimenter_stats_request.version", "version", base.DEC, nil)
-fields['of15.experimenter_stats_request.type'] = ProtoField.uint8("of15.experimenter_stats_request.type", "type", base.DEC, nil)
-fields['of15.experimenter_stats_request.length'] = ProtoField.uint16("of15.experimenter_stats_request.length", "length", base.DEC, nil)
-fields['of15.experimenter_stats_request.xid'] = ProtoField.uint32("of15.experimenter_stats_request.xid", "xid", base.DEC, nil)
-fields['of15.experimenter_stats_request.stats_type'] = ProtoField.uint16("of15.experimenter_stats_request.stats_type", "stats_type", base.DEC, nil)
-fields['of15.experimenter_stats_request.flags'] = ProtoField.uint32("of15.experimenter_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
-fields['of15.experimenter_stats_request.experimenter'] = ProtoField.uint32("of15.experimenter_stats_request.experimenter", "experimenter", base.DEC, nil)
-fields['of15.experimenter_stats_request.subtype'] = ProtoField.uint32("of15.experimenter_stats_request.subtype", "subtype", base.DEC, nil)
-fields['of15.bsn_stats_request.version'] = ProtoField.uint8("of15.bsn_stats_request.version", "version", base.DEC, nil)
-fields['of15.bsn_stats_request.type'] = ProtoField.uint8("of15.bsn_stats_request.type", "type", base.DEC, nil)
-fields['of15.bsn_stats_request.length'] = ProtoField.uint16("of15.bsn_stats_request.length", "length", base.DEC, nil)
-fields['of15.bsn_stats_request.xid'] = ProtoField.uint32("of15.bsn_stats_request.xid", "xid", base.DEC, nil)
-fields['of15.bsn_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_stats_request.stats_type", "stats_type", base.DEC, nil)
-fields['of15.bsn_stats_request.flags'] = ProtoField.uint32("of15.bsn_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
-fields['of15.bsn_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_stats_request.experimenter", "experimenter", base.DEC, nil)
-fields['of15.bsn_stats_request.subtype'] = ProtoField.uint32("of15.bsn_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_reply.version'] = ProtoField.uint8("of15.bsn_set_switch_pipeline_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_reply.type'] = ProtoField.uint8("of15.bsn_set_switch_pipeline_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_reply.length'] = ProtoField.uint16("of15.bsn_set_switch_pipeline_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_reply.xid'] = ProtoField.uint32("of15.bsn_set_switch_pipeline_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_reply.experimenter'] = ProtoField.uint32("of15.bsn_set_switch_pipeline_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_reply.subtype'] = ProtoField.uint32("of15.bsn_set_switch_pipeline_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_reply.status'] = ProtoField.uint32("of15.bsn_set_switch_pipeline_reply.status", "status", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_request.version'] = ProtoField.uint8("of15.bsn_set_switch_pipeline_request.version", "version", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_request.type'] = ProtoField.uint8("of15.bsn_set_switch_pipeline_request.type", "type", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_request.length'] = ProtoField.uint16("of15.bsn_set_switch_pipeline_request.length", "length", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_request.xid'] = ProtoField.uint32("of15.bsn_set_switch_pipeline_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_request.experimenter'] = ProtoField.uint32("of15.bsn_set_switch_pipeline_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_request.subtype'] = ProtoField.uint32("of15.bsn_set_switch_pipeline_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_set_switch_pipeline_request.pipeline'] = ProtoField.stringz("of15.bsn_set_switch_pipeline_request.pipeline", "pipeline")
+fields['of15.bsn_switch_pipeline_stats_entry.pipeline'] = ProtoField.stringz("of15.bsn_switch_pipeline_stats_entry.pipeline", "pipeline")
+fields['of15.bsn_switch_pipeline_stats_reply.version'] = ProtoField.uint8("of15.bsn_switch_pipeline_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_switch_pipeline_stats_reply.type'] = ProtoField.uint8("of15.bsn_switch_pipeline_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_switch_pipeline_stats_reply.length'] = ProtoField.uint16("of15.bsn_switch_pipeline_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_switch_pipeline_stats_reply.xid'] = ProtoField.uint32("of15.bsn_switch_pipeline_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_switch_pipeline_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_switch_pipeline_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_switch_pipeline_stats_reply.flags'] = ProtoField.uint32("of15.bsn_switch_pipeline_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_switch_pipeline_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_switch_pipeline_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_switch_pipeline_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_switch_pipeline_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_switch_pipeline_stats_reply.entries'] = ProtoField.bytes("of15.bsn_switch_pipeline_stats_reply.entries", "entries")
+fields['of15.bsn_switch_pipeline_stats_request.version'] = ProtoField.uint8("of15.bsn_switch_pipeline_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_switch_pipeline_stats_request.type'] = ProtoField.uint8("of15.bsn_switch_pipeline_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_switch_pipeline_stats_request.length'] = ProtoField.uint16("of15.bsn_switch_pipeline_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_switch_pipeline_stats_request.xid'] = ProtoField.uint32("of15.bsn_switch_pipeline_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_switch_pipeline_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_switch_pipeline_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_switch_pipeline_stats_request.flags'] = ProtoField.uint32("of15.bsn_switch_pipeline_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_switch_pipeline_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_switch_pipeline_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_switch_pipeline_stats_request.subtype'] = ProtoField.uint32("of15.bsn_switch_pipeline_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_entry.table_id'] = ProtoField.uint8("of15.bsn_table_checksum_stats_entry.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_entry.checksum'] = ProtoField.uint64("of15.bsn_table_checksum_stats_entry.checksum", "checksum", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_reply.version'] = ProtoField.uint8("of15.bsn_table_checksum_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_reply.type'] = ProtoField.uint8("of15.bsn_table_checksum_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_reply.length'] = ProtoField.uint16("of15.bsn_table_checksum_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_reply.xid'] = ProtoField.uint32("of15.bsn_table_checksum_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_table_checksum_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_reply.flags'] = ProtoField.uint32("of15.bsn_table_checksum_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_table_checksum_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_table_checksum_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_table_checksum_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_reply.entries'] = ProtoField.bytes("of15.bsn_table_checksum_stats_reply.entries", "entries")
+fields['of15.bsn_table_checksum_stats_request.version'] = ProtoField.uint8("of15.bsn_table_checksum_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_request.type'] = ProtoField.uint8("of15.bsn_table_checksum_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_request.length'] = ProtoField.uint16("of15.bsn_table_checksum_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_request.xid'] = ProtoField.uint32("of15.bsn_table_checksum_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_table_checksum_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_request.flags'] = ProtoField.uint32("of15.bsn_table_checksum_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_table_checksum_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_table_checksum_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_table_checksum_stats_request.subtype'] = ProtoField.uint32("of15.bsn_table_checksum_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_table_set_buckets_size.version'] = ProtoField.uint8("of15.bsn_table_set_buckets_size.version", "version", base.DEC, nil)
+fields['of15.bsn_table_set_buckets_size.type'] = ProtoField.uint8("of15.bsn_table_set_buckets_size.type", "type", base.DEC, nil)
+fields['of15.bsn_table_set_buckets_size.length'] = ProtoField.uint16("of15.bsn_table_set_buckets_size.length", "length", base.DEC, nil)
+fields['of15.bsn_table_set_buckets_size.xid'] = ProtoField.uint32("of15.bsn_table_set_buckets_size.xid", "xid", base.DEC, nil)
+fields['of15.bsn_table_set_buckets_size.experimenter'] = ProtoField.uint32("of15.bsn_table_set_buckets_size.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_table_set_buckets_size.subtype'] = ProtoField.uint32("of15.bsn_table_set_buckets_size.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_table_set_buckets_size.table_id'] = ProtoField.uint8("of15.bsn_table_set_buckets_size.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_table_set_buckets_size.buckets_size'] = ProtoField.uint32("of15.bsn_table_set_buckets_size.buckets_size", "buckets_size", base.DEC, nil)
+fields['of15.bsn_takeover.version'] = ProtoField.uint8("of15.bsn_takeover.version", "version", base.DEC, nil)
+fields['of15.bsn_takeover.type'] = ProtoField.uint8("of15.bsn_takeover.type", "type", base.DEC, nil)
+fields['of15.bsn_takeover.length'] = ProtoField.uint16("of15.bsn_takeover.length", "length", base.DEC, nil)
+fields['of15.bsn_takeover.xid'] = ProtoField.uint32("of15.bsn_takeover.xid", "xid", base.DEC, nil)
+fields['of15.bsn_takeover.experimenter'] = ProtoField.uint32("of15.bsn_takeover.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_takeover.subtype'] = ProtoField.uint32("of15.bsn_takeover.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_time_reply.version'] = ProtoField.uint8("of15.bsn_time_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_time_reply.type'] = ProtoField.uint8("of15.bsn_time_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_time_reply.length'] = ProtoField.uint16("of15.bsn_time_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_time_reply.xid'] = ProtoField.uint32("of15.bsn_time_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_time_reply.experimenter'] = ProtoField.uint32("of15.bsn_time_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_time_reply.subtype'] = ProtoField.uint32("of15.bsn_time_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_time_reply.time_ms'] = ProtoField.uint64("of15.bsn_time_reply.time_ms", "time_ms", base.DEC, nil)
+fields['of15.bsn_time_request.version'] = ProtoField.uint8("of15.bsn_time_request.version", "version", base.DEC, nil)
+fields['of15.bsn_time_request.type'] = ProtoField.uint8("of15.bsn_time_request.type", "type", base.DEC, nil)
+fields['of15.bsn_time_request.length'] = ProtoField.uint16("of15.bsn_time_request.length", "length", base.DEC, nil)
+fields['of15.bsn_time_request.xid'] = ProtoField.uint32("of15.bsn_time_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_time_request.experimenter'] = ProtoField.uint32("of15.bsn_time_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_time_request.subtype'] = ProtoField.uint32("of15.bsn_time_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_tlv.type'] = ProtoField.uint16("of15.bsn_tlv.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv.length'] = ProtoField.uint16("of15.bsn_tlv.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_actor_key.type'] = ProtoField.uint16("of15.bsn_tlv_actor_key.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_actor_key.length'] = ProtoField.uint16("of15.bsn_tlv_actor_key.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_actor_key.value'] = ProtoField.uint16("of15.bsn_tlv_actor_key.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_actor_port_num.type'] = ProtoField.uint16("of15.bsn_tlv_actor_port_num.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_actor_port_num.length'] = ProtoField.uint16("of15.bsn_tlv_actor_port_num.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_actor_port_num.value'] = ProtoField.uint16("of15.bsn_tlv_actor_port_num.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_actor_port_priority.type'] = ProtoField.uint16("of15.bsn_tlv_actor_port_priority.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_actor_port_priority.length'] = ProtoField.uint16("of15.bsn_tlv_actor_port_priority.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_actor_port_priority.value'] = ProtoField.uint16("of15.bsn_tlv_actor_port_priority.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_actor_state.type'] = ProtoField.uint16("of15.bsn_tlv_actor_state.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_actor_state.length'] = ProtoField.uint16("of15.bsn_tlv_actor_state.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_actor_state.value'] = ProtoField.uint32("of15.bsn_tlv_actor_state.value", "value", base.HEX, enum_v6_ofp_bsn_lacp_state)
+fields['of15.bsn_tlv_actor_system_mac.type'] = ProtoField.uint16("of15.bsn_tlv_actor_system_mac.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_actor_system_mac.length'] = ProtoField.uint16("of15.bsn_tlv_actor_system_mac.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_actor_system_mac.value'] = ProtoField.ether("of15.bsn_tlv_actor_system_mac.value", "value")
+fields['of15.bsn_tlv_actor_system_priority.type'] = ProtoField.uint16("of15.bsn_tlv_actor_system_priority.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_actor_system_priority.length'] = ProtoField.uint16("of15.bsn_tlv_actor_system_priority.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_actor_system_priority.value'] = ProtoField.uint16("of15.bsn_tlv_actor_system_priority.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_anchor.type'] = ProtoField.uint16("of15.bsn_tlv_anchor.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_anchor.length'] = ProtoField.uint16("of15.bsn_tlv_anchor.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_anchor.value'] = ProtoField.uint32("of15.bsn_tlv_anchor.value", "value", base.DEC, enum_v6_ofp_bsn_anchor)
+fields['of15.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of15.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of15.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of15.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_broadcast_rate.type'] = ProtoField.uint16("of15.bsn_tlv_broadcast_rate.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_broadcast_rate.length'] = ProtoField.uint16("of15.bsn_tlv_broadcast_rate.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_broadcast_rate.value'] = ProtoField.uint32("of15.bsn_tlv_broadcast_rate.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_bucket.type'] = ProtoField.uint16("of15.bsn_tlv_bucket.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bucket.length'] = ProtoField.uint16("of15.bsn_tlv_bucket.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bucket.value'] = ProtoField.bytes("of15.bsn_tlv_bucket.value", "value")
+fields['of15.bsn_tlv_circuit_id.type'] = ProtoField.uint16("of15.bsn_tlv_circuit_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_circuit_id.length'] = ProtoField.uint16("of15.bsn_tlv_circuit_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_circuit_id.value'] = ProtoField.bytes("of15.bsn_tlv_circuit_id.value", "value")
+fields['of15.bsn_tlv_convergence_status.type'] = ProtoField.uint16("of15.bsn_tlv_convergence_status.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_convergence_status.length'] = ProtoField.uint16("of15.bsn_tlv_convergence_status.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_convergence_status.value'] = ProtoField.uint8("of15.bsn_tlv_convergence_status.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_cpu_lag.type'] = ProtoField.uint16("of15.bsn_tlv_cpu_lag.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_cpu_lag.length'] = ProtoField.uint16("of15.bsn_tlv_cpu_lag.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_crc_enabled.type'] = ProtoField.uint16("of15.bsn_tlv_crc_enabled.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_crc_enabled.length'] = ProtoField.uint16("of15.bsn_tlv_crc_enabled.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_crc_enabled.value'] = ProtoField.uint8("of15.bsn_tlv_crc_enabled.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_data.type'] = ProtoField.uint16("of15.bsn_tlv_data.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_data.length'] = ProtoField.uint16("of15.bsn_tlv_data.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_data.value'] = ProtoField.bytes("of15.bsn_tlv_data.value", "value")
+fields['of15.bsn_tlv_decap.type'] = ProtoField.uint16("of15.bsn_tlv_decap.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_decap.length'] = ProtoField.uint16("of15.bsn_tlv_decap.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_decap.value'] = ProtoField.uint32("of15.bsn_tlv_decap.value", "value", base.DEC, enum_v6_ofp_bsn_decap)
+fields['of15.bsn_tlv_disable_src_mac_check.type'] = ProtoField.uint16("of15.bsn_tlv_disable_src_mac_check.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_disable_src_mac_check.length'] = ProtoField.uint16("of15.bsn_tlv_disable_src_mac_check.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_dscp.type'] = ProtoField.uint16("of15.bsn_tlv_dscp.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_dscp.length'] = ProtoField.uint16("of15.bsn_tlv_dscp.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_dscp.value'] = ProtoField.uint16("of15.bsn_tlv_dscp.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of15.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of15.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_eth_dst.value'] = ProtoField.ether("of15.bsn_tlv_eth_dst.value", "value")
+fields['of15.bsn_tlv_eth_src.type'] = ProtoField.uint16("of15.bsn_tlv_eth_src.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_eth_src.length'] = ProtoField.uint16("of15.bsn_tlv_eth_src.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_eth_src.value'] = ProtoField.ether("of15.bsn_tlv_eth_src.value", "value")
+fields['of15.bsn_tlv_external_gateway_ip.type'] = ProtoField.uint16("of15.bsn_tlv_external_gateway_ip.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_external_gateway_ip.length'] = ProtoField.uint16("of15.bsn_tlv_external_gateway_ip.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_external_gateway_ip.value'] = ProtoField.ipv4("of15.bsn_tlv_external_gateway_ip.value", "value")
+fields['of15.bsn_tlv_external_gateway_mac.type'] = ProtoField.uint16("of15.bsn_tlv_external_gateway_mac.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_external_gateway_mac.length'] = ProtoField.uint16("of15.bsn_tlv_external_gateway_mac.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_external_gateway_mac.value'] = ProtoField.ether("of15.bsn_tlv_external_gateway_mac.value", "value")
+fields['of15.bsn_tlv_external_ip.type'] = ProtoField.uint16("of15.bsn_tlv_external_ip.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_external_ip.length'] = ProtoField.uint16("of15.bsn_tlv_external_ip.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_external_ip.value'] = ProtoField.ipv4("of15.bsn_tlv_external_ip.value", "value")
+fields['of15.bsn_tlv_external_mac.type'] = ProtoField.uint16("of15.bsn_tlv_external_mac.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_external_mac.length'] = ProtoField.uint16("of15.bsn_tlv_external_mac.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_external_mac.value'] = ProtoField.ether("of15.bsn_tlv_external_mac.value", "value")
+fields['of15.bsn_tlv_external_netmask.type'] = ProtoField.uint16("of15.bsn_tlv_external_netmask.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_external_netmask.length'] = ProtoField.uint16("of15.bsn_tlv_external_netmask.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of15.bsn_tlv_external_netmask.value", "value")
+fields['of15.bsn_tlv_generation_id.type'] = ProtoField.uint16("of15.bsn_tlv_generation_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_generation_id.length'] = ProtoField.uint16("of15.bsn_tlv_generation_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_generation_id.value'] = ProtoField.uint64("of15.bsn_tlv_generation_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_hash_gtp_header_match.type'] = ProtoField.uint16("of15.bsn_tlv_hash_gtp_header_match.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_hash_gtp_header_match.length'] = ProtoField.uint16("of15.bsn_tlv_hash_gtp_header_match.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_hash_gtp_header_match.first_header_byte'] = ProtoField.uint8("of15.bsn_tlv_hash_gtp_header_match.first_header_byte", "first_header_byte", base.DEC, nil)
+fields['of15.bsn_tlv_hash_gtp_header_match.first_header_mask'] = ProtoField.uint8("of15.bsn_tlv_hash_gtp_header_match.first_header_mask", "first_header_mask", base.DEC, nil)
+fields['of15.bsn_tlv_hash_gtp_port_match.type'] = ProtoField.uint16("of15.bsn_tlv_hash_gtp_port_match.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_hash_gtp_port_match.length'] = ProtoField.uint16("of15.bsn_tlv_hash_gtp_port_match.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_hash_gtp_port_match.match'] = ProtoField.uint32("of15.bsn_tlv_hash_gtp_port_match.match", "match", base.DEC, enum_v6_of_bsn_hash_gtp_port_match)
+fields['of15.bsn_tlv_hash_gtp_port_match.src_port'] = ProtoField.uint16("of15.bsn_tlv_hash_gtp_port_match.src_port", "src_port", base.DEC, nil)
+fields['of15.bsn_tlv_hash_gtp_port_match.dst_port'] = ProtoField.uint16("of15.bsn_tlv_hash_gtp_port_match.dst_port", "dst_port", base.DEC, nil)
+fields['of15.bsn_tlv_hash_packet_field.type'] = ProtoField.uint16("of15.bsn_tlv_hash_packet_field.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_hash_packet_field.length'] = ProtoField.uint16("of15.bsn_tlv_hash_packet_field.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_hash_packet_field.value'] = ProtoField.uint32("of15.bsn_tlv_hash_packet_field.value", "value", base.HEX, enum_v6_of_bsn_hash_packet_field)
+fields['of15.bsn_tlv_hash_packet_type.type'] = ProtoField.uint16("of15.bsn_tlv_hash_packet_type.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_hash_packet_type.length'] = ProtoField.uint16("of15.bsn_tlv_hash_packet_type.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_hash_packet_type.value'] = ProtoField.uint32("of15.bsn_tlv_hash_packet_type.value", "value", base.DEC, enum_v6_of_bsn_hash_packet_type)
+fields['of15.bsn_tlv_hash_seed.type'] = ProtoField.uint16("of15.bsn_tlv_hash_seed.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_hash_seed.length'] = ProtoField.uint16("of15.bsn_tlv_hash_seed.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_hash_seed.seed1'] = ProtoField.uint32("of15.bsn_tlv_hash_seed.seed1", "seed1", base.DEC, nil)
+fields['of15.bsn_tlv_hash_seed.seed2'] = ProtoField.uint32("of15.bsn_tlv_hash_seed.seed2", "seed2", base.DEC, nil)
+fields['of15.bsn_tlv_hash_type.type'] = ProtoField.uint16("of15.bsn_tlv_hash_type.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_hash_type.length'] = ProtoField.uint16("of15.bsn_tlv_hash_type.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_hash_type.value'] = ProtoField.uint32("of15.bsn_tlv_hash_type.value", "value", base.DEC, enum_v6_of_bsn_hash_type)
+fields['of15.bsn_tlv_header_size.type'] = ProtoField.uint16("of15.bsn_tlv_header_size.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_header_size.length'] = ProtoField.uint16("of15.bsn_tlv_header_size.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_header_size.value'] = ProtoField.uint32("of15.bsn_tlv_header_size.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_icmp_code.type'] = ProtoField.uint16("of15.bsn_tlv_icmp_code.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_icmp_code.length'] = ProtoField.uint16("of15.bsn_tlv_icmp_code.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_icmp_code.value'] = ProtoField.uint8("of15.bsn_tlv_icmp_code.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_icmp_id.type'] = ProtoField.uint16("of15.bsn_tlv_icmp_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_icmp_id.length'] = ProtoField.uint16("of15.bsn_tlv_icmp_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_icmp_id.value'] = ProtoField.uint16("of15.bsn_tlv_icmp_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_icmp_type.type'] = ProtoField.uint16("of15.bsn_tlv_icmp_type.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_icmp_type.length'] = ProtoField.uint16("of15.bsn_tlv_icmp_type.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_icmp_type.value'] = ProtoField.uint8("of15.bsn_tlv_icmp_type.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_idle_notification.type'] = ProtoField.uint16("of15.bsn_tlv_idle_notification.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_idle_notification.length'] = ProtoField.uint16("of15.bsn_tlv_idle_notification.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_idle_time.type'] = ProtoField.uint16("of15.bsn_tlv_idle_time.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_idle_time.length'] = ProtoField.uint16("of15.bsn_tlv_idle_time.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_idle_time.value'] = ProtoField.uint64("of15.bsn_tlv_idle_time.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_idle_timeout.type'] = ProtoField.uint16("of15.bsn_tlv_idle_timeout.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_idle_timeout.length'] = ProtoField.uint16("of15.bsn_tlv_idle_timeout.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_idle_timeout.value'] = ProtoField.uint32("of15.bsn_tlv_idle_timeout.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_igmp_snooping.type'] = ProtoField.uint16("of15.bsn_tlv_igmp_snooping.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_igmp_snooping.length'] = ProtoField.uint16("of15.bsn_tlv_igmp_snooping.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_internal_gateway_mac.type'] = ProtoField.uint16("of15.bsn_tlv_internal_gateway_mac.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_internal_gateway_mac.length'] = ProtoField.uint16("of15.bsn_tlv_internal_gateway_mac.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_internal_gateway_mac.value'] = ProtoField.ether("of15.bsn_tlv_internal_gateway_mac.value", "value")
+fields['of15.bsn_tlv_internal_mac.type'] = ProtoField.uint16("of15.bsn_tlv_internal_mac.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_internal_mac.length'] = ProtoField.uint16("of15.bsn_tlv_internal_mac.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_internal_mac.value'] = ProtoField.ether("of15.bsn_tlv_internal_mac.value", "value")
+fields['of15.bsn_tlv_interval.type'] = ProtoField.uint16("of15.bsn_tlv_interval.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_interval.length'] = ProtoField.uint16("of15.bsn_tlv_interval.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_interval.value'] = ProtoField.uint32("of15.bsn_tlv_interval.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_ip_proto.type'] = ProtoField.uint16("of15.bsn_tlv_ip_proto.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_ip_proto.length'] = ProtoField.uint16("of15.bsn_tlv_ip_proto.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ip_proto.value'] = ProtoField.uint8("of15.bsn_tlv_ip_proto.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_ipv4.type'] = ProtoField.uint16("of15.bsn_tlv_ipv4.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_ipv4.length'] = ProtoField.uint16("of15.bsn_tlv_ipv4.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ipv4.value'] = ProtoField.ipv4("of15.bsn_tlv_ipv4.value", "value")
+fields['of15.bsn_tlv_ipv4_dst.type'] = ProtoField.uint16("of15.bsn_tlv_ipv4_dst.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_ipv4_dst.length'] = ProtoField.uint16("of15.bsn_tlv_ipv4_dst.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ipv4_dst.value'] = ProtoField.ipv4("of15.bsn_tlv_ipv4_dst.value", "value")
+fields['of15.bsn_tlv_ipv4_netmask.type'] = ProtoField.uint16("of15.bsn_tlv_ipv4_netmask.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_ipv4_netmask.length'] = ProtoField.uint16("of15.bsn_tlv_ipv4_netmask.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ipv4_netmask.value'] = ProtoField.ipv4("of15.bsn_tlv_ipv4_netmask.value", "value")
+fields['of15.bsn_tlv_ipv4_src.type'] = ProtoField.uint16("of15.bsn_tlv_ipv4_src.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_ipv4_src.length'] = ProtoField.uint16("of15.bsn_tlv_ipv4_src.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ipv4_src.value'] = ProtoField.ipv4("of15.bsn_tlv_ipv4_src.value", "value")
+fields['of15.bsn_tlv_ipv6.type'] = ProtoField.uint16("of15.bsn_tlv_ipv6.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_ipv6.length'] = ProtoField.uint16("of15.bsn_tlv_ipv6.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ipv6.value'] = ProtoField.ipv6("of15.bsn_tlv_ipv6.value", "value")
+fields['of15.bsn_tlv_known_multicast_rate.type'] = ProtoField.uint16("of15.bsn_tlv_known_multicast_rate.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_known_multicast_rate.length'] = ProtoField.uint16("of15.bsn_tlv_known_multicast_rate.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_known_multicast_rate.value'] = ProtoField.uint32("of15.bsn_tlv_known_multicast_rate.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_l2_multicast_lookup.type'] = ProtoField.uint16("of15.bsn_tlv_l2_multicast_lookup.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_l2_multicast_lookup.length'] = ProtoField.uint16("of15.bsn_tlv_l2_multicast_lookup.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_loopback_port.type'] = ProtoField.uint16("of15.bsn_tlv_loopback_port.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_loopback_port.length'] = ProtoField.uint16("of15.bsn_tlv_loopback_port.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_loopback_port.value'] = ProtoField.uint32("of15.bsn_tlv_loopback_port.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_mac.type'] = ProtoField.uint16("of15.bsn_tlv_mac.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_mac.length'] = ProtoField.uint16("of15.bsn_tlv_mac.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_mac.value'] = ProtoField.ether("of15.bsn_tlv_mac.value", "value")
+fields['of15.bsn_tlv_mac_mask.type'] = ProtoField.uint16("of15.bsn_tlv_mac_mask.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of15.bsn_tlv_mac_mask.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_mac_mask.value'] = ProtoField.ether("of15.bsn_tlv_mac_mask.value", "value")
+fields['of15.bsn_tlv_mcg_type_vxlan.type'] = ProtoField.uint16("of15.bsn_tlv_mcg_type_vxlan.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_mcg_type_vxlan.length'] = ProtoField.uint16("of15.bsn_tlv_mcg_type_vxlan.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of15.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_miss_packets.length'] = ProtoField.uint16("of15.bsn_tlv_miss_packets.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of15.bsn_tlv_miss_packets.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_mpls_control_word.type'] = ProtoField.uint16("of15.bsn_tlv_mpls_control_word.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_mpls_control_word.length'] = ProtoField.uint16("of15.bsn_tlv_mpls_control_word.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_mpls_control_word.value'] = ProtoField.uint8("of15.bsn_tlv_mpls_control_word.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_mpls_label.type'] = ProtoField.uint16("of15.bsn_tlv_mpls_label.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_mpls_label.length'] = ProtoField.uint16("of15.bsn_tlv_mpls_label.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_mpls_label.value'] = ProtoField.uint32("of15.bsn_tlv_mpls_label.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_mpls_sequenced.type'] = ProtoField.uint16("of15.bsn_tlv_mpls_sequenced.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_mpls_sequenced.length'] = ProtoField.uint16("of15.bsn_tlv_mpls_sequenced.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_mpls_sequenced.value'] = ProtoField.uint8("of15.bsn_tlv_mpls_sequenced.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_multicast_interface_id.type'] = ProtoField.uint16("of15.bsn_tlv_multicast_interface_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_multicast_interface_id.length'] = ProtoField.uint16("of15.bsn_tlv_multicast_interface_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_multicast_interface_id.value'] = ProtoField.uint32("of15.bsn_tlv_multicast_interface_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_name.type'] = ProtoField.uint16("of15.bsn_tlv_name.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_name.length'] = ProtoField.uint16("of15.bsn_tlv_name.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_name.value'] = ProtoField.bytes("of15.bsn_tlv_name.value", "value")
+fields['of15.bsn_tlv_negate.type'] = ProtoField.uint16("of15.bsn_tlv_negate.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_negate.length'] = ProtoField.uint16("of15.bsn_tlv_negate.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_next_hop_ipv4.type'] = ProtoField.uint16("of15.bsn_tlv_next_hop_ipv4.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_next_hop_ipv4.length'] = ProtoField.uint16("of15.bsn_tlv_next_hop_ipv4.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_next_hop_ipv4.value'] = ProtoField.ipv4("of15.bsn_tlv_next_hop_ipv4.value", "value")
+fields['of15.bsn_tlv_next_hop_mac.type'] = ProtoField.uint16("of15.bsn_tlv_next_hop_mac.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_next_hop_mac.length'] = ProtoField.uint16("of15.bsn_tlv_next_hop_mac.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_next_hop_mac.value'] = ProtoField.ether("of15.bsn_tlv_next_hop_mac.value", "value")
+fields['of15.bsn_tlv_nexthop_type_vxlan.type'] = ProtoField.uint16("of15.bsn_tlv_nexthop_type_vxlan.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_nexthop_type_vxlan.length'] = ProtoField.uint16("of15.bsn_tlv_nexthop_type_vxlan.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_offset.type'] = ProtoField.uint16("of15.bsn_tlv_offset.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_offset.length'] = ProtoField.uint16("of15.bsn_tlv_offset.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_offset.value'] = ProtoField.uint16("of15.bsn_tlv_offset.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_parent_port.type'] = ProtoField.uint16("of15.bsn_tlv_parent_port.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_parent_port.length'] = ProtoField.uint16("of15.bsn_tlv_parent_port.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_parent_port.value'] = ProtoField.uint32("of15.bsn_tlv_parent_port.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_partner_key.type'] = ProtoField.uint16("of15.bsn_tlv_partner_key.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_partner_key.length'] = ProtoField.uint16("of15.bsn_tlv_partner_key.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_partner_key.value'] = ProtoField.uint16("of15.bsn_tlv_partner_key.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_partner_port_num.type'] = ProtoField.uint16("of15.bsn_tlv_partner_port_num.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_partner_port_num.length'] = ProtoField.uint16("of15.bsn_tlv_partner_port_num.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_partner_port_num.value'] = ProtoField.uint16("of15.bsn_tlv_partner_port_num.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_partner_port_priority.type'] = ProtoField.uint16("of15.bsn_tlv_partner_port_priority.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_partner_port_priority.length'] = ProtoField.uint16("of15.bsn_tlv_partner_port_priority.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_partner_port_priority.value'] = ProtoField.uint16("of15.bsn_tlv_partner_port_priority.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_partner_state.type'] = ProtoField.uint16("of15.bsn_tlv_partner_state.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_partner_state.length'] = ProtoField.uint16("of15.bsn_tlv_partner_state.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_partner_state.value'] = ProtoField.uint32("of15.bsn_tlv_partner_state.value", "value", base.HEX, enum_v6_ofp_bsn_lacp_state)
+fields['of15.bsn_tlv_partner_system_mac.type'] = ProtoField.uint16("of15.bsn_tlv_partner_system_mac.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_partner_system_mac.length'] = ProtoField.uint16("of15.bsn_tlv_partner_system_mac.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_partner_system_mac.value'] = ProtoField.ether("of15.bsn_tlv_partner_system_mac.value", "value")
+fields['of15.bsn_tlv_partner_system_priority.type'] = ProtoField.uint16("of15.bsn_tlv_partner_system_priority.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_partner_system_priority.length'] = ProtoField.uint16("of15.bsn_tlv_partner_system_priority.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of15.bsn_tlv_partner_system_priority.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_port.type'] = ProtoField.uint16("of15.bsn_tlv_port.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_port.length'] = ProtoField.uint16("of15.bsn_tlv_port.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_port.value'] = ProtoField.uint32("of15.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_port_vxlan_mode.type'] = ProtoField.uint16("of15.bsn_tlv_port_vxlan_mode.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_port_vxlan_mode.length'] = ProtoField.uint16("of15.bsn_tlv_port_vxlan_mode.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of15.bsn_tlv_port_vxlan_mode.value", "value", base.DEC, enum_v6_ofp_bsn_port_vxlan_mode)
+fields['of15.bsn_tlv_priority.type'] = ProtoField.uint16("of15.bsn_tlv_priority.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_priority.length'] = ProtoField.uint16("of15.bsn_tlv_priority.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_priority.value'] = ProtoField.uint32("of15.bsn_tlv_priority.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_qos_priority.type'] = ProtoField.uint16("of15.bsn_tlv_qos_priority.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_qos_priority.length'] = ProtoField.uint16("of15.bsn_tlv_qos_priority.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_qos_priority.value'] = ProtoField.uint32("of15.bsn_tlv_qos_priority.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_queue_id.type'] = ProtoField.uint16("of15.bsn_tlv_queue_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_queue_id.length'] = ProtoField.uint16("of15.bsn_tlv_queue_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_queue_id.value'] = ProtoField.uint32("of15.bsn_tlv_queue_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_queue_weight.type'] = ProtoField.uint16("of15.bsn_tlv_queue_weight.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_queue_weight.length'] = ProtoField.uint16("of15.bsn_tlv_queue_weight.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_queue_weight.value'] = ProtoField.uint32("of15.bsn_tlv_queue_weight.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_rate_limit.type'] = ProtoField.uint16("of15.bsn_tlv_rate_limit.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_rate_limit.length'] = ProtoField.uint16("of15.bsn_tlv_rate_limit.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_rate_limit.value'] = ProtoField.uint32("of15.bsn_tlv_rate_limit.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_rate_unit.type'] = ProtoField.uint16("of15.bsn_tlv_rate_unit.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_rate_unit.length'] = ProtoField.uint16("of15.bsn_tlv_rate_unit.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_rate_unit.value'] = ProtoField.uint32("of15.bsn_tlv_rate_unit.value", "value", base.DEC, enum_v6_ofp_bsn_rate_unit)
+fields['of15.bsn_tlv_reference.type'] = ProtoField.uint16("of15.bsn_tlv_reference.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_reference.length'] = ProtoField.uint16("of15.bsn_tlv_reference.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_reference.table_id'] = ProtoField.uint16("of15.bsn_tlv_reference.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_tlv_reference.key'] = ProtoField.bytes("of15.bsn_tlv_reference.key", "key")
+fields['of15.bsn_tlv_reply_packets.type'] = ProtoField.uint16("of15.bsn_tlv_reply_packets.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_reply_packets.length'] = ProtoField.uint16("of15.bsn_tlv_reply_packets.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_reply_packets.value'] = ProtoField.uint64("of15.bsn_tlv_reply_packets.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_request_packets.type'] = ProtoField.uint16("of15.bsn_tlv_request_packets.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_request_packets.length'] = ProtoField.uint16("of15.bsn_tlv_request_packets.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_request_packets.value'] = ProtoField.uint64("of15.bsn_tlv_request_packets.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_rx_bytes.type'] = ProtoField.uint16("of15.bsn_tlv_rx_bytes.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_rx_bytes.length'] = ProtoField.uint16("of15.bsn_tlv_rx_bytes.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_rx_bytes.value'] = ProtoField.uint64("of15.bsn_tlv_rx_bytes.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_rx_packets.type'] = ProtoField.uint16("of15.bsn_tlv_rx_packets.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_rx_packets.length'] = ProtoField.uint16("of15.bsn_tlv_rx_packets.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_rx_packets.value'] = ProtoField.uint64("of15.bsn_tlv_rx_packets.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_sampling_rate.type'] = ProtoField.uint16("of15.bsn_tlv_sampling_rate.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_sampling_rate.length'] = ProtoField.uint16("of15.bsn_tlv_sampling_rate.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_sampling_rate.value'] = ProtoField.uint32("of15.bsn_tlv_sampling_rate.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_set_loopback_mode.type'] = ProtoField.uint16("of15.bsn_tlv_set_loopback_mode.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_set_loopback_mode.length'] = ProtoField.uint16("of15.bsn_tlv_set_loopback_mode.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_status.type'] = ProtoField.uint16("of15.bsn_tlv_status.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_status.length'] = ProtoField.uint16("of15.bsn_tlv_status.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_status.value'] = ProtoField.uint32("of15.bsn_tlv_status.value", "value", base.DEC, enum_v6_ofp_bsn_status)
+fields['of15.bsn_tlv_strip_mpls_l2_on_ingress.type'] = ProtoField.uint16("of15.bsn_tlv_strip_mpls_l2_on_ingress.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_strip_mpls_l2_on_ingress.length'] = ProtoField.uint16("of15.bsn_tlv_strip_mpls_l2_on_ingress.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_strip_mpls_l3_on_ingress.type'] = ProtoField.uint16("of15.bsn_tlv_strip_mpls_l3_on_ingress.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_strip_mpls_l3_on_ingress.length'] = ProtoField.uint16("of15.bsn_tlv_strip_mpls_l3_on_ingress.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_strip_vlan_on_egress.type'] = ProtoField.uint16("of15.bsn_tlv_strip_vlan_on_egress.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_strip_vlan_on_egress.length'] = ProtoField.uint16("of15.bsn_tlv_strip_vlan_on_egress.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_sub_agent_id.type'] = ProtoField.uint16("of15.bsn_tlv_sub_agent_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_sub_agent_id.length'] = ProtoField.uint16("of15.bsn_tlv_sub_agent_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_sub_agent_id.value'] = ProtoField.uint32("of15.bsn_tlv_sub_agent_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_tcp_dst.type'] = ProtoField.uint16("of15.bsn_tlv_tcp_dst.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_tcp_dst.length'] = ProtoField.uint16("of15.bsn_tlv_tcp_dst.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_tcp_dst.value'] = ProtoField.uint16("of15.bsn_tlv_tcp_dst.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_tcp_src.type'] = ProtoField.uint16("of15.bsn_tlv_tcp_src.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_tcp_src.length'] = ProtoField.uint16("of15.bsn_tlv_tcp_src.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_tcp_src.value'] = ProtoField.uint16("of15.bsn_tlv_tcp_src.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_ttl.type'] = ProtoField.uint16("of15.bsn_tlv_ttl.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_ttl.length'] = ProtoField.uint16("of15.bsn_tlv_ttl.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ttl.value'] = ProtoField.uint16("of15.bsn_tlv_ttl.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_tx_bytes.type'] = ProtoField.uint16("of15.bsn_tlv_tx_bytes.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_tx_bytes.length'] = ProtoField.uint16("of15.bsn_tlv_tx_bytes.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_tx_bytes.value'] = ProtoField.uint64("of15.bsn_tlv_tx_bytes.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_tx_packets.type'] = ProtoField.uint16("of15.bsn_tlv_tx_packets.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_tx_packets.length'] = ProtoField.uint16("of15.bsn_tlv_tx_packets.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_tx_packets.value'] = ProtoField.uint64("of15.bsn_tlv_tx_packets.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_udf_anchor.type'] = ProtoField.uint16("of15.bsn_tlv_udf_anchor.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_udf_anchor.length'] = ProtoField.uint16("of15.bsn_tlv_udf_anchor.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_udf_anchor.value'] = ProtoField.uint32("of15.bsn_tlv_udf_anchor.value", "value", base.DEC, enum_v6_ofp_bsn_udf_anchor)
+fields['of15.bsn_tlv_udf_id.type'] = ProtoField.uint16("of15.bsn_tlv_udf_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_udf_id.length'] = ProtoField.uint16("of15.bsn_tlv_udf_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_udf_id.value'] = ProtoField.uint16("of15.bsn_tlv_udf_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_udf_length.type'] = ProtoField.uint16("of15.bsn_tlv_udf_length.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_udf_length.length'] = ProtoField.uint16("of15.bsn_tlv_udf_length.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_udf_length.value'] = ProtoField.uint16("of15.bsn_tlv_udf_length.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_udf_offset.type'] = ProtoField.uint16("of15.bsn_tlv_udf_offset.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_udf_offset.length'] = ProtoField.uint16("of15.bsn_tlv_udf_offset.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_udf_offset.value'] = ProtoField.uint16("of15.bsn_tlv_udf_offset.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_udp_dst.type'] = ProtoField.uint16("of15.bsn_tlv_udp_dst.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_udp_dst.length'] = ProtoField.uint16("of15.bsn_tlv_udp_dst.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_udp_dst.value'] = ProtoField.uint16("of15.bsn_tlv_udp_dst.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_udp_src.type'] = ProtoField.uint16("of15.bsn_tlv_udp_src.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_udp_src.length'] = ProtoField.uint16("of15.bsn_tlv_udp_src.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_udp_src.value'] = ProtoField.uint16("of15.bsn_tlv_udp_src.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_uint64_list.type'] = ProtoField.uint16("of15.bsn_tlv_uint64_list.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_uint64_list.length'] = ProtoField.uint16("of15.bsn_tlv_uint64_list.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_uint64_list.value'] = ProtoField.bytes("of15.bsn_tlv_uint64_list.value", "value")
+fields['of15.bsn_tlv_unicast_query_timeout.type'] = ProtoField.uint16("of15.bsn_tlv_unicast_query_timeout.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_unicast_query_timeout.length'] = ProtoField.uint16("of15.bsn_tlv_unicast_query_timeout.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_unicast_query_timeout.value'] = ProtoField.uint32("of15.bsn_tlv_unicast_query_timeout.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_unicast_rate.type'] = ProtoField.uint16("of15.bsn_tlv_unicast_rate.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_unicast_rate.length'] = ProtoField.uint16("of15.bsn_tlv_unicast_rate.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_unicast_rate.value'] = ProtoField.uint32("of15.bsn_tlv_unicast_rate.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_unknown_multicast_rate.type'] = ProtoField.uint16("of15.bsn_tlv_unknown_multicast_rate.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_unknown_multicast_rate.length'] = ProtoField.uint16("of15.bsn_tlv_unknown_multicast_rate.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_unknown_multicast_rate.value'] = ProtoField.uint32("of15.bsn_tlv_unknown_multicast_rate.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_untagged.type'] = ProtoField.uint16("of15.bsn_tlv_untagged.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_untagged.length'] = ProtoField.uint16("of15.bsn_tlv_untagged.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_use_packet_state.type'] = ProtoField.uint16("of15.bsn_tlv_use_packet_state.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_use_packet_state.length'] = ProtoField.uint16("of15.bsn_tlv_use_packet_state.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of15.bsn_tlv_use_packet_state.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_vfi.type'] = ProtoField.uint16("of15.bsn_tlv_vfi.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_vfi.length'] = ProtoField.uint16("of15.bsn_tlv_vfi.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_vfi.value'] = ProtoField.uint16("of15.bsn_tlv_vfi.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_vfp_class_id.type'] = ProtoField.uint16("of15.bsn_tlv_vfp_class_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_vfp_class_id.length'] = ProtoField.uint16("of15.bsn_tlv_vfp_class_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_vfp_class_id.value'] = ProtoField.uint32("of15.bsn_tlv_vfp_class_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_vlan_mac_list.type'] = ProtoField.uint16("of15.bsn_tlv_vlan_mac_list.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_vlan_mac_list.length'] = ProtoField.uint16("of15.bsn_tlv_vlan_mac_list.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_vlan_mac_list.key'] = ProtoField.bytes("of15.bsn_tlv_vlan_mac_list.key", "key")
+fields['of15.bsn_tlv_vlan_pcp.type'] = ProtoField.uint16("of15.bsn_tlv_vlan_pcp.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_vlan_pcp.length'] = ProtoField.uint16("of15.bsn_tlv_vlan_pcp.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_vlan_pcp.value'] = ProtoField.uint8("of15.bsn_tlv_vlan_pcp.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_vlan_vid.type'] = ProtoField.uint16("of15.bsn_tlv_vlan_vid.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_vlan_vid.length'] = ProtoField.uint16("of15.bsn_tlv_vlan_vid.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_vlan_vid.value'] = ProtoField.uint16("of15.bsn_tlv_vlan_vid.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_vlan_vid_mask.type'] = ProtoField.uint16("of15.bsn_tlv_vlan_vid_mask.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_vlan_vid_mask.length'] = ProtoField.uint16("of15.bsn_tlv_vlan_vid_mask.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_vlan_vid_mask.value'] = ProtoField.uint16("of15.bsn_tlv_vlan_vid_mask.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_vni.type'] = ProtoField.uint16("of15.bsn_tlv_vni.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_vni.length'] = ProtoField.uint16("of15.bsn_tlv_vni.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_vni.value'] = ProtoField.uint32("of15.bsn_tlv_vni.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_vpn_key.type'] = ProtoField.uint16("of15.bsn_tlv_vpn_key.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_vpn_key.length'] = ProtoField.uint16("of15.bsn_tlv_vpn_key.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_vpn_key.value'] = ProtoField.uint32("of15.bsn_tlv_vpn_key.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_vrf.type'] = ProtoField.uint16("of15.bsn_tlv_vrf.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_vrf.length'] = ProtoField.uint16("of15.bsn_tlv_vrf.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_vrf.value'] = ProtoField.uint32("of15.bsn_tlv_vrf.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_vxlan_egress_lag.type'] = ProtoField.uint16("of15.bsn_tlv_vxlan_egress_lag.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_vxlan_egress_lag.length'] = ProtoField.uint16("of15.bsn_tlv_vxlan_egress_lag.length", "length", base.DEC, nil)
 fields['of15.bsn_virtual_port_create_reply.version'] = ProtoField.uint8("of15.bsn_virtual_port_create_reply.version", "version", base.DEC, nil)
 fields['of15.bsn_virtual_port_create_reply.type'] = ProtoField.uint8("of15.bsn_virtual_port_create_reply.type", "type", base.DEC, nil)
 fields['of15.bsn_virtual_port_create_reply.length'] = ProtoField.uint16("of15.bsn_virtual_port_create_reply.length", "length", base.DEC, nil)
@@ -13005,6 +14189,36 @@ fields['of15.bsn_virtual_port_remove_request.xid'] = ProtoField.uint32("of15.bsn
 fields['of15.bsn_virtual_port_remove_request.experimenter'] = ProtoField.uint32("of15.bsn_virtual_port_remove_request.experimenter", "experimenter", base.DEC, nil)
 fields['of15.bsn_virtual_port_remove_request.subtype'] = ProtoField.uint32("of15.bsn_virtual_port_remove_request.subtype", "subtype", base.DEC, nil)
 fields['of15.bsn_virtual_port_remove_request.vport_no'] = ProtoField.uint32("of15.bsn_virtual_port_remove_request.vport_no", "vport_no", base.DEC, nil)
+fields['of15.bsn_vlan_counter_clear.version'] = ProtoField.uint8("of15.bsn_vlan_counter_clear.version", "version", base.DEC, nil)
+fields['of15.bsn_vlan_counter_clear.type'] = ProtoField.uint8("of15.bsn_vlan_counter_clear.type", "type", base.DEC, nil)
+fields['of15.bsn_vlan_counter_clear.length'] = ProtoField.uint16("of15.bsn_vlan_counter_clear.length", "length", base.DEC, nil)
+fields['of15.bsn_vlan_counter_clear.xid'] = ProtoField.uint32("of15.bsn_vlan_counter_clear.xid", "xid", base.DEC, nil)
+fields['of15.bsn_vlan_counter_clear.experimenter'] = ProtoField.uint32("of15.bsn_vlan_counter_clear.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_vlan_counter_clear.subtype'] = ProtoField.uint32("of15.bsn_vlan_counter_clear.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_vlan_counter_clear.vlan_vid'] = ProtoField.uint16("of15.bsn_vlan_counter_clear.vlan_vid", "vlan_vid", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_entry.length'] = ProtoField.uint16("of15.bsn_vlan_counter_stats_entry.length", "length", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_entry.vlan_vid'] = ProtoField.uint16("of15.bsn_vlan_counter_stats_entry.vlan_vid", "vlan_vid", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_entry.values'] = ProtoField.bytes("of15.bsn_vlan_counter_stats_entry.values", "values")
+fields['of15.bsn_vlan_counter_stats_reply.version'] = ProtoField.uint8("of15.bsn_vlan_counter_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_reply.type'] = ProtoField.uint8("of15.bsn_vlan_counter_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_reply.length'] = ProtoField.uint16("of15.bsn_vlan_counter_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_reply.xid'] = ProtoField.uint32("of15.bsn_vlan_counter_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_vlan_counter_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_reply.flags'] = ProtoField.uint32("of15.bsn_vlan_counter_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_vlan_counter_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_vlan_counter_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_vlan_counter_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_reply.entries'] = ProtoField.bytes("of15.bsn_vlan_counter_stats_reply.entries", "entries")
+fields['of15.bsn_vlan_counter_stats_request.version'] = ProtoField.uint8("of15.bsn_vlan_counter_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_request.type'] = ProtoField.uint8("of15.bsn_vlan_counter_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_request.length'] = ProtoField.uint16("of15.bsn_vlan_counter_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_request.xid'] = ProtoField.uint32("of15.bsn_vlan_counter_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_vlan_counter_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_request.flags'] = ProtoField.uint32("of15.bsn_vlan_counter_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_vlan_counter_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_vlan_counter_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_request.subtype'] = ProtoField.uint32("of15.bsn_vlan_counter_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_vlan_counter_stats_request.vlan_vid'] = ProtoField.uint16("of15.bsn_vlan_counter_stats_request.vlan_vid", "vlan_vid", base.DEC, nil)
+fields['of15.bsn_vlan_mac.vlan_vid'] = ProtoField.uint16("of15.bsn_vlan_mac.vlan_vid", "vlan_vid", base.DEC, nil)
+fields['of15.bsn_vlan_mac.mac'] = ProtoField.ether("of15.bsn_vlan_mac.mac", "mac")
 fields['of15.bsn_vport_l2gre.type'] = ProtoField.uint16("of15.bsn_vport_l2gre.type", "type", base.DEC, nil)
 fields['of15.bsn_vport_l2gre.length'] = ProtoField.uint16("of15.bsn_vport_l2gre.length", "length", base.DEC, nil)
 fields['of15.bsn_vport_l2gre.flags'] = ProtoField.uint32("of15.bsn_vport_l2gre.flags", "flags", base.HEX, enum_v6_ofp_bsn_vport_l2gre_flags)
@@ -13027,6 +14241,27 @@ fields['of15.bsn_vport_q_in_q.ingress_vlan_id'] = ProtoField.uint16("of15.bsn_vp
 fields['of15.bsn_vport_q_in_q.egress_tpid'] = ProtoField.uint16("of15.bsn_vport_q_in_q.egress_tpid", "egress_tpid", base.DEC, nil)
 fields['of15.bsn_vport_q_in_q.egress_vlan_id'] = ProtoField.uint16("of15.bsn_vport_q_in_q.egress_vlan_id", "egress_vlan_id", base.DEC, nil)
 fields['of15.bsn_vport_q_in_q.if_name'] = ProtoField.stringz("of15.bsn_vport_q_in_q.if_name", "if_name")
+fields['of15.bsn_vrf_counter_stats_entry.length'] = ProtoField.uint16("of15.bsn_vrf_counter_stats_entry.length", "length", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_entry.vrf'] = ProtoField.uint32("of15.bsn_vrf_counter_stats_entry.vrf", "vrf", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_entry.values'] = ProtoField.bytes("of15.bsn_vrf_counter_stats_entry.values", "values")
+fields['of15.bsn_vrf_counter_stats_reply.version'] = ProtoField.uint8("of15.bsn_vrf_counter_stats_reply.version", "version", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_reply.type'] = ProtoField.uint8("of15.bsn_vrf_counter_stats_reply.type", "type", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_reply.length'] = ProtoField.uint16("of15.bsn_vrf_counter_stats_reply.length", "length", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_reply.xid'] = ProtoField.uint32("of15.bsn_vrf_counter_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_reply.stats_type'] = ProtoField.uint16("of15.bsn_vrf_counter_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_reply.flags'] = ProtoField.uint32("of15.bsn_vrf_counter_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.bsn_vrf_counter_stats_reply.experimenter'] = ProtoField.uint32("of15.bsn_vrf_counter_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_reply.subtype'] = ProtoField.uint32("of15.bsn_vrf_counter_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_reply.entries'] = ProtoField.bytes("of15.bsn_vrf_counter_stats_reply.entries", "entries")
+fields['of15.bsn_vrf_counter_stats_request.version'] = ProtoField.uint8("of15.bsn_vrf_counter_stats_request.version", "version", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_request.type'] = ProtoField.uint8("of15.bsn_vrf_counter_stats_request.type", "type", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_request.length'] = ProtoField.uint16("of15.bsn_vrf_counter_stats_request.length", "length", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_request.xid'] = ProtoField.uint32("of15.bsn_vrf_counter_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_request.stats_type'] = ProtoField.uint16("of15.bsn_vrf_counter_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_request.flags'] = ProtoField.uint32("of15.bsn_vrf_counter_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.bsn_vrf_counter_stats_request.experimenter'] = ProtoField.uint32("of15.bsn_vrf_counter_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_request.subtype'] = ProtoField.uint32("of15.bsn_vrf_counter_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_vrf_counter_stats_request.vrf'] = ProtoField.uint32("of15.bsn_vrf_counter_stats_request.vrf", "vrf", base.DEC, nil)
 fields['of15.bucket.len'] = ProtoField.uint16("of15.bucket.len", "len", base.DEC, nil)
 fields['of15.bucket.action_array_len'] = ProtoField.uint16("of15.bucket.action_array_len", "action_array_len", base.DEC, nil)
 fields['of15.bucket.bucket_id'] = ProtoField.uint32("of15.bucket.bucket_id", "bucket_id", base.DEC, enum_v6_ofp_group_bucket)
@@ -13145,14 +14380,6 @@ fields['of15.echo_request.type'] = ProtoField.uint32("of15.echo_request.type", "
 fields['of15.echo_request.length'] = ProtoField.uint16("of15.echo_request.length", "length", base.DEC, nil)
 fields['of15.echo_request.xid'] = ProtoField.uint32("of15.echo_request.xid", "xid", base.DEC, nil)
 fields['of15.echo_request.data'] = ProtoField.bytes("of15.echo_request.data", "data")
-fields['of15.experimenter_error_msg.version'] = ProtoField.uint8("of15.experimenter_error_msg.version", "version", base.DEC, nil)
-fields['of15.experimenter_error_msg.type'] = ProtoField.uint8("of15.experimenter_error_msg.type", "type", base.DEC, nil)
-fields['of15.experimenter_error_msg.length'] = ProtoField.uint16("of15.experimenter_error_msg.length", "length", base.DEC, nil)
-fields['of15.experimenter_error_msg.xid'] = ProtoField.uint32("of15.experimenter_error_msg.xid", "xid", base.DEC, nil)
-fields['of15.experimenter_error_msg.err_type'] = ProtoField.uint16("of15.experimenter_error_msg.err_type", "err_type", base.DEC, nil)
-fields['of15.experimenter_error_msg.subtype'] = ProtoField.uint16("of15.experimenter_error_msg.subtype", "subtype", base.DEC, nil)
-fields['of15.experimenter_error_msg.experimenter'] = ProtoField.uint32("of15.experimenter_error_msg.experimenter", "experimenter", base.DEC, nil)
-fields['of15.experimenter_error_msg.data'] = ProtoField.bytes("of15.experimenter_error_msg.data", "data")
 fields['of15.features_reply.version'] = ProtoField.uint8("of15.features_reply.version", "version", base.DEC, nil)
 fields['of15.features_reply.type'] = ProtoField.uint32("of15.features_reply.type", "type", base.DEC, enum_v6_ofp_type)
 fields['of15.features_reply.length'] = ProtoField.uint16("of15.features_reply.length", "length", base.DEC, nil)
@@ -13575,17 +14802,130 @@ fields['of15.instruction_apply_actions.len'] = ProtoField.uint16("of15.instructi
 fields['of15.instruction_apply_actions.actions'] = ProtoField.bytes("of15.instruction_apply_actions.actions", "actions")
 fields['of15.instruction_id_apply_actions.type'] = ProtoField.uint16("of15.instruction_id_apply_actions.type", "type", base.DEC, nil)
 fields['of15.instruction_id_apply_actions.len'] = ProtoField.uint16("of15.instruction_id_apply_actions.len", "len", base.DEC, nil)
-fields['of15.instruction_clear_actions.type'] = ProtoField.uint16("of15.instruction_clear_actions.type", "type", base.DEC, nil)
-fields['of15.instruction_clear_actions.len'] = ProtoField.uint16("of15.instruction_clear_actions.len", "len", base.DEC, nil)
-fields['of15.instruction_id_clear_actions.type'] = ProtoField.uint16("of15.instruction_id_clear_actions.type", "type", base.DEC, nil)
-fields['of15.instruction_id_clear_actions.len'] = ProtoField.uint16("of15.instruction_id_clear_actions.len", "len", base.DEC, nil)
 fields['of15.instruction_experimenter.type'] = ProtoField.uint16("of15.instruction_experimenter.type", "type", base.DEC, nil)
 fields['of15.instruction_experimenter.len'] = ProtoField.uint16("of15.instruction_experimenter.len", "len", base.DEC, nil)
 fields['of15.instruction_experimenter.experimenter'] = ProtoField.uint32("of15.instruction_experimenter.experimenter", "experimenter", base.DEC, nil)
 fields['of15.instruction_experimenter.data'] = ProtoField.bytes("of15.instruction_experimenter.data", "data")
+fields['of15.instruction_bsn.type'] = ProtoField.uint16("of15.instruction_bsn.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn.len'] = ProtoField.uint16("of15.instruction_bsn.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn.experimenter'] = ProtoField.uint32("of15.instruction_bsn.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn.subtype'] = ProtoField.uint32("of15.instruction_bsn.subtype", "subtype", base.DEC, nil)
 fields['of15.instruction_id_experimenter.type'] = ProtoField.uint16("of15.instruction_id_experimenter.type", "type", base.DEC, nil)
 fields['of15.instruction_id_experimenter.len'] = ProtoField.uint16("of15.instruction_id_experimenter.len", "len", base.DEC, nil)
 fields['of15.instruction_id_experimenter.experimenter'] = ProtoField.uint32("of15.instruction_id_experimenter.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn.type'] = ProtoField.uint16("of15.instruction_id_bsn.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn.len'] = ProtoField.uint16("of15.instruction_id_bsn.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn.subtype'] = ProtoField.uint32("of15.instruction_id_bsn.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_arp_offload.type'] = ProtoField.uint16("of15.instruction_bsn_arp_offload.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_arp_offload.len'] = ProtoField.uint16("of15.instruction_bsn_arp_offload.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_arp_offload.experimenter'] = ProtoField.uint32("of15.instruction_bsn_arp_offload.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_arp_offload.subtype'] = ProtoField.uint32("of15.instruction_bsn_arp_offload.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_id_bsn_arp_offload.type'] = ProtoField.uint16("of15.instruction_id_bsn_arp_offload.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_arp_offload.len'] = ProtoField.uint16("of15.instruction_id_bsn_arp_offload.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_arp_offload.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_arp_offload.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_arp_offload.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_arp_offload.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_auto_negotiation.type'] = ProtoField.uint16("of15.instruction_bsn_auto_negotiation.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_auto_negotiation.len'] = ProtoField.uint16("of15.instruction_bsn_auto_negotiation.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_auto_negotiation.experimenter'] = ProtoField.uint32("of15.instruction_bsn_auto_negotiation.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_auto_negotiation.subtype'] = ProtoField.uint32("of15.instruction_bsn_auto_negotiation.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_id_bsn_auto_negotiation.type'] = ProtoField.uint16("of15.instruction_id_bsn_auto_negotiation.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_auto_negotiation.len'] = ProtoField.uint16("of15.instruction_id_bsn_auto_negotiation.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_auto_negotiation.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_auto_negotiation.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_auto_negotiation.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_auto_negotiation.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_deny.type'] = ProtoField.uint16("of15.instruction_bsn_deny.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_deny.len'] = ProtoField.uint16("of15.instruction_bsn_deny.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_deny.experimenter'] = ProtoField.uint32("of15.instruction_bsn_deny.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_deny.subtype'] = ProtoField.uint32("of15.instruction_bsn_deny.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_id_bsn_deny.type'] = ProtoField.uint16("of15.instruction_id_bsn_deny.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_deny.len'] = ProtoField.uint16("of15.instruction_id_bsn_deny.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_deny.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_deny.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_deny.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_deny.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_dhcp_offload.type'] = ProtoField.uint16("of15.instruction_bsn_dhcp_offload.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_dhcp_offload.len'] = ProtoField.uint16("of15.instruction_bsn_dhcp_offload.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_dhcp_offload.experimenter'] = ProtoField.uint32("of15.instruction_bsn_dhcp_offload.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_dhcp_offload.subtype'] = ProtoField.uint32("of15.instruction_bsn_dhcp_offload.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_id_bsn_dhcp_offload.type'] = ProtoField.uint16("of15.instruction_id_bsn_dhcp_offload.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_dhcp_offload.len'] = ProtoField.uint16("of15.instruction_id_bsn_dhcp_offload.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_dhcp_offload.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_dhcp_offload.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_dhcp_offload.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_dhcp_offload.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_disable_l3.type'] = ProtoField.uint16("of15.instruction_bsn_disable_l3.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_disable_l3.len'] = ProtoField.uint16("of15.instruction_bsn_disable_l3.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_disable_l3.experimenter'] = ProtoField.uint32("of15.instruction_bsn_disable_l3.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_disable_l3.subtype'] = ProtoField.uint32("of15.instruction_bsn_disable_l3.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_id_bsn_disable_l3.type'] = ProtoField.uint16("of15.instruction_id_bsn_disable_l3.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_disable_l3.len'] = ProtoField.uint16("of15.instruction_id_bsn_disable_l3.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_disable_l3.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_disable_l3.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_disable_l3.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_disable_l3.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_disable_src_mac_check.type'] = ProtoField.uint16("of15.instruction_bsn_disable_src_mac_check.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_disable_src_mac_check.len'] = ProtoField.uint16("of15.instruction_bsn_disable_src_mac_check.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_disable_src_mac_check.experimenter'] = ProtoField.uint32("of15.instruction_bsn_disable_src_mac_check.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_disable_src_mac_check.subtype'] = ProtoField.uint32("of15.instruction_bsn_disable_src_mac_check.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_id_bsn_disable_src_mac_check.type'] = ProtoField.uint16("of15.instruction_id_bsn_disable_src_mac_check.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_disable_src_mac_check.len'] = ProtoField.uint16("of15.instruction_id_bsn_disable_src_mac_check.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_disable_src_mac_check.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_disable_src_mac_check.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_disable_src_mac_check.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_disable_src_mac_check.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_disable_vlan_counters.type'] = ProtoField.uint16("of15.instruction_bsn_disable_vlan_counters.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_disable_vlan_counters.len'] = ProtoField.uint16("of15.instruction_bsn_disable_vlan_counters.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_disable_vlan_counters.experimenter'] = ProtoField.uint32("of15.instruction_bsn_disable_vlan_counters.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_disable_vlan_counters.subtype'] = ProtoField.uint32("of15.instruction_bsn_disable_vlan_counters.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_id_bsn_disable_vlan_counters.type'] = ProtoField.uint16("of15.instruction_id_bsn_disable_vlan_counters.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_disable_vlan_counters.len'] = ProtoField.uint16("of15.instruction_id_bsn_disable_vlan_counters.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_disable_vlan_counters.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_disable_vlan_counters.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_disable_vlan_counters.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_disable_vlan_counters.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_internal_priority.type'] = ProtoField.uint16("of15.instruction_bsn_internal_priority.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_internal_priority.len'] = ProtoField.uint16("of15.instruction_bsn_internal_priority.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_internal_priority.experimenter'] = ProtoField.uint32("of15.instruction_bsn_internal_priority.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_internal_priority.subtype'] = ProtoField.uint32("of15.instruction_bsn_internal_priority.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_internal_priority.value'] = ProtoField.uint32("of15.instruction_bsn_internal_priority.value", "value", base.DEC, nil)
+fields['of15.instruction_id_bsn_internal_priority.type'] = ProtoField.uint16("of15.instruction_id_bsn_internal_priority.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_internal_priority.len'] = ProtoField.uint16("of15.instruction_id_bsn_internal_priority.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_internal_priority.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_internal_priority.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_internal_priority.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_internal_priority.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_packet_of_death.type'] = ProtoField.uint16("of15.instruction_bsn_packet_of_death.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_packet_of_death.len'] = ProtoField.uint16("of15.instruction_bsn_packet_of_death.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_packet_of_death.experimenter'] = ProtoField.uint32("of15.instruction_bsn_packet_of_death.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_packet_of_death.subtype'] = ProtoField.uint32("of15.instruction_bsn_packet_of_death.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_id_bsn_packet_of_death.type'] = ProtoField.uint16("of15.instruction_id_bsn_packet_of_death.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_packet_of_death.len'] = ProtoField.uint16("of15.instruction_id_bsn_packet_of_death.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_packet_of_death.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_packet_of_death.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_packet_of_death.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_packet_of_death.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_permit.type'] = ProtoField.uint16("of15.instruction_bsn_permit.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_permit.len'] = ProtoField.uint16("of15.instruction_bsn_permit.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_permit.experimenter'] = ProtoField.uint32("of15.instruction_bsn_permit.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_permit.subtype'] = ProtoField.uint32("of15.instruction_bsn_permit.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_id_bsn_permit.type'] = ProtoField.uint16("of15.instruction_id_bsn_permit.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_permit.len'] = ProtoField.uint16("of15.instruction_id_bsn_permit.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_permit.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_permit.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_permit.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_permit.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_prioritize_pdus.type'] = ProtoField.uint16("of15.instruction_bsn_prioritize_pdus.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_prioritize_pdus.len'] = ProtoField.uint16("of15.instruction_bsn_prioritize_pdus.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_prioritize_pdus.experimenter'] = ProtoField.uint32("of15.instruction_bsn_prioritize_pdus.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_prioritize_pdus.subtype'] = ProtoField.uint32("of15.instruction_bsn_prioritize_pdus.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_id_bsn_prioritize_pdus.type'] = ProtoField.uint16("of15.instruction_id_bsn_prioritize_pdus.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_prioritize_pdus.len'] = ProtoField.uint16("of15.instruction_id_bsn_prioritize_pdus.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_prioritize_pdus.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_prioritize_pdus.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_prioritize_pdus.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_prioritize_pdus.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_require_vlan_xlate.type'] = ProtoField.uint16("of15.instruction_bsn_require_vlan_xlate.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_require_vlan_xlate.len'] = ProtoField.uint16("of15.instruction_bsn_require_vlan_xlate.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_require_vlan_xlate.experimenter'] = ProtoField.uint32("of15.instruction_bsn_require_vlan_xlate.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_require_vlan_xlate.subtype'] = ProtoField.uint32("of15.instruction_bsn_require_vlan_xlate.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_id_bsn_require_vlan_xlate.type'] = ProtoField.uint16("of15.instruction_id_bsn_require_vlan_xlate.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_require_vlan_xlate.len'] = ProtoField.uint16("of15.instruction_id_bsn_require_vlan_xlate.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_require_vlan_xlate.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_require_vlan_xlate.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_require_vlan_xlate.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_require_vlan_xlate.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_span_destination.type'] = ProtoField.uint16("of15.instruction_bsn_span_destination.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_span_destination.len'] = ProtoField.uint16("of15.instruction_bsn_span_destination.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_span_destination.experimenter'] = ProtoField.uint32("of15.instruction_bsn_span_destination.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_span_destination.subtype'] = ProtoField.uint32("of15.instruction_bsn_span_destination.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_id_bsn_span_destination.type'] = ProtoField.uint16("of15.instruction_id_bsn_span_destination.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_span_destination.len'] = ProtoField.uint16("of15.instruction_id_bsn_span_destination.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_span_destination.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_span_destination.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_span_destination.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_span_destination.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_clear_actions.type'] = ProtoField.uint16("of15.instruction_clear_actions.type", "type", base.DEC, nil)
+fields['of15.instruction_clear_actions.len'] = ProtoField.uint16("of15.instruction_clear_actions.len", "len", base.DEC, nil)
+fields['of15.instruction_id_clear_actions.type'] = ProtoField.uint16("of15.instruction_id_clear_actions.type", "type", base.DEC, nil)
+fields['of15.instruction_id_clear_actions.len'] = ProtoField.uint16("of15.instruction_id_clear_actions.len", "len", base.DEC, nil)
 fields['of15.instruction_goto_table.type'] = ProtoField.uint16("of15.instruction_goto_table.type", "type", base.DEC, nil)
 fields['of15.instruction_goto_table.len'] = ProtoField.uint16("of15.instruction_goto_table.len", "len", base.DEC, nil)
 fields['of15.instruction_goto_table.table_id'] = ProtoField.uint8("of15.instruction_goto_table.table_id", "table_id", base.DEC, nil)
@@ -13739,6 +15079,126 @@ fields['of15.oxm_arp_tpa.value'] = ProtoField.uint32("of15.oxm_arp_tpa.value", "
 fields['of15.oxm_arp_tpa_masked.type_len'] = ProtoField.uint32("of15.oxm_arp_tpa_masked.type_len", "type_len", base.DEC, nil)
 fields['of15.oxm_arp_tpa_masked.value'] = ProtoField.uint32("of15.oxm_arp_tpa_masked.value", "value", base.DEC, nil)
 fields['of15.oxm_arp_tpa_masked.value_mask'] = ProtoField.uint32("of15.oxm_arp_tpa_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_egr_port_group_id.type_len'] = ProtoField.uint32("of15.oxm_bsn_egr_port_group_id.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_egr_port_group_id.value'] = ProtoField.uint32("of15.oxm_bsn_egr_port_group_id.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_egr_port_group_id_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_egr_port_group_id_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_egr_port_group_id_masked.value'] = ProtoField.uint32("of15.oxm_bsn_egr_port_group_id_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_egr_port_group_id_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_egr_port_group_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_in_ports_128.type_len'] = ProtoField.uint32("of15.oxm_bsn_in_ports_128.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_in_ports_128.value'] = ProtoField.bytes("of15.oxm_bsn_in_ports_128.value", "value")
+fields['of15.oxm_bsn_in_ports_128_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_in_ports_128_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_in_ports_128_masked.value'] = ProtoField.bytes("of15.oxm_bsn_in_ports_128_masked.value", "value")
+fields['of15.oxm_bsn_in_ports_128_masked.value_mask'] = ProtoField.bytes("of15.oxm_bsn_in_ports_128_masked.value_mask", "value_mask")
+fields['of15.oxm_bsn_in_ports_512.type_len'] = ProtoField.uint32("of15.oxm_bsn_in_ports_512.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_in_ports_512.value'] = ProtoField.bytes("of15.oxm_bsn_in_ports_512.value", "value")
+fields['of15.oxm_bsn_in_ports_512_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_in_ports_512_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_in_ports_512_masked.value'] = ProtoField.bytes("of15.oxm_bsn_in_ports_512_masked.value", "value")
+fields['of15.oxm_bsn_in_ports_512_masked.value_mask'] = ProtoField.bytes("of15.oxm_bsn_in_ports_512_masked.value_mask", "value_mask")
+fields['of15.oxm_bsn_ingress_port_group_id.type_len'] = ProtoField.uint32("of15.oxm_bsn_ingress_port_group_id.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_ingress_port_group_id.value'] = ProtoField.uint32("of15.oxm_bsn_ingress_port_group_id.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_ingress_port_group_id_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_ingress_port_group_id_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_ingress_port_group_id_masked.value'] = ProtoField.uint32("of15.oxm_bsn_ingress_port_group_id_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_ingress_port_group_id_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_ingress_port_group_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_inner_eth_dst.type_len'] = ProtoField.uint32("of15.oxm_bsn_inner_eth_dst.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_inner_eth_dst.value'] = ProtoField.ether("of15.oxm_bsn_inner_eth_dst.value", "value")
+fields['of15.oxm_bsn_inner_eth_dst_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_inner_eth_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_inner_eth_dst_masked.value'] = ProtoField.ether("of15.oxm_bsn_inner_eth_dst_masked.value", "value")
+fields['of15.oxm_bsn_inner_eth_dst_masked.value_mask'] = ProtoField.ether("of15.oxm_bsn_inner_eth_dst_masked.value_mask", "value_mask")
+fields['of15.oxm_bsn_inner_eth_src.type_len'] = ProtoField.uint32("of15.oxm_bsn_inner_eth_src.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_inner_eth_src.value'] = ProtoField.ether("of15.oxm_bsn_inner_eth_src.value", "value")
+fields['of15.oxm_bsn_inner_eth_src_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_inner_eth_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_inner_eth_src_masked.value'] = ProtoField.ether("of15.oxm_bsn_inner_eth_src_masked.value", "value")
+fields['of15.oxm_bsn_inner_eth_src_masked.value_mask'] = ProtoField.ether("of15.oxm_bsn_inner_eth_src_masked.value_mask", "value_mask")
+fields['of15.oxm_bsn_inner_vlan_vid.type_len'] = ProtoField.uint32("of15.oxm_bsn_inner_vlan_vid.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_inner_vlan_vid.value'] = ProtoField.uint16("of15.oxm_bsn_inner_vlan_vid.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_inner_vlan_vid_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_inner_vlan_vid_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_inner_vlan_vid_masked.value'] = ProtoField.uint16("of15.oxm_bsn_inner_vlan_vid_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_inner_vlan_vid_masked.value_mask'] = ProtoField.uint16("of15.oxm_bsn_inner_vlan_vid_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_l2_cache_hit.type_len'] = ProtoField.uint32("of15.oxm_bsn_l2_cache_hit.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_l2_cache_hit.value'] = ProtoField.uint8("of15.oxm_bsn_l2_cache_hit.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_l2_cache_hit_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_l2_cache_hit_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_l2_cache_hit_masked.value'] = ProtoField.uint8("of15.oxm_bsn_l2_cache_hit_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_l2_cache_hit_masked.value_mask'] = ProtoField.uint8("of15.oxm_bsn_l2_cache_hit_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_l3_interface_class_id.type_len'] = ProtoField.uint32("of15.oxm_bsn_l3_interface_class_id.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_l3_interface_class_id.value'] = ProtoField.uint32("of15.oxm_bsn_l3_interface_class_id.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_l3_interface_class_id_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_l3_interface_class_id_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_l3_interface_class_id_masked.value'] = ProtoField.uint32("of15.oxm_bsn_l3_interface_class_id_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_l3_interface_class_id_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_l3_interface_class_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_l3_src_class_id.type_len'] = ProtoField.uint32("of15.oxm_bsn_l3_src_class_id.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_l3_src_class_id.value'] = ProtoField.uint32("of15.oxm_bsn_l3_src_class_id.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_l3_src_class_id_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_l3_src_class_id_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_l3_src_class_id_masked.value'] = ProtoField.uint32("of15.oxm_bsn_l3_src_class_id_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_l3_src_class_id_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_l3_src_class_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_lag_id.type_len'] = ProtoField.uint32("of15.oxm_bsn_lag_id.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_lag_id.value'] = ProtoField.uint32("of15.oxm_bsn_lag_id.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_lag_id_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_lag_id_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_lag_id_masked.value'] = ProtoField.uint32("of15.oxm_bsn_lag_id_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_lag_id_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_lag_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_tcp_flags.type_len'] = ProtoField.uint32("of15.oxm_bsn_tcp_flags.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_tcp_flags.value'] = ProtoField.uint16("of15.oxm_bsn_tcp_flags.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_tcp_flags_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_tcp_flags_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_tcp_flags_masked.value'] = ProtoField.uint16("of15.oxm_bsn_tcp_flags_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_tcp_flags_masked.value_mask'] = ProtoField.uint16("of15.oxm_bsn_tcp_flags_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_udf0.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf0.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf0.value'] = ProtoField.uint32("of15.oxm_bsn_udf0.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf0_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf0_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf0_masked.value'] = ProtoField.uint32("of15.oxm_bsn_udf0_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf0_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_udf0_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_udf1.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf1.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf1.value'] = ProtoField.uint32("of15.oxm_bsn_udf1.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf1_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf1_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf1_masked.value'] = ProtoField.uint32("of15.oxm_bsn_udf1_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf1_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_udf1_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_udf2.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf2.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf2.value'] = ProtoField.uint32("of15.oxm_bsn_udf2.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf2_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf2_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf2_masked.value'] = ProtoField.uint32("of15.oxm_bsn_udf2_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf2_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_udf2_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_udf3.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf3.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf3.value'] = ProtoField.uint32("of15.oxm_bsn_udf3.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf3_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf3_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf3_masked.value'] = ProtoField.uint32("of15.oxm_bsn_udf3_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf3_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_udf3_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_udf4.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf4.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf4.value'] = ProtoField.uint32("of15.oxm_bsn_udf4.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf4_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf4_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf4_masked.value'] = ProtoField.uint32("of15.oxm_bsn_udf4_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf4_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_udf4_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_udf5.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf5.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf5.value'] = ProtoField.uint32("of15.oxm_bsn_udf5.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf5_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf5_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf5_masked.value'] = ProtoField.uint32("of15.oxm_bsn_udf5_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf5_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_udf5_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_udf6.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf6.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf6.value'] = ProtoField.uint32("of15.oxm_bsn_udf6.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf6_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf6_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf6_masked.value'] = ProtoField.uint32("of15.oxm_bsn_udf6_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf6_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_udf6_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_udf7.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf7.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf7.value'] = ProtoField.uint32("of15.oxm_bsn_udf7.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf7_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_udf7_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_udf7_masked.value'] = ProtoField.uint32("of15.oxm_bsn_udf7_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_udf7_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_udf7_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_vfi.type_len'] = ProtoField.uint32("of15.oxm_bsn_vfi.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_vfi.value'] = ProtoField.uint16("of15.oxm_bsn_vfi.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_vfi_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_vfi_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_vfi_masked.value'] = ProtoField.uint16("of15.oxm_bsn_vfi_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_vfi_masked.value_mask'] = ProtoField.uint16("of15.oxm_bsn_vfi_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_vlan_xlate_port_group_id.type_len'] = ProtoField.uint32("of15.oxm_bsn_vlan_xlate_port_group_id.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_vlan_xlate_port_group_id.value'] = ProtoField.uint32("of15.oxm_bsn_vlan_xlate_port_group_id.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_vlan_xlate_port_group_id_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_vlan_xlate_port_group_id_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_vlan_xlate_port_group_id_masked.value'] = ProtoField.uint32("of15.oxm_bsn_vlan_xlate_port_group_id_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_vlan_xlate_port_group_id_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_vlan_xlate_port_group_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_vrf.type_len'] = ProtoField.uint32("of15.oxm_bsn_vrf.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_vrf.value'] = ProtoField.uint32("of15.oxm_bsn_vrf.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_vrf_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_vrf_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_vrf_masked.value'] = ProtoField.uint32("of15.oxm_bsn_vrf_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_vrf_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_vrf_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_vxlan_network_id.type_len'] = ProtoField.uint32("of15.oxm_bsn_vxlan_network_id.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_vxlan_network_id.value'] = ProtoField.uint32("of15.oxm_bsn_vxlan_network_id.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_vxlan_network_id_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_vxlan_network_id_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_vxlan_network_id_masked.value'] = ProtoField.uint32("of15.oxm_bsn_vxlan_network_id_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_vxlan_network_id_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_vxlan_network_id_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of15.oxm_eth_dst.type_len'] = ProtoField.uint32("of15.oxm_eth_dst.type_len", "type_len", base.DEC, nil)
 fields['of15.oxm_eth_dst.value'] = ProtoField.ether("of15.oxm_eth_dst.value", "value")
 fields['of15.oxm_eth_dst_masked.type_len'] = ProtoField.uint32("of15.oxm_eth_dst_masked.type_len", "type_len", base.DEC, nil)
@@ -13978,6 +15438,23 @@ fields['of15.port_desc.state'] = ProtoField.uint32("of15.port_desc.state", "stat
 fields['of15.port_desc.properties'] = ProtoField.bytes("of15.port_desc.properties", "properties")
 fields['of15.port_desc_prop.type'] = ProtoField.uint16("of15.port_desc_prop.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop.length'] = ProtoField.uint16("of15.port_desc_prop.length", "length", base.DEC, nil)
+fields['of15.port_desc_prop_experimenter.type'] = ProtoField.uint16("of15.port_desc_prop_experimenter.type", "type", base.DEC, nil)
+fields['of15.port_desc_prop_experimenter.length'] = ProtoField.uint16("of15.port_desc_prop_experimenter.length", "length", base.DEC, nil)
+fields['of15.port_desc_prop_experimenter.experimenter'] = ProtoField.uint32("of15.port_desc_prop_experimenter.experimenter", "experimenter", base.DEC, nil)
+fields['of15.port_desc_prop_experimenter.exp_type'] = ProtoField.uint32("of15.port_desc_prop_experimenter.exp_type", "exp_type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn.type'] = ProtoField.uint16("of15.port_desc_prop_bsn.type", "type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn.length'] = ProtoField.uint16("of15.port_desc_prop_bsn.length", "length", base.DEC, nil)
+fields['of15.port_desc_prop_bsn.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn.experimenter", "experimenter", base.DEC, nil)
+fields['of15.port_desc_prop_bsn.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn.exp_type", "exp_type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_generation_id.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_generation_id.type", "type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_generation_id.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_generation_id.length", "length", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_generation_id.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_generation_id.experimenter", "experimenter", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_generation_id.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_generation_id.exp_type", "exp_type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_generation_id.generation_id'] = ProtoField.uint64("of15.port_desc_prop_bsn_generation_id.generation_id", "generation_id", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_uplink.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_uplink.type", "type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_uplink.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_uplink.length", "length", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_uplink.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_uplink.experimenter", "experimenter", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_uplink.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_uplink.exp_type", "exp_type", base.DEC, nil)
 fields['of15.port_desc_prop_egress.type'] = ProtoField.uint16("of15.port_desc_prop_egress.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop_egress.length'] = ProtoField.uint16("of15.port_desc_prop_egress.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_egress.oxm_ids'] = ProtoField.bytes("of15.port_desc_prop_egress.oxm_ids", "oxm_ids")
@@ -13989,10 +15466,6 @@ fields['of15.port_desc_prop_ethernet.supported'] = ProtoField.uint32("of15.port_
 fields['of15.port_desc_prop_ethernet.peer'] = ProtoField.uint32("of15.port_desc_prop_ethernet.peer", "peer", base.DEC, nil)
 fields['of15.port_desc_prop_ethernet.curr_speed'] = ProtoField.uint32("of15.port_desc_prop_ethernet.curr_speed", "curr_speed", base.DEC, nil)
 fields['of15.port_desc_prop_ethernet.max_speed'] = ProtoField.uint32("of15.port_desc_prop_ethernet.max_speed", "max_speed", base.DEC, nil)
-fields['of15.port_desc_prop_experimenter.type'] = ProtoField.uint16("of15.port_desc_prop_experimenter.type", "type", base.DEC, nil)
-fields['of15.port_desc_prop_experimenter.length'] = ProtoField.uint16("of15.port_desc_prop_experimenter.length", "length", base.DEC, nil)
-fields['of15.port_desc_prop_experimenter.experimenter'] = ProtoField.uint32("of15.port_desc_prop_experimenter.experimenter", "experimenter", base.DEC, nil)
-fields['of15.port_desc_prop_experimenter.exp_type'] = ProtoField.uint32("of15.port_desc_prop_experimenter.exp_type", "exp_type", base.DEC, nil)
 fields['of15.port_desc_prop_ingress.type'] = ProtoField.uint16("of15.port_desc_prop_ingress.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop_ingress.length'] = ProtoField.uint16("of15.port_desc_prop_ingress.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_ingress.oxm_ids'] = ProtoField.bytes("of15.port_desc_prop_ingress.oxm_ids", "oxm_ids")
@@ -14121,6 +15594,15 @@ fields['of15.queue_desc_prop_experimenter.type'] = ProtoField.uint16("of15.queue
 fields['of15.queue_desc_prop_experimenter.length'] = ProtoField.uint16("of15.queue_desc_prop_experimenter.length", "length", base.DEC, nil)
 fields['of15.queue_desc_prop_experimenter.experimenter'] = ProtoField.uint32("of15.queue_desc_prop_experimenter.experimenter", "experimenter", base.DEC, nil)
 fields['of15.queue_desc_prop_experimenter.exp_type'] = ProtoField.uint32("of15.queue_desc_prop_experimenter.exp_type", "exp_type", base.DEC, nil)
+fields['of15.queue_desc_prop_bsn.type'] = ProtoField.uint16("of15.queue_desc_prop_bsn.type", "type", base.DEC, nil)
+fields['of15.queue_desc_prop_bsn.length'] = ProtoField.uint16("of15.queue_desc_prop_bsn.length", "length", base.DEC, nil)
+fields['of15.queue_desc_prop_bsn.experimenter'] = ProtoField.uint32("of15.queue_desc_prop_bsn.experimenter", "experimenter", base.DEC, nil)
+fields['of15.queue_desc_prop_bsn.exp_type'] = ProtoField.uint32("of15.queue_desc_prop_bsn.exp_type", "exp_type", base.DEC, nil)
+fields['of15.queue_desc_prop_bsn_queue_name.type'] = ProtoField.uint16("of15.queue_desc_prop_bsn_queue_name.type", "type", base.DEC, nil)
+fields['of15.queue_desc_prop_bsn_queue_name.length'] = ProtoField.uint16("of15.queue_desc_prop_bsn_queue_name.length", "length", base.DEC, nil)
+fields['of15.queue_desc_prop_bsn_queue_name.experimenter'] = ProtoField.uint32("of15.queue_desc_prop_bsn_queue_name.experimenter", "experimenter", base.DEC, nil)
+fields['of15.queue_desc_prop_bsn_queue_name.exp_type'] = ProtoField.uint32("of15.queue_desc_prop_bsn_queue_name.exp_type", "exp_type", base.DEC, nil)
+fields['of15.queue_desc_prop_bsn_queue_name.name'] = ProtoField.bytes("of15.queue_desc_prop_bsn_queue_name.name", "name")
 fields['of15.queue_desc_prop_max_rate.type'] = ProtoField.uint16("of15.queue_desc_prop_max_rate.type", "type", base.DEC, nil)
 fields['of15.queue_desc_prop_max_rate.length'] = ProtoField.uint16("of15.queue_desc_prop_max_rate.length", "length", base.DEC, nil)
 fields['of15.queue_desc_prop_max_rate.rate'] = ProtoField.uint16("of15.queue_desc_prop_max_rate.rate", "rate", base.DEC, nil)
@@ -23194,6 +24676,16 @@ p_of.fields = {
     fields['of15.action_id_bsn_checksum.len'],
     fields['of15.action_id_bsn_checksum.experimenter'],
     fields['of15.action_id_bsn_checksum.subtype'],
+    fields['of15.action_bsn_gentable.type'],
+    fields['of15.action_bsn_gentable.len'],
+    fields['of15.action_bsn_gentable.experimenter'],
+    fields['of15.action_bsn_gentable.subtype'],
+    fields['of15.action_bsn_gentable.table_id'],
+    fields['of15.action_bsn_gentable.key'],
+    fields['of15.action_id_bsn_gentable.type'],
+    fields['of15.action_id_bsn_gentable.len'],
+    fields['of15.action_id_bsn_gentable.experimenter'],
+    fields['of15.action_id_bsn_gentable.subtype'],
     fields['of15.action_bsn_mirror.type'],
     fields['of15.action_bsn_mirror.len'],
     fields['of15.action_bsn_mirror.experimenter'],
@@ -23483,6 +24975,31 @@ p_of.fields = {
     fields['of15.bsn_header.xid'],
     fields['of15.bsn_header.experimenter'],
     fields['of15.bsn_header.subtype'],
+    fields['of15.bsn_arp_idle.version'],
+    fields['of15.bsn_arp_idle.type'],
+    fields['of15.bsn_arp_idle.length'],
+    fields['of15.bsn_arp_idle.xid'],
+    fields['of15.bsn_arp_idle.experimenter'],
+    fields['of15.bsn_arp_idle.subtype'],
+    fields['of15.bsn_arp_idle.vlan_vid'],
+    fields['of15.bsn_arp_idle.ipv4_addr'],
+    fields['of15.experimenter_error_msg.version'],
+    fields['of15.experimenter_error_msg.type'],
+    fields['of15.experimenter_error_msg.length'],
+    fields['of15.experimenter_error_msg.xid'],
+    fields['of15.experimenter_error_msg.err_type'],
+    fields['of15.experimenter_error_msg.subtype'],
+    fields['of15.experimenter_error_msg.experimenter'],
+    fields['of15.experimenter_error_msg.data'],
+    fields['of15.bsn_base_error.version'],
+    fields['of15.bsn_base_error.type'],
+    fields['of15.bsn_base_error.length'],
+    fields['of15.bsn_base_error.xid'],
+    fields['of15.bsn_base_error.err_type'],
+    fields['of15.bsn_base_error.subtype'],
+    fields['of15.bsn_base_error.experimenter'],
+    fields['of15.bsn_base_error.err_msg'],
+    fields['of15.bsn_base_error.data'],
     fields['of15.bsn_bw_clear_data_reply.version'],
     fields['of15.bsn_bw_clear_data_reply.type'],
     fields['of15.bsn_bw_clear_data_reply.length'],
@@ -23524,6 +25041,352 @@ p_of.fields = {
     fields['of15.bsn_bw_enable_set_request.experimenter'],
     fields['of15.bsn_bw_enable_set_request.subtype'],
     fields['of15.bsn_bw_enable_set_request.enable'],
+    fields['of15.bsn_controller_connection.state'],
+    fields['of15.bsn_controller_connection.auxiliary_id'],
+    fields['of15.bsn_controller_connection.role'],
+    fields['of15.bsn_controller_connection.uri'],
+    fields['of15.bsn_controller_connections_reply.version'],
+    fields['of15.bsn_controller_connections_reply.type'],
+    fields['of15.bsn_controller_connections_reply.length'],
+    fields['of15.bsn_controller_connections_reply.xid'],
+    fields['of15.bsn_controller_connections_reply.experimenter'],
+    fields['of15.bsn_controller_connections_reply.subtype'],
+    fields['of15.bsn_controller_connections_reply.connections'],
+    fields['of15.bsn_controller_connections_request.version'],
+    fields['of15.bsn_controller_connections_request.type'],
+    fields['of15.bsn_controller_connections_request.length'],
+    fields['of15.bsn_controller_connections_request.xid'],
+    fields['of15.bsn_controller_connections_request.experimenter'],
+    fields['of15.bsn_controller_connections_request.subtype'],
+    fields['of15.bsn_debug_counter_desc_stats_entry.counter_id'],
+    fields['of15.bsn_debug_counter_desc_stats_entry.name'],
+    fields['of15.bsn_debug_counter_desc_stats_entry.description'],
+    fields['of15.experimenter_stats_reply.version'],
+    fields['of15.experimenter_stats_reply.type'],
+    fields['of15.experimenter_stats_reply.length'],
+    fields['of15.experimenter_stats_reply.xid'],
+    fields['of15.experimenter_stats_reply.stats_type'],
+    fields['of15.experimenter_stats_reply.flags'],
+    fields['of15.experimenter_stats_reply.experimenter'],
+    fields['of15.experimenter_stats_reply.subtype'],
+    fields['of15.bsn_stats_reply.version'],
+    fields['of15.bsn_stats_reply.type'],
+    fields['of15.bsn_stats_reply.length'],
+    fields['of15.bsn_stats_reply.xid'],
+    fields['of15.bsn_stats_reply.stats_type'],
+    fields['of15.bsn_stats_reply.flags'],
+    fields['of15.bsn_stats_reply.experimenter'],
+    fields['of15.bsn_stats_reply.subtype'],
+    fields['of15.bsn_debug_counter_desc_stats_reply.version'],
+    fields['of15.bsn_debug_counter_desc_stats_reply.type'],
+    fields['of15.bsn_debug_counter_desc_stats_reply.length'],
+    fields['of15.bsn_debug_counter_desc_stats_reply.xid'],
+    fields['of15.bsn_debug_counter_desc_stats_reply.stats_type'],
+    fields['of15.bsn_debug_counter_desc_stats_reply.flags'],
+    fields['of15.bsn_debug_counter_desc_stats_reply.experimenter'],
+    fields['of15.bsn_debug_counter_desc_stats_reply.subtype'],
+    fields['of15.bsn_debug_counter_desc_stats_reply.entries'],
+    fields['of15.experimenter_stats_request.version'],
+    fields['of15.experimenter_stats_request.type'],
+    fields['of15.experimenter_stats_request.length'],
+    fields['of15.experimenter_stats_request.xid'],
+    fields['of15.experimenter_stats_request.stats_type'],
+    fields['of15.experimenter_stats_request.flags'],
+    fields['of15.experimenter_stats_request.experimenter'],
+    fields['of15.experimenter_stats_request.subtype'],
+    fields['of15.bsn_stats_request.version'],
+    fields['of15.bsn_stats_request.type'],
+    fields['of15.bsn_stats_request.length'],
+    fields['of15.bsn_stats_request.xid'],
+    fields['of15.bsn_stats_request.stats_type'],
+    fields['of15.bsn_stats_request.flags'],
+    fields['of15.bsn_stats_request.experimenter'],
+    fields['of15.bsn_stats_request.subtype'],
+    fields['of15.bsn_debug_counter_desc_stats_request.version'],
+    fields['of15.bsn_debug_counter_desc_stats_request.type'],
+    fields['of15.bsn_debug_counter_desc_stats_request.length'],
+    fields['of15.bsn_debug_counter_desc_stats_request.xid'],
+    fields['of15.bsn_debug_counter_desc_stats_request.stats_type'],
+    fields['of15.bsn_debug_counter_desc_stats_request.flags'],
+    fields['of15.bsn_debug_counter_desc_stats_request.experimenter'],
+    fields['of15.bsn_debug_counter_desc_stats_request.subtype'],
+    fields['of15.bsn_debug_counter_stats_entry.counter_id'],
+    fields['of15.bsn_debug_counter_stats_entry.value'],
+    fields['of15.bsn_debug_counter_stats_reply.version'],
+    fields['of15.bsn_debug_counter_stats_reply.type'],
+    fields['of15.bsn_debug_counter_stats_reply.length'],
+    fields['of15.bsn_debug_counter_stats_reply.xid'],
+    fields['of15.bsn_debug_counter_stats_reply.stats_type'],
+    fields['of15.bsn_debug_counter_stats_reply.flags'],
+    fields['of15.bsn_debug_counter_stats_reply.experimenter'],
+    fields['of15.bsn_debug_counter_stats_reply.subtype'],
+    fields['of15.bsn_debug_counter_stats_reply.entries'],
+    fields['of15.bsn_debug_counter_stats_request.version'],
+    fields['of15.bsn_debug_counter_stats_request.type'],
+    fields['of15.bsn_debug_counter_stats_request.length'],
+    fields['of15.bsn_debug_counter_stats_request.xid'],
+    fields['of15.bsn_debug_counter_stats_request.stats_type'],
+    fields['of15.bsn_debug_counter_stats_request.flags'],
+    fields['of15.bsn_debug_counter_stats_request.experimenter'],
+    fields['of15.bsn_debug_counter_stats_request.subtype'],
+    fields['of15.bsn_error.version'],
+    fields['of15.bsn_error.type'],
+    fields['of15.bsn_error.length'],
+    fields['of15.bsn_error.xid'],
+    fields['of15.bsn_error.err_type'],
+    fields['of15.bsn_error.subtype'],
+    fields['of15.bsn_error.experimenter'],
+    fields['of15.bsn_error.err_msg'],
+    fields['of15.bsn_error.data'],
+    fields['of15.bsn_flow_checksum_bucket_stats_entry.checksum'],
+    fields['of15.bsn_flow_checksum_bucket_stats_reply.version'],
+    fields['of15.bsn_flow_checksum_bucket_stats_reply.type'],
+    fields['of15.bsn_flow_checksum_bucket_stats_reply.length'],
+    fields['of15.bsn_flow_checksum_bucket_stats_reply.xid'],
+    fields['of15.bsn_flow_checksum_bucket_stats_reply.stats_type'],
+    fields['of15.bsn_flow_checksum_bucket_stats_reply.flags'],
+    fields['of15.bsn_flow_checksum_bucket_stats_reply.experimenter'],
+    fields['of15.bsn_flow_checksum_bucket_stats_reply.subtype'],
+    fields['of15.bsn_flow_checksum_bucket_stats_reply.entries'],
+    fields['of15.bsn_flow_checksum_bucket_stats_request.version'],
+    fields['of15.bsn_flow_checksum_bucket_stats_request.type'],
+    fields['of15.bsn_flow_checksum_bucket_stats_request.length'],
+    fields['of15.bsn_flow_checksum_bucket_stats_request.xid'],
+    fields['of15.bsn_flow_checksum_bucket_stats_request.stats_type'],
+    fields['of15.bsn_flow_checksum_bucket_stats_request.flags'],
+    fields['of15.bsn_flow_checksum_bucket_stats_request.experimenter'],
+    fields['of15.bsn_flow_checksum_bucket_stats_request.subtype'],
+    fields['of15.bsn_flow_checksum_bucket_stats_request.table_id'],
+    fields['of15.bsn_flow_idle.version'],
+    fields['of15.bsn_flow_idle.type'],
+    fields['of15.bsn_flow_idle.length'],
+    fields['of15.bsn_flow_idle.xid'],
+    fields['of15.bsn_flow_idle.experimenter'],
+    fields['of15.bsn_flow_idle.subtype'],
+    fields['of15.bsn_flow_idle.cookie'],
+    fields['of15.bsn_flow_idle.priority'],
+    fields['of15.bsn_flow_idle.table_id'],
+    fields['of15.bsn_flow_idle.match'],
+    fields['of15.bsn_flow_idle_enable_get_reply.version'],
+    fields['of15.bsn_flow_idle_enable_get_reply.type'],
+    fields['of15.bsn_flow_idle_enable_get_reply.length'],
+    fields['of15.bsn_flow_idle_enable_get_reply.xid'],
+    fields['of15.bsn_flow_idle_enable_get_reply.experimenter'],
+    fields['of15.bsn_flow_idle_enable_get_reply.subtype'],
+    fields['of15.bsn_flow_idle_enable_get_reply.enabled'],
+    fields['of15.bsn_flow_idle_enable_get_request.version'],
+    fields['of15.bsn_flow_idle_enable_get_request.type'],
+    fields['of15.bsn_flow_idle_enable_get_request.length'],
+    fields['of15.bsn_flow_idle_enable_get_request.xid'],
+    fields['of15.bsn_flow_idle_enable_get_request.experimenter'],
+    fields['of15.bsn_flow_idle_enable_get_request.subtype'],
+    fields['of15.bsn_flow_idle_enable_set_reply.version'],
+    fields['of15.bsn_flow_idle_enable_set_reply.type'],
+    fields['of15.bsn_flow_idle_enable_set_reply.length'],
+    fields['of15.bsn_flow_idle_enable_set_reply.xid'],
+    fields['of15.bsn_flow_idle_enable_set_reply.experimenter'],
+    fields['of15.bsn_flow_idle_enable_set_reply.subtype'],
+    fields['of15.bsn_flow_idle_enable_set_reply.enable'],
+    fields['of15.bsn_flow_idle_enable_set_reply.status'],
+    fields['of15.bsn_flow_idle_enable_set_request.version'],
+    fields['of15.bsn_flow_idle_enable_set_request.type'],
+    fields['of15.bsn_flow_idle_enable_set_request.length'],
+    fields['of15.bsn_flow_idle_enable_set_request.xid'],
+    fields['of15.bsn_flow_idle_enable_set_request.experimenter'],
+    fields['of15.bsn_flow_idle_enable_set_request.subtype'],
+    fields['of15.bsn_flow_idle_enable_set_request.enable'],
+    fields['of15.bsn_generic_async.version'],
+    fields['of15.bsn_generic_async.type'],
+    fields['of15.bsn_generic_async.length'],
+    fields['of15.bsn_generic_async.xid'],
+    fields['of15.bsn_generic_async.experimenter'],
+    fields['of15.bsn_generic_async.subtype'],
+    fields['of15.bsn_generic_async.name'],
+    fields['of15.bsn_generic_async.tlvs'],
+    fields['of15.bsn_generic_command.version'],
+    fields['of15.bsn_generic_command.type'],
+    fields['of15.bsn_generic_command.length'],
+    fields['of15.bsn_generic_command.xid'],
+    fields['of15.bsn_generic_command.experimenter'],
+    fields['of15.bsn_generic_command.subtype'],
+    fields['of15.bsn_generic_command.name'],
+    fields['of15.bsn_generic_command.tlvs'],
+    fields['of15.bsn_generic_stats_entry.length'],
+    fields['of15.bsn_generic_stats_entry.tlvs'],
+    fields['of15.bsn_generic_stats_reply.version'],
+    fields['of15.bsn_generic_stats_reply.type'],
+    fields['of15.bsn_generic_stats_reply.length'],
+    fields['of15.bsn_generic_stats_reply.xid'],
+    fields['of15.bsn_generic_stats_reply.stats_type'],
+    fields['of15.bsn_generic_stats_reply.flags'],
+    fields['of15.bsn_generic_stats_reply.experimenter'],
+    fields['of15.bsn_generic_stats_reply.subtype'],
+    fields['of15.bsn_generic_stats_reply.entries'],
+    fields['of15.bsn_generic_stats_request.version'],
+    fields['of15.bsn_generic_stats_request.type'],
+    fields['of15.bsn_generic_stats_request.length'],
+    fields['of15.bsn_generic_stats_request.xid'],
+    fields['of15.bsn_generic_stats_request.stats_type'],
+    fields['of15.bsn_generic_stats_request.flags'],
+    fields['of15.bsn_generic_stats_request.experimenter'],
+    fields['of15.bsn_generic_stats_request.subtype'],
+    fields['of15.bsn_generic_stats_request.name'],
+    fields['of15.bsn_generic_stats_request.tlvs'],
+    fields['of15.bsn_gentable_bucket_stats_entry.checksum'],
+    fields['of15.bsn_gentable_bucket_stats_reply.version'],
+    fields['of15.bsn_gentable_bucket_stats_reply.type'],
+    fields['of15.bsn_gentable_bucket_stats_reply.length'],
+    fields['of15.bsn_gentable_bucket_stats_reply.xid'],
+    fields['of15.bsn_gentable_bucket_stats_reply.stats_type'],
+    fields['of15.bsn_gentable_bucket_stats_reply.flags'],
+    fields['of15.bsn_gentable_bucket_stats_reply.experimenter'],
+    fields['of15.bsn_gentable_bucket_stats_reply.subtype'],
+    fields['of15.bsn_gentable_bucket_stats_reply.entries'],
+    fields['of15.bsn_gentable_bucket_stats_request.version'],
+    fields['of15.bsn_gentable_bucket_stats_request.type'],
+    fields['of15.bsn_gentable_bucket_stats_request.length'],
+    fields['of15.bsn_gentable_bucket_stats_request.xid'],
+    fields['of15.bsn_gentable_bucket_stats_request.stats_type'],
+    fields['of15.bsn_gentable_bucket_stats_request.flags'],
+    fields['of15.bsn_gentable_bucket_stats_request.experimenter'],
+    fields['of15.bsn_gentable_bucket_stats_request.subtype'],
+    fields['of15.bsn_gentable_bucket_stats_request.table_id'],
+    fields['of15.bsn_gentable_clear_reply.version'],
+    fields['of15.bsn_gentable_clear_reply.type'],
+    fields['of15.bsn_gentable_clear_reply.length'],
+    fields['of15.bsn_gentable_clear_reply.xid'],
+    fields['of15.bsn_gentable_clear_reply.experimenter'],
+    fields['of15.bsn_gentable_clear_reply.subtype'],
+    fields['of15.bsn_gentable_clear_reply.table_id'],
+    fields['of15.bsn_gentable_clear_reply.deleted_count'],
+    fields['of15.bsn_gentable_clear_reply.error_count'],
+    fields['of15.bsn_gentable_clear_request.version'],
+    fields['of15.bsn_gentable_clear_request.type'],
+    fields['of15.bsn_gentable_clear_request.length'],
+    fields['of15.bsn_gentable_clear_request.xid'],
+    fields['of15.bsn_gentable_clear_request.experimenter'],
+    fields['of15.bsn_gentable_clear_request.subtype'],
+    fields['of15.bsn_gentable_clear_request.table_id'],
+    fields['of15.bsn_gentable_clear_request.checksum'],
+    fields['of15.bsn_gentable_clear_request.checksum_mask'],
+    fields['of15.bsn_gentable_desc_stats_entry.length'],
+    fields['of15.bsn_gentable_desc_stats_entry.table_id'],
+    fields['of15.bsn_gentable_desc_stats_entry.name'],
+    fields['of15.bsn_gentable_desc_stats_entry.buckets_size'],
+    fields['of15.bsn_gentable_desc_stats_entry.max_entries'],
+    fields['of15.bsn_gentable_desc_stats_reply.version'],
+    fields['of15.bsn_gentable_desc_stats_reply.type'],
+    fields['of15.bsn_gentable_desc_stats_reply.length'],
+    fields['of15.bsn_gentable_desc_stats_reply.xid'],
+    fields['of15.bsn_gentable_desc_stats_reply.stats_type'],
+    fields['of15.bsn_gentable_desc_stats_reply.flags'],
+    fields['of15.bsn_gentable_desc_stats_reply.experimenter'],
+    fields['of15.bsn_gentable_desc_stats_reply.subtype'],
+    fields['of15.bsn_gentable_desc_stats_reply.entries'],
+    fields['of15.bsn_gentable_desc_stats_request.version'],
+    fields['of15.bsn_gentable_desc_stats_request.type'],
+    fields['of15.bsn_gentable_desc_stats_request.length'],
+    fields['of15.bsn_gentable_desc_stats_request.xid'],
+    fields['of15.bsn_gentable_desc_stats_request.stats_type'],
+    fields['of15.bsn_gentable_desc_stats_request.flags'],
+    fields['of15.bsn_gentable_desc_stats_request.experimenter'],
+    fields['of15.bsn_gentable_desc_stats_request.subtype'],
+    fields['of15.bsn_gentable_entry_add.version'],
+    fields['of15.bsn_gentable_entry_add.type'],
+    fields['of15.bsn_gentable_entry_add.length'],
+    fields['of15.bsn_gentable_entry_add.xid'],
+    fields['of15.bsn_gentable_entry_add.experimenter'],
+    fields['of15.bsn_gentable_entry_add.subtype'],
+    fields['of15.bsn_gentable_entry_add.table_id'],
+    fields['of15.bsn_gentable_entry_add.key_length'],
+    fields['of15.bsn_gentable_entry_add.checksum'],
+    fields['of15.bsn_gentable_entry_add.key'],
+    fields['of15.bsn_gentable_entry_add.value'],
+    fields['of15.bsn_gentable_entry_delete.version'],
+    fields['of15.bsn_gentable_entry_delete.type'],
+    fields['of15.bsn_gentable_entry_delete.length'],
+    fields['of15.bsn_gentable_entry_delete.xid'],
+    fields['of15.bsn_gentable_entry_delete.experimenter'],
+    fields['of15.bsn_gentable_entry_delete.subtype'],
+    fields['of15.bsn_gentable_entry_delete.table_id'],
+    fields['of15.bsn_gentable_entry_delete.key'],
+    fields['of15.bsn_gentable_entry_desc_stats_entry.length'],
+    fields['of15.bsn_gentable_entry_desc_stats_entry.key_length'],
+    fields['of15.bsn_gentable_entry_desc_stats_entry.checksum'],
+    fields['of15.bsn_gentable_entry_desc_stats_entry.key'],
+    fields['of15.bsn_gentable_entry_desc_stats_entry.value'],
+    fields['of15.bsn_gentable_entry_desc_stats_reply.version'],
+    fields['of15.bsn_gentable_entry_desc_stats_reply.type'],
+    fields['of15.bsn_gentable_entry_desc_stats_reply.length'],
+    fields['of15.bsn_gentable_entry_desc_stats_reply.xid'],
+    fields['of15.bsn_gentable_entry_desc_stats_reply.stats_type'],
+    fields['of15.bsn_gentable_entry_desc_stats_reply.flags'],
+    fields['of15.bsn_gentable_entry_desc_stats_reply.experimenter'],
+    fields['of15.bsn_gentable_entry_desc_stats_reply.subtype'],
+    fields['of15.bsn_gentable_entry_desc_stats_reply.entries'],
+    fields['of15.bsn_gentable_entry_desc_stats_request.version'],
+    fields['of15.bsn_gentable_entry_desc_stats_request.type'],
+    fields['of15.bsn_gentable_entry_desc_stats_request.length'],
+    fields['of15.bsn_gentable_entry_desc_stats_request.xid'],
+    fields['of15.bsn_gentable_entry_desc_stats_request.stats_type'],
+    fields['of15.bsn_gentable_entry_desc_stats_request.flags'],
+    fields['of15.bsn_gentable_entry_desc_stats_request.experimenter'],
+    fields['of15.bsn_gentable_entry_desc_stats_request.subtype'],
+    fields['of15.bsn_gentable_entry_desc_stats_request.table_id'],
+    fields['of15.bsn_gentable_entry_desc_stats_request.checksum'],
+    fields['of15.bsn_gentable_entry_desc_stats_request.checksum_mask'],
+    fields['of15.bsn_gentable_entry_stats_entry.length'],
+    fields['of15.bsn_gentable_entry_stats_entry.key_length'],
+    fields['of15.bsn_gentable_entry_stats_entry.key'],
+    fields['of15.bsn_gentable_entry_stats_entry.stats'],
+    fields['of15.bsn_gentable_entry_stats_reply.version'],
+    fields['of15.bsn_gentable_entry_stats_reply.type'],
+    fields['of15.bsn_gentable_entry_stats_reply.length'],
+    fields['of15.bsn_gentable_entry_stats_reply.xid'],
+    fields['of15.bsn_gentable_entry_stats_reply.stats_type'],
+    fields['of15.bsn_gentable_entry_stats_reply.flags'],
+    fields['of15.bsn_gentable_entry_stats_reply.experimenter'],
+    fields['of15.bsn_gentable_entry_stats_reply.subtype'],
+    fields['of15.bsn_gentable_entry_stats_reply.entries'],
+    fields['of15.bsn_gentable_entry_stats_request.version'],
+    fields['of15.bsn_gentable_entry_stats_request.type'],
+    fields['of15.bsn_gentable_entry_stats_request.length'],
+    fields['of15.bsn_gentable_entry_stats_request.xid'],
+    fields['of15.bsn_gentable_entry_stats_request.stats_type'],
+    fields['of15.bsn_gentable_entry_stats_request.flags'],
+    fields['of15.bsn_gentable_entry_stats_request.experimenter'],
+    fields['of15.bsn_gentable_entry_stats_request.subtype'],
+    fields['of15.bsn_gentable_entry_stats_request.table_id'],
+    fields['of15.bsn_gentable_entry_stats_request.checksum'],
+    fields['of15.bsn_gentable_entry_stats_request.checksum_mask'],
+    fields['of15.bsn_gentable_set_buckets_size.version'],
+    fields['of15.bsn_gentable_set_buckets_size.type'],
+    fields['of15.bsn_gentable_set_buckets_size.length'],
+    fields['of15.bsn_gentable_set_buckets_size.xid'],
+    fields['of15.bsn_gentable_set_buckets_size.experimenter'],
+    fields['of15.bsn_gentable_set_buckets_size.subtype'],
+    fields['of15.bsn_gentable_set_buckets_size.table_id'],
+    fields['of15.bsn_gentable_set_buckets_size.buckets_size'],
+    fields['of15.bsn_gentable_stats_entry.table_id'],
+    fields['of15.bsn_gentable_stats_entry.entry_count'],
+    fields['of15.bsn_gentable_stats_entry.checksum'],
+    fields['of15.bsn_gentable_stats_reply.version'],
+    fields['of15.bsn_gentable_stats_reply.type'],
+    fields['of15.bsn_gentable_stats_reply.length'],
+    fields['of15.bsn_gentable_stats_reply.xid'],
+    fields['of15.bsn_gentable_stats_reply.stats_type'],
+    fields['of15.bsn_gentable_stats_reply.flags'],
+    fields['of15.bsn_gentable_stats_reply.experimenter'],
+    fields['of15.bsn_gentable_stats_reply.subtype'],
+    fields['of15.bsn_gentable_stats_reply.entries'],
+    fields['of15.bsn_gentable_stats_request.version'],
+    fields['of15.bsn_gentable_stats_request.type'],
+    fields['of15.bsn_gentable_stats_request.length'],
+    fields['of15.bsn_gentable_stats_request.xid'],
+    fields['of15.bsn_gentable_stats_request.stats_type'],
+    fields['of15.bsn_gentable_stats_request.flags'],
+    fields['of15.bsn_gentable_stats_request.experimenter'],
+    fields['of15.bsn_gentable_stats_request.subtype'],
     fields['of15.bsn_get_interfaces_reply.version'],
     fields['of15.bsn_get_interfaces_reply.type'],
     fields['of15.bsn_get_interfaces_reply.length'],
@@ -23551,10 +25414,126 @@ p_of.fields = {
     fields['of15.bsn_get_mirroring_request.experimenter'],
     fields['of15.bsn_get_mirroring_request.subtype'],
     fields['of15.bsn_get_mirroring_request.report_mirror_ports'],
+    fields['of15.bsn_get_switch_pipeline_reply.version'],
+    fields['of15.bsn_get_switch_pipeline_reply.type'],
+    fields['of15.bsn_get_switch_pipeline_reply.length'],
+    fields['of15.bsn_get_switch_pipeline_reply.xid'],
+    fields['of15.bsn_get_switch_pipeline_reply.experimenter'],
+    fields['of15.bsn_get_switch_pipeline_reply.subtype'],
+    fields['of15.bsn_get_switch_pipeline_reply.pipeline'],
+    fields['of15.bsn_get_switch_pipeline_request.version'],
+    fields['of15.bsn_get_switch_pipeline_request.type'],
+    fields['of15.bsn_get_switch_pipeline_request.length'],
+    fields['of15.bsn_get_switch_pipeline_request.xid'],
+    fields['of15.bsn_get_switch_pipeline_request.experimenter'],
+    fields['of15.bsn_get_switch_pipeline_request.subtype'],
+    fields['of15.bsn_image_desc_stats_reply.version'],
+    fields['of15.bsn_image_desc_stats_reply.type'],
+    fields['of15.bsn_image_desc_stats_reply.length'],
+    fields['of15.bsn_image_desc_stats_reply.xid'],
+    fields['of15.bsn_image_desc_stats_reply.stats_type'],
+    fields['of15.bsn_image_desc_stats_reply.flags'],
+    fields['of15.bsn_image_desc_stats_reply.experimenter'],
+    fields['of15.bsn_image_desc_stats_reply.subtype'],
+    fields['of15.bsn_image_desc_stats_reply.image_checksum'],
+    fields['of15.bsn_image_desc_stats_reply.startup_config_checksum'],
+    fields['of15.bsn_image_desc_stats_request.version'],
+    fields['of15.bsn_image_desc_stats_request.type'],
+    fields['of15.bsn_image_desc_stats_request.length'],
+    fields['of15.bsn_image_desc_stats_request.xid'],
+    fields['of15.bsn_image_desc_stats_request.stats_type'],
+    fields['of15.bsn_image_desc_stats_request.flags'],
+    fields['of15.bsn_image_desc_stats_request.experimenter'],
+    fields['of15.bsn_image_desc_stats_request.subtype'],
     fields['of15.bsn_interface.hw_addr'],
     fields['of15.bsn_interface.name'],
     fields['of15.bsn_interface.ipv4_addr'],
     fields['of15.bsn_interface.ipv4_netmask'],
+    fields['of15.bsn_lacp_convergence_notif.version'],
+    fields['of15.bsn_lacp_convergence_notif.type'],
+    fields['of15.bsn_lacp_convergence_notif.length'],
+    fields['of15.bsn_lacp_convergence_notif.xid'],
+    fields['of15.bsn_lacp_convergence_notif.experimenter'],
+    fields['of15.bsn_lacp_convergence_notif.subtype'],
+    fields['of15.bsn_lacp_convergence_notif.convergence_status'],
+    fields['of15.bsn_lacp_convergence_notif.port_no'],
+    fields['of15.bsn_lacp_convergence_notif.actor_sys_priority'],
+    fields['of15.bsn_lacp_convergence_notif.actor_sys_mac'],
+    fields['of15.bsn_lacp_convergence_notif.actor_port_priority'],
+    fields['of15.bsn_lacp_convergence_notif.actor_port_num'],
+    fields['of15.bsn_lacp_convergence_notif.actor_key'],
+    fields['of15.bsn_lacp_convergence_notif.partner_sys_priority'],
+    fields['of15.bsn_lacp_convergence_notif.partner_sys_mac'],
+    fields['of15.bsn_lacp_convergence_notif.partner_port_priority'],
+    fields['of15.bsn_lacp_convergence_notif.partner_port_num'],
+    fields['of15.bsn_lacp_convergence_notif.partner_key'],
+    fields['of15.bsn_lacp_stats_entry.port_no'],
+    fields['of15.bsn_lacp_stats_entry.actor_sys_priority'],
+    fields['of15.bsn_lacp_stats_entry.actor_sys_mac'],
+    fields['of15.bsn_lacp_stats_entry.actor_port_priority'],
+    fields['of15.bsn_lacp_stats_entry.actor_port_num'],
+    fields['of15.bsn_lacp_stats_entry.actor_key'],
+    fields['of15.bsn_lacp_stats_entry.convergence_status'],
+    fields['of15.bsn_lacp_stats_entry.partner_sys_priority'],
+    fields['of15.bsn_lacp_stats_entry.partner_sys_mac'],
+    fields['of15.bsn_lacp_stats_entry.partner_port_priority'],
+    fields['of15.bsn_lacp_stats_entry.partner_port_num'],
+    fields['of15.bsn_lacp_stats_entry.partner_key'],
+    fields['of15.bsn_lacp_stats_reply.version'],
+    fields['of15.bsn_lacp_stats_reply.type'],
+    fields['of15.bsn_lacp_stats_reply.length'],
+    fields['of15.bsn_lacp_stats_reply.xid'],
+    fields['of15.bsn_lacp_stats_reply.stats_type'],
+    fields['of15.bsn_lacp_stats_reply.flags'],
+    fields['of15.bsn_lacp_stats_reply.experimenter'],
+    fields['of15.bsn_lacp_stats_reply.subtype'],
+    fields['of15.bsn_lacp_stats_reply.entries'],
+    fields['of15.bsn_lacp_stats_request.version'],
+    fields['of15.bsn_lacp_stats_request.type'],
+    fields['of15.bsn_lacp_stats_request.length'],
+    fields['of15.bsn_lacp_stats_request.xid'],
+    fields['of15.bsn_lacp_stats_request.stats_type'],
+    fields['of15.bsn_lacp_stats_request.flags'],
+    fields['of15.bsn_lacp_stats_request.experimenter'],
+    fields['of15.bsn_lacp_stats_request.subtype'],
+    fields['of15.bsn_log.version'],
+    fields['of15.bsn_log.type'],
+    fields['of15.bsn_log.length'],
+    fields['of15.bsn_log.xid'],
+    fields['of15.bsn_log.experimenter'],
+    fields['of15.bsn_log.subtype'],
+    fields['of15.bsn_log.loglevel'],
+    fields['of15.bsn_log.data'],
+    fields['of15.bsn_lua_command_reply.version'],
+    fields['of15.bsn_lua_command_reply.type'],
+    fields['of15.bsn_lua_command_reply.length'],
+    fields['of15.bsn_lua_command_reply.xid'],
+    fields['of15.bsn_lua_command_reply.experimenter'],
+    fields['of15.bsn_lua_command_reply.subtype'],
+    fields['of15.bsn_lua_command_reply.data'],
+    fields['of15.bsn_lua_command_request.version'],
+    fields['of15.bsn_lua_command_request.type'],
+    fields['of15.bsn_lua_command_request.length'],
+    fields['of15.bsn_lua_command_request.xid'],
+    fields['of15.bsn_lua_command_request.experimenter'],
+    fields['of15.bsn_lua_command_request.subtype'],
+    fields['of15.bsn_lua_command_request.data'],
+    fields['of15.bsn_lua_notification.version'],
+    fields['of15.bsn_lua_notification.type'],
+    fields['of15.bsn_lua_notification.length'],
+    fields['of15.bsn_lua_notification.xid'],
+    fields['of15.bsn_lua_notification.experimenter'],
+    fields['of15.bsn_lua_notification.subtype'],
+    fields['of15.bsn_lua_notification.data'],
+    fields['of15.bsn_lua_upload.version'],
+    fields['of15.bsn_lua_upload.type'],
+    fields['of15.bsn_lua_upload.length'],
+    fields['of15.bsn_lua_upload.xid'],
+    fields['of15.bsn_lua_upload.experimenter'],
+    fields['of15.bsn_lua_upload.subtype'],
+    fields['of15.bsn_lua_upload.flags'],
+    fields['of15.bsn_lua_upload.filename'],
+    fields['of15.bsn_lua_upload.data'],
     fields['of15.bsn_pdu_rx_reply.version'],
     fields['of15.bsn_pdu_rx_reply.type'],
     fields['of15.bsn_pdu_rx_reply.length'],
@@ -23601,6 +25580,63 @@ p_of.fields = {
     fields['of15.bsn_pdu_tx_request.port_no'],
     fields['of15.bsn_pdu_tx_request.slot_num'],
     fields['of15.bsn_pdu_tx_request.data'],
+    fields['of15.bsn_port_counter_stats_entry.length'],
+    fields['of15.bsn_port_counter_stats_entry.port_no'],
+    fields['of15.bsn_port_counter_stats_entry.values'],
+    fields['of15.bsn_port_counter_stats_reply.version'],
+    fields['of15.bsn_port_counter_stats_reply.type'],
+    fields['of15.bsn_port_counter_stats_reply.length'],
+    fields['of15.bsn_port_counter_stats_reply.xid'],
+    fields['of15.bsn_port_counter_stats_reply.stats_type'],
+    fields['of15.bsn_port_counter_stats_reply.flags'],
+    fields['of15.bsn_port_counter_stats_reply.experimenter'],
+    fields['of15.bsn_port_counter_stats_reply.subtype'],
+    fields['of15.bsn_port_counter_stats_reply.entries'],
+    fields['of15.bsn_port_counter_stats_request.version'],
+    fields['of15.bsn_port_counter_stats_request.type'],
+    fields['of15.bsn_port_counter_stats_request.length'],
+    fields['of15.bsn_port_counter_stats_request.xid'],
+    fields['of15.bsn_port_counter_stats_request.stats_type'],
+    fields['of15.bsn_port_counter_stats_request.flags'],
+    fields['of15.bsn_port_counter_stats_request.experimenter'],
+    fields['of15.bsn_port_counter_stats_request.subtype'],
+    fields['of15.bsn_port_counter_stats_request.port_no'],
+    fields['of15.bsn_set_aux_cxns_reply.version'],
+    fields['of15.bsn_set_aux_cxns_reply.type'],
+    fields['of15.bsn_set_aux_cxns_reply.length'],
+    fields['of15.bsn_set_aux_cxns_reply.xid'],
+    fields['of15.bsn_set_aux_cxns_reply.experimenter'],
+    fields['of15.bsn_set_aux_cxns_reply.subtype'],
+    fields['of15.bsn_set_aux_cxns_reply.num_aux'],
+    fields['of15.bsn_set_aux_cxns_reply.status'],
+    fields['of15.bsn_set_aux_cxns_request.version'],
+    fields['of15.bsn_set_aux_cxns_request.type'],
+    fields['of15.bsn_set_aux_cxns_request.length'],
+    fields['of15.bsn_set_aux_cxns_request.xid'],
+    fields['of15.bsn_set_aux_cxns_request.experimenter'],
+    fields['of15.bsn_set_aux_cxns_request.subtype'],
+    fields['of15.bsn_set_aux_cxns_request.num_aux'],
+    fields['of15.bsn_set_lacp_reply.version'],
+    fields['of15.bsn_set_lacp_reply.type'],
+    fields['of15.bsn_set_lacp_reply.length'],
+    fields['of15.bsn_set_lacp_reply.xid'],
+    fields['of15.bsn_set_lacp_reply.experimenter'],
+    fields['of15.bsn_set_lacp_reply.subtype'],
+    fields['of15.bsn_set_lacp_reply.status'],
+    fields['of15.bsn_set_lacp_reply.port_no'],
+    fields['of15.bsn_set_lacp_request.version'],
+    fields['of15.bsn_set_lacp_request.type'],
+    fields['of15.bsn_set_lacp_request.length'],
+    fields['of15.bsn_set_lacp_request.xid'],
+    fields['of15.bsn_set_lacp_request.experimenter'],
+    fields['of15.bsn_set_lacp_request.subtype'],
+    fields['of15.bsn_set_lacp_request.enabled'],
+    fields['of15.bsn_set_lacp_request.port_no'],
+    fields['of15.bsn_set_lacp_request.actor_sys_priority'],
+    fields['of15.bsn_set_lacp_request.actor_sys_mac'],
+    fields['of15.bsn_set_lacp_request.actor_port_priority'],
+    fields['of15.bsn_set_lacp_request.actor_port_num'],
+    fields['of15.bsn_set_lacp_request.actor_key'],
     fields['of15.bsn_set_mirroring.version'],
     fields['of15.bsn_set_mirroring.type'],
     fields['of15.bsn_set_mirroring.length'],
@@ -23626,38 +25662,437 @@ p_of.fields = {
     fields['of15.bsn_set_pktin_suppression_request.hard_timeout'],
     fields['of15.bsn_set_pktin_suppression_request.priority'],
     fields['of15.bsn_set_pktin_suppression_request.cookie'],
-    fields['of15.experimenter_stats_reply.version'],
-    fields['of15.experimenter_stats_reply.type'],
-    fields['of15.experimenter_stats_reply.length'],
-    fields['of15.experimenter_stats_reply.xid'],
-    fields['of15.experimenter_stats_reply.stats_type'],
-    fields['of15.experimenter_stats_reply.flags'],
-    fields['of15.experimenter_stats_reply.experimenter'],
-    fields['of15.experimenter_stats_reply.subtype'],
-    fields['of15.bsn_stats_reply.version'],
-    fields['of15.bsn_stats_reply.type'],
-    fields['of15.bsn_stats_reply.length'],
-    fields['of15.bsn_stats_reply.xid'],
-    fields['of15.bsn_stats_reply.stats_type'],
-    fields['of15.bsn_stats_reply.flags'],
-    fields['of15.bsn_stats_reply.experimenter'],
-    fields['of15.bsn_stats_reply.subtype'],
-    fields['of15.experimenter_stats_request.version'],
-    fields['of15.experimenter_stats_request.type'],
-    fields['of15.experimenter_stats_request.length'],
-    fields['of15.experimenter_stats_request.xid'],
-    fields['of15.experimenter_stats_request.stats_type'],
-    fields['of15.experimenter_stats_request.flags'],
-    fields['of15.experimenter_stats_request.experimenter'],
-    fields['of15.experimenter_stats_request.subtype'],
-    fields['of15.bsn_stats_request.version'],
-    fields['of15.bsn_stats_request.type'],
-    fields['of15.bsn_stats_request.length'],
-    fields['of15.bsn_stats_request.xid'],
-    fields['of15.bsn_stats_request.stats_type'],
-    fields['of15.bsn_stats_request.flags'],
-    fields['of15.bsn_stats_request.experimenter'],
-    fields['of15.bsn_stats_request.subtype'],
+    fields['of15.bsn_set_switch_pipeline_reply.version'],
+    fields['of15.bsn_set_switch_pipeline_reply.type'],
+    fields['of15.bsn_set_switch_pipeline_reply.length'],
+    fields['of15.bsn_set_switch_pipeline_reply.xid'],
+    fields['of15.bsn_set_switch_pipeline_reply.experimenter'],
+    fields['of15.bsn_set_switch_pipeline_reply.subtype'],
+    fields['of15.bsn_set_switch_pipeline_reply.status'],
+    fields['of15.bsn_set_switch_pipeline_request.version'],
+    fields['of15.bsn_set_switch_pipeline_request.type'],
+    fields['of15.bsn_set_switch_pipeline_request.length'],
+    fields['of15.bsn_set_switch_pipeline_request.xid'],
+    fields['of15.bsn_set_switch_pipeline_request.experimenter'],
+    fields['of15.bsn_set_switch_pipeline_request.subtype'],
+    fields['of15.bsn_set_switch_pipeline_request.pipeline'],
+    fields['of15.bsn_switch_pipeline_stats_entry.pipeline'],
+    fields['of15.bsn_switch_pipeline_stats_reply.version'],
+    fields['of15.bsn_switch_pipeline_stats_reply.type'],
+    fields['of15.bsn_switch_pipeline_stats_reply.length'],
+    fields['of15.bsn_switch_pipeline_stats_reply.xid'],
+    fields['of15.bsn_switch_pipeline_stats_reply.stats_type'],
+    fields['of15.bsn_switch_pipeline_stats_reply.flags'],
+    fields['of15.bsn_switch_pipeline_stats_reply.experimenter'],
+    fields['of15.bsn_switch_pipeline_stats_reply.subtype'],
+    fields['of15.bsn_switch_pipeline_stats_reply.entries'],
+    fields['of15.bsn_switch_pipeline_stats_request.version'],
+    fields['of15.bsn_switch_pipeline_stats_request.type'],
+    fields['of15.bsn_switch_pipeline_stats_request.length'],
+    fields['of15.bsn_switch_pipeline_stats_request.xid'],
+    fields['of15.bsn_switch_pipeline_stats_request.stats_type'],
+    fields['of15.bsn_switch_pipeline_stats_request.flags'],
+    fields['of15.bsn_switch_pipeline_stats_request.experimenter'],
+    fields['of15.bsn_switch_pipeline_stats_request.subtype'],
+    fields['of15.bsn_table_checksum_stats_entry.table_id'],
+    fields['of15.bsn_table_checksum_stats_entry.checksum'],
+    fields['of15.bsn_table_checksum_stats_reply.version'],
+    fields['of15.bsn_table_checksum_stats_reply.type'],
+    fields['of15.bsn_table_checksum_stats_reply.length'],
+    fields['of15.bsn_table_checksum_stats_reply.xid'],
+    fields['of15.bsn_table_checksum_stats_reply.stats_type'],
+    fields['of15.bsn_table_checksum_stats_reply.flags'],
+    fields['of15.bsn_table_checksum_stats_reply.experimenter'],
+    fields['of15.bsn_table_checksum_stats_reply.subtype'],
+    fields['of15.bsn_table_checksum_stats_reply.entries'],
+    fields['of15.bsn_table_checksum_stats_request.version'],
+    fields['of15.bsn_table_checksum_stats_request.type'],
+    fields['of15.bsn_table_checksum_stats_request.length'],
+    fields['of15.bsn_table_checksum_stats_request.xid'],
+    fields['of15.bsn_table_checksum_stats_request.stats_type'],
+    fields['of15.bsn_table_checksum_stats_request.flags'],
+    fields['of15.bsn_table_checksum_stats_request.experimenter'],
+    fields['of15.bsn_table_checksum_stats_request.subtype'],
+    fields['of15.bsn_table_set_buckets_size.version'],
+    fields['of15.bsn_table_set_buckets_size.type'],
+    fields['of15.bsn_table_set_buckets_size.length'],
+    fields['of15.bsn_table_set_buckets_size.xid'],
+    fields['of15.bsn_table_set_buckets_size.experimenter'],
+    fields['of15.bsn_table_set_buckets_size.subtype'],
+    fields['of15.bsn_table_set_buckets_size.table_id'],
+    fields['of15.bsn_table_set_buckets_size.buckets_size'],
+    fields['of15.bsn_takeover.version'],
+    fields['of15.bsn_takeover.type'],
+    fields['of15.bsn_takeover.length'],
+    fields['of15.bsn_takeover.xid'],
+    fields['of15.bsn_takeover.experimenter'],
+    fields['of15.bsn_takeover.subtype'],
+    fields['of15.bsn_time_reply.version'],
+    fields['of15.bsn_time_reply.type'],
+    fields['of15.bsn_time_reply.length'],
+    fields['of15.bsn_time_reply.xid'],
+    fields['of15.bsn_time_reply.experimenter'],
+    fields['of15.bsn_time_reply.subtype'],
+    fields['of15.bsn_time_reply.time_ms'],
+    fields['of15.bsn_time_request.version'],
+    fields['of15.bsn_time_request.type'],
+    fields['of15.bsn_time_request.length'],
+    fields['of15.bsn_time_request.xid'],
+    fields['of15.bsn_time_request.experimenter'],
+    fields['of15.bsn_time_request.subtype'],
+    fields['of15.bsn_tlv.type'],
+    fields['of15.bsn_tlv.length'],
+    fields['of15.bsn_tlv_actor_key.type'],
+    fields['of15.bsn_tlv_actor_key.length'],
+    fields['of15.bsn_tlv_actor_key.value'],
+    fields['of15.bsn_tlv_actor_port_num.type'],
+    fields['of15.bsn_tlv_actor_port_num.length'],
+    fields['of15.bsn_tlv_actor_port_num.value'],
+    fields['of15.bsn_tlv_actor_port_priority.type'],
+    fields['of15.bsn_tlv_actor_port_priority.length'],
+    fields['of15.bsn_tlv_actor_port_priority.value'],
+    fields['of15.bsn_tlv_actor_state.type'],
+    fields['of15.bsn_tlv_actor_state.length'],
+    fields['of15.bsn_tlv_actor_state.value'],
+    fields['of15.bsn_tlv_actor_system_mac.type'],
+    fields['of15.bsn_tlv_actor_system_mac.length'],
+    fields['of15.bsn_tlv_actor_system_mac.value'],
+    fields['of15.bsn_tlv_actor_system_priority.type'],
+    fields['of15.bsn_tlv_actor_system_priority.length'],
+    fields['of15.bsn_tlv_actor_system_priority.value'],
+    fields['of15.bsn_tlv_anchor.type'],
+    fields['of15.bsn_tlv_anchor.length'],
+    fields['of15.bsn_tlv_anchor.value'],
+    fields['of15.bsn_tlv_broadcast_query_timeout.type'],
+    fields['of15.bsn_tlv_broadcast_query_timeout.length'],
+    fields['of15.bsn_tlv_broadcast_query_timeout.value'],
+    fields['of15.bsn_tlv_broadcast_rate.type'],
+    fields['of15.bsn_tlv_broadcast_rate.length'],
+    fields['of15.bsn_tlv_broadcast_rate.value'],
+    fields['of15.bsn_tlv_bucket.type'],
+    fields['of15.bsn_tlv_bucket.length'],
+    fields['of15.bsn_tlv_bucket.value'],
+    fields['of15.bsn_tlv_circuit_id.type'],
+    fields['of15.bsn_tlv_circuit_id.length'],
+    fields['of15.bsn_tlv_circuit_id.value'],
+    fields['of15.bsn_tlv_convergence_status.type'],
+    fields['of15.bsn_tlv_convergence_status.length'],
+    fields['of15.bsn_tlv_convergence_status.value'],
+    fields['of15.bsn_tlv_cpu_lag.type'],
+    fields['of15.bsn_tlv_cpu_lag.length'],
+    fields['of15.bsn_tlv_crc_enabled.type'],
+    fields['of15.bsn_tlv_crc_enabled.length'],
+    fields['of15.bsn_tlv_crc_enabled.value'],
+    fields['of15.bsn_tlv_data.type'],
+    fields['of15.bsn_tlv_data.length'],
+    fields['of15.bsn_tlv_data.value'],
+    fields['of15.bsn_tlv_decap.type'],
+    fields['of15.bsn_tlv_decap.length'],
+    fields['of15.bsn_tlv_decap.value'],
+    fields['of15.bsn_tlv_disable_src_mac_check.type'],
+    fields['of15.bsn_tlv_disable_src_mac_check.length'],
+    fields['of15.bsn_tlv_dscp.type'],
+    fields['of15.bsn_tlv_dscp.length'],
+    fields['of15.bsn_tlv_dscp.value'],
+    fields['of15.bsn_tlv_eth_dst.type'],
+    fields['of15.bsn_tlv_eth_dst.length'],
+    fields['of15.bsn_tlv_eth_dst.value'],
+    fields['of15.bsn_tlv_eth_src.type'],
+    fields['of15.bsn_tlv_eth_src.length'],
+    fields['of15.bsn_tlv_eth_src.value'],
+    fields['of15.bsn_tlv_external_gateway_ip.type'],
+    fields['of15.bsn_tlv_external_gateway_ip.length'],
+    fields['of15.bsn_tlv_external_gateway_ip.value'],
+    fields['of15.bsn_tlv_external_gateway_mac.type'],
+    fields['of15.bsn_tlv_external_gateway_mac.length'],
+    fields['of15.bsn_tlv_external_gateway_mac.value'],
+    fields['of15.bsn_tlv_external_ip.type'],
+    fields['of15.bsn_tlv_external_ip.length'],
+    fields['of15.bsn_tlv_external_ip.value'],
+    fields['of15.bsn_tlv_external_mac.type'],
+    fields['of15.bsn_tlv_external_mac.length'],
+    fields['of15.bsn_tlv_external_mac.value'],
+    fields['of15.bsn_tlv_external_netmask.type'],
+    fields['of15.bsn_tlv_external_netmask.length'],
+    fields['of15.bsn_tlv_external_netmask.value'],
+    fields['of15.bsn_tlv_generation_id.type'],
+    fields['of15.bsn_tlv_generation_id.length'],
+    fields['of15.bsn_tlv_generation_id.value'],
+    fields['of15.bsn_tlv_hash_gtp_header_match.type'],
+    fields['of15.bsn_tlv_hash_gtp_header_match.length'],
+    fields['of15.bsn_tlv_hash_gtp_header_match.first_header_byte'],
+    fields['of15.bsn_tlv_hash_gtp_header_match.first_header_mask'],
+    fields['of15.bsn_tlv_hash_gtp_port_match.type'],
+    fields['of15.bsn_tlv_hash_gtp_port_match.length'],
+    fields['of15.bsn_tlv_hash_gtp_port_match.match'],
+    fields['of15.bsn_tlv_hash_gtp_port_match.src_port'],
+    fields['of15.bsn_tlv_hash_gtp_port_match.dst_port'],
+    fields['of15.bsn_tlv_hash_packet_field.type'],
+    fields['of15.bsn_tlv_hash_packet_field.length'],
+    fields['of15.bsn_tlv_hash_packet_field.value'],
+    fields['of15.bsn_tlv_hash_packet_type.type'],
+    fields['of15.bsn_tlv_hash_packet_type.length'],
+    fields['of15.bsn_tlv_hash_packet_type.value'],
+    fields['of15.bsn_tlv_hash_seed.type'],
+    fields['of15.bsn_tlv_hash_seed.length'],
+    fields['of15.bsn_tlv_hash_seed.seed1'],
+    fields['of15.bsn_tlv_hash_seed.seed2'],
+    fields['of15.bsn_tlv_hash_type.type'],
+    fields['of15.bsn_tlv_hash_type.length'],
+    fields['of15.bsn_tlv_hash_type.value'],
+    fields['of15.bsn_tlv_header_size.type'],
+    fields['of15.bsn_tlv_header_size.length'],
+    fields['of15.bsn_tlv_header_size.value'],
+    fields['of15.bsn_tlv_icmp_code.type'],
+    fields['of15.bsn_tlv_icmp_code.length'],
+    fields['of15.bsn_tlv_icmp_code.value'],
+    fields['of15.bsn_tlv_icmp_id.type'],
+    fields['of15.bsn_tlv_icmp_id.length'],
+    fields['of15.bsn_tlv_icmp_id.value'],
+    fields['of15.bsn_tlv_icmp_type.type'],
+    fields['of15.bsn_tlv_icmp_type.length'],
+    fields['of15.bsn_tlv_icmp_type.value'],
+    fields['of15.bsn_tlv_idle_notification.type'],
+    fields['of15.bsn_tlv_idle_notification.length'],
+    fields['of15.bsn_tlv_idle_time.type'],
+    fields['of15.bsn_tlv_idle_time.length'],
+    fields['of15.bsn_tlv_idle_time.value'],
+    fields['of15.bsn_tlv_idle_timeout.type'],
+    fields['of15.bsn_tlv_idle_timeout.length'],
+    fields['of15.bsn_tlv_idle_timeout.value'],
+    fields['of15.bsn_tlv_igmp_snooping.type'],
+    fields['of15.bsn_tlv_igmp_snooping.length'],
+    fields['of15.bsn_tlv_internal_gateway_mac.type'],
+    fields['of15.bsn_tlv_internal_gateway_mac.length'],
+    fields['of15.bsn_tlv_internal_gateway_mac.value'],
+    fields['of15.bsn_tlv_internal_mac.type'],
+    fields['of15.bsn_tlv_internal_mac.length'],
+    fields['of15.bsn_tlv_internal_mac.value'],
+    fields['of15.bsn_tlv_interval.type'],
+    fields['of15.bsn_tlv_interval.length'],
+    fields['of15.bsn_tlv_interval.value'],
+    fields['of15.bsn_tlv_ip_proto.type'],
+    fields['of15.bsn_tlv_ip_proto.length'],
+    fields['of15.bsn_tlv_ip_proto.value'],
+    fields['of15.bsn_tlv_ipv4.type'],
+    fields['of15.bsn_tlv_ipv4.length'],
+    fields['of15.bsn_tlv_ipv4.value'],
+    fields['of15.bsn_tlv_ipv4_dst.type'],
+    fields['of15.bsn_tlv_ipv4_dst.length'],
+    fields['of15.bsn_tlv_ipv4_dst.value'],
+    fields['of15.bsn_tlv_ipv4_netmask.type'],
+    fields['of15.bsn_tlv_ipv4_netmask.length'],
+    fields['of15.bsn_tlv_ipv4_netmask.value'],
+    fields['of15.bsn_tlv_ipv4_src.type'],
+    fields['of15.bsn_tlv_ipv4_src.length'],
+    fields['of15.bsn_tlv_ipv4_src.value'],
+    fields['of15.bsn_tlv_ipv6.type'],
+    fields['of15.bsn_tlv_ipv6.length'],
+    fields['of15.bsn_tlv_ipv6.value'],
+    fields['of15.bsn_tlv_known_multicast_rate.type'],
+    fields['of15.bsn_tlv_known_multicast_rate.length'],
+    fields['of15.bsn_tlv_known_multicast_rate.value'],
+    fields['of15.bsn_tlv_l2_multicast_lookup.type'],
+    fields['of15.bsn_tlv_l2_multicast_lookup.length'],
+    fields['of15.bsn_tlv_loopback_port.type'],
+    fields['of15.bsn_tlv_loopback_port.length'],
+    fields['of15.bsn_tlv_loopback_port.value'],
+    fields['of15.bsn_tlv_mac.type'],
+    fields['of15.bsn_tlv_mac.length'],
+    fields['of15.bsn_tlv_mac.value'],
+    fields['of15.bsn_tlv_mac_mask.type'],
+    fields['of15.bsn_tlv_mac_mask.length'],
+    fields['of15.bsn_tlv_mac_mask.value'],
+    fields['of15.bsn_tlv_mcg_type_vxlan.type'],
+    fields['of15.bsn_tlv_mcg_type_vxlan.length'],
+    fields['of15.bsn_tlv_miss_packets.type'],
+    fields['of15.bsn_tlv_miss_packets.length'],
+    fields['of15.bsn_tlv_miss_packets.value'],
+    fields['of15.bsn_tlv_mpls_control_word.type'],
+    fields['of15.bsn_tlv_mpls_control_word.length'],
+    fields['of15.bsn_tlv_mpls_control_word.value'],
+    fields['of15.bsn_tlv_mpls_label.type'],
+    fields['of15.bsn_tlv_mpls_label.length'],
+    fields['of15.bsn_tlv_mpls_label.value'],
+    fields['of15.bsn_tlv_mpls_sequenced.type'],
+    fields['of15.bsn_tlv_mpls_sequenced.length'],
+    fields['of15.bsn_tlv_mpls_sequenced.value'],
+    fields['of15.bsn_tlv_multicast_interface_id.type'],
+    fields['of15.bsn_tlv_multicast_interface_id.length'],
+    fields['of15.bsn_tlv_multicast_interface_id.value'],
+    fields['of15.bsn_tlv_name.type'],
+    fields['of15.bsn_tlv_name.length'],
+    fields['of15.bsn_tlv_name.value'],
+    fields['of15.bsn_tlv_negate.type'],
+    fields['of15.bsn_tlv_negate.length'],
+    fields['of15.bsn_tlv_next_hop_ipv4.type'],
+    fields['of15.bsn_tlv_next_hop_ipv4.length'],
+    fields['of15.bsn_tlv_next_hop_ipv4.value'],
+    fields['of15.bsn_tlv_next_hop_mac.type'],
+    fields['of15.bsn_tlv_next_hop_mac.length'],
+    fields['of15.bsn_tlv_next_hop_mac.value'],
+    fields['of15.bsn_tlv_nexthop_type_vxlan.type'],
+    fields['of15.bsn_tlv_nexthop_type_vxlan.length'],
+    fields['of15.bsn_tlv_offset.type'],
+    fields['of15.bsn_tlv_offset.length'],
+    fields['of15.bsn_tlv_offset.value'],
+    fields['of15.bsn_tlv_parent_port.type'],
+    fields['of15.bsn_tlv_parent_port.length'],
+    fields['of15.bsn_tlv_parent_port.value'],
+    fields['of15.bsn_tlv_partner_key.type'],
+    fields['of15.bsn_tlv_partner_key.length'],
+    fields['of15.bsn_tlv_partner_key.value'],
+    fields['of15.bsn_tlv_partner_port_num.type'],
+    fields['of15.bsn_tlv_partner_port_num.length'],
+    fields['of15.bsn_tlv_partner_port_num.value'],
+    fields['of15.bsn_tlv_partner_port_priority.type'],
+    fields['of15.bsn_tlv_partner_port_priority.length'],
+    fields['of15.bsn_tlv_partner_port_priority.value'],
+    fields['of15.bsn_tlv_partner_state.type'],
+    fields['of15.bsn_tlv_partner_state.length'],
+    fields['of15.bsn_tlv_partner_state.value'],
+    fields['of15.bsn_tlv_partner_system_mac.type'],
+    fields['of15.bsn_tlv_partner_system_mac.length'],
+    fields['of15.bsn_tlv_partner_system_mac.value'],
+    fields['of15.bsn_tlv_partner_system_priority.type'],
+    fields['of15.bsn_tlv_partner_system_priority.length'],
+    fields['of15.bsn_tlv_partner_system_priority.value'],
+    fields['of15.bsn_tlv_port.type'],
+    fields['of15.bsn_tlv_port.length'],
+    fields['of15.bsn_tlv_port.value'],
+    fields['of15.bsn_tlv_port_vxlan_mode.type'],
+    fields['of15.bsn_tlv_port_vxlan_mode.length'],
+    fields['of15.bsn_tlv_port_vxlan_mode.value'],
+    fields['of15.bsn_tlv_priority.type'],
+    fields['of15.bsn_tlv_priority.length'],
+    fields['of15.bsn_tlv_priority.value'],
+    fields['of15.bsn_tlv_qos_priority.type'],
+    fields['of15.bsn_tlv_qos_priority.length'],
+    fields['of15.bsn_tlv_qos_priority.value'],
+    fields['of15.bsn_tlv_queue_id.type'],
+    fields['of15.bsn_tlv_queue_id.length'],
+    fields['of15.bsn_tlv_queue_id.value'],
+    fields['of15.bsn_tlv_queue_weight.type'],
+    fields['of15.bsn_tlv_queue_weight.length'],
+    fields['of15.bsn_tlv_queue_weight.value'],
+    fields['of15.bsn_tlv_rate_limit.type'],
+    fields['of15.bsn_tlv_rate_limit.length'],
+    fields['of15.bsn_tlv_rate_limit.value'],
+    fields['of15.bsn_tlv_rate_unit.type'],
+    fields['of15.bsn_tlv_rate_unit.length'],
+    fields['of15.bsn_tlv_rate_unit.value'],
+    fields['of15.bsn_tlv_reference.type'],
+    fields['of15.bsn_tlv_reference.length'],
+    fields['of15.bsn_tlv_reference.table_id'],
+    fields['of15.bsn_tlv_reference.key'],
+    fields['of15.bsn_tlv_reply_packets.type'],
+    fields['of15.bsn_tlv_reply_packets.length'],
+    fields['of15.bsn_tlv_reply_packets.value'],
+    fields['of15.bsn_tlv_request_packets.type'],
+    fields['of15.bsn_tlv_request_packets.length'],
+    fields['of15.bsn_tlv_request_packets.value'],
+    fields['of15.bsn_tlv_rx_bytes.type'],
+    fields['of15.bsn_tlv_rx_bytes.length'],
+    fields['of15.bsn_tlv_rx_bytes.value'],
+    fields['of15.bsn_tlv_rx_packets.type'],
+    fields['of15.bsn_tlv_rx_packets.length'],
+    fields['of15.bsn_tlv_rx_packets.value'],
+    fields['of15.bsn_tlv_sampling_rate.type'],
+    fields['of15.bsn_tlv_sampling_rate.length'],
+    fields['of15.bsn_tlv_sampling_rate.value'],
+    fields['of15.bsn_tlv_set_loopback_mode.type'],
+    fields['of15.bsn_tlv_set_loopback_mode.length'],
+    fields['of15.bsn_tlv_status.type'],
+    fields['of15.bsn_tlv_status.length'],
+    fields['of15.bsn_tlv_status.value'],
+    fields['of15.bsn_tlv_strip_mpls_l2_on_ingress.type'],
+    fields['of15.bsn_tlv_strip_mpls_l2_on_ingress.length'],
+    fields['of15.bsn_tlv_strip_mpls_l3_on_ingress.type'],
+    fields['of15.bsn_tlv_strip_mpls_l3_on_ingress.length'],
+    fields['of15.bsn_tlv_strip_vlan_on_egress.type'],
+    fields['of15.bsn_tlv_strip_vlan_on_egress.length'],
+    fields['of15.bsn_tlv_sub_agent_id.type'],
+    fields['of15.bsn_tlv_sub_agent_id.length'],
+    fields['of15.bsn_tlv_sub_agent_id.value'],
+    fields['of15.bsn_tlv_tcp_dst.type'],
+    fields['of15.bsn_tlv_tcp_dst.length'],
+    fields['of15.bsn_tlv_tcp_dst.value'],
+    fields['of15.bsn_tlv_tcp_src.type'],
+    fields['of15.bsn_tlv_tcp_src.length'],
+    fields['of15.bsn_tlv_tcp_src.value'],
+    fields['of15.bsn_tlv_ttl.type'],
+    fields['of15.bsn_tlv_ttl.length'],
+    fields['of15.bsn_tlv_ttl.value'],
+    fields['of15.bsn_tlv_tx_bytes.type'],
+    fields['of15.bsn_tlv_tx_bytes.length'],
+    fields['of15.bsn_tlv_tx_bytes.value'],
+    fields['of15.bsn_tlv_tx_packets.type'],
+    fields['of15.bsn_tlv_tx_packets.length'],
+    fields['of15.bsn_tlv_tx_packets.value'],
+    fields['of15.bsn_tlv_udf_anchor.type'],
+    fields['of15.bsn_tlv_udf_anchor.length'],
+    fields['of15.bsn_tlv_udf_anchor.value'],
+    fields['of15.bsn_tlv_udf_id.type'],
+    fields['of15.bsn_tlv_udf_id.length'],
+    fields['of15.bsn_tlv_udf_id.value'],
+    fields['of15.bsn_tlv_udf_length.type'],
+    fields['of15.bsn_tlv_udf_length.length'],
+    fields['of15.bsn_tlv_udf_length.value'],
+    fields['of15.bsn_tlv_udf_offset.type'],
+    fields['of15.bsn_tlv_udf_offset.length'],
+    fields['of15.bsn_tlv_udf_offset.value'],
+    fields['of15.bsn_tlv_udp_dst.type'],
+    fields['of15.bsn_tlv_udp_dst.length'],
+    fields['of15.bsn_tlv_udp_dst.value'],
+    fields['of15.bsn_tlv_udp_src.type'],
+    fields['of15.bsn_tlv_udp_src.length'],
+    fields['of15.bsn_tlv_udp_src.value'],
+    fields['of15.bsn_tlv_uint64_list.type'],
+    fields['of15.bsn_tlv_uint64_list.length'],
+    fields['of15.bsn_tlv_uint64_list.value'],
+    fields['of15.bsn_tlv_unicast_query_timeout.type'],
+    fields['of15.bsn_tlv_unicast_query_timeout.length'],
+    fields['of15.bsn_tlv_unicast_query_timeout.value'],
+    fields['of15.bsn_tlv_unicast_rate.type'],
+    fields['of15.bsn_tlv_unicast_rate.length'],
+    fields['of15.bsn_tlv_unicast_rate.value'],
+    fields['of15.bsn_tlv_unknown_multicast_rate.type'],
+    fields['of15.bsn_tlv_unknown_multicast_rate.length'],
+    fields['of15.bsn_tlv_unknown_multicast_rate.value'],
+    fields['of15.bsn_tlv_untagged.type'],
+    fields['of15.bsn_tlv_untagged.length'],
+    fields['of15.bsn_tlv_use_packet_state.type'],
+    fields['of15.bsn_tlv_use_packet_state.length'],
+    fields['of15.bsn_tlv_use_packet_state.value'],
+    fields['of15.bsn_tlv_vfi.type'],
+    fields['of15.bsn_tlv_vfi.length'],
+    fields['of15.bsn_tlv_vfi.value'],
+    fields['of15.bsn_tlv_vfp_class_id.type'],
+    fields['of15.bsn_tlv_vfp_class_id.length'],
+    fields['of15.bsn_tlv_vfp_class_id.value'],
+    fields['of15.bsn_tlv_vlan_mac_list.type'],
+    fields['of15.bsn_tlv_vlan_mac_list.length'],
+    fields['of15.bsn_tlv_vlan_mac_list.key'],
+    fields['of15.bsn_tlv_vlan_pcp.type'],
+    fields['of15.bsn_tlv_vlan_pcp.length'],
+    fields['of15.bsn_tlv_vlan_pcp.value'],
+    fields['of15.bsn_tlv_vlan_vid.type'],
+    fields['of15.bsn_tlv_vlan_vid.length'],
+    fields['of15.bsn_tlv_vlan_vid.value'],
+    fields['of15.bsn_tlv_vlan_vid_mask.type'],
+    fields['of15.bsn_tlv_vlan_vid_mask.length'],
+    fields['of15.bsn_tlv_vlan_vid_mask.value'],
+    fields['of15.bsn_tlv_vni.type'],
+    fields['of15.bsn_tlv_vni.length'],
+    fields['of15.bsn_tlv_vni.value'],
+    fields['of15.bsn_tlv_vpn_key.type'],
+    fields['of15.bsn_tlv_vpn_key.length'],
+    fields['of15.bsn_tlv_vpn_key.value'],
+    fields['of15.bsn_tlv_vrf.type'],
+    fields['of15.bsn_tlv_vrf.length'],
+    fields['of15.bsn_tlv_vrf.value'],
+    fields['of15.bsn_tlv_vxlan_egress_lag.type'],
+    fields['of15.bsn_tlv_vxlan_egress_lag.length'],
     fields['of15.bsn_virtual_port_create_reply.version'],
     fields['of15.bsn_virtual_port_create_reply.type'],
     fields['of15.bsn_virtual_port_create_reply.length'],
@@ -23689,6 +26124,36 @@ p_of.fields = {
     fields['of15.bsn_virtual_port_remove_request.experimenter'],
     fields['of15.bsn_virtual_port_remove_request.subtype'],
     fields['of15.bsn_virtual_port_remove_request.vport_no'],
+    fields['of15.bsn_vlan_counter_clear.version'],
+    fields['of15.bsn_vlan_counter_clear.type'],
+    fields['of15.bsn_vlan_counter_clear.length'],
+    fields['of15.bsn_vlan_counter_clear.xid'],
+    fields['of15.bsn_vlan_counter_clear.experimenter'],
+    fields['of15.bsn_vlan_counter_clear.subtype'],
+    fields['of15.bsn_vlan_counter_clear.vlan_vid'],
+    fields['of15.bsn_vlan_counter_stats_entry.length'],
+    fields['of15.bsn_vlan_counter_stats_entry.vlan_vid'],
+    fields['of15.bsn_vlan_counter_stats_entry.values'],
+    fields['of15.bsn_vlan_counter_stats_reply.version'],
+    fields['of15.bsn_vlan_counter_stats_reply.type'],
+    fields['of15.bsn_vlan_counter_stats_reply.length'],
+    fields['of15.bsn_vlan_counter_stats_reply.xid'],
+    fields['of15.bsn_vlan_counter_stats_reply.stats_type'],
+    fields['of15.bsn_vlan_counter_stats_reply.flags'],
+    fields['of15.bsn_vlan_counter_stats_reply.experimenter'],
+    fields['of15.bsn_vlan_counter_stats_reply.subtype'],
+    fields['of15.bsn_vlan_counter_stats_reply.entries'],
+    fields['of15.bsn_vlan_counter_stats_request.version'],
+    fields['of15.bsn_vlan_counter_stats_request.type'],
+    fields['of15.bsn_vlan_counter_stats_request.length'],
+    fields['of15.bsn_vlan_counter_stats_request.xid'],
+    fields['of15.bsn_vlan_counter_stats_request.stats_type'],
+    fields['of15.bsn_vlan_counter_stats_request.flags'],
+    fields['of15.bsn_vlan_counter_stats_request.experimenter'],
+    fields['of15.bsn_vlan_counter_stats_request.subtype'],
+    fields['of15.bsn_vlan_counter_stats_request.vlan_vid'],
+    fields['of15.bsn_vlan_mac.vlan_vid'],
+    fields['of15.bsn_vlan_mac.mac'],
     fields['of15.bsn_vport_l2gre.type'],
     fields['of15.bsn_vport_l2gre.length'],
     fields['of15.bsn_vport_l2gre.flags'],
@@ -23711,6 +26176,27 @@ p_of.fields = {
     fields['of15.bsn_vport_q_in_q.egress_tpid'],
     fields['of15.bsn_vport_q_in_q.egress_vlan_id'],
     fields['of15.bsn_vport_q_in_q.if_name'],
+    fields['of15.bsn_vrf_counter_stats_entry.length'],
+    fields['of15.bsn_vrf_counter_stats_entry.vrf'],
+    fields['of15.bsn_vrf_counter_stats_entry.values'],
+    fields['of15.bsn_vrf_counter_stats_reply.version'],
+    fields['of15.bsn_vrf_counter_stats_reply.type'],
+    fields['of15.bsn_vrf_counter_stats_reply.length'],
+    fields['of15.bsn_vrf_counter_stats_reply.xid'],
+    fields['of15.bsn_vrf_counter_stats_reply.stats_type'],
+    fields['of15.bsn_vrf_counter_stats_reply.flags'],
+    fields['of15.bsn_vrf_counter_stats_reply.experimenter'],
+    fields['of15.bsn_vrf_counter_stats_reply.subtype'],
+    fields['of15.bsn_vrf_counter_stats_reply.entries'],
+    fields['of15.bsn_vrf_counter_stats_request.version'],
+    fields['of15.bsn_vrf_counter_stats_request.type'],
+    fields['of15.bsn_vrf_counter_stats_request.length'],
+    fields['of15.bsn_vrf_counter_stats_request.xid'],
+    fields['of15.bsn_vrf_counter_stats_request.stats_type'],
+    fields['of15.bsn_vrf_counter_stats_request.flags'],
+    fields['of15.bsn_vrf_counter_stats_request.experimenter'],
+    fields['of15.bsn_vrf_counter_stats_request.subtype'],
+    fields['of15.bsn_vrf_counter_stats_request.vrf'],
     fields['of15.bucket.len'],
     fields['of15.bucket.action_array_len'],
     fields['of15.bucket.bucket_id'],
@@ -23829,14 +26315,6 @@ p_of.fields = {
     fields['of15.echo_request.length'],
     fields['of15.echo_request.xid'],
     fields['of15.echo_request.data'],
-    fields['of15.experimenter_error_msg.version'],
-    fields['of15.experimenter_error_msg.type'],
-    fields['of15.experimenter_error_msg.length'],
-    fields['of15.experimenter_error_msg.xid'],
-    fields['of15.experimenter_error_msg.err_type'],
-    fields['of15.experimenter_error_msg.subtype'],
-    fields['of15.experimenter_error_msg.experimenter'],
-    fields['of15.experimenter_error_msg.data'],
     fields['of15.features_reply.version'],
     fields['of15.features_reply.type'],
     fields['of15.features_reply.length'],
@@ -24259,17 +26737,130 @@ p_of.fields = {
     fields['of15.instruction_apply_actions.actions'],
     fields['of15.instruction_id_apply_actions.type'],
     fields['of15.instruction_id_apply_actions.len'],
-    fields['of15.instruction_clear_actions.type'],
-    fields['of15.instruction_clear_actions.len'],
-    fields['of15.instruction_id_clear_actions.type'],
-    fields['of15.instruction_id_clear_actions.len'],
     fields['of15.instruction_experimenter.type'],
     fields['of15.instruction_experimenter.len'],
     fields['of15.instruction_experimenter.experimenter'],
     fields['of15.instruction_experimenter.data'],
+    fields['of15.instruction_bsn.type'],
+    fields['of15.instruction_bsn.len'],
+    fields['of15.instruction_bsn.experimenter'],
+    fields['of15.instruction_bsn.subtype'],
     fields['of15.instruction_id_experimenter.type'],
     fields['of15.instruction_id_experimenter.len'],
     fields['of15.instruction_id_experimenter.experimenter'],
+    fields['of15.instruction_id_bsn.type'],
+    fields['of15.instruction_id_bsn.len'],
+    fields['of15.instruction_id_bsn.experimenter'],
+    fields['of15.instruction_id_bsn.subtype'],
+    fields['of15.instruction_bsn_arp_offload.type'],
+    fields['of15.instruction_bsn_arp_offload.len'],
+    fields['of15.instruction_bsn_arp_offload.experimenter'],
+    fields['of15.instruction_bsn_arp_offload.subtype'],
+    fields['of15.instruction_id_bsn_arp_offload.type'],
+    fields['of15.instruction_id_bsn_arp_offload.len'],
+    fields['of15.instruction_id_bsn_arp_offload.experimenter'],
+    fields['of15.instruction_id_bsn_arp_offload.subtype'],
+    fields['of15.instruction_bsn_auto_negotiation.type'],
+    fields['of15.instruction_bsn_auto_negotiation.len'],
+    fields['of15.instruction_bsn_auto_negotiation.experimenter'],
+    fields['of15.instruction_bsn_auto_negotiation.subtype'],
+    fields['of15.instruction_id_bsn_auto_negotiation.type'],
+    fields['of15.instruction_id_bsn_auto_negotiation.len'],
+    fields['of15.instruction_id_bsn_auto_negotiation.experimenter'],
+    fields['of15.instruction_id_bsn_auto_negotiation.subtype'],
+    fields['of15.instruction_bsn_deny.type'],
+    fields['of15.instruction_bsn_deny.len'],
+    fields['of15.instruction_bsn_deny.experimenter'],
+    fields['of15.instruction_bsn_deny.subtype'],
+    fields['of15.instruction_id_bsn_deny.type'],
+    fields['of15.instruction_id_bsn_deny.len'],
+    fields['of15.instruction_id_bsn_deny.experimenter'],
+    fields['of15.instruction_id_bsn_deny.subtype'],
+    fields['of15.instruction_bsn_dhcp_offload.type'],
+    fields['of15.instruction_bsn_dhcp_offload.len'],
+    fields['of15.instruction_bsn_dhcp_offload.experimenter'],
+    fields['of15.instruction_bsn_dhcp_offload.subtype'],
+    fields['of15.instruction_id_bsn_dhcp_offload.type'],
+    fields['of15.instruction_id_bsn_dhcp_offload.len'],
+    fields['of15.instruction_id_bsn_dhcp_offload.experimenter'],
+    fields['of15.instruction_id_bsn_dhcp_offload.subtype'],
+    fields['of15.instruction_bsn_disable_l3.type'],
+    fields['of15.instruction_bsn_disable_l3.len'],
+    fields['of15.instruction_bsn_disable_l3.experimenter'],
+    fields['of15.instruction_bsn_disable_l3.subtype'],
+    fields['of15.instruction_id_bsn_disable_l3.type'],
+    fields['of15.instruction_id_bsn_disable_l3.len'],
+    fields['of15.instruction_id_bsn_disable_l3.experimenter'],
+    fields['of15.instruction_id_bsn_disable_l3.subtype'],
+    fields['of15.instruction_bsn_disable_src_mac_check.type'],
+    fields['of15.instruction_bsn_disable_src_mac_check.len'],
+    fields['of15.instruction_bsn_disable_src_mac_check.experimenter'],
+    fields['of15.instruction_bsn_disable_src_mac_check.subtype'],
+    fields['of15.instruction_id_bsn_disable_src_mac_check.type'],
+    fields['of15.instruction_id_bsn_disable_src_mac_check.len'],
+    fields['of15.instruction_id_bsn_disable_src_mac_check.experimenter'],
+    fields['of15.instruction_id_bsn_disable_src_mac_check.subtype'],
+    fields['of15.instruction_bsn_disable_vlan_counters.type'],
+    fields['of15.instruction_bsn_disable_vlan_counters.len'],
+    fields['of15.instruction_bsn_disable_vlan_counters.experimenter'],
+    fields['of15.instruction_bsn_disable_vlan_counters.subtype'],
+    fields['of15.instruction_id_bsn_disable_vlan_counters.type'],
+    fields['of15.instruction_id_bsn_disable_vlan_counters.len'],
+    fields['of15.instruction_id_bsn_disable_vlan_counters.experimenter'],
+    fields['of15.instruction_id_bsn_disable_vlan_counters.subtype'],
+    fields['of15.instruction_bsn_internal_priority.type'],
+    fields['of15.instruction_bsn_internal_priority.len'],
+    fields['of15.instruction_bsn_internal_priority.experimenter'],
+    fields['of15.instruction_bsn_internal_priority.subtype'],
+    fields['of15.instruction_bsn_internal_priority.value'],
+    fields['of15.instruction_id_bsn_internal_priority.type'],
+    fields['of15.instruction_id_bsn_internal_priority.len'],
+    fields['of15.instruction_id_bsn_internal_priority.experimenter'],
+    fields['of15.instruction_id_bsn_internal_priority.subtype'],
+    fields['of15.instruction_bsn_packet_of_death.type'],
+    fields['of15.instruction_bsn_packet_of_death.len'],
+    fields['of15.instruction_bsn_packet_of_death.experimenter'],
+    fields['of15.instruction_bsn_packet_of_death.subtype'],
+    fields['of15.instruction_id_bsn_packet_of_death.type'],
+    fields['of15.instruction_id_bsn_packet_of_death.len'],
+    fields['of15.instruction_id_bsn_packet_of_death.experimenter'],
+    fields['of15.instruction_id_bsn_packet_of_death.subtype'],
+    fields['of15.instruction_bsn_permit.type'],
+    fields['of15.instruction_bsn_permit.len'],
+    fields['of15.instruction_bsn_permit.experimenter'],
+    fields['of15.instruction_bsn_permit.subtype'],
+    fields['of15.instruction_id_bsn_permit.type'],
+    fields['of15.instruction_id_bsn_permit.len'],
+    fields['of15.instruction_id_bsn_permit.experimenter'],
+    fields['of15.instruction_id_bsn_permit.subtype'],
+    fields['of15.instruction_bsn_prioritize_pdus.type'],
+    fields['of15.instruction_bsn_prioritize_pdus.len'],
+    fields['of15.instruction_bsn_prioritize_pdus.experimenter'],
+    fields['of15.instruction_bsn_prioritize_pdus.subtype'],
+    fields['of15.instruction_id_bsn_prioritize_pdus.type'],
+    fields['of15.instruction_id_bsn_prioritize_pdus.len'],
+    fields['of15.instruction_id_bsn_prioritize_pdus.experimenter'],
+    fields['of15.instruction_id_bsn_prioritize_pdus.subtype'],
+    fields['of15.instruction_bsn_require_vlan_xlate.type'],
+    fields['of15.instruction_bsn_require_vlan_xlate.len'],
+    fields['of15.instruction_bsn_require_vlan_xlate.experimenter'],
+    fields['of15.instruction_bsn_require_vlan_xlate.subtype'],
+    fields['of15.instruction_id_bsn_require_vlan_xlate.type'],
+    fields['of15.instruction_id_bsn_require_vlan_xlate.len'],
+    fields['of15.instruction_id_bsn_require_vlan_xlate.experimenter'],
+    fields['of15.instruction_id_bsn_require_vlan_xlate.subtype'],
+    fields['of15.instruction_bsn_span_destination.type'],
+    fields['of15.instruction_bsn_span_destination.len'],
+    fields['of15.instruction_bsn_span_destination.experimenter'],
+    fields['of15.instruction_bsn_span_destination.subtype'],
+    fields['of15.instruction_id_bsn_span_destination.type'],
+    fields['of15.instruction_id_bsn_span_destination.len'],
+    fields['of15.instruction_id_bsn_span_destination.experimenter'],
+    fields['of15.instruction_id_bsn_span_destination.subtype'],
+    fields['of15.instruction_clear_actions.type'],
+    fields['of15.instruction_clear_actions.len'],
+    fields['of15.instruction_id_clear_actions.type'],
+    fields['of15.instruction_id_clear_actions.len'],
     fields['of15.instruction_goto_table.type'],
     fields['of15.instruction_goto_table.len'],
     fields['of15.instruction_goto_table.table_id'],
@@ -24423,6 +27014,126 @@ p_of.fields = {
     fields['of15.oxm_arp_tpa_masked.type_len'],
     fields['of15.oxm_arp_tpa_masked.value'],
     fields['of15.oxm_arp_tpa_masked.value_mask'],
+    fields['of15.oxm_bsn_egr_port_group_id.type_len'],
+    fields['of15.oxm_bsn_egr_port_group_id.value'],
+    fields['of15.oxm_bsn_egr_port_group_id_masked.type_len'],
+    fields['of15.oxm_bsn_egr_port_group_id_masked.value'],
+    fields['of15.oxm_bsn_egr_port_group_id_masked.value_mask'],
+    fields['of15.oxm_bsn_in_ports_128.type_len'],
+    fields['of15.oxm_bsn_in_ports_128.value'],
+    fields['of15.oxm_bsn_in_ports_128_masked.type_len'],
+    fields['of15.oxm_bsn_in_ports_128_masked.value'],
+    fields['of15.oxm_bsn_in_ports_128_masked.value_mask'],
+    fields['of15.oxm_bsn_in_ports_512.type_len'],
+    fields['of15.oxm_bsn_in_ports_512.value'],
+    fields['of15.oxm_bsn_in_ports_512_masked.type_len'],
+    fields['of15.oxm_bsn_in_ports_512_masked.value'],
+    fields['of15.oxm_bsn_in_ports_512_masked.value_mask'],
+    fields['of15.oxm_bsn_ingress_port_group_id.type_len'],
+    fields['of15.oxm_bsn_ingress_port_group_id.value'],
+    fields['of15.oxm_bsn_ingress_port_group_id_masked.type_len'],
+    fields['of15.oxm_bsn_ingress_port_group_id_masked.value'],
+    fields['of15.oxm_bsn_ingress_port_group_id_masked.value_mask'],
+    fields['of15.oxm_bsn_inner_eth_dst.type_len'],
+    fields['of15.oxm_bsn_inner_eth_dst.value'],
+    fields['of15.oxm_bsn_inner_eth_dst_masked.type_len'],
+    fields['of15.oxm_bsn_inner_eth_dst_masked.value'],
+    fields['of15.oxm_bsn_inner_eth_dst_masked.value_mask'],
+    fields['of15.oxm_bsn_inner_eth_src.type_len'],
+    fields['of15.oxm_bsn_inner_eth_src.value'],
+    fields['of15.oxm_bsn_inner_eth_src_masked.type_len'],
+    fields['of15.oxm_bsn_inner_eth_src_masked.value'],
+    fields['of15.oxm_bsn_inner_eth_src_masked.value_mask'],
+    fields['of15.oxm_bsn_inner_vlan_vid.type_len'],
+    fields['of15.oxm_bsn_inner_vlan_vid.value'],
+    fields['of15.oxm_bsn_inner_vlan_vid_masked.type_len'],
+    fields['of15.oxm_bsn_inner_vlan_vid_masked.value'],
+    fields['of15.oxm_bsn_inner_vlan_vid_masked.value_mask'],
+    fields['of15.oxm_bsn_l2_cache_hit.type_len'],
+    fields['of15.oxm_bsn_l2_cache_hit.value'],
+    fields['of15.oxm_bsn_l2_cache_hit_masked.type_len'],
+    fields['of15.oxm_bsn_l2_cache_hit_masked.value'],
+    fields['of15.oxm_bsn_l2_cache_hit_masked.value_mask'],
+    fields['of15.oxm_bsn_l3_interface_class_id.type_len'],
+    fields['of15.oxm_bsn_l3_interface_class_id.value'],
+    fields['of15.oxm_bsn_l3_interface_class_id_masked.type_len'],
+    fields['of15.oxm_bsn_l3_interface_class_id_masked.value'],
+    fields['of15.oxm_bsn_l3_interface_class_id_masked.value_mask'],
+    fields['of15.oxm_bsn_l3_src_class_id.type_len'],
+    fields['of15.oxm_bsn_l3_src_class_id.value'],
+    fields['of15.oxm_bsn_l3_src_class_id_masked.type_len'],
+    fields['of15.oxm_bsn_l3_src_class_id_masked.value'],
+    fields['of15.oxm_bsn_l3_src_class_id_masked.value_mask'],
+    fields['of15.oxm_bsn_lag_id.type_len'],
+    fields['of15.oxm_bsn_lag_id.value'],
+    fields['of15.oxm_bsn_lag_id_masked.type_len'],
+    fields['of15.oxm_bsn_lag_id_masked.value'],
+    fields['of15.oxm_bsn_lag_id_masked.value_mask'],
+    fields['of15.oxm_bsn_tcp_flags.type_len'],
+    fields['of15.oxm_bsn_tcp_flags.value'],
+    fields['of15.oxm_bsn_tcp_flags_masked.type_len'],
+    fields['of15.oxm_bsn_tcp_flags_masked.value'],
+    fields['of15.oxm_bsn_tcp_flags_masked.value_mask'],
+    fields['of15.oxm_bsn_udf0.type_len'],
+    fields['of15.oxm_bsn_udf0.value'],
+    fields['of15.oxm_bsn_udf0_masked.type_len'],
+    fields['of15.oxm_bsn_udf0_masked.value'],
+    fields['of15.oxm_bsn_udf0_masked.value_mask'],
+    fields['of15.oxm_bsn_udf1.type_len'],
+    fields['of15.oxm_bsn_udf1.value'],
+    fields['of15.oxm_bsn_udf1_masked.type_len'],
+    fields['of15.oxm_bsn_udf1_masked.value'],
+    fields['of15.oxm_bsn_udf1_masked.value_mask'],
+    fields['of15.oxm_bsn_udf2.type_len'],
+    fields['of15.oxm_bsn_udf2.value'],
+    fields['of15.oxm_bsn_udf2_masked.type_len'],
+    fields['of15.oxm_bsn_udf2_masked.value'],
+    fields['of15.oxm_bsn_udf2_masked.value_mask'],
+    fields['of15.oxm_bsn_udf3.type_len'],
+    fields['of15.oxm_bsn_udf3.value'],
+    fields['of15.oxm_bsn_udf3_masked.type_len'],
+    fields['of15.oxm_bsn_udf3_masked.value'],
+    fields['of15.oxm_bsn_udf3_masked.value_mask'],
+    fields['of15.oxm_bsn_udf4.type_len'],
+    fields['of15.oxm_bsn_udf4.value'],
+    fields['of15.oxm_bsn_udf4_masked.type_len'],
+    fields['of15.oxm_bsn_udf4_masked.value'],
+    fields['of15.oxm_bsn_udf4_masked.value_mask'],
+    fields['of15.oxm_bsn_udf5.type_len'],
+    fields['of15.oxm_bsn_udf5.value'],
+    fields['of15.oxm_bsn_udf5_masked.type_len'],
+    fields['of15.oxm_bsn_udf5_masked.value'],
+    fields['of15.oxm_bsn_udf5_masked.value_mask'],
+    fields['of15.oxm_bsn_udf6.type_len'],
+    fields['of15.oxm_bsn_udf6.value'],
+    fields['of15.oxm_bsn_udf6_masked.type_len'],
+    fields['of15.oxm_bsn_udf6_masked.value'],
+    fields['of15.oxm_bsn_udf6_masked.value_mask'],
+    fields['of15.oxm_bsn_udf7.type_len'],
+    fields['of15.oxm_bsn_udf7.value'],
+    fields['of15.oxm_bsn_udf7_masked.type_len'],
+    fields['of15.oxm_bsn_udf7_masked.value'],
+    fields['of15.oxm_bsn_udf7_masked.value_mask'],
+    fields['of15.oxm_bsn_vfi.type_len'],
+    fields['of15.oxm_bsn_vfi.value'],
+    fields['of15.oxm_bsn_vfi_masked.type_len'],
+    fields['of15.oxm_bsn_vfi_masked.value'],
+    fields['of15.oxm_bsn_vfi_masked.value_mask'],
+    fields['of15.oxm_bsn_vlan_xlate_port_group_id.type_len'],
+    fields['of15.oxm_bsn_vlan_xlate_port_group_id.value'],
+    fields['of15.oxm_bsn_vlan_xlate_port_group_id_masked.type_len'],
+    fields['of15.oxm_bsn_vlan_xlate_port_group_id_masked.value'],
+    fields['of15.oxm_bsn_vlan_xlate_port_group_id_masked.value_mask'],
+    fields['of15.oxm_bsn_vrf.type_len'],
+    fields['of15.oxm_bsn_vrf.value'],
+    fields['of15.oxm_bsn_vrf_masked.type_len'],
+    fields['of15.oxm_bsn_vrf_masked.value'],
+    fields['of15.oxm_bsn_vrf_masked.value_mask'],
+    fields['of15.oxm_bsn_vxlan_network_id.type_len'],
+    fields['of15.oxm_bsn_vxlan_network_id.value'],
+    fields['of15.oxm_bsn_vxlan_network_id_masked.type_len'],
+    fields['of15.oxm_bsn_vxlan_network_id_masked.value'],
+    fields['of15.oxm_bsn_vxlan_network_id_masked.value_mask'],
     fields['of15.oxm_eth_dst.type_len'],
     fields['of15.oxm_eth_dst.value'],
     fields['of15.oxm_eth_dst_masked.type_len'],
@@ -24662,6 +27373,23 @@ p_of.fields = {
     fields['of15.port_desc.properties'],
     fields['of15.port_desc_prop.type'],
     fields['of15.port_desc_prop.length'],
+    fields['of15.port_desc_prop_experimenter.type'],
+    fields['of15.port_desc_prop_experimenter.length'],
+    fields['of15.port_desc_prop_experimenter.experimenter'],
+    fields['of15.port_desc_prop_experimenter.exp_type'],
+    fields['of15.port_desc_prop_bsn.type'],
+    fields['of15.port_desc_prop_bsn.length'],
+    fields['of15.port_desc_prop_bsn.experimenter'],
+    fields['of15.port_desc_prop_bsn.exp_type'],
+    fields['of15.port_desc_prop_bsn_generation_id.type'],
+    fields['of15.port_desc_prop_bsn_generation_id.length'],
+    fields['of15.port_desc_prop_bsn_generation_id.experimenter'],
+    fields['of15.port_desc_prop_bsn_generation_id.exp_type'],
+    fields['of15.port_desc_prop_bsn_generation_id.generation_id'],
+    fields['of15.port_desc_prop_bsn_uplink.type'],
+    fields['of15.port_desc_prop_bsn_uplink.length'],
+    fields['of15.port_desc_prop_bsn_uplink.experimenter'],
+    fields['of15.port_desc_prop_bsn_uplink.exp_type'],
     fields['of15.port_desc_prop_egress.type'],
     fields['of15.port_desc_prop_egress.length'],
     fields['of15.port_desc_prop_egress.oxm_ids'],
@@ -24673,10 +27401,6 @@ p_of.fields = {
     fields['of15.port_desc_prop_ethernet.peer'],
     fields['of15.port_desc_prop_ethernet.curr_speed'],
     fields['of15.port_desc_prop_ethernet.max_speed'],
-    fields['of15.port_desc_prop_experimenter.type'],
-    fields['of15.port_desc_prop_experimenter.length'],
-    fields['of15.port_desc_prop_experimenter.experimenter'],
-    fields['of15.port_desc_prop_experimenter.exp_type'],
     fields['of15.port_desc_prop_ingress.type'],
     fields['of15.port_desc_prop_ingress.length'],
     fields['of15.port_desc_prop_ingress.oxm_ids'],
@@ -24805,6 +27529,15 @@ p_of.fields = {
     fields['of15.queue_desc_prop_experimenter.length'],
     fields['of15.queue_desc_prop_experimenter.experimenter'],
     fields['of15.queue_desc_prop_experimenter.exp_type'],
+    fields['of15.queue_desc_prop_bsn.type'],
+    fields['of15.queue_desc_prop_bsn.length'],
+    fields['of15.queue_desc_prop_bsn.experimenter'],
+    fields['of15.queue_desc_prop_bsn.exp_type'],
+    fields['of15.queue_desc_prop_bsn_queue_name.type'],
+    fields['of15.queue_desc_prop_bsn_queue_name.length'],
+    fields['of15.queue_desc_prop_bsn_queue_name.experimenter'],
+    fields['of15.queue_desc_prop_bsn_queue_name.exp_type'],
+    fields['of15.queue_desc_prop_bsn_queue_name.name'],
     fields['of15.queue_desc_prop_max_rate.type'],
     fields['of15.queue_desc_prop_max_rate.length'],
     fields['of15.queue_desc_prop_max_rate.rate'],
@@ -25309,16 +28042,18 @@ of_error_msg_v6_dissectors = {}
 of_async_config_prop_v6_dissectors = {}
 of_experimenter_v6_dissectors = {}
 of_bsn_header_v6_dissectors = {}
+of_experimenter_error_msg_v6_dissectors = {}
+of_bsn_base_error_v6_dissectors = {}
 of_experimenter_stats_reply_v6_dissectors = {}
 of_bsn_stats_reply_v6_dissectors = {}
 of_experimenter_stats_request_v6_dissectors = {}
 of_bsn_stats_request_v6_dissectors = {}
+of_bsn_tlv_v6_dissectors = {}
 of_bsn_vport_v6_dissectors = {}
 of_bundle_features_prop_v6_dissectors = {}
 of_bundle_prop_v6_dissectors = {}
 of_bundle_prop_experimenter_v6_dissectors = {}
 of_controller_status_prop_v6_dissectors = {}
-of_experimenter_error_msg_v6_dissectors = {}
 of_flow_mod_v6_dissectors = {}
 of_group_mod_v6_dissectors = {}
 of_group_bucket_prop_v6_dissectors = {}
@@ -25330,18 +28065,22 @@ of_hello_elem_v6_dissectors = {}
 of_instruction_v6_dissectors = {}
 of_instruction_id_v6_dissectors = {}
 of_instruction_experimenter_v6_dissectors = {}
+of_instruction_bsn_v6_dissectors = {}
 of_instruction_id_experimenter_v6_dissectors = {}
+of_instruction_id_bsn_v6_dissectors = {}
 of_meter_band_v6_dissectors = {}
 of_nicira_header_v6_dissectors = {}
 of_oxs_v6_dissectors = {}
 of_port_desc_prop_v6_dissectors = {}
 of_port_desc_prop_experimenter_v6_dissectors = {}
+of_port_desc_prop_bsn_v6_dissectors = {}
 of_port_mod_prop_v6_dissectors = {}
 of_port_mod_prop_experimenter_v6_dissectors = {}
 of_port_stats_prop_v6_dissectors = {}
 of_port_stats_prop_experimenter_v6_dissectors = {}
 of_queue_desc_prop_v6_dissectors = {}
 of_queue_desc_prop_experimenter_v6_dissectors = {}
+of_queue_desc_prop_bsn_v6_dissectors = {}
 of_queue_prop_v6_dissectors = {}
 of_queue_prop_experimenter_v6_dissectors = {}
 of_queue_stats_prop_v6_dissectors = {}
@@ -47198,6 +49937,33 @@ function dissect_of_action_id_bsn_checksum_v6(reader, subtree)
 end
 of_action_id_bsn_v6_dissectors[4] = dissect_of_action_id_bsn_checksum_v6
 
+-- child class of_action_bsn_gentable
+-- Child of of_action_bsn
+function dissect_of_action_bsn_gentable_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.action_bsn_gentable.type')
+    read_uint16_t(reader, 6, subtree, 'of15.action_bsn_gentable.len')
+    read_uint32_t(reader, 6, subtree, 'of15.action_bsn_gentable.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.action_bsn_gentable.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.action_bsn_gentable.table_id')
+    read_list(reader, dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    return 'of_action_bsn_gentable'
+end
+of_action_bsn_v6_dissectors[5] = dissect_of_action_bsn_gentable_v6
+
+-- child class of_action_id_bsn_gentable
+-- Child of of_action_id_bsn
+function dissect_of_action_id_bsn_gentable_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.action_id_bsn_gentable.type')
+    read_uint16_t(reader, 6, subtree, 'of15.action_id_bsn_gentable.len')
+    read_uint32_t(reader, 6, subtree, 'of15.action_id_bsn_gentable.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.action_id_bsn_gentable.subtype')
+    return 'of_action_id_bsn_gentable'
+end
+of_action_id_bsn_v6_dissectors[5] = dissect_of_action_id_bsn_gentable_v6
+
 -- child class of_action_bsn_mirror
 -- Child of of_action_bsn
 function dissect_of_action_bsn_mirror_v6(reader, subtree)
@@ -48066,6 +50832,38 @@ function dissect_of_bsn_header_v6(reader, subtree)
 end
 of_experimenter_v6_dissectors[6035143] = dissect_of_bsn_header_v6
 
+-- child class of_bsn_arp_idle
+-- Child of of_bsn_header
+function dissect_of_bsn_arp_idle_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_arp_idle.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_arp_idle.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_arp_idle.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_arp_idle.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_arp_idle.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_arp_idle.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_arp_idle.vlan_vid')
+    reader.skip(2)
+    read_of_ipv4_t(reader, 6, subtree, 'of15.bsn_arp_idle.ipv4_addr')
+    return 'of_bsn_arp_idle'
+end
+of_bsn_header_v6_dissectors[60] = dissect_of_bsn_arp_idle_v6
+
+-- virtual child class of_experimenter_error_msg
+-- Child of of_error_msg
+-- Discriminator is experimenter
+function dissect_of_experimenter_error_msg_v6(reader, subtree)
+    return of_experimenter_error_msg_v6_dissectors[reader.peek(12,4):uint()](reader, subtree)
+end
+of_error_msg_v6_dissectors[65535] = dissect_of_experimenter_error_msg_v6
+
+-- virtual child class of_bsn_base_error
+-- Child of of_experimenter_error_msg
+-- Discriminator is subtype
+function dissect_of_bsn_base_error_v6(reader, subtree)
+    return of_bsn_base_error_v6_dissectors[reader.peek(10,2):uint()](reader, subtree)
+end
+of_experimenter_error_msg_v6_dissectors[6035143] = dissect_of_bsn_base_error_v6
+
 -- child class of_bsn_bw_clear_data_reply
 -- Child of of_bsn_header
 function dissect_of_bsn_bw_clear_data_reply_v6(reader, subtree)
@@ -48149,6 +50947,713 @@ function dissect_of_bsn_bw_enable_set_request_v6(reader, subtree)
 end
 of_bsn_header_v6_dissectors[18] = dissect_of_bsn_bw_enable_set_request_v6
 
+-- top-level class of_bsn_controller_connection
+function dissect_of_bsn_controller_connection_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_controller_connection.state')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_controller_connection.auxiliary_id')
+    reader.skip(2)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_controller_connection.role')
+    read_of_desc_str_t(reader, 6, subtree, 'of15.bsn_controller_connection.uri')
+    return 'of_bsn_controller_connection'
+end
+-- child class of_bsn_controller_connections_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_controller_connections_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_controller_connections_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_controller_connections_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_controller_connections_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_controller_connections_reply.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_controller_connections_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_controller_connections_reply.subtype')
+    read_list(reader, dissect_of_bsn_controller_connection_v6, subtree, 'of_bsn_controller_connection')
+    return 'of_bsn_controller_connections_reply'
+end
+of_bsn_header_v6_dissectors[57] = dissect_of_bsn_controller_connections_reply_v6
+
+-- child class of_bsn_controller_connections_request
+-- Child of of_bsn_header
+function dissect_of_bsn_controller_connections_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_controller_connections_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_controller_connections_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_controller_connections_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_controller_connections_request.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_controller_connections_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_controller_connections_request.subtype')
+    return 'of_bsn_controller_connections_request'
+end
+of_bsn_header_v6_dissectors[56] = dissect_of_bsn_controller_connections_request_v6
+
+-- top-level class of_bsn_debug_counter_desc_stats_entry
+function dissect_of_bsn_debug_counter_desc_stats_entry_v6(reader, subtree)
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_entry.counter_id')
+    read_of_str64_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_entry.name')
+    read_of_desc_str_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_entry.description')
+    return 'of_bsn_debug_counter_desc_stats_entry'
+end
+-- virtual child class of_experimenter_stats_reply
+-- Child of of_stats_reply
+-- Discriminator is experimenter
+function dissect_of_experimenter_stats_reply_v6(reader, subtree)
+    return of_experimenter_stats_reply_v6_dissectors[reader.peek(16,4):uint()](reader, subtree)
+end
+of_stats_reply_v6_dissectors[65535] = dissect_of_experimenter_stats_reply_v6
+
+-- virtual child class of_bsn_stats_reply
+-- Child of of_experimenter_stats_reply
+-- Discriminator is subtype
+function dissect_of_bsn_stats_reply_v6(reader, subtree)
+    return of_bsn_stats_reply_v6_dissectors[reader.peek(20,4):uint()](reader, subtree)
+end
+of_experimenter_stats_reply_v6_dissectors[6035143] = dissect_of_bsn_stats_reply_v6
+
+-- child class of_bsn_debug_counter_desc_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_debug_counter_desc_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_debug_counter_desc_stats_entry_v6, subtree, 'of_bsn_debug_counter_desc_stats_entry')
+    return 'of_bsn_debug_counter_desc_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[13] = dissect_of_bsn_debug_counter_desc_stats_reply_v6
+
+-- virtual child class of_experimenter_stats_request
+-- Child of of_stats_request
+-- Discriminator is experimenter
+function dissect_of_experimenter_stats_request_v6(reader, subtree)
+    return of_experimenter_stats_request_v6_dissectors[reader.peek(16,4):uint()](reader, subtree)
+end
+of_stats_request_v6_dissectors[65535] = dissect_of_experimenter_stats_request_v6
+
+-- virtual child class of_bsn_stats_request
+-- Child of of_experimenter_stats_request
+-- Discriminator is subtype
+function dissect_of_bsn_stats_request_v6(reader, subtree)
+    return of_bsn_stats_request_v6_dissectors[reader.peek(20,4):uint()](reader, subtree)
+end
+of_experimenter_stats_request_v6_dissectors[6035143] = dissect_of_bsn_stats_request_v6
+
+-- child class of_bsn_debug_counter_desc_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_debug_counter_desc_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_debug_counter_desc_stats_request.subtype')
+    return 'of_bsn_debug_counter_desc_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[13] = dissect_of_bsn_debug_counter_desc_stats_request_v6
+
+-- top-level class of_bsn_debug_counter_stats_entry
+function dissect_of_bsn_debug_counter_stats_entry_v6(reader, subtree)
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_entry.counter_id')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_entry.value')
+    return 'of_bsn_debug_counter_stats_entry'
+end
+-- child class of_bsn_debug_counter_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_debug_counter_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_debug_counter_stats_entry_v6, subtree, 'of_bsn_debug_counter_stats_entry')
+    return 'of_bsn_debug_counter_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[12] = dissect_of_bsn_debug_counter_stats_reply_v6
+
+-- child class of_bsn_debug_counter_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_debug_counter_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_debug_counter_stats_request.subtype')
+    return 'of_bsn_debug_counter_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[12] = dissect_of_bsn_debug_counter_stats_request_v6
+
+-- child class of_bsn_error
+-- Child of of_bsn_base_error
+function dissect_of_bsn_error_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_error.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_error.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_error.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_error.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_error.err_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_error.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_error.experimenter')
+    read_of_desc_str_t(reader, 6, subtree, 'of15.bsn_error.err_msg')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_error.data')
+    return 'of_bsn_error'
+end
+of_bsn_base_error_v6_dissectors[1] = dissect_of_bsn_error_v6
+
+-- top-level class of_bsn_flow_checksum_bucket_stats_entry
+function dissect_of_bsn_flow_checksum_bucket_stats_entry_v6(reader, subtree)
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_entry.checksum')
+    return 'of_bsn_flow_checksum_bucket_stats_entry'
+end
+-- child class of_bsn_flow_checksum_bucket_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_flow_checksum_bucket_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_flow_checksum_bucket_stats_entry_v6, subtree, 'of_bsn_flow_checksum_bucket_stats_entry')
+    return 'of_bsn_flow_checksum_bucket_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[10] = dissect_of_bsn_flow_checksum_bucket_stats_reply_v6
+
+-- child class of_bsn_flow_checksum_bucket_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_flow_checksum_bucket_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_request.subtype')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_checksum_bucket_stats_request.table_id')
+    return 'of_bsn_flow_checksum_bucket_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[10] = dissect_of_bsn_flow_checksum_bucket_stats_request_v6
+
+-- child class of_bsn_flow_idle
+-- Child of of_bsn_header
+function dissect_of_bsn_flow_idle_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_idle.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_idle.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_flow_idle.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle.subtype')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_flow_idle.cookie')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_flow_idle.priority')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_idle.table_id')
+    reader.skip(5)
+    read_of_match_t(reader, 6, subtree, 'of15.bsn_flow_idle.match')
+    return 'of_bsn_flow_idle'
+end
+of_bsn_header_v6_dissectors[40] = dissect_of_bsn_flow_idle_v6
+
+-- child class of_bsn_flow_idle_enable_get_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_flow_idle_enable_get_reply_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_get_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_get_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_get_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_get_reply.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_get_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_get_reply.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_get_reply.enabled')
+    return 'of_bsn_flow_idle_enable_get_reply'
+end
+of_bsn_header_v6_dissectors[39] = dissect_of_bsn_flow_idle_enable_get_reply_v6
+
+-- child class of_bsn_flow_idle_enable_get_request
+-- Child of of_bsn_header
+function dissect_of_bsn_flow_idle_enable_get_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_get_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_get_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_get_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_get_request.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_get_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_get_request.subtype')
+    return 'of_bsn_flow_idle_enable_get_request'
+end
+of_bsn_header_v6_dissectors[38] = dissect_of_bsn_flow_idle_enable_get_request_v6
+
+-- child class of_bsn_flow_idle_enable_set_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_flow_idle_enable_set_reply_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_reply.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_reply.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_reply.enable')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_reply.status')
+    return 'of_bsn_flow_idle_enable_set_reply'
+end
+of_bsn_header_v6_dissectors[37] = dissect_of_bsn_flow_idle_enable_set_reply_v6
+
+-- child class of_bsn_flow_idle_enable_set_request
+-- Child of of_bsn_header
+function dissect_of_bsn_flow_idle_enable_set_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_request.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_request.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_flow_idle_enable_set_request.enable')
+    return 'of_bsn_flow_idle_enable_set_request'
+end
+of_bsn_header_v6_dissectors[36] = dissect_of_bsn_flow_idle_enable_set_request_v6
+
+-- child class of_bsn_generic_async
+-- Child of of_bsn_header
+function dissect_of_bsn_generic_async_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_generic_async.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_generic_async.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_generic_async.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_generic_async.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_generic_async.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_generic_async.subtype')
+    read_of_str64_t(reader, 6, subtree, 'of15.bsn_generic_async.name')
+    read_list(reader, dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    return 'of_bsn_generic_async'
+end
+of_bsn_header_v6_dissectors[68] = dissect_of_bsn_generic_async_v6
+
+-- child class of_bsn_generic_command
+-- Child of of_bsn_header
+function dissect_of_bsn_generic_command_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_generic_command.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_generic_command.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_generic_command.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_generic_command.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_generic_command.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_generic_command.subtype')
+    read_of_str64_t(reader, 6, subtree, 'of15.bsn_generic_command.name')
+    read_list(reader, dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    return 'of_bsn_generic_command'
+end
+of_bsn_header_v6_dissectors[71] = dissect_of_bsn_generic_command_v6
+
+-- top-level class of_bsn_generic_stats_entry
+function dissect_of_bsn_generic_stats_entry_v6(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_generic_stats_entry.length')
+    read_list(reader, dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    return 'of_bsn_generic_stats_entry'
+end
+-- child class of_bsn_generic_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_generic_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_generic_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_generic_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_generic_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_generic_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_generic_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_generic_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_generic_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_generic_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_generic_stats_entry_v6, subtree, 'of_bsn_generic_stats_entry')
+    return 'of_bsn_generic_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[16] = dissect_of_bsn_generic_stats_reply_v6
+
+-- child class of_bsn_generic_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_generic_stats_request_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_generic_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_generic_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_generic_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_generic_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_generic_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_generic_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_generic_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_generic_stats_request.subtype')
+    read_of_str64_t(reader, 6, subtree, 'of15.bsn_generic_stats_request.name')
+    read_list(reader, dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    return 'of_bsn_generic_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[16] = dissect_of_bsn_generic_stats_request_v6
+
+-- top-level class of_bsn_gentable_bucket_stats_entry
+function dissect_of_bsn_gentable_bucket_stats_entry_v6(reader, subtree)
+    read_of_checksum_128_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_entry.checksum')
+    return 'of_bsn_gentable_bucket_stats_entry'
+end
+-- child class of_bsn_gentable_bucket_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_gentable_bucket_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_gentable_bucket_stats_entry_v6, subtree, 'of_bsn_gentable_bucket_stats_entry')
+    return 'of_bsn_gentable_bucket_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[5] = dissect_of_bsn_gentable_bucket_stats_reply_v6
+
+-- child class of_bsn_gentable_bucket_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_gentable_bucket_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_request.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_bucket_stats_request.table_id')
+    return 'of_bsn_gentable_bucket_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[5] = dissect_of_bsn_gentable_bucket_stats_request_v6
+
+-- child class of_bsn_gentable_clear_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_gentable_clear_reply_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_clear_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_clear_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_clear_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_clear_reply.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_clear_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_clear_reply.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_clear_reply.table_id')
+    reader.skip(2)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_clear_reply.deleted_count')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_clear_reply.error_count')
+    return 'of_bsn_gentable_clear_reply'
+end
+of_bsn_header_v6_dissectors[49] = dissect_of_bsn_gentable_clear_reply_v6
+
+-- child class of_bsn_gentable_clear_request
+-- Child of of_bsn_header
+function dissect_of_bsn_gentable_clear_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_clear_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_clear_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_clear_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_clear_request.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_clear_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_clear_request.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_clear_request.table_id')
+    reader.skip(2)
+    read_of_checksum_128_t(reader, 6, subtree, 'of15.bsn_gentable_clear_request.checksum')
+    read_of_checksum_128_t(reader, 6, subtree, 'of15.bsn_gentable_clear_request.checksum_mask')
+    return 'of_bsn_gentable_clear_request'
+end
+of_bsn_header_v6_dissectors[48] = dissect_of_bsn_gentable_clear_request_v6
+
+-- top-level class of_bsn_gentable_desc_stats_entry
+function dissect_of_bsn_gentable_desc_stats_entry_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_entry.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_entry.table_id')
+    read_of_table_name_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_entry.name')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_entry.buckets_size')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_entry.max_entries')
+    reader.skip(4)
+    return 'of_bsn_gentable_desc_stats_entry'
+end
+-- child class of_bsn_gentable_desc_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_gentable_desc_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_gentable_desc_stats_entry_v6, subtree, 'of_bsn_gentable_desc_stats_entry')
+    return 'of_bsn_gentable_desc_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[4] = dissect_of_bsn_gentable_desc_stats_reply_v6
+
+-- child class of_bsn_gentable_desc_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_gentable_desc_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_desc_stats_request.subtype')
+    return 'of_bsn_gentable_desc_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[4] = dissect_of_bsn_gentable_desc_stats_request_v6
+
+-- child class of_bsn_gentable_entry_add
+-- Child of of_bsn_header
+function dissect_of_bsn_gentable_entry_add_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_entry_add.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_entry_add.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_add.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_add.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_add.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_add.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_add.table_id')
+    local _key_length = reader.peek(0, 2):uint()
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_add.key_length')
+    read_of_checksum_128_t(reader, 6, subtree, 'of15.bsn_gentable_entry_add.checksum')
+    read_list(reader.slice(_key_length), dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    read_list(reader, dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    return 'of_bsn_gentable_entry_add'
+end
+of_bsn_header_v6_dissectors[46] = dissect_of_bsn_gentable_entry_add_v6
+
+-- child class of_bsn_gentable_entry_delete
+-- Child of of_bsn_header
+function dissect_of_bsn_gentable_entry_delete_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_entry_delete.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_entry_delete.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_delete.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_delete.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_delete.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_delete.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_delete.table_id')
+    read_list(reader, dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    return 'of_bsn_gentable_entry_delete'
+end
+of_bsn_header_v6_dissectors[47] = dissect_of_bsn_gentable_entry_delete_v6
+
+-- top-level class of_bsn_gentable_entry_desc_stats_entry
+function dissect_of_bsn_gentable_entry_desc_stats_entry_v6(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_entry.length')
+    local _key_length = reader.peek(0, 2):uint()
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_entry.key_length')
+    read_of_checksum_128_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_entry.checksum')
+    read_list(reader.slice(_key_length), dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    read_list(reader, dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    return 'of_bsn_gentable_entry_desc_stats_entry'
+end
+-- child class of_bsn_gentable_entry_desc_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_gentable_entry_desc_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_gentable_entry_desc_stats_entry_v6, subtree, 'of_bsn_gentable_entry_desc_stats_entry')
+    return 'of_bsn_gentable_entry_desc_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[2] = dissect_of_bsn_gentable_entry_desc_stats_reply_v6
+
+-- child class of_bsn_gentable_entry_desc_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_gentable_entry_desc_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_request.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_request.table_id')
+    reader.skip(2)
+    read_of_checksum_128_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_request.checksum')
+    read_of_checksum_128_t(reader, 6, subtree, 'of15.bsn_gentable_entry_desc_stats_request.checksum_mask')
+    return 'of_bsn_gentable_entry_desc_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[2] = dissect_of_bsn_gentable_entry_desc_stats_request_v6
+
+-- top-level class of_bsn_gentable_entry_stats_entry
+function dissect_of_bsn_gentable_entry_stats_entry_v6(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_entry.length')
+    local _key_length = reader.peek(0, 2):uint()
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_entry.key_length')
+    read_list(reader.slice(_key_length), dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    read_list(reader, dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    return 'of_bsn_gentable_entry_stats_entry'
+end
+-- child class of_bsn_gentable_entry_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_gentable_entry_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_gentable_entry_stats_entry_v6, subtree, 'of_bsn_gentable_entry_stats_entry')
+    return 'of_bsn_gentable_entry_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[3] = dissect_of_bsn_gentable_entry_stats_reply_v6
+
+-- child class of_bsn_gentable_entry_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_gentable_entry_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_request.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_request.table_id')
+    reader.skip(2)
+    read_of_checksum_128_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_request.checksum')
+    read_of_checksum_128_t(reader, 6, subtree, 'of15.bsn_gentable_entry_stats_request.checksum_mask')
+    return 'of_bsn_gentable_entry_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[3] = dissect_of_bsn_gentable_entry_stats_request_v6
+
+-- child class of_bsn_gentable_set_buckets_size
+-- Child of of_bsn_header
+function dissect_of_bsn_gentable_set_buckets_size_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_set_buckets_size.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_set_buckets_size.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_set_buckets_size.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_set_buckets_size.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_set_buckets_size.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_set_buckets_size.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_set_buckets_size.table_id')
+    reader.skip(2)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_set_buckets_size.buckets_size')
+    return 'of_bsn_gentable_set_buckets_size'
+end
+of_bsn_header_v6_dissectors[50] = dissect_of_bsn_gentable_set_buckets_size_v6
+
+-- top-level class of_bsn_gentable_stats_entry
+function dissect_of_bsn_gentable_stats_entry_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_stats_entry.table_id')
+    reader.skip(2)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_stats_entry.entry_count')
+    read_of_checksum_128_t(reader, 6, subtree, 'of15.bsn_gentable_stats_entry.checksum')
+    return 'of_bsn_gentable_stats_entry'
+end
+-- child class of_bsn_gentable_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_gentable_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_gentable_stats_entry_v6, subtree, 'of_bsn_gentable_stats_entry')
+    return 'of_bsn_gentable_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[7] = dissect_of_bsn_gentable_stats_reply_v6
+
+-- child class of_bsn_gentable_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_gentable_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_stats_request.subtype')
+    return 'of_bsn_gentable_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[7] = dissect_of_bsn_gentable_stats_request_v6
+
 -- child class of_bsn_get_interfaces_reply
 -- Child of of_bsn_header
 function dissect_of_bsn_get_interfaces_reply_v6(reader, subtree)
@@ -48209,6 +51714,67 @@ function dissect_of_bsn_get_mirroring_request_v6(reader, subtree)
 end
 of_bsn_header_v6_dissectors[4] = dissect_of_bsn_get_mirroring_request_v6
 
+-- child class of_bsn_get_switch_pipeline_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_get_switch_pipeline_reply_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_get_switch_pipeline_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_get_switch_pipeline_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_get_switch_pipeline_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_get_switch_pipeline_reply.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_get_switch_pipeline_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_get_switch_pipeline_reply.subtype')
+    read_of_desc_str_t(reader, 6, subtree, 'of15.bsn_get_switch_pipeline_reply.pipeline')
+    return 'of_bsn_get_switch_pipeline_reply'
+end
+of_bsn_header_v6_dissectors[52] = dissect_of_bsn_get_switch_pipeline_reply_v6
+
+-- child class of_bsn_get_switch_pipeline_request
+-- Child of of_bsn_header
+function dissect_of_bsn_get_switch_pipeline_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_get_switch_pipeline_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_get_switch_pipeline_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_get_switch_pipeline_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_get_switch_pipeline_request.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_get_switch_pipeline_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_get_switch_pipeline_request.subtype')
+    return 'of_bsn_get_switch_pipeline_request'
+end
+of_bsn_header_v6_dissectors[51] = dissect_of_bsn_get_switch_pipeline_request_v6
+
+-- child class of_bsn_image_desc_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_image_desc_stats_reply_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_reply.subtype')
+    read_of_desc_str_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_reply.image_checksum')
+    read_of_desc_str_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_reply.startup_config_checksum')
+    return 'of_bsn_image_desc_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[14] = dissect_of_bsn_image_desc_stats_reply_v6
+
+-- child class of_bsn_image_desc_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_image_desc_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_image_desc_stats_request.subtype')
+    return 'of_bsn_image_desc_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[14] = dissect_of_bsn_image_desc_stats_request_v6
+
 -- top-level class of_bsn_interface
 function dissect_of_bsn_interface_v6(reader, subtree)
     read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_interface.hw_addr')
@@ -48218,6 +51784,174 @@ function dissect_of_bsn_interface_v6(reader, subtree)
     read_of_ipv4_t(reader, 6, subtree, 'of15.bsn_interface.ipv4_netmask')
     return 'of_bsn_interface'
 end
+-- child class of_bsn_lacp_convergence_notif
+-- Child of of_bsn_header
+function dissect_of_bsn_lacp_convergence_notif_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.subtype')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.convergence_status')
+    reader.skip(3)
+    read_of_port_no_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.port_no')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.actor_sys_priority')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.actor_sys_mac')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.actor_port_priority')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.actor_port_num')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.actor_key')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.partner_sys_priority')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.partner_sys_mac')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.partner_port_priority')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.partner_port_num')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_convergence_notif.partner_key')
+    return 'of_bsn_lacp_convergence_notif'
+end
+of_bsn_header_v6_dissectors[43] = dissect_of_bsn_lacp_convergence_notif_v6
+
+-- top-level class of_bsn_lacp_stats_entry
+function dissect_of_bsn_lacp_stats_entry_v6(reader, subtree)
+    read_of_port_no_t(reader, 6, subtree, 'of15.bsn_lacp_stats_entry.port_no')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_entry.actor_sys_priority')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_lacp_stats_entry.actor_sys_mac')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_entry.actor_port_priority')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_entry.actor_port_num')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_entry.actor_key')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lacp_stats_entry.convergence_status')
+    reader.skip(1)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_entry.partner_sys_priority')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_lacp_stats_entry.partner_sys_mac')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_entry.partner_port_priority')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_entry.partner_port_num')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_entry.partner_key')
+    reader.skip(2)
+    return 'of_bsn_lacp_stats_entry'
+end
+-- child class of_bsn_lacp_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_lacp_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lacp_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lacp_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lacp_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lacp_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lacp_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_lacp_stats_entry_v6, subtree, 'of_bsn_lacp_stats_entry')
+    return 'of_bsn_lacp_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[1] = dissect_of_bsn_lacp_stats_reply_v6
+
+-- child class of_bsn_lacp_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_lacp_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lacp_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lacp_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lacp_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lacp_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lacp_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lacp_stats_request.subtype')
+    return 'of_bsn_lacp_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[1] = dissect_of_bsn_lacp_stats_request_v6
+
+-- child class of_bsn_log
+-- Child of of_bsn_header
+function dissect_of_bsn_log_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_log.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_log.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_log.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_log.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_log.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_log.subtype')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_log.loglevel')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_log.data')
+    return 'of_bsn_log'
+end
+of_bsn_header_v6_dissectors[63] = dissect_of_bsn_log_v6
+
+-- child class of_bsn_lua_command_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_lua_command_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lua_command_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lua_command_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lua_command_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lua_command_reply.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lua_command_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lua_command_reply.subtype')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_lua_command_reply.data')
+    return 'of_bsn_lua_command_reply'
+end
+of_bsn_header_v6_dissectors[66] = dissect_of_bsn_lua_command_reply_v6
+
+-- child class of_bsn_lua_command_request
+-- Child of of_bsn_header
+function dissect_of_bsn_lua_command_request_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lua_command_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lua_command_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lua_command_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lua_command_request.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lua_command_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lua_command_request.subtype')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_lua_command_request.data')
+    return 'of_bsn_lua_command_request'
+end
+of_bsn_header_v6_dissectors[65] = dissect_of_bsn_lua_command_request_v6
+
+-- child class of_bsn_lua_notification
+-- Child of of_bsn_header
+function dissect_of_bsn_lua_notification_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lua_notification.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lua_notification.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lua_notification.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lua_notification.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lua_notification.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lua_notification.subtype')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_lua_notification.data')
+    return 'of_bsn_lua_notification'
+end
+of_bsn_header_v6_dissectors[67] = dissect_of_bsn_lua_notification_v6
+
+-- child class of_bsn_lua_upload
+-- Child of of_bsn_header
+function dissect_of_bsn_lua_upload_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lua_upload.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_lua_upload.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lua_upload.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lua_upload.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lua_upload.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_lua_upload.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_lua_upload.flags')
+    read_of_str64_t(reader, 6, subtree, 'of15.bsn_lua_upload.filename')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_lua_upload.data')
+    return 'of_bsn_lua_upload'
+end
+of_bsn_header_v6_dissectors[64] = dissect_of_bsn_lua_upload_v6
+
 -- child class of_bsn_pdu_rx_reply
 -- Child of of_bsn_header
 function dissect_of_bsn_pdu_rx_reply_v6(reader, subtree)
@@ -48307,6 +52041,119 @@ function dissect_of_bsn_pdu_tx_request_v6(reader, subtree)
 end
 of_bsn_header_v6_dissectors[31] = dissect_of_bsn_pdu_tx_request_v6
 
+-- top-level class of_bsn_port_counter_stats_entry
+function dissect_of_bsn_port_counter_stats_entry_v6(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_entry.length')
+    reader.skip(2)
+    read_of_port_no_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_entry.port_no')
+    read_list(reader, dissect_of_uint64_v6, subtree, 'of_uint64')
+    return 'of_bsn_port_counter_stats_entry'
+end
+-- child class of_bsn_port_counter_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_port_counter_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_port_counter_stats_entry_v6, subtree, 'of_bsn_port_counter_stats_entry')
+    return 'of_bsn_port_counter_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[8] = dissect_of_bsn_port_counter_stats_reply_v6
+
+-- child class of_bsn_port_counter_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_port_counter_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_request.subtype')
+    read_of_port_no_t(reader, 6, subtree, 'of15.bsn_port_counter_stats_request.port_no')
+    return 'of_bsn_port_counter_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[8] = dissect_of_bsn_port_counter_stats_request_v6
+
+-- child class of_bsn_set_aux_cxns_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_set_aux_cxns_reply_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_reply.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_reply.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_reply.num_aux')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_reply.status')
+    return 'of_bsn_set_aux_cxns_reply'
+end
+of_bsn_header_v6_dissectors[59] = dissect_of_bsn_set_aux_cxns_reply_v6
+
+-- child class of_bsn_set_aux_cxns_request
+-- Child of of_bsn_header
+function dissect_of_bsn_set_aux_cxns_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_request.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_request.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_aux_cxns_request.num_aux')
+    return 'of_bsn_set_aux_cxns_request'
+end
+of_bsn_header_v6_dissectors[58] = dissect_of_bsn_set_aux_cxns_request_v6
+
+-- child class of_bsn_set_lacp_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_set_lacp_reply_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_set_lacp_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_set_lacp_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_set_lacp_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_lacp_reply.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_lacp_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_lacp_reply.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_lacp_reply.status')
+    read_of_port_no_t(reader, 6, subtree, 'of15.bsn_set_lacp_reply.port_no')
+    return 'of_bsn_set_lacp_reply'
+end
+of_bsn_header_v6_dissectors[42] = dissect_of_bsn_set_lacp_reply_v6
+
+-- child class of_bsn_set_lacp_request
+-- Child of of_bsn_header
+function dissect_of_bsn_set_lacp_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_set_lacp_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_set_lacp_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_set_lacp_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_lacp_request.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_lacp_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_lacp_request.subtype')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_set_lacp_request.enabled')
+    reader.skip(3)
+    read_of_port_no_t(reader, 6, subtree, 'of15.bsn_set_lacp_request.port_no')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_set_lacp_request.actor_sys_priority')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_set_lacp_request.actor_sys_mac')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_set_lacp_request.actor_port_priority')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_set_lacp_request.actor_port_num')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_set_lacp_request.actor_key')
+    return 'of_bsn_set_lacp_request'
+end
+of_bsn_header_v6_dissectors[41] = dissect_of_bsn_set_lacp_request_v6
+
 -- child class of_bsn_set_mirroring
 -- Child of of_bsn_header
 function dissect_of_bsn_set_mirroring_v6(reader, subtree)
@@ -48355,37 +52202,1390 @@ function dissect_of_bsn_set_pktin_suppression_request_v6(reader, subtree)
 end
 of_bsn_header_v6_dissectors[11] = dissect_of_bsn_set_pktin_suppression_request_v6
 
--- virtual child class of_experimenter_stats_reply
--- Child of of_stats_reply
--- Discriminator is experimenter
-function dissect_of_experimenter_stats_reply_v6(reader, subtree)
-    return of_experimenter_stats_reply_v6_dissectors[reader.peek(16,4):uint()](reader, subtree)
+-- child class of_bsn_set_switch_pipeline_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_set_switch_pipeline_reply_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_reply.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_reply.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_reply.status')
+    return 'of_bsn_set_switch_pipeline_reply'
 end
-of_stats_reply_v6_dissectors[65535] = dissect_of_experimenter_stats_reply_v6
+of_bsn_header_v6_dissectors[54] = dissect_of_bsn_set_switch_pipeline_reply_v6
 
--- virtual child class of_bsn_stats_reply
--- Child of of_experimenter_stats_reply
--- Discriminator is subtype
-function dissect_of_bsn_stats_reply_v6(reader, subtree)
-    return of_bsn_stats_reply_v6_dissectors[reader.peek(20,4):uint()](reader, subtree)
+-- child class of_bsn_set_switch_pipeline_request
+-- Child of of_bsn_header
+function dissect_of_bsn_set_switch_pipeline_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_request.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_request.subtype')
+    read_of_desc_str_t(reader, 6, subtree, 'of15.bsn_set_switch_pipeline_request.pipeline')
+    return 'of_bsn_set_switch_pipeline_request'
 end
-of_experimenter_stats_reply_v6_dissectors[6035143] = dissect_of_bsn_stats_reply_v6
+of_bsn_header_v6_dissectors[53] = dissect_of_bsn_set_switch_pipeline_request_v6
 
--- virtual child class of_experimenter_stats_request
--- Child of of_stats_request
--- Discriminator is experimenter
-function dissect_of_experimenter_stats_request_v6(reader, subtree)
-    return of_experimenter_stats_request_v6_dissectors[reader.peek(16,4):uint()](reader, subtree)
+-- top-level class of_bsn_switch_pipeline_stats_entry
+function dissect_of_bsn_switch_pipeline_stats_entry_v6(reader, subtree)
+    read_of_desc_str_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_entry.pipeline')
+    return 'of_bsn_switch_pipeline_stats_entry'
 end
-of_stats_request_v6_dissectors[65535] = dissect_of_experimenter_stats_request_v6
+-- child class of_bsn_switch_pipeline_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_switch_pipeline_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_switch_pipeline_stats_entry_v6, subtree, 'of_bsn_switch_pipeline_stats_entry')
+    return 'of_bsn_switch_pipeline_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[6] = dissect_of_bsn_switch_pipeline_stats_reply_v6
 
--- virtual child class of_bsn_stats_request
--- Child of of_experimenter_stats_request
--- Discriminator is subtype
-function dissect_of_bsn_stats_request_v6(reader, subtree)
-    return of_bsn_stats_request_v6_dissectors[reader.peek(20,4):uint()](reader, subtree)
+-- child class of_bsn_switch_pipeline_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_switch_pipeline_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_switch_pipeline_stats_request.subtype')
+    return 'of_bsn_switch_pipeline_stats_request'
 end
-of_experimenter_stats_request_v6_dissectors[6035143] = dissect_of_bsn_stats_request_v6
+of_bsn_stats_request_v6_dissectors[6] = dissect_of_bsn_switch_pipeline_stats_request_v6
+
+-- top-level class of_bsn_table_checksum_stats_entry
+function dissect_of_bsn_table_checksum_stats_entry_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_entry.table_id')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_entry.checksum')
+    return 'of_bsn_table_checksum_stats_entry'
+end
+-- child class of_bsn_table_checksum_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_table_checksum_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_table_checksum_stats_entry_v6, subtree, 'of_bsn_table_checksum_stats_entry')
+    return 'of_bsn_table_checksum_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[11] = dissect_of_bsn_table_checksum_stats_reply_v6
+
+-- child class of_bsn_table_checksum_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_table_checksum_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_table_checksum_stats_request.subtype')
+    return 'of_bsn_table_checksum_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[11] = dissect_of_bsn_table_checksum_stats_request_v6
+
+-- child class of_bsn_table_set_buckets_size
+-- Child of of_bsn_header
+function dissect_of_bsn_table_set_buckets_size_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_table_set_buckets_size.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_table_set_buckets_size.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_table_set_buckets_size.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_table_set_buckets_size.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_table_set_buckets_size.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_table_set_buckets_size.subtype')
+    reader.skip(1)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_table_set_buckets_size.table_id')
+    reader.skip(2)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_table_set_buckets_size.buckets_size')
+    return 'of_bsn_table_set_buckets_size'
+end
+of_bsn_header_v6_dissectors[61] = dissect_of_bsn_table_set_buckets_size_v6
+
+-- child class of_bsn_takeover
+-- Child of of_bsn_header
+function dissect_of_bsn_takeover_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_takeover.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_takeover.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_takeover.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_takeover.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_takeover.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_takeover.subtype')
+    return 'of_bsn_takeover'
+end
+of_bsn_header_v6_dissectors[69] = dissect_of_bsn_takeover_v6
+
+-- child class of_bsn_time_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_time_reply_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_time_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_time_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_time_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_time_reply.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_time_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_time_reply.subtype')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_time_reply.time_ms')
+    return 'of_bsn_time_reply'
+end
+of_bsn_header_v6_dissectors[45] = dissect_of_bsn_time_reply_v6
+
+-- child class of_bsn_time_request
+-- Child of of_bsn_header
+function dissect_of_bsn_time_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_time_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_time_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_time_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_time_request.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_time_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_time_request.subtype')
+    return 'of_bsn_time_request'
+end
+of_bsn_header_v6_dissectors[44] = dissect_of_bsn_time_request_v6
+
+-- virtual top-level class of_bsn_tlv
+-- Discriminator is type
+function dissect_of_bsn_tlv_v6(reader, subtree)
+    return of_bsn_tlv_v6_dissectors[reader.peek(0,2):uint()](reader, subtree)
+end
+-- child class of_bsn_tlv_actor_key
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_actor_key_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_key.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_key.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_key.value')
+    return 'of_bsn_tlv_actor_key'
+end
+of_bsn_tlv_v6_dissectors[44] = dissect_of_bsn_tlv_actor_key_v6
+
+-- child class of_bsn_tlv_actor_port_num
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_actor_port_num_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_port_num.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_port_num.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_port_num.value')
+    return 'of_bsn_tlv_actor_port_num'
+end
+of_bsn_tlv_v6_dissectors[43] = dissect_of_bsn_tlv_actor_port_num_v6
+
+-- child class of_bsn_tlv_actor_port_priority
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_actor_port_priority_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_port_priority.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_port_priority.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_port_priority.value')
+    return 'of_bsn_tlv_actor_port_priority'
+end
+of_bsn_tlv_v6_dissectors[42] = dissect_of_bsn_tlv_actor_port_priority_v6
+
+-- child class of_bsn_tlv_actor_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_actor_state_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_state.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_state.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_actor_state.value')
+    return 'of_bsn_tlv_actor_state'
+end
+of_bsn_tlv_v6_dissectors[53] = dissect_of_bsn_tlv_actor_state_v6
+
+-- child class of_bsn_tlv_actor_system_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_actor_system_mac_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_system_mac.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_system_mac.length')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_tlv_actor_system_mac.value')
+    return 'of_bsn_tlv_actor_system_mac'
+end
+of_bsn_tlv_v6_dissectors[41] = dissect_of_bsn_tlv_actor_system_mac_v6
+
+-- child class of_bsn_tlv_actor_system_priority
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_actor_system_priority_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_system_priority.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_system_priority.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_actor_system_priority.value')
+    return 'of_bsn_tlv_actor_system_priority'
+end
+of_bsn_tlv_v6_dissectors[40] = dissect_of_bsn_tlv_actor_system_priority_v6
+
+-- child class of_bsn_tlv_anchor
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_anchor_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_anchor.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_anchor.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_anchor.value')
+    return 'of_bsn_tlv_anchor'
+end
+of_bsn_tlv_v6_dissectors[81] = dissect_of_bsn_tlv_anchor_v6
+
+-- child class of_bsn_tlv_broadcast_query_timeout
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_broadcast_query_timeout_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_broadcast_query_timeout.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_broadcast_query_timeout.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_broadcast_query_timeout.value')
+    return 'of_bsn_tlv_broadcast_query_timeout'
+end
+of_bsn_tlv_v6_dissectors[10] = dissect_of_bsn_tlv_broadcast_query_timeout_v6
+
+-- child class of_bsn_tlv_broadcast_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_broadcast_rate_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_broadcast_rate.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_broadcast_rate.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_broadcast_rate.value')
+    return 'of_bsn_tlv_broadcast_rate'
+end
+of_bsn_tlv_v6_dissectors[90] = dissect_of_bsn_tlv_broadcast_rate_v6
+
+-- child class of_bsn_tlv_bucket
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bucket_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bucket.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bucket.length')
+    read_list(reader, dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    return 'of_bsn_tlv_bucket'
+end
+of_bsn_tlv_v6_dissectors[64] = dissect_of_bsn_tlv_bucket_v6
+
+-- child class of_bsn_tlv_circuit_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_circuit_id_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_circuit_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_circuit_id.length')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_tlv_circuit_id.value')
+    return 'of_bsn_tlv_circuit_id'
+end
+of_bsn_tlv_v6_dissectors[14] = dissect_of_bsn_tlv_circuit_id_v6
+
+-- child class of_bsn_tlv_convergence_status
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_convergence_status_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_convergence_status.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_convergence_status.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_convergence_status.value')
+    return 'of_bsn_tlv_convergence_status'
+end
+of_bsn_tlv_v6_dissectors[45] = dissect_of_bsn_tlv_convergence_status_v6
+
+-- child class of_bsn_tlv_cpu_lag
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_cpu_lag_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_cpu_lag.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_cpu_lag.length')
+    return 'of_bsn_tlv_cpu_lag'
+end
+of_bsn_tlv_v6_dissectors[118] = dissect_of_bsn_tlv_cpu_lag_v6
+
+-- child class of_bsn_tlv_crc_enabled
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_crc_enabled_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_crc_enabled.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_crc_enabled.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_crc_enabled.value')
+    return 'of_bsn_tlv_crc_enabled'
+end
+of_bsn_tlv_v6_dissectors[22] = dissect_of_bsn_tlv_crc_enabled_v6
+
+-- child class of_bsn_tlv_data
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_data_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_data.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_data.length')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_tlv_data.value')
+    return 'of_bsn_tlv_data'
+end
+of_bsn_tlv_v6_dissectors[55] = dissect_of_bsn_tlv_data_v6
+
+-- child class of_bsn_tlv_decap
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_decap_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_decap.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_decap.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_decap.value')
+    return 'of_bsn_tlv_decap'
+end
+of_bsn_tlv_v6_dissectors[85] = dissect_of_bsn_tlv_decap_v6
+
+-- child class of_bsn_tlv_disable_src_mac_check
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_disable_src_mac_check_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_disable_src_mac_check.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_disable_src_mac_check.length')
+    return 'of_bsn_tlv_disable_src_mac_check'
+end
+of_bsn_tlv_v6_dissectors[120] = dissect_of_bsn_tlv_disable_src_mac_check_v6
+
+-- child class of_bsn_tlv_dscp
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_dscp_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_dscp.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_dscp.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_dscp.value')
+    return 'of_bsn_tlv_dscp'
+end
+of_bsn_tlv_v6_dissectors[112] = dissect_of_bsn_tlv_dscp_v6
+
+-- child class of_bsn_tlv_eth_dst
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_eth_dst_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_eth_dst.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_eth_dst.length')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_tlv_eth_dst.value')
+    return 'of_bsn_tlv_eth_dst'
+end
+of_bsn_tlv_v6_dissectors[33] = dissect_of_bsn_tlv_eth_dst_v6
+
+-- child class of_bsn_tlv_eth_src
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_eth_src_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_eth_src.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_eth_src.length')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_tlv_eth_src.value')
+    return 'of_bsn_tlv_eth_src'
+end
+of_bsn_tlv_v6_dissectors[32] = dissect_of_bsn_tlv_eth_src_v6
+
+-- child class of_bsn_tlv_external_gateway_ip
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_external_gateway_ip_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_external_gateway_ip.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_external_gateway_ip.length')
+    read_of_ipv4_t(reader, 6, subtree, 'of15.bsn_tlv_external_gateway_ip.value')
+    return 'of_bsn_tlv_external_gateway_ip'
+end
+of_bsn_tlv_v6_dissectors[26] = dissect_of_bsn_tlv_external_gateway_ip_v6
+
+-- child class of_bsn_tlv_external_gateway_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_external_gateway_mac_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_external_gateway_mac.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_external_gateway_mac.length')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_tlv_external_gateway_mac.value')
+    return 'of_bsn_tlv_external_gateway_mac'
+end
+of_bsn_tlv_v6_dissectors[29] = dissect_of_bsn_tlv_external_gateway_mac_v6
+
+-- child class of_bsn_tlv_external_ip
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_external_ip_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_external_ip.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_external_ip.length')
+    read_of_ipv4_t(reader, 6, subtree, 'of15.bsn_tlv_external_ip.value')
+    return 'of_bsn_tlv_external_ip'
+end
+of_bsn_tlv_v6_dissectors[23] = dissect_of_bsn_tlv_external_ip_v6
+
+-- child class of_bsn_tlv_external_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_external_mac_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_external_mac.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_external_mac.length')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_tlv_external_mac.value')
+    return 'of_bsn_tlv_external_mac'
+end
+of_bsn_tlv_v6_dissectors[24] = dissect_of_bsn_tlv_external_mac_v6
+
+-- child class of_bsn_tlv_external_netmask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_external_netmask_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_external_netmask.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_external_netmask.length')
+    read_of_ipv4_t(reader, 6, subtree, 'of15.bsn_tlv_external_netmask.value')
+    return 'of_bsn_tlv_external_netmask'
+end
+of_bsn_tlv_v6_dissectors[25] = dissect_of_bsn_tlv_external_netmask_v6
+
+-- child class of_bsn_tlv_generation_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_generation_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_generation_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_generation_id.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_generation_id.value')
+    return 'of_bsn_tlv_generation_id'
+end
+of_bsn_tlv_v6_dissectors[80] = dissect_of_bsn_tlv_generation_id_v6
+
+-- child class of_bsn_tlv_hash_gtp_header_match
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_gtp_header_match_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_gtp_header_match.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_gtp_header_match.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_hash_gtp_header_match.first_header_byte')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_hash_gtp_header_match.first_header_mask')
+    return 'of_bsn_tlv_hash_gtp_header_match'
+end
+of_bsn_tlv_v6_dissectors[104] = dissect_of_bsn_tlv_hash_gtp_header_match_v6
+
+-- child class of_bsn_tlv_hash_gtp_port_match
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_gtp_port_match_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_gtp_port_match.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_gtp_port_match.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_hash_gtp_port_match.match')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_gtp_port_match.src_port')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_gtp_port_match.dst_port')
+    return 'of_bsn_tlv_hash_gtp_port_match'
+end
+of_bsn_tlv_v6_dissectors[105] = dissect_of_bsn_tlv_hash_gtp_port_match_v6
+
+-- child class of_bsn_tlv_hash_packet_field
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_packet_field_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_packet_field.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_packet_field.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_hash_packet_field.value')
+    return 'of_bsn_tlv_hash_packet_field'
+end
+of_bsn_tlv_v6_dissectors[103] = dissect_of_bsn_tlv_hash_packet_field_v6
+
+-- child class of_bsn_tlv_hash_packet_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_packet_type_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_packet_type.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_packet_type.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_hash_packet_type.value')
+    return 'of_bsn_tlv_hash_packet_type'
+end
+of_bsn_tlv_v6_dissectors[102] = dissect_of_bsn_tlv_hash_packet_type_v6
+
+-- child class of_bsn_tlv_hash_seed
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_seed_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_seed.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_seed.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_hash_seed.seed1')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_hash_seed.seed2')
+    return 'of_bsn_tlv_hash_seed'
+end
+of_bsn_tlv_v6_dissectors[100] = dissect_of_bsn_tlv_hash_seed_v6
+
+-- child class of_bsn_tlv_hash_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_hash_type_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_type.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_hash_type.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_hash_type.value')
+    return 'of_bsn_tlv_hash_type'
+end
+of_bsn_tlv_v6_dissectors[101] = dissect_of_bsn_tlv_hash_type_v6
+
+-- child class of_bsn_tlv_header_size
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_header_size_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_header_size.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_header_size.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_header_size.value')
+    return 'of_bsn_tlv_header_size'
+end
+of_bsn_tlv_v6_dissectors[31] = dissect_of_bsn_tlv_header_size_v6
+
+-- child class of_bsn_tlv_icmp_code
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_icmp_code_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_icmp_code.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_icmp_code.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_icmp_code.value')
+    return 'of_bsn_tlv_icmp_code'
+end
+of_bsn_tlv_v6_dissectors[69] = dissect_of_bsn_tlv_icmp_code_v6
+
+-- child class of_bsn_tlv_icmp_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_icmp_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_icmp_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_icmp_id.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_icmp_id.value')
+    return 'of_bsn_tlv_icmp_id'
+end
+of_bsn_tlv_v6_dissectors[70] = dissect_of_bsn_tlv_icmp_id_v6
+
+-- child class of_bsn_tlv_icmp_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_icmp_type_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_icmp_type.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_icmp_type.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_icmp_type.value')
+    return 'of_bsn_tlv_icmp_type'
+end
+of_bsn_tlv_v6_dissectors[68] = dissect_of_bsn_tlv_icmp_type_v6
+
+-- child class of_bsn_tlv_idle_notification
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_idle_notification_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_idle_notification.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_idle_notification.length')
+    return 'of_bsn_tlv_idle_notification'
+end
+of_bsn_tlv_v6_dissectors[7] = dissect_of_bsn_tlv_idle_notification_v6
+
+-- child class of_bsn_tlv_idle_time
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_idle_time_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_idle_time.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_idle_time.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_idle_time.value')
+    return 'of_bsn_tlv_idle_time'
+end
+of_bsn_tlv_v6_dissectors[5] = dissect_of_bsn_tlv_idle_time_v6
+
+-- child class of_bsn_tlv_idle_timeout
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_idle_timeout_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_idle_timeout.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_idle_timeout.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_idle_timeout.value')
+    return 'of_bsn_tlv_idle_timeout'
+end
+of_bsn_tlv_v6_dissectors[8] = dissect_of_bsn_tlv_idle_timeout_v6
+
+-- child class of_bsn_tlv_igmp_snooping
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_igmp_snooping_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_igmp_snooping.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_igmp_snooping.length')
+    return 'of_bsn_tlv_igmp_snooping'
+end
+of_bsn_tlv_v6_dissectors[78] = dissect_of_bsn_tlv_igmp_snooping_v6
+
+-- child class of_bsn_tlv_internal_gateway_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_internal_gateway_mac_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_internal_gateway_mac.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_internal_gateway_mac.length')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_tlv_internal_gateway_mac.value')
+    return 'of_bsn_tlv_internal_gateway_mac'
+end
+of_bsn_tlv_v6_dissectors[28] = dissect_of_bsn_tlv_internal_gateway_mac_v6
+
+-- child class of_bsn_tlv_internal_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_internal_mac_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_internal_mac.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_internal_mac.length')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_tlv_internal_mac.value')
+    return 'of_bsn_tlv_internal_mac'
+end
+of_bsn_tlv_v6_dissectors[27] = dissect_of_bsn_tlv_internal_mac_v6
+
+-- child class of_bsn_tlv_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_interval_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_interval.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_interval.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_interval.value')
+    return 'of_bsn_tlv_interval'
+end
+of_bsn_tlv_v6_dissectors[58] = dissect_of_bsn_tlv_interval_v6
+
+-- child class of_bsn_tlv_ip_proto
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ip_proto_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ip_proto.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ip_proto.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_ip_proto.value')
+    return 'of_bsn_tlv_ip_proto'
+end
+of_bsn_tlv_v6_dissectors[67] = dissect_of_bsn_tlv_ip_proto_v6
+
+-- child class of_bsn_tlv_ipv4
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ipv4_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ipv4.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ipv4.length')
+    read_of_ipv4_t(reader, 6, subtree, 'of15.bsn_tlv_ipv4.value')
+    return 'of_bsn_tlv_ipv4'
+end
+of_bsn_tlv_v6_dissectors[4] = dissect_of_bsn_tlv_ipv4_v6
+
+-- child class of_bsn_tlv_ipv4_dst
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ipv4_dst_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ipv4_dst.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ipv4_dst.length')
+    read_of_ipv4_t(reader, 6, subtree, 'of15.bsn_tlv_ipv4_dst.value')
+    return 'of_bsn_tlv_ipv4_dst'
+end
+of_bsn_tlv_v6_dissectors[35] = dissect_of_bsn_tlv_ipv4_dst_v6
+
+-- child class of_bsn_tlv_ipv4_netmask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ipv4_netmask_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ipv4_netmask.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ipv4_netmask.length')
+    read_of_ipv4_t(reader, 6, subtree, 'of15.bsn_tlv_ipv4_netmask.value')
+    return 'of_bsn_tlv_ipv4_netmask'
+end
+of_bsn_tlv_v6_dissectors[60] = dissect_of_bsn_tlv_ipv4_netmask_v6
+
+-- child class of_bsn_tlv_ipv4_src
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ipv4_src_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ipv4_src.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ipv4_src.length')
+    read_of_ipv4_t(reader, 6, subtree, 'of15.bsn_tlv_ipv4_src.value')
+    return 'of_bsn_tlv_ipv4_src'
+end
+of_bsn_tlv_v6_dissectors[34] = dissect_of_bsn_tlv_ipv4_src_v6
+
+-- child class of_bsn_tlv_ipv6
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ipv6_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ipv6.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ipv6.length')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.bsn_tlv_ipv6.value')
+    return 'of_bsn_tlv_ipv6'
+end
+of_bsn_tlv_v6_dissectors[84] = dissect_of_bsn_tlv_ipv6_v6
+
+-- child class of_bsn_tlv_known_multicast_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_known_multicast_rate_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_known_multicast_rate.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_known_multicast_rate.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_known_multicast_rate.value')
+    return 'of_bsn_tlv_known_multicast_rate'
+end
+of_bsn_tlv_v6_dissectors[91] = dissect_of_bsn_tlv_known_multicast_rate_v6
+
+-- child class of_bsn_tlv_l2_multicast_lookup
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_l2_multicast_lookup_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_l2_multicast_lookup.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_l2_multicast_lookup.length')
+    return 'of_bsn_tlv_l2_multicast_lookup'
+end
+of_bsn_tlv_v6_dissectors[79] = dissect_of_bsn_tlv_l2_multicast_lookup_v6
+
+-- child class of_bsn_tlv_loopback_port
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_loopback_port_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_loopback_port.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_loopback_port.length')
+    read_of_port_no_t(reader, 6, subtree, 'of15.bsn_tlv_loopback_port.value')
+    return 'of_bsn_tlv_loopback_port'
+end
+of_bsn_tlv_v6_dissectors[110] = dissect_of_bsn_tlv_loopback_port_v6
+
+-- child class of_bsn_tlv_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mac_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mac.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mac.length')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_tlv_mac.value')
+    return 'of_bsn_tlv_mac'
+end
+of_bsn_tlv_v6_dissectors[1] = dissect_of_bsn_tlv_mac_v6
+
+-- child class of_bsn_tlv_mac_mask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mac_mask_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mac_mask.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mac_mask.length')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_tlv_mac_mask.value')
+    return 'of_bsn_tlv_mac_mask'
+end
+of_bsn_tlv_v6_dissectors[56] = dissect_of_bsn_tlv_mac_mask_v6
+
+-- child class of_bsn_tlv_mcg_type_vxlan
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mcg_type_vxlan_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mcg_type_vxlan.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mcg_type_vxlan.length')
+    return 'of_bsn_tlv_mcg_type_vxlan'
+end
+of_bsn_tlv_v6_dissectors[87] = dissect_of_bsn_tlv_mcg_type_vxlan_v6
+
+-- child class of_bsn_tlv_miss_packets
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_miss_packets_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_miss_packets.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_miss_packets.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_miss_packets.value')
+    return 'of_bsn_tlv_miss_packets'
+end
+of_bsn_tlv_v6_dissectors[13] = dissect_of_bsn_tlv_miss_packets_v6
+
+-- child class of_bsn_tlv_mpls_control_word
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mpls_control_word_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mpls_control_word.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mpls_control_word.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_mpls_control_word.value')
+    return 'of_bsn_tlv_mpls_control_word'
+end
+of_bsn_tlv_v6_dissectors[62] = dissect_of_bsn_tlv_mpls_control_word_v6
+
+-- child class of_bsn_tlv_mpls_label
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mpls_label_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mpls_label.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mpls_label.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_mpls_label.value')
+    return 'of_bsn_tlv_mpls_label'
+end
+of_bsn_tlv_v6_dissectors[61] = dissect_of_bsn_tlv_mpls_label_v6
+
+-- child class of_bsn_tlv_mpls_sequenced
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mpls_sequenced_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mpls_sequenced.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_mpls_sequenced.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_mpls_sequenced.value')
+    return 'of_bsn_tlv_mpls_sequenced'
+end
+of_bsn_tlv_v6_dissectors[63] = dissect_of_bsn_tlv_mpls_sequenced_v6
+
+-- child class of_bsn_tlv_multicast_interface_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_multicast_interface_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_multicast_interface_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_multicast_interface_id.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_multicast_interface_id.value')
+    return 'of_bsn_tlv_multicast_interface_id'
+end
+of_bsn_tlv_v6_dissectors[95] = dissect_of_bsn_tlv_multicast_interface_id_v6
+
+-- child class of_bsn_tlv_name
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_name_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_name.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_name.length')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_tlv_name.value')
+    return 'of_bsn_tlv_name'
+end
+of_bsn_tlv_v6_dissectors[52] = dissect_of_bsn_tlv_name_v6
+
+-- child class of_bsn_tlv_negate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_negate_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_negate.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_negate.length')
+    return 'of_bsn_tlv_negate'
+end
+of_bsn_tlv_v6_dissectors[83] = dissect_of_bsn_tlv_negate_v6
+
+-- child class of_bsn_tlv_next_hop_ipv4
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_next_hop_ipv4_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_next_hop_ipv4.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_next_hop_ipv4.length')
+    read_of_ipv4_t(reader, 6, subtree, 'of15.bsn_tlv_next_hop_ipv4.value')
+    return 'of_bsn_tlv_next_hop_ipv4'
+end
+of_bsn_tlv_v6_dissectors[115] = dissect_of_bsn_tlv_next_hop_ipv4_v6
+
+-- child class of_bsn_tlv_next_hop_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_next_hop_mac_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_next_hop_mac.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_next_hop_mac.length')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_tlv_next_hop_mac.value')
+    return 'of_bsn_tlv_next_hop_mac'
+end
+of_bsn_tlv_v6_dissectors[114] = dissect_of_bsn_tlv_next_hop_mac_v6
+
+-- child class of_bsn_tlv_nexthop_type_vxlan
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_nexthop_type_vxlan_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_nexthop_type_vxlan.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_nexthop_type_vxlan.length')
+    return 'of_bsn_tlv_nexthop_type_vxlan'
+end
+of_bsn_tlv_v6_dissectors[94] = dissect_of_bsn_tlv_nexthop_type_vxlan_v6
+
+-- child class of_bsn_tlv_offset
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_offset_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_offset.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_offset.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_offset.value')
+    return 'of_bsn_tlv_offset'
+end
+of_bsn_tlv_v6_dissectors[82] = dissect_of_bsn_tlv_offset_v6
+
+-- child class of_bsn_tlv_parent_port
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_parent_port_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_parent_port.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_parent_port.length')
+    read_of_port_no_t(reader, 6, subtree, 'of15.bsn_tlv_parent_port.value')
+    return 'of_bsn_tlv_parent_port'
+end
+of_bsn_tlv_v6_dissectors[109] = dissect_of_bsn_tlv_parent_port_v6
+
+-- child class of_bsn_tlv_partner_key
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_partner_key_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_key.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_key.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_key.value')
+    return 'of_bsn_tlv_partner_key'
+end
+of_bsn_tlv_v6_dissectors[51] = dissect_of_bsn_tlv_partner_key_v6
+
+-- child class of_bsn_tlv_partner_port_num
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_partner_port_num_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_port_num.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_port_num.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_port_num.value')
+    return 'of_bsn_tlv_partner_port_num'
+end
+of_bsn_tlv_v6_dissectors[50] = dissect_of_bsn_tlv_partner_port_num_v6
+
+-- child class of_bsn_tlv_partner_port_priority
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_partner_port_priority_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_port_priority.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_port_priority.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_port_priority.value')
+    return 'of_bsn_tlv_partner_port_priority'
+end
+of_bsn_tlv_v6_dissectors[49] = dissect_of_bsn_tlv_partner_port_priority_v6
+
+-- child class of_bsn_tlv_partner_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_partner_state_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_state.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_state.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_partner_state.value')
+    return 'of_bsn_tlv_partner_state'
+end
+of_bsn_tlv_v6_dissectors[54] = dissect_of_bsn_tlv_partner_state_v6
+
+-- child class of_bsn_tlv_partner_system_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_partner_system_mac_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_system_mac.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_system_mac.length')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_tlv_partner_system_mac.value')
+    return 'of_bsn_tlv_partner_system_mac'
+end
+of_bsn_tlv_v6_dissectors[48] = dissect_of_bsn_tlv_partner_system_mac_v6
+
+-- child class of_bsn_tlv_partner_system_priority
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_partner_system_priority_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_system_priority.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_system_priority.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_partner_system_priority.value')
+    return 'of_bsn_tlv_partner_system_priority'
+end
+of_bsn_tlv_v6_dissectors[47] = dissect_of_bsn_tlv_partner_system_priority_v6
+
+-- child class of_bsn_tlv_port
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_port.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_port.length')
+    read_of_port_no_t(reader, 6, subtree, 'of15.bsn_tlv_port.value')
+    return 'of_bsn_tlv_port'
+end
+of_bsn_tlv_v6_dissectors[0] = dissect_of_bsn_tlv_port_v6
+
+-- child class of_bsn_tlv_port_vxlan_mode
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_vxlan_mode_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_port_vxlan_mode.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_port_vxlan_mode.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_port_vxlan_mode.value')
+    return 'of_bsn_tlv_port_vxlan_mode'
+end
+of_bsn_tlv_v6_dissectors[88] = dissect_of_bsn_tlv_port_vxlan_mode_v6
+
+-- child class of_bsn_tlv_priority
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_priority_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_priority.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_priority.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_priority.value')
+    return 'of_bsn_tlv_priority'
+end
+of_bsn_tlv_v6_dissectors[57] = dissect_of_bsn_tlv_priority_v6
+
+-- child class of_bsn_tlv_qos_priority
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_qos_priority_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_qos_priority.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_qos_priority.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_qos_priority.value')
+    return 'of_bsn_tlv_qos_priority'
+end
+of_bsn_tlv_v6_dissectors[108] = dissect_of_bsn_tlv_qos_priority_v6
+
+-- child class of_bsn_tlv_queue_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_queue_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_queue_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_queue_id.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_queue_id.value')
+    return 'of_bsn_tlv_queue_id'
+end
+of_bsn_tlv_v6_dissectors[20] = dissect_of_bsn_tlv_queue_id_v6
+
+-- child class of_bsn_tlv_queue_weight
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_queue_weight_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_queue_weight.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_queue_weight.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_queue_weight.value')
+    return 'of_bsn_tlv_queue_weight'
+end
+of_bsn_tlv_v6_dissectors[21] = dissect_of_bsn_tlv_queue_weight_v6
+
+-- child class of_bsn_tlv_rate_limit
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_rate_limit_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_rate_limit.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_rate_limit.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_rate_limit.value')
+    return 'of_bsn_tlv_rate_limit'
+end
+of_bsn_tlv_v6_dissectors[116] = dissect_of_bsn_tlv_rate_limit_v6
+
+-- child class of_bsn_tlv_rate_unit
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_rate_unit_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_rate_unit.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_rate_unit.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_rate_unit.value')
+    return 'of_bsn_tlv_rate_unit'
+end
+of_bsn_tlv_v6_dissectors[89] = dissect_of_bsn_tlv_rate_unit_v6
+
+-- child class of_bsn_tlv_reference
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_reference_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_reference.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_reference.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_reference.table_id')
+    read_list(reader, dissect_of_bsn_tlv_v6, subtree, 'of_bsn_tlv')
+    return 'of_bsn_tlv_reference'
+end
+of_bsn_tlv_v6_dissectors[59] = dissect_of_bsn_tlv_reference_v6
+
+-- child class of_bsn_tlv_reply_packets
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_reply_packets_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_reply_packets.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_reply_packets.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_reply_packets.value')
+    return 'of_bsn_tlv_reply_packets'
+end
+of_bsn_tlv_v6_dissectors[12] = dissect_of_bsn_tlv_reply_packets_v6
+
+-- child class of_bsn_tlv_request_packets
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_request_packets_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_request_packets.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_request_packets.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_request_packets.value')
+    return 'of_bsn_tlv_request_packets'
+end
+of_bsn_tlv_v6_dissectors[11] = dissect_of_bsn_tlv_request_packets_v6
+
+-- child class of_bsn_tlv_rx_bytes
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_rx_bytes_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_rx_bytes.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_rx_bytes.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_rx_bytes.value')
+    return 'of_bsn_tlv_rx_bytes'
+end
+of_bsn_tlv_v6_dissectors[71] = dissect_of_bsn_tlv_rx_bytes_v6
+
+-- child class of_bsn_tlv_rx_packets
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_rx_packets_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_rx_packets.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_rx_packets.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_rx_packets.value')
+    return 'of_bsn_tlv_rx_packets'
+end
+of_bsn_tlv_v6_dissectors[2] = dissect_of_bsn_tlv_rx_packets_v6
+
+-- child class of_bsn_tlv_sampling_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_sampling_rate_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_sampling_rate.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_sampling_rate.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_sampling_rate.value')
+    return 'of_bsn_tlv_sampling_rate'
+end
+of_bsn_tlv_v6_dissectors[30] = dissect_of_bsn_tlv_sampling_rate_v6
+
+-- child class of_bsn_tlv_set_loopback_mode
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_set_loopback_mode_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_set_loopback_mode.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_set_loopback_mode.length')
+    return 'of_bsn_tlv_set_loopback_mode'
+end
+of_bsn_tlv_v6_dissectors[74] = dissect_of_bsn_tlv_set_loopback_mode_v6
+
+-- child class of_bsn_tlv_status
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_status_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_status.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_status.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_status.value')
+    return 'of_bsn_tlv_status'
+end
+of_bsn_tlv_v6_dissectors[97] = dissect_of_bsn_tlv_status_v6
+
+-- child class of_bsn_tlv_strip_mpls_l2_on_ingress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_strip_mpls_l2_on_ingress_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_strip_mpls_l2_on_ingress.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_strip_mpls_l2_on_ingress.length')
+    return 'of_bsn_tlv_strip_mpls_l2_on_ingress'
+end
+of_bsn_tlv_v6_dissectors[75] = dissect_of_bsn_tlv_strip_mpls_l2_on_ingress_v6
+
+-- child class of_bsn_tlv_strip_mpls_l3_on_ingress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_strip_mpls_l3_on_ingress_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_strip_mpls_l3_on_ingress.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_strip_mpls_l3_on_ingress.length')
+    return 'of_bsn_tlv_strip_mpls_l3_on_ingress'
+end
+of_bsn_tlv_v6_dissectors[76] = dissect_of_bsn_tlv_strip_mpls_l3_on_ingress_v6
+
+-- child class of_bsn_tlv_strip_vlan_on_egress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_strip_vlan_on_egress_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_strip_vlan_on_egress.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_strip_vlan_on_egress.length')
+    return 'of_bsn_tlv_strip_vlan_on_egress'
+end
+of_bsn_tlv_v6_dissectors[73] = dissect_of_bsn_tlv_strip_vlan_on_egress_v6
+
+-- child class of_bsn_tlv_sub_agent_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_sub_agent_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_sub_agent_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_sub_agent_id.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_sub_agent_id.value')
+    return 'of_bsn_tlv_sub_agent_id'
+end
+of_bsn_tlv_v6_dissectors[38] = dissect_of_bsn_tlv_sub_agent_id_v6
+
+-- child class of_bsn_tlv_tcp_dst
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_tcp_dst_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tcp_dst.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tcp_dst.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tcp_dst.value')
+    return 'of_bsn_tlv_tcp_dst'
+end
+of_bsn_tlv_v6_dissectors[66] = dissect_of_bsn_tlv_tcp_dst_v6
+
+-- child class of_bsn_tlv_tcp_src
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_tcp_src_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tcp_src.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tcp_src.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tcp_src.value')
+    return 'of_bsn_tlv_tcp_src'
+end
+of_bsn_tlv_v6_dissectors[65] = dissect_of_bsn_tlv_tcp_src_v6
+
+-- child class of_bsn_tlv_ttl
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ttl_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ttl.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ttl.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ttl.value')
+    return 'of_bsn_tlv_ttl'
+end
+of_bsn_tlv_v6_dissectors[113] = dissect_of_bsn_tlv_ttl_v6
+
+-- child class of_bsn_tlv_tx_bytes
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_tx_bytes_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tx_bytes.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tx_bytes.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_tx_bytes.value')
+    return 'of_bsn_tlv_tx_bytes'
+end
+of_bsn_tlv_v6_dissectors[39] = dissect_of_bsn_tlv_tx_bytes_v6
+
+-- child class of_bsn_tlv_tx_packets
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_tx_packets_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tx_packets.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tx_packets.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_tx_packets.value')
+    return 'of_bsn_tlv_tx_packets'
+end
+of_bsn_tlv_v6_dissectors[3] = dissect_of_bsn_tlv_tx_packets_v6
+
+-- child class of_bsn_tlv_udf_anchor
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_anchor_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_anchor.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_anchor.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_anchor.value')
+    return 'of_bsn_tlv_udf_anchor'
+end
+of_bsn_tlv_v6_dissectors[16] = dissect_of_bsn_tlv_udf_anchor_v6
+
+-- child class of_bsn_tlv_udf_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_id.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_id.value')
+    return 'of_bsn_tlv_udf_id'
+end
+of_bsn_tlv_v6_dissectors[15] = dissect_of_bsn_tlv_udf_id_v6
+
+-- child class of_bsn_tlv_udf_length
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_length_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_length.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_length.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_length.value')
+    return 'of_bsn_tlv_udf_length'
+end
+of_bsn_tlv_v6_dissectors[18] = dissect_of_bsn_tlv_udf_length_v6
+
+-- child class of_bsn_tlv_udf_offset
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_offset_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_offset.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_offset.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_offset.value')
+    return 'of_bsn_tlv_udf_offset'
+end
+of_bsn_tlv_v6_dissectors[17] = dissect_of_bsn_tlv_udf_offset_v6
+
+-- child class of_bsn_tlv_udp_dst
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udp_dst_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udp_dst.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udp_dst.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udp_dst.value')
+    return 'of_bsn_tlv_udp_dst'
+end
+of_bsn_tlv_v6_dissectors[37] = dissect_of_bsn_tlv_udp_dst_v6
+
+-- child class of_bsn_tlv_udp_src
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udp_src_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udp_src.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udp_src.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udp_src.value')
+    return 'of_bsn_tlv_udp_src'
+end
+of_bsn_tlv_v6_dissectors[36] = dissect_of_bsn_tlv_udp_src_v6
+
+-- child class of_bsn_tlv_uint64_list
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_uint64_list_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_uint64_list.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_uint64_list.length')
+    read_list(reader, dissect_of_uint64_v6, subtree, 'of_uint64')
+    return 'of_bsn_tlv_uint64_list'
+end
+of_bsn_tlv_v6_dissectors[119] = dissect_of_bsn_tlv_uint64_list_v6
+
+-- child class of_bsn_tlv_unicast_query_timeout
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_unicast_query_timeout_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_unicast_query_timeout.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_unicast_query_timeout.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_unicast_query_timeout.value')
+    return 'of_bsn_tlv_unicast_query_timeout'
+end
+of_bsn_tlv_v6_dissectors[9] = dissect_of_bsn_tlv_unicast_query_timeout_v6
+
+-- child class of_bsn_tlv_unicast_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_unicast_rate_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_unicast_rate.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_unicast_rate.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_unicast_rate.value')
+    return 'of_bsn_tlv_unicast_rate'
+end
+of_bsn_tlv_v6_dissectors[93] = dissect_of_bsn_tlv_unicast_rate_v6
+
+-- child class of_bsn_tlv_unknown_multicast_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_unknown_multicast_rate_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_unknown_multicast_rate.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_unknown_multicast_rate.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_unknown_multicast_rate.value')
+    return 'of_bsn_tlv_unknown_multicast_rate'
+end
+of_bsn_tlv_v6_dissectors[92] = dissect_of_bsn_tlv_unknown_multicast_rate_v6
+
+-- child class of_bsn_tlv_untagged
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_untagged_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_untagged.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_untagged.length')
+    return 'of_bsn_tlv_untagged'
+end
+of_bsn_tlv_v6_dissectors[106] = dissect_of_bsn_tlv_untagged_v6
+
+-- child class of_bsn_tlv_use_packet_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_use_packet_state_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_use_packet_state.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_use_packet_state.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_use_packet_state.value')
+    return 'of_bsn_tlv_use_packet_state'
+end
+of_bsn_tlv_v6_dissectors[96] = dissect_of_bsn_tlv_use_packet_state_v6
+
+-- child class of_bsn_tlv_vfi
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vfi_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vfi.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vfi.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vfi.value')
+    return 'of_bsn_tlv_vfi'
+end
+of_bsn_tlv_v6_dissectors[99] = dissect_of_bsn_tlv_vfi_v6
+
+-- child class of_bsn_tlv_vfp_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vfp_class_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vfp_class_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vfp_class_id.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_vfp_class_id.value')
+    return 'of_bsn_tlv_vfp_class_id'
+end
+of_bsn_tlv_v6_dissectors[107] = dissect_of_bsn_tlv_vfp_class_id_v6
+
+-- child class of_bsn_tlv_vlan_mac_list
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vlan_mac_list_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vlan_mac_list.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vlan_mac_list.length')
+    read_list(reader, dissect_of_bsn_vlan_mac_v6, subtree, 'of_bsn_vlan_mac')
+    return 'of_bsn_tlv_vlan_mac_list'
+end
+of_bsn_tlv_v6_dissectors[98] = dissect_of_bsn_tlv_vlan_mac_list_v6
+
+-- child class of_bsn_tlv_vlan_pcp
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vlan_pcp_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vlan_pcp.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vlan_pcp.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_vlan_pcp.value')
+    return 'of_bsn_tlv_vlan_pcp'
+end
+of_bsn_tlv_v6_dissectors[72] = dissect_of_bsn_tlv_vlan_pcp_v6
+
+-- child class of_bsn_tlv_vlan_vid
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vlan_vid_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vlan_vid.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vlan_vid.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vlan_vid.value')
+    return 'of_bsn_tlv_vlan_vid'
+end
+of_bsn_tlv_v6_dissectors[6] = dissect_of_bsn_tlv_vlan_vid_v6
+
+-- child class of_bsn_tlv_vlan_vid_mask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vlan_vid_mask_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vlan_vid_mask.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vlan_vid_mask.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vlan_vid_mask.value')
+    return 'of_bsn_tlv_vlan_vid_mask'
+end
+of_bsn_tlv_v6_dissectors[77] = dissect_of_bsn_tlv_vlan_vid_mask_v6
+
+-- child class of_bsn_tlv_vni
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vni_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vni.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vni.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_vni.value')
+    return 'of_bsn_tlv_vni'
+end
+of_bsn_tlv_v6_dissectors[86] = dissect_of_bsn_tlv_vni_v6
+
+-- child class of_bsn_tlv_vpn_key
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vpn_key_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vpn_key.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vpn_key.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_vpn_key.value')
+    return 'of_bsn_tlv_vpn_key'
+end
+of_bsn_tlv_v6_dissectors[111] = dissect_of_bsn_tlv_vpn_key_v6
+
+-- child class of_bsn_tlv_vrf
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vrf_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vrf.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vrf.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_vrf.value')
+    return 'of_bsn_tlv_vrf'
+end
+of_bsn_tlv_v6_dissectors[19] = dissect_of_bsn_tlv_vrf_v6
+
+-- child class of_bsn_tlv_vxlan_egress_lag
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vxlan_egress_lag_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vxlan_egress_lag.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_vxlan_egress_lag.length')
+    return 'of_bsn_tlv_vxlan_egress_lag'
+end
+of_bsn_tlv_v6_dissectors[117] = dissect_of_bsn_tlv_vxlan_egress_lag_v6
 
 -- child class of_bsn_virtual_port_create_reply
 -- Child of of_bsn_header
@@ -48452,6 +53652,74 @@ function dissect_of_bsn_virtual_port_remove_request_v6(reader, subtree)
 end
 of_bsn_header_v6_dissectors[17] = dissect_of_bsn_virtual_port_remove_request_v6
 
+-- child class of_bsn_vlan_counter_clear
+-- Child of of_bsn_header
+function dissect_of_bsn_vlan_counter_clear_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_vlan_counter_clear.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_vlan_counter_clear.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vlan_counter_clear.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vlan_counter_clear.xid')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vlan_counter_clear.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vlan_counter_clear.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vlan_counter_clear.vlan_vid')
+    return 'of_bsn_vlan_counter_clear'
+end
+of_bsn_header_v6_dissectors[70] = dissect_of_bsn_vlan_counter_clear_v6
+
+-- top-level class of_bsn_vlan_counter_stats_entry
+function dissect_of_bsn_vlan_counter_stats_entry_v6(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_entry.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_entry.vlan_vid')
+    reader.skip(4)
+    read_list(reader, dissect_of_uint64_v6, subtree, 'of_uint64')
+    return 'of_bsn_vlan_counter_stats_entry'
+end
+-- child class of_bsn_vlan_counter_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_vlan_counter_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_vlan_counter_stats_entry_v6, subtree, 'of_bsn_vlan_counter_stats_entry')
+    return 'of_bsn_vlan_counter_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[9] = dissect_of_bsn_vlan_counter_stats_reply_v6
+
+-- child class of_bsn_vlan_counter_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_vlan_counter_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_request.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vlan_counter_stats_request.vlan_vid')
+    return 'of_bsn_vlan_counter_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[9] = dissect_of_bsn_vlan_counter_stats_request_v6
+
+-- top-level class of_bsn_vlan_mac
+function dissect_of_bsn_vlan_mac_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vlan_mac.vlan_vid')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_vlan_mac.mac')
+    return 'of_bsn_vlan_mac'
+end
 -- child class of_bsn_vport_l2gre
 -- Child of of_bsn_vport
 function dissect_of_bsn_vport_l2gre_v6(reader, subtree)
@@ -48488,6 +53756,54 @@ function dissect_of_bsn_vport_q_in_q_v6(reader, subtree)
     return 'of_bsn_vport_q_in_q'
 end
 of_bsn_vport_v6_dissectors[0] = dissect_of_bsn_vport_q_in_q_v6
+
+-- top-level class of_bsn_vrf_counter_stats_entry
+function dissect_of_bsn_vrf_counter_stats_entry_v6(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_entry.length')
+    reader.skip(2)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_entry.vrf')
+    read_list(reader, dissect_of_uint64_v6, subtree, 'of_uint64')
+    return 'of_bsn_vrf_counter_stats_entry'
+end
+-- child class of_bsn_vrf_counter_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_vrf_counter_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_reply.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_vrf_counter_stats_entry_v6, subtree, 'of_bsn_vrf_counter_stats_entry')
+    return 'of_bsn_vrf_counter_stats_reply'
+end
+of_bsn_stats_reply_v6_dissectors[15] = dissect_of_bsn_vrf_counter_stats_reply_v6
+
+-- child class of_bsn_vrf_counter_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_vrf_counter_stats_request_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_request.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_request.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_vrf_counter_stats_request.vrf')
+    return 'of_bsn_vrf_counter_stats_request'
+end
+of_bsn_stats_request_v6_dissectors[15] = dissect_of_bsn_vrf_counter_stats_request_v6
 
 -- top-level class of_bucket
 function dissect_of_bucket_v6(reader, subtree)
@@ -48783,14 +54099,6 @@ function dissect_of_echo_request_v6(reader, subtree)
     return 'of_echo_request'
 end
 of_header_v6_dissectors[2] = dissect_of_echo_request_v6
-
--- virtual child class of_experimenter_error_msg
--- Child of of_error_msg
--- Discriminator is experimenter
-function dissect_of_experimenter_error_msg_v6(reader, subtree)
-    return of_experimenter_error_msg_v6_dissectors[reader.peek(12,4):uint()](reader, subtree)
-end
-of_error_msg_v6_dissectors[65535] = dissect_of_experimenter_error_msg_v6
 
 -- child class of_features_reply
 -- Child of of_header
@@ -49648,6 +54956,337 @@ function dissect_of_instruction_id_apply_actions_v6(reader, subtree)
 end
 of_instruction_id_v6_dissectors[4] = dissect_of_instruction_id_apply_actions_v6
 
+-- virtual child class of_instruction_experimenter
+-- Child of of_instruction
+-- Discriminator is experimenter
+function dissect_of_instruction_experimenter_v6(reader, subtree)
+    return of_instruction_experimenter_v6_dissectors[reader.peek(4,4):uint()](reader, subtree)
+end
+of_instruction_v6_dissectors[65535] = dissect_of_instruction_experimenter_v6
+
+-- virtual child class of_instruction_bsn
+-- Child of of_instruction_experimenter
+-- Discriminator is subtype
+function dissect_of_instruction_bsn_v6(reader, subtree)
+    return of_instruction_bsn_v6_dissectors[reader.peek(8,4):uint()](reader, subtree)
+end
+of_instruction_experimenter_v6_dissectors[6035143] = dissect_of_instruction_bsn_v6
+
+-- virtual child class of_instruction_id_experimenter
+-- Child of of_instruction_id
+-- Discriminator is experimenter
+function dissect_of_instruction_id_experimenter_v6(reader, subtree)
+    return of_instruction_id_experimenter_v6_dissectors[reader.peek(4,4):uint()](reader, subtree)
+end
+of_instruction_id_v6_dissectors[65535] = dissect_of_instruction_id_experimenter_v6
+
+-- virtual child class of_instruction_id_bsn
+-- Child of of_instruction_id_experimenter
+-- Discriminator is subtype
+function dissect_of_instruction_id_bsn_v6(reader, subtree)
+    return of_instruction_id_bsn_v6_dissectors[reader.peek(8,4):uint()](reader, subtree)
+end
+of_instruction_id_experimenter_v6_dissectors[6035143] = dissect_of_instruction_id_bsn_v6
+
+-- child class of_instruction_bsn_arp_offload
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_arp_offload_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_arp_offload.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_arp_offload.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_arp_offload.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_arp_offload.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_arp_offload'
+end
+of_instruction_bsn_v6_dissectors[1] = dissect_of_instruction_bsn_arp_offload_v6
+
+-- child class of_instruction_id_bsn_arp_offload
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_arp_offload_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_arp_offload.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_arp_offload.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_arp_offload.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_arp_offload.subtype')
+    return 'of_instruction_id_bsn_arp_offload'
+end
+of_instruction_id_bsn_v6_dissectors[1] = dissect_of_instruction_id_bsn_arp_offload_v6
+
+-- child class of_instruction_bsn_auto_negotiation
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_auto_negotiation_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_auto_negotiation.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_auto_negotiation.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_auto_negotiation.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_auto_negotiation.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_auto_negotiation'
+end
+of_instruction_bsn_v6_dissectors[11] = dissect_of_instruction_bsn_auto_negotiation_v6
+
+-- child class of_instruction_id_bsn_auto_negotiation
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_auto_negotiation_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_auto_negotiation.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_auto_negotiation.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_auto_negotiation.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_auto_negotiation.subtype')
+    return 'of_instruction_id_bsn_auto_negotiation'
+end
+of_instruction_id_bsn_v6_dissectors[11] = dissect_of_instruction_id_bsn_auto_negotiation_v6
+
+-- child class of_instruction_bsn_deny
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_deny_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_deny.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_deny.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_deny.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_deny.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_deny'
+end
+of_instruction_bsn_v6_dissectors[5] = dissect_of_instruction_bsn_deny_v6
+
+-- child class of_instruction_id_bsn_deny
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_deny_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_deny.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_deny.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_deny.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_deny.subtype')
+    return 'of_instruction_id_bsn_deny'
+end
+of_instruction_id_bsn_v6_dissectors[5] = dissect_of_instruction_id_bsn_deny_v6
+
+-- child class of_instruction_bsn_dhcp_offload
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_dhcp_offload_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_dhcp_offload.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_dhcp_offload.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_dhcp_offload.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_dhcp_offload.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_dhcp_offload'
+end
+of_instruction_bsn_v6_dissectors[2] = dissect_of_instruction_bsn_dhcp_offload_v6
+
+-- child class of_instruction_id_bsn_dhcp_offload
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_dhcp_offload_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_dhcp_offload.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_dhcp_offload.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_dhcp_offload.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_dhcp_offload.subtype')
+    return 'of_instruction_id_bsn_dhcp_offload'
+end
+of_instruction_id_bsn_v6_dissectors[2] = dissect_of_instruction_id_bsn_dhcp_offload_v6
+
+-- child class of_instruction_bsn_disable_l3
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_disable_l3_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_disable_l3.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_disable_l3.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_disable_l3.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_disable_l3.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_disable_l3'
+end
+of_instruction_bsn_v6_dissectors[13] = dissect_of_instruction_bsn_disable_l3_v6
+
+-- child class of_instruction_id_bsn_disable_l3
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_disable_l3_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_disable_l3.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_disable_l3.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_disable_l3.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_disable_l3.subtype')
+    return 'of_instruction_id_bsn_disable_l3'
+end
+of_instruction_id_bsn_v6_dissectors[13] = dissect_of_instruction_id_bsn_disable_l3_v6
+
+-- child class of_instruction_bsn_disable_src_mac_check
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_disable_src_mac_check_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_disable_src_mac_check.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_disable_src_mac_check.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_disable_src_mac_check.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_disable_src_mac_check.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_disable_src_mac_check'
+end
+of_instruction_bsn_v6_dissectors[0] = dissect_of_instruction_bsn_disable_src_mac_check_v6
+
+-- child class of_instruction_id_bsn_disable_src_mac_check
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_disable_src_mac_check_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_disable_src_mac_check.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_disable_src_mac_check.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_disable_src_mac_check.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_disable_src_mac_check.subtype')
+    return 'of_instruction_id_bsn_disable_src_mac_check'
+end
+of_instruction_id_bsn_v6_dissectors[0] = dissect_of_instruction_id_bsn_disable_src_mac_check_v6
+
+-- child class of_instruction_bsn_disable_vlan_counters
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_disable_vlan_counters_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_disable_vlan_counters.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_disable_vlan_counters.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_disable_vlan_counters.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_disable_vlan_counters.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_disable_vlan_counters'
+end
+of_instruction_bsn_v6_dissectors[9] = dissect_of_instruction_bsn_disable_vlan_counters_v6
+
+-- child class of_instruction_id_bsn_disable_vlan_counters
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_disable_vlan_counters_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_disable_vlan_counters.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_disable_vlan_counters.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_disable_vlan_counters.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_disable_vlan_counters.subtype')
+    return 'of_instruction_id_bsn_disable_vlan_counters'
+end
+of_instruction_id_bsn_v6_dissectors[9] = dissect_of_instruction_id_bsn_disable_vlan_counters_v6
+
+-- child class of_instruction_bsn_internal_priority
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_internal_priority_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_internal_priority.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_internal_priority.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_internal_priority.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_internal_priority.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_internal_priority.value')
+    return 'of_instruction_bsn_internal_priority'
+end
+of_instruction_bsn_v6_dissectors[12] = dissect_of_instruction_bsn_internal_priority_v6
+
+-- child class of_instruction_id_bsn_internal_priority
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_internal_priority_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_internal_priority.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_internal_priority.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_internal_priority.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_internal_priority.subtype')
+    return 'of_instruction_id_bsn_internal_priority'
+end
+of_instruction_id_bsn_v6_dissectors[12] = dissect_of_instruction_id_bsn_internal_priority_v6
+
+-- child class of_instruction_bsn_packet_of_death
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_packet_of_death_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_packet_of_death.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_packet_of_death.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_packet_of_death.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_packet_of_death.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_packet_of_death'
+end
+of_instruction_bsn_v6_dissectors[6] = dissect_of_instruction_bsn_packet_of_death_v6
+
+-- child class of_instruction_id_bsn_packet_of_death
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_packet_of_death_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_packet_of_death.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_packet_of_death.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_packet_of_death.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_packet_of_death.subtype')
+    return 'of_instruction_id_bsn_packet_of_death'
+end
+of_instruction_id_bsn_v6_dissectors[6] = dissect_of_instruction_id_bsn_packet_of_death_v6
+
+-- child class of_instruction_bsn_permit
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_permit_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_permit.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_permit.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_permit.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_permit.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_permit'
+end
+of_instruction_bsn_v6_dissectors[4] = dissect_of_instruction_bsn_permit_v6
+
+-- child class of_instruction_id_bsn_permit
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_permit_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_permit.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_permit.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_permit.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_permit.subtype')
+    return 'of_instruction_id_bsn_permit'
+end
+of_instruction_id_bsn_v6_dissectors[4] = dissect_of_instruction_id_bsn_permit_v6
+
+-- child class of_instruction_bsn_prioritize_pdus
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_prioritize_pdus_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_prioritize_pdus.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_prioritize_pdus.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_prioritize_pdus.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_prioritize_pdus.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_prioritize_pdus'
+end
+of_instruction_bsn_v6_dissectors[7] = dissect_of_instruction_bsn_prioritize_pdus_v6
+
+-- child class of_instruction_id_bsn_prioritize_pdus
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_prioritize_pdus_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_prioritize_pdus.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_prioritize_pdus.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_prioritize_pdus.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_prioritize_pdus.subtype')
+    return 'of_instruction_id_bsn_prioritize_pdus'
+end
+of_instruction_id_bsn_v6_dissectors[7] = dissect_of_instruction_id_bsn_prioritize_pdus_v6
+
+-- child class of_instruction_bsn_require_vlan_xlate
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_require_vlan_xlate_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_require_vlan_xlate.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_require_vlan_xlate.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_require_vlan_xlate.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_require_vlan_xlate.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_require_vlan_xlate'
+end
+of_instruction_bsn_v6_dissectors[8] = dissect_of_instruction_bsn_require_vlan_xlate_v6
+
+-- child class of_instruction_id_bsn_require_vlan_xlate
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_require_vlan_xlate_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_require_vlan_xlate.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_require_vlan_xlate.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_require_vlan_xlate.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_require_vlan_xlate.subtype')
+    return 'of_instruction_id_bsn_require_vlan_xlate'
+end
+of_instruction_id_bsn_v6_dissectors[8] = dissect_of_instruction_id_bsn_require_vlan_xlate_v6
+
+-- child class of_instruction_bsn_span_destination
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_span_destination_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_span_destination.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_span_destination.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_span_destination.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_span_destination.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_span_destination'
+end
+of_instruction_bsn_v6_dissectors[10] = dissect_of_instruction_bsn_span_destination_v6
+
+-- child class of_instruction_id_bsn_span_destination
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_span_destination_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_span_destination.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_span_destination.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_span_destination.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_span_destination.subtype')
+    return 'of_instruction_id_bsn_span_destination'
+end
+of_instruction_id_bsn_v6_dissectors[10] = dissect_of_instruction_id_bsn_span_destination_v6
+
 -- child class of_instruction_clear_actions
 -- Child of of_instruction
 function dissect_of_instruction_clear_actions_v6(reader, subtree)
@@ -49666,22 +55305,6 @@ function dissect_of_instruction_id_clear_actions_v6(reader, subtree)
     return 'of_instruction_id_clear_actions'
 end
 of_instruction_id_v6_dissectors[5] = dissect_of_instruction_id_clear_actions_v6
-
--- virtual child class of_instruction_experimenter
--- Child of of_instruction
--- Discriminator is experimenter
-function dissect_of_instruction_experimenter_v6(reader, subtree)
-    return of_instruction_experimenter_v6_dissectors[reader.peek(4,4):uint()](reader, subtree)
-end
-of_instruction_v6_dissectors[65535] = dissect_of_instruction_experimenter_v6
-
--- virtual child class of_instruction_id_experimenter
--- Child of of_instruction_id
--- Discriminator is experimenter
-function dissect_of_instruction_id_experimenter_v6(reader, subtree)
-    return of_instruction_id_experimenter_v6_dissectors[reader.peek(4,4):uint()](reader, subtree)
-end
-of_instruction_id_v6_dissectors[65535] = dissect_of_instruction_id_experimenter_v6
 
 -- child class of_instruction_goto_table
 -- Child of of_instruction
@@ -50121,6 +55744,462 @@ function dissect_of_oxm_arp_tpa_masked_v6(reader, subtree)
     return 'of_oxm_arp_tpa_masked'
 end
 of_oxm_v6_dissectors[2147495688] = dissect_of_oxm_arp_tpa_masked_v6
+
+-- child class of_oxm_bsn_egr_port_group_id
+-- Child of of_oxm
+function dissect_of_oxm_bsn_egr_port_group_id_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_egr_port_group_id.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_egr_port_group_id.value')
+    return 'of_oxm_bsn_egr_port_group_id'
+end
+of_oxm_v6_dissectors[200196] = dissect_of_oxm_bsn_egr_port_group_id_v6
+
+-- child class of_oxm_bsn_egr_port_group_id_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_egr_port_group_id_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_egr_port_group_id_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_egr_port_group_id_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_egr_port_group_id_masked.value_mask')
+    return 'of_oxm_bsn_egr_port_group_id_masked'
+end
+of_oxm_v6_dissectors[200456] = dissect_of_oxm_bsn_egr_port_group_id_masked_v6
+
+-- child class of_oxm_bsn_in_ports_128
+-- Child of of_oxm
+function dissect_of_oxm_bsn_in_ports_128_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_in_ports_128.type_len')
+    read_of_bitmap_128_t(reader, 6, subtree, 'of15.oxm_bsn_in_ports_128.value')
+    return 'of_oxm_bsn_in_ports_128'
+end
+of_oxm_v6_dissectors[196624] = dissect_of_oxm_bsn_in_ports_128_v6
+
+-- child class of_oxm_bsn_in_ports_128_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_in_ports_128_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_in_ports_128_masked.type_len')
+    read_of_bitmap_128_t(reader, 6, subtree, 'of15.oxm_bsn_in_ports_128_masked.value')
+    read_of_bitmap_128_t(reader, 6, subtree, 'of15.oxm_bsn_in_ports_128_masked.value_mask')
+    return 'of_oxm_bsn_in_ports_128_masked'
+end
+of_oxm_v6_dissectors[196896] = dissect_of_oxm_bsn_in_ports_128_masked_v6
+
+-- child class of_oxm_bsn_in_ports_512
+-- Child of of_oxm
+function dissect_of_oxm_bsn_in_ports_512_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_in_ports_512.type_len')
+    read_of_bitmap_512_t(reader, 6, subtree, 'of15.oxm_bsn_in_ports_512.value')
+    return 'of_oxm_bsn_in_ports_512'
+end
+of_oxm_v6_dissectors[206400] = dissect_of_oxm_bsn_in_ports_512_v6
+
+-- child class of_oxm_bsn_in_ports_512_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_in_ports_512_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_in_ports_512_masked.type_len')
+    read_of_bitmap_512_t(reader, 6, subtree, 'of15.oxm_bsn_in_ports_512_masked.value')
+    read_of_bitmap_512_t(reader, 6, subtree, 'of15.oxm_bsn_in_ports_512_masked.value_mask')
+    return 'of_oxm_bsn_in_ports_512_masked'
+end
+of_oxm_v6_dissectors[206720] = dissect_of_oxm_bsn_in_ports_512_masked_v6
+
+-- child class of_oxm_bsn_ingress_port_group_id
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ingress_port_group_id_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_ingress_port_group_id.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_ingress_port_group_id.value')
+    return 'of_oxm_bsn_ingress_port_group_id'
+end
+of_oxm_v6_dissectors[206852] = dissect_of_oxm_bsn_ingress_port_group_id_v6
+
+-- child class of_oxm_bsn_ingress_port_group_id_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ingress_port_group_id_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_ingress_port_group_id_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_ingress_port_group_id_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_ingress_port_group_id_masked.value_mask')
+    return 'of_oxm_bsn_ingress_port_group_id_masked'
+end
+of_oxm_v6_dissectors[207112] = dissect_of_oxm_bsn_ingress_port_group_id_masked_v6
+
+-- child class of_oxm_bsn_inner_eth_dst
+-- Child of of_oxm
+function dissect_of_oxm_bsn_inner_eth_dst_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_inner_eth_dst.type_len')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.oxm_bsn_inner_eth_dst.value')
+    return 'of_oxm_bsn_inner_eth_dst'
+end
+of_oxm_v6_dissectors[207878] = dissect_of_oxm_bsn_inner_eth_dst_v6
+
+-- child class of_oxm_bsn_inner_eth_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_inner_eth_dst_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_inner_eth_dst_masked.type_len')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.oxm_bsn_inner_eth_dst_masked.value')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.oxm_bsn_inner_eth_dst_masked.value_mask')
+    return 'of_oxm_bsn_inner_eth_dst_masked'
+end
+of_oxm_v6_dissectors[208140] = dissect_of_oxm_bsn_inner_eth_dst_masked_v6
+
+-- child class of_oxm_bsn_inner_eth_src
+-- Child of of_oxm
+function dissect_of_oxm_bsn_inner_eth_src_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_inner_eth_src.type_len')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.oxm_bsn_inner_eth_src.value')
+    return 'of_oxm_bsn_inner_eth_src'
+end
+of_oxm_v6_dissectors[208390] = dissect_of_oxm_bsn_inner_eth_src_v6
+
+-- child class of_oxm_bsn_inner_eth_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_inner_eth_src_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_inner_eth_src_masked.type_len')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.oxm_bsn_inner_eth_src_masked.value')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.oxm_bsn_inner_eth_src_masked.value_mask')
+    return 'of_oxm_bsn_inner_eth_src_masked'
+end
+of_oxm_v6_dissectors[208652] = dissect_of_oxm_bsn_inner_eth_src_masked_v6
+
+-- child class of_oxm_bsn_inner_vlan_vid
+-- Child of of_oxm
+function dissect_of_oxm_bsn_inner_vlan_vid_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_inner_vlan_vid.type_len')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_bsn_inner_vlan_vid.value')
+    return 'of_oxm_bsn_inner_vlan_vid'
+end
+of_oxm_v6_dissectors[208898] = dissect_of_oxm_bsn_inner_vlan_vid_v6
+
+-- child class of_oxm_bsn_inner_vlan_vid_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_inner_vlan_vid_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_inner_vlan_vid_masked.type_len')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_bsn_inner_vlan_vid_masked.value')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_bsn_inner_vlan_vid_masked.value_mask')
+    return 'of_oxm_bsn_inner_vlan_vid_masked'
+end
+of_oxm_v6_dissectors[209156] = dissect_of_oxm_bsn_inner_vlan_vid_masked_v6
+
+-- child class of_oxm_bsn_l2_cache_hit
+-- Child of of_oxm
+function dissect_of_oxm_bsn_l2_cache_hit_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_l2_cache_hit.type_len')
+    read_uint8_t(reader, 6, subtree, 'of15.oxm_bsn_l2_cache_hit.value')
+    return 'of_oxm_bsn_l2_cache_hit'
+end
+of_oxm_v6_dissectors[205825] = dissect_of_oxm_bsn_l2_cache_hit_v6
+
+-- child class of_oxm_bsn_l2_cache_hit_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_l2_cache_hit_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_l2_cache_hit_masked.type_len')
+    read_uint8_t(reader, 6, subtree, 'of15.oxm_bsn_l2_cache_hit_masked.value')
+    read_uint8_t(reader, 6, subtree, 'of15.oxm_bsn_l2_cache_hit_masked.value_mask')
+    return 'of_oxm_bsn_l2_cache_hit_masked'
+end
+of_oxm_v6_dissectors[206082] = dissect_of_oxm_bsn_l2_cache_hit_masked_v6
+
+-- child class of_oxm_bsn_l3_interface_class_id
+-- Child of of_oxm
+function dissect_of_oxm_bsn_l3_interface_class_id_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_l3_interface_class_id.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_l3_interface_class_id.value')
+    return 'of_oxm_bsn_l3_interface_class_id'
+end
+of_oxm_v6_dissectors[198660] = dissect_of_oxm_bsn_l3_interface_class_id_v6
+
+-- child class of_oxm_bsn_l3_interface_class_id_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_l3_interface_class_id_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_l3_interface_class_id_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_l3_interface_class_id_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_l3_interface_class_id_masked.value_mask')
+    return 'of_oxm_bsn_l3_interface_class_id_masked'
+end
+of_oxm_v6_dissectors[198920] = dissect_of_oxm_bsn_l3_interface_class_id_masked_v6
+
+-- child class of_oxm_bsn_l3_src_class_id
+-- Child of of_oxm
+function dissect_of_oxm_bsn_l3_src_class_id_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_l3_src_class_id.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_l3_src_class_id.value')
+    return 'of_oxm_bsn_l3_src_class_id'
+end
+of_oxm_v6_dissectors[199172] = dissect_of_oxm_bsn_l3_src_class_id_v6
+
+-- child class of_oxm_bsn_l3_src_class_id_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_l3_src_class_id_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_l3_src_class_id_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_l3_src_class_id_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_l3_src_class_id_masked.value_mask')
+    return 'of_oxm_bsn_l3_src_class_id_masked'
+end
+of_oxm_v6_dissectors[199432] = dissect_of_oxm_bsn_l3_src_class_id_masked_v6
+
+-- child class of_oxm_bsn_lag_id
+-- Child of of_oxm
+function dissect_of_oxm_bsn_lag_id_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_lag_id.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_lag_id.value')
+    return 'of_oxm_bsn_lag_id'
+end
+of_oxm_v6_dissectors[197124] = dissect_of_oxm_bsn_lag_id_v6
+
+-- child class of_oxm_bsn_lag_id_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_lag_id_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_lag_id_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_lag_id_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_lag_id_masked.value_mask')
+    return 'of_oxm_bsn_lag_id_masked'
+end
+of_oxm_v6_dissectors[197384] = dissect_of_oxm_bsn_lag_id_masked_v6
+
+-- child class of_oxm_bsn_tcp_flags
+-- Child of of_oxm
+function dissect_of_oxm_bsn_tcp_flags_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_tcp_flags.type_len')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_bsn_tcp_flags.value')
+    return 'of_oxm_bsn_tcp_flags'
+end
+of_oxm_v6_dissectors[204802] = dissect_of_oxm_bsn_tcp_flags_v6
+
+-- child class of_oxm_bsn_tcp_flags_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_tcp_flags_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_tcp_flags_masked.type_len')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_bsn_tcp_flags_masked.value')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_bsn_tcp_flags_masked.value_mask')
+    return 'of_oxm_bsn_tcp_flags_masked'
+end
+of_oxm_v6_dissectors[205060] = dissect_of_oxm_bsn_tcp_flags_masked_v6
+
+-- child class of_oxm_bsn_udf0
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf0_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf0.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf0.value')
+    return 'of_oxm_bsn_udf0'
+end
+of_oxm_v6_dissectors[200708] = dissect_of_oxm_bsn_udf0_v6
+
+-- child class of_oxm_bsn_udf0_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf0_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf0_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf0_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf0_masked.value_mask')
+    return 'of_oxm_bsn_udf0_masked'
+end
+of_oxm_v6_dissectors[200968] = dissect_of_oxm_bsn_udf0_masked_v6
+
+-- child class of_oxm_bsn_udf1
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf1_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf1.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf1.value')
+    return 'of_oxm_bsn_udf1'
+end
+of_oxm_v6_dissectors[201220] = dissect_of_oxm_bsn_udf1_v6
+
+-- child class of_oxm_bsn_udf1_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf1_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf1_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf1_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf1_masked.value_mask')
+    return 'of_oxm_bsn_udf1_masked'
+end
+of_oxm_v6_dissectors[201480] = dissect_of_oxm_bsn_udf1_masked_v6
+
+-- child class of_oxm_bsn_udf2
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf2_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf2.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf2.value')
+    return 'of_oxm_bsn_udf2'
+end
+of_oxm_v6_dissectors[201732] = dissect_of_oxm_bsn_udf2_v6
+
+-- child class of_oxm_bsn_udf2_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf2_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf2_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf2_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf2_masked.value_mask')
+    return 'of_oxm_bsn_udf2_masked'
+end
+of_oxm_v6_dissectors[201992] = dissect_of_oxm_bsn_udf2_masked_v6
+
+-- child class of_oxm_bsn_udf3
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf3_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf3.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf3.value')
+    return 'of_oxm_bsn_udf3'
+end
+of_oxm_v6_dissectors[202244] = dissect_of_oxm_bsn_udf3_v6
+
+-- child class of_oxm_bsn_udf3_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf3_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf3_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf3_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf3_masked.value_mask')
+    return 'of_oxm_bsn_udf3_masked'
+end
+of_oxm_v6_dissectors[202504] = dissect_of_oxm_bsn_udf3_masked_v6
+
+-- child class of_oxm_bsn_udf4
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf4_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf4.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf4.value')
+    return 'of_oxm_bsn_udf4'
+end
+of_oxm_v6_dissectors[202756] = dissect_of_oxm_bsn_udf4_v6
+
+-- child class of_oxm_bsn_udf4_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf4_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf4_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf4_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf4_masked.value_mask')
+    return 'of_oxm_bsn_udf4_masked'
+end
+of_oxm_v6_dissectors[203016] = dissect_of_oxm_bsn_udf4_masked_v6
+
+-- child class of_oxm_bsn_udf5
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf5_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf5.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf5.value')
+    return 'of_oxm_bsn_udf5'
+end
+of_oxm_v6_dissectors[203268] = dissect_of_oxm_bsn_udf5_v6
+
+-- child class of_oxm_bsn_udf5_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf5_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf5_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf5_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf5_masked.value_mask')
+    return 'of_oxm_bsn_udf5_masked'
+end
+of_oxm_v6_dissectors[203528] = dissect_of_oxm_bsn_udf5_masked_v6
+
+-- child class of_oxm_bsn_udf6
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf6_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf6.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf6.value')
+    return 'of_oxm_bsn_udf6'
+end
+of_oxm_v6_dissectors[203780] = dissect_of_oxm_bsn_udf6_v6
+
+-- child class of_oxm_bsn_udf6_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf6_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf6_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf6_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf6_masked.value_mask')
+    return 'of_oxm_bsn_udf6_masked'
+end
+of_oxm_v6_dissectors[204040] = dissect_of_oxm_bsn_udf6_masked_v6
+
+-- child class of_oxm_bsn_udf7
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf7_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf7.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf7.value')
+    return 'of_oxm_bsn_udf7'
+end
+of_oxm_v6_dissectors[204292] = dissect_of_oxm_bsn_udf7_v6
+
+-- child class of_oxm_bsn_udf7_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf7_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf7_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf7_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_udf7_masked.value_mask')
+    return 'of_oxm_bsn_udf7_masked'
+end
+of_oxm_v6_dissectors[204552] = dissect_of_oxm_bsn_udf7_masked_v6
+
+-- child class of_oxm_bsn_vfi
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vfi_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vfi.type_len')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_bsn_vfi.value')
+    return 'of_oxm_bsn_vfi'
+end
+of_oxm_v6_dissectors[209410] = dissect_of_oxm_bsn_vfi_v6
+
+-- child class of_oxm_bsn_vfi_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vfi_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vfi_masked.type_len')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_bsn_vfi_masked.value')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_bsn_vfi_masked.value_mask')
+    return 'of_oxm_bsn_vfi_masked'
+end
+of_oxm_v6_dissectors[209668] = dissect_of_oxm_bsn_vfi_masked_v6
+
+-- child class of_oxm_bsn_vlan_xlate_port_group_id
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vlan_xlate_port_group_id_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vlan_xlate_port_group_id.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vlan_xlate_port_group_id.value')
+    return 'of_oxm_bsn_vlan_xlate_port_group_id'
+end
+of_oxm_v6_dissectors[205316] = dissect_of_oxm_bsn_vlan_xlate_port_group_id_v6
+
+-- child class of_oxm_bsn_vlan_xlate_port_group_id_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vlan_xlate_port_group_id_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vlan_xlate_port_group_id_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vlan_xlate_port_group_id_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vlan_xlate_port_group_id_masked.value_mask')
+    return 'of_oxm_bsn_vlan_xlate_port_group_id_masked'
+end
+of_oxm_v6_dissectors[205576] = dissect_of_oxm_bsn_vlan_xlate_port_group_id_masked_v6
+
+-- child class of_oxm_bsn_vrf
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vrf_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vrf.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vrf.value')
+    return 'of_oxm_bsn_vrf'
+end
+of_oxm_v6_dissectors[197636] = dissect_of_oxm_bsn_vrf_v6
+
+-- child class of_oxm_bsn_vrf_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vrf_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vrf_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vrf_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vrf_masked.value_mask')
+    return 'of_oxm_bsn_vrf_masked'
+end
+of_oxm_v6_dissectors[197896] = dissect_of_oxm_bsn_vrf_masked_v6
+
+-- child class of_oxm_bsn_vxlan_network_id
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vxlan_network_id_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vxlan_network_id.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vxlan_network_id.value')
+    return 'of_oxm_bsn_vxlan_network_id'
+end
+of_oxm_v6_dissectors[207364] = dissect_of_oxm_bsn_vxlan_network_id_v6
+
+-- child class of_oxm_bsn_vxlan_network_id_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vxlan_network_id_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vxlan_network_id_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vxlan_network_id_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_vxlan_network_id_masked.value_mask')
+    return 'of_oxm_bsn_vxlan_network_id_masked'
+end
+of_oxm_v6_dissectors[207624] = dissect_of_oxm_bsn_vxlan_network_id_masked_v6
 
 -- child class of_oxm_eth_dst
 -- Child of of_oxm
@@ -50989,6 +57068,45 @@ end
 function dissect_of_port_desc_prop_v6(reader, subtree)
     return of_port_desc_prop_v6_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
+-- virtual child class of_port_desc_prop_experimenter
+-- Child of of_port_desc_prop
+-- Discriminator is experimenter
+function dissect_of_port_desc_prop_experimenter_v6(reader, subtree)
+    return of_port_desc_prop_experimenter_v6_dissectors[reader.peek(4,4):uint()](reader, subtree)
+end
+of_port_desc_prop_v6_dissectors[65535] = dissect_of_port_desc_prop_experimenter_v6
+
+-- virtual child class of_port_desc_prop_bsn
+-- Child of of_port_desc_prop_experimenter
+-- Discriminator is exp_type
+function dissect_of_port_desc_prop_bsn_v6(reader, subtree)
+    return of_port_desc_prop_bsn_v6_dissectors[reader.peek(8,4):uint()](reader, subtree)
+end
+of_port_desc_prop_experimenter_v6_dissectors[6035143] = dissect_of_port_desc_prop_bsn_v6
+
+-- child class of_port_desc_prop_bsn_generation_id
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_generation_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_generation_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_generation_id.length')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_generation_id.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_generation_id.exp_type')
+    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_generation_id.generation_id')
+    return 'of_port_desc_prop_bsn_generation_id'
+end
+of_port_desc_prop_bsn_v6_dissectors[1] = dissect_of_port_desc_prop_bsn_generation_id_v6
+
+-- child class of_port_desc_prop_bsn_uplink
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_uplink_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_uplink.type')
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_uplink.length')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_uplink.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_uplink.exp_type')
+    return 'of_port_desc_prop_bsn_uplink'
+end
+of_port_desc_prop_bsn_v6_dissectors[0] = dissect_of_port_desc_prop_bsn_uplink_v6
+
 -- top-level class of_port_desc_prop_egress
 function dissect_of_port_desc_prop_egress_v6(reader, subtree)
     local _length = reader.peek(2, 2):uint()
@@ -51014,14 +57132,6 @@ function dissect_of_port_desc_prop_ethernet_v6(reader, subtree)
     return 'of_port_desc_prop_ethernet'
 end
 of_port_desc_prop_v6_dissectors[0] = dissect_of_port_desc_prop_ethernet_v6
-
--- virtual child class of_port_desc_prop_experimenter
--- Child of of_port_desc_prop
--- Discriminator is experimenter
-function dissect_of_port_desc_prop_experimenter_v6(reader, subtree)
-    return of_port_desc_prop_experimenter_v6_dissectors[reader.peek(4,4):uint()](reader, subtree)
-end
-of_port_desc_prop_v6_dissectors[65535] = dissect_of_port_desc_prop_experimenter_v6
 
 -- top-level class of_port_desc_prop_ingress
 function dissect_of_port_desc_prop_ingress_v6(reader, subtree)
@@ -51305,6 +57415,29 @@ function dissect_of_queue_desc_prop_experimenter_v6(reader, subtree)
     return of_queue_desc_prop_experimenter_v6_dissectors[reader.peek(4,4):uint()](reader, subtree)
 end
 of_queue_desc_prop_v6_dissectors[65535] = dissect_of_queue_desc_prop_experimenter_v6
+
+-- virtual child class of_queue_desc_prop_bsn
+-- Child of of_queue_desc_prop_experimenter
+-- Discriminator is exp_type
+function dissect_of_queue_desc_prop_bsn_v6(reader, subtree)
+    return of_queue_desc_prop_bsn_v6_dissectors[reader.peek(8,4):uint()](reader, subtree)
+end
+of_queue_desc_prop_experimenter_v6_dissectors[6035143] = dissect_of_queue_desc_prop_bsn_v6
+
+-- child class of_queue_desc_prop_bsn_queue_name
+-- Child of of_queue_desc_prop_bsn
+function dissect_of_queue_desc_prop_bsn_queue_name_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.queue_desc_prop_bsn_queue_name.type')
+    read_uint16_t(reader, 6, subtree, 'of15.queue_desc_prop_bsn_queue_name.length')
+    read_uint32_t(reader, 6, subtree, 'of15.queue_desc_prop_bsn_queue_name.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.queue_desc_prop_bsn_queue_name.exp_type')
+    read_of_octets_t(reader, 6, subtree, 'of15.queue_desc_prop_bsn_queue_name.name')
+    return 'of_queue_desc_prop_bsn_queue_name'
+end
+of_queue_desc_prop_bsn_v6_dissectors[0] = dissect_of_queue_desc_prop_bsn_queue_name_v6
 
 -- child class of_queue_desc_prop_max_rate
 -- Child of of_queue_desc_prop

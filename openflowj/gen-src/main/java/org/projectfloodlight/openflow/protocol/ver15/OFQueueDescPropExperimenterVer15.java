@@ -51,6 +51,9 @@ abstract class OFQueueDescPropExperimenterVer15 {
             int experimenter = bb.readInt();
             bb.readerIndex(start);
             switch(experimenter) {
+               case 0x5c16c7:
+                   // discriminator value 0x5c16c7L=0x5c16c7L for class OFQueueDescPropBsnVer15
+                   return OFQueueDescPropBsnVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator experimenter of class OFQueueDescPropExperimenterVer15: " + experimenter);
             }

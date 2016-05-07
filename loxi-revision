@@ -1,1 +1,1 @@
-9555af7d9fb1f441996b42b11205e6ee71dc08cd Merge into master from pull request #483: Add disable_src_mac_check tlv (https://github.com/floodlight/loxigen/pull/483)
+dd2e04bda188622767af52e8e6d8dd6234ff0429 Merge into master from pull request #484: openflow_input: generate BSN messages for version 1.5 (https://github.com/floodlight/loxigen/pull/484)

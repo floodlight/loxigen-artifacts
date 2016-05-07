@@ -36,802 +36,1015 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
 
 
     public OFBsnTlvActorKey.Builder buildActorKey() {
-        throw new UnsupportedOperationException("OFBsnTlvActorKey not supported in version 1.5");
+        return new OFBsnTlvActorKeyVer15.Builder();
     }
     public OFBsnTlvActorKey actorKey(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvActorKey not supported in version 1.5");
+        return new OFBsnTlvActorKeyVer15(
+                value
+                    );
     }
 
     public OFBsnTlvActorPortNum.Builder buildActorPortNum() {
-        throw new UnsupportedOperationException("OFBsnTlvActorPortNum not supported in version 1.5");
+        return new OFBsnTlvActorPortNumVer15.Builder();
     }
     public OFBsnTlvActorPortNum actorPortNum(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvActorPortNum not supported in version 1.5");
+        return new OFBsnTlvActorPortNumVer15(
+                value
+                    );
     }
 
     public OFBsnTlvActorPortPriority.Builder buildActorPortPriority() {
-        throw new UnsupportedOperationException("OFBsnTlvActorPortPriority not supported in version 1.5");
+        return new OFBsnTlvActorPortPriorityVer15.Builder();
     }
     public OFBsnTlvActorPortPriority actorPortPriority(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvActorPortPriority not supported in version 1.5");
+        return new OFBsnTlvActorPortPriorityVer15(
+                value
+                    );
     }
 
     public OFBsnTlvActorState.Builder buildActorState() {
-        throw new UnsupportedOperationException("OFBsnTlvActorState not supported in version 1.5");
+        return new OFBsnTlvActorStateVer15.Builder();
     }
     public OFBsnTlvActorState actorState(Set<OFBsnLacpState> value) {
-        throw new UnsupportedOperationException("OFBsnTlvActorState not supported in version 1.5");
+        return new OFBsnTlvActorStateVer15(
+                value
+                    );
     }
 
     public OFBsnTlvActorSystemMac.Builder buildActorSystemMac() {
-        throw new UnsupportedOperationException("OFBsnTlvActorSystemMac not supported in version 1.5");
+        return new OFBsnTlvActorSystemMacVer15.Builder();
     }
     public OFBsnTlvActorSystemMac actorSystemMac(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvActorSystemMac not supported in version 1.5");
+        return new OFBsnTlvActorSystemMacVer15(
+                value
+                    );
     }
 
     public OFBsnTlvActorSystemPriority.Builder buildActorSystemPriority() {
-        throw new UnsupportedOperationException("OFBsnTlvActorSystemPriority not supported in version 1.5");
+        return new OFBsnTlvActorSystemPriorityVer15.Builder();
     }
     public OFBsnTlvActorSystemPriority actorSystemPriority(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvActorSystemPriority not supported in version 1.5");
+        return new OFBsnTlvActorSystemPriorityVer15(
+                value
+                    );
     }
 
     public OFBsnTlvAnchor.Builder buildAnchor() {
-        throw new UnsupportedOperationException("OFBsnTlvAnchor not supported in version 1.5");
+        return new OFBsnTlvAnchorVer15.Builder();
     }
     public OFBsnTlvAnchor anchor(OFBsnAnchor value) {
-        throw new UnsupportedOperationException("OFBsnTlvAnchor not supported in version 1.5");
+        return new OFBsnTlvAnchorVer15(
+                value
+                    );
     }
 
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
-        throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.5");
+        return new OFBsnTlvBroadcastQueryTimeoutVer15.Builder();
     }
     public OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.5");
+        return new OFBsnTlvBroadcastQueryTimeoutVer15(
+                value
+                    );
     }
 
     public OFBsnTlvBroadcastRate.Builder buildBroadcastRate() {
-        throw new UnsupportedOperationException("OFBsnTlvBroadcastRate not supported in version 1.5");
+        return new OFBsnTlvBroadcastRateVer15.Builder();
     }
     public OFBsnTlvBroadcastRate broadcastRate(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvBroadcastRate not supported in version 1.5");
+        return new OFBsnTlvBroadcastRateVer15(
+                value
+                    );
     }
 
     public OFBsnTlvBucket.Builder buildBucket() {
-        throw new UnsupportedOperationException("OFBsnTlvBucket not supported in version 1.5");
+        return new OFBsnTlvBucketVer15.Builder();
     }
     public OFBsnTlvBucket bucket(List<OFBsnTlv> value) {
-        throw new UnsupportedOperationException("OFBsnTlvBucket not supported in version 1.5");
+        return new OFBsnTlvBucketVer15(
+                value
+                    );
     }
 
     public OFBsnTlvCircuitId.Builder buildCircuitId() {
-        throw new UnsupportedOperationException("OFBsnTlvCircuitId not supported in version 1.5");
+        return new OFBsnTlvCircuitIdVer15.Builder();
     }
     public OFBsnTlvCircuitId circuitId(byte[] value) {
-        throw new UnsupportedOperationException("OFBsnTlvCircuitId not supported in version 1.5");
+        return new OFBsnTlvCircuitIdVer15(
+                value
+                    );
     }
 
     public OFBsnTlvConvergenceStatus.Builder buildConvergenceStatus() {
-        throw new UnsupportedOperationException("OFBsnTlvConvergenceStatus not supported in version 1.5");
+        return new OFBsnTlvConvergenceStatusVer15.Builder();
     }
     public OFBsnTlvConvergenceStatus convergenceStatus(short value) {
-        throw new UnsupportedOperationException("OFBsnTlvConvergenceStatus not supported in version 1.5");
+        return new OFBsnTlvConvergenceStatusVer15(
+                value
+                    );
     }
 
     public OFBsnTlvCpuLag cpuLag() {
-        throw new UnsupportedOperationException("OFBsnTlvCpuLag not supported in version 1.5");
+        return OFBsnTlvCpuLagVer15.INSTANCE;
     }
 
     public OFBsnTlvCrcEnabled.Builder buildCrcEnabled() {
-        throw new UnsupportedOperationException("OFBsnTlvCrcEnabled not supported in version 1.5");
+        return new OFBsnTlvCrcEnabledVer15.Builder();
     }
     public OFBsnTlvCrcEnabled crcEnabled(short value) {
-        throw new UnsupportedOperationException("OFBsnTlvCrcEnabled not supported in version 1.5");
+        return new OFBsnTlvCrcEnabledVer15(
+                value
+                    );
     }
 
     public OFBsnTlvData.Builder buildData() {
-        throw new UnsupportedOperationException("OFBsnTlvData not supported in version 1.5");
+        return new OFBsnTlvDataVer15.Builder();
     }
     public OFBsnTlvData data(byte[] value) {
-        throw new UnsupportedOperationException("OFBsnTlvData not supported in version 1.5");
+        return new OFBsnTlvDataVer15(
+                value
+                    );
     }
 
     public OFBsnTlvDecap.Builder buildDecap() {
-        throw new UnsupportedOperationException("OFBsnTlvDecap not supported in version 1.5");
+        return new OFBsnTlvDecapVer15.Builder();
     }
     public OFBsnTlvDecap decap(OFBsnDecap value) {
-        throw new UnsupportedOperationException("OFBsnTlvDecap not supported in version 1.5");
+        return new OFBsnTlvDecapVer15(
+                value
+                    );
     }
 
     public OFBsnTlvDisableSrcMacCheck disableSrcMacCheck() {
-        throw new UnsupportedOperationException("OFBsnTlvDisableSrcMacCheck not supported in version 1.5");
+        return OFBsnTlvDisableSrcMacCheckVer15.INSTANCE;
     }
 
     public OFBsnTlvDscp.Builder buildDscp() {
-        throw new UnsupportedOperationException("OFBsnTlvDscp not supported in version 1.5");
+        return new OFBsnTlvDscpVer15.Builder();
     }
     public OFBsnTlvDscp dscp(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvDscp not supported in version 1.5");
+        return new OFBsnTlvDscpVer15(
+                value
+                    );
     }
 
     public OFBsnTlvEthDst.Builder buildEthDst() {
-        throw new UnsupportedOperationException("OFBsnTlvEthDst not supported in version 1.5");
+        return new OFBsnTlvEthDstVer15.Builder();
     }
     public OFBsnTlvEthDst ethDst(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvEthDst not supported in version 1.5");
+        return new OFBsnTlvEthDstVer15(
+                value
+                    );
     }
 
     public OFBsnTlvEthSrc.Builder buildEthSrc() {
-        throw new UnsupportedOperationException("OFBsnTlvEthSrc not supported in version 1.5");
+        return new OFBsnTlvEthSrcVer15.Builder();
     }
     public OFBsnTlvEthSrc ethSrc(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvEthSrc not supported in version 1.5");
+        return new OFBsnTlvEthSrcVer15(
+                value
+                    );
     }
 
     public OFBsnTlvExternalGatewayIp.Builder buildExternalGatewayIp() {
-        throw new UnsupportedOperationException("OFBsnTlvExternalGatewayIp not supported in version 1.5");
+        return new OFBsnTlvExternalGatewayIpVer15.Builder();
     }
     public OFBsnTlvExternalGatewayIp externalGatewayIp(IPv4Address value) {
-        throw new UnsupportedOperationException("OFBsnTlvExternalGatewayIp not supported in version 1.5");
+        return new OFBsnTlvExternalGatewayIpVer15(
+                value
+                    );
     }
 
     public OFBsnTlvExternalGatewayMac.Builder buildExternalGatewayMac() {
-        throw new UnsupportedOperationException("OFBsnTlvExternalGatewayMac not supported in version 1.5");
+        return new OFBsnTlvExternalGatewayMacVer15.Builder();
     }
     public OFBsnTlvExternalGatewayMac externalGatewayMac(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvExternalGatewayMac not supported in version 1.5");
+        return new OFBsnTlvExternalGatewayMacVer15(
+                value
+                    );
     }
 
     public OFBsnTlvExternalIp.Builder buildExternalIp() {
-        throw new UnsupportedOperationException("OFBsnTlvExternalIp not supported in version 1.5");
+        return new OFBsnTlvExternalIpVer15.Builder();
     }
     public OFBsnTlvExternalIp externalIp(IPv4Address value) {
-        throw new UnsupportedOperationException("OFBsnTlvExternalIp not supported in version 1.5");
+        return new OFBsnTlvExternalIpVer15(
+                value
+                    );
     }
 
     public OFBsnTlvExternalMac.Builder buildExternalMac() {
-        throw new UnsupportedOperationException("OFBsnTlvExternalMac not supported in version 1.5");
+        return new OFBsnTlvExternalMacVer15.Builder();
     }
     public OFBsnTlvExternalMac externalMac(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvExternalMac not supported in version 1.5");
+        return new OFBsnTlvExternalMacVer15(
+                value
+                    );
     }
 
     public OFBsnTlvExternalNetmask.Builder buildExternalNetmask() {
-        throw new UnsupportedOperationException("OFBsnTlvExternalNetmask not supported in version 1.5");
+        return new OFBsnTlvExternalNetmaskVer15.Builder();
     }
     public OFBsnTlvExternalNetmask externalNetmask(IPv4Address value) {
-        throw new UnsupportedOperationException("OFBsnTlvExternalNetmask not supported in version 1.5");
+        return new OFBsnTlvExternalNetmaskVer15(
+                value
+                    );
     }
 
     public OFBsnTlvGenerationId.Builder buildGenerationId() {
-        throw new UnsupportedOperationException("OFBsnTlvGenerationId not supported in version 1.5");
+        return new OFBsnTlvGenerationIdVer15.Builder();
     }
     public OFBsnTlvGenerationId generationId(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvGenerationId not supported in version 1.5");
+        return new OFBsnTlvGenerationIdVer15(
+                value
+                    );
     }
 
     public OFBsnTlvHashGtpHeaderMatch.Builder buildHashGtpHeaderMatch() {
-        throw new UnsupportedOperationException("OFBsnTlvHashGtpHeaderMatch not supported in version 1.5");
+        return new OFBsnTlvHashGtpHeaderMatchVer15.Builder();
     }
     public OFBsnTlvHashGtpHeaderMatch hashGtpHeaderMatch(short firstHeaderByte, short firstHeaderMask) {
-        throw new UnsupportedOperationException("OFBsnTlvHashGtpHeaderMatch not supported in version 1.5");
+        return new OFBsnTlvHashGtpHeaderMatchVer15(
+                firstHeaderByte,
+                      firstHeaderMask
+                    );
     }
 
     public OFBsnTlvHashGtpPortMatch.Builder buildHashGtpPortMatch() {
-        throw new UnsupportedOperationException("OFBsnTlvHashGtpPortMatch not supported in version 1.5");
+        return new OFBsnTlvHashGtpPortMatchVer15.Builder();
     }
 
     public OFBsnTlvHashPacketField.Builder buildHashPacketField() {
-        throw new UnsupportedOperationException("OFBsnTlvHashPacketField not supported in version 1.5");
+        return new OFBsnTlvHashPacketFieldVer15.Builder();
     }
     public OFBsnTlvHashPacketField hashPacketField(Set<OFBsnHashPacketField> value) {
-        throw new UnsupportedOperationException("OFBsnTlvHashPacketField not supported in version 1.5");
+        return new OFBsnTlvHashPacketFieldVer15(
+                value
+                    );
     }
 
     public OFBsnTlvHashPacketType.Builder buildHashPacketType() {
-        throw new UnsupportedOperationException("OFBsnTlvHashPacketType not supported in version 1.5");
+        return new OFBsnTlvHashPacketTypeVer15.Builder();
     }
     public OFBsnTlvHashPacketType hashPacketType(OFBsnHashPacketType value) {
-        throw new UnsupportedOperationException("OFBsnTlvHashPacketType not supported in version 1.5");
+        return new OFBsnTlvHashPacketTypeVer15(
+                value
+                    );
     }
 
     public OFBsnTlvHashSeed.Builder buildHashSeed() {
-        throw new UnsupportedOperationException("OFBsnTlvHashSeed not supported in version 1.5");
+        return new OFBsnTlvHashSeedVer15.Builder();
     }
     public OFBsnTlvHashSeed hashSeed(long seed1, long seed2) {
-        throw new UnsupportedOperationException("OFBsnTlvHashSeed not supported in version 1.5");
+        return new OFBsnTlvHashSeedVer15(
+                seed1,
+                      seed2
+                    );
     }
 
     public OFBsnTlvHashType.Builder buildHashType() {
-        throw new UnsupportedOperationException("OFBsnTlvHashType not supported in version 1.5");
+        return new OFBsnTlvHashTypeVer15.Builder();
     }
     public OFBsnTlvHashType hashType(OFBsnHashType value) {
-        throw new UnsupportedOperationException("OFBsnTlvHashType not supported in version 1.5");
+        return new OFBsnTlvHashTypeVer15(
+                value
+                    );
     }
 
     public OFBsnTlvHeaderSize.Builder buildHeaderSize() {
-        throw new UnsupportedOperationException("OFBsnTlvHeaderSize not supported in version 1.5");
+        return new OFBsnTlvHeaderSizeVer15.Builder();
     }
     public OFBsnTlvHeaderSize headerSize(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvHeaderSize not supported in version 1.5");
+        return new OFBsnTlvHeaderSizeVer15(
+                value
+                    );
     }
 
     public OFBsnTlvIcmpCode.Builder buildIcmpCode() {
-        throw new UnsupportedOperationException("OFBsnTlvIcmpCode not supported in version 1.5");
+        return new OFBsnTlvIcmpCodeVer15.Builder();
     }
     public OFBsnTlvIcmpCode icmpCode(short value) {
-        throw new UnsupportedOperationException("OFBsnTlvIcmpCode not supported in version 1.5");
+        return new OFBsnTlvIcmpCodeVer15(
+                value
+                    );
     }
 
     public OFBsnTlvIcmpId.Builder buildIcmpId() {
-        throw new UnsupportedOperationException("OFBsnTlvIcmpId not supported in version 1.5");
+        return new OFBsnTlvIcmpIdVer15.Builder();
     }
     public OFBsnTlvIcmpId icmpId(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvIcmpId not supported in version 1.5");
+        return new OFBsnTlvIcmpIdVer15(
+                value
+                    );
     }
 
     public OFBsnTlvIcmpType.Builder buildIcmpType() {
-        throw new UnsupportedOperationException("OFBsnTlvIcmpType not supported in version 1.5");
+        return new OFBsnTlvIcmpTypeVer15.Builder();
     }
     public OFBsnTlvIcmpType icmpType(short value) {
-        throw new UnsupportedOperationException("OFBsnTlvIcmpType not supported in version 1.5");
+        return new OFBsnTlvIcmpTypeVer15(
+                value
+                    );
     }
 
     public OFBsnTlvIdleNotification idleNotification() {
-        throw new UnsupportedOperationException("OFBsnTlvIdleNotification not supported in version 1.5");
+        return OFBsnTlvIdleNotificationVer15.INSTANCE;
     }
 
     public OFBsnTlvIdleTime.Builder buildIdleTime() {
-        throw new UnsupportedOperationException("OFBsnTlvIdleTime not supported in version 1.5");
+        return new OFBsnTlvIdleTimeVer15.Builder();
     }
     public OFBsnTlvIdleTime idleTime(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvIdleTime not supported in version 1.5");
+        return new OFBsnTlvIdleTimeVer15(
+                value
+                    );
     }
 
     public OFBsnTlvIdleTimeout.Builder buildIdleTimeout() {
-        throw new UnsupportedOperationException("OFBsnTlvIdleTimeout not supported in version 1.5");
+        return new OFBsnTlvIdleTimeoutVer15.Builder();
     }
     public OFBsnTlvIdleTimeout idleTimeout(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvIdleTimeout not supported in version 1.5");
+        return new OFBsnTlvIdleTimeoutVer15(
+                value
+                    );
     }
 
     public OFBsnTlvIgmpSnooping igmpSnooping() {
-        throw new UnsupportedOperationException("OFBsnTlvIgmpSnooping not supported in version 1.5");
+        return OFBsnTlvIgmpSnoopingVer15.INSTANCE;
     }
 
     public OFBsnTlvInternalGatewayMac.Builder buildInternalGatewayMac() {
-        throw new UnsupportedOperationException("OFBsnTlvInternalGatewayMac not supported in version 1.5");
+        return new OFBsnTlvInternalGatewayMacVer15.Builder();
     }
     public OFBsnTlvInternalGatewayMac internalGatewayMac(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvInternalGatewayMac not supported in version 1.5");
+        return new OFBsnTlvInternalGatewayMacVer15(
+                value
+                    );
     }
 
     public OFBsnTlvInternalMac.Builder buildInternalMac() {
-        throw new UnsupportedOperationException("OFBsnTlvInternalMac not supported in version 1.5");
+        return new OFBsnTlvInternalMacVer15.Builder();
     }
     public OFBsnTlvInternalMac internalMac(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvInternalMac not supported in version 1.5");
+        return new OFBsnTlvInternalMacVer15(
+                value
+                    );
     }
 
     public OFBsnTlvInterval.Builder buildInterval() {
-        throw new UnsupportedOperationException("OFBsnTlvInterval not supported in version 1.5");
+        return new OFBsnTlvIntervalVer15.Builder();
     }
     public OFBsnTlvInterval interval(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvInterval not supported in version 1.5");
+        return new OFBsnTlvIntervalVer15(
+                value
+                    );
     }
 
     public OFBsnTlvIpProto.Builder buildIpProto() {
-        throw new UnsupportedOperationException("OFBsnTlvIpProto not supported in version 1.5");
+        return new OFBsnTlvIpProtoVer15.Builder();
     }
     public OFBsnTlvIpProto ipProto(short value) {
-        throw new UnsupportedOperationException("OFBsnTlvIpProto not supported in version 1.5");
+        return new OFBsnTlvIpProtoVer15(
+                value
+                    );
     }
 
     public OFBsnTlvIpv4.Builder buildIpv4() {
-        throw new UnsupportedOperationException("OFBsnTlvIpv4 not supported in version 1.5");
+        return new OFBsnTlvIpv4Ver15.Builder();
     }
     public OFBsnTlvIpv4 ipv4(IPv4Address value) {
-        throw new UnsupportedOperationException("OFBsnTlvIpv4 not supported in version 1.5");
+        return new OFBsnTlvIpv4Ver15(
+                value
+                    );
     }
 
     public OFBsnTlvIpv4Dst.Builder buildIpv4Dst() {
-        throw new UnsupportedOperationException("OFBsnTlvIpv4Dst not supported in version 1.5");
+        return new OFBsnTlvIpv4DstVer15.Builder();
     }
     public OFBsnTlvIpv4Dst ipv4Dst(IPv4Address value) {
-        throw new UnsupportedOperationException("OFBsnTlvIpv4Dst not supported in version 1.5");
+        return new OFBsnTlvIpv4DstVer15(
+                value
+                    );
     }
 
     public OFBsnTlvIpv4Netmask.Builder buildIpv4Netmask() {
-        throw new UnsupportedOperationException("OFBsnTlvIpv4Netmask not supported in version 1.5");
+        return new OFBsnTlvIpv4NetmaskVer15.Builder();
     }
     public OFBsnTlvIpv4Netmask ipv4Netmask(IPv4Address value) {
-        throw new UnsupportedOperationException("OFBsnTlvIpv4Netmask not supported in version 1.5");
+        return new OFBsnTlvIpv4NetmaskVer15(
+                value
+                    );
     }
 
     public OFBsnTlvIpv4Src.Builder buildIpv4Src() {
-        throw new UnsupportedOperationException("OFBsnTlvIpv4Src not supported in version 1.5");
+        return new OFBsnTlvIpv4SrcVer15.Builder();
     }
     public OFBsnTlvIpv4Src ipv4Src(IPv4Address value) {
-        throw new UnsupportedOperationException("OFBsnTlvIpv4Src not supported in version 1.5");
+        return new OFBsnTlvIpv4SrcVer15(
+                value
+                    );
     }
 
     public OFBsnTlvIpv6.Builder buildIpv6() {
-        throw new UnsupportedOperationException("OFBsnTlvIpv6 not supported in version 1.5");
+        return new OFBsnTlvIpv6Ver15.Builder();
     }
     public OFBsnTlvIpv6 ipv6(IPv6Address value) {
-        throw new UnsupportedOperationException("OFBsnTlvIpv6 not supported in version 1.5");
+        return new OFBsnTlvIpv6Ver15(
+                value
+                    );
     }
 
     public OFBsnTlvKnownMulticastRate.Builder buildKnownMulticastRate() {
-        throw new UnsupportedOperationException("OFBsnTlvKnownMulticastRate not supported in version 1.5");
+        return new OFBsnTlvKnownMulticastRateVer15.Builder();
     }
     public OFBsnTlvKnownMulticastRate knownMulticastRate(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvKnownMulticastRate not supported in version 1.5");
+        return new OFBsnTlvKnownMulticastRateVer15(
+                value
+                    );
     }
 
     public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
-        throw new UnsupportedOperationException("OFBsnTlvL2MulticastLookup not supported in version 1.5");
+        return OFBsnTlvL2MulticastLookupVer15.INSTANCE;
     }
 
     public OFBsnTlvLoopbackPort.Builder buildLoopbackPort() {
-        throw new UnsupportedOperationException("OFBsnTlvLoopbackPort not supported in version 1.5");
+        return new OFBsnTlvLoopbackPortVer15.Builder();
     }
     public OFBsnTlvLoopbackPort loopbackPort(OFPort value) {
-        throw new UnsupportedOperationException("OFBsnTlvLoopbackPort not supported in version 1.5");
+        return new OFBsnTlvLoopbackPortVer15(
+                value
+                    );
     }
 
     public OFBsnTlvMac.Builder buildMac() {
-        throw new UnsupportedOperationException("OFBsnTlvMac not supported in version 1.5");
+        return new OFBsnTlvMacVer15.Builder();
     }
     public OFBsnTlvMac mac(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvMac not supported in version 1.5");
+        return new OFBsnTlvMacVer15(
+                value
+                    );
     }
 
     public OFBsnTlvMacMask.Builder buildMacMask() {
-        throw new UnsupportedOperationException("OFBsnTlvMacMask not supported in version 1.5");
+        return new OFBsnTlvMacMaskVer15.Builder();
     }
     public OFBsnTlvMacMask macMask(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvMacMask not supported in version 1.5");
+        return new OFBsnTlvMacMaskVer15(
+                value
+                    );
     }
 
     public OFBsnTlvMcgTypeVxlan mcgTypeVxlan() {
-        throw new UnsupportedOperationException("OFBsnTlvMcgTypeVxlan not supported in version 1.5");
+        return OFBsnTlvMcgTypeVxlanVer15.INSTANCE;
     }
 
     public OFBsnTlvMissPackets.Builder buildMissPackets() {
-        throw new UnsupportedOperationException("OFBsnTlvMissPackets not supported in version 1.5");
+        return new OFBsnTlvMissPacketsVer15.Builder();
     }
     public OFBsnTlvMissPackets missPackets(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvMissPackets not supported in version 1.5");
+        return new OFBsnTlvMissPacketsVer15(
+                value
+                    );
     }
 
     public OFBsnTlvMplsControlWord.Builder buildMplsControlWord() {
-        throw new UnsupportedOperationException("OFBsnTlvMplsControlWord not supported in version 1.5");
+        return new OFBsnTlvMplsControlWordVer15.Builder();
     }
     public OFBsnTlvMplsControlWord mplsControlWord(short value) {
-        throw new UnsupportedOperationException("OFBsnTlvMplsControlWord not supported in version 1.5");
+        return new OFBsnTlvMplsControlWordVer15(
+                value
+                    );
     }
 
     public OFBsnTlvMplsLabel.Builder buildMplsLabel() {
-        throw new UnsupportedOperationException("OFBsnTlvMplsLabel not supported in version 1.5");
+        return new OFBsnTlvMplsLabelVer15.Builder();
     }
     public OFBsnTlvMplsLabel mplsLabel(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvMplsLabel not supported in version 1.5");
+        return new OFBsnTlvMplsLabelVer15(
+                value
+                    );
     }
 
     public OFBsnTlvMplsSequenced.Builder buildMplsSequenced() {
-        throw new UnsupportedOperationException("OFBsnTlvMplsSequenced not supported in version 1.5");
+        return new OFBsnTlvMplsSequencedVer15.Builder();
     }
     public OFBsnTlvMplsSequenced mplsSequenced(short value) {
-        throw new UnsupportedOperationException("OFBsnTlvMplsSequenced not supported in version 1.5");
+        return new OFBsnTlvMplsSequencedVer15(
+                value
+                    );
     }
 
     public OFBsnTlvMulticastInterfaceId.Builder buildMulticastInterfaceId() {
-        throw new UnsupportedOperationException("OFBsnTlvMulticastInterfaceId not supported in version 1.5");
+        return new OFBsnTlvMulticastInterfaceIdVer15.Builder();
     }
     public OFBsnTlvMulticastInterfaceId multicastInterfaceId(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvMulticastInterfaceId not supported in version 1.5");
+        return new OFBsnTlvMulticastInterfaceIdVer15(
+                value
+                    );
     }
 
     public OFBsnTlvName.Builder buildName() {
-        throw new UnsupportedOperationException("OFBsnTlvName not supported in version 1.5");
+        return new OFBsnTlvNameVer15.Builder();
     }
     public OFBsnTlvName name(byte[] value) {
-        throw new UnsupportedOperationException("OFBsnTlvName not supported in version 1.5");
+        return new OFBsnTlvNameVer15(
+                value
+                    );
     }
 
     public OFBsnTlvNegate negate() {
-        throw new UnsupportedOperationException("OFBsnTlvNegate not supported in version 1.5");
+        return OFBsnTlvNegateVer15.INSTANCE;
     }
 
     public OFBsnTlvNextHopIpv4.Builder buildNextHopIpv4() {
-        throw new UnsupportedOperationException("OFBsnTlvNextHopIpv4 not supported in version 1.5");
+        return new OFBsnTlvNextHopIpv4Ver15.Builder();
     }
     public OFBsnTlvNextHopIpv4 nextHopIpv4(IPv4Address value) {
-        throw new UnsupportedOperationException("OFBsnTlvNextHopIpv4 not supported in version 1.5");
+        return new OFBsnTlvNextHopIpv4Ver15(
+                value
+                    );
     }
 
     public OFBsnTlvNextHopMac.Builder buildNextHopMac() {
-        throw new UnsupportedOperationException("OFBsnTlvNextHopMac not supported in version 1.5");
+        return new OFBsnTlvNextHopMacVer15.Builder();
     }
     public OFBsnTlvNextHopMac nextHopMac(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvNextHopMac not supported in version 1.5");
+        return new OFBsnTlvNextHopMacVer15(
+                value
+                    );
     }
 
     public OFBsnTlvNexthopTypeVxlan nexthopTypeVxlan() {
-        throw new UnsupportedOperationException("OFBsnTlvNexthopTypeVxlan not supported in version 1.5");
+        return OFBsnTlvNexthopTypeVxlanVer15.INSTANCE;
     }
 
     public OFBsnTlvOffset.Builder buildOffset() {
-        throw new UnsupportedOperationException("OFBsnTlvOffset not supported in version 1.5");
+        return new OFBsnTlvOffsetVer15.Builder();
     }
     public OFBsnTlvOffset offset(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvOffset not supported in version 1.5");
+        return new OFBsnTlvOffsetVer15(
+                value
+                    );
     }
 
     public OFBsnTlvParentPort.Builder buildParentPort() {
-        throw new UnsupportedOperationException("OFBsnTlvParentPort not supported in version 1.5");
+        return new OFBsnTlvParentPortVer15.Builder();
     }
     public OFBsnTlvParentPort parentPort(OFPort value) {
-        throw new UnsupportedOperationException("OFBsnTlvParentPort not supported in version 1.5");
+        return new OFBsnTlvParentPortVer15(
+                value
+                    );
     }
 
     public OFBsnTlvPartnerKey.Builder buildPartnerKey() {
-        throw new UnsupportedOperationException("OFBsnTlvPartnerKey not supported in version 1.5");
+        return new OFBsnTlvPartnerKeyVer15.Builder();
     }
     public OFBsnTlvPartnerKey partnerKey(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvPartnerKey not supported in version 1.5");
+        return new OFBsnTlvPartnerKeyVer15(
+                value
+                    );
     }
 
     public OFBsnTlvPartnerPortNum.Builder buildPartnerPortNum() {
-        throw new UnsupportedOperationException("OFBsnTlvPartnerPortNum not supported in version 1.5");
+        return new OFBsnTlvPartnerPortNumVer15.Builder();
     }
     public OFBsnTlvPartnerPortNum partnerPortNum(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvPartnerPortNum not supported in version 1.5");
+        return new OFBsnTlvPartnerPortNumVer15(
+                value
+                    );
     }
 
     public OFBsnTlvPartnerPortPriority.Builder buildPartnerPortPriority() {
-        throw new UnsupportedOperationException("OFBsnTlvPartnerPortPriority not supported in version 1.5");
+        return new OFBsnTlvPartnerPortPriorityVer15.Builder();
     }
     public OFBsnTlvPartnerPortPriority partnerPortPriority(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvPartnerPortPriority not supported in version 1.5");
+        return new OFBsnTlvPartnerPortPriorityVer15(
+                value
+                    );
     }
 
     public OFBsnTlvPartnerState.Builder buildPartnerState() {
-        throw new UnsupportedOperationException("OFBsnTlvPartnerState not supported in version 1.5");
+        return new OFBsnTlvPartnerStateVer15.Builder();
     }
     public OFBsnTlvPartnerState partnerState(Set<OFBsnLacpState> value) {
-        throw new UnsupportedOperationException("OFBsnTlvPartnerState not supported in version 1.5");
+        return new OFBsnTlvPartnerStateVer15(
+                value
+                    );
     }
 
     public OFBsnTlvPartnerSystemMac.Builder buildPartnerSystemMac() {
-        throw new UnsupportedOperationException("OFBsnTlvPartnerSystemMac not supported in version 1.5");
+        return new OFBsnTlvPartnerSystemMacVer15.Builder();
     }
     public OFBsnTlvPartnerSystemMac partnerSystemMac(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvPartnerSystemMac not supported in version 1.5");
+        return new OFBsnTlvPartnerSystemMacVer15(
+                value
+                    );
     }
 
     public OFBsnTlvPartnerSystemPriority.Builder buildPartnerSystemPriority() {
-        throw new UnsupportedOperationException("OFBsnTlvPartnerSystemPriority not supported in version 1.5");
+        return new OFBsnTlvPartnerSystemPriorityVer15.Builder();
     }
     public OFBsnTlvPartnerSystemPriority partnerSystemPriority(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvPartnerSystemPriority not supported in version 1.5");
+        return new OFBsnTlvPartnerSystemPriorityVer15(
+                value
+                    );
     }
 
     public OFBsnTlvPort.Builder buildPort() {
-        throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.5");
+        return new OFBsnTlvPortVer15.Builder();
     }
     public OFBsnTlvPort port(OFPort value) {
-        throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.5");
+        return new OFBsnTlvPortVer15(
+                value
+                    );
     }
 
     public OFBsnTlvPortVxlanMode.Builder buildPortVxlanMode() {
-        throw new UnsupportedOperationException("OFBsnTlvPortVxlanMode not supported in version 1.5");
+        return new OFBsnTlvPortVxlanModeVer15.Builder();
     }
     public OFBsnTlvPortVxlanMode portVxlanMode(OFBsnPortVxlanMode value) {
-        throw new UnsupportedOperationException("OFBsnTlvPortVxlanMode not supported in version 1.5");
+        return new OFBsnTlvPortVxlanModeVer15(
+                value
+                    );
     }
 
     public OFBsnTlvPriority.Builder buildPriority() {
-        throw new UnsupportedOperationException("OFBsnTlvPriority not supported in version 1.5");
+        return new OFBsnTlvPriorityVer15.Builder();
     }
     public OFBsnTlvPriority priority(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvPriority not supported in version 1.5");
+        return new OFBsnTlvPriorityVer15(
+                value
+                    );
     }
 
     public OFBsnTlvQosPriority.Builder buildQosPriority() {
-        throw new UnsupportedOperationException("OFBsnTlvQosPriority not supported in version 1.5");
+        return new OFBsnTlvQosPriorityVer15.Builder();
     }
     public OFBsnTlvQosPriority qosPriority(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvQosPriority not supported in version 1.5");
+        return new OFBsnTlvQosPriorityVer15(
+                value
+                    );
     }
 
     public OFBsnTlvQueueId.Builder buildQueueId() {
-        throw new UnsupportedOperationException("OFBsnTlvQueueId not supported in version 1.5");
+        return new OFBsnTlvQueueIdVer15.Builder();
     }
     public OFBsnTlvQueueId queueId(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvQueueId not supported in version 1.5");
+        return new OFBsnTlvQueueIdVer15(
+                value
+                    );
     }
 
     public OFBsnTlvQueueWeight.Builder buildQueueWeight() {
-        throw new UnsupportedOperationException("OFBsnTlvQueueWeight not supported in version 1.5");
+        return new OFBsnTlvQueueWeightVer15.Builder();
     }
     public OFBsnTlvQueueWeight queueWeight(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvQueueWeight not supported in version 1.5");
+        return new OFBsnTlvQueueWeightVer15(
+                value
+                    );
     }
 
     public OFBsnTlvRateLimit.Builder buildRateLimit() {
-        throw new UnsupportedOperationException("OFBsnTlvRateLimit not supported in version 1.5");
+        return new OFBsnTlvRateLimitVer15.Builder();
     }
     public OFBsnTlvRateLimit rateLimit(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvRateLimit not supported in version 1.5");
+        return new OFBsnTlvRateLimitVer15(
+                value
+                    );
     }
 
     public OFBsnTlvRateUnit.Builder buildRateUnit() {
-        throw new UnsupportedOperationException("OFBsnTlvRateUnit not supported in version 1.5");
+        return new OFBsnTlvRateUnitVer15.Builder();
     }
     public OFBsnTlvRateUnit rateUnit(OFBsnRateUnit value) {
-        throw new UnsupportedOperationException("OFBsnTlvRateUnit not supported in version 1.5");
+        return new OFBsnTlvRateUnitVer15(
+                value
+                    );
     }
 
     public OFBsnTlvReference.Builder buildReference() {
-        throw new UnsupportedOperationException("OFBsnTlvReference not supported in version 1.5");
+        return new OFBsnTlvReferenceVer15.Builder();
     }
     public OFBsnTlvReference reference(int tableId, List<OFBsnTlv> key) {
-        throw new UnsupportedOperationException("OFBsnTlvReference not supported in version 1.5");
+        return new OFBsnTlvReferenceVer15(
+                tableId,
+                      key
+                    );
     }
 
     public OFBsnTlvReplyPackets.Builder buildReplyPackets() {
-        throw new UnsupportedOperationException("OFBsnTlvReplyPackets not supported in version 1.5");
+        return new OFBsnTlvReplyPacketsVer15.Builder();
     }
     public OFBsnTlvReplyPackets replyPackets(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvReplyPackets not supported in version 1.5");
+        return new OFBsnTlvReplyPacketsVer15(
+                value
+                    );
     }
 
     public OFBsnTlvRequestPackets.Builder buildRequestPackets() {
-        throw new UnsupportedOperationException("OFBsnTlvRequestPackets not supported in version 1.5");
+        return new OFBsnTlvRequestPacketsVer15.Builder();
     }
     public OFBsnTlvRequestPackets requestPackets(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvRequestPackets not supported in version 1.5");
+        return new OFBsnTlvRequestPacketsVer15(
+                value
+                    );
     }
 
     public OFBsnTlvRxBytes.Builder buildRxBytes() {
-        throw new UnsupportedOperationException("OFBsnTlvRxBytes not supported in version 1.5");
+        return new OFBsnTlvRxBytesVer15.Builder();
     }
     public OFBsnTlvRxBytes rxBytes(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvRxBytes not supported in version 1.5");
+        return new OFBsnTlvRxBytesVer15(
+                value
+                    );
     }
 
     public OFBsnTlvRxPackets.Builder buildRxPackets() {
-        throw new UnsupportedOperationException("OFBsnTlvRxPackets not supported in version 1.5");
+        return new OFBsnTlvRxPacketsVer15.Builder();
     }
     public OFBsnTlvRxPackets rxPackets(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvRxPackets not supported in version 1.5");
+        return new OFBsnTlvRxPacketsVer15(
+                value
+                    );
     }
 
     public OFBsnTlvSamplingRate.Builder buildSamplingRate() {
-        throw new UnsupportedOperationException("OFBsnTlvSamplingRate not supported in version 1.5");
+        return new OFBsnTlvSamplingRateVer15.Builder();
     }
     public OFBsnTlvSamplingRate samplingRate(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvSamplingRate not supported in version 1.5");
+        return new OFBsnTlvSamplingRateVer15(
+                value
+                    );
     }
 
     public OFBsnTlvSetLoopbackMode setLoopbackMode() {
-        throw new UnsupportedOperationException("OFBsnTlvSetLoopbackMode not supported in version 1.5");
+        return OFBsnTlvSetLoopbackModeVer15.INSTANCE;
     }
 
     public OFBsnTlvStatus.Builder buildStatus() {
-        throw new UnsupportedOperationException("OFBsnTlvStatus not supported in version 1.5");
+        return new OFBsnTlvStatusVer15.Builder();
     }
     public OFBsnTlvStatus status(OFBsnStatus value) {
-        throw new UnsupportedOperationException("OFBsnTlvStatus not supported in version 1.5");
+        return new OFBsnTlvStatusVer15(
+                value
+                    );
     }
 
     public OFBsnTlvStripMplsL2OnIngress stripMplsL2OnIngress() {
-        throw new UnsupportedOperationException("OFBsnTlvStripMplsL2OnIngress not supported in version 1.5");
+        return OFBsnTlvStripMplsL2OnIngressVer15.INSTANCE;
     }
 
     public OFBsnTlvStripMplsL3OnIngress stripMplsL3OnIngress() {
-        throw new UnsupportedOperationException("OFBsnTlvStripMplsL3OnIngress not supported in version 1.5");
+        return OFBsnTlvStripMplsL3OnIngressVer15.INSTANCE;
     }
 
     public OFBsnTlvStripVlanOnEgress stripVlanOnEgress() {
-        throw new UnsupportedOperationException("OFBsnTlvStripVlanOnEgress not supported in version 1.5");
+        return OFBsnTlvStripVlanOnEgressVer15.INSTANCE;
     }
 
     public OFBsnTlvSubAgentId.Builder buildSubAgentId() {
-        throw new UnsupportedOperationException("OFBsnTlvSubAgentId not supported in version 1.5");
+        return new OFBsnTlvSubAgentIdVer15.Builder();
     }
     public OFBsnTlvSubAgentId subAgentId(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvSubAgentId not supported in version 1.5");
+        return new OFBsnTlvSubAgentIdVer15(
+                value
+                    );
     }
 
     public OFBsnTlvTcpDst.Builder buildTcpDst() {
-        throw new UnsupportedOperationException("OFBsnTlvTcpDst not supported in version 1.5");
+        return new OFBsnTlvTcpDstVer15.Builder();
     }
     public OFBsnTlvTcpDst tcpDst(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvTcpDst not supported in version 1.5");
+        return new OFBsnTlvTcpDstVer15(
+                value
+                    );
     }
 
     public OFBsnTlvTcpSrc.Builder buildTcpSrc() {
-        throw new UnsupportedOperationException("OFBsnTlvTcpSrc not supported in version 1.5");
+        return new OFBsnTlvTcpSrcVer15.Builder();
     }
     public OFBsnTlvTcpSrc tcpSrc(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvTcpSrc not supported in version 1.5");
+        return new OFBsnTlvTcpSrcVer15(
+                value
+                    );
     }
 
     public OFBsnTlvTtl.Builder buildTtl() {
-        throw new UnsupportedOperationException("OFBsnTlvTtl not supported in version 1.5");
+        return new OFBsnTlvTtlVer15.Builder();
     }
     public OFBsnTlvTtl ttl(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvTtl not supported in version 1.5");
+        return new OFBsnTlvTtlVer15(
+                value
+                    );
     }
 
     public OFBsnTlvTxBytes.Builder buildTxBytes() {
-        throw new UnsupportedOperationException("OFBsnTlvTxBytes not supported in version 1.5");
+        return new OFBsnTlvTxBytesVer15.Builder();
     }
     public OFBsnTlvTxBytes txBytes(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvTxBytes not supported in version 1.5");
+        return new OFBsnTlvTxBytesVer15(
+                value
+                    );
     }
 
     public OFBsnTlvTxPackets.Builder buildTxPackets() {
-        throw new UnsupportedOperationException("OFBsnTlvTxPackets not supported in version 1.5");
+        return new OFBsnTlvTxPacketsVer15.Builder();
     }
     public OFBsnTlvTxPackets txPackets(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvTxPackets not supported in version 1.5");
+        return new OFBsnTlvTxPacketsVer15(
+                value
+                    );
     }
 
     public OFBsnTlvUdfAnchor.Builder buildUdfAnchor() {
-        throw new UnsupportedOperationException("OFBsnTlvUdfAnchor not supported in version 1.5");
+        return new OFBsnTlvUdfAnchorVer15.Builder();
     }
     public OFBsnTlvUdfAnchor udfAnchor(OFBsnUdfAnchor value) {
-        throw new UnsupportedOperationException("OFBsnTlvUdfAnchor not supported in version 1.5");
+        return new OFBsnTlvUdfAnchorVer15(
+                value
+                    );
     }
 
     public OFBsnTlvUdfId.Builder buildUdfId() {
-        throw new UnsupportedOperationException("OFBsnTlvUdfId not supported in version 1.5");
+        return new OFBsnTlvUdfIdVer15.Builder();
     }
     public OFBsnTlvUdfId udfId(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvUdfId not supported in version 1.5");
+        return new OFBsnTlvUdfIdVer15(
+                value
+                    );
     }
 
     public OFBsnTlvUdfLength.Builder buildUdfLength() {
-        throw new UnsupportedOperationException("OFBsnTlvUdfLength not supported in version 1.5");
+        return new OFBsnTlvUdfLengthVer15.Builder();
     }
     public OFBsnTlvUdfLength udfLength(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvUdfLength not supported in version 1.5");
+        return new OFBsnTlvUdfLengthVer15(
+                value
+                    );
     }
 
     public OFBsnTlvUdfOffset.Builder buildUdfOffset() {
-        throw new UnsupportedOperationException("OFBsnTlvUdfOffset not supported in version 1.5");
+        return new OFBsnTlvUdfOffsetVer15.Builder();
     }
     public OFBsnTlvUdfOffset udfOffset(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvUdfOffset not supported in version 1.5");
+        return new OFBsnTlvUdfOffsetVer15(
+                value
+                    );
     }
 
     public OFBsnTlvUdpDst.Builder buildUdpDst() {
-        throw new UnsupportedOperationException("OFBsnTlvUdpDst not supported in version 1.5");
+        return new OFBsnTlvUdpDstVer15.Builder();
     }
     public OFBsnTlvUdpDst udpDst(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvUdpDst not supported in version 1.5");
+        return new OFBsnTlvUdpDstVer15(
+                value
+                    );
     }
 
     public OFBsnTlvUdpSrc.Builder buildUdpSrc() {
-        throw new UnsupportedOperationException("OFBsnTlvUdpSrc not supported in version 1.5");
+        return new OFBsnTlvUdpSrcVer15.Builder();
     }
     public OFBsnTlvUdpSrc udpSrc(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvUdpSrc not supported in version 1.5");
+        return new OFBsnTlvUdpSrcVer15(
+                value
+                    );
     }
 
     public OFBsnTlvUint64List.Builder buildUint64List() {
-        throw new UnsupportedOperationException("OFBsnTlvUint64List not supported in version 1.5");
+        return new OFBsnTlvUint64ListVer15.Builder();
     }
     public OFBsnTlvUint64List uint64List(List<U64> value) {
-        throw new UnsupportedOperationException("OFBsnTlvUint64List not supported in version 1.5");
+        return new OFBsnTlvUint64ListVer15(
+                value
+                    );
     }
 
     public OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() {
-        throw new UnsupportedOperationException("OFBsnTlvUnicastQueryTimeout not supported in version 1.5");
+        return new OFBsnTlvUnicastQueryTimeoutVer15.Builder();
     }
     public OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvUnicastQueryTimeout not supported in version 1.5");
+        return new OFBsnTlvUnicastQueryTimeoutVer15(
+                value
+                    );
     }
 
     public OFBsnTlvUnicastRate.Builder buildUnicastRate() {
-        throw new UnsupportedOperationException("OFBsnTlvUnicastRate not supported in version 1.5");
+        return new OFBsnTlvUnicastRateVer15.Builder();
     }
     public OFBsnTlvUnicastRate unicastRate(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvUnicastRate not supported in version 1.5");
+        return new OFBsnTlvUnicastRateVer15(
+                value
+                    );
     }
 
     public OFBsnTlvUnknownMulticastRate.Builder buildUnknownMulticastRate() {
-        throw new UnsupportedOperationException("OFBsnTlvUnknownMulticastRate not supported in version 1.5");
+        return new OFBsnTlvUnknownMulticastRateVer15.Builder();
     }
     public OFBsnTlvUnknownMulticastRate unknownMulticastRate(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvUnknownMulticastRate not supported in version 1.5");
+        return new OFBsnTlvUnknownMulticastRateVer15(
+                value
+                    );
     }
 
     public OFBsnTlvUntagged untagged() {
-        throw new UnsupportedOperationException("OFBsnTlvUntagged not supported in version 1.5");
+        return OFBsnTlvUntaggedVer15.INSTANCE;
     }
 
     public OFBsnTlvUsePacketState.Builder buildUsePacketState() {
-        throw new UnsupportedOperationException("OFBsnTlvUsePacketState not supported in version 1.5");
+        return new OFBsnTlvUsePacketStateVer15.Builder();
     }
     public OFBsnTlvUsePacketState usePacketState(short value) {
-        throw new UnsupportedOperationException("OFBsnTlvUsePacketState not supported in version 1.5");
+        return new OFBsnTlvUsePacketStateVer15(
+                value
+                    );
     }
 
     public OFBsnTlvVfi.Builder buildVfi() {
-        throw new UnsupportedOperationException("OFBsnTlvVfi not supported in version 1.5");
+        return new OFBsnTlvVfiVer15.Builder();
     }
     public OFBsnTlvVfi vfi(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvVfi not supported in version 1.5");
+        return new OFBsnTlvVfiVer15(
+                value
+                    );
     }
 
     public OFBsnTlvVfpClassId.Builder buildVfpClassId() {
-        throw new UnsupportedOperationException("OFBsnTlvVfpClassId not supported in version 1.5");
+        return new OFBsnTlvVfpClassIdVer15.Builder();
     }
     public OFBsnTlvVfpClassId vfpClassId(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvVfpClassId not supported in version 1.5");
+        return new OFBsnTlvVfpClassIdVer15(
+                value
+                    );
     }
 
     public OFBsnTlvVlanMacList.Builder buildVlanMacList() {
-        throw new UnsupportedOperationException("OFBsnTlvVlanMacList not supported in version 1.5");
+        return new OFBsnTlvVlanMacListVer15.Builder();
     }
     public OFBsnTlvVlanMacList vlanMacList(List<OFBsnVlanMac> key) {
-        throw new UnsupportedOperationException("OFBsnTlvVlanMacList not supported in version 1.5");
+        return new OFBsnTlvVlanMacListVer15(
+                key
+                    );
     }
 
     public OFBsnTlvVlanPcp.Builder buildVlanPcp() {
-        throw new UnsupportedOperationException("OFBsnTlvVlanPcp not supported in version 1.5");
+        return new OFBsnTlvVlanPcpVer15.Builder();
     }
     public OFBsnTlvVlanPcp vlanPcp(short value) {
-        throw new UnsupportedOperationException("OFBsnTlvVlanPcp not supported in version 1.5");
+        return new OFBsnTlvVlanPcpVer15(
+                value
+                    );
     }
 
     public OFBsnTlvVlanVid.Builder buildVlanVid() {
-        throw new UnsupportedOperationException("OFBsnTlvVlanVid not supported in version 1.5");
+        return new OFBsnTlvVlanVidVer15.Builder();
     }
     public OFBsnTlvVlanVid vlanVid(VlanVid value) {
-        throw new UnsupportedOperationException("OFBsnTlvVlanVid not supported in version 1.5");
+        return new OFBsnTlvVlanVidVer15(
+                value
+                    );
     }
 
     public OFBsnTlvVlanVidMask.Builder buildVlanVidMask() {
-        throw new UnsupportedOperationException("OFBsnTlvVlanVidMask not supported in version 1.5");
+        return new OFBsnTlvVlanVidMaskVer15.Builder();
     }
     public OFBsnTlvVlanVidMask vlanVidMask(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvVlanVidMask not supported in version 1.5");
+        return new OFBsnTlvVlanVidMaskVer15(
+                value
+                    );
     }
 
     public OFBsnTlvVni.Builder buildVni() {
-        throw new UnsupportedOperationException("OFBsnTlvVni not supported in version 1.5");
+        return new OFBsnTlvVniVer15.Builder();
     }
     public OFBsnTlvVni vni(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvVni not supported in version 1.5");
+        return new OFBsnTlvVniVer15(
+                value
+                    );
     }
 
     public OFBsnTlvVpnKey.Builder buildVpnKey() {
-        throw new UnsupportedOperationException("OFBsnTlvVpnKey not supported in version 1.5");
+        return new OFBsnTlvVpnKeyVer15.Builder();
     }
     public OFBsnTlvVpnKey vpnKey(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvVpnKey not supported in version 1.5");
+        return new OFBsnTlvVpnKeyVer15(
+                value
+                    );
     }
 
     public OFBsnTlvVrf.Builder buildVrf() {
-        throw new UnsupportedOperationException("OFBsnTlvVrf not supported in version 1.5");
+        return new OFBsnTlvVrfVer15.Builder();
     }
     public OFBsnTlvVrf vrf(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvVrf not supported in version 1.5");
+        return new OFBsnTlvVrfVer15(
+                value
+                    );
     }
 
     public OFBsnTlvVxlanEgressLag vxlanEgressLag() {
-        throw new UnsupportedOperationException("OFBsnTlvVxlanEgressLag not supported in version 1.5");
+        return OFBsnTlvVxlanEgressLagVer15.INSTANCE;
     }
 
     public OFMessageReader<OFBsnTlv> getReader() {
-        throw new UnsupportedOperationException("Reader<OFBsnTlv> not supported in version 1.5");
+        return OFBsnTlvVer15.READER;
     }
 
 

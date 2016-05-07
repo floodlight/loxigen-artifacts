@@ -38,23 +38,23 @@ public class OFInstructionIdsVer15 implements OFInstructionIds {
     }
 
     public OFInstructionIdBsnArpOffload bsnArpOffload() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnArpOffload not supported in version 1.5");
+        return OFInstructionIdBsnArpOffloadVer15.INSTANCE;
     }
 
     public OFInstructionIdBsnAutoNegotiation bsnAutoNegotiation() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnAutoNegotiation not supported in version 1.5");
+        return OFInstructionIdBsnAutoNegotiationVer15.INSTANCE;
     }
 
     public OFInstructionIdBsnDeny bsnDeny() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnDeny not supported in version 1.5");
+        return OFInstructionIdBsnDenyVer15.INSTANCE;
     }
 
     public OFInstructionIdBsnDhcpOffload bsnDhcpOffload() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnDhcpOffload not supported in version 1.5");
+        return OFInstructionIdBsnDhcpOffloadVer15.INSTANCE;
     }
 
     public OFInstructionIdBsnDisableL3 bsnDisableL3() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnDisableL3 not supported in version 1.5");
+        return OFInstructionIdBsnDisableL3Ver15.INSTANCE;
     }
 
     public OFInstructionIdBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck() {
@@ -62,35 +62,35 @@ public class OFInstructionIdsVer15 implements OFInstructionIds {
     }
 
     public OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnDisableSrcMacCheck not supported in version 1.5");
+        return OFInstructionIdBsnDisableSrcMacCheckVer15.INSTANCE;
     }
 
     public OFInstructionIdBsnDisableVlanCounters bsnDisableVlanCounters() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnDisableVlanCounters not supported in version 1.5");
+        return OFInstructionIdBsnDisableVlanCountersVer15.INSTANCE;
     }
 
     public OFInstructionIdBsnInternalPriority bsnInternalPriority() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnInternalPriority not supported in version 1.5");
+        return OFInstructionIdBsnInternalPriorityVer15.INSTANCE;
     }
 
     public OFInstructionIdBsnPacketOfDeath bsnPacketOfDeath() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnPacketOfDeath not supported in version 1.5");
+        return OFInstructionIdBsnPacketOfDeathVer15.INSTANCE;
     }
 
     public OFInstructionIdBsnPermit bsnPermit() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnPermit not supported in version 1.5");
+        return OFInstructionIdBsnPermitVer15.INSTANCE;
     }
 
     public OFInstructionIdBsnPrioritizePdus bsnPrioritizePdus() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnPrioritizePdus not supported in version 1.5");
+        return OFInstructionIdBsnPrioritizePdusVer15.INSTANCE;
     }
 
     public OFInstructionIdBsnRequireVlanXlate bsnRequireVlanXlate() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnRequireVlanXlate not supported in version 1.5");
+        return OFInstructionIdBsnRequireVlanXlateVer15.INSTANCE;
     }
 
     public OFInstructionIdBsnSpanDestination bsnSpanDestination() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnSpanDestination not supported in version 1.5");
+        return OFInstructionIdBsnSpanDestinationVer15.INSTANCE;
     }
 
     public OFInstructionIdClearActions clearActions() {

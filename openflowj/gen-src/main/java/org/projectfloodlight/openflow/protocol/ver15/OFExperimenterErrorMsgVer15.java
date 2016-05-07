@@ -61,6 +61,9 @@ abstract class OFExperimenterErrorMsgVer15 {
             int experimenter = bb.readInt();
             bb.readerIndex(start);
             switch(experimenter) {
+               case 0x5c16c7:
+                   // discriminator value 0x5c16c7L=0x5c16c7L for class OFBsnBaseErrorVer15
+                   return OFBsnBaseErrorVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator experimenter of class OFExperimenterErrorMsgVer15: " + experimenter);
             }
