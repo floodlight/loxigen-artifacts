@@ -198,6 +198,20 @@ class OFStatV6Ver15 implements OFStatV6 {
                     oxsFields
                 );
         }
+    private OFOxsList.Builder oxsFieldsBuilder;
+
+    private void initBuilder() {
+        if (oxsFieldsBuilder != null)
+            return;
+        oxsFieldsBuilder = new OFOxsList.Builder();
+    }
+
+    private void updateOxsList() {
+        this.oxsFields = this.oxsFieldsBuilder.build();
+        this.oxsFieldsSet = true;
+    }
+
+
 
     @Override
     public <F extends OFValueType<F>> F get(StatField<F> field) throws UnsupportedOperationException{
@@ -211,6 +225,16 @@ class OFStatV6Ver15 implements OFStatV6 {
 
         return oxs.getValue();
     }
+
+    @Override
+    public <F extends OFValueType<F>> Stat.Builder set(StatField<F> field, F value) {
+        initBuilder();
+        OFOxs<F> oxs = OFFactories.getFactory(OFVersion.OF_15).oxss().fromValue(value, field);
+        this.oxsFieldsBuilder.set(oxs);
+        updateOxsList();
+        return this;
+    }
+
 
     @Override
     public boolean supports(StatField<?> field){
@@ -271,6 +295,20 @@ class OFStatV6Ver15 implements OFStatV6 {
                     oxsFields
                 );
         }
+    private OFOxsList.Builder oxsFieldsBuilder;
+
+    private void initBuilder() {
+        if (oxsFieldsBuilder != null)
+            return;
+        oxsFieldsBuilder = new OFOxsList.Builder();
+    }
+
+    private void updateOxsList() {
+        this.oxsFields = this.oxsFieldsBuilder.build();
+        this.oxsFieldsSet = true;
+    }
+
+
 
     @Override
     public <F extends OFValueType<F>> F get(StatField<F> field) throws UnsupportedOperationException{
@@ -284,6 +322,16 @@ class OFStatV6Ver15 implements OFStatV6 {
 
         return oxs.getValue();
     }
+
+    @Override
+    public <F extends OFValueType<F>> Stat.Builder set(StatField<F> field, F value) {
+        initBuilder();
+        OFOxs<F> oxs = OFFactories.getFactory(OFVersion.OF_15).oxss().fromValue(value, field);
+        this.oxsFieldsBuilder.set(oxs);
+        updateOxsList();
+        return this;
+    }
+
 
     @Override
     public boolean supports(StatField<?> field){

@@ -471,6 +471,7 @@ public interface OFFactory extends XidGenerator {
     OFPortDescPropRecirculate portDescPropRecirculate(byte[] portNos);
     Match.Builder buildMatch();
     Match matchWildcardAll();
+    Stat.Builder buildStat();
 
     OFMessageReader<OFMessage> getReader();
     OFVersion getVersion();

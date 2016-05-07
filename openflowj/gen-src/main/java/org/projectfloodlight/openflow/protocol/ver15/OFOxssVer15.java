@@ -82,6 +82,24 @@ public class OFOxssVer15 implements OFOxss {
         return OFOxsVer15.READER;
     }
 
+    @SuppressWarnings("unchecked")
+    public <F extends OFValueType<F>> OFOxs<F> fromValue(F value, StatField<F> field) {
+        switch (field.id) {
+            case BYTE_COUNT:
+                return (OFOxs<F>)((Object)byteCount((U64)((Object)value)));
+            case DURATION:
+                return (OFOxs<F>)((Object)duration((U64)((Object)value)));
+            case FLOW_COUNT:
+                return (OFOxs<F>)((Object)flowCount((U32)((Object)value)));
+            case IDLE_TIME:
+                return (OFOxs<F>)((Object)idleTime((U64)((Object)value)));
+            case PACKET_COUNT:
+                return (OFOxs<F>)((Object)packetCount((U64)((Object)value)));
+            default:
+                throw new IllegalArgumentException("No OXM known for match field " + field);
+        }
+    }
+
 
     public OFVersion getVersion() {
             return OFVersion.OF_15;
