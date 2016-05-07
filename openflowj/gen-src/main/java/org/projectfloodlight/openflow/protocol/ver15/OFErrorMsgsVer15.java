@@ -83,7 +83,7 @@ public class OFErrorMsgsVer15 implements OFErrorMsgs {
     }
 
     public OFBsnError.Builder buildBsnError() {
-        throw new UnsupportedOperationException("OFBsnError not supported in version 1.5");
+        return new OFBsnErrorVer15.Builder().setXid(nextXid());
     }
 
     public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {

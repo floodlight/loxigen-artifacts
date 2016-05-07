@@ -51,6 +51,9 @@ abstract class OFPortDescPropExperimenterVer15 {
             int experimenter = bb.readInt();
             bb.readerIndex(start);
             switch(experimenter) {
+               case 0x5c16c7:
+                   // discriminator value 0x5c16c7L=0x5c16c7L for class OFPortDescPropBsnVer15
+                   return OFPortDescPropBsnVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator experimenter of class OFPortDescPropExperimenterVer15: " + experimenter);
             }

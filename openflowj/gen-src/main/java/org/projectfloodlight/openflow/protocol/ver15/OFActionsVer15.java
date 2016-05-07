@@ -259,10 +259,13 @@ public class OFActionsVer15 implements OFActions {
     }
 
     public OFActionBsnGentable.Builder buildBsnGentable() {
-        throw new UnsupportedOperationException("OFActionBsnGentable not supported in version 1.5");
+        return new OFActionBsnGentableVer15.Builder();
     }
     public OFActionBsnGentable bsnGentable(long tableId, List<OFBsnTlv> key) {
-        throw new UnsupportedOperationException("OFActionBsnGentable not supported in version 1.5");
+        return new OFActionBsnGentableVer15(
+                tableId,
+                      key
+                    );
     }
 
     public OFActionPopPbb popPbb() {

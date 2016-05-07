@@ -65,6 +65,9 @@ abstract class OFActionBsnVer15 {
                case 0x2:
                    // discriminator value 0x2L=0x2L for class OFActionBsnSetTunnelDstVer15
                    return OFActionBsnSetTunnelDstVer15.READER.readFrom(bb);
+               case 0x5:
+                   // discriminator value 0x5L=0x5L for class OFActionBsnGentableVer15
+                   return OFActionBsnGentableVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFActionBsnVer15: " + subtype);
             }
