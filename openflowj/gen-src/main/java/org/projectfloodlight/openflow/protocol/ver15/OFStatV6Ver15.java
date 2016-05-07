@@ -41,31 +41,28 @@ class OFStatV6Ver15 implements OFStatV6 {
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 4;
 
-        private final static int DEFAULT_RESERVED = 0x0;
         private final static OFOxsList DEFAULT_OXS_FIELDS = OFOxsList.EMPTY;
 
     // OF message fields
-    private final int reserved;
     private final OFOxsList oxsFields;
 //
     // Immutable default instance
     final static OFStatV6Ver15 DEFAULT = new OFStatV6Ver15(
-        DEFAULT_RESERVED, DEFAULT_OXS_FIELDS
+        DEFAULT_OXS_FIELDS
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFStatV6Ver15(int reserved, OFOxsList oxsFields) {
+    OFStatV6Ver15(OFOxsList oxsFields) {
         if(oxsFields == null) {
             throw new NullPointerException("OFStatV6Ver15: property oxsFields cannot be null");
         }
-        this.reserved = reserved;
         this.oxsFields = oxsFields;
     }
 
     // Accessors for OF message fields
     @Override
     public int getReserved() {
-        return reserved;
+        return 0x0;
     }
 
     @Override
@@ -147,8 +144,6 @@ class OFStatV6Ver15 implements OFStatV6 {
         final OFStatV6Ver15 parentMessage;
 
         // OF message fields
-        private boolean reservedSet;
-        private int reserved;
         private boolean oxsFieldsSet;
         private OFOxsList oxsFields;
 
@@ -158,15 +153,9 @@ class OFStatV6Ver15 implements OFStatV6 {
 
     @Override
     public int getReserved() {
-        return reserved;
+        return 0x0;
     }
 
-    @Override
-    public OFStatV6.Builder setReserved(int reserved) {
-        this.reserved = reserved;
-        this.reservedSet = true;
-        return this;
-    }
     @Override
     public OFOxsList getOxsFields() {
         return oxsFields;
@@ -187,14 +176,12 @@ class OFStatV6Ver15 implements OFStatV6 {
 
         @Override
         public OFStatV6 build() {
-                int reserved = this.reservedSet ? this.reserved : parentMessage.reserved;
                 OFOxsList oxsFields = this.oxsFieldsSet ? this.oxsFields : parentMessage.oxsFields;
                 if(oxsFields == null)
                     throw new NullPointerException("Property oxsFields must not be null");
 
                 //
                 return new OFStatV6Ver15(
-                    reserved,
                     oxsFields
                 );
         }
@@ -225,22 +212,14 @@ class OFStatV6Ver15 implements OFStatV6 {
 
     static class Builder implements OFStatV6.Builder {
         // OF message fields
-        private boolean reservedSet;
-        private int reserved;
         private boolean oxsFieldsSet;
         private OFOxsList oxsFields;
 
     @Override
     public int getReserved() {
-        return reserved;
+        return 0x0;
     }
 
-    @Override
-    public OFStatV6.Builder setReserved(int reserved) {
-        this.reserved = reserved;
-        this.reservedSet = true;
-        return this;
-    }
     @Override
     public OFOxsList getOxsFields() {
         return oxsFields;
@@ -260,14 +239,12 @@ class OFStatV6Ver15 implements OFStatV6 {
 //
         @Override
         public OFStatV6 build() {
-            int reserved = this.reservedSet ? this.reserved : DEFAULT_RESERVED;
             OFOxsList oxsFields = this.oxsFieldsSet ? this.oxsFields : DEFAULT_OXS_FIELDS;
             if(oxsFields == null)
                 throw new NullPointerException("Property oxsFields must not be null");
 
 
             return new OFStatV6Ver15(
-                    reserved,
                     oxsFields
                 );
         }
@@ -302,7 +279,10 @@ class OFStatV6Ver15 implements OFStatV6 {
         @Override
         public OFStatV6 readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
-            int reserved = U16.f(bb.readShort());
+            // fixed value property reserved == 0x0
+            short reserved = bb.readShort();
+            if(reserved != (short) 0x0)
+                throw new OFParseError("Wrong reserved: Expected=0x0(0x0), got="+reserved);
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
@@ -318,8 +298,7 @@ class OFStatV6Ver15 implements OFStatV6 {
             bb.skipBytes(((length + 7)/8 * 8 ) - length );
 
             OFStatV6Ver15 statV6Ver15 = new OFStatV6Ver15(
-                    reserved,
-                      oxsFields
+                    oxsFields
                     );
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - read={}", statV6Ver15);
@@ -336,7 +315,8 @@ class OFStatV6Ver15 implements OFStatV6 {
         private static final long serialVersionUID = 1L;
         @Override
         public void funnel(OFStatV6Ver15 message, PrimitiveSink sink) {
-            sink.putInt(message.reserved);
+            // fixed value property reserved = 0x0
+            sink.putShort((short) 0x0);
             // FIXME: skip funnel of length
             message.oxsFields.putTo(sink);
         }
@@ -352,7 +332,8 @@ class OFStatV6Ver15 implements OFStatV6 {
         @Override
         public void write(ByteBuf bb, OFStatV6Ver15 message) {
             int startIndex = bb.writerIndex();
-            bb.writeShort(U16.t(message.reserved));
+            // fixed value property reserved = 0x0
+            bb.writeShort((short) 0x0);
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();
             bb.writeShort(U16.t(0));
@@ -372,8 +353,6 @@ class OFStatV6Ver15 implements OFStatV6 {
     @Override
     public String toString() {
         StringBuilder b = new StringBuilder("OFStatV6Ver15(");
-        b.append("reserved=").append(reserved);
-        b.append(", ");
         b.append("oxsFields=").append(oxsFields);
         b.append(")");
         return b.toString();
@@ -389,8 +368,6 @@ class OFStatV6Ver15 implements OFStatV6 {
             return false;
         OFStatV6Ver15 other = (OFStatV6Ver15) obj;
 
-        if( reserved != other.reserved)
-            return false;
         if (oxsFields == null) {
             if (other.oxsFields != null)
                 return false;
@@ -404,7 +381,6 @@ class OFStatV6Ver15 implements OFStatV6 {
         final int prime = 31;
         int result = 1;
 
-        result = prime * result + reserved;
         result = prime * result + ((oxsFields == null) ? 0 : oxsFields.hashCode());
         return result;
     }

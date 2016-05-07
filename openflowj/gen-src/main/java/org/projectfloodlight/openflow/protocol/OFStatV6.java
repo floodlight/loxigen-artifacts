@@ -40,7 +40,6 @@ public interface OFStatV6 extends OFObject, Stat {
     public interface Builder extends Stat.Builder {
         OFStatV6 build();
         int getReserved();
-        Builder setReserved(int reserved);
         OFOxsList getOxsFields();
         Builder setOxsFields(OFOxsList oxsFields);
         OFVersion getVersion();

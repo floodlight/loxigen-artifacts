@@ -1663,7 +1663,7 @@ public class OFFactoryVer12 implements OFFactory {
     public OFStatV6.Builder buildStatV6() {
         throw new UnsupportedOperationException("OFStatV6 not supported in version 1.2");
     }
-    public OFStatV6 statV6(int reserved, OFOxsList oxsFields) {
+    public OFStatV6 statV6(OFOxsList oxsFields) {
         throw new UnsupportedOperationException("OFStatV6 not supported in version 1.2");
     }
 
