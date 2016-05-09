@@ -1,1 +1,1 @@
-dd2e04bda188622767af52e8e6d8dd6234ff0429 Merge into master from pull request #484: openflow_input: generate BSN messages for version 1.5 (https://github.com/floodlight/loxigen/pull/484)
+aa04b51ccc3949e30a678f7edb7f211efe9d7233 Merge into master from pull request #480: Expose MatchField prereqs (https://github.com/floodlight/loxigen/pull/480)
