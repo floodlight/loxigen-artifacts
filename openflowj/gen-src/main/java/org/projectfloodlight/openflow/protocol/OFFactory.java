@@ -451,7 +451,7 @@ public interface OFFactory extends XidGenerator {
     OFRolePropBsn.Builder buildRolePropBsn() throws UnsupportedOperationException;
     OFRolePropBsn rolePropBsn(byte[] experimenterData);
     OFStatV6.Builder buildStatV6() throws UnsupportedOperationException;
-    OFStatV6 statV6(int reserved, OFOxsList oxsFields);
+    OFStatV6 statV6(OFOxsList oxsFields);
     OFTableFeaturePropApplyCopyfield.Builder buildTableFeaturePropApplyCopyfield() throws UnsupportedOperationException;
     OFTableFeaturePropApplyCopyfield tableFeaturePropApplyCopyfield(List<U32> oxmIds);
     OFTableFeaturePropApplyCopyfieldMiss.Builder buildTableFeaturePropApplyCopyfieldMiss() throws UnsupportedOperationException;
