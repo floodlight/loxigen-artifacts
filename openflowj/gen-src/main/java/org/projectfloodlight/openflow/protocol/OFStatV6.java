@@ -29,7 +29,6 @@ import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFStatV6 extends OFObject, Stat {
-    int getReserved();
     OFOxsList getOxsFields();
     OFVersion getVersion();
 
@@ -39,8 +38,6 @@ public interface OFStatV6 extends OFObject, Stat {
     Builder createBuilder();
     public interface Builder extends Stat.Builder {
         OFStatV6 build();
-        int getReserved();
-        Builder setReserved(int reserved);
         OFOxsList getOxsFields();
         Builder setOxsFields(OFOxsList oxsFields);
         OFVersion getVersion();

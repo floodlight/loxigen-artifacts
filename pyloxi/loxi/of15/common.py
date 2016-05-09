@@ -4220,11 +4220,7 @@ class queue_stats_entry(loxi.OFObject):
 
 class stat_v6(loxi.OFObject):
 
-    def __init__(self, reserved=None, oxs_fields=None):
-        if reserved != None:
-            self.reserved = reserved
-        else:
-            self.reserved = 0
+    def __init__(self, oxs_fields=None):
         if oxs_fields != None:
             self.oxs_fields = oxs_fields
         else:
@@ -4233,7 +4229,7 @@ class stat_v6(loxi.OFObject):
 
     def pack(self):
         packed = []
-        packed.append(struct.pack("!H", self.reserved))
+        packed.append('\x00' * 2)
         packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
         packed.append(loxi.generic_util.pack_list(self.oxs_fields))
         length = sum([len(x) for x in packed])
@@ -4244,7 +4240,7 @@ class stat_v6(loxi.OFObject):
     @staticmethod
     def unpack(reader):
         obj = stat_v6()
-        obj.reserved = reader.read("!H")[0]
+        reader.skip(2)
         _length = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_length, 4)
@@ -4254,7 +4250,6 @@ class stat_v6(loxi.OFObject):
 
     def __eq__(self, other):
         if type(self) != type(other): return False
-        if self.reserved != other.reserved: return False
         if self.oxs_fields != other.oxs_fields: return False
         return True
 
@@ -4263,9 +4258,6 @@ class stat_v6(loxi.OFObject):
         with q.group():
             with q.indent(2):
                 q.breakable()
-                q.text("reserved = ");
-                q.text("%#x" % self.reserved)
-                q.text(","); q.breakable()
                 q.text("oxs_fields = ");
                 q.pp(self.oxs_fields)
             q.breakable()

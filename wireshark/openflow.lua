@@ -15729,7 +15729,6 @@ fields['of15.set_config.length'] = ProtoField.uint16("of15.set_config.length", "
 fields['of15.set_config.xid'] = ProtoField.uint32("of15.set_config.xid", "xid", base.DEC, nil)
 fields['of15.set_config.flags'] = ProtoField.uint32("of15.set_config.flags", "flags", base.HEX, enum_v6_ofp_config_flags)
 fields['of15.set_config.miss_send_len'] = ProtoField.uint16("of15.set_config.miss_send_len", "miss_send_len", base.DEC, nil)
-fields['of15.stat_v6.reserved'] = ProtoField.uint16("of15.stat_v6.reserved", "reserved", base.DEC, nil)
 fields['of15.stat_v6.length'] = ProtoField.uint16("of15.stat_v6.length", "length", base.DEC, nil)
 fields['of15.stat_v6.oxs_fields'] = ProtoField.bytes("of15.stat_v6.oxs_fields", "oxs_fields")
 fields['of15.switch_config_failed_error_msg.version'] = ProtoField.uint8("of15.switch_config_failed_error_msg.version", "version", base.DEC, nil)
@@ -27664,7 +27663,6 @@ p_of.fields = {
     fields['of15.set_config.xid'],
     fields['of15.set_config.flags'],
     fields['of15.set_config.miss_send_len'],
-    fields['of15.stat_v6.reserved'],
     fields['of15.stat_v6.length'],
     fields['of15.stat_v6.oxs_fields'],
     fields['of15.switch_config_failed_error_msg.version'],
@@ -57755,7 +57753,7 @@ function dissect_of_stat_v6_v6(reader, subtree)
     local _length = reader.peek(2, 2):uint()
     local orig_reader = reader
     reader = orig_reader.slice(_length)
-    read_uint16_t(reader, 6, subtree, 'of15.stat_v6.reserved')
+    reader.skip(2)
     read_uint16_t(reader, 6, subtree, 'of15.stat_v6.length')
     read_list(reader, dissect_of_oxs_v6, subtree, 'of_oxs')
     orig_reader.skip_align()

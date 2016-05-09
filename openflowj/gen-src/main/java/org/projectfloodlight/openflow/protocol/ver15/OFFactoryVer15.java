@@ -1874,10 +1874,9 @@ public class OFFactoryVer15 implements OFFactory {
     public OFStatV6.Builder buildStatV6() {
         return new OFStatV6Ver15.Builder();
     }
-    public OFStatV6 statV6(int reserved, OFOxsList oxsFields) {
+    public OFStatV6 statV6(OFOxsList oxsFields) {
         return new OFStatV6Ver15(
-                reserved,
-                      oxsFields
+                oxsFields
                     );
     }
 
