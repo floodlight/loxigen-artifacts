@@ -1732,6 +1732,10 @@ public class OFFactoryVer12 implements OFFactory {
         return OFMessageVer12.READER;
     }
 
+    @Override
+    public Stat.Builder buildStat() {
+            return buildStatV6();
+    }
     public long nextXid() {
         return xidGenerator.nextXid();
     }

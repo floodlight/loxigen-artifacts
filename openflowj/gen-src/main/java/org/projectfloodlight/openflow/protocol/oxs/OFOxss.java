@@ -42,4 +42,6 @@ public interface OFOxss {
 
     OFMessageReader<OFOxs<?>> getReader();
     OFVersion getVersion();
+
+    public <F extends OFValueType<F>> OFOxs<F> fromValue(F value, StatField<F> field);
 }
