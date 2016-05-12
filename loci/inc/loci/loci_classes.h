@@ -835,6 +835,8 @@ void of_bsn_tlv_decap_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_decap_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_disable_src_mac_check_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_disable_src_mac_check_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_drop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_drop_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_dscp_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_dscp_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_eth_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1710,6 +1712,7 @@ typedef of_object_t of_bsn_tlv_crc_enabled_t;
 typedef of_object_t of_bsn_tlv_data_t;
 typedef of_object_t of_bsn_tlv_decap_t;
 typedef of_object_t of_bsn_tlv_disable_src_mac_check_t;
+typedef of_object_t of_bsn_tlv_drop_t;
 typedef of_object_t of_bsn_tlv_dscp_t;
 typedef of_object_t of_bsn_tlv_eth_dst_t;
 typedef of_object_t of_bsn_tlv_eth_src_t;
@@ -3752,6 +3755,11 @@ extern void of_bsn_tlv_decap_init(
 extern of_object_t *
     of_bsn_tlv_disable_src_mac_check_new(of_version_t version);
 extern void of_bsn_tlv_disable_src_mac_check_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_drop_new(of_version_t version);
+extern void of_bsn_tlv_drop_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9406,6 +9414,17 @@ of_bsn_tlv_decap_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_disable_src_mac_check_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_drop_t
+ * @param obj An instance of type of_bsn_tlv_drop_t
+ *
+ * \ingroup of_bsn_tlv_drop
+ */
+static inline void
+of_bsn_tlv_drop_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -21968,6 +21987,8 @@ extern void of_bsn_tlv_decap_value_get(
     uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_disable_src_mac_check */
+
+/* Unified accessor functions for of_bsn_tlv_drop */
 
 /* Unified accessor functions for of_bsn_tlv_dscp */
 

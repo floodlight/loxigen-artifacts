@@ -178,6 +178,10 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
         return OFBsnTlvDisableSrcMacCheckVer14.INSTANCE;
     }
 
+    public OFBsnTlvDrop drop() {
+        return OFBsnTlvDropVer14.INSTANCE;
+    }
+
     public OFBsnTlvDscp.Builder buildDscp() {
         return new OFBsnTlvDscpVer14.Builder();
     }

@@ -327,6 +327,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_data",
     "of_bsn_tlv_decap",
     "of_bsn_tlv_disable_src_mac_check",
+    "of_bsn_tlv_drop",
     "of_bsn_tlv_dscp",
     "of_bsn_tlv_eth_dst",
     "of_bsn_tlv_eth_src",

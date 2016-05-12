@@ -148,6 +148,10 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvDisableSrcMacCheck not supported in version 1.2");
     }
 
+    public OFBsnTlvDrop drop() {
+        throw new UnsupportedOperationException("OFBsnTlvDrop not supported in version 1.2");
+    }
+
     public OFBsnTlvDscp.Builder buildDscp() {
         throw new UnsupportedOperationException("OFBsnTlvDscp not supported in version 1.2");
     }

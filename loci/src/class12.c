@@ -6599,6 +6599,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x78:
             *id = OF_BSN_TLV_DISABLE_SRC_MAC_CHECK;
             break;
+        case 0x79:
+            *id = OF_BSN_TLV_DROP;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -6967,6 +6970,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x78:
             *id = OF_BSN_TLV_DISABLE_SRC_MAC_CHECK;
+            break;
+        case 0x79:
+            *id = OF_BSN_TLV_DROP;
             break;
         default:
             *id = OF_BSN_TLV;
@@ -10459,13 +10465,13 @@ of_bsn_tlv_disable_src_mac_check_init(of_object_t *obj,
 #include "loci_int.h"
 
 void
-of_bsn_tlv_dscp_push_wire_types(of_object_t *obj)
+of_bsn_tlv_drop_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x70); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x79); /* type */
         break;
     default:
         UNREACHABLE();
@@ -10475,11 +10481,11 @@ of_bsn_tlv_dscp_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_bsn_tlv_dscp of_bsn_tlv_dscp
+ * \defgroup of_bsn_tlv_drop of_bsn_tlv_drop
  */
 
 /**
- * Create a new of_bsn_tlv_dscp object
+ * Create a new of_bsn_tlv_drop object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -10487,30 +10493,30 @@ of_bsn_tlv_dscp_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_bsn_tlv_dscp
+ * \ingroup of_bsn_tlv_drop
  */
 
 of_object_t *
-of_bsn_tlv_dscp_new(of_version_t version)
+of_bsn_tlv_drop_new(of_version_t version)
 {
     of_object_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_DSCP];
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_DROP];
 
     if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_bsn_tlv_dscp_init(obj, version, bytes, 0);
-    of_bsn_tlv_dscp_push_wire_types(obj);
+    of_bsn_tlv_drop_init(obj, version, bytes, 0);
+    of_bsn_tlv_drop_push_wire_types(obj);
     of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
 
 /**
- * Initialize an object of type of_bsn_tlv_dscp.
+ * Initialize an object of type of_bsn_tlv_drop.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -10527,19 +10533,19 @@ of_bsn_tlv_dscp_new(of_version_t version)
  */
 
 void
-of_bsn_tlv_dscp_init(of_object_t *obj,
+of_bsn_tlv_drop_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_DSCP] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_DROP] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_DSCP];
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_DROP];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_DSCP;
+    obj->object_id = OF_BSN_TLV_DROP;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -10548,84 +10554,4 @@ of_bsn_tlv_dscp_init(of_object_t *obj,
         tot_bytes = bytes + obj->obj_offset;
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
-}
-
-/**
- * Get value from an object of type of_bsn_tlv_dscp.
- * @param obj Pointer to an object of type of_bsn_tlv_dscp.
- * @param value Pointer to the child object of type
- * uint16_t to be filled out.
- *
- */
-void
-of_bsn_tlv_dscp_value_get(
-    of_bsn_tlv_dscp_t *obj,
-    uint16_t *value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_DSCP);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_get(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set value in an object of type of_bsn_tlv_dscp.
- * @param obj Pointer to an object of type of_bsn_tlv_dscp.
- * @param value The value to write into the object
- */
-void
-of_bsn_tlv_dscp_value_set(
-    of_bsn_tlv_dscp_t *obj,
-    uint16_t value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_DSCP);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_set(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
 }
