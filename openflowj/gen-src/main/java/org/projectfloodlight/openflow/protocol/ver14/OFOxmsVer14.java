@@ -1318,14 +1318,14 @@ public class OFOxmsVer14 implements OFOxms {
     public OFOxmActsetOutput.Builder buildActsetOutput() {
         throw new UnsupportedOperationException("OFOxmActsetOutput not supported in version 1.4");
     }
-    public OFOxmActsetOutput actsetOutput(TransportPort value) {
+    public OFOxmActsetOutput actsetOutput(OFPort value) {
         throw new UnsupportedOperationException("OFOxmActsetOutput not supported in version 1.4");
     }
 
     public OFOxmActsetOutputMasked.Builder buildActsetOutputMasked() {
         throw new UnsupportedOperationException("OFOxmActsetOutputMasked not supported in version 1.4");
     }
-    public OFOxmActsetOutputMasked actsetOutputMasked(TransportPort value, TransportPort mask) {
+    public OFOxmActsetOutputMasked actsetOutputMasked(OFPort value, OFPort mask) {
         throw new UnsupportedOperationException("OFOxmActsetOutputMasked not supported in version 1.4");
     }
 
@@ -1501,7 +1501,7 @@ public class OFOxmsVer14 implements OFOxms {
             case PBB_UCA:
                 return (OFOxm<F>)((Object)pbbUca((OFBooleanValue)((Object)value)));
             case ACTSET_OUTPUT:
-                return (OFOxm<F>)((Object)actsetOutput((TransportPort)((Object)value)));
+                return (OFOxm<F>)((Object)actsetOutput((OFPort)((Object)value)));
             case PACKET_TYPE:
                 return (OFOxm<F>)((Object)packetType((PacketType)((Object)value)));
             case TCP_FLAGS:
@@ -1651,7 +1651,7 @@ public class OFOxmsVer14 implements OFOxms {
             case PBB_UCA:
                 return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case ACTSET_OUTPUT:
-                return (OFOxm<F>)((Object)actsetOutputMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
+                return (OFOxm<F>)((Object)actsetOutputMasked((OFPort)((Object)value), (OFPort)((Object)mask)));
             case PACKET_TYPE:
                 return (OFOxm<F>)((Object)packetTypeMasked((PacketType)((Object)value), (PacketType)((Object)mask)));
             case TCP_FLAGS:
@@ -1801,7 +1801,7 @@ public class OFOxmsVer14 implements OFOxms {
             case PBB_UCA:
                 return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case ACTSET_OUTPUT:
-                return (OFOxm<F>)((Object)actsetOutputMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
+                return (OFOxm<F>)((Object)actsetOutputMasked((OFPort)((Object)(masked.getValue())), (OFPort)((Object)(masked.getMask()))));
             case PACKET_TYPE:
                 return (OFOxm<F>)((Object)packetTypeMasked((PacketType)((Object)(masked.getValue())), (PacketType)((Object)(masked.getMask()))));
             case TCP_FLAGS:

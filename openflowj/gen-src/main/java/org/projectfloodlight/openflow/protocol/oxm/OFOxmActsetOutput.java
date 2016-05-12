@@ -27,28 +27,28 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
-public interface OFOxmActsetOutput extends OFObject, OFOxm<TransportPort> {
+public interface OFOxmActsetOutput extends OFObject, OFOxm<OFPort> {
     long getTypeLen();
-    TransportPort getValue();
-    MatchField<TransportPort> getMatchField();
+    OFPort getValue();
+    MatchField<OFPort> getMatchField();
     boolean isMasked();
-    OFOxm<TransportPort> getCanonical();
-    TransportPort getMask();
+    OFOxm<OFPort> getCanonical();
+    OFPort getMask();
     OFVersion getVersion();
 
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
-    public interface Builder extends OFOxm.Builder<TransportPort> {
+    public interface Builder extends OFOxm.Builder<OFPort> {
         OFOxmActsetOutput build();
         long getTypeLen();
-        TransportPort getValue();
-        Builder setValue(TransportPort value);
-        MatchField<TransportPort> getMatchField();
+        OFPort getValue();
+        Builder setValue(OFPort value);
+        MatchField<OFPort> getMatchField();
         boolean isMasked();
-        OFOxm<TransportPort> getCanonical();
-        TransportPort getMask();
+        OFOxm<OFPort> getCanonical();
+        OFPort getMask();
         OFVersion getVersion();
     }
 }
