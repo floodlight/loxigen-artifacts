@@ -8121,6 +8121,8 @@ fields['of13.bsn_tlv_decap.length'] = ProtoField.uint16("of13.bsn_tlv_decap.leng
 fields['of13.bsn_tlv_decap.value'] = ProtoField.uint32("of13.bsn_tlv_decap.value", "value", base.DEC, enum_v4_ofp_bsn_decap)
 fields['of13.bsn_tlv_disable_src_mac_check.type'] = ProtoField.uint16("of13.bsn_tlv_disable_src_mac_check.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_disable_src_mac_check.length'] = ProtoField.uint16("of13.bsn_tlv_disable_src_mac_check.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_drop.type'] = ProtoField.uint16("of13.bsn_tlv_drop.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_drop.length'] = ProtoField.uint16("of13.bsn_tlv_drop.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_dscp.type'] = ProtoField.uint16("of13.bsn_tlv_dscp.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_dscp.length'] = ProtoField.uint16("of13.bsn_tlv_dscp.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_dscp.value'] = ProtoField.uint16("of13.bsn_tlv_dscp.value", "value", base.DEC, nil)
@@ -10882,6 +10884,8 @@ fields['of14.bsn_tlv_decap.length'] = ProtoField.uint16("of14.bsn_tlv_decap.leng
 fields['of14.bsn_tlv_decap.value'] = ProtoField.uint32("of14.bsn_tlv_decap.value", "value", base.DEC, enum_v5_ofp_bsn_decap)
 fields['of14.bsn_tlv_disable_src_mac_check.type'] = ProtoField.uint16("of14.bsn_tlv_disable_src_mac_check.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_disable_src_mac_check.length'] = ProtoField.uint16("of14.bsn_tlv_disable_src_mac_check.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_drop.type'] = ProtoField.uint16("of14.bsn_tlv_drop.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_drop.length'] = ProtoField.uint16("of14.bsn_tlv_drop.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_dscp.type'] = ProtoField.uint16("of14.bsn_tlv_dscp.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_dscp.length'] = ProtoField.uint16("of14.bsn_tlv_dscp.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_dscp.value'] = ProtoField.uint16("of14.bsn_tlv_dscp.value", "value", base.DEC, nil)
@@ -13856,6 +13860,8 @@ fields['of15.bsn_tlv_decap.length'] = ProtoField.uint16("of15.bsn_tlv_decap.leng
 fields['of15.bsn_tlv_decap.value'] = ProtoField.uint32("of15.bsn_tlv_decap.value", "value", base.DEC, enum_v6_ofp_bsn_decap)
 fields['of15.bsn_tlv_disable_src_mac_check.type'] = ProtoField.uint16("of15.bsn_tlv_disable_src_mac_check.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_disable_src_mac_check.length'] = ProtoField.uint16("of15.bsn_tlv_disable_src_mac_check.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_drop.type'] = ProtoField.uint16("of15.bsn_tlv_drop.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_drop.length'] = ProtoField.uint16("of15.bsn_tlv_drop.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_dscp.type'] = ProtoField.uint16("of15.bsn_tlv_dscp.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_dscp.length'] = ProtoField.uint16("of15.bsn_tlv_dscp.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_dscp.value'] = ProtoField.uint16("of15.bsn_tlv_dscp.value", "value", base.DEC, nil)
@@ -20055,6 +20061,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_decap.value'],
     fields['of13.bsn_tlv_disable_src_mac_check.type'],
     fields['of13.bsn_tlv_disable_src_mac_check.length'],
+    fields['of13.bsn_tlv_drop.type'],
+    fields['of13.bsn_tlv_drop.length'],
     fields['of13.bsn_tlv_dscp.type'],
     fields['of13.bsn_tlv_dscp.length'],
     fields['of13.bsn_tlv_dscp.value'],
@@ -22816,6 +22824,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_decap.value'],
     fields['of14.bsn_tlv_disable_src_mac_check.type'],
     fields['of14.bsn_tlv_disable_src_mac_check.length'],
+    fields['of14.bsn_tlv_drop.type'],
+    fields['of14.bsn_tlv_drop.length'],
     fields['of14.bsn_tlv_dscp.type'],
     fields['of14.bsn_tlv_dscp.length'],
     fields['of14.bsn_tlv_dscp.value'],
@@ -25790,6 +25800,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_decap.value'],
     fields['of15.bsn_tlv_disable_src_mac_check.type'],
     fields['of15.bsn_tlv_disable_src_mac_check.length'],
+    fields['of15.bsn_tlv_drop.type'],
+    fields['of15.bsn_tlv_drop.length'],
     fields['of15.bsn_tlv_dscp.type'],
     fields['of15.bsn_tlv_dscp.length'],
     fields['of15.bsn_tlv_dscp.value'],
@@ -37415,6 +37427,15 @@ function dissect_of_bsn_tlv_disable_src_mac_check_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[120] = dissect_of_bsn_tlv_disable_src_mac_check_v4
 
+-- child class of_bsn_tlv_drop
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_drop_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_drop.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_drop.length')
+    return 'of_bsn_tlv_drop'
+end
+of_bsn_tlv_v4_dissectors[121] = dissect_of_bsn_tlv_drop_v4
+
 -- child class of_bsn_tlv_dscp
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_dscp_v4(reader, subtree)
@@ -44726,6 +44747,15 @@ function dissect_of_bsn_tlv_disable_src_mac_check_v5(reader, subtree)
     return 'of_bsn_tlv_disable_src_mac_check'
 end
 of_bsn_tlv_v5_dissectors[120] = dissect_of_bsn_tlv_disable_src_mac_check_v5
+
+-- child class of_bsn_tlv_drop
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_drop_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_drop.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_drop.length')
+    return 'of_bsn_tlv_drop'
+end
+of_bsn_tlv_v5_dissectors[121] = dissect_of_bsn_tlv_drop_v5
 
 -- child class of_bsn_tlv_dscp
 -- Child of of_bsn_tlv
@@ -52549,6 +52579,15 @@ function dissect_of_bsn_tlv_disable_src_mac_check_v6(reader, subtree)
     return 'of_bsn_tlv_disable_src_mac_check'
 end
 of_bsn_tlv_v6_dissectors[120] = dissect_of_bsn_tlv_disable_src_mac_check_v6
+
+-- child class of_bsn_tlv_drop
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_drop_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_drop.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_drop.length')
+    return 'of_bsn_tlv_drop'
+end
+of_bsn_tlv_v6_dissectors[121] = dissect_of_bsn_tlv_drop_v6
 
 -- child class of_bsn_tlv_dscp
 -- Child of of_bsn_tlv
