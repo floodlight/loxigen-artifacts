@@ -1,1 +1,1 @@
-55bc3daa3eb2fd99c461d4454ce547e7a8d96a2e Merge into master from pull request #488: Add drop tlv (https://github.com/floodlight/loxigen/pull/488)
+bbd08a0ba812425e7310286dc0692baae3a24d7b Merge into master from pull request #487: ACTSET_OUTPUT OXM should be type OFPort, not TransportPort (https://github.com/floodlight/loxigen/pull/487)

@@ -302,9 +302,9 @@ public interface OFOxms {
     OFOxmPbbUcaMasked.Builder buildPbbUcaMasked() throws UnsupportedOperationException;
     OFOxmPbbUcaMasked pbbUcaMasked(OFBooleanValue value, OFBooleanValue mask);
     OFOxmActsetOutput.Builder buildActsetOutput() throws UnsupportedOperationException;
-    OFOxmActsetOutput actsetOutput(TransportPort value);
+    OFOxmActsetOutput actsetOutput(OFPort value);
     OFOxmActsetOutputMasked.Builder buildActsetOutputMasked() throws UnsupportedOperationException;
-    OFOxmActsetOutputMasked actsetOutputMasked(TransportPort value, TransportPort mask);
+    OFOxmActsetOutputMasked actsetOutputMasked(OFPort value, OFPort mask);
     OFOxmPacketType.Builder buildPacketType() throws UnsupportedOperationException;
     OFOxmPacketType packetType(PacketType value);
     OFOxmPacketTypeMasked.Builder buildPacketTypeMasked() throws UnsupportedOperationException;

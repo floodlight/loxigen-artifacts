@@ -15058,8 +15058,8 @@ fields['of15.nicira_header.subtype'] = ProtoField.uint32("of15.nicira_header.sub
 fields['of15.oxm_actset_output.type_len'] = ProtoField.uint32("of15.oxm_actset_output.type_len", "type_len", base.DEC, nil)
 fields['of15.oxm_actset_output.value'] = ProtoField.uint8("of15.oxm_actset_output.value", "value", base.DEC, nil)
 fields['of15.oxm_actset_output_masked.type_len'] = ProtoField.uint32("of15.oxm_actset_output_masked.type_len", "type_len", base.DEC, nil)
-fields['of15.oxm_actset_output_masked.value'] = ProtoField.uint8("of15.oxm_actset_output_masked.value", "value", base.DEC, nil)
-fields['of15.oxm_actset_output_masked.value_mask'] = ProtoField.uint8("of15.oxm_actset_output_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_actset_output_masked.value'] = ProtoField.uint32("of15.oxm_actset_output_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_actset_output_masked.value_mask'] = ProtoField.uint32("of15.oxm_actset_output_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of15.oxm_arp_op.type_len'] = ProtoField.uint32("of15.oxm_arp_op.type_len", "type_len", base.DEC, nil)
 fields['of15.oxm_arp_op.value'] = ProtoField.uint16("of15.oxm_arp_op.value", "value", base.DEC, nil)
 fields['of15.oxm_arp_op_masked.type_len'] = ProtoField.uint32("of15.oxm_arp_op_masked.type_len", "type_len", base.DEC, nil)
@@ -55681,8 +55681,8 @@ of_oxm_v6_dissectors[2147505668] = dissect_of_oxm_actset_output_v6
 -- Child of of_oxm
 function dissect_of_oxm_actset_output_masked_v6(reader, subtree)
     read_uint32_t(reader, 6, subtree, 'of15.oxm_actset_output_masked.type_len')
-    read_uint8_t(reader, 6, subtree, 'of15.oxm_actset_output_masked.value')
-    read_uint8_t(reader, 6, subtree, 'of15.oxm_actset_output_masked.value_mask')
+    read_of_port_no_t(reader, 6, subtree, 'of15.oxm_actset_output_masked.value')
+    read_of_port_no_t(reader, 6, subtree, 'of15.oxm_actset_output_masked.value_mask')
     return 'of_oxm_actset_output_masked'
 end
 of_oxm_v6_dissectors[2147505928] = dissect_of_oxm_actset_output_masked_v6

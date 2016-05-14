@@ -36,14 +36,14 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
     private static final Logger logger = LoggerFactory.getLogger(OFOxmActsetOutputMaskedVer15.class);
     // version: 1.5
     final static byte WIRE_VERSION = 6;
-    final static int LENGTH = 6;
+    final static int LENGTH = 12;
 
-        private final static TransportPort DEFAULT_VALUE = TransportPort.NONE;
-        private final static TransportPort DEFAULT_VALUE_MASK = TransportPort.NONE;
+        private final static OFPort DEFAULT_VALUE = OFPort.ANY;
+        private final static OFPort DEFAULT_VALUE_MASK = OFPort.ANY;
 
     // OF message fields
-    private final TransportPort value;
-    private final TransportPort mask;
+    private final OFPort value;
+    private final OFPort mask;
 //
     // Immutable default instance
     final static OFOxmActsetOutputMaskedVer15 DEFAULT = new OFOxmActsetOutputMaskedVer15(
@@ -51,7 +51,7 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFOxmActsetOutputMaskedVer15(TransportPort value, TransportPort mask) {
+    OFOxmActsetOutputMaskedVer15(OFPort value, OFPort mask) {
         if(value == null) {
             throw new NullPointerException("OFOxmActsetOutputMaskedVer15: property value cannot be null");
         }
@@ -69,17 +69,17 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
     }
 
     @Override
-    public TransportPort getValue() {
+    public OFPort getValue() {
         return value;
     }
 
     @Override
-    public TransportPort getMask() {
+    public OFPort getMask() {
         return mask;
     }
 
     @Override
-    public MatchField<TransportPort> getMatchField() {
+    public MatchField<OFPort> getMatchField() {
         return MatchField.ACTSET_OUTPUT;
     }
 
@@ -88,10 +88,10 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
         return true;
     }
 
-    public OFOxm<TransportPort> getCanonical() {
-        if (TransportPort.NO_MASK.equals(mask)) {
+    public OFOxm<OFPort> getCanonical() {
+        if (OFPort.NO_MASK.equals(mask)) {
             return new OFOxmActsetOutputVer15(value);
-        } else if(TransportPort.FULL_MASK.equals(mask)) {
+        } else if(OFPort.FULL_MASK.equals(mask)) {
             return null;
         } else {
             return this;
@@ -114,9 +114,9 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
 
         // OF message fields
         private boolean valueSet;
-        private TransportPort value;
+        private OFPort value;
         private boolean maskSet;
-        private TransportPort mask;
+        private OFPort mask;
 
         BuilderWithParent(OFOxmActsetOutputMaskedVer15 parentMessage) {
             this.parentMessage = parentMessage;
@@ -128,29 +128,29 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
     }
 
     @Override
-    public TransportPort getValue() {
+    public OFPort getValue() {
         return value;
     }
 
     @Override
-    public OFOxmActsetOutputMasked.Builder setValue(TransportPort value) {
+    public OFOxmActsetOutputMasked.Builder setValue(OFPort value) {
         this.value = value;
         this.valueSet = true;
         return this;
     }
     @Override
-    public TransportPort getMask() {
+    public OFPort getMask() {
         return mask;
     }
 
     @Override
-    public OFOxmActsetOutputMasked.Builder setMask(TransportPort mask) {
+    public OFOxmActsetOutputMasked.Builder setMask(OFPort mask) {
         this.mask = mask;
         this.maskSet = true;
         return this;
     }
     @Override
-    public MatchField<TransportPort> getMatchField() {
+    public MatchField<OFPort> getMatchField() {
         return MatchField.ACTSET_OUTPUT;
     }
 
@@ -160,7 +160,7 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
     }
 
     @Override
-    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
+    public OFOxm<OFPort> getCanonical()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
@@ -173,10 +173,10 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
 
         @Override
         public OFOxmActsetOutputMasked build() {
-                TransportPort value = this.valueSet ? this.value : parentMessage.value;
+                OFPort value = this.valueSet ? this.value : parentMessage.value;
                 if(value == null)
                     throw new NullPointerException("Property value must not be null");
-                TransportPort mask = this.maskSet ? this.mask : parentMessage.mask;
+                OFPort mask = this.maskSet ? this.mask : parentMessage.mask;
                 if(mask == null)
                     throw new NullPointerException("Property mask must not be null");
 
@@ -192,9 +192,9 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
     static class Builder implements OFOxmActsetOutputMasked.Builder {
         // OF message fields
         private boolean valueSet;
-        private TransportPort value;
+        private OFPort value;
         private boolean maskSet;
-        private TransportPort mask;
+        private OFPort mask;
 
     @Override
     public long getTypeLen() {
@@ -202,29 +202,29 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
     }
 
     @Override
-    public TransportPort getValue() {
+    public OFPort getValue() {
         return value;
     }
 
     @Override
-    public OFOxmActsetOutputMasked.Builder setValue(TransportPort value) {
+    public OFOxmActsetOutputMasked.Builder setValue(OFPort value) {
         this.value = value;
         this.valueSet = true;
         return this;
     }
     @Override
-    public TransportPort getMask() {
+    public OFPort getMask() {
         return mask;
     }
 
     @Override
-    public OFOxmActsetOutputMasked.Builder setMask(TransportPort mask) {
+    public OFOxmActsetOutputMasked.Builder setMask(OFPort mask) {
         this.mask = mask;
         this.maskSet = true;
         return this;
     }
     @Override
-    public MatchField<TransportPort> getMatchField() {
+    public MatchField<OFPort> getMatchField() {
         return MatchField.ACTSET_OUTPUT;
     }
 
@@ -234,7 +234,7 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
     }
 
     @Override
-    public OFOxm<TransportPort> getCanonical()throws UnsupportedOperationException {
+    public OFOxm<OFPort> getCanonical()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property canonical not supported in version 1.5");
     }
 
@@ -246,10 +246,10 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
 //
         @Override
         public OFOxmActsetOutputMasked build() {
-            TransportPort value = this.valueSet ? this.value : DEFAULT_VALUE;
+            OFPort value = this.valueSet ? this.value : DEFAULT_VALUE;
             if(value == null)
                 throw new NullPointerException("Property value must not be null");
-            TransportPort mask = this.maskSet ? this.mask : DEFAULT_VALUE_MASK;
+            OFPort mask = this.maskSet ? this.mask : DEFAULT_VALUE_MASK;
             if(mask == null)
                 throw new NullPointerException("Property mask must not be null");
 
@@ -271,8 +271,8 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80005708)
                 throw new OFParseError("Wrong typeLen: Expected=0x80005708L(0x80005708L), got="+typeLen);
-            TransportPort value = TransportPort.read2Bytes(bb);
-            TransportPort mask = TransportPort.read2Bytes(bb);
+            OFPort value = OFPort.read4Bytes(bb);
+            OFPort mask = OFPort.read4Bytes(bb);
 
             OFOxmActsetOutputMaskedVer15 oxmActsetOutputMaskedVer15 = new OFOxmActsetOutputMaskedVer15(
                     value,
@@ -311,8 +311,8 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
         public void write(ByteBuf bb, OFOxmActsetOutputMaskedVer15 message) {
             // fixed value property typeLen = 0x80005708L
             bb.writeInt((int) 0x80005708);
-            message.value.write2Bytes(bb);
-            message.mask.write2Bytes(bb);
+            message.value.write4Bytes(bb);
+            message.mask.write4Bytes(bb);
 
 
         }

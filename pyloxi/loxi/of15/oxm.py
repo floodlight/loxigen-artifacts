@@ -113,8 +113,8 @@ class actset_output_masked(oxm):
     def pack(self):
         packed = []
         packed.append(struct.pack("!L", self.type_len))
-        packed.append(struct.pack("!B", self.value))
-        packed.append(struct.pack("!B", self.value_mask))
+        packed.append(util.pack_port_no(self.value))
+        packed.append(util.pack_port_no(self.value_mask))
         return ''.join(packed)
 
     @staticmethod
@@ -122,8 +122,8 @@ class actset_output_masked(oxm):
         obj = actset_output_masked()
         _type_len = reader.read("!L")[0]
         assert(_type_len == 2147505928)
-        obj.value = reader.read("!B")[0]
-        obj.value_mask = reader.read("!B")[0]
+        obj.value = util.unpack_port_no(reader)
+        obj.value_mask = util.unpack_port_no(reader)
         return obj
 
     def __eq__(self, other):
@@ -138,10 +138,10 @@ class actset_output_masked(oxm):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.text("%#x" % self.value)
+                q.text(util.pretty_port(self.value))
                 q.text(","); q.breakable()
                 q.text("value_mask = ");
-                q.text("%#x" % self.value_mask)
+                q.text(util.pretty_port(self.value_mask))
             q.breakable()
         q.text('}')
 
