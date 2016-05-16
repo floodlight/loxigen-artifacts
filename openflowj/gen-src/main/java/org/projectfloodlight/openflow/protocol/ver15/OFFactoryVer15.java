@@ -1382,11 +1382,11 @@ public class OFFactoryVer15 implements OFFactory {
     }
 
     public OFTableFeaturesStatsReply.Builder buildTableFeaturesStatsReply() {
-        throw new UnsupportedOperationException("OFTableFeaturesStatsReply not supported in version 1.5");
+        return new OFTableFeaturesStatsReplyVer15.Builder().setXid(nextXid());
     }
 
     public OFTableFeaturesStatsRequest.Builder buildTableFeaturesStatsRequest() {
-        throw new UnsupportedOperationException("OFTableFeaturesStatsRequest not supported in version 1.5");
+        return new OFTableFeaturesStatsRequestVer15.Builder().setXid(nextXid());
     }
 
     public OFUint64.Builder buildUint64() {
@@ -1923,14 +1923,6 @@ public class OFFactoryVer15 implements OFFactory {
         return new OFTableFeaturePropWriteCopyfieldMissVer15(
                 oxmIds
                     );
-    }
-
-    public OFTableFeatureStatsReply.Builder buildTableFeatureStatsReply() {
-        return new OFTableFeatureStatsReplyVer15.Builder().setXid(nextXid());
-    }
-
-    public OFTableFeatureStatsRequest.Builder buildTableFeatureStatsRequest() {
-        return new OFTableFeatureStatsRequestVer15.Builder().setXid(nextXid());
     }
 
     public OFActionCopyField.Builder buildActionCopyField() {
