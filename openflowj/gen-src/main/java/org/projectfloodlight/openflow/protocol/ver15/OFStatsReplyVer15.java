@@ -98,6 +98,9 @@ abstract class OFStatsReplyVer15 {
                case (short) 0xd:
                    // discriminator value OFStatsType.PORT_DESC=13 for class OFPortDescStatsReplyVer15
                    return OFPortDescStatsReplyVer15.READER.readFrom(bb);
+               case (short) 0xc:
+                   // discriminator value OFStatsType.TABLE_FEATURES=12 for class OFTableFeaturesStatsReplyVer15
+                   return OFTableFeaturesStatsReplyVer15.READER.readFrom(bb);
                case (short) 0xf:
                    // discriminator value OFStatsType.QUEUE_DESC=15 for class OFQueueDescStatsReplyVer15
                    return OFQueueDescStatsReplyVer15.READER.readFrom(bb);
@@ -116,9 +119,6 @@ abstract class OFStatsReplyVer15 {
                case (short) 0x11:
                    // discriminator value OFStatsType.FLOW_STATS=17 for class OFIndividualFlowStatsReplyVer15
                    return OFIndividualFlowStatsReplyVer15.READER.readFrom(bb);
-               case (short) 0xc:
-                   // discriminator value OFStatsType.TABLE_FEATURES=12 for class OFTableFeatureStatsReplyVer15
-                   return OFTableFeatureStatsReplyVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator statsType of class OFStatsReplyVer15: " + statsType);
             }

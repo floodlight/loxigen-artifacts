@@ -1878,14 +1878,6 @@ public class OFFactoryVer14 implements OFFactory {
         throw new UnsupportedOperationException("OFTableFeaturePropWriteCopyfieldMiss not supported in version 1.4");
     }
 
-    public OFTableFeatureStatsReply.Builder buildTableFeatureStatsReply() {
-        throw new UnsupportedOperationException("OFTableFeatureStatsReply not supported in version 1.4");
-    }
-
-    public OFTableFeatureStatsRequest.Builder buildTableFeatureStatsRequest() {
-        throw new UnsupportedOperationException("OFTableFeatureStatsRequest not supported in version 1.4");
-    }
-
     public OFActionCopyField.Builder buildActionCopyField() {
         throw new UnsupportedOperationException("OFActionCopyField not supported in version 1.4");
     }

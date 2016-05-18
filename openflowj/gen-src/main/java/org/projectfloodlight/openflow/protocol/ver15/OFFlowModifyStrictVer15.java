@@ -31,6 +31,7 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
+import java.util.Collections;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -203,11 +204,17 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
         return instructions;
     }
 
+
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.5");
+        for (OFInstruction inst : this.instructions) {
+            if (inst instanceof OFInstructionApplyActions) {
+                OFInstructionApplyActions iap = (OFInstructionApplyActions)inst;
+                return iap.getActions();
+            }
+        }
+        return Collections.emptyList();
     }
-
     @Override
     public int getImportance() {
         return importance;
@@ -414,15 +421,29 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
         this.instructionsSet = true;
         return this;
     }
+
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.5");
+        if (!this.instructionsSet)
+            return parentMessage.getActions();
+        for (OFInstruction inst : this.instructions) {
+            if (inst instanceof OFInstructionApplyActions) {
+                OFInstructionApplyActions iap = (OFInstructionApplyActions)inst;
+                return iap.getActions();
+            }
+        }
+        return Collections.emptyList();
     }
 
     @Override
     public OFFlowModifyStrict.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.5");
+        OFInstructionApplyActionsVer15.Builder builder = new OFInstructionApplyActionsVer15.Builder();
+        builder.setActions(actions);
+        this.instructions = Collections.singletonList((OFInstruction)builder.build());
+        this.instructionsSet = true;
+        return this;
     }
+
     @Override
     public int getImportance() {
         return importance;
@@ -681,15 +702,29 @@ class OFFlowModifyStrictVer15 implements OFFlowModifyStrict {
         this.instructionsSet = true;
         return this;
     }
+
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.5");
+        if (!this.instructionsSet)
+            return Collections.emptyList();
+        for (OFInstruction inst : this.instructions) {
+            if (inst instanceof OFInstructionApplyActions) {
+                OFInstructionApplyActions iap = (OFInstructionApplyActions)inst;
+                return iap.getActions();
+            }
+        }
+        return Collections.emptyList();
     }
 
     @Override
     public OFFlowModifyStrict.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property actions not supported in version 1.5");
+        OFInstructionApplyActionsVer15.Builder builder = new OFInstructionApplyActionsVer15.Builder();
+        builder.setActions(actions);
+        this.instructions = Collections.singletonList((OFInstruction)builder.build());
+        this.instructionsSet = true;
+        return this;
     }
+
     @Override
     public int getImportance() {
         return importance;
