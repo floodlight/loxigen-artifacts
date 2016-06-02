@@ -566,6 +566,8 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                 builder.add(MatchField.TCP_SRC);
             } else if (ipProto == IpProtocol.SCTP) {
                 builder.add(MatchField.SCTP_SRC);
+            } else if (ipProto == IpProtocol.ICMP) {
+                builder.add(MatchField.ICMPV4_TYPE);
             } else {
                 throw new UnsupportedOperationException(
                         "Unsupported IP protocol for matching on source port " + ipProto);
@@ -578,6 +580,8 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                 builder.add(MatchField.TCP_DST);
             } else if (ipProto == IpProtocol.SCTP) {
                 builder.add(MatchField.SCTP_DST);
+            } else if (ipProto == IpProtocol.ICMP) {
+                builder.add(MatchField.ICMPV4_CODE);
             } else {
                 throw new UnsupportedOperationException(
                         "Unsupported IP protocol for matching on destination port " + ipProto);
