@@ -433,6 +433,7 @@ class OFPortStatsPropEthernetVer15 implements OFPortStatsPropEthernet {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

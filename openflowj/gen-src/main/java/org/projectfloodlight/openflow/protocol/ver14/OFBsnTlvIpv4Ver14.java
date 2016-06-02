@@ -260,6 +260,7 @@ class OFBsnTlvIpv4Ver14 implements OFBsnTlvIpv4 {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -260,6 +260,7 @@ class OFBsnTlvExternalIpVer14 implements OFBsnTlvExternalIp {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

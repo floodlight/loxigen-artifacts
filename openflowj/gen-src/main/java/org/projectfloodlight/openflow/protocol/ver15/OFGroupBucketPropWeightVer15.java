@@ -255,6 +255,7 @@ class OFGroupBucketPropWeightVer15 implements OFGroupBucketPropWeight {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -267,6 +267,7 @@ class OFTableFeaturePropWriteCopyfieldVer15 implements OFTableFeaturePropWriteCo
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

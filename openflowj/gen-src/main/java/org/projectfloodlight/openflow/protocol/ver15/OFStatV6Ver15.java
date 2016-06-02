@@ -406,6 +406,7 @@ class OFStatV6Ver15 implements OFStatV6 {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

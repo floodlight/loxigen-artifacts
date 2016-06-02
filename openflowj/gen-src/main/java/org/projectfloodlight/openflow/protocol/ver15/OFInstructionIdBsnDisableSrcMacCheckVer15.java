@@ -174,6 +174,7 @@ class OFInstructionIdBsnDisableSrcMacCheckVer15 implements OFInstructionIdBsnDis
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

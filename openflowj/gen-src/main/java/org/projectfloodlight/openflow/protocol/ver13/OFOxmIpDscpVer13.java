@@ -305,6 +305,7 @@ class OFOxmIpDscpVer13 implements OFOxmIpDscp {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

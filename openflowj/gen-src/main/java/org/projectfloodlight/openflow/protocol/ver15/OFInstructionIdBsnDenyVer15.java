@@ -174,6 +174,7 @@ class OFInstructionIdBsnDenyVer15 implements OFInstructionIdBsnDeny {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

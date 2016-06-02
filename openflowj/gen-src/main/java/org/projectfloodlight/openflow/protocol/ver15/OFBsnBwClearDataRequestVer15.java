@@ -304,6 +304,19 @@ class OFBsnBwClearDataRequestVer15 implements OFBsnBwClearDataRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnBwClearDataRequestVer15 other = (OFBsnBwClearDataRequestVer15) obj;
+
+        // ignore XID
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -174,6 +174,7 @@ class OFInstructionIdBsnPermitVer13 implements OFInstructionIdBsnPermit {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

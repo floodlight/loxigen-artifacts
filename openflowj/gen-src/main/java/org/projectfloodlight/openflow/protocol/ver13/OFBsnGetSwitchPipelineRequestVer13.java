@@ -304,6 +304,19 @@ class OFBsnGetSwitchPipelineRequestVer13 implements OFBsnGetSwitchPipelineReques
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnGetSwitchPipelineRequestVer13 other = (OFBsnGetSwitchPipelineRequestVer13) obj;
+
+        // ignore XID
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

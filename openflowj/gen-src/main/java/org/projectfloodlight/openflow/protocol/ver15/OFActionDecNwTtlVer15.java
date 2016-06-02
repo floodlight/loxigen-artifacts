@@ -153,6 +153,7 @@ class OFActionDecNwTtlVer15 implements OFActionDecNwTtl {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

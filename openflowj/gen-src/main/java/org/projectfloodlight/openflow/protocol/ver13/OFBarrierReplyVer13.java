@@ -258,6 +258,19 @@ class OFBarrierReplyVer13 implements OFBarrierReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBarrierReplyVer13 other = (OFBarrierReplyVer13) obj;
+
+        // ignore XID
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

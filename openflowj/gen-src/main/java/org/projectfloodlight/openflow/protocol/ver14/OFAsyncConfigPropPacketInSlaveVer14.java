@@ -250,6 +250,7 @@ class OFAsyncConfigPropPacketInSlaveVer14 implements OFAsyncConfigPropPacketInSl
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

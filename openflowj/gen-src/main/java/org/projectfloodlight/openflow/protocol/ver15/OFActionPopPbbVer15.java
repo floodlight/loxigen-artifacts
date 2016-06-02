@@ -153,6 +153,7 @@ class OFActionPopPbbVer15 implements OFActionPopPbb {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

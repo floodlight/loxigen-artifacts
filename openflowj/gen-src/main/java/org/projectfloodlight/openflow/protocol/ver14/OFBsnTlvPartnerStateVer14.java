@@ -261,6 +261,7 @@ class OFBsnTlvPartnerStateVer14 implements OFBsnTlvPartnerState {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

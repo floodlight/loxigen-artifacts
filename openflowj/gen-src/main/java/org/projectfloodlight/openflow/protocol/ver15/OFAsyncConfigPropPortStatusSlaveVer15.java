@@ -250,6 +250,7 @@ class OFAsyncConfigPropPortStatusSlaveVer15 implements OFAsyncConfigPropPortStat
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

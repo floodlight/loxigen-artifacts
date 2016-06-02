@@ -179,6 +179,7 @@ class OFInstructionBsnDisableVlanCountersVer13 implements OFInstructionBsnDisabl
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

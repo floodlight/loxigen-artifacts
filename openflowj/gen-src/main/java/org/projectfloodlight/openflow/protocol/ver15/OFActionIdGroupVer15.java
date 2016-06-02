@@ -148,6 +148,7 @@ class OFActionIdGroupVer15 implements OFActionIdGroup {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

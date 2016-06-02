@@ -311,6 +311,7 @@ class OFActionEnqueueVer10 implements OFActionEnqueue {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

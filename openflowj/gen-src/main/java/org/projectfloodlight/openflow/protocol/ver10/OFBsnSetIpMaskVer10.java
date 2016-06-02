@@ -401,6 +401,23 @@ class OFBsnSetIpMaskVer10 implements OFBsnSetIpMask {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnSetIpMaskVer10 other = (OFBsnSetIpMaskVer10) obj;
+
+        // ignore XID
+        if( index != other.index)
+            return false;
+        if( mask != other.mask)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

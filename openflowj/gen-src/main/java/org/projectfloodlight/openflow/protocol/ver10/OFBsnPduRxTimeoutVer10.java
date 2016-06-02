@@ -406,6 +406,26 @@ class OFBsnPduRxTimeoutVer10 implements OFBsnPduRxTimeout {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnPduRxTimeoutVer10 other = (OFBsnPduRxTimeoutVer10) obj;
+
+        // ignore XID
+        if (portNo == null) {
+            if (other.portNo != null)
+                return false;
+        } else if (!portNo.equals(other.portNo))
+            return false;
+        if( slotNum != other.slotNum)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

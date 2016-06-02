@@ -148,6 +148,7 @@ class OFInstructionIdClearActionsVer13 implements OFInstructionIdClearActions {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

@@ -255,6 +255,7 @@ class OFActionSetNwTosVer10 implements OFActionSetNwTos {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

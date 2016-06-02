@@ -355,6 +355,21 @@ class OFBsnGetIpMaskRequestVer10 implements OFBsnGetIpMaskRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnGetIpMaskRequestVer10 other = (OFBsnGetIpMaskRequestVer10) obj;
+
+        // ignore XID
+        if( index != other.index)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

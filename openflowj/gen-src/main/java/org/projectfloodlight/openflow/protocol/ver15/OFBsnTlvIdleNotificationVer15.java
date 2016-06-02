@@ -148,6 +148,7 @@ class OFBsnTlvIdleNotificationVer15 implements OFBsnTlvIdleNotification {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

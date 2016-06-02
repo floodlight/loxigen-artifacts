@@ -452,6 +452,28 @@ class OFBsnPduRxReplyVer12 implements OFBsnPduRxReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnPduRxReplyVer12 other = (OFBsnPduRxReplyVer12) obj;
+
+        // ignore XID
+        if( status != other.status)
+            return false;
+        if (portNo == null) {
+            if (other.portNo != null)
+                return false;
+        } else if (!portNo.equals(other.portNo))
+            return false;
+        if( slotNum != other.slotNum)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

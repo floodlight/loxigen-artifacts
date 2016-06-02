@@ -222,6 +222,7 @@ class OFBsnGentableBucketStatsEntryVer15 implements OFBsnGentableBucketStatsEntr
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

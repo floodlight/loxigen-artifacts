@@ -148,6 +148,7 @@ class OFInstructionIdMeterVer13 implements OFInstructionIdMeter {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

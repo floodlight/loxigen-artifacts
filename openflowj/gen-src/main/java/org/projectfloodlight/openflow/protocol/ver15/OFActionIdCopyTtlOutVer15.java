@@ -148,6 +148,7 @@ class OFActionIdCopyTtlOutVer15 implements OFActionIdCopyTtlOut {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

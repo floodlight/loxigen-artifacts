@@ -153,6 +153,7 @@ class OFInstructionClearActionsVer14 implements OFInstructionClearActions {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

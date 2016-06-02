@@ -351,6 +351,7 @@ class OFOxmIpv6FlabelMaskedVer13 implements OFOxmIpv6FlabelMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

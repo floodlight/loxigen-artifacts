@@ -878,6 +878,55 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFFlowDeleteVer10 other = (OFFlowDeleteVer10) obj;
+
+        // ignore XID
+        if (match == null) {
+            if (other.match != null)
+                return false;
+        } else if (!match.equals(other.match))
+            return false;
+        if (cookie == null) {
+            if (other.cookie != null)
+                return false;
+        } else if (!cookie.equals(other.cookie))
+            return false;
+        if( idleTimeout != other.idleTimeout)
+            return false;
+        if( hardTimeout != other.hardTimeout)
+            return false;
+        if( priority != other.priority)
+            return false;
+        if (bufferId == null) {
+            if (other.bufferId != null)
+                return false;
+        } else if (!bufferId.equals(other.bufferId))
+            return false;
+        if (outPort == null) {
+            if (other.outPort != null)
+                return false;
+        } else if (!outPort.equals(other.outPort))
+            return false;
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (actions == null) {
+            if (other.actions != null)
+                return false;
+        } else if (!actions.equals(other.actions))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

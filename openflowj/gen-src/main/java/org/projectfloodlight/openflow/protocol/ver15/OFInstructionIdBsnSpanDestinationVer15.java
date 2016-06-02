@@ -174,6 +174,7 @@ class OFInstructionIdBsnSpanDestinationVer15 implements OFInstructionIdBsnSpanDe
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

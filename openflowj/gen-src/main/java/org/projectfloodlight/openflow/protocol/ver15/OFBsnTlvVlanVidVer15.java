@@ -260,6 +260,7 @@ class OFBsnTlvVlanVidVer15 implements OFBsnTlvVlanVid {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

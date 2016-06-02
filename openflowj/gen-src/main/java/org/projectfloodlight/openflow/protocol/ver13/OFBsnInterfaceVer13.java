@@ -395,6 +395,7 @@ class OFBsnInterfaceVer13 implements OFBsnInterface {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

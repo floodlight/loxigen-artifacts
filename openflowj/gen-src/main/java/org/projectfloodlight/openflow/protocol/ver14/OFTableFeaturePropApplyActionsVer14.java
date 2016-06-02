@@ -272,6 +272,7 @@ class OFTableFeaturePropApplyActionsVer14 implements OFTableFeaturePropApplyActi
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

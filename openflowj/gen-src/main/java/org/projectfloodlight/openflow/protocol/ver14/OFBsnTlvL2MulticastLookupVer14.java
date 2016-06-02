@@ -148,6 +148,7 @@ class OFBsnTlvL2MulticastLookupVer14 implements OFBsnTlvL2MulticastLookup {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

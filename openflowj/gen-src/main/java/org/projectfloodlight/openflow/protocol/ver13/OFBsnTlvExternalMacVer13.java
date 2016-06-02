@@ -260,6 +260,7 @@ class OFBsnTlvExternalMacVer13 implements OFBsnTlvExternalMac {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

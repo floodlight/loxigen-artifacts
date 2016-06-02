@@ -260,6 +260,7 @@ class OFBsnTlvParentPortVer13 implements OFBsnTlvParentPort {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

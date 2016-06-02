@@ -233,6 +233,7 @@ class OFFlowMonitorReplyEntryVer15 implements OFFlowMonitorReplyEntry {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

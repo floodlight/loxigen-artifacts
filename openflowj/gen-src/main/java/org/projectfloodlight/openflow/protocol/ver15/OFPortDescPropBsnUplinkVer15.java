@@ -174,6 +174,7 @@ class OFPortDescPropBsnUplinkVer15 implements OFPortDescPropBsnUplink {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

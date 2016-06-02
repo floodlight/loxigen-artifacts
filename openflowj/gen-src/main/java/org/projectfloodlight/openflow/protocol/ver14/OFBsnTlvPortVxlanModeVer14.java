@@ -256,6 +256,7 @@ class OFBsnTlvPortVxlanModeVer14 implements OFBsnTlvPortVxlanMode {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

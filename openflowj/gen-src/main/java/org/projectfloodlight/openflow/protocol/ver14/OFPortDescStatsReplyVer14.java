@@ -429,6 +429,29 @@ class OFPortDescStatsReplyVer14 implements OFPortDescStatsReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFPortDescStatsReplyVer14 other = (OFPortDescStatsReplyVer14) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (entries == null) {
+            if (other.entries != null)
+                return false;
+        } else if (!entries.equals(other.entries))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

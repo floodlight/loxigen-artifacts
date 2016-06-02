@@ -351,6 +351,7 @@ class OFOxmEthTypeMaskedVer13 implements OFOxmEthTypeMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

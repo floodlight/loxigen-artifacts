@@ -673,6 +673,7 @@ class OFMatchV3Ver15 implements OFMatchV3 {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

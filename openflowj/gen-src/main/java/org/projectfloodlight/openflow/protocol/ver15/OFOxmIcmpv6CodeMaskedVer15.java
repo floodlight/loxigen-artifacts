@@ -351,6 +351,7 @@ class OFOxmIcmpv6CodeMaskedVer15 implements OFOxmIcmpv6CodeMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

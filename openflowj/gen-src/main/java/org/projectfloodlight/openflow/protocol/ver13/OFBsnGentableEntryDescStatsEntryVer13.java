@@ -366,6 +366,7 @@ class OFBsnGentableEntryDescStatsEntryVer13 implements OFBsnGentableEntryDescSta
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

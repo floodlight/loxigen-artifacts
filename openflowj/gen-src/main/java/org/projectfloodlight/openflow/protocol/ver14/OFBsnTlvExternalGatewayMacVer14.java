@@ -260,6 +260,7 @@ class OFBsnTlvExternalGatewayMacVer14 implements OFBsnTlvExternalGatewayMac {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

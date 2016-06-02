@@ -351,6 +351,7 @@ class OFOxmBsnUdf2MaskedVer12 implements OFOxmBsnUdf2Masked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

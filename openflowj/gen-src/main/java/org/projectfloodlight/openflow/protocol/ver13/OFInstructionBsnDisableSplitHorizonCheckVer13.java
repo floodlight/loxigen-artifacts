@@ -179,6 +179,7 @@ class OFInstructionBsnDisableSplitHorizonCheckVer13 implements OFInstructionBsnD
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

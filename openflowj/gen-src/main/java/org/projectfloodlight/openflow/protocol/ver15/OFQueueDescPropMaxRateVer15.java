@@ -255,6 +255,7 @@ class OFQueueDescPropMaxRateVer15 implements OFQueueDescPropMaxRate {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

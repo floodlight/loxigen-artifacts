@@ -305,6 +305,7 @@ class OFOxmUdpDstVer15 implements OFOxmUdpDst {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

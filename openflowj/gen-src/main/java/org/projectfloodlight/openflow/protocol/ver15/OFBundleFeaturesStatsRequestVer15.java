@@ -467,6 +467,34 @@ class OFBundleFeaturesStatsRequestVer15 implements OFBundleFeaturesStatsRequest 
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBundleFeaturesStatsRequestVer15 other = (OFBundleFeaturesStatsRequestVer15) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (featureRequestFlags == null) {
+            if (other.featureRequestFlags != null)
+                return false;
+        } else if (!featureRequestFlags.equals(other.featureRequestFlags))
+            return false;
+        if (properties == null) {
+            if (other.properties != null)
+                return false;
+        } else if (!properties.equals(other.properties))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

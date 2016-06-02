@@ -347,6 +347,7 @@ class OFMeterBandDscpRemarkVer15 implements OFMeterBandDscpRemark {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -305,6 +305,7 @@ class OFOxmBsnIngressPortGroupIdVer14 implements OFOxmBsnIngressPortGroupId {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

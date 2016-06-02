@@ -250,6 +250,7 @@ class OFBsnTlvIcmpTypeVer15 implements OFBsnTlvIcmpType {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -148,6 +148,7 @@ class OFActionIdPopPbbVer15 implements OFActionIdPopPbb {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

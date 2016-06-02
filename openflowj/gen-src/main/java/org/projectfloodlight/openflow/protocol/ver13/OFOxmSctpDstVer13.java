@@ -305,6 +305,7 @@ class OFOxmSctpDstVer13 implements OFOxmSctpDst {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

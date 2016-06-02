@@ -317,6 +317,7 @@ class OFQueueStatsPropBsnVer15 implements OFQueueStatsPropBsn {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -148,6 +148,7 @@ class OFBsnTlvStripVlanOnEgressVer13 implements OFBsnTlvStripVlanOnEgress {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

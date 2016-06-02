@@ -389,6 +389,24 @@ class OFBsnImageDescStatsRequestVer14 implements OFBsnImageDescStatsRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnImageDescStatsRequestVer14 other = (OFBsnImageDescStatsRequestVer14) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

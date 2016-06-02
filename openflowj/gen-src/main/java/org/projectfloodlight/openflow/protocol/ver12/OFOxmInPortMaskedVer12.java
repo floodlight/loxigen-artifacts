@@ -351,6 +351,7 @@ class OFOxmInPortMaskedVer12 implements OFOxmInPortMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

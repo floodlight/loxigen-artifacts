@@ -260,6 +260,7 @@ class OFBsnTlvGenerationIdVer15 implements OFBsnTlvGenerationId {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

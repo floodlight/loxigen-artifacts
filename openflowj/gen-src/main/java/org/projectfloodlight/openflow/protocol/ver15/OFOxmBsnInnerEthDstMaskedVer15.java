@@ -351,6 +351,7 @@ class OFOxmBsnInnerEthDstMaskedVer15 implements OFOxmBsnInnerEthDstMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

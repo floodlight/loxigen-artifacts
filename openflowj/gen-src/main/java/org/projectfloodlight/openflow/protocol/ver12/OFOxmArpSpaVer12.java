@@ -305,6 +305,7 @@ class OFOxmArpSpaVer12 implements OFOxmArpSpa {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

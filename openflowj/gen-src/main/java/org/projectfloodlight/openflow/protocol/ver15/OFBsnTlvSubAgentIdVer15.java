@@ -250,6 +250,7 @@ class OFBsnTlvSubAgentIdVer15 implements OFBsnTlvSubAgentId {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

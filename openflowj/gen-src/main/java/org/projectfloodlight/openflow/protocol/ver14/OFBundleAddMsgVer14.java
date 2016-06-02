@@ -500,6 +500,34 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBundleAddMsgVer14 other = (OFBundleAddMsgVer14) obj;
+
+        // ignore XID
+        if (bundleId == null) {
+            if (other.bundleId != null)
+                return false;
+        } else if (!bundleId.equals(other.bundleId))
+            return false;
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (data == null) {
+            if (other.data != null)
+                return false;
+        } else if (!data.equals(other.data))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

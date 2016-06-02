@@ -351,6 +351,7 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

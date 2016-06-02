@@ -260,6 +260,7 @@ class OFBsnTlvReplyPacketsVer15 implements OFBsnTlvReplyPackets {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

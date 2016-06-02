@@ -351,6 +351,7 @@ class OFOxmBsnIngressPortGroupIdMaskedVer15 implements OFOxmBsnIngressPortGroupI
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

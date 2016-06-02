@@ -265,6 +265,7 @@ class OFActionPushMplsVer12 implements OFActionPushMpls {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -256,6 +256,7 @@ class OFBsnTlvDecapVer14 implements OFBsnTlvDecap {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -813,6 +813,47 @@ class OFGroupFeaturesStatsReplyVer14 implements OFGroupFeaturesStatsReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFGroupFeaturesStatsReplyVer14 other = (OFGroupFeaturesStatsReplyVer14) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if( types != other.types)
+            return false;
+        if (capabilities == null) {
+            if (other.capabilities != null)
+                return false;
+        } else if (!capabilities.equals(other.capabilities))
+            return false;
+        if( maxGroupsAll != other.maxGroupsAll)
+            return false;
+        if( maxGroupsSelect != other.maxGroupsSelect)
+            return false;
+        if( maxGroupsIndirect != other.maxGroupsIndirect)
+            return false;
+        if( maxGroupsFf != other.maxGroupsFf)
+            return false;
+        if( actionsAll != other.actionsAll)
+            return false;
+        if( actionsSelect != other.actionsSelect)
+            return false;
+        if( actionsIndirect != other.actionsIndirect)
+            return false;
+        if( actionsFf != other.actionsFf)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

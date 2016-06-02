@@ -351,6 +351,7 @@ class OFOxmBsnInnerVlanVidMaskedVer15 implements OFOxmBsnInnerVlanVidMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -179,6 +179,7 @@ class OFInstructionBsnAutoNegotiationVer13 implements OFInstructionBsnAutoNegoti
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

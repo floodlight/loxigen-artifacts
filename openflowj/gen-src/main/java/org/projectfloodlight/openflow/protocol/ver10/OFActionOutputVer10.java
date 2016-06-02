@@ -306,6 +306,7 @@ class OFActionOutputVer10 implements OFActionOutput {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

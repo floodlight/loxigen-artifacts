@@ -255,6 +255,7 @@ class OFActionSetNwTtlVer12 implements OFActionSetNwTtl {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -148,6 +148,7 @@ class OFBsnTlvNexthopTypeVxlanVer14 implements OFBsnTlvNexthopTypeVxlan {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

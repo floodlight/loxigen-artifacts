@@ -267,6 +267,7 @@ class OFBsnTlvBucketVer15 implements OFBsnTlvBucket {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

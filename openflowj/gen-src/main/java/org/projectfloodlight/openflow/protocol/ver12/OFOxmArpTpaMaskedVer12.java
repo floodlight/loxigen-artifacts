@@ -351,6 +351,7 @@ class OFOxmArpTpaMaskedVer12 implements OFOxmArpTpaMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

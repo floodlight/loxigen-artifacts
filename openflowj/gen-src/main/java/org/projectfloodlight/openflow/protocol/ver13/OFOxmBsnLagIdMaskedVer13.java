@@ -351,6 +351,7 @@ class OFOxmBsnLagIdMaskedVer13 implements OFOxmBsnLagIdMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

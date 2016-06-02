@@ -391,6 +391,7 @@ class OFBsnControllerConnectionVer14 implements OFBsnControllerConnection {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

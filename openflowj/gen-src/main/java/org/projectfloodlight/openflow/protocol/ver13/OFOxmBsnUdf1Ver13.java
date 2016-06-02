@@ -305,6 +305,7 @@ class OFOxmBsnUdf1Ver13 implements OFOxmBsnUdf1 {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

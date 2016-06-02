@@ -250,6 +250,7 @@ class OFAsyncConfigPropPacketInMasterVer14 implements OFAsyncConfigPropPacketInM
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

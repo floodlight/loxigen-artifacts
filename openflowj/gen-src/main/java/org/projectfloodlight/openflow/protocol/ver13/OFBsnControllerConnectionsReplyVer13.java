@@ -367,6 +367,24 @@ class OFBsnControllerConnectionsReplyVer13 implements OFBsnControllerConnections
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnControllerConnectionsReplyVer13 other = (OFBsnControllerConnectionsReplyVer13) obj;
+
+        // ignore XID
+        if (connections == null) {
+            if (other.connections != null)
+                return false;
+        } else if (!connections.equals(other.connections))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -174,6 +174,7 @@ class OFInstructionIdBsnPacketOfDeathVer15 implements OFInstructionIdBsnPacketOf
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

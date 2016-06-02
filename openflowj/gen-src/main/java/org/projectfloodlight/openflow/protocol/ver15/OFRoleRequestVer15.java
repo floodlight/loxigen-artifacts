@@ -417,6 +417,31 @@ class OFRoleRequestVer15 implements OFRoleRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFRoleRequestVer15 other = (OFRoleRequestVer15) obj;
+
+        // ignore XID
+        if (role == null) {
+            if (other.role != null)
+                return false;
+        } else if (!role.equals(other.role))
+            return false;
+        if( shortId != other.shortId)
+            return false;
+        if (generationId == null) {
+            if (other.generationId != null)
+                return false;
+        } else if (!generationId.equals(other.generationId))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

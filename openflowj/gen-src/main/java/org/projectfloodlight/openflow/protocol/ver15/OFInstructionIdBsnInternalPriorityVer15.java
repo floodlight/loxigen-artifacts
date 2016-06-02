@@ -174,6 +174,7 @@ class OFInstructionIdBsnInternalPriorityVer15 implements OFInstructionIdBsnInter
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

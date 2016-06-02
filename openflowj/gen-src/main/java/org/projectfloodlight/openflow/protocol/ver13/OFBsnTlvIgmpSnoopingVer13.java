@@ -148,6 +148,7 @@ class OFBsnTlvIgmpSnoopingVer13 implements OFBsnTlvIgmpSnooping {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

@@ -222,6 +222,7 @@ class OFUint64Ver14 implements OFUint64 {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

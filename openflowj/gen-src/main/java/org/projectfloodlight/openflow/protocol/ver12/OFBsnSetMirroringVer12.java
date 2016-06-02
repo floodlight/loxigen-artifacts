@@ -355,6 +355,21 @@ class OFBsnSetMirroringVer12 implements OFBsnSetMirroring {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnSetMirroringVer12 other = (OFBsnSetMirroringVer12) obj;
+
+        // ignore XID
+        if( reportMirrorPorts != other.reportMirrorPorts)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

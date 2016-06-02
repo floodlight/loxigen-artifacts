@@ -250,6 +250,7 @@ class OFBsnTlvKnownMulticastRateVer15 implements OFBsnTlvKnownMulticastRate {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

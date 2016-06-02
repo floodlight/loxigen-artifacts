@@ -267,6 +267,7 @@ class OFTableFeaturePropWriteActionsMissVer15 implements OFTableFeaturePropWrite
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

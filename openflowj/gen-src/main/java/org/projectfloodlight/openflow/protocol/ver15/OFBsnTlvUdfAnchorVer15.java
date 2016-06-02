@@ -256,6 +256,7 @@ class OFBsnTlvUdfAnchorVer15 implements OFBsnTlvUdfAnchor {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

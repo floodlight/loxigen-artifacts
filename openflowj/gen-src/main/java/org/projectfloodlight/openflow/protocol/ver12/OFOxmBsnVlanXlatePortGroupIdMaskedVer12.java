@@ -351,6 +351,7 @@ class OFOxmBsnVlanXlatePortGroupIdMaskedVer12 implements OFOxmBsnVlanXlatePortGr
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

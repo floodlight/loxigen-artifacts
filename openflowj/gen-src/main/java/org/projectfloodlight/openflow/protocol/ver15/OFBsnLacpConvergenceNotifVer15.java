@@ -891,6 +891,52 @@ class OFBsnLacpConvergenceNotifVer15 implements OFBsnLacpConvergenceNotif {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnLacpConvergenceNotifVer15 other = (OFBsnLacpConvergenceNotifVer15) obj;
+
+        // ignore XID
+        if( convergenceStatus != other.convergenceStatus)
+            return false;
+        if (portNo == null) {
+            if (other.portNo != null)
+                return false;
+        } else if (!portNo.equals(other.portNo))
+            return false;
+        if( actorSysPriority != other.actorSysPriority)
+            return false;
+        if (actorSysMac == null) {
+            if (other.actorSysMac != null)
+                return false;
+        } else if (!actorSysMac.equals(other.actorSysMac))
+            return false;
+        if( actorPortPriority != other.actorPortPriority)
+            return false;
+        if( actorPortNum != other.actorPortNum)
+            return false;
+        if( actorKey != other.actorKey)
+            return false;
+        if( partnerSysPriority != other.partnerSysPriority)
+            return false;
+        if (partnerSysMac == null) {
+            if (other.partnerSysMac != null)
+                return false;
+        } else if (!partnerSysMac.equals(other.partnerSysMac))
+            return false;
+        if( partnerPortPriority != other.partnerPortPriority)
+            return false;
+        if( partnerPortNum != other.partnerPortNum)
+            return false;
+        if( partnerKey != other.partnerKey)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

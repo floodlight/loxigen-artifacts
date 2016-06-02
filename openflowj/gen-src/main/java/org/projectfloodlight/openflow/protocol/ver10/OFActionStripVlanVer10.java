@@ -153,6 +153,7 @@ class OFActionStripVlanVer10 implements OFActionStripVlan {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

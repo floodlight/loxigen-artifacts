@@ -305,6 +305,7 @@ class OFOxmBsnInPorts128Ver13 implements OFOxmBsnInPorts128 {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

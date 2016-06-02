@@ -250,6 +250,7 @@ class OFBsnTlvVniVer15 implements OFBsnTlvVni {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

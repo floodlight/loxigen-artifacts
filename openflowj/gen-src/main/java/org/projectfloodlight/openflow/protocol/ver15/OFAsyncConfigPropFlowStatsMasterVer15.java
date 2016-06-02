@@ -250,6 +250,7 @@ class OFAsyncConfigPropFlowStatsMasterVer15 implements OFAsyncConfigPropFlowStat
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

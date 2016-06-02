@@ -296,6 +296,7 @@ class OFInstructionBsnInternalPriorityVer15 implements OFInstructionBsnInternalP
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

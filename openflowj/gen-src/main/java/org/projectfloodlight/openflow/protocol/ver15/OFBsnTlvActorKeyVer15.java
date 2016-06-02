@@ -250,6 +250,7 @@ class OFBsnTlvActorKeyVer15 implements OFBsnTlvActorKey {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

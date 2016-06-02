@@ -341,6 +341,7 @@ class OFQueueDescVer14 implements OFQueueDesc {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

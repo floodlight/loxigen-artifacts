@@ -409,6 +409,7 @@ class OFActionCopyFieldVer15 implements OFActionCopyField {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

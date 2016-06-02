@@ -317,6 +317,21 @@ class OFEchoReplyVer13 implements OFEchoReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFEchoReplyVer13 other = (OFEchoReplyVer13) obj;
+
+        // ignore XID
+        if (!Arrays.equals(data, other.data))
+                return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -278,6 +278,7 @@ class OFBsnDebugCounterStatsEntryVer14 implements OFBsnDebugCounterStatsEntry {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

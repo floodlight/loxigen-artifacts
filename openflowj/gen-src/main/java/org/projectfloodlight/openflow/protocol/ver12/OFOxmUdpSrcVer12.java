@@ -305,6 +305,7 @@ class OFOxmUdpSrcVer12 implements OFOxmUdpSrc {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -295,6 +295,7 @@ class OFBsnVlanCounterStatsEntryVer14 implements OFBsnVlanCounterStatsEntry {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -261,6 +261,7 @@ class OFBsnTlvHashPacketFieldVer13 implements OFBsnTlvHashPacketField {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -351,6 +351,7 @@ class OFOxmIpv6NdTllMaskedVer12 implements OFOxmIpv6NdTllMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

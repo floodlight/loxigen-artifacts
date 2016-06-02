@@ -260,6 +260,7 @@ class OFBsnTlvIdleTimeVer14 implements OFBsnTlvIdleTime {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -148,6 +148,7 @@ class OFBsnTlvCpuLagVer13 implements OFBsnTlvCpuLag {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

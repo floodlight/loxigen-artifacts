@@ -250,6 +250,7 @@ class OFBsnTlvPartnerKeyVer13 implements OFBsnTlvPartnerKey {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

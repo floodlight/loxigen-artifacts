@@ -260,6 +260,7 @@ class OFBsnTlvPortVer13 implements OFBsnTlvPort {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

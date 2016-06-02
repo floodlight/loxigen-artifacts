@@ -148,6 +148,7 @@ class OFBsnTlvDisableSrcMacCheckVer14 implements OFBsnTlvDisableSrcMacCheck {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

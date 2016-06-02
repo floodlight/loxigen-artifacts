@@ -485,6 +485,7 @@ class OFPortDescPropEthernetVer14 implements OFPortDescPropEthernet {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

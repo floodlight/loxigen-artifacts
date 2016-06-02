@@ -490,6 +490,39 @@ class OFRoleStatusVer14 implements OFRoleStatus {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFRoleStatusVer14 other = (OFRoleStatusVer14) obj;
+
+        // ignore XID
+        if (role == null) {
+            if (other.role != null)
+                return false;
+        } else if (!role.equals(other.role))
+            return false;
+        if (reason == null) {
+            if (other.reason != null)
+                return false;
+        } else if (!reason.equals(other.reason))
+            return false;
+        if (generationId == null) {
+            if (other.generationId != null)
+                return false;
+        } else if (!generationId.equals(other.generationId))
+            return false;
+        if (properties == null) {
+            if (other.properties != null)
+                return false;
+        } else if (!properties.equals(other.properties))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

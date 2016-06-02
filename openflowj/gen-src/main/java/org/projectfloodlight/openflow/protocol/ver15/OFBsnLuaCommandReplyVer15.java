@@ -363,6 +363,21 @@ class OFBsnLuaCommandReplyVer15 implements OFBsnLuaCommandReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnLuaCommandReplyVer15 other = (OFBsnLuaCommandReplyVer15) obj;
+
+        // ignore XID
+        if (!Arrays.equals(data, other.data))
+                return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

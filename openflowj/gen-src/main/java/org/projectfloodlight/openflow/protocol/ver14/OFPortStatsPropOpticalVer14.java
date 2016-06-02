@@ -715,6 +715,7 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

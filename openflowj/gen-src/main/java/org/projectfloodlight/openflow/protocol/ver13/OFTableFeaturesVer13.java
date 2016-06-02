@@ -634,6 +634,7 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

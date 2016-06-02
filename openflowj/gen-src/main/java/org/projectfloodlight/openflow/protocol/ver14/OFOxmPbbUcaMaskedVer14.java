@@ -351,6 +351,7 @@ class OFOxmPbbUcaMaskedVer14 implements OFOxmPbbUcaMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -305,6 +305,7 @@ class OFOxmIpv6NdSllVer13 implements OFOxmIpv6NdSll {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

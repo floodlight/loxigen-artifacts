@@ -250,6 +250,7 @@ class OFBsnTlvIdleTimeoutVer13 implements OFBsnTlvIdleTimeout {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

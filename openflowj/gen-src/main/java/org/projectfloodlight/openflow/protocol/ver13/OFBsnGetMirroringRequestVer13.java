@@ -355,6 +355,21 @@ class OFBsnGetMirroringRequestVer13 implements OFBsnGetMirroringRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnGetMirroringRequestVer13 other = (OFBsnGetMirroringRequestVer13) obj;
+
+        // ignore XID
+        if( reportMirrorPorts != other.reportMirrorPorts)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

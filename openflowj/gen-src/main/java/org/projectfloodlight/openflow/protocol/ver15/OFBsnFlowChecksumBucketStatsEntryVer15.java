@@ -222,6 +222,7 @@ class OFBsnFlowChecksumBucketStatsEntryVer15 implements OFBsnFlowChecksumBucketS
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

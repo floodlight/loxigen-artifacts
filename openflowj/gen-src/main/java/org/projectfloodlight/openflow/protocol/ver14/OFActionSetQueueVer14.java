@@ -250,6 +250,7 @@ class OFActionSetQueueVer14 implements OFActionSetQueue {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

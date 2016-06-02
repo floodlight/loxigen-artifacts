@@ -260,6 +260,7 @@ class OFBsnTlvIpv4NetmaskVer14 implements OFBsnTlvIpv4Netmask {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

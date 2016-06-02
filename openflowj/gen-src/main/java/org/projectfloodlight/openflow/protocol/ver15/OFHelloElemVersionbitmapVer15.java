@@ -267,6 +267,7 @@ class OFHelloElemVersionbitmapVer15 implements OFHelloElemVersionbitmap {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -263,6 +263,7 @@ class OFBsnTlvNameVer13 implements OFBsnTlvName {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -419,6 +419,29 @@ class OFBsnGentableEntryDeleteVer15 implements OFBsnGentableEntryDelete {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnGentableEntryDeleteVer15 other = (OFBsnGentableEntryDeleteVer15) obj;
+
+        // ignore XID
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
+            return false;
+        if (key == null) {
+            if (other.key != null)
+                return false;
+        } else if (!key.equals(other.key))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

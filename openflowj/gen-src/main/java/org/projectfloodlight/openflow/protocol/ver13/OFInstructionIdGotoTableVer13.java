@@ -148,6 +148,7 @@ class OFInstructionIdGotoTableVer13 implements OFInstructionIdGotoTable {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

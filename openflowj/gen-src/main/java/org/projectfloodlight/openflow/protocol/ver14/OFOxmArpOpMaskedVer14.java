@@ -351,6 +351,7 @@ class OFOxmArpOpMaskedVer14 implements OFOxmArpOpMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -913,6 +913,7 @@ class OFFlowStatsEntryVer14 implements OFFlowStatsEntry {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

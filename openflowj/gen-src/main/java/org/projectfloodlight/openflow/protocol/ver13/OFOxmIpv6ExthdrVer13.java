@@ -305,6 +305,7 @@ class OFOxmIpv6ExthdrVer13 implements OFOxmIpv6Exthdr {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -406,6 +406,23 @@ class OFBsnHybridGetReplyVer10 implements OFBsnHybridGetReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnHybridGetReplyVer10 other = (OFBsnHybridGetReplyVer10) obj;
+
+        // ignore XID
+        if( hybridEnable != other.hybridEnable)
+            return false;
+        if( hybridVersion != other.hybridVersion)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

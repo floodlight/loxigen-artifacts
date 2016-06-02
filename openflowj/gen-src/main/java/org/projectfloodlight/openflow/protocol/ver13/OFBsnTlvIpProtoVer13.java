@@ -250,6 +250,7 @@ class OFBsnTlvIpProtoVer13 implements OFBsnTlvIpProto {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

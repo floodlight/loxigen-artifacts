@@ -256,6 +256,7 @@ class OFBsnTlvRateUnitVer14 implements OFBsnTlvRateUnit {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

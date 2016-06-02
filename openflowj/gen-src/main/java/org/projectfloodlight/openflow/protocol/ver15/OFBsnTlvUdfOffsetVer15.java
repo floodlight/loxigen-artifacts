@@ -250,6 +250,7 @@ class OFBsnTlvUdfOffsetVer15 implements OFBsnTlvUdfOffset {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

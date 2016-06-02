@@ -148,6 +148,7 @@ class OFBsnTlvMcgTypeVxlanVer14 implements OFBsnTlvMcgTypeVxlan {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

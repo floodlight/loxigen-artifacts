@@ -148,6 +148,7 @@ class OFInstructionIdApplyActionsVer15 implements OFInstructionIdApplyActions {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

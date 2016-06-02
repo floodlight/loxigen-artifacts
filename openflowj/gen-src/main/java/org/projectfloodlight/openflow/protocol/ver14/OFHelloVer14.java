@@ -321,6 +321,24 @@ class OFHelloVer14 implements OFHello {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFHelloVer14 other = (OFHelloVer14) obj;
+
+        // ignore XID
+        if (elements == null) {
+            if (other.elements != null)
+                return false;
+        } else if (!elements.equals(other.elements))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

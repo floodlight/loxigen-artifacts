@@ -423,6 +423,29 @@ class OFBsnGenericCommandVer15 implements OFBsnGenericCommand {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnGenericCommandVer15 other = (OFBsnGenericCommandVer15) obj;
+
+        // ignore XID
+        if (name == null) {
+            if (other.name != null)
+                return false;
+        } else if (!name.equals(other.name))
+            return false;
+        if (tlvs == null) {
+            if (other.tlvs != null)
+                return false;
+        } else if (!tlvs.equals(other.tlvs))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

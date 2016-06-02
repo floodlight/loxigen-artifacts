@@ -508,6 +508,34 @@ class OFBsnGenericStatsRequestVer14 implements OFBsnGenericStatsRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnGenericStatsRequestVer14 other = (OFBsnGenericStatsRequestVer14) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (name == null) {
+            if (other.name != null)
+                return false;
+        } else if (!name.equals(other.name))
+            return false;
+        if (tlvs == null) {
+            if (other.tlvs != null)
+                return false;
+        } else if (!tlvs.equals(other.tlvs))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

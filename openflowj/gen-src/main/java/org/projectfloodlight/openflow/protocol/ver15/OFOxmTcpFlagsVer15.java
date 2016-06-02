@@ -305,6 +305,7 @@ class OFOxmTcpFlagsVer15 implements OFOxmTcpFlags {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

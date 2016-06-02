@@ -351,6 +351,7 @@ class OFOxmBsnL2CacheHitMaskedVer13 implements OFOxmBsnL2CacheHitMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

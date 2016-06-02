@@ -351,6 +351,7 @@ class OFOxmEthSrcMaskedVer12 implements OFOxmEthSrcMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;
