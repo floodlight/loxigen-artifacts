@@ -26,31 +26,45 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
-import java.util.List;
 import io.netty.buffer.ByteBuf;
 
-public interface OFTableFeatureStatsReply extends OFObject, OFStatsReply {
+public interface OFFlowDescRequest extends OFObject, OFStatsRequest<OFFlowDescReply>, OFRequest<OFFlowDescReply> {
     OFVersion getVersion();
     OFType getType();
     long getXid();
     OFStatsType getStatsType();
-    Set<OFStatsReplyFlags> getFlags();
-    List<OFTableFeatures> getEntries();
+    Set<OFStatsRequestFlags> getFlags();
+    TableId getTableId();
+    OFPort getOutPort();
+    OFGroup getOutGroup();
+    U64 getCookie();
+    U64 getCookieMask();
+    Match getMatch();
 
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
-    public interface Builder extends OFStatsReply.Builder {
-        OFTableFeatureStatsReply build();
+    public interface Builder extends OFStatsRequest.Builder<OFFlowDescReply> {
+        OFFlowDescRequest build();
         OFVersion getVersion();
         OFType getType();
         long getXid();
         Builder setXid(long xid);
         OFStatsType getStatsType();
-        Set<OFStatsReplyFlags> getFlags();
-        Builder setFlags(Set<OFStatsReplyFlags> flags);
-        List<OFTableFeatures> getEntries();
-        Builder setEntries(List<OFTableFeatures> entries);
+        Set<OFStatsRequestFlags> getFlags();
+        Builder setFlags(Set<OFStatsRequestFlags> flags);
+        TableId getTableId();
+        Builder setTableId(TableId tableId);
+        OFPort getOutPort();
+        Builder setOutPort(OFPort outPort);
+        OFGroup getOutGroup();
+        Builder setOutGroup(OFGroup outGroup);
+        U64 getCookie();
+        Builder setCookie(U64 cookie);
+        U64 getCookieMask();
+        Builder setCookieMask(U64 cookieMask);
+        Match getMatch();
+        Builder setMatch(Match match);
     }
 }

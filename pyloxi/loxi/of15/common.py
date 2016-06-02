@@ -1777,6 +1777,142 @@ class controller_status_prop(loxi.OFObject):
         q.text('}')
 
 
+class flow_desc_entry(loxi.OFObject):
+
+    def __init__(self, table_id=None, priority=None, idle_timeout=None, hard_timeout=None, flags=None, importance=None, cookie=None, match=None, stats=None, instructions=None):
+        if table_id != None:
+            self.table_id = table_id
+        else:
+            self.table_id = 0
+        if priority != None:
+            self.priority = priority
+        else:
+            self.priority = 0
+        if idle_timeout != None:
+            self.idle_timeout = idle_timeout
+        else:
+            self.idle_timeout = 0
+        if hard_timeout != None:
+            self.hard_timeout = hard_timeout
+        else:
+            self.hard_timeout = 0
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if importance != None:
+            self.importance = importance
+        else:
+            self.importance = 0
+        if cookie != None:
+            self.cookie = cookie
+        else:
+            self.cookie = 0
+        if match != None:
+            self.match = match
+        else:
+            self.match = ofp.match()
+        if stats != None:
+            self.stats = stats
+        else:
+            self.stats = ofp.stat()
+        if instructions != None:
+            self.instructions = instructions
+        else:
+            self.instructions = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 0
+        packed.append('\x00' * 2)
+        packed.append(struct.pack("!B", self.table_id))
+        packed.append('\x00' * 1)
+        packed.append(struct.pack("!H", self.priority))
+        packed.append(struct.pack("!H", self.idle_timeout))
+        packed.append(struct.pack("!H", self.hard_timeout))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append(struct.pack("!H", self.importance))
+        packed.append(struct.pack("!Q", self.cookie))
+        packed.append(self.match.pack())
+        packed.append(self.stats.pack())
+        packed.append(loxi.generic_util.pack_list(self.instructions))
+        length = sum([len(x) for x in packed])
+        packed[0] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = flow_desc_entry()
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 2)
+        reader.skip(2)
+        obj.table_id = reader.read("!B")[0]
+        reader.skip(1)
+        obj.priority = reader.read("!H")[0]
+        obj.idle_timeout = reader.read("!H")[0]
+        obj.hard_timeout = reader.read("!H")[0]
+        obj.flags = reader.read("!H")[0]
+        obj.importance = reader.read("!H")[0]
+        obj.cookie = reader.read("!Q")[0]
+        obj.match = ofp.match.unpack(reader)
+        obj.stats = ofp.stat.unpack(reader)
+        obj.instructions = loxi.generic_util.unpack_list(reader, ofp.instruction.instruction.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.table_id != other.table_id: return False
+        if self.priority != other.priority: return False
+        if self.idle_timeout != other.idle_timeout: return False
+        if self.hard_timeout != other.hard_timeout: return False
+        if self.flags != other.flags: return False
+        if self.importance != other.importance: return False
+        if self.cookie != other.cookie: return False
+        if self.match != other.match: return False
+        if self.stats != other.stats: return False
+        if self.instructions != other.instructions: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("flow_desc_entry {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("table_id = ");
+                q.text("%#x" % self.table_id)
+                q.text(","); q.breakable()
+                q.text("priority = ");
+                q.text("%#x" % self.priority)
+                q.text(","); q.breakable()
+                q.text("idle_timeout = ");
+                q.text("%#x" % self.idle_timeout)
+                q.text(","); q.breakable()
+                q.text("hard_timeout = ");
+                q.text("%#x" % self.hard_timeout)
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("importance = ");
+                q.text("%#x" % self.importance)
+                q.text(","); q.breakable()
+                q.text("cookie = ");
+                q.text("%#x" % self.cookie)
+                q.text(","); q.breakable()
+                q.text("match = ");
+                q.pp(self.match)
+                q.text(","); q.breakable()
+                q.text("stats = ");
+                q.pp(self.stats)
+                q.text(","); q.breakable()
+                q.text("instructions = ");
+                q.pp(self.instructions)
+            q.breakable()
+        q.text('}')
+
+
 class flow_monitor_entry(loxi.OFObject):
 
     def __init__(self, monitor_id=None, out_port=None, out_group=None, flags=None, table_id=None, command=None, match=None):
@@ -1917,35 +2053,19 @@ class flow_monitor_reply_entry(loxi.OFObject):
 
 class flow_stats_entry(loxi.OFObject):
 
-    def __init__(self, table_id=None, priority=None, idle_timeout=None, hard_timeout=None, flags=None, importance=None, cookie=None, match=None, stats=None, instructions=None):
+    def __init__(self, table_id=None, reason=None, priority=None, match=None, stats=None):
         if table_id != None:
             self.table_id = table_id
         else:
             self.table_id = 0
+        if reason != None:
+            self.reason = reason
+        else:
+            self.reason = 0
         if priority != None:
             self.priority = priority
         else:
             self.priority = 0
-        if idle_timeout != None:
-            self.idle_timeout = idle_timeout
-        else:
-            self.idle_timeout = 0
-        if hard_timeout != None:
-            self.hard_timeout = hard_timeout
-        else:
-            self.hard_timeout = 0
-        if flags != None:
-            self.flags = flags
-        else:
-            self.flags = 0
-        if importance != None:
-            self.importance = importance
-        else:
-            self.importance = 0
-        if cookie != None:
-            self.cookie = cookie
-        else:
-            self.cookie = 0
         if match != None:
             self.match = match
         else:
@@ -1954,10 +2074,6 @@ class flow_stats_entry(loxi.OFObject):
             self.stats = stats
         else:
             self.stats = ofp.stat()
-        if instructions != None:
-            self.instructions = instructions
-        else:
-            self.instructions = []
         return
 
     def pack(self):
@@ -1965,16 +2081,10 @@ class flow_stats_entry(loxi.OFObject):
         packed.append(struct.pack("!H", 0)) # placeholder for length at index 0
         packed.append('\x00' * 2)
         packed.append(struct.pack("!B", self.table_id))
-        packed.append('\x00' * 1)
+        packed.append(struct.pack("!B", self.reason))
         packed.append(struct.pack("!H", self.priority))
-        packed.append(struct.pack("!H", self.idle_timeout))
-        packed.append(struct.pack("!H", self.hard_timeout))
-        packed.append(struct.pack("!H", self.flags))
-        packed.append(struct.pack("!H", self.importance))
-        packed.append(struct.pack("!Q", self.cookie))
         packed.append(self.match.pack())
         packed.append(self.stats.pack())
-        packed.append(loxi.generic_util.pack_list(self.instructions))
         length = sum([len(x) for x in packed])
         packed[0] = struct.pack("!H", length)
         return ''.join(packed)
@@ -1987,30 +2097,19 @@ class flow_stats_entry(loxi.OFObject):
         reader = orig_reader.slice(_length, 2)
         reader.skip(2)
         obj.table_id = reader.read("!B")[0]
-        reader.skip(1)
+        obj.reason = reader.read("!B")[0]
         obj.priority = reader.read("!H")[0]
-        obj.idle_timeout = reader.read("!H")[0]
-        obj.hard_timeout = reader.read("!H")[0]
-        obj.flags = reader.read("!H")[0]
-        obj.importance = reader.read("!H")[0]
-        obj.cookie = reader.read("!Q")[0]
         obj.match = ofp.match.unpack(reader)
         obj.stats = ofp.stat.unpack(reader)
-        obj.instructions = loxi.generic_util.unpack_list(reader, ofp.instruction.instruction.unpack)
         return obj
 
     def __eq__(self, other):
         if type(self) != type(other): return False
         if self.table_id != other.table_id: return False
+        if self.reason != other.reason: return False
         if self.priority != other.priority: return False
-        if self.idle_timeout != other.idle_timeout: return False
-        if self.hard_timeout != other.hard_timeout: return False
-        if self.flags != other.flags: return False
-        if self.importance != other.importance: return False
-        if self.cookie != other.cookie: return False
         if self.match != other.match: return False
         if self.stats != other.stats: return False
-        if self.instructions != other.instructions: return False
         return True
 
     def pretty_print(self, q):
@@ -2021,32 +2120,17 @@ class flow_stats_entry(loxi.OFObject):
                 q.text("table_id = ");
                 q.text("%#x" % self.table_id)
                 q.text(","); q.breakable()
+                q.text("reason = ");
+                q.text("%#x" % self.reason)
+                q.text(","); q.breakable()
                 q.text("priority = ");
                 q.text("%#x" % self.priority)
-                q.text(","); q.breakable()
-                q.text("idle_timeout = ");
-                q.text("%#x" % self.idle_timeout)
-                q.text(","); q.breakable()
-                q.text("hard_timeout = ");
-                q.text("%#x" % self.hard_timeout)
-                q.text(","); q.breakable()
-                q.text("flags = ");
-                q.text("%#x" % self.flags)
-                q.text(","); q.breakable()
-                q.text("importance = ");
-                q.text("%#x" % self.importance)
-                q.text(","); q.breakable()
-                q.text("cookie = ");
-                q.text("%#x" % self.cookie)
                 q.text(","); q.breakable()
                 q.text("match = ");
                 q.pp(self.match)
                 q.text(","); q.breakable()
                 q.text("stats = ");
                 q.pp(self.stats)
-                q.text(","); q.breakable()
-                q.text("instructions = ");
-                q.pp(self.instructions)
             q.breakable()
         q.text('}')
 
@@ -2737,90 +2821,6 @@ class hello_elem_versionbitmap(hello_elem):
         q.text('}')
 
 hello_elem.subtypes[1] = hello_elem_versionbitmap
-
-class individual_flow_stats_entry(loxi.OFObject):
-
-    def __init__(self, table_id=None, reason=None, priority=None, match=None, stats=None):
-        if table_id != None:
-            self.table_id = table_id
-        else:
-            self.table_id = 0
-        if reason != None:
-            self.reason = reason
-        else:
-            self.reason = 0
-        if priority != None:
-            self.priority = priority
-        else:
-            self.priority = 0
-        if match != None:
-            self.match = match
-        else:
-            self.match = ofp.match()
-        if stats != None:
-            self.stats = stats
-        else:
-            self.stats = ofp.stat()
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!H", 0)) # placeholder for length at index 0
-        packed.append('\x00' * 2)
-        packed.append(struct.pack("!B", self.table_id))
-        packed.append(struct.pack("!B", self.reason))
-        packed.append(struct.pack("!H", self.priority))
-        packed.append(self.match.pack())
-        packed.append(self.stats.pack())
-        length = sum([len(x) for x in packed])
-        packed[0] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = individual_flow_stats_entry()
-        _length = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_length, 2)
-        reader.skip(2)
-        obj.table_id = reader.read("!B")[0]
-        obj.reason = reader.read("!B")[0]
-        obj.priority = reader.read("!H")[0]
-        obj.match = ofp.match.unpack(reader)
-        obj.stats = ofp.stat.unpack(reader)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        if self.table_id != other.table_id: return False
-        if self.reason != other.reason: return False
-        if self.priority != other.priority: return False
-        if self.match != other.match: return False
-        if self.stats != other.stats: return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("individual_flow_stats_entry {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-                q.text("table_id = ");
-                q.text("%#x" % self.table_id)
-                q.text(","); q.breakable()
-                q.text("reason = ");
-                q.text("%#x" % self.reason)
-                q.text(","); q.breakable()
-                q.text("priority = ");
-                q.text("%#x" % self.priority)
-                q.text(","); q.breakable()
-                q.text("match = ");
-                q.pp(self.match)
-                q.text(","); q.breakable()
-                q.text("stats = ");
-                q.pp(self.stats)
-            q.breakable()
-        q.text('}')
-
 
 class match_v3(loxi.OFObject):
     type = 1

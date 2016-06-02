@@ -33,22 +33,22 @@ public class OFStatsTypeSerializerVer15 {
 
     public final static short DESC_VAL = (short) 0x0;
     public final static short FLOW_DESC_VAL = (short) 0x1;
-    public final static short AGGREGATE_STATS_VAL = (short) 0x2;
-    public final static short TABLE_STATS_VAL = (short) 0x3;
-    public final static short PORT_STATS_VAL = (short) 0x4;
-    public final static short QUEUE_STATS_VAL = (short) 0x5;
-    public final static short GROUP_STATS_VAL = (short) 0x6;
+    public final static short AGGREGATE_VAL = (short) 0x2;
+    public final static short TABLE_VAL = (short) 0x3;
+    public final static short PORT_VAL = (short) 0x4;
+    public final static short QUEUE_VAL = (short) 0x5;
+    public final static short GROUP_VAL = (short) 0x6;
     public final static short GROUP_DESC_VAL = (short) 0x7;
     public final static short GROUP_FEATURES_VAL = (short) 0x8;
-    public final static short METER_STATS_VAL = (short) 0x9;
-    public final static short METER_DESC_VAL = (short) 0xa;
+    public final static short METER_VAL = (short) 0x9;
+    public final static short METER_CONFIG_VAL = (short) 0xa;
     public final static short METER_FEATURES_VAL = (short) 0xb;
     public final static short TABLE_FEATURES_VAL = (short) 0xc;
     public final static short PORT_DESC_VAL = (short) 0xd;
     public final static short TABLE_DESC_VAL = (short) 0xe;
     public final static short QUEUE_DESC_VAL = (short) 0xf;
     public final static short FLOW_MONITOR_VAL = (short) 0x10;
-    public final static short FLOW_STATS_VAL = (short) 0x11;
+    public final static short FLOW_VAL = (short) 0x11;
     public final static short CONTROLLER_STATUS_VAL = (short) 0x12;
     public final static short BUNDLE_FEATURES_VAL = (short) 0x13;
     public final static short EXPERIMENTER_VAL = (short) 0xffff;
@@ -75,24 +75,24 @@ public class OFStatsTypeSerializerVer15 {
                 return OFStatsType.DESC;
             case FLOW_DESC_VAL:
                 return OFStatsType.FLOW_DESC;
-            case AGGREGATE_STATS_VAL:
-                return OFStatsType.AGGREGATE_STATS;
-            case TABLE_STATS_VAL:
-                return OFStatsType.TABLE_STATS;
-            case PORT_STATS_VAL:
-                return OFStatsType.PORT_STATS;
-            case QUEUE_STATS_VAL:
-                return OFStatsType.QUEUE_STATS;
-            case GROUP_STATS_VAL:
-                return OFStatsType.GROUP_STATS;
+            case AGGREGATE_VAL:
+                return OFStatsType.AGGREGATE;
+            case TABLE_VAL:
+                return OFStatsType.TABLE;
+            case PORT_VAL:
+                return OFStatsType.PORT;
+            case QUEUE_VAL:
+                return OFStatsType.QUEUE;
+            case GROUP_VAL:
+                return OFStatsType.GROUP;
             case GROUP_DESC_VAL:
                 return OFStatsType.GROUP_DESC;
             case GROUP_FEATURES_VAL:
                 return OFStatsType.GROUP_FEATURES;
-            case METER_STATS_VAL:
-                return OFStatsType.METER_STATS;
-            case METER_DESC_VAL:
-                return OFStatsType.METER_DESC;
+            case METER_VAL:
+                return OFStatsType.METER;
+            case METER_CONFIG_VAL:
+                return OFStatsType.METER_CONFIG;
             case METER_FEATURES_VAL:
                 return OFStatsType.METER_FEATURES;
             case TABLE_FEATURES_VAL:
@@ -105,8 +105,8 @@ public class OFStatsTypeSerializerVer15 {
                 return OFStatsType.QUEUE_DESC;
             case FLOW_MONITOR_VAL:
                 return OFStatsType.FLOW_MONITOR;
-            case FLOW_STATS_VAL:
-                return OFStatsType.FLOW_STATS;
+            case FLOW_VAL:
+                return OFStatsType.FLOW;
             case CONTROLLER_STATUS_VAL:
                 return OFStatsType.CONTROLLER_STATUS;
             case BUNDLE_FEATURES_VAL:
@@ -125,24 +125,24 @@ public class OFStatsTypeSerializerVer15 {
                 return DESC_VAL;
             case FLOW_DESC:
                 return FLOW_DESC_VAL;
-            case AGGREGATE_STATS:
-                return AGGREGATE_STATS_VAL;
-            case TABLE_STATS:
-                return TABLE_STATS_VAL;
-            case PORT_STATS:
-                return PORT_STATS_VAL;
-            case QUEUE_STATS:
-                return QUEUE_STATS_VAL;
-            case GROUP_STATS:
-                return GROUP_STATS_VAL;
+            case AGGREGATE:
+                return AGGREGATE_VAL;
+            case TABLE:
+                return TABLE_VAL;
+            case PORT:
+                return PORT_VAL;
+            case QUEUE:
+                return QUEUE_VAL;
+            case GROUP:
+                return GROUP_VAL;
             case GROUP_DESC:
                 return GROUP_DESC_VAL;
             case GROUP_FEATURES:
                 return GROUP_FEATURES_VAL;
-            case METER_STATS:
-                return METER_STATS_VAL;
-            case METER_DESC:
-                return METER_DESC_VAL;
+            case METER:
+                return METER_VAL;
+            case METER_CONFIG:
+                return METER_CONFIG_VAL;
             case METER_FEATURES:
                 return METER_FEATURES_VAL;
             case TABLE_FEATURES:
@@ -155,8 +155,8 @@ public class OFStatsTypeSerializerVer15 {
                 return QUEUE_DESC_VAL;
             case FLOW_MONITOR:
                 return FLOW_MONITOR_VAL;
-            case FLOW_STATS:
-                return FLOW_STATS_VAL;
+            case FLOW:
+                return FLOW_VAL;
             case CONTROLLER_STATUS:
                 return CONTROLLER_STATUS_VAL;
             case BUNDLE_FEATURES:

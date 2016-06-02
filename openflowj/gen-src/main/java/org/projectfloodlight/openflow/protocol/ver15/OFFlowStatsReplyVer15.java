@@ -86,7 +86,7 @@ class OFFlowStatsReplyVer15 implements OFFlowStatsReply {
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_DESC;
+        return OFStatsType.FLOW;
     }
 
     @Override
@@ -143,7 +143,7 @@ class OFFlowStatsReplyVer15 implements OFFlowStatsReply {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_DESC;
+        return OFStatsType.FLOW;
     }
 
     @Override
@@ -222,7 +222,7 @@ class OFFlowStatsReplyVer15 implements OFFlowStatsReply {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_DESC;
+        return OFStatsType.FLOW;
     }
 
     @Override
@@ -293,10 +293,10 @@ class OFFlowStatsReplyVer15 implements OFFlowStatsReply {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            // fixed value property statsType == 1
+            // fixed value property statsType == 17
             short statsType = bb.readShort();
-            if(statsType != (short) 0x1)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.FLOW_DESC(1), got="+statsType);
+            if(statsType != (short) 0x11)
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.FLOW(17), got="+statsType);
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
@@ -328,8 +328,8 @@ class OFFlowStatsReplyVer15 implements OFFlowStatsReply {
             sink.putByte((byte) 0x13);
             // FIXME: skip funnel of length
             sink.putLong(message.xid);
-            // fixed value property statsType = 1
-            sink.putShort((short) 0x1);
+            // fixed value property statsType = 17
+            sink.putShort((short) 0x11);
             OFStatsReplyFlagsSerializerVer15.putTo(message.flags, sink);
             // skip pad (4 bytes)
             FunnelUtils.putList(message.entries, sink);
@@ -355,8 +355,8 @@ class OFFlowStatsReplyVer15 implements OFFlowStatsReply {
             bb.writeShort(U16.t(0));
 
             bb.writeInt(U32.t(message.xid));
-            // fixed value property statsType = 1
-            bb.writeShort((short) 0x1);
+            // fixed value property statsType = 17
+            bb.writeShort((short) 0x11);
             OFStatsReplyFlagsSerializerVer15.writeTo(bb, message.flags);
             // pad: 4 bytes
             bb.writeZero(4);

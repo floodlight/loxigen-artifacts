@@ -78,7 +78,7 @@ class OFTableStatsRequestVer15 implements OFTableStatsRequest {
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_STATS;
+        return OFStatsType.TABLE;
     }
 
     @Override
@@ -128,7 +128,7 @@ class OFTableStatsRequestVer15 implements OFTableStatsRequest {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_STATS;
+        return OFStatsType.TABLE;
     }
 
     @Override
@@ -190,7 +190,7 @@ class OFTableStatsRequestVer15 implements OFTableStatsRequest {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_STATS;
+        return OFStatsType.TABLE;
     }
 
     @Override
@@ -249,7 +249,7 @@ class OFTableStatsRequestVer15 implements OFTableStatsRequest {
             // fixed value property statsType == 3
             short statsType = bb.readShort();
             if(statsType != (short) 0x3)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.TABLE_STATS(3), got="+statsType);
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.TABLE(3), got="+statsType);
             Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);

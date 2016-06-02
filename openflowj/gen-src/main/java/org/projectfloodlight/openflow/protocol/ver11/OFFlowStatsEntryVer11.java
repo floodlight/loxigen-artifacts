@@ -170,13 +170,18 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
     }
 
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    public OFFlowStatsReason getReason()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property reason not supported in version 1.1");
     }
 
     @Override
     public Stat getStats()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property stats not supported in version 1.1");
+    }
+
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
     }
 
     @Override
@@ -361,13 +366,13 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.1");
     }
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    public OFFlowStatsReason getReason()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property reason not supported in version 1.1");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    public OFFlowStatsEntry.Builder setReason(OFFlowStatsReason reason) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property reason not supported in version 1.1");
     }
     @Override
     public Stat getStats()throws UnsupportedOperationException {
@@ -377,6 +382,15 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
     @Override
     public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property stats not supported in version 1.1");
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.1");
     }
     @Override
     public OFVersion getVersion() {
@@ -594,13 +608,13 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.1");
     }
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    public OFFlowStatsReason getReason()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property reason not supported in version 1.1");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    public OFFlowStatsEntry.Builder setReason(OFFlowStatsReason reason) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property reason not supported in version 1.1");
     }
     @Override
     public Stat getStats()throws UnsupportedOperationException {
@@ -610,6 +624,15 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
     @Override
     public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property stats not supported in version 1.1");
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.1");
     }
     @Override
     public OFVersion getVersion() {

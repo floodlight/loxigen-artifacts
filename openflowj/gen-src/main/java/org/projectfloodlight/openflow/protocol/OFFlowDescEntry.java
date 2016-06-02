@@ -29,28 +29,45 @@ import java.util.Set;
 import java.util.List;
 import io.netty.buffer.ByteBuf;
 
-public interface OFTableFeatureStatsRequest extends OFObject, OFStatsRequest<OFTableFeatureStatsReply>, OFRequest<OFTableFeatureStatsReply> {
+public interface OFFlowDescEntry extends OFObject {
+    TableId getTableId();
+    int getPriority();
+    int getIdleTimeout();
+    int getHardTimeout();
+    Set<OFFlowModFlags> getFlags();
+    int getImportance();
+    U64 getCookie();
+    Match getMatch();
+    Stat getStats();
+    List<OFInstruction> getInstructions();
     OFVersion getVersion();
-    OFType getType();
-    long getXid();
-    OFStatsType getStatsType();
-    Set<OFStatsRequestFlags> getFlags();
-    List<OFTableFeatures> getEntries();
 
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
-    public interface Builder extends OFStatsRequest.Builder<OFTableFeatureStatsReply> {
-        OFTableFeatureStatsRequest build();
+    public interface Builder  {
+        OFFlowDescEntry build();
+        TableId getTableId();
+        Builder setTableId(TableId tableId);
+        int getPriority();
+        Builder setPriority(int priority);
+        int getIdleTimeout();
+        Builder setIdleTimeout(int idleTimeout);
+        int getHardTimeout();
+        Builder setHardTimeout(int hardTimeout);
+        Set<OFFlowModFlags> getFlags();
+        Builder setFlags(Set<OFFlowModFlags> flags);
+        int getImportance();
+        Builder setImportance(int importance);
+        U64 getCookie();
+        Builder setCookie(U64 cookie);
+        Match getMatch();
+        Builder setMatch(Match match);
+        Stat getStats();
+        Builder setStats(Stat stats);
+        List<OFInstruction> getInstructions();
+        Builder setInstructions(List<OFInstruction> instructions);
         OFVersion getVersion();
-        OFType getType();
-        long getXid();
-        Builder setXid(long xid);
-        OFStatsType getStatsType();
-        Set<OFStatsRequestFlags> getFlags();
-        Builder setFlags(Set<OFStatsRequestFlags> flags);
-        List<OFTableFeatures> getEntries();
-        Builder setEntries(List<OFTableFeatures> entries);
     }
 }

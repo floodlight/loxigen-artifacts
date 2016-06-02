@@ -1583,6 +1583,18 @@ public class OFFactoryVer10 implements OFFactory {
         throw new UnsupportedOperationException("OFControllerStatusStatsRequest not supported in version 1.0");
     }
 
+    public OFFlowDescEntry.Builder buildFlowDescEntry() {
+        throw new UnsupportedOperationException("OFFlowDescEntry not supported in version 1.0");
+    }
+
+    public OFFlowDescReply.Builder buildFlowDescReply() {
+        throw new UnsupportedOperationException("OFFlowDescReply not supported in version 1.0");
+    }
+
+    public OFFlowDescRequest.Builder buildFlowDescRequest() {
+        throw new UnsupportedOperationException("OFFlowDescRequest not supported in version 1.0");
+    }
+
     public OFFlowMonitorEntry.Builder buildFlowMonitorEntry() {
         throw new UnsupportedOperationException("OFFlowMonitorEntry not supported in version 1.0");
     }
@@ -1629,18 +1641,6 @@ public class OFFactoryVer10 implements OFFactory {
 
     public OFGroupRemoveBucket.Builder buildGroupRemoveBucket() {
         throw new UnsupportedOperationException("OFGroupRemoveBucket not supported in version 1.0");
-    }
-
-    public OFIndividualFlowStatsEntry.Builder buildIndividualFlowStatsEntry() {
-        throw new UnsupportedOperationException("OFIndividualFlowStatsEntry not supported in version 1.0");
-    }
-
-    public OFIndividualFlowStatsReply.Builder buildIndividualFlowStatsReply() {
-        throw new UnsupportedOperationException("OFIndividualFlowStatsReply not supported in version 1.0");
-    }
-
-    public OFIndividualFlowStatsRequest.Builder buildIndividualFlowStatsRequest() {
-        throw new UnsupportedOperationException("OFIndividualFlowStatsRequest not supported in version 1.0");
     }
 
     public OFPortDescPropEgress.Builder buildPortDescPropEgress() {
@@ -1711,14 +1711,6 @@ public class OFFactoryVer10 implements OFFactory {
     }
     public OFTableFeaturePropWriteCopyfieldMiss tableFeaturePropWriteCopyfieldMiss(List<U32> oxmIds) {
         throw new UnsupportedOperationException("OFTableFeaturePropWriteCopyfieldMiss not supported in version 1.0");
-    }
-
-    public OFTableFeatureStatsReply.Builder buildTableFeatureStatsReply() {
-        throw new UnsupportedOperationException("OFTableFeatureStatsReply not supported in version 1.0");
-    }
-
-    public OFTableFeatureStatsRequest.Builder buildTableFeatureStatsRequest() {
-        throw new UnsupportedOperationException("OFTableFeatureStatsRequest not supported in version 1.0");
     }
 
     public OFActionCopyField.Builder buildActionCopyField() {

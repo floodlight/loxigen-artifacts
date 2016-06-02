@@ -34,17 +34,18 @@ public interface OFFlowStatsEntry extends OFObject {
     long getDurationSec() throws UnsupportedOperationException;
     long getDurationNsec() throws UnsupportedOperationException;
     int getPriority();
-    int getIdleTimeout();
-    int getHardTimeout();
+    int getIdleTimeout() throws UnsupportedOperationException;
+    int getHardTimeout() throws UnsupportedOperationException;
     Set<OFFlowModFlags> getFlags() throws UnsupportedOperationException;
-    U64 getCookie();
+    U64 getCookie() throws UnsupportedOperationException;
     U64 getPacketCount() throws UnsupportedOperationException;
     U64 getByteCount() throws UnsupportedOperationException;
     Match getMatch();
     List<OFInstruction> getInstructions() throws UnsupportedOperationException;
     List<OFAction> getActions() throws UnsupportedOperationException;
-    int getImportance() throws UnsupportedOperationException;
+    OFFlowStatsReason getReason() throws UnsupportedOperationException;
     Stat getStats() throws UnsupportedOperationException;
+    int getImportance() throws UnsupportedOperationException;
     OFVersion getVersion();
 
 
@@ -61,14 +62,14 @@ public interface OFFlowStatsEntry extends OFObject {
         Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException;
         int getPriority();
         Builder setPriority(int priority);
-        int getIdleTimeout();
-        Builder setIdleTimeout(int idleTimeout);
-        int getHardTimeout();
-        Builder setHardTimeout(int hardTimeout);
+        int getIdleTimeout() throws UnsupportedOperationException;
+        Builder setIdleTimeout(int idleTimeout) throws UnsupportedOperationException;
+        int getHardTimeout() throws UnsupportedOperationException;
+        Builder setHardTimeout(int hardTimeout) throws UnsupportedOperationException;
         Set<OFFlowModFlags> getFlags() throws UnsupportedOperationException;
         Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException;
-        U64 getCookie();
-        Builder setCookie(U64 cookie);
+        U64 getCookie() throws UnsupportedOperationException;
+        Builder setCookie(U64 cookie) throws UnsupportedOperationException;
         U64 getPacketCount() throws UnsupportedOperationException;
         Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException;
         U64 getByteCount() throws UnsupportedOperationException;
@@ -79,10 +80,12 @@ public interface OFFlowStatsEntry extends OFObject {
         Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException;
         List<OFAction> getActions() throws UnsupportedOperationException;
         Builder setActions(List<OFAction> actions) throws UnsupportedOperationException;
-        int getImportance() throws UnsupportedOperationException;
-        Builder setImportance(int importance) throws UnsupportedOperationException;
+        OFFlowStatsReason getReason() throws UnsupportedOperationException;
+        Builder setReason(OFFlowStatsReason reason) throws UnsupportedOperationException;
         Stat getStats() throws UnsupportedOperationException;
         Builder setStats(Stat stats) throws UnsupportedOperationException;
+        int getImportance() throws UnsupportedOperationException;
+        Builder setImportance(int importance) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

@@ -28,9 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import com.google.common.collect.ImmutableSet;
 import java.util.List;
-import com.google.common.collect.ImmutableList;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -39,41 +37,27 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
     private static final Logger logger = LoggerFactory.getLogger(OFFlowStatsEntryVer15.class);
     // version: 1.5
     final static byte WIRE_VERSION = 6;
-    final static int MINIMUM_LENGTH = 40;
+    final static int MINIMUM_LENGTH = 24;
 
         private final static TableId DEFAULT_TABLE_ID = TableId.ALL;
         private final static int DEFAULT_PRIORITY = 0x0;
-        private final static int DEFAULT_IDLE_TIMEOUT = 0x0;
-        private final static int DEFAULT_HARD_TIMEOUT = 0x0;
-        private final static Set<OFFlowModFlags> DEFAULT_FLAGS = ImmutableSet.<OFFlowModFlags>of();
-        private final static int DEFAULT_IMPORTANCE = 0x0;
-        private final static U64 DEFAULT_COOKIE = U64.ZERO;
         private final static Match DEFAULT_MATCH = OFFactoryVer15.MATCH_WILDCARD_ALL;
-        private final static List<OFInstruction> DEFAULT_INSTRUCTIONS = ImmutableList.<OFInstruction>of();
 
     // OF message fields
     private final TableId tableId;
+    private final OFFlowStatsReason reason;
     private final int priority;
-    private final int idleTimeout;
-    private final int hardTimeout;
-    private final Set<OFFlowModFlags> flags;
-    private final int importance;
-    private final U64 cookie;
     private final Match match;
     private final Stat stats;
-    private final List<OFInstruction> instructions;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFFlowStatsEntryVer15(TableId tableId, int priority, int idleTimeout, int hardTimeout, Set<OFFlowModFlags> flags, int importance, U64 cookie, Match match, Stat stats, List<OFInstruction> instructions) {
+    OFFlowStatsEntryVer15(TableId tableId, OFFlowStatsReason reason, int priority, Match match, Stat stats) {
         if(tableId == null) {
             throw new NullPointerException("OFFlowStatsEntryVer15: property tableId cannot be null");
         }
-        if(flags == null) {
-            throw new NullPointerException("OFFlowStatsEntryVer15: property flags cannot be null");
-        }
-        if(cookie == null) {
-            throw new NullPointerException("OFFlowStatsEntryVer15: property cookie cannot be null");
+        if(reason == null) {
+            throw new NullPointerException("OFFlowStatsEntryVer15: property reason cannot be null");
         }
         if(match == null) {
             throw new NullPointerException("OFFlowStatsEntryVer15: property match cannot be null");
@@ -81,19 +65,11 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         if(stats == null) {
             throw new NullPointerException("OFFlowStatsEntryVer15: property stats cannot be null");
         }
-        if(instructions == null) {
-            throw new NullPointerException("OFFlowStatsEntryVer15: property instructions cannot be null");
-        }
         this.tableId = tableId;
+        this.reason = reason;
         this.priority = priority;
-        this.idleTimeout = idleTimeout;
-        this.hardTimeout = hardTimeout;
-        this.flags = flags;
-        this.importance = importance;
-        this.cookie = cookie;
         this.match = match;
         this.stats = stats;
-        this.instructions = instructions;
     }
 
     // Accessors for OF message fields
@@ -118,23 +94,23 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
     }
 
     @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
+    public int getIdleTimeout()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property idleTimeout not supported in version 1.5");
     }
 
     @Override
-    public int getHardTimeout() {
-        return hardTimeout;
+    public int getHardTimeout()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.5");
     }
 
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flags not supported in version 1.5");
     }
 
     @Override
-    public U64 getCookie() {
-        return cookie;
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.5");
     }
 
     @Override
@@ -153,8 +129,8 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
     }
 
     @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
+    public List<OFInstruction> getInstructions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property instructions not supported in version 1.5");
     }
 
     @Override
@@ -163,13 +139,18 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
     }
 
     @Override
-    public int getImportance() {
-        return importance;
+    public OFFlowStatsReason getReason() {
+        return reason;
     }
 
     @Override
     public Stat getStats() {
         return stats;
+    }
+
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.5");
     }
 
     @Override
@@ -189,24 +170,14 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         // OF message fields
         private boolean tableIdSet;
         private TableId tableId;
+        private boolean reasonSet;
+        private OFFlowStatsReason reason;
         private boolean prioritySet;
         private int priority;
-        private boolean idleTimeoutSet;
-        private int idleTimeout;
-        private boolean hardTimeoutSet;
-        private int hardTimeout;
-        private boolean flagsSet;
-        private Set<OFFlowModFlags> flags;
-        private boolean importanceSet;
-        private int importance;
-        private boolean cookieSet;
-        private U64 cookie;
         private boolean matchSet;
         private Match match;
         private boolean statsSet;
         private Stat stats;
-        private boolean instructionsSet;
-        private List<OFInstruction> instructions;
 
         BuilderWithParent(OFFlowStatsEntryVer15 parentMessage) {
             this.parentMessage = parentMessage;
@@ -253,48 +224,40 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
+    public int getIdleTimeout()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property idleTimeout not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setIdleTimeout(int idleTimeout) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property idleTimeout not supported in version 1.5");
     }
     @Override
-    public int getHardTimeout() {
-        return hardTimeout;
+    public int getHardTimeout()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setHardTimeout(int hardTimeout) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.5");
     }
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flags not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property flags not supported in version 1.5");
     }
     @Override
-    public U64 getCookie() {
-        return cookie;
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setCookie(U64 cookie) {
-        this.cookie = cookie;
-        this.cookieSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.5");
     }
     @Override
     public U64 getPacketCount()throws UnsupportedOperationException {
@@ -326,15 +289,13 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
+    public List<OFInstruction> getInstructions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property instructions not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setInstructions(List<OFInstruction> instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property instructions not supported in version 1.5");
     }
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
@@ -346,14 +307,14 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.5");
     }
     @Override
-    public int getImportance() {
-        return importance;
+    public OFFlowStatsReason getReason() {
+        return reason;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setImportance(int importance) {
-        this.importance = importance;
-        this.importanceSet = true;
+    public OFFlowStatsEntry.Builder setReason(OFFlowStatsReason reason) {
+        this.reason = reason;
+        this.reasonSet = true;
         return this;
     }
     @Override
@@ -368,6 +329,15 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         return this;
     }
     @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.5");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.5");
+    }
+    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
     }
@@ -379,38 +349,24 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
                 TableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
                 if(tableId == null)
                     throw new NullPointerException("Property tableId must not be null");
+                OFFlowStatsReason reason = this.reasonSet ? this.reason : parentMessage.reason;
+                if(reason == null)
+                    throw new NullPointerException("Property reason must not be null");
                 int priority = this.prioritySet ? this.priority : parentMessage.priority;
-                int idleTimeout = this.idleTimeoutSet ? this.idleTimeout : parentMessage.idleTimeout;
-                int hardTimeout = this.hardTimeoutSet ? this.hardTimeout : parentMessage.hardTimeout;
-                Set<OFFlowModFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
-                if(flags == null)
-                    throw new NullPointerException("Property flags must not be null");
-                int importance = this.importanceSet ? this.importance : parentMessage.importance;
-                U64 cookie = this.cookieSet ? this.cookie : parentMessage.cookie;
-                if(cookie == null)
-                    throw new NullPointerException("Property cookie must not be null");
                 Match match = this.matchSet ? this.match : parentMessage.match;
                 if(match == null)
                     throw new NullPointerException("Property match must not be null");
                 Stat stats = this.statsSet ? this.stats : parentMessage.stats;
                 if(stats == null)
                     throw new NullPointerException("Property stats must not be null");
-                List<OFInstruction> instructions = this.instructionsSet ? this.instructions : parentMessage.instructions;
-                if(instructions == null)
-                    throw new NullPointerException("Property instructions must not be null");
 
                 //
                 return new OFFlowStatsEntryVer15(
                     tableId,
+                    reason,
                     priority,
-                    idleTimeout,
-                    hardTimeout,
-                    flags,
-                    importance,
-                    cookie,
                     match,
-                    stats,
-                    instructions
+                    stats
                 );
         }
 
@@ -420,24 +376,14 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         // OF message fields
         private boolean tableIdSet;
         private TableId tableId;
+        private boolean reasonSet;
+        private OFFlowStatsReason reason;
         private boolean prioritySet;
         private int priority;
-        private boolean idleTimeoutSet;
-        private int idleTimeout;
-        private boolean hardTimeoutSet;
-        private int hardTimeout;
-        private boolean flagsSet;
-        private Set<OFFlowModFlags> flags;
-        private boolean importanceSet;
-        private int importance;
-        private boolean cookieSet;
-        private U64 cookie;
         private boolean matchSet;
         private Match match;
         private boolean statsSet;
         private Stat stats;
-        private boolean instructionsSet;
-        private List<OFInstruction> instructions;
 
     @Override
     public TableId getTableId() {
@@ -480,48 +426,40 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public int getIdleTimeout() {
-        return idleTimeout;
+    public int getIdleTimeout()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property idleTimeout not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setIdleTimeout(int idleTimeout) {
-        this.idleTimeout = idleTimeout;
-        this.idleTimeoutSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setIdleTimeout(int idleTimeout) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property idleTimeout not supported in version 1.5");
     }
     @Override
-    public int getHardTimeout() {
-        return hardTimeout;
+    public int getHardTimeout()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setHardTimeout(int hardTimeout) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.5");
     }
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flags not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property flags not supported in version 1.5");
     }
     @Override
-    public U64 getCookie() {
-        return cookie;
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setCookie(U64 cookie) {
-        this.cookie = cookie;
-        this.cookieSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.5");
     }
     @Override
     public U64 getPacketCount()throws UnsupportedOperationException {
@@ -553,15 +491,13 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public List<OFInstruction> getInstructions() {
-        return instructions;
+    public List<OFInstruction> getInstructions()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property instructions not supported in version 1.5");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setInstructions(List<OFInstruction> instructions) {
-        this.instructions = instructions;
-        this.instructionsSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property instructions not supported in version 1.5");
     }
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
@@ -573,14 +509,14 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.5");
     }
     @Override
-    public int getImportance() {
-        return importance;
+    public OFFlowStatsReason getReason() {
+        return reason;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setImportance(int importance) {
-        this.importance = importance;
-        this.importanceSet = true;
+    public OFFlowStatsEntry.Builder setReason(OFFlowStatsReason reason) {
+        this.reason = reason;
+        this.reasonSet = true;
         return this;
     }
     @Override
@@ -595,6 +531,15 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         return this;
     }
     @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.5");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.5");
+    }
+    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_15;
     }
@@ -605,16 +550,11 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
             TableId tableId = this.tableIdSet ? this.tableId : DEFAULT_TABLE_ID;
             if(tableId == null)
                 throw new NullPointerException("Property tableId must not be null");
+            if(!this.reasonSet)
+                throw new IllegalStateException("Property reason doesn't have default value -- must be set");
+            if(reason == null)
+                throw new NullPointerException("Property reason must not be null");
             int priority = this.prioritySet ? this.priority : DEFAULT_PRIORITY;
-            int idleTimeout = this.idleTimeoutSet ? this.idleTimeout : DEFAULT_IDLE_TIMEOUT;
-            int hardTimeout = this.hardTimeoutSet ? this.hardTimeout : DEFAULT_HARD_TIMEOUT;
-            Set<OFFlowModFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
-            if(flags == null)
-                throw new NullPointerException("Property flags must not be null");
-            int importance = this.importanceSet ? this.importance : DEFAULT_IMPORTANCE;
-            U64 cookie = this.cookieSet ? this.cookie : DEFAULT_COOKIE;
-            if(cookie == null)
-                throw new NullPointerException("Property cookie must not be null");
             Match match = this.matchSet ? this.match : DEFAULT_MATCH;
             if(match == null)
                 throw new NullPointerException("Property match must not be null");
@@ -622,22 +562,14 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
                 throw new IllegalStateException("Property stats doesn't have default value -- must be set");
             if(stats == null)
                 throw new NullPointerException("Property stats must not be null");
-            List<OFInstruction> instructions = this.instructionsSet ? this.instructions : DEFAULT_INSTRUCTIONS;
-            if(instructions == null)
-                throw new NullPointerException("Property instructions must not be null");
 
 
             return new OFFlowStatsEntryVer15(
                     tableId,
+                    reason,
                     priority,
-                    idleTimeout,
-                    hardTimeout,
-                    flags,
-                    importance,
-                    cookie,
                     match,
-                    stats,
-                    instructions
+                    stats
                 );
         }
 
@@ -662,29 +594,17 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
             // pad: 2 bytes
             bb.skipBytes(2);
             TableId tableId = TableId.readByte(bb);
-            // pad: 1 bytes
-            bb.skipBytes(1);
+            OFFlowStatsReason reason = OFFlowStatsReasonSerializerVer15.readFrom(bb);
             int priority = U16.f(bb.readShort());
-            int idleTimeout = U16.f(bb.readShort());
-            int hardTimeout = U16.f(bb.readShort());
-            Set<OFFlowModFlags> flags = OFFlowModFlagsSerializerVer15.readFrom(bb);
-            int importance = U16.f(bb.readShort());
-            U64 cookie = U64.ofRaw(bb.readLong());
             Match match = ChannelUtilsVer15.readOFMatch(bb);
             Stat stats = ChannelUtilsVer15.readOFStat(bb);
-            List<OFInstruction> instructions = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFInstructionVer15.READER);
 
             OFFlowStatsEntryVer15 flowStatsEntryVer15 = new OFFlowStatsEntryVer15(
                     tableId,
+                      reason,
                       priority,
-                      idleTimeout,
-                      hardTimeout,
-                      flags,
-                      importance,
-                      cookie,
                       match,
-                      stats,
-                      instructions
+                      stats
                     );
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - read={}", flowStatsEntryVer15);
@@ -704,16 +624,10 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
             // FIXME: skip funnel of length
             // skip pad (2 bytes)
             message.tableId.putTo(sink);
-            // skip pad (1 bytes)
+            OFFlowStatsReasonSerializerVer15.putTo(message.reason, sink);
             sink.putInt(message.priority);
-            sink.putInt(message.idleTimeout);
-            sink.putInt(message.hardTimeout);
-            OFFlowModFlagsSerializerVer15.putTo(message.flags, sink);
-            sink.putInt(message.importance);
-            message.cookie.putTo(sink);
             message.match.putTo(sink);
             message.stats.putTo(sink);
-            FunnelUtils.putList(message.instructions, sink);
         }
     }
 
@@ -734,17 +648,10 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
             // pad: 2 bytes
             bb.writeZero(2);
             message.tableId.writeByte(bb);
-            // pad: 1 bytes
-            bb.writeZero(1);
+            OFFlowStatsReasonSerializerVer15.writeTo(bb, message.reason);
             bb.writeShort(U16.t(message.priority));
-            bb.writeShort(U16.t(message.idleTimeout));
-            bb.writeShort(U16.t(message.hardTimeout));
-            OFFlowModFlagsSerializerVer15.writeTo(bb, message.flags);
-            bb.writeShort(U16.t(message.importance));
-            bb.writeLong(message.cookie.getValue());
             message.match.writeTo(bb);
             message.stats.writeTo(bb);
-            ChannelUtils.writeList(bb, message.instructions);
 
             // update length field
             int length = bb.writerIndex() - startIndex;
@@ -758,23 +665,13 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         StringBuilder b = new StringBuilder("OFFlowStatsEntryVer15(");
         b.append("tableId=").append(tableId);
         b.append(", ");
+        b.append("reason=").append(reason);
+        b.append(", ");
         b.append("priority=").append(priority);
-        b.append(", ");
-        b.append("idleTimeout=").append(idleTimeout);
-        b.append(", ");
-        b.append("hardTimeout=").append(hardTimeout);
-        b.append(", ");
-        b.append("flags=").append(flags);
-        b.append(", ");
-        b.append("importance=").append(importance);
-        b.append(", ");
-        b.append("cookie=").append(cookie);
         b.append(", ");
         b.append("match=").append(match);
         b.append(", ");
         b.append("stats=").append(stats);
-        b.append(", ");
-        b.append("instructions=").append(instructions);
         b.append(")");
         return b.toString();
     }
@@ -794,23 +691,12 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
                 return false;
         } else if (!tableId.equals(other.tableId))
             return false;
+        if (reason == null) {
+            if (other.reason != null)
+                return false;
+        } else if (!reason.equals(other.reason))
+            return false;
         if( priority != other.priority)
-            return false;
-        if( idleTimeout != other.idleTimeout)
-            return false;
-        if( hardTimeout != other.hardTimeout)
-            return false;
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if( importance != other.importance)
-            return false;
-        if (cookie == null) {
-            if (other.cookie != null)
-                return false;
-        } else if (!cookie.equals(other.cookie))
             return false;
         if (match == null) {
             if (other.match != null)
@@ -822,11 +708,6 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
                 return false;
         } else if (!stats.equals(other.stats))
             return false;
-        if (instructions == null) {
-            if (other.instructions != null)
-                return false;
-        } else if (!instructions.equals(other.instructions))
-            return false;
         return true;
     }
 
@@ -836,15 +717,10 @@ class OFFlowStatsEntryVer15 implements OFFlowStatsEntry {
         int result = 1;
 
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
+        result = prime * result + ((reason == null) ? 0 : reason.hashCode());
         result = prime * result + priority;
-        result = prime * result + idleTimeout;
-        result = prime * result + hardTimeout;
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + importance;
-        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + ((match == null) ? 0 : match.hashCode());
         result = prime * result + ((stats == null) ? 0 : stats.hashCode());
-        result = prime * result + ((instructions == null) ? 0 : instructions.hashCode());
         return result;
     }
 

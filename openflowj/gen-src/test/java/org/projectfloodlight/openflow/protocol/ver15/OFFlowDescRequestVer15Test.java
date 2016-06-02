@@ -36,11 +36,11 @@ import org.hamcrest.CoreMatchers;
 
 
 
-public class OFTableFeatureStatsRequestVer15Test {
+public class OFFlowDescRequestVer15Test {
     OFFactory factory;
 
-    final static byte[] TABLE_FEATURE_STATS_REQUEST_SERIALIZED =
-        new byte[] { 0x6, 0x12, 0x0, 0x10, 0x12, 0x34, 0x56, 0x78, 0x0, 0xc, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0 };
+    final static byte[] FLOW_DESC_REQUEST_SERIALIZED =
+        new byte[] { 0x6, 0x12, 0x0, 0x40, 0x12, 0x34, 0x56, 0x78, 0x0, 0x1, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, (byte) 0xfe, (byte) 0xdc, (byte) 0xba, (byte) 0x98, 0x76, 0x54, 0x32, 0x10, (byte) 0xff, 0x0, (byte) 0xff, 0x0, (byte) 0xff, 0x0, (byte) 0xff, 0x0, 0x0, 0x1, 0x0, 0x10, (byte) 0x80, 0x0, 0x1, 0x8, 0x0, 0x0, 0x0, 0x4, 0x0, 0x0, 0x0, 0x5 };
 
     @Before
     public void setup() {
@@ -49,53 +49,71 @@ public class OFTableFeatureStatsRequestVer15Test {
 
     @Test
     public void testWrite() {
-        OFTableFeatureStatsRequest.Builder builder = factory.buildTableFeatureStatsRequest();
+        OFFlowDescRequest.Builder builder = factory.buildFlowDescRequest();
         builder
         .setXid(0x12345678)
         .setFlags(ImmutableSet.<OFStatsRequestFlags>of(OFStatsRequestFlags.REQ_MORE))
+        .setTableId(TableId.of(1))
+        .setOutPort(OFPort.of(4))
+        .setOutGroup(OFGroup.of(1))
+        .setCookie(U64.parseHex("FEDCBA9876543210"))
+        .setCookieMask(U64.parseHex("FF00FF00FF00FF00"))
+        .setMatch(
+        factory.buildMatch()
+            .setMasked(MatchField.IN_PORT, OFPort.of(4), OFPort.of(5))
+            .build())
         .build();
-        OFTableFeatureStatsRequest tableFeatureStatsRequest = builder.build();
+        OFFlowDescRequest flowDescRequest = builder.build();
         ByteBuf bb = Unpooled.buffer();
-        tableFeatureStatsRequest.writeTo(bb);
+        flowDescRequest.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
 
-        assertThat(written, CoreMatchers.equalTo(TABLE_FEATURE_STATS_REQUEST_SERIALIZED));
+        assertThat(written, CoreMatchers.equalTo(FLOW_DESC_REQUEST_SERIALIZED));
     }
 
     @Test
     public void testRead() throws Exception {
-        OFTableFeatureStatsRequest.Builder builder = factory.buildTableFeatureStatsRequest();
+        OFFlowDescRequest.Builder builder = factory.buildFlowDescRequest();
         builder
         .setXid(0x12345678)
         .setFlags(ImmutableSet.<OFStatsRequestFlags>of(OFStatsRequestFlags.REQ_MORE))
+        .setTableId(TableId.of(1))
+        .setOutPort(OFPort.of(4))
+        .setOutGroup(OFGroup.of(1))
+        .setCookie(U64.parseHex("FEDCBA9876543210"))
+        .setCookieMask(U64.parseHex("FF00FF00FF00FF00"))
+        .setMatch(
+        factory.buildMatch()
+            .setMasked(MatchField.IN_PORT, OFPort.of(4), OFPort.of(5))
+            .build())
         .build();
-        OFTableFeatureStatsRequest tableFeatureStatsRequestBuilt = builder.build();
+        OFFlowDescRequest flowDescRequestBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(TABLE_FEATURE_STATS_REQUEST_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(FLOW_DESC_REQUEST_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
-        OFTableFeatureStatsRequest tableFeatureStatsRequestRead = OFTableFeatureStatsRequestVer15.READER.readFrom(input);
-        assertEquals(TABLE_FEATURE_STATS_REQUEST_SERIALIZED.length, input.readerIndex());
+        OFFlowDescRequest flowDescRequestRead = OFFlowDescRequestVer15.READER.readFrom(input);
+        assertEquals(FLOW_DESC_REQUEST_SERIALIZED.length, input.readerIndex());
 
-        assertEquals(tableFeatureStatsRequestBuilt, tableFeatureStatsRequestRead);
+        assertEquals(flowDescRequestBuilt, flowDescRequestRead);
    }
 
    @Test
    public void testReadWrite() throws Exception {
-       ByteBuf input = Unpooled.copiedBuffer(TABLE_FEATURE_STATS_REQUEST_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(FLOW_DESC_REQUEST_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
-       OFTableFeatureStatsRequest tableFeatureStatsRequest = OFTableFeatureStatsRequestVer15.READER.readFrom(input);
-       assertEquals(TABLE_FEATURE_STATS_REQUEST_SERIALIZED.length, input.readerIndex());
+       OFFlowDescRequest flowDescRequest = OFFlowDescRequestVer15.READER.readFrom(input);
+       assertEquals(FLOW_DESC_REQUEST_SERIALIZED.length, input.readerIndex());
 
        // write message again
        ByteBuf bb = Unpooled.buffer();
-       tableFeatureStatsRequest.writeTo(bb);
+       flowDescRequest.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);
 
-       assertThat(written, CoreMatchers.equalTo(TABLE_FEATURE_STATS_REQUEST_SERIALIZED));
+       assertThat(written, CoreMatchers.equalTo(FLOW_DESC_REQUEST_SERIALIZED));
    }
 
 }

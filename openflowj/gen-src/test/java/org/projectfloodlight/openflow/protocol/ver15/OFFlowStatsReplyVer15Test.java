@@ -42,7 +42,7 @@ public class OFFlowStatsReplyVer15Test {
     OFFactory factory;
 
     final static byte[] FLOW_STATS_REPLY_SERIALIZED =
-        new byte[] { 0x6, 0x13, 0x0, 0x68, 0x12, 0x34, 0x56, 0x78, 0x0, 0x1, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x58, 0x0, 0x0, 0x1, 0x0, 0x0, 0x1, 0x0, 0x10, 0x0, 0x60, 0x0, 0x1, 0x0, 0x1, (byte) 0xfe, (byte) 0xdc, (byte) 0xba, (byte) 0x98, 0x76, 0x54, 0x32, 0x10, 0x0, 0x1, 0x0, 0x10, (byte) 0x80, 0x0, 0x1, 0x8, 0x0, 0x0, 0x0, 0x4, 0x0, 0x0, 0x0, 0x5, 0x0, 0x0, 0x0, 0x1c, (byte) 0x80, 0x2, 0x0, 0x8, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, (byte) 0x80, 0x2, 0x2, 0x8, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x6, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x8, 0x4, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x8, 0x7, 0x0, 0x0, 0x0 };
+        new byte[] { 0x6, 0x13, 0x0, 0x48, 0x12, 0x34, 0x56, 0x78, 0x0, 0x11, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x38, 0x0, 0x0, 0x1, 0x0, 0x0, 0x1, 0x0, 0x1, 0x0, 0x10, (byte) 0x80, 0x0, 0x1, 0x8, 0x0, 0x0, 0x0, 0x4, 0x0, 0x0, 0x0, 0x5, 0x0, 0x0, 0x0, 0x1c, (byte) 0x80, 0x2, 0x0, 0x8, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, (byte) 0x80, 0x2, 0x2, 0x8, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x6, 0x0, 0x0, 0x0, 0x0 };
 
     @Before
     public void setup() {
@@ -55,26 +55,18 @@ public class OFFlowStatsReplyVer15Test {
         builder
         .setXid(0x12345678)
         .setFlags(ImmutableSet.<OFStatsReplyFlags>of(OFStatsReplyFlags.REPLY_MORE))
-        .setEntries(ImmutableList.<OFFlowStatsEntry>of(
-                        factory.buildFlowStatsEntry().setTableId(TableId.of(1))
-                                                    .setPriority(1)
-                                                    .setIdleTimeout(16)
-                                                    .setHardTimeout(96)
-                                                    .setFlags(ImmutableSet.<OFFlowModFlags>of(OFFlowModFlags.SEND_FLOW_REM))
-                                                    .setImportance(1)
-                                                    .setCookie(U64.parseHex("FEDCBA9876543210"))
-                                                    .setMatch(factory.buildMatch()
-                                                        .setMasked(MatchField.IN_PORT, OFPort.of(4), OFPort.of(5))
-                                                        .build())
-                                                    .setStats(factory.buildStatV6()
-                                                        .setOxsFields(OFOxsList.of(factory.oxss().buildDuration().setValue(U64.of(4)).build(),
-                                                                                    factory.oxss().buildIdleTime().setValue(U64.of(6)).build()))
-                                                        .build())
-                                                    .setInstructions(ImmutableList.<OFInstruction>of(
-                                                                                    factory.instructions().gotoTable(TableId.of(4)),
-                                                                                    factory.instructions().gotoTable(TableId.of(7))))
-                                                    .build() ))
-        .build();
+        .setEntries(ImmutableList.<OFFlowStatsEntry>of(factory.buildFlowStatsEntry().setTableId(TableId.of(1))
+                                                                .setReason(OFFlowStatsReason.STATS_REQUEST)
+                                                                .setPriority(1)
+                                                                .setMatch(factory.buildMatch()
+                                                                                .setMasked(MatchField.IN_PORT, OFPort.of(4), OFPort.of(5))
+                                                                                .build())
+                                                                .setStats(factory.buildStatV6()
+                                                                                .setOxsFields(OFOxsList.of(factory.oxss().buildDuration().setValue(U64.of(4)).build(),
+                                                                                factory.oxss().buildIdleTime().setValue(U64.of(6)).build()))
+                                                                                .build())
+                                                                .build()))
+        .build();;
         OFFlowStatsReply flowStatsReply = builder.build();
         ByteBuf bb = Unpooled.buffer();
         flowStatsReply.writeTo(bb);
@@ -90,26 +82,18 @@ public class OFFlowStatsReplyVer15Test {
         builder
         .setXid(0x12345678)
         .setFlags(ImmutableSet.<OFStatsReplyFlags>of(OFStatsReplyFlags.REPLY_MORE))
-        .setEntries(ImmutableList.<OFFlowStatsEntry>of(
-                        factory.buildFlowStatsEntry().setTableId(TableId.of(1))
-                                                    .setPriority(1)
-                                                    .setIdleTimeout(16)
-                                                    .setHardTimeout(96)
-                                                    .setFlags(ImmutableSet.<OFFlowModFlags>of(OFFlowModFlags.SEND_FLOW_REM))
-                                                    .setImportance(1)
-                                                    .setCookie(U64.parseHex("FEDCBA9876543210"))
-                                                    .setMatch(factory.buildMatch()
-                                                        .setMasked(MatchField.IN_PORT, OFPort.of(4), OFPort.of(5))
-                                                        .build())
-                                                    .setStats(factory.buildStatV6()
-                                                        .setOxsFields(OFOxsList.of(factory.oxss().buildDuration().setValue(U64.of(4)).build(),
-                                                                                    factory.oxss().buildIdleTime().setValue(U64.of(6)).build()))
-                                                        .build())
-                                                    .setInstructions(ImmutableList.<OFInstruction>of(
-                                                                                    factory.instructions().gotoTable(TableId.of(4)),
-                                                                                    factory.instructions().gotoTable(TableId.of(7))))
-                                                    .build() ))
-        .build();
+        .setEntries(ImmutableList.<OFFlowStatsEntry>of(factory.buildFlowStatsEntry().setTableId(TableId.of(1))
+                                                                .setReason(OFFlowStatsReason.STATS_REQUEST)
+                                                                .setPriority(1)
+                                                                .setMatch(factory.buildMatch()
+                                                                                .setMasked(MatchField.IN_PORT, OFPort.of(4), OFPort.of(5))
+                                                                                .build())
+                                                                .setStats(factory.buildStatV6()
+                                                                                .setOxsFields(OFOxsList.of(factory.oxss().buildDuration().setValue(U64.of(4)).build(),
+                                                                                factory.oxss().buildIdleTime().setValue(U64.of(6)).build()))
+                                                                                .build())
+                                                                .build()))
+        .build();;
         OFFlowStatsReply flowStatsReplyBuilt = builder.build();
 
         ByteBuf input = Unpooled.copiedBuffer(FLOW_STATS_REPLY_SERIALIZED);

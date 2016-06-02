@@ -180,13 +180,18 @@ class OFFlowStatsEntryVer14 implements OFFlowStatsEntry {
     }
 
     @Override
-    public int getImportance() {
-        return importance;
+    public OFFlowStatsReason getReason()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property reason not supported in version 1.4");
     }
 
     @Override
     public Stat getStats()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property stats not supported in version 1.4");
+    }
+
+    @Override
+    public int getImportance() {
+        return importance;
     }
 
     @Override
@@ -377,15 +382,13 @@ class OFFlowStatsEntryVer14 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.4");
     }
     @Override
-    public int getImportance() {
-        return importance;
+    public OFFlowStatsReason getReason()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property reason not supported in version 1.4");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setImportance(int importance) {
-        this.importance = importance;
-        this.importanceSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setReason(OFFlowStatsReason reason) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property reason not supported in version 1.4");
     }
     @Override
     public Stat getStats()throws UnsupportedOperationException {
@@ -395,6 +398,17 @@ class OFFlowStatsEntryVer14 implements OFFlowStatsEntry {
     @Override
     public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property stats not supported in version 1.4");
+    }
+    @Override
+    public int getImportance() {
+        return importance;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setImportance(int importance) {
+        this.importance = importance;
+        this.importanceSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -624,15 +638,13 @@ class OFFlowStatsEntryVer14 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.4");
     }
     @Override
-    public int getImportance() {
-        return importance;
+    public OFFlowStatsReason getReason()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property reason not supported in version 1.4");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setImportance(int importance) {
-        this.importance = importance;
-        this.importanceSet = true;
-        return this;
+    public OFFlowStatsEntry.Builder setReason(OFFlowStatsReason reason) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property reason not supported in version 1.4");
     }
     @Override
     public Stat getStats()throws UnsupportedOperationException {
@@ -642,6 +654,17 @@ class OFFlowStatsEntryVer14 implements OFFlowStatsEntry {
     @Override
     public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property stats not supported in version 1.4");
+    }
+    @Override
+    public int getImportance() {
+        return importance;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setImportance(int importance) {
+        this.importance = importance;
+        this.importanceSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {

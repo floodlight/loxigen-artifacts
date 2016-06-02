@@ -46,14 +46,6 @@ public enum OFStatsType {
      QUEUE_DESC,
      FLOW_MONITOR,
      FLOW_DESC,
-     AGGREGATE_STATS,
-     TABLE_STATS,
-     PORT_STATS,
-     QUEUE_STATS,
-     GROUP_STATS,
-     METER_STATS,
-     METER_DESC,
-     FLOW_STATS,
      CONTROLLER_STATUS,
      BUNDLE_FEATURES;
 }

@@ -35,8 +35,7 @@ public interface OFPortDescStatsReply extends OFObject, OFStatsReply {
     long getXid();
     OFStatsType getStatsType();
     Set<OFStatsReplyFlags> getFlags();
-    List<OFPortDesc> getEntries() throws UnsupportedOperationException;
-    List<OFPortDesc> getPorts() throws UnsupportedOperationException;
+    List<OFPortDesc> getEntries();
 
 
     void writeTo(ByteBuf channelBuffer);
@@ -51,9 +50,7 @@ public interface OFPortDescStatsReply extends OFObject, OFStatsReply {
         OFStatsType getStatsType();
         Set<OFStatsReplyFlags> getFlags();
         Builder setFlags(Set<OFStatsReplyFlags> flags);
-        List<OFPortDesc> getEntries() throws UnsupportedOperationException;
-        Builder setEntries(List<OFPortDesc> entries) throws UnsupportedOperationException;
-        List<OFPortDesc> getPorts() throws UnsupportedOperationException;
-        Builder setPorts(List<OFPortDesc> ports) throws UnsupportedOperationException;
+        List<OFPortDesc> getEntries();
+        Builder setEntries(List<OFPortDesc> entries);
     }
 }

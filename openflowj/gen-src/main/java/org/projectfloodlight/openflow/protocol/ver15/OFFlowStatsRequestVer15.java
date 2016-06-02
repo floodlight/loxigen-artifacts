@@ -43,7 +43,7 @@ class OFFlowStatsRequestVer15 implements OFFlowStatsRequest {
         private final static Set<OFStatsRequestFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsRequestFlags>of();
         private final static TableId DEFAULT_TABLE_ID = TableId.ALL;
         private final static OFPort DEFAULT_OUT_PORT = OFPort.ANY;
-        private final static OFGroup DEFAULT_OUT_GROUP = OFGroup.ANY;
+        private final static OFGroup DEFAULT_OUT_GROUP = OFGroup.ALL;
         private final static U64 DEFAULT_COOKIE = U64.ZERO;
         private final static U64 DEFAULT_COOKIE_MASK = U64.ZERO;
         private final static Match DEFAULT_MATCH = OFFactoryVer15.MATCH_WILDCARD_ALL;
@@ -114,7 +114,7 @@ class OFFlowStatsRequestVer15 implements OFFlowStatsRequest {
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_DESC;
+        return OFStatsType.FLOW;
     }
 
     @Override
@@ -206,7 +206,7 @@ class OFFlowStatsRequestVer15 implements OFFlowStatsRequest {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_DESC;
+        return OFStatsType.FLOW;
     }
 
     @Override
@@ -370,7 +370,7 @@ class OFFlowStatsRequestVer15 implements OFFlowStatsRequest {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_DESC;
+        return OFStatsType.FLOW;
     }
 
     @Override
@@ -516,10 +516,10 @@ class OFFlowStatsRequestVer15 implements OFFlowStatsRequest {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            // fixed value property statsType == 1
+            // fixed value property statsType == 17
             short statsType = bb.readShort();
-            if(statsType != (short) 0x1)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.FLOW_DESC(1), got="+statsType);
+            if(statsType != (short) 0x11)
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.FLOW(17), got="+statsType);
             Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
@@ -565,8 +565,8 @@ class OFFlowStatsRequestVer15 implements OFFlowStatsRequest {
             sink.putByte((byte) 0x12);
             // FIXME: skip funnel of length
             sink.putLong(message.xid);
-            // fixed value property statsType = 1
-            sink.putShort((short) 0x1);
+            // fixed value property statsType = 17
+            sink.putShort((short) 0x11);
             OFStatsRequestFlagsSerializerVer15.putTo(message.flags, sink);
             // skip pad (4 bytes)
             message.tableId.putTo(sink);
@@ -599,8 +599,8 @@ class OFFlowStatsRequestVer15 implements OFFlowStatsRequest {
             bb.writeShort(U16.t(0));
 
             bb.writeInt(U32.t(message.xid));
-            // fixed value property statsType = 1
-            bb.writeShort((short) 0x1);
+            // fixed value property statsType = 17
+            bb.writeShort((short) 0x11);
             OFStatsRequestFlagsSerializerVer15.writeTo(bb, message.flags);
             // pad: 4 bytes
             bb.writeZero(4);

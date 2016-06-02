@@ -25,32 +25,32 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
+import java.util.Set;
+import java.util.List;
 import io.netty.buffer.ByteBuf;
 
-public interface OFIndividualFlowStatsEntry extends OFObject {
-    TableId getTableId();
-    OFFlowStatsReason getReason();
-    int getPriority();
-    Match getMatch();
-    Stat getStats();
+public interface OFFlowDescReply extends OFObject, OFStatsReply {
     OFVersion getVersion();
+    OFType getType();
+    long getXid();
+    OFStatsType getStatsType();
+    Set<OFStatsReplyFlags> getFlags();
+    List<OFFlowDescEntry> getEntries();
 
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
-    public interface Builder  {
-        OFIndividualFlowStatsEntry build();
-        TableId getTableId();
-        Builder setTableId(TableId tableId);
-        OFFlowStatsReason getReason();
-        Builder setReason(OFFlowStatsReason reason);
-        int getPriority();
-        Builder setPriority(int priority);
-        Match getMatch();
-        Builder setMatch(Match match);
-        Stat getStats();
-        Builder setStats(Stat stats);
+    public interface Builder extends OFStatsReply.Builder {
+        OFFlowDescReply build();
         OFVersion getVersion();
+        OFType getType();
+        long getXid();
+        Builder setXid(long xid);
+        OFStatsType getStatsType();
+        Set<OFStatsReplyFlags> getFlags();
+        Builder setFlags(Set<OFStatsReplyFlags> flags);
+        List<OFFlowDescEntry> getEntries();
+        Builder setEntries(List<OFFlowDescEntry> entries);
     }
 }
