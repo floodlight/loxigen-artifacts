@@ -1,1 +1,1 @@
-359c28ee8a60f1732634e618df414ec46fb007b1 Merge into master from pull request #489: HexString: optimize performance; MacAddress: optimize putTo BVS-5367 LOXI-77 (https://github.com/floodlight/loxigen/pull/489)
+1a03286b9073e0b4b760aab72fab4cd47208bcee Merge e52485d8e36adb1461d92760ad0bd2e8f397f3be into 359c28ee8a60f1732634e618df414ec46fb007b1
