@@ -1,1 +1,1 @@
-bbd08a0ba812425e7310286dc0692baae3a24d7b Merge into master from pull request #487: ACTSET_OUTPUT OXM should be type OFPort, not TransportPort (https://github.com/floodlight/loxigen/pull/487)
+359c28ee8a60f1732634e618df414ec46fb007b1 Merge into master from pull request #489: HexString: optimize performance; MacAddress: optimize putTo BVS-5367 LOXI-77 (https://github.com/floodlight/loxigen/pull/489)
