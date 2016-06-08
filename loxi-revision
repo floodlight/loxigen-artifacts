@@ -1,1 +1,1 @@
-359c28ee8a60f1732634e618df414ec46fb007b1 Merge into master from pull request #489: HexString: optimize performance; MacAddress: optimize putTo BVS-5367 LOXI-77 (https://github.com/floodlight/loxigen/pull/489)
+e5101b1e2b2b273adddf8848e5ba89b6198025b6 Merge into master from pull request #492: OF1.0 patch for ICMP type and code matches (https://github.com/floodlight/loxigen/pull/492)
