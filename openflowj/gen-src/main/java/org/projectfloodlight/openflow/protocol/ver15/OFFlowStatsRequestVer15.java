@@ -43,7 +43,7 @@ class OFFlowStatsRequestVer15 implements OFFlowStatsRequest {
         private final static Set<OFStatsRequestFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsRequestFlags>of();
         private final static TableId DEFAULT_TABLE_ID = TableId.ALL;
         private final static OFPort DEFAULT_OUT_PORT = OFPort.ANY;
-        private final static OFGroup DEFAULT_OUT_GROUP = OFGroup.ANY;
+        private final static OFGroup DEFAULT_OUT_GROUP = OFGroup.ALL;
         private final static U64 DEFAULT_COOKIE = U64.ZERO;
         private final static U64 DEFAULT_COOKIE_MASK = U64.ZERO;
         private final static Match DEFAULT_MATCH = OFFactoryVer15.MATCH_WILDCARD_ALL;
@@ -114,7 +114,7 @@ class OFFlowStatsRequestVer15 implements OFFlowStatsRequest {
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_DESC;
+        return OFStatsType.FLOW;
     }
 
     @Override
@@ -206,7 +206,7 @@ class OFFlowStatsRequestVer15 implements OFFlowStatsRequest {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_DESC;
+        return OFStatsType.FLOW;
     }
 
     @Override
@@ -370,7 +370,7 @@ class OFFlowStatsRequestVer15 implements OFFlowStatsRequest {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_DESC;
+        return OFStatsType.FLOW;
     }
 
     @Override
@@ -519,7 +519,7 @@ class OFFlowStatsRequestVer15 implements OFFlowStatsRequest {
             // fixed value property statsType == 1
             short statsType = bb.readShort();
             if(statsType != (short) 0x1)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.FLOW_DESC(1), got="+statsType);
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.FLOW(1), got="+statsType);
             Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);

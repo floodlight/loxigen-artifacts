@@ -86,7 +86,7 @@ class OFMeterStatsReplyVer15 implements OFMeterStatsReply {
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.METER_STATS;
+        return OFStatsType.METER;
     }
 
     @Override
@@ -143,7 +143,7 @@ class OFMeterStatsReplyVer15 implements OFMeterStatsReply {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.METER_STATS;
+        return OFStatsType.METER;
     }
 
     @Override
@@ -222,7 +222,7 @@ class OFMeterStatsReplyVer15 implements OFMeterStatsReply {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.METER_STATS;
+        return OFStatsType.METER;
     }
 
     @Override
@@ -296,7 +296,7 @@ class OFMeterStatsReplyVer15 implements OFMeterStatsReply {
             // fixed value property statsType == 9
             short statsType = bb.readShort();
             if(statsType != (short) 0x9)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.METER_STATS(9), got="+statsType);
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.METER(9), got="+statsType);
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);

@@ -86,7 +86,7 @@ class OFFlowStatsReplyVer15 implements OFFlowStatsReply {
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_DESC;
+        return OFStatsType.FLOW;
     }
 
     @Override
@@ -143,7 +143,7 @@ class OFFlowStatsReplyVer15 implements OFFlowStatsReply {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_DESC;
+        return OFStatsType.FLOW;
     }
 
     @Override
@@ -222,7 +222,7 @@ class OFFlowStatsReplyVer15 implements OFFlowStatsReply {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_DESC;
+        return OFStatsType.FLOW;
     }
 
     @Override
@@ -296,7 +296,7 @@ class OFFlowStatsReplyVer15 implements OFFlowStatsReply {
             // fixed value property statsType == 1
             short statsType = bb.readShort();
             if(statsType != (short) 0x1)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.FLOW_DESC(1), got="+statsType);
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.FLOW(1), got="+statsType);
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);

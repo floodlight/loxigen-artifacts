@@ -114,7 +114,7 @@ class OFAggregateStatsRequestVer15 implements OFAggregateStatsRequest {
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.AGGREGATE_STATS;
+        return OFStatsType.AGGREGATE;
     }
 
     @Override
@@ -206,7 +206,7 @@ class OFAggregateStatsRequestVer15 implements OFAggregateStatsRequest {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.AGGREGATE_STATS;
+        return OFStatsType.AGGREGATE;
     }
 
     @Override
@@ -370,7 +370,7 @@ class OFAggregateStatsRequestVer15 implements OFAggregateStatsRequest {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.AGGREGATE_STATS;
+        return OFStatsType.AGGREGATE;
     }
 
     @Override
@@ -519,7 +519,7 @@ class OFAggregateStatsRequestVer15 implements OFAggregateStatsRequest {
             // fixed value property statsType == 2
             short statsType = bb.readShort();
             if(statsType != (short) 0x2)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.AGGREGATE_STATS(2), got="+statsType);
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.AGGREGATE(2), got="+statsType);
             Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
