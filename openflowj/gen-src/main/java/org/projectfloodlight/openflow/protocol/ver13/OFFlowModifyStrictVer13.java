@@ -212,6 +212,7 @@ class OFFlowModifyStrictVer13 implements OFFlowModifyStrict {
         }
         return Collections.emptyList();
     }
+
     @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.3");
@@ -420,7 +421,7 @@ class OFFlowModifyStrictVer13 implements OFFlowModifyStrict {
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
         if (!this.instructionsSet)
-            return parentMessage.getActions();
+            return Collections.emptyList();
         for (OFInstruction inst : this.instructions) {
             if (inst instanceof OFInstructionApplyActions) {
                 OFInstructionApplyActions iap = (OFInstructionApplyActions)inst;
@@ -429,6 +430,7 @@ class OFFlowModifyStrictVer13 implements OFFlowModifyStrict {
         }
         return Collections.emptyList();
     }
+
 
     @Override
     public OFFlowModifyStrict.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
@@ -704,6 +706,7 @@ class OFFlowModifyStrictVer13 implements OFFlowModifyStrict {
         }
         return Collections.emptyList();
     }
+
 
     @Override
     public OFFlowModifyStrict.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {

@@ -99,11 +99,6 @@ class OFPortDescStatsReplyVer14 implements OFPortDescStatsReply {
         return entries;
     }
 
-    @Override
-    public List<OFPortDesc> getPorts()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property ports not supported in version 1.4");
-    }
-
 
 
     public OFPortDescStatsReply.Builder createBuilder() {
@@ -172,15 +167,6 @@ class OFPortDescStatsReplyVer14 implements OFPortDescStatsReply {
         this.entries = entries;
         this.entriesSet = true;
         return this;
-    }
-    @Override
-    public List<OFPortDesc> getPorts()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property ports not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDescStatsReply.Builder setPorts(List<OFPortDesc> ports) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property ports not supported in version 1.4");
     }
 
 
@@ -260,15 +246,6 @@ class OFPortDescStatsReplyVer14 implements OFPortDescStatsReply {
         this.entries = entries;
         this.entriesSet = true;
         return this;
-    }
-    @Override
-    public List<OFPortDesc> getPorts()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property ports not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDescStatsReply.Builder setPorts(List<OFPortDesc> ports) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property ports not supported in version 1.4");
     }
 //
         @Override

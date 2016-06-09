@@ -11346,6 +11346,220 @@ class flow_delete_strict(flow_mod):
 
 flow_mod.subtypes[4] = flow_delete_strict
 
+class flow_lightweight_stats_reply(stats_reply):
+    version = 6
+    type = 19
+    stats_type = 17
+
+    def __init__(self, xid=None, flags=None, entries=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if entries != None:
+            self.entries = entries
+        else:
+            self.entries = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(loxi.generic_util.pack_list(self.entries))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = flow_lightweight_stats_reply()
+        _version = reader.read("!B")[0]
+        assert(_version == 6)
+        _type = reader.read("!B")[0]
+        assert(_type == 19)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 17)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        obj.entries = loxi.generic_util.unpack_list(reader, ofp.common.flow_lightweight_stats_entry.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        if self.entries != other.entries: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("flow_lightweight_stats_reply {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("entries = ");
+                q.pp(self.entries)
+            q.breakable()
+        q.text('}')
+
+stats_reply.subtypes[17] = flow_lightweight_stats_reply
+
+class flow_lightweight_stats_request(stats_request):
+    version = 6
+    type = 18
+    stats_type = 17
+
+    def __init__(self, xid=None, flags=None, table_id=None, out_port=None, out_group=None, cookie=None, cookie_mask=None, match=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if table_id != None:
+            self.table_id = table_id
+        else:
+            self.table_id = 0
+        if out_port != None:
+            self.out_port = out_port
+        else:
+            self.out_port = 0
+        if out_group != None:
+            self.out_group = out_group
+        else:
+            self.out_group = 0
+        if cookie != None:
+            self.cookie = cookie
+        else:
+            self.cookie = 0
+        if cookie_mask != None:
+            self.cookie_mask = cookie_mask
+        else:
+            self.cookie_mask = 0
+        if match != None:
+            self.match = match
+        else:
+            self.match = ofp.match()
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(struct.pack("!B", self.table_id))
+        packed.append('\x00' * 3)
+        packed.append(util.pack_port_no(self.out_port))
+        packed.append(struct.pack("!L", self.out_group))
+        packed.append('\x00' * 4)
+        packed.append(struct.pack("!Q", self.cookie))
+        packed.append(struct.pack("!Q", self.cookie_mask))
+        packed.append(self.match.pack())
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = flow_lightweight_stats_request()
+        _version = reader.read("!B")[0]
+        assert(_version == 6)
+        _type = reader.read("!B")[0]
+        assert(_type == 18)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 17)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        obj.table_id = reader.read("!B")[0]
+        reader.skip(3)
+        obj.out_port = util.unpack_port_no(reader)
+        obj.out_group = reader.read("!L")[0]
+        reader.skip(4)
+        obj.cookie = reader.read("!Q")[0]
+        obj.cookie_mask = reader.read("!Q")[0]
+        obj.match = ofp.match.unpack(reader)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        if self.table_id != other.table_id: return False
+        if self.out_port != other.out_port: return False
+        if self.out_group != other.out_group: return False
+        if self.cookie != other.cookie: return False
+        if self.cookie_mask != other.cookie_mask: return False
+        if self.match != other.match: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("flow_lightweight_stats_request {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("table_id = ");
+                q.text("%#x" % self.table_id)
+                q.text(","); q.breakable()
+                q.text("out_port = ");
+                q.text(util.pretty_port(self.out_port))
+                q.text(","); q.breakable()
+                q.text("out_group = ");
+                q.text("%#x" % self.out_group)
+                q.text(","); q.breakable()
+                q.text("cookie = ");
+                q.text("%#x" % self.cookie)
+                q.text(","); q.breakable()
+                q.text("cookie_mask = ");
+                q.text("%#x" % self.cookie_mask)
+                q.text(","); q.breakable()
+                q.text("match = ");
+                q.pp(self.match)
+            q.breakable()
+        q.text('}')
+
+stats_request.subtypes[17] = flow_lightweight_stats_request
+
 class flow_mod_failed_error_msg(error_msg):
     version = 6
     type = 1
@@ -13998,220 +14212,6 @@ class hello_failed_error_msg(error_msg):
 
 error_msg.subtypes[0] = hello_failed_error_msg
 
-class individual_flow_stats_reply(stats_reply):
-    version = 6
-    type = 19
-    stats_type = 17
-
-    def __init__(self, xid=None, flags=None, entries=None):
-        if xid != None:
-            self.xid = xid
-        else:
-            self.xid = None
-        if flags != None:
-            self.flags = flags
-        else:
-            self.flags = 0
-        if entries != None:
-            self.entries = entries
-        else:
-            self.entries = []
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!B", self.version))
-        packed.append(struct.pack("!B", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
-        packed.append(struct.pack("!L", self.xid))
-        packed.append(struct.pack("!H", self.stats_type))
-        packed.append(struct.pack("!H", self.flags))
-        packed.append('\x00' * 4)
-        packed.append(loxi.generic_util.pack_list(self.entries))
-        length = sum([len(x) for x in packed])
-        packed[2] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = individual_flow_stats_reply()
-        _version = reader.read("!B")[0]
-        assert(_version == 6)
-        _type = reader.read("!B")[0]
-        assert(_type == 19)
-        _length = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
-        obj.xid = reader.read("!L")[0]
-        _stats_type = reader.read("!H")[0]
-        assert(_stats_type == 17)
-        obj.flags = reader.read("!H")[0]
-        reader.skip(4)
-        obj.entries = loxi.generic_util.unpack_list(reader, ofp.common.individual_flow_stats_entry.unpack)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        if self.xid != other.xid: return False
-        if self.flags != other.flags: return False
-        if self.entries != other.entries: return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("individual_flow_stats_reply {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-                q.text("xid = ");
-                if self.xid != None:
-                    q.text("%#x" % self.xid)
-                else:
-                    q.text('None')
-                q.text(","); q.breakable()
-                q.text("flags = ");
-                q.text("%#x" % self.flags)
-                q.text(","); q.breakable()
-                q.text("entries = ");
-                q.pp(self.entries)
-            q.breakable()
-        q.text('}')
-
-stats_reply.subtypes[17] = individual_flow_stats_reply
-
-class individual_flow_stats_request(stats_request):
-    version = 6
-    type = 18
-    stats_type = 17
-
-    def __init__(self, xid=None, flags=None, table_id=None, out_port=None, out_group=None, cookie=None, cookie_mask=None, match=None):
-        if xid != None:
-            self.xid = xid
-        else:
-            self.xid = None
-        if flags != None:
-            self.flags = flags
-        else:
-            self.flags = 0
-        if table_id != None:
-            self.table_id = table_id
-        else:
-            self.table_id = 0
-        if out_port != None:
-            self.out_port = out_port
-        else:
-            self.out_port = 0
-        if out_group != None:
-            self.out_group = out_group
-        else:
-            self.out_group = 0
-        if cookie != None:
-            self.cookie = cookie
-        else:
-            self.cookie = 0
-        if cookie_mask != None:
-            self.cookie_mask = cookie_mask
-        else:
-            self.cookie_mask = 0
-        if match != None:
-            self.match = match
-        else:
-            self.match = ofp.match()
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!B", self.version))
-        packed.append(struct.pack("!B", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
-        packed.append(struct.pack("!L", self.xid))
-        packed.append(struct.pack("!H", self.stats_type))
-        packed.append(struct.pack("!H", self.flags))
-        packed.append('\x00' * 4)
-        packed.append(struct.pack("!B", self.table_id))
-        packed.append('\x00' * 3)
-        packed.append(util.pack_port_no(self.out_port))
-        packed.append(struct.pack("!L", self.out_group))
-        packed.append('\x00' * 4)
-        packed.append(struct.pack("!Q", self.cookie))
-        packed.append(struct.pack("!Q", self.cookie_mask))
-        packed.append(self.match.pack())
-        length = sum([len(x) for x in packed])
-        packed[2] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = individual_flow_stats_request()
-        _version = reader.read("!B")[0]
-        assert(_version == 6)
-        _type = reader.read("!B")[0]
-        assert(_type == 18)
-        _length = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
-        obj.xid = reader.read("!L")[0]
-        _stats_type = reader.read("!H")[0]
-        assert(_stats_type == 17)
-        obj.flags = reader.read("!H")[0]
-        reader.skip(4)
-        obj.table_id = reader.read("!B")[0]
-        reader.skip(3)
-        obj.out_port = util.unpack_port_no(reader)
-        obj.out_group = reader.read("!L")[0]
-        reader.skip(4)
-        obj.cookie = reader.read("!Q")[0]
-        obj.cookie_mask = reader.read("!Q")[0]
-        obj.match = ofp.match.unpack(reader)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        if self.xid != other.xid: return False
-        if self.flags != other.flags: return False
-        if self.table_id != other.table_id: return False
-        if self.out_port != other.out_port: return False
-        if self.out_group != other.out_group: return False
-        if self.cookie != other.cookie: return False
-        if self.cookie_mask != other.cookie_mask: return False
-        if self.match != other.match: return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("individual_flow_stats_request {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-                q.text("xid = ");
-                if self.xid != None:
-                    q.text("%#x" % self.xid)
-                else:
-                    q.text('None')
-                q.text(","); q.breakable()
-                q.text("flags = ");
-                q.text("%#x" % self.flags)
-                q.text(","); q.breakable()
-                q.text("table_id = ");
-                q.text("%#x" % self.table_id)
-                q.text(","); q.breakable()
-                q.text("out_port = ");
-                q.text(util.pretty_port(self.out_port))
-                q.text(","); q.breakable()
-                q.text("out_group = ");
-                q.text("%#x" % self.out_group)
-                q.text(","); q.breakable()
-                q.text("cookie = ");
-                q.text("%#x" % self.cookie)
-                q.text(","); q.breakable()
-                q.text("cookie_mask = ");
-                q.text("%#x" % self.cookie_mask)
-                q.text(","); q.breakable()
-                q.text("match = ");
-                q.pp(self.match)
-            q.breakable()
-        q.text('}')
-
-stats_request.subtypes[17] = individual_flow_stats_request
-
 class meter_config_stats_reply(stats_reply):
     version = 6
     type = 19
@@ -15160,7 +15160,7 @@ class port_desc_stats_reply(stats_reply):
     type = 19
     stats_type = 13
 
-    def __init__(self, xid=None, flags=None, ports=None):
+    def __init__(self, xid=None, flags=None, entries=None):
         if xid != None:
             self.xid = xid
         else:
@@ -15169,10 +15169,10 @@ class port_desc_stats_reply(stats_reply):
             self.flags = flags
         else:
             self.flags = 0
-        if ports != None:
-            self.ports = ports
+        if entries != None:
+            self.entries = entries
         else:
-            self.ports = []
+            self.entries = []
         return
 
     def pack(self):
@@ -15184,7 +15184,7 @@ class port_desc_stats_reply(stats_reply):
         packed.append(struct.pack("!H", self.stats_type))
         packed.append(struct.pack("!H", self.flags))
         packed.append('\x00' * 4)
-        packed.append(loxi.generic_util.pack_list(self.ports))
+        packed.append(loxi.generic_util.pack_list(self.entries))
         length = sum([len(x) for x in packed])
         packed[2] = struct.pack("!H", length)
         return ''.join(packed)
@@ -15204,14 +15204,14 @@ class port_desc_stats_reply(stats_reply):
         assert(_stats_type == 13)
         obj.flags = reader.read("!H")[0]
         reader.skip(4)
-        obj.ports = loxi.generic_util.unpack_list(reader, ofp.common.port_desc.unpack)
+        obj.entries = loxi.generic_util.unpack_list(reader, ofp.common.port_desc.unpack)
         return obj
 
     def __eq__(self, other):
         if type(self) != type(other): return False
         if self.xid != other.xid: return False
         if self.flags != other.flags: return False
-        if self.ports != other.ports: return False
+        if self.entries != other.entries: return False
         return True
 
     def pretty_print(self, q):
@@ -15228,8 +15228,8 @@ class port_desc_stats_reply(stats_reply):
                 q.text("flags = ");
                 q.text("%#x" % self.flags)
                 q.text(","); q.breakable()
-                q.text("ports = ");
-                q.pp(self.ports)
+                q.text("entries = ");
+                q.pp(self.entries)
             q.breakable()
         q.text('}')
 
@@ -16871,166 +16871,6 @@ class table_desc_stats_request(stats_request):
 
 stats_request.subtypes[14] = table_desc_stats_request
 
-class table_feature_stats_reply(stats_reply):
-    version = 6
-    type = 19
-    stats_type = 12
-
-    def __init__(self, xid=None, flags=None, entries=None):
-        if xid != None:
-            self.xid = xid
-        else:
-            self.xid = None
-        if flags != None:
-            self.flags = flags
-        else:
-            self.flags = 0
-        if entries != None:
-            self.entries = entries
-        else:
-            self.entries = []
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!B", self.version))
-        packed.append(struct.pack("!B", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
-        packed.append(struct.pack("!L", self.xid))
-        packed.append(struct.pack("!H", self.stats_type))
-        packed.append(struct.pack("!H", self.flags))
-        packed.append('\x00' * 4)
-        packed.append(loxi.generic_util.pack_list(self.entries))
-        length = sum([len(x) for x in packed])
-        packed[2] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = table_feature_stats_reply()
-        _version = reader.read("!B")[0]
-        assert(_version == 6)
-        _type = reader.read("!B")[0]
-        assert(_type == 19)
-        _length = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
-        obj.xid = reader.read("!L")[0]
-        _stats_type = reader.read("!H")[0]
-        assert(_stats_type == 12)
-        obj.flags = reader.read("!H")[0]
-        reader.skip(4)
-        obj.entries = loxi.generic_util.unpack_list(reader, ofp.common.table_features.unpack)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        if self.xid != other.xid: return False
-        if self.flags != other.flags: return False
-        if self.entries != other.entries: return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("table_feature_stats_reply {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-                q.text("xid = ");
-                if self.xid != None:
-                    q.text("%#x" % self.xid)
-                else:
-                    q.text('None')
-                q.text(","); q.breakable()
-                q.text("flags = ");
-                q.text("%#x" % self.flags)
-                q.text(","); q.breakable()
-                q.text("entries = ");
-                q.pp(self.entries)
-            q.breakable()
-        q.text('}')
-
-stats_reply.subtypes[12] = table_feature_stats_reply
-
-class table_feature_stats_request(stats_request):
-    version = 6
-    type = 18
-    stats_type = 12
-
-    def __init__(self, xid=None, flags=None, entries=None):
-        if xid != None:
-            self.xid = xid
-        else:
-            self.xid = None
-        if flags != None:
-            self.flags = flags
-        else:
-            self.flags = 0
-        if entries != None:
-            self.entries = entries
-        else:
-            self.entries = []
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!B", self.version))
-        packed.append(struct.pack("!B", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
-        packed.append(struct.pack("!L", self.xid))
-        packed.append(struct.pack("!H", self.stats_type))
-        packed.append(struct.pack("!H", self.flags))
-        packed.append('\x00' * 4)
-        packed.append(loxi.generic_util.pack_list(self.entries))
-        length = sum([len(x) for x in packed])
-        packed[2] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = table_feature_stats_request()
-        _version = reader.read("!B")[0]
-        assert(_version == 6)
-        _type = reader.read("!B")[0]
-        assert(_type == 18)
-        _length = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
-        obj.xid = reader.read("!L")[0]
-        _stats_type = reader.read("!H")[0]
-        assert(_stats_type == 12)
-        obj.flags = reader.read("!H")[0]
-        reader.skip(4)
-        obj.entries = loxi.generic_util.unpack_list(reader, ofp.common.table_features.unpack)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        if self.xid != other.xid: return False
-        if self.flags != other.flags: return False
-        if self.entries != other.entries: return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("table_feature_stats_request {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-                q.text("xid = ");
-                if self.xid != None:
-                    q.text("%#x" % self.xid)
-                else:
-                    q.text('None')
-                q.text(","); q.breakable()
-                q.text("flags = ");
-                q.text("%#x" % self.flags)
-                q.text(","); q.breakable()
-                q.text("entries = ");
-                q.pp(self.entries)
-            q.breakable()
-        q.text('}')
-
-stats_request.subtypes[12] = table_feature_stats_request
-
 class table_features_failed_error_msg(error_msg):
     version = 6
     type = 1
@@ -17108,6 +16948,166 @@ class table_features_failed_error_msg(error_msg):
         q.text('}')
 
 error_msg.subtypes[13] = table_features_failed_error_msg
+
+class table_features_stats_reply(stats_reply):
+    version = 6
+    type = 19
+    stats_type = 12
+
+    def __init__(self, xid=None, flags=None, entries=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if entries != None:
+            self.entries = entries
+        else:
+            self.entries = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(loxi.generic_util.pack_list(self.entries))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = table_features_stats_reply()
+        _version = reader.read("!B")[0]
+        assert(_version == 6)
+        _type = reader.read("!B")[0]
+        assert(_type == 19)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 12)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        obj.entries = loxi.generic_util.unpack_list(reader, ofp.common.table_features.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        if self.entries != other.entries: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("table_features_stats_reply {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("entries = ");
+                q.pp(self.entries)
+            q.breakable()
+        q.text('}')
+
+stats_reply.subtypes[12] = table_features_stats_reply
+
+class table_features_stats_request(stats_request):
+    version = 6
+    type = 18
+    stats_type = 12
+
+    def __init__(self, xid=None, flags=None, entries=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if entries != None:
+            self.entries = entries
+        else:
+            self.entries = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(loxi.generic_util.pack_list(self.entries))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = table_features_stats_request()
+        _version = reader.read("!B")[0]
+        assert(_version == 6)
+        _type = reader.read("!B")[0]
+        assert(_type == 18)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 12)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        obj.entries = loxi.generic_util.unpack_list(reader, ofp.common.table_features.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        if self.entries != other.entries: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("table_features_stats_request {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("entries = ");
+                q.pp(self.entries)
+            q.breakable()
+        q.text('}')
+
+stats_request.subtypes[12] = table_features_stats_request
 
 class table_mod(message):
     version = 6

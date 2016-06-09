@@ -426,6 +426,9 @@ public interface OFFactory extends XidGenerator {
     OFControllerStatusStatsReply.Builder buildControllerStatusStatsReply() throws UnsupportedOperationException;
     OFControllerStatusStatsRequest.Builder buildControllerStatusStatsRequest() throws UnsupportedOperationException;
     OFControllerStatusStatsRequest controllerStatusStatsRequest(Set<OFStatsRequestFlags> flags);
+    OFFlowLightweightStatsEntry.Builder buildFlowLightweightStatsEntry() throws UnsupportedOperationException;
+    OFFlowLightweightStatsReply.Builder buildFlowLightweightStatsReply() throws UnsupportedOperationException;
+    OFFlowLightweightStatsRequest.Builder buildFlowLightweightStatsRequest() throws UnsupportedOperationException;
     OFFlowMonitorEntry.Builder buildFlowMonitorEntry() throws UnsupportedOperationException;
     OFFlowMonitorReply.Builder buildFlowMonitorReply() throws UnsupportedOperationException;
     OFFlowMonitorReplyEntry.Builder buildFlowMonitorReplyEntry() throws UnsupportedOperationException;
@@ -439,9 +442,6 @@ public interface OFFactory extends XidGenerator {
     OFGroupBucketPropWeight groupBucketPropWeight(int weight);
     OFGroupInsertBucket.Builder buildGroupInsertBucket() throws UnsupportedOperationException;
     OFGroupRemoveBucket.Builder buildGroupRemoveBucket() throws UnsupportedOperationException;
-    OFIndividualFlowStatsEntry.Builder buildIndividualFlowStatsEntry() throws UnsupportedOperationException;
-    OFIndividualFlowStatsReply.Builder buildIndividualFlowStatsReply() throws UnsupportedOperationException;
-    OFIndividualFlowStatsRequest.Builder buildIndividualFlowStatsRequest() throws UnsupportedOperationException;
     OFPortDescPropEgress.Builder buildPortDescPropEgress() throws UnsupportedOperationException;
     OFPortDescPropEgress portDescPropEgress(byte[] oxmIds);
     OFPortDescPropIngress.Builder buildPortDescPropIngress() throws UnsupportedOperationException;
@@ -462,8 +462,6 @@ public interface OFFactory extends XidGenerator {
     OFTableFeaturePropWriteCopyfield tableFeaturePropWriteCopyfield(List<U32> oxmIds);
     OFTableFeaturePropWriteCopyfieldMiss.Builder buildTableFeaturePropWriteCopyfieldMiss() throws UnsupportedOperationException;
     OFTableFeaturePropWriteCopyfieldMiss tableFeaturePropWriteCopyfieldMiss(List<U32> oxmIds);
-    OFTableFeatureStatsReply.Builder buildTableFeatureStatsReply() throws UnsupportedOperationException;
-    OFTableFeatureStatsRequest.Builder buildTableFeatureStatsRequest() throws UnsupportedOperationException;
     OFActionCopyField.Builder buildActionCopyField() throws UnsupportedOperationException;
     OFControllerStatusPropUri.Builder buildControllerStatusPropUri() throws UnsupportedOperationException;
     OFControllerStatusPropUri controllerStatusPropUri(OFConnectionIndex uri);

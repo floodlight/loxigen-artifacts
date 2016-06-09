@@ -1777,6 +1777,90 @@ class controller_status_prop(loxi.OFObject):
         q.text('}')
 
 
+class flow_lightweight_stats_entry(loxi.OFObject):
+
+    def __init__(self, table_id=None, reason=None, priority=None, match=None, stats=None):
+        if table_id != None:
+            self.table_id = table_id
+        else:
+            self.table_id = 0
+        if reason != None:
+            self.reason = reason
+        else:
+            self.reason = 0
+        if priority != None:
+            self.priority = priority
+        else:
+            self.priority = 0
+        if match != None:
+            self.match = match
+        else:
+            self.match = ofp.match()
+        if stats != None:
+            self.stats = stats
+        else:
+            self.stats = ofp.stat()
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 0
+        packed.append('\x00' * 2)
+        packed.append(struct.pack("!B", self.table_id))
+        packed.append(struct.pack("!B", self.reason))
+        packed.append(struct.pack("!H", self.priority))
+        packed.append(self.match.pack())
+        packed.append(self.stats.pack())
+        length = sum([len(x) for x in packed])
+        packed[0] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = flow_lightweight_stats_entry()
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 2)
+        reader.skip(2)
+        obj.table_id = reader.read("!B")[0]
+        obj.reason = reader.read("!B")[0]
+        obj.priority = reader.read("!H")[0]
+        obj.match = ofp.match.unpack(reader)
+        obj.stats = ofp.stat.unpack(reader)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.table_id != other.table_id: return False
+        if self.reason != other.reason: return False
+        if self.priority != other.priority: return False
+        if self.match != other.match: return False
+        if self.stats != other.stats: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("flow_lightweight_stats_entry {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("table_id = ");
+                q.text("%#x" % self.table_id)
+                q.text(","); q.breakable()
+                q.text("reason = ");
+                q.text("%#x" % self.reason)
+                q.text(","); q.breakable()
+                q.text("priority = ");
+                q.text("%#x" % self.priority)
+                q.text(","); q.breakable()
+                q.text("match = ");
+                q.pp(self.match)
+                q.text(","); q.breakable()
+                q.text("stats = ");
+                q.pp(self.stats)
+            q.breakable()
+        q.text('}')
+
+
 class flow_monitor_entry(loxi.OFObject):
 
     def __init__(self, monitor_id=None, out_port=None, out_group=None, flags=None, table_id=None, command=None, match=None):
@@ -2737,90 +2821,6 @@ class hello_elem_versionbitmap(hello_elem):
         q.text('}')
 
 hello_elem.subtypes[1] = hello_elem_versionbitmap
-
-class individual_flow_stats_entry(loxi.OFObject):
-
-    def __init__(self, table_id=None, reason=None, priority=None, match=None, stats=None):
-        if table_id != None:
-            self.table_id = table_id
-        else:
-            self.table_id = 0
-        if reason != None:
-            self.reason = reason
-        else:
-            self.reason = 0
-        if priority != None:
-            self.priority = priority
-        else:
-            self.priority = 0
-        if match != None:
-            self.match = match
-        else:
-            self.match = ofp.match()
-        if stats != None:
-            self.stats = stats
-        else:
-            self.stats = ofp.stat()
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!H", 0)) # placeholder for length at index 0
-        packed.append('\x00' * 2)
-        packed.append(struct.pack("!B", self.table_id))
-        packed.append(struct.pack("!B", self.reason))
-        packed.append(struct.pack("!H", self.priority))
-        packed.append(self.match.pack())
-        packed.append(self.stats.pack())
-        length = sum([len(x) for x in packed])
-        packed[0] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = individual_flow_stats_entry()
-        _length = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_length, 2)
-        reader.skip(2)
-        obj.table_id = reader.read("!B")[0]
-        obj.reason = reader.read("!B")[0]
-        obj.priority = reader.read("!H")[0]
-        obj.match = ofp.match.unpack(reader)
-        obj.stats = ofp.stat.unpack(reader)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        if self.table_id != other.table_id: return False
-        if self.reason != other.reason: return False
-        if self.priority != other.priority: return False
-        if self.match != other.match: return False
-        if self.stats != other.stats: return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("individual_flow_stats_entry {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-                q.text("table_id = ");
-                q.text("%#x" % self.table_id)
-                q.text(","); q.breakable()
-                q.text("reason = ");
-                q.text("%#x" % self.reason)
-                q.text(","); q.breakable()
-                q.text("priority = ");
-                q.text("%#x" % self.priority)
-                q.text(","); q.breakable()
-                q.text("match = ");
-                q.pp(self.match)
-                q.text(","); q.breakable()
-                q.text("stats = ");
-                q.pp(self.stats)
-            q.breakable()
-        q.text('}')
-
 
 class match_v3(loxi.OFObject):
     type = 1

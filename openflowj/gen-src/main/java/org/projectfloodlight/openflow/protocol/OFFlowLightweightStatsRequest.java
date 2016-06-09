@@ -25,32 +25,46 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
+import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
-public interface OFIndividualFlowStatsEntry extends OFObject {
-    TableId getTableId();
-    OFFlowStatsReason getReason();
-    int getPriority();
-    Match getMatch();
-    Stat getStats();
+public interface OFFlowLightweightStatsRequest extends OFObject, OFStatsRequest<OFFlowLightweightStatsReply>, OFRequest<OFFlowLightweightStatsReply> {
     OFVersion getVersion();
+    OFType getType();
+    long getXid();
+    OFStatsType getStatsType();
+    Set<OFStatsRequestFlags> getFlags();
+    TableId getTableId();
+    OFPort getOutPort();
+    OFGroup getOutGroup();
+    U64 getCookie();
+    U64 getCookieMask();
+    Match getMatch();
 
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
-    public interface Builder  {
-        OFIndividualFlowStatsEntry build();
+    public interface Builder extends OFStatsRequest.Builder<OFFlowLightweightStatsReply> {
+        OFFlowLightweightStatsRequest build();
+        OFVersion getVersion();
+        OFType getType();
+        long getXid();
+        Builder setXid(long xid);
+        OFStatsType getStatsType();
+        Set<OFStatsRequestFlags> getFlags();
+        Builder setFlags(Set<OFStatsRequestFlags> flags);
         TableId getTableId();
         Builder setTableId(TableId tableId);
-        OFFlowStatsReason getReason();
-        Builder setReason(OFFlowStatsReason reason);
-        int getPriority();
-        Builder setPriority(int priority);
+        OFPort getOutPort();
+        Builder setOutPort(OFPort outPort);
+        OFGroup getOutGroup();
+        Builder setOutGroup(OFGroup outGroup);
+        U64 getCookie();
+        Builder setCookie(U64 cookie);
+        U64 getCookieMask();
+        Builder setCookieMask(U64 cookieMask);
         Match getMatch();
         Builder setMatch(Match match);
-        Stat getStats();
-        Builder setStats(Stat stats);
-        OFVersion getVersion();
     }
 }
