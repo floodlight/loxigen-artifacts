@@ -347,6 +347,7 @@ class OFOxmPacketTypeMaskedVer15 implements OFOxmPacketTypeMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

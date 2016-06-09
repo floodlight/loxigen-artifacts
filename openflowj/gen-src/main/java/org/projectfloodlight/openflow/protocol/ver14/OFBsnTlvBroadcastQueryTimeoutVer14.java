@@ -250,6 +250,7 @@ class OFBsnTlvBroadcastQueryTimeoutVer14 implements OFBsnTlvBroadcastQueryTimeou
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

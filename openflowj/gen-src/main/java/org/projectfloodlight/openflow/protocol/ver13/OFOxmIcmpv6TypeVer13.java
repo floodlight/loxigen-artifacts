@@ -305,6 +305,7 @@ class OFOxmIcmpv6TypeVer13 implements OFOxmIcmpv6Type {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -174,6 +174,7 @@ class OFInstructionIdBsnDisableSplitHorizonCheckVer13 implements OFInstructionId
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

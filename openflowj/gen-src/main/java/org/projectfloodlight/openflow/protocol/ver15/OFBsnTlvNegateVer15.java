@@ -148,6 +148,7 @@ class OFBsnTlvNegateVer15 implements OFBsnTlvNegate {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

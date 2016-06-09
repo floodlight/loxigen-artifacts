@@ -174,6 +174,7 @@ class OFActionIdBsnChecksumVer13 implements OFActionIdBsnChecksum {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

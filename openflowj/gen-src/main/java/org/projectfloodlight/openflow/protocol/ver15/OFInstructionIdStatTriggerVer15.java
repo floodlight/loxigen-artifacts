@@ -148,6 +148,7 @@ class OFInstructionIdStatTriggerVer15 implements OFInstructionIdStatTrigger {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

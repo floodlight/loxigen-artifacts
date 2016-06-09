@@ -250,6 +250,7 @@ class OFAsyncConfigPropRequestforwardSlaveVer15 implements OFAsyncConfigPropRequ
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -148,6 +148,7 @@ class OFInstructionIdWriteMetadataVer14 implements OFInstructionIdWriteMetadata 
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

@@ -305,6 +305,7 @@ class OFOxmIpEcnVer12 implements OFOxmIpEcn {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

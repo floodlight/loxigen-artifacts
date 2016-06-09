@@ -250,6 +250,7 @@ class OFBsnTlvUdpDstVer14 implements OFBsnTlvUdpDst {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

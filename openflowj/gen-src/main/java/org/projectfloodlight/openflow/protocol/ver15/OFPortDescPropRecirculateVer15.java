@@ -263,6 +263,7 @@ class OFPortDescPropRecirculateVer15 implements OFPortDescPropRecirculate {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

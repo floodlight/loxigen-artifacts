@@ -260,6 +260,7 @@ class OFBsnTlvActorSystemMacVer14 implements OFBsnTlvActorSystemMac {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

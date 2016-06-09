@@ -179,6 +179,7 @@ class OFInstructionBsnDisableL3Ver14 implements OFInstructionBsnDisableL3 {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

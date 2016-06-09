@@ -250,6 +250,7 @@ class OFBsnTlvPartnerPortPriorityVer13 implements OFBsnTlvPartnerPortPriority {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

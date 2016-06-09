@@ -501,6 +501,34 @@ class OFBsnImageDescStatsReplyVer13 implements OFBsnImageDescStatsReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnImageDescStatsReplyVer13 other = (OFBsnImageDescStatsReplyVer13) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (imageChecksum == null) {
+            if (other.imageChecksum != null)
+                return false;
+        } else if (!imageChecksum.equals(other.imageChecksum))
+            return false;
+        if (startupConfigChecksum == null) {
+            if (other.startupConfigChecksum != null)
+                return false;
+        } else if (!startupConfigChecksum.equals(other.startupConfigChecksum))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

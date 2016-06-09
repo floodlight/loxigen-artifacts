@@ -394,6 +394,29 @@ class OFRoleRequestFailedErrorMsgVer12 implements OFRoleRequestFailedErrorMsg {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFRoleRequestFailedErrorMsgVer12 other = (OFRoleRequestFailedErrorMsgVer12) obj;
+
+        // ignore XID
+        if (code == null) {
+            if (other.code != null)
+                return false;
+        } else if (!code.equals(other.code))
+            return false;
+        if (data == null) {
+            if (other.data != null)
+                return false;
+        } else if (!data.equals(other.data))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

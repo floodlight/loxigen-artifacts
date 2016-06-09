@@ -409,6 +409,23 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnShellCommandVer10 other = (OFBsnShellCommandVer10) obj;
+
+        // ignore XID
+        if( service != other.service)
+            return false;
+        if (!Arrays.equals(data, other.data))
+                return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

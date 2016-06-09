@@ -260,6 +260,7 @@ class OFBsnTlvNextHopIpv4Ver14 implements OFBsnTlvNextHopIpv4 {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

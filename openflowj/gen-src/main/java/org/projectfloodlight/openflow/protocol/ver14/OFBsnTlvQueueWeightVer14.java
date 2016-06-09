@@ -250,6 +250,7 @@ class OFBsnTlvQueueWeightVer14 implements OFBsnTlvQueueWeight {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

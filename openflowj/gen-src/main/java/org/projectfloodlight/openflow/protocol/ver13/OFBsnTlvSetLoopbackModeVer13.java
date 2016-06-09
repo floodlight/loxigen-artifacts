@@ -149,6 +149,7 @@ class OFBsnTlvSetLoopbackModeVer13 implements OFBsnTlvSetLoopbackMode {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

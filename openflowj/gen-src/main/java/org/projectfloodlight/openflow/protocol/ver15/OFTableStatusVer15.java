@@ -399,6 +399,29 @@ class OFTableStatusVer15 implements OFTableStatus {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFTableStatusVer15 other = (OFTableStatusVer15) obj;
+
+        // ignore XID
+        if (reason == null) {
+            if (other.reason != null)
+                return false;
+        } else if (!reason.equals(other.reason))
+            return false;
+        if (table == null) {
+            if (other.table != null)
+                return false;
+        } else if (!table.equals(other.table))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

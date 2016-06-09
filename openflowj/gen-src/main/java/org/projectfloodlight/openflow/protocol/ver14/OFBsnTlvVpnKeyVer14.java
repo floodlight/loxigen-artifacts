@@ -250,6 +250,7 @@ class OFBsnTlvVpnKeyVer14 implements OFBsnTlvVpnKey {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

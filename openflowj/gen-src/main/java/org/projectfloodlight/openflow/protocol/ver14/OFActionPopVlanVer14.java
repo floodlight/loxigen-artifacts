@@ -153,6 +153,7 @@ class OFActionPopVlanVer14 implements OFActionPopVlan {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

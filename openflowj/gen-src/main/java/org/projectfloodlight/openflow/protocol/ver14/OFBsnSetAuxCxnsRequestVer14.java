@@ -350,6 +350,21 @@ class OFBsnSetAuxCxnsRequestVer14 implements OFBsnSetAuxCxnsRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnSetAuxCxnsRequestVer14 other = (OFBsnSetAuxCxnsRequestVer14) obj;
+
+        // ignore XID
+        if( numAux != other.numAux)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

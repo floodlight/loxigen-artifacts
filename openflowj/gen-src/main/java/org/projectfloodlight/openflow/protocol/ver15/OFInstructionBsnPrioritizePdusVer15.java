@@ -179,6 +179,7 @@ class OFInstructionBsnPrioritizePdusVer15 implements OFInstructionBsnPrioritizeP
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

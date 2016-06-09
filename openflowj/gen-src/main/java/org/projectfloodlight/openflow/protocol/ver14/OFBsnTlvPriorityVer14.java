@@ -250,6 +250,7 @@ class OFBsnTlvPriorityVer14 implements OFBsnTlvPriority {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

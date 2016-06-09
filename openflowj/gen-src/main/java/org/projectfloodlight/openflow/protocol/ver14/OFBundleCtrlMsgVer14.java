@@ -486,6 +486,39 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBundleCtrlMsgVer14 other = (OFBundleCtrlMsgVer14) obj;
+
+        // ignore XID
+        if (bundleId == null) {
+            if (other.bundleId != null)
+                return false;
+        } else if (!bundleId.equals(other.bundleId))
+            return false;
+        if (bundleCtrlType == null) {
+            if (other.bundleCtrlType != null)
+                return false;
+        } else if (!bundleCtrlType.equals(other.bundleCtrlType))
+            return false;
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (properties == null) {
+            if (other.properties != null)
+                return false;
+        } else if (!properties.equals(other.properties))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

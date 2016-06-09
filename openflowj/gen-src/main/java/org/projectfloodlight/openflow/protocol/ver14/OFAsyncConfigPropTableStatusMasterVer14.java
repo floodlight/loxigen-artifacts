@@ -250,6 +250,7 @@ class OFAsyncConfigPropTableStatusMasterVer14 implements OFAsyncConfigPropTableS
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

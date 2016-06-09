@@ -842,6 +842,7 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

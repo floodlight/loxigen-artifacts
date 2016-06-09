@@ -351,6 +351,7 @@ class OFOxmTcpSrcMaskedVer12 implements OFOxmTcpSrcMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -514,6 +514,7 @@ class OFGroupStatsEntryVer11 implements OFGroupStatsEntry {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

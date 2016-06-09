@@ -153,6 +153,7 @@ class OFActionCopyTtlInVer12 implements OFActionCopyTtlIn {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

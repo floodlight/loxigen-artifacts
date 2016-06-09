@@ -351,6 +351,7 @@ class OFOxmVlanVidMaskedVer12 implements OFOxmVlanVidMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

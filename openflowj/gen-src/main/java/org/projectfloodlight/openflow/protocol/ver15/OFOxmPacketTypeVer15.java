@@ -301,6 +301,7 @@ class OFOxmPacketTypeVer15 implements OFOxmPacketType {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

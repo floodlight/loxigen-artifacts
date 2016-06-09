@@ -250,6 +250,7 @@ class OFBsnTlvUnicastQueryTimeoutVer14 implements OFBsnTlvUnicastQueryTimeout {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -305,6 +305,7 @@ class OFOxmIpv6DstVer12 implements OFOxmIpv6Dst {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

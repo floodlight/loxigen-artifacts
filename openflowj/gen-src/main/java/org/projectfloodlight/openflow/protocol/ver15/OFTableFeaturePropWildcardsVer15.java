@@ -267,6 +267,7 @@ class OFTableFeaturePropWildcardsVer15 implements OFTableFeaturePropWildcards {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

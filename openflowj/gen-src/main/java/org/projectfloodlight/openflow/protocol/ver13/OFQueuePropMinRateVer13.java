@@ -260,6 +260,7 @@ class OFQueuePropMinRateVer13 implements OFQueuePropMinRate {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

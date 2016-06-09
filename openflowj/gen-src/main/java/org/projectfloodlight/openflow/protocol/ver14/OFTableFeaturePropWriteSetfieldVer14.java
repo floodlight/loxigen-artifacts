@@ -272,6 +272,7 @@ class OFTableFeaturePropWriteSetfieldVer14 implements OFTableFeaturePropWriteSet
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

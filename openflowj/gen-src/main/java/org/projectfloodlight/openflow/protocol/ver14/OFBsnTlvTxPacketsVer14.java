@@ -260,6 +260,7 @@ class OFBsnTlvTxPacketsVer14 implements OFBsnTlvTxPackets {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

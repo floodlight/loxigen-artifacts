@@ -272,6 +272,7 @@ class OFTableFeaturePropApplySetfieldMissVer13 implements OFTableFeaturePropAppl
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

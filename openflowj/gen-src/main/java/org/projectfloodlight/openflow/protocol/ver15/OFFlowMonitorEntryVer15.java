@@ -526,6 +526,7 @@ class OFFlowMonitorEntryVer15 implements OFFlowMonitorEntry {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

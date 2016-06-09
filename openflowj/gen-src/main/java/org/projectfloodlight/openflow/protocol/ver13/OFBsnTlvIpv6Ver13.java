@@ -260,6 +260,7 @@ class OFBsnTlvIpv6Ver13 implements OFBsnTlvIpv6 {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -305,6 +305,7 @@ class OFOxmArpTpaVer12 implements OFOxmArpTpa {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -351,6 +351,7 @@ class OFPacketQueueVer12 implements OFPacketQueue {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

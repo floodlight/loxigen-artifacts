@@ -317,6 +317,7 @@ class OFRolePropBsnVer15 implements OFRolePropBsn {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

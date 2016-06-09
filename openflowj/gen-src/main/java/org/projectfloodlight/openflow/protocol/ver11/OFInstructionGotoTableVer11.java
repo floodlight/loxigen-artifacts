@@ -265,6 +265,7 @@ class OFInstructionGotoTableVer11 implements OFInstructionGotoTable {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

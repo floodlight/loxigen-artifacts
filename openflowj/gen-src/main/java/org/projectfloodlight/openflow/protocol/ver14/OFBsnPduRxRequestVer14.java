@@ -516,6 +516,30 @@ class OFBsnPduRxRequestVer14 implements OFBsnPduRxRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnPduRxRequestVer14 other = (OFBsnPduRxRequestVer14) obj;
+
+        // ignore XID
+        if( timeoutMs != other.timeoutMs)
+            return false;
+        if (portNo == null) {
+            if (other.portNo != null)
+                return false;
+        } else if (!portNo.equals(other.portNo))
+            return false;
+        if( slotNum != other.slotNum)
+            return false;
+        if (!Arrays.equals(data, other.data))
+                return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

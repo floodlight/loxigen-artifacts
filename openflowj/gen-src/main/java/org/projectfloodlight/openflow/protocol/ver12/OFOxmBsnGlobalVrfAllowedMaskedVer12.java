@@ -351,6 +351,7 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer12 implements OFOxmBsnGlobalVrfAllowedMas
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

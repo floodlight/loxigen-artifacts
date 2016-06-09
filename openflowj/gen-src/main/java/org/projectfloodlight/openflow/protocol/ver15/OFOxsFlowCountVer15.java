@@ -305,6 +305,7 @@ class OFOxsFlowCountVer15 implements OFOxsFlowCount {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

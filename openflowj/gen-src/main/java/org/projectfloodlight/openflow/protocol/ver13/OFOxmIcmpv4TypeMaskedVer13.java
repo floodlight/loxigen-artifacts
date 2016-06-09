@@ -351,6 +351,7 @@ class OFOxmIcmpv4TypeMaskedVer13 implements OFOxmIcmpv4TypeMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -351,6 +351,7 @@ class OFOxmIpv4SrcMaskedVer15 implements OFOxmIpv4SrcMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

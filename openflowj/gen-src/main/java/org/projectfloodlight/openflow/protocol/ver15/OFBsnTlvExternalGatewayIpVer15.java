@@ -260,6 +260,7 @@ class OFBsnTlvExternalGatewayIpVer15 implements OFBsnTlvExternalGatewayIp {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

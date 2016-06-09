@@ -351,6 +351,7 @@ class OFOxmIpEcnMaskedVer15 implements OFOxmIpEcnMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

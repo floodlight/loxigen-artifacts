@@ -267,6 +267,7 @@ class OFTableFeaturePropInstructionsMissVer15 implements OFTableFeaturePropInstr
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

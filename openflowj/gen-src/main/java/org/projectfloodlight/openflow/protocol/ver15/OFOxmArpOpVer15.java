@@ -305,6 +305,7 @@ class OFOxmArpOpVer15 implements OFOxmArpOp {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

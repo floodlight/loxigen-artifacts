@@ -250,6 +250,7 @@ class OFGroupBucketPropWatchPortVer15 implements OFGroupBucketPropWatchPort {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

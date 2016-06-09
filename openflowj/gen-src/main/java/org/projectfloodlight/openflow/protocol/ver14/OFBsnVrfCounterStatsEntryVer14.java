@@ -295,6 +295,7 @@ class OFBsnVrfCounterStatsEntryVer14 implements OFBsnVrfCounterStatsEntry {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

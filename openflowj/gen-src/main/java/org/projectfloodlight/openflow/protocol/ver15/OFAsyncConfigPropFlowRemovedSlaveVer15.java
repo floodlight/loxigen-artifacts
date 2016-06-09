@@ -250,6 +250,7 @@ class OFAsyncConfigPropFlowRemovedSlaveVer15 implements OFAsyncConfigPropFlowRem
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -148,6 +148,7 @@ class OFBsnTlvStripMplsL3OnIngressVer15 implements OFBsnTlvStripMplsL3OnIngress 
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

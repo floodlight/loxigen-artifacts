@@ -250,6 +250,7 @@ class OFBsnTlvUsePacketStateVer13 implements OFBsnTlvUsePacketState {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

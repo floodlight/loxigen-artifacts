@@ -263,6 +263,7 @@ class OFPortDescPropEgressVer15 implements OFPortDescPropEgress {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

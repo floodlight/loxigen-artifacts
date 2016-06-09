@@ -351,6 +351,7 @@ class OFOxmIpv6DstMaskedVer14 implements OFOxmIpv6DstMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

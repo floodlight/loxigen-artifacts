@@ -174,6 +174,7 @@ class OFInstructionIdBsnRequireVlanXlateVer15 implements OFInstructionIdBsnRequi
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

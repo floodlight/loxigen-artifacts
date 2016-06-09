@@ -2452,6 +2452,7 @@ class OFMatchV1Ver10 implements OFMatchV1 {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

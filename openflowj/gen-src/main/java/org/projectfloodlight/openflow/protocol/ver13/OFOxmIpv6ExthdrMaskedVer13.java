@@ -351,6 +351,7 @@ class OFOxmIpv6ExthdrMaskedVer13 implements OFOxmIpv6ExthdrMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

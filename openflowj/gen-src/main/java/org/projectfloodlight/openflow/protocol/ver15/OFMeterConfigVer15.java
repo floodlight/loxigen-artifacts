@@ -347,6 +347,7 @@ class OFMeterConfigVer15 implements OFMeterConfig {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

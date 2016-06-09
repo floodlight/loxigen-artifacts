@@ -347,6 +347,7 @@ class OFTableModPropVacancyVer14 implements OFTableModPropVacancy {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

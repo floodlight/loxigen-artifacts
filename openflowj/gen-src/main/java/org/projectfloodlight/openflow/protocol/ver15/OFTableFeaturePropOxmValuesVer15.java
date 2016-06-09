@@ -263,6 +263,7 @@ class OFTableFeaturePropOxmValuesVer15 implements OFTableFeaturePropOxmValues {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -321,6 +321,7 @@ class OFInstructionWriteMetadataVer15 implements OFInstructionWriteMetadata {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

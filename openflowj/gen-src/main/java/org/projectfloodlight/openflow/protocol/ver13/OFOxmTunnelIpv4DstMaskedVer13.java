@@ -351,6 +351,7 @@ class OFOxmTunnelIpv4DstMaskedVer13 implements OFOxmTunnelIpv4DstMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

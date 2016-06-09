@@ -305,6 +305,7 @@ class OFOxmBsnL3InterfaceClassIdVer13 implements OFOxmBsnL3InterfaceClassId {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

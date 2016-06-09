@@ -278,6 +278,7 @@ class OFBsnTableChecksumStatsEntryVer14 implements OFBsnTableChecksumStatsEntry 
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

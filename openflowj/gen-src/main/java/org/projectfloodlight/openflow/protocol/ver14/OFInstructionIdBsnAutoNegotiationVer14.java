@@ -174,6 +174,7 @@ class OFInstructionIdBsnAutoNegotiationVer14 implements OFInstructionIdBsnAutoNe
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

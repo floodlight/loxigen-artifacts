@@ -623,6 +623,49 @@ class OFDescStatsReplyVer11 implements OFDescStatsReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFDescStatsReplyVer11 other = (OFDescStatsReplyVer11) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (mfrDesc == null) {
+            if (other.mfrDesc != null)
+                return false;
+        } else if (!mfrDesc.equals(other.mfrDesc))
+            return false;
+        if (hwDesc == null) {
+            if (other.hwDesc != null)
+                return false;
+        } else if (!hwDesc.equals(other.hwDesc))
+            return false;
+        if (swDesc == null) {
+            if (other.swDesc != null)
+                return false;
+        } else if (!swDesc.equals(other.swDesc))
+            return false;
+        if (serialNum == null) {
+            if (other.serialNum != null)
+                return false;
+        } else if (!serialNum.equals(other.serialNum))
+            return false;
+        if (dpDesc == null) {
+            if (other.dpDesc != null)
+                return false;
+        } else if (!dpDesc.equals(other.dpDesc))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

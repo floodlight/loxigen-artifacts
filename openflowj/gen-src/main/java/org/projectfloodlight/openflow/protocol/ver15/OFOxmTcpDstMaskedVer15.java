@@ -351,6 +351,7 @@ class OFOxmTcpDstMaskedVer15 implements OFOxmTcpDstMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

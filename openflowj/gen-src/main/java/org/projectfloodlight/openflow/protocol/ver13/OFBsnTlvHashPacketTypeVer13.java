@@ -256,6 +256,7 @@ class OFBsnTlvHashPacketTypeVer13 implements OFBsnTlvHashPacketType {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

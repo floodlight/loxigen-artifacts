@@ -179,6 +179,7 @@ class OFInstructionBsnArpOffloadVer13 implements OFInstructionBsnArpOffload {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

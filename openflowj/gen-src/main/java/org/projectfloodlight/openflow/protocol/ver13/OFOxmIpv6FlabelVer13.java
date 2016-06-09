@@ -305,6 +305,7 @@ class OFOxmIpv6FlabelVer13 implements OFOxmIpv6Flabel {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

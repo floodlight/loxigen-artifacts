@@ -313,6 +313,7 @@ class OFBsnTlvReferenceVer13 implements OFBsnTlvReference {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -351,6 +351,7 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -541,6 +541,39 @@ class OFBsnGentableEntryAddVer14 implements OFBsnGentableEntryAdd {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnGentableEntryAddVer14 other = (OFBsnGentableEntryAddVer14) obj;
+
+        // ignore XID
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
+            return false;
+        if (checksum == null) {
+            if (other.checksum != null)
+                return false;
+        } else if (!checksum.equals(other.checksum))
+            return false;
+        if (key == null) {
+            if (other.key != null)
+                return false;
+        } else if (!key.equals(other.key))
+            return false;
+        if (value == null) {
+            if (other.value != null)
+                return false;
+        } else if (!value.equals(other.value))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

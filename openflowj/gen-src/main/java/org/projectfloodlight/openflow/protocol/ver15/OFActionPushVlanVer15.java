@@ -265,6 +265,7 @@ class OFActionPushVlanVer15 implements OFActionPushVlan {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -301,6 +301,7 @@ class OFMeterBandDropVer14 implements OFMeterBandDrop {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

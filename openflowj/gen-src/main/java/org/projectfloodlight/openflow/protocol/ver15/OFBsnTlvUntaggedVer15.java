@@ -148,6 +148,7 @@ class OFBsnTlvUntaggedVer15 implements OFBsnTlvUntagged {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

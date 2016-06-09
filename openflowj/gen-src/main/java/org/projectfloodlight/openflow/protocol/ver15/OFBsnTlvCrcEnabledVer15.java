@@ -250,6 +250,7 @@ class OFBsnTlvCrcEnabledVer15 implements OFBsnTlvCrcEnabled {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

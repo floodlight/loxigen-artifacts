@@ -250,6 +250,7 @@ class OFBsnTlvVlanPcpVer14 implements OFBsnTlvVlanPcp {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

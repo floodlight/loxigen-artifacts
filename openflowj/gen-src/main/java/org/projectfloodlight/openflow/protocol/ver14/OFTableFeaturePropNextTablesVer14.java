@@ -272,6 +272,7 @@ class OFTableFeaturePropNextTablesVer14 implements OFTableFeaturePropNextTables 
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

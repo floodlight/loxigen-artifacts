@@ -272,6 +272,7 @@ class OFInstructionApplyActionsVer11 implements OFInstructionApplyActions {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

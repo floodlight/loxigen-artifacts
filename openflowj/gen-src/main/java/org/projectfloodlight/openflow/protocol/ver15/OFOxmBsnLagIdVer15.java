@@ -305,6 +305,7 @@ class OFOxmBsnLagIdVer15 implements OFOxmBsnLagId {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -250,6 +250,7 @@ class OFBsnTlvHeaderSizeVer14 implements OFBsnTlvHeaderSize {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

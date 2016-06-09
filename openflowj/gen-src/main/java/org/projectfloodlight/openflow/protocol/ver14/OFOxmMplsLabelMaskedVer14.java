@@ -351,6 +351,7 @@ class OFOxmMplsLabelMaskedVer14 implements OFOxmMplsLabelMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

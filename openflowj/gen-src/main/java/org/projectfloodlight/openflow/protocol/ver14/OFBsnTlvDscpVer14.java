@@ -250,6 +250,7 @@ class OFBsnTlvDscpVer14 implements OFBsnTlvDscp {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

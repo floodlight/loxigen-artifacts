@@ -361,6 +361,24 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnVirtualPortCreateRequestVer13 other = (OFBsnVirtualPortCreateRequestVer13) obj;
+
+        // ignore XID
+        if (vport == null) {
+            if (other.vport != null)
+                return false;
+        } else if (!vport.equals(other.vport))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

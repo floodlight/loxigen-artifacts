@@ -305,6 +305,7 @@ class OFOxmBsnVxlanNetworkIdVer14 implements OFOxmBsnVxlanNetworkId {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -305,6 +305,7 @@ class OFOxmIcmpv4CodeVer12 implements OFOxmIcmpv4Code {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

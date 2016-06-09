@@ -296,6 +296,7 @@ class OFBsnTlvHashSeedVer15 implements OFBsnTlvHashSeed {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

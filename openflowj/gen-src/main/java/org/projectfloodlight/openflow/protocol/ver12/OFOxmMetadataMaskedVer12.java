@@ -351,6 +351,7 @@ class OFOxmMetadataMaskedVer12 implements OFOxmMetadataMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

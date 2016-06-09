@@ -305,6 +305,7 @@ class OFOxmIpv6SrcVer12 implements OFOxmIpv6Src {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

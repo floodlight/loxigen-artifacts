@@ -148,6 +148,7 @@ class OFActionIdPushVlanVer13 implements OFActionIdPushVlan {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

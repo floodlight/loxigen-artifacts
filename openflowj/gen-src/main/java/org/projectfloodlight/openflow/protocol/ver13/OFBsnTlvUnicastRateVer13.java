@@ -250,6 +250,7 @@ class OFBsnTlvUnicastRateVer13 implements OFBsnTlvUnicastRate {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

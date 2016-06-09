@@ -148,6 +148,7 @@ class OFActionIdPopVlanVer13 implements OFActionIdPopVlan {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

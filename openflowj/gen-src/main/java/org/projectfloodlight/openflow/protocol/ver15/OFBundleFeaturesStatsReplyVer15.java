@@ -467,6 +467,34 @@ class OFBundleFeaturesStatsReplyVer15 implements OFBundleFeaturesStatsReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBundleFeaturesStatsReplyVer15 other = (OFBundleFeaturesStatsReplyVer15) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (capabilities == null) {
+            if (other.capabilities != null)
+                return false;
+        } else if (!capabilities.equals(other.capabilities))
+            return false;
+        if (properties == null) {
+            if (other.properties != null)
+                return false;
+        } else if (!properties.equals(other.properties))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

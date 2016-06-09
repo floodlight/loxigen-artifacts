@@ -222,6 +222,7 @@ class OFBsnSwitchPipelineStatsEntryVer15 implements OFBsnSwitchPipelineStatsEntr
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

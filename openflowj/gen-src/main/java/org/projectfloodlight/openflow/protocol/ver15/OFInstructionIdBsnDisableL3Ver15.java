@@ -174,6 +174,7 @@ class OFInstructionIdBsnDisableL3Ver15 implements OFInstructionIdBsnDisableL3 {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

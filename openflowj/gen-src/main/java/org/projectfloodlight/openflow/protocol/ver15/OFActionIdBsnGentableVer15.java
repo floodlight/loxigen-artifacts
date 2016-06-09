@@ -174,6 +174,7 @@ class OFActionIdBsnGentableVer15 implements OFActionIdBsnGentable {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

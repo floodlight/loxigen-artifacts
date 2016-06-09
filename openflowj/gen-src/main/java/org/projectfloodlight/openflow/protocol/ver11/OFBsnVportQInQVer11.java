@@ -490,6 +490,7 @@ class OFBsnVportQInQVer11 implements OFBsnVportQInQ {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

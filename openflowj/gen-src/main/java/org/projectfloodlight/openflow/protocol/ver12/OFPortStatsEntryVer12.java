@@ -969,6 +969,7 @@ class OFPortStatsEntryVer12 implements OFPortStatsEntry {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

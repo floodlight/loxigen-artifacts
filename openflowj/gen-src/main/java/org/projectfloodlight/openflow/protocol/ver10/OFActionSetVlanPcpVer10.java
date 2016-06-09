@@ -265,6 +265,7 @@ class OFActionSetVlanPcpVer10 implements OFActionSetVlanPcp {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

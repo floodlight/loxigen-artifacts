@@ -272,6 +272,7 @@ class OFBundlePropTimeVer15 implements OFBundlePropTime {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

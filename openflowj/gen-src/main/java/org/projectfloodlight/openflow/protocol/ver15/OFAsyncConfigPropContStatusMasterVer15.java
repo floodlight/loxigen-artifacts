@@ -250,6 +250,7 @@ class OFAsyncConfigPropContStatusMasterVer15 implements OFAsyncConfigPropContSta
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

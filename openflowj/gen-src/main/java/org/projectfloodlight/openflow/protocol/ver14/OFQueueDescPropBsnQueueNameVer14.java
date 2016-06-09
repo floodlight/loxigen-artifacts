@@ -317,6 +317,7 @@ class OFQueueDescPropBsnQueueNameVer14 implements OFQueueDescPropBsnQueueName {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -266,6 +266,7 @@ class OFActionSetFieldVer14 implements OFActionSetField {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

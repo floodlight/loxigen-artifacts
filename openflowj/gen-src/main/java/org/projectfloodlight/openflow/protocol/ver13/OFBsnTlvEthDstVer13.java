@@ -260,6 +260,7 @@ class OFBsnTlvEthDstVer13 implements OFBsnTlvEthDst {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

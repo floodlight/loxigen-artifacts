@@ -260,6 +260,7 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

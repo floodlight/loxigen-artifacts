@@ -305,6 +305,7 @@ class OFOxmIpv6NdTargetVer15 implements OFOxmIpv6NdTarget {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

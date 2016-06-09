@@ -549,6 +549,32 @@ class OFBsnSetPktinSuppressionRequestVer10 implements OFBsnSetPktinSuppressionRe
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnSetPktinSuppressionRequestVer10 other = (OFBsnSetPktinSuppressionRequestVer10) obj;
+
+        // ignore XID
+        if( enabled != other.enabled)
+            return false;
+        if( idleTimeout != other.idleTimeout)
+            return false;
+        if( hardTimeout != other.hardTimeout)
+            return false;
+        if( priority != other.priority)
+            return false;
+        if (cookie == null) {
+            if (other.cookie != null)
+                return false;
+        } else if (!cookie.equals(other.cookie))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

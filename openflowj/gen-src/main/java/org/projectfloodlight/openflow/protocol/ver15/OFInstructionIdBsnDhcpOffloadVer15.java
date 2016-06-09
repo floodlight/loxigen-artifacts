@@ -174,6 +174,7 @@ class OFInstructionIdBsnDhcpOffloadVer15 implements OFInstructionIdBsnDhcpOffloa
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

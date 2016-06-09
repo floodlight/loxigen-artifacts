@@ -305,6 +305,7 @@ class OFBsnPortCounterStatsEntryVer14 implements OFBsnPortCounterStatsEntry {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

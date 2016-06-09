@@ -261,6 +261,7 @@ class OFBsnTlvActorStateVer15 implements OFBsnTlvActorState {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

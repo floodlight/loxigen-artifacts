@@ -148,6 +148,7 @@ class OFActionIdCopyTtlInVer14 implements OFActionIdCopyTtlIn {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

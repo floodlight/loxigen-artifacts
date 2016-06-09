@@ -305,6 +305,7 @@ class OFOxmVlanPcpVer14 implements OFOxmVlanPcp {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

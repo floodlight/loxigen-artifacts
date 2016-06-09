@@ -304,6 +304,19 @@ class OFBsnControllerConnectionsRequestVer15 implements OFBsnControllerConnectio
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnControllerConnectionsRequestVer15 other = (OFBsnControllerConnectionsRequestVer15) obj;
+
+        // ignore XID
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

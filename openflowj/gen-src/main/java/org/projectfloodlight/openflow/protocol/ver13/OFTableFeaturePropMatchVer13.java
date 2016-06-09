@@ -272,6 +272,7 @@ class OFTableFeaturePropMatchVer13 implements OFTableFeaturePropMatch {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -260,6 +260,7 @@ class OFBsnTlvInternalMacVer15 implements OFBsnTlvInternalMac {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

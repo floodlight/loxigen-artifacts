@@ -305,6 +305,7 @@ class OFOxmBsnL2CacheHitVer14 implements OFOxmBsnL2CacheHit {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

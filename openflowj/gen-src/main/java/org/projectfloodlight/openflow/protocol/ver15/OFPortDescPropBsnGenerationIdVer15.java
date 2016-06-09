@@ -314,6 +314,7 @@ class OFPortDescPropBsnGenerationIdVer15 implements OFPortDescPropBsnGenerationI
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

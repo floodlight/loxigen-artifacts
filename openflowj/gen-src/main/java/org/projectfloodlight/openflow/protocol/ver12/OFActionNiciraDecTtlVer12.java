@@ -184,6 +184,7 @@ class OFActionNiciraDecTtlVer12 implements OFActionNiciraDecTtl {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = 1;

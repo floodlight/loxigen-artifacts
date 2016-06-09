@@ -623,6 +623,7 @@ class OFPortDescPropOpticalVer15 implements OFPortDescPropOptical {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;

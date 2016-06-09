@@ -351,6 +351,7 @@ class OFOxmVlanPcpMaskedVer15 implements OFOxmVlanPcpMasked {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         final int prime = 31;
