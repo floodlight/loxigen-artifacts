@@ -396,6 +396,23 @@ class OFBsnVirtualPortCreateReplyVer12 implements OFBsnVirtualPortCreateReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnVirtualPortCreateReplyVer12 other = (OFBsnVirtualPortCreateReplyVer12) obj;
+
+        // ignore XID
+        if( status != other.status)
+            return false;
+        if( vportNo != other.vportNo)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

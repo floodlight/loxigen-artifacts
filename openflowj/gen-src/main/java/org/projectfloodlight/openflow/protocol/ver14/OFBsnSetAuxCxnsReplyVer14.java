@@ -396,6 +396,23 @@ class OFBsnSetAuxCxnsReplyVer14 implements OFBsnSetAuxCxnsReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnSetAuxCxnsReplyVer14 other = (OFBsnSetAuxCxnsReplyVer14) obj;
+
+        // ignore XID
+        if( numAux != other.numAux)
+            return false;
+        if( status != other.status)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

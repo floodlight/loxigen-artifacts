@@ -982,6 +982,70 @@ class OFFlowDeleteStrictVer12 implements OFFlowDeleteStrict {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFFlowDeleteStrictVer12 other = (OFFlowDeleteStrictVer12) obj;
+
+        // ignore XID
+        if (cookie == null) {
+            if (other.cookie != null)
+                return false;
+        } else if (!cookie.equals(other.cookie))
+            return false;
+        if (cookieMask == null) {
+            if (other.cookieMask != null)
+                return false;
+        } else if (!cookieMask.equals(other.cookieMask))
+            return false;
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
+            return false;
+        if( idleTimeout != other.idleTimeout)
+            return false;
+        if( hardTimeout != other.hardTimeout)
+            return false;
+        if( priority != other.priority)
+            return false;
+        if (bufferId == null) {
+            if (other.bufferId != null)
+                return false;
+        } else if (!bufferId.equals(other.bufferId))
+            return false;
+        if (outPort == null) {
+            if (other.outPort != null)
+                return false;
+        } else if (!outPort.equals(other.outPort))
+            return false;
+        if (outGroup == null) {
+            if (other.outGroup != null)
+                return false;
+        } else if (!outGroup.equals(other.outGroup))
+            return false;
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (match == null) {
+            if (other.match != null)
+                return false;
+        } else if (!match.equals(other.match))
+            return false;
+        if (instructions == null) {
+            if (other.instructions != null)
+                return false;
+        } else if (!instructions.equals(other.instructions))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

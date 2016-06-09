@@ -473,6 +473,34 @@ class OFBsnGentableClearRequestVer15 implements OFBsnGentableClearRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnGentableClearRequestVer15 other = (OFBsnGentableClearRequestVer15) obj;
+
+        // ignore XID
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
+            return false;
+        if (checksum == null) {
+            if (other.checksum != null)
+                return false;
+        } else if (!checksum.equals(other.checksum))
+            return false;
+        if (checksumMask == null) {
+            if (other.checksumMask != null)
+                return false;
+        } else if (!checksumMask.equals(other.checksumMask))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

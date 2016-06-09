@@ -350,6 +350,21 @@ class OFBsnVirtualPortRemoveRequestVer10 implements OFBsnVirtualPortRemoveReques
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnVirtualPortRemoveRequestVer10 other = (OFBsnVirtualPortRemoveRequestVer10) obj;
+
+        // ignore XID
+        if( vportNo != other.vportNo)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

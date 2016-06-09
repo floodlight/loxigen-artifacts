@@ -367,6 +367,24 @@ class OFBsnGetInterfacesReplyVer10 implements OFBsnGetInterfacesReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnGetInterfacesReplyVer10 other = (OFBsnGetInterfacesReplyVer10) obj;
+
+        // ignore XID
+        if (interfaces == null) {
+            if (other.interfaces != null)
+                return false;
+        } else if (!interfaces.equals(other.interfaces))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

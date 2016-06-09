@@ -633,6 +633,43 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFFeaturesReplyVer10 other = (OFFeaturesReplyVer10) obj;
+
+        // ignore XID
+        if (datapathId == null) {
+            if (other.datapathId != null)
+                return false;
+        } else if (!datapathId.equals(other.datapathId))
+            return false;
+        if( nBuffers != other.nBuffers)
+            return false;
+        if( nTables != other.nTables)
+            return false;
+        if (capabilities == null) {
+            if (other.capabilities != null)
+                return false;
+        } else if (!capabilities.equals(other.capabilities))
+            return false;
+        if (actions == null) {
+            if (other.actions != null)
+                return false;
+        } else if (!actions.equals(other.actions))
+            return false;
+        if (ports == null) {
+            if (other.ports != null)
+                return false;
+        } else if (!ports.equals(other.ports))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

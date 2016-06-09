@@ -476,6 +476,31 @@ class OFBsnLuaUploadVer15 implements OFBsnLuaUpload {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnLuaUploadVer15 other = (OFBsnLuaUploadVer15) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (filename == null) {
+            if (other.filename != null)
+                return false;
+        } else if (!filename.equals(other.filename))
+            return false;
+        if (!Arrays.equals(data, other.data))
+                return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

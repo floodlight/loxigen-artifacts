@@ -579,6 +579,44 @@ class OFPortModVer15 implements OFPortMod {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFPortModVer15 other = (OFPortModVer15) obj;
+
+        // ignore XID
+        if (portNo == null) {
+            if (other.portNo != null)
+                return false;
+        } else if (!portNo.equals(other.portNo))
+            return false;
+        if (hwAddr == null) {
+            if (other.hwAddr != null)
+                return false;
+        } else if (!hwAddr.equals(other.hwAddr))
+            return false;
+        if (config == null) {
+            if (other.config != null)
+                return false;
+        } else if (!config.equals(other.config))
+            return false;
+        if (mask == null) {
+            if (other.mask != null)
+                return false;
+        } else if (!mask.equals(other.mask))
+            return false;
+        if (properties == null) {
+            if (other.properties != null)
+                return false;
+        } else if (!properties.equals(other.properties))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

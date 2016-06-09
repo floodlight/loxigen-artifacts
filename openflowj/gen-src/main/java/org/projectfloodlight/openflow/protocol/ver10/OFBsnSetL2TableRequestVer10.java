@@ -406,6 +406,23 @@ class OFBsnSetL2TableRequestVer10 implements OFBsnSetL2TableRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnSetL2TableRequestVer10 other = (OFBsnSetL2TableRequestVer10) obj;
+
+        // ignore XID
+        if( l2TableEnable != other.l2TableEnable)
+            return false;
+        if( l2TablePriority != other.l2TablePriority)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

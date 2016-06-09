@@ -315,6 +315,24 @@ class OFControllerStatusVer15 implements OFControllerStatus {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFControllerStatusVer15 other = (OFControllerStatusVer15) obj;
+
+        // ignore XID
+        if (entry == null) {
+            if (other.entry != null)
+                return false;
+        } else if (!entry.equals(other.entry))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

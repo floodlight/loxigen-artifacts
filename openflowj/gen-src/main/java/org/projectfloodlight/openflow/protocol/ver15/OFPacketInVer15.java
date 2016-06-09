@@ -690,6 +690,48 @@ class OFPacketInVer15 implements OFPacketIn {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFPacketInVer15 other = (OFPacketInVer15) obj;
+
+        // ignore XID
+        if (bufferId == null) {
+            if (other.bufferId != null)
+                return false;
+        } else if (!bufferId.equals(other.bufferId))
+            return false;
+        if( totalLen != other.totalLen)
+            return false;
+        if (reason == null) {
+            if (other.reason != null)
+                return false;
+        } else if (!reason.equals(other.reason))
+            return false;
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
+            return false;
+        if (cookie == null) {
+            if (other.cookie != null)
+                return false;
+        } else if (!cookie.equals(other.cookie))
+            return false;
+        if (match == null) {
+            if (other.match != null)
+                return false;
+        } else if (!match.equals(other.match))
+            return false;
+        if (!Arrays.equals(data, other.data))
+                return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

@@ -350,6 +350,21 @@ class OFBsnFlowIdleEnableSetRequestVer13 implements OFBsnFlowIdleEnableSetReques
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnFlowIdleEnableSetRequestVer13 other = (OFBsnFlowIdleEnableSetRequestVer13) obj;
+
+        // ignore XID
+        if( enable != other.enable)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

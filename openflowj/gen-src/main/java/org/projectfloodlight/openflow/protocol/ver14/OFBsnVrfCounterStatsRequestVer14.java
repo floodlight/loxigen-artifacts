@@ -435,6 +435,26 @@ class OFBsnVrfCounterStatsRequestVer14 implements OFBsnVrfCounterStatsRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnVrfCounterStatsRequestVer14 other = (OFBsnVrfCounterStatsRequestVer14) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if( vrf != other.vrf)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
