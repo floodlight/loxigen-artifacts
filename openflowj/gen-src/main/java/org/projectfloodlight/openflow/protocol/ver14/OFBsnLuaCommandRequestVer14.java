@@ -363,6 +363,21 @@ class OFBsnLuaCommandRequestVer14 implements OFBsnLuaCommandRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnLuaCommandRequestVer14 other = (OFBsnLuaCommandRequestVer14) obj;
+
+        // ignore XID
+        if (!Arrays.equals(data, other.data))
+                return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

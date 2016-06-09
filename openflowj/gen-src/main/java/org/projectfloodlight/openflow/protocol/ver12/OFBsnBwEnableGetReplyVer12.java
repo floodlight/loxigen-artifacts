@@ -350,6 +350,21 @@ class OFBsnBwEnableGetReplyVer12 implements OFBsnBwEnableGetReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnBwEnableGetReplyVer12 other = (OFBsnBwEnableGetReplyVer12) obj;
+
+        // ignore XID
+        if( enabled != other.enabled)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

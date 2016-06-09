@@ -499,6 +499,36 @@ class OFMeterModVer15 implements OFMeterMod {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFMeterModVer15 other = (OFMeterModVer15) obj;
+
+        // ignore XID
+        if (command == null) {
+            if (other.command != null)
+                return false;
+        } else if (!command.equals(other.command))
+            return false;
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if( meterId != other.meterId)
+            return false;
+        if (bands == null) {
+            if (other.bands != null)
+                return false;
+        } else if (!bands.equals(other.bands))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

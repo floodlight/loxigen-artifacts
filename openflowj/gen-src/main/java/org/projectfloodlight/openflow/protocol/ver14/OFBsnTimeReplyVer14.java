@@ -360,6 +360,24 @@ class OFBsnTimeReplyVer14 implements OFBsnTimeReply {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnTimeReplyVer14 other = (OFBsnTimeReplyVer14) obj;
+
+        // ignore XID
+        if (timeMs == null) {
+            if (other.timeMs != null)
+                return false;
+        } else if (!timeMs.equals(other.timeMs))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

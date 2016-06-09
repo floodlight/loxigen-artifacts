@@ -319,6 +319,24 @@ class OFQueueGetConfigRequestVer13 implements OFQueueGetConfigRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFQueueGetConfigRequestVer13 other = (OFQueueGetConfigRequestVer13) obj;
+
+        // ignore XID
+        if (port == null) {
+            if (other.port != null)
+                return false;
+        } else if (!port.equals(other.port))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

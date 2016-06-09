@@ -769,6 +769,50 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFFlowRemovedVer15 other = (OFFlowRemovedVer15) obj;
+
+        // ignore XID
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
+            return false;
+        if (reason == null) {
+            if (other.reason != null)
+                return false;
+        } else if (!reason.equals(other.reason))
+            return false;
+        if( priority != other.priority)
+            return false;
+        if( idleTimeout != other.idleTimeout)
+            return false;
+        if( hardTimeout != other.hardTimeout)
+            return false;
+        if (cookie == null) {
+            if (other.cookie != null)
+                return false;
+        } else if (!cookie.equals(other.cookie))
+            return false;
+        if (match == null) {
+            if (other.match != null)
+                return false;
+        } else if (!match.equals(other.match))
+            return false;
+        if (stats == null) {
+            if (other.stats != null)
+                return false;
+        } else if (!stats.equals(other.stats))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

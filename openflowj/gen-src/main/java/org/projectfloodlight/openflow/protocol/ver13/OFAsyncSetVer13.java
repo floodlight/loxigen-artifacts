@@ -558,6 +558,31 @@ class OFAsyncSetVer13 implements OFAsyncSet {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFAsyncSetVer13 other = (OFAsyncSetVer13) obj;
+
+        // ignore XID
+        if( packetInMaskEqualMaster != other.packetInMaskEqualMaster)
+            return false;
+        if( packetInMaskSlave != other.packetInMaskSlave)
+            return false;
+        if( portStatusMaskEqualMaster != other.portStatusMaskEqualMaster)
+            return false;
+        if( portStatusMaskSlave != other.portStatusMaskSlave)
+            return false;
+        if( flowRemovedMaskEqualMaster != other.flowRemovedMaskEqualMaster)
+            return false;
+        if( flowRemovedMaskSlave != other.flowRemovedMaskSlave)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

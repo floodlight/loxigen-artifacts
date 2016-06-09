@@ -503,6 +503,34 @@ class OFGroupAddVer11 implements OFGroupAdd {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFGroupAddVer11 other = (OFGroupAddVer11) obj;
+
+        // ignore XID
+        if (groupType == null) {
+            if (other.groupType != null)
+                return false;
+        } else if (!groupType.equals(other.groupType))
+            return false;
+        if (group == null) {
+            if (other.group != null)
+                return false;
+        } else if (!group.equals(other.group))
+            return false;
+        if (buckets == null) {
+            if (other.buckets != null)
+                return false;
+        } else if (!buckets.equals(other.buckets))
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

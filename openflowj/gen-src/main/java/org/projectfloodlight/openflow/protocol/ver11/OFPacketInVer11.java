@@ -685,6 +685,48 @@ class OFPacketInVer11 implements OFPacketIn {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFPacketInVer11 other = (OFPacketInVer11) obj;
+
+        // ignore XID
+        if (bufferId == null) {
+            if (other.bufferId != null)
+                return false;
+        } else if (!bufferId.equals(other.bufferId))
+            return false;
+        if (inPort == null) {
+            if (other.inPort != null)
+                return false;
+        } else if (!inPort.equals(other.inPort))
+            return false;
+        if (inPhyPort == null) {
+            if (other.inPhyPort != null)
+                return false;
+        } else if (!inPhyPort.equals(other.inPhyPort))
+            return false;
+        if( totalLen != other.totalLen)
+            return false;
+        if (reason == null) {
+            if (other.reason != null)
+                return false;
+        } else if (!reason.equals(other.reason))
+            return false;
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
+            return false;
+        if (!Arrays.equals(data, other.data))
+                return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

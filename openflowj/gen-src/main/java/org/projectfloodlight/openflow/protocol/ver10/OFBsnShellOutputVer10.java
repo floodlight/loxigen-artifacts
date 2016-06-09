@@ -363,6 +363,21 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnShellOutputVer10 other = (OFBsnShellOutputVer10) obj;
+
+        // ignore XID
+        if (!Arrays.equals(data, other.data))
+                return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

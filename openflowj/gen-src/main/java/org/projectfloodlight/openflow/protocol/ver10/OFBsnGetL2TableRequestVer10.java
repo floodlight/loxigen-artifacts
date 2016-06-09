@@ -304,6 +304,19 @@ class OFBsnGetL2TableRequestVer10 implements OFBsnGetL2TableRequest {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnGetL2TableRequestVer10 other = (OFBsnGetL2TableRequestVer10) obj;
+
+        // ignore XID
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

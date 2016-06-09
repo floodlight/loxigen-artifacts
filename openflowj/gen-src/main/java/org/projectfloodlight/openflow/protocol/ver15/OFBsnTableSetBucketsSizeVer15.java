@@ -416,6 +416,26 @@ class OFBsnTableSetBucketsSizeVer15 implements OFBsnTableSetBucketsSize {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnTableSetBucketsSizeVer15 other = (OFBsnTableSetBucketsSizeVer15) obj;
+
+        // ignore XID
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
+            return false;
+        if( bucketsSize != other.bucketsSize)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

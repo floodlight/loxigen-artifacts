@@ -525,6 +525,36 @@ class OFPacketOutVer13 implements OFPacketOut {
         return true;
     }
 
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFPacketOutVer13 other = (OFPacketOutVer13) obj;
+
+        // ignore XID
+        if (bufferId == null) {
+            if (other.bufferId != null)
+                return false;
+        } else if (!bufferId.equals(other.bufferId))
+            return false;
+        if (inPort == null) {
+            if (other.inPort != null)
+                return false;
+        } else if (!inPort.equals(other.inPort))
+            return false;
+        if (actions == null) {
+            if (other.actions != null)
+                return false;
+        } else if (!actions.equals(other.actions))
+            return false;
+        if (!Arrays.equals(data, other.data))
+                return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
