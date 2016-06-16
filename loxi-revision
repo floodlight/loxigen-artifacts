@@ -1,1 +1,1 @@
-8d8bf8845aaa482447d4be99ee56a2d717b9b6b6 Merge into master from pull request #493: Patch to optionally ignore the XID field in OFMessage and other types (https://github.com/floodlight/loxigen/pull/493)
+52cc4bd609716755792ac6cc72e418154c12af3d Merge 6f2e315254c7078172152605c51e86406b650b93 into 8d8bf8845aaa482447d4be99ee56a2d717b9b6b6
