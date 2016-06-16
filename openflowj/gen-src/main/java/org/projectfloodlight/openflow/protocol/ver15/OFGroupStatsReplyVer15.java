@@ -86,7 +86,7 @@ class OFGroupStatsReplyVer15 implements OFGroupStatsReply {
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.GROUP_STATS;
+        return OFStatsType.GROUP;
     }
 
     @Override
@@ -143,7 +143,7 @@ class OFGroupStatsReplyVer15 implements OFGroupStatsReply {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.GROUP_STATS;
+        return OFStatsType.GROUP;
     }
 
     @Override
@@ -222,7 +222,7 @@ class OFGroupStatsReplyVer15 implements OFGroupStatsReply {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.GROUP_STATS;
+        return OFStatsType.GROUP;
     }
 
     @Override
@@ -296,7 +296,7 @@ class OFGroupStatsReplyVer15 implements OFGroupStatsReply {
             // fixed value property statsType == 6
             short statsType = bb.readShort();
             if(statsType != (short) 0x6)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.GROUP_STATS(6), got="+statsType);
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.GROUP(6), got="+statsType);
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);

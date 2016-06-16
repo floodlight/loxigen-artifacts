@@ -38,10 +38,10 @@ import org.hamcrest.CoreMatchers;
 
 
 
-public class OFIndividualFlowStatsReplyVer15Test {
+public class OFFlowLightweightStatsReplyVer15Test {
     OFFactory factory;
 
-    final static byte[] INDIVIDUAL_FLOW_STATS_REPLY_SERIALIZED =
+    final static byte[] FLOW_LIGHTWEIGHT_STATS_REPLY_SERIALIZED =
         new byte[] { 0x6, 0x13, 0x0, 0x48, 0x12, 0x34, 0x56, 0x78, 0x0, 0x11, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x38, 0x0, 0x0, 0x1, 0x0, 0x0, 0x1, 0x0, 0x1, 0x0, 0x10, (byte) 0x80, 0x0, 0x1, 0x8, 0x0, 0x0, 0x0, 0x4, 0x0, 0x0, 0x0, 0x5, 0x0, 0x0, 0x0, 0x1c, (byte) 0x80, 0x2, 0x0, 0x8, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, (byte) 0x80, 0x2, 0x2, 0x8, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x6, 0x0, 0x0, 0x0, 0x0 };
 
     @Before
@@ -51,11 +51,11 @@ public class OFIndividualFlowStatsReplyVer15Test {
 
     @Test
     public void testWrite() {
-        OFIndividualFlowStatsReply.Builder builder = factory.buildIndividualFlowStatsReply();
+        OFFlowLightweightStatsReply.Builder builder = factory.buildFlowLightweightStatsReply();
         builder
         .setXid(0x12345678)
         .setFlags(ImmutableSet.<OFStatsReplyFlags>of(OFStatsReplyFlags.REPLY_MORE))
-        .setEntries(ImmutableList.<OFIndividualFlowStatsEntry>of(factory.buildIndividualFlowStatsEntry().setTableId(TableId.of(1))
+        .setEntries(ImmutableList.<OFFlowLightweightStatsEntry>of(factory.buildFlowLightweightStatsEntry().setTableId(TableId.of(1))
                                                                 .setReason(OFFlowStatsReason.STATS_REQUEST)
                                                                 .setPriority(1)
                                                                 .setMatch(factory.buildMatch()
@@ -67,22 +67,22 @@ public class OFIndividualFlowStatsReplyVer15Test {
                                                                                 .build())
                                                                 .build()))
         .build();;
-        OFIndividualFlowStatsReply individualFlowStatsReply = builder.build();
+        OFFlowLightweightStatsReply flowLightweightStatsReply = builder.build();
         ByteBuf bb = Unpooled.buffer();
-        individualFlowStatsReply.writeTo(bb);
+        flowLightweightStatsReply.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
 
-        assertThat(written, CoreMatchers.equalTo(INDIVIDUAL_FLOW_STATS_REPLY_SERIALIZED));
+        assertThat(written, CoreMatchers.equalTo(FLOW_LIGHTWEIGHT_STATS_REPLY_SERIALIZED));
     }
 
     @Test
     public void testRead() throws Exception {
-        OFIndividualFlowStatsReply.Builder builder = factory.buildIndividualFlowStatsReply();
+        OFFlowLightweightStatsReply.Builder builder = factory.buildFlowLightweightStatsReply();
         builder
         .setXid(0x12345678)
         .setFlags(ImmutableSet.<OFStatsReplyFlags>of(OFStatsReplyFlags.REPLY_MORE))
-        .setEntries(ImmutableList.<OFIndividualFlowStatsEntry>of(factory.buildIndividualFlowStatsEntry().setTableId(TableId.of(1))
+        .setEntries(ImmutableList.<OFFlowLightweightStatsEntry>of(factory.buildFlowLightweightStatsEntry().setTableId(TableId.of(1))
                                                                 .setReason(OFFlowStatsReason.STATS_REQUEST)
                                                                 .setPriority(1)
                                                                 .setMatch(factory.buildMatch()
@@ -94,32 +94,32 @@ public class OFIndividualFlowStatsReplyVer15Test {
                                                                                 .build())
                                                                 .build()))
         .build();;
-        OFIndividualFlowStatsReply individualFlowStatsReplyBuilt = builder.build();
+        OFFlowLightweightStatsReply flowLightweightStatsReplyBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(INDIVIDUAL_FLOW_STATS_REPLY_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(FLOW_LIGHTWEIGHT_STATS_REPLY_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
-        OFIndividualFlowStatsReply individualFlowStatsReplyRead = OFIndividualFlowStatsReplyVer15.READER.readFrom(input);
-        assertEquals(INDIVIDUAL_FLOW_STATS_REPLY_SERIALIZED.length, input.readerIndex());
+        OFFlowLightweightStatsReply flowLightweightStatsReplyRead = OFFlowLightweightStatsReplyVer15.READER.readFrom(input);
+        assertEquals(FLOW_LIGHTWEIGHT_STATS_REPLY_SERIALIZED.length, input.readerIndex());
 
-        assertEquals(individualFlowStatsReplyBuilt, individualFlowStatsReplyRead);
+        assertEquals(flowLightweightStatsReplyBuilt, flowLightweightStatsReplyRead);
    }
 
    @Test
    public void testReadWrite() throws Exception {
-       ByteBuf input = Unpooled.copiedBuffer(INDIVIDUAL_FLOW_STATS_REPLY_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(FLOW_LIGHTWEIGHT_STATS_REPLY_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
-       OFIndividualFlowStatsReply individualFlowStatsReply = OFIndividualFlowStatsReplyVer15.READER.readFrom(input);
-       assertEquals(INDIVIDUAL_FLOW_STATS_REPLY_SERIALIZED.length, input.readerIndex());
+       OFFlowLightweightStatsReply flowLightweightStatsReply = OFFlowLightweightStatsReplyVer15.READER.readFrom(input);
+       assertEquals(FLOW_LIGHTWEIGHT_STATS_REPLY_SERIALIZED.length, input.readerIndex());
 
        // write message again
        ByteBuf bb = Unpooled.buffer();
-       individualFlowStatsReply.writeTo(bb);
+       flowLightweightStatsReply.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);
 
-       assertThat(written, CoreMatchers.equalTo(INDIVIDUAL_FLOW_STATS_REPLY_SERIALIZED));
+       assertThat(written, CoreMatchers.equalTo(FLOW_LIGHTWEIGHT_STATS_REPLY_SERIALIZED));
    }
 
 }

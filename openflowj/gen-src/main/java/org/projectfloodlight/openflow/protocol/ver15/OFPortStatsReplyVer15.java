@@ -86,7 +86,7 @@ class OFPortStatsReplyVer15 implements OFPortStatsReply {
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.PORT_STATS;
+        return OFStatsType.PORT;
     }
 
     @Override
@@ -143,7 +143,7 @@ class OFPortStatsReplyVer15 implements OFPortStatsReply {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.PORT_STATS;
+        return OFStatsType.PORT;
     }
 
     @Override
@@ -222,7 +222,7 @@ class OFPortStatsReplyVer15 implements OFPortStatsReply {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.PORT_STATS;
+        return OFStatsType.PORT;
     }
 
     @Override
@@ -296,7 +296,7 @@ class OFPortStatsReplyVer15 implements OFPortStatsReply {
             // fixed value property statsType == 4
             short statsType = bb.readShort();
             if(statsType != (short) 0x4)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.PORT_STATS(4), got="+statsType);
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.PORT(4), got="+statsType);
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);

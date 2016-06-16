@@ -33,8 +33,8 @@ import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
-class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest {
-    private static final Logger logger = LoggerFactory.getLogger(OFIndividualFlowStatsRequestVer15.class);
+class OFFlowLightweightStatsRequestVer15 implements OFFlowLightweightStatsRequest {
+    private static final Logger logger = LoggerFactory.getLogger(OFFlowLightweightStatsRequestVer15.class);
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 56;
@@ -43,7 +43,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
         private final static Set<OFStatsRequestFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsRequestFlags>of();
         private final static TableId DEFAULT_TABLE_ID = TableId.ALL;
         private final static OFPort DEFAULT_OUT_PORT = OFPort.ANY;
-        private final static long DEFAULT_OUT_GROUP = 0x0L;
+        private final static OFGroup DEFAULT_OUT_GROUP = OFGroup.ALL;
         private final static U64 DEFAULT_COOKIE = U64.ZERO;
         private final static U64 DEFAULT_COOKIE_MASK = U64.ZERO;
         private final static Match DEFAULT_MATCH = OFFactoryVer15.MATCH_WILDCARD_ALL;
@@ -53,35 +53,38 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     private final Set<OFStatsRequestFlags> flags;
     private final TableId tableId;
     private final OFPort outPort;
-    private final long outGroup;
+    private final OFGroup outGroup;
     private final U64 cookie;
     private final U64 cookieMask;
     private final Match match;
 //
     // Immutable default instance
-    final static OFIndividualFlowStatsRequestVer15 DEFAULT = new OFIndividualFlowStatsRequestVer15(
+    final static OFFlowLightweightStatsRequestVer15 DEFAULT = new OFFlowLightweightStatsRequestVer15(
         DEFAULT_XID, DEFAULT_FLAGS, DEFAULT_TABLE_ID, DEFAULT_OUT_PORT, DEFAULT_OUT_GROUP, DEFAULT_COOKIE, DEFAULT_COOKIE_MASK, DEFAULT_MATCH
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFIndividualFlowStatsRequestVer15(long xid, Set<OFStatsRequestFlags> flags, TableId tableId, OFPort outPort, long outGroup, U64 cookie, U64 cookieMask, Match match) {
+    OFFlowLightweightStatsRequestVer15(long xid, Set<OFStatsRequestFlags> flags, TableId tableId, OFPort outPort, OFGroup outGroup, U64 cookie, U64 cookieMask, Match match) {
         if(flags == null) {
-            throw new NullPointerException("OFIndividualFlowStatsRequestVer15: property flags cannot be null");
+            throw new NullPointerException("OFFlowLightweightStatsRequestVer15: property flags cannot be null");
         }
         if(tableId == null) {
-            throw new NullPointerException("OFIndividualFlowStatsRequestVer15: property tableId cannot be null");
+            throw new NullPointerException("OFFlowLightweightStatsRequestVer15: property tableId cannot be null");
         }
         if(outPort == null) {
-            throw new NullPointerException("OFIndividualFlowStatsRequestVer15: property outPort cannot be null");
+            throw new NullPointerException("OFFlowLightweightStatsRequestVer15: property outPort cannot be null");
+        }
+        if(outGroup == null) {
+            throw new NullPointerException("OFFlowLightweightStatsRequestVer15: property outGroup cannot be null");
         }
         if(cookie == null) {
-            throw new NullPointerException("OFIndividualFlowStatsRequestVer15: property cookie cannot be null");
+            throw new NullPointerException("OFFlowLightweightStatsRequestVer15: property cookie cannot be null");
         }
         if(cookieMask == null) {
-            throw new NullPointerException("OFIndividualFlowStatsRequestVer15: property cookieMask cannot be null");
+            throw new NullPointerException("OFFlowLightweightStatsRequestVer15: property cookieMask cannot be null");
         }
         if(match == null) {
-            throw new NullPointerException("OFIndividualFlowStatsRequestVer15: property match cannot be null");
+            throw new NullPointerException("OFFlowLightweightStatsRequestVer15: property match cannot be null");
         }
         this.xid = xid;
         this.flags = flags;
@@ -111,7 +114,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_STATS;
+        return OFStatsType.FLOW_LIGHTWEIGHT;
     }
 
     @Override
@@ -130,7 +133,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public long getOutGroup() {
+    public OFGroup getOutGroup() {
         return outGroup;
     }
 
@@ -151,12 +154,12 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
 
 
 
-    public OFIndividualFlowStatsRequest.Builder createBuilder() {
+    public OFFlowLightweightStatsRequest.Builder createBuilder() {
         return new BuilderWithParent(this);
     }
 
-    static class BuilderWithParent implements OFIndividualFlowStatsRequest.Builder {
-        final OFIndividualFlowStatsRequestVer15 parentMessage;
+    static class BuilderWithParent implements OFFlowLightweightStatsRequest.Builder {
+        final OFFlowLightweightStatsRequestVer15 parentMessage;
 
         // OF message fields
         private boolean xidSet;
@@ -168,7 +171,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
         private boolean outPortSet;
         private OFPort outPort;
         private boolean outGroupSet;
-        private long outGroup;
+        private OFGroup outGroup;
         private boolean cookieSet;
         private U64 cookie;
         private boolean cookieMaskSet;
@@ -176,7 +179,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
         private boolean matchSet;
         private Match match;
 
-        BuilderWithParent(OFIndividualFlowStatsRequestVer15 parentMessage) {
+        BuilderWithParent(OFFlowLightweightStatsRequestVer15 parentMessage) {
             this.parentMessage = parentMessage;
         }
 
@@ -196,14 +199,14 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setXid(long xid) {
+    public OFFlowLightweightStatsRequest.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
         return this;
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_STATS;
+        return OFStatsType.FLOW_LIGHTWEIGHT;
     }
 
     @Override
@@ -212,7 +215,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
+    public OFFlowLightweightStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
         return this;
@@ -223,7 +226,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setTableId(TableId tableId) {
+    public OFFlowLightweightStatsRequest.Builder setTableId(TableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -234,18 +237,18 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setOutPort(OFPort outPort) {
+    public OFFlowLightweightStatsRequest.Builder setOutPort(OFPort outPort) {
         this.outPort = outPort;
         this.outPortSet = true;
         return this;
     }
     @Override
-    public long getOutGroup() {
+    public OFGroup getOutGroup() {
         return outGroup;
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setOutGroup(long outGroup) {
+    public OFFlowLightweightStatsRequest.Builder setOutGroup(OFGroup outGroup) {
         this.outGroup = outGroup;
         this.outGroupSet = true;
         return this;
@@ -256,7 +259,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setCookie(U64 cookie) {
+    public OFFlowLightweightStatsRequest.Builder setCookie(U64 cookie) {
         this.cookie = cookie;
         this.cookieSet = true;
         return this;
@@ -267,7 +270,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setCookieMask(U64 cookieMask) {
+    public OFFlowLightweightStatsRequest.Builder setCookieMask(U64 cookieMask) {
         this.cookieMask = cookieMask;
         this.cookieMaskSet = true;
         return this;
@@ -278,7 +281,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setMatch(Match match) {
+    public OFFlowLightweightStatsRequest.Builder setMatch(Match match) {
         this.match = match;
         this.matchSet = true;
         return this;
@@ -286,7 +289,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
 
 
         @Override
-        public OFIndividualFlowStatsRequest build() {
+        public OFFlowLightweightStatsRequest build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
                 Set<OFStatsRequestFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
                 if(flags == null)
@@ -297,7 +300,9 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
                 OFPort outPort = this.outPortSet ? this.outPort : parentMessage.outPort;
                 if(outPort == null)
                     throw new NullPointerException("Property outPort must not be null");
-                long outGroup = this.outGroupSet ? this.outGroup : parentMessage.outGroup;
+                OFGroup outGroup = this.outGroupSet ? this.outGroup : parentMessage.outGroup;
+                if(outGroup == null)
+                    throw new NullPointerException("Property outGroup must not be null");
                 U64 cookie = this.cookieSet ? this.cookie : parentMessage.cookie;
                 if(cookie == null)
                     throw new NullPointerException("Property cookie must not be null");
@@ -309,7 +314,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
                     throw new NullPointerException("Property match must not be null");
 
                 //
-                return new OFIndividualFlowStatsRequestVer15(
+                return new OFFlowLightweightStatsRequestVer15(
                     xid,
                     flags,
                     tableId,
@@ -323,7 +328,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
 
     }
 
-    static class Builder implements OFIndividualFlowStatsRequest.Builder {
+    static class Builder implements OFFlowLightweightStatsRequest.Builder {
         // OF message fields
         private boolean xidSet;
         private long xid;
@@ -334,7 +339,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
         private boolean outPortSet;
         private OFPort outPort;
         private boolean outGroupSet;
-        private long outGroup;
+        private OFGroup outGroup;
         private boolean cookieSet;
         private U64 cookie;
         private boolean cookieMaskSet;
@@ -358,14 +363,14 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setXid(long xid) {
+    public OFFlowLightweightStatsRequest.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
         return this;
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_STATS;
+        return OFStatsType.FLOW_LIGHTWEIGHT;
     }
 
     @Override
@@ -374,7 +379,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
+    public OFFlowLightweightStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
         return this;
@@ -385,7 +390,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setTableId(TableId tableId) {
+    public OFFlowLightweightStatsRequest.Builder setTableId(TableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -396,18 +401,18 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setOutPort(OFPort outPort) {
+    public OFFlowLightweightStatsRequest.Builder setOutPort(OFPort outPort) {
         this.outPort = outPort;
         this.outPortSet = true;
         return this;
     }
     @Override
-    public long getOutGroup() {
+    public OFGroup getOutGroup() {
         return outGroup;
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setOutGroup(long outGroup) {
+    public OFFlowLightweightStatsRequest.Builder setOutGroup(OFGroup outGroup) {
         this.outGroup = outGroup;
         this.outGroupSet = true;
         return this;
@@ -418,7 +423,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setCookie(U64 cookie) {
+    public OFFlowLightweightStatsRequest.Builder setCookie(U64 cookie) {
         this.cookie = cookie;
         this.cookieSet = true;
         return this;
@@ -429,7 +434,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setCookieMask(U64 cookieMask) {
+    public OFFlowLightweightStatsRequest.Builder setCookieMask(U64 cookieMask) {
         this.cookieMask = cookieMask;
         this.cookieMaskSet = true;
         return this;
@@ -440,14 +445,14 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     @Override
-    public OFIndividualFlowStatsRequest.Builder setMatch(Match match) {
+    public OFFlowLightweightStatsRequest.Builder setMatch(Match match) {
         this.match = match;
         this.matchSet = true;
         return this;
     }
 //
         @Override
-        public OFIndividualFlowStatsRequest build() {
+        public OFFlowLightweightStatsRequest build() {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
             Set<OFStatsRequestFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
             if(flags == null)
@@ -458,7 +463,9 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
             OFPort outPort = this.outPortSet ? this.outPort : DEFAULT_OUT_PORT;
             if(outPort == null)
                 throw new NullPointerException("Property outPort must not be null");
-            long outGroup = this.outGroupSet ? this.outGroup : DEFAULT_OUT_GROUP;
+            OFGroup outGroup = this.outGroupSet ? this.outGroup : DEFAULT_OUT_GROUP;
+            if(outGroup == null)
+                throw new NullPointerException("Property outGroup must not be null");
             U64 cookie = this.cookieSet ? this.cookie : DEFAULT_COOKIE;
             if(cookie == null)
                 throw new NullPointerException("Property cookie must not be null");
@@ -470,7 +477,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
                 throw new NullPointerException("Property match must not be null");
 
 
-            return new OFIndividualFlowStatsRequestVer15(
+            return new OFFlowLightweightStatsRequestVer15(
                     xid,
                     flags,
                     tableId,
@@ -486,9 +493,9 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFIndividualFlowStatsRequest> {
+    static class Reader implements OFMessageReader<OFFlowLightweightStatsRequest> {
         @Override
-        public OFIndividualFlowStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowLightweightStatsRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -512,7 +519,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
             // fixed value property statsType == 17
             short statsType = bb.readShort();
             if(statsType != (short) 0x11)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.FLOW_STATS(17), got="+statsType);
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.FLOW_LIGHTWEIGHT(17), got="+statsType);
             Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
@@ -520,14 +527,14 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
             // pad: 3 bytes
             bb.skipBytes(3);
             OFPort outPort = OFPort.read4Bytes(bb);
-            long outGroup = U32.f(bb.readInt());
+            OFGroup outGroup = OFGroup.read4Bytes(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
             U64 cookie = U64.ofRaw(bb.readLong());
             U64 cookieMask = U64.ofRaw(bb.readLong());
             Match match = ChannelUtilsVer15.readOFMatch(bb);
 
-            OFIndividualFlowStatsRequestVer15 individualFlowStatsRequestVer15 = new OFIndividualFlowStatsRequestVer15(
+            OFFlowLightweightStatsRequestVer15 flowLightweightStatsRequestVer15 = new OFFlowLightweightStatsRequestVer15(
                     xid,
                       flags,
                       tableId,
@@ -538,8 +545,8 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
                       match
                     );
             if(logger.isTraceEnabled())
-                logger.trace("readFrom - read={}", individualFlowStatsRequestVer15);
-            return individualFlowStatsRequestVer15;
+                logger.trace("readFrom - read={}", flowLightweightStatsRequestVer15);
+            return flowLightweightStatsRequestVer15;
         }
     }
 
@@ -547,11 +554,11 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
         FUNNEL.funnel(this, sink);
     }
 
-    final static OFIndividualFlowStatsRequestVer15Funnel FUNNEL = new OFIndividualFlowStatsRequestVer15Funnel();
-    static class OFIndividualFlowStatsRequestVer15Funnel implements Funnel<OFIndividualFlowStatsRequestVer15> {
+    final static OFFlowLightweightStatsRequestVer15Funnel FUNNEL = new OFFlowLightweightStatsRequestVer15Funnel();
+    static class OFFlowLightweightStatsRequestVer15Funnel implements Funnel<OFFlowLightweightStatsRequestVer15> {
         private static final long serialVersionUID = 1L;
         @Override
-        public void funnel(OFIndividualFlowStatsRequestVer15 message, PrimitiveSink sink) {
+        public void funnel(OFFlowLightweightStatsRequestVer15 message, PrimitiveSink sink) {
             // fixed value property version = 6
             sink.putByte((byte) 0x6);
             // fixed value property type = 18
@@ -565,7 +572,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
             message.tableId.putTo(sink);
             // skip pad (3 bytes)
             message.outPort.putTo(sink);
-            sink.putLong(message.outGroup);
+            message.outGroup.putTo(sink);
             // skip pad (4 bytes)
             message.cookie.putTo(sink);
             message.cookieMask.putTo(sink);
@@ -579,9 +586,9 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
     }
 
     final static Writer WRITER = new Writer();
-    static class Writer implements OFMessageWriter<OFIndividualFlowStatsRequestVer15> {
+    static class Writer implements OFMessageWriter<OFFlowLightweightStatsRequestVer15> {
         @Override
-        public void write(ByteBuf bb, OFIndividualFlowStatsRequestVer15 message) {
+        public void write(ByteBuf bb, OFFlowLightweightStatsRequestVer15 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 6
             bb.writeByte((byte) 0x6);
@@ -601,7 +608,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
             // pad: 3 bytes
             bb.writeZero(3);
             message.outPort.write4Bytes(bb);
-            bb.writeInt(U32.t(message.outGroup));
+            message.outGroup.write4Bytes(bb);
             // pad: 4 bytes
             bb.writeZero(4);
             bb.writeLong(message.cookie.getValue());
@@ -617,7 +624,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
 
     @Override
     public String toString() {
-        StringBuilder b = new StringBuilder("OFIndividualFlowStatsRequestVer15(");
+        StringBuilder b = new StringBuilder("OFFlowLightweightStatsRequestVer15(");
         b.append("xid=").append(xid);
         b.append(", ");
         b.append("flags=").append(flags);
@@ -645,7 +652,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
             return false;
         if (getClass() != obj.getClass())
             return false;
-        OFIndividualFlowStatsRequestVer15 other = (OFIndividualFlowStatsRequestVer15) obj;
+        OFFlowLightweightStatsRequestVer15 other = (OFFlowLightweightStatsRequestVer15) obj;
 
         if( xid != other.xid)
             return false;
@@ -664,7 +671,10 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
                 return false;
         } else if (!outPort.equals(other.outPort))
             return false;
-        if( outGroup != other.outGroup)
+        if (outGroup == null) {
+            if (other.outGroup != null)
+                return false;
+        } else if (!outGroup.equals(other.outGroup))
             return false;
         if (cookie == null) {
             if (other.cookie != null)
@@ -691,7 +701,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
             return false;
         if (getClass() != obj.getClass())
             return false;
-        OFIndividualFlowStatsRequestVer15 other = (OFIndividualFlowStatsRequestVer15) obj;
+        OFFlowLightweightStatsRequestVer15 other = (OFFlowLightweightStatsRequestVer15) obj;
 
         // ignore XID
         if (flags == null) {
@@ -709,7 +719,10 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
                 return false;
         } else if (!outPort.equals(other.outPort))
             return false;
-        if( outGroup != other.outGroup)
+        if (outGroup == null) {
+            if (other.outGroup != null)
+                return false;
+        } else if (!outGroup.equals(other.outGroup))
             return false;
         if (cookie == null) {
             if (other.cookie != null)
@@ -738,7 +751,7 @@ class OFIndividualFlowStatsRequestVer15 implements OFIndividualFlowStatsRequest 
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((outPort == null) ? 0 : outPort.hashCode());
-        result = prime *  (int) (outGroup ^ (outGroup >>> 32));
+        result = prime * result + ((outGroup == null) ? 0 : outGroup.hashCode());
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + ((cookieMask == null) ? 0 : cookieMask.hashCode());
         result = prime * result + ((match == null) ? 0 : match.hashCode());

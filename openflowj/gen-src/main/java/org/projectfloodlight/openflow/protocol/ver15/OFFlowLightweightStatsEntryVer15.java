@@ -32,8 +32,8 @@ import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
-class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
-    private static final Logger logger = LoggerFactory.getLogger(OFIndividualFlowStatsEntryVer15.class);
+class OFFlowLightweightStatsEntryVer15 implements OFFlowLightweightStatsEntry {
+    private static final Logger logger = LoggerFactory.getLogger(OFFlowLightweightStatsEntryVer15.class);
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 24;
@@ -51,18 +51,18 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFIndividualFlowStatsEntryVer15(TableId tableId, OFFlowStatsReason reason, int priority, Match match, Stat stats) {
+    OFFlowLightweightStatsEntryVer15(TableId tableId, OFFlowStatsReason reason, int priority, Match match, Stat stats) {
         if(tableId == null) {
-            throw new NullPointerException("OFIndividualFlowStatsEntryVer15: property tableId cannot be null");
+            throw new NullPointerException("OFFlowLightweightStatsEntryVer15: property tableId cannot be null");
         }
         if(reason == null) {
-            throw new NullPointerException("OFIndividualFlowStatsEntryVer15: property reason cannot be null");
+            throw new NullPointerException("OFFlowLightweightStatsEntryVer15: property reason cannot be null");
         }
         if(match == null) {
-            throw new NullPointerException("OFIndividualFlowStatsEntryVer15: property match cannot be null");
+            throw new NullPointerException("OFFlowLightweightStatsEntryVer15: property match cannot be null");
         }
         if(stats == null) {
-            throw new NullPointerException("OFIndividualFlowStatsEntryVer15: property stats cannot be null");
+            throw new NullPointerException("OFFlowLightweightStatsEntryVer15: property stats cannot be null");
         }
         this.tableId = tableId;
         this.reason = reason;
@@ -104,12 +104,12 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
 
 
 
-    public OFIndividualFlowStatsEntry.Builder createBuilder() {
+    public OFFlowLightweightStatsEntry.Builder createBuilder() {
         return new BuilderWithParent(this);
     }
 
-    static class BuilderWithParent implements OFIndividualFlowStatsEntry.Builder {
-        final OFIndividualFlowStatsEntryVer15 parentMessage;
+    static class BuilderWithParent implements OFFlowLightweightStatsEntry.Builder {
+        final OFFlowLightweightStatsEntryVer15 parentMessage;
 
         // OF message fields
         private boolean tableIdSet;
@@ -123,7 +123,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
         private boolean statsSet;
         private Stat stats;
 
-        BuilderWithParent(OFIndividualFlowStatsEntryVer15 parentMessage) {
+        BuilderWithParent(OFFlowLightweightStatsEntryVer15 parentMessage) {
             this.parentMessage = parentMessage;
         }
 
@@ -133,7 +133,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
     }
 
     @Override
-    public OFIndividualFlowStatsEntry.Builder setTableId(TableId tableId) {
+    public OFFlowLightweightStatsEntry.Builder setTableId(TableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -144,7 +144,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
     }
 
     @Override
-    public OFIndividualFlowStatsEntry.Builder setReason(OFFlowStatsReason reason) {
+    public OFFlowLightweightStatsEntry.Builder setReason(OFFlowStatsReason reason) {
         this.reason = reason;
         this.reasonSet = true;
         return this;
@@ -155,7 +155,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
     }
 
     @Override
-    public OFIndividualFlowStatsEntry.Builder setPriority(int priority) {
+    public OFFlowLightweightStatsEntry.Builder setPriority(int priority) {
         this.priority = priority;
         this.prioritySet = true;
         return this;
@@ -166,7 +166,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
     }
 
     @Override
-    public OFIndividualFlowStatsEntry.Builder setMatch(Match match) {
+    public OFFlowLightweightStatsEntry.Builder setMatch(Match match) {
         this.match = match;
         this.matchSet = true;
         return this;
@@ -177,7 +177,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
     }
 
     @Override
-    public OFIndividualFlowStatsEntry.Builder setStats(Stat stats) {
+    public OFFlowLightweightStatsEntry.Builder setStats(Stat stats) {
         this.stats = stats;
         this.statsSet = true;
         return this;
@@ -190,7 +190,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
 
 
         @Override
-        public OFIndividualFlowStatsEntry build() {
+        public OFFlowLightweightStatsEntry build() {
                 TableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
                 if(tableId == null)
                     throw new NullPointerException("Property tableId must not be null");
@@ -206,7 +206,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
                     throw new NullPointerException("Property stats must not be null");
 
                 //
-                return new OFIndividualFlowStatsEntryVer15(
+                return new OFFlowLightweightStatsEntryVer15(
                     tableId,
                     reason,
                     priority,
@@ -217,7 +217,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
 
     }
 
-    static class Builder implements OFIndividualFlowStatsEntry.Builder {
+    static class Builder implements OFFlowLightweightStatsEntry.Builder {
         // OF message fields
         private boolean tableIdSet;
         private TableId tableId;
@@ -236,7 +236,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
     }
 
     @Override
-    public OFIndividualFlowStatsEntry.Builder setTableId(TableId tableId) {
+    public OFFlowLightweightStatsEntry.Builder setTableId(TableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -247,7 +247,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
     }
 
     @Override
-    public OFIndividualFlowStatsEntry.Builder setReason(OFFlowStatsReason reason) {
+    public OFFlowLightweightStatsEntry.Builder setReason(OFFlowStatsReason reason) {
         this.reason = reason;
         this.reasonSet = true;
         return this;
@@ -258,7 +258,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
     }
 
     @Override
-    public OFIndividualFlowStatsEntry.Builder setPriority(int priority) {
+    public OFFlowLightweightStatsEntry.Builder setPriority(int priority) {
         this.priority = priority;
         this.prioritySet = true;
         return this;
@@ -269,7 +269,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
     }
 
     @Override
-    public OFIndividualFlowStatsEntry.Builder setMatch(Match match) {
+    public OFFlowLightweightStatsEntry.Builder setMatch(Match match) {
         this.match = match;
         this.matchSet = true;
         return this;
@@ -280,7 +280,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
     }
 
     @Override
-    public OFIndividualFlowStatsEntry.Builder setStats(Stat stats) {
+    public OFFlowLightweightStatsEntry.Builder setStats(Stat stats) {
         this.stats = stats;
         this.statsSet = true;
         return this;
@@ -292,7 +292,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
 
 //
         @Override
-        public OFIndividualFlowStatsEntry build() {
+        public OFFlowLightweightStatsEntry build() {
             TableId tableId = this.tableIdSet ? this.tableId : DEFAULT_TABLE_ID;
             if(tableId == null)
                 throw new NullPointerException("Property tableId must not be null");
@@ -310,7 +310,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
                 throw new NullPointerException("Property stats must not be null");
 
 
-            return new OFIndividualFlowStatsEntryVer15(
+            return new OFFlowLightweightStatsEntryVer15(
                     tableId,
                     reason,
                     priority,
@@ -323,9 +323,9 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFIndividualFlowStatsEntry> {
+    static class Reader implements OFMessageReader<OFFlowLightweightStatsEntry> {
         @Override
-        public OFIndividualFlowStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowLightweightStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
@@ -345,7 +345,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
             Match match = ChannelUtilsVer15.readOFMatch(bb);
             Stat stats = ChannelUtilsVer15.readOFStat(bb);
 
-            OFIndividualFlowStatsEntryVer15 individualFlowStatsEntryVer15 = new OFIndividualFlowStatsEntryVer15(
+            OFFlowLightweightStatsEntryVer15 flowLightweightStatsEntryVer15 = new OFFlowLightweightStatsEntryVer15(
                     tableId,
                       reason,
                       priority,
@@ -353,8 +353,8 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
                       stats
                     );
             if(logger.isTraceEnabled())
-                logger.trace("readFrom - read={}", individualFlowStatsEntryVer15);
-            return individualFlowStatsEntryVer15;
+                logger.trace("readFrom - read={}", flowLightweightStatsEntryVer15);
+            return flowLightweightStatsEntryVer15;
         }
     }
 
@@ -362,11 +362,11 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
         FUNNEL.funnel(this, sink);
     }
 
-    final static OFIndividualFlowStatsEntryVer15Funnel FUNNEL = new OFIndividualFlowStatsEntryVer15Funnel();
-    static class OFIndividualFlowStatsEntryVer15Funnel implements Funnel<OFIndividualFlowStatsEntryVer15> {
+    final static OFFlowLightweightStatsEntryVer15Funnel FUNNEL = new OFFlowLightweightStatsEntryVer15Funnel();
+    static class OFFlowLightweightStatsEntryVer15Funnel implements Funnel<OFFlowLightweightStatsEntryVer15> {
         private static final long serialVersionUID = 1L;
         @Override
-        public void funnel(OFIndividualFlowStatsEntryVer15 message, PrimitiveSink sink) {
+        public void funnel(OFFlowLightweightStatsEntryVer15 message, PrimitiveSink sink) {
             // FIXME: skip funnel of length
             // skip pad (2 bytes)
             message.tableId.putTo(sink);
@@ -383,9 +383,9 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
     }
 
     final static Writer WRITER = new Writer();
-    static class Writer implements OFMessageWriter<OFIndividualFlowStatsEntryVer15> {
+    static class Writer implements OFMessageWriter<OFFlowLightweightStatsEntryVer15> {
         @Override
-        public void write(ByteBuf bb, OFIndividualFlowStatsEntryVer15 message) {
+        public void write(ByteBuf bb, OFFlowLightweightStatsEntryVer15 message) {
             int startIndex = bb.writerIndex();
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();
@@ -408,7 +408,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
 
     @Override
     public String toString() {
-        StringBuilder b = new StringBuilder("OFIndividualFlowStatsEntryVer15(");
+        StringBuilder b = new StringBuilder("OFFlowLightweightStatsEntryVer15(");
         b.append("tableId=").append(tableId);
         b.append(", ");
         b.append("reason=").append(reason);
@@ -430,7 +430,7 @@ class OFIndividualFlowStatsEntryVer15 implements OFIndividualFlowStatsEntry {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        OFIndividualFlowStatsEntryVer15 other = (OFIndividualFlowStatsEntryVer15) obj;
+        OFFlowLightweightStatsEntryVer15 other = (OFFlowLightweightStatsEntryVer15) obj;
 
         if (tableId == null) {
             if (other.tableId != null)

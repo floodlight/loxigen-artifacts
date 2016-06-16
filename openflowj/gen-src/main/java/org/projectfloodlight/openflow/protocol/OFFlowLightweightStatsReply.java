@@ -29,28 +29,28 @@ import java.util.Set;
 import java.util.List;
 import io.netty.buffer.ByteBuf;
 
-public interface OFTableFeatureStatsRequest extends OFObject, OFStatsRequest<OFTableFeatureStatsReply>, OFRequest<OFTableFeatureStatsReply> {
+public interface OFFlowLightweightStatsReply extends OFObject, OFStatsReply {
     OFVersion getVersion();
     OFType getType();
     long getXid();
     OFStatsType getStatsType();
-    Set<OFStatsRequestFlags> getFlags();
-    List<OFTableFeatures> getEntries();
+    Set<OFStatsReplyFlags> getFlags();
+    List<OFFlowLightweightStatsEntry> getEntries();
 
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
-    public interface Builder extends OFStatsRequest.Builder<OFTableFeatureStatsReply> {
-        OFTableFeatureStatsRequest build();
+    public interface Builder extends OFStatsReply.Builder {
+        OFFlowLightweightStatsReply build();
         OFVersion getVersion();
         OFType getType();
         long getXid();
         Builder setXid(long xid);
         OFStatsType getStatsType();
-        Set<OFStatsRequestFlags> getFlags();
-        Builder setFlags(Set<OFStatsRequestFlags> flags);
-        List<OFTableFeatures> getEntries();
-        Builder setEntries(List<OFTableFeatures> entries);
+        Set<OFStatsReplyFlags> getFlags();
+        Builder setFlags(Set<OFStatsReplyFlags> flags);
+        List<OFFlowLightweightStatsEntry> getEntries();
+        Builder setEntries(List<OFFlowLightweightStatsEntry> entries);
     }
 }

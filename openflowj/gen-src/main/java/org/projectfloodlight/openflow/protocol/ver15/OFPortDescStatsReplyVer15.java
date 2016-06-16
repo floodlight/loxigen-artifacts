@@ -43,29 +43,29 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
 
         private final static long DEFAULT_XID = 0x0L;
         private final static Set<OFStatsReplyFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsReplyFlags>of();
-        private final static List<OFPortDesc> DEFAULT_PORTS = ImmutableList.<OFPortDesc>of();
+        private final static List<OFPortDesc> DEFAULT_ENTRIES = ImmutableList.<OFPortDesc>of();
 
     // OF message fields
     private final long xid;
     private final Set<OFStatsReplyFlags> flags;
-    private final List<OFPortDesc> ports;
+    private final List<OFPortDesc> entries;
 //
     // Immutable default instance
     final static OFPortDescStatsReplyVer15 DEFAULT = new OFPortDescStatsReplyVer15(
-        DEFAULT_XID, DEFAULT_FLAGS, DEFAULT_PORTS
+        DEFAULT_XID, DEFAULT_FLAGS, DEFAULT_ENTRIES
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFPortDescStatsReplyVer15(long xid, Set<OFStatsReplyFlags> flags, List<OFPortDesc> ports) {
+    OFPortDescStatsReplyVer15(long xid, Set<OFStatsReplyFlags> flags, List<OFPortDesc> entries) {
         if(flags == null) {
             throw new NullPointerException("OFPortDescStatsReplyVer15: property flags cannot be null");
         }
-        if(ports == null) {
-            throw new NullPointerException("OFPortDescStatsReplyVer15: property ports cannot be null");
+        if(entries == null) {
+            throw new NullPointerException("OFPortDescStatsReplyVer15: property entries cannot be null");
         }
         this.xid = xid;
         this.flags = flags;
-        this.ports = ports;
+        this.entries = entries;
     }
 
     // Accessors for OF message fields
@@ -95,13 +95,8 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
     }
 
     @Override
-    public List<OFPortDesc> getEntries()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property entries not supported in version 1.5");
-    }
-
-    @Override
-    public List<OFPortDesc> getPorts() {
-        return ports;
+    public List<OFPortDesc> getEntries() {
+        return entries;
     }
 
 
@@ -118,8 +113,8 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
         private long xid;
         private boolean flagsSet;
         private Set<OFStatsReplyFlags> flags;
-        private boolean portsSet;
-        private List<OFPortDesc> ports;
+        private boolean entriesSet;
+        private List<OFPortDesc> entries;
 
         BuilderWithParent(OFPortDescStatsReplyVer15 parentMessage) {
             this.parentMessage = parentMessage;
@@ -163,23 +158,14 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
         return this;
     }
     @Override
-    public List<OFPortDesc> getEntries()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property entries not supported in version 1.5");
+    public List<OFPortDesc> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFPortDescStatsReply.Builder setEntries(List<OFPortDesc> entries) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property entries not supported in version 1.5");
-    }
-    @Override
-    public List<OFPortDesc> getPorts() {
-        return ports;
-    }
-
-    @Override
-    public OFPortDescStatsReply.Builder setPorts(List<OFPortDesc> ports) {
-        this.ports = ports;
-        this.portsSet = true;
+    public OFPortDescStatsReply.Builder setEntries(List<OFPortDesc> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
 
@@ -190,15 +176,15 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
                 Set<OFStatsReplyFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
                 if(flags == null)
                     throw new NullPointerException("Property flags must not be null");
-                List<OFPortDesc> ports = this.portsSet ? this.ports : parentMessage.ports;
-                if(ports == null)
-                    throw new NullPointerException("Property ports must not be null");
+                List<OFPortDesc> entries = this.entriesSet ? this.entries : parentMessage.entries;
+                if(entries == null)
+                    throw new NullPointerException("Property entries must not be null");
 
                 //
                 return new OFPortDescStatsReplyVer15(
                     xid,
                     flags,
-                    ports
+                    entries
                 );
         }
 
@@ -210,8 +196,8 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
         private long xid;
         private boolean flagsSet;
         private Set<OFStatsReplyFlags> flags;
-        private boolean portsSet;
-        private List<OFPortDesc> ports;
+        private boolean entriesSet;
+        private List<OFPortDesc> entries;
 
     @Override
     public OFVersion getVersion() {
@@ -251,23 +237,14 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
         return this;
     }
     @Override
-    public List<OFPortDesc> getEntries()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property entries not supported in version 1.5");
+    public List<OFPortDesc> getEntries() {
+        return entries;
     }
 
     @Override
-    public OFPortDescStatsReply.Builder setEntries(List<OFPortDesc> entries) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property entries not supported in version 1.5");
-    }
-    @Override
-    public List<OFPortDesc> getPorts() {
-        return ports;
-    }
-
-    @Override
-    public OFPortDescStatsReply.Builder setPorts(List<OFPortDesc> ports) {
-        this.ports = ports;
-        this.portsSet = true;
+    public OFPortDescStatsReply.Builder setEntries(List<OFPortDesc> entries) {
+        this.entries = entries;
+        this.entriesSet = true;
         return this;
     }
 //
@@ -277,15 +254,15 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
             Set<OFStatsReplyFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
             if(flags == null)
                 throw new NullPointerException("Property flags must not be null");
-            List<OFPortDesc> ports = this.portsSet ? this.ports : DEFAULT_PORTS;
-            if(ports == null)
-                throw new NullPointerException("Property ports must not be null");
+            List<OFPortDesc> entries = this.entriesSet ? this.entries : DEFAULT_ENTRIES;
+            if(entries == null)
+                throw new NullPointerException("Property entries must not be null");
 
 
             return new OFPortDescStatsReplyVer15(
                     xid,
                     flags,
-                    ports
+                    entries
                 );
         }
 
@@ -323,12 +300,12 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFPortDesc> ports = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFPortDescVer15.READER);
+            List<OFPortDesc> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFPortDescVer15.READER);
 
             OFPortDescStatsReplyVer15 portDescStatsReplyVer15 = new OFPortDescStatsReplyVer15(
                     xid,
                       flags,
-                      ports
+                      entries
                     );
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - read={}", portDescStatsReplyVer15);
@@ -355,7 +332,7 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
             sink.putShort((short) 0xd);
             OFStatsReplyFlagsSerializerVer15.putTo(message.flags, sink);
             // skip pad (4 bytes)
-            FunnelUtils.putList(message.ports, sink);
+            FunnelUtils.putList(message.entries, sink);
         }
     }
 
@@ -383,7 +360,7 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
             OFStatsReplyFlagsSerializerVer15.writeTo(bb, message.flags);
             // pad: 4 bytes
             bb.writeZero(4);
-            ChannelUtils.writeList(bb, message.ports);
+            ChannelUtils.writeList(bb, message.entries);
 
             // update length field
             int length = bb.writerIndex() - startIndex;
@@ -399,7 +376,7 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
         b.append(", ");
         b.append("flags=").append(flags);
         b.append(", ");
-        b.append("ports=").append(ports);
+        b.append("entries=").append(entries);
         b.append(")");
         return b.toString();
     }
@@ -421,10 +398,10 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
                 return false;
         } else if (!flags.equals(other.flags))
             return false;
-        if (ports == null) {
-            if (other.ports != null)
+        if (entries == null) {
+            if (other.entries != null)
                 return false;
-        } else if (!ports.equals(other.ports))
+        } else if (!entries.equals(other.entries))
             return false;
         return true;
     }
@@ -444,10 +421,10 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
                 return false;
         } else if (!flags.equals(other.flags))
             return false;
-        if (ports == null) {
-            if (other.ports != null)
+        if (entries == null) {
+            if (other.entries != null)
                 return false;
-        } else if (!ports.equals(other.ports))
+        } else if (!entries.equals(other.entries))
             return false;
         return true;
     }
@@ -459,7 +436,7 @@ class OFPortDescStatsReplyVer15 implements OFPortDescStatsReply {
 
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((ports == null) ? 0 : ports.hashCode());
+        result = prime * result + ((entries == null) ? 0 : entries.hashCode());
         return result;
     }
 

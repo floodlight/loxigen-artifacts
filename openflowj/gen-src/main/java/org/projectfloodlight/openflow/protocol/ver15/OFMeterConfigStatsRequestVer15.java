@@ -81,7 +81,7 @@ class OFMeterConfigStatsRequestVer15 implements OFMeterConfigStatsRequest {
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.METER_DESC;
+        return OFStatsType.METER_CONFIG;
     }
 
     @Override
@@ -138,7 +138,7 @@ class OFMeterConfigStatsRequestVer15 implements OFMeterConfigStatsRequest {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.METER_DESC;
+        return OFStatsType.METER_CONFIG;
     }
 
     @Override
@@ -215,7 +215,7 @@ class OFMeterConfigStatsRequestVer15 implements OFMeterConfigStatsRequest {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.METER_DESC;
+        return OFStatsType.METER_CONFIG;
     }
 
     @Override
@@ -287,7 +287,7 @@ class OFMeterConfigStatsRequestVer15 implements OFMeterConfigStatsRequest {
             // fixed value property statsType == 10
             short statsType = bb.readShort();
             if(statsType != (short) 0xa)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.METER_DESC(10), got="+statsType);
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.METER_CONFIG(10), got="+statsType);
             Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
