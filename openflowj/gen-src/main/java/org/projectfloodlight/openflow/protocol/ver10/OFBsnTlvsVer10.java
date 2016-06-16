@@ -367,6 +367,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvIpv6 not supported in version 1.0");
     }
 
+    public OFBsnTlvIpv6Prefix.Builder buildIpv6Prefix() {
+        throw new UnsupportedOperationException("OFBsnTlvIpv6Prefix not supported in version 1.0");
+    }
+    public OFBsnTlvIpv6Prefix ipv6Prefix(IPv6Address value, short prefixLength) {
+        throw new UnsupportedOperationException("OFBsnTlvIpv6Prefix not supported in version 1.0");
+    }
+
     public OFBsnTlvKnownMulticastRate.Builder buildKnownMulticastRate() {
         throw new UnsupportedOperationException("OFBsnTlvKnownMulticastRate not supported in version 1.0");
     }

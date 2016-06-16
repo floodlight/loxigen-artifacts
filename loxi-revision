@@ -1,1 +1,1 @@
-8d8bf8845aaa482447d4be99ee56a2d717b9b6b6 Merge into master from pull request #493: Patch to optionally ignore the XID field in OFMessage and other types (https://github.com/floodlight/loxigen/pull/493)
+2cd0f6e4ab4ee7a40d6cfe7a7b50d1583a728bd9 Merge into master from pull request #495: Add BSN IPV6 Prefix TLV (https://github.com/floodlight/loxigen/pull/495)

@@ -27005,6 +27005,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_udf_id_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_IPV6_PREFIX) {
+        return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
         return of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_dup(src);
     }
@@ -28536,6 +28540,35 @@ of_bsn_tlv_ipv6_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_ipv6_value_get(src, &ipv6);
     of_bsn_tlv_ipv6_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_ipv6_prefix
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_ipv6_prefix.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_ipv6_prefix_t *
+of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_dup(
+    of_bsn_tlv_ipv6_prefix_t *src)
+{
+    of_bsn_tlv_ipv6_prefix_t *dst;
+    of_ipv6_t ipv6;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_ipv6_prefix_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_ipv6_prefix_value_get(src, &ipv6);
+    of_bsn_tlv_ipv6_prefix_value_set(dst, ipv6);
+
+    of_bsn_tlv_ipv6_prefix_prefix_length_get(src, &val8);
+    of_bsn_tlv_ipv6_prefix_prefix_length_set(dst, val8);
 
     return dst;
 }
@@ -48461,6 +48494,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_udf_id_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_IPV6_PREFIX) {
+        return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
         return of_bsn_tlv_partner_system_mac_OF_VERSION_1_4_dup(src);
     }
@@ -49992,6 +50029,35 @@ of_bsn_tlv_ipv6_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_ipv6_value_get(src, &ipv6);
     of_bsn_tlv_ipv6_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_ipv6_prefix
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_ipv6_prefix.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_ipv6_prefix_t *
+of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_dup(
+    of_bsn_tlv_ipv6_prefix_t *src)
+{
+    of_bsn_tlv_ipv6_prefix_t *dst;
+    of_ipv6_t ipv6;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_ipv6_prefix_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_ipv6_prefix_value_get(src, &ipv6);
+    of_bsn_tlv_ipv6_prefix_value_set(dst, ipv6);
+
+    of_bsn_tlv_ipv6_prefix_prefix_length_get(src, &val8);
+    of_bsn_tlv_ipv6_prefix_prefix_length_set(dst, val8);
 
     return dst;
 }
@@ -68117,6 +68183,23 @@ of_bsn_tlv_ipv6_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_ipv6_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_ipv6_prefix_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
