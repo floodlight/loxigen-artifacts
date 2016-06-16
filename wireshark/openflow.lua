@@ -8221,6 +8221,10 @@ fields['of13.bsn_tlv_ipv4_src.value'] = ProtoField.ipv4("of13.bsn_tlv_ipv4_src.v
 fields['of13.bsn_tlv_ipv6.type'] = ProtoField.uint16("of13.bsn_tlv_ipv6.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ipv6.length'] = ProtoField.uint16("of13.bsn_tlv_ipv6.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_ipv6.value'] = ProtoField.ipv6("of13.bsn_tlv_ipv6.value", "value")
+fields['of13.bsn_tlv_ipv6_prefix.type'] = ProtoField.uint16("of13.bsn_tlv_ipv6_prefix.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_ipv6_prefix.length'] = ProtoField.uint16("of13.bsn_tlv_ipv6_prefix.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_ipv6_prefix.value'] = ProtoField.ipv6("of13.bsn_tlv_ipv6_prefix.value", "value")
+fields['of13.bsn_tlv_ipv6_prefix.prefix_length'] = ProtoField.uint8("of13.bsn_tlv_ipv6_prefix.prefix_length", "prefix_length", base.DEC, nil)
 fields['of13.bsn_tlv_known_multicast_rate.type'] = ProtoField.uint16("of13.bsn_tlv_known_multicast_rate.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_known_multicast_rate.length'] = ProtoField.uint16("of13.bsn_tlv_known_multicast_rate.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_known_multicast_rate.value'] = ProtoField.uint32("of13.bsn_tlv_known_multicast_rate.value", "value", base.DEC, nil)
@@ -10984,6 +10988,10 @@ fields['of14.bsn_tlv_ipv4_src.value'] = ProtoField.ipv4("of14.bsn_tlv_ipv4_src.v
 fields['of14.bsn_tlv_ipv6.type'] = ProtoField.uint16("of14.bsn_tlv_ipv6.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_ipv6.length'] = ProtoField.uint16("of14.bsn_tlv_ipv6.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_ipv6.value'] = ProtoField.ipv6("of14.bsn_tlv_ipv6.value", "value")
+fields['of14.bsn_tlv_ipv6_prefix.type'] = ProtoField.uint16("of14.bsn_tlv_ipv6_prefix.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_ipv6_prefix.length'] = ProtoField.uint16("of14.bsn_tlv_ipv6_prefix.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_ipv6_prefix.value'] = ProtoField.ipv6("of14.bsn_tlv_ipv6_prefix.value", "value")
+fields['of14.bsn_tlv_ipv6_prefix.prefix_length'] = ProtoField.uint8("of14.bsn_tlv_ipv6_prefix.prefix_length", "prefix_length", base.DEC, nil)
 fields['of14.bsn_tlv_known_multicast_rate.type'] = ProtoField.uint16("of14.bsn_tlv_known_multicast_rate.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_known_multicast_rate.length'] = ProtoField.uint16("of14.bsn_tlv_known_multicast_rate.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_known_multicast_rate.value'] = ProtoField.uint32("of14.bsn_tlv_known_multicast_rate.value", "value", base.DEC, nil)
@@ -13960,6 +13968,10 @@ fields['of15.bsn_tlv_ipv4_src.value'] = ProtoField.ipv4("of15.bsn_tlv_ipv4_src.v
 fields['of15.bsn_tlv_ipv6.type'] = ProtoField.uint16("of15.bsn_tlv_ipv6.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_ipv6.length'] = ProtoField.uint16("of15.bsn_tlv_ipv6.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_ipv6.value'] = ProtoField.ipv6("of15.bsn_tlv_ipv6.value", "value")
+fields['of15.bsn_tlv_ipv6_prefix.type'] = ProtoField.uint16("of15.bsn_tlv_ipv6_prefix.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_ipv6_prefix.length'] = ProtoField.uint16("of15.bsn_tlv_ipv6_prefix.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ipv6_prefix.value'] = ProtoField.ipv6("of15.bsn_tlv_ipv6_prefix.value", "value")
+fields['of15.bsn_tlv_ipv6_prefix.prefix_length'] = ProtoField.uint8("of15.bsn_tlv_ipv6_prefix.prefix_length", "prefix_length", base.DEC, nil)
 fields['of15.bsn_tlv_known_multicast_rate.type'] = ProtoField.uint16("of15.bsn_tlv_known_multicast_rate.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_known_multicast_rate.length'] = ProtoField.uint16("of15.bsn_tlv_known_multicast_rate.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_known_multicast_rate.value'] = ProtoField.uint32("of15.bsn_tlv_known_multicast_rate.value", "value", base.DEC, nil)
@@ -20161,6 +20173,10 @@ p_of.fields = {
     fields['of13.bsn_tlv_ipv6.type'],
     fields['of13.bsn_tlv_ipv6.length'],
     fields['of13.bsn_tlv_ipv6.value'],
+    fields['of13.bsn_tlv_ipv6_prefix.type'],
+    fields['of13.bsn_tlv_ipv6_prefix.length'],
+    fields['of13.bsn_tlv_ipv6_prefix.value'],
+    fields['of13.bsn_tlv_ipv6_prefix.prefix_length'],
     fields['of13.bsn_tlv_known_multicast_rate.type'],
     fields['of13.bsn_tlv_known_multicast_rate.length'],
     fields['of13.bsn_tlv_known_multicast_rate.value'],
@@ -22924,6 +22940,10 @@ p_of.fields = {
     fields['of14.bsn_tlv_ipv6.type'],
     fields['of14.bsn_tlv_ipv6.length'],
     fields['of14.bsn_tlv_ipv6.value'],
+    fields['of14.bsn_tlv_ipv6_prefix.type'],
+    fields['of14.bsn_tlv_ipv6_prefix.length'],
+    fields['of14.bsn_tlv_ipv6_prefix.value'],
+    fields['of14.bsn_tlv_ipv6_prefix.prefix_length'],
     fields['of14.bsn_tlv_known_multicast_rate.type'],
     fields['of14.bsn_tlv_known_multicast_rate.length'],
     fields['of14.bsn_tlv_known_multicast_rate.value'],
@@ -25900,6 +25920,10 @@ p_of.fields = {
     fields['of15.bsn_tlv_ipv6.type'],
     fields['of15.bsn_tlv_ipv6.length'],
     fields['of15.bsn_tlv_ipv6.value'],
+    fields['of15.bsn_tlv_ipv6_prefix.type'],
+    fields['of15.bsn_tlv_ipv6_prefix.length'],
+    fields['of15.bsn_tlv_ipv6_prefix.value'],
+    fields['of15.bsn_tlv_ipv6_prefix.prefix_length'],
     fields['of15.bsn_tlv_known_multicast_rate.type'],
     fields['of15.bsn_tlv_known_multicast_rate.length'],
     fields['of15.bsn_tlv_known_multicast_rate.value'],
@@ -37758,6 +37782,17 @@ function dissect_of_bsn_tlv_ipv6_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[84] = dissect_of_bsn_tlv_ipv6_v4
 
+-- child class of_bsn_tlv_ipv6_prefix
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ipv6_prefix_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ipv6_prefix.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ipv6_prefix.length')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.bsn_tlv_ipv6_prefix.value')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_ipv6_prefix.prefix_length')
+    return 'of_bsn_tlv_ipv6_prefix'
+end
+of_bsn_tlv_v4_dissectors[122] = dissect_of_bsn_tlv_ipv6_prefix_v4
+
 -- child class of_bsn_tlv_known_multicast_rate
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_known_multicast_rate_v4(reader, subtree)
@@ -45078,6 +45113,17 @@ function dissect_of_bsn_tlv_ipv6_v5(reader, subtree)
     return 'of_bsn_tlv_ipv6'
 end
 of_bsn_tlv_v5_dissectors[84] = dissect_of_bsn_tlv_ipv6_v5
+
+-- child class of_bsn_tlv_ipv6_prefix
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ipv6_prefix_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ipv6_prefix.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ipv6_prefix.length')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.bsn_tlv_ipv6_prefix.value')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_ipv6_prefix.prefix_length')
+    return 'of_bsn_tlv_ipv6_prefix'
+end
+of_bsn_tlv_v5_dissectors[122] = dissect_of_bsn_tlv_ipv6_prefix_v5
 
 -- child class of_bsn_tlv_known_multicast_rate
 -- Child of of_bsn_tlv
@@ -52910,6 +52956,17 @@ function dissect_of_bsn_tlv_ipv6_v6(reader, subtree)
     return 'of_bsn_tlv_ipv6'
 end
 of_bsn_tlv_v6_dissectors[84] = dissect_of_bsn_tlv_ipv6_v6
+
+-- child class of_bsn_tlv_ipv6_prefix
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ipv6_prefix_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ipv6_prefix.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ipv6_prefix.length')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.bsn_tlv_ipv6_prefix.value')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_ipv6_prefix.prefix_length')
+    return 'of_bsn_tlv_ipv6_prefix'
+end
+of_bsn_tlv_v6_dissectors[122] = dissect_of_bsn_tlv_ipv6_prefix_v6
 
 -- child class of_bsn_tlv_known_multicast_rate
 -- Child of of_bsn_tlv

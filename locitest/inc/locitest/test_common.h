@@ -7007,6 +7007,15 @@ extern int of_bsn_tlv_ipv6_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_ipv6_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_ipv6_t *obj, int value);
 
+extern int of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_populate(
+    of_bsn_tlv_ipv6_prefix_t *obj, int value);
+extern int of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_check(
+    of_bsn_tlv_ipv6_prefix_t *obj, int value);
+extern int of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_ipv6_prefix_t *obj, int value);
+extern int of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_ipv6_prefix_t *obj, int value);
+
 extern int of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_populate(
     of_bsn_tlv_known_multicast_rate_t *obj, int value);
 extern int of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_check(
@@ -12667,6 +12676,15 @@ extern int of_bsn_tlv_ipv6_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_ipv6_t *obj, int value);
 extern int of_bsn_tlv_ipv6_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_ipv6_t *obj, int value);
+
+extern int of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_populate(
+    of_bsn_tlv_ipv6_prefix_t *obj, int value);
+extern int of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_check(
+    of_bsn_tlv_ipv6_prefix_t *obj, int value);
+extern int of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_ipv6_prefix_t *obj, int value);
+extern int of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_ipv6_prefix_t *obj, int value);
 
 extern int of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_populate(
     of_bsn_tlv_known_multicast_rate_t *obj, int value);

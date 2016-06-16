@@ -457,6 +457,16 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvIpv6Prefix.Builder buildIpv6Prefix() {
+        return new OFBsnTlvIpv6PrefixVer14.Builder();
+    }
+    public OFBsnTlvIpv6Prefix ipv6Prefix(IPv6Address value, short prefixLength) {
+        return new OFBsnTlvIpv6PrefixVer14(
+                value,
+                      prefixLength
+                    );
+    }
+
     public OFBsnTlvKnownMulticastRate.Builder buildKnownMulticastRate() {
         return new OFBsnTlvKnownMulticastRateVer14.Builder();
     }

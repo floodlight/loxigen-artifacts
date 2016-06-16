@@ -6944,6 +6944,21 @@ typedef struct of_bsn_tlv_ipv4_src_s of_bsn_tlv_ipv4_src_t;
 typedef struct of_bsn_tlv_ipv6_s of_bsn_tlv_ipv6_t;
 
 /**
+ * Structure for of_bsn_tlv_ipv6_prefix object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_ipv6.  Functions
+ *   are of type of_bsn_tlv_ipv6_prefix_of_ipv6_get_f and _set_f.
+ *
+ * @param prefix_length_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for prefix_length, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_ipv6_prefix_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_ipv6_prefix_s of_bsn_tlv_ipv6_prefix_t;
+
+/**
  * Structure for of_bsn_tlv_known_multicast_rate object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

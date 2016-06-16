@@ -196,6 +196,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x54:
                    // discriminator value 0x54=0x54 for class OFBsnTlvIpv6Ver15
                    return OFBsnTlvIpv6Ver15.READER.readFrom(bb);
+               case (short) 0x7a:
+                   // discriminator value 0x7a=0x7a for class OFBsnTlvIpv6PrefixVer15
+                   return OFBsnTlvIpv6PrefixVer15.READER.readFrom(bb);
                case (short) 0x5b:
                    // discriminator value 0x5b=0x5b for class OFBsnTlvKnownMulticastRateVer15
                    return OFBsnTlvKnownMulticastRateVer15.READER.readFrom(bb);
