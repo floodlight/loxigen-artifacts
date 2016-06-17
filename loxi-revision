@@ -1,1 +1,1 @@
-2cd0f6e4ab4ee7a40d6cfe7a7b50d1583a728bd9 Merge into master from pull request #495: Add BSN IPV6 Prefix TLV (https://github.com/floodlight/loxigen/pull/495)
+f169efe9368214ce76ffe830cdef818ac4d15ffc Merge into master from pull request #491: patch for OF1.5 table features stats messages + actions <--> apply-actions instruction mapping for OF1.5 (https://github.com/floodlight/loxigen/pull/491)

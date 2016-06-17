@@ -87,7 +87,7 @@ class OFQueueStatsRequestVer15 implements OFQueueStatsRequest {
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.QUEUE_STATS;
+        return OFStatsType.QUEUE;
     }
 
     @Override
@@ -151,7 +151,7 @@ class OFQueueStatsRequestVer15 implements OFQueueStatsRequest {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.QUEUE_STATS;
+        return OFStatsType.QUEUE;
     }
 
     @Override
@@ -245,7 +245,7 @@ class OFQueueStatsRequestVer15 implements OFQueueStatsRequest {
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.QUEUE_STATS;
+        return OFStatsType.QUEUE;
     }
 
     @Override
@@ -332,7 +332,7 @@ class OFQueueStatsRequestVer15 implements OFQueueStatsRequest {
             // fixed value property statsType == 5
             short statsType = bb.readShort();
             if(statsType != (short) 0x5)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.QUEUE_STATS(5), got="+statsType);
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.QUEUE(5), got="+statsType);
             Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);

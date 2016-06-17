@@ -204,9 +204,16 @@ class OFFlowModifyVer14 implements OFFlowModify {
         return instructions;
     }
 
+
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.4");
+        for (OFInstruction inst : this.instructions) {
+            if (inst instanceof OFInstructionApplyActions) {
+                OFInstructionApplyActions iap = (OFInstructionApplyActions)inst;
+                return iap.getActions();
+            }
+        }
+        return Collections.emptyList();
     }
 
     @Override
@@ -415,9 +422,18 @@ class OFFlowModifyVer14 implements OFFlowModify {
         this.instructionsSet = true;
         return this;
     }
+
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.4");
+        if (!this.instructionsSet)
+            return Collections.emptyList();
+        for (OFInstruction inst : this.instructions) {
+            if (inst instanceof OFInstructionApplyActions) {
+                OFInstructionApplyActions iap = (OFInstructionApplyActions)inst;
+                return iap.getActions();
+            }
+        }
+        return Collections.emptyList();
     }
 
 
@@ -688,9 +704,18 @@ class OFFlowModifyVer14 implements OFFlowModify {
         this.instructionsSet = true;
         return this;
     }
+
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property actions not supported in version 1.4");
+        if (!this.instructionsSet)
+            return Collections.emptyList();
+        for (OFInstruction inst : this.instructions) {
+            if (inst instanceof OFInstructionApplyActions) {
+                OFInstructionApplyActions iap = (OFInstructionApplyActions)inst;
+                return iap.getActions();
+            }
+        }
+        return Collections.emptyList();
     }
 
 

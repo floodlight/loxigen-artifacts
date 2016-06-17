@@ -3652,23 +3652,23 @@ enum_v6_ofp_queue_op_failed_code = {
 
 enum_v6_ofp_stats_type = {
     [0] = "OFPST_DESC",
-    [1] = "OFPST_FLOW_DESC",
-    [2] = "OFPST_AGGREGATE_STATS",
-    [3] = "OFPST_TABLE_STATS",
-    [4] = "OFPST_PORT_STATS",
-    [5] = "OFPST_QUEUE_STATS",
-    [6] = "OFPST_GROUP_STATS",
+    [1] = "OFPST_FLOW",
+    [2] = "OFPST_AGGREGATE",
+    [3] = "OFPST_TABLE",
+    [4] = "OFPST_PORT",
+    [5] = "OFPST_QUEUE",
+    [6] = "OFPST_GROUP",
     [7] = "OFPST_GROUP_DESC",
     [8] = "OFPST_GROUP_FEATURES",
-    [9] = "OFPST_METER_STATS",
-    [10] = "OFPST_METER_DESC",
+    [9] = "OFPST_METER",
+    [10] = "OFPST_METER_CONFIG",
     [11] = "OFPST_METER_FEATURES",
     [12] = "OFPST_TABLE_FEATURES",
     [13] = "OFPST_PORT_DESC",
     [14] = "OFPMP_TABLE_DESC",
     [15] = "OFPMP_QUEUE_DESC",
     [16] = "OFPMP_FLOW_MONITOR",
-    [17] = "OFPMP_FLOW_STATS",
+    [17] = "OFPMP_FLOW_LIGHTWEIGHT",
     [18] = "OFPMP_CONTROLLER_STATUS",
     [19] = "OFPMP_BUNDLE_FEATURES",
     [65535] = "OFPST_EXPERIMENTER",
@@ -14484,6 +14484,31 @@ fields['of15.flow_delete_strict.flags'] = ProtoField.uint32("of15.flow_delete_st
 fields['of15.flow_delete_strict.importance'] = ProtoField.uint16("of15.flow_delete_strict.importance", "importance", base.DEC, nil)
 fields['of15.flow_delete_strict.match'] = ProtoField.bytes("of15.flow_delete_strict.match", "match")
 fields['of15.flow_delete_strict.instructions'] = ProtoField.bytes("of15.flow_delete_strict.instructions", "instructions")
+fields['of15.flow_lightweight_stats_entry.length'] = ProtoField.uint16("of15.flow_lightweight_stats_entry.length", "length", base.DEC, nil)
+fields['of15.flow_lightweight_stats_entry.table_id'] = ProtoField.uint8("of15.flow_lightweight_stats_entry.table_id", "table_id", base.DEC, nil)
+fields['of15.flow_lightweight_stats_entry.reason'] = ProtoField.uint32("of15.flow_lightweight_stats_entry.reason", "reason", base.DEC, enum_v6_ofp_flow_stats_reason)
+fields['of15.flow_lightweight_stats_entry.priority'] = ProtoField.uint16("of15.flow_lightweight_stats_entry.priority", "priority", base.DEC, nil)
+fields['of15.flow_lightweight_stats_entry.match'] = ProtoField.bytes("of15.flow_lightweight_stats_entry.match", "match")
+fields['of15.flow_lightweight_stats_entry.stats'] = ProtoField.bytes("of15.flow_lightweight_stats_entry.stats", "stats")
+fields['of15.flow_lightweight_stats_reply.version'] = ProtoField.uint8("of15.flow_lightweight_stats_reply.version", "version", base.DEC, nil)
+fields['of15.flow_lightweight_stats_reply.type'] = ProtoField.uint8("of15.flow_lightweight_stats_reply.type", "type", base.DEC, nil)
+fields['of15.flow_lightweight_stats_reply.length'] = ProtoField.uint16("of15.flow_lightweight_stats_reply.length", "length", base.DEC, nil)
+fields['of15.flow_lightweight_stats_reply.xid'] = ProtoField.uint32("of15.flow_lightweight_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.flow_lightweight_stats_reply.stats_type'] = ProtoField.uint16("of15.flow_lightweight_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.flow_lightweight_stats_reply.flags'] = ProtoField.uint32("of15.flow_lightweight_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.flow_lightweight_stats_reply.entries'] = ProtoField.bytes("of15.flow_lightweight_stats_reply.entries", "entries")
+fields['of15.flow_lightweight_stats_request.version'] = ProtoField.uint8("of15.flow_lightweight_stats_request.version", "version", base.DEC, nil)
+fields['of15.flow_lightweight_stats_request.type'] = ProtoField.uint8("of15.flow_lightweight_stats_request.type", "type", base.DEC, nil)
+fields['of15.flow_lightweight_stats_request.length'] = ProtoField.uint16("of15.flow_lightweight_stats_request.length", "length", base.DEC, nil)
+fields['of15.flow_lightweight_stats_request.xid'] = ProtoField.uint32("of15.flow_lightweight_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.flow_lightweight_stats_request.stats_type'] = ProtoField.uint16("of15.flow_lightweight_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.flow_lightweight_stats_request.flags'] = ProtoField.uint32("of15.flow_lightweight_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.flow_lightweight_stats_request.table_id'] = ProtoField.uint8("of15.flow_lightweight_stats_request.table_id", "table_id", base.DEC, nil)
+fields['of15.flow_lightweight_stats_request.out_port'] = ProtoField.uint32("of15.flow_lightweight_stats_request.out_port", "out_port", base.DEC, nil)
+fields['of15.flow_lightweight_stats_request.out_group'] = ProtoField.uint32("of15.flow_lightweight_stats_request.out_group", "out_group", base.DEC, nil)
+fields['of15.flow_lightweight_stats_request.cookie'] = ProtoField.uint64("of15.flow_lightweight_stats_request.cookie", "cookie", base.DEC, nil)
+fields['of15.flow_lightweight_stats_request.cookie_mask'] = ProtoField.uint64("of15.flow_lightweight_stats_request.cookie_mask", "cookie_mask", base.DEC, nil)
+fields['of15.flow_lightweight_stats_request.match'] = ProtoField.bytes("of15.flow_lightweight_stats_request.match", "match")
 fields['of15.flow_mod_failed_error_msg.version'] = ProtoField.uint8("of15.flow_mod_failed_error_msg.version", "version", base.DEC, nil)
 fields['of15.flow_mod_failed_error_msg.type'] = ProtoField.uint8("of15.flow_mod_failed_error_msg.type", "type", base.DEC, nil)
 fields['of15.flow_mod_failed_error_msg.length'] = ProtoField.uint16("of15.flow_mod_failed_error_msg.length", "length", base.DEC, nil)
@@ -14786,31 +14811,6 @@ fields['of15.hello_failed_error_msg.xid'] = ProtoField.uint32("of15.hello_failed
 fields['of15.hello_failed_error_msg.err_type'] = ProtoField.uint16("of15.hello_failed_error_msg.err_type", "err_type", base.DEC, nil)
 fields['of15.hello_failed_error_msg.code'] = ProtoField.uint32("of15.hello_failed_error_msg.code", "code", base.DEC, enum_v6_ofp_hello_failed_code)
 fields['of15.hello_failed_error_msg.data'] = ProtoField.bytes("of15.hello_failed_error_msg.data", "data")
-fields['of15.individual_flow_stats_entry.length'] = ProtoField.uint16("of15.individual_flow_stats_entry.length", "length", base.DEC, nil)
-fields['of15.individual_flow_stats_entry.table_id'] = ProtoField.uint8("of15.individual_flow_stats_entry.table_id", "table_id", base.DEC, nil)
-fields['of15.individual_flow_stats_entry.reason'] = ProtoField.uint32("of15.individual_flow_stats_entry.reason", "reason", base.DEC, enum_v6_ofp_flow_stats_reason)
-fields['of15.individual_flow_stats_entry.priority'] = ProtoField.uint16("of15.individual_flow_stats_entry.priority", "priority", base.DEC, nil)
-fields['of15.individual_flow_stats_entry.match'] = ProtoField.bytes("of15.individual_flow_stats_entry.match", "match")
-fields['of15.individual_flow_stats_entry.stats'] = ProtoField.bytes("of15.individual_flow_stats_entry.stats", "stats")
-fields['of15.individual_flow_stats_reply.version'] = ProtoField.uint8("of15.individual_flow_stats_reply.version", "version", base.DEC, nil)
-fields['of15.individual_flow_stats_reply.type'] = ProtoField.uint8("of15.individual_flow_stats_reply.type", "type", base.DEC, nil)
-fields['of15.individual_flow_stats_reply.length'] = ProtoField.uint16("of15.individual_flow_stats_reply.length", "length", base.DEC, nil)
-fields['of15.individual_flow_stats_reply.xid'] = ProtoField.uint32("of15.individual_flow_stats_reply.xid", "xid", base.DEC, nil)
-fields['of15.individual_flow_stats_reply.stats_type'] = ProtoField.uint16("of15.individual_flow_stats_reply.stats_type", "stats_type", base.DEC, nil)
-fields['of15.individual_flow_stats_reply.flags'] = ProtoField.uint32("of15.individual_flow_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
-fields['of15.individual_flow_stats_reply.entries'] = ProtoField.bytes("of15.individual_flow_stats_reply.entries", "entries")
-fields['of15.individual_flow_stats_request.version'] = ProtoField.uint8("of15.individual_flow_stats_request.version", "version", base.DEC, nil)
-fields['of15.individual_flow_stats_request.type'] = ProtoField.uint8("of15.individual_flow_stats_request.type", "type", base.DEC, nil)
-fields['of15.individual_flow_stats_request.length'] = ProtoField.uint16("of15.individual_flow_stats_request.length", "length", base.DEC, nil)
-fields['of15.individual_flow_stats_request.xid'] = ProtoField.uint32("of15.individual_flow_stats_request.xid", "xid", base.DEC, nil)
-fields['of15.individual_flow_stats_request.stats_type'] = ProtoField.uint16("of15.individual_flow_stats_request.stats_type", "stats_type", base.DEC, nil)
-fields['of15.individual_flow_stats_request.flags'] = ProtoField.uint32("of15.individual_flow_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
-fields['of15.individual_flow_stats_request.table_id'] = ProtoField.uint8("of15.individual_flow_stats_request.table_id", "table_id", base.DEC, nil)
-fields['of15.individual_flow_stats_request.out_port'] = ProtoField.uint32("of15.individual_flow_stats_request.out_port", "out_port", base.DEC, nil)
-fields['of15.individual_flow_stats_request.out_group'] = ProtoField.uint32("of15.individual_flow_stats_request.out_group", "out_group", base.DEC, nil)
-fields['of15.individual_flow_stats_request.cookie'] = ProtoField.uint64("of15.individual_flow_stats_request.cookie", "cookie", base.DEC, nil)
-fields['of15.individual_flow_stats_request.cookie_mask'] = ProtoField.uint64("of15.individual_flow_stats_request.cookie_mask", "cookie_mask", base.DEC, nil)
-fields['of15.individual_flow_stats_request.match'] = ProtoField.bytes("of15.individual_flow_stats_request.match", "match")
 fields['of15.instruction.type'] = ProtoField.uint16("of15.instruction.type", "type", base.DEC, nil)
 fields['of15.instruction.len'] = ProtoField.uint16("of15.instruction.len", "len", base.DEC, nil)
 fields['of15.instruction_id.type'] = ProtoField.uint16("of15.instruction_id.type", "type", base.DEC, nil)
@@ -15504,7 +15504,7 @@ fields['of15.port_desc_stats_reply.length'] = ProtoField.uint16("of15.port_desc_
 fields['of15.port_desc_stats_reply.xid'] = ProtoField.uint32("of15.port_desc_stats_reply.xid", "xid", base.DEC, nil)
 fields['of15.port_desc_stats_reply.stats_type'] = ProtoField.uint32("of15.port_desc_stats_reply.stats_type", "stats_type", base.DEC, enum_v6_ofp_stats_type)
 fields['of15.port_desc_stats_reply.flags'] = ProtoField.uint32("of15.port_desc_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
-fields['of15.port_desc_stats_reply.ports'] = ProtoField.bytes("of15.port_desc_stats_reply.ports", "ports")
+fields['of15.port_desc_stats_reply.entries'] = ProtoField.bytes("of15.port_desc_stats_reply.entries", "entries")
 fields['of15.port_desc_stats_request.version'] = ProtoField.uint8("of15.port_desc_stats_request.version", "version", base.DEC, nil)
 fields['of15.port_desc_stats_request.type'] = ProtoField.uint32("of15.port_desc_stats_request.type", "type", base.DEC, enum_v6_ofp_type)
 fields['of15.port_desc_stats_request.length'] = ProtoField.uint16("of15.port_desc_stats_request.length", "length", base.DEC, nil)
@@ -15843,20 +15843,6 @@ fields['of15.table_feature_prop_write_setfield.oxm_ids'] = ProtoField.bytes("of1
 fields['of15.table_feature_prop_write_setfield_miss.type'] = ProtoField.uint16("of15.table_feature_prop_write_setfield_miss.type", "type", base.DEC, nil)
 fields['of15.table_feature_prop_write_setfield_miss.length'] = ProtoField.uint16("of15.table_feature_prop_write_setfield_miss.length", "length", base.DEC, nil)
 fields['of15.table_feature_prop_write_setfield_miss.oxm_ids'] = ProtoField.bytes("of15.table_feature_prop_write_setfield_miss.oxm_ids", "oxm_ids")
-fields['of15.table_feature_stats_reply.version'] = ProtoField.uint8("of15.table_feature_stats_reply.version", "version", base.DEC, nil)
-fields['of15.table_feature_stats_reply.type'] = ProtoField.uint8("of15.table_feature_stats_reply.type", "type", base.DEC, nil)
-fields['of15.table_feature_stats_reply.length'] = ProtoField.uint16("of15.table_feature_stats_reply.length", "length", base.DEC, nil)
-fields['of15.table_feature_stats_reply.xid'] = ProtoField.uint32("of15.table_feature_stats_reply.xid", "xid", base.DEC, nil)
-fields['of15.table_feature_stats_reply.stats_type'] = ProtoField.uint16("of15.table_feature_stats_reply.stats_type", "stats_type", base.DEC, nil)
-fields['of15.table_feature_stats_reply.flags'] = ProtoField.uint32("of15.table_feature_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
-fields['of15.table_feature_stats_reply.entries'] = ProtoField.bytes("of15.table_feature_stats_reply.entries", "entries")
-fields['of15.table_feature_stats_request.version'] = ProtoField.uint8("of15.table_feature_stats_request.version", "version", base.DEC, nil)
-fields['of15.table_feature_stats_request.type'] = ProtoField.uint8("of15.table_feature_stats_request.type", "type", base.DEC, nil)
-fields['of15.table_feature_stats_request.length'] = ProtoField.uint16("of15.table_feature_stats_request.length", "length", base.DEC, nil)
-fields['of15.table_feature_stats_request.xid'] = ProtoField.uint32("of15.table_feature_stats_request.xid", "xid", base.DEC, nil)
-fields['of15.table_feature_stats_request.stats_type'] = ProtoField.uint16("of15.table_feature_stats_request.stats_type", "stats_type", base.DEC, nil)
-fields['of15.table_feature_stats_request.flags'] = ProtoField.uint32("of15.table_feature_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
-fields['of15.table_feature_stats_request.entries'] = ProtoField.bytes("of15.table_feature_stats_request.entries", "entries")
 fields['of15.table_features.length'] = ProtoField.uint16("of15.table_features.length", "length", base.DEC, nil)
 fields['of15.table_features.table_id'] = ProtoField.uint8("of15.table_features.table_id", "table_id", base.DEC, nil)
 fields['of15.table_features.command'] = ProtoField.uint32("of15.table_features.command", "command", base.DEC, enum_v6_ofp_table_features_command)
@@ -15874,6 +15860,20 @@ fields['of15.table_features_failed_error_msg.xid'] = ProtoField.uint32("of15.tab
 fields['of15.table_features_failed_error_msg.err_type'] = ProtoField.uint16("of15.table_features_failed_error_msg.err_type", "err_type", base.DEC, nil)
 fields['of15.table_features_failed_error_msg.code'] = ProtoField.uint32("of15.table_features_failed_error_msg.code", "code", base.DEC, enum_v6_ofp_table_features_failed_code)
 fields['of15.table_features_failed_error_msg.data'] = ProtoField.bytes("of15.table_features_failed_error_msg.data", "data")
+fields['of15.table_features_stats_reply.version'] = ProtoField.uint8("of15.table_features_stats_reply.version", "version", base.DEC, nil)
+fields['of15.table_features_stats_reply.type'] = ProtoField.uint8("of15.table_features_stats_reply.type", "type", base.DEC, nil)
+fields['of15.table_features_stats_reply.length'] = ProtoField.uint16("of15.table_features_stats_reply.length", "length", base.DEC, nil)
+fields['of15.table_features_stats_reply.xid'] = ProtoField.uint32("of15.table_features_stats_reply.xid", "xid", base.DEC, nil)
+fields['of15.table_features_stats_reply.stats_type'] = ProtoField.uint16("of15.table_features_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of15.table_features_stats_reply.flags'] = ProtoField.uint32("of15.table_features_stats_reply.flags", "flags", base.HEX, enum_v6_ofp_stats_reply_flags)
+fields['of15.table_features_stats_reply.entries'] = ProtoField.bytes("of15.table_features_stats_reply.entries", "entries")
+fields['of15.table_features_stats_request.version'] = ProtoField.uint8("of15.table_features_stats_request.version", "version", base.DEC, nil)
+fields['of15.table_features_stats_request.type'] = ProtoField.uint8("of15.table_features_stats_request.type", "type", base.DEC, nil)
+fields['of15.table_features_stats_request.length'] = ProtoField.uint16("of15.table_features_stats_request.length", "length", base.DEC, nil)
+fields['of15.table_features_stats_request.xid'] = ProtoField.uint32("of15.table_features_stats_request.xid", "xid", base.DEC, nil)
+fields['of15.table_features_stats_request.stats_type'] = ProtoField.uint16("of15.table_features_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of15.table_features_stats_request.flags'] = ProtoField.uint32("of15.table_features_stats_request.flags", "flags", base.HEX, enum_v6_ofp_stats_request_flags)
+fields['of15.table_features_stats_request.entries'] = ProtoField.bytes("of15.table_features_stats_request.entries", "entries")
 fields['of15.table_mod.version'] = ProtoField.uint8("of15.table_mod.version", "version", base.DEC, nil)
 fields['of15.table_mod.type'] = ProtoField.uint8("of15.table_mod.type", "type", base.DEC, nil)
 fields['of15.table_mod.length'] = ProtoField.uint16("of15.table_mod.length", "length", base.DEC, nil)
@@ -26436,6 +26436,31 @@ p_of.fields = {
     fields['of15.flow_delete_strict.importance'],
     fields['of15.flow_delete_strict.match'],
     fields['of15.flow_delete_strict.instructions'],
+    fields['of15.flow_lightweight_stats_entry.length'],
+    fields['of15.flow_lightweight_stats_entry.table_id'],
+    fields['of15.flow_lightweight_stats_entry.reason'],
+    fields['of15.flow_lightweight_stats_entry.priority'],
+    fields['of15.flow_lightweight_stats_entry.match'],
+    fields['of15.flow_lightweight_stats_entry.stats'],
+    fields['of15.flow_lightweight_stats_reply.version'],
+    fields['of15.flow_lightweight_stats_reply.type'],
+    fields['of15.flow_lightweight_stats_reply.length'],
+    fields['of15.flow_lightweight_stats_reply.xid'],
+    fields['of15.flow_lightweight_stats_reply.stats_type'],
+    fields['of15.flow_lightweight_stats_reply.flags'],
+    fields['of15.flow_lightweight_stats_reply.entries'],
+    fields['of15.flow_lightweight_stats_request.version'],
+    fields['of15.flow_lightweight_stats_request.type'],
+    fields['of15.flow_lightweight_stats_request.length'],
+    fields['of15.flow_lightweight_stats_request.xid'],
+    fields['of15.flow_lightweight_stats_request.stats_type'],
+    fields['of15.flow_lightweight_stats_request.flags'],
+    fields['of15.flow_lightweight_stats_request.table_id'],
+    fields['of15.flow_lightweight_stats_request.out_port'],
+    fields['of15.flow_lightweight_stats_request.out_group'],
+    fields['of15.flow_lightweight_stats_request.cookie'],
+    fields['of15.flow_lightweight_stats_request.cookie_mask'],
+    fields['of15.flow_lightweight_stats_request.match'],
     fields['of15.flow_mod_failed_error_msg.version'],
     fields['of15.flow_mod_failed_error_msg.type'],
     fields['of15.flow_mod_failed_error_msg.length'],
@@ -26738,31 +26763,6 @@ p_of.fields = {
     fields['of15.hello_failed_error_msg.err_type'],
     fields['of15.hello_failed_error_msg.code'],
     fields['of15.hello_failed_error_msg.data'],
-    fields['of15.individual_flow_stats_entry.length'],
-    fields['of15.individual_flow_stats_entry.table_id'],
-    fields['of15.individual_flow_stats_entry.reason'],
-    fields['of15.individual_flow_stats_entry.priority'],
-    fields['of15.individual_flow_stats_entry.match'],
-    fields['of15.individual_flow_stats_entry.stats'],
-    fields['of15.individual_flow_stats_reply.version'],
-    fields['of15.individual_flow_stats_reply.type'],
-    fields['of15.individual_flow_stats_reply.length'],
-    fields['of15.individual_flow_stats_reply.xid'],
-    fields['of15.individual_flow_stats_reply.stats_type'],
-    fields['of15.individual_flow_stats_reply.flags'],
-    fields['of15.individual_flow_stats_reply.entries'],
-    fields['of15.individual_flow_stats_request.version'],
-    fields['of15.individual_flow_stats_request.type'],
-    fields['of15.individual_flow_stats_request.length'],
-    fields['of15.individual_flow_stats_request.xid'],
-    fields['of15.individual_flow_stats_request.stats_type'],
-    fields['of15.individual_flow_stats_request.flags'],
-    fields['of15.individual_flow_stats_request.table_id'],
-    fields['of15.individual_flow_stats_request.out_port'],
-    fields['of15.individual_flow_stats_request.out_group'],
-    fields['of15.individual_flow_stats_request.cookie'],
-    fields['of15.individual_flow_stats_request.cookie_mask'],
-    fields['of15.individual_flow_stats_request.match'],
     fields['of15.instruction.type'],
     fields['of15.instruction.len'],
     fields['of15.instruction_id.type'],
@@ -27456,7 +27456,7 @@ p_of.fields = {
     fields['of15.port_desc_stats_reply.xid'],
     fields['of15.port_desc_stats_reply.stats_type'],
     fields['of15.port_desc_stats_reply.flags'],
-    fields['of15.port_desc_stats_reply.ports'],
+    fields['of15.port_desc_stats_reply.entries'],
     fields['of15.port_desc_stats_request.version'],
     fields['of15.port_desc_stats_request.type'],
     fields['of15.port_desc_stats_request.length'],
@@ -27795,20 +27795,6 @@ p_of.fields = {
     fields['of15.table_feature_prop_write_setfield_miss.type'],
     fields['of15.table_feature_prop_write_setfield_miss.length'],
     fields['of15.table_feature_prop_write_setfield_miss.oxm_ids'],
-    fields['of15.table_feature_stats_reply.version'],
-    fields['of15.table_feature_stats_reply.type'],
-    fields['of15.table_feature_stats_reply.length'],
-    fields['of15.table_feature_stats_reply.xid'],
-    fields['of15.table_feature_stats_reply.stats_type'],
-    fields['of15.table_feature_stats_reply.flags'],
-    fields['of15.table_feature_stats_reply.entries'],
-    fields['of15.table_feature_stats_request.version'],
-    fields['of15.table_feature_stats_request.type'],
-    fields['of15.table_feature_stats_request.length'],
-    fields['of15.table_feature_stats_request.xid'],
-    fields['of15.table_feature_stats_request.stats_type'],
-    fields['of15.table_feature_stats_request.flags'],
-    fields['of15.table_feature_stats_request.entries'],
     fields['of15.table_features.length'],
     fields['of15.table_features.table_id'],
     fields['of15.table_features.command'],
@@ -27826,6 +27812,20 @@ p_of.fields = {
     fields['of15.table_features_failed_error_msg.err_type'],
     fields['of15.table_features_failed_error_msg.code'],
     fields['of15.table_features_failed_error_msg.data'],
+    fields['of15.table_features_stats_reply.version'],
+    fields['of15.table_features_stats_reply.type'],
+    fields['of15.table_features_stats_reply.length'],
+    fields['of15.table_features_stats_reply.xid'],
+    fields['of15.table_features_stats_reply.stats_type'],
+    fields['of15.table_features_stats_reply.flags'],
+    fields['of15.table_features_stats_reply.entries'],
+    fields['of15.table_features_stats_request.version'],
+    fields['of15.table_features_stats_request.type'],
+    fields['of15.table_features_stats_request.length'],
+    fields['of15.table_features_stats_request.xid'],
+    fields['of15.table_features_stats_request.stats_type'],
+    fields['of15.table_features_stats_request.flags'],
+    fields['of15.table_features_stats_request.entries'],
     fields['of15.table_mod.version'],
     fields['of15.table_mod.type'],
     fields['of15.table_mod.length'],
@@ -54315,6 +54315,63 @@ function dissect_of_flow_delete_strict_v6(reader, subtree)
 end
 of_flow_mod_v6_dissectors[4] = dissect_of_flow_delete_strict_v6
 
+-- top-level class of_flow_lightweight_stats_entry
+function dissect_of_flow_lightweight_stats_entry_v6(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.flow_lightweight_stats_entry.length')
+    reader.skip(2)
+    read_uint8_t(reader, 6, subtree, 'of15.flow_lightweight_stats_entry.table_id')
+    read_uint8_t(reader, 6, subtree, 'of15.flow_lightweight_stats_entry.reason')
+    read_uint16_t(reader, 6, subtree, 'of15.flow_lightweight_stats_entry.priority')
+    read_of_match_t(reader, 6, subtree, 'of15.flow_lightweight_stats_entry.match')
+    read_of_stat_t(reader, 6, subtree, 'of15.flow_lightweight_stats_entry.stats')
+    return 'of_flow_lightweight_stats_entry'
+end
+-- child class of_flow_lightweight_stats_reply
+-- Child of of_stats_reply
+function dissect_of_flow_lightweight_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.flow_lightweight_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.flow_lightweight_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.flow_lightweight_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.flow_lightweight_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.flow_lightweight_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.flow_lightweight_stats_reply.flags')
+    reader.skip(4)
+    read_list(reader, dissect_of_flow_lightweight_stats_entry_v6, subtree, 'of_flow_lightweight_stats_entry')
+    return 'of_flow_lightweight_stats_reply'
+end
+of_stats_reply_v6_dissectors[17] = dissect_of_flow_lightweight_stats_reply_v6
+
+-- child class of_flow_lightweight_stats_request
+-- Child of of_stats_request
+function dissect_of_flow_lightweight_stats_request_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.flow_lightweight_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.flow_lightweight_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.flow_lightweight_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.flow_lightweight_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.flow_lightweight_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.flow_lightweight_stats_request.flags')
+    reader.skip(4)
+    read_uint8_t(reader, 6, subtree, 'of15.flow_lightweight_stats_request.table_id')
+    reader.skip(3)
+    read_of_port_no_t(reader, 6, subtree, 'of15.flow_lightweight_stats_request.out_port')
+    read_uint32_t(reader, 6, subtree, 'of15.flow_lightweight_stats_request.out_group')
+    reader.skip(4)
+    read_uint64_t(reader, 6, subtree, 'of15.flow_lightweight_stats_request.cookie')
+    read_uint64_t(reader, 6, subtree, 'of15.flow_lightweight_stats_request.cookie_mask')
+    read_of_match_t(reader, 6, subtree, 'of15.flow_lightweight_stats_request.match')
+    return 'of_flow_lightweight_stats_request'
+end
+of_stats_request_v6_dissectors[17] = dissect_of_flow_lightweight_stats_request_v6
+
 -- child class of_flow_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_flow_mod_failed_error_msg_v6(reader, subtree)
@@ -54959,63 +55016,6 @@ function dissect_of_hello_failed_error_msg_v6(reader, subtree)
     return 'of_hello_failed_error_msg'
 end
 of_error_msg_v6_dissectors[0] = dissect_of_hello_failed_error_msg_v6
-
--- top-level class of_individual_flow_stats_entry
-function dissect_of_individual_flow_stats_entry_v6(reader, subtree)
-    local _length = reader.peek(0, 2):uint()
-    local orig_reader = reader
-    reader = orig_reader.slice(_length)
-    read_uint16_t(reader, 6, subtree, 'of15.individual_flow_stats_entry.length')
-    reader.skip(2)
-    read_uint8_t(reader, 6, subtree, 'of15.individual_flow_stats_entry.table_id')
-    read_uint8_t(reader, 6, subtree, 'of15.individual_flow_stats_entry.reason')
-    read_uint16_t(reader, 6, subtree, 'of15.individual_flow_stats_entry.priority')
-    read_of_match_t(reader, 6, subtree, 'of15.individual_flow_stats_entry.match')
-    read_of_stat_t(reader, 6, subtree, 'of15.individual_flow_stats_entry.stats')
-    return 'of_individual_flow_stats_entry'
-end
--- child class of_individual_flow_stats_reply
--- Child of of_stats_reply
-function dissect_of_individual_flow_stats_reply_v6(reader, subtree)
-    local _length = reader.peek(2, 2):uint()
-    local orig_reader = reader
-    reader = orig_reader.slice(_length)
-    read_uint8_t(reader, 6, subtree, 'of15.individual_flow_stats_reply.version')
-    read_uint8_t(reader, 6, subtree, 'of15.individual_flow_stats_reply.type')
-    read_uint16_t(reader, 6, subtree, 'of15.individual_flow_stats_reply.length')
-    read_uint32_t(reader, 6, subtree, 'of15.individual_flow_stats_reply.xid')
-    read_uint16_t(reader, 6, subtree, 'of15.individual_flow_stats_reply.stats_type')
-    read_uint16_t(reader, 6, subtree, 'of15.individual_flow_stats_reply.flags')
-    reader.skip(4)
-    read_list(reader, dissect_of_individual_flow_stats_entry_v6, subtree, 'of_individual_flow_stats_entry')
-    return 'of_individual_flow_stats_reply'
-end
-of_stats_reply_v6_dissectors[17] = dissect_of_individual_flow_stats_reply_v6
-
--- child class of_individual_flow_stats_request
--- Child of of_stats_request
-function dissect_of_individual_flow_stats_request_v6(reader, subtree)
-    local _length = reader.peek(2, 2):uint()
-    local orig_reader = reader
-    reader = orig_reader.slice(_length)
-    read_uint8_t(reader, 6, subtree, 'of15.individual_flow_stats_request.version')
-    read_uint8_t(reader, 6, subtree, 'of15.individual_flow_stats_request.type')
-    read_uint16_t(reader, 6, subtree, 'of15.individual_flow_stats_request.length')
-    read_uint32_t(reader, 6, subtree, 'of15.individual_flow_stats_request.xid')
-    read_uint16_t(reader, 6, subtree, 'of15.individual_flow_stats_request.stats_type')
-    read_uint16_t(reader, 6, subtree, 'of15.individual_flow_stats_request.flags')
-    reader.skip(4)
-    read_uint8_t(reader, 6, subtree, 'of15.individual_flow_stats_request.table_id')
-    reader.skip(3)
-    read_of_port_no_t(reader, 6, subtree, 'of15.individual_flow_stats_request.out_port')
-    read_uint32_t(reader, 6, subtree, 'of15.individual_flow_stats_request.out_group')
-    reader.skip(4)
-    read_uint64_t(reader, 6, subtree, 'of15.individual_flow_stats_request.cookie')
-    read_uint64_t(reader, 6, subtree, 'of15.individual_flow_stats_request.cookie_mask')
-    read_of_match_t(reader, 6, subtree, 'of15.individual_flow_stats_request.match')
-    return 'of_individual_flow_stats_request'
-end
-of_stats_request_v6_dissectors[17] = dissect_of_individual_flow_stats_request_v6
 
 -- virtual top-level class of_instruction
 -- Discriminator is type
@@ -58194,42 +58194,6 @@ function dissect_of_table_feature_prop_write_setfield_miss_v6(reader, subtree)
 end
 of_table_feature_prop_v6_dissectors[13] = dissect_of_table_feature_prop_write_setfield_miss_v6
 
--- child class of_table_feature_stats_reply
--- Child of of_stats_reply
-function dissect_of_table_feature_stats_reply_v6(reader, subtree)
-    local _length = reader.peek(2, 2):uint()
-    local orig_reader = reader
-    reader = orig_reader.slice(_length)
-    read_uint8_t(reader, 6, subtree, 'of15.table_feature_stats_reply.version')
-    read_uint8_t(reader, 6, subtree, 'of15.table_feature_stats_reply.type')
-    read_uint16_t(reader, 6, subtree, 'of15.table_feature_stats_reply.length')
-    read_uint32_t(reader, 6, subtree, 'of15.table_feature_stats_reply.xid')
-    read_uint16_t(reader, 6, subtree, 'of15.table_feature_stats_reply.stats_type')
-    read_uint16_t(reader, 6, subtree, 'of15.table_feature_stats_reply.flags')
-    reader.skip(4)
-    read_list(reader, dissect_of_table_features_v6, subtree, 'of_table_features')
-    return 'of_table_feature_stats_reply'
-end
-of_stats_reply_v6_dissectors[12] = dissect_of_table_feature_stats_reply_v6
-
--- child class of_table_feature_stats_request
--- Child of of_stats_request
-function dissect_of_table_feature_stats_request_v6(reader, subtree)
-    local _length = reader.peek(2, 2):uint()
-    local orig_reader = reader
-    reader = orig_reader.slice(_length)
-    read_uint8_t(reader, 6, subtree, 'of15.table_feature_stats_request.version')
-    read_uint8_t(reader, 6, subtree, 'of15.table_feature_stats_request.type')
-    read_uint16_t(reader, 6, subtree, 'of15.table_feature_stats_request.length')
-    read_uint32_t(reader, 6, subtree, 'of15.table_feature_stats_request.xid')
-    read_uint16_t(reader, 6, subtree, 'of15.table_feature_stats_request.stats_type')
-    read_uint16_t(reader, 6, subtree, 'of15.table_feature_stats_request.flags')
-    reader.skip(4)
-    read_list(reader, dissect_of_table_features_v6, subtree, 'of_table_features')
-    return 'of_table_feature_stats_request'
-end
-of_stats_request_v6_dissectors[12] = dissect_of_table_feature_stats_request_v6
-
 -- top-level class of_table_features
 function dissect_of_table_features_v6(reader, subtree)
     local _length = reader.peek(0, 2):uint()
@@ -58263,6 +58227,42 @@ function dissect_of_table_features_failed_error_msg_v6(reader, subtree)
     return 'of_table_features_failed_error_msg'
 end
 of_error_msg_v6_dissectors[13] = dissect_of_table_features_failed_error_msg_v6
+
+-- child class of_table_features_stats_reply
+-- Child of of_stats_reply
+function dissect_of_table_features_stats_reply_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.table_features_stats_reply.version')
+    read_uint8_t(reader, 6, subtree, 'of15.table_features_stats_reply.type')
+    read_uint16_t(reader, 6, subtree, 'of15.table_features_stats_reply.length')
+    read_uint32_t(reader, 6, subtree, 'of15.table_features_stats_reply.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.table_features_stats_reply.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.table_features_stats_reply.flags')
+    reader.skip(4)
+    read_list(reader, dissect_of_table_features_v6, subtree, 'of_table_features')
+    return 'of_table_features_stats_reply'
+end
+of_stats_reply_v6_dissectors[12] = dissect_of_table_features_stats_reply_v6
+
+-- child class of_table_features_stats_request
+-- Child of of_stats_request
+function dissect_of_table_features_stats_request_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.table_features_stats_request.version')
+    read_uint8_t(reader, 6, subtree, 'of15.table_features_stats_request.type')
+    read_uint16_t(reader, 6, subtree, 'of15.table_features_stats_request.length')
+    read_uint32_t(reader, 6, subtree, 'of15.table_features_stats_request.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.table_features_stats_request.stats_type')
+    read_uint16_t(reader, 6, subtree, 'of15.table_features_stats_request.flags')
+    reader.skip(4)
+    read_list(reader, dissect_of_table_features_v6, subtree, 'of_table_features')
+    return 'of_table_features_stats_request'
+end
+of_stats_request_v6_dissectors[12] = dissect_of_table_features_stats_request_v6
 
 -- child class of_table_mod
 -- Child of of_header

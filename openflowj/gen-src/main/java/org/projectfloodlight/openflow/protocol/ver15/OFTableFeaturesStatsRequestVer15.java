@@ -35,33 +35,33 @@ import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
-class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
-    private static final Logger logger = LoggerFactory.getLogger(OFIndividualFlowStatsReplyVer15.class);
+class OFTableFeaturesStatsRequestVer15 implements OFTableFeaturesStatsRequest {
+    private static final Logger logger = LoggerFactory.getLogger(OFTableFeaturesStatsRequestVer15.class);
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 16;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static Set<OFStatsReplyFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsReplyFlags>of();
-        private final static List<OFIndividualFlowStatsEntry> DEFAULT_ENTRIES = ImmutableList.<OFIndividualFlowStatsEntry>of();
+        private final static Set<OFStatsRequestFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsRequestFlags>of();
+        private final static List<OFTableFeatures> DEFAULT_ENTRIES = ImmutableList.<OFTableFeatures>of();
 
     // OF message fields
     private final long xid;
-    private final Set<OFStatsReplyFlags> flags;
-    private final List<OFIndividualFlowStatsEntry> entries;
+    private final Set<OFStatsRequestFlags> flags;
+    private final List<OFTableFeatures> entries;
 //
     // Immutable default instance
-    final static OFIndividualFlowStatsReplyVer15 DEFAULT = new OFIndividualFlowStatsReplyVer15(
+    final static OFTableFeaturesStatsRequestVer15 DEFAULT = new OFTableFeaturesStatsRequestVer15(
         DEFAULT_XID, DEFAULT_FLAGS, DEFAULT_ENTRIES
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFIndividualFlowStatsReplyVer15(long xid, Set<OFStatsReplyFlags> flags, List<OFIndividualFlowStatsEntry> entries) {
+    OFTableFeaturesStatsRequestVer15(long xid, Set<OFStatsRequestFlags> flags, List<OFTableFeatures> entries) {
         if(flags == null) {
-            throw new NullPointerException("OFIndividualFlowStatsReplyVer15: property flags cannot be null");
+            throw new NullPointerException("OFTableFeaturesStatsRequestVer15: property flags cannot be null");
         }
         if(entries == null) {
-            throw new NullPointerException("OFIndividualFlowStatsReplyVer15: property entries cannot be null");
+            throw new NullPointerException("OFTableFeaturesStatsRequestVer15: property entries cannot be null");
         }
         this.xid = xid;
         this.flags = flags;
@@ -76,7 +76,7 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
 
     @Override
     public OFType getType() {
-        return OFType.STATS_REPLY;
+        return OFType.STATS_REQUEST;
     }
 
     @Override
@@ -86,37 +86,37 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_STATS;
+        return OFStatsType.TABLE_FEATURES;
     }
 
     @Override
-    public Set<OFStatsReplyFlags> getFlags() {
+    public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
 
     @Override
-    public List<OFIndividualFlowStatsEntry> getEntries() {
+    public List<OFTableFeatures> getEntries() {
         return entries;
     }
 
 
 
-    public OFIndividualFlowStatsReply.Builder createBuilder() {
+    public OFTableFeaturesStatsRequest.Builder createBuilder() {
         return new BuilderWithParent(this);
     }
 
-    static class BuilderWithParent implements OFIndividualFlowStatsReply.Builder {
-        final OFIndividualFlowStatsReplyVer15 parentMessage;
+    static class BuilderWithParent implements OFTableFeaturesStatsRequest.Builder {
+        final OFTableFeaturesStatsRequestVer15 parentMessage;
 
         // OF message fields
         private boolean xidSet;
         private long xid;
         private boolean flagsSet;
-        private Set<OFStatsReplyFlags> flags;
+        private Set<OFStatsRequestFlags> flags;
         private boolean entriesSet;
-        private List<OFIndividualFlowStatsEntry> entries;
+        private List<OFTableFeatures> entries;
 
-        BuilderWithParent(OFIndividualFlowStatsReplyVer15 parentMessage) {
+        BuilderWithParent(OFTableFeaturesStatsRequestVer15 parentMessage) {
             this.parentMessage = parentMessage;
         }
 
@@ -127,7 +127,7 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
 
     @Override
     public OFType getType() {
-        return OFType.STATS_REPLY;
+        return OFType.STATS_REQUEST;
     }
 
     @Override
@@ -136,34 +136,34 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
     }
 
     @Override
-    public OFIndividualFlowStatsReply.Builder setXid(long xid) {
+    public OFTableFeaturesStatsRequest.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
         return this;
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_STATS;
+        return OFStatsType.TABLE_FEATURES;
     }
 
     @Override
-    public Set<OFStatsReplyFlags> getFlags() {
+    public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
 
     @Override
-    public OFIndividualFlowStatsReply.Builder setFlags(Set<OFStatsReplyFlags> flags) {
+    public OFTableFeaturesStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
         return this;
     }
     @Override
-    public List<OFIndividualFlowStatsEntry> getEntries() {
+    public List<OFTableFeatures> getEntries() {
         return entries;
     }
 
     @Override
-    public OFIndividualFlowStatsReply.Builder setEntries(List<OFIndividualFlowStatsEntry> entries) {
+    public OFTableFeaturesStatsRequest.Builder setEntries(List<OFTableFeatures> entries) {
         this.entries = entries;
         this.entriesSet = true;
         return this;
@@ -171,17 +171,17 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
 
 
         @Override
-        public OFIndividualFlowStatsReply build() {
+        public OFTableFeaturesStatsRequest build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
-                Set<OFStatsReplyFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
+                Set<OFStatsRequestFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
                 if(flags == null)
                     throw new NullPointerException("Property flags must not be null");
-                List<OFIndividualFlowStatsEntry> entries = this.entriesSet ? this.entries : parentMessage.entries;
+                List<OFTableFeatures> entries = this.entriesSet ? this.entries : parentMessage.entries;
                 if(entries == null)
                     throw new NullPointerException("Property entries must not be null");
 
                 //
-                return new OFIndividualFlowStatsReplyVer15(
+                return new OFTableFeaturesStatsRequestVer15(
                     xid,
                     flags,
                     entries
@@ -190,14 +190,14 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
 
     }
 
-    static class Builder implements OFIndividualFlowStatsReply.Builder {
+    static class Builder implements OFTableFeaturesStatsRequest.Builder {
         // OF message fields
         private boolean xidSet;
         private long xid;
         private boolean flagsSet;
-        private Set<OFStatsReplyFlags> flags;
+        private Set<OFStatsRequestFlags> flags;
         private boolean entriesSet;
-        private List<OFIndividualFlowStatsEntry> entries;
+        private List<OFTableFeatures> entries;
 
     @Override
     public OFVersion getVersion() {
@@ -206,7 +206,7 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
 
     @Override
     public OFType getType() {
-        return OFType.STATS_REPLY;
+        return OFType.STATS_REQUEST;
     }
 
     @Override
@@ -215,51 +215,51 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
     }
 
     @Override
-    public OFIndividualFlowStatsReply.Builder setXid(long xid) {
+    public OFTableFeaturesStatsRequest.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
         return this;
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.FLOW_STATS;
+        return OFStatsType.TABLE_FEATURES;
     }
 
     @Override
-    public Set<OFStatsReplyFlags> getFlags() {
+    public Set<OFStatsRequestFlags> getFlags() {
         return flags;
     }
 
     @Override
-    public OFIndividualFlowStatsReply.Builder setFlags(Set<OFStatsReplyFlags> flags) {
+    public OFTableFeaturesStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
         return this;
     }
     @Override
-    public List<OFIndividualFlowStatsEntry> getEntries() {
+    public List<OFTableFeatures> getEntries() {
         return entries;
     }
 
     @Override
-    public OFIndividualFlowStatsReply.Builder setEntries(List<OFIndividualFlowStatsEntry> entries) {
+    public OFTableFeaturesStatsRequest.Builder setEntries(List<OFTableFeatures> entries) {
         this.entries = entries;
         this.entriesSet = true;
         return this;
     }
 //
         @Override
-        public OFIndividualFlowStatsReply build() {
+        public OFTableFeaturesStatsRequest build() {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
-            Set<OFStatsReplyFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
+            Set<OFStatsRequestFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
             if(flags == null)
                 throw new NullPointerException("Property flags must not be null");
-            List<OFIndividualFlowStatsEntry> entries = this.entriesSet ? this.entries : DEFAULT_ENTRIES;
+            List<OFTableFeatures> entries = this.entriesSet ? this.entries : DEFAULT_ENTRIES;
             if(entries == null)
                 throw new NullPointerException("Property entries must not be null");
 
 
-            return new OFIndividualFlowStatsReplyVer15(
+            return new OFTableFeaturesStatsRequestVer15(
                     xid,
                     flags,
                     entries
@@ -270,18 +270,18 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFIndividualFlowStatsReply> {
+    static class Reader implements OFMessageReader<OFTableFeaturesStatsRequest> {
         @Override
-        public OFIndividualFlowStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeaturesStatsRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
             if(version != (byte) 0x6)
                 throw new OFParseError("Wrong version: Expected=OFVersion.OF_15(6), got="+version);
-            // fixed value property type == 19
+            // fixed value property type == 18
             byte type = bb.readByte();
-            if(type != (byte) 0x13)
-                throw new OFParseError("Wrong type: Expected=OFType.STATS_REPLY(19), got="+type);
+            if(type != (byte) 0x12)
+                throw new OFParseError("Wrong type: Expected=OFType.STATS_REQUEST(18), got="+type);
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
@@ -293,23 +293,23 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            // fixed value property statsType == 17
+            // fixed value property statsType == 12
             short statsType = bb.readShort();
-            if(statsType != (short) 0x11)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.FLOW_STATS(17), got="+statsType);
-            Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer15.readFrom(bb);
+            if(statsType != (short) 0xc)
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.TABLE_FEATURES(12), got="+statsType);
+            Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFIndividualFlowStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFIndividualFlowStatsEntryVer15.READER);
+            List<OFTableFeatures> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFTableFeaturesVer15.READER);
 
-            OFIndividualFlowStatsReplyVer15 individualFlowStatsReplyVer15 = new OFIndividualFlowStatsReplyVer15(
+            OFTableFeaturesStatsRequestVer15 tableFeaturesStatsRequestVer15 = new OFTableFeaturesStatsRequestVer15(
                     xid,
                       flags,
                       entries
                     );
             if(logger.isTraceEnabled())
-                logger.trace("readFrom - read={}", individualFlowStatsReplyVer15);
-            return individualFlowStatsReplyVer15;
+                logger.trace("readFrom - read={}", tableFeaturesStatsRequestVer15);
+            return tableFeaturesStatsRequestVer15;
         }
     }
 
@@ -317,20 +317,20 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
         FUNNEL.funnel(this, sink);
     }
 
-    final static OFIndividualFlowStatsReplyVer15Funnel FUNNEL = new OFIndividualFlowStatsReplyVer15Funnel();
-    static class OFIndividualFlowStatsReplyVer15Funnel implements Funnel<OFIndividualFlowStatsReplyVer15> {
+    final static OFTableFeaturesStatsRequestVer15Funnel FUNNEL = new OFTableFeaturesStatsRequestVer15Funnel();
+    static class OFTableFeaturesStatsRequestVer15Funnel implements Funnel<OFTableFeaturesStatsRequestVer15> {
         private static final long serialVersionUID = 1L;
         @Override
-        public void funnel(OFIndividualFlowStatsReplyVer15 message, PrimitiveSink sink) {
+        public void funnel(OFTableFeaturesStatsRequestVer15 message, PrimitiveSink sink) {
             // fixed value property version = 6
             sink.putByte((byte) 0x6);
-            // fixed value property type = 19
-            sink.putByte((byte) 0x13);
+            // fixed value property type = 18
+            sink.putByte((byte) 0x12);
             // FIXME: skip funnel of length
             sink.putLong(message.xid);
-            // fixed value property statsType = 17
-            sink.putShort((short) 0x11);
-            OFStatsReplyFlagsSerializerVer15.putTo(message.flags, sink);
+            // fixed value property statsType = 12
+            sink.putShort((short) 0xc);
+            OFStatsRequestFlagsSerializerVer15.putTo(message.flags, sink);
             // skip pad (4 bytes)
             FunnelUtils.putList(message.entries, sink);
         }
@@ -342,22 +342,22 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
     }
 
     final static Writer WRITER = new Writer();
-    static class Writer implements OFMessageWriter<OFIndividualFlowStatsReplyVer15> {
+    static class Writer implements OFMessageWriter<OFTableFeaturesStatsRequestVer15> {
         @Override
-        public void write(ByteBuf bb, OFIndividualFlowStatsReplyVer15 message) {
+        public void write(ByteBuf bb, OFTableFeaturesStatsRequestVer15 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 6
             bb.writeByte((byte) 0x6);
-            // fixed value property type = 19
-            bb.writeByte((byte) 0x13);
+            // fixed value property type = 18
+            bb.writeByte((byte) 0x12);
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();
             bb.writeShort(U16.t(0));
 
             bb.writeInt(U32.t(message.xid));
-            // fixed value property statsType = 17
-            bb.writeShort((short) 0x11);
-            OFStatsReplyFlagsSerializerVer15.writeTo(bb, message.flags);
+            // fixed value property statsType = 12
+            bb.writeShort((short) 0xc);
+            OFStatsRequestFlagsSerializerVer15.writeTo(bb, message.flags);
             // pad: 4 bytes
             bb.writeZero(4);
             ChannelUtils.writeList(bb, message.entries);
@@ -371,7 +371,7 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
 
     @Override
     public String toString() {
-        StringBuilder b = new StringBuilder("OFIndividualFlowStatsReplyVer15(");
+        StringBuilder b = new StringBuilder("OFTableFeaturesStatsRequestVer15(");
         b.append("xid=").append(xid);
         b.append(", ");
         b.append("flags=").append(flags);
@@ -389,7 +389,7 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        OFIndividualFlowStatsReplyVer15 other = (OFIndividualFlowStatsReplyVer15) obj;
+        OFTableFeaturesStatsRequestVer15 other = (OFTableFeaturesStatsRequestVer15) obj;
 
         if( xid != other.xid)
             return false;
@@ -413,7 +413,7 @@ class OFIndividualFlowStatsReplyVer15 implements OFIndividualFlowStatsReply {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        OFIndividualFlowStatsReplyVer15 other = (OFIndividualFlowStatsReplyVer15) obj;
+        OFTableFeaturesStatsRequestVer15 other = (OFTableFeaturesStatsRequestVer15) obj;
 
         // ignore XID
         if (flags == null) {

@@ -35,33 +35,33 @@ import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
-class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
-    private static final Logger logger = LoggerFactory.getLogger(OFTableFeatureStatsRequestVer15.class);
+class OFFlowLightweightStatsReplyVer15 implements OFFlowLightweightStatsReply {
+    private static final Logger logger = LoggerFactory.getLogger(OFFlowLightweightStatsReplyVer15.class);
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 16;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static Set<OFStatsRequestFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsRequestFlags>of();
-        private final static List<OFTableFeatures> DEFAULT_ENTRIES = ImmutableList.<OFTableFeatures>of();
+        private final static Set<OFStatsReplyFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsReplyFlags>of();
+        private final static List<OFFlowLightweightStatsEntry> DEFAULT_ENTRIES = ImmutableList.<OFFlowLightweightStatsEntry>of();
 
     // OF message fields
     private final long xid;
-    private final Set<OFStatsRequestFlags> flags;
-    private final List<OFTableFeatures> entries;
+    private final Set<OFStatsReplyFlags> flags;
+    private final List<OFFlowLightweightStatsEntry> entries;
 //
     // Immutable default instance
-    final static OFTableFeatureStatsRequestVer15 DEFAULT = new OFTableFeatureStatsRequestVer15(
+    final static OFFlowLightweightStatsReplyVer15 DEFAULT = new OFFlowLightweightStatsReplyVer15(
         DEFAULT_XID, DEFAULT_FLAGS, DEFAULT_ENTRIES
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFTableFeatureStatsRequestVer15(long xid, Set<OFStatsRequestFlags> flags, List<OFTableFeatures> entries) {
+    OFFlowLightweightStatsReplyVer15(long xid, Set<OFStatsReplyFlags> flags, List<OFFlowLightweightStatsEntry> entries) {
         if(flags == null) {
-            throw new NullPointerException("OFTableFeatureStatsRequestVer15: property flags cannot be null");
+            throw new NullPointerException("OFFlowLightweightStatsReplyVer15: property flags cannot be null");
         }
         if(entries == null) {
-            throw new NullPointerException("OFTableFeatureStatsRequestVer15: property entries cannot be null");
+            throw new NullPointerException("OFFlowLightweightStatsReplyVer15: property entries cannot be null");
         }
         this.xid = xid;
         this.flags = flags;
@@ -76,7 +76,7 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
 
     @Override
     public OFType getType() {
-        return OFType.STATS_REQUEST;
+        return OFType.STATS_REPLY;
     }
 
     @Override
@@ -86,37 +86,37 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
 
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_FEATURES;
+        return OFStatsType.FLOW_LIGHTWEIGHT;
     }
 
     @Override
-    public Set<OFStatsRequestFlags> getFlags() {
+    public Set<OFStatsReplyFlags> getFlags() {
         return flags;
     }
 
     @Override
-    public List<OFTableFeatures> getEntries() {
+    public List<OFFlowLightweightStatsEntry> getEntries() {
         return entries;
     }
 
 
 
-    public OFTableFeatureStatsRequest.Builder createBuilder() {
+    public OFFlowLightweightStatsReply.Builder createBuilder() {
         return new BuilderWithParent(this);
     }
 
-    static class BuilderWithParent implements OFTableFeatureStatsRequest.Builder {
-        final OFTableFeatureStatsRequestVer15 parentMessage;
+    static class BuilderWithParent implements OFFlowLightweightStatsReply.Builder {
+        final OFFlowLightweightStatsReplyVer15 parentMessage;
 
         // OF message fields
         private boolean xidSet;
         private long xid;
         private boolean flagsSet;
-        private Set<OFStatsRequestFlags> flags;
+        private Set<OFStatsReplyFlags> flags;
         private boolean entriesSet;
-        private List<OFTableFeatures> entries;
+        private List<OFFlowLightweightStatsEntry> entries;
 
-        BuilderWithParent(OFTableFeatureStatsRequestVer15 parentMessage) {
+        BuilderWithParent(OFFlowLightweightStatsReplyVer15 parentMessage) {
             this.parentMessage = parentMessage;
         }
 
@@ -127,7 +127,7 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
 
     @Override
     public OFType getType() {
-        return OFType.STATS_REQUEST;
+        return OFType.STATS_REPLY;
     }
 
     @Override
@@ -136,34 +136,34 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
     }
 
     @Override
-    public OFTableFeatureStatsRequest.Builder setXid(long xid) {
+    public OFFlowLightweightStatsReply.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
         return this;
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_FEATURES;
+        return OFStatsType.FLOW_LIGHTWEIGHT;
     }
 
     @Override
-    public Set<OFStatsRequestFlags> getFlags() {
+    public Set<OFStatsReplyFlags> getFlags() {
         return flags;
     }
 
     @Override
-    public OFTableFeatureStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
+    public OFFlowLightweightStatsReply.Builder setFlags(Set<OFStatsReplyFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
         return this;
     }
     @Override
-    public List<OFTableFeatures> getEntries() {
+    public List<OFFlowLightweightStatsEntry> getEntries() {
         return entries;
     }
 
     @Override
-    public OFTableFeatureStatsRequest.Builder setEntries(List<OFTableFeatures> entries) {
+    public OFFlowLightweightStatsReply.Builder setEntries(List<OFFlowLightweightStatsEntry> entries) {
         this.entries = entries;
         this.entriesSet = true;
         return this;
@@ -171,17 +171,17 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
 
 
         @Override
-        public OFTableFeatureStatsRequest build() {
+        public OFFlowLightweightStatsReply build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
-                Set<OFStatsRequestFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
+                Set<OFStatsReplyFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
                 if(flags == null)
                     throw new NullPointerException("Property flags must not be null");
-                List<OFTableFeatures> entries = this.entriesSet ? this.entries : parentMessage.entries;
+                List<OFFlowLightweightStatsEntry> entries = this.entriesSet ? this.entries : parentMessage.entries;
                 if(entries == null)
                     throw new NullPointerException("Property entries must not be null");
 
                 //
-                return new OFTableFeatureStatsRequestVer15(
+                return new OFFlowLightweightStatsReplyVer15(
                     xid,
                     flags,
                     entries
@@ -190,14 +190,14 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
 
     }
 
-    static class Builder implements OFTableFeatureStatsRequest.Builder {
+    static class Builder implements OFFlowLightweightStatsReply.Builder {
         // OF message fields
         private boolean xidSet;
         private long xid;
         private boolean flagsSet;
-        private Set<OFStatsRequestFlags> flags;
+        private Set<OFStatsReplyFlags> flags;
         private boolean entriesSet;
-        private List<OFTableFeatures> entries;
+        private List<OFFlowLightweightStatsEntry> entries;
 
     @Override
     public OFVersion getVersion() {
@@ -206,7 +206,7 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
 
     @Override
     public OFType getType() {
-        return OFType.STATS_REQUEST;
+        return OFType.STATS_REPLY;
     }
 
     @Override
@@ -215,51 +215,51 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
     }
 
     @Override
-    public OFTableFeatureStatsRequest.Builder setXid(long xid) {
+    public OFFlowLightweightStatsReply.Builder setXid(long xid) {
         this.xid = xid;
         this.xidSet = true;
         return this;
     }
     @Override
     public OFStatsType getStatsType() {
-        return OFStatsType.TABLE_FEATURES;
+        return OFStatsType.FLOW_LIGHTWEIGHT;
     }
 
     @Override
-    public Set<OFStatsRequestFlags> getFlags() {
+    public Set<OFStatsReplyFlags> getFlags() {
         return flags;
     }
 
     @Override
-    public OFTableFeatureStatsRequest.Builder setFlags(Set<OFStatsRequestFlags> flags) {
+    public OFFlowLightweightStatsReply.Builder setFlags(Set<OFStatsReplyFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
         return this;
     }
     @Override
-    public List<OFTableFeatures> getEntries() {
+    public List<OFFlowLightweightStatsEntry> getEntries() {
         return entries;
     }
 
     @Override
-    public OFTableFeatureStatsRequest.Builder setEntries(List<OFTableFeatures> entries) {
+    public OFFlowLightweightStatsReply.Builder setEntries(List<OFFlowLightweightStatsEntry> entries) {
         this.entries = entries;
         this.entriesSet = true;
         return this;
     }
 //
         @Override
-        public OFTableFeatureStatsRequest build() {
+        public OFFlowLightweightStatsReply build() {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
-            Set<OFStatsRequestFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
+            Set<OFStatsReplyFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
             if(flags == null)
                 throw new NullPointerException("Property flags must not be null");
-            List<OFTableFeatures> entries = this.entriesSet ? this.entries : DEFAULT_ENTRIES;
+            List<OFFlowLightweightStatsEntry> entries = this.entriesSet ? this.entries : DEFAULT_ENTRIES;
             if(entries == null)
                 throw new NullPointerException("Property entries must not be null");
 
 
-            return new OFTableFeatureStatsRequestVer15(
+            return new OFFlowLightweightStatsReplyVer15(
                     xid,
                     flags,
                     entries
@@ -270,18 +270,18 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableFeatureStatsRequest> {
+    static class Reader implements OFMessageReader<OFFlowLightweightStatsReply> {
         @Override
-        public OFTableFeatureStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowLightweightStatsReply readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
             if(version != (byte) 0x6)
                 throw new OFParseError("Wrong version: Expected=OFVersion.OF_15(6), got="+version);
-            // fixed value property type == 18
+            // fixed value property type == 19
             byte type = bb.readByte();
-            if(type != (byte) 0x12)
-                throw new OFParseError("Wrong type: Expected=OFType.STATS_REQUEST(18), got="+type);
+            if(type != (byte) 0x13)
+                throw new OFParseError("Wrong type: Expected=OFType.STATS_REPLY(19), got="+type);
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
@@ -293,23 +293,23 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            // fixed value property statsType == 12
+            // fixed value property statsType == 17
             short statsType = bb.readShort();
-            if(statsType != (short) 0xc)
-                throw new OFParseError("Wrong statsType: Expected=OFStatsType.TABLE_FEATURES(12), got="+statsType);
-            Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer15.readFrom(bb);
+            if(statsType != (short) 0x11)
+                throw new OFParseError("Wrong statsType: Expected=OFStatsType.FLOW_LIGHTWEIGHT(17), got="+statsType);
+            Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFTableFeatures> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFTableFeaturesVer15.READER);
+            List<OFFlowLightweightStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFFlowLightweightStatsEntryVer15.READER);
 
-            OFTableFeatureStatsRequestVer15 tableFeatureStatsRequestVer15 = new OFTableFeatureStatsRequestVer15(
+            OFFlowLightweightStatsReplyVer15 flowLightweightStatsReplyVer15 = new OFFlowLightweightStatsReplyVer15(
                     xid,
                       flags,
                       entries
                     );
             if(logger.isTraceEnabled())
-                logger.trace("readFrom - read={}", tableFeatureStatsRequestVer15);
-            return tableFeatureStatsRequestVer15;
+                logger.trace("readFrom - read={}", flowLightweightStatsReplyVer15);
+            return flowLightweightStatsReplyVer15;
         }
     }
 
@@ -317,20 +317,20 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
         FUNNEL.funnel(this, sink);
     }
 
-    final static OFTableFeatureStatsRequestVer15Funnel FUNNEL = new OFTableFeatureStatsRequestVer15Funnel();
-    static class OFTableFeatureStatsRequestVer15Funnel implements Funnel<OFTableFeatureStatsRequestVer15> {
+    final static OFFlowLightweightStatsReplyVer15Funnel FUNNEL = new OFFlowLightweightStatsReplyVer15Funnel();
+    static class OFFlowLightweightStatsReplyVer15Funnel implements Funnel<OFFlowLightweightStatsReplyVer15> {
         private static final long serialVersionUID = 1L;
         @Override
-        public void funnel(OFTableFeatureStatsRequestVer15 message, PrimitiveSink sink) {
+        public void funnel(OFFlowLightweightStatsReplyVer15 message, PrimitiveSink sink) {
             // fixed value property version = 6
             sink.putByte((byte) 0x6);
-            // fixed value property type = 18
-            sink.putByte((byte) 0x12);
+            // fixed value property type = 19
+            sink.putByte((byte) 0x13);
             // FIXME: skip funnel of length
             sink.putLong(message.xid);
-            // fixed value property statsType = 12
-            sink.putShort((short) 0xc);
-            OFStatsRequestFlagsSerializerVer15.putTo(message.flags, sink);
+            // fixed value property statsType = 17
+            sink.putShort((short) 0x11);
+            OFStatsReplyFlagsSerializerVer15.putTo(message.flags, sink);
             // skip pad (4 bytes)
             FunnelUtils.putList(message.entries, sink);
         }
@@ -342,22 +342,22 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
     }
 
     final static Writer WRITER = new Writer();
-    static class Writer implements OFMessageWriter<OFTableFeatureStatsRequestVer15> {
+    static class Writer implements OFMessageWriter<OFFlowLightweightStatsReplyVer15> {
         @Override
-        public void write(ByteBuf bb, OFTableFeatureStatsRequestVer15 message) {
+        public void write(ByteBuf bb, OFFlowLightweightStatsReplyVer15 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 6
             bb.writeByte((byte) 0x6);
-            // fixed value property type = 18
-            bb.writeByte((byte) 0x12);
+            // fixed value property type = 19
+            bb.writeByte((byte) 0x13);
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();
             bb.writeShort(U16.t(0));
 
             bb.writeInt(U32.t(message.xid));
-            // fixed value property statsType = 12
-            bb.writeShort((short) 0xc);
-            OFStatsRequestFlagsSerializerVer15.writeTo(bb, message.flags);
+            // fixed value property statsType = 17
+            bb.writeShort((short) 0x11);
+            OFStatsReplyFlagsSerializerVer15.writeTo(bb, message.flags);
             // pad: 4 bytes
             bb.writeZero(4);
             ChannelUtils.writeList(bb, message.entries);
@@ -371,7 +371,7 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
 
     @Override
     public String toString() {
-        StringBuilder b = new StringBuilder("OFTableFeatureStatsRequestVer15(");
+        StringBuilder b = new StringBuilder("OFFlowLightweightStatsReplyVer15(");
         b.append("xid=").append(xid);
         b.append(", ");
         b.append("flags=").append(flags);
@@ -389,7 +389,7 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        OFTableFeatureStatsRequestVer15 other = (OFTableFeatureStatsRequestVer15) obj;
+        OFFlowLightweightStatsReplyVer15 other = (OFFlowLightweightStatsReplyVer15) obj;
 
         if( xid != other.xid)
             return false;
@@ -413,7 +413,7 @@ class OFTableFeatureStatsRequestVer15 implements OFTableFeatureStatsRequest {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        OFTableFeatureStatsRequestVer15 other = (OFTableFeatureStatsRequestVer15) obj;
+        OFFlowLightweightStatsReplyVer15 other = (OFFlowLightweightStatsReplyVer15) obj;
 
         // ignore XID
         if (flags == null) {
