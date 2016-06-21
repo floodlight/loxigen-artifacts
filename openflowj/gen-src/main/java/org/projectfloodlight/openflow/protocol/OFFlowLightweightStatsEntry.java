@@ -35,7 +35,6 @@ public interface OFFlowLightweightStatsEntry extends OFObject {
     Stat getStats();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

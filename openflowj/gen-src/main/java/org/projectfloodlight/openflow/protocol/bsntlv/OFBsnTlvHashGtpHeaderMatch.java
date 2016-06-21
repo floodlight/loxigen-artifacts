@@ -33,7 +33,6 @@ public interface OFBsnTlvHashGtpHeaderMatch extends OFObject, OFBsnTlv {
     short getFirstHeaderMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

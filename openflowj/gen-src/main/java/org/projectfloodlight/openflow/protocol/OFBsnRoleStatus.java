@@ -37,7 +37,6 @@ public interface OFBsnRoleStatus extends OFObject, OFBsnHeader {
     OFBsnControllerRoleReason getReason();
     U64 getGenerationId();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

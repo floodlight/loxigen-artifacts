@@ -39,7 +39,6 @@ public interface OFBundleAddMsg extends OFObject, OFMessage {
     List<OFBundleProp> getProperties() throws UnsupportedOperationException;
     OFMessage getData() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

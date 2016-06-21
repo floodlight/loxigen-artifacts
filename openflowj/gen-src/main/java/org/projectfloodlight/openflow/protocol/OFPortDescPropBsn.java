@@ -33,7 +33,6 @@ public interface OFPortDescPropBsn extends OFObject, OFPortDescPropExperimenter 
     long getExpType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -35,7 +35,6 @@ public interface OFInstructionStatTrigger extends OFObject, OFInstruction {
     OFOxsList getThresholds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

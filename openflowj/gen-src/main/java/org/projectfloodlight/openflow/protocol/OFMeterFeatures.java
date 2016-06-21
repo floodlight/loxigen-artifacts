@@ -36,7 +36,6 @@ public interface OFMeterFeatures extends OFObject {
     long getFeatures() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

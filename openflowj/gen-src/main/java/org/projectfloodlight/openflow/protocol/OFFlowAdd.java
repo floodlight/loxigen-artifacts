@@ -49,7 +49,6 @@ public interface OFFlowAdd extends OFObject, OFFlowMod {
     List<OFAction> getActions() throws UnsupportedOperationException;
     int getImportance() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

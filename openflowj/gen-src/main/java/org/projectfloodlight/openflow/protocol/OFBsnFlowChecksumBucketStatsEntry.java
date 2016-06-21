@@ -31,7 +31,6 @@ public interface OFBsnFlowChecksumBucketStatsEntry extends OFObject {
     U64 getChecksum();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

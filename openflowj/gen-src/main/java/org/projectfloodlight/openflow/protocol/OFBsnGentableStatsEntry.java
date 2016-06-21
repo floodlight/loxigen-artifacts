@@ -33,7 +33,6 @@ public interface OFBsnGentableStatsEntry extends OFObject {
     U128 getChecksum();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

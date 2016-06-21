@@ -32,7 +32,6 @@ public interface OFActionIdExperimenter extends OFObject, OFActionId {
     long getExperimenter();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -36,7 +36,6 @@ public interface OFOxmBsnVfiMasked extends OFObject, OFOxm<VFI> {
     OFOxm<VFI> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

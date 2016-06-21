@@ -32,7 +32,6 @@ public interface OFBsnTlvName extends OFObject, OFBsnTlv {
     byte[] getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

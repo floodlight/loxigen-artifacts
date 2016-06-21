@@ -35,7 +35,6 @@ public interface OFAsyncConfigFailedErrorMsg extends OFObject, OFErrorMsg {
     OFAsyncConfigFailedCode getCode();
     OFErrorCauseData getData();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

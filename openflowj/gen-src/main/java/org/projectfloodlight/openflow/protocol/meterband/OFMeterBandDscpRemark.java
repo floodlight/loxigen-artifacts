@@ -34,7 +34,6 @@ public interface OFMeterBandDscpRemark extends OFObject, OFMeterBand {
     short getPrecLevel();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

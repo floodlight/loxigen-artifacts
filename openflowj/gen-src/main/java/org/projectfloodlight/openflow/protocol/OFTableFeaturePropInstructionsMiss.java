@@ -33,7 +33,6 @@ public interface OFTableFeaturePropInstructionsMiss extends OFObject, OFTableFea
     List<OFInstructionId> getInstructionIds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

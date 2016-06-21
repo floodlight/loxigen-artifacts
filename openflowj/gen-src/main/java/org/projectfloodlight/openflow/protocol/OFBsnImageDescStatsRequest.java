@@ -37,7 +37,6 @@ public interface OFBsnImageDescStatsRequest extends OFObject, OFBsnStatsRequest<
     long getExperimenter();
     long getSubtype();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

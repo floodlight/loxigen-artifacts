@@ -33,7 +33,6 @@ public interface OFBsnTlvUint64List extends OFObject, OFBsnTlv {
     List<U64> getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

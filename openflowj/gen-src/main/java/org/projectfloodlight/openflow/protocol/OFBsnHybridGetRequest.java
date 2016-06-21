@@ -34,7 +34,6 @@ public interface OFBsnHybridGetRequest extends OFObject, OFBsnHeader, OFRequest<
     long getExperimenter();
     long getSubtype();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

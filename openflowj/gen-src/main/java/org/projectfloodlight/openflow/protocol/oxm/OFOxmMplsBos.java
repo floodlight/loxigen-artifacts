@@ -36,7 +36,6 @@ public interface OFOxmMplsBos extends OFObject, OFOxm<OFBooleanValue> {
     OFBooleanValue getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -39,7 +39,6 @@ public interface OFBsnLacpStatsReply extends OFObject, OFBsnStatsReply {
     long getSubtype();
     List<OFBsnLacpStatsEntry> getEntries();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

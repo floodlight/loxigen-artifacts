@@ -36,7 +36,6 @@ public interface OFOxmIpv4Src extends OFObject, OFOxm<IPv4Address> {
     IPv4Address getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

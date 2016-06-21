@@ -36,7 +36,6 @@ public interface OFOxmPacketType extends OFObject, OFOxm<PacketType> {
     PacketType getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

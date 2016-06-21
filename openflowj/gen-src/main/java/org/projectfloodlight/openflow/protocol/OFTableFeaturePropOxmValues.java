@@ -32,7 +32,6 @@ public interface OFTableFeaturePropOxmValues extends OFObject {
     byte[] getOxmValues();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

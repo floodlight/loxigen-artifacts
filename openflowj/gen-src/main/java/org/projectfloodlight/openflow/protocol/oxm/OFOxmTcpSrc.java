@@ -36,7 +36,6 @@ public interface OFOxmTcpSrc extends OFObject, OFOxm<TransportPort> {
     TransportPort getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

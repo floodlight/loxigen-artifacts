@@ -33,7 +33,6 @@ public interface OFActionSetVlanPcp extends OFObject, OFAction {
     VlanPcp getVlanPcp();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

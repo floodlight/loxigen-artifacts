@@ -38,7 +38,6 @@ public interface OFBsnGentableBucketStatsRequest extends OFObject, OFBsnStatsReq
     long getSubtype();
     GenTableId getTableId();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

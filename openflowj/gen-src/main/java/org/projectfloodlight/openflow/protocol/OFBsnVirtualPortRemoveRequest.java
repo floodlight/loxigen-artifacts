@@ -35,7 +35,6 @@ public interface OFBsnVirtualPortRemoveRequest extends OFObject, OFBsnHeader, OF
     long getSubtype();
     long getVportNo();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

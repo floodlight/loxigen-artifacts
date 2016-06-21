@@ -34,7 +34,6 @@ public interface OFPortDescPropBsnGenerationId extends OFObject, OFPortDescPropB
     U64 getGenerationId();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

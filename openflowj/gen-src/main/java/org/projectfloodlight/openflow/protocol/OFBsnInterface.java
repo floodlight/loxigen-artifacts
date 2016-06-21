@@ -34,7 +34,6 @@ public interface OFBsnInterface extends OFObject {
     IPv4Address getIpv4Netmask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

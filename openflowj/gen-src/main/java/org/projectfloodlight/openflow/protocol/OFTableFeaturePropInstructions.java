@@ -33,7 +33,6 @@ public interface OFTableFeaturePropInstructions extends OFObject, OFTableFeature
     List<OFInstructionId> getInstructionIds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

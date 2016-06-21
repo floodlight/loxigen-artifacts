@@ -33,7 +33,6 @@ public interface OFPortDescPropBsnUplink extends OFObject, OFPortDescPropBsn {
     long getExpType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

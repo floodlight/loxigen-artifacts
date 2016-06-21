@@ -32,7 +32,6 @@ public interface OFBsnTlvDscp extends OFObject, OFBsnTlv {
     int getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

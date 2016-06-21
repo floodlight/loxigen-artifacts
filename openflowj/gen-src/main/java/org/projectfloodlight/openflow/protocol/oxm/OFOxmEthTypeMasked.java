@@ -36,7 +36,6 @@ public interface OFOxmEthTypeMasked extends OFObject, OFOxm<EthType> {
     OFOxm<EthType> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

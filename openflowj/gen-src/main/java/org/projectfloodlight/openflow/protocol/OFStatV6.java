@@ -32,7 +32,6 @@ public interface OFStatV6 extends OFObject, Stat {
     OFOxsList getOxsFields();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

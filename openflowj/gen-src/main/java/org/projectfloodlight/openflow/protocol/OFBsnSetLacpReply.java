@@ -37,7 +37,6 @@ public interface OFBsnSetLacpReply extends OFObject, OFBsnHeader {
     long getStatus();
     OFPort getPortNo();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

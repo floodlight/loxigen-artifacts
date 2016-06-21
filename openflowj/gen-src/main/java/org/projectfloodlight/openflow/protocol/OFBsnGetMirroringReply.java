@@ -35,7 +35,6 @@ public interface OFBsnGetMirroringReply extends OFObject, OFBsnHeader {
     long getSubtype();
     short getReportMirrorPorts();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -37,7 +37,6 @@ public interface OFBsnGentableStatsRequest extends OFObject, OFBsnStatsRequest<O
     long getExperimenter();
     long getSubtype();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

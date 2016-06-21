@@ -36,7 +36,6 @@ public interface OFBsnSetSwitchPipelineReply extends OFObject, OFBsnHeader {
     long getSubtype();
     long getStatus();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -35,7 +35,6 @@ public interface OFStatsReply extends OFObject, OFMessage {
     OFStatsType getStatsType();
     Set<OFStatsReplyFlags> getFlags();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -36,7 +36,6 @@ public interface OFGroupDescStatsRequest extends OFObject, OFStatsRequest<OFGrou
     Set<OFStatsRequestFlags> getFlags();
     OFGroup getGroup() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

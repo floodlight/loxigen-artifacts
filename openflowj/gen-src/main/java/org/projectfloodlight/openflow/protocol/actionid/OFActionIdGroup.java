@@ -31,7 +31,6 @@ public interface OFActionIdGroup extends OFObject, OFActionId {
     OFActionType getType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

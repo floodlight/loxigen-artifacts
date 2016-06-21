@@ -42,7 +42,6 @@ public interface OFTableFeatures extends OFObject {
     Set<OFTableConfig> getCapabilities() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

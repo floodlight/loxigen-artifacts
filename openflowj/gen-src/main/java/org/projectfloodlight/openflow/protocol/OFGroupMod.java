@@ -39,7 +39,6 @@ public interface OFGroupMod extends OFObject, OFMessage {
     OFGroupBucket getCommandBucketId() throws UnsupportedOperationException;
     List<OFGroupProp> getProperties() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

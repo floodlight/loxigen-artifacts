@@ -32,7 +32,6 @@ public interface OFBsnTlvStatus extends OFObject, OFBsnTlv {
     OFBsnStatus getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

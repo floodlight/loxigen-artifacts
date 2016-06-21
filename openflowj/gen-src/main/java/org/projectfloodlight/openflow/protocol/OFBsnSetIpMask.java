@@ -37,7 +37,6 @@ public interface OFBsnSetIpMask extends OFObject, OFBsnHeader {
     short getIndex();
     long getMask();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

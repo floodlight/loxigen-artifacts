@@ -36,7 +36,6 @@ public interface OFBsnFlowIdleEnableSetRequest extends OFObject, OFBsnHeader, OF
     long getSubtype();
     long getEnable();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

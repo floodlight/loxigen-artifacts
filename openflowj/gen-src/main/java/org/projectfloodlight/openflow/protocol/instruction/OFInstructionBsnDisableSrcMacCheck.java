@@ -33,7 +33,6 @@ public interface OFInstructionBsnDisableSrcMacCheck extends OFObject, OFInstruct
     long getSubtype();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

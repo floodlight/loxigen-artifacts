@@ -47,7 +47,6 @@ public interface OFFlowStatsEntry extends OFObject {
     Stat getStats() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -38,7 +38,6 @@ public interface OFBsnPduTxRequest extends OFObject, OFBsnHeader, OFRequest<OFBs
     short getSlotNum();
     byte[] getData();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

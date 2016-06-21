@@ -36,7 +36,6 @@ public interface OFOxmBsnInPorts128 extends OFObject, OFOxm<OFBitMask128> {
     OFBitMask128 getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

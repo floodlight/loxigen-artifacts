@@ -33,7 +33,6 @@ public interface OFActionIdBsn extends OFObject, OFActionIdExperimenter {
     long getSubtype();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -33,7 +33,6 @@ public interface OFInstructionIdBsnDhcpOffload extends OFObject, OFInstructionId
     long getSubtype();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -36,7 +36,6 @@ public interface OFOxmBsnInnerVlanVidMasked extends OFObject, OFOxm<OFVlanVidMat
     OFOxm<OFVlanVidMatch> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

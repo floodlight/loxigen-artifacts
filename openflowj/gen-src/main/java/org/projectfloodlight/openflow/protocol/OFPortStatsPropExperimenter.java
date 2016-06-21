@@ -34,7 +34,6 @@ public interface OFPortStatsPropExperimenter extends OFObject, OFPortStatsProp {
     byte[] getExperimenterData() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -36,7 +36,6 @@ public interface OFOxmVlanPcp extends OFObject, OFOxm<VlanPcp> {
     VlanPcp getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -35,7 +35,6 @@ public interface OFRoleReply extends OFObject, OFMessage {
     U64 getGenerationId();
     int getShortId() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

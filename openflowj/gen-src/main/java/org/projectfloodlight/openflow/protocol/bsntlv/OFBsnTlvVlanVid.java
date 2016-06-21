@@ -32,7 +32,6 @@ public interface OFBsnTlvVlanVid extends OFObject, OFBsnTlv {
     VlanVid getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

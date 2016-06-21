@@ -33,7 +33,6 @@ public interface OFActionSetMplsTtl extends OFObject, OFAction {
     short getMplsTtl();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

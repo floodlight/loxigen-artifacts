@@ -41,7 +41,6 @@ public interface OFAsyncSet extends OFObject, OFMessage {
     long getFlowRemovedMaskSlave() throws UnsupportedOperationException;
     List<OFAsyncConfigProp> getProperties() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

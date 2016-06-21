@@ -40,7 +40,6 @@ public interface OFBsnGenericStatsRequest extends OFObject, OFBsnStatsRequest<OF
     String getName();
     List<OFBsnTlv> getTlvs();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

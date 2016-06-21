@@ -33,7 +33,6 @@ public interface OFActionSetMplsLabel extends OFObject, OFAction {
     long getMplsLabel();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

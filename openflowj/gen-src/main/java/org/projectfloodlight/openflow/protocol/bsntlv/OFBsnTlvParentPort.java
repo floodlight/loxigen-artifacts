@@ -32,7 +32,6 @@ public interface OFBsnTlvParentPort extends OFObject, OFBsnTlv {
     OFPort getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

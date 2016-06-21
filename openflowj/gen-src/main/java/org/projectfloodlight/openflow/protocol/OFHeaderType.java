@@ -32,7 +32,6 @@ public interface OFHeaderType extends OFObject {
     int getNsType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

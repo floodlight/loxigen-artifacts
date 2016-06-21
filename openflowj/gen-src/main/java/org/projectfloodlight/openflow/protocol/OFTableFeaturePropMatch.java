@@ -33,7 +33,6 @@ public interface OFTableFeaturePropMatch extends OFObject, OFTableFeatureProp {
     List<U32> getOxmIds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

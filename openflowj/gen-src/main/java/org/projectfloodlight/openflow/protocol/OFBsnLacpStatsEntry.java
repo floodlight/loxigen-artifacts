@@ -42,7 +42,6 @@ public interface OFBsnLacpStatsEntry extends OFObject {
     int getPartnerKey();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

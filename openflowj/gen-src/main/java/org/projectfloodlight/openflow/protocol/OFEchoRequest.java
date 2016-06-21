@@ -33,7 +33,6 @@ public interface OFEchoRequest extends OFObject, OFMessage, OFRequest<OFEchoRepl
     long getXid();
     byte[] getData();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

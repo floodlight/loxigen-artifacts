@@ -33,7 +33,6 @@ public interface OFQueueGetConfigRequest extends OFObject, OFMessage, OFRequest<
     long getXid();
     OFPort getPort();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

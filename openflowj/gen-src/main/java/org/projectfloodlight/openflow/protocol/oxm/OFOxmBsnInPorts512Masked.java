@@ -36,7 +36,6 @@ public interface OFOxmBsnInPorts512Masked extends OFObject, OFOxm<OFBitMask512> 
     OFOxm<OFBitMask512> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

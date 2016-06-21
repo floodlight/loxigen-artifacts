@@ -47,7 +47,6 @@ public interface OFPortStatsEntry extends OFObject {
     List<OFPortStatsProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

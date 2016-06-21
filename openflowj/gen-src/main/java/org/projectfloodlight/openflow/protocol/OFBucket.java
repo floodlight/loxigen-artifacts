@@ -37,7 +37,6 @@ public interface OFBucket extends OFObject {
     List<OFGroupBucketProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -36,7 +36,6 @@ public interface OFOxmIcmpv4TypeMasked extends OFObject, OFOxm<ICMPv4Type> {
     OFOxm<ICMPv4Type> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
