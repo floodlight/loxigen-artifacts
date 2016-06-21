@@ -469,6 +469,7 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -498,6 +499,17 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((stats == null) ? 0 : stats.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((stats == null) ? 0 : stats.hashCode());
         return result;

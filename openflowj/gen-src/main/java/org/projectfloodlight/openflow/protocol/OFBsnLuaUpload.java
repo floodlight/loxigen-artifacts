@@ -38,7 +38,6 @@ public interface OFBsnLuaUpload extends OFObject, OFBsnHeader {
     String getFilename();
     byte[] getData();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

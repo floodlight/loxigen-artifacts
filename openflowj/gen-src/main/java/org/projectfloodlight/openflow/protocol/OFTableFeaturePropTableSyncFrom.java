@@ -33,7 +33,6 @@ public interface OFTableFeaturePropTableSyncFrom extends OFObject, OFTableFeatur
     List<U8> getTableIds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

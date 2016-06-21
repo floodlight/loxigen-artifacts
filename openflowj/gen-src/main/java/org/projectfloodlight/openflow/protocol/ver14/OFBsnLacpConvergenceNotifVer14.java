@@ -891,6 +891,7 @@ class OFBsnLacpConvergenceNotifVer14 implements OFBsnLacpConvergenceNotif {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -943,6 +944,27 @@ class OFBsnLacpConvergenceNotifVer14 implements OFBsnLacpConvergenceNotif {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + convergenceStatus;
+        result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
+        result = prime * result + actorSysPriority;
+        result = prime * result + ((actorSysMac == null) ? 0 : actorSysMac.hashCode());
+        result = prime * result + actorPortPriority;
+        result = prime * result + actorPortNum;
+        result = prime * result + actorKey;
+        result = prime * result + partnerSysPriority;
+        result = prime * result + ((partnerSysMac == null) ? 0 : partnerSysMac.hashCode());
+        result = prime * result + partnerPortPriority;
+        result = prime * result + partnerPortNum;
+        result = prime * result + partnerKey;
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + convergenceStatus;
         result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
         result = prime * result + actorSysPriority;

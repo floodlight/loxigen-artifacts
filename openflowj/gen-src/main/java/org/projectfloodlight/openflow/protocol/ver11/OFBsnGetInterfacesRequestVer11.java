@@ -304,6 +304,7 @@ class OFBsnGetInterfacesRequestVer11 implements OFBsnGetInterfacesRequest {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -323,6 +324,15 @@ class OFBsnGetInterfacesRequestVer11 implements OFBsnGetInterfacesRequest {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         return result;
     }
 

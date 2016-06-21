@@ -33,7 +33,6 @@ public interface OFTableFeaturePropApplyActionsMiss extends OFObject, OFTableFea
     List<OFActionId> getActionIds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

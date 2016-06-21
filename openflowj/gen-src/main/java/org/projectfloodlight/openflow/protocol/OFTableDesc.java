@@ -35,7 +35,6 @@ public interface OFTableDesc extends OFObject {
     List<OFTableModProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

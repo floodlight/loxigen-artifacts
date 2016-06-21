@@ -36,7 +36,6 @@ public interface OFOxsFlowCount extends OFObject, OFOxs<U32> {
     U32 getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

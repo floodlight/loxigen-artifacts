@@ -33,7 +33,6 @@ public interface OFBsnTlvIpv6Prefix extends OFObject, OFBsnTlv {
     short getPrefixLength();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

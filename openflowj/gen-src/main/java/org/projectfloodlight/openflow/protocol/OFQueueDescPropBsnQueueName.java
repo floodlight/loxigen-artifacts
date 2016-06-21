@@ -34,7 +34,6 @@ public interface OFQueueDescPropBsnQueueName extends OFObject, OFQueueDescPropBs
     byte[] getName();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

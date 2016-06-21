@@ -33,7 +33,6 @@ public interface OFControllerStatusPropExperimenter extends OFObject, OFControll
     long getExpType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

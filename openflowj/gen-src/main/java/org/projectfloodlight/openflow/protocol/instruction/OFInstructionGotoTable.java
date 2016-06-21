@@ -32,7 +32,6 @@ public interface OFInstructionGotoTable extends OFObject, OFInstruction {
     TableId getTableId();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

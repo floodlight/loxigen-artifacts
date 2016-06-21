@@ -32,7 +32,6 @@ public interface OFFeaturesRequest extends OFObject, OFMessage, OFRequest<OFFeat
     OFType getType();
     long getXid();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

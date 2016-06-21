@@ -386,6 +386,7 @@ class OFRequestforwardVer14 implements OFRequestforward {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -409,6 +410,17 @@ class OFRequestforwardVer14 implements OFRequestforward {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime *  (int) (role ^ (role >>> 32));
+        result = prime * result + Arrays.hashCode(data);
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime *  (int) (role ^ (role >>> 32));
         result = prime * result + Arrays.hashCode(data);
         return result;

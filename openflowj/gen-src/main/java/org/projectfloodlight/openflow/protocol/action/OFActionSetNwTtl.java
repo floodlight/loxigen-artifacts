@@ -33,7 +33,6 @@ public interface OFActionSetNwTtl extends OFObject, OFAction {
     short getNwTtl();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

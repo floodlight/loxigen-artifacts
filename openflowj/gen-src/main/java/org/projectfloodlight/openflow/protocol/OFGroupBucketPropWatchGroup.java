@@ -32,7 +32,6 @@ public interface OFGroupBucketPropWatchGroup extends OFObject, OFGroupBucketProp
     long getWatch();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

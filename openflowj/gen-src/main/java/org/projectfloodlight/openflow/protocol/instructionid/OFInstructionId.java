@@ -31,7 +31,6 @@ public interface OFInstructionId extends OFObject {
     OFInstructionType getType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

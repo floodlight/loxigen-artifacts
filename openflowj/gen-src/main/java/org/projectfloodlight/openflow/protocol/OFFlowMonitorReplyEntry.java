@@ -31,7 +31,6 @@ public interface OFFlowMonitorReplyEntry extends OFObject {
     OFFlowUpdateEvent getEvent();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

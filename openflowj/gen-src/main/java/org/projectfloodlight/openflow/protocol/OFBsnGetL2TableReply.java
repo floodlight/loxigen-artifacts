@@ -36,7 +36,6 @@ public interface OFBsnGetL2TableReply extends OFObject, OFBsnHeader {
     short getL2TableEnable();
     int getL2TablePriority();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

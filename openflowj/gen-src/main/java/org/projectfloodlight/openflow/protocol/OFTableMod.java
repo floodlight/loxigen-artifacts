@@ -36,7 +36,6 @@ public interface OFTableMod extends OFObject, OFMessage {
     long getConfig();
     List<OFTableModProp> getProperties() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

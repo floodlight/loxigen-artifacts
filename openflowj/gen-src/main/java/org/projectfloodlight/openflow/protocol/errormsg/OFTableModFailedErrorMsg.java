@@ -35,7 +35,6 @@ public interface OFTableModFailedErrorMsg extends OFObject, OFErrorMsg {
     OFTableModFailedCode getCode();
     OFErrorCauseData getData();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

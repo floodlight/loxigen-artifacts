@@ -528,6 +528,7 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -564,6 +565,19 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
+        result = prime * result + priority;
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
+        result = prime * result + ((match == null) ? 0 : match.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + priority;
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());

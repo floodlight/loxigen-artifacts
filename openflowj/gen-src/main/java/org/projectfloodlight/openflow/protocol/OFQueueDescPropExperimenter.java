@@ -33,7 +33,6 @@ public interface OFQueueDescPropExperimenter extends OFObject, OFQueueDescProp {
     long getExpType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

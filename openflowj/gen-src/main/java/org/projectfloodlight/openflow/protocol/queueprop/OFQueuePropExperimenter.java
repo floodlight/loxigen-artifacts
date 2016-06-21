@@ -33,7 +33,6 @@ public interface OFQueuePropExperimenter extends OFObject, OFQueueProp {
     byte[] getData();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

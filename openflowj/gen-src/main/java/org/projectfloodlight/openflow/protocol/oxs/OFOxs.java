@@ -33,7 +33,6 @@ public interface OFOxs<T extends OFValueType<T>> extends OFObject {
     StatField<T> getStatField();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder<T> createBuilder();

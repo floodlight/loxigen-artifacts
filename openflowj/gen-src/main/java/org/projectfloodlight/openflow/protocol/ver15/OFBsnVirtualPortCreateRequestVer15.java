@@ -361,6 +361,7 @@ class OFBsnVirtualPortCreateRequestVer15 implements OFBsnVirtualPortCreateReques
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -385,6 +386,16 @@ class OFBsnVirtualPortCreateRequestVer15 implements OFBsnVirtualPortCreateReques
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((vport == null) ? 0 : vport.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((vport == null) ? 0 : vport.hashCode());
         return result;
     }

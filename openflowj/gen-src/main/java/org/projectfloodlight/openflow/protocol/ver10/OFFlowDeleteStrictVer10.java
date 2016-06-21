@@ -878,6 +878,7 @@ class OFFlowDeleteStrictVer10 implements OFFlowDeleteStrict {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -933,6 +934,24 @@ class OFFlowDeleteStrictVer10 implements OFFlowDeleteStrict {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((match == null) ? 0 : match.hashCode());
+        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
+        result = prime * result + idleTimeout;
+        result = prime * result + hardTimeout;
+        result = prime * result + priority;
+        result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
+        result = prime * result + ((outPort == null) ? 0 : outPort.hashCode());
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((actions == null) ? 0 : actions.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((match == null) ? 0 : match.hashCode());
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + idleTimeout;

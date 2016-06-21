@@ -396,6 +396,7 @@ class OFBsnSetAuxCxnsReplyVer14 implements OFBsnSetAuxCxnsReply {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -419,6 +420,17 @@ class OFBsnSetAuxCxnsReplyVer14 implements OFBsnSetAuxCxnsReply {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime *  (int) (numAux ^ (numAux >>> 32));
+        result = prime *  (int) (status ^ (status >>> 32));
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime *  (int) (numAux ^ (numAux >>> 32));
         result = prime *  (int) (status ^ (status >>> 32));
         return result;

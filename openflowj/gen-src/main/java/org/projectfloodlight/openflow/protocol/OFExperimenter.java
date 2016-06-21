@@ -33,7 +33,6 @@ public interface OFExperimenter extends OFObject, OFMessage {
     long getXid();
     long getExperimenter();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

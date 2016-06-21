@@ -39,7 +39,6 @@ public interface OFGroupRemoveBucket extends OFObject, OFGroupMod {
     List<OFBucket> getBuckets();
     List<OFGroupProp> getProperties();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

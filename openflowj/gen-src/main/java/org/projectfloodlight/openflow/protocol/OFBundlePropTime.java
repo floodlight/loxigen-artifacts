@@ -33,7 +33,6 @@ public interface OFBundlePropTime extends OFObject, OFBundleProp {
     List<OFTime> getScheduledTime();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

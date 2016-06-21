@@ -38,7 +38,6 @@ public interface OFBsnSetL2TableReply extends OFObject, OFBsnHeader {
     int getL2TablePriority();
     long getStatus();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

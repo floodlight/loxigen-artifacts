@@ -32,7 +32,6 @@ public interface OFBsnTlvIpv6 extends OFObject, OFBsnTlv {
     IPv6Address getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

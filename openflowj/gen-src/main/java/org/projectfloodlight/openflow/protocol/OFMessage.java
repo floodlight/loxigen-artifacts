@@ -32,6 +32,20 @@ public interface OFMessage extends OFObject {
     OFType getType();
     long getXid();
 
+    /**
+     * Compares the two messages for equality, ignoring the XID field.
+     *
+     * @param obj the other message to compare
+     * @return true if the messages are equal, ignoring the XID; false otherwise
+     */
+    boolean equalsIgnoreXid(Object obj);
+
+    /**
+     * Computes the hashcode of the message, ignoring the XID field.
+     *
+     * @return the hashcode of the message, ignoring the XID
+     */
+    int hashCodeIgnoreXid();
 
     void writeTo(ByteBuf channelBuffer);
 

@@ -36,7 +36,6 @@ public interface OFOxmBsnL2CacheHitMasked extends OFObject, OFOxm<OFBooleanValue
     OFOxm<OFBooleanValue> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -33,7 +33,6 @@ public interface OFBsnTlvHashSeed extends OFObject, OFBsnTlv {
     long getSeed2();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

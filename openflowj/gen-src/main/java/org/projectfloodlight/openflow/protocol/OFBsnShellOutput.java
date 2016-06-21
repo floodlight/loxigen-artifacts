@@ -35,7 +35,6 @@ public interface OFBsnShellOutput extends OFObject, OFBsnHeader {
     long getSubtype();
     byte[] getData();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

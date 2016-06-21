@@ -499,6 +499,7 @@ class OFMeterModVer14 implements OFMeterMod {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -535,6 +536,19 @@ class OFMeterModVer14 implements OFMeterMod {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((command == null) ? 0 : command.hashCode());
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime *  (int) (meterId ^ (meterId >>> 32));
+        result = prime * result + ((bands == null) ? 0 : bands.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((command == null) ? 0 : command.hashCode());
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime *  (int) (meterId ^ (meterId >>> 32));

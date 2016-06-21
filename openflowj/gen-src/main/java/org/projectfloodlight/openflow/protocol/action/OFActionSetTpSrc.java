@@ -33,7 +33,6 @@ public interface OFActionSetTpSrc extends OFObject, OFAction {
     TransportPort getTpPort();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

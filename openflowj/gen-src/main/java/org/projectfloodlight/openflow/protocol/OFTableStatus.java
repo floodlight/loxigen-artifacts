@@ -35,7 +35,6 @@ public interface OFTableStatus extends OFObject, OFMessage {
     OFTableDesc getTable();
     long getRole() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

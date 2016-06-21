@@ -38,7 +38,6 @@ public interface OFBsnFlowChecksumBucketStatsRequest extends OFObject, OFBsnStat
     long getSubtype();
     TableId getTableId();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

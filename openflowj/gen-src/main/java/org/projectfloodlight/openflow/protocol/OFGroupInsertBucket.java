@@ -39,7 +39,6 @@ public interface OFGroupInsertBucket extends OFObject, OFGroupMod {
     List<OFBucket> getBuckets();
     List<OFGroupProp> getProperties();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -35,7 +35,6 @@ public interface OFGroupDescStatsEntry extends OFObject {
     List<OFGroupProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

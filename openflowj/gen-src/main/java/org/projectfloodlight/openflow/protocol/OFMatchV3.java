@@ -33,7 +33,6 @@ public interface OFMatchV3 extends OFObject, Match {
     OFOxmList getOxmList();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

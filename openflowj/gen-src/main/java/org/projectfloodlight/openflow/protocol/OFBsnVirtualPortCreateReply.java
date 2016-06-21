@@ -36,7 +36,6 @@ public interface OFBsnVirtualPortCreateReply extends OFObject, OFBsnHeader {
     long getStatus();
     long getVportNo();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -371,6 +371,7 @@ class OFPortStatusVer10 implements OFPortStatus {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -400,6 +401,17 @@ class OFPortStatusVer10 implements OFPortStatus {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((reason == null) ? 0 : reason.hashCode());
+        result = prime * result + ((desc == null) ? 0 : desc.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((reason == null) ? 0 : reason.hashCode());
         result = prime * result + ((desc == null) ? 0 : desc.hashCode());
         return result;

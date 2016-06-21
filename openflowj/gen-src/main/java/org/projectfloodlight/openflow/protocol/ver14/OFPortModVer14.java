@@ -579,6 +579,7 @@ class OFPortModVer14 implements OFPortMod {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -623,6 +624,20 @@ class OFPortModVer14 implements OFPortMod {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
+        result = prime * result + ((hwAddr == null) ? 0 : hwAddr.hashCode());
+        result = prime * result + ((config == null) ? 0 : config.hashCode());
+        result = prime * result + ((mask == null) ? 0 : mask.hashCode());
+        result = prime * result + ((properties == null) ? 0 : properties.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
         result = prime * result + ((hwAddr == null) ? 0 : hwAddr.hashCode());
         result = prime * result + ((config == null) ? 0 : config.hashCode());

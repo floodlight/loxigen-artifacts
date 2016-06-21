@@ -33,7 +33,6 @@ public interface OFActionSetDlSrc extends OFObject, OFAction {
     MacAddress getDlAddr();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

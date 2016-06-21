@@ -47,7 +47,6 @@ public interface OFTableStatsEntry extends OFObject {
     long getConfig() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

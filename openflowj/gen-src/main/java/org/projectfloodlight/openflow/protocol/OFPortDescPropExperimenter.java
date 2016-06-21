@@ -33,7 +33,6 @@ public interface OFPortDescPropExperimenter extends OFObject, OFPortDescProp {
     long getExpType() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -33,7 +33,6 @@ public interface OFTableFeaturePropNextTables extends OFObject, OFTableFeaturePr
     List<U8> getNextTableIds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

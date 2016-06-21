@@ -626,6 +626,7 @@ class OFGroupRemoveBucketVer15 implements OFGroupRemoveBucket {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -670,6 +671,20 @@ class OFGroupRemoveBucketVer15 implements OFGroupRemoveBucket {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((groupType == null) ? 0 : groupType.hashCode());
+        result = prime * result + ((group == null) ? 0 : group.hashCode());
+        result = prime * result + ((commandBucketId == null) ? 0 : commandBucketId.hashCode());
+        result = prime * result + ((buckets == null) ? 0 : buckets.hashCode());
+        result = prime * result + ((properties == null) ? 0 : properties.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((groupType == null) ? 0 : groupType.hashCode());
         result = prime * result + ((group == null) ? 0 : group.hashCode());
         result = prime * result + ((commandBucketId == null) ? 0 : commandBucketId.hashCode());

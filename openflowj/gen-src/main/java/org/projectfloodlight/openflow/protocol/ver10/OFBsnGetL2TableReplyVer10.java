@@ -406,6 +406,7 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -429,6 +430,17 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + l2TableEnable;
+        result = prime * result + l2TablePriority;
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + l2TableEnable;
         result = prime * result + l2TablePriority;
         return result;

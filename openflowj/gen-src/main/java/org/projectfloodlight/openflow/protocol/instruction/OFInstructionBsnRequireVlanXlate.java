@@ -33,7 +33,6 @@ public interface OFInstructionBsnRequireVlanXlate extends OFObject, OFInstructio
     long getSubtype();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

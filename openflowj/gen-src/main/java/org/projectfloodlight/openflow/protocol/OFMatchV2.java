@@ -52,7 +52,6 @@ public interface OFMatchV2 extends OFObject, Match {
     U64 getMetadataMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

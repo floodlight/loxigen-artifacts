@@ -32,7 +32,6 @@ public interface OFActionPopMpls extends OFObject, OFAction {
     EthType getEthertype();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

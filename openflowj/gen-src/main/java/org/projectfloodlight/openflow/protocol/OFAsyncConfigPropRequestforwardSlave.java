@@ -32,7 +32,6 @@ public interface OFAsyncConfigPropRequestforwardSlave extends OFObject, OFAsyncC
     long getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

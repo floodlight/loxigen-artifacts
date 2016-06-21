@@ -36,7 +36,6 @@ public interface OFActionCopyField extends OFObject {
     OFOxmList getOxmIds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

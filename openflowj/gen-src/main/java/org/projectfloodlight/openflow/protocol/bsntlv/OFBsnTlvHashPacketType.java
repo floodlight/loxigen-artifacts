@@ -32,7 +32,6 @@ public interface OFBsnTlvHashPacketType extends OFObject, OFBsnTlv {
     OFBsnHashPacketType getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

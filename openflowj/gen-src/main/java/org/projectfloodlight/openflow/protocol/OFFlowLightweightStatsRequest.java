@@ -41,7 +41,6 @@ public interface OFFlowLightweightStatsRequest extends OFObject, OFStatsRequest<
     U64 getCookieMask();
     Match getMatch();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

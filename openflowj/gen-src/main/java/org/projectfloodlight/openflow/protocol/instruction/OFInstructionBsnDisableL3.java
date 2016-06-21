@@ -33,7 +33,6 @@ public interface OFInstructionBsnDisableL3 extends OFObject, OFInstructionBsn {
     long getSubtype();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

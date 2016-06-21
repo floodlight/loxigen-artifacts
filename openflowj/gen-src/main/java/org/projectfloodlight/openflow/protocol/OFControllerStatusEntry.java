@@ -36,7 +36,6 @@ public interface OFControllerStatusEntry extends OFObject {
     List<OFControllerStatusProp> getProperties();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

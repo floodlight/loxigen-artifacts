@@ -31,7 +31,6 @@ public interface OFBsnVport extends OFObject {
     int getType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

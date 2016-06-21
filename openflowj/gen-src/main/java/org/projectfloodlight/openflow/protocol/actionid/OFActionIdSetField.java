@@ -32,7 +32,6 @@ public interface OFActionIdSetField extends OFObject, OFActionId {
     OFActionType getType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

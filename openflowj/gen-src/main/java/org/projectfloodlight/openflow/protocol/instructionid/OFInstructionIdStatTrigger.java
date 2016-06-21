@@ -31,7 +31,6 @@ public interface OFInstructionIdStatTrigger extends OFObject, OFInstructionId {
     OFInstructionType getType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

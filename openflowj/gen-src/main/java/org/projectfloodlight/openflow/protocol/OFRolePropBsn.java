@@ -34,7 +34,6 @@ public interface OFRolePropBsn extends OFObject, OFRolePropExperimenter {
     byte[] getExperimenterData();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

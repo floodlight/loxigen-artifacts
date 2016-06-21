@@ -35,7 +35,6 @@ public interface OFRoleRequestFailedErrorMsg extends OFObject, OFErrorMsg {
     OFRoleRequestFailedCode getCode();
     OFErrorCauseData getData();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

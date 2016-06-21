@@ -38,7 +38,6 @@ public interface OFBundleCtrlMsg extends OFObject, OFMessage, OFRequest<OFBundle
     Set<OFBundleFlags> getFlags();
     List<OFBundleProp> getProperties();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

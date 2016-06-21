@@ -350,6 +350,7 @@ class OFBsnVlanCounterClearVer14 implements OFBsnVlanCounterClear {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -371,6 +372,16 @@ class OFBsnVlanCounterClearVer14 implements OFBsnVlanCounterClear {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + vlanVid;
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + vlanVid;
         return result;
     }

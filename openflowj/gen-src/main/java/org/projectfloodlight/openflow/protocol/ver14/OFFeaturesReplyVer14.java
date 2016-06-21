@@ -617,6 +617,7 @@ class OFFeaturesReplyVer14 implements OFFeaturesReply {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -657,6 +658,21 @@ class OFFeaturesReplyVer14 implements OFFeaturesReply {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((datapathId == null) ? 0 : datapathId.hashCode());
+        result = prime *  (int) (nBuffers ^ (nBuffers >>> 32));
+        result = prime * result + nTables;
+        result = prime * result + ((auxiliaryId == null) ? 0 : auxiliaryId.hashCode());
+        result = prime * result + ((capabilities == null) ? 0 : capabilities.hashCode());
+        result = prime *  (int) (reserved ^ (reserved >>> 32));
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((datapathId == null) ? 0 : datapathId.hashCode());
         result = prime *  (int) (nBuffers ^ (nBuffers >>> 32));
         result = prime * result + nTables;

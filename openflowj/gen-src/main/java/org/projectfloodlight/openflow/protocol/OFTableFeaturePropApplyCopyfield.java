@@ -33,7 +33,6 @@ public interface OFTableFeaturePropApplyCopyfield extends OFObject, OFTableFeatu
     List<U32> getOxmIds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

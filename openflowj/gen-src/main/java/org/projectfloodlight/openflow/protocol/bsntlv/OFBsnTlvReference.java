@@ -34,7 +34,6 @@ public interface OFBsnTlvReference extends OFObject, OFBsnTlv {
     List<OFBsnTlv> getKey();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

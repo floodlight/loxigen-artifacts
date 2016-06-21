@@ -36,7 +36,6 @@ public interface OFOxmIpProtoMasked extends OFObject, OFOxm<IpProtocol> {
     OFOxm<IpProtocol> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

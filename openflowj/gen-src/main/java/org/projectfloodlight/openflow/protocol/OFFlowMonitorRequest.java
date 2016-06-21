@@ -37,7 +37,6 @@ public interface OFFlowMonitorRequest extends OFObject, OFStatsRequest<OFFlowMon
     Set<OFStatsRequestFlags> getFlags();
     List<OFFlowMonitorEntry> getEntries();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -618,6 +618,7 @@ class OFDescStatsReplyVer10 implements OFDescStatsReply {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -667,6 +668,21 @@ class OFDescStatsReplyVer10 implements OFDescStatsReply {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((mfrDesc == null) ? 0 : mfrDesc.hashCode());
+        result = prime * result + ((hwDesc == null) ? 0 : hwDesc.hashCode());
+        result = prime * result + ((swDesc == null) ? 0 : swDesc.hashCode());
+        result = prime * result + ((serialNum == null) ? 0 : serialNum.hashCode());
+        result = prime * result + ((dpDesc == null) ? 0 : dpDesc.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((mfrDesc == null) ? 0 : mfrDesc.hashCode());
         result = prime * result + ((hwDesc == null) ? 0 : hwDesc.hashCode());

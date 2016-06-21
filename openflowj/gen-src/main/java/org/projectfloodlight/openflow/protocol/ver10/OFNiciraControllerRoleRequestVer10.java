@@ -356,6 +356,7 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -380,6 +381,16 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((role == null) ? 0 : role.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((role == null) ? 0 : role.hashCode());
         return result;
     }

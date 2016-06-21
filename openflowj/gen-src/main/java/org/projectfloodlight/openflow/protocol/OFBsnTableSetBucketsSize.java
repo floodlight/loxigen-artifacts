@@ -37,7 +37,6 @@ public interface OFBsnTableSetBucketsSize extends OFObject, OFBsnHeader {
     TableId getTableId();
     long getBucketsSize();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

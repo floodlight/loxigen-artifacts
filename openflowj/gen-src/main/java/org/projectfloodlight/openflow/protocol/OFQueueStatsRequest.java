@@ -37,7 +37,6 @@ public interface OFQueueStatsRequest extends OFObject, OFStatsRequest<OFQueueSta
     OFPort getPortNo();
     long getQueueId();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
