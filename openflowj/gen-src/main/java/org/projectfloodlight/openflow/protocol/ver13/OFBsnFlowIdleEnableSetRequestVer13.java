@@ -350,6 +350,7 @@ class OFBsnFlowIdleEnableSetRequestVer13 implements OFBsnFlowIdleEnableSetReques
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -371,6 +372,16 @@ class OFBsnFlowIdleEnableSetRequestVer13 implements OFBsnFlowIdleEnableSetReques
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime *  (int) (enable ^ (enable >>> 32));
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime *  (int) (enable ^ (enable >>> 32));
         return result;
     }

@@ -389,6 +389,7 @@ class OFTableModVer12 implements OFTableMod {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -415,6 +416,17 @@ class OFTableModVer12 implements OFTableMod {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
+        result = prime *  (int) (config ^ (config >>> 32));
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime *  (int) (config ^ (config >>> 32));
         return result;

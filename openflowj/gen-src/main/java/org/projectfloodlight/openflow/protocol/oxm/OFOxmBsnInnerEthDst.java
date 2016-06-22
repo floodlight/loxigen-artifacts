@@ -36,7 +36,6 @@ public interface OFOxmBsnInnerEthDst extends OFObject, OFOxm<MacAddress> {
     MacAddress getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

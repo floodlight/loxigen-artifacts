@@ -411,6 +411,7 @@ class OFBsnArpIdleVer14 implements OFBsnArpIdle {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -437,6 +438,17 @@ class OFBsnArpIdleVer14 implements OFBsnArpIdle {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + vlanVid;
+        result = prime * result + ((ipv4Addr == null) ? 0 : ipv4Addr.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + vlanVid;
         result = prime * result + ((ipv4Addr == null) ? 0 : ipv4Addr.hashCode());
         return result;

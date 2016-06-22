@@ -624,6 +624,7 @@ class OFPacketInVer10 implements OFPacketIn {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -662,6 +663,20 @@ class OFPacketInVer10 implements OFPacketIn {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
+        result = prime * result + totalLen;
+        result = prime * result + ((inPort == null) ? 0 : inPort.hashCode());
+        result = prime * result + ((reason == null) ? 0 : reason.hashCode());
+        result = prime * result + Arrays.hashCode(data);
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
         result = prime * result + totalLen;
         result = prime * result + ((inPort == null) ? 0 : inPort.hashCode());

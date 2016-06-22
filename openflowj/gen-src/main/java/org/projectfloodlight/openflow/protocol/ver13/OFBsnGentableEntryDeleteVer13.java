@@ -419,6 +419,7 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -448,6 +449,17 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
+        result = prime * result + ((key == null) ? 0 : key.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((key == null) ? 0 : key.hashCode());
         return result;

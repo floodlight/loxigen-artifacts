@@ -37,7 +37,6 @@ public interface OFTableFeaturesStatsRequest extends OFObject, OFStatsRequest<OF
     Set<OFStatsRequestFlags> getFlags();
     List<OFTableFeatures> getEntries();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

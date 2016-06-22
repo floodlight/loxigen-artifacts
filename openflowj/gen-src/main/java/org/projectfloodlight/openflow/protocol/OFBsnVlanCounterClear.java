@@ -35,7 +35,6 @@ public interface OFBsnVlanCounterClear extends OFObject, OFBsnHeader {
     long getSubtype();
     int getVlanVid();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

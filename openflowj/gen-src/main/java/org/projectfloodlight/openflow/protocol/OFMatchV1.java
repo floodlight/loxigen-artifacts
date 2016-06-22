@@ -43,7 +43,6 @@ public interface OFMatchV1 extends OFObject, Match {
     TransportPort getTcpDst();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

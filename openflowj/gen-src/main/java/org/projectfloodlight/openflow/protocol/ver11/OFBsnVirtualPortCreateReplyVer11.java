@@ -396,6 +396,7 @@ class OFBsnVirtualPortCreateReplyVer11 implements OFBsnVirtualPortCreateReply {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -419,6 +420,17 @@ class OFBsnVirtualPortCreateReplyVer11 implements OFBsnVirtualPortCreateReply {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime *  (int) (status ^ (status >>> 32));
+        result = prime *  (int) (vportNo ^ (vportNo >>> 32));
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime *  (int) (status ^ (status >>> 32));
         result = prime *  (int) (vportNo ^ (vportNo >>> 32));
         return result;

@@ -34,7 +34,6 @@ public interface OFTableFeaturePropExperimenter extends OFObject, OFTableFeature
     byte[] getExperimenterData() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

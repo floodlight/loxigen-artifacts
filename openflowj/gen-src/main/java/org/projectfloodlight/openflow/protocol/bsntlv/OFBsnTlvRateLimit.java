@@ -32,7 +32,6 @@ public interface OFBsnTlvRateLimit extends OFObject, OFBsnTlv {
     long getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

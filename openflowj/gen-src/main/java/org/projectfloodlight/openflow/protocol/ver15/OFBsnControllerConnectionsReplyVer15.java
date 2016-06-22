@@ -367,6 +367,7 @@ class OFBsnControllerConnectionsReplyVer15 implements OFBsnControllerConnections
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -391,6 +392,16 @@ class OFBsnControllerConnectionsReplyVer15 implements OFBsnControllerConnections
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((connections == null) ? 0 : connections.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((connections == null) ? 0 : connections.hashCode());
         return result;
     }

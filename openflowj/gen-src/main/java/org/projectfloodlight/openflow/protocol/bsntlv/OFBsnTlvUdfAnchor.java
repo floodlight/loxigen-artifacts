@@ -32,7 +32,6 @@ public interface OFBsnTlvUdfAnchor extends OFObject, OFBsnTlv {
     OFBsnUdfAnchor getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

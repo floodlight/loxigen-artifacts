@@ -34,7 +34,6 @@ public interface OFQueueStatsPropBsn extends OFObject, OFQueueStatsPropExperimen
     byte[] getExperimenterData();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

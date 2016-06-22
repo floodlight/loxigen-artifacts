@@ -32,7 +32,6 @@ public interface OFBsnTlvTxPackets extends OFObject, OFBsnTlv {
     U64 getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

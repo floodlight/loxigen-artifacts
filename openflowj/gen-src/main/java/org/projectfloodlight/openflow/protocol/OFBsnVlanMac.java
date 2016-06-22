@@ -32,7 +32,6 @@ public interface OFBsnVlanMac extends OFObject {
     MacAddress getMac();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

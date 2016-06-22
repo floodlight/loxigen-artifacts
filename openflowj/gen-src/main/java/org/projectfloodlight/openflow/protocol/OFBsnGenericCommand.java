@@ -37,7 +37,6 @@ public interface OFBsnGenericCommand extends OFObject, OFBsnHeader {
     String getName();
     List<OFBsnTlv> getTlvs();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

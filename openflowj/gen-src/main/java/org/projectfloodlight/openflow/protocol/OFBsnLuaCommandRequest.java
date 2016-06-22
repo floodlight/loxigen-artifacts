@@ -35,7 +35,6 @@ public interface OFBsnLuaCommandRequest extends OFObject, OFBsnHeader, OFRequest
     long getSubtype();
     byte[] getData();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

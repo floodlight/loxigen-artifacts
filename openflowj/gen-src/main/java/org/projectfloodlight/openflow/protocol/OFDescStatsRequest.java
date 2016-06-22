@@ -35,7 +35,6 @@ public interface OFDescStatsRequest extends OFObject, OFStatsRequest<OFDescStats
     OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

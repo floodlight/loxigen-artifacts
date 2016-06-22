@@ -33,7 +33,6 @@ public interface OFTableModPropEviction extends OFObject, OFTableModProp {
     Set<OFTableModPropEvictionFlag> getFlags();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

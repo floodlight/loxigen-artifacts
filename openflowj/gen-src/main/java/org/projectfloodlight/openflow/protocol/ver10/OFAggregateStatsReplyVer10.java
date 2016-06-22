@@ -524,6 +524,7 @@ class OFAggregateStatsReplyVer10 implements OFAggregateStatsReply {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -560,6 +561,19 @@ class OFAggregateStatsReplyVer10 implements OFAggregateStatsReply {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((packetCount == null) ? 0 : packetCount.hashCode());
+        result = prime * result + ((byteCount == null) ? 0 : byteCount.hashCode());
+        result = prime *  (int) (flowCount ^ (flowCount >>> 32));
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((packetCount == null) ? 0 : packetCount.hashCode());
         result = prime * result + ((byteCount == null) ? 0 : byteCount.hashCode());

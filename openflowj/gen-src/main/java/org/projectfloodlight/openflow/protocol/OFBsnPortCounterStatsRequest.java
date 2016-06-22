@@ -38,7 +38,6 @@ public interface OFBsnPortCounterStatsRequest extends OFObject, OFBsnStatsReques
     long getSubtype();
     OFPort getPortNo();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

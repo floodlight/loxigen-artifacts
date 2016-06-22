@@ -435,6 +435,7 @@ class OFBsnVlanCounterStatsRequestVer13 implements OFBsnVlanCounterStatsRequest 
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -461,6 +462,17 @@ class OFBsnVlanCounterStatsRequestVer13 implements OFBsnVlanCounterStatsRequest 
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + vlanVid;
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + vlanVid;
         return result;

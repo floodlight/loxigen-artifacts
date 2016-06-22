@@ -38,7 +38,6 @@ public interface OFBsnVrfCounterStatsRequest extends OFObject, OFBsnStatsRequest
     long getSubtype();
     long getVrf();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

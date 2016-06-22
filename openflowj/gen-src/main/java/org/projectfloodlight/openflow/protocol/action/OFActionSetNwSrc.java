@@ -33,7 +33,6 @@ public interface OFActionSetNwSrc extends OFObject, OFAction {
     IPv4Address getNwAddr();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -33,7 +33,6 @@ public interface OFActionOutput extends OFObject, OFAction {
     int getMaxLen();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

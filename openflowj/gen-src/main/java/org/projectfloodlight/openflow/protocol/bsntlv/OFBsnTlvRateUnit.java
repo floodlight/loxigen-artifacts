@@ -32,7 +32,6 @@ public interface OFBsnTlvRateUnit extends OFObject, OFBsnTlv {
     OFBsnRateUnit getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

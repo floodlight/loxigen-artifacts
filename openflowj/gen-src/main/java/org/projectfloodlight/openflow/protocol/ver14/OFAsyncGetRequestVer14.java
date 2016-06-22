@@ -459,6 +459,7 @@ class OFAsyncGetRequestVer14 implements OFAsyncGetRequest {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -483,6 +484,16 @@ class OFAsyncGetRequestVer14 implements OFAsyncGetRequest {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((properties == null) ? 0 : properties.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((properties == null) ? 0 : properties.hashCode());
         return result;
     }

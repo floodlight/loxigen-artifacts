@@ -37,7 +37,6 @@ public interface OFBsnPduRxReply extends OFObject, OFBsnHeader {
     OFPort getPortNo();
     short getSlotNum();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

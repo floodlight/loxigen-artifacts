@@ -32,7 +32,6 @@ public interface OFBsnTlvIpProto extends OFObject, OFBsnTlv {
     short getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

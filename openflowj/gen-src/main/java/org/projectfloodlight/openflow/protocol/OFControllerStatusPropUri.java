@@ -32,7 +32,6 @@ public interface OFControllerStatusPropUri extends OFObject, OFControllerStatusP
     OFConnectionIndex getUri();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -34,7 +34,6 @@ public interface OFBsnGentableDescStatsEntry extends OFObject {
     long getMaxEntries();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

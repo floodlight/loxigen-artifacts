@@ -36,7 +36,6 @@ public interface OFOxmArpOpMasked extends OFObject, OFOxm<ArpOpcode> {
     OFOxm<ArpOpcode> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

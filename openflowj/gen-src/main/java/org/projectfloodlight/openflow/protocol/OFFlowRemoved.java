@@ -44,7 +44,6 @@ public interface OFFlowRemoved extends OFObject, OFMessage {
     Match getMatch();
     Stat getStats() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

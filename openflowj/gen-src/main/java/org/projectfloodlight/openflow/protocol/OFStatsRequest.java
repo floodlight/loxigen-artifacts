@@ -35,7 +35,6 @@ public interface OFStatsRequest<T extends OFStatsReply> extends OFObject, OFMess
     OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder<T> createBuilder();

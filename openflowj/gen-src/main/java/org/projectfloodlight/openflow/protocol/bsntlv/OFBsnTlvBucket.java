@@ -33,7 +33,6 @@ public interface OFBsnTlvBucket extends OFObject, OFBsnTlv {
     List<OFBsnTlv> getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

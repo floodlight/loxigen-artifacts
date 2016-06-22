@@ -33,7 +33,6 @@ public interface OFMeterBandDrop extends OFObject, OFMeterBand {
     long getBurstSize();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

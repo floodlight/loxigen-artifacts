@@ -41,7 +41,6 @@ public interface OFAggregateStatsRequest extends OFObject, OFStatsRequest<OFAggr
     U64 getCookieMask() throws UnsupportedOperationException;
     Match getMatch();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

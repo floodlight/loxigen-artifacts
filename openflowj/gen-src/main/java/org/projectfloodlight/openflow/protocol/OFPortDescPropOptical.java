@@ -40,7 +40,6 @@ public interface OFPortDescPropOptical extends OFObject, OFPortDescProp {
     long getTxPwrMax();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

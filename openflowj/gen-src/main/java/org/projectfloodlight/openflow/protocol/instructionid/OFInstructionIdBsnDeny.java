@@ -33,7 +33,6 @@ public interface OFInstructionIdBsnDeny extends OFObject, OFInstructionIdBsn {
     long getSubtype();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -36,7 +36,6 @@ public interface OFOxmBsnVxlanNetworkIdMasked extends OFObject, OFOxm<VxlanNI> {
     OFOxm<VxlanNI> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

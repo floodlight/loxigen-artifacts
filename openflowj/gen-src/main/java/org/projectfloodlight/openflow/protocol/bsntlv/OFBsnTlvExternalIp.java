@@ -32,7 +32,6 @@ public interface OFBsnTlvExternalIp extends OFObject, OFBsnTlv {
     IPv4Address getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

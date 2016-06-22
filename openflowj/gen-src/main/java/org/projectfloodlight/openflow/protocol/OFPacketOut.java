@@ -38,7 +38,6 @@ public interface OFPacketOut extends OFObject, OFMessage {
     byte[] getData();
     Match getMatch() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

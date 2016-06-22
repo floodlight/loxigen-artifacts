@@ -35,7 +35,6 @@ public interface OFBundleFeaturesPropTime extends OFObject, OFBundleFeaturesProp
     OFTime getTimestamp();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

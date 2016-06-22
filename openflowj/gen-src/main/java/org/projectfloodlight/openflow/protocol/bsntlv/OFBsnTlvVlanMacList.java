@@ -33,7 +33,6 @@ public interface OFBsnTlvVlanMacList extends OFObject, OFBsnTlv {
     List<OFBsnVlanMac> getKey();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

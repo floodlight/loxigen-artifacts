@@ -32,7 +32,6 @@ public interface OFQueuePropMinRate extends OFObject, OFQueueProp {
     int getRate();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

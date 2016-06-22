@@ -36,7 +36,6 @@ public interface OFOxmTcpSrcMasked extends OFObject, OFOxm<TransportPort> {
     OFOxm<TransportPort> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

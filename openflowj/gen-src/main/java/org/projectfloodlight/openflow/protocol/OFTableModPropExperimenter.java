@@ -33,7 +33,6 @@ public interface OFTableModPropExperimenter extends OFObject, OFTableModProp {
     long getExpType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -32,7 +32,6 @@ public interface OFBsnTlvDecap extends OFObject, OFBsnTlv {
     OFBsnDecap getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

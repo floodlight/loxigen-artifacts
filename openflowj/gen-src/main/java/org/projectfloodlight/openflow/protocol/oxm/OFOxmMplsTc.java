@@ -36,7 +36,6 @@ public interface OFOxmMplsTc extends OFObject, OFOxm<U8> {
     U8 getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

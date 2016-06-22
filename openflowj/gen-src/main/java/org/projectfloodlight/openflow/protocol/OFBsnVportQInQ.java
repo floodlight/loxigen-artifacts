@@ -37,7 +37,6 @@ public interface OFBsnVportQInQ extends OFObject, OFBsnVport {
     String getIfName();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

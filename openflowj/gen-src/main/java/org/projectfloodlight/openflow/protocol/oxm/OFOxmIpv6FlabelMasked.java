@@ -36,7 +36,6 @@ public interface OFOxmIpv6FlabelMasked extends OFObject, OFOxm<IPv6FlowLabel> {
     OFOxm<IPv6FlowLabel> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

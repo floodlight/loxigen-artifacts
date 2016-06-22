@@ -36,7 +36,6 @@ public interface OFPortDescStatsRequest extends OFObject, OFStatsRequest<OFPortD
     Set<OFStatsRequestFlags> getFlags();
     OFPort getPortNo() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

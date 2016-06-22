@@ -500,6 +500,7 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -534,6 +535,18 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((bundleId == null) ? 0 : bundleId.hashCode());
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((data == null) ? 0 : data.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((bundleId == null) ? 0 : bundleId.hashCode());
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((data == null) ? 0 : data.hashCode());

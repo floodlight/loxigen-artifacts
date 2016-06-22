@@ -41,7 +41,6 @@ public interface OFPacketIn extends OFObject, OFMessage {
     OFPort getInPort() throws UnsupportedOperationException;
     OFPort getInPhyPort() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -40,7 +40,6 @@ public interface OFBsnSetPktinSuppressionRequest extends OFObject, OFBsnHeader, 
     int getPriority();
     U64 getCookie();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

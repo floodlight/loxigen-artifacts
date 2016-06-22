@@ -36,7 +36,6 @@ public interface OFBsnSetSwitchPipelineRequest extends OFObject, OFBsnHeader, OF
     long getSubtype();
     String getPipeline();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

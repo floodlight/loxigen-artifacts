@@ -501,6 +501,7 @@ class OFBsnImageDescStatsReplyVer15 implements OFBsnImageDescStatsReply {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -535,6 +536,18 @@ class OFBsnImageDescStatsReplyVer15 implements OFBsnImageDescStatsReply {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((imageChecksum == null) ? 0 : imageChecksum.hashCode());
+        result = prime * result + ((startupConfigChecksum == null) ? 0 : startupConfigChecksum.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((imageChecksum == null) ? 0 : imageChecksum.hashCode());
         result = prime * result + ((startupConfigChecksum == null) ? 0 : startupConfigChecksum.hashCode());

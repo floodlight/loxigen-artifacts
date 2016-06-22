@@ -37,7 +37,6 @@ public interface OFControllerStatusStatsReply extends OFObject, OFStatsReply {
     Set<OFStatsReplyFlags> getFlags();
     List<OFControllerStatusEntry> getControllerStatus();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

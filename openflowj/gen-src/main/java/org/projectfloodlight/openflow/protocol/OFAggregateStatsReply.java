@@ -39,7 +39,6 @@ public interface OFAggregateStatsReply extends OFObject, OFStatsReply {
     long getFlowCount() throws UnsupportedOperationException;
     Stat getStats() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

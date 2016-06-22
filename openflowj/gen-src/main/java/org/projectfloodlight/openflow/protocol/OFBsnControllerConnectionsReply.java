@@ -36,7 +36,6 @@ public interface OFBsnControllerConnectionsReply extends OFObject, OFBsnHeader {
     long getSubtype();
     List<OFBsnControllerConnection> getConnections();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

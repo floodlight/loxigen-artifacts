@@ -39,7 +39,6 @@ public interface OFMeterStats extends OFObject {
     long getRefCount() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

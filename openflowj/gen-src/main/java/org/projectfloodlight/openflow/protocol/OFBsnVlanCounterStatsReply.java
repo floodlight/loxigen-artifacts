@@ -39,7 +39,6 @@ public interface OFBsnVlanCounterStatsReply extends OFObject, OFBsnStatsReply {
     long getSubtype();
     List<OFBsnVlanCounterStatsEntry> getEntries();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

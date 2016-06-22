@@ -34,7 +34,6 @@ public interface OFInstructionBsnInternalPriority extends OFObject, OFInstructio
     long getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

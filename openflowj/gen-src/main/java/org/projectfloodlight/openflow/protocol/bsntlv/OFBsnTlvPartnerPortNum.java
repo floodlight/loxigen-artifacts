@@ -32,7 +32,6 @@ public interface OFBsnTlvPartnerPortNum extends OFObject, OFBsnTlv {
     int getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

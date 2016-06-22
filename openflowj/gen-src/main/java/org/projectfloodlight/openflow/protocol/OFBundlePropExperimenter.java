@@ -33,7 +33,6 @@ public interface OFBundlePropExperimenter extends OFObject, OFBundleProp {
     long getExpType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

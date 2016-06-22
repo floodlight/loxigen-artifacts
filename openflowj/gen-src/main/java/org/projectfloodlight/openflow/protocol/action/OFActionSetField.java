@@ -33,7 +33,6 @@ public interface OFActionSetField extends OFObject, OFAction {
     OFOxm<?> getField();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

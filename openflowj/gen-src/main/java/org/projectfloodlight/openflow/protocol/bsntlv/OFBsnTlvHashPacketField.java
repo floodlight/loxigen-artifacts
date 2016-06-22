@@ -33,7 +33,6 @@ public interface OFBsnTlvHashPacketField extends OFObject, OFBsnTlv {
     Set<OFBsnHashPacketField> getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

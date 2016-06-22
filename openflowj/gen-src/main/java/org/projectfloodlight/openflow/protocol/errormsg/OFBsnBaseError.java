@@ -37,7 +37,6 @@ public interface OFBsnBaseError extends OFObject, OFExperimenterErrorMsg {
     String getErrMsg();
     OFErrorCauseData getData();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

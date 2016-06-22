@@ -32,7 +32,6 @@ public interface OFGroupBucketPropWeight extends OFObject, OFGroupBucketProp {
     int getWeight();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -33,7 +33,6 @@ public interface OFBsnDebugCounterDescStatsEntry extends OFObject {
     String getDescription();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

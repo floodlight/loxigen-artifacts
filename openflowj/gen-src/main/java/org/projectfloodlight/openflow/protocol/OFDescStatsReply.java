@@ -40,7 +40,6 @@ public interface OFDescStatsReply extends OFObject, OFStatsReply {
     String getSerialNum();
     String getDpDesc();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -34,7 +34,6 @@ public interface OFQueueDesc extends OFObject {
     List<OFQueueDescProp> getProperties();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

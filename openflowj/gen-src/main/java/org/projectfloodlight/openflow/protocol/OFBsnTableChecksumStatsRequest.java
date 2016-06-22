@@ -37,7 +37,6 @@ public interface OFBsnTableChecksumStatsRequest extends OFObject, OFBsnStatsRequ
     long getExperimenter();
     long getSubtype();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

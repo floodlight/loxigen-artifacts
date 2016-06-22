@@ -37,7 +37,6 @@ public interface OFFlowMonitorReply extends OFObject, OFStatsReply {
     Set<OFStatsReplyFlags> getFlags();
     List<OFFlowMonitorReplyEntry> getEntries();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

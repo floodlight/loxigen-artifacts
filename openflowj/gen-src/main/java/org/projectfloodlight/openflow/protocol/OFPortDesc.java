@@ -67,7 +67,6 @@ public interface OFPortDesc extends OFObject {
      */
      public U64 getBsnGenerationId();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

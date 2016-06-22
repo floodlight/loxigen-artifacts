@@ -35,7 +35,6 @@ public interface OFBsnVirtualPortCreateRequest extends OFObject, OFBsnHeader, OF
     long getSubtype();
     OFBsnVport getVport();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

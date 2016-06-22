@@ -34,7 +34,6 @@ public interface OFBsnTlvHashGtpPortMatch extends OFObject, OFBsnTlv {
     int getDstPort();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

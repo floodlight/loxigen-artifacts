@@ -503,6 +503,7 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -537,6 +538,18 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((groupType == null) ? 0 : groupType.hashCode());
+        result = prime * result + ((group == null) ? 0 : group.hashCode());
+        result = prime * result + ((buckets == null) ? 0 : buckets.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((groupType == null) ? 0 : groupType.hashCode());
         result = prime * result + ((group == null) ? 0 : group.hashCode());
         result = prime * result + ((buckets == null) ? 0 : buckets.hashCode());

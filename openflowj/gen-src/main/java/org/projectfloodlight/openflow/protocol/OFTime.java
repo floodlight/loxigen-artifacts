@@ -32,7 +32,6 @@ public interface OFTime extends OFObject {
     long getNanoseconds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

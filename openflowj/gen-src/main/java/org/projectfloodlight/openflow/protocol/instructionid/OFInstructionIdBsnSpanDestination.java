@@ -33,7 +33,6 @@ public interface OFInstructionIdBsnSpanDestination extends OFObject, OFInstructi
     long getSubtype();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
