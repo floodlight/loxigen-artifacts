@@ -1,1 +1,1 @@
-a1d1c6c77e9638547dd8491fbf0cb1bfd4bc9481 Merge into master from pull request #497: Add equalsIgnoreXid() + hashCodeIgnoreXid() to OFMessage (https://github.com/floodlight/loxigen/pull/497)
+e68c39aca57228f852b05dcd5009821b9215bee1 Merge into master from pull request #496: Correct Javadoc to fix build failure when running 'make package-java' (https://github.com/floodlight/loxigen/pull/496)
