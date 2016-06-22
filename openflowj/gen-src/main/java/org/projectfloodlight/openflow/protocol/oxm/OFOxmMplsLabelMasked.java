@@ -36,7 +36,6 @@ public interface OFOxmMplsLabelMasked extends OFObject, OFOxm<U32> {
     OFOxm<U32> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

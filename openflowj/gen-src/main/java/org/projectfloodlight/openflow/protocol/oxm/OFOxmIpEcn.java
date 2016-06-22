@@ -36,7 +36,6 @@ public interface OFOxmIpEcn extends OFObject, OFOxm<IpEcn> {
     IpEcn getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

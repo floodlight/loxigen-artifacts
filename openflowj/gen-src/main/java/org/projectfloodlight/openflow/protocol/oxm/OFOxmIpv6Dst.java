@@ -36,7 +36,6 @@ public interface OFOxmIpv6Dst extends OFObject, OFOxm<IPv6Address> {
     IPv6Address getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

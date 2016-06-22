@@ -36,7 +36,6 @@ public interface OFPortStatsRequest extends OFObject, OFStatsRequest<OFPortStats
     Set<OFStatsRequestFlags> getFlags();
     OFPort getPortNo();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

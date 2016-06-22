@@ -42,7 +42,6 @@ public interface OFFeaturesReply extends OFObject, OFMessage {
     Set<OFActionType> getActions() throws UnsupportedOperationException;
     List<OFPortDesc> getPorts() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

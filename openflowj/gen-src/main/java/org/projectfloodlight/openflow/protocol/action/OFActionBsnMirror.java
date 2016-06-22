@@ -36,7 +36,6 @@ public interface OFActionBsnMirror extends OFObject, OFActionBsn {
     short getCopyStage();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

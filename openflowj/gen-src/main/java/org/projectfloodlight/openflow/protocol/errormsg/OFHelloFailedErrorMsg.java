@@ -35,7 +35,6 @@ public interface OFHelloFailedErrorMsg extends OFObject, OFErrorMsg {
     OFHelloFailedCode getCode();
     OFErrorCauseData getData();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

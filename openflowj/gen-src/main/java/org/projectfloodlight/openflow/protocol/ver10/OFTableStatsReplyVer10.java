@@ -401,6 +401,7 @@ class OFTableStatsReplyVer10 implements OFTableStatsReply {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -430,6 +431,17 @@ class OFTableStatsReplyVer10 implements OFTableStatsReply {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((entries == null) ? 0 : entries.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((entries == null) ? 0 : entries.hashCode());
         return result;

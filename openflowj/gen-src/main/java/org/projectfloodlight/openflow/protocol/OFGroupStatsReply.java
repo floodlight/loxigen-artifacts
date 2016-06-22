@@ -37,7 +37,6 @@ public interface OFGroupStatsReply extends OFObject, OFStatsReply {
     Set<OFStatsReplyFlags> getFlags();
     List<OFGroupStatsEntry> getEntries();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

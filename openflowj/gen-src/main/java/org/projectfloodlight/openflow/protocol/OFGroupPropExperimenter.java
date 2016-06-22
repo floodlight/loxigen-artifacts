@@ -33,7 +33,6 @@ public interface OFGroupPropExperimenter extends OFObject {
     long getExpType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

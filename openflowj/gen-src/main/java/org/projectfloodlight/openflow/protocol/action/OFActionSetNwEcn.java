@@ -33,7 +33,6 @@ public interface OFActionSetNwEcn extends OFObject, OFAction {
     IpEcn getNwEcn();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

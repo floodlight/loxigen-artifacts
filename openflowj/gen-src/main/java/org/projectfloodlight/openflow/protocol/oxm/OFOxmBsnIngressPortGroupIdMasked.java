@@ -36,7 +36,6 @@ public interface OFOxmBsnIngressPortGroupIdMasked extends OFObject, OFOxm<ClassI
     OFOxm<ClassId> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

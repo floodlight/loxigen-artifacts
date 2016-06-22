@@ -37,7 +37,6 @@ public interface OFBsnGentableSetBucketsSize extends OFObject, OFBsnHeader {
     GenTableId getTableId();
     long getBucketsSize();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

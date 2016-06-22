@@ -33,7 +33,6 @@ public interface OFActionSetTpDst extends OFObject, OFAction {
     TransportPort getTpPort();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

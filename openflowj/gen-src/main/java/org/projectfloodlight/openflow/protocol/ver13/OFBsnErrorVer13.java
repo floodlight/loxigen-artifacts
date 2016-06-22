@@ -452,6 +452,7 @@ class OFBsnErrorVer13 implements OFBsnError {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -481,6 +482,17 @@ class OFBsnErrorVer13 implements OFBsnError {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((errMsg == null) ? 0 : errMsg.hashCode());
+        result = prime * result + ((data == null) ? 0 : data.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((errMsg == null) ? 0 : errMsg.hashCode());
         result = prime * result + ((data == null) ? 0 : data.hashCode());
         return result;

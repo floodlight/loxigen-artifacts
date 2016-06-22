@@ -394,6 +394,7 @@ class OFRoleRequestVer14 implements OFRoleRequest {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -423,6 +424,17 @@ class OFRoleRequestVer14 implements OFRoleRequest {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((role == null) ? 0 : role.hashCode());
+        result = prime * result + ((generationId == null) ? 0 : generationId.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((role == null) ? 0 : role.hashCode());
         result = prime * result + ((generationId == null) ? 0 : generationId.hashCode());
         return result;

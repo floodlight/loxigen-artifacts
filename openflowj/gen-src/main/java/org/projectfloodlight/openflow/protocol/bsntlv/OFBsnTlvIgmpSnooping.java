@@ -31,7 +31,6 @@ public interface OFBsnTlvIgmpSnooping extends OFObject, OFBsnTlv {
     int getType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -32,7 +32,6 @@ public interface OFPortDescPropRecirculate extends OFObject {
     byte[] getPortNos();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

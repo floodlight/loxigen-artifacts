@@ -355,6 +355,7 @@ class OFBsnSetMirroringVer11 implements OFBsnSetMirroring {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -376,6 +377,16 @@ class OFBsnSetMirroringVer11 implements OFBsnSetMirroring {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + reportMirrorPorts;
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + reportMirrorPorts;
         return result;
     }

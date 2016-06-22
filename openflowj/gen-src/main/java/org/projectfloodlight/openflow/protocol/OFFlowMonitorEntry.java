@@ -38,7 +38,6 @@ public interface OFFlowMonitorEntry extends OFObject {
     Match getMatch();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

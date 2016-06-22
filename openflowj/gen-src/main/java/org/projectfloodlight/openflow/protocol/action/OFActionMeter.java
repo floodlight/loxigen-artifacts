@@ -32,7 +32,6 @@ public interface OFActionMeter extends OFObject, OFAction {
     long getMeterId();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

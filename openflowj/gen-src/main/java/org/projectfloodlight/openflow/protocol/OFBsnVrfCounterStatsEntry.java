@@ -33,7 +33,6 @@ public interface OFBsnVrfCounterStatsEntry extends OFObject {
     List<U64> getValues();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

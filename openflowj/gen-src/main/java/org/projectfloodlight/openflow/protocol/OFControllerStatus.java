@@ -33,7 +33,6 @@ public interface OFControllerStatus extends OFObject, OFMessage {
     long getXid();
     OFControllerStatusEntry getEntry();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

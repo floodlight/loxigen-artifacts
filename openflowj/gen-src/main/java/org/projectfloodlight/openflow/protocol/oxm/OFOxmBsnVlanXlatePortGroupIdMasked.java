@@ -36,7 +36,6 @@ public interface OFOxmBsnVlanXlatePortGroupIdMasked extends OFObject, OFOxm<Clas
     OFOxm<ClassId> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

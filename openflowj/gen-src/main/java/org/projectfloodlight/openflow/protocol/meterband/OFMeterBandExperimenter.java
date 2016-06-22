@@ -34,7 +34,6 @@ public interface OFMeterBandExperimenter extends OFObject, OFMeterBand {
     long getExperimenter();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -1038,6 +1038,7 @@ class OFFlowAddVer15 implements OFFlowAdd {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -1110,6 +1111,28 @@ class OFFlowAddVer15 implements OFFlowAdd {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
+        result = prime * result + ((cookieMask == null) ? 0 : cookieMask.hashCode());
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
+        result = prime * result + idleTimeout;
+        result = prime * result + hardTimeout;
+        result = prime * result + priority;
+        result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
+        result = prime * result + ((outPort == null) ? 0 : outPort.hashCode());
+        result = prime * result + ((outGroup == null) ? 0 : outGroup.hashCode());
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + importance;
+        result = prime * result + ((match == null) ? 0 : match.hashCode());
+        result = prime * result + ((instructions == null) ? 0 : instructions.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + ((cookieMask == null) ? 0 : cookieMask.hashCode());
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());

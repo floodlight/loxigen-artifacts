@@ -33,7 +33,6 @@ public interface OFTableFeaturePropWriteCopyfieldMiss extends OFObject, OFTableF
     List<U32> getOxmIds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

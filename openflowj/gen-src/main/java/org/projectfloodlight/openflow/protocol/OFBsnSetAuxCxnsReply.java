@@ -37,7 +37,6 @@ public interface OFBsnSetAuxCxnsReply extends OFObject, OFBsnHeader {
     long getNumAux();
     long getStatus();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

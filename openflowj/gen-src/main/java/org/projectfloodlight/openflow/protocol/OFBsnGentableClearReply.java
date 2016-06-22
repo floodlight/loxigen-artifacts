@@ -37,7 +37,6 @@ public interface OFBsnGentableClearReply extends OFObject, OFBsnHeader {
     long getDeletedCount();
     long getErrorCount();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

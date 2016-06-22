@@ -769,6 +769,7 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -819,6 +820,23 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
+        result = prime * result + ((reason == null) ? 0 : reason.hashCode());
+        result = prime * result + priority;
+        result = prime * result + idleTimeout;
+        result = prime * result + hardTimeout;
+        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
+        result = prime * result + ((match == null) ? 0 : match.hashCode());
+        result = prime * result + ((stats == null) ? 0 : stats.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((reason == null) ? 0 : reason.hashCode());
         result = prime * result + priority;

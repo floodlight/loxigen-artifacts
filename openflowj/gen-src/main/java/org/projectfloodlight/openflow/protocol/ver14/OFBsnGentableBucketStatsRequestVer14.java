@@ -441,6 +441,7 @@ class OFBsnGentableBucketStatsRequestVer14 implements OFBsnGentableBucketStatsRe
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -470,6 +471,17 @@ class OFBsnGentableBucketStatsRequestVer14 implements OFBsnGentableBucketStatsRe
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         return result;

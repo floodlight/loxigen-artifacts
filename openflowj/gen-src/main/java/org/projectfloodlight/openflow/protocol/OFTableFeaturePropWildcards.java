@@ -33,7 +33,6 @@ public interface OFTableFeaturePropWildcards extends OFObject, OFTableFeaturePro
     List<U32> getOxmIds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

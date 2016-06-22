@@ -32,7 +32,6 @@ public interface OFBsnTlvPortVxlanMode extends OFObject, OFBsnTlv {
     OFBsnPortVxlanMode getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

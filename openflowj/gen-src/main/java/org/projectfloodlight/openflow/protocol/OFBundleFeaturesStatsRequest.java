@@ -38,7 +38,6 @@ public interface OFBundleFeaturesStatsRequest extends OFObject, OFStatsRequest<O
     Set<OFBundleFeatureFlags> getFeatureRequestFlags();
     List<OFBundleFeaturesProp> getProperties();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

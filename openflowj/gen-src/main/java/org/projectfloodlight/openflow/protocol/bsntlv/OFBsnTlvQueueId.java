@@ -32,7 +32,6 @@ public interface OFBsnTlvQueueId extends OFObject, OFBsnTlv {
     long getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

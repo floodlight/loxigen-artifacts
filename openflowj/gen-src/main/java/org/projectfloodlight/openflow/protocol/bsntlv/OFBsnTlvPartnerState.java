@@ -33,7 +33,6 @@ public interface OFBsnTlvPartnerState extends OFObject, OFBsnTlv {
     Set<OFBsnLacpState> getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

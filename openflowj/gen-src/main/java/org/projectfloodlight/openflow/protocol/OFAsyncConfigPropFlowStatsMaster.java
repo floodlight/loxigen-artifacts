@@ -32,7 +32,6 @@ public interface OFAsyncConfigPropFlowStatsMaster extends OFObject, OFAsyncConfi
     long getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

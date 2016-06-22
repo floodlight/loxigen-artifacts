@@ -394,6 +394,7 @@ class OFBadActionErrorMsgVer13 implements OFBadActionErrorMsg {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -423,6 +424,17 @@ class OFBadActionErrorMsgVer13 implements OFBadActionErrorMsg {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((code == null) ? 0 : code.hashCode());
+        result = prime * result + ((data == null) ? 0 : data.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((code == null) ? 0 : code.hashCode());
         result = prime * result + ((data == null) ? 0 : data.hashCode());
         return result;

@@ -42,7 +42,6 @@ public interface OFBsnSetLacpRequest extends OFObject, OFBsnHeader, OFRequest<OF
     int getActorPortNum();
     int getActorKey();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

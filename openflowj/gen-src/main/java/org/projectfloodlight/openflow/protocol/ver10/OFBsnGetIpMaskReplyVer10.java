@@ -401,6 +401,7 @@ class OFBsnGetIpMaskReplyVer10 implements OFBsnGetIpMaskReply {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -424,6 +425,17 @@ class OFBsnGetIpMaskReplyVer10 implements OFBsnGetIpMaskReply {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + index;
+        result = prime *  (int) (mask ^ (mask >>> 32));
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + index;
         result = prime *  (int) (mask ^ (mask >>> 32));
         return result;

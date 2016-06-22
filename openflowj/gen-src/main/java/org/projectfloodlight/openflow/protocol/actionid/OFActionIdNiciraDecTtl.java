@@ -33,7 +33,6 @@ public interface OFActionIdNiciraDecTtl extends OFObject, OFActionIdNicira {
     int getSubtype();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

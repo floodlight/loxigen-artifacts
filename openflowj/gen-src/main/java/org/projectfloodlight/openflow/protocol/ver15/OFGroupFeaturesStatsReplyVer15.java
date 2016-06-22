@@ -813,6 +813,7 @@ class OFGroupFeaturesStatsReplyVer15 implements OFGroupFeaturesStatsReply {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -860,6 +861,26 @@ class OFGroupFeaturesStatsReplyVer15 implements OFGroupFeaturesStatsReply {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime *  (int) (types ^ (types >>> 32));
+        result = prime * result + ((capabilities == null) ? 0 : capabilities.hashCode());
+        result = prime *  (int) (maxGroupsAll ^ (maxGroupsAll >>> 32));
+        result = prime *  (int) (maxGroupsSelect ^ (maxGroupsSelect >>> 32));
+        result = prime *  (int) (maxGroupsIndirect ^ (maxGroupsIndirect >>> 32));
+        result = prime *  (int) (maxGroupsFf ^ (maxGroupsFf >>> 32));
+        result = prime *  (int) (actionsAll ^ (actionsAll >>> 32));
+        result = prime *  (int) (actionsSelect ^ (actionsSelect >>> 32));
+        result = prime *  (int) (actionsIndirect ^ (actionsIndirect >>> 32));
+        result = prime *  (int) (actionsFf ^ (actionsFf >>> 32));
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime *  (int) (types ^ (types >>> 32));
         result = prime * result + ((capabilities == null) ? 0 : capabilities.hashCode());

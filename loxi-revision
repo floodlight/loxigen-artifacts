@@ -1,1 +1,1 @@
-866d11af637f9d61f9386de218d2e81cd1ad0c28 Merge into master from pull request #494: BVS-6442: Adding MacAddr generation for IPv6 Mcast addresses. (https://github.com/floodlight/loxigen/pull/494)
+a1d1c6c77e9638547dd8491fbf0cb1bfd4bc9481 Merge into master from pull request #497: Add equalsIgnoreXid() + hashCodeIgnoreXid() to OFMessage (https://github.com/floodlight/loxigen/pull/497)

@@ -33,7 +33,6 @@ public interface OFTableFeaturePropApplyActions extends OFObject, OFTableFeature
     List<OFActionId> getActionIds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

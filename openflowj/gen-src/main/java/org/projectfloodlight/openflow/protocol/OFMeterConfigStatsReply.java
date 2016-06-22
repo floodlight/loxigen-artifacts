@@ -37,7 +37,6 @@ public interface OFMeterConfigStatsReply extends OFObject, OFStatsReply {
     Set<OFStatsReplyFlags> getFlags();
     List<OFMeterConfig> getEntries();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

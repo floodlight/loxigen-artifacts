@@ -32,7 +32,6 @@ public interface OFPortDescPropEgress extends OFObject {
     byte[] getOxmIds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

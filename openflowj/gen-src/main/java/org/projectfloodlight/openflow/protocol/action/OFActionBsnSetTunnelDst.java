@@ -35,7 +35,6 @@ public interface OFActionBsnSetTunnelDst extends OFObject, OFActionBsn {
     long getDst();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -32,7 +32,6 @@ public interface OFBsnTlvMplsSequenced extends OFObject, OFBsnTlv {
     short getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

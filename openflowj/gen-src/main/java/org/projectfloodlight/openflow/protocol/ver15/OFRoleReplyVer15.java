@@ -417,6 +417,7 @@ class OFRoleReplyVer15 implements OFRoleReply {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -448,6 +449,18 @@ class OFRoleReplyVer15 implements OFRoleReply {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((role == null) ? 0 : role.hashCode());
+        result = prime * result + shortId;
+        result = prime * result + ((generationId == null) ? 0 : generationId.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((role == null) ? 0 : role.hashCode());
         result = prime * result + shortId;
         result = prime * result + ((generationId == null) ? 0 : generationId.hashCode());

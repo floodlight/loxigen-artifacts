@@ -31,7 +31,6 @@ public interface OFBsnSwitchPipelineStatsEntry extends OFObject {
     String getPipeline();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

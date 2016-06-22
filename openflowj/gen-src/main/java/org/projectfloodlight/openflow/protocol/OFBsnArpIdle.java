@@ -36,7 +36,6 @@ public interface OFBsnArpIdle extends OFObject, OFBsnHeader {
     int getVlanVid();
     IPv4Address getIpv4Addr();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -33,7 +33,6 @@ public interface OFPortModPropEthernet extends OFObject, OFPortModProp {
     Set<OFPortFeatures> getAdvertise();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

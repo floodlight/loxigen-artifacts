@@ -32,7 +32,6 @@ public interface OFBsnTlvNextHopMac extends OFObject, OFBsnTlv {
     MacAddress getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

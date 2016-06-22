@@ -36,7 +36,6 @@ public interface OFOxmEthSrcMasked extends OFObject, OFOxm<MacAddress> {
     OFOxm<MacAddress> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

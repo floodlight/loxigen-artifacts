@@ -36,7 +36,6 @@ public interface OFOxsDuration extends OFObject, OFOxs<U64> {
     U64 getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

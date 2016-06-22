@@ -34,7 +34,6 @@ public interface OFPortStatus extends OFObject, OFMessage {
     OFPortReason getReason();
     OFPortDesc getDesc();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

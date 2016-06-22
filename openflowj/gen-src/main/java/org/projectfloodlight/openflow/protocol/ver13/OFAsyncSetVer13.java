@@ -558,6 +558,7 @@ class OFAsyncSetVer13 implements OFAsyncSet {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -589,6 +590,21 @@ class OFAsyncSetVer13 implements OFAsyncSet {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime *  (int) (packetInMaskEqualMaster ^ (packetInMaskEqualMaster >>> 32));
+        result = prime *  (int) (packetInMaskSlave ^ (packetInMaskSlave >>> 32));
+        result = prime *  (int) (portStatusMaskEqualMaster ^ (portStatusMaskEqualMaster >>> 32));
+        result = prime *  (int) (portStatusMaskSlave ^ (portStatusMaskSlave >>> 32));
+        result = prime *  (int) (flowRemovedMaskEqualMaster ^ (flowRemovedMaskEqualMaster >>> 32));
+        result = prime *  (int) (flowRemovedMaskSlave ^ (flowRemovedMaskSlave >>> 32));
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime *  (int) (packetInMaskEqualMaster ^ (packetInMaskEqualMaster >>> 32));
         result = prime *  (int) (packetInMaskSlave ^ (packetInMaskSlave >>> 32));
         result = prime *  (int) (portStatusMaskEqualMaster ^ (portStatusMaskEqualMaster >>> 32));

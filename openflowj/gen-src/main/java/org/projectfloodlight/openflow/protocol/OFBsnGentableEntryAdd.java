@@ -39,7 +39,6 @@ public interface OFBsnGentableEntryAdd extends OFObject, OFBsnHeader {
     List<OFBsnTlv> getKey();
     List<OFBsnTlv> getValue();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

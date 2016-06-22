@@ -32,7 +32,6 @@ public interface OFBsnTlvExternalGatewayMac extends OFObject, OFBsnTlv {
     MacAddress getValue();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

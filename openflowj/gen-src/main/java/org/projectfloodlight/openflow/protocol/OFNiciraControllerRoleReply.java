@@ -35,7 +35,6 @@ public interface OFNiciraControllerRoleReply extends OFObject, OFNiciraHeader {
     long getSubtype();
     OFNiciraControllerRole getRole();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

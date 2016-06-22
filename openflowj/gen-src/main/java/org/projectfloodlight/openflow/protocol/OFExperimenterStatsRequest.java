@@ -36,7 +36,6 @@ public interface OFExperimenterStatsRequest<T extends OFExperimenterStatsReply> 
     Set<OFStatsRequestFlags> getFlags();
     long getExperimenter();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder<T> createBuilder();

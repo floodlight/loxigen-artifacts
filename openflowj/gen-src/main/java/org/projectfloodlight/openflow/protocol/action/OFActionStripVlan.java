@@ -31,7 +31,6 @@ public interface OFActionStripVlan extends OFObject, OFAction {
     OFActionType getType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

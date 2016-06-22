@@ -35,7 +35,6 @@ public interface OFRequestforward extends OFObject, OFMessage {
     long getRole() throws UnsupportedOperationException;
     byte[] getData() throws UnsupportedOperationException;
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

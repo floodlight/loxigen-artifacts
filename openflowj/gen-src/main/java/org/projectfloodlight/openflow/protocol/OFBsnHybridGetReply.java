@@ -36,7 +36,6 @@ public interface OFBsnHybridGetReply extends OFObject, OFBsnHeader {
     short getHybridEnable();
     int getHybridVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

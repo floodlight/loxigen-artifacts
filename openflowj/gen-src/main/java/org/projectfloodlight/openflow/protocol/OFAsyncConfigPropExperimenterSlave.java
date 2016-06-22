@@ -31,7 +31,6 @@ public interface OFAsyncConfigPropExperimenterSlave extends OFObject, OFAsyncCon
     int getType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

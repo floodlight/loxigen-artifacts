@@ -33,7 +33,6 @@ public interface OFPortModPropExperimenter extends OFObject, OFPortModProp {
     long getExpType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

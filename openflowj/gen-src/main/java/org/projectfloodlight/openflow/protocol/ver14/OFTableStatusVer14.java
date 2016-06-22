@@ -417,6 +417,7 @@ class OFTableStatusVer14 implements OFTableStatus {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -448,6 +449,18 @@ class OFTableStatusVer14 implements OFTableStatus {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime *  (int) (role ^ (role >>> 32));
+        result = prime * result + ((reason == null) ? 0 : reason.hashCode());
+        result = prime * result + ((table == null) ? 0 : table.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime *  (int) (role ^ (role >>> 32));
         result = prime * result + ((reason == null) ? 0 : reason.hashCode());
         result = prime * result + ((table == null) ? 0 : table.hashCode());

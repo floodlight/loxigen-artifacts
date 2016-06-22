@@ -35,7 +35,6 @@ public interface OFGroupFeaturesStatsRequest extends OFObject, OFStatsRequest<OF
     OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

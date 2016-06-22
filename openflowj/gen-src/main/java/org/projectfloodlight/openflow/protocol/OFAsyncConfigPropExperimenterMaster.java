@@ -31,7 +31,6 @@ public interface OFAsyncConfigPropExperimenterMaster extends OFObject, OFAsyncCo
     int getType();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

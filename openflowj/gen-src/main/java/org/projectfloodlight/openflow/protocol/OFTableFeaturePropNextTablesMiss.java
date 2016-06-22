@@ -33,7 +33,6 @@ public interface OFTableFeaturePropNextTablesMiss extends OFObject, OFTableFeatu
     List<U8> getNextTableIds();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

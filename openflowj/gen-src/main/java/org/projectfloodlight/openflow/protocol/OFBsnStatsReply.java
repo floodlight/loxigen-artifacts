@@ -37,7 +37,6 @@ public interface OFBsnStatsReply extends OFObject, OFExperimenterStatsReply {
     long getExperimenter();
     long getSubtype();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

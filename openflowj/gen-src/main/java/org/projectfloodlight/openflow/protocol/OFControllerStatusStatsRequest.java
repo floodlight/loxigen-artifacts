@@ -35,7 +35,6 @@ public interface OFControllerStatusStatsRequest extends OFObject, OFStatsRequest
     OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

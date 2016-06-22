@@ -35,7 +35,6 @@ public interface OFBsnLuaNotification extends OFObject, OFBsnHeader {
     long getSubtype();
     byte[] getData();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

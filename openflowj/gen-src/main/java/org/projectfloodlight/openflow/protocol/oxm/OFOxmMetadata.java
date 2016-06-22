@@ -36,7 +36,6 @@ public interface OFOxmMetadata extends OFObject, OFOxm<OFMetadata> {
     OFMetadata getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

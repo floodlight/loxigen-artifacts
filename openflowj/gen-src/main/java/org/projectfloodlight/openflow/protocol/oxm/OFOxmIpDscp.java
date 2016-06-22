@@ -36,7 +36,6 @@ public interface OFOxmIpDscp extends OFObject, OFOxm<IpDscp> {
     IpDscp getMask();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

@@ -36,7 +36,6 @@ public interface OFOxmActsetOutputMasked extends OFObject, OFOxm<OFPort> {
     OFOxm<OFPort> getCanonical();
     OFVersion getVersion();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

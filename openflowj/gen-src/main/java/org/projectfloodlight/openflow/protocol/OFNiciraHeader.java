@@ -34,7 +34,6 @@ public interface OFNiciraHeader extends OFObject, OFExperimenter {
     long getExperimenter();
     long getSubtype();
 
-
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();

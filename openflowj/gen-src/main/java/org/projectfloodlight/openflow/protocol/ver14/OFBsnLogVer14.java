@@ -417,6 +417,7 @@ class OFBsnLogVer14 implements OFBsnLog {
         return true;
     }
 
+    @Override
     public boolean equalsIgnoreXid(Object obj) {
         if (this == obj)
             return true;
@@ -446,6 +447,17 @@ class OFBsnLogVer14 implements OFBsnLog {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((loglevel == null) ? 0 : loglevel.hashCode());
+        result = prime * result + ((data == null) ? 0 : data.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((loglevel == null) ? 0 : loglevel.hashCode());
         result = prime * result + ((data == null) ? 0 : data.hashCode());
         return result;
