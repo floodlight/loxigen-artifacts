@@ -1,1 +1,1 @@
-e68c39aca57228f852b05dcd5009821b9215bee1 Merge into master from pull request #496: Correct Javadoc to fix build failure when running 'make package-java' (https://github.com/floodlight/loxigen/pull/496)
+704e718a22c4d069365644d4963d0c9b61c02792 Merge into master from pull request #498: BSC-9320 making LENGTH field public from IPv6Address class (https://github.com/floodlight/loxigen/pull/498)
