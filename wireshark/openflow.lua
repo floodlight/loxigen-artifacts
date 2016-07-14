@@ -1334,6 +1334,7 @@ enum_v4_ofp_bsn_pktin_flag = {
     [65536] = "OFP_BSN_PKTIN_FLAG_VXLAN_SIP_MISS",
     [131072] = "OFP_BSN_PKTIN_FLAG_MC_RESERVED",
     [262144] = "OFP_BSN_PKTIN_FLAG_ANALYTICS",
+    [524288] = "OFP_BSN_PKTIN_FLAG_ICMPV6",
 }
 
 enum_v4_ofp_bad_instruction_code = {
@@ -2720,6 +2721,7 @@ enum_v5_ofp_bsn_pktin_flag = {
     [65536] = "OFP_BSN_PKTIN_FLAG_VXLAN_SIP_MISS",
     [131072] = "OFP_BSN_PKTIN_FLAG_MC_RESERVED",
     [262144] = "OFP_BSN_PKTIN_FLAG_ANALYTICS",
+    [524288] = "OFP_BSN_PKTIN_FLAG_ICMPV6",
 }
 
 enum_v5_ofp_bad_instruction_code = {
@@ -3781,6 +3783,7 @@ enum_v6_ofp_bsn_pktin_flag = {
     [65536] = "OFP_BSN_PKTIN_FLAG_VXLAN_SIP_MISS",
     [131072] = "OFP_BSN_PKTIN_FLAG_MC_RESERVED",
     [262144] = "OFP_BSN_PKTIN_FLAG_ANALYTICS",
+    [524288] = "OFP_BSN_PKTIN_FLAG_ICMPV6",
 }
 
 enum_v6_ofp_bad_instruction_code = {
