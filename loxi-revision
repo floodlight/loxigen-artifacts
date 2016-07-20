@@ -1,1 +1,1 @@
-657078745dba679c3db54e65ac1e5c699ef11a89 Merge into master from pull request #500: ICMPV6 packet-in reason. (https://github.com/floodlight/loxigen/pull/500)
+6ed98488f86d821ddfda46bdb256a93d2cee23ce Merge into master from pull request #506: pyloxi: support connecting over a unix domain socket (https://github.com/floodlight/loxigen/pull/506)
