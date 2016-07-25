@@ -1111,6 +1111,10 @@ void of_instruction_bsn_internal_priority_wire_object_id_get(of_object_t *obj, o
 void of_instruction_bsn_internal_priority_push_wire_types(of_object_t *obj);
 void of_instruction_id_bsn_internal_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_instruction_id_bsn_internal_priority_push_wire_types(of_object_t *obj);
+void of_instruction_bsn_ndp_offload_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_instruction_bsn_ndp_offload_push_wire_types(of_object_t *obj);
+void of_instruction_id_bsn_ndp_offload_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_instruction_id_bsn_ndp_offload_push_wire_types(of_object_t *obj);
 void of_instruction_bsn_packet_of_death_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_instruction_bsn_packet_of_death_push_wire_types(of_object_t *obj);
 void of_instruction_id_bsn_packet_of_death_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1846,6 +1850,7 @@ typedef of_object_t of_instruction_bsn_disable_split_horizon_check_t;
 typedef of_object_t of_instruction_bsn_disable_src_mac_check_t;
 typedef of_object_t of_instruction_bsn_disable_vlan_counters_t;
 typedef of_object_t of_instruction_bsn_internal_priority_t;
+typedef of_object_t of_instruction_bsn_ndp_offload_t;
 typedef of_object_t of_instruction_bsn_packet_of_death_t;
 typedef of_object_t of_instruction_bsn_permit_t;
 typedef of_object_t of_instruction_bsn_prioritize_pdus_t;
@@ -1866,6 +1871,7 @@ typedef of_object_t of_instruction_id_bsn_disable_split_horizon_check_t;
 typedef of_object_t of_instruction_id_bsn_disable_src_mac_check_t;
 typedef of_object_t of_instruction_id_bsn_disable_vlan_counters_t;
 typedef of_object_t of_instruction_id_bsn_internal_priority_t;
+typedef of_object_t of_instruction_id_bsn_ndp_offload_t;
 typedef of_object_t of_instruction_id_bsn_packet_of_death_t;
 typedef of_object_t of_instruction_id_bsn_permit_t;
 typedef of_object_t of_instruction_id_bsn_prioritize_pdus_t;
@@ -4421,6 +4427,11 @@ extern void of_instruction_bsn_internal_priority_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_instruction_bsn_ndp_offload_new(of_version_t version);
+extern void of_instruction_bsn_ndp_offload_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_instruction_bsn_packet_of_death_new(of_version_t version);
 extern void of_instruction_bsn_packet_of_death_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4518,6 +4529,11 @@ extern void of_instruction_id_bsn_disable_vlan_counters_init(
 extern of_object_t *
     of_instruction_id_bsn_internal_priority_new(of_version_t version);
 extern void of_instruction_id_bsn_internal_priority_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_instruction_id_bsn_ndp_offload_new(of_version_t version);
+extern void of_instruction_id_bsn_ndp_offload_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10878,6 +10894,17 @@ of_instruction_bsn_internal_priority_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_instruction_bsn_ndp_offload_t
+ * @param obj An instance of type of_instruction_bsn_ndp_offload_t
+ *
+ * \ingroup of_instruction_bsn_ndp_offload
+ */
+static inline void
+of_instruction_bsn_ndp_offload_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_instruction_bsn_packet_of_death_t
  * @param obj An instance of type of_instruction_bsn_packet_of_death_t
  *
@@ -11094,6 +11121,17 @@ of_instruction_id_bsn_disable_vlan_counters_delete(of_object_t *obj) {
  */
 static inline void
 of_instruction_id_bsn_internal_priority_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_instruction_id_bsn_ndp_offload_t
+ * @param obj An instance of type of_instruction_id_bsn_ndp_offload_t
+ *
+ * \ingroup of_instruction_id_bsn_ndp_offload
+ */
+static inline void
+of_instruction_id_bsn_ndp_offload_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23494,6 +23532,22 @@ extern void of_instruction_bsn_internal_priority_value_get(
     of_instruction_bsn_internal_priority_t *obj,
     uint32_t *value);
 
+/* Unified accessor functions for of_instruction_bsn_ndp_offload */
+
+extern void of_instruction_bsn_ndp_offload_experimenter_set(
+    of_instruction_bsn_ndp_offload_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_bsn_ndp_offload_experimenter_get(
+    of_instruction_bsn_ndp_offload_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_bsn_ndp_offload_subtype_set(
+    of_instruction_bsn_ndp_offload_t *obj,
+    uint32_t subtype);
+extern void of_instruction_bsn_ndp_offload_subtype_get(
+    of_instruction_bsn_ndp_offload_t *obj,
+    uint32_t *subtype);
+
 /* Unified accessor functions for of_instruction_bsn_packet_of_death */
 
 extern void of_instruction_bsn_packet_of_death_experimenter_set(
@@ -23729,6 +23783,22 @@ extern void of_instruction_id_bsn_internal_priority_subtype_set(
     uint32_t subtype);
 extern void of_instruction_id_bsn_internal_priority_subtype_get(
     of_instruction_id_bsn_internal_priority_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_instruction_id_bsn_ndp_offload */
+
+extern void of_instruction_id_bsn_ndp_offload_experimenter_set(
+    of_instruction_id_bsn_ndp_offload_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_id_bsn_ndp_offload_experimenter_get(
+    of_instruction_id_bsn_ndp_offload_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_id_bsn_ndp_offload_subtype_set(
+    of_instruction_id_bsn_ndp_offload_t *obj,
+    uint32_t subtype);
+extern void of_instruction_id_bsn_ndp_offload_subtype_get(
+    of_instruction_id_bsn_ndp_offload_t *obj,
     uint32_t *subtype);
 
 /* Unified accessor functions for of_instruction_id_bsn_packet_of_death */

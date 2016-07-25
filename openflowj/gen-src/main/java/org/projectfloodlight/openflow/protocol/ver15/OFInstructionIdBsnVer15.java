@@ -79,6 +79,9 @@ abstract class OFInstructionIdBsnVer15 {
                case 0xc:
                    // discriminator value 0xcL=0xcL for class OFInstructionIdBsnInternalPriorityVer15
                    return OFInstructionIdBsnInternalPriorityVer15.READER.readFrom(bb);
+               case 0xe:
+                   // discriminator value 0xeL=0xeL for class OFInstructionIdBsnNdpOffloadVer15
+                   return OFInstructionIdBsnNdpOffloadVer15.READER.readFrom(bb);
                case 0x6:
                    // discriminator value 0x6L=0x6L for class OFInstructionIdBsnPacketOfDeathVer15
                    return OFInstructionIdBsnPacketOfDeathVer15.READER.readFrom(bb);

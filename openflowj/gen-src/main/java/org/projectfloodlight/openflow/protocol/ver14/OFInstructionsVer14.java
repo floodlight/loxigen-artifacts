@@ -117,6 +117,10 @@ public class OFInstructionsVer14 implements OFInstructions {
                     );
     }
 
+    public OFInstructionBsnNdpOffload bsnNdpOffload() {
+        return OFInstructionBsnNdpOffloadVer14.INSTANCE;
+    }
+
     public OFInstructionBsnPacketOfDeath bsnPacketOfDeath() {
         return OFInstructionBsnPacketOfDeathVer14.INSTANCE;
     }
