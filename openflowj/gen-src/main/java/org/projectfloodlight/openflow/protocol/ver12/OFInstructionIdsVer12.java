@@ -73,6 +73,10 @@ public class OFInstructionIdsVer12 implements OFInstructionIds {
         throw new UnsupportedOperationException("OFInstructionIdBsnInternalPriority not supported in version 1.2");
     }
 
+    public OFInstructionIdBsnNdpOffload bsnNdpOffload() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnNdpOffload not supported in version 1.2");
+    }
+
     public OFInstructionIdBsnPacketOfDeath bsnPacketOfDeath() {
         throw new UnsupportedOperationException("OFInstructionIdBsnPacketOfDeath not supported in version 1.2");
     }

@@ -115,6 +115,10 @@ public class OFInstructionsVer11 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnInternalPriority not supported in version 1.1");
     }
 
+    public OFInstructionBsnNdpOffload bsnNdpOffload() {
+        throw new UnsupportedOperationException("OFInstructionBsnNdpOffload not supported in version 1.1");
+    }
+
     public OFInstructionBsnPacketOfDeath bsnPacketOfDeath() {
         throw new UnsupportedOperationException("OFInstructionBsnPacketOfDeath not supported in version 1.1");
     }
