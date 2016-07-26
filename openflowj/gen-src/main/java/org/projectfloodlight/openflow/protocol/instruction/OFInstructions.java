@@ -50,6 +50,7 @@ public interface OFInstructions {
     OFInstructionBsnDisableVlanCounters bsnDisableVlanCounters();
     OFInstructionBsnInternalPriority.Builder buildBsnInternalPriority() throws UnsupportedOperationException;
     OFInstructionBsnInternalPriority bsnInternalPriority(long value);
+    OFInstructionBsnNdpOffload bsnNdpOffload();
     OFInstructionBsnPacketOfDeath bsnPacketOfDeath();
     OFInstructionBsnPermit bsnPermit();
     OFInstructionBsnPrioritizePdus bsnPrioritizePdus();

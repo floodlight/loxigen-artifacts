@@ -73,6 +73,10 @@ public class OFInstructionIdsVer15 implements OFInstructionIds {
         return OFInstructionIdBsnInternalPriorityVer15.INSTANCE;
     }
 
+    public OFInstructionIdBsnNdpOffload bsnNdpOffload() {
+        return OFInstructionIdBsnNdpOffloadVer15.INSTANCE;
+    }
+
     public OFInstructionIdBsnPacketOfDeath bsnPacketOfDeath() {
         return OFInstructionIdBsnPacketOfDeathVer15.INSTANCE;
     }
