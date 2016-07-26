@@ -1,1 +1,1 @@
-6ed98488f86d821ddfda46bdb256a93d2cee23ce Merge into master from pull request #506: pyloxi: support connecting over a unix domain socket (https://github.com/floodlight/loxigen/pull/506)
+24d868ff5efb4aada58fde866a8b466dce4a5b47 Merge into master from pull request #508: loci: set wire length when truncating (https://github.com/floodlight/loxigen/pull/508)
