@@ -1471,6 +1471,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_ndp_offload_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_negate_dup(
         of_object_t *src);
 
@@ -6235,6 +6239,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_ndp_offload_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_negate_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8812,6 +8820,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_name_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ndp_offload_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

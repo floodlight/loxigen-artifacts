@@ -452,6 +452,10 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvName not supported in version 1.2");
     }
 
+    public OFBsnTlvNdpOffload ndpOffload() {
+        throw new UnsupportedOperationException("OFBsnTlvNdpOffload not supported in version 1.2");
+    }
+
     public OFBsnTlvNegate negate() {
         throw new UnsupportedOperationException("OFBsnTlvNegate not supported in version 1.2");
     }

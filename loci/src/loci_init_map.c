@@ -376,6 +376,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_mpls_sequenced_init,
     (of_object_init_f)of_bsn_tlv_multicast_interface_id_init,
     (of_object_init_f)of_bsn_tlv_name_init,
+    (of_object_init_f)of_bsn_tlv_ndp_offload_init,
     (of_object_init_f)of_bsn_tlv_negate_init,
     (of_object_init_f)of_bsn_tlv_next_hop_ipv4_init,
     (of_object_init_f)of_bsn_tlv_next_hop_mac_init,

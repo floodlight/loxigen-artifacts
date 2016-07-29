@@ -373,6 +373,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_mpls_sequenced",
     "of_bsn_tlv_multicast_interface_id",
     "of_bsn_tlv_name",
+    "of_bsn_tlv_ndp_offload",
     "of_bsn_tlv_negate",
     "of_bsn_tlv_next_hop_ipv4",
     "of_bsn_tlv_next_hop_mac",

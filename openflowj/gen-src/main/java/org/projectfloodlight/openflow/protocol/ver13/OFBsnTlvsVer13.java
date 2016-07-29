@@ -565,6 +565,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvNdpOffload ndpOffload() {
+        return OFBsnTlvNdpOffloadVer13.INSTANCE;
+    }
+
     public OFBsnTlvNegate negate() {
         return OFBsnTlvNegateVer13.INSTANCE;
     }
