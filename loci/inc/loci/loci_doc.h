@@ -7083,6 +7083,13 @@ typedef struct of_bsn_tlv_multicast_interface_id_s of_bsn_tlv_multicast_interfac
 typedef struct of_bsn_tlv_name_s of_bsn_tlv_name_t;
 
 /**
+ * Structure for of_bsn_tlv_ndp_offload object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_ndp_offload_s of_bsn_tlv_ndp_offload_t;
+
+/**
  * Structure for of_bsn_tlv_negate object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

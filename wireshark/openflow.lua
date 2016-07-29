@@ -8265,6 +8265,8 @@ fields['of13.bsn_tlv_multicast_interface_id.value'] = ProtoField.uint32("of13.bs
 fields['of13.bsn_tlv_name.type'] = ProtoField.uint16("of13.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_name.length'] = ProtoField.uint16("of13.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_name.value'] = ProtoField.bytes("of13.bsn_tlv_name.value", "value")
+fields['of13.bsn_tlv_ndp_offload.type'] = ProtoField.uint16("of13.bsn_tlv_ndp_offload.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_ndp_offload.length'] = ProtoField.uint16("of13.bsn_tlv_ndp_offload.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_negate.type'] = ProtoField.uint16("of13.bsn_tlv_negate.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_negate.length'] = ProtoField.uint16("of13.bsn_tlv_negate.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_next_hop_ipv4.type'] = ProtoField.uint16("of13.bsn_tlv_next_hop_ipv4.type", "type", base.DEC, nil)
@@ -11040,6 +11042,8 @@ fields['of14.bsn_tlv_multicast_interface_id.value'] = ProtoField.uint32("of14.bs
 fields['of14.bsn_tlv_name.type'] = ProtoField.uint16("of14.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_name.length'] = ProtoField.uint16("of14.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_name.value'] = ProtoField.bytes("of14.bsn_tlv_name.value", "value")
+fields['of14.bsn_tlv_ndp_offload.type'] = ProtoField.uint16("of14.bsn_tlv_ndp_offload.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_ndp_offload.length'] = ProtoField.uint16("of14.bsn_tlv_ndp_offload.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_negate.type'] = ProtoField.uint16("of14.bsn_tlv_negate.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_negate.length'] = ProtoField.uint16("of14.bsn_tlv_negate.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_next_hop_ipv4.type'] = ProtoField.uint16("of14.bsn_tlv_next_hop_ipv4.type", "type", base.DEC, nil)
@@ -14028,6 +14032,8 @@ fields['of15.bsn_tlv_multicast_interface_id.value'] = ProtoField.uint32("of15.bs
 fields['of15.bsn_tlv_name.type'] = ProtoField.uint16("of15.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_name.length'] = ProtoField.uint16("of15.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_name.value'] = ProtoField.bytes("of15.bsn_tlv_name.value", "value")
+fields['of15.bsn_tlv_ndp_offload.type'] = ProtoField.uint16("of15.bsn_tlv_ndp_offload.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_ndp_offload.length'] = ProtoField.uint16("of15.bsn_tlv_ndp_offload.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_negate.type'] = ProtoField.uint16("of15.bsn_tlv_negate.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_negate.length'] = ProtoField.uint16("of15.bsn_tlv_negate.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_next_hop_ipv4.type'] = ProtoField.uint16("of15.bsn_tlv_next_hop_ipv4.type", "type", base.DEC, nil)
@@ -20241,6 +20247,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_name.type'],
     fields['of13.bsn_tlv_name.length'],
     fields['of13.bsn_tlv_name.value'],
+    fields['of13.bsn_tlv_ndp_offload.type'],
+    fields['of13.bsn_tlv_ndp_offload.length'],
     fields['of13.bsn_tlv_negate.type'],
     fields['of13.bsn_tlv_negate.length'],
     fields['of13.bsn_tlv_next_hop_ipv4.type'],
@@ -23016,6 +23024,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_name.type'],
     fields['of14.bsn_tlv_name.length'],
     fields['of14.bsn_tlv_name.value'],
+    fields['of14.bsn_tlv_ndp_offload.type'],
+    fields['of14.bsn_tlv_ndp_offload.length'],
     fields['of14.bsn_tlv_negate.type'],
     fields['of14.bsn_tlv_negate.length'],
     fields['of14.bsn_tlv_next_hop_ipv4.type'],
@@ -26004,6 +26014,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_name.type'],
     fields['of15.bsn_tlv_name.length'],
     fields['of15.bsn_tlv_name.value'],
+    fields['of15.bsn_tlv_ndp_offload.type'],
+    fields['of15.bsn_tlv_ndp_offload.length'],
     fields['of15.bsn_tlv_negate.type'],
     fields['of15.bsn_tlv_negate.length'],
     fields['of15.bsn_tlv_next_hop_ipv4.type'],
@@ -37968,6 +37980,15 @@ function dissect_of_bsn_tlv_name_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[52] = dissect_of_bsn_tlv_name_v4
 
+-- child class of_bsn_tlv_ndp_offload
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ndp_offload_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ndp_offload.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ndp_offload.length')
+    return 'of_bsn_tlv_ndp_offload'
+end
+of_bsn_tlv_v4_dissectors[123] = dissect_of_bsn_tlv_ndp_offload_v4
+
 -- child class of_bsn_tlv_negate
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_negate_v4(reader, subtree)
@@ -45322,6 +45343,15 @@ function dissect_of_bsn_tlv_name_v5(reader, subtree)
     return 'of_bsn_tlv_name'
 end
 of_bsn_tlv_v5_dissectors[52] = dissect_of_bsn_tlv_name_v5
+
+-- child class of_bsn_tlv_ndp_offload
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ndp_offload_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ndp_offload.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ndp_offload.length')
+    return 'of_bsn_tlv_ndp_offload'
+end
+of_bsn_tlv_v5_dissectors[123] = dissect_of_bsn_tlv_ndp_offload_v5
 
 -- child class of_bsn_tlv_negate
 -- Child of of_bsn_tlv
@@ -53188,6 +53218,15 @@ function dissect_of_bsn_tlv_name_v6(reader, subtree)
     return 'of_bsn_tlv_name'
 end
 of_bsn_tlv_v6_dissectors[52] = dissect_of_bsn_tlv_name_v6
+
+-- child class of_bsn_tlv_ndp_offload
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ndp_offload_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ndp_offload.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ndp_offload.length')
+    return 'of_bsn_tlv_ndp_offload'
+end
+of_bsn_tlv_v6_dissectors[123] = dissect_of_bsn_tlv_ndp_offload_v6
 
 -- child class of_bsn_tlv_negate
 -- Child of of_bsn_tlv

@@ -3009,6 +3009,44 @@ class name(bsn_tlv):
 
 bsn_tlv.subtypes[52] = name
 
+class ndp_offload(bsn_tlv):
+    type = 123
+
+    def __init__(self):
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = ndp_offload()
+        _type = reader.read("!H")[0]
+        assert(_type == 123)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("ndp_offload {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[123] = ndp_offload
+
 class negate(bsn_tlv):
     type = 83
 

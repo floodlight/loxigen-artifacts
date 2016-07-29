@@ -6605,6 +6605,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x7a:
             *id = OF_BSN_TLV_IPV6_PREFIX;
             break;
+        case 0x7b:
+            *id = OF_BSN_TLV_NDP_OFFLOAD;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -6979,6 +6982,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x7a:
             *id = OF_BSN_TLV_IPV6_PREFIX;
+            break;
+        case 0x7b:
+            *id = OF_BSN_TLV_NDP_OFFLOAD;
             break;
         default:
             *id = OF_BSN_TLV;

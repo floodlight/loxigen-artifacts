@@ -149,6 +149,7 @@ public interface OFBsnTlvs {
     OFBsnTlvMulticastInterfaceId multicastInterfaceId(long value);
     OFBsnTlvName.Builder buildName() throws UnsupportedOperationException;
     OFBsnTlvName name(byte[] value);
+    OFBsnTlvNdpOffload ndpOffload();
     OFBsnTlvNegate negate();
     OFBsnTlvNextHopIpv4.Builder buildNextHopIpv4() throws UnsupportedOperationException;
     OFBsnTlvNextHopIpv4 nextHopIpv4(IPv4Address value);
