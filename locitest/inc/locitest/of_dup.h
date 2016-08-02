@@ -1367,6 +1367,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_icmpv6_chksum_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_idle_notification_dup(
         of_object_t *src);
 
@@ -1472,6 +1476,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_ndp_offload_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ndp_static_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6135,6 +6143,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6240,6 +6252,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_ndp_offload_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ndp_static_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8719,6 +8735,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_idle_notification_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8824,6 +8844,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_ndp_offload_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ndp_static_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

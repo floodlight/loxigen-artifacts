@@ -875,6 +875,8 @@ void of_bsn_tlv_icmp_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
 void of_bsn_tlv_icmp_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_icmp_type_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_icmp_type_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_icmpv6_chksum_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_icmpv6_chksum_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_idle_notification_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_idle_notification_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_idle_time_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -929,6 +931,8 @@ void of_bsn_tlv_name_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_name_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ndp_offload_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ndp_offload_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_ndp_static_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_ndp_static_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_negate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_negate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_next_hop_ipv4_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1740,6 +1744,7 @@ typedef of_object_t of_bsn_tlv_header_size_t;
 typedef of_object_t of_bsn_tlv_icmp_code_t;
 typedef of_object_t of_bsn_tlv_icmp_id_t;
 typedef of_object_t of_bsn_tlv_icmp_type_t;
+typedef of_object_t of_bsn_tlv_icmpv6_chksum_t;
 typedef of_object_t of_bsn_tlv_idle_notification_t;
 typedef of_object_t of_bsn_tlv_idle_time_t;
 typedef of_object_t of_bsn_tlv_idle_timeout_t;
@@ -1767,6 +1772,7 @@ typedef of_object_t of_bsn_tlv_mpls_sequenced_t;
 typedef of_object_t of_bsn_tlv_multicast_interface_id_t;
 typedef of_object_t of_bsn_tlv_name_t;
 typedef of_object_t of_bsn_tlv_ndp_offload_t;
+typedef of_object_t of_bsn_tlv_ndp_static_t;
 typedef of_object_t of_bsn_tlv_negate_t;
 typedef of_object_t of_bsn_tlv_next_hop_ipv4_t;
 typedef of_object_t of_bsn_tlv_next_hop_mac_t;
@@ -3870,6 +3876,11 @@ extern void of_bsn_tlv_icmp_type_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_icmpv6_chksum_new(of_version_t version);
+extern void of_bsn_tlv_icmpv6_chksum_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_idle_notification_new(of_version_t version);
 extern void of_bsn_tlv_idle_notification_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4002,6 +4013,11 @@ extern void of_bsn_tlv_name_init(
 extern of_object_t *
     of_bsn_tlv_ndp_offload_new(of_version_t version);
 extern void of_bsn_tlv_ndp_offload_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_ndp_static_new(of_version_t version);
+extern void of_bsn_tlv_ndp_static_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9670,6 +9686,17 @@ of_bsn_tlv_icmp_type_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_icmpv6_chksum_t
+ * @param obj An instance of type of_bsn_tlv_icmpv6_chksum_t
+ *
+ * \ingroup of_bsn_tlv_icmpv6_chksum
+ */
+static inline void
+of_bsn_tlv_icmpv6_chksum_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_idle_notification_t
  * @param obj An instance of type of_bsn_tlv_idle_notification_t
  *
@@ -9963,6 +9990,17 @@ of_bsn_tlv_name_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_ndp_offload_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_ndp_static_t
+ * @param obj An instance of type of_bsn_tlv_ndp_static_t
+ *
+ * \ingroup of_bsn_tlv_ndp_static
+ */
+static inline void
+of_bsn_tlv_ndp_static_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22265,6 +22303,15 @@ extern void of_bsn_tlv_icmp_type_value_get(
     of_bsn_tlv_icmp_type_t *obj,
     uint8_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_icmpv6_chksum */
+
+extern void of_bsn_tlv_icmpv6_chksum_value_set(
+    of_bsn_tlv_icmpv6_chksum_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_icmpv6_chksum_value_get(
+    of_bsn_tlv_icmpv6_chksum_t *obj,
+    uint16_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_idle_notification */
 
 /* Unified accessor functions for of_bsn_tlv_idle_time */
@@ -22479,6 +22526,8 @@ extern void of_bsn_tlv_name_value_get(
     of_octets_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_ndp_offload */
+
+/* Unified accessor functions for of_bsn_tlv_ndp_static */
 
 /* Unified accessor functions for of_bsn_tlv_negate */
 

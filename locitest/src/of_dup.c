@@ -26989,6 +26989,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_negate_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_ICMPV6_CHKSUM) {
+        return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
         return of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(src);
     }
@@ -27271,6 +27275,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_ICMP_CODE) {
         return of_bsn_tlv_icmp_code_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NDP_STATIC) {
+        return of_bsn_tlv_ndp_static_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_REFERENCE) {
@@ -28232,6 +28240,31 @@ of_bsn_tlv_icmp_type_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_icmpv6_chksum
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_icmpv6_chksum.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_icmpv6_chksum_t *
+of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dup(
+    of_bsn_tlv_icmpv6_chksum_t *src)
+{
+    of_bsn_tlv_icmpv6_chksum_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_icmpv6_chksum_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_icmpv6_chksum_value_get(src, &val16);
+    of_bsn_tlv_icmpv6_chksum_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_idle_notification
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -28884,6 +28917,27 @@ of_bsn_tlv_ndp_offload_OF_VERSION_1_3_dup(
     of_bsn_tlv_ndp_offload_t *dst;
 
     if ((dst = of_bsn_tlv_ndp_offload_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_ndp_static
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_ndp_static.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_ndp_static_t *
+of_bsn_tlv_ndp_static_OF_VERSION_1_3_dup(
+    of_bsn_tlv_ndp_static_t *src)
+{
+    of_bsn_tlv_ndp_static_t *dst;
+
+    if ((dst = of_bsn_tlv_ndp_static_new(src->version)) == NULL) {
         return NULL;
     }
 
@@ -48567,6 +48621,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_negate_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_ICMPV6_CHKSUM) {
+        return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
         return of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(src);
     }
@@ -48849,6 +48907,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_ICMP_CODE) {
         return of_bsn_tlv_icmp_code_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NDP_STATIC) {
+        return of_bsn_tlv_ndp_static_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_REFERENCE) {
@@ -49810,6 +49872,31 @@ of_bsn_tlv_icmp_type_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_icmpv6_chksum
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_icmpv6_chksum.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_icmpv6_chksum_t *
+of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dup(
+    of_bsn_tlv_icmpv6_chksum_t *src)
+{
+    of_bsn_tlv_icmpv6_chksum_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_icmpv6_chksum_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_icmpv6_chksum_value_get(src, &val16);
+    of_bsn_tlv_icmpv6_chksum_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_idle_notification
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -50462,6 +50549,27 @@ of_bsn_tlv_ndp_offload_OF_VERSION_1_4_dup(
     of_bsn_tlv_ndp_offload_t *dst;
 
     if ((dst = of_bsn_tlv_ndp_offload_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_ndp_static
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_ndp_static.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_ndp_static_t *
+of_bsn_tlv_ndp_static_OF_VERSION_1_4_dup(
+    of_bsn_tlv_ndp_static_t *src)
+{
+    of_bsn_tlv_ndp_static_t *dst;
+
+    if ((dst = of_bsn_tlv_ndp_static_new(src->version)) == NULL) {
         return NULL;
     }
 
@@ -68147,6 +68255,23 @@ of_bsn_tlv_icmp_type_dup(
 }
 
 of_object_t *
+of_bsn_tlv_icmpv6_chksum_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_idle_notification_dup(
     of_object_t *src)
 {
@@ -68599,6 +68724,23 @@ of_bsn_tlv_ndp_offload_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_ndp_offload_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_ndp_static_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_ndp_static_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_ndp_static_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

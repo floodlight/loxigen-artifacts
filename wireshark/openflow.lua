@@ -8190,6 +8190,9 @@ fields['of13.bsn_tlv_icmp_id.value'] = ProtoField.uint16("of13.bsn_tlv_icmp_id.v
 fields['of13.bsn_tlv_icmp_type.type'] = ProtoField.uint16("of13.bsn_tlv_icmp_type.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_icmp_type.length'] = ProtoField.uint16("of13.bsn_tlv_icmp_type.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_icmp_type.value'] = ProtoField.uint8("of13.bsn_tlv_icmp_type.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_icmpv6_chksum.type'] = ProtoField.uint16("of13.bsn_tlv_icmpv6_chksum.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_icmpv6_chksum.length'] = ProtoField.uint16("of13.bsn_tlv_icmpv6_chksum.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_icmpv6_chksum.value'] = ProtoField.uint16("of13.bsn_tlv_icmpv6_chksum.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_idle_notification.type'] = ProtoField.uint16("of13.bsn_tlv_idle_notification.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_idle_notification.length'] = ProtoField.uint16("of13.bsn_tlv_idle_notification.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_idle_time.type'] = ProtoField.uint16("of13.bsn_tlv_idle_time.type", "type", base.DEC, nil)
@@ -8267,6 +8270,8 @@ fields['of13.bsn_tlv_name.length'] = ProtoField.uint16("of13.bsn_tlv_name.length
 fields['of13.bsn_tlv_name.value'] = ProtoField.bytes("of13.bsn_tlv_name.value", "value")
 fields['of13.bsn_tlv_ndp_offload.type'] = ProtoField.uint16("of13.bsn_tlv_ndp_offload.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ndp_offload.length'] = ProtoField.uint16("of13.bsn_tlv_ndp_offload.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_ndp_static.type'] = ProtoField.uint16("of13.bsn_tlv_ndp_static.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_ndp_static.length'] = ProtoField.uint16("of13.bsn_tlv_ndp_static.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_negate.type'] = ProtoField.uint16("of13.bsn_tlv_negate.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_negate.length'] = ProtoField.uint16("of13.bsn_tlv_negate.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_next_hop_ipv4.type'] = ProtoField.uint16("of13.bsn_tlv_next_hop_ipv4.type", "type", base.DEC, nil)
@@ -10967,6 +10972,9 @@ fields['of14.bsn_tlv_icmp_id.value'] = ProtoField.uint16("of14.bsn_tlv_icmp_id.v
 fields['of14.bsn_tlv_icmp_type.type'] = ProtoField.uint16("of14.bsn_tlv_icmp_type.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_icmp_type.length'] = ProtoField.uint16("of14.bsn_tlv_icmp_type.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_icmp_type.value'] = ProtoField.uint8("of14.bsn_tlv_icmp_type.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_icmpv6_chksum.type'] = ProtoField.uint16("of14.bsn_tlv_icmpv6_chksum.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_icmpv6_chksum.length'] = ProtoField.uint16("of14.bsn_tlv_icmpv6_chksum.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_icmpv6_chksum.value'] = ProtoField.uint16("of14.bsn_tlv_icmpv6_chksum.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_idle_notification.type'] = ProtoField.uint16("of14.bsn_tlv_idle_notification.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_idle_notification.length'] = ProtoField.uint16("of14.bsn_tlv_idle_notification.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_idle_time.type'] = ProtoField.uint16("of14.bsn_tlv_idle_time.type", "type", base.DEC, nil)
@@ -11044,6 +11052,8 @@ fields['of14.bsn_tlv_name.length'] = ProtoField.uint16("of14.bsn_tlv_name.length
 fields['of14.bsn_tlv_name.value'] = ProtoField.bytes("of14.bsn_tlv_name.value", "value")
 fields['of14.bsn_tlv_ndp_offload.type'] = ProtoField.uint16("of14.bsn_tlv_ndp_offload.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_ndp_offload.length'] = ProtoField.uint16("of14.bsn_tlv_ndp_offload.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_ndp_static.type'] = ProtoField.uint16("of14.bsn_tlv_ndp_static.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_ndp_static.length'] = ProtoField.uint16("of14.bsn_tlv_ndp_static.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_negate.type'] = ProtoField.uint16("of14.bsn_tlv_negate.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_negate.length'] = ProtoField.uint16("of14.bsn_tlv_negate.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_next_hop_ipv4.type'] = ProtoField.uint16("of14.bsn_tlv_next_hop_ipv4.type", "type", base.DEC, nil)
@@ -13957,6 +13967,9 @@ fields['of15.bsn_tlv_icmp_id.value'] = ProtoField.uint16("of15.bsn_tlv_icmp_id.v
 fields['of15.bsn_tlv_icmp_type.type'] = ProtoField.uint16("of15.bsn_tlv_icmp_type.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_icmp_type.length'] = ProtoField.uint16("of15.bsn_tlv_icmp_type.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_icmp_type.value'] = ProtoField.uint8("of15.bsn_tlv_icmp_type.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_icmpv6_chksum.type'] = ProtoField.uint16("of15.bsn_tlv_icmpv6_chksum.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_icmpv6_chksum.length'] = ProtoField.uint16("of15.bsn_tlv_icmpv6_chksum.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_icmpv6_chksum.value'] = ProtoField.uint16("of15.bsn_tlv_icmpv6_chksum.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_idle_notification.type'] = ProtoField.uint16("of15.bsn_tlv_idle_notification.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_idle_notification.length'] = ProtoField.uint16("of15.bsn_tlv_idle_notification.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_idle_time.type'] = ProtoField.uint16("of15.bsn_tlv_idle_time.type", "type", base.DEC, nil)
@@ -14034,6 +14047,8 @@ fields['of15.bsn_tlv_name.length'] = ProtoField.uint16("of15.bsn_tlv_name.length
 fields['of15.bsn_tlv_name.value'] = ProtoField.bytes("of15.bsn_tlv_name.value", "value")
 fields['of15.bsn_tlv_ndp_offload.type'] = ProtoField.uint16("of15.bsn_tlv_ndp_offload.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_ndp_offload.length'] = ProtoField.uint16("of15.bsn_tlv_ndp_offload.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ndp_static.type'] = ProtoField.uint16("of15.bsn_tlv_ndp_static.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_ndp_static.length'] = ProtoField.uint16("of15.bsn_tlv_ndp_static.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_negate.type'] = ProtoField.uint16("of15.bsn_tlv_negate.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_negate.length'] = ProtoField.uint16("of15.bsn_tlv_negate.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_next_hop_ipv4.type'] = ProtoField.uint16("of15.bsn_tlv_next_hop_ipv4.type", "type", base.DEC, nil)
@@ -20172,6 +20187,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_icmp_type.type'],
     fields['of13.bsn_tlv_icmp_type.length'],
     fields['of13.bsn_tlv_icmp_type.value'],
+    fields['of13.bsn_tlv_icmpv6_chksum.type'],
+    fields['of13.bsn_tlv_icmpv6_chksum.length'],
+    fields['of13.bsn_tlv_icmpv6_chksum.value'],
     fields['of13.bsn_tlv_idle_notification.type'],
     fields['of13.bsn_tlv_idle_notification.length'],
     fields['of13.bsn_tlv_idle_time.type'],
@@ -20249,6 +20267,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_name.value'],
     fields['of13.bsn_tlv_ndp_offload.type'],
     fields['of13.bsn_tlv_ndp_offload.length'],
+    fields['of13.bsn_tlv_ndp_static.type'],
+    fields['of13.bsn_tlv_ndp_static.length'],
     fields['of13.bsn_tlv_negate.type'],
     fields['of13.bsn_tlv_negate.length'],
     fields['of13.bsn_tlv_next_hop_ipv4.type'],
@@ -22949,6 +22969,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_icmp_type.type'],
     fields['of14.bsn_tlv_icmp_type.length'],
     fields['of14.bsn_tlv_icmp_type.value'],
+    fields['of14.bsn_tlv_icmpv6_chksum.type'],
+    fields['of14.bsn_tlv_icmpv6_chksum.length'],
+    fields['of14.bsn_tlv_icmpv6_chksum.value'],
     fields['of14.bsn_tlv_idle_notification.type'],
     fields['of14.bsn_tlv_idle_notification.length'],
     fields['of14.bsn_tlv_idle_time.type'],
@@ -23026,6 +23049,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_name.value'],
     fields['of14.bsn_tlv_ndp_offload.type'],
     fields['of14.bsn_tlv_ndp_offload.length'],
+    fields['of14.bsn_tlv_ndp_static.type'],
+    fields['of14.bsn_tlv_ndp_static.length'],
     fields['of14.bsn_tlv_negate.type'],
     fields['of14.bsn_tlv_negate.length'],
     fields['of14.bsn_tlv_next_hop_ipv4.type'],
@@ -25939,6 +25964,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_icmp_type.type'],
     fields['of15.bsn_tlv_icmp_type.length'],
     fields['of15.bsn_tlv_icmp_type.value'],
+    fields['of15.bsn_tlv_icmpv6_chksum.type'],
+    fields['of15.bsn_tlv_icmpv6_chksum.length'],
+    fields['of15.bsn_tlv_icmpv6_chksum.value'],
     fields['of15.bsn_tlv_idle_notification.type'],
     fields['of15.bsn_tlv_idle_notification.length'],
     fields['of15.bsn_tlv_idle_time.type'],
@@ -26016,6 +26044,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_name.value'],
     fields['of15.bsn_tlv_ndp_offload.type'],
     fields['of15.bsn_tlv_ndp_offload.length'],
+    fields['of15.bsn_tlv_ndp_static.type'],
+    fields['of15.bsn_tlv_ndp_static.length'],
     fields['of15.bsn_tlv_negate.type'],
     fields['of15.bsn_tlv_negate.length'],
     fields['of15.bsn_tlv_next_hop_ipv4.type'],
@@ -37720,6 +37750,16 @@ function dissect_of_bsn_tlv_icmp_type_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[68] = dissect_of_bsn_tlv_icmp_type_v4
 
+-- child class of_bsn_tlv_icmpv6_chksum
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_icmpv6_chksum_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_icmpv6_chksum.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_icmpv6_chksum.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_icmpv6_chksum.value')
+    return 'of_bsn_tlv_icmpv6_chksum'
+end
+of_bsn_tlv_v4_dissectors[125] = dissect_of_bsn_tlv_icmpv6_chksum_v4
+
 -- child class of_bsn_tlv_idle_notification
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_idle_notification_v4(reader, subtree)
@@ -37988,6 +38028,15 @@ function dissect_of_bsn_tlv_ndp_offload_v4(reader, subtree)
     return 'of_bsn_tlv_ndp_offload'
 end
 of_bsn_tlv_v4_dissectors[123] = dissect_of_bsn_tlv_ndp_offload_v4
+
+-- child class of_bsn_tlv_ndp_static
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ndp_static_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ndp_static.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ndp_static.length')
+    return 'of_bsn_tlv_ndp_static'
+end
+of_bsn_tlv_v4_dissectors[124] = dissect_of_bsn_tlv_ndp_static_v4
 
 -- child class of_bsn_tlv_negate
 -- Child of of_bsn_tlv
@@ -45084,6 +45133,16 @@ function dissect_of_bsn_tlv_icmp_type_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[68] = dissect_of_bsn_tlv_icmp_type_v5
 
+-- child class of_bsn_tlv_icmpv6_chksum
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_icmpv6_chksum_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_icmpv6_chksum.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_icmpv6_chksum.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_icmpv6_chksum.value')
+    return 'of_bsn_tlv_icmpv6_chksum'
+end
+of_bsn_tlv_v5_dissectors[125] = dissect_of_bsn_tlv_icmpv6_chksum_v5
+
 -- child class of_bsn_tlv_idle_notification
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_idle_notification_v5(reader, subtree)
@@ -45352,6 +45411,15 @@ function dissect_of_bsn_tlv_ndp_offload_v5(reader, subtree)
     return 'of_bsn_tlv_ndp_offload'
 end
 of_bsn_tlv_v5_dissectors[123] = dissect_of_bsn_tlv_ndp_offload_v5
+
+-- child class of_bsn_tlv_ndp_static
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ndp_static_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ndp_static.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ndp_static.length')
+    return 'of_bsn_tlv_ndp_static'
+end
+of_bsn_tlv_v5_dissectors[124] = dissect_of_bsn_tlv_ndp_static_v5
 
 -- child class of_bsn_tlv_negate
 -- Child of of_bsn_tlv
@@ -52959,6 +53027,16 @@ function dissect_of_bsn_tlv_icmp_type_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[68] = dissect_of_bsn_tlv_icmp_type_v6
 
+-- child class of_bsn_tlv_icmpv6_chksum
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_icmpv6_chksum_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_icmpv6_chksum.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_icmpv6_chksum.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_icmpv6_chksum.value')
+    return 'of_bsn_tlv_icmpv6_chksum'
+end
+of_bsn_tlv_v6_dissectors[125] = dissect_of_bsn_tlv_icmpv6_chksum_v6
+
 -- child class of_bsn_tlv_idle_notification
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_idle_notification_v6(reader, subtree)
@@ -53227,6 +53305,15 @@ function dissect_of_bsn_tlv_ndp_offload_v6(reader, subtree)
     return 'of_bsn_tlv_ndp_offload'
 end
 of_bsn_tlv_v6_dissectors[123] = dissect_of_bsn_tlv_ndp_offload_v6
+
+-- child class of_bsn_tlv_ndp_static
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ndp_static_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ndp_static.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ndp_static.length')
+    return 'of_bsn_tlv_ndp_static'
+end
+of_bsn_tlv_v6_dissectors[124] = dissect_of_bsn_tlv_ndp_static_v6
 
 -- child class of_bsn_tlv_negate
 -- Child of of_bsn_tlv

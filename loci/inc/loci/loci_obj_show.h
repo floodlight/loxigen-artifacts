@@ -762,6 +762,7 @@ int of_bsn_tlv_header_size_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 int of_bsn_tlv_icmp_code_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_icmp_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_icmp_type_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_idle_notification_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_idle_time_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_idle_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -789,6 +790,7 @@ int of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 int of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_name_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_ndp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_ndp_static_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_negate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_next_hop_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1350,6 +1352,7 @@ int of_bsn_tlv_header_size_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 int of_bsn_tlv_icmp_code_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_icmp_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_icmp_type_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_idle_notification_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_idle_time_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_idle_timeout_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1377,6 +1380,7 @@ int of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_show(loci_writer_f writer, void* co
 int of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_name_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_ndp_offload_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_ndp_static_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_negate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_next_hop_mac_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);

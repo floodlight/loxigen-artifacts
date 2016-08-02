@@ -6809,6 +6809,17 @@ typedef struct of_bsn_tlv_icmp_id_s of_bsn_tlv_icmp_id_t;
 typedef struct of_bsn_tlv_icmp_type_s of_bsn_tlv_icmp_type_t;
 
 /**
+ * Structure for of_bsn_tlv_icmpv6_chksum object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_icmpv6_chksum_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_icmpv6_chksum_s of_bsn_tlv_icmpv6_chksum_t;
+
+/**
  * Structure for of_bsn_tlv_idle_notification object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7088,6 +7099,13 @@ typedef struct of_bsn_tlv_name_s of_bsn_tlv_name_t;
  *
  */
 typedef struct of_bsn_tlv_ndp_offload_s of_bsn_tlv_ndp_offload_t;
+
+/**
+ * Structure for of_bsn_tlv_ndp_static object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_ndp_static_s of_bsn_tlv_ndp_static_t;
 
 /**
  * Structure for of_bsn_tlv_negate object.  Get/set

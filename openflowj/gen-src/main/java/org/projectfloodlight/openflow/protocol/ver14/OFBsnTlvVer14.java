@@ -157,6 +157,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x44:
                    // discriminator value 0x44=0x44 for class OFBsnTlvIcmpTypeVer14
                    return OFBsnTlvIcmpTypeVer14.READER.readFrom(bb);
+               case (short) 0x7d:
+                   // discriminator value 0x7d=0x7d for class OFBsnTlvIcmpv6ChksumVer14
+                   return OFBsnTlvIcmpv6ChksumVer14.READER.readFrom(bb);
                case (short) 0x7:
                    // discriminator value 0x7=0x7 for class OFBsnTlvIdleNotificationVer14
                    return OFBsnTlvIdleNotificationVer14.READER.readFrom(bb);
@@ -238,6 +241,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x7b:
                    // discriminator value 0x7b=0x7b for class OFBsnTlvNdpOffloadVer14
                    return OFBsnTlvNdpOffloadVer14.READER.readFrom(bb);
+               case (short) 0x7c:
+                   // discriminator value 0x7c=0x7c for class OFBsnTlvNdpStaticVer14
+                   return OFBsnTlvNdpStaticVer14.READER.readFrom(bb);
                case (short) 0x53:
                    // discriminator value 0x53=0x53 for class OFBsnTlvNegateVer14
                    return OFBsnTlvNegateVer14.READER.readFrom(bb);
