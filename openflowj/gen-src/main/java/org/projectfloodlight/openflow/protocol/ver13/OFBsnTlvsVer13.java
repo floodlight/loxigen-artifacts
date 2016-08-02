@@ -350,6 +350,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvIcmpv6Chksum.Builder buildIcmpv6Chksum() {
+        return new OFBsnTlvIcmpv6ChksumVer13.Builder();
+    }
+    public OFBsnTlvIcmpv6Chksum icmpv6Chksum(int value) {
+        return new OFBsnTlvIcmpv6ChksumVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvIdleNotification idleNotification() {
         return OFBsnTlvIdleNotificationVer13.INSTANCE;
     }
@@ -567,6 +576,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
 
     public OFBsnTlvNdpOffload ndpOffload() {
         return OFBsnTlvNdpOffloadVer13.INSTANCE;
+    }
+
+    public OFBsnTlvNdpStatic ndpStatic() {
+        return OFBsnTlvNdpStaticVer13.INSTANCE;
     }
 
     public OFBsnTlvNegate negate() {

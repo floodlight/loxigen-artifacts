@@ -27373,6 +27373,44 @@ test_of_bsn_tlv_icmp_type_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_icmpv6_chksum_t *obj;
+    obj = of_bsn_tlv_icmpv6_chksum_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_ICMPV6_CHKSUM);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_ICMPV6_CHKSUM);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_icmpv6_chksum_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_idle_notification_OF_VERSION_1_3(void)
 {
     of_bsn_tlv_idle_notification_t *obj;
@@ -28393,6 +28431,44 @@ test_of_bsn_tlv_ndp_offload_OF_VERSION_1_3(void)
         obj, 1) != 0);
 
     of_bsn_tlv_ndp_offload_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_ndp_static_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_ndp_static_t *obj;
+    obj = of_bsn_tlv_ndp_static_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_NDP_STATIC);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_NDP_STATIC);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_ndp_static_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_ndp_static_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_ndp_static_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -49717,6 +49793,44 @@ test_of_bsn_tlv_icmp_type_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_icmpv6_chksum_t *obj;
+    obj = of_bsn_tlv_icmpv6_chksum_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_ICMPV6_CHKSUM);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_ICMPV6_CHKSUM);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_icmpv6_chksum_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_idle_notification_OF_VERSION_1_4(void)
 {
     of_bsn_tlv_idle_notification_t *obj;
@@ -50737,6 +50851,44 @@ test_of_bsn_tlv_ndp_offload_OF_VERSION_1_4(void)
         obj, 1) != 0);
 
     of_bsn_tlv_ndp_offload_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_ndp_static_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_ndp_static_t *obj;
+    obj = of_bsn_tlv_ndp_static_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_NDP_STATIC);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_NDP_STATIC);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_ndp_static_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_ndp_static_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_ndp_static_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -62523,6 +62675,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_icmp_code_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_icmp_id_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_icmp_type_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_idle_notification_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_idle_time_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_idle_timeout_OF_VERSION_1_3);
@@ -62550,6 +62703,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_name_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_ndp_offload_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_ndp_static_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_negate_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_next_hop_mac_OF_VERSION_1_3);
@@ -63111,6 +63265,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_icmp_code_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_icmp_id_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_icmp_type_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_idle_notification_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_idle_time_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_idle_timeout_OF_VERSION_1_4);
@@ -63138,6 +63293,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_name_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_ndp_offload_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_ndp_static_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_negate_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_next_hop_mac_OF_VERSION_1_4);

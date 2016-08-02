@@ -101,6 +101,8 @@ public interface OFBsnTlvs {
     OFBsnTlvIcmpId icmpId(int value);
     OFBsnTlvIcmpType.Builder buildIcmpType() throws UnsupportedOperationException;
     OFBsnTlvIcmpType icmpType(short value);
+    OFBsnTlvIcmpv6Chksum.Builder buildIcmpv6Chksum() throws UnsupportedOperationException;
+    OFBsnTlvIcmpv6Chksum icmpv6Chksum(int value);
     OFBsnTlvIdleNotification idleNotification();
     OFBsnTlvIdleTime.Builder buildIdleTime() throws UnsupportedOperationException;
     OFBsnTlvIdleTime idleTime(U64 value);
@@ -150,6 +152,7 @@ public interface OFBsnTlvs {
     OFBsnTlvName.Builder buildName() throws UnsupportedOperationException;
     OFBsnTlvName name(byte[] value);
     OFBsnTlvNdpOffload ndpOffload();
+    OFBsnTlvNdpStatic ndpStatic();
     OFBsnTlvNegate negate();
     OFBsnTlvNextHopIpv4.Builder buildNextHopIpv4() throws UnsupportedOperationException;
     OFBsnTlvNextHopIpv4 nextHopIpv4(IPv4Address value);

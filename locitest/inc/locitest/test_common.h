@@ -6890,6 +6890,15 @@ extern int of_bsn_tlv_icmp_type_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_icmp_type_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_icmp_type_t *obj, int value);
 
+extern int of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_populate(
+    of_bsn_tlv_icmpv6_chksum_t *obj, int value);
+extern int of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_check(
+    of_bsn_tlv_icmpv6_chksum_t *obj, int value);
+extern int of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_icmpv6_chksum_t *obj, int value);
+extern int of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_icmpv6_chksum_t *obj, int value);
+
 extern int of_bsn_tlv_idle_notification_OF_VERSION_1_3_populate(
     of_bsn_tlv_idle_notification_t *obj, int value);
 extern int of_bsn_tlv_idle_notification_OF_VERSION_1_3_check(
@@ -7132,6 +7141,15 @@ extern int of_bsn_tlv_ndp_offload_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_ndp_offload_t *obj, int value);
 extern int of_bsn_tlv_ndp_offload_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_ndp_offload_t *obj, int value);
+
+extern int of_bsn_tlv_ndp_static_OF_VERSION_1_3_populate(
+    of_bsn_tlv_ndp_static_t *obj, int value);
+extern int of_bsn_tlv_ndp_static_OF_VERSION_1_3_check(
+    of_bsn_tlv_ndp_static_t *obj, int value);
+extern int of_bsn_tlv_ndp_static_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_ndp_static_t *obj, int value);
+extern int of_bsn_tlv_ndp_static_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_ndp_static_t *obj, int value);
 
 extern int of_bsn_tlv_negate_OF_VERSION_1_3_populate(
     of_bsn_tlv_negate_t *obj, int value);
@@ -12587,6 +12605,15 @@ extern int of_bsn_tlv_icmp_type_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_icmp_type_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_icmp_type_t *obj, int value);
 
+extern int of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_populate(
+    of_bsn_tlv_icmpv6_chksum_t *obj, int value);
+extern int of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_check(
+    of_bsn_tlv_icmpv6_chksum_t *obj, int value);
+extern int of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_icmpv6_chksum_t *obj, int value);
+extern int of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_icmpv6_chksum_t *obj, int value);
+
 extern int of_bsn_tlv_idle_notification_OF_VERSION_1_4_populate(
     of_bsn_tlv_idle_notification_t *obj, int value);
 extern int of_bsn_tlv_idle_notification_OF_VERSION_1_4_check(
@@ -12829,6 +12856,15 @@ extern int of_bsn_tlv_ndp_offload_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_ndp_offload_t *obj, int value);
 extern int of_bsn_tlv_ndp_offload_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_ndp_offload_t *obj, int value);
+
+extern int of_bsn_tlv_ndp_static_OF_VERSION_1_4_populate(
+    of_bsn_tlv_ndp_static_t *obj, int value);
+extern int of_bsn_tlv_ndp_static_OF_VERSION_1_4_check(
+    of_bsn_tlv_ndp_static_t *obj, int value);
+extern int of_bsn_tlv_ndp_static_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_ndp_static_t *obj, int value);
+extern int of_bsn_tlv_ndp_static_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_ndp_static_t *obj, int value);
 
 extern int of_bsn_tlv_negate_OF_VERSION_1_4_populate(
     of_bsn_tlv_negate_t *obj, int value);

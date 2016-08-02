@@ -282,6 +282,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvIcmpType not supported in version 1.1");
     }
 
+    public OFBsnTlvIcmpv6Chksum.Builder buildIcmpv6Chksum() {
+        throw new UnsupportedOperationException("OFBsnTlvIcmpv6Chksum not supported in version 1.1");
+    }
+    public OFBsnTlvIcmpv6Chksum icmpv6Chksum(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvIcmpv6Chksum not supported in version 1.1");
+    }
+
     public OFBsnTlvIdleNotification idleNotification() {
         throw new UnsupportedOperationException("OFBsnTlvIdleNotification not supported in version 1.1");
     }
@@ -454,6 +461,10 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
 
     public OFBsnTlvNdpOffload ndpOffload() {
         throw new UnsupportedOperationException("OFBsnTlvNdpOffload not supported in version 1.1");
+    }
+
+    public OFBsnTlvNdpStatic ndpStatic() {
+        throw new UnsupportedOperationException("OFBsnTlvNdpStatic not supported in version 1.1");
     }
 
     public OFBsnTlvNegate negate() {
