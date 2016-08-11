@@ -6614,6 +6614,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x7d:
             *id = OF_BSN_TLV_ICMPV6_CHKSUM;
             break;
+        case 0x7e:
+            *id = OF_BSN_TLV_IPV6_SRC;
+            break;
+        case 0x7f:
+            *id = OF_BSN_TLV_IPV6_DST;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -6997,6 +7003,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x7d:
             *id = OF_BSN_TLV_ICMPV6_CHKSUM;
+            break;
+        case 0x7e:
+            *id = OF_BSN_TLV_IPV6_SRC;
+            break;
+        case 0x7f:
+            *id = OF_BSN_TLV_IPV6_DST;
             break;
         default:
             *id = OF_BSN_TLV;

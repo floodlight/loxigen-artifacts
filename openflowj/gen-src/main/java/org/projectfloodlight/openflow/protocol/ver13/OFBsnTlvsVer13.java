@@ -466,6 +466,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvIpv6Dst.Builder buildIpv6Dst() {
+        return new OFBsnTlvIpv6DstVer13.Builder();
+    }
+    public OFBsnTlvIpv6Dst ipv6Dst(IPv6Address value) {
+        return new OFBsnTlvIpv6DstVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvIpv6Prefix.Builder buildIpv6Prefix() {
         return new OFBsnTlvIpv6PrefixVer13.Builder();
     }
@@ -473,6 +482,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return new OFBsnTlvIpv6PrefixVer13(
                 value,
                       prefixLength
+                    );
+    }
+
+    public OFBsnTlvIpv6Src.Builder buildIpv6Src() {
+        return new OFBsnTlvIpv6SrcVer13.Builder();
+    }
+    public OFBsnTlvIpv6Src ipv6Src(IPv6Address value) {
+        return new OFBsnTlvIpv6SrcVer13(
+                value
                     );
     }
 

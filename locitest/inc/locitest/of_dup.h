@@ -1423,7 +1423,15 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_ipv6_dst_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_ipv6_prefix_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ipv6_src_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6199,7 +6207,15 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_ipv6_dst_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ipv6_src_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8791,7 +8807,15 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_ipv6_dst_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ipv6_src_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
