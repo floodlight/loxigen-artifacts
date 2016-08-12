@@ -903,8 +903,12 @@ void of_bsn_tlv_ipv4_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_bsn_tlv_ipv4_src_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv6_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ipv6_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_ipv6_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_ipv6_dst_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv6_prefix_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ipv6_prefix_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_ipv6_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_ipv6_src_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_known_multicast_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_known_multicast_rate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_l2_multicast_lookup_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1758,7 +1762,9 @@ typedef of_object_t of_bsn_tlv_ipv4_dst_t;
 typedef of_object_t of_bsn_tlv_ipv4_netmask_t;
 typedef of_object_t of_bsn_tlv_ipv4_src_t;
 typedef of_object_t of_bsn_tlv_ipv6_t;
+typedef of_object_t of_bsn_tlv_ipv6_dst_t;
 typedef of_object_t of_bsn_tlv_ipv6_prefix_t;
+typedef of_object_t of_bsn_tlv_ipv6_src_t;
 typedef of_object_t of_bsn_tlv_known_multicast_rate_t;
 typedef of_object_t of_bsn_tlv_l2_multicast_lookup_t;
 typedef of_object_t of_bsn_tlv_loopback_port_t;
@@ -3946,8 +3952,18 @@ extern void of_bsn_tlv_ipv6_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_ipv6_dst_new(of_version_t version);
+extern void of_bsn_tlv_ipv6_dst_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_ipv6_prefix_new(of_version_t version);
 extern void of_bsn_tlv_ipv6_prefix_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_ipv6_src_new(of_version_t version);
+extern void of_bsn_tlv_ipv6_src_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9840,6 +9856,17 @@ of_bsn_tlv_ipv6_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_ipv6_dst_t
+ * @param obj An instance of type of_bsn_tlv_ipv6_dst_t
+ *
+ * \ingroup of_bsn_tlv_ipv6_dst
+ */
+static inline void
+of_bsn_tlv_ipv6_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_ipv6_prefix_t
  * @param obj An instance of type of_bsn_tlv_ipv6_prefix_t
  *
@@ -9847,6 +9874,17 @@ of_bsn_tlv_ipv6_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_ipv6_prefix_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_ipv6_src_t
+ * @param obj An instance of type of_bsn_tlv_ipv6_src_t
+ *
+ * \ingroup of_bsn_tlv_ipv6_src
+ */
+static inline void
+of_bsn_tlv_ipv6_src_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22415,6 +22453,15 @@ extern void of_bsn_tlv_ipv6_value_get(
     of_bsn_tlv_ipv6_t *obj,
     of_ipv6_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_ipv6_dst */
+
+extern void of_bsn_tlv_ipv6_dst_value_set(
+    of_bsn_tlv_ipv6_dst_t *obj,
+    of_ipv6_t value);
+extern void of_bsn_tlv_ipv6_dst_value_get(
+    of_bsn_tlv_ipv6_dst_t *obj,
+    of_ipv6_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_ipv6_prefix */
 
 extern void of_bsn_tlv_ipv6_prefix_value_set(
@@ -22430,6 +22477,15 @@ extern void of_bsn_tlv_ipv6_prefix_prefix_length_set(
 extern void of_bsn_tlv_ipv6_prefix_prefix_length_get(
     of_bsn_tlv_ipv6_prefix_t *obj,
     uint8_t *prefix_length);
+
+/* Unified accessor functions for of_bsn_tlv_ipv6_src */
+
+extern void of_bsn_tlv_ipv6_src_value_set(
+    of_bsn_tlv_ipv6_src_t *obj,
+    of_ipv6_t value);
+extern void of_bsn_tlv_ipv6_src_value_get(
+    of_bsn_tlv_ipv6_src_t *obj,
+    of_ipv6_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_known_multicast_rate */
 

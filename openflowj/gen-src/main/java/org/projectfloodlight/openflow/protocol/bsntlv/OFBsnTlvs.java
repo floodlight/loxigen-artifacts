@@ -127,8 +127,12 @@ public interface OFBsnTlvs {
     OFBsnTlvIpv4Src ipv4Src(IPv4Address value);
     OFBsnTlvIpv6.Builder buildIpv6() throws UnsupportedOperationException;
     OFBsnTlvIpv6 ipv6(IPv6Address value);
+    OFBsnTlvIpv6Dst.Builder buildIpv6Dst() throws UnsupportedOperationException;
+    OFBsnTlvIpv6Dst ipv6Dst(IPv6Address value);
     OFBsnTlvIpv6Prefix.Builder buildIpv6Prefix() throws UnsupportedOperationException;
     OFBsnTlvIpv6Prefix ipv6Prefix(IPv6Address value, short prefixLength);
+    OFBsnTlvIpv6Src.Builder buildIpv6Src() throws UnsupportedOperationException;
+    OFBsnTlvIpv6Src ipv6Src(IPv6Address value);
     OFBsnTlvKnownMulticastRate.Builder buildKnownMulticastRate() throws UnsupportedOperationException;
     OFBsnTlvKnownMulticastRate knownMulticastRate(long value);
     OFBsnTlvL2MulticastLookup l2MulticastLookup();
