@@ -872,6 +872,7 @@ int of_instruction_bsn_disable_l3_OF_VERSION_1_3_dump(loci_writer_f writer, void
 int of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_instruction_bsn_hash_select_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_internal_priority_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_ndp_offload_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -890,6 +891,7 @@ int of_instruction_id_bsn_disable_l3_OF_VERSION_1_3_dump(loci_writer_f writer, v
 int of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_instruction_id_bsn_hash_select_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_internal_priority_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_ndp_offload_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1463,6 +1465,7 @@ int of_instruction_bsn_dhcp_offload_OF_VERSION_1_4_dump(loci_writer_f writer, vo
 int of_instruction_bsn_disable_l3_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_instruction_bsn_hash_select_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_internal_priority_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_ndp_offload_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_packet_of_death_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1480,6 +1483,7 @@ int of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_4_dump(loci_writer_f writer,
 int of_instruction_id_bsn_disable_l3_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_instruction_id_bsn_hash_select_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_ndp_offload_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_packet_of_death_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);

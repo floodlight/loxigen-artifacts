@@ -69,6 +69,10 @@ public class OFInstructionIdsVer15 implements OFInstructionIds {
         return OFInstructionIdBsnDisableVlanCountersVer15.INSTANCE;
     }
 
+    public OFInstructionIdBsnHashSelect bsnHashSelect() {
+        return OFInstructionIdBsnHashSelectVer15.INSTANCE;
+    }
+
     public OFInstructionIdBsnInternalPriority bsnInternalPriority() {
         return OFInstructionIdBsnInternalPriorityVer15.INSTANCE;
     }

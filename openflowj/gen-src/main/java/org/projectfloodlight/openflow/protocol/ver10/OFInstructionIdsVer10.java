@@ -69,6 +69,10 @@ public class OFInstructionIdsVer10 implements OFInstructionIds {
         throw new UnsupportedOperationException("OFInstructionIdBsnDisableVlanCounters not supported in version 1.0");
     }
 
+    public OFInstructionIdBsnHashSelect bsnHashSelect() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnHashSelect not supported in version 1.0");
+    }
+
     public OFInstructionIdBsnInternalPriority bsnInternalPriority() {
         throw new UnsupportedOperationException("OFInstructionIdBsnInternalPriority not supported in version 1.0");
     }

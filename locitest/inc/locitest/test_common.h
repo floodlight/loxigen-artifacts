@@ -7880,6 +7880,15 @@ extern int of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_populate_scal
 extern int of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_check_scalars(
     of_instruction_bsn_disable_vlan_counters_t *obj, int value);
 
+extern int of_instruction_bsn_hash_select_OF_VERSION_1_3_populate(
+    of_instruction_bsn_hash_select_t *obj, int value);
+extern int of_instruction_bsn_hash_select_OF_VERSION_1_3_check(
+    of_instruction_bsn_hash_select_t *obj, int value);
+extern int of_instruction_bsn_hash_select_OF_VERSION_1_3_populate_scalars(
+    of_instruction_bsn_hash_select_t *obj, int value);
+extern int of_instruction_bsn_hash_select_OF_VERSION_1_3_check_scalars(
+    of_instruction_bsn_hash_select_t *obj, int value);
+
 extern int of_instruction_bsn_internal_priority_OF_VERSION_1_3_populate(
     of_instruction_bsn_internal_priority_t *obj, int value);
 extern int of_instruction_bsn_internal_priority_OF_VERSION_1_3_check(
@@ -8041,6 +8050,15 @@ extern int of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_populate_s
     of_instruction_id_bsn_disable_vlan_counters_t *obj, int value);
 extern int of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_check_scalars(
     of_instruction_id_bsn_disable_vlan_counters_t *obj, int value);
+
+extern int of_instruction_id_bsn_hash_select_OF_VERSION_1_3_populate(
+    of_instruction_id_bsn_hash_select_t *obj, int value);
+extern int of_instruction_id_bsn_hash_select_OF_VERSION_1_3_check(
+    of_instruction_id_bsn_hash_select_t *obj, int value);
+extern int of_instruction_id_bsn_hash_select_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_bsn_hash_select_t *obj, int value);
+extern int of_instruction_id_bsn_hash_select_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_bsn_hash_select_t *obj, int value);
 
 extern int of_instruction_id_bsn_internal_priority_OF_VERSION_1_3_populate(
     of_instruction_id_bsn_internal_priority_t *obj, int value);
@@ -13604,6 +13622,15 @@ extern int of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_4_populate_scal
 extern int of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_4_check_scalars(
     of_instruction_bsn_disable_vlan_counters_t *obj, int value);
 
+extern int of_instruction_bsn_hash_select_OF_VERSION_1_4_populate(
+    of_instruction_bsn_hash_select_t *obj, int value);
+extern int of_instruction_bsn_hash_select_OF_VERSION_1_4_check(
+    of_instruction_bsn_hash_select_t *obj, int value);
+extern int of_instruction_bsn_hash_select_OF_VERSION_1_4_populate_scalars(
+    of_instruction_bsn_hash_select_t *obj, int value);
+extern int of_instruction_bsn_hash_select_OF_VERSION_1_4_check_scalars(
+    of_instruction_bsn_hash_select_t *obj, int value);
+
 extern int of_instruction_bsn_internal_priority_OF_VERSION_1_4_populate(
     of_instruction_bsn_internal_priority_t *obj, int value);
 extern int of_instruction_bsn_internal_priority_OF_VERSION_1_4_check(
@@ -13756,6 +13783,15 @@ extern int of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_4_populate_s
     of_instruction_id_bsn_disable_vlan_counters_t *obj, int value);
 extern int of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_4_check_scalars(
     of_instruction_id_bsn_disable_vlan_counters_t *obj, int value);
+
+extern int of_instruction_id_bsn_hash_select_OF_VERSION_1_4_populate(
+    of_instruction_id_bsn_hash_select_t *obj, int value);
+extern int of_instruction_id_bsn_hash_select_OF_VERSION_1_4_check(
+    of_instruction_id_bsn_hash_select_t *obj, int value);
+extern int of_instruction_id_bsn_hash_select_OF_VERSION_1_4_populate_scalars(
+    of_instruction_id_bsn_hash_select_t *obj, int value);
+extern int of_instruction_id_bsn_hash_select_OF_VERSION_1_4_check_scalars(
+    of_instruction_id_bsn_hash_select_t *obj, int value);
 
 extern int of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_populate(
     of_instruction_id_bsn_internal_priority_t *obj, int value);

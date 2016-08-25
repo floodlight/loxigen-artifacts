@@ -48,6 +48,8 @@ public interface OFInstructions {
     OFInstructionBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck();
     OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
     OFInstructionBsnDisableVlanCounters bsnDisableVlanCounters();
+    OFInstructionBsnHashSelect.Builder buildBsnHashSelect() throws UnsupportedOperationException;
+    OFInstructionBsnHashSelect bsnHashSelect(Set<OFBsnHashSelectFlags> flags);
     OFInstructionBsnInternalPriority.Builder buildBsnInternalPriority() throws UnsupportedOperationException;
     OFInstructionBsnInternalPriority bsnInternalPriority(long value);
     OFInstructionBsnNdpOffload bsnNdpOffload();

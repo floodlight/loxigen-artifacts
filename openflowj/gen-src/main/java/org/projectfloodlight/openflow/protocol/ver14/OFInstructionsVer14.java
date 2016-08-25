@@ -108,6 +108,15 @@ public class OFInstructionsVer14 implements OFInstructions {
         return OFInstructionBsnDisableVlanCountersVer14.INSTANCE;
     }
 
+    public OFInstructionBsnHashSelect.Builder buildBsnHashSelect() {
+        return new OFInstructionBsnHashSelectVer14.Builder();
+    }
+    public OFInstructionBsnHashSelect bsnHashSelect(Set<OFBsnHashSelectFlags> flags) {
+        return new OFInstructionBsnHashSelectVer14(
+                flags
+                    );
+    }
+
     public OFInstructionBsnInternalPriority.Builder buildBsnInternalPriority() {
         return new OFInstructionBsnInternalPriorityVer14.Builder();
     }

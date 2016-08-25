@@ -99,6 +99,13 @@ public class OFInstructionsVer10 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnDisableVlanCounters not supported in version 1.0");
     }
 
+    public OFInstructionBsnHashSelect.Builder buildBsnHashSelect() {
+        throw new UnsupportedOperationException("OFInstructionBsnHashSelect not supported in version 1.0");
+    }
+    public OFInstructionBsnHashSelect bsnHashSelect(Set<OFBsnHashSelectFlags> flags) {
+        throw new UnsupportedOperationException("OFInstructionBsnHashSelect not supported in version 1.0");
+    }
+
     public OFInstructionBsnInternalPriority.Builder buildBsnInternalPriority() {
         throw new UnsupportedOperationException("OFInstructionBsnInternalPriority not supported in version 1.0");
     }
