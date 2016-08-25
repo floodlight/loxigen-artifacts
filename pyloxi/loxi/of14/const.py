@@ -393,6 +393,15 @@ ofp_bsn_decap_map = {
     8: 'OFP_BSN_DECAP_L3_MPLS',
 }
 
+# Identifiers from group ofp_bsn_hash_select_flags
+OFP_BSN_HASH_SELECT_SRC_IP = 1
+OFP_BSN_HASH_SELECT_DST_IP = 2
+
+ofp_bsn_hash_select_flags_map = {
+    1: 'OFP_BSN_HASH_SELECT_SRC_IP',
+    2: 'OFP_BSN_HASH_SELECT_DST_IP',
+}
+
 # Identifiers from group ofp_bsn_lacp_state
 OFP_BSN_LACP_STATE_ACTIVITY = 1
 OFP_BSN_LACP_STATE_TIMEOUT = 2

@@ -79,6 +79,9 @@ abstract class OFInstructionIdBsnVer13 {
                case 0x9:
                    // discriminator value 0x9L=0x9L for class OFInstructionIdBsnDisableVlanCountersVer13
                    return OFInstructionIdBsnDisableVlanCountersVer13.READER.readFrom(bb);
+               case 0xf:
+                   // discriminator value 0xfL=0xfL for class OFInstructionIdBsnHashSelectVer13
+                   return OFInstructionIdBsnHashSelectVer13.READER.readFrom(bb);
                case 0xc:
                    // discriminator value 0xcL=0xcL for class OFInstructionIdBsnInternalPriorityVer13
                    return OFInstructionIdBsnInternalPriorityVer13.READER.readFrom(bb);

@@ -1198,6 +1198,11 @@ enum_v3_ofp_port_features = {
 }
 
 
+enum_v4_ofp_bsn_hash_select_flags = {
+    [1] = "OFP_BSN_HASH_SELECT_SRC_IP",
+    [2] = "OFP_BSN_HASH_SELECT_DST_IP",
+}
+
 enum_v4_ofp_error_type = {
     [0] = "OFPET_HELLO_FAILED",
     [1] = "OFPET_BAD_REQUEST",
@@ -2676,6 +2681,11 @@ enum_v5_ofp_bsn_udf_anchor = {
     [2] = "OFP_BSN_UDF_ANCHOR_L4_HEADER_START",
 }
 
+enum_v5_ofp_bsn_hash_select_flags = {
+    [1] = "OFP_BSN_HASH_SELECT_SRC_IP",
+    [2] = "OFP_BSN_HASH_SELECT_DST_IP",
+}
+
 enum_v5_of_bsn_hash_type = {
     [0] = "OFP_BSN_HASH_TYPE_L2",
     [1] = "OFP_BSN_HASH_TYPE_L3",
@@ -3733,6 +3743,11 @@ enum_v6_ofp_group_mod_command = {
 
 enum_v6_ofp_queue_stats_prop_type = {
     [65535] = "OFPQSPT_EXPERIMENTER",
+}
+
+enum_v6_ofp_bsn_hash_select_flags = {
+    [1] = "OFP_BSN_HASH_SELECT_SRC_IP",
+    [2] = "OFP_BSN_HASH_SELECT_DST_IP",
 }
 
 enum_v6_of_bsn_hash_type = {
@@ -8971,6 +8986,15 @@ fields['of13.instruction_id_bsn_disable_vlan_counters.type'] = ProtoField.uint16
 fields['of13.instruction_id_bsn_disable_vlan_counters.len'] = ProtoField.uint16("of13.instruction_id_bsn_disable_vlan_counters.len", "len", base.DEC, nil)
 fields['of13.instruction_id_bsn_disable_vlan_counters.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_disable_vlan_counters.experimenter", "experimenter", base.DEC, nil)
 fields['of13.instruction_id_bsn_disable_vlan_counters.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_disable_vlan_counters.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_bsn_hash_select.type'] = ProtoField.uint16("of13.instruction_bsn_hash_select.type", "type", base.DEC, nil)
+fields['of13.instruction_bsn_hash_select.len'] = ProtoField.uint16("of13.instruction_bsn_hash_select.len", "len", base.DEC, nil)
+fields['of13.instruction_bsn_hash_select.experimenter'] = ProtoField.uint32("of13.instruction_bsn_hash_select.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_bsn_hash_select.subtype'] = ProtoField.uint32("of13.instruction_bsn_hash_select.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_bsn_hash_select.flags'] = ProtoField.uint32("of13.instruction_bsn_hash_select.flags", "flags", base.HEX, enum_v4_ofp_bsn_hash_select_flags)
+fields['of13.instruction_id_bsn_hash_select.type'] = ProtoField.uint16("of13.instruction_id_bsn_hash_select.type", "type", base.DEC, nil)
+fields['of13.instruction_id_bsn_hash_select.len'] = ProtoField.uint16("of13.instruction_id_bsn_hash_select.len", "len", base.DEC, nil)
+fields['of13.instruction_id_bsn_hash_select.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_hash_select.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_id_bsn_hash_select.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_hash_select.subtype", "subtype", base.DEC, nil)
 fields['of13.instruction_bsn_internal_priority.type'] = ProtoField.uint16("of13.instruction_bsn_internal_priority.type", "type", base.DEC, nil)
 fields['of13.instruction_bsn_internal_priority.len'] = ProtoField.uint16("of13.instruction_bsn_internal_priority.len", "len", base.DEC, nil)
 fields['of13.instruction_bsn_internal_priority.experimenter'] = ProtoField.uint32("of13.instruction_bsn_internal_priority.experimenter", "experimenter", base.DEC, nil)
@@ -11792,6 +11816,15 @@ fields['of14.instruction_id_bsn_disable_vlan_counters.type'] = ProtoField.uint16
 fields['of14.instruction_id_bsn_disable_vlan_counters.len'] = ProtoField.uint16("of14.instruction_id_bsn_disable_vlan_counters.len", "len", base.DEC, nil)
 fields['of14.instruction_id_bsn_disable_vlan_counters.experimenter'] = ProtoField.uint32("of14.instruction_id_bsn_disable_vlan_counters.experimenter", "experimenter", base.DEC, nil)
 fields['of14.instruction_id_bsn_disable_vlan_counters.subtype'] = ProtoField.uint32("of14.instruction_id_bsn_disable_vlan_counters.subtype", "subtype", base.DEC, nil)
+fields['of14.instruction_bsn_hash_select.type'] = ProtoField.uint16("of14.instruction_bsn_hash_select.type", "type", base.DEC, nil)
+fields['of14.instruction_bsn_hash_select.len'] = ProtoField.uint16("of14.instruction_bsn_hash_select.len", "len", base.DEC, nil)
+fields['of14.instruction_bsn_hash_select.experimenter'] = ProtoField.uint32("of14.instruction_bsn_hash_select.experimenter", "experimenter", base.DEC, nil)
+fields['of14.instruction_bsn_hash_select.subtype'] = ProtoField.uint32("of14.instruction_bsn_hash_select.subtype", "subtype", base.DEC, nil)
+fields['of14.instruction_bsn_hash_select.flags'] = ProtoField.uint32("of14.instruction_bsn_hash_select.flags", "flags", base.HEX, enum_v5_ofp_bsn_hash_select_flags)
+fields['of14.instruction_id_bsn_hash_select.type'] = ProtoField.uint16("of14.instruction_id_bsn_hash_select.type", "type", base.DEC, nil)
+fields['of14.instruction_id_bsn_hash_select.len'] = ProtoField.uint16("of14.instruction_id_bsn_hash_select.len", "len", base.DEC, nil)
+fields['of14.instruction_id_bsn_hash_select.experimenter'] = ProtoField.uint32("of14.instruction_id_bsn_hash_select.experimenter", "experimenter", base.DEC, nil)
+fields['of14.instruction_id_bsn_hash_select.subtype'] = ProtoField.uint32("of14.instruction_id_bsn_hash_select.subtype", "subtype", base.DEC, nil)
 fields['of14.instruction_bsn_internal_priority.type'] = ProtoField.uint16("of14.instruction_bsn_internal_priority.type", "type", base.DEC, nil)
 fields['of14.instruction_bsn_internal_priority.len'] = ProtoField.uint16("of14.instruction_bsn_internal_priority.len", "len", base.DEC, nil)
 fields['of14.instruction_bsn_internal_priority.experimenter'] = ProtoField.uint32("of14.instruction_bsn_internal_priority.experimenter", "experimenter", base.DEC, nil)
@@ -14952,6 +14985,15 @@ fields['of15.instruction_id_bsn_disable_vlan_counters.type'] = ProtoField.uint16
 fields['of15.instruction_id_bsn_disable_vlan_counters.len'] = ProtoField.uint16("of15.instruction_id_bsn_disable_vlan_counters.len", "len", base.DEC, nil)
 fields['of15.instruction_id_bsn_disable_vlan_counters.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_disable_vlan_counters.experimenter", "experimenter", base.DEC, nil)
 fields['of15.instruction_id_bsn_disable_vlan_counters.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_disable_vlan_counters.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_hash_select.type'] = ProtoField.uint16("of15.instruction_bsn_hash_select.type", "type", base.DEC, nil)
+fields['of15.instruction_bsn_hash_select.len'] = ProtoField.uint16("of15.instruction_bsn_hash_select.len", "len", base.DEC, nil)
+fields['of15.instruction_bsn_hash_select.experimenter'] = ProtoField.uint32("of15.instruction_bsn_hash_select.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_bsn_hash_select.subtype'] = ProtoField.uint32("of15.instruction_bsn_hash_select.subtype", "subtype", base.DEC, nil)
+fields['of15.instruction_bsn_hash_select.flags'] = ProtoField.uint32("of15.instruction_bsn_hash_select.flags", "flags", base.HEX, enum_v6_ofp_bsn_hash_select_flags)
+fields['of15.instruction_id_bsn_hash_select.type'] = ProtoField.uint16("of15.instruction_id_bsn_hash_select.type", "type", base.DEC, nil)
+fields['of15.instruction_id_bsn_hash_select.len'] = ProtoField.uint16("of15.instruction_id_bsn_hash_select.len", "len", base.DEC, nil)
+fields['of15.instruction_id_bsn_hash_select.experimenter'] = ProtoField.uint32("of15.instruction_id_bsn_hash_select.experimenter", "experimenter", base.DEC, nil)
+fields['of15.instruction_id_bsn_hash_select.subtype'] = ProtoField.uint32("of15.instruction_id_bsn_hash_select.subtype", "subtype", base.DEC, nil)
 fields['of15.instruction_bsn_internal_priority.type'] = ProtoField.uint16("of15.instruction_bsn_internal_priority.type", "type", base.DEC, nil)
 fields['of15.instruction_bsn_internal_priority.len'] = ProtoField.uint16("of15.instruction_bsn_internal_priority.len", "len", base.DEC, nil)
 fields['of15.instruction_bsn_internal_priority.experimenter'] = ProtoField.uint32("of15.instruction_bsn_internal_priority.experimenter", "experimenter", base.DEC, nil)
@@ -20986,6 +21028,15 @@ p_of.fields = {
     fields['of13.instruction_id_bsn_disable_vlan_counters.len'],
     fields['of13.instruction_id_bsn_disable_vlan_counters.experimenter'],
     fields['of13.instruction_id_bsn_disable_vlan_counters.subtype'],
+    fields['of13.instruction_bsn_hash_select.type'],
+    fields['of13.instruction_bsn_hash_select.len'],
+    fields['of13.instruction_bsn_hash_select.experimenter'],
+    fields['of13.instruction_bsn_hash_select.subtype'],
+    fields['of13.instruction_bsn_hash_select.flags'],
+    fields['of13.instruction_id_bsn_hash_select.type'],
+    fields['of13.instruction_id_bsn_hash_select.len'],
+    fields['of13.instruction_id_bsn_hash_select.experimenter'],
+    fields['of13.instruction_id_bsn_hash_select.subtype'],
     fields['of13.instruction_bsn_internal_priority.type'],
     fields['of13.instruction_bsn_internal_priority.len'],
     fields['of13.instruction_bsn_internal_priority.experimenter'],
@@ -23807,6 +23858,15 @@ p_of.fields = {
     fields['of14.instruction_id_bsn_disable_vlan_counters.len'],
     fields['of14.instruction_id_bsn_disable_vlan_counters.experimenter'],
     fields['of14.instruction_id_bsn_disable_vlan_counters.subtype'],
+    fields['of14.instruction_bsn_hash_select.type'],
+    fields['of14.instruction_bsn_hash_select.len'],
+    fields['of14.instruction_bsn_hash_select.experimenter'],
+    fields['of14.instruction_bsn_hash_select.subtype'],
+    fields['of14.instruction_bsn_hash_select.flags'],
+    fields['of14.instruction_id_bsn_hash_select.type'],
+    fields['of14.instruction_id_bsn_hash_select.len'],
+    fields['of14.instruction_id_bsn_hash_select.experimenter'],
+    fields['of14.instruction_id_bsn_hash_select.subtype'],
     fields['of14.instruction_bsn_internal_priority.type'],
     fields['of14.instruction_bsn_internal_priority.len'],
     fields['of14.instruction_bsn_internal_priority.experimenter'],
@@ -26967,6 +27027,15 @@ p_of.fields = {
     fields['of15.instruction_id_bsn_disable_vlan_counters.len'],
     fields['of15.instruction_id_bsn_disable_vlan_counters.experimenter'],
     fields['of15.instruction_id_bsn_disable_vlan_counters.subtype'],
+    fields['of15.instruction_bsn_hash_select.type'],
+    fields['of15.instruction_bsn_hash_select.len'],
+    fields['of15.instruction_bsn_hash_select.experimenter'],
+    fields['of15.instruction_bsn_hash_select.subtype'],
+    fields['of15.instruction_bsn_hash_select.flags'],
+    fields['of15.instruction_id_bsn_hash_select.type'],
+    fields['of15.instruction_id_bsn_hash_select.len'],
+    fields['of15.instruction_id_bsn_hash_select.experimenter'],
+    fields['of15.instruction_id_bsn_hash_select.subtype'],
     fields['of15.instruction_bsn_internal_priority.type'],
     fields['of15.instruction_bsn_internal_priority.len'],
     fields['of15.instruction_bsn_internal_priority.experimenter'],
@@ -39808,6 +39877,29 @@ function dissect_of_instruction_id_bsn_disable_vlan_counters_v4(reader, subtree)
 end
 of_instruction_id_bsn_v4_dissectors[9] = dissect_of_instruction_id_bsn_disable_vlan_counters_v4
 
+-- child class of_instruction_bsn_hash_select
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_hash_select_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_hash_select.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_hash_select.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_hash_select.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_hash_select.subtype')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_hash_select.flags')
+    return 'of_instruction_bsn_hash_select'
+end
+of_instruction_bsn_v4_dissectors[15] = dissect_of_instruction_bsn_hash_select_v4
+
+-- child class of_instruction_id_bsn_hash_select
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_hash_select_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_hash_select.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_hash_select.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_hash_select.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_hash_select.subtype')
+    return 'of_instruction_id_bsn_hash_select'
+end
+of_instruction_id_bsn_v4_dissectors[15] = dissect_of_instruction_id_bsn_hash_select_v4
+
 -- child class of_instruction_bsn_internal_priority
 -- Child of of_instruction_bsn
 function dissect_of_instruction_bsn_internal_priority_v4(reader, subtree)
@@ -47271,6 +47363,29 @@ function dissect_of_instruction_id_bsn_disable_vlan_counters_v5(reader, subtree)
     return 'of_instruction_id_bsn_disable_vlan_counters'
 end
 of_instruction_id_bsn_v5_dissectors[9] = dissect_of_instruction_id_bsn_disable_vlan_counters_v5
+
+-- child class of_instruction_bsn_hash_select
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_hash_select_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.instruction_bsn_hash_select.type')
+    read_uint16_t(reader, 5, subtree, 'of14.instruction_bsn_hash_select.len')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_bsn_hash_select.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_bsn_hash_select.subtype')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_bsn_hash_select.flags')
+    return 'of_instruction_bsn_hash_select'
+end
+of_instruction_bsn_v5_dissectors[15] = dissect_of_instruction_bsn_hash_select_v5
+
+-- child class of_instruction_id_bsn_hash_select
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_hash_select_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.instruction_id_bsn_hash_select.type')
+    read_uint16_t(reader, 5, subtree, 'of14.instruction_id_bsn_hash_select.len')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_id_bsn_hash_select.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_id_bsn_hash_select.subtype')
+    return 'of_instruction_id_bsn_hash_select'
+end
+of_instruction_id_bsn_v5_dissectors[15] = dissect_of_instruction_id_bsn_hash_select_v5
 
 -- child class of_instruction_bsn_internal_priority
 -- Child of of_instruction_bsn
@@ -55564,6 +55679,29 @@ function dissect_of_instruction_id_bsn_disable_vlan_counters_v6(reader, subtree)
     return 'of_instruction_id_bsn_disable_vlan_counters'
 end
 of_instruction_id_bsn_v6_dissectors[9] = dissect_of_instruction_id_bsn_disable_vlan_counters_v6
+
+-- child class of_instruction_bsn_hash_select
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_hash_select_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_hash_select.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_bsn_hash_select.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_hash_select.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_hash_select.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_bsn_hash_select.flags')
+    return 'of_instruction_bsn_hash_select'
+end
+of_instruction_bsn_v6_dissectors[15] = dissect_of_instruction_bsn_hash_select_v6
+
+-- child class of_instruction_id_bsn_hash_select
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_hash_select_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_hash_select.type')
+    read_uint16_t(reader, 6, subtree, 'of15.instruction_id_bsn_hash_select.len')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_hash_select.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.instruction_id_bsn_hash_select.subtype')
+    return 'of_instruction_id_bsn_hash_select'
+end
+of_instruction_id_bsn_v6_dissectors[15] = dissect_of_instruction_id_bsn_hash_select_v6
 
 -- child class of_instruction_bsn_internal_priority
 -- Child of of_instruction_bsn

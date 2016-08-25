@@ -21968,6 +21968,30 @@ of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_show(loci_writer_f write
 }
 
 int
+of_instruction_bsn_hash_select_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_instruction_bsn_hash_select_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_instruction_bsn_hash_select_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_instruction_bsn_hash_select_flags_get(obj, &val32);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_instruction_bsn_internal_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -22280,6 +22304,25 @@ of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_show(loci_writer_f wr
     out += writer(cookie, " ");
 
     of_instruction_id_bsn_disable_vlan_counters_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_instruction_id_bsn_hash_select_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_instruction_id_bsn_hash_select_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_instruction_id_bsn_hash_select_subtype_get(obj, &val32);
     out += writer(cookie, "subtype=");
     out += LOCI_SHOW_u32(writer, cookie, val32);
     out += writer(cookie, " ");
@@ -35092,6 +35135,30 @@ of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_4_show(loci_writer_f write
 }
 
 int
+of_instruction_bsn_hash_select_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_instruction_bsn_hash_select_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_instruction_bsn_hash_select_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_instruction_bsn_hash_select_flags_get(obj, &val32);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_instruction_bsn_internal_priority_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -35385,6 +35452,25 @@ of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_4_show(loci_writer_f wr
     out += writer(cookie, " ");
 
     of_instruction_id_bsn_disable_vlan_counters_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_instruction_id_bsn_hash_select_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_instruction_id_bsn_hash_select_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_instruction_id_bsn_hash_select_subtype_get(obj, &val32);
     out += writer(cookie, "subtype=");
     out += LOCI_SHOW_u32(writer, cookie, val32);
     out += writer(cookie, " ");
@@ -40138,6 +40224,8 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_match_v1_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
@@ -40870,9 +40958,11 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_instruction_clear_actions_OF_VERSION_1_1_show,
     unknown_show,
     of_instruction_goto_table_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -41632,9 +41722,11 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_instruction_clear_actions_OF_VERSION_1_2_show,
     unknown_show,
     of_instruction_goto_table_OF_VERSION_1_2_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -42387,6 +42479,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_show,
     of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_show,
     of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_show,
+    of_instruction_bsn_hash_select_OF_VERSION_1_3_show,
     of_instruction_bsn_internal_priority_OF_VERSION_1_3_show,
     of_instruction_bsn_ndp_offload_OF_VERSION_1_3_show,
     of_instruction_bsn_packet_of_death_OF_VERSION_1_3_show,
@@ -42408,6 +42501,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_show,
     of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_show,
     of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_show,
+    of_instruction_id_bsn_hash_select_OF_VERSION_1_3_show,
     of_instruction_id_bsn_internal_priority_OF_VERSION_1_3_show,
     of_instruction_id_bsn_ndp_offload_OF_VERSION_1_3_show,
     of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_show,
@@ -43149,6 +43243,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     unknown_show,
     of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_4_show,
     of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_4_show,
+    of_instruction_bsn_hash_select_OF_VERSION_1_4_show,
     of_instruction_bsn_internal_priority_OF_VERSION_1_4_show,
     of_instruction_bsn_ndp_offload_OF_VERSION_1_4_show,
     of_instruction_bsn_packet_of_death_OF_VERSION_1_4_show,
@@ -43170,6 +43265,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     unknown_show,
     of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_4_show,
     of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_4_show,
+    of_instruction_id_bsn_hash_select_OF_VERSION_1_4_show,
     of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_show,
     of_instruction_id_bsn_ndp_offload_OF_VERSION_1_4_show,
     of_instruction_id_bsn_packet_of_death_OF_VERSION_1_4_show,
