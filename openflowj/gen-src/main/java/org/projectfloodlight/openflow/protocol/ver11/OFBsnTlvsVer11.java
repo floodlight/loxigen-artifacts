@@ -580,6 +580,10 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPriority not supported in version 1.1");
     }
 
+    public OFBsnTlvPushVlanOnIngress pushVlanOnIngress() {
+        throw new UnsupportedOperationException("OFBsnTlvPushVlanOnIngress not supported in version 1.1");
+    }
+
     public OFBsnTlvQosPriority.Builder buildQosPriority() {
         throw new UnsupportedOperationException("OFBsnTlvQosPriority not supported in version 1.1");
     }
