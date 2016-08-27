@@ -7304,6 +7304,15 @@ extern int of_bsn_tlv_priority_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_priority_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_priority_t *obj, int value);
 
+extern int of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_populate(
+    of_bsn_tlv_push_vlan_on_ingress_t *obj, int value);
+extern int of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_check(
+    of_bsn_tlv_push_vlan_on_ingress_t *obj, int value);
+extern int of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_push_vlan_on_ingress_t *obj, int value);
+extern int of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_push_vlan_on_ingress_t *obj, int value);
+
 extern int of_bsn_tlv_qos_priority_OF_VERSION_1_3_populate(
     of_bsn_tlv_qos_priority_t *obj, int value);
 extern int of_bsn_tlv_qos_priority_OF_VERSION_1_3_check(
@@ -13054,6 +13063,15 @@ extern int of_bsn_tlv_priority_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_priority_t *obj, int value);
 extern int of_bsn_tlv_priority_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_priority_t *obj, int value);
+
+extern int of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_populate(
+    of_bsn_tlv_push_vlan_on_ingress_t *obj, int value);
+extern int of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_check(
+    of_bsn_tlv_push_vlan_on_ingress_t *obj, int value);
+extern int of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_push_vlan_on_ingress_t *obj, int value);
+extern int of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_push_vlan_on_ingress_t *obj, int value);
 
 extern int of_bsn_tlv_qos_priority_OF_VERSION_1_4_populate(
     of_bsn_tlv_qos_priority_t *obj, int value);

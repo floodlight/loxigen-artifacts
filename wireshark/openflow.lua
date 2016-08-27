@@ -8336,6 +8336,8 @@ fields['of13.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of13.bsn_tlv_p
 fields['of13.bsn_tlv_priority.type'] = ProtoField.uint16("of13.bsn_tlv_priority.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_priority.length'] = ProtoField.uint16("of13.bsn_tlv_priority.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_priority.value'] = ProtoField.uint32("of13.bsn_tlv_priority.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_push_vlan_on_ingress.type'] = ProtoField.uint16("of13.bsn_tlv_push_vlan_on_ingress.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_push_vlan_on_ingress.length'] = ProtoField.uint16("of13.bsn_tlv_push_vlan_on_ingress.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_qos_priority.type'] = ProtoField.uint16("of13.bsn_tlv_qos_priority.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_qos_priority.length'] = ProtoField.uint16("of13.bsn_tlv_qos_priority.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_qos_priority.value'] = ProtoField.uint32("of13.bsn_tlv_qos_priority.value", "value", base.DEC, nil)
@@ -11133,6 +11135,8 @@ fields['of14.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of14.bsn_tlv_p
 fields['of14.bsn_tlv_priority.type'] = ProtoField.uint16("of14.bsn_tlv_priority.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_priority.length'] = ProtoField.uint16("of14.bsn_tlv_priority.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_priority.value'] = ProtoField.uint32("of14.bsn_tlv_priority.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_push_vlan_on_ingress.type'] = ProtoField.uint16("of14.bsn_tlv_push_vlan_on_ingress.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_push_vlan_on_ingress.length'] = ProtoField.uint16("of14.bsn_tlv_push_vlan_on_ingress.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_qos_priority.type'] = ProtoField.uint16("of14.bsn_tlv_qos_priority.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_qos_priority.length'] = ProtoField.uint16("of14.bsn_tlv_qos_priority.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_qos_priority.value'] = ProtoField.uint32("of14.bsn_tlv_qos_priority.value", "value", base.DEC, nil)
@@ -14143,6 +14147,8 @@ fields['of15.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of15.bsn_tlv_p
 fields['of15.bsn_tlv_priority.type'] = ProtoField.uint16("of15.bsn_tlv_priority.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_priority.length'] = ProtoField.uint16("of15.bsn_tlv_priority.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_priority.value'] = ProtoField.uint32("of15.bsn_tlv_priority.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_push_vlan_on_ingress.type'] = ProtoField.uint16("of15.bsn_tlv_push_vlan_on_ingress.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_push_vlan_on_ingress.length'] = ProtoField.uint16("of15.bsn_tlv_push_vlan_on_ingress.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_qos_priority.type'] = ProtoField.uint16("of15.bsn_tlv_qos_priority.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_qos_priority.length'] = ProtoField.uint16("of15.bsn_tlv_qos_priority.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_qos_priority.value'] = ProtoField.uint32("of15.bsn_tlv_qos_priority.value", "value", base.DEC, nil)
@@ -20378,6 +20384,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_priority.type'],
     fields['of13.bsn_tlv_priority.length'],
     fields['of13.bsn_tlv_priority.value'],
+    fields['of13.bsn_tlv_push_vlan_on_ingress.type'],
+    fields['of13.bsn_tlv_push_vlan_on_ingress.length'],
     fields['of13.bsn_tlv_qos_priority.type'],
     fields['of13.bsn_tlv_qos_priority.length'],
     fields['of13.bsn_tlv_qos_priority.value'],
@@ -23175,6 +23183,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_priority.type'],
     fields['of14.bsn_tlv_priority.length'],
     fields['of14.bsn_tlv_priority.value'],
+    fields['of14.bsn_tlv_push_vlan_on_ingress.type'],
+    fields['of14.bsn_tlv_push_vlan_on_ingress.length'],
     fields['of14.bsn_tlv_qos_priority.type'],
     fields['of14.bsn_tlv_qos_priority.length'],
     fields['of14.bsn_tlv_qos_priority.value'],
@@ -26185,6 +26195,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_priority.type'],
     fields['of15.bsn_tlv_priority.length'],
     fields['of15.bsn_tlv_priority.value'],
+    fields['of15.bsn_tlv_push_vlan_on_ingress.type'],
+    fields['of15.bsn_tlv_push_vlan_on_ingress.length'],
     fields['of15.bsn_tlv_qos_priority.type'],
     fields['of15.bsn_tlv_qos_priority.length'],
     fields['of15.bsn_tlv_qos_priority.value'],
@@ -38311,6 +38323,15 @@ function dissect_of_bsn_tlv_priority_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[57] = dissect_of_bsn_tlv_priority_v4
 
+-- child class of_bsn_tlv_push_vlan_on_ingress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_push_vlan_on_ingress_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_push_vlan_on_ingress.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_push_vlan_on_ingress.length')
+    return 'of_bsn_tlv_push_vlan_on_ingress'
+end
+of_bsn_tlv_v4_dissectors[128] = dissect_of_bsn_tlv_push_vlan_on_ingress_v4
+
 -- child class of_bsn_tlv_qos_priority
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_qos_priority_v4(reader, subtree)
@@ -45736,6 +45757,15 @@ function dissect_of_bsn_tlv_priority_v5(reader, subtree)
     return 'of_bsn_tlv_priority'
 end
 of_bsn_tlv_v5_dissectors[57] = dissect_of_bsn_tlv_priority_v5
+
+-- child class of_bsn_tlv_push_vlan_on_ingress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_push_vlan_on_ingress_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_push_vlan_on_ingress.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_push_vlan_on_ingress.length')
+    return 'of_bsn_tlv_push_vlan_on_ingress'
+end
+of_bsn_tlv_v5_dissectors[128] = dissect_of_bsn_tlv_push_vlan_on_ingress_v5
 
 -- child class of_bsn_tlv_qos_priority
 -- Child of of_bsn_tlv
@@ -53673,6 +53703,15 @@ function dissect_of_bsn_tlv_priority_v6(reader, subtree)
     return 'of_bsn_tlv_priority'
 end
 of_bsn_tlv_v6_dissectors[57] = dissect_of_bsn_tlv_priority_v6
+
+-- child class of_bsn_tlv_push_vlan_on_ingress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_push_vlan_on_ingress_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_push_vlan_on_ingress.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_push_vlan_on_ingress.length')
+    return 'of_bsn_tlv_push_vlan_on_ingress'
+end
+of_bsn_tlv_v6_dissectors[128] = dissect_of_bsn_tlv_push_vlan_on_ingress_v6
 
 -- child class of_bsn_tlv_qos_priority
 -- Child of of_bsn_tlv

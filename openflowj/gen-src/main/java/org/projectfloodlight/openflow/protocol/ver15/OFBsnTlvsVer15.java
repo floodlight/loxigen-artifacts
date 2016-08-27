@@ -725,6 +725,10 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvPushVlanOnIngress pushVlanOnIngress() {
+        return OFBsnTlvPushVlanOnIngressVer15.INSTANCE;
+    }
+
     public OFBsnTlvQosPriority.Builder buildQosPriority() {
         return new OFBsnTlvQosPriorityVer15.Builder();
     }
