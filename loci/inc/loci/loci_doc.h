@@ -6475,6 +6475,28 @@ typedef struct of_bsn_tlv_actor_system_priority_s of_bsn_tlv_actor_system_priori
 typedef struct of_bsn_tlv_anchor_s of_bsn_tlv_anchor_t;
 
 /**
+ * Structure for of_bsn_tlv_apply_bytes object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_apply_bytes_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_apply_bytes_s of_bsn_tlv_apply_bytes_t;
+
+/**
+ * Structure for of_bsn_tlv_apply_packets object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_apply_packets_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_apply_packets_s of_bsn_tlv_apply_packets_t;
+
+/**
  * Structure for of_bsn_tlv_broadcast_query_timeout object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
