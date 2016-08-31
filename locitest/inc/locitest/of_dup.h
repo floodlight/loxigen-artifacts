@@ -1247,6 +1247,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_apply_bytes_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_apply_packets_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_broadcast_query_timeout_dup(
         of_object_t *src);
 
@@ -6043,6 +6051,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_apply_bytes_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_apply_packets_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8652,6 +8668,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_anchor_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_apply_bytes_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_apply_packets_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

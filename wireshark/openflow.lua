@@ -8114,6 +8114,12 @@ fields['of13.bsn_tlv_actor_system_priority.value'] = ProtoField.uint16("of13.bsn
 fields['of13.bsn_tlv_anchor.type'] = ProtoField.uint16("of13.bsn_tlv_anchor.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_anchor.length'] = ProtoField.uint16("of13.bsn_tlv_anchor.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_anchor.value'] = ProtoField.uint32("of13.bsn_tlv_anchor.value", "value", base.DEC, enum_v4_ofp_bsn_anchor)
+fields['of13.bsn_tlv_apply_bytes.type'] = ProtoField.uint16("of13.bsn_tlv_apply_bytes.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_apply_bytes.length'] = ProtoField.uint16("of13.bsn_tlv_apply_bytes.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_apply_bytes.value'] = ProtoField.uint64("of13.bsn_tlv_apply_bytes.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_apply_packets.type'] = ProtoField.uint16("of13.bsn_tlv_apply_packets.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_apply_packets.length'] = ProtoField.uint16("of13.bsn_tlv_apply_packets.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_apply_packets.value'] = ProtoField.uint64("of13.bsn_tlv_apply_packets.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
@@ -10913,6 +10919,12 @@ fields['of14.bsn_tlv_actor_system_priority.value'] = ProtoField.uint16("of14.bsn
 fields['of14.bsn_tlv_anchor.type'] = ProtoField.uint16("of14.bsn_tlv_anchor.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_anchor.length'] = ProtoField.uint16("of14.bsn_tlv_anchor.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_anchor.value'] = ProtoField.uint32("of14.bsn_tlv_anchor.value", "value", base.DEC, enum_v5_ofp_bsn_anchor)
+fields['of14.bsn_tlv_apply_bytes.type'] = ProtoField.uint16("of14.bsn_tlv_apply_bytes.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_apply_bytes.length'] = ProtoField.uint16("of14.bsn_tlv_apply_bytes.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_apply_bytes.value'] = ProtoField.uint64("of14.bsn_tlv_apply_bytes.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_apply_packets.type'] = ProtoField.uint16("of14.bsn_tlv_apply_packets.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_apply_packets.length'] = ProtoField.uint16("of14.bsn_tlv_apply_packets.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_apply_packets.value'] = ProtoField.uint64("of14.bsn_tlv_apply_packets.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of14.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of14.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of14.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
@@ -13925,6 +13937,12 @@ fields['of15.bsn_tlv_actor_system_priority.value'] = ProtoField.uint16("of15.bsn
 fields['of15.bsn_tlv_anchor.type'] = ProtoField.uint16("of15.bsn_tlv_anchor.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_anchor.length'] = ProtoField.uint16("of15.bsn_tlv_anchor.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_anchor.value'] = ProtoField.uint32("of15.bsn_tlv_anchor.value", "value", base.DEC, enum_v6_ofp_bsn_anchor)
+fields['of15.bsn_tlv_apply_bytes.type'] = ProtoField.uint16("of15.bsn_tlv_apply_bytes.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_apply_bytes.length'] = ProtoField.uint16("of15.bsn_tlv_apply_bytes.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_apply_bytes.value'] = ProtoField.uint64("of15.bsn_tlv_apply_bytes.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_apply_packets.type'] = ProtoField.uint16("of15.bsn_tlv_apply_packets.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_apply_packets.length'] = ProtoField.uint16("of15.bsn_tlv_apply_packets.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_apply_packets.value'] = ProtoField.uint64("of15.bsn_tlv_apply_packets.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of15.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of15.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of15.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
@@ -20162,6 +20180,12 @@ p_of.fields = {
     fields['of13.bsn_tlv_anchor.type'],
     fields['of13.bsn_tlv_anchor.length'],
     fields['of13.bsn_tlv_anchor.value'],
+    fields['of13.bsn_tlv_apply_bytes.type'],
+    fields['of13.bsn_tlv_apply_bytes.length'],
+    fields['of13.bsn_tlv_apply_bytes.value'],
+    fields['of13.bsn_tlv_apply_packets.type'],
+    fields['of13.bsn_tlv_apply_packets.length'],
+    fields['of13.bsn_tlv_apply_packets.value'],
     fields['of13.bsn_tlv_broadcast_query_timeout.type'],
     fields['of13.bsn_tlv_broadcast_query_timeout.length'],
     fields['of13.bsn_tlv_broadcast_query_timeout.value'],
@@ -22961,6 +22985,12 @@ p_of.fields = {
     fields['of14.bsn_tlv_anchor.type'],
     fields['of14.bsn_tlv_anchor.length'],
     fields['of14.bsn_tlv_anchor.value'],
+    fields['of14.bsn_tlv_apply_bytes.type'],
+    fields['of14.bsn_tlv_apply_bytes.length'],
+    fields['of14.bsn_tlv_apply_bytes.value'],
+    fields['of14.bsn_tlv_apply_packets.type'],
+    fields['of14.bsn_tlv_apply_packets.length'],
+    fields['of14.bsn_tlv_apply_packets.value'],
     fields['of14.bsn_tlv_broadcast_query_timeout.type'],
     fields['of14.bsn_tlv_broadcast_query_timeout.length'],
     fields['of14.bsn_tlv_broadcast_query_timeout.value'],
@@ -25973,6 +26003,12 @@ p_of.fields = {
     fields['of15.bsn_tlv_anchor.type'],
     fields['of15.bsn_tlv_anchor.length'],
     fields['of15.bsn_tlv_anchor.value'],
+    fields['of15.bsn_tlv_apply_bytes.type'],
+    fields['of15.bsn_tlv_apply_bytes.length'],
+    fields['of15.bsn_tlv_apply_bytes.value'],
+    fields['of15.bsn_tlv_apply_packets.type'],
+    fields['of15.bsn_tlv_apply_packets.length'],
+    fields['of15.bsn_tlv_apply_packets.value'],
     fields['of15.bsn_tlv_broadcast_query_timeout.type'],
     fields['of15.bsn_tlv_broadcast_query_timeout.length'],
     fields['of15.bsn_tlv_broadcast_query_timeout.value'],
@@ -37557,6 +37593,26 @@ function dissect_of_bsn_tlv_anchor_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[81] = dissect_of_bsn_tlv_anchor_v4
 
+-- child class of_bsn_tlv_apply_bytes
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_apply_bytes_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_apply_bytes.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_apply_bytes.length')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_tlv_apply_bytes.value')
+    return 'of_bsn_tlv_apply_bytes'
+end
+of_bsn_tlv_v4_dissectors[130] = dissect_of_bsn_tlv_apply_bytes_v4
+
+-- child class of_bsn_tlv_apply_packets
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_apply_packets_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_apply_packets.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_apply_packets.length')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_tlv_apply_packets.value')
+    return 'of_bsn_tlv_apply_packets'
+end
+of_bsn_tlv_v4_dissectors[129] = dissect_of_bsn_tlv_apply_packets_v4
+
 -- child class of_bsn_tlv_broadcast_query_timeout
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_broadcast_query_timeout_v4(reader, subtree)
@@ -44991,6 +45047,26 @@ function dissect_of_bsn_tlv_anchor_v5(reader, subtree)
     return 'of_bsn_tlv_anchor'
 end
 of_bsn_tlv_v5_dissectors[81] = dissect_of_bsn_tlv_anchor_v5
+
+-- child class of_bsn_tlv_apply_bytes
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_apply_bytes_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_apply_bytes.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_apply_bytes.length')
+    read_uint64_t(reader, 5, subtree, 'of14.bsn_tlv_apply_bytes.value')
+    return 'of_bsn_tlv_apply_bytes'
+end
+of_bsn_tlv_v5_dissectors[130] = dissect_of_bsn_tlv_apply_bytes_v5
+
+-- child class of_bsn_tlv_apply_packets
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_apply_packets_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_apply_packets.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_apply_packets.length')
+    read_uint64_t(reader, 5, subtree, 'of14.bsn_tlv_apply_packets.value')
+    return 'of_bsn_tlv_apply_packets'
+end
+of_bsn_tlv_v5_dissectors[129] = dissect_of_bsn_tlv_apply_packets_v5
 
 -- child class of_bsn_tlv_broadcast_query_timeout
 -- Child of of_bsn_tlv
@@ -52937,6 +53013,26 @@ function dissect_of_bsn_tlv_anchor_v6(reader, subtree)
     return 'of_bsn_tlv_anchor'
 end
 of_bsn_tlv_v6_dissectors[81] = dissect_of_bsn_tlv_anchor_v6
+
+-- child class of_bsn_tlv_apply_bytes
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_apply_bytes_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_apply_bytes.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_apply_bytes.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_apply_bytes.value')
+    return 'of_bsn_tlv_apply_bytes'
+end
+of_bsn_tlv_v6_dissectors[130] = dissect_of_bsn_tlv_apply_bytes_v6
+
+-- child class of_bsn_tlv_apply_packets
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_apply_packets_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_apply_packets.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_apply_packets.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_apply_packets.value')
+    return 'of_bsn_tlv_apply_packets'
+end
+of_bsn_tlv_v6_dissectors[129] = dissect_of_bsn_tlv_apply_packets_v6
 
 -- child class of_bsn_tlv_broadcast_query_timeout
 -- Child of of_bsn_tlv

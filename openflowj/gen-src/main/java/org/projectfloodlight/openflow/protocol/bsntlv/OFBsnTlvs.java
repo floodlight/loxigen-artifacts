@@ -45,6 +45,10 @@ public interface OFBsnTlvs {
     OFBsnTlvActorSystemPriority actorSystemPriority(int value);
     OFBsnTlvAnchor.Builder buildAnchor() throws UnsupportedOperationException;
     OFBsnTlvAnchor anchor(OFBsnAnchor value);
+    OFBsnTlvApplyBytes.Builder buildApplyBytes() throws UnsupportedOperationException;
+    OFBsnTlvApplyBytes applyBytes(U64 value);
+    OFBsnTlvApplyPackets.Builder buildApplyPackets() throws UnsupportedOperationException;
+    OFBsnTlvApplyPackets applyPackets(U64 value);
     OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() throws UnsupportedOperationException;
     OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value);
     OFBsnTlvBroadcastRate.Builder buildBroadcastRate() throws UnsupportedOperationException;
