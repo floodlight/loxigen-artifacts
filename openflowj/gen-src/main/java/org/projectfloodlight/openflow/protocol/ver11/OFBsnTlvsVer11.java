@@ -84,6 +84,20 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvAnchor not supported in version 1.1");
     }
 
+    public OFBsnTlvApplyBytes.Builder buildApplyBytes() {
+        throw new UnsupportedOperationException("OFBsnTlvApplyBytes not supported in version 1.1");
+    }
+    public OFBsnTlvApplyBytes applyBytes(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvApplyBytes not supported in version 1.1");
+    }
+
+    public OFBsnTlvApplyPackets.Builder buildApplyPackets() {
+        throw new UnsupportedOperationException("OFBsnTlvApplyPackets not supported in version 1.1");
+    }
+    public OFBsnTlvApplyPackets applyPackets(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvApplyPackets not supported in version 1.1");
+    }
+
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.1");
     }
