@@ -98,6 +98,24 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvApplyBytes.Builder buildApplyBytes() {
+        return new OFBsnTlvApplyBytesVer15.Builder();
+    }
+    public OFBsnTlvApplyBytes applyBytes(U64 value) {
+        return new OFBsnTlvApplyBytesVer15(
+                value
+                    );
+    }
+
+    public OFBsnTlvApplyPackets.Builder buildApplyPackets() {
+        return new OFBsnTlvApplyPacketsVer15.Builder();
+    }
+    public OFBsnTlvApplyPackets applyPackets(U64 value) {
+        return new OFBsnTlvApplyPacketsVer15(
+                value
+                    );
+    }
+
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         return new OFBsnTlvBroadcastQueryTimeoutVer15.Builder();
     }
