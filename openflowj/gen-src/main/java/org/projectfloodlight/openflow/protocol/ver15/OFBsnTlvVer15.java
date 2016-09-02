@@ -109,12 +109,18 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x70:
                    // discriminator value 0x70=0x70 for class OFBsnTlvDscpVer15
                    return OFBsnTlvDscpVer15.READER.readFrom(bb);
+               case (short) 0x84:
+                   // discriminator value 0x84=0x84 for class OFBsnTlvEcnVer15
+                   return OFBsnTlvEcnVer15.READER.readFrom(bb);
                case (short) 0x21:
                    // discriminator value 0x21=0x21 for class OFBsnTlvEthDstVer15
                    return OFBsnTlvEthDstVer15.READER.readFrom(bb);
                case (short) 0x20:
                    // discriminator value 0x20=0x20 for class OFBsnTlvEthSrcVer15
                    return OFBsnTlvEthSrcVer15.READER.readFrom(bb);
+               case (short) 0x83:
+                   // discriminator value 0x83=0x83 for class OFBsnTlvEthTypeVer15
+                   return OFBsnTlvEthTypeVer15.READER.readFrom(bb);
                case (short) 0x1a:
                    // discriminator value 0x1a=0x1a for class OFBsnTlvExternalGatewayIpVer15
                    return OFBsnTlvExternalGatewayIpVer15.READER.readFrom(bb);
@@ -220,6 +226,15 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x4f:
                    // discriminator value 0x4f=0x4f for class OFBsnTlvL2MulticastLookupVer15
                    return OFBsnTlvL2MulticastLookupVer15.READER.readFrom(bb);
+               case (short) 0x88:
+                   // discriminator value 0x88=0x88 for class OFBsnTlvL3DstClassIdVer15
+                   return OFBsnTlvL3DstClassIdVer15.READER.readFrom(bb);
+               case (short) 0x86:
+                   // discriminator value 0x86=0x86 for class OFBsnTlvL3InterfaceClassIdVer15
+                   return OFBsnTlvL3InterfaceClassIdVer15.READER.readFrom(bb);
+               case (short) 0x87:
+                   // discriminator value 0x87=0x87 for class OFBsnTlvL3SrcClassIdVer15
+                   return OFBsnTlvL3SrcClassIdVer15.READER.readFrom(bb);
                case (short) 0x6e:
                    // discriminator value 0x6e=0x6e for class OFBsnTlvLoopbackPortVer15
                    return OFBsnTlvLoopbackPortVer15.READER.readFrom(bb);
@@ -358,6 +373,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x42:
                    // discriminator value 0x42=0x42 for class OFBsnTlvTcpDstVer15
                    return OFBsnTlvTcpDstVer15.READER.readFrom(bb);
+               case (short) 0x85:
+                   // discriminator value 0x85=0x85 for class OFBsnTlvTcpFlagsVer15
+                   return OFBsnTlvTcpFlagsVer15.READER.readFrom(bb);
                case (short) 0x41:
                    // discriminator value 0x41=0x41 for class OFBsnTlvTcpSrcVer15
                    return OFBsnTlvTcpSrcVer15.READER.readFrom(bb);

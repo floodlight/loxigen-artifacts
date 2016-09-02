@@ -173,6 +173,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvDscp not supported in version 1.1");
     }
 
+    public OFBsnTlvEcn.Builder buildEcn() {
+        throw new UnsupportedOperationException("OFBsnTlvEcn not supported in version 1.1");
+    }
+    public OFBsnTlvEcn ecn(short value) {
+        throw new UnsupportedOperationException("OFBsnTlvEcn not supported in version 1.1");
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         throw new UnsupportedOperationException("OFBsnTlvEthDst not supported in version 1.1");
     }
@@ -185,6 +192,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvEthSrc ethSrc(MacAddress value) {
         throw new UnsupportedOperationException("OFBsnTlvEthSrc not supported in version 1.1");
+    }
+
+    public OFBsnTlvEthType.Builder buildEthType() {
+        throw new UnsupportedOperationException("OFBsnTlvEthType not supported in version 1.1");
+    }
+    public OFBsnTlvEthType ethType(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvEthType not supported in version 1.1");
     }
 
     public OFBsnTlvExternalGatewayIp.Builder buildExternalGatewayIp() {
@@ -418,6 +432,27 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
 
     public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
         throw new UnsupportedOperationException("OFBsnTlvL2MulticastLookup not supported in version 1.1");
+    }
+
+    public OFBsnTlvL3DstClassId.Builder buildL3DstClassId() {
+        throw new UnsupportedOperationException("OFBsnTlvL3DstClassId not supported in version 1.1");
+    }
+    public OFBsnTlvL3DstClassId l3DstClassId(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvL3DstClassId not supported in version 1.1");
+    }
+
+    public OFBsnTlvL3InterfaceClassId.Builder buildL3InterfaceClassId() {
+        throw new UnsupportedOperationException("OFBsnTlvL3InterfaceClassId not supported in version 1.1");
+    }
+    public OFBsnTlvL3InterfaceClassId l3InterfaceClassId(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvL3InterfaceClassId not supported in version 1.1");
+    }
+
+    public OFBsnTlvL3SrcClassId.Builder buildL3SrcClassId() {
+        throw new UnsupportedOperationException("OFBsnTlvL3SrcClassId not supported in version 1.1");
+    }
+    public OFBsnTlvL3SrcClassId l3SrcClassId(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvL3SrcClassId not supported in version 1.1");
     }
 
     public OFBsnTlvLoopbackPort.Builder buildLoopbackPort() {
@@ -710,6 +745,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvTcpDst tcpDst(int value) {
         throw new UnsupportedOperationException("OFBsnTlvTcpDst not supported in version 1.1");
+    }
+
+    public OFBsnTlvTcpFlags.Builder buildTcpFlags() {
+        throw new UnsupportedOperationException("OFBsnTlvTcpFlags not supported in version 1.1");
+    }
+    public OFBsnTlvTcpFlags tcpFlags(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvTcpFlags not supported in version 1.1");
     }
 
     public OFBsnTlvTcpSrc.Builder buildTcpSrc() {
