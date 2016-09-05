@@ -13178,6 +13178,55 @@ of_oxm_mpls_tc_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of
 }
 
 int
+of_oxm_ovs_tcp_flags_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_oxm_ovs_tcp_flags\n");
+
+    of_oxm_ovs_tcp_flags_experimenter_id_get(obj, &val32);
+    out += writer(cookie, "  experimenter_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_ovs_tcp_flags_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_oxm_ovs_tcp_flags_masked\n");
+
+    of_oxm_ovs_tcp_flags_masked_experimenter_id_get(obj, &val32);
+    out += writer(cookie, "  experimenter_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_ovs_tcp_flags_masked_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_oxm_ovs_tcp_flags_masked_value_mask_get(obj, &val16);
+    out += writer(cookie, "  value_mask (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_oxm_sctp_dst_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -26500,6 +26549,55 @@ of_oxm_mpls_tc_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of
     of_oxm_mpls_tc_masked_value_mask_get(obj, &val8);
     out += writer(cookie, "  value_mask (uint8_t):  ");
     out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_ovs_tcp_flags_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_oxm_ovs_tcp_flags\n");
+
+    of_oxm_ovs_tcp_flags_experimenter_id_get(obj, &val32);
+    out += writer(cookie, "  experimenter_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_ovs_tcp_flags_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_oxm_ovs_tcp_flags_masked\n");
+
+    of_oxm_ovs_tcp_flags_masked_experimenter_id_get(obj, &val32);
+    out += writer(cookie, "  experimenter_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_ovs_tcp_flags_masked_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_oxm_ovs_tcp_flags_masked_value_mask_get(obj, &val16);
+    out += writer(cookie, "  value_mask (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
     return out;
@@ -40713,6 +40811,55 @@ of_oxm_mpls_tc_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of
 }
 
 int
+of_oxm_ovs_tcp_flags_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_oxm_ovs_tcp_flags\n");
+
+    of_oxm_ovs_tcp_flags_experimenter_id_get(obj, &val32);
+    out += writer(cookie, "  experimenter_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_ovs_tcp_flags_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_oxm_ovs_tcp_flags_masked\n");
+
+    of_oxm_ovs_tcp_flags_masked_experimenter_id_get(obj, &val32);
+    out += writer(cookie, "  experimenter_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_ovs_tcp_flags_masked_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_oxm_ovs_tcp_flags_masked_value_mask_get(obj, &val16);
+    out += writer(cookie, "  value_mask (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_oxm_pbb_uca_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -42299,6 +42446,14 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
 
     out += writer(cookie, "Match obj, version %d.\n", match->version);
 
+    if (OF_MATCH_MASK_OVS_TCP_FLAGS_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  ovs_tcp_flags (uint16_t) active: Value ");
+        out += LOCI_DUMP_u16(writer, cookie, match->fields.ovs_tcp_flags);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_u16(writer, cookie, match->masks.ovs_tcp_flags);
+        out += writer(cookie, "\n");
+    }
+
     if (OF_MATCH_MASK_IPV6_FLABEL_ACTIVE_TEST(match)) {
         out += writer(cookie, "  ipv6_flabel (uint32_t) active: Value ");
         out += LOCI_DUMP_u32(writer, cookie, match->fields.ipv6_flabel);
@@ -43492,6 +43647,8 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_packet_queue_OF_VERSION_1_0_dump,
     of_port_desc_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -44113,6 +44270,8 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_instruction_write_metadata_OF_VERSION_1_1_dump,
     unknown_dump,
     of_match_v2_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -45002,6 +45161,8 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     of_oxm_mpls_label_masked_OF_VERSION_1_2_dump,
     of_oxm_mpls_tc_OF_VERSION_1_2_dump,
     of_oxm_mpls_tc_masked_OF_VERSION_1_2_dump,
+    of_oxm_ovs_tcp_flags_OF_VERSION_1_2_dump,
+    of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_dump,
     unknown_dump,
     unknown_dump,
     of_oxm_sctp_dst_OF_VERSION_1_2_dump,
@@ -45769,6 +45930,8 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_oxm_mpls_label_masked_OF_VERSION_1_3_dump,
     of_oxm_mpls_tc_OF_VERSION_1_3_dump,
     of_oxm_mpls_tc_masked_OF_VERSION_1_3_dump,
+    of_oxm_ovs_tcp_flags_OF_VERSION_1_3_dump,
+    of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_dump,
     unknown_dump,
     unknown_dump,
     of_oxm_sctp_dst_OF_VERSION_1_3_dump,
@@ -46536,6 +46699,8 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_oxm_mpls_label_masked_OF_VERSION_1_4_dump,
     of_oxm_mpls_tc_OF_VERSION_1_4_dump,
     of_oxm_mpls_tc_masked_OF_VERSION_1_4_dump,
+    of_oxm_ovs_tcp_flags_OF_VERSION_1_4_dump,
+    of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_dump,
     of_oxm_pbb_uca_OF_VERSION_1_4_dump,
     of_oxm_pbb_uca_masked_OF_VERSION_1_4_dump,
     of_oxm_sctp_dst_OF_VERSION_1_4_dump,

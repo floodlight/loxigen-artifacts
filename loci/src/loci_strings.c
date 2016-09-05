@@ -629,6 +629,8 @@ const char *const of_object_id_str[] = {
     "of_oxm_mpls_label_masked",
     "of_oxm_mpls_tc",
     "of_oxm_mpls_tc_masked",
+    "of_oxm_ovs_tcp_flags",
+    "of_oxm_ovs_tcp_flags_masked",
     "of_oxm_pbb_uca",
     "of_oxm_pbb_uca_masked",
     "of_oxm_sctp_dst",

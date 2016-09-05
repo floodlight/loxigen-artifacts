@@ -719,6 +719,20 @@ public class OFOxmsVer11 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmMplsTcMasked not supported in version 1.1");
     }
 
+    public OFOxmOvsTcpFlags.Builder buildOvsTcpFlags() {
+        throw new UnsupportedOperationException("OFOxmOvsTcpFlags not supported in version 1.1");
+    }
+    public OFOxmOvsTcpFlags ovsTcpFlags(U16 value) {
+        throw new UnsupportedOperationException("OFOxmOvsTcpFlags not supported in version 1.1");
+    }
+
+    public OFOxmOvsTcpFlagsMasked.Builder buildOvsTcpFlagsMasked() {
+        throw new UnsupportedOperationException("OFOxmOvsTcpFlagsMasked not supported in version 1.1");
+    }
+    public OFOxmOvsTcpFlagsMasked ovsTcpFlagsMasked(U16 value, U16 mask) {
+        throw new UnsupportedOperationException("OFOxmOvsTcpFlagsMasked not supported in version 1.1");
+    }
+
     public OFOxmSctpDst.Builder buildSctpDst() {
         throw new UnsupportedOperationException("OFOxmSctpDst not supported in version 1.1");
     }
@@ -1132,6 +1146,8 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsLabel((U32)((Object)value)));
             case MPLS_TC:
                 return (OFOxm<F>)((Object)mplsTc((U8)((Object)value)));
+            case OVS_TCP_FLAGS:
+                return (OFOxm<F>)((Object)ovsTcpFlags((U16)((Object)value)));
             case SCTP_DST:
                 return (OFOxm<F>)((Object)sctpDst((TransportPort)((Object)value)));
             case SCTP_SRC:
@@ -1282,6 +1298,8 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsLabelMasked((U32)((Object)value), (U32)((Object)mask)));
             case MPLS_TC:
                 return (OFOxm<F>)((Object)mplsTcMasked((U8)((Object)value), (U8)((Object)mask)));
+            case OVS_TCP_FLAGS:
+                return (OFOxm<F>)((Object)ovsTcpFlagsMasked((U16)((Object)value), (U16)((Object)mask)));
             case SCTP_DST:
                 return (OFOxm<F>)((Object)sctpDstMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
             case SCTP_SRC:
@@ -1432,6 +1450,8 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsLabelMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
             case MPLS_TC:
                 return (OFOxm<F>)((Object)mplsTcMasked((U8)((Object)(masked.getValue())), (U8)((Object)(masked.getMask()))));
+            case OVS_TCP_FLAGS:
+                return (OFOxm<F>)((Object)ovsTcpFlagsMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             case SCTP_DST:
                 return (OFOxm<F>)((Object)sctpDstMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
             case SCTP_SRC:

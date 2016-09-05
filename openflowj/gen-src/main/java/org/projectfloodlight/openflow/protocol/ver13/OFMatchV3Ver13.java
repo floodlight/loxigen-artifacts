@@ -167,6 +167,7 @@ class OFMatchV3Ver13 implements OFMatchV3 {
             case MPLS_BOS:
             case MPLS_LABEL:
             case MPLS_TC:
+            case OVS_TCP_FLAGS:
             case PACKET_TYPE:
             case PBB_UCA:
             case SCTP_DST:

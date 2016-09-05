@@ -2495,6 +2495,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_oxm_ovs_tcp_flags_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_ovs_tcp_flags_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_oxm_pbb_uca_dup(
         of_object_t *src);
 
@@ -4963,6 +4971,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_oxm_ovs_tcp_flags_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_oxm_sctp_dst_OF_VERSION_1_2_dup(
         of_object_t *src);
 
@@ -7264,6 +7280,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_mpls_tc_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_ovs_tcp_flags_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9864,6 +9888,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_mpls_tc_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_ovs_tcp_flags_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

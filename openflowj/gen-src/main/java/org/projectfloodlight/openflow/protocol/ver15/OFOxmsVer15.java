@@ -954,6 +954,25 @@ public class OFOxmsVer15 implements OFOxms {
                     );
     }
 
+    public OFOxmOvsTcpFlags.Builder buildOvsTcpFlags() {
+        return new OFOxmOvsTcpFlagsVer15.Builder();
+    }
+    public OFOxmOvsTcpFlags ovsTcpFlags(U16 value) {
+        return new OFOxmOvsTcpFlagsVer15(
+                value
+                    );
+    }
+
+    public OFOxmOvsTcpFlagsMasked.Builder buildOvsTcpFlagsMasked() {
+        return new OFOxmOvsTcpFlagsMaskedVer15.Builder();
+    }
+    public OFOxmOvsTcpFlagsMasked ovsTcpFlagsMasked(U16 value, U16 mask) {
+        return new OFOxmOvsTcpFlagsMaskedVer15(
+                value,
+                      mask
+                    );
+    }
+
     public OFOxmSctpDst.Builder buildSctpDst() {
         return new OFOxmSctpDstVer15.Builder();
     }
@@ -1477,6 +1496,8 @@ public class OFOxmsVer15 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsLabel((U32)((Object)value)));
             case MPLS_TC:
                 return (OFOxm<F>)((Object)mplsTc((U8)((Object)value)));
+            case OVS_TCP_FLAGS:
+                return (OFOxm<F>)((Object)ovsTcpFlags((U16)((Object)value)));
             case SCTP_DST:
                 return (OFOxm<F>)((Object)sctpDst((TransportPort)((Object)value)));
             case SCTP_SRC:
@@ -1627,6 +1648,8 @@ public class OFOxmsVer15 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsLabelMasked((U32)((Object)value), (U32)((Object)mask)));
             case MPLS_TC:
                 return (OFOxm<F>)((Object)mplsTcMasked((U8)((Object)value), (U8)((Object)mask)));
+            case OVS_TCP_FLAGS:
+                return (OFOxm<F>)((Object)ovsTcpFlagsMasked((U16)((Object)value), (U16)((Object)mask)));
             case SCTP_DST:
                 return (OFOxm<F>)((Object)sctpDstMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
             case SCTP_SRC:
@@ -1777,6 +1800,8 @@ public class OFOxmsVer15 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsLabelMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
             case MPLS_TC:
                 return (OFOxm<F>)((Object)mplsTcMasked((U8)((Object)(masked.getValue())), (U8)((Object)(masked.getMask()))));
+            case OVS_TCP_FLAGS:
+                return (OFOxm<F>)((Object)ovsTcpFlagsMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             case SCTP_DST:
                 return (OFOxm<F>)((Object)sctpDstMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
             case SCTP_SRC:

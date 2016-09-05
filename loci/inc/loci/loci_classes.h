@@ -537,6 +537,10 @@ void of_oxm_mpls_tc_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_mpls_tc_push_wire_types(of_object_t *obj);
 void of_oxm_mpls_tc_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_mpls_tc_masked_push_wire_types(of_object_t *obj);
+void of_oxm_ovs_tcp_flags_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_ovs_tcp_flags_push_wire_types(of_object_t *obj);
+void of_oxm_ovs_tcp_flags_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_ovs_tcp_flags_masked_push_wire_types(of_object_t *obj);
 void of_oxm_sctp_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_sctp_dst_push_wire_types(of_object_t *obj);
 void of_oxm_sctp_dst_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2040,6 +2044,8 @@ typedef of_object_t of_oxm_mpls_label_t;
 typedef of_object_t of_oxm_mpls_label_masked_t;
 typedef of_object_t of_oxm_mpls_tc_t;
 typedef of_object_t of_oxm_mpls_tc_masked_t;
+typedef of_object_t of_oxm_ovs_tcp_flags_t;
+typedef of_object_t of_oxm_ovs_tcp_flags_masked_t;
 typedef of_object_t of_oxm_pbb_uca_t;
 typedef of_object_t of_oxm_pbb_uca_masked_t;
 typedef of_object_t of_oxm_sctp_dst_t;
@@ -5304,6 +5310,16 @@ extern void of_oxm_mpls_tc_init(
 extern of_object_t *
     of_oxm_mpls_tc_masked_new(of_version_t version);
 extern void of_oxm_mpls_tc_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_ovs_tcp_flags_new(of_version_t version);
+extern void of_oxm_ovs_tcp_flags_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_ovs_tcp_flags_masked_new(of_version_t version);
+extern void of_oxm_ovs_tcp_flags_masked_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -12840,6 +12856,28 @@ of_oxm_mpls_tc_delete(of_object_t *obj) {
  */
 static inline void
 of_oxm_mpls_tc_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_ovs_tcp_flags_t
+ * @param obj An instance of type of_oxm_ovs_tcp_flags_t
+ *
+ * \ingroup of_oxm_ovs_tcp_flags
+ */
+static inline void
+of_oxm_ovs_tcp_flags_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_ovs_tcp_flags_masked_t
+ * @param obj An instance of type of_oxm_ovs_tcp_flags_masked_t
+ *
+ * \ingroup of_oxm_ovs_tcp_flags_masked
+ */
+static inline void
+of_oxm_ovs_tcp_flags_masked_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -26052,6 +26090,45 @@ extern void of_oxm_mpls_tc_masked_value_mask_set(
 extern void of_oxm_mpls_tc_masked_value_mask_get(
     of_oxm_mpls_tc_masked_t *obj,
     uint8_t *value_mask);
+
+/* Unified accessor functions for of_oxm_ovs_tcp_flags */
+
+extern void of_oxm_ovs_tcp_flags_experimenter_id_set(
+    of_oxm_ovs_tcp_flags_t *obj,
+    uint32_t experimenter_id);
+extern void of_oxm_ovs_tcp_flags_experimenter_id_get(
+    of_oxm_ovs_tcp_flags_t *obj,
+    uint32_t *experimenter_id);
+
+extern void of_oxm_ovs_tcp_flags_value_set(
+    of_oxm_ovs_tcp_flags_t *obj,
+    uint16_t value);
+extern void of_oxm_ovs_tcp_flags_value_get(
+    of_oxm_ovs_tcp_flags_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_oxm_ovs_tcp_flags_masked */
+
+extern void of_oxm_ovs_tcp_flags_masked_experimenter_id_set(
+    of_oxm_ovs_tcp_flags_masked_t *obj,
+    uint32_t experimenter_id);
+extern void of_oxm_ovs_tcp_flags_masked_experimenter_id_get(
+    of_oxm_ovs_tcp_flags_masked_t *obj,
+    uint32_t *experimenter_id);
+
+extern void of_oxm_ovs_tcp_flags_masked_value_set(
+    of_oxm_ovs_tcp_flags_masked_t *obj,
+    uint16_t value);
+extern void of_oxm_ovs_tcp_flags_masked_value_get(
+    of_oxm_ovs_tcp_flags_masked_t *obj,
+    uint16_t *value);
+
+extern void of_oxm_ovs_tcp_flags_masked_value_mask_set(
+    of_oxm_ovs_tcp_flags_masked_t *obj,
+    uint16_t value_mask);
+extern void of_oxm_ovs_tcp_flags_masked_value_mask_get(
+    of_oxm_ovs_tcp_flags_masked_t *obj,
+    uint16_t *value_mask);
 
 /* Unified accessor functions for of_oxm_pbb_uca */
 

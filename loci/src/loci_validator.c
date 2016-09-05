@@ -497,6 +497,8 @@ static int __attribute__((unused)) loci_validate_of_oxm_mpls_label_OF_VERSION_1_
 static int __attribute__((unused)) loci_validate_of_oxm_mpls_label_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_mpls_tc_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_mpls_tc_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_ovs_tcp_flags_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_sctp_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_sctp_dst_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_sctp_src_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
@@ -1078,6 +1080,8 @@ static int __attribute__((unused)) loci_validate_of_oxm_mpls_label_OF_VERSION_1_
 static int __attribute__((unused)) loci_validate_of_oxm_mpls_label_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_mpls_tc_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_mpls_tc_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_ovs_tcp_flags_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_sctp_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_sctp_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_sctp_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1706,6 +1710,8 @@ static int __attribute__((unused)) loci_validate_of_oxm_mpls_label_OF_VERSION_1_
 static int __attribute__((unused)) loci_validate_of_oxm_mpls_label_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_mpls_tc_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_mpls_tc_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_ovs_tcp_flags_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_pbb_uca_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_pbb_uca_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_sctp_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -9860,6 +9866,10 @@ loci_validate_of_oxm_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_mpls_tc_OF_VERSION_1_2(data, len, out_len);
     case 0x80004702:
         return loci_validate_of_oxm_mpls_tc_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0xffff5406:
+        return loci_validate_of_oxm_ovs_tcp_flags_OF_VERSION_1_2(data, len, out_len);
+    case 0xffff5508:
+        return loci_validate_of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2(data, len, out_len);
     case 0x80002402:
         return loci_validate_of_oxm_sctp_dst_OF_VERSION_1_2(data, len, out_len);
     case 0x80002504:
@@ -13948,6 +13958,38 @@ loci_validate_of_oxm_mpls_tc_masked_OF_VERSION_1_2(uint8_t *data, int len, int *
 }
 
 static int
+loci_validate_of_oxm_ovs_tcp_flags_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_oxm_sctp_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
 {
     if (len < 6) {
@@ -16947,6 +16989,10 @@ loci_validate_of_oxm_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_mpls_tc_OF_VERSION_1_3(data, len, out_len);
     case 0x80004702:
         return loci_validate_of_oxm_mpls_tc_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0xffff5406:
+        return loci_validate_of_oxm_ovs_tcp_flags_OF_VERSION_1_3(data, len, out_len);
+    case 0xffff5508:
+        return loci_validate_of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3(data, len, out_len);
     case 0x80002402:
         return loci_validate_of_oxm_sctp_dst_OF_VERSION_1_3(data, len, out_len);
     case 0x80002504:
@@ -28195,6 +28241,38 @@ loci_validate_of_oxm_mpls_tc_masked_OF_VERSION_1_3(uint8_t *data, int len, int *
 }
 
 static int
+loci_validate_of_oxm_ovs_tcp_flags_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_oxm_sctp_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 6) {
@@ -32078,6 +32156,10 @@ loci_validate_of_oxm_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_mpls_tc_OF_VERSION_1_4(data, len, out_len);
     case 0x80004702:
         return loci_validate_of_oxm_mpls_tc_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0xffff5406:
+        return loci_validate_of_oxm_ovs_tcp_flags_OF_VERSION_1_4(data, len, out_len);
+    case 0xffff5508:
+        return loci_validate_of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4(data, len, out_len);
     case 0x80005201:
         return loci_validate_of_oxm_pbb_uca_OF_VERSION_1_4(data, len, out_len);
     case 0x80005302:
@@ -43871,6 +43953,38 @@ loci_validate_of_oxm_mpls_tc_masked_OF_VERSION_1_4(uint8_t *data, int len, int *
     }
 
     len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_ovs_tcp_flags_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
 
 
 

@@ -480,6 +480,8 @@ int of_oxm_mpls_label_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 int of_oxm_mpls_label_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_mpls_tc_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_mpls_tc_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_ovs_tcp_flags_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_sctp_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_sctp_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_sctp_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1030,6 +1032,8 @@ int of_oxm_mpls_label_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 int of_oxm_mpls_label_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_mpls_tc_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_mpls_tc_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_ovs_tcp_flags_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_sctp_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_sctp_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_sctp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1621,6 +1625,8 @@ int of_oxm_mpls_label_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 int of_oxm_mpls_label_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_mpls_tc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_mpls_tc_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_ovs_tcp_flags_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_pbb_uca_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_pbb_uca_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_sctp_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);

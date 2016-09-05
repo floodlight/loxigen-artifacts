@@ -1611,6 +1611,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_oxm_wire_object_id_get,
         .wire_type_set=of_oxm_mpls_tc_masked_push_wire_types,
     },
+    [OF_OXM_OVS_TCP_FLAGS] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_ovs_tcp_flags_push_wire_types,
+    },
+    [OF_OXM_OVS_TCP_FLAGS_MASKED] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_ovs_tcp_flags_masked_push_wire_types,
+    },
     [OF_OXM_SCTP_DST] = {
         .wire_length_get=of_oxm_wire_length_get,
         .wire_length_set=NULL,

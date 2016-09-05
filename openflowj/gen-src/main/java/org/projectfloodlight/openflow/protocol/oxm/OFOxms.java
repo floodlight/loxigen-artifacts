@@ -225,6 +225,10 @@ public interface OFOxms {
     OFOxmMplsTc mplsTc(U8 value);
     OFOxmMplsTcMasked.Builder buildMplsTcMasked() throws UnsupportedOperationException;
     OFOxmMplsTcMasked mplsTcMasked(U8 value, U8 mask);
+    OFOxmOvsTcpFlags.Builder buildOvsTcpFlags() throws UnsupportedOperationException;
+    OFOxmOvsTcpFlags ovsTcpFlags(U16 value);
+    OFOxmOvsTcpFlagsMasked.Builder buildOvsTcpFlagsMasked() throws UnsupportedOperationException;
+    OFOxmOvsTcpFlagsMasked ovsTcpFlagsMasked(U16 value, U16 mask);
     OFOxmSctpDst.Builder buildSctpDst() throws UnsupportedOperationException;
     OFOxmSctpDst sctpDst(TransportPort value);
     OFOxmSctpDstMasked.Builder buildSctpDstMasked() throws UnsupportedOperationException;

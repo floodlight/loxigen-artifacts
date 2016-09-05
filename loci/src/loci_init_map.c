@@ -632,6 +632,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_oxm_mpls_label_masked_init,
     (of_object_init_f)of_oxm_mpls_tc_init,
     (of_object_init_f)of_oxm_mpls_tc_masked_init,
+    (of_object_init_f)of_oxm_ovs_tcp_flags_init,
+    (of_object_init_f)of_oxm_ovs_tcp_flags_masked_init,
     (of_object_init_f)of_oxm_pbb_uca_init,
     (of_object_init_f)of_oxm_pbb_uca_masked_init,
     (of_object_init_f)of_oxm_sctp_dst_init,

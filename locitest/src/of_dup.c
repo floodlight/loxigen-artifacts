@@ -14303,6 +14303,10 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_icmpv4_code_masked_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_OVS_TCP_FLAGS_MASKED) {
+        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_IPV4_DST) {
         return of_oxm_ipv4_dst_OF_VERSION_1_2_dup(src);
     }
@@ -14509,6 +14513,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_METADATA) {
         return of_oxm_metadata_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_OVS_TCP_FLAGS) {
+        return of_oxm_ovs_tcp_flags_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
@@ -17143,6 +17151,67 @@ of_oxm_mpls_tc_masked_OF_VERSION_1_2_dup(
 
     of_oxm_mpls_tc_masked_value_mask_get(src, &val8);
     of_oxm_mpls_tc_masked_value_mask_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_ovs_tcp_flags
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_ovs_tcp_flags.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_ovs_tcp_flags_t *
+of_oxm_ovs_tcp_flags_OF_VERSION_1_2_dup(
+    of_oxm_ovs_tcp_flags_t *src)
+{
+    of_oxm_ovs_tcp_flags_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_oxm_ovs_tcp_flags_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_ovs_tcp_flags_experimenter_id_get(src, &val32);
+    of_oxm_ovs_tcp_flags_experimenter_id_set(dst, val32);
+
+    of_oxm_ovs_tcp_flags_value_get(src, &val16);
+    of_oxm_ovs_tcp_flags_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_ovs_tcp_flags_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_ovs_tcp_flags_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_ovs_tcp_flags_masked_t *
+of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_dup(
+    of_oxm_ovs_tcp_flags_masked_t *src)
+{
+    of_oxm_ovs_tcp_flags_masked_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_oxm_ovs_tcp_flags_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_ovs_tcp_flags_masked_experimenter_id_get(src, &val32);
+    of_oxm_ovs_tcp_flags_masked_experimenter_id_set(dst, val32);
+
+    of_oxm_ovs_tcp_flags_masked_value_get(src, &val16);
+    of_oxm_ovs_tcp_flags_masked_value_set(dst, val16);
+
+    of_oxm_ovs_tcp_flags_masked_value_mask_get(src, &val16);
+    of_oxm_ovs_tcp_flags_masked_value_mask_set(dst, val16);
 
     return dst;
 }
@@ -33066,6 +33135,10 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_icmpv4_code_masked_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_OVS_TCP_FLAGS_MASKED) {
+        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_IPV4_DST) {
         return of_oxm_ipv4_dst_OF_VERSION_1_3_dup(src);
     }
@@ -33304,6 +33377,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_METADATA) {
         return of_oxm_metadata_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_OVS_TCP_FLAGS) {
+        return of_oxm_ovs_tcp_flags_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
@@ -36317,6 +36394,67 @@ of_oxm_mpls_tc_masked_OF_VERSION_1_3_dup(
 
     of_oxm_mpls_tc_masked_value_mask_get(src, &val8);
     of_oxm_mpls_tc_masked_value_mask_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_ovs_tcp_flags
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_ovs_tcp_flags.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_ovs_tcp_flags_t *
+of_oxm_ovs_tcp_flags_OF_VERSION_1_3_dup(
+    of_oxm_ovs_tcp_flags_t *src)
+{
+    of_oxm_ovs_tcp_flags_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_oxm_ovs_tcp_flags_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_ovs_tcp_flags_experimenter_id_get(src, &val32);
+    of_oxm_ovs_tcp_flags_experimenter_id_set(dst, val32);
+
+    of_oxm_ovs_tcp_flags_value_get(src, &val16);
+    of_oxm_ovs_tcp_flags_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_ovs_tcp_flags_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_ovs_tcp_flags_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_ovs_tcp_flags_masked_t *
+of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_dup(
+    of_oxm_ovs_tcp_flags_masked_t *src)
+{
+    of_oxm_ovs_tcp_flags_masked_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_oxm_ovs_tcp_flags_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_ovs_tcp_flags_masked_experimenter_id_get(src, &val32);
+    of_oxm_ovs_tcp_flags_masked_experimenter_id_set(dst, val32);
+
+    of_oxm_ovs_tcp_flags_masked_value_get(src, &val16);
+    of_oxm_ovs_tcp_flags_masked_value_set(dst, val16);
+
+    of_oxm_ovs_tcp_flags_masked_value_mask_get(src, &val16);
+    of_oxm_ovs_tcp_flags_masked_value_mask_set(dst, val16);
 
     return dst;
 }
@@ -54848,6 +54986,10 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_icmpv4_code_masked_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_OVS_TCP_FLAGS_MASKED) {
+        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_IPV4_DST) {
         return of_oxm_ipv4_dst_OF_VERSION_1_4_dup(src);
     }
@@ -55086,6 +55228,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_METADATA) {
         return of_oxm_metadata_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_OVS_TCP_FLAGS) {
+        return of_oxm_ovs_tcp_flags_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
@@ -57997,6 +58143,67 @@ of_oxm_mpls_tc_masked_OF_VERSION_1_4_dup(
 
     of_oxm_mpls_tc_masked_value_mask_get(src, &val8);
     of_oxm_mpls_tc_masked_value_mask_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_ovs_tcp_flags
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_ovs_tcp_flags.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_ovs_tcp_flags_t *
+of_oxm_ovs_tcp_flags_OF_VERSION_1_4_dup(
+    of_oxm_ovs_tcp_flags_t *src)
+{
+    of_oxm_ovs_tcp_flags_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_oxm_ovs_tcp_flags_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_ovs_tcp_flags_experimenter_id_get(src, &val32);
+    of_oxm_ovs_tcp_flags_experimenter_id_set(dst, val32);
+
+    of_oxm_ovs_tcp_flags_value_get(src, &val16);
+    of_oxm_ovs_tcp_flags_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_ovs_tcp_flags_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_ovs_tcp_flags_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_ovs_tcp_flags_masked_t *
+of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_dup(
+    of_oxm_ovs_tcp_flags_masked_t *src)
+{
+    of_oxm_ovs_tcp_flags_masked_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_oxm_ovs_tcp_flags_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_ovs_tcp_flags_masked_experimenter_id_get(src, &val32);
+    of_oxm_ovs_tcp_flags_masked_experimenter_id_set(dst, val32);
+
+    of_oxm_ovs_tcp_flags_masked_value_get(src, &val16);
+    of_oxm_ovs_tcp_flags_masked_value_set(dst, val16);
+
+    of_oxm_ovs_tcp_flags_masked_value_mask_get(src, &val16);
+    of_oxm_ovs_tcp_flags_masked_value_mask_set(dst, val16);
 
     return dst;
 }
@@ -73910,6 +74117,48 @@ of_oxm_mpls_tc_masked_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_oxm_mpls_tc_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_ovs_tcp_flags_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_ovs_tcp_flags_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_ovs_tcp_flags_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_ovs_tcp_flags_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_ovs_tcp_flags_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

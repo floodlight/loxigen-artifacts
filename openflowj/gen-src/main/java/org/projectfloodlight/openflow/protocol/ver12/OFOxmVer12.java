@@ -338,6 +338,12 @@ abstract class OFOxmVer12 {
                case (int) 0x80004702:
                    // discriminator value 0x80004702L=0x80004702L for class OFOxmMplsTcMaskedVer12
                    return OFOxmMplsTcMaskedVer12.READER.readFrom(bb);
+               case (int) 0xffff5406:
+                   // discriminator value 0xffff5406L=0xffff5406L for class OFOxmOvsTcpFlagsVer12
+                   return OFOxmOvsTcpFlagsVer12.READER.readFrom(bb);
+               case (int) 0xffff5508:
+                   // discriminator value 0xffff5508L=0xffff5508L for class OFOxmOvsTcpFlagsMaskedVer12
+                   return OFOxmOvsTcpFlagsMaskedVer12.READER.readFrom(bb);
                case (int) 0x80002402:
                    // discriminator value 0x80002402L=0x80002402L for class OFOxmSctpDstVer12
                    return OFOxmSctpDstVer12.READER.readFrom(bb);

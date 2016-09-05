@@ -71,6 +71,10 @@ static inline int
 of_match_v1_compat_check(of_match_t *match)
 {
 
+    if (OF_MATCH_MASK_OVS_TCP_FLAGS_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_IPV6_FLABEL_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -411,6 +415,10 @@ of_match_to_wire_match_v1(of_match_t *src, of_match_v1_t *dst)
 static inline int
 of_match_v2_compat_check(of_match_t *match)
 {
+
+    if (OF_MATCH_MASK_OVS_TCP_FLAGS_ACTIVE_TEST(match)) {
+        return 0;
+    }
 
     if (OF_MATCH_MASK_IPV6_FLABEL_ACTIVE_TEST(match)) {
         return 0;
@@ -1899,6 +1907,22 @@ populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
             of_oxm_bsn_vfi_value_set(&elt, src->fields.bsn_vfi);
         }
     }
+    if (OF_MATCH_MASK_OVS_TCP_FLAGS_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_OVS_TCP_FLAGS_EXACT_TEST(src)) {
+            of_oxm_ovs_tcp_flags_masked_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ovs_tcp_flags_masked_value_set(&elt,
+                   src->fields.ovs_tcp_flags);
+            of_oxm_ovs_tcp_flags_masked_value_mask_set(&elt,
+                   src->masks.ovs_tcp_flags);
+        } else {  /* Active, but not masked */
+            of_oxm_ovs_tcp_flags_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ovs_tcp_flags_value_set(&elt, src->fields.ovs_tcp_flags);
+        }
+    }
 
     return OF_ERROR_NONE;
 }
@@ -2133,6 +2157,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
 
     while (rv == OF_ERROR_NONE) {
         switch (oxm_entry.object_id) { /* What kind of entry is this */
+
+        case OF_OXM_OVS_TCP_FLAGS_MASKED:
+            of_oxm_ovs_tcp_flags_masked_value_mask_get(
+                &oxm_entry,
+                &dst->masks.ovs_tcp_flags);
+            of_oxm_ovs_tcp_flags_masked_value_get(
+                &oxm_entry,
+                &dst->fields.ovs_tcp_flags);
+            of_memmask(&dst->fields.ovs_tcp_flags, &dst->masks.ovs_tcp_flags, sizeof(dst->fields.ovs_tcp_flags));
+            break;
+        case OF_OXM_OVS_TCP_FLAGS:
+            OF_MATCH_MASK_OVS_TCP_FLAGS_EXACT_SET(dst);
+            of_oxm_ovs_tcp_flags_value_get(
+                &oxm_entry,
+                &dst->fields.ovs_tcp_flags);
+            break;
 
         case OF_OXM_IPV6_FLABEL_MASKED:
             of_oxm_ipv6_flabel_masked_value_mask_get(

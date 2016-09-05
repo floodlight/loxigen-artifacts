@@ -10559,6 +10559,40 @@ typedef struct of_oxm_mpls_tc_s of_oxm_mpls_tc_t;
 typedef struct of_oxm_mpls_tc_masked_s of_oxm_mpls_tc_masked_t;
 
 /**
+ * Structure for of_oxm_ovs_tcp_flags object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_id_get/set 
+ *   Accessors for experimenter_id, a variable of type uint32.  Functions
+ *   are of type of_oxm_ovs_tcp_flags_uint32_get_f and _set_f.
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_oxm_ovs_tcp_flags_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_ovs_tcp_flags_s of_oxm_ovs_tcp_flags_t;
+
+/**
+ * Structure for of_oxm_ovs_tcp_flags_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_id_get/set 
+ *   Accessors for experimenter_id, a variable of type uint32.  Functions
+ *   are of type of_oxm_ovs_tcp_flags_masked_uint32_get_f and _set_f.
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_oxm_ovs_tcp_flags_masked_uint16_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type uint16.  Functions
+ *   are of type of_oxm_ovs_tcp_flags_masked_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_ovs_tcp_flags_masked_s of_oxm_ovs_tcp_flags_masked_t;
+
+/**
  * Structure for of_oxm_pbb_uca object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

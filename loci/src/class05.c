@@ -1184,6 +1184,12 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x80004702:
             *id = OF_OXM_MPLS_TC_MASKED;
             break;
+        case 0xffff5406:
+            *id = OF_OXM_OVS_TCP_FLAGS;
+            break;
+        case 0xffff5508:
+            *id = OF_OXM_OVS_TCP_FLAGS_MASKED;
+            break;
         default:
             *id = OF_OXM;
             break;
@@ -1595,6 +1601,12 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x80004f04:
             *id = OF_OXM_IPV6_EXTHDR_MASKED;
             break;
+        case 0xffff5406:
+            *id = OF_OXM_OVS_TCP_FLAGS;
+            break;
+        case 0xffff5508:
+            *id = OF_OXM_OVS_TCP_FLAGS_MASKED;
+            break;
         default:
             *id = OF_OXM;
             break;
@@ -1999,6 +2011,12 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x80005302:
             *id = OF_OXM_PBB_UCA_MASKED;
+            break;
+        case 0xffff5406:
+            *id = OF_OXM_OVS_TCP_FLAGS;
+            break;
+        case 0xffff5508:
+            *id = OF_OXM_OVS_TCP_FLAGS_MASKED;
             break;
         default:
             *id = OF_OXM;
