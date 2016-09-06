@@ -1,1 +1,1 @@
-78210955ca556a7f3428955c159c82c7cc3150ca Merge into master from pull request #512: add tcp_flags (https://github.com/floodlight/loxigen/pull/512)
+a97ee19a59ed7a9c302ccdf84b3023ec18a00c71 Merge into master from pull request #517: Add eth_type, ecn, tcp_flags, l3 interface class id, l3 src class id, and l3 dst class id TLVs (https://github.com/floodlight/loxigen/pull/517)

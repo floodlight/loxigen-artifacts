@@ -70,10 +70,14 @@ public interface OFBsnTlvs {
     OFBsnTlvDrop drop();
     OFBsnTlvDscp.Builder buildDscp() throws UnsupportedOperationException;
     OFBsnTlvDscp dscp(int value);
+    OFBsnTlvEcn.Builder buildEcn() throws UnsupportedOperationException;
+    OFBsnTlvEcn ecn(short value);
     OFBsnTlvEthDst.Builder buildEthDst() throws UnsupportedOperationException;
     OFBsnTlvEthDst ethDst(MacAddress value);
     OFBsnTlvEthSrc.Builder buildEthSrc() throws UnsupportedOperationException;
     OFBsnTlvEthSrc ethSrc(MacAddress value);
+    OFBsnTlvEthType.Builder buildEthType() throws UnsupportedOperationException;
+    OFBsnTlvEthType ethType(int value);
     OFBsnTlvExternalGatewayIp.Builder buildExternalGatewayIp() throws UnsupportedOperationException;
     OFBsnTlvExternalGatewayIp externalGatewayIp(IPv4Address value);
     OFBsnTlvExternalGatewayMac.Builder buildExternalGatewayMac() throws UnsupportedOperationException;
@@ -140,6 +144,12 @@ public interface OFBsnTlvs {
     OFBsnTlvKnownMulticastRate.Builder buildKnownMulticastRate() throws UnsupportedOperationException;
     OFBsnTlvKnownMulticastRate knownMulticastRate(long value);
     OFBsnTlvL2MulticastLookup l2MulticastLookup();
+    OFBsnTlvL3DstClassId.Builder buildL3DstClassId() throws UnsupportedOperationException;
+    OFBsnTlvL3DstClassId l3DstClassId(long value);
+    OFBsnTlvL3InterfaceClassId.Builder buildL3InterfaceClassId() throws UnsupportedOperationException;
+    OFBsnTlvL3InterfaceClassId l3InterfaceClassId(long value);
+    OFBsnTlvL3SrcClassId.Builder buildL3SrcClassId() throws UnsupportedOperationException;
+    OFBsnTlvL3SrcClassId l3SrcClassId(long value);
     OFBsnTlvLoopbackPort.Builder buildLoopbackPort() throws UnsupportedOperationException;
     OFBsnTlvLoopbackPort loopbackPort(OFPort value);
     OFBsnTlvMac.Builder buildMac() throws UnsupportedOperationException;
@@ -222,6 +232,8 @@ public interface OFBsnTlvs {
     OFBsnTlvSubAgentId subAgentId(long value);
     OFBsnTlvTcpDst.Builder buildTcpDst() throws UnsupportedOperationException;
     OFBsnTlvTcpDst tcpDst(int value);
+    OFBsnTlvTcpFlags.Builder buildTcpFlags() throws UnsupportedOperationException;
+    OFBsnTlvTcpFlags tcpFlags(int value);
     OFBsnTlvTcpSrc.Builder buildTcpSrc() throws UnsupportedOperationException;
     OFBsnTlvTcpSrc tcpSrc(int value);
     OFBsnTlvTtl.Builder buildTtl() throws UnsupportedOperationException;

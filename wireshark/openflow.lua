@@ -8208,12 +8208,18 @@ fields['of13.bsn_tlv_drop.length'] = ProtoField.uint16("of13.bsn_tlv_drop.length
 fields['of13.bsn_tlv_dscp.type'] = ProtoField.uint16("of13.bsn_tlv_dscp.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_dscp.length'] = ProtoField.uint16("of13.bsn_tlv_dscp.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_dscp.value'] = ProtoField.uint16("of13.bsn_tlv_dscp.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_ecn.type'] = ProtoField.uint16("of13.bsn_tlv_ecn.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_ecn.length'] = ProtoField.uint16("of13.bsn_tlv_ecn.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_ecn.value'] = ProtoField.uint8("of13.bsn_tlv_ecn.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of13.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of13.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.value'] = ProtoField.ether("of13.bsn_tlv_eth_dst.value", "value")
 fields['of13.bsn_tlv_eth_src.type'] = ProtoField.uint16("of13.bsn_tlv_eth_src.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_eth_src.length'] = ProtoField.uint16("of13.bsn_tlv_eth_src.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_eth_src.value'] = ProtoField.ether("of13.bsn_tlv_eth_src.value", "value")
+fields['of13.bsn_tlv_eth_type.type'] = ProtoField.uint16("of13.bsn_tlv_eth_type.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_eth_type.length'] = ProtoField.uint16("of13.bsn_tlv_eth_type.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_eth_type.value'] = ProtoField.uint16("of13.bsn_tlv_eth_type.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_external_gateway_ip.type'] = ProtoField.uint16("of13.bsn_tlv_external_gateway_ip.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_external_gateway_ip.length'] = ProtoField.uint16("of13.bsn_tlv_external_gateway_ip.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_external_gateway_ip.value'] = ProtoField.ipv4("of13.bsn_tlv_external_gateway_ip.value", "value")
@@ -8321,6 +8327,15 @@ fields['of13.bsn_tlv_known_multicast_rate.length'] = ProtoField.uint16("of13.bsn
 fields['of13.bsn_tlv_known_multicast_rate.value'] = ProtoField.uint32("of13.bsn_tlv_known_multicast_rate.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_l2_multicast_lookup.type'] = ProtoField.uint16("of13.bsn_tlv_l2_multicast_lookup.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_l2_multicast_lookup.length'] = ProtoField.uint16("of13.bsn_tlv_l2_multicast_lookup.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_l3_dst_class_id.type'] = ProtoField.uint16("of13.bsn_tlv_l3_dst_class_id.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_l3_dst_class_id.length'] = ProtoField.uint16("of13.bsn_tlv_l3_dst_class_id.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_l3_dst_class_id.value'] = ProtoField.uint32("of13.bsn_tlv_l3_dst_class_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_l3_interface_class_id.type'] = ProtoField.uint16("of13.bsn_tlv_l3_interface_class_id.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_l3_interface_class_id.length'] = ProtoField.uint16("of13.bsn_tlv_l3_interface_class_id.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_l3_interface_class_id.value'] = ProtoField.uint32("of13.bsn_tlv_l3_interface_class_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_l3_src_class_id.type'] = ProtoField.uint16("of13.bsn_tlv_l3_src_class_id.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_l3_src_class_id.length'] = ProtoField.uint16("of13.bsn_tlv_l3_src_class_id.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_l3_src_class_id.value'] = ProtoField.uint32("of13.bsn_tlv_l3_src_class_id.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_port.type'] = ProtoField.uint16("of13.bsn_tlv_loopback_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_port.length'] = ProtoField.uint16("of13.bsn_tlv_loopback_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_port.value'] = ProtoField.uint32("of13.bsn_tlv_loopback_port.value", "value", base.DEC, nil)
@@ -8450,6 +8465,9 @@ fields['of13.bsn_tlv_sub_agent_id.value'] = ProtoField.uint32("of13.bsn_tlv_sub_
 fields['of13.bsn_tlv_tcp_dst.type'] = ProtoField.uint16("of13.bsn_tlv_tcp_dst.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_tcp_dst.length'] = ProtoField.uint16("of13.bsn_tlv_tcp_dst.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_tcp_dst.value'] = ProtoField.uint16("of13.bsn_tlv_tcp_dst.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_tcp_flags.type'] = ProtoField.uint16("of13.bsn_tlv_tcp_flags.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_tcp_flags.length'] = ProtoField.uint16("of13.bsn_tlv_tcp_flags.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_tcp_flags.value'] = ProtoField.uint16("of13.bsn_tlv_tcp_flags.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_tcp_src.type'] = ProtoField.uint16("of13.bsn_tlv_tcp_src.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_tcp_src.length'] = ProtoField.uint16("of13.bsn_tlv_tcp_src.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_tcp_src.value'] = ProtoField.uint16("of13.bsn_tlv_tcp_src.value", "value", base.DEC, nil)
@@ -11020,12 +11038,18 @@ fields['of14.bsn_tlv_drop.length'] = ProtoField.uint16("of14.bsn_tlv_drop.length
 fields['of14.bsn_tlv_dscp.type'] = ProtoField.uint16("of14.bsn_tlv_dscp.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_dscp.length'] = ProtoField.uint16("of14.bsn_tlv_dscp.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_dscp.value'] = ProtoField.uint16("of14.bsn_tlv_dscp.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_ecn.type'] = ProtoField.uint16("of14.bsn_tlv_ecn.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_ecn.length'] = ProtoField.uint16("of14.bsn_tlv_ecn.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_ecn.value'] = ProtoField.uint8("of14.bsn_tlv_ecn.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of14.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of14.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_eth_dst.value'] = ProtoField.ether("of14.bsn_tlv_eth_dst.value", "value")
 fields['of14.bsn_tlv_eth_src.type'] = ProtoField.uint16("of14.bsn_tlv_eth_src.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_eth_src.length'] = ProtoField.uint16("of14.bsn_tlv_eth_src.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_eth_src.value'] = ProtoField.ether("of14.bsn_tlv_eth_src.value", "value")
+fields['of14.bsn_tlv_eth_type.type'] = ProtoField.uint16("of14.bsn_tlv_eth_type.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_eth_type.length'] = ProtoField.uint16("of14.bsn_tlv_eth_type.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_eth_type.value'] = ProtoField.uint16("of14.bsn_tlv_eth_type.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_external_gateway_ip.type'] = ProtoField.uint16("of14.bsn_tlv_external_gateway_ip.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_external_gateway_ip.length'] = ProtoField.uint16("of14.bsn_tlv_external_gateway_ip.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_external_gateway_ip.value'] = ProtoField.ipv4("of14.bsn_tlv_external_gateway_ip.value", "value")
@@ -11133,6 +11157,15 @@ fields['of14.bsn_tlv_known_multicast_rate.length'] = ProtoField.uint16("of14.bsn
 fields['of14.bsn_tlv_known_multicast_rate.value'] = ProtoField.uint32("of14.bsn_tlv_known_multicast_rate.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_l2_multicast_lookup.type'] = ProtoField.uint16("of14.bsn_tlv_l2_multicast_lookup.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_l2_multicast_lookup.length'] = ProtoField.uint16("of14.bsn_tlv_l2_multicast_lookup.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_l3_dst_class_id.type'] = ProtoField.uint16("of14.bsn_tlv_l3_dst_class_id.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_l3_dst_class_id.length'] = ProtoField.uint16("of14.bsn_tlv_l3_dst_class_id.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_l3_dst_class_id.value'] = ProtoField.uint32("of14.bsn_tlv_l3_dst_class_id.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_l3_interface_class_id.type'] = ProtoField.uint16("of14.bsn_tlv_l3_interface_class_id.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_l3_interface_class_id.length'] = ProtoField.uint16("of14.bsn_tlv_l3_interface_class_id.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_l3_interface_class_id.value'] = ProtoField.uint32("of14.bsn_tlv_l3_interface_class_id.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_l3_src_class_id.type'] = ProtoField.uint16("of14.bsn_tlv_l3_src_class_id.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_l3_src_class_id.length'] = ProtoField.uint16("of14.bsn_tlv_l3_src_class_id.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_l3_src_class_id.value'] = ProtoField.uint32("of14.bsn_tlv_l3_src_class_id.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_port.type'] = ProtoField.uint16("of14.bsn_tlv_loopback_port.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_port.length'] = ProtoField.uint16("of14.bsn_tlv_loopback_port.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_port.value'] = ProtoField.uint32("of14.bsn_tlv_loopback_port.value", "value", base.DEC, nil)
@@ -11262,6 +11295,9 @@ fields['of14.bsn_tlv_sub_agent_id.value'] = ProtoField.uint32("of14.bsn_tlv_sub_
 fields['of14.bsn_tlv_tcp_dst.type'] = ProtoField.uint16("of14.bsn_tlv_tcp_dst.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_tcp_dst.length'] = ProtoField.uint16("of14.bsn_tlv_tcp_dst.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_tcp_dst.value'] = ProtoField.uint16("of14.bsn_tlv_tcp_dst.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_tcp_flags.type'] = ProtoField.uint16("of14.bsn_tlv_tcp_flags.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_tcp_flags.length'] = ProtoField.uint16("of14.bsn_tlv_tcp_flags.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_tcp_flags.value'] = ProtoField.uint16("of14.bsn_tlv_tcp_flags.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_tcp_src.type'] = ProtoField.uint16("of14.bsn_tlv_tcp_src.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_tcp_src.length'] = ProtoField.uint16("of14.bsn_tlv_tcp_src.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_tcp_src.value'] = ProtoField.uint16("of14.bsn_tlv_tcp_src.value", "value", base.DEC, nil)
@@ -14045,12 +14081,18 @@ fields['of15.bsn_tlv_drop.length'] = ProtoField.uint16("of15.bsn_tlv_drop.length
 fields['of15.bsn_tlv_dscp.type'] = ProtoField.uint16("of15.bsn_tlv_dscp.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_dscp.length'] = ProtoField.uint16("of15.bsn_tlv_dscp.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_dscp.value'] = ProtoField.uint16("of15.bsn_tlv_dscp.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_ecn.type'] = ProtoField.uint16("of15.bsn_tlv_ecn.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_ecn.length'] = ProtoField.uint16("of15.bsn_tlv_ecn.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ecn.value'] = ProtoField.uint8("of15.bsn_tlv_ecn.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of15.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of15.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_eth_dst.value'] = ProtoField.ether("of15.bsn_tlv_eth_dst.value", "value")
 fields['of15.bsn_tlv_eth_src.type'] = ProtoField.uint16("of15.bsn_tlv_eth_src.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_eth_src.length'] = ProtoField.uint16("of15.bsn_tlv_eth_src.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_eth_src.value'] = ProtoField.ether("of15.bsn_tlv_eth_src.value", "value")
+fields['of15.bsn_tlv_eth_type.type'] = ProtoField.uint16("of15.bsn_tlv_eth_type.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_eth_type.length'] = ProtoField.uint16("of15.bsn_tlv_eth_type.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_eth_type.value'] = ProtoField.uint16("of15.bsn_tlv_eth_type.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_external_gateway_ip.type'] = ProtoField.uint16("of15.bsn_tlv_external_gateway_ip.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_external_gateway_ip.length'] = ProtoField.uint16("of15.bsn_tlv_external_gateway_ip.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_external_gateway_ip.value'] = ProtoField.ipv4("of15.bsn_tlv_external_gateway_ip.value", "value")
@@ -14158,6 +14200,15 @@ fields['of15.bsn_tlv_known_multicast_rate.length'] = ProtoField.uint16("of15.bsn
 fields['of15.bsn_tlv_known_multicast_rate.value'] = ProtoField.uint32("of15.bsn_tlv_known_multicast_rate.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_l2_multicast_lookup.type'] = ProtoField.uint16("of15.bsn_tlv_l2_multicast_lookup.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_l2_multicast_lookup.length'] = ProtoField.uint16("of15.bsn_tlv_l2_multicast_lookup.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_l3_dst_class_id.type'] = ProtoField.uint16("of15.bsn_tlv_l3_dst_class_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_l3_dst_class_id.length'] = ProtoField.uint16("of15.bsn_tlv_l3_dst_class_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_l3_dst_class_id.value'] = ProtoField.uint32("of15.bsn_tlv_l3_dst_class_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_l3_interface_class_id.type'] = ProtoField.uint16("of15.bsn_tlv_l3_interface_class_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_l3_interface_class_id.length'] = ProtoField.uint16("of15.bsn_tlv_l3_interface_class_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_l3_interface_class_id.value'] = ProtoField.uint32("of15.bsn_tlv_l3_interface_class_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_l3_src_class_id.type'] = ProtoField.uint16("of15.bsn_tlv_l3_src_class_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_l3_src_class_id.length'] = ProtoField.uint16("of15.bsn_tlv_l3_src_class_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_l3_src_class_id.value'] = ProtoField.uint32("of15.bsn_tlv_l3_src_class_id.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_port.type'] = ProtoField.uint16("of15.bsn_tlv_loopback_port.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_port.length'] = ProtoField.uint16("of15.bsn_tlv_loopback_port.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_port.value'] = ProtoField.uint32("of15.bsn_tlv_loopback_port.value", "value", base.DEC, nil)
@@ -14287,6 +14338,9 @@ fields['of15.bsn_tlv_sub_agent_id.value'] = ProtoField.uint32("of15.bsn_tlv_sub_
 fields['of15.bsn_tlv_tcp_dst.type'] = ProtoField.uint16("of15.bsn_tlv_tcp_dst.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_tcp_dst.length'] = ProtoField.uint16("of15.bsn_tlv_tcp_dst.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_tcp_dst.value'] = ProtoField.uint16("of15.bsn_tlv_tcp_dst.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_tcp_flags.type'] = ProtoField.uint16("of15.bsn_tlv_tcp_flags.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_tcp_flags.length'] = ProtoField.uint16("of15.bsn_tlv_tcp_flags.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_tcp_flags.value'] = ProtoField.uint16("of15.bsn_tlv_tcp_flags.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_tcp_src.type'] = ProtoField.uint16("of15.bsn_tlv_tcp_src.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_tcp_src.length'] = ProtoField.uint16("of15.bsn_tlv_tcp_src.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_tcp_src.value'] = ProtoField.uint16("of15.bsn_tlv_tcp_src.value", "value", base.DEC, nil)
@@ -20302,12 +20356,18 @@ p_of.fields = {
     fields['of13.bsn_tlv_dscp.type'],
     fields['of13.bsn_tlv_dscp.length'],
     fields['of13.bsn_tlv_dscp.value'],
+    fields['of13.bsn_tlv_ecn.type'],
+    fields['of13.bsn_tlv_ecn.length'],
+    fields['of13.bsn_tlv_ecn.value'],
     fields['of13.bsn_tlv_eth_dst.type'],
     fields['of13.bsn_tlv_eth_dst.length'],
     fields['of13.bsn_tlv_eth_dst.value'],
     fields['of13.bsn_tlv_eth_src.type'],
     fields['of13.bsn_tlv_eth_src.length'],
     fields['of13.bsn_tlv_eth_src.value'],
+    fields['of13.bsn_tlv_eth_type.type'],
+    fields['of13.bsn_tlv_eth_type.length'],
+    fields['of13.bsn_tlv_eth_type.value'],
     fields['of13.bsn_tlv_external_gateway_ip.type'],
     fields['of13.bsn_tlv_external_gateway_ip.length'],
     fields['of13.bsn_tlv_external_gateway_ip.value'],
@@ -20415,6 +20475,15 @@ p_of.fields = {
     fields['of13.bsn_tlv_known_multicast_rate.value'],
     fields['of13.bsn_tlv_l2_multicast_lookup.type'],
     fields['of13.bsn_tlv_l2_multicast_lookup.length'],
+    fields['of13.bsn_tlv_l3_dst_class_id.type'],
+    fields['of13.bsn_tlv_l3_dst_class_id.length'],
+    fields['of13.bsn_tlv_l3_dst_class_id.value'],
+    fields['of13.bsn_tlv_l3_interface_class_id.type'],
+    fields['of13.bsn_tlv_l3_interface_class_id.length'],
+    fields['of13.bsn_tlv_l3_interface_class_id.value'],
+    fields['of13.bsn_tlv_l3_src_class_id.type'],
+    fields['of13.bsn_tlv_l3_src_class_id.length'],
+    fields['of13.bsn_tlv_l3_src_class_id.value'],
     fields['of13.bsn_tlv_loopback_port.type'],
     fields['of13.bsn_tlv_loopback_port.length'],
     fields['of13.bsn_tlv_loopback_port.value'],
@@ -20544,6 +20613,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_tcp_dst.type'],
     fields['of13.bsn_tlv_tcp_dst.length'],
     fields['of13.bsn_tlv_tcp_dst.value'],
+    fields['of13.bsn_tlv_tcp_flags.type'],
+    fields['of13.bsn_tlv_tcp_flags.length'],
+    fields['of13.bsn_tlv_tcp_flags.value'],
     fields['of13.bsn_tlv_tcp_src.type'],
     fields['of13.bsn_tlv_tcp_src.length'],
     fields['of13.bsn_tlv_tcp_src.value'],
@@ -23114,12 +23186,18 @@ p_of.fields = {
     fields['of14.bsn_tlv_dscp.type'],
     fields['of14.bsn_tlv_dscp.length'],
     fields['of14.bsn_tlv_dscp.value'],
+    fields['of14.bsn_tlv_ecn.type'],
+    fields['of14.bsn_tlv_ecn.length'],
+    fields['of14.bsn_tlv_ecn.value'],
     fields['of14.bsn_tlv_eth_dst.type'],
     fields['of14.bsn_tlv_eth_dst.length'],
     fields['of14.bsn_tlv_eth_dst.value'],
     fields['of14.bsn_tlv_eth_src.type'],
     fields['of14.bsn_tlv_eth_src.length'],
     fields['of14.bsn_tlv_eth_src.value'],
+    fields['of14.bsn_tlv_eth_type.type'],
+    fields['of14.bsn_tlv_eth_type.length'],
+    fields['of14.bsn_tlv_eth_type.value'],
     fields['of14.bsn_tlv_external_gateway_ip.type'],
     fields['of14.bsn_tlv_external_gateway_ip.length'],
     fields['of14.bsn_tlv_external_gateway_ip.value'],
@@ -23227,6 +23305,15 @@ p_of.fields = {
     fields['of14.bsn_tlv_known_multicast_rate.value'],
     fields['of14.bsn_tlv_l2_multicast_lookup.type'],
     fields['of14.bsn_tlv_l2_multicast_lookup.length'],
+    fields['of14.bsn_tlv_l3_dst_class_id.type'],
+    fields['of14.bsn_tlv_l3_dst_class_id.length'],
+    fields['of14.bsn_tlv_l3_dst_class_id.value'],
+    fields['of14.bsn_tlv_l3_interface_class_id.type'],
+    fields['of14.bsn_tlv_l3_interface_class_id.length'],
+    fields['of14.bsn_tlv_l3_interface_class_id.value'],
+    fields['of14.bsn_tlv_l3_src_class_id.type'],
+    fields['of14.bsn_tlv_l3_src_class_id.length'],
+    fields['of14.bsn_tlv_l3_src_class_id.value'],
     fields['of14.bsn_tlv_loopback_port.type'],
     fields['of14.bsn_tlv_loopback_port.length'],
     fields['of14.bsn_tlv_loopback_port.value'],
@@ -23356,6 +23443,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_tcp_dst.type'],
     fields['of14.bsn_tlv_tcp_dst.length'],
     fields['of14.bsn_tlv_tcp_dst.value'],
+    fields['of14.bsn_tlv_tcp_flags.type'],
+    fields['of14.bsn_tlv_tcp_flags.length'],
+    fields['of14.bsn_tlv_tcp_flags.value'],
     fields['of14.bsn_tlv_tcp_src.type'],
     fields['of14.bsn_tlv_tcp_src.length'],
     fields['of14.bsn_tlv_tcp_src.value'],
@@ -26139,12 +26229,18 @@ p_of.fields = {
     fields['of15.bsn_tlv_dscp.type'],
     fields['of15.bsn_tlv_dscp.length'],
     fields['of15.bsn_tlv_dscp.value'],
+    fields['of15.bsn_tlv_ecn.type'],
+    fields['of15.bsn_tlv_ecn.length'],
+    fields['of15.bsn_tlv_ecn.value'],
     fields['of15.bsn_tlv_eth_dst.type'],
     fields['of15.bsn_tlv_eth_dst.length'],
     fields['of15.bsn_tlv_eth_dst.value'],
     fields['of15.bsn_tlv_eth_src.type'],
     fields['of15.bsn_tlv_eth_src.length'],
     fields['of15.bsn_tlv_eth_src.value'],
+    fields['of15.bsn_tlv_eth_type.type'],
+    fields['of15.bsn_tlv_eth_type.length'],
+    fields['of15.bsn_tlv_eth_type.value'],
     fields['of15.bsn_tlv_external_gateway_ip.type'],
     fields['of15.bsn_tlv_external_gateway_ip.length'],
     fields['of15.bsn_tlv_external_gateway_ip.value'],
@@ -26252,6 +26348,15 @@ p_of.fields = {
     fields['of15.bsn_tlv_known_multicast_rate.value'],
     fields['of15.bsn_tlv_l2_multicast_lookup.type'],
     fields['of15.bsn_tlv_l2_multicast_lookup.length'],
+    fields['of15.bsn_tlv_l3_dst_class_id.type'],
+    fields['of15.bsn_tlv_l3_dst_class_id.length'],
+    fields['of15.bsn_tlv_l3_dst_class_id.value'],
+    fields['of15.bsn_tlv_l3_interface_class_id.type'],
+    fields['of15.bsn_tlv_l3_interface_class_id.length'],
+    fields['of15.bsn_tlv_l3_interface_class_id.value'],
+    fields['of15.bsn_tlv_l3_src_class_id.type'],
+    fields['of15.bsn_tlv_l3_src_class_id.length'],
+    fields['of15.bsn_tlv_l3_src_class_id.value'],
     fields['of15.bsn_tlv_loopback_port.type'],
     fields['of15.bsn_tlv_loopback_port.length'],
     fields['of15.bsn_tlv_loopback_port.value'],
@@ -26381,6 +26486,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_tcp_dst.type'],
     fields['of15.bsn_tlv_tcp_dst.length'],
     fields['of15.bsn_tlv_tcp_dst.value'],
+    fields['of15.bsn_tlv_tcp_flags.type'],
+    fields['of15.bsn_tlv_tcp_flags.length'],
+    fields['of15.bsn_tlv_tcp_flags.value'],
     fields['of15.bsn_tlv_tcp_src.type'],
     fields['of15.bsn_tlv_tcp_src.length'],
     fields['of15.bsn_tlv_tcp_src.value'],
@@ -37864,6 +37972,16 @@ function dissect_of_bsn_tlv_dscp_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[112] = dissect_of_bsn_tlv_dscp_v4
 
+-- child class of_bsn_tlv_ecn
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ecn_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ecn.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ecn.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_ecn.value')
+    return 'of_bsn_tlv_ecn'
+end
+of_bsn_tlv_v4_dissectors[132] = dissect_of_bsn_tlv_ecn_v4
+
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_eth_dst_v4(reader, subtree)
@@ -37883,6 +38001,16 @@ function dissect_of_bsn_tlv_eth_src_v4(reader, subtree)
     return 'of_bsn_tlv_eth_src'
 end
 of_bsn_tlv_v4_dissectors[32] = dissect_of_bsn_tlv_eth_src_v4
+
+-- child class of_bsn_tlv_eth_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_eth_type_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_eth_type.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_eth_type.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_eth_type.value')
+    return 'of_bsn_tlv_eth_type'
+end
+of_bsn_tlv_v4_dissectors[131] = dissect_of_bsn_tlv_eth_type_v4
 
 -- child class of_bsn_tlv_external_gateway_ip
 -- Child of of_bsn_tlv
@@ -38235,6 +38363,36 @@ function dissect_of_bsn_tlv_l2_multicast_lookup_v4(reader, subtree)
     return 'of_bsn_tlv_l2_multicast_lookup'
 end
 of_bsn_tlv_v4_dissectors[79] = dissect_of_bsn_tlv_l2_multicast_lookup_v4
+
+-- child class of_bsn_tlv_l3_dst_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_l3_dst_class_id_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_l3_dst_class_id.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_l3_dst_class_id.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_l3_dst_class_id.value')
+    return 'of_bsn_tlv_l3_dst_class_id'
+end
+of_bsn_tlv_v4_dissectors[136] = dissect_of_bsn_tlv_l3_dst_class_id_v4
+
+-- child class of_bsn_tlv_l3_interface_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_l3_interface_class_id_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_l3_interface_class_id.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_l3_interface_class_id.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_l3_interface_class_id.value')
+    return 'of_bsn_tlv_l3_interface_class_id'
+end
+of_bsn_tlv_v4_dissectors[134] = dissect_of_bsn_tlv_l3_interface_class_id_v4
+
+-- child class of_bsn_tlv_l3_src_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_l3_src_class_id_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_l3_src_class_id.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_l3_src_class_id.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_l3_src_class_id.value')
+    return 'of_bsn_tlv_l3_src_class_id'
+end
+of_bsn_tlv_v4_dissectors[135] = dissect_of_bsn_tlv_l3_src_class_id_v4
 
 -- child class of_bsn_tlv_loopback_port
 -- Child of of_bsn_tlv
@@ -38692,6 +38850,16 @@ function dissect_of_bsn_tlv_tcp_dst_v4(reader, subtree)
     return 'of_bsn_tlv_tcp_dst'
 end
 of_bsn_tlv_v4_dissectors[66] = dissect_of_bsn_tlv_tcp_dst_v4
+
+-- child class of_bsn_tlv_tcp_flags
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_tcp_flags_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_tcp_flags.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_tcp_flags.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_tcp_flags.value')
+    return 'of_bsn_tlv_tcp_flags'
+end
+of_bsn_tlv_v4_dissectors[133] = dissect_of_bsn_tlv_tcp_flags_v4
 
 -- child class of_bsn_tlv_tcp_src
 -- Child of of_bsn_tlv
@@ -45340,6 +45508,16 @@ function dissect_of_bsn_tlv_dscp_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[112] = dissect_of_bsn_tlv_dscp_v5
 
+-- child class of_bsn_tlv_ecn
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ecn_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ecn.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ecn.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_ecn.value')
+    return 'of_bsn_tlv_ecn'
+end
+of_bsn_tlv_v5_dissectors[132] = dissect_of_bsn_tlv_ecn_v5
+
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_eth_dst_v5(reader, subtree)
@@ -45359,6 +45537,16 @@ function dissect_of_bsn_tlv_eth_src_v5(reader, subtree)
     return 'of_bsn_tlv_eth_src'
 end
 of_bsn_tlv_v5_dissectors[32] = dissect_of_bsn_tlv_eth_src_v5
+
+-- child class of_bsn_tlv_eth_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_eth_type_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_eth_type.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_eth_type.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_eth_type.value')
+    return 'of_bsn_tlv_eth_type'
+end
+of_bsn_tlv_v5_dissectors[131] = dissect_of_bsn_tlv_eth_type_v5
 
 -- child class of_bsn_tlv_external_gateway_ip
 -- Child of of_bsn_tlv
@@ -45711,6 +45899,36 @@ function dissect_of_bsn_tlv_l2_multicast_lookup_v5(reader, subtree)
     return 'of_bsn_tlv_l2_multicast_lookup'
 end
 of_bsn_tlv_v5_dissectors[79] = dissect_of_bsn_tlv_l2_multicast_lookup_v5
+
+-- child class of_bsn_tlv_l3_dst_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_l3_dst_class_id_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_l3_dst_class_id.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_l3_dst_class_id.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_l3_dst_class_id.value')
+    return 'of_bsn_tlv_l3_dst_class_id'
+end
+of_bsn_tlv_v5_dissectors[136] = dissect_of_bsn_tlv_l3_dst_class_id_v5
+
+-- child class of_bsn_tlv_l3_interface_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_l3_interface_class_id_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_l3_interface_class_id.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_l3_interface_class_id.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_l3_interface_class_id.value')
+    return 'of_bsn_tlv_l3_interface_class_id'
+end
+of_bsn_tlv_v5_dissectors[134] = dissect_of_bsn_tlv_l3_interface_class_id_v5
+
+-- child class of_bsn_tlv_l3_src_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_l3_src_class_id_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_l3_src_class_id.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_l3_src_class_id.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_l3_src_class_id.value')
+    return 'of_bsn_tlv_l3_src_class_id'
+end
+of_bsn_tlv_v5_dissectors[135] = dissect_of_bsn_tlv_l3_src_class_id_v5
 
 -- child class of_bsn_tlv_loopback_port
 -- Child of of_bsn_tlv
@@ -46168,6 +46386,16 @@ function dissect_of_bsn_tlv_tcp_dst_v5(reader, subtree)
     return 'of_bsn_tlv_tcp_dst'
 end
 of_bsn_tlv_v5_dissectors[66] = dissect_of_bsn_tlv_tcp_dst_v5
+
+-- child class of_bsn_tlv_tcp_flags
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_tcp_flags_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_tcp_flags.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_tcp_flags.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_tcp_flags.value')
+    return 'of_bsn_tlv_tcp_flags'
+end
+of_bsn_tlv_v5_dissectors[133] = dissect_of_bsn_tlv_tcp_flags_v5
 
 -- child class of_bsn_tlv_tcp_src
 -- Child of of_bsn_tlv
@@ -53327,6 +53555,16 @@ function dissect_of_bsn_tlv_dscp_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[112] = dissect_of_bsn_tlv_dscp_v6
 
+-- child class of_bsn_tlv_ecn
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ecn_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ecn.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ecn.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_ecn.value')
+    return 'of_bsn_tlv_ecn'
+end
+of_bsn_tlv_v6_dissectors[132] = dissect_of_bsn_tlv_ecn_v6
+
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_eth_dst_v6(reader, subtree)
@@ -53346,6 +53584,16 @@ function dissect_of_bsn_tlv_eth_src_v6(reader, subtree)
     return 'of_bsn_tlv_eth_src'
 end
 of_bsn_tlv_v6_dissectors[32] = dissect_of_bsn_tlv_eth_src_v6
+
+-- child class of_bsn_tlv_eth_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_eth_type_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_eth_type.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_eth_type.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_eth_type.value')
+    return 'of_bsn_tlv_eth_type'
+end
+of_bsn_tlv_v6_dissectors[131] = dissect_of_bsn_tlv_eth_type_v6
 
 -- child class of_bsn_tlv_external_gateway_ip
 -- Child of of_bsn_tlv
@@ -53698,6 +53946,36 @@ function dissect_of_bsn_tlv_l2_multicast_lookup_v6(reader, subtree)
     return 'of_bsn_tlv_l2_multicast_lookup'
 end
 of_bsn_tlv_v6_dissectors[79] = dissect_of_bsn_tlv_l2_multicast_lookup_v6
+
+-- child class of_bsn_tlv_l3_dst_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_l3_dst_class_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_l3_dst_class_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_l3_dst_class_id.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_l3_dst_class_id.value')
+    return 'of_bsn_tlv_l3_dst_class_id'
+end
+of_bsn_tlv_v6_dissectors[136] = dissect_of_bsn_tlv_l3_dst_class_id_v6
+
+-- child class of_bsn_tlv_l3_interface_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_l3_interface_class_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_l3_interface_class_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_l3_interface_class_id.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_l3_interface_class_id.value')
+    return 'of_bsn_tlv_l3_interface_class_id'
+end
+of_bsn_tlv_v6_dissectors[134] = dissect_of_bsn_tlv_l3_interface_class_id_v6
+
+-- child class of_bsn_tlv_l3_src_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_l3_src_class_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_l3_src_class_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_l3_src_class_id.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_l3_src_class_id.value')
+    return 'of_bsn_tlv_l3_src_class_id'
+end
+of_bsn_tlv_v6_dissectors[135] = dissect_of_bsn_tlv_l3_src_class_id_v6
 
 -- child class of_bsn_tlv_loopback_port
 -- Child of of_bsn_tlv
@@ -54155,6 +54433,16 @@ function dissect_of_bsn_tlv_tcp_dst_v6(reader, subtree)
     return 'of_bsn_tlv_tcp_dst'
 end
 of_bsn_tlv_v6_dissectors[66] = dissect_of_bsn_tlv_tcp_dst_v6
+
+-- child class of_bsn_tlv_tcp_flags
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_tcp_flags_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tcp_flags.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tcp_flags.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tcp_flags.value')
+    return 'of_bsn_tlv_tcp_flags'
+end
+of_bsn_tlv_v6_dissectors[133] = dissect_of_bsn_tlv_tcp_flags_v6
 
 -- child class of_bsn_tlv_tcp_src
 -- Child of of_bsn_tlv

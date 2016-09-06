@@ -6617,6 +6617,17 @@ typedef struct of_bsn_tlv_drop_s of_bsn_tlv_drop_t;
 typedef struct of_bsn_tlv_dscp_s of_bsn_tlv_dscp_t;
 
 /**
+ * Structure for of_bsn_tlv_ecn object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_ecn_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_ecn_s of_bsn_tlv_ecn_t;
+
+/**
  * Structure for of_bsn_tlv_eth_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6637,6 +6648,17 @@ typedef struct of_bsn_tlv_eth_dst_s of_bsn_tlv_eth_dst_t;
  *
  */
 typedef struct of_bsn_tlv_eth_src_s of_bsn_tlv_eth_src_t;
+
+/**
+ * Structure for of_bsn_tlv_eth_type object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_eth_type_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_eth_type_s of_bsn_tlv_eth_type_t;
 
 /**
  * Structure for of_bsn_tlv_external_gateway_ip object.  Get/set
@@ -7030,6 +7052,39 @@ typedef struct of_bsn_tlv_known_multicast_rate_s of_bsn_tlv_known_multicast_rate
  *
  */
 typedef struct of_bsn_tlv_l2_multicast_lookup_s of_bsn_tlv_l2_multicast_lookup_t;
+
+/**
+ * Structure for of_bsn_tlv_l3_dst_class_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_l3_dst_class_id_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_l3_dst_class_id_s of_bsn_tlv_l3_dst_class_id_t;
+
+/**
+ * Structure for of_bsn_tlv_l3_interface_class_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_l3_interface_class_id_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_l3_interface_class_id_s of_bsn_tlv_l3_interface_class_id_t;
+
+/**
+ * Structure for of_bsn_tlv_l3_src_class_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_l3_src_class_id_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_l3_src_class_id_s of_bsn_tlv_l3_src_class_id_t;
 
 /**
  * Structure for of_bsn_tlv_loopback_port object.  Get/set
@@ -7500,6 +7555,17 @@ typedef struct of_bsn_tlv_sub_agent_id_s of_bsn_tlv_sub_agent_id_t;
  *
  */
 typedef struct of_bsn_tlv_tcp_dst_s of_bsn_tlv_tcp_dst_t;
+
+/**
+ * Structure for of_bsn_tlv_tcp_flags object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_tcp_flags_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_tcp_flags_s of_bsn_tlv_tcp_flags_t;
 
 /**
  * Structure for of_bsn_tlv_tcp_src object.  Get/set

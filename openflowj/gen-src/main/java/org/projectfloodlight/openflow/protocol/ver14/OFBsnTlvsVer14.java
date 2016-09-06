@@ -209,6 +209,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvEcn.Builder buildEcn() {
+        return new OFBsnTlvEcnVer14.Builder();
+    }
+    public OFBsnTlvEcn ecn(short value) {
+        return new OFBsnTlvEcnVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         return new OFBsnTlvEthDstVer14.Builder();
     }
@@ -223,6 +232,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
     }
     public OFBsnTlvEthSrc ethSrc(MacAddress value) {
         return new OFBsnTlvEthSrcVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvEthType.Builder buildEthType() {
+        return new OFBsnTlvEthTypeVer14.Builder();
+    }
+    public OFBsnTlvEthType ethType(int value) {
+        return new OFBsnTlvEthTypeVer14(
                 value
                     );
     }
@@ -523,6 +541,33 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
 
     public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
         return OFBsnTlvL2MulticastLookupVer14.INSTANCE;
+    }
+
+    public OFBsnTlvL3DstClassId.Builder buildL3DstClassId() {
+        return new OFBsnTlvL3DstClassIdVer14.Builder();
+    }
+    public OFBsnTlvL3DstClassId l3DstClassId(long value) {
+        return new OFBsnTlvL3DstClassIdVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvL3InterfaceClassId.Builder buildL3InterfaceClassId() {
+        return new OFBsnTlvL3InterfaceClassIdVer14.Builder();
+    }
+    public OFBsnTlvL3InterfaceClassId l3InterfaceClassId(long value) {
+        return new OFBsnTlvL3InterfaceClassIdVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvL3SrcClassId.Builder buildL3SrcClassId() {
+        return new OFBsnTlvL3SrcClassIdVer14.Builder();
+    }
+    public OFBsnTlvL3SrcClassId l3SrcClassId(long value) {
+        return new OFBsnTlvL3SrcClassIdVer14(
+                value
+                    );
     }
 
     public OFBsnTlvLoopbackPort.Builder buildLoopbackPort() {
@@ -886,6 +931,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
     }
     public OFBsnTlvTcpDst tcpDst(int value) {
         return new OFBsnTlvTcpDstVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvTcpFlags.Builder buildTcpFlags() {
+        return new OFBsnTlvTcpFlagsVer14.Builder();
+    }
+    public OFBsnTlvTcpFlags tcpFlags(int value) {
+        return new OFBsnTlvTcpFlagsVer14(
                 value
                     );
     }

@@ -7599,6 +7599,24 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x82:
             *id = OF_BSN_TLV_APPLY_BYTES;
             break;
+        case 0x83:
+            *id = OF_BSN_TLV_ETH_TYPE;
+            break;
+        case 0x84:
+            *id = OF_BSN_TLV_ECN;
+            break;
+        case 0x85:
+            *id = OF_BSN_TLV_TCP_FLAGS;
+            break;
+        case 0x86:
+            *id = OF_BSN_TLV_L3_INTERFACE_CLASS_ID;
+            break;
+        case 0x87:
+            *id = OF_BSN_TLV_L3_SRC_CLASS_ID;
+            break;
+        case 0x88:
+            *id = OF_BSN_TLV_L3_DST_CLASS_ID;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -7997,6 +8015,24 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x82:
             *id = OF_BSN_TLV_APPLY_BYTES;
+            break;
+        case 0x83:
+            *id = OF_BSN_TLV_ETH_TYPE;
+            break;
+        case 0x84:
+            *id = OF_BSN_TLV_ECN;
+            break;
+        case 0x85:
+            *id = OF_BSN_TLV_TCP_FLAGS;
+            break;
+        case 0x86:
+            *id = OF_BSN_TLV_L3_INTERFACE_CLASS_ID;
+            break;
+        case 0x87:
+            *id = OF_BSN_TLV_L3_SRC_CLASS_ID;
+            break;
+        case 0x88:
+            *id = OF_BSN_TLV_L3_DST_CLASS_ID;
             break;
         default:
             *id = OF_BSN_TLV;
