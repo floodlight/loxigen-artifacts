@@ -72,6 +72,7 @@ public interface OFBsnTlvs {
     OFBsnTlvDscp dscp(int value);
     OFBsnTlvEcn.Builder buildEcn() throws UnsupportedOperationException;
     OFBsnTlvEcn ecn(short value);
+    OFBsnTlvEgressOnly egressOnly();
     OFBsnTlvEthDst.Builder buildEthDst() throws UnsupportedOperationException;
     OFBsnTlvEthDst ethDst(MacAddress value);
     OFBsnTlvEthSrc.Builder buildEthSrc() throws UnsupportedOperationException;

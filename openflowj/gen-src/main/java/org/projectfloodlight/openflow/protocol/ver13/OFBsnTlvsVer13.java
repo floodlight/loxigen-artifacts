@@ -218,6 +218,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvEgressOnly egressOnly() {
+        return OFBsnTlvEgressOnlyVer13.INSTANCE;
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         return new OFBsnTlvEthDstVer13.Builder();
     }

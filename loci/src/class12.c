@@ -7617,6 +7617,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x88:
             *id = OF_BSN_TLV_L3_DST_CLASS_ID;
             break;
+        case 0x89:
+            *id = OF_BSN_TLV_EGRESS_ONLY;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -8033,6 +8036,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x88:
             *id = OF_BSN_TLV_L3_DST_CLASS_ID;
+            break;
+        case 0x89:
+            *id = OF_BSN_TLV_EGRESS_ONLY;
             break;
         default:
             *id = OF_BSN_TLV;

@@ -180,6 +180,10 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvEcn not supported in version 1.1");
     }
 
+    public OFBsnTlvEgressOnly egressOnly() {
+        throw new UnsupportedOperationException("OFBsnTlvEgressOnly not supported in version 1.1");
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         throw new UnsupportedOperationException("OFBsnTlvEthDst not supported in version 1.1");
     }
