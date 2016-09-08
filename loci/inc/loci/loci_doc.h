@@ -6628,6 +6628,13 @@ typedef struct of_bsn_tlv_dscp_s of_bsn_tlv_dscp_t;
 typedef struct of_bsn_tlv_ecn_s of_bsn_tlv_ecn_t;
 
 /**
+ * Structure for of_bsn_tlv_egress_only object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_egress_only_s of_bsn_tlv_egress_only_t;
+
+/**
  * Structure for of_bsn_tlv_eth_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

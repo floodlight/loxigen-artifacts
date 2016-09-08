@@ -8211,6 +8211,8 @@ fields['of13.bsn_tlv_dscp.value'] = ProtoField.uint16("of13.bsn_tlv_dscp.value",
 fields['of13.bsn_tlv_ecn.type'] = ProtoField.uint16("of13.bsn_tlv_ecn.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ecn.length'] = ProtoField.uint16("of13.bsn_tlv_ecn.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_ecn.value'] = ProtoField.uint8("of13.bsn_tlv_ecn.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_egress_only.type'] = ProtoField.uint16("of13.bsn_tlv_egress_only.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_egress_only.length'] = ProtoField.uint16("of13.bsn_tlv_egress_only.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of13.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of13.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.value'] = ProtoField.ether("of13.bsn_tlv_eth_dst.value", "value")
@@ -11041,6 +11043,8 @@ fields['of14.bsn_tlv_dscp.value'] = ProtoField.uint16("of14.bsn_tlv_dscp.value",
 fields['of14.bsn_tlv_ecn.type'] = ProtoField.uint16("of14.bsn_tlv_ecn.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_ecn.length'] = ProtoField.uint16("of14.bsn_tlv_ecn.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_ecn.value'] = ProtoField.uint8("of14.bsn_tlv_ecn.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_egress_only.type'] = ProtoField.uint16("of14.bsn_tlv_egress_only.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_egress_only.length'] = ProtoField.uint16("of14.bsn_tlv_egress_only.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of14.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of14.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_eth_dst.value'] = ProtoField.ether("of14.bsn_tlv_eth_dst.value", "value")
@@ -14084,6 +14088,8 @@ fields['of15.bsn_tlv_dscp.value'] = ProtoField.uint16("of15.bsn_tlv_dscp.value",
 fields['of15.bsn_tlv_ecn.type'] = ProtoField.uint16("of15.bsn_tlv_ecn.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_ecn.length'] = ProtoField.uint16("of15.bsn_tlv_ecn.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_ecn.value'] = ProtoField.uint8("of15.bsn_tlv_ecn.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_egress_only.type'] = ProtoField.uint16("of15.bsn_tlv_egress_only.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_egress_only.length'] = ProtoField.uint16("of15.bsn_tlv_egress_only.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of15.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of15.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_eth_dst.value'] = ProtoField.ether("of15.bsn_tlv_eth_dst.value", "value")
@@ -20359,6 +20365,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_ecn.type'],
     fields['of13.bsn_tlv_ecn.length'],
     fields['of13.bsn_tlv_ecn.value'],
+    fields['of13.bsn_tlv_egress_only.type'],
+    fields['of13.bsn_tlv_egress_only.length'],
     fields['of13.bsn_tlv_eth_dst.type'],
     fields['of13.bsn_tlv_eth_dst.length'],
     fields['of13.bsn_tlv_eth_dst.value'],
@@ -23189,6 +23197,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_ecn.type'],
     fields['of14.bsn_tlv_ecn.length'],
     fields['of14.bsn_tlv_ecn.value'],
+    fields['of14.bsn_tlv_egress_only.type'],
+    fields['of14.bsn_tlv_egress_only.length'],
     fields['of14.bsn_tlv_eth_dst.type'],
     fields['of14.bsn_tlv_eth_dst.length'],
     fields['of14.bsn_tlv_eth_dst.value'],
@@ -26232,6 +26242,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_ecn.type'],
     fields['of15.bsn_tlv_ecn.length'],
     fields['of15.bsn_tlv_ecn.value'],
+    fields['of15.bsn_tlv_egress_only.type'],
+    fields['of15.bsn_tlv_egress_only.length'],
     fields['of15.bsn_tlv_eth_dst.type'],
     fields['of15.bsn_tlv_eth_dst.length'],
     fields['of15.bsn_tlv_eth_dst.value'],
@@ -37982,6 +37994,15 @@ function dissect_of_bsn_tlv_ecn_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[132] = dissect_of_bsn_tlv_ecn_v4
 
+-- child class of_bsn_tlv_egress_only
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_egress_only_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_egress_only.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_egress_only.length')
+    return 'of_bsn_tlv_egress_only'
+end
+of_bsn_tlv_v4_dissectors[137] = dissect_of_bsn_tlv_egress_only_v4
+
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_eth_dst_v4(reader, subtree)
@@ -45517,6 +45538,15 @@ function dissect_of_bsn_tlv_ecn_v5(reader, subtree)
     return 'of_bsn_tlv_ecn'
 end
 of_bsn_tlv_v5_dissectors[132] = dissect_of_bsn_tlv_ecn_v5
+
+-- child class of_bsn_tlv_egress_only
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_egress_only_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_egress_only.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_egress_only.length')
+    return 'of_bsn_tlv_egress_only'
+end
+of_bsn_tlv_v5_dissectors[137] = dissect_of_bsn_tlv_egress_only_v5
 
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv
@@ -53564,6 +53594,15 @@ function dissect_of_bsn_tlv_ecn_v6(reader, subtree)
     return 'of_bsn_tlv_ecn'
 end
 of_bsn_tlv_v6_dissectors[132] = dissect_of_bsn_tlv_ecn_v6
+
+-- child class of_bsn_tlv_egress_only
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_egress_only_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_egress_only.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_egress_only.length')
+    return 'of_bsn_tlv_egress_only'
+end
+of_bsn_tlv_v6_dissectors[137] = dissect_of_bsn_tlv_egress_only_v6
 
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv

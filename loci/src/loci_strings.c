@@ -332,6 +332,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_drop",
     "of_bsn_tlv_dscp",
     "of_bsn_tlv_ecn",
+    "of_bsn_tlv_egress_only",
     "of_bsn_tlv_eth_dst",
     "of_bsn_tlv_eth_src",
     "of_bsn_tlv_eth_type",

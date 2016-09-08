@@ -335,6 +335,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_drop_init,
     (of_object_init_f)of_bsn_tlv_dscp_init,
     (of_object_init_f)of_bsn_tlv_ecn_init,
+    (of_object_init_f)of_bsn_tlv_egress_only_init,
     (of_object_init_f)of_bsn_tlv_eth_dst_init,
     (of_object_init_f)of_bsn_tlv_eth_src_init,
     (of_object_init_f)of_bsn_tlv_eth_type_init,
