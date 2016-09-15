@@ -1311,6 +1311,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_egress_port_group_id_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_eth_dst_dup(
         of_object_t *src);
 
@@ -1404,6 +1408,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_igmp_snooping_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ingress_port_group_id_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6159,6 +6167,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6252,6 +6264,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_igmp_snooping_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8815,6 +8831,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_eth_dst_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8908,6 +8928,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_igmp_snooping_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

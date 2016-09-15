@@ -222,6 +222,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
         return OFBsnTlvEgressOnlyVer15.INSTANCE;
     }
 
+    public OFBsnTlvEgressPortGroupId.Builder buildEgressPortGroupId() {
+        return new OFBsnTlvEgressPortGroupIdVer15.Builder();
+    }
+    public OFBsnTlvEgressPortGroupId egressPortGroupId(long value) {
+        return new OFBsnTlvEgressPortGroupIdVer15(
+                value
+                    );
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         return new OFBsnTlvEthDstVer15.Builder();
     }
@@ -423,6 +432,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
 
     public OFBsnTlvIgmpSnooping igmpSnooping() {
         return OFBsnTlvIgmpSnoopingVer15.INSTANCE;
+    }
+
+    public OFBsnTlvIngressPortGroupId.Builder buildIngressPortGroupId() {
+        return new OFBsnTlvIngressPortGroupIdVer15.Builder();
+    }
+    public OFBsnTlvIngressPortGroupId ingressPortGroupId(long value) {
+        return new OFBsnTlvIngressPortGroupIdVer15(
+                value
+                    );
     }
 
     public OFBsnTlvInternalGatewayMac.Builder buildInternalGatewayMac() {
