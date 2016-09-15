@@ -184,6 +184,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvEgressOnly not supported in version 1.1");
     }
 
+    public OFBsnTlvEgressPortGroupId.Builder buildEgressPortGroupId() {
+        throw new UnsupportedOperationException("OFBsnTlvEgressPortGroupId not supported in version 1.1");
+    }
+    public OFBsnTlvEgressPortGroupId egressPortGroupId(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvEgressPortGroupId not supported in version 1.1");
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         throw new UnsupportedOperationException("OFBsnTlvEthDst not supported in version 1.1");
     }
@@ -341,6 +348,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
 
     public OFBsnTlvIgmpSnooping igmpSnooping() {
         throw new UnsupportedOperationException("OFBsnTlvIgmpSnooping not supported in version 1.1");
+    }
+
+    public OFBsnTlvIngressPortGroupId.Builder buildIngressPortGroupId() {
+        throw new UnsupportedOperationException("OFBsnTlvIngressPortGroupId not supported in version 1.1");
+    }
+    public OFBsnTlvIngressPortGroupId ingressPortGroupId(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvIngressPortGroupId not supported in version 1.1");
     }
 
     public OFBsnTlvInternalGatewayMac.Builder buildInternalGatewayMac() {

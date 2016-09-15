@@ -740,6 +740,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_drop_OF_VERSION_1_3(
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_dscp_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_ecn_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_egress_only_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_type_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -764,6 +765,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_idle_notification_OF
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_idle_time_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_idle_timeout_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_igmp_snooping_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_internal_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_interval_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1377,6 +1379,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_drop_OF_VERSION_1_4(
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_dscp_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_ecn_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_egress_only_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_type_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -1401,6 +1404,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_idle_notification_OF
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_idle_time_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_idle_timeout_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_igmp_snooping_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_internal_mac_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_interval_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -20356,6 +20360,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_ecn_OF_VERSION_1_3(data, len, out_len);
     case 0x89:
         return loci_validate_of_bsn_tlv_egress_only_OF_VERSION_1_3(data, len, out_len);
+    case 0x8b:
+        return loci_validate_of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3(data, len, out_len);
     case 0x21:
         return loci_validate_of_bsn_tlv_eth_dst_OF_VERSION_1_3(data, len, out_len);
     case 0x20:
@@ -20404,6 +20410,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_idle_timeout_OF_VERSION_1_3(data, len, out_len);
     case 0x4e:
         return loci_validate_of_bsn_tlv_igmp_snooping_OF_VERSION_1_3(data, len, out_len);
+    case 0x8a:
+        return loci_validate_of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3(data, len, out_len);
     case 0x1c:
         return loci_validate_of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3(data, len, out_len);
     case 0x1b:
@@ -21106,6 +21114,28 @@ loci_validate_of_bsn_tlv_egress_only_OF_VERSION_1_3(uint8_t *data, int len, int 
 }
 
 static int
+loci_validate_of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_bsn_tlv_eth_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 10) {
@@ -21623,6 +21653,28 @@ loci_validate_of_bsn_tlv_igmp_snooping_OF_VERSION_1_3(uint8_t *data, int len, in
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 8) {
         return -1;
     }
 
@@ -36204,6 +36256,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_ecn_OF_VERSION_1_4(data, len, out_len);
     case 0x89:
         return loci_validate_of_bsn_tlv_egress_only_OF_VERSION_1_4(data, len, out_len);
+    case 0x8b:
+        return loci_validate_of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4(data, len, out_len);
     case 0x21:
         return loci_validate_of_bsn_tlv_eth_dst_OF_VERSION_1_4(data, len, out_len);
     case 0x20:
@@ -36252,6 +36306,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_idle_timeout_OF_VERSION_1_4(data, len, out_len);
     case 0x4e:
         return loci_validate_of_bsn_tlv_igmp_snooping_OF_VERSION_1_4(data, len, out_len);
+    case 0x8a:
+        return loci_validate_of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4(data, len, out_len);
     case 0x1c:
         return loci_validate_of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_4(data, len, out_len);
     case 0x1b:
@@ -36954,6 +37010,28 @@ loci_validate_of_bsn_tlv_egress_only_OF_VERSION_1_4(uint8_t *data, int len, int 
 }
 
 static int
+loci_validate_of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_bsn_tlv_eth_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 10) {
@@ -37471,6 +37549,28 @@ loci_validate_of_bsn_tlv_igmp_snooping_OF_VERSION_1_4(uint8_t *data, int len, in
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 8) {
         return -1;
     }
 

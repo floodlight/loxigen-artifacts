@@ -27026,6 +27026,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_EGRESS_PORT_GROUP_ID) {
+        return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_TCP_SRC) {
         return of_bsn_tlv_tcp_src_OF_VERSION_1_3_dup(src);
     }
@@ -27068,6 +27072,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_IGMP_SNOOPING) {
         return of_bsn_tlv_igmp_snooping_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_INGRESS_PORT_GROUP_ID) {
+        return of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_EXTERNAL_MAC) {
@@ -27990,6 +27998,31 @@ of_bsn_tlv_egress_only_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_egress_port_group_id
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_egress_port_group_id.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_egress_port_group_id_t *
+of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dup(
+    of_bsn_tlv_egress_port_group_id_t *src)
+{
+    of_bsn_tlv_egress_port_group_id_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_egress_port_group_id_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_egress_port_group_id_value_get(src, &val32);
+    of_bsn_tlv_egress_port_group_id_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_eth_dst
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -28590,6 +28623,31 @@ of_bsn_tlv_igmp_snooping_OF_VERSION_1_3_dup(
     if ((dst = of_bsn_tlv_igmp_snooping_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_ingress_port_group_id
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_ingress_port_group_id.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_ingress_port_group_id_t *
+of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3_dup(
+    of_bsn_tlv_ingress_port_group_id_t *src)
+{
+    of_bsn_tlv_ingress_port_group_id_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_ingress_port_group_id_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_ingress_port_group_id_value_get(src, &val32);
+    of_bsn_tlv_ingress_port_group_id_value_set(dst, val32);
 
     return dst;
 }
@@ -49134,6 +49192,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_EGRESS_PORT_GROUP_ID) {
+        return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_TCP_SRC) {
         return of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(src);
     }
@@ -49176,6 +49238,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_IGMP_SNOOPING) {
         return of_bsn_tlv_igmp_snooping_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_INGRESS_PORT_GROUP_ID) {
+        return of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_EXTERNAL_MAC) {
@@ -50098,6 +50164,31 @@ of_bsn_tlv_egress_only_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_egress_port_group_id
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_egress_port_group_id.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_egress_port_group_id_t *
+of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(
+    of_bsn_tlv_egress_port_group_id_t *src)
+{
+    of_bsn_tlv_egress_port_group_id_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_egress_port_group_id_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_egress_port_group_id_value_get(src, &val32);
+    of_bsn_tlv_egress_port_group_id_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_eth_dst
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -50698,6 +50789,31 @@ of_bsn_tlv_igmp_snooping_OF_VERSION_1_4_dup(
     if ((dst = of_bsn_tlv_igmp_snooping_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_ingress_port_group_id
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_ingress_port_group_id.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_ingress_port_group_id_t *
+of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4_dup(
+    of_bsn_tlv_ingress_port_group_id_t *src)
+{
+    of_bsn_tlv_ingress_port_group_id_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_ingress_port_group_id_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_ingress_port_group_id_value_get(src, &val32);
+    of_bsn_tlv_ingress_port_group_id_value_set(dst, val32);
 
     return dst;
 }
@@ -69038,6 +69154,23 @@ of_bsn_tlv_egress_only_dup(
 }
 
 of_object_t *
+of_bsn_tlv_egress_port_group_id_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_eth_dst_dup(
     of_object_t *src)
 {
@@ -69439,6 +69572,23 @@ of_bsn_tlv_igmp_snooping_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_igmp_snooping_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_ingress_port_group_id_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

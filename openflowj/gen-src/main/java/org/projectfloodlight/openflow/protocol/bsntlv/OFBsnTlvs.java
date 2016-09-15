@@ -73,6 +73,8 @@ public interface OFBsnTlvs {
     OFBsnTlvEcn.Builder buildEcn() throws UnsupportedOperationException;
     OFBsnTlvEcn ecn(short value);
     OFBsnTlvEgressOnly egressOnly();
+    OFBsnTlvEgressPortGroupId.Builder buildEgressPortGroupId() throws UnsupportedOperationException;
+    OFBsnTlvEgressPortGroupId egressPortGroupId(long value);
     OFBsnTlvEthDst.Builder buildEthDst() throws UnsupportedOperationException;
     OFBsnTlvEthDst ethDst(MacAddress value);
     OFBsnTlvEthSrc.Builder buildEthSrc() throws UnsupportedOperationException;
@@ -118,6 +120,8 @@ public interface OFBsnTlvs {
     OFBsnTlvIdleTimeout.Builder buildIdleTimeout() throws UnsupportedOperationException;
     OFBsnTlvIdleTimeout idleTimeout(long value);
     OFBsnTlvIgmpSnooping igmpSnooping();
+    OFBsnTlvIngressPortGroupId.Builder buildIngressPortGroupId() throws UnsupportedOperationException;
+    OFBsnTlvIngressPortGroupId ingressPortGroupId(long value);
     OFBsnTlvInternalGatewayMac.Builder buildInternalGatewayMac() throws UnsupportedOperationException;
     OFBsnTlvInternalGatewayMac internalGatewayMac(MacAddress value);
     OFBsnTlvInternalMac.Builder buildInternalMac() throws UnsupportedOperationException;

@@ -8213,6 +8213,9 @@ fields['of13.bsn_tlv_ecn.length'] = ProtoField.uint16("of13.bsn_tlv_ecn.length",
 fields['of13.bsn_tlv_ecn.value'] = ProtoField.uint8("of13.bsn_tlv_ecn.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_egress_only.type'] = ProtoField.uint16("of13.bsn_tlv_egress_only.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_egress_only.length'] = ProtoField.uint16("of13.bsn_tlv_egress_only.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_egress_port_group_id.type'] = ProtoField.uint16("of13.bsn_tlv_egress_port_group_id.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_egress_port_group_id.length'] = ProtoField.uint16("of13.bsn_tlv_egress_port_group_id.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_egress_port_group_id.value'] = ProtoField.uint32("of13.bsn_tlv_egress_port_group_id.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of13.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of13.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.value'] = ProtoField.ether("of13.bsn_tlv_eth_dst.value", "value")
@@ -8287,6 +8290,9 @@ fields['of13.bsn_tlv_idle_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_idl
 fields['of13.bsn_tlv_idle_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_idle_timeout.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_igmp_snooping.type'] = ProtoField.uint16("of13.bsn_tlv_igmp_snooping.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_igmp_snooping.length'] = ProtoField.uint16("of13.bsn_tlv_igmp_snooping.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_ingress_port_group_id.type'] = ProtoField.uint16("of13.bsn_tlv_ingress_port_group_id.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_ingress_port_group_id.length'] = ProtoField.uint16("of13.bsn_tlv_ingress_port_group_id.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_ingress_port_group_id.value'] = ProtoField.uint32("of13.bsn_tlv_ingress_port_group_id.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_internal_gateway_mac.type'] = ProtoField.uint16("of13.bsn_tlv_internal_gateway_mac.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_internal_gateway_mac.length'] = ProtoField.uint16("of13.bsn_tlv_internal_gateway_mac.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_internal_gateway_mac.value'] = ProtoField.ether("of13.bsn_tlv_internal_gateway_mac.value", "value")
@@ -11045,6 +11051,9 @@ fields['of14.bsn_tlv_ecn.length'] = ProtoField.uint16("of14.bsn_tlv_ecn.length",
 fields['of14.bsn_tlv_ecn.value'] = ProtoField.uint8("of14.bsn_tlv_ecn.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_egress_only.type'] = ProtoField.uint16("of14.bsn_tlv_egress_only.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_egress_only.length'] = ProtoField.uint16("of14.bsn_tlv_egress_only.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_egress_port_group_id.type'] = ProtoField.uint16("of14.bsn_tlv_egress_port_group_id.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_egress_port_group_id.length'] = ProtoField.uint16("of14.bsn_tlv_egress_port_group_id.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_egress_port_group_id.value'] = ProtoField.uint32("of14.bsn_tlv_egress_port_group_id.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of14.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of14.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_eth_dst.value'] = ProtoField.ether("of14.bsn_tlv_eth_dst.value", "value")
@@ -11119,6 +11128,9 @@ fields['of14.bsn_tlv_idle_timeout.length'] = ProtoField.uint16("of14.bsn_tlv_idl
 fields['of14.bsn_tlv_idle_timeout.value'] = ProtoField.uint32("of14.bsn_tlv_idle_timeout.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_igmp_snooping.type'] = ProtoField.uint16("of14.bsn_tlv_igmp_snooping.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_igmp_snooping.length'] = ProtoField.uint16("of14.bsn_tlv_igmp_snooping.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_ingress_port_group_id.type'] = ProtoField.uint16("of14.bsn_tlv_ingress_port_group_id.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_ingress_port_group_id.length'] = ProtoField.uint16("of14.bsn_tlv_ingress_port_group_id.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_ingress_port_group_id.value'] = ProtoField.uint32("of14.bsn_tlv_ingress_port_group_id.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_internal_gateway_mac.type'] = ProtoField.uint16("of14.bsn_tlv_internal_gateway_mac.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_internal_gateway_mac.length'] = ProtoField.uint16("of14.bsn_tlv_internal_gateway_mac.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_internal_gateway_mac.value'] = ProtoField.ether("of14.bsn_tlv_internal_gateway_mac.value", "value")
@@ -14090,6 +14102,9 @@ fields['of15.bsn_tlv_ecn.length'] = ProtoField.uint16("of15.bsn_tlv_ecn.length",
 fields['of15.bsn_tlv_ecn.value'] = ProtoField.uint8("of15.bsn_tlv_ecn.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_egress_only.type'] = ProtoField.uint16("of15.bsn_tlv_egress_only.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_egress_only.length'] = ProtoField.uint16("of15.bsn_tlv_egress_only.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_egress_port_group_id.type'] = ProtoField.uint16("of15.bsn_tlv_egress_port_group_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_egress_port_group_id.length'] = ProtoField.uint16("of15.bsn_tlv_egress_port_group_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_egress_port_group_id.value'] = ProtoField.uint32("of15.bsn_tlv_egress_port_group_id.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of15.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of15.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_eth_dst.value'] = ProtoField.ether("of15.bsn_tlv_eth_dst.value", "value")
@@ -14164,6 +14179,9 @@ fields['of15.bsn_tlv_idle_timeout.length'] = ProtoField.uint16("of15.bsn_tlv_idl
 fields['of15.bsn_tlv_idle_timeout.value'] = ProtoField.uint32("of15.bsn_tlv_idle_timeout.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_igmp_snooping.type'] = ProtoField.uint16("of15.bsn_tlv_igmp_snooping.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_igmp_snooping.length'] = ProtoField.uint16("of15.bsn_tlv_igmp_snooping.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ingress_port_group_id.type'] = ProtoField.uint16("of15.bsn_tlv_ingress_port_group_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_ingress_port_group_id.length'] = ProtoField.uint16("of15.bsn_tlv_ingress_port_group_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ingress_port_group_id.value'] = ProtoField.uint32("of15.bsn_tlv_ingress_port_group_id.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_internal_gateway_mac.type'] = ProtoField.uint16("of15.bsn_tlv_internal_gateway_mac.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_internal_gateway_mac.length'] = ProtoField.uint16("of15.bsn_tlv_internal_gateway_mac.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_internal_gateway_mac.value'] = ProtoField.ether("of15.bsn_tlv_internal_gateway_mac.value", "value")
@@ -20367,6 +20385,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_ecn.value'],
     fields['of13.bsn_tlv_egress_only.type'],
     fields['of13.bsn_tlv_egress_only.length'],
+    fields['of13.bsn_tlv_egress_port_group_id.type'],
+    fields['of13.bsn_tlv_egress_port_group_id.length'],
+    fields['of13.bsn_tlv_egress_port_group_id.value'],
     fields['of13.bsn_tlv_eth_dst.type'],
     fields['of13.bsn_tlv_eth_dst.length'],
     fields['of13.bsn_tlv_eth_dst.value'],
@@ -20441,6 +20462,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_idle_timeout.value'],
     fields['of13.bsn_tlv_igmp_snooping.type'],
     fields['of13.bsn_tlv_igmp_snooping.length'],
+    fields['of13.bsn_tlv_ingress_port_group_id.type'],
+    fields['of13.bsn_tlv_ingress_port_group_id.length'],
+    fields['of13.bsn_tlv_ingress_port_group_id.value'],
     fields['of13.bsn_tlv_internal_gateway_mac.type'],
     fields['of13.bsn_tlv_internal_gateway_mac.length'],
     fields['of13.bsn_tlv_internal_gateway_mac.value'],
@@ -23199,6 +23223,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_ecn.value'],
     fields['of14.bsn_tlv_egress_only.type'],
     fields['of14.bsn_tlv_egress_only.length'],
+    fields['of14.bsn_tlv_egress_port_group_id.type'],
+    fields['of14.bsn_tlv_egress_port_group_id.length'],
+    fields['of14.bsn_tlv_egress_port_group_id.value'],
     fields['of14.bsn_tlv_eth_dst.type'],
     fields['of14.bsn_tlv_eth_dst.length'],
     fields['of14.bsn_tlv_eth_dst.value'],
@@ -23273,6 +23300,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_idle_timeout.value'],
     fields['of14.bsn_tlv_igmp_snooping.type'],
     fields['of14.bsn_tlv_igmp_snooping.length'],
+    fields['of14.bsn_tlv_ingress_port_group_id.type'],
+    fields['of14.bsn_tlv_ingress_port_group_id.length'],
+    fields['of14.bsn_tlv_ingress_port_group_id.value'],
     fields['of14.bsn_tlv_internal_gateway_mac.type'],
     fields['of14.bsn_tlv_internal_gateway_mac.length'],
     fields['of14.bsn_tlv_internal_gateway_mac.value'],
@@ -26244,6 +26274,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_ecn.value'],
     fields['of15.bsn_tlv_egress_only.type'],
     fields['of15.bsn_tlv_egress_only.length'],
+    fields['of15.bsn_tlv_egress_port_group_id.type'],
+    fields['of15.bsn_tlv_egress_port_group_id.length'],
+    fields['of15.bsn_tlv_egress_port_group_id.value'],
     fields['of15.bsn_tlv_eth_dst.type'],
     fields['of15.bsn_tlv_eth_dst.length'],
     fields['of15.bsn_tlv_eth_dst.value'],
@@ -26318,6 +26351,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_idle_timeout.value'],
     fields['of15.bsn_tlv_igmp_snooping.type'],
     fields['of15.bsn_tlv_igmp_snooping.length'],
+    fields['of15.bsn_tlv_ingress_port_group_id.type'],
+    fields['of15.bsn_tlv_ingress_port_group_id.length'],
+    fields['of15.bsn_tlv_ingress_port_group_id.value'],
     fields['of15.bsn_tlv_internal_gateway_mac.type'],
     fields['of15.bsn_tlv_internal_gateway_mac.length'],
     fields['of15.bsn_tlv_internal_gateway_mac.value'],
@@ -38003,6 +38039,16 @@ function dissect_of_bsn_tlv_egress_only_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[137] = dissect_of_bsn_tlv_egress_only_v4
 
+-- child class of_bsn_tlv_egress_port_group_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_egress_port_group_id_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_egress_port_group_id.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_egress_port_group_id.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_egress_port_group_id.value')
+    return 'of_bsn_tlv_egress_port_group_id'
+end
+of_bsn_tlv_v4_dissectors[139] = dissect_of_bsn_tlv_egress_port_group_id_v4
+
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_eth_dst_v4(reader, subtree)
@@ -38244,6 +38290,16 @@ function dissect_of_bsn_tlv_igmp_snooping_v4(reader, subtree)
     return 'of_bsn_tlv_igmp_snooping'
 end
 of_bsn_tlv_v4_dissectors[78] = dissect_of_bsn_tlv_igmp_snooping_v4
+
+-- child class of_bsn_tlv_ingress_port_group_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ingress_port_group_id_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ingress_port_group_id.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ingress_port_group_id.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_ingress_port_group_id.value')
+    return 'of_bsn_tlv_ingress_port_group_id'
+end
+of_bsn_tlv_v4_dissectors[138] = dissect_of_bsn_tlv_ingress_port_group_id_v4
 
 -- child class of_bsn_tlv_internal_gateway_mac
 -- Child of of_bsn_tlv
@@ -45548,6 +45604,16 @@ function dissect_of_bsn_tlv_egress_only_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[137] = dissect_of_bsn_tlv_egress_only_v5
 
+-- child class of_bsn_tlv_egress_port_group_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_egress_port_group_id_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_egress_port_group_id.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_egress_port_group_id.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_egress_port_group_id.value')
+    return 'of_bsn_tlv_egress_port_group_id'
+end
+of_bsn_tlv_v5_dissectors[139] = dissect_of_bsn_tlv_egress_port_group_id_v5
+
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_eth_dst_v5(reader, subtree)
@@ -45789,6 +45855,16 @@ function dissect_of_bsn_tlv_igmp_snooping_v5(reader, subtree)
     return 'of_bsn_tlv_igmp_snooping'
 end
 of_bsn_tlv_v5_dissectors[78] = dissect_of_bsn_tlv_igmp_snooping_v5
+
+-- child class of_bsn_tlv_ingress_port_group_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ingress_port_group_id_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ingress_port_group_id.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ingress_port_group_id.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_ingress_port_group_id.value')
+    return 'of_bsn_tlv_ingress_port_group_id'
+end
+of_bsn_tlv_v5_dissectors[138] = dissect_of_bsn_tlv_ingress_port_group_id_v5
 
 -- child class of_bsn_tlv_internal_gateway_mac
 -- Child of of_bsn_tlv
@@ -53604,6 +53680,16 @@ function dissect_of_bsn_tlv_egress_only_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[137] = dissect_of_bsn_tlv_egress_only_v6
 
+-- child class of_bsn_tlv_egress_port_group_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_egress_port_group_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_egress_port_group_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_egress_port_group_id.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_egress_port_group_id.value')
+    return 'of_bsn_tlv_egress_port_group_id'
+end
+of_bsn_tlv_v6_dissectors[139] = dissect_of_bsn_tlv_egress_port_group_id_v6
+
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_eth_dst_v6(reader, subtree)
@@ -53845,6 +53931,16 @@ function dissect_of_bsn_tlv_igmp_snooping_v6(reader, subtree)
     return 'of_bsn_tlv_igmp_snooping'
 end
 of_bsn_tlv_v6_dissectors[78] = dissect_of_bsn_tlv_igmp_snooping_v6
+
+-- child class of_bsn_tlv_ingress_port_group_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ingress_port_group_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ingress_port_group_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ingress_port_group_id.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_ingress_port_group_id.value')
+    return 'of_bsn_tlv_ingress_port_group_id'
+end
+of_bsn_tlv_v6_dissectors[138] = dissect_of_bsn_tlv_ingress_port_group_id_v6
 
 -- child class of_bsn_tlv_internal_gateway_mac
 -- Child of of_bsn_tlv

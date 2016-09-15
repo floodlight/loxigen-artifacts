@@ -851,6 +851,8 @@ void of_bsn_tlv_ecn_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ecn_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_egress_only_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_egress_only_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_egress_port_group_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_egress_port_group_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_eth_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_eth_dst_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_eth_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -899,6 +901,8 @@ void of_bsn_tlv_idle_timeout_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_bsn_tlv_idle_timeout_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_igmp_snooping_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_igmp_snooping_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_ingress_port_group_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_ingress_port_group_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_internal_gateway_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_internal_gateway_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_internal_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1762,6 +1766,7 @@ typedef of_object_t of_bsn_tlv_drop_t;
 typedef of_object_t of_bsn_tlv_dscp_t;
 typedef of_object_t of_bsn_tlv_ecn_t;
 typedef of_object_t of_bsn_tlv_egress_only_t;
+typedef of_object_t of_bsn_tlv_egress_port_group_id_t;
 typedef of_object_t of_bsn_tlv_eth_dst_t;
 typedef of_object_t of_bsn_tlv_eth_src_t;
 typedef of_object_t of_bsn_tlv_eth_type_t;
@@ -1786,6 +1791,7 @@ typedef of_object_t of_bsn_tlv_idle_notification_t;
 typedef of_object_t of_bsn_tlv_idle_time_t;
 typedef of_object_t of_bsn_tlv_idle_timeout_t;
 typedef of_object_t of_bsn_tlv_igmp_snooping_t;
+typedef of_object_t of_bsn_tlv_ingress_port_group_id_t;
 typedef of_object_t of_bsn_tlv_internal_gateway_mac_t;
 typedef of_object_t of_bsn_tlv_internal_mac_t;
 typedef of_object_t of_bsn_tlv_interval_t;
@@ -3854,6 +3860,11 @@ extern void of_bsn_tlv_egress_only_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_egress_port_group_id_new(of_version_t version);
+extern void of_bsn_tlv_egress_port_group_id_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_eth_dst_new(of_version_t version);
 extern void of_bsn_tlv_eth_dst_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3971,6 +3982,11 @@ extern void of_bsn_tlv_idle_timeout_init(
 extern of_object_t *
     of_bsn_tlv_igmp_snooping_new(of_version_t version);
 extern void of_bsn_tlv_igmp_snooping_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_ingress_port_group_id_new(of_version_t version);
+extern void of_bsn_tlv_ingress_port_group_id_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9660,6 +9676,17 @@ of_bsn_tlv_egress_only_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_egress_port_group_id_t
+ * @param obj An instance of type of_bsn_tlv_egress_port_group_id_t
+ *
+ * \ingroup of_bsn_tlv_egress_port_group_id
+ */
+static inline void
+of_bsn_tlv_egress_port_group_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_eth_dst_t
  * @param obj An instance of type of_bsn_tlv_eth_dst_t
  *
@@ -9920,6 +9947,17 @@ of_bsn_tlv_idle_timeout_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_igmp_snooping_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_ingress_port_group_id_t
+ * @param obj An instance of type of_bsn_tlv_ingress_port_group_id_t
+ *
+ * \ingroup of_bsn_tlv_ingress_port_group_id
+ */
+static inline void
+of_bsn_tlv_ingress_port_group_id_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22446,6 +22484,15 @@ extern void of_bsn_tlv_ecn_value_get(
 
 /* Unified accessor functions for of_bsn_tlv_egress_only */
 
+/* Unified accessor functions for of_bsn_tlv_egress_port_group_id */
+
+extern void of_bsn_tlv_egress_port_group_id_value_set(
+    of_bsn_tlv_egress_port_group_id_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_egress_port_group_id_value_get(
+    of_bsn_tlv_egress_port_group_id_t *obj,
+    uint32_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_eth_dst */
 
 extern void of_bsn_tlv_eth_dst_value_set(
@@ -22675,6 +22722,15 @@ extern void of_bsn_tlv_idle_timeout_value_get(
     uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_igmp_snooping */
+
+/* Unified accessor functions for of_bsn_tlv_ingress_port_group_id */
+
+extern void of_bsn_tlv_ingress_port_group_id_value_set(
+    of_bsn_tlv_ingress_port_group_id_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_ingress_port_group_id_value_get(
+    of_bsn_tlv_ingress_port_group_id_t *obj,
+    uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_internal_gateway_mac */
 
