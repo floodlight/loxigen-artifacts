@@ -2767,7 +2767,7 @@ class ipv6(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
             q.breakable()
         q.text('}')
 
@@ -2814,7 +2814,7 @@ class ipv6_dst(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
             q.breakable()
         q.text('}')
 
@@ -2868,7 +2868,7 @@ class ipv6_prefix(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
                 q.text(","); q.breakable()
                 q.text("prefix_length = ");
                 q.text("%#x" % self.prefix_length)
@@ -2918,7 +2918,7 @@ class ipv6_src(bsn_tlv):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
             q.breakable()
         q.text('}')
 

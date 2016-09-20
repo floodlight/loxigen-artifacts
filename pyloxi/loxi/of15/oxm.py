@@ -4138,7 +4138,7 @@ class ipv6_dst(oxm):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
             q.breakable()
         q.text('}')
 
@@ -4186,10 +4186,10 @@ class ipv6_dst_masked(oxm):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
                 q.text(","); q.breakable()
                 q.text("value_mask = ");
-                q.pp(self.value_mask)
+                q.text(util.pretty_ipv6(self.value_mask))
             q.breakable()
         q.text('}')
 
@@ -4506,7 +4506,7 @@ class ipv6_nd_target(oxm):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
             q.breakable()
         q.text('}')
 
@@ -4554,10 +4554,10 @@ class ipv6_nd_target_masked(oxm):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
                 q.text(","); q.breakable()
                 q.text("value_mask = ");
-                q.pp(self.value_mask)
+                q.text(util.pretty_ipv6(self.value_mask))
             q.breakable()
         q.text('}')
 
@@ -4690,7 +4690,7 @@ class ipv6_src(oxm):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
             q.breakable()
         q.text('}')
 
@@ -4738,10 +4738,10 @@ class ipv6_src_masked(oxm):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
                 q.text(","); q.breakable()
                 q.text("value_mask = ");
-                q.pp(self.value_mask)
+                q.text(util.pretty_ipv6(self.value_mask))
             q.breakable()
         q.text('}')
 
