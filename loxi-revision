@@ -1,1 +1,1 @@
-495d66faf0157adb8361adc9a36df8af7ac0cc59 Merge into master from pull request #519: New TLVs ingress_port_group_id, ingress_port_group_id. (https://github.com/floodlight/loxigen/pull/519)
+72ee071cae07406559f00f4a7093ada73160d352 Merge into master from pull request #520: SWL-3216 IPV6 address pretty_print function. (https://github.com/floodlight/loxigen/pull/520)
