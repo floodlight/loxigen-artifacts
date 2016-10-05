@@ -183,6 +183,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvDataMask.Builder buildDataMask() {
+        return new OFBsnTlvDataMaskVer14.Builder();
+    }
+    public OFBsnTlvDataMask dataMask(byte[] value) {
+        return new OFBsnTlvDataMaskVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvDecap.Builder buildDecap() {
         return new OFBsnTlvDecapVer14.Builder();
     }

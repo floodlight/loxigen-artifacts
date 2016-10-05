@@ -64,6 +64,8 @@ public interface OFBsnTlvs {
     OFBsnTlvCrcEnabled crcEnabled(short value);
     OFBsnTlvData.Builder buildData() throws UnsupportedOperationException;
     OFBsnTlvData data(byte[] value);
+    OFBsnTlvDataMask.Builder buildDataMask() throws UnsupportedOperationException;
+    OFBsnTlvDataMask dataMask(byte[] value);
     OFBsnTlvDecap.Builder buildDecap() throws UnsupportedOperationException;
     OFBsnTlvDecap decap(OFBsnDecap value);
     OFBsnTlvDisableSrcMacCheck disableSrcMacCheck();

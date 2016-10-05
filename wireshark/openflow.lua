@@ -8198,6 +8198,9 @@ fields['of13.bsn_tlv_crc_enabled.value'] = ProtoField.uint8("of13.bsn_tlv_crc_en
 fields['of13.bsn_tlv_data.type'] = ProtoField.uint16("of13.bsn_tlv_data.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_data.length'] = ProtoField.uint16("of13.bsn_tlv_data.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_data.value'] = ProtoField.bytes("of13.bsn_tlv_data.value", "value")
+fields['of13.bsn_tlv_data_mask.type'] = ProtoField.uint16("of13.bsn_tlv_data_mask.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_data_mask.length'] = ProtoField.uint16("of13.bsn_tlv_data_mask.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_data_mask.value'] = ProtoField.bytes("of13.bsn_tlv_data_mask.value", "value")
 fields['of13.bsn_tlv_decap.type'] = ProtoField.uint16("of13.bsn_tlv_decap.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_decap.length'] = ProtoField.uint16("of13.bsn_tlv_decap.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_decap.value'] = ProtoField.uint32("of13.bsn_tlv_decap.value", "value", base.DEC, enum_v4_ofp_bsn_decap)
@@ -11036,6 +11039,9 @@ fields['of14.bsn_tlv_crc_enabled.value'] = ProtoField.uint8("of14.bsn_tlv_crc_en
 fields['of14.bsn_tlv_data.type'] = ProtoField.uint16("of14.bsn_tlv_data.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_data.length'] = ProtoField.uint16("of14.bsn_tlv_data.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_data.value'] = ProtoField.bytes("of14.bsn_tlv_data.value", "value")
+fields['of14.bsn_tlv_data_mask.type'] = ProtoField.uint16("of14.bsn_tlv_data_mask.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_data_mask.length'] = ProtoField.uint16("of14.bsn_tlv_data_mask.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_data_mask.value'] = ProtoField.bytes("of14.bsn_tlv_data_mask.value", "value")
 fields['of14.bsn_tlv_decap.type'] = ProtoField.uint16("of14.bsn_tlv_decap.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_decap.length'] = ProtoField.uint16("of14.bsn_tlv_decap.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_decap.value'] = ProtoField.uint32("of14.bsn_tlv_decap.value", "value", base.DEC, enum_v5_ofp_bsn_decap)
@@ -14087,6 +14093,9 @@ fields['of15.bsn_tlv_crc_enabled.value'] = ProtoField.uint8("of15.bsn_tlv_crc_en
 fields['of15.bsn_tlv_data.type'] = ProtoField.uint16("of15.bsn_tlv_data.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_data.length'] = ProtoField.uint16("of15.bsn_tlv_data.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_data.value'] = ProtoField.bytes("of15.bsn_tlv_data.value", "value")
+fields['of15.bsn_tlv_data_mask.type'] = ProtoField.uint16("of15.bsn_tlv_data_mask.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_data_mask.length'] = ProtoField.uint16("of15.bsn_tlv_data_mask.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_data_mask.value'] = ProtoField.bytes("of15.bsn_tlv_data_mask.value", "value")
 fields['of15.bsn_tlv_decap.type'] = ProtoField.uint16("of15.bsn_tlv_decap.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_decap.length'] = ProtoField.uint16("of15.bsn_tlv_decap.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_decap.value'] = ProtoField.uint32("of15.bsn_tlv_decap.value", "value", base.DEC, enum_v6_ofp_bsn_decap)
@@ -20370,6 +20379,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_data.type'],
     fields['of13.bsn_tlv_data.length'],
     fields['of13.bsn_tlv_data.value'],
+    fields['of13.bsn_tlv_data_mask.type'],
+    fields['of13.bsn_tlv_data_mask.length'],
+    fields['of13.bsn_tlv_data_mask.value'],
     fields['of13.bsn_tlv_decap.type'],
     fields['of13.bsn_tlv_decap.length'],
     fields['of13.bsn_tlv_decap.value'],
@@ -23208,6 +23220,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_data.type'],
     fields['of14.bsn_tlv_data.length'],
     fields['of14.bsn_tlv_data.value'],
+    fields['of14.bsn_tlv_data_mask.type'],
+    fields['of14.bsn_tlv_data_mask.length'],
+    fields['of14.bsn_tlv_data_mask.value'],
     fields['of14.bsn_tlv_decap.type'],
     fields['of14.bsn_tlv_decap.length'],
     fields['of14.bsn_tlv_decap.value'],
@@ -26259,6 +26274,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_data.type'],
     fields['of15.bsn_tlv_data.length'],
     fields['of15.bsn_tlv_data.value'],
+    fields['of15.bsn_tlv_data_mask.type'],
+    fields['of15.bsn_tlv_data_mask.length'],
+    fields['of15.bsn_tlv_data_mask.value'],
     fields['of15.bsn_tlv_decap.type'],
     fields['of15.bsn_tlv_decap.length'],
     fields['of15.bsn_tlv_decap.value'],
@@ -37982,6 +38000,19 @@ function dissect_of_bsn_tlv_data_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[55] = dissect_of_bsn_tlv_data_v4
 
+-- child class of_bsn_tlv_data_mask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_data_mask_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_data_mask.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_data_mask.length')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_tlv_data_mask.value')
+    return 'of_bsn_tlv_data_mask'
+end
+of_bsn_tlv_v4_dissectors[140] = dissect_of_bsn_tlv_data_mask_v4
+
 -- child class of_bsn_tlv_decap
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_decap_v4(reader, subtree)
@@ -45546,6 +45577,19 @@ function dissect_of_bsn_tlv_data_v5(reader, subtree)
     return 'of_bsn_tlv_data'
 end
 of_bsn_tlv_v5_dissectors[55] = dissect_of_bsn_tlv_data_v5
+
+-- child class of_bsn_tlv_data_mask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_data_mask_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_data_mask.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_data_mask.length')
+    read_of_octets_t(reader, 5, subtree, 'of14.bsn_tlv_data_mask.value')
+    return 'of_bsn_tlv_data_mask'
+end
+of_bsn_tlv_v5_dissectors[140] = dissect_of_bsn_tlv_data_mask_v5
 
 -- child class of_bsn_tlv_decap
 -- Child of of_bsn_tlv
@@ -53622,6 +53666,19 @@ function dissect_of_bsn_tlv_data_v6(reader, subtree)
     return 'of_bsn_tlv_data'
 end
 of_bsn_tlv_v6_dissectors[55] = dissect_of_bsn_tlv_data_v6
+
+-- child class of_bsn_tlv_data_mask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_data_mask_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_data_mask.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_data_mask.length')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_tlv_data_mask.value')
+    return 'of_bsn_tlv_data_mask'
+end
+of_bsn_tlv_v6_dissectors[140] = dissect_of_bsn_tlv_data_mask_v6
 
 -- child class of_bsn_tlv_decap
 -- Child of of_bsn_tlv

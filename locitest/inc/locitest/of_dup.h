@@ -1287,6 +1287,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_data_mask_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_decap_dup(
         of_object_t *src);
 
@@ -6143,6 +6147,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_data_mask_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_decap_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8804,6 +8812,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_data_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_data_mask_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
