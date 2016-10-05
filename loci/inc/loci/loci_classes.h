@@ -839,6 +839,8 @@ void of_bsn_tlv_crc_enabled_wire_object_id_get(of_object_t *obj, of_object_id_t 
 void of_bsn_tlv_crc_enabled_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_data_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_data_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_data_mask_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_data_mask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_decap_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_decap_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_disable_src_mac_check_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1760,6 +1762,7 @@ typedef of_object_t of_bsn_tlv_convergence_status_t;
 typedef of_object_t of_bsn_tlv_cpu_lag_t;
 typedef of_object_t of_bsn_tlv_crc_enabled_t;
 typedef of_object_t of_bsn_tlv_data_t;
+typedef of_object_t of_bsn_tlv_data_mask_t;
 typedef of_object_t of_bsn_tlv_decap_t;
 typedef of_object_t of_bsn_tlv_disable_src_mac_check_t;
 typedef of_object_t of_bsn_tlv_drop_t;
@@ -3827,6 +3830,11 @@ extern void of_bsn_tlv_crc_enabled_init(
 extern of_object_t *
     of_bsn_tlv_data_new(of_version_t version);
 extern void of_bsn_tlv_data_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_data_mask_new(of_version_t version);
+extern void of_bsn_tlv_data_mask_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9606,6 +9614,17 @@ of_bsn_tlv_crc_enabled_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_data_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_data_mask_t
+ * @param obj An instance of type of_bsn_tlv_data_mask_t
+ *
+ * \ingroup of_bsn_tlv_data_mask
+ */
+static inline void
+of_bsn_tlv_data_mask_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22449,6 +22468,15 @@ extern int WARN_UNUSED_RESULT of_bsn_tlv_data_value_set(
     of_octets_t *value);
 extern void of_bsn_tlv_data_value_get(
     of_bsn_tlv_data_t *obj,
+    of_octets_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_data_mask */
+
+extern int WARN_UNUSED_RESULT of_bsn_tlv_data_mask_value_set(
+    of_bsn_tlv_data_mask_t *obj,
+    of_octets_t *value);
+extern void of_bsn_tlv_data_mask_value_get(
+    of_bsn_tlv_data_mask_t *obj,
     of_octets_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_decap */

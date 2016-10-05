@@ -851,6 +851,53 @@ class data(bsn_tlv):
 
 bsn_tlv.subtypes[55] = data
 
+class data_mask(bsn_tlv):
+    type = 140
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = ''
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(self.value)
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = data_mask()
+        _type = reader.read("!H")[0]
+        assert(_type == 140)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = str(reader.read_all())
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("data_mask {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.pp(self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[140] = data_mask
+
 class decap(bsn_tlv):
     type = 85
 

@@ -6581,6 +6581,17 @@ typedef struct of_bsn_tlv_crc_enabled_s of_bsn_tlv_crc_enabled_t;
 typedef struct of_bsn_tlv_data_s of_bsn_tlv_data_t;
 
 /**
+ * Structure for of_bsn_tlv_data_mask object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_octets.  Functions
+ *   are of type of_bsn_tlv_data_mask_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_data_mask_s of_bsn_tlv_data_mask_t;
+
+/**
  * Structure for of_bsn_tlv_decap object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
