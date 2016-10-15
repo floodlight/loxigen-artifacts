@@ -956,6 +956,8 @@ int of_oxm_bsn_inner_eth_src_OF_VERSION_1_3_dump(loci_writer_f writer, void* coo
 int of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_inner_vlan_vid_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1561,6 +1563,8 @@ int of_oxm_bsn_inner_eth_src_OF_VERSION_1_4_dump(loci_writer_f writer, void* coo
 int of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_inner_vlan_vid_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);

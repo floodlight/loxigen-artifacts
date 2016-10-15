@@ -247,6 +247,10 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_BSN_IP_FRAGMENTATION_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_MPLS_TC_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -585,6 +589,10 @@ of_match_v2_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_BSN_IP_FRAGMENTATION_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -1907,6 +1915,22 @@ populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
             of_oxm_bsn_vfi_value_set(&elt, src->fields.bsn_vfi);
         }
     }
+    if (OF_MATCH_MASK_BSN_IP_FRAGMENTATION_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_BSN_IP_FRAGMENTATION_EXACT_TEST(src)) {
+            of_oxm_bsn_ip_fragmentation_masked_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_ip_fragmentation_masked_value_set(&elt,
+                   src->fields.bsn_ip_fragmentation);
+            of_oxm_bsn_ip_fragmentation_masked_value_mask_set(&elt,
+                   src->masks.bsn_ip_fragmentation);
+        } else {  /* Active, but not masked */
+            of_oxm_bsn_ip_fragmentation_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_ip_fragmentation_value_set(&elt, src->fields.bsn_ip_fragmentation);
+        }
+    }
     if (OF_MATCH_MASK_OVS_TCP_FLAGS_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_OVS_TCP_FLAGS_EXACT_TEST(src)) {
             of_oxm_ovs_tcp_flags_masked_init(&elt,
@@ -3036,6 +3060,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
             of_oxm_bsn_vlan_xlate_port_group_id_value_get(
                 &oxm_entry,
                 &dst->fields.bsn_vlan_xlate_port_group_id);
+            break;
+
+        case OF_OXM_BSN_IP_FRAGMENTATION_MASKED:
+            of_oxm_bsn_ip_fragmentation_masked_value_mask_get(
+                &oxm_entry,
+                &dst->masks.bsn_ip_fragmentation);
+            of_oxm_bsn_ip_fragmentation_masked_value_get(
+                &oxm_entry,
+                &dst->fields.bsn_ip_fragmentation);
+            of_memmask(&dst->fields.bsn_ip_fragmentation, &dst->masks.bsn_ip_fragmentation, sizeof(dst->fields.bsn_ip_fragmentation));
+            break;
+        case OF_OXM_BSN_IP_FRAGMENTATION:
+            OF_MATCH_MASK_BSN_IP_FRAGMENTATION_EXACT_SET(dst);
+            of_oxm_bsn_ip_fragmentation_value_get(
+                &oxm_entry,
+                &dst->fields.bsn_ip_fragmentation);
             break;
 
         case OF_OXM_MPLS_TC_MASKED:

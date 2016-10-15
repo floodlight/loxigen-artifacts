@@ -553,6 +553,8 @@ const char *const of_object_id_str[] = {
     "of_oxm_bsn_inner_eth_src_masked",
     "of_oxm_bsn_inner_vlan_vid",
     "of_oxm_bsn_inner_vlan_vid_masked",
+    "of_oxm_bsn_ip_fragmentation",
+    "of_oxm_bsn_ip_fragmentation_masked",
     "of_oxm_bsn_l2_cache_hit",
     "of_oxm_bsn_l2_cache_hit_masked",
     "of_oxm_bsn_l3_dst_class_id",

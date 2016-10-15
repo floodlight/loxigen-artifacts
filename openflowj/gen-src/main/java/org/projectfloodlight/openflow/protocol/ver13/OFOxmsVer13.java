@@ -1230,6 +1230,25 @@ public class OFOxmsVer13 implements OFOxms {
                     );
     }
 
+    public OFOxmBsnIpFragmentation.Builder buildBsnIpFragmentation() {
+        return new OFOxmBsnIpFragmentationVer13.Builder();
+    }
+    public OFOxmBsnIpFragmentation bsnIpFragmentation(OFBooleanValue value) {
+        return new OFOxmBsnIpFragmentationVer13(
+                value
+                    );
+    }
+
+    public OFOxmBsnIpFragmentationMasked.Builder buildBsnIpFragmentationMasked() {
+        return new OFOxmBsnIpFragmentationMaskedVer13.Builder();
+    }
+    public OFOxmBsnIpFragmentationMasked bsnIpFragmentationMasked(short value, short mask) {
+        return new OFOxmBsnIpFragmentationMaskedVer13(
+                value,
+                      mask
+                    );
+    }
+
     public OFOxmBsnVfi.Builder buildBsnVfi() {
         return new OFOxmBsnVfiVer13.Builder();
     }
@@ -1514,6 +1533,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInnerEthSrc((MacAddress)((Object)value)));
             case BSN_INNER_VLAN_VID:
                 return (OFOxm<F>)((Object)bsnInnerVlanVid((OFVlanVidMatch)((Object)value)));
+            case BSN_IP_FRAGMENTATION:
+                return (OFOxm<F>)((Object)bsnIpFragmentation((OFBooleanValue)((Object)value)));
             case BSN_VFI:
                 return (OFOxm<F>)((Object)bsnVfi((VFI)((Object)value)));
             case BSN_VXLAN_NETWORK_ID:
@@ -1666,6 +1687,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
             case BSN_INNER_VLAN_VID:
                 return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
+            case BSN_IP_FRAGMENTATION:
+                return (OFOxm<F>)((Object)bsnIpFragmentationMasked((short)((Object)value), (short)((Object)mask)));
             case BSN_VFI:
                 return (OFOxm<F>)((Object)bsnVfiMasked((VFI)((Object)value), (VFI)((Object)mask)));
             case BSN_VXLAN_NETWORK_ID:
@@ -1818,6 +1841,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
             case BSN_INNER_VLAN_VID:
                 return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
+            case BSN_IP_FRAGMENTATION:
+                return (OFOxm<F>)((Object)bsnIpFragmentationMasked((short)((Object)(masked.getValue())), (short)((Object)(masked.getMask()))));
             case BSN_VFI:
                 return (OFOxm<F>)((Object)bsnVfiMasked((VFI)((Object)(masked.getValue())), (VFI)((Object)(masked.getMask()))));
             case BSN_VXLAN_NETWORK_ID:

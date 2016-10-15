@@ -2191,6 +2191,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_oxm_bsn_ip_fragmentation_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_ip_fragmentation_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_oxm_bsn_l2_cache_hit_dup(
         of_object_t *src);
 
@@ -7019,6 +7027,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9672,6 +9688,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
