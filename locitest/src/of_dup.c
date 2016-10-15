@@ -14083,8 +14083,8 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_ipv6_nd_target_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV4_CODE) {
-        return of_oxm_icmpv4_code_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION_MASKED) {
+        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID_MASKED) {
@@ -14119,6 +14119,10 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_lag_id_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_ICMPV4_CODE) {
+        return of_oxm_icmpv4_code_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
         return of_oxm_bsn_udf2_masked_OF_VERSION_1_2_dup(src);
     }
@@ -14135,8 +14139,8 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_udp_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
-        return of_oxm_ipv6_nd_sll_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
+        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_ETH_TYPE) {
@@ -14423,12 +14427,12 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
-        return of_oxm_ipv6_src_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
+        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
-        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
+        return of_oxm_ipv6_src_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IP_DSCP) {
@@ -14437,6 +14441,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
         return of_oxm_vlan_vid_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
+        return of_oxm_ipv6_nd_sll_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
@@ -15084,6 +15092,59 @@ of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_dup(
 
     of_oxm_bsn_ingress_port_group_id_masked_value_mask_get(src, &val32);
     of_oxm_bsn_ingress_port_group_id_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_ip_fragmentation
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_ip_fragmentation.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_ip_fragmentation_t *
+of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_dup(
+    of_oxm_bsn_ip_fragmentation_t *src)
+{
+    of_oxm_bsn_ip_fragmentation_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_oxm_bsn_ip_fragmentation_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_ip_fragmentation_value_get(src, &val8);
+    of_oxm_bsn_ip_fragmentation_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_ip_fragmentation_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_ip_fragmentation_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_ip_fragmentation_masked_t *
+of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_dup(
+    of_oxm_bsn_ip_fragmentation_masked_t *src)
+{
+    of_oxm_bsn_ip_fragmentation_masked_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_oxm_bsn_ip_fragmentation_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_ip_fragmentation_masked_value_get(src, &val8);
+    of_oxm_bsn_ip_fragmentation_masked_value_set(dst, val8);
+
+    of_oxm_bsn_ip_fragmentation_masked_value_mask_get(src, &val8);
+    of_oxm_bsn_ip_fragmentation_masked_value_mask_set(dst, val8);
 
     return dst;
 }
@@ -33181,8 +33242,8 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_ipv6_nd_target_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV4_CODE) {
-        return of_oxm_icmpv4_code_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION_MASKED) {
+        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID_MASKED) {
@@ -33229,6 +33290,10 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_lag_id_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_ICMPV4_CODE) {
+        return of_oxm_icmpv4_code_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
         return of_oxm_bsn_udf2_masked_OF_VERSION_1_3_dup(src);
     }
@@ -33245,8 +33310,8 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_udp_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
-        return of_oxm_ipv6_nd_sll_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
+        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_ETH_TYPE) {
@@ -33561,12 +33626,12 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
-        return of_oxm_ipv6_src_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
+        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
-        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
+        return of_oxm_ipv6_src_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IP_DSCP) {
@@ -33575,6 +33640,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
         return of_oxm_vlan_vid_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
+        return of_oxm_ipv6_nd_sll_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
@@ -34401,6 +34470,59 @@ of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_3_dup(
 
     of_oxm_bsn_inner_vlan_vid_masked_value_mask_get(src, &val16);
     of_oxm_bsn_inner_vlan_vid_masked_value_mask_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_ip_fragmentation
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_ip_fragmentation.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_ip_fragmentation_t *
+of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_dup(
+    of_oxm_bsn_ip_fragmentation_t *src)
+{
+    of_oxm_bsn_ip_fragmentation_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_oxm_bsn_ip_fragmentation_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_ip_fragmentation_value_get(src, &val8);
+    of_oxm_bsn_ip_fragmentation_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_ip_fragmentation_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_ip_fragmentation_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_ip_fragmentation_masked_t *
+of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_dup(
+    of_oxm_bsn_ip_fragmentation_masked_t *src)
+{
+    of_oxm_bsn_ip_fragmentation_masked_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_oxm_bsn_ip_fragmentation_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_ip_fragmentation_masked_value_get(src, &val8);
+    of_oxm_bsn_ip_fragmentation_masked_value_set(dst, val8);
+
+    of_oxm_bsn_ip_fragmentation_masked_value_mask_get(src, &val8);
+    of_oxm_bsn_ip_fragmentation_masked_value_mask_set(dst, val8);
 
     return dst;
 }
@@ -55330,8 +55452,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_ipv6_nd_target_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV4_CODE) {
-        return of_oxm_icmpv4_code_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION_MASKED) {
+        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_MPLS_BOS_MASKED) {
@@ -55374,6 +55496,10 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_lag_id_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_ICMPV4_CODE) {
+        return of_oxm_icmpv4_code_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
         return of_oxm_bsn_udf2_masked_OF_VERSION_1_4_dup(src);
     }
@@ -55390,8 +55516,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_udp_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
-        return of_oxm_ipv6_nd_sll_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
+        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_ETH_TYPE) {
@@ -55698,12 +55824,12 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_udf3_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
-        return of_oxm_ipv6_src_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
+        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
-        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
+        return of_oxm_ipv6_src_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IP_DSCP) {
@@ -55712,6 +55838,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
         return of_oxm_vlan_vid_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
+        return of_oxm_ipv6_nd_sll_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
@@ -56489,6 +56619,59 @@ of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_dup(
 
     of_oxm_bsn_inner_vlan_vid_masked_value_mask_get(src, &val16);
     of_oxm_bsn_inner_vlan_vid_masked_value_mask_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_ip_fragmentation
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_ip_fragmentation.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_ip_fragmentation_t *
+of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_dup(
+    of_oxm_bsn_ip_fragmentation_t *src)
+{
+    of_oxm_bsn_ip_fragmentation_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_oxm_bsn_ip_fragmentation_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_ip_fragmentation_value_get(src, &val8);
+    of_oxm_bsn_ip_fragmentation_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_ip_fragmentation_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_ip_fragmentation_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_ip_fragmentation_masked_t *
+of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_dup(
+    of_oxm_bsn_ip_fragmentation_masked_t *src)
+{
+    of_oxm_bsn_ip_fragmentation_masked_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_oxm_bsn_ip_fragmentation_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_ip_fragmentation_masked_value_get(src, &val8);
+    of_oxm_bsn_ip_fragmentation_masked_value_set(dst, val8);
+
+    of_oxm_bsn_ip_fragmentation_masked_value_mask_get(src, &val8);
+    of_oxm_bsn_ip_fragmentation_masked_value_mask_set(dst, val8);
 
     return dst;
 }
@@ -73093,6 +73276,48 @@ of_oxm_bsn_inner_vlan_vid_masked_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_bsn_ip_fragmentation_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_bsn_ip_fragmentation_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

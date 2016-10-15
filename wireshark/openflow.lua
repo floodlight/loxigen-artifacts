@@ -6664,6 +6664,11 @@ fields['of12.oxm_bsn_ingress_port_group_id.value'] = ProtoField.uint32("of12.oxm
 fields['of12.oxm_bsn_ingress_port_group_id_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_ingress_port_group_id_masked.type_len", "type_len", base.DEC, nil)
 fields['of12.oxm_bsn_ingress_port_group_id_masked.value'] = ProtoField.uint32("of12.oxm_bsn_ingress_port_group_id_masked.value", "value", base.DEC, nil)
 fields['of12.oxm_bsn_ingress_port_group_id_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_ingress_port_group_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_bsn_ip_fragmentation.type_len'] = ProtoField.uint32("of12.oxm_bsn_ip_fragmentation.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_ip_fragmentation.value'] = ProtoField.uint8("of12.oxm_bsn_ip_fragmentation.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_ip_fragmentation_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_ip_fragmentation_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_ip_fragmentation_masked.value'] = ProtoField.uint8("of12.oxm_bsn_ip_fragmentation_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_ip_fragmentation_masked.value_mask'] = ProtoField.uint8("of12.oxm_bsn_ip_fragmentation_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of12.oxm_bsn_l2_cache_hit.type_len'] = ProtoField.uint32("of12.oxm_bsn_l2_cache_hit.type_len", "type_len", base.DEC, nil)
 fields['of12.oxm_bsn_l2_cache_hit.value'] = ProtoField.uint8("of12.oxm_bsn_l2_cache_hit.value", "value", base.DEC, nil)
 fields['of12.oxm_bsn_l2_cache_hit_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_l2_cache_hit_masked.type_len", "type_len", base.DEC, nil)
@@ -9334,6 +9339,11 @@ fields['of13.oxm_bsn_inner_vlan_vid.value'] = ProtoField.uint16("of13.oxm_bsn_in
 fields['of13.oxm_bsn_inner_vlan_vid_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_inner_vlan_vid_masked.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_bsn_inner_vlan_vid_masked.value'] = ProtoField.uint16("of13.oxm_bsn_inner_vlan_vid_masked.value", "value", base.DEC, nil)
 fields['of13.oxm_bsn_inner_vlan_vid_masked.value_mask'] = ProtoField.uint16("of13.oxm_bsn_inner_vlan_vid_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_bsn_ip_fragmentation.type_len'] = ProtoField.uint32("of13.oxm_bsn_ip_fragmentation.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_ip_fragmentation.value'] = ProtoField.uint8("of13.oxm_bsn_ip_fragmentation.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_ip_fragmentation_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_ip_fragmentation_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_ip_fragmentation_masked.value'] = ProtoField.uint8("of13.oxm_bsn_ip_fragmentation_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_ip_fragmentation_masked.value_mask'] = ProtoField.uint8("of13.oxm_bsn_ip_fragmentation_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of13.oxm_bsn_l2_cache_hit.type_len'] = ProtoField.uint32("of13.oxm_bsn_l2_cache_hit.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_bsn_l2_cache_hit.value'] = ProtoField.uint8("of13.oxm_bsn_l2_cache_hit.value", "value", base.DEC, nil)
 fields['of13.oxm_bsn_l2_cache_hit_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_l2_cache_hit_masked.type_len", "type_len", base.DEC, nil)
@@ -12203,6 +12213,11 @@ fields['of14.oxm_bsn_inner_vlan_vid.value'] = ProtoField.uint16("of14.oxm_bsn_in
 fields['of14.oxm_bsn_inner_vlan_vid_masked.type_len'] = ProtoField.uint32("of14.oxm_bsn_inner_vlan_vid_masked.type_len", "type_len", base.DEC, nil)
 fields['of14.oxm_bsn_inner_vlan_vid_masked.value'] = ProtoField.uint16("of14.oxm_bsn_inner_vlan_vid_masked.value", "value", base.DEC, nil)
 fields['of14.oxm_bsn_inner_vlan_vid_masked.value_mask'] = ProtoField.uint16("of14.oxm_bsn_inner_vlan_vid_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of14.oxm_bsn_ip_fragmentation.type_len'] = ProtoField.uint32("of14.oxm_bsn_ip_fragmentation.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_bsn_ip_fragmentation.value'] = ProtoField.uint8("of14.oxm_bsn_ip_fragmentation.value", "value", base.DEC, nil)
+fields['of14.oxm_bsn_ip_fragmentation_masked.type_len'] = ProtoField.uint32("of14.oxm_bsn_ip_fragmentation_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_bsn_ip_fragmentation_masked.value'] = ProtoField.uint8("of14.oxm_bsn_ip_fragmentation_masked.value", "value", base.DEC, nil)
+fields['of14.oxm_bsn_ip_fragmentation_masked.value_mask'] = ProtoField.uint8("of14.oxm_bsn_ip_fragmentation_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of14.oxm_bsn_l2_cache_hit.type_len'] = ProtoField.uint32("of14.oxm_bsn_l2_cache_hit.type_len", "type_len", base.DEC, nil)
 fields['of14.oxm_bsn_l2_cache_hit.value'] = ProtoField.uint8("of14.oxm_bsn_l2_cache_hit.value", "value", base.DEC, nil)
 fields['of14.oxm_bsn_l2_cache_hit_masked.type_len'] = ProtoField.uint32("of14.oxm_bsn_l2_cache_hit_masked.type_len", "type_len", base.DEC, nil)
@@ -15423,6 +15438,11 @@ fields['of15.oxm_bsn_inner_vlan_vid.value'] = ProtoField.uint16("of15.oxm_bsn_in
 fields['of15.oxm_bsn_inner_vlan_vid_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_inner_vlan_vid_masked.type_len", "type_len", base.DEC, nil)
 fields['of15.oxm_bsn_inner_vlan_vid_masked.value'] = ProtoField.uint16("of15.oxm_bsn_inner_vlan_vid_masked.value", "value", base.DEC, nil)
 fields['of15.oxm_bsn_inner_vlan_vid_masked.value_mask'] = ProtoField.uint16("of15.oxm_bsn_inner_vlan_vid_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_ip_fragmentation.type_len'] = ProtoField.uint32("of15.oxm_bsn_ip_fragmentation.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_ip_fragmentation.value'] = ProtoField.uint8("of15.oxm_bsn_ip_fragmentation.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_ip_fragmentation_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_ip_fragmentation_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_ip_fragmentation_masked.value'] = ProtoField.uint8("of15.oxm_bsn_ip_fragmentation_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_ip_fragmentation_masked.value_mask'] = ProtoField.uint8("of15.oxm_bsn_ip_fragmentation_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of15.oxm_bsn_l2_cache_hit.type_len'] = ProtoField.uint32("of15.oxm_bsn_l2_cache_hit.type_len", "type_len", base.DEC, nil)
 fields['of15.oxm_bsn_l2_cache_hit.value'] = ProtoField.uint8("of15.oxm_bsn_l2_cache_hit.value", "value", base.DEC, nil)
 fields['of15.oxm_bsn_l2_cache_hit_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_l2_cache_hit_masked.type_len", "type_len", base.DEC, nil)
@@ -18845,6 +18865,11 @@ p_of.fields = {
     fields['of12.oxm_bsn_ingress_port_group_id_masked.type_len'],
     fields['of12.oxm_bsn_ingress_port_group_id_masked.value'],
     fields['of12.oxm_bsn_ingress_port_group_id_masked.value_mask'],
+    fields['of12.oxm_bsn_ip_fragmentation.type_len'],
+    fields['of12.oxm_bsn_ip_fragmentation.value'],
+    fields['of12.oxm_bsn_ip_fragmentation_masked.type_len'],
+    fields['of12.oxm_bsn_ip_fragmentation_masked.value'],
+    fields['of12.oxm_bsn_ip_fragmentation_masked.value_mask'],
     fields['of12.oxm_bsn_l2_cache_hit.type_len'],
     fields['of12.oxm_bsn_l2_cache_hit.value'],
     fields['of12.oxm_bsn_l2_cache_hit_masked.type_len'],
@@ -21515,6 +21540,11 @@ p_of.fields = {
     fields['of13.oxm_bsn_inner_vlan_vid_masked.type_len'],
     fields['of13.oxm_bsn_inner_vlan_vid_masked.value'],
     fields['of13.oxm_bsn_inner_vlan_vid_masked.value_mask'],
+    fields['of13.oxm_bsn_ip_fragmentation.type_len'],
+    fields['of13.oxm_bsn_ip_fragmentation.value'],
+    fields['of13.oxm_bsn_ip_fragmentation_masked.type_len'],
+    fields['of13.oxm_bsn_ip_fragmentation_masked.value'],
+    fields['of13.oxm_bsn_ip_fragmentation_masked.value_mask'],
     fields['of13.oxm_bsn_l2_cache_hit.type_len'],
     fields['of13.oxm_bsn_l2_cache_hit.value'],
     fields['of13.oxm_bsn_l2_cache_hit_masked.type_len'],
@@ -24384,6 +24414,11 @@ p_of.fields = {
     fields['of14.oxm_bsn_inner_vlan_vid_masked.type_len'],
     fields['of14.oxm_bsn_inner_vlan_vid_masked.value'],
     fields['of14.oxm_bsn_inner_vlan_vid_masked.value_mask'],
+    fields['of14.oxm_bsn_ip_fragmentation.type_len'],
+    fields['of14.oxm_bsn_ip_fragmentation.value'],
+    fields['of14.oxm_bsn_ip_fragmentation_masked.type_len'],
+    fields['of14.oxm_bsn_ip_fragmentation_masked.value'],
+    fields['of14.oxm_bsn_ip_fragmentation_masked.value_mask'],
     fields['of14.oxm_bsn_l2_cache_hit.type_len'],
     fields['of14.oxm_bsn_l2_cache_hit.value'],
     fields['of14.oxm_bsn_l2_cache_hit_masked.type_len'],
@@ -27604,6 +27639,11 @@ p_of.fields = {
     fields['of15.oxm_bsn_inner_vlan_vid_masked.type_len'],
     fields['of15.oxm_bsn_inner_vlan_vid_masked.value'],
     fields['of15.oxm_bsn_inner_vlan_vid_masked.value_mask'],
+    fields['of15.oxm_bsn_ip_fragmentation.type_len'],
+    fields['of15.oxm_bsn_ip_fragmentation.value'],
+    fields['of15.oxm_bsn_ip_fragmentation_masked.type_len'],
+    fields['of15.oxm_bsn_ip_fragmentation_masked.value'],
+    fields['of15.oxm_bsn_ip_fragmentation_masked.value_mask'],
     fields['of15.oxm_bsn_l2_cache_hit.type_len'],
     fields['of15.oxm_bsn_l2_cache_hit.value'],
     fields['of15.oxm_bsn_l2_cache_hit_masked.type_len'],
@@ -34169,6 +34209,25 @@ function dissect_of_oxm_bsn_ingress_port_group_id_masked_v3(reader, subtree)
     return 'of_oxm_bsn_ingress_port_group_id_masked'
 end
 of_oxm_v3_dissectors[207112] = dissect_of_oxm_bsn_ingress_port_group_id_masked_v3
+
+-- child class of_oxm_bsn_ip_fragmentation
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ip_fragmentation_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_ip_fragmentation.type_len')
+    read_uint8_t(reader, 3, subtree, 'of12.oxm_bsn_ip_fragmentation.value')
+    return 'of_oxm_bsn_ip_fragmentation'
+end
+of_oxm_v3_dissectors[209921] = dissect_of_oxm_bsn_ip_fragmentation_v3
+
+-- child class of_oxm_bsn_ip_fragmentation_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ip_fragmentation_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_ip_fragmentation_masked.type_len')
+    read_uint8_t(reader, 3, subtree, 'of12.oxm_bsn_ip_fragmentation_masked.value')
+    read_uint8_t(reader, 3, subtree, 'of12.oxm_bsn_ip_fragmentation_masked.value_mask')
+    return 'of_oxm_bsn_ip_fragmentation_masked'
+end
+of_oxm_v3_dissectors[210178] = dissect_of_oxm_bsn_ip_fragmentation_masked_v3
 
 -- child class of_oxm_bsn_l2_cache_hit
 -- Child of of_oxm
@@ -41123,6 +41182,25 @@ function dissect_of_oxm_bsn_inner_vlan_vid_masked_v4(reader, subtree)
     return 'of_oxm_bsn_inner_vlan_vid_masked'
 end
 of_oxm_v4_dissectors[209156] = dissect_of_oxm_bsn_inner_vlan_vid_masked_v4
+
+-- child class of_oxm_bsn_ip_fragmentation
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ip_fragmentation_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_ip_fragmentation.type_len')
+    read_uint8_t(reader, 4, subtree, 'of13.oxm_bsn_ip_fragmentation.value')
+    return 'of_oxm_bsn_ip_fragmentation'
+end
+of_oxm_v4_dissectors[209921] = dissect_of_oxm_bsn_ip_fragmentation_v4
+
+-- child class of_oxm_bsn_ip_fragmentation_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ip_fragmentation_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_ip_fragmentation_masked.type_len')
+    read_uint8_t(reader, 4, subtree, 'of13.oxm_bsn_ip_fragmentation_masked.value')
+    read_uint8_t(reader, 4, subtree, 'of13.oxm_bsn_ip_fragmentation_masked.value_mask')
+    return 'of_oxm_bsn_ip_fragmentation_masked'
+end
+of_oxm_v4_dissectors[210178] = dissect_of_oxm_bsn_ip_fragmentation_masked_v4
 
 -- child class of_oxm_bsn_l2_cache_hit
 -- Child of of_oxm
@@ -48743,6 +48821,25 @@ function dissect_of_oxm_bsn_inner_vlan_vid_masked_v5(reader, subtree)
     return 'of_oxm_bsn_inner_vlan_vid_masked'
 end
 of_oxm_v5_dissectors[209156] = dissect_of_oxm_bsn_inner_vlan_vid_masked_v5
+
+-- child class of_oxm_bsn_ip_fragmentation
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ip_fragmentation_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_bsn_ip_fragmentation.type_len')
+    read_uint8_t(reader, 5, subtree, 'of14.oxm_bsn_ip_fragmentation.value')
+    return 'of_oxm_bsn_ip_fragmentation'
+end
+of_oxm_v5_dissectors[209921] = dissect_of_oxm_bsn_ip_fragmentation_v5
+
+-- child class of_oxm_bsn_ip_fragmentation_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ip_fragmentation_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_bsn_ip_fragmentation_masked.type_len')
+    read_uint8_t(reader, 5, subtree, 'of14.oxm_bsn_ip_fragmentation_masked.value')
+    read_uint8_t(reader, 5, subtree, 'of14.oxm_bsn_ip_fragmentation_masked.value_mask')
+    return 'of_oxm_bsn_ip_fragmentation_masked'
+end
+of_oxm_v5_dissectors[210178] = dissect_of_oxm_bsn_ip_fragmentation_masked_v5
 
 -- child class of_oxm_bsn_l2_cache_hit
 -- Child of of_oxm
@@ -57236,6 +57333,25 @@ function dissect_of_oxm_bsn_inner_vlan_vid_masked_v6(reader, subtree)
     return 'of_oxm_bsn_inner_vlan_vid_masked'
 end
 of_oxm_v6_dissectors[209156] = dissect_of_oxm_bsn_inner_vlan_vid_masked_v6
+
+-- child class of_oxm_bsn_ip_fragmentation
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ip_fragmentation_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_ip_fragmentation.type_len')
+    read_uint8_t(reader, 6, subtree, 'of15.oxm_bsn_ip_fragmentation.value')
+    return 'of_oxm_bsn_ip_fragmentation'
+end
+of_oxm_v6_dissectors[209921] = dissect_of_oxm_bsn_ip_fragmentation_v6
+
+-- child class of_oxm_bsn_ip_fragmentation_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ip_fragmentation_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_ip_fragmentation_masked.type_len')
+    read_uint8_t(reader, 6, subtree, 'of15.oxm_bsn_ip_fragmentation_masked.value')
+    read_uint8_t(reader, 6, subtree, 'of15.oxm_bsn_ip_fragmentation_masked.value_mask')
+    return 'of_oxm_bsn_ip_fragmentation_masked'
+end
+of_oxm_v6_dissectors[210178] = dissect_of_oxm_bsn_ip_fragmentation_masked_v6
 
 -- child class of_oxm_bsn_l2_cache_hit
 -- Child of of_oxm
