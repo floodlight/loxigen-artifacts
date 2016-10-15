@@ -3515,6 +3515,24 @@ extern int of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_populate_scala
 extern int of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_check_scalars(
     of_oxm_bsn_ingress_port_group_id_masked_t *obj, int value);
 
+extern int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_populate(
+    of_oxm_bsn_ip_fragmentation_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_check(
+    of_oxm_bsn_ip_fragmentation_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_populate_scalars(
+    of_oxm_bsn_ip_fragmentation_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_check_scalars(
+    of_oxm_bsn_ip_fragmentation_t *obj, int value);
+
+extern int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_populate(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_check(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj, int value);
+
 extern int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_populate(
     of_oxm_bsn_l2_cache_hit_t *obj, int value);
 extern int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_check(
@@ -8635,6 +8653,24 @@ extern int of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_3_populate_scalars(
     of_oxm_bsn_inner_vlan_vid_masked_t *obj, int value);
 extern int of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_3_check_scalars(
     of_oxm_bsn_inner_vlan_vid_masked_t *obj, int value);
+
+extern int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_populate(
+    of_oxm_bsn_ip_fragmentation_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_check(
+    of_oxm_bsn_ip_fragmentation_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_populate_scalars(
+    of_oxm_bsn_ip_fragmentation_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_check_scalars(
+    of_oxm_bsn_ip_fragmentation_t *obj, int value);
+
+extern int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_populate(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_check(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj, int value);
 
 extern int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_populate(
     of_oxm_bsn_l2_cache_hit_t *obj, int value);
@@ -14485,6 +14521,24 @@ extern int of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_populate_scalars(
     of_oxm_bsn_inner_vlan_vid_masked_t *obj, int value);
 extern int of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_check_scalars(
     of_oxm_bsn_inner_vlan_vid_masked_t *obj, int value);
+
+extern int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_populate(
+    of_oxm_bsn_ip_fragmentation_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_check(
+    of_oxm_bsn_ip_fragmentation_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_populate_scalars(
+    of_oxm_bsn_ip_fragmentation_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_check_scalars(
+    of_oxm_bsn_ip_fragmentation_t *obj, int value);
+
+extern int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_populate(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_check(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj, int value);
+extern int of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj, int value);
 
 extern int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_4_populate(
     of_oxm_bsn_l2_cache_hit_t *obj, int value);

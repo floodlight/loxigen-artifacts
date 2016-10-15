@@ -381,6 +381,10 @@ void of_oxm_bsn_ingress_port_group_id_wire_object_id_get(of_object_t *obj, of_ob
 void of_oxm_bsn_ingress_port_group_id_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_ingress_port_group_id_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_ingress_port_group_id_masked_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_ip_fragmentation_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_ip_fragmentation_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_ip_fragmentation_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_ip_fragmentation_masked_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_l2_cache_hit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_l2_cache_hit_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_l2_cache_hit_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1988,6 +1992,8 @@ typedef of_object_t of_oxm_bsn_inner_eth_src_t;
 typedef of_object_t of_oxm_bsn_inner_eth_src_masked_t;
 typedef of_object_t of_oxm_bsn_inner_vlan_vid_t;
 typedef of_object_t of_oxm_bsn_inner_vlan_vid_masked_t;
+typedef of_object_t of_oxm_bsn_ip_fragmentation_t;
+typedef of_object_t of_oxm_bsn_ip_fragmentation_masked_t;
 typedef of_object_t of_oxm_bsn_l2_cache_hit_t;
 typedef of_object_t of_oxm_bsn_l2_cache_hit_masked_t;
 typedef of_object_t of_oxm_bsn_l3_dst_class_id_t;
@@ -4960,6 +4966,16 @@ extern void of_oxm_bsn_inner_vlan_vid_init(
 extern of_object_t *
     of_oxm_bsn_inner_vlan_vid_masked_new(of_version_t version);
 extern void of_oxm_bsn_inner_vlan_vid_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_bsn_ip_fragmentation_new(of_version_t version);
+extern void of_oxm_bsn_ip_fragmentation_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_bsn_ip_fragmentation_masked_new(of_version_t version);
+extern void of_oxm_bsn_ip_fragmentation_masked_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -12100,6 +12116,28 @@ of_oxm_bsn_inner_vlan_vid_delete(of_object_t *obj) {
  */
 static inline void
 of_oxm_bsn_inner_vlan_vid_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_ip_fragmentation_t
+ * @param obj An instance of type of_oxm_bsn_ip_fragmentation_t
+ *
+ * \ingroup of_oxm_bsn_ip_fragmentation
+ */
+static inline void
+of_oxm_bsn_ip_fragmentation_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_ip_fragmentation_masked_t
+ * @param obj An instance of type of_oxm_bsn_ip_fragmentation_masked_t
+ *
+ * \ingroup of_oxm_bsn_ip_fragmentation_masked
+ */
+static inline void
+of_oxm_bsn_ip_fragmentation_masked_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -25288,6 +25326,31 @@ extern void of_oxm_bsn_inner_vlan_vid_masked_value_mask_set(
 extern void of_oxm_bsn_inner_vlan_vid_masked_value_mask_get(
     of_oxm_bsn_inner_vlan_vid_masked_t *obj,
     uint16_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_ip_fragmentation */
+
+extern void of_oxm_bsn_ip_fragmentation_value_set(
+    of_oxm_bsn_ip_fragmentation_t *obj,
+    uint8_t value);
+extern void of_oxm_bsn_ip_fragmentation_value_get(
+    of_oxm_bsn_ip_fragmentation_t *obj,
+    uint8_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_ip_fragmentation_masked */
+
+extern void of_oxm_bsn_ip_fragmentation_masked_value_set(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj,
+    uint8_t value);
+extern void of_oxm_bsn_ip_fragmentation_masked_value_get(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj,
+    uint8_t *value);
+
+extern void of_oxm_bsn_ip_fragmentation_masked_value_mask_set(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj,
+    uint8_t value_mask);
+extern void of_oxm_bsn_ip_fragmentation_masked_value_mask_get(
+    of_oxm_bsn_ip_fragmentation_masked_t *obj,
+    uint8_t *value_mask);
 
 /* Unified accessor functions for of_oxm_bsn_l2_cache_hit */
 

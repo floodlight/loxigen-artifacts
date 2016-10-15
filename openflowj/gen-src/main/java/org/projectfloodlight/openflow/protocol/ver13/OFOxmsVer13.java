@@ -223,6 +223,25 @@ public class OFOxmsVer13 implements OFOxms {
                     );
     }
 
+    public OFOxmBsnIpFragmentation.Builder buildBsnIpFragmentation() {
+        return new OFOxmBsnIpFragmentationVer13.Builder();
+    }
+    public OFOxmBsnIpFragmentation bsnIpFragmentation(OFBooleanValue value) {
+        return new OFOxmBsnIpFragmentationVer13(
+                value
+                    );
+    }
+
+    public OFOxmBsnIpFragmentationMasked.Builder buildBsnIpFragmentationMasked() {
+        return new OFOxmBsnIpFragmentationMaskedVer13.Builder();
+    }
+    public OFOxmBsnIpFragmentationMasked bsnIpFragmentationMasked(short value, short mask) {
+        return new OFOxmBsnIpFragmentationMaskedVer13(
+                value,
+                      mask
+                    );
+    }
+
     public OFOxmBsnL2CacheHit.Builder buildBsnL2CacheHit() {
         return new OFOxmBsnL2CacheHitVer13.Builder();
     }
@@ -1408,6 +1427,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInPorts512((OFBitMask512)((Object)value)));
             case BSN_INGRESS_PORT_GROUP_ID:
                 return (OFOxm<F>)((Object)bsnIngressPortGroupId((ClassId)((Object)value)));
+            case BSN_IP_FRAGMENTATION:
+                return (OFOxm<F>)((Object)bsnIpFragmentation((OFBooleanValue)((Object)value)));
             case BSN_L2_CACHE_HIT:
                 return (OFOxm<F>)((Object)bsnL2CacheHit((OFBooleanValue)((Object)value)));
             case BSN_L3_DST_CLASS_ID:
@@ -1560,6 +1581,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInPorts512Masked((OFBitMask512)((Object)value), (OFBitMask512)((Object)mask)));
             case BSN_INGRESS_PORT_GROUP_ID:
                 return (OFOxm<F>)((Object)bsnIngressPortGroupIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
+            case BSN_IP_FRAGMENTATION:
+                return (OFOxm<F>)((Object)bsnIpFragmentationMasked((short)((Object)value), (short)((Object)mask)));
             case BSN_L2_CACHE_HIT:
                 return (OFOxm<F>)((Object)bsnL2CacheHitMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case BSN_L3_DST_CLASS_ID:
@@ -1712,6 +1735,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInPorts512Masked((OFBitMask512)((Object)(masked.getValue())), (OFBitMask512)((Object)(masked.getMask()))));
             case BSN_INGRESS_PORT_GROUP_ID:
                 return (OFOxm<F>)((Object)bsnIngressPortGroupIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
+            case BSN_IP_FRAGMENTATION:
+                return (OFOxm<F>)((Object)bsnIpFragmentationMasked((short)((Object)(masked.getValue())), (short)((Object)(masked.getMask()))));
             case BSN_L2_CACHE_HIT:
                 return (OFOxm<F>)((Object)bsnL2CacheHitMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case BSN_L3_DST_CLASS_ID:
