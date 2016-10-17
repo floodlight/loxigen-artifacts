@@ -124,6 +124,7 @@ class OFMatchV3Ver13 implements OFMatchV3 {
             case BSN_INNER_VLAN_VID:
             case BSN_IN_PORTS_128:
             case BSN_IN_PORTS_512:
+            case BSN_IP_FRAGMENTATION:
             case BSN_L2_CACHE_HIT:
             case BSN_L3_DST_CLASS_ID:
             case BSN_L3_INTERFACE_CLASS_ID:

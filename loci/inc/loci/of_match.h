@@ -89,6 +89,7 @@ typedef struct of_match_fields_s {
     of_mac_addr_t        bsn_inner_eth_src;
     uint16_t             bsn_inner_vlan_vid;
     uint16_t             bsn_vfi;
+    uint8_t              bsn_ip_fragmentation;
     uint16_t             ovs_tcp_flags;
 
 } of_match_fields_t;

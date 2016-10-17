@@ -556,6 +556,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_oxm_bsn_inner_eth_src_masked_init,
     (of_object_init_f)of_oxm_bsn_inner_vlan_vid_init,
     (of_object_init_f)of_oxm_bsn_inner_vlan_vid_masked_init,
+    (of_object_init_f)of_oxm_bsn_ip_fragmentation_init,
+    (of_object_init_f)of_oxm_bsn_ip_fragmentation_masked_init,
     (of_object_init_f)of_oxm_bsn_l2_cache_hit_init,
     (of_object_init_f)of_oxm_bsn_l2_cache_hit_masked_init,
     (of_object_init_f)of_oxm_bsn_l3_dst_class_id_init,
