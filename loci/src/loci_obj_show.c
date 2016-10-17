@@ -11080,6 +11080,39 @@ of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_show(loci_writer_f writer
 }
 
 int
+of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_oxm_bsn_ip_fragmentation_value_get(obj, &val8);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_oxm_bsn_ip_fragmentation_masked_value_get(obj, &val8);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_oxm_bsn_ip_fragmentation_masked_value_mask_get(obj, &val8);
+    out += writer(cookie, "value_mask=");
+    out += LOCI_SHOW_x8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -23417,6 +23450,39 @@ of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_3_show(loci_writer_f writer, void*
     of_oxm_bsn_inner_vlan_vid_masked_value_mask_get(obj, &val16);
     out += writer(cookie, "value_mask=");
     out += LOCI_SHOW_x16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_oxm_bsn_ip_fragmentation_value_get(obj, &val8);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_oxm_bsn_ip_fragmentation_masked_value_get(obj, &val8);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_oxm_bsn_ip_fragmentation_masked_value_mask_get(obj, &val8);
+    out += writer(cookie, "value_mask=");
+    out += LOCI_SHOW_x8(writer, cookie, val8);
     out += writer(cookie, " ");
 
     return out;
@@ -36753,6 +36819,39 @@ of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_show(loci_writer_f writer, void*
 }
 
 int
+of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_oxm_bsn_ip_fragmentation_value_get(obj, &val8);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_oxm_bsn_ip_fragmentation_masked_value_get(obj, &val8);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_oxm_bsn_ip_fragmentation_masked_value_mask_get(obj, &val8);
+    out += writer(cookie, "value_mask=");
+    out += LOCI_SHOW_x8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_oxm_bsn_l2_cache_hit_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -39835,6 +39934,14 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
+    if (OF_MATCH_MASK_IP_PROTO_ACTIVE_TEST(match)) {
+        out += writer(cookie, "ip_proto active=");
+        out += LOCI_SHOW_u8(writer, cookie, match->fields.ip_proto);
+        out += writer(cookie, "/");
+        out += LOCI_SHOW_u8(writer, cookie, match->masks.ip_proto);
+        out += writer(cookie, " ");
+    }
+
     if (OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_ACTIVE_TEST(match)) {
         out += writer(cookie, "bsn_ingress_port_group_id active=");
         out += LOCI_SHOW_u32(writer, cookie, match->fields.bsn_ingress_port_group_id);
@@ -40011,11 +40118,11 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_IP_PROTO_ACTIVE_TEST(match)) {
-        out += writer(cookie, "ip_proto active=");
-        out += LOCI_SHOW_u8(writer, cookie, match->fields.ip_proto);
+    if (OF_MATCH_MASK_BSN_IP_FRAGMENTATION_ACTIVE_TEST(match)) {
+        out += writer(cookie, "bsn_ip_fragmentation active=");
+        out += LOCI_SHOW_u8(writer, cookie, match->fields.bsn_ip_fragmentation);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u8(writer, cookie, match->masks.ip_proto);
+        out += LOCI_SHOW_u8(writer, cookie, match->masks.bsn_ip_fragmentation);
         out += writer(cookie, " ");
     }
 
@@ -40723,6 +40830,8 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_match_v1_OF_VERSION_1_0_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -41651,6 +41760,8 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_packet_queue_OF_VERSION_1_1_show,
     of_port_desc_OF_VERSION_1_1_show,
     unknown_show,
@@ -42318,6 +42429,8 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_show,
+    of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_show,
     of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_show,
     of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_2_show,
     of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_2_show,
@@ -43097,6 +43210,8 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_3_show,
     of_oxm_bsn_inner_vlan_vid_OF_VERSION_1_3_show,
     of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_3_show,
+    of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_show,
+    of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_show,
     of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_show,
     of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3_show,
     of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3_show,
@@ -43876,6 +43991,8 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_4_show,
     of_oxm_bsn_inner_vlan_vid_OF_VERSION_1_4_show,
     of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_show,
+    of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_show,
+    of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_show,
     of_oxm_bsn_l2_cache_hit_OF_VERSION_1_4_show,
     of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_4_show,
     unknown_show,
