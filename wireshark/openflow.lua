@@ -1215,11 +1215,16 @@ enum_v4_ofp_bsn_hash_select_flags = {
     [2] = "OFP_BSN_HASH_SELECT_DST_IP",
 }
 
-enum_v4_ofp_flow_removed_reason = {
-    [0] = "OFPRR_IDLE_TIMEOUT",
-    [1] = "OFPRR_HARD_TIMEOUT",
-    [2] = "OFPRR_DELETE",
-    [3] = "OFPRR_GROUP_DELETE",
+enum_v4_ofp_ovs_tcp_flag = {
+    [1] = "OFP_OVS_TCP_FLAG_FIN",
+    [2] = "OFP_OVS_TCP_FLAG_SYN",
+    [4] = "OFP_OVS_TCP_FLAG_RST",
+    [8] = "OFP_OVS_TCP_FLAG_PSH",
+    [16] = "OFP_OVS_TCP_FLAG_ACK",
+    [32] = "OFP_OVS_TCP_FLAG_URG",
+    [64] = "OFP_OVS_TCP_FLAG_ECE",
+    [128] = "OFP_OVS_TCP_FLAG_CWR",
+    [256] = "OFP_OVS_TCP_FLAG_NS",
 }
 
 enum_v4_ofp_stats_type = {
@@ -1413,6 +1418,10 @@ enum_v4_of_bsn_pdu_slot_num = {
     [255] = "BSN_PDU_SLOT_NUM_ANY",
 }
 
+enum_v4_ofp_stats_request_flags = {
+    [1] = "OFPSF_REQ_MORE",
+}
+
 enum_v4_ofp_bsn_port_vxlan_mode = {
     [0] = "OFP_BSN_PORT_VXLAN_RECIRCULATION_ENABLE",
     [1] = "OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE",
@@ -1494,16 +1503,11 @@ enum_v4_ofp_ipv6exthdr_flags = {
     [256] = "OFPIEH_UNSEQ",
 }
 
-enum_v4_ofp_ovs_tcp_flag = {
-    [1] = "OFP_OVS_TCP_FLAG_FIN",
-    [2] = "OFP_OVS_TCP_FLAG_SYN",
-    [4] = "OFP_OVS_TCP_FLAG_RST",
-    [8] = "OFP_OVS_TCP_FLAG_PSH",
-    [16] = "OFP_OVS_TCP_FLAG_ACK",
-    [32] = "OFP_OVS_TCP_FLAG_URG",
-    [64] = "OFP_OVS_TCP_FLAG_ECE",
-    [128] = "OFP_OVS_TCP_FLAG_CWR",
-    [256] = "OFP_OVS_TCP_FLAG_NS",
+enum_v4_ofp_bsn_port_usage = {
+    [0] = "OFP_BSN_PORT_UNUSED",
+    [1] = "OFP_BSN_PORT_TRANSMIT_ONLY",
+    [2] = "OFP_BSN_PORT_RECEIVE_ONLY",
+    [3] = "OFP_BSN_PORT_BIDIRECTION",
 }
 
 enum_v4_ofp_table_mod_failed_code = {
@@ -1683,8 +1687,13 @@ enum_v4_of_bsn_hash_type = {
     [2] = "OFP_BSN_HASH_TYPE_ENHANCED",
 }
 
-enum_v4_ofp_stats_request_flags = {
-    [1] = "OFPSF_REQ_MORE",
+enum_v4_ofp_table_features_failed_code = {
+    [0] = "OFPTFFC_BAD_TABLE",
+    [1] = "OFPTFFC_BAD_METADATA",
+    [2] = "OFPTFFC_BAD_TYPE",
+    [3] = "OFPTFFC_BAD_LEN",
+    [4] = "OFPTFFC_BAD_ARGUMENT",
+    [5] = "OFPTFFC_EPERM",
 }
 
 enum_v4_ofp_hello_elem_type = {
@@ -1970,13 +1979,11 @@ enum_v4_ofp_group_mod_command = {
     [2] = "OFPGC_DELETE",
 }
 
-enum_v4_ofp_table_features_failed_code = {
-    [0] = "OFPTFFC_BAD_TABLE",
-    [1] = "OFPTFFC_BAD_METADATA",
-    [2] = "OFPTFFC_BAD_TYPE",
-    [3] = "OFPTFFC_BAD_LEN",
-    [4] = "OFPTFFC_BAD_ARGUMENT",
-    [5] = "OFPTFFC_EPERM",
+enum_v4_ofp_flow_removed_reason = {
+    [0] = "OFPRR_IDLE_TIMEOUT",
+    [1] = "OFPRR_HARD_TIMEOUT",
+    [2] = "OFPRR_DELETE",
+    [3] = "OFPRR_GROUP_DELETE",
 }
 
 enum_v4_ofp_stats_reply_flags = {
@@ -2491,6 +2498,15 @@ enum_v5_ofp_bad_property_code = {
     [8] = "OFPBPC_EPERM",
 }
 
+enum_v5_ofp_flow_removed_reason = {
+    [0] = "OFPRR_IDLE_TIMEOUT",
+    [1] = "OFPRR_HARD_TIMEOUT",
+    [2] = "OFPRR_DELETE",
+    [3] = "OFPRR_GROUP_DELETE",
+    [4] = "OFPRR_METER_DELETE",
+    [5] = "OFPRR_EVICTION",
+}
+
 enum_v5_ofp_port_mod_failed_code = {
     [0] = "OFPPMFC_BAD_PORT",
     [1] = "OFPPMFC_BAD_HW_ADDR",
@@ -2499,26 +2515,11 @@ enum_v5_ofp_port_mod_failed_code = {
     [4] = "OFPPMFC_EPERM",
 }
 
-enum_v5_ofp_error_type = {
-    [0] = "OFPET_HELLO_FAILED",
-    [1] = "OFPET_BAD_REQUEST",
-    [2] = "OFPET_BAD_ACTION",
-    [3] = "OFPET_BAD_INSTRUCTION",
-    [4] = "OFPET_BAD_MATCH",
-    [5] = "OFPET_FLOW_MOD_FAILED",
-    [6] = "OFPET_GROUP_MOD_FAILED",
-    [7] = "OFPET_PORT_MOD_FAILED",
-    [8] = "OFPET_TABLE_MOD_FAILED",
-    [9] = "OFPET_QUEUE_OP_FAILED",
-    [10] = "OFPET_SWITCH_CONFIG_FAILED",
-    [11] = "OFPET_ROLE_REQUEST_FAILED",
-    [12] = "OFPET_METER_MOD_FAILED",
-    [13] = "OFPET_TABLE_FEATURES_FAILED",
-    [14] = "OFPET_BAD_PROPERTY",
-    [15] = "OFPET_ASYNC_CONFIG_FAILED",
-    [16] = "OFPET_FLOW_MONITOR_FAILED",
-    [17] = "OFPET_BUNDLE_FAILED",
-    [65535] = "OFPET_EXPERIMENTER",
+enum_v5_ofp_bsn_port_usage = {
+    [0] = "OFP_BSN_PORT_UNUSED",
+    [1] = "OFP_BSN_PORT_TRANSMIT_ONLY",
+    [2] = "OFP_BSN_PORT_RECEIVE_ONLY",
+    [3] = "OFP_BSN_PORT_BIDIRECTION",
 }
 
 enum_v5_of_bsn_hash_packet_type = {
@@ -2569,13 +2570,26 @@ enum_v5_ofp_bsn_vport_l2gre_flags = {
     [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
 }
 
-enum_v5_ofp_flow_removed_reason = {
-    [0] = "OFPRR_IDLE_TIMEOUT",
-    [1] = "OFPRR_HARD_TIMEOUT",
-    [2] = "OFPRR_DELETE",
-    [3] = "OFPRR_GROUP_DELETE",
-    [4] = "OFPRR_METER_DELETE",
-    [5] = "OFPRR_EVICTION",
+enum_v5_ofp_error_type = {
+    [0] = "OFPET_HELLO_FAILED",
+    [1] = "OFPET_BAD_REQUEST",
+    [2] = "OFPET_BAD_ACTION",
+    [3] = "OFPET_BAD_INSTRUCTION",
+    [4] = "OFPET_BAD_MATCH",
+    [5] = "OFPET_FLOW_MOD_FAILED",
+    [6] = "OFPET_GROUP_MOD_FAILED",
+    [7] = "OFPET_PORT_MOD_FAILED",
+    [8] = "OFPET_TABLE_MOD_FAILED",
+    [9] = "OFPET_QUEUE_OP_FAILED",
+    [10] = "OFPET_SWITCH_CONFIG_FAILED",
+    [11] = "OFPET_ROLE_REQUEST_FAILED",
+    [12] = "OFPET_METER_MOD_FAILED",
+    [13] = "OFPET_TABLE_FEATURES_FAILED",
+    [14] = "OFPET_BAD_PROPERTY",
+    [15] = "OFPET_ASYNC_CONFIG_FAILED",
+    [16] = "OFPET_FLOW_MONITOR_FAILED",
+    [17] = "OFPET_BUNDLE_FAILED",
+    [65535] = "OFPET_EXPERIMENTER",
 }
 
 enum_v5_ofp_port_stats_optical_flags = {
@@ -2979,15 +2993,10 @@ enum_v6_ofp_oxm_class = {
     [65535] = "OFPXMC_EXPERIMENTER",
 }
 
-enum_v6_ofp_flow_monitor_failed_code = {
-    [0] = "OFPMOFC_UNKNOWN",
-    [1] = "OFPMOFC_MONITOR_EXISTS",
-    [2] = "OFPMOFC_INVALID_MONITOR",
-    [3] = "OFPMOFC_UNKNOWN_MONITOR",
-    [4] = "OFPMOFC_BAD_COMMAND",
-    [5] = "OFPMOFC_BAD_FLAGS",
-    [6] = "OFPMOFC_BAD_TABLE_ID",
-    [7] = "OFPMOFC_BAD_OUT",
+enum_v6_ofp_meter_feature_flags = {
+    [1] = "OFPMFF_ACTION_SET",
+    [2] = "OFPMFF_ANY_POSITION",
+    [4] = "OFPMFF_MULTI_LIST",
 }
 
 enum_v6_ofp_port_stats_prop_type = {
@@ -3215,6 +3224,17 @@ enum_v6_ofp_group_bucket = {
     [4294967293] = "OFPG_BUCKET_FIRST",
     [4294967294] = "OFPG_BUCKET_LAST",
     [4294967295] = "OFPG_BUCKET_ALL",
+}
+
+enum_v6_ofp_flow_monitor_failed_code = {
+    [0] = "OFPMOFC_UNKNOWN",
+    [1] = "OFPMOFC_MONITOR_EXISTS",
+    [2] = "OFPMOFC_INVALID_MONITOR",
+    [3] = "OFPMOFC_UNKNOWN_MONITOR",
+    [4] = "OFPMOFC_BAD_COMMAND",
+    [5] = "OFPMOFC_BAD_FLAGS",
+    [6] = "OFPMOFC_BAD_TABLE_ID",
+    [7] = "OFPMOFC_BAD_OUT",
 }
 
 enum_v6_ofp_group_prop_type = {
@@ -3558,10 +3578,11 @@ enum_v6_ofp_port_mod_failed_code = {
     [4] = "OFPPMFC_EPERM",
 }
 
-enum_v6_ofp_meter_feature_flags = {
-    [1] = "OFPMFF_ACTION_SET",
-    [2] = "OFPMFF_ANY_POSITION",
-    [4] = "OFPMFF_MULTI_LIST",
+enum_v6_ofp_bsn_port_usage = {
+    [0] = "OFP_BSN_PORT_UNUSED",
+    [1] = "OFP_BSN_PORT_TRANSMIT_ONLY",
+    [2] = "OFP_BSN_PORT_RECEIVE_ONLY",
+    [3] = "OFP_BSN_PORT_BIDIRECTION",
 }
 
 enum_v6_of_bsn_hash_packet_type = {
@@ -8422,6 +8443,9 @@ fields['of13.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of13.b
 fields['of13.bsn_tlv_port.type'] = ProtoField.uint16("of13.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port.length'] = ProtoField.uint16("of13.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port.value'] = ProtoField.uint32("of13.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_port_usage.type'] = ProtoField.uint16("of13.bsn_tlv_port_usage.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_port_usage.length'] = ProtoField.uint16("of13.bsn_tlv_port_usage.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_port_usage.value'] = ProtoField.uint32("of13.bsn_tlv_port_usage.value", "value", base.DEC, enum_v4_ofp_bsn_port_usage)
 fields['of13.bsn_tlv_port_vxlan_mode.type'] = ProtoField.uint16("of13.bsn_tlv_port_vxlan_mode.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port_vxlan_mode.length'] = ProtoField.uint16("of13.bsn_tlv_port_vxlan_mode.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of13.bsn_tlv_port_vxlan_mode.value", "value", base.DEC, enum_v4_ofp_bsn_port_vxlan_mode)
@@ -11268,6 +11292,9 @@ fields['of14.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of14.b
 fields['of14.bsn_tlv_port.type'] = ProtoField.uint16("of14.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_port.length'] = ProtoField.uint16("of14.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_port.value'] = ProtoField.uint32("of14.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_port_usage.type'] = ProtoField.uint16("of14.bsn_tlv_port_usage.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_port_usage.length'] = ProtoField.uint16("of14.bsn_tlv_port_usage.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_port_usage.value'] = ProtoField.uint32("of14.bsn_tlv_port_usage.value", "value", base.DEC, enum_v5_ofp_bsn_port_usage)
 fields['of14.bsn_tlv_port_vxlan_mode.type'] = ProtoField.uint16("of14.bsn_tlv_port_vxlan_mode.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_port_vxlan_mode.length'] = ProtoField.uint16("of14.bsn_tlv_port_vxlan_mode.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of14.bsn_tlv_port_vxlan_mode.value", "value", base.DEC, enum_v5_ofp_bsn_port_vxlan_mode)
@@ -14327,6 +14354,9 @@ fields['of15.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of15.b
 fields['of15.bsn_tlv_port.type'] = ProtoField.uint16("of15.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_port.length'] = ProtoField.uint16("of15.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_port.value'] = ProtoField.uint32("of15.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_port_usage.type'] = ProtoField.uint16("of15.bsn_tlv_port_usage.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_port_usage.length'] = ProtoField.uint16("of15.bsn_tlv_port_usage.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_port_usage.value'] = ProtoField.uint32("of15.bsn_tlv_port_usage.value", "value", base.DEC, enum_v6_ofp_bsn_port_usage)
 fields['of15.bsn_tlv_port_vxlan_mode.type'] = ProtoField.uint16("of15.bsn_tlv_port_vxlan_mode.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_port_vxlan_mode.length'] = ProtoField.uint16("of15.bsn_tlv_port_vxlan_mode.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of15.bsn_tlv_port_vxlan_mode.value", "value", base.DEC, enum_v6_ofp_bsn_port_vxlan_mode)
@@ -20623,6 +20653,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_port.type'],
     fields['of13.bsn_tlv_port.length'],
     fields['of13.bsn_tlv_port.value'],
+    fields['of13.bsn_tlv_port_usage.type'],
+    fields['of13.bsn_tlv_port_usage.length'],
+    fields['of13.bsn_tlv_port_usage.value'],
     fields['of13.bsn_tlv_port_vxlan_mode.type'],
     fields['of13.bsn_tlv_port_vxlan_mode.length'],
     fields['of13.bsn_tlv_port_vxlan_mode.value'],
@@ -23469,6 +23502,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_port.type'],
     fields['of14.bsn_tlv_port.length'],
     fields['of14.bsn_tlv_port.value'],
+    fields['of14.bsn_tlv_port_usage.type'],
+    fields['of14.bsn_tlv_port_usage.length'],
+    fields['of14.bsn_tlv_port_usage.value'],
     fields['of14.bsn_tlv_port_vxlan_mode.type'],
     fields['of14.bsn_tlv_port_vxlan_mode.length'],
     fields['of14.bsn_tlv_port_vxlan_mode.value'],
@@ -26528,6 +26564,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_port.type'],
     fields['of15.bsn_tlv_port.length'],
     fields['of15.bsn_tlv_port.value'],
+    fields['of15.bsn_tlv_port_usage.type'],
+    fields['of15.bsn_tlv_port_usage.length'],
+    fields['of15.bsn_tlv_port_usage.value'],
     fields['of15.bsn_tlv_port_vxlan_mode.type'],
     fields['of15.bsn_tlv_port_vxlan_mode.length'],
     fields['of15.bsn_tlv_port_vxlan_mode.value'],
@@ -38809,6 +38848,16 @@ function dissect_of_bsn_tlv_port_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[0] = dissect_of_bsn_tlv_port_v4
 
+-- child class of_bsn_tlv_port_usage
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_usage_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_usage.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_usage.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_usage.value')
+    return 'of_bsn_tlv_port_usage'
+end
+of_bsn_tlv_v4_dissectors[141] = dissect_of_bsn_tlv_port_usage_v4
+
 -- child class of_bsn_tlv_port_vxlan_mode
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_port_vxlan_mode_v4(reader, subtree)
@@ -46405,6 +46454,16 @@ function dissect_of_bsn_tlv_port_v5(reader, subtree)
     return 'of_bsn_tlv_port'
 end
 of_bsn_tlv_v5_dissectors[0] = dissect_of_bsn_tlv_port_v5
+
+-- child class of_bsn_tlv_port_usage
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_usage_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_port_usage.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_port_usage.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_port_usage.value')
+    return 'of_bsn_tlv_port_usage'
+end
+of_bsn_tlv_v5_dissectors[141] = dissect_of_bsn_tlv_port_usage_v5
 
 -- child class of_bsn_tlv_port_vxlan_mode
 -- Child of of_bsn_tlv
@@ -54513,6 +54572,16 @@ function dissect_of_bsn_tlv_port_v6(reader, subtree)
     return 'of_bsn_tlv_port'
 end
 of_bsn_tlv_v6_dissectors[0] = dissect_of_bsn_tlv_port_v6
+
+-- child class of_bsn_tlv_port_usage
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_usage_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_port_usage.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_port_usage.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_port_usage.value')
+    return 'of_bsn_tlv_port_usage'
+end
+of_bsn_tlv_v6_dissectors[141] = dissect_of_bsn_tlv_port_usage_v6
 
 -- child class of_bsn_tlv_port_vxlan_mode
 -- Child of of_bsn_tlv

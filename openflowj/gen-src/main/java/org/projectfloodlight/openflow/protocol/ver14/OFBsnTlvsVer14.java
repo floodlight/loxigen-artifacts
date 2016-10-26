@@ -801,6 +801,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvPortUsage.Builder buildPortUsage() {
+        return new OFBsnTlvPortUsageVer14.Builder();
+    }
+    public OFBsnTlvPortUsage portUsage(OFBsnPortUsage value) {
+        return new OFBsnTlvPortUsageVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvPortVxlanMode.Builder buildPortVxlanMode() {
         return new OFBsnTlvPortVxlanModeVer14.Builder();
     }

@@ -202,6 +202,8 @@ public interface OFBsnTlvs {
     OFBsnTlvPartnerSystemPriority partnerSystemPriority(int value);
     OFBsnTlvPort.Builder buildPort() throws UnsupportedOperationException;
     OFBsnTlvPort port(OFPort value);
+    OFBsnTlvPortUsage.Builder buildPortUsage() throws UnsupportedOperationException;
+    OFBsnTlvPortUsage portUsage(OFBsnPortUsage value);
     OFBsnTlvPortVxlanMode.Builder buildPortVxlanMode() throws UnsupportedOperationException;
     OFBsnTlvPortVxlanMode portVxlanMode(OFBsnPortVxlanMode value);
     OFBsnTlvPriority.Builder buildPriority() throws UnsupportedOperationException;

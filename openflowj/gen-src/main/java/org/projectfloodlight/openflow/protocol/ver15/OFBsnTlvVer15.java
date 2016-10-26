@@ -322,6 +322,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x0:
                    // discriminator value 0x0=0x0 for class OFBsnTlvPortVer15
                    return OFBsnTlvPortVer15.READER.readFrom(bb);
+               case (short) 0x8d:
+                   // discriminator value 0x8d=0x8d for class OFBsnTlvPortUsageVer15
+                   return OFBsnTlvPortUsageVer15.READER.readFrom(bb);
                case (short) 0x58:
                    // discriminator value 0x58=0x58 for class OFBsnTlvPortVxlanModeVer15
                    return OFBsnTlvPortVxlanModeVer15.READER.readFrom(bb);

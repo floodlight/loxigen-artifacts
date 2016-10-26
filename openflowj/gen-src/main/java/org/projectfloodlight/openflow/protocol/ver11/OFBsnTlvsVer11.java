@@ -640,6 +640,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.1");
     }
 
+    public OFBsnTlvPortUsage.Builder buildPortUsage() {
+        throw new UnsupportedOperationException("OFBsnTlvPortUsage not supported in version 1.1");
+    }
+    public OFBsnTlvPortUsage portUsage(OFBsnPortUsage value) {
+        throw new UnsupportedOperationException("OFBsnTlvPortUsage not supported in version 1.1");
+    }
+
     public OFBsnTlvPortVxlanMode.Builder buildPortVxlanMode() {
         throw new UnsupportedOperationException("OFBsnTlvPortVxlanMode not supported in version 1.1");
     }
