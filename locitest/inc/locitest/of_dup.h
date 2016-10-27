@@ -1587,6 +1587,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_port_usage_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_port_vxlan_mode_dup(
         of_object_t *src);
 
@@ -6463,6 +6467,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_port_usage_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9136,6 +9144,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_port_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_port_usage_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

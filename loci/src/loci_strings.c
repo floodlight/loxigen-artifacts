@@ -402,6 +402,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_partner_system_mac",
     "of_bsn_tlv_partner_system_priority",
     "of_bsn_tlv_port",
+    "of_bsn_tlv_port_usage",
     "of_bsn_tlv_port_vxlan_mode",
     "of_bsn_tlv_priority",
     "of_bsn_tlv_push_vlan_on_ingress",

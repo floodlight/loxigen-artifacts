@@ -611,6 +611,19 @@ ofp_bsn_port_counter_map = {
     55: 'OFP_BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_7',
 }
 
+# Identifiers from group ofp_bsn_port_usage
+OFP_BSN_PORT_UNUSED = 0
+OFP_BSN_PORT_TRANSMIT_ONLY = 1
+OFP_BSN_PORT_RECEIVE_ONLY = 2
+OFP_BSN_PORT_BIDIRECTION = 3
+
+ofp_bsn_port_usage_map = {
+    0: 'OFP_BSN_PORT_UNUSED',
+    1: 'OFP_BSN_PORT_TRANSMIT_ONLY',
+    2: 'OFP_BSN_PORT_RECEIVE_ONLY',
+    3: 'OFP_BSN_PORT_BIDIRECTION',
+}
+
 # Identifiers from group ofp_bsn_port_vxlan_mode
 OFP_BSN_PORT_VXLAN_RECIRCULATION_ENABLE = 0
 OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE = 1
