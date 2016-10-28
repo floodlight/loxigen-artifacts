@@ -121,6 +121,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x8b:
                    // discriminator value 0x8b=0x8b for class OFBsnTlvEgressPortGroupIdVer15
                    return OFBsnTlvEgressPortGroupIdVer15.READER.readFrom(bb);
+               case (short) 0x8f:
+                   // discriminator value 0x8f=0x8f for class OFBsnTlvEnhancedHashCapabilityVer15
+                   return OFBsnTlvEnhancedHashCapabilityVer15.READER.readFrom(bb);
                case (short) 0x21:
                    // discriminator value 0x21=0x21 for class OFBsnTlvEthDstVer15
                    return OFBsnTlvEthDstVer15.READER.readFrom(bb);
@@ -397,6 +400,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x71:
                    // discriminator value 0x71=0x71 for class OFBsnTlvTtlVer15
                    return OFBsnTlvTtlVer15.READER.readFrom(bb);
+               case (short) 0x8e:
+                   // discriminator value 0x8e=0x8e for class OFBsnTlvTunnelCapabilityVer15
+                   return OFBsnTlvTunnelCapabilityVer15.READER.readFrom(bb);
                case (short) 0x27:
                    // discriminator value 0x27=0x27 for class OFBsnTlvTxBytesVer15
                    return OFBsnTlvTxBytesVer15.READER.readFrom(bb);

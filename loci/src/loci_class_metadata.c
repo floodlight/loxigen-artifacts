@@ -2577,6 +2577,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_egress_port_group_id_push_wire_types,
     },
+    [OF_BSN_TLV_ENHANCED_HASH_CAPABILITY] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_enhanced_hash_capability_push_wire_types,
+    },
     [OF_BSN_TLV_ETH_DST] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -3128,6 +3134,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_ttl_push_wire_types,
+    },
+    [OF_BSN_TLV_TUNNEL_CAPABILITY] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_tunnel_capability_push_wire_types,
     },
     [OF_BSN_TLV_TX_BYTES] = {
         .wire_length_get=of_tlv16_wire_length_get,

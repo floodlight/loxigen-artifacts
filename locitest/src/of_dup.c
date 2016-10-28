@@ -27183,6 +27183,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_ENHANCED_HASH_CAPABILITY) {
+        return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MPLS_CONTROL_WORD) {
         return of_bsn_tlv_mpls_control_word_OF_VERSION_1_3_dup(src);
     }
@@ -27429,6 +27433,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_VNI) {
         return of_bsn_tlv_vni_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TUNNEL_CAPABILITY) {
+        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
@@ -28112,6 +28120,31 @@ of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_egress_port_group_id_value_get(src, &val32);
     of_bsn_tlv_egress_port_group_id_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_enhanced_hash_capability
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_enhanced_hash_capability.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_enhanced_hash_capability_t *
+of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_dup(
+    of_bsn_tlv_enhanced_hash_capability_t *src)
+{
+    of_bsn_tlv_enhanced_hash_capability_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_enhanced_hash_capability_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_enhanced_hash_capability_value_get(src, &val64);
+    of_bsn_tlv_enhanced_hash_capability_value_set(dst, val64);
 
     return dst;
 }
@@ -30390,6 +30423,31 @@ of_bsn_tlv_ttl_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_ttl_value_get(src, &val16);
     of_bsn_tlv_ttl_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_tunnel_capability
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_tunnel_capability.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_tunnel_capability_t *
+of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_dup(
+    of_bsn_tlv_tunnel_capability_t *src)
+{
+    of_bsn_tlv_tunnel_capability_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_tunnel_capability_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_tunnel_capability_value_get(src, &val64);
+    of_bsn_tlv_tunnel_capability_value_set(dst, val64);
 
     return dst;
 }
@@ -49468,6 +49526,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_ENHANCED_HASH_CAPABILITY) {
+        return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MPLS_CONTROL_WORD) {
         return of_bsn_tlv_mpls_control_word_OF_VERSION_1_4_dup(src);
     }
@@ -49714,6 +49776,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_VNI) {
         return of_bsn_tlv_vni_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TUNNEL_CAPABILITY) {
+        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
@@ -50397,6 +50463,31 @@ of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_egress_port_group_id_value_get(src, &val32);
     of_bsn_tlv_egress_port_group_id_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_enhanced_hash_capability
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_enhanced_hash_capability.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_enhanced_hash_capability_t *
+of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_dup(
+    of_bsn_tlv_enhanced_hash_capability_t *src)
+{
+    of_bsn_tlv_enhanced_hash_capability_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_enhanced_hash_capability_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_enhanced_hash_capability_value_get(src, &val64);
+    of_bsn_tlv_enhanced_hash_capability_value_set(dst, val64);
 
     return dst;
 }
@@ -52675,6 +52766,31 @@ of_bsn_tlv_ttl_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_ttl_value_get(src, &val16);
     of_bsn_tlv_ttl_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_tunnel_capability
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_tunnel_capability.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_tunnel_capability_t *
+of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_dup(
+    of_bsn_tlv_tunnel_capability_t *src)
+{
+    of_bsn_tlv_tunnel_capability_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_tunnel_capability_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_tunnel_capability_value_get(src, &val64);
+    of_bsn_tlv_tunnel_capability_value_set(dst, val64);
 
     return dst;
 }
@@ -69487,6 +69603,23 @@ of_bsn_tlv_egress_port_group_id_dup(
 }
 
 of_object_t *
+of_bsn_tlv_enhanced_hash_capability_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_eth_dst_dup(
     of_object_t *src)
 {
@@ -71044,6 +71177,23 @@ of_bsn_tlv_ttl_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_ttl_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_tunnel_capability_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

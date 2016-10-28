@@ -859,6 +859,8 @@ void of_bsn_tlv_egress_only_wire_object_id_get(of_object_t *obj, of_object_id_t 
 void of_bsn_tlv_egress_only_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_egress_port_group_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_egress_port_group_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_enhanced_hash_capability_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_enhanced_hash_capability_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_eth_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_eth_dst_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_eth_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1043,6 +1045,8 @@ void of_bsn_tlv_tcp_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
 void of_bsn_tlv_tcp_src_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ttl_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ttl_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_tunnel_capability_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_tunnel_capability_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tx_bytes_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_tx_bytes_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tx_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1776,6 +1780,7 @@ typedef of_object_t of_bsn_tlv_dscp_t;
 typedef of_object_t of_bsn_tlv_ecn_t;
 typedef of_object_t of_bsn_tlv_egress_only_t;
 typedef of_object_t of_bsn_tlv_egress_port_group_id_t;
+typedef of_object_t of_bsn_tlv_enhanced_hash_capability_t;
 typedef of_object_t of_bsn_tlv_eth_dst_t;
 typedef of_object_t of_bsn_tlv_eth_src_t;
 typedef of_object_t of_bsn_tlv_eth_type_t;
@@ -1868,6 +1873,7 @@ typedef of_object_t of_bsn_tlv_tcp_dst_t;
 typedef of_object_t of_bsn_tlv_tcp_flags_t;
 typedef of_object_t of_bsn_tlv_tcp_src_t;
 typedef of_object_t of_bsn_tlv_ttl_t;
+typedef of_object_t of_bsn_tlv_tunnel_capability_t;
 typedef of_object_t of_bsn_tlv_tx_bytes_t;
 typedef of_object_t of_bsn_tlv_tx_packets_t;
 typedef of_object_t of_bsn_tlv_udf_anchor_t;
@@ -3882,6 +3888,11 @@ extern void of_bsn_tlv_egress_port_group_id_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_enhanced_hash_capability_new(of_version_t version);
+extern void of_bsn_tlv_enhanced_hash_capability_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_eth_dst_new(of_version_t version);
 extern void of_bsn_tlv_eth_dst_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4339,6 +4350,11 @@ extern void of_bsn_tlv_tcp_src_init(
 extern of_object_t *
     of_bsn_tlv_ttl_new(of_version_t version);
 extern void of_bsn_tlv_ttl_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_tunnel_capability_new(of_version_t version);
+extern void of_bsn_tlv_tunnel_capability_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9730,6 +9746,17 @@ of_bsn_tlv_egress_port_group_id_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_enhanced_hash_capability_t
+ * @param obj An instance of type of_bsn_tlv_enhanced_hash_capability_t
+ *
+ * \ingroup of_bsn_tlv_enhanced_hash_capability
+ */
+static inline void
+of_bsn_tlv_enhanced_hash_capability_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_eth_dst_t
  * @param obj An instance of type of_bsn_tlv_eth_dst_t
  *
@@ -10738,6 +10765,17 @@ of_bsn_tlv_tcp_src_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_ttl_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_tunnel_capability_t
+ * @param obj An instance of type of_bsn_tlv_tunnel_capability_t
+ *
+ * \ingroup of_bsn_tlv_tunnel_capability
+ */
+static inline void
+of_bsn_tlv_tunnel_capability_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22578,6 +22616,15 @@ extern void of_bsn_tlv_egress_port_group_id_value_get(
     of_bsn_tlv_egress_port_group_id_t *obj,
     uint32_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_enhanced_hash_capability */
+
+extern void of_bsn_tlv_enhanced_hash_capability_value_set(
+    of_bsn_tlv_enhanced_hash_capability_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_enhanced_hash_capability_value_get(
+    of_bsn_tlv_enhanced_hash_capability_t *obj,
+    uint64_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_eth_dst */
 
 extern void of_bsn_tlv_eth_dst_value_set(
@@ -23358,6 +23405,15 @@ extern void of_bsn_tlv_ttl_value_set(
 extern void of_bsn_tlv_ttl_value_get(
     of_bsn_tlv_ttl_t *obj,
     uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_tunnel_capability */
+
+extern void of_bsn_tlv_tunnel_capability_value_set(
+    of_bsn_tlv_tunnel_capability_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_tunnel_capability_value_get(
+    of_bsn_tlv_tunnel_capability_t *obj,
+    uint64_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_tx_bytes */
 

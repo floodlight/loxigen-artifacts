@@ -6657,6 +6657,17 @@ typedef struct of_bsn_tlv_egress_only_s of_bsn_tlv_egress_only_t;
 typedef struct of_bsn_tlv_egress_port_group_id_s of_bsn_tlv_egress_port_group_id_t;
 
 /**
+ * Structure for of_bsn_tlv_enhanced_hash_capability object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_enhanced_hash_capability_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_enhanced_hash_capability_s of_bsn_tlv_enhanced_hash_capability_t;
+
+/**
  * Structure for of_bsn_tlv_eth_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7639,6 +7650,17 @@ typedef struct of_bsn_tlv_tcp_src_s of_bsn_tlv_tcp_src_t;
  *
  */
 typedef struct of_bsn_tlv_ttl_s of_bsn_tlv_ttl_t;
+
+/**
+ * Structure for of_bsn_tlv_tunnel_capability object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_tunnel_capability_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_tunnel_capability_s of_bsn_tlv_tunnel_capability_t;
 
 /**
  * Structure for of_bsn_tlv_tx_bytes object.  Get/set

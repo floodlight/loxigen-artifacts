@@ -1319,6 +1319,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_enhanced_hash_capability_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_eth_dst_dup(
         of_object_t *src);
 
@@ -1684,6 +1688,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_ttl_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_tunnel_capability_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6199,6 +6207,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6564,6 +6576,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_ttl_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8879,6 +8895,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_eth_dst_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -9244,6 +9264,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_ttl_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

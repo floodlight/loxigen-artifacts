@@ -393,6 +393,23 @@ ofp_bsn_decap_map = {
     8: 'OFP_BSN_DECAP_L3_MPLS',
 }
 
+# Identifiers from group ofp_bsn_enhanced_hash_type
+OFP_BSN_ENHANCED_HASH_L2 = 1
+OFP_BSN_ENHANCED_HASH_L3 = 2
+OFP_BSN_ENHANCED_HASH_L2GRE = 4
+OFP_BSN_ENHANCED_HASH_MPLS = 8
+OFP_BSN_ENHANCED_HASH_GTP = 16
+OFP_BSN_ENHANCED_HASH_SYMMETRIC = 32
+
+ofp_bsn_enhanced_hash_type_map = {
+    1: 'OFP_BSN_ENHANCED_HASH_L2',
+    2: 'OFP_BSN_ENHANCED_HASH_L3',
+    4: 'OFP_BSN_ENHANCED_HASH_L2GRE',
+    8: 'OFP_BSN_ENHANCED_HASH_MPLS',
+    16: 'OFP_BSN_ENHANCED_HASH_GTP',
+    32: 'OFP_BSN_ENHANCED_HASH_SYMMETRIC',
+}
+
 # Identifiers from group ofp_bsn_hash_select_flags
 OFP_BSN_HASH_SELECT_SRC_IP = 1
 OFP_BSN_HASH_SELECT_DST_IP = 2
@@ -672,6 +689,13 @@ ofp_bsn_tcp_flag_map = {
     64: 'OFP_BSN_TCP_FLAG_ECE',
     128: 'OFP_BSN_TCP_FLAG_CWR',
     256: 'OFP_BSN_TCP_FLAG_NS',
+}
+
+# Identifiers from group ofp_bsn_tunnel_type
+OFP_BSN_TUNNEL_L2GRE = 1
+
+ofp_bsn_tunnel_type_map = {
+    1: 'OFP_BSN_TUNNEL_L2GRE',
 }
 
 # Identifiers from group ofp_bsn_udf_anchor

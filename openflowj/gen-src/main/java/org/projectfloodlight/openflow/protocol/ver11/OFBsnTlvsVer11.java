@@ -198,6 +198,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvEgressPortGroupId not supported in version 1.1");
     }
 
+    public OFBsnTlvEnhancedHashCapability.Builder buildEnhancedHashCapability() {
+        throw new UnsupportedOperationException("OFBsnTlvEnhancedHashCapability not supported in version 1.1");
+    }
+    public OFBsnTlvEnhancedHashCapability enhancedHashCapability(Set<OFBsnEnhancedHashType> value) {
+        throw new UnsupportedOperationException("OFBsnTlvEnhancedHashCapability not supported in version 1.1");
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         throw new UnsupportedOperationException("OFBsnTlvEthDst not supported in version 1.1");
     }
@@ -798,6 +805,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvTtl ttl(int value) {
         throw new UnsupportedOperationException("OFBsnTlvTtl not supported in version 1.1");
+    }
+
+    public OFBsnTlvTunnelCapability.Builder buildTunnelCapability() {
+        throw new UnsupportedOperationException("OFBsnTlvTunnelCapability not supported in version 1.1");
+    }
+    public OFBsnTlvTunnelCapability tunnelCapability(Set<OFBsnTunnelType> value) {
+        throw new UnsupportedOperationException("OFBsnTlvTunnelCapability not supported in version 1.1");
     }
 
     public OFBsnTlvTxBytes.Builder buildTxBytes() {

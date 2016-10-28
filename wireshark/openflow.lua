@@ -1422,6 +1422,12 @@ enum_v4_ofp_stats_request_flags = {
     [1] = "OFPSF_REQ_MORE",
 }
 
+enum_v4_ofp_queue_op_failed_code = {
+    [0] = "OFPQOFC_BAD_PORT",
+    [1] = "OFPQOFC_BAD_QUEUE",
+    [2] = "OFPQOFC_EPERM",
+}
+
 enum_v4_ofp_bsn_port_vxlan_mode = {
     [0] = "OFP_BSN_PORT_VXLAN_RECIRCULATION_ENABLE",
     [1] = "OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE",
@@ -1572,6 +1578,10 @@ enum_v4_ofp_bsn_controller_connection_state = {
     [1] = "OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED",
 }
 
+enum_v4_ofp_stats_reply_flags = {
+    [1] = "OFPSF_REPLY_MORE",
+}
+
 enum_v4_ofp_group = {
     [4294967040] = "OFPG_MAX",
     [4294967292] = "OFPG_ALL",
@@ -1631,10 +1641,8 @@ enum_v4_ofp_meter_flags = {
     [8] = "OFPMF_STATS",
 }
 
-enum_v4_ofp_queue_op_failed_code = {
-    [0] = "OFPQOFC_BAD_PORT",
-    [1] = "OFPQOFC_BAD_QUEUE",
-    [2] = "OFPQOFC_EPERM",
+enum_v4_ofp_bsn_vport_q_in_q_untagged = {
+    [65535] = "OF_BSN_VPORT_Q_IN_Q_UNTAGGED",
 }
 
 enum_v4_ofp_meter_band_type = {
@@ -1969,8 +1977,8 @@ enum_v4_ofp_action_type = {
     [65535] = "OFPAT_EXPERIMENTER",
 }
 
-enum_v4_ofp_bsn_vport_q_in_q_untagged = {
-    [65535] = "OF_BSN_VPORT_Q_IN_Q_UNTAGGED",
+enum_v4_ofp_bsn_tunnel_type = {
+    [1] = "OFP_BSN_TUNNEL_L2GRE",
 }
 
 enum_v4_ofp_group_mod_command = {
@@ -1986,8 +1994,13 @@ enum_v4_ofp_flow_removed_reason = {
     [3] = "OFPRR_GROUP_DELETE",
 }
 
-enum_v4_ofp_stats_reply_flags = {
-    [1] = "OFPSF_REPLY_MORE",
+enum_v4_ofp_bsn_enhanced_hash_type = {
+    [1] = "OFP_BSN_ENHANCED_HASH_L2",
+    [2] = "OFP_BSN_ENHANCED_HASH_L3",
+    [4] = "OFP_BSN_ENHANCED_HASH_L2GRE",
+    [8] = "OFP_BSN_ENHANCED_HASH_MPLS",
+    [16] = "OFP_BSN_ENHANCED_HASH_GTP",
+    [32] = "OFP_BSN_ENHANCED_HASH_SYMMETRIC",
 }
 
 enum_v4_ofp_port_features = {
@@ -2228,6 +2241,15 @@ enum_v5_ofp_bsn_loglevel = {
 enum_v5_ofp_bundle_flags = {
     [1] = "OFPBF_ATOMIC",
     [2] = "OFPBF_ORDERED",
+}
+
+enum_v5_ofp_bsn_enhanced_hash_type = {
+    [1] = "OFP_BSN_ENHANCED_HASH_L2",
+    [2] = "OFP_BSN_ENHANCED_HASH_L3",
+    [4] = "OFP_BSN_ENHANCED_HASH_L2GRE",
+    [8] = "OFP_BSN_ENHANCED_HASH_MPLS",
+    [16] = "OFP_BSN_ENHANCED_HASH_GTP",
+    [32] = "OFP_BSN_ENHANCED_HASH_SYMMETRIC",
 }
 
 enum_v5_ofp_controller_role = {
@@ -2640,6 +2662,10 @@ enum_v5_ofp_bsn_controller_connection_state = {
     [1] = "OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED",
 }
 
+enum_v5_ofp_bsn_tunnel_type = {
+    [1] = "OFP_BSN_TUNNEL_L2GRE",
+}
+
 enum_v5_ofp_group_capabilities = {
     [1] = "OFPGFC_SELECT_WEIGHT",
     [2] = "OFPGFC_SELECT_LIVENESS",
@@ -2999,6 +3025,12 @@ enum_v6_ofp_meter_feature_flags = {
     [4] = "OFPMFF_MULTI_LIST",
 }
 
+enum_v6_ofp_async_config_failed_code = {
+    [0] = "OFPACFC_INVALID",
+    [1] = "OFPACFC_UNSUPPORTED",
+    [2] = "OFPACFC_EPERM",
+}
+
 enum_v6_ofp_port_stats_prop_type = {
     [0] = "OFPPSPT_ETHERNET",
     [1] = "OFPPSPT_OPTICAL",
@@ -3235,6 +3267,15 @@ enum_v6_ofp_flow_monitor_failed_code = {
     [5] = "OFPMOFC_BAD_FLAGS",
     [6] = "OFPMOFC_BAD_TABLE_ID",
     [7] = "OFPMOFC_BAD_OUT",
+}
+
+enum_v6_ofp_bsn_enhanced_hash_type = {
+    [1] = "OFP_BSN_ENHANCED_HASH_L2",
+    [2] = "OFP_BSN_ENHANCED_HASH_L3",
+    [4] = "OFP_BSN_ENHANCED_HASH_L2GRE",
+    [8] = "OFP_BSN_ENHANCED_HASH_MPLS",
+    [16] = "OFP_BSN_ENHANCED_HASH_GTP",
+    [32] = "OFP_BSN_ENHANCED_HASH_SYMMETRIC",
 }
 
 enum_v6_ofp_group_prop_type = {
@@ -3924,10 +3965,8 @@ enum_v6_ofp_bundle_features_prop_type = {
     [65535] = "OFPTMPBF_EXPERIMENTER",
 }
 
-enum_v6_ofp_async_config_failed_code = {
-    [0] = "OFPACFC_INVALID",
-    [1] = "OFPACFC_UNSUPPORTED",
-    [2] = "OFPACFC_EPERM",
+enum_v6_ofp_bsn_tunnel_type = {
+    [1] = "OFP_BSN_TUNNEL_L2GRE",
 }
 
 enum_v6_ofp_controller_max_len = {
@@ -8245,6 +8284,9 @@ fields['of13.bsn_tlv_egress_only.length'] = ProtoField.uint16("of13.bsn_tlv_egre
 fields['of13.bsn_tlv_egress_port_group_id.type'] = ProtoField.uint16("of13.bsn_tlv_egress_port_group_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_egress_port_group_id.length'] = ProtoField.uint16("of13.bsn_tlv_egress_port_group_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_egress_port_group_id.value'] = ProtoField.uint32("of13.bsn_tlv_egress_port_group_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_enhanced_hash_capability.type'] = ProtoField.uint16("of13.bsn_tlv_enhanced_hash_capability.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_enhanced_hash_capability.length'] = ProtoField.uint16("of13.bsn_tlv_enhanced_hash_capability.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_enhanced_hash_capability.value'] = ProtoField.uint32("of13.bsn_tlv_enhanced_hash_capability.value", "value", base.HEX, enum_v4_ofp_bsn_enhanced_hash_type)
 fields['of13.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of13.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of13.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.value'] = ProtoField.ether("of13.bsn_tlv_eth_dst.value", "value")
@@ -8514,6 +8556,9 @@ fields['of13.bsn_tlv_tcp_src.value'] = ProtoField.uint16("of13.bsn_tlv_tcp_src.v
 fields['of13.bsn_tlv_ttl.type'] = ProtoField.uint16("of13.bsn_tlv_ttl.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ttl.length'] = ProtoField.uint16("of13.bsn_tlv_ttl.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_ttl.value'] = ProtoField.uint16("of13.bsn_tlv_ttl.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_tunnel_capability.type'] = ProtoField.uint16("of13.bsn_tlv_tunnel_capability.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_tunnel_capability.length'] = ProtoField.uint16("of13.bsn_tlv_tunnel_capability.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_tunnel_capability.value'] = ProtoField.uint32("of13.bsn_tlv_tunnel_capability.value", "value", base.HEX, enum_v4_ofp_bsn_tunnel_type)
 fields['of13.bsn_tlv_tx_bytes.type'] = ProtoField.uint16("of13.bsn_tlv_tx_bytes.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_tx_bytes.length'] = ProtoField.uint16("of13.bsn_tlv_tx_bytes.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_tx_bytes.value'] = ProtoField.uint64("of13.bsn_tlv_tx_bytes.value", "value", base.DEC, nil)
@@ -11094,6 +11139,9 @@ fields['of14.bsn_tlv_egress_only.length'] = ProtoField.uint16("of14.bsn_tlv_egre
 fields['of14.bsn_tlv_egress_port_group_id.type'] = ProtoField.uint16("of14.bsn_tlv_egress_port_group_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_egress_port_group_id.length'] = ProtoField.uint16("of14.bsn_tlv_egress_port_group_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_egress_port_group_id.value'] = ProtoField.uint32("of14.bsn_tlv_egress_port_group_id.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_enhanced_hash_capability.type'] = ProtoField.uint16("of14.bsn_tlv_enhanced_hash_capability.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_enhanced_hash_capability.length'] = ProtoField.uint16("of14.bsn_tlv_enhanced_hash_capability.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_enhanced_hash_capability.value'] = ProtoField.uint32("of14.bsn_tlv_enhanced_hash_capability.value", "value", base.HEX, enum_v5_ofp_bsn_enhanced_hash_type)
 fields['of14.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of14.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of14.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_eth_dst.value'] = ProtoField.ether("of14.bsn_tlv_eth_dst.value", "value")
@@ -11363,6 +11411,9 @@ fields['of14.bsn_tlv_tcp_src.value'] = ProtoField.uint16("of14.bsn_tlv_tcp_src.v
 fields['of14.bsn_tlv_ttl.type'] = ProtoField.uint16("of14.bsn_tlv_ttl.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_ttl.length'] = ProtoField.uint16("of14.bsn_tlv_ttl.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_ttl.value'] = ProtoField.uint16("of14.bsn_tlv_ttl.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_tunnel_capability.type'] = ProtoField.uint16("of14.bsn_tlv_tunnel_capability.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_tunnel_capability.length'] = ProtoField.uint16("of14.bsn_tlv_tunnel_capability.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_tunnel_capability.value'] = ProtoField.uint32("of14.bsn_tlv_tunnel_capability.value", "value", base.HEX, enum_v5_ofp_bsn_tunnel_type)
 fields['of14.bsn_tlv_tx_bytes.type'] = ProtoField.uint16("of14.bsn_tlv_tx_bytes.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_tx_bytes.length'] = ProtoField.uint16("of14.bsn_tlv_tx_bytes.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_tx_bytes.value'] = ProtoField.uint64("of14.bsn_tlv_tx_bytes.value", "value", base.DEC, nil)
@@ -14156,6 +14207,9 @@ fields['of15.bsn_tlv_egress_only.length'] = ProtoField.uint16("of15.bsn_tlv_egre
 fields['of15.bsn_tlv_egress_port_group_id.type'] = ProtoField.uint16("of15.bsn_tlv_egress_port_group_id.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_egress_port_group_id.length'] = ProtoField.uint16("of15.bsn_tlv_egress_port_group_id.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_egress_port_group_id.value'] = ProtoField.uint32("of15.bsn_tlv_egress_port_group_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_enhanced_hash_capability.type'] = ProtoField.uint16("of15.bsn_tlv_enhanced_hash_capability.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_enhanced_hash_capability.length'] = ProtoField.uint16("of15.bsn_tlv_enhanced_hash_capability.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_enhanced_hash_capability.value'] = ProtoField.uint32("of15.bsn_tlv_enhanced_hash_capability.value", "value", base.HEX, enum_v6_ofp_bsn_enhanced_hash_type)
 fields['of15.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of15.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of15.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_eth_dst.value'] = ProtoField.ether("of15.bsn_tlv_eth_dst.value", "value")
@@ -14425,6 +14479,9 @@ fields['of15.bsn_tlv_tcp_src.value'] = ProtoField.uint16("of15.bsn_tlv_tcp_src.v
 fields['of15.bsn_tlv_ttl.type'] = ProtoField.uint16("of15.bsn_tlv_ttl.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_ttl.length'] = ProtoField.uint16("of15.bsn_tlv_ttl.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_ttl.value'] = ProtoField.uint16("of15.bsn_tlv_ttl.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_tunnel_capability.type'] = ProtoField.uint16("of15.bsn_tlv_tunnel_capability.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_tunnel_capability.length'] = ProtoField.uint16("of15.bsn_tlv_tunnel_capability.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_tunnel_capability.value'] = ProtoField.uint32("of15.bsn_tlv_tunnel_capability.value", "value", base.HEX, enum_v6_ofp_bsn_tunnel_type)
 fields['of15.bsn_tlv_tx_bytes.type'] = ProtoField.uint16("of15.bsn_tlv_tx_bytes.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_tx_bytes.length'] = ProtoField.uint16("of15.bsn_tlv_tx_bytes.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_tx_bytes.value'] = ProtoField.uint64("of15.bsn_tlv_tx_bytes.value", "value", base.DEC, nil)
@@ -20455,6 +20512,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_egress_port_group_id.type'],
     fields['of13.bsn_tlv_egress_port_group_id.length'],
     fields['of13.bsn_tlv_egress_port_group_id.value'],
+    fields['of13.bsn_tlv_enhanced_hash_capability.type'],
+    fields['of13.bsn_tlv_enhanced_hash_capability.length'],
+    fields['of13.bsn_tlv_enhanced_hash_capability.value'],
     fields['of13.bsn_tlv_eth_dst.type'],
     fields['of13.bsn_tlv_eth_dst.length'],
     fields['of13.bsn_tlv_eth_dst.value'],
@@ -20724,6 +20784,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_ttl.type'],
     fields['of13.bsn_tlv_ttl.length'],
     fields['of13.bsn_tlv_ttl.value'],
+    fields['of13.bsn_tlv_tunnel_capability.type'],
+    fields['of13.bsn_tlv_tunnel_capability.length'],
+    fields['of13.bsn_tlv_tunnel_capability.value'],
     fields['of13.bsn_tlv_tx_bytes.type'],
     fields['of13.bsn_tlv_tx_bytes.length'],
     fields['of13.bsn_tlv_tx_bytes.value'],
@@ -23304,6 +23367,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_egress_port_group_id.type'],
     fields['of14.bsn_tlv_egress_port_group_id.length'],
     fields['of14.bsn_tlv_egress_port_group_id.value'],
+    fields['of14.bsn_tlv_enhanced_hash_capability.type'],
+    fields['of14.bsn_tlv_enhanced_hash_capability.length'],
+    fields['of14.bsn_tlv_enhanced_hash_capability.value'],
     fields['of14.bsn_tlv_eth_dst.type'],
     fields['of14.bsn_tlv_eth_dst.length'],
     fields['of14.bsn_tlv_eth_dst.value'],
@@ -23573,6 +23639,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_ttl.type'],
     fields['of14.bsn_tlv_ttl.length'],
     fields['of14.bsn_tlv_ttl.value'],
+    fields['of14.bsn_tlv_tunnel_capability.type'],
+    fields['of14.bsn_tlv_tunnel_capability.length'],
+    fields['of14.bsn_tlv_tunnel_capability.value'],
     fields['of14.bsn_tlv_tx_bytes.type'],
     fields['of14.bsn_tlv_tx_bytes.length'],
     fields['of14.bsn_tlv_tx_bytes.value'],
@@ -26366,6 +26435,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_egress_port_group_id.type'],
     fields['of15.bsn_tlv_egress_port_group_id.length'],
     fields['of15.bsn_tlv_egress_port_group_id.value'],
+    fields['of15.bsn_tlv_enhanced_hash_capability.type'],
+    fields['of15.bsn_tlv_enhanced_hash_capability.length'],
+    fields['of15.bsn_tlv_enhanced_hash_capability.value'],
     fields['of15.bsn_tlv_eth_dst.type'],
     fields['of15.bsn_tlv_eth_dst.length'],
     fields['of15.bsn_tlv_eth_dst.value'],
@@ -26635,6 +26707,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_ttl.type'],
     fields['of15.bsn_tlv_ttl.length'],
     fields['of15.bsn_tlv_ttl.value'],
+    fields['of15.bsn_tlv_tunnel_capability.type'],
+    fields['of15.bsn_tlv_tunnel_capability.length'],
+    fields['of15.bsn_tlv_tunnel_capability.value'],
     fields['of15.bsn_tlv_tx_bytes.type'],
     fields['of15.bsn_tlv_tx_bytes.length'],
     fields['of15.bsn_tlv_tx_bytes.value'],
@@ -38178,6 +38253,16 @@ function dissect_of_bsn_tlv_egress_port_group_id_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[139] = dissect_of_bsn_tlv_egress_port_group_id_v4
 
+-- child class of_bsn_tlv_enhanced_hash_capability
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_enhanced_hash_capability_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_enhanced_hash_capability.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_enhanced_hash_capability.length')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_tlv_enhanced_hash_capability.value')
+    return 'of_bsn_tlv_enhanced_hash_capability'
+end
+of_bsn_tlv_v4_dissectors[143] = dissect_of_bsn_tlv_enhanced_hash_capability_v4
+
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_eth_dst_v4(reader, subtree)
@@ -39096,6 +39181,16 @@ function dissect_of_bsn_tlv_ttl_v4(reader, subtree)
     return 'of_bsn_tlv_ttl'
 end
 of_bsn_tlv_v4_dissectors[113] = dissect_of_bsn_tlv_ttl_v4
+
+-- child class of_bsn_tlv_tunnel_capability
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_tunnel_capability_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_tunnel_capability.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_tunnel_capability.length')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_tlv_tunnel_capability.value')
+    return 'of_bsn_tlv_tunnel_capability'
+end
+of_bsn_tlv_v4_dissectors[142] = dissect_of_bsn_tlv_tunnel_capability_v4
 
 -- child class of_bsn_tlv_tx_bytes
 -- Child of of_bsn_tlv
@@ -45785,6 +45880,16 @@ function dissect_of_bsn_tlv_egress_port_group_id_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[139] = dissect_of_bsn_tlv_egress_port_group_id_v5
 
+-- child class of_bsn_tlv_enhanced_hash_capability
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_enhanced_hash_capability_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_enhanced_hash_capability.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_enhanced_hash_capability.length')
+    read_uint64_t(reader, 5, subtree, 'of14.bsn_tlv_enhanced_hash_capability.value')
+    return 'of_bsn_tlv_enhanced_hash_capability'
+end
+of_bsn_tlv_v5_dissectors[143] = dissect_of_bsn_tlv_enhanced_hash_capability_v5
+
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_eth_dst_v5(reader, subtree)
@@ -46703,6 +46808,16 @@ function dissect_of_bsn_tlv_ttl_v5(reader, subtree)
     return 'of_bsn_tlv_ttl'
 end
 of_bsn_tlv_v5_dissectors[113] = dissect_of_bsn_tlv_ttl_v5
+
+-- child class of_bsn_tlv_tunnel_capability
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_tunnel_capability_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_tunnel_capability.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_tunnel_capability.length')
+    read_uint64_t(reader, 5, subtree, 'of14.bsn_tlv_tunnel_capability.value')
+    return 'of_bsn_tlv_tunnel_capability'
+end
+of_bsn_tlv_v5_dissectors[142] = dissect_of_bsn_tlv_tunnel_capability_v5
 
 -- child class of_bsn_tlv_tx_bytes
 -- Child of of_bsn_tlv
@@ -53903,6 +54018,16 @@ function dissect_of_bsn_tlv_egress_port_group_id_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[139] = dissect_of_bsn_tlv_egress_port_group_id_v6
 
+-- child class of_bsn_tlv_enhanced_hash_capability
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_enhanced_hash_capability_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_enhanced_hash_capability.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_enhanced_hash_capability.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_enhanced_hash_capability.value')
+    return 'of_bsn_tlv_enhanced_hash_capability'
+end
+of_bsn_tlv_v6_dissectors[143] = dissect_of_bsn_tlv_enhanced_hash_capability_v6
+
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_eth_dst_v6(reader, subtree)
@@ -54821,6 +54946,16 @@ function dissect_of_bsn_tlv_ttl_v6(reader, subtree)
     return 'of_bsn_tlv_ttl'
 end
 of_bsn_tlv_v6_dissectors[113] = dissect_of_bsn_tlv_ttl_v6
+
+-- child class of_bsn_tlv_tunnel_capability
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_tunnel_capability_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tunnel_capability.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_tunnel_capability.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_tunnel_capability.value')
+    return 'of_bsn_tlv_tunnel_capability'
+end
+of_bsn_tlv_v6_dissectors[142] = dissect_of_bsn_tlv_tunnel_capability_v6
 
 -- child class of_bsn_tlv_tx_bytes
 -- Child of of_bsn_tlv
