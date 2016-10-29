@@ -77,6 +77,8 @@ public interface OFBsnTlvs {
     OFBsnTlvEgressOnly egressOnly();
     OFBsnTlvEgressPortGroupId.Builder buildEgressPortGroupId() throws UnsupportedOperationException;
     OFBsnTlvEgressPortGroupId egressPortGroupId(long value);
+    OFBsnTlvEnhancedHashCapability.Builder buildEnhancedHashCapability() throws UnsupportedOperationException;
+    OFBsnTlvEnhancedHashCapability enhancedHashCapability(Set<OFBsnEnhancedHashType> value);
     OFBsnTlvEthDst.Builder buildEthDst() throws UnsupportedOperationException;
     OFBsnTlvEthDst ethDst(MacAddress value);
     OFBsnTlvEthSrc.Builder buildEthSrc() throws UnsupportedOperationException;
@@ -247,6 +249,8 @@ public interface OFBsnTlvs {
     OFBsnTlvTcpSrc tcpSrc(int value);
     OFBsnTlvTtl.Builder buildTtl() throws UnsupportedOperationException;
     OFBsnTlvTtl ttl(int value);
+    OFBsnTlvTunnelCapability.Builder buildTunnelCapability() throws UnsupportedOperationException;
+    OFBsnTlvTunnelCapability tunnelCapability(Set<OFBsnTunnelType> value);
     OFBsnTlvTxBytes.Builder buildTxBytes() throws UnsupportedOperationException;
     OFBsnTlvTxBytes txBytes(U64 value);
     OFBsnTlvTxPackets.Builder buildTxPackets() throws UnsupportedOperationException;

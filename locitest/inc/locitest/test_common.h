@@ -6818,6 +6818,15 @@ extern int of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_egress_port_group_id_t *obj, int value);
 
+extern int of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_populate(
+    of_bsn_tlv_enhanced_hash_capability_t *obj, int value);
+extern int of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_check(
+    of_bsn_tlv_enhanced_hash_capability_t *obj, int value);
+extern int of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_enhanced_hash_capability_t *obj, int value);
+extern int of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_enhanced_hash_capability_t *obj, int value);
+
 extern int of_bsn_tlv_eth_dst_OF_VERSION_1_3_populate(
     of_bsn_tlv_eth_dst_t *obj, int value);
 extern int of_bsn_tlv_eth_dst_OF_VERSION_1_3_check(
@@ -7645,6 +7654,15 @@ extern int of_bsn_tlv_ttl_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_ttl_t *obj, int value);
 extern int of_bsn_tlv_ttl_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_ttl_t *obj, int value);
+
+extern int of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_populate(
+    of_bsn_tlv_tunnel_capability_t *obj, int value);
+extern int of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_check(
+    of_bsn_tlv_tunnel_capability_t *obj, int value);
+extern int of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_tunnel_capability_t *obj, int value);
+extern int of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_tunnel_capability_t *obj, int value);
 
 extern int of_bsn_tlv_tx_bytes_OF_VERSION_1_3_populate(
     of_bsn_tlv_tx_bytes_t *obj, int value);
@@ -12731,6 +12749,15 @@ extern int of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_egress_port_group_id_t *obj, int value);
 
+extern int of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_populate(
+    of_bsn_tlv_enhanced_hash_capability_t *obj, int value);
+extern int of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_check(
+    of_bsn_tlv_enhanced_hash_capability_t *obj, int value);
+extern int of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_enhanced_hash_capability_t *obj, int value);
+extern int of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_enhanced_hash_capability_t *obj, int value);
+
 extern int of_bsn_tlv_eth_dst_OF_VERSION_1_4_populate(
     of_bsn_tlv_eth_dst_t *obj, int value);
 extern int of_bsn_tlv_eth_dst_OF_VERSION_1_4_check(
@@ -13558,6 +13585,15 @@ extern int of_bsn_tlv_ttl_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_ttl_t *obj, int value);
 extern int of_bsn_tlv_ttl_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_ttl_t *obj, int value);
+
+extern int of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_populate(
+    of_bsn_tlv_tunnel_capability_t *obj, int value);
+extern int of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_check(
+    of_bsn_tlv_tunnel_capability_t *obj, int value);
+extern int of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_tunnel_capability_t *obj, int value);
+extern int of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_tunnel_capability_t *obj, int value);
 
 extern int of_bsn_tlv_tx_bytes_OF_VERSION_1_4_populate(
     of_bsn_tlv_tx_bytes_t *obj, int value);

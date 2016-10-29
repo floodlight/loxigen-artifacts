@@ -240,6 +240,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvEnhancedHashCapability.Builder buildEnhancedHashCapability() {
+        return new OFBsnTlvEnhancedHashCapabilityVer13.Builder();
+    }
+    public OFBsnTlvEnhancedHashCapability enhancedHashCapability(Set<OFBsnEnhancedHashType> value) {
+        return new OFBsnTlvEnhancedHashCapabilityVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         return new OFBsnTlvEthDstVer13.Builder();
     }
@@ -998,6 +1007,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvTtl ttl(int value) {
         return new OFBsnTlvTtlVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvTunnelCapability.Builder buildTunnelCapability() {
+        return new OFBsnTlvTunnelCapabilityVer13.Builder();
+    }
+    public OFBsnTlvTunnelCapability tunnelCapability(Set<OFBsnTunnelType> value) {
+        return new OFBsnTlvTunnelCapabilityVer13(
                 value
                     );
     }
