@@ -1,1 +1,1 @@
-7e49dd307185f0749526cf75e962d9e9e9c109d3 Merge into master from pull request #525: Add tunnel and enhanced hash capabilities. (https://github.com/floodlight/loxigen/pull/525)
+07bc822c58534c2c716a3df0d6d53dd0194f3513 Merge into master from pull request #526: Fix IPv6Address.toString to conform to RFC 5952 standard canonical string rep (https://github.com/floodlight/loxigen/pull/526)
