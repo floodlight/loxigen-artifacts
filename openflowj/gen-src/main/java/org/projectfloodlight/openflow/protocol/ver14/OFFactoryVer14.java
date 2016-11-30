@@ -1539,6 +1539,16 @@ public class OFFactoryVer14 implements OFFactory {
         return new OFBundleCtrlMsgVer14.Builder().setXid(nextXid());
     }
 
+    public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
+        return new OFPortDescPropBsnForwardErrorCorrectionVer14.Builder();
+    }
+    public OFPortDescPropBsnForwardErrorCorrection portDescPropBsnForwardErrorCorrection(long configured, long enabled) {
+        return new OFPortDescPropBsnForwardErrorCorrectionVer14(
+                configured,
+                      enabled
+                    );
+    }
+
     public OFPortDescPropBsnGenerationId.Builder buildPortDescPropBsnGenerationId() {
         return new OFPortDescPropBsnGenerationIdVer14.Builder();
     }

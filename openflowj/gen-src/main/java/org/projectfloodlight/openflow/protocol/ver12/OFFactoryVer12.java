@@ -1380,6 +1380,13 @@ public class OFFactoryVer12 implements OFFactory {
         throw new UnsupportedOperationException("OFBundleCtrlMsg not supported in version 1.2");
     }
 
+    public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnForwardErrorCorrection not supported in version 1.2");
+    }
+    public OFPortDescPropBsnForwardErrorCorrection portDescPropBsnForwardErrorCorrection(long configured, long enabled) {
+        throw new UnsupportedOperationException("OFPortDescPropBsnForwardErrorCorrection not supported in version 1.2");
+    }
+
     public OFPortDescPropBsnGenerationId.Builder buildPortDescPropBsnGenerationId() {
         throw new UnsupportedOperationException("OFPortDescPropBsnGenerationId not supported in version 1.2");
     }

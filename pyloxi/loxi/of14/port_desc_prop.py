@@ -169,6 +169,71 @@ class bsn(experimenter):
 
 experimenter.subtypes[6035143] = bsn
 
+class bsn_forward_error_correction(bsn):
+    type = 65535
+    experimenter = 6035143
+    exp_type = 2
+
+    def __init__(self, configured=None, enabled=None):
+        if configured != None:
+            self.configured = configured
+        else:
+            self.configured = 0
+        if enabled != None:
+            self.enabled = enabled
+        else:
+            self.enabled = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.exp_type))
+        packed.append(struct.pack("!L", self.configured))
+        packed.append(struct.pack("!L", self.enabled))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_forward_error_correction()
+        _type = reader.read("!H")[0]
+        assert(_type == 65535)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _exp_type = reader.read("!L")[0]
+        assert(_exp_type == 2)
+        obj.configured = reader.read("!L")[0]
+        obj.enabled = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.configured != other.configured: return False
+        if self.enabled != other.enabled: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_forward_error_correction {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("configured = ");
+                q.text("%#x" % self.configured)
+                q.text(","); q.breakable()
+                q.text("enabled = ");
+                q.text("%#x" % self.enabled)
+            q.breakable()
+        q.text('}')
+
+bsn.subtypes[2] = bsn_forward_error_correction
+
 class bsn_generation_id(bsn):
     type = 65535
     experimenter = 6035143
