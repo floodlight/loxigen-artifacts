@@ -2675,6 +2675,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_port_desc_prop_bsn_forward_error_correction_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_port_desc_prop_bsn_generation_id_dup(
         of_object_t *src);
 
@@ -10192,6 +10196,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_port_desc_prop_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

@@ -11166,6 +11166,29 @@ typedef struct of_port_desc_prop_s of_port_desc_prop_t;
 typedef struct of_port_desc_prop_bsn_s of_port_desc_prop_bsn_t;
 
 /**
+ * Structure for of_port_desc_prop_bsn_forward_error_correction object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_bsn_forward_error_correction_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_bsn_forward_error_correction_uint32_get_f and _set_f.
+ *
+ * @param configured_get/set ( OF_1_4).
+ *   Accessors for configured, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_bsn_forward_error_correction_uint32_get_f and _set_f.
+ *
+ * @param enabled_get/set ( OF_1_4).
+ *   Accessors for enabled, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_bsn_forward_error_correction_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_port_desc_prop_bsn_forward_error_correction_s of_port_desc_prop_bsn_forward_error_correction_t;
+
+/**
  * Structure for of_port_desc_prop_bsn_generation_id object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
