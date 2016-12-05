@@ -49,6 +49,8 @@ public interface OFBsnTlvs {
     OFBsnTlvApplyBytes applyBytes(U64 value);
     OFBsnTlvApplyPackets.Builder buildApplyPackets() throws UnsupportedOperationException;
     OFBsnTlvApplyPackets applyPackets(U64 value);
+    OFBsnTlvAutoNegotiation.Builder buildAutoNegotiation() throws UnsupportedOperationException;
+    OFBsnTlvAutoNegotiation autoNegotiation(OFBsnAutoNegotiationType value);
     OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() throws UnsupportedOperationException;
     OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value);
     OFBsnTlvBroadcastRate.Builder buildBroadcastRate() throws UnsupportedOperationException;

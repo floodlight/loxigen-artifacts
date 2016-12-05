@@ -21126,6 +21126,22 @@ of_bsn_tlv_apply_packets_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie,
 }
 
 int
+of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_auto_negotiation\n");
+
+    of_bsn_tlv_auto_negotiation_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -35732,6 +35748,22 @@ of_bsn_tlv_apply_packets_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie,
 }
 
 int
+of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_auto_negotiation\n");
+
+    of_bsn_tlv_auto_negotiation_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -44004,6 +44036,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_0_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -44638,6 +44671,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_interface_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -45574,6 +45608,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_2_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dump,
     unknown_dump,
@@ -46222,6 +46257,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_anchor_OF_VERSION_1_3_dump,
     of_bsn_tlv_apply_bytes_OF_VERSION_1_3_dump,
     of_bsn_tlv_apply_packets_OF_VERSION_1_3_dump,
+    of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dump,
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dump,
     of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dump,
     of_bsn_tlv_bucket_OF_VERSION_1_3_dump,
@@ -47007,6 +47043,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_anchor_OF_VERSION_1_4_dump,
     of_bsn_tlv_apply_bytes_OF_VERSION_1_4_dump,
     of_bsn_tlv_apply_packets_OF_VERSION_1_4_dump,
+    of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dump,
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dump,
     of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dump,
     of_bsn_tlv_bucket_OF_VERSION_1_4_dump,

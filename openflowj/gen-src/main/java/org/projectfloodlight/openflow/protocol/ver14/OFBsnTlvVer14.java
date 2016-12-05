@@ -73,6 +73,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x81:
                    // discriminator value 0x81=0x81 for class OFBsnTlvApplyPacketsVer14
                    return OFBsnTlvApplyPacketsVer14.READER.readFrom(bb);
+               case (short) 0x90:
+                   // discriminator value 0x90=0x90 for class OFBsnTlvAutoNegotiationVer14
+                   return OFBsnTlvAutoNegotiationVer14.READER.readFrom(bb);
                case (short) 0xa:
                    // discriminator value 0xa=0xa for class OFBsnTlvBroadcastQueryTimeoutVer14
                    return OFBsnTlvBroadcastQueryTimeoutVer14.READER.readFrom(bb);

@@ -827,6 +827,8 @@ void of_bsn_tlv_apply_bytes_wire_object_id_get(of_object_t *obj, of_object_id_t 
 void of_bsn_tlv_apply_bytes_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_apply_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_apply_packets_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_auto_negotiation_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_auto_negotiation_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_broadcast_query_timeout_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_broadcast_query_timeout_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_broadcast_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1766,6 +1768,7 @@ typedef of_object_t of_bsn_tlv_actor_system_priority_t;
 typedef of_object_t of_bsn_tlv_anchor_t;
 typedef of_object_t of_bsn_tlv_apply_bytes_t;
 typedef of_object_t of_bsn_tlv_apply_packets_t;
+typedef of_object_t of_bsn_tlv_auto_negotiation_t;
 typedef of_object_t of_bsn_tlv_broadcast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_broadcast_rate_t;
 typedef of_object_t of_bsn_tlv_bucket_t;
@@ -3808,6 +3811,11 @@ extern void of_bsn_tlv_apply_bytes_init(
 extern of_object_t *
     of_bsn_tlv_apply_packets_new(of_version_t version);
 extern void of_bsn_tlv_apply_packets_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_auto_negotiation_new(of_version_t version);
+extern void of_bsn_tlv_auto_negotiation_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9574,6 +9582,17 @@ of_bsn_tlv_apply_bytes_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_apply_packets_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_auto_negotiation_t
+ * @param obj An instance of type of_bsn_tlv_auto_negotiation_t
+ *
+ * \ingroup of_bsn_tlv_auto_negotiation
+ */
+static inline void
+of_bsn_tlv_auto_negotiation_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22516,6 +22535,15 @@ extern void of_bsn_tlv_apply_packets_value_set(
 extern void of_bsn_tlv_apply_packets_value_get(
     of_bsn_tlv_apply_packets_t *obj,
     uint64_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_auto_negotiation */
+
+extern void of_bsn_tlv_auto_negotiation_value_set(
+    of_bsn_tlv_auto_negotiation_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_auto_negotiation_value_get(
+    of_bsn_tlv_auto_negotiation_t *obj,
+    uint8_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_broadcast_query_timeout */
 

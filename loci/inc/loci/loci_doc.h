@@ -6497,6 +6497,17 @@ typedef struct of_bsn_tlv_apply_bytes_s of_bsn_tlv_apply_bytes_t;
 typedef struct of_bsn_tlv_apply_packets_s of_bsn_tlv_apply_packets_t;
 
 /**
+ * Structure for of_bsn_tlv_auto_negotiation object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_auto_negotiation_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_auto_negotiation_s of_bsn_tlv_auto_negotiation_t;
+
+/**
  * Structure for of_bsn_tlv_broadcast_query_timeout object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

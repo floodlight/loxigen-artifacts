@@ -1635,6 +1635,12 @@ enum_v4_ofp_flow_mod_flags = {
     [128] = "OFPFF_BSN_SEND_IDLE",
 }
 
+enum_v4_ofp_bsn_auto_negotiation_type = {
+    [0] = "OFP_BSN_AUTO_NEGOTIATION_DEFAULT",
+    [1] = "OFP_BSN_AUTO_NEGOTIATION_ENABLE",
+    [2] = "OFP_BSN_AUTO_NEGOTIATION_DISABLE",
+}
+
 enum_v4_ofp_meter_flags = {
     [1] = "OFPMF_KBPS",
     [2] = "OFPMF_PKTPS",
@@ -2170,6 +2176,12 @@ enum_v5_ofp_group = {
     [4294967040] = "OFPG_MAX",
     [4294967292] = "OFPG_ALL",
     [4294967295] = "OFPG_ANY",
+}
+
+enum_v5_ofp_bsn_auto_negotiation_type = {
+    [0] = "OFP_BSN_AUTO_NEGOTIATION_DEFAULT",
+    [1] = "OFP_BSN_AUTO_NEGOTIATION_ENABLE",
+    [2] = "OFP_BSN_AUTO_NEGOTIATION_DISABLE",
 }
 
 enum_v5_ofp_meter_flags = {
@@ -3132,6 +3144,12 @@ enum_v6_ofp_group = {
     [4294967040] = "OFPG_MAX",
     [4294967292] = "OFPG_ALL",
     [4294967295] = "OFPG_ANY",
+}
+
+enum_v6_ofp_bsn_auto_negotiation_type = {
+    [0] = "OFP_BSN_AUTO_NEGOTIATION_DEFAULT",
+    [1] = "OFP_BSN_AUTO_NEGOTIATION_ENABLE",
+    [2] = "OFP_BSN_AUTO_NEGOTIATION_DISABLE",
 }
 
 enum_v6_ofp_meter_flags = {
@@ -8243,6 +8261,9 @@ fields['of13.bsn_tlv_apply_bytes.value'] = ProtoField.uint64("of13.bsn_tlv_apply
 fields['of13.bsn_tlv_apply_packets.type'] = ProtoField.uint16("of13.bsn_tlv_apply_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_apply_packets.length'] = ProtoField.uint16("of13.bsn_tlv_apply_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_apply_packets.value'] = ProtoField.uint64("of13.bsn_tlv_apply_packets.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_auto_negotiation.type'] = ProtoField.uint16("of13.bsn_tlv_auto_negotiation.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_auto_negotiation.length'] = ProtoField.uint16("of13.bsn_tlv_auto_negotiation.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_auto_negotiation.value'] = ProtoField.uint32("of13.bsn_tlv_auto_negotiation.value", "value", base.DEC, enum_v4_ofp_bsn_auto_negotiation_type)
 fields['of13.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
@@ -11098,6 +11119,9 @@ fields['of14.bsn_tlv_apply_bytes.value'] = ProtoField.uint64("of14.bsn_tlv_apply
 fields['of14.bsn_tlv_apply_packets.type'] = ProtoField.uint16("of14.bsn_tlv_apply_packets.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_apply_packets.length'] = ProtoField.uint16("of14.bsn_tlv_apply_packets.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_apply_packets.value'] = ProtoField.uint64("of14.bsn_tlv_apply_packets.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_auto_negotiation.type'] = ProtoField.uint16("of14.bsn_tlv_auto_negotiation.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_auto_negotiation.length'] = ProtoField.uint16("of14.bsn_tlv_auto_negotiation.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_auto_negotiation.value'] = ProtoField.uint32("of14.bsn_tlv_auto_negotiation.value", "value", base.DEC, enum_v5_ofp_bsn_auto_negotiation_type)
 fields['of14.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of14.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of14.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of14.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
@@ -14172,6 +14196,9 @@ fields['of15.bsn_tlv_apply_bytes.value'] = ProtoField.uint64("of15.bsn_tlv_apply
 fields['of15.bsn_tlv_apply_packets.type'] = ProtoField.uint16("of15.bsn_tlv_apply_packets.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_apply_packets.length'] = ProtoField.uint16("of15.bsn_tlv_apply_packets.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_apply_packets.value'] = ProtoField.uint64("of15.bsn_tlv_apply_packets.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_auto_negotiation.type'] = ProtoField.uint16("of15.bsn_tlv_auto_negotiation.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_auto_negotiation.length'] = ProtoField.uint16("of15.bsn_tlv_auto_negotiation.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_auto_negotiation.value'] = ProtoField.uint32("of15.bsn_tlv_auto_negotiation.value", "value", base.DEC, enum_v6_ofp_bsn_auto_negotiation_type)
 fields['of15.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of15.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of15.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of15.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
@@ -20483,6 +20510,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_apply_packets.type'],
     fields['of13.bsn_tlv_apply_packets.length'],
     fields['of13.bsn_tlv_apply_packets.value'],
+    fields['of13.bsn_tlv_auto_negotiation.type'],
+    fields['of13.bsn_tlv_auto_negotiation.length'],
+    fields['of13.bsn_tlv_auto_negotiation.value'],
     fields['of13.bsn_tlv_broadcast_query_timeout.type'],
     fields['of13.bsn_tlv_broadcast_query_timeout.length'],
     fields['of13.bsn_tlv_broadcast_query_timeout.value'],
@@ -23338,6 +23368,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_apply_packets.type'],
     fields['of14.bsn_tlv_apply_packets.length'],
     fields['of14.bsn_tlv_apply_packets.value'],
+    fields['of14.bsn_tlv_auto_negotiation.type'],
+    fields['of14.bsn_tlv_auto_negotiation.length'],
+    fields['of14.bsn_tlv_auto_negotiation.value'],
     fields['of14.bsn_tlv_broadcast_query_timeout.type'],
     fields['of14.bsn_tlv_broadcast_query_timeout.length'],
     fields['of14.bsn_tlv_broadcast_query_timeout.value'],
@@ -26412,6 +26445,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_apply_packets.type'],
     fields['of15.bsn_tlv_apply_packets.length'],
     fields['of15.bsn_tlv_apply_packets.value'],
+    fields['of15.bsn_tlv_auto_negotiation.type'],
+    fields['of15.bsn_tlv_auto_negotiation.length'],
+    fields['of15.bsn_tlv_auto_negotiation.value'],
     fields['of15.bsn_tlv_broadcast_query_timeout.type'],
     fields['of15.bsn_tlv_broadcast_query_timeout.length'],
     fields['of15.bsn_tlv_broadcast_query_timeout.value'],
@@ -38112,6 +38148,16 @@ function dissect_of_bsn_tlv_apply_packets_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[129] = dissect_of_bsn_tlv_apply_packets_v4
 
+-- child class of_bsn_tlv_auto_negotiation
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_auto_negotiation_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_auto_negotiation.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_auto_negotiation.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_auto_negotiation.value')
+    return 'of_bsn_tlv_auto_negotiation'
+end
+of_bsn_tlv_v4_dissectors[144] = dissect_of_bsn_tlv_auto_negotiation_v4
+
 -- child class of_bsn_tlv_broadcast_query_timeout
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_broadcast_query_timeout_v4(reader, subtree)
@@ -45738,6 +45784,16 @@ function dissect_of_bsn_tlv_apply_packets_v5(reader, subtree)
     return 'of_bsn_tlv_apply_packets'
 end
 of_bsn_tlv_v5_dissectors[129] = dissect_of_bsn_tlv_apply_packets_v5
+
+-- child class of_bsn_tlv_auto_negotiation
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_auto_negotiation_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_auto_negotiation.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_auto_negotiation.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_auto_negotiation.value')
+    return 'of_bsn_tlv_auto_negotiation'
+end
+of_bsn_tlv_v5_dissectors[144] = dissect_of_bsn_tlv_auto_negotiation_v5
 
 -- child class of_bsn_tlv_broadcast_query_timeout
 -- Child of of_bsn_tlv
@@ -53889,6 +53945,16 @@ function dissect_of_bsn_tlv_apply_packets_v6(reader, subtree)
     return 'of_bsn_tlv_apply_packets'
 end
 of_bsn_tlv_v6_dissectors[129] = dissect_of_bsn_tlv_apply_packets_v6
+
+-- child class of_bsn_tlv_auto_negotiation
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_auto_negotiation_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_auto_negotiation.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_auto_negotiation.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_auto_negotiation.value')
+    return 'of_bsn_tlv_auto_negotiation'
+end
+of_bsn_tlv_v6_dissectors[144] = dissect_of_bsn_tlv_auto_negotiation_v6
 
 -- child class of_bsn_tlv_broadcast_query_timeout
 -- Child of of_bsn_tlv
