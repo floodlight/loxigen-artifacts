@@ -6674,6 +6674,15 @@ extern int of_bsn_tlv_apply_packets_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_apply_packets_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_apply_packets_t *obj, int value);
 
+extern int of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_populate(
+    of_bsn_tlv_auto_negotiation_t *obj, int value);
+extern int of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_check(
+    of_bsn_tlv_auto_negotiation_t *obj, int value);
+extern int of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_auto_negotiation_t *obj, int value);
+extern int of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_auto_negotiation_t *obj, int value);
+
 extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_populate(
     of_bsn_tlv_broadcast_query_timeout_t *obj, int value);
 extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_check(
@@ -12604,6 +12613,15 @@ extern int of_bsn_tlv_apply_packets_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_apply_packets_t *obj, int value);
 extern int of_bsn_tlv_apply_packets_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_apply_packets_t *obj, int value);
+
+extern int of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_populate(
+    of_bsn_tlv_auto_negotiation_t *obj, int value);
+extern int of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_check(
+    of_bsn_tlv_auto_negotiation_t *obj, int value);
+extern int of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_auto_negotiation_t *obj, int value);
+extern int of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_auto_negotiation_t *obj, int value);
 
 extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_populate(
     of_bsn_tlv_broadcast_query_timeout_t *obj, int value);

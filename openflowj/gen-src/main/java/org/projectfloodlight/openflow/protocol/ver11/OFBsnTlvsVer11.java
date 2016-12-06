@@ -98,6 +98,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvApplyPackets not supported in version 1.1");
     }
 
+    public OFBsnTlvAutoNegotiation.Builder buildAutoNegotiation() {
+        throw new UnsupportedOperationException("OFBsnTlvAutoNegotiation not supported in version 1.1");
+    }
+    public OFBsnTlvAutoNegotiation autoNegotiation(OFBsnAutoNegotiationType value) {
+        throw new UnsupportedOperationException("OFBsnTlvAutoNegotiation not supported in version 1.1");
+    }
+
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.1");
     }
