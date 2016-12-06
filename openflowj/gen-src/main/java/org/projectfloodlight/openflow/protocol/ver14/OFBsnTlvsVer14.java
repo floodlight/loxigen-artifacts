@@ -116,6 +116,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvAutoNegotiation.Builder buildAutoNegotiation() {
+        return new OFBsnTlvAutoNegotiationVer14.Builder();
+    }
+    public OFBsnTlvAutoNegotiation autoNegotiation(OFBsnAutoNegotiationType value) {
+        return new OFBsnTlvAutoNegotiationVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         return new OFBsnTlvBroadcastQueryTimeoutVer14.Builder();
     }

@@ -738,6 +738,7 @@ int of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_show(loci_writer_f writer, v
 int of_bsn_tlv_anchor_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_apply_bytes_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_apply_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_bucket_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1352,6 +1353,7 @@ int of_bsn_tlv_actor_system_priority_OF_VERSION_1_4_show(loci_writer_f writer, v
 int of_bsn_tlv_anchor_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_apply_bytes_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_apply_packets_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_bucket_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);

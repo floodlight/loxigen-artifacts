@@ -27371,6 +27371,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_tx_bytes_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_AUTO_NEGOTIATION) {
+        return of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_IPV4_DST) {
         return of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_dup(src);
     }
@@ -27727,6 +27731,31 @@ of_bsn_tlv_apply_packets_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_apply_packets_value_get(src, &val64);
     of_bsn_tlv_apply_packets_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_auto_negotiation
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_auto_negotiation.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_auto_negotiation_t *
+of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dup(
+    of_bsn_tlv_auto_negotiation_t *src)
+{
+    of_bsn_tlv_auto_negotiation_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_auto_negotiation_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_auto_negotiation_value_get(src, &val8);
+    of_bsn_tlv_auto_negotiation_value_set(dst, val8);
 
     return dst;
 }
@@ -49714,6 +49743,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_tx_bytes_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_AUTO_NEGOTIATION) {
+        return of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_IPV4_DST) {
         return of_bsn_tlv_ipv4_dst_OF_VERSION_1_4_dup(src);
     }
@@ -50070,6 +50103,31 @@ of_bsn_tlv_apply_packets_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_apply_packets_value_get(src, &val64);
     of_bsn_tlv_apply_packets_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_auto_negotiation
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_auto_negotiation.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_auto_negotiation_t *
+of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dup(
+    of_bsn_tlv_auto_negotiation_t *src)
+{
+    of_bsn_tlv_auto_negotiation_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_auto_negotiation_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_auto_negotiation_value_get(src, &val8);
+    of_bsn_tlv_auto_negotiation_value_set(dst, val8);
 
     return dst;
 }
@@ -69362,6 +69420,23 @@ of_bsn_tlv_apply_packets_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_apply_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_auto_negotiation_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

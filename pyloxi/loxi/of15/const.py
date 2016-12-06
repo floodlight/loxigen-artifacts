@@ -416,6 +416,17 @@ ofp_bsn_anchor_map = {
     3: 'OFP_BSN_ANCHOR_L4_PAYLOAD_START',
 }
 
+# Identifiers from group ofp_bsn_auto_negotiation_type
+OFP_BSN_AUTO_NEGOTIATION_DEFAULT = 0
+OFP_BSN_AUTO_NEGOTIATION_ENABLE = 1
+OFP_BSN_AUTO_NEGOTIATION_DISABLE = 2
+
+ofp_bsn_auto_negotiation_type_map = {
+    0: 'OFP_BSN_AUTO_NEGOTIATION_DEFAULT',
+    1: 'OFP_BSN_AUTO_NEGOTIATION_ENABLE',
+    2: 'OFP_BSN_AUTO_NEGOTIATION_DISABLE',
+}
+
 # Identifiers from group ofp_bsn_controller_connection_state
 OFP_BSN_CONTROLLER_CONNECTION_STATE_DISCONNECTED = 0
 OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED = 1

@@ -319,6 +319,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_anchor",
     "of_bsn_tlv_apply_bytes",
     "of_bsn_tlv_apply_packets",
+    "of_bsn_tlv_auto_negotiation",
     "of_bsn_tlv_broadcast_query_timeout",
     "of_bsn_tlv_broadcast_rate",
     "of_bsn_tlv_bucket",

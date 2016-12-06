@@ -322,6 +322,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_anchor_init,
     (of_object_init_f)of_bsn_tlv_apply_bytes_init,
     (of_object_init_f)of_bsn_tlv_apply_packets_init,
+    (of_object_init_f)of_bsn_tlv_auto_negotiation_init,
     (of_object_init_f)of_bsn_tlv_broadcast_query_timeout_init,
     (of_object_init_f)of_bsn_tlv_broadcast_rate_init,
     (of_object_init_f)of_bsn_tlv_bucket_init,
