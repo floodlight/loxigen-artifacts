@@ -1210,88 +1210,31 @@ enum_v3_ofp_port_features = {
 }
 
 
-enum_v4_ofp_bsn_hash_select_flags = {
-    [1] = "OFP_BSN_HASH_SELECT_SRC_IP",
-    [2] = "OFP_BSN_HASH_SELECT_DST_IP",
+enum_v4_macro_definitions = {
+    [32] = "OFP_MAX_TABLE_NAME_LEN",
+    [16] = "OFP_MAX_PORT_NAME_LEN",
+    [6653] = "OFP_TCP_PORT",
+    [6653] = "OFP_SSL_PORT",
+    [6] = "OFP_ETH_ALEN",
+    [128] = "OFP_DEFAULT_MISS_SEND_LEN",
+    [0] = "OFP_VLAN_NONE",
+    [0] = "OFP_FLOW_PERMANENT",
+    [32768] = "OFP_DEFAULT_PRIORITY",
+    [4294967295] = "OFP_NO_BUFFER",
+    [256] = "DESC_STR_LEN",
+    [32] = "SERIAL_NUM_LEN",
+    [4294967295] = "OFPQ_ALL",
+    [65535] = "OFPQ_MAX_RATE_UNCFG",
+    [65535] = "OFPQ_MIN_RATE_UNCFG",
 }
 
-enum_v4_ofp_ovs_tcp_flag = {
-    [1] = "OFP_OVS_TCP_FLAG_FIN",
-    [2] = "OFP_OVS_TCP_FLAG_SYN",
-    [4] = "OFP_OVS_TCP_FLAG_RST",
-    [8] = "OFP_OVS_TCP_FLAG_PSH",
-    [16] = "OFP_OVS_TCP_FLAG_ACK",
-    [32] = "OFP_OVS_TCP_FLAG_URG",
-    [64] = "OFP_OVS_TCP_FLAG_ECE",
-    [128] = "OFP_OVS_TCP_FLAG_CWR",
-    [256] = "OFP_OVS_TCP_FLAG_NS",
-}
-
-enum_v4_ofp_stats_type = {
-    [0] = "OFPST_DESC",
-    [1] = "OFPST_FLOW",
-    [2] = "OFPST_AGGREGATE",
-    [3] = "OFPST_TABLE",
-    [4] = "OFPST_PORT",
-    [5] = "OFPST_QUEUE",
-    [6] = "OFPST_GROUP",
-    [7] = "OFPST_GROUP_DESC",
-    [8] = "OFPST_GROUP_FEATURES",
-    [9] = "OFPST_METER",
-    [10] = "OFPST_METER_CONFIG",
-    [11] = "OFPST_METER_FEATURES",
-    [12] = "OFPST_TABLE_FEATURES",
-    [13] = "OFPST_PORT_DESC",
-    [65535] = "OFPST_EXPERIMENTER",
-}
-
-enum_v4_ofp_type = {
-    [0] = "OFPT_HELLO",
-    [1] = "OFPT_ERROR",
-    [2] = "OFPT_ECHO_REQUEST",
-    [3] = "OFPT_ECHO_REPLY",
-    [4] = "OFPT_EXPERIMENTER",
-    [5] = "OFPT_FEATURES_REQUEST",
-    [6] = "OFPT_FEATURES_REPLY",
-    [7] = "OFPT_GET_CONFIG_REQUEST",
-    [8] = "OFPT_GET_CONFIG_REPLY",
-    [9] = "OFPT_SET_CONFIG",
-    [10] = "OFPT_PACKET_IN",
-    [11] = "OFPT_FLOW_REMOVED",
-    [12] = "OFPT_PORT_STATUS",
-    [13] = "OFPT_PACKET_OUT",
-    [14] = "OFPT_FLOW_MOD",
-    [15] = "OFPT_GROUP_MOD",
-    [16] = "OFPT_PORT_MOD",
-    [17] = "OFPT_TABLE_MOD",
-    [18] = "OFPT_STATS_REQUEST",
-    [19] = "OFPT_STATS_REPLY",
-    [20] = "OFPT_BARRIER_REQUEST",
-    [21] = "OFPT_BARRIER_REPLY",
-    [22] = "OFPT_QUEUE_GET_CONFIG_REQUEST",
-    [23] = "OFPT_QUEUE_GET_CONFIG_REPLY",
-    [24] = "OFPT_ROLE_REQUEST",
-    [25] = "OFPT_ROLE_REPLY",
-    [26] = "OFPT_GET_ASYNC_REQUEST",
-    [27] = "OFPT_GET_ASYNC_REPLY",
-    [28] = "OFPT_SET_ASYNC",
-    [29] = "OFPT_METER_MOD",
-}
-
-enum_v4_of_bsn_hash_packet_type = {
-    [0] = "OF_BSN_HASH_PACKET_L2",
-    [1] = "OF_BSN_HASH_PACKET_L2GRE",
-    [3] = "OF_BSN_HASH_PACKET_IPV4",
-    [4] = "OF_BSN_HASH_PACKET_IPV6",
-    [5] = "OF_BSN_HASH_PACKET_MPLS",
-    [6] = "OF_BSN_HASH_PACKET_SYMMETRIC",
-}
-
-enum_v4_ofp_controller_role = {
-    [0] = "OFPCR_ROLE_NOCHANGE",
-    [1] = "OFPCR_ROLE_EQUAL",
-    [2] = "OFPCR_ROLE_MASTER",
-    [3] = "OFPCR_ROLE_SLAVE",
+enum_v4_ofp_flow_mod_flags = {
+    [1] = "OFPFF_SEND_FLOW_REM",
+    [2] = "OFPFF_CHECK_OVERLAP",
+    [4] = "OFPFF_RESET_COUNTS",
+    [8] = "OFPFF_NO_PKT_COUNTS",
+    [16] = "OFPFF_NO_BYT_COUNTS",
+    [128] = "OFPFF_BSN_SEND_IDLE",
 }
 
 enum_v4_ofp_bsn_anchor = {
@@ -1308,72 +1251,117 @@ enum_v4_ofp_oxm_class = {
     [65535] = "OFPXMC_EXPERIMENTER",
 }
 
-enum_v4_ofp_bad_request_code = {
-    [0] = "OFPBRC_BAD_VERSION",
-    [1] = "OFPBRC_BAD_TYPE",
-    [2] = "OFPBRC_BAD_STAT",
-    [3] = "OFPBRC_BAD_EXPERIMENTER",
-    [4] = "OFPBRC_BAD_EXPERIMENTER_TYPE",
-    [5] = "OFPBRC_EPERM",
-    [6] = "OFPBRC_BAD_LEN",
-    [7] = "OFPBRC_BUFFER_EMPTY",
-    [8] = "OFPBRC_BUFFER_UNKNOWN",
-    [9] = "OFPBRC_BAD_TABLE_ID",
-    [10] = "OFPBRC_IS_SLAVE",
-    [11] = "OFPBRC_BAD_PORT",
-    [12] = "OFPBRC_BAD_PACKET",
-    [13] = "OFPBRC_MULTIPART_BUFFER_OVERFLOW",
+enum_v4_ofp_switch_config_failed_code = {
+    [0] = "OFPSCFC_BAD_FLAGS",
+    [1] = "OFPSCFC_BAD_LEN",
+    [2] = "OFPSCFC_EPERM",
 }
 
-enum_v4_ofp_bsn_pktin_flag = {
-    [1] = "OFP_BSN_PKTIN_FLAG_PDU",
-    [2] = "OFP_BSN_PKTIN_FLAG_NEW_HOST",
-    [4] = "OFP_BSN_PKTIN_FLAG_STATION_MOVE",
-    [8] = "OFP_BSN_PKTIN_FLAG_ARP",
-    [16] = "OFP_BSN_PKTIN_FLAG_DHCP",
-    [32] = "OFP_BSN_PKTIN_FLAG_L2_CPU",
-    [64] = "OFP_BSN_PKTIN_FLAG_DEBUG",
-    [128] = "OFP_BSN_PKTIN_FLAG_TTL_EXPIRED",
-    [256] = "OFP_BSN_PKTIN_FLAG_L3_MISS",
-    [512] = "OFP_BSN_PKTIN_FLAG_L3_CPU",
-    [1024] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL",
-    [2048] = "OFP_BSN_PKTIN_FLAG_SFLOW",
-    [4096] = "OFP_BSN_PKTIN_FLAG_ARP_CACHE",
-    [8192] = "OFP_BSN_PKTIN_FLAG_ARP_TARGET",
-    [16384] = "OFP_BSN_PKTIN_FLAG_IGMP",
-    [32768] = "OFP_BSN_PKTIN_FLAG_PIM",
-    [65536] = "OFP_BSN_PKTIN_FLAG_VXLAN_SIP_MISS",
-    [131072] = "OFP_BSN_PKTIN_FLAG_MC_RESERVED",
-    [262144] = "OFP_BSN_PKTIN_FLAG_ANALYTICS",
-    [524288] = "OFP_BSN_PKTIN_FLAG_ICMPV6",
-    [1048576] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL",
+enum_v4_ofp_bsn_port_vxlan_mode = {
+    [0] = "OFP_BSN_PORT_VXLAN_RECIRCULATION_ENABLE",
+    [1] = "OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE",
 }
 
-enum_v4_ofp_bad_instruction_code = {
-    [0] = "OFPBIC_UNKNOWN_INST",
-    [1] = "OFPBIC_UNSUP_INST",
-    [2] = "OFPBIC_BAD_TABLE_ID",
-    [3] = "OFPBIC_UNSUP_METADATA",
-    [4] = "OFPBIC_UNSUP_METADATA_MASK",
-    [5] = "OFPBIC_BAD_EXPERIMENTER",
-    [6] = "OFPBIC_BAD_EXPERIMENTER_TYPE",
-    [7] = "OFPBIC_BAD_LEN",
-    [8] = "OFPBIC_EPERM",
+enum_v4_of_bsn_gentable_error_code = {
+    [0] = "OF_BSN_GENTABLE_ERROR_UNKNOWN",
+    [1] = "OF_BSN_GENTABLE_ERROR_PARAM",
+    [2] = "OF_BSN_GENTABLE_ERROR_TABLE_FULL",
 }
 
-enum_v4_ofp_port_config = {
-    [1] = "OFPPC_PORT_DOWN",
-    [4] = "OFPPC_NO_RECV",
-    [32] = "OFPPC_NO_FWD",
-    [64] = "OFPPC_NO_PACKET_IN",
-    [2147483648] = "OFPPC_BSN_MIRROR_DEST",
+enum_v4_ofp_ipv6exthdr_flags = {
+    [1] = "OFPIEH_NONEXT",
+    [2] = "OFPIEH_ESP",
+    [4] = "OFPIEH_AUTH",
+    [8] = "OFPIEH_DEST",
+    [16] = "OFPIEH_FRAG",
+    [32] = "OFPIEH_ROUTER",
+    [64] = "OFPIEH_HOP",
+    [128] = "OFPIEH_UNREP",
+    [256] = "OFPIEH_UNSEQ",
 }
 
-enum_v4_ofp_meter = {
-    [4294901760] = "OFPM_MAX",
-    [4294967293] = "OFPM_SLOWPATH",
-    [4294967294] = "OFPM_CONTROLLER",
-    [4294967295] = "OFPM_ALL",
+enum_v4_ofp_ovs_tcp_flag = {
+    [1] = "OFP_OVS_TCP_FLAG_FIN",
+    [2] = "OFP_OVS_TCP_FLAG_SYN",
+    [4] = "OFP_OVS_TCP_FLAG_RST",
+    [8] = "OFP_OVS_TCP_FLAG_PSH",
+    [16] = "OFP_OVS_TCP_FLAG_ACK",
+    [32] = "OFP_OVS_TCP_FLAG_URG",
+    [64] = "OFP_OVS_TCP_FLAG_ECE",
+    [128] = "OFP_OVS_TCP_FLAG_CWR",
+    [256] = "OFP_OVS_TCP_FLAG_NS",
+}
+
+enum_v4_ofp_table_mod_failed_code = {
+    [0] = "OFPTMFC_BAD_TABLE",
+    [1] = "OFPTMFC_BAD_CONFIG",
+    [2] = "OFPTMFC_EPERM",
+}
+
+enum_v4_ofp_bsn_status = {
+    [0] = "OFP_BSN_STATUS_DISABLE",
+    [1] = "OFP_BSN_STATUS_ENABLE",
+}
+
+enum_v4_ofp_bsn_vport_l2gre_flags = {
+    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
+    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
+    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
+    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
+    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
+}
+
+enum_v4_ofp_bsn_lua_upload_flags = {
+    [1] = "OFP_BSN_LUA_UPLOAD_MORE",
+    [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
+}
+
+enum_v4_ofp_group = {
+    [4294967040] = "OFPG_MAX",
+    [4294967292] = "OFPG_ALL",
+    [4294967295] = "OFPG_ANY",
+}
+
+enum_v4_ofp_bsn_auto_negotiation_type = {
+    [0] = "OFP_BSN_AUTO_NEGOTIATION_DEFAULT",
+    [1] = "OFP_BSN_AUTO_NEGOTIATION_ENABLE",
+    [2] = "OFP_BSN_AUTO_NEGOTIATION_DISABLE",
+}
+
+enum_v4_ofp_meter_flags = {
+    [1] = "OFPMF_KBPS",
+    [2] = "OFPMF_PKTPS",
+    [4] = "OFPMF_BURST",
+    [8] = "OFPMF_STATS",
+}
+
+enum_v4_ofp_bsn_vlan_counter_constants = {
+    [65535] = "OFP_BSN_VLAN_ALL",
+}
+
+enum_v4_ofp_match_type = {
+    [0] = "OFPMT_STANDARD",
+    [1] = "OFPMT_OXM",
+}
+
+enum_v4_ofp_stats_reply_flags = {
+    [1] = "OFPSF_REPLY_MORE",
+}
+
+enum_v4_ofp_table_features_failed_code = {
+    [0] = "OFPTFFC_BAD_TABLE",
+    [1] = "OFPTFFC_BAD_METADATA",
+    [2] = "OFPTFFC_BAD_TYPE",
+    [3] = "OFPTFFC_BAD_LEN",
+    [4] = "OFPTFFC_BAD_ARGUMENT",
+    [5] = "OFPTFFC_EPERM",
+}
+
+enum_v4_ofp_group_type = {
+    [0] = "OFPGT_ALL",
+    [1] = "OFPGT_SELECT",
+    [2] = "OFPGT_INDIRECT",
+    [3] = "OFPGT_FF",
 }
 
 enum_v4_ofp_bad_action_code = {
@@ -1393,6 +1381,42 @@ enum_v4_ofp_bad_action_code = {
     [13] = "OFPBAC_BAD_SET_TYPE",
     [14] = "OFPBAC_BAD_SET_LEN",
     [15] = "OFPBAC_BAD_SET_ARGUMENT",
+}
+
+enum_v4_ofp_bsn_loglevel = {
+    [0] = "OFP_BSN_LOGLEVEL_MSG",
+    [1] = "OFP_BSN_LOGLEVEL_ERROR",
+    [2] = "OFP_BSN_LOGLEVEL_WARN",
+    [3] = "OFP_BSN_LOGLEVEL_INFO",
+    [4] = "OFP_BSN_LOGLEVEL_VERBOSE",
+    [5] = "OFP_BSN_LOGLEVEL_TRACE",
+}
+
+enum_v4_ofp_bsn_enhanced_hash_type = {
+    [1] = "OFP_BSN_ENHANCED_HASH_L2",
+    [2] = "OFP_BSN_ENHANCED_HASH_L3",
+    [4] = "OFP_BSN_ENHANCED_HASH_L2GRE",
+    [8] = "OFP_BSN_ENHANCED_HASH_MPLS",
+    [16] = "OFP_BSN_ENHANCED_HASH_GTP",
+    [32] = "OFP_BSN_ENHANCED_HASH_SYMMETRIC",
+}
+
+enum_v4_ofp_controller_role = {
+    [0] = "OFPCR_ROLE_NOCHANGE",
+    [1] = "OFPCR_ROLE_EQUAL",
+    [2] = "OFPCR_ROLE_MASTER",
+    [3] = "OFPCR_ROLE_SLAVE",
+}
+
+enum_v4_ofp_flow_mod_failed_code = {
+    [0] = "OFPFMFC_UNKNOWN",
+    [1] = "OFPFMFC_TABLE_FULL",
+    [2] = "OFPFMFC_BAD_TABLE_ID",
+    [3] = "OFPFMFC_OVERLAP",
+    [4] = "OFPFMFC_EPERM",
+    [5] = "OFPFMFC_BAD_TIMEOUT",
+    [6] = "OFPFMFC_BAD_COMMAND",
+    [7] = "OFPFMFC_BAD_FLAGS",
 }
 
 enum_v4_ofp_port_state = {
@@ -1415,28 +1439,9 @@ enum_v4_of_bsn_vlan_counter = {
     [3] = "OFP_BSN_VLAN_COUNTER_TX_PACKETS",
 }
 
-enum_v4_of_bsn_pdu_slot_num = {
-    [255] = "BSN_PDU_SLOT_NUM_ANY",
-}
-
-enum_v4_ofp_stats_request_flags = {
-    [1] = "OFPSF_REQ_MORE",
-}
-
-enum_v4_ofp_queue_op_failed_code = {
-    [0] = "OFPQOFC_BAD_PORT",
-    [1] = "OFPQOFC_BAD_QUEUE",
-    [2] = "OFPQOFC_EPERM",
-}
-
-enum_v4_ofp_bsn_port_vxlan_mode = {
-    [0] = "OFP_BSN_PORT_VXLAN_RECIRCULATION_ENABLE",
-    [1] = "OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE",
-}
-
-enum_v4_ofp_controller_max_len = {
-    [65509] = "OFPCML_MAX",
-    [65535] = "OFPCML_NO_BUFFER",
+enum_v4_ofp_hello_failed_code = {
+    [0] = "OFPHFC_INCOMPATIBLE",
+    [1] = "OFPHFC_EPERM",
 }
 
 enum_v4_ofp_role_request_failed_code = {
@@ -1445,30 +1450,14 @@ enum_v4_ofp_role_request_failed_code = {
     [2] = "OFPRRFC_BAD_ROLE",
 }
 
-enum_v4_of_bsn_vrf_counter = {
-    [0] = "OFP_BSN_VRF_COUNTER_BYTES",
-    [1] = "OFP_BSN_VRF_COUNTER_PACKETS",
-}
-
-enum_v4_ofp_bsn_vrf_counter_constants = {
-    [4294967295] = "OFP_BSN_VRF_ALL",
-}
-
-enum_v4_ofp_bsn_tcp_flag = {
-    [1] = "OFP_BSN_TCP_FLAG_FIN",
-    [2] = "OFP_BSN_TCP_FLAG_SYN",
-    [4] = "OFP_BSN_TCP_FLAG_RST",
-    [8] = "OFP_BSN_TCP_FLAG_PSH",
-    [16] = "OFP_BSN_TCP_FLAG_ACK",
-    [32] = "OFP_BSN_TCP_FLAG_URG",
-    [64] = "OFP_BSN_TCP_FLAG_ECE",
-    [128] = "OFP_BSN_TCP_FLAG_CWR",
-    [256] = "OFP_BSN_TCP_FLAG_NS",
-}
-
-enum_v4_ofp_table = {
-    [254] = "OFPTT_MAX",
-    [255] = "OFPTT_ALL",
+enum_v4_ofp_capabilities = {
+    [1] = "OFPC_FLOW_STATS",
+    [2] = "OFPC_TABLE_STATS",
+    [4] = "OFPC_PORT_STATS",
+    [8] = "OFPC_GROUP_STATS",
+    [32] = "OFPC_IP_REASM",
+    [64] = "OFPC_QUEUE_STATS",
+    [256] = "OFPC_PORT_BLOCKED",
 }
 
 enum_v4_of_bsn_hash_packet_field = {
@@ -1492,101 +1481,14 @@ enum_v4_of_bsn_hash_packet_field = {
     [262144] = "OFP_BSN_HASH_FIELD_SYMMETRIC",
 }
 
-enum_v4_ofp_switch_config_failed_code = {
-    [0] = "OFPSCFC_BAD_FLAGS",
-    [1] = "OFPSCFC_BAD_LEN",
-    [2] = "OFPSCFC_EPERM",
-}
-
-enum_v4_ofp_ipv6exthdr_flags = {
-    [1] = "OFPIEH_NONEXT",
-    [2] = "OFPIEH_ESP",
-    [4] = "OFPIEH_AUTH",
-    [8] = "OFPIEH_DEST",
-    [16] = "OFPIEH_FRAG",
-    [32] = "OFPIEH_ROUTER",
-    [64] = "OFPIEH_HOP",
-    [128] = "OFPIEH_UNREP",
-    [256] = "OFPIEH_UNSEQ",
-}
-
-enum_v4_ofp_bsn_port_usage = {
-    [0] = "OFP_BSN_PORT_UNUSED",
-    [1] = "OFP_BSN_PORT_TRANSMIT_ONLY",
-    [2] = "OFP_BSN_PORT_RECEIVE_ONLY",
-    [3] = "OFP_BSN_PORT_BIDIRECTION",
-}
-
-enum_v4_ofp_table_mod_failed_code = {
-    [0] = "OFPTMFC_BAD_TABLE",
-    [1] = "OFPTMFC_BAD_CONFIG",
-    [2] = "OFPTMFC_EPERM",
-}
-
 enum_v4_ofp_bsn_rate_unit = {
     [0] = "OFP_BSN_RATE_UNIT_PPS",
     [1] = "OFP_BSN_RATE_UNIT_KBITPS",
 }
 
-enum_v4_ofp_queue_properties = {
-    [1] = "OFPQT_MIN_RATE",
-    [2] = "OFPQT_MAX_RATE",
-    [65535] = "OFPQT_EXPERIMENTER",
-}
-
-enum_v4_ofp_bsn_status = {
-    [0] = "OFP_BSN_STATUS_DISABLE",
-    [1] = "OFP_BSN_STATUS_ENABLE",
-}
-
-enum_v4_ofp_bsn_vport_l2gre_flags = {
-    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
-    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
-    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
-    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
-    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
-}
-
-enum_v4_ofp_meter_mod_failed_code = {
-    [0] = "OFPMMFC_UNKNOWN",
-    [1] = "OFPMMFC_METER_EXISTS",
-    [2] = "OFPMMFC_INVALID_METER",
-    [3] = "OFPMMFC_UNKNOWN_METER",
-    [4] = "OFPMMFC_BAD_COMMAND",
-    [5] = "OFPMMFC_BAD_FLAGS",
-    [6] = "OFPMMFC_BAD_RATE",
-    [7] = "OFPMMFC_BAD_BURST",
-    [8] = "OFPMMFC_BAD_BAND",
-    [9] = "OFPMMFC_BAD_BAND_VALUE",
-    [10] = "OFPMMFC_OUT_OF_METERS",
-    [11] = "OFPMMFC_OUT_OF_BANDS",
-}
-
 enum_v4_ofp_bsn_vport_status = {
     [0] = "OF_BSN_VPORT_STATUS_OK",
     [1] = "OF_BSN_VPORT_STATUS_FAILED",
-}
-
-enum_v4_ofp_group_type = {
-    [0] = "OFPGT_ALL",
-    [1] = "OFPGT_SELECT",
-    [2] = "OFPGT_INDIRECT",
-    [3] = "OFPGT_FF",
-}
-
-enum_v4_ofp_bsn_controller_connection_state = {
-    [0] = "OFP_BSN_CONTROLLER_CONNECTION_STATE_DISCONNECTED",
-    [1] = "OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED",
-}
-
-enum_v4_ofp_stats_reply_flags = {
-    [1] = "OFPSF_REPLY_MORE",
-}
-
-enum_v4_ofp_group = {
-    [4294967040] = "OFPG_MAX",
-    [4294967292] = "OFPG_ALL",
-    [4294967295] = "OFPG_ANY",
 }
 
 enum_v4_ofp_port_reason = {
@@ -1595,27 +1497,8 @@ enum_v4_ofp_port_reason = {
     [2] = "OFPPR_MODIFY",
 }
 
-enum_v4_ofp_group_capabilities = {
-    [1] = "OFPGFC_SELECT_WEIGHT",
-    [2] = "OFPGFC_SELECT_LIVENESS",
-    [4] = "OFPGFC_CHAINING",
-    [8] = "OFPGFC_CHAINING_CHECKS",
-}
-
 enum_v4_ofp_table_config = {
     [3] = "OFPTC_DEPRECATED_MASK",
-}
-
-enum_v4_ofp_bsn_decap = {
-    [0] = "OFP_BSN_DECAP_VXLAN",
-    [1] = "OFP_BSN_DECAP_ERSPAN",
-    [2] = "OFP_BSN_DECAP_L2_GRE",
-    [3] = "OFP_BSN_DECAP_NVGRE",
-    [4] = "OFP_BSN_DECAP_CAPWAP",
-    [5] = "OFP_BSN_DECAP_L2_MPLS",
-    [6] = "OFP_BSN_DECAP_L3_GRE",
-    [7] = "OFP_BSN_DECAP_GTP",
-    [8] = "OFP_BSN_DECAP_L3_MPLS",
 }
 
 enum_v4_ofp_flow_mod_command = {
@@ -1626,93 +1509,15 @@ enum_v4_ofp_flow_mod_command = {
     [4] = "OFPFC_DELETE_STRICT",
 }
 
-enum_v4_ofp_flow_mod_flags = {
-    [1] = "OFPFF_SEND_FLOW_REM",
-    [2] = "OFPFF_CHECK_OVERLAP",
-    [4] = "OFPFF_RESET_COUNTS",
-    [8] = "OFPFF_NO_PKT_COUNTS",
-    [16] = "OFPFF_NO_BYT_COUNTS",
-    [128] = "OFPFF_BSN_SEND_IDLE",
-}
-
-enum_v4_ofp_bsn_auto_negotiation_type = {
-    [0] = "OFP_BSN_AUTO_NEGOTIATION_DEFAULT",
-    [1] = "OFP_BSN_AUTO_NEGOTIATION_ENABLE",
-    [2] = "OFP_BSN_AUTO_NEGOTIATION_DISABLE",
-}
-
-enum_v4_ofp_meter_flags = {
-    [1] = "OFPMF_KBPS",
-    [2] = "OFPMF_PKTPS",
-    [4] = "OFPMF_BURST",
-    [8] = "OFPMF_STATS",
-}
-
-enum_v4_ofp_bsn_vport_q_in_q_untagged = {
-    [65535] = "OF_BSN_VPORT_Q_IN_Q_UNTAGGED",
-}
-
-enum_v4_ofp_meter_band_type = {
-    [1] = "OFPMBT_DROP",
-    [2] = "OFPMBT_DSCP_REMARK",
-    [65535] = "OFPMBT_EXPERIMENTER",
-}
-
-enum_v4_ofp_error_type = {
-    [0] = "OFPET_HELLO_FAILED",
-    [1] = "OFPET_BAD_REQUEST",
-    [2] = "OFPET_BAD_ACTION",
-    [3] = "OFPET_BAD_INSTRUCTION",
-    [4] = "OFPET_BAD_MATCH",
-    [5] = "OFPET_FLOW_MOD_FAILED",
-    [6] = "OFPET_GROUP_MOD_FAILED",
-    [7] = "OFPET_PORT_MOD_FAILED",
-    [8] = "OFPET_TABLE_MOD_FAILED",
-    [9] = "OFPET_QUEUE_OP_FAILED",
-    [10] = "OFPET_SWITCH_CONFIG_FAILED",
-    [11] = "OFPET_ROLE_REQUEST_FAILED",
-    [12] = "OFPET_METER_MOD_FAILED",
-    [13] = "OFPET_TABLE_FEATURES_FAILED",
-    [65535] = "OFPET_EXPERIMENTER",
-}
-
-enum_v4_ofp_bsn_vlan_counter_constants = {
-    [65535] = "OFP_BSN_VLAN_ALL",
-}
-
 enum_v4_of_bsn_lacp_convergence_status = {
     [0] = "LACP_SUCCESS",
     [1] = "LACP_TIMEDOUT",
     [2] = "LACP_OUT_OF_SYNC",
 }
 
-enum_v4_ofp_match_type = {
-    [0] = "OFPMT_STANDARD",
-    [1] = "OFPMT_OXM",
-}
-
 enum_v4_ofp_vlan_id = {
     [0] = "OFPVID_NONE",
     [4096] = "OFPVID_PRESENT",
-}
-
-enum_v4_of_bsn_hash_type = {
-    [0] = "OFP_BSN_HASH_TYPE_L2",
-    [1] = "OFP_BSN_HASH_TYPE_L3",
-    [2] = "OFP_BSN_HASH_TYPE_ENHANCED",
-}
-
-enum_v4_ofp_table_features_failed_code = {
-    [0] = "OFPTFFC_BAD_TABLE",
-    [1] = "OFPTFFC_BAD_METADATA",
-    [2] = "OFPTFFC_BAD_TYPE",
-    [3] = "OFPTFFC_BAD_LEN",
-    [4] = "OFPTFFC_BAD_ARGUMENT",
-    [5] = "OFPTFFC_EPERM",
-}
-
-enum_v4_ofp_hello_elem_type = {
-    [1] = "OFPHET_VERSIONBITMAP",
 }
 
 enum_v4_ofp_bsn_controller_role_reason = {
@@ -1739,46 +1544,6 @@ enum_v4_ofp_group_mod_failed_code = {
     [14] = "OFPGMFC_EPERM",
 }
 
-enum_v4_macro_definitions = {
-    [32] = "OFP_MAX_TABLE_NAME_LEN",
-    [16] = "OFP_MAX_PORT_NAME_LEN",
-    [6653] = "OFP_TCP_PORT",
-    [6653] = "OFP_SSL_PORT",
-    [6] = "OFP_ETH_ALEN",
-    [128] = "OFP_DEFAULT_MISS_SEND_LEN",
-    [0] = "OFP_VLAN_NONE",
-    [0] = "OFP_FLOW_PERMANENT",
-    [32768] = "OFP_DEFAULT_PRIORITY",
-    [4294967295] = "OFP_NO_BUFFER",
-    [256] = "DESC_STR_LEN",
-    [32] = "SERIAL_NUM_LEN",
-    [4294967295] = "OFPQ_ALL",
-    [65535] = "OFPQ_MAX_RATE_UNCFG",
-    [65535] = "OFPQ_MIN_RATE_UNCFG",
-}
-
-enum_v4_ofp_hello_failed_code = {
-    [0] = "OFPHFC_INCOMPATIBLE",
-    [1] = "OFPHFC_EPERM",
-}
-
-enum_v4_ofp_port = {
-    [4294967040] = "OFPP_MAX",
-    [4294967288] = "OFPP_IN_PORT",
-    [4294967289] = "OFPP_TABLE",
-    [4294967290] = "OFPP_NORMAL",
-    [4294967291] = "OFPP_FLOOD",
-    [4294967292] = "OFPP_ALL",
-    [4294967293] = "OFPP_CONTROLLER",
-    [4294967294] = "OFPP_LOCAL",
-    [4294967295] = "OFPP_ANY",
-}
-
-enum_v4_ofp_bsn_lua_upload_flags = {
-    [1] = "OFP_BSN_LUA_UPLOAD_MORE",
-    [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
-}
-
 enum_v4_ofp_instruction_type = {
     [1] = "OFPIT_GOTO_TABLE",
     [2] = "OFPIT_WRITE_METADATA",
@@ -1789,74 +1554,11 @@ enum_v4_ofp_instruction_type = {
     [65535] = "OFPIT_EXPERIMENTER",
 }
 
-enum_v4_ofp_meter_mod_command = {
-    [0] = "OFPMC_ADD",
-    [1] = "OFPMC_MODIFY",
-    [2] = "OFPMC_DELETE",
-}
-
 enum_v4_of_bsn_hash_gtp_port_match = {
     [1] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC",
     [2] = "OF_BSN_HASH_GTP_PORT_MATCH_DST",
     [3] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC_OR_DST",
     [4] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC_AND_DST",
-}
-
-enum_v4_ofp_table_feature_prop_type = {
-    [0] = "OFPTFPT_INSTRUCTIONS",
-    [1] = "OFPTFPT_INSTRUCTIONS_MISS",
-    [2] = "OFPTFPT_NEXT_TABLES",
-    [3] = "OFPTFPT_NEXT_TABLES_MISS",
-    [4] = "OFPTFPT_WRITE_ACTIONS",
-    [5] = "OFPTFPT_WRITE_ACTIONS_MISS",
-    [6] = "OFPTFPT_APPLY_ACTIONS",
-    [7] = "OFPTFPT_APPLY_ACTIONS_MISS",
-    [8] = "OFPTFPT_MATCH",
-    [10] = "OFPTFPT_WILDCARDS",
-    [12] = "OFPTFPT_WRITE_SETFIELD",
-    [13] = "OFPTFPT_WRITE_SETFIELD_MISS",
-    [14] = "OFPTFPT_APPLY_SETFIELD",
-    [15] = "OFPTFPT_APPLY_SETFIELD_MISS",
-    [65534] = "OFPTFPT_EXPERIMENTER",
-    [65535] = "OFPTFPT_EXPERIMENTER_MISS",
-}
-
-enum_v4_ofp_capabilities = {
-    [1] = "OFPC_FLOW_STATS",
-    [2] = "OFPC_TABLE_STATS",
-    [4] = "OFPC_PORT_STATS",
-    [8] = "OFPC_GROUP_STATS",
-    [32] = "OFPC_IP_REASM",
-    [64] = "OFPC_QUEUE_STATS",
-    [256] = "OFPC_PORT_BLOCKED",
-}
-
-enum_v4_ofp_flow_mod_failed_code = {
-    [0] = "OFPFMFC_UNKNOWN",
-    [1] = "OFPFMFC_TABLE_FULL",
-    [2] = "OFPFMFC_BAD_TABLE_ID",
-    [3] = "OFPFMFC_OVERLAP",
-    [4] = "OFPFMFC_EPERM",
-    [5] = "OFPFMFC_BAD_TIMEOUT",
-    [6] = "OFPFMFC_BAD_COMMAND",
-    [7] = "OFPFMFC_BAD_FLAGS",
-}
-
-enum_v4_ofp_bsn_loglevel = {
-    [0] = "OFP_BSN_LOGLEVEL_MSG",
-    [1] = "OFP_BSN_LOGLEVEL_ERROR",
-    [2] = "OFP_BSN_LOGLEVEL_WARN",
-    [3] = "OFP_BSN_LOGLEVEL_INFO",
-    [4] = "OFP_BSN_LOGLEVEL_VERBOSE",
-    [5] = "OFP_BSN_LOGLEVEL_TRACE",
-}
-
-enum_v4_ofp_port_mod_failed_code = {
-    [0] = "OFPPMFC_BAD_PORT",
-    [1] = "OFPPMFC_BAD_HW_ADDR",
-    [2] = "OFPPMFC_BAD_CONFIG",
-    [3] = "OFPPMFC_BAD_ADVERTISE",
-    [4] = "OFPPMFC_EPERM",
 }
 
 enum_v4_ofp_bad_match_code = {
@@ -1953,15 +1655,164 @@ enum_v4_ofp_packet_in_reason = {
     [142] = "OFPR_BSN_PACKET_OF_DEATH",
 }
 
-enum_v4_ofp_bsn_lacp_state = {
-    [1] = "OFP_BSN_LACP_STATE_ACTIVITY",
-    [2] = "OFP_BSN_LACP_STATE_TIMEOUT",
-    [4] = "OFP_BSN_LACP_STATE_AGGREGATION",
-    [8] = "OFP_BSN_LACP_STATE_SYNCHRONIZATION",
-    [16] = "OFP_BSN_LACP_STATE_COLLECTING",
-    [32] = "OFP_BSN_LACP_STATE_DISTRIBUTING",
-    [64] = "OFP_BSN_LACP_STATE_DEFAULTED",
-    [128] = "OFP_BSN_LACP_STATE_EXPIRED",
+enum_v4_ofp_flow_removed_reason = {
+    [0] = "OFPRR_IDLE_TIMEOUT",
+    [1] = "OFPRR_HARD_TIMEOUT",
+    [2] = "OFPRR_DELETE",
+    [3] = "OFPRR_GROUP_DELETE",
+}
+
+enum_v4_ofp_port_mod_failed_code = {
+    [0] = "OFPPMFC_BAD_PORT",
+    [1] = "OFPPMFC_BAD_HW_ADDR",
+    [2] = "OFPPMFC_BAD_CONFIG",
+    [3] = "OFPPMFC_BAD_ADVERTISE",
+    [4] = "OFPPMFC_EPERM",
+}
+
+enum_v4_ofp_bsn_port_usage = {
+    [0] = "OFP_BSN_PORT_UNUSED",
+    [1] = "OFP_BSN_PORT_TRANSMIT_ONLY",
+    [2] = "OFP_BSN_PORT_RECEIVE_ONLY",
+    [3] = "OFP_BSN_PORT_BIDIRECTION",
+}
+
+enum_v4_of_bsn_hash_packet_type = {
+    [0] = "OF_BSN_HASH_PACKET_L2",
+    [1] = "OF_BSN_HASH_PACKET_L2GRE",
+    [3] = "OF_BSN_HASH_PACKET_IPV4",
+    [4] = "OF_BSN_HASH_PACKET_IPV6",
+    [5] = "OF_BSN_HASH_PACKET_MPLS",
+    [6] = "OF_BSN_HASH_PACKET_SYMMETRIC",
+}
+
+enum_v4_ofp_port_config = {
+    [1] = "OFPPC_PORT_DOWN",
+    [4] = "OFPPC_NO_RECV",
+    [32] = "OFPPC_NO_FWD",
+    [64] = "OFPPC_NO_PACKET_IN",
+    [2147483648] = "OFPPC_BSN_MIRROR_DEST",
+}
+
+enum_v4_ofp_meter = {
+    [4294901760] = "OFPM_MAX",
+    [4294967293] = "OFPM_SLOWPATH",
+    [4294967294] = "OFPM_CONTROLLER",
+    [4294967295] = "OFPM_ALL",
+}
+
+enum_v4_of_bsn_pdu_slot_num = {
+    [255] = "BSN_PDU_SLOT_NUM_ANY",
+}
+
+enum_v4_ofp_bsn_tcp_flag = {
+    [1] = "OFP_BSN_TCP_FLAG_FIN",
+    [2] = "OFP_BSN_TCP_FLAG_SYN",
+    [4] = "OFP_BSN_TCP_FLAG_RST",
+    [8] = "OFP_BSN_TCP_FLAG_PSH",
+    [16] = "OFP_BSN_TCP_FLAG_ACK",
+    [32] = "OFP_BSN_TCP_FLAG_URG",
+    [64] = "OFP_BSN_TCP_FLAG_ECE",
+    [128] = "OFP_BSN_TCP_FLAG_CWR",
+    [256] = "OFP_BSN_TCP_FLAG_NS",
+}
+
+enum_v4_ofp_table = {
+    [254] = "OFPTT_MAX",
+    [255] = "OFPTT_ALL",
+}
+
+enum_v4_ofp_error_type = {
+    [0] = "OFPET_HELLO_FAILED",
+    [1] = "OFPET_BAD_REQUEST",
+    [2] = "OFPET_BAD_ACTION",
+    [3] = "OFPET_BAD_INSTRUCTION",
+    [4] = "OFPET_BAD_MATCH",
+    [5] = "OFPET_FLOW_MOD_FAILED",
+    [6] = "OFPET_GROUP_MOD_FAILED",
+    [7] = "OFPET_PORT_MOD_FAILED",
+    [8] = "OFPET_TABLE_MOD_FAILED",
+    [9] = "OFPET_QUEUE_OP_FAILED",
+    [10] = "OFPET_SWITCH_CONFIG_FAILED",
+    [11] = "OFPET_ROLE_REQUEST_FAILED",
+    [12] = "OFPET_METER_MOD_FAILED",
+    [13] = "OFPET_TABLE_FEATURES_FAILED",
+    [65535] = "OFPET_EXPERIMENTER",
+}
+
+enum_v4_ofp_queue_properties = {
+    [1] = "OFPQT_MIN_RATE",
+    [2] = "OFPQT_MAX_RATE",
+    [65535] = "OFPQT_EXPERIMENTER",
+}
+
+enum_v4_ofp_meter_mod_failed_code = {
+    [0] = "OFPMMFC_UNKNOWN",
+    [1] = "OFPMMFC_METER_EXISTS",
+    [2] = "OFPMMFC_INVALID_METER",
+    [3] = "OFPMMFC_UNKNOWN_METER",
+    [4] = "OFPMMFC_BAD_COMMAND",
+    [5] = "OFPMMFC_BAD_FLAGS",
+    [6] = "OFPMMFC_BAD_RATE",
+    [7] = "OFPMMFC_BAD_BURST",
+    [8] = "OFPMMFC_BAD_BAND",
+    [9] = "OFPMMFC_BAD_BAND_VALUE",
+    [10] = "OFPMMFC_OUT_OF_METERS",
+    [11] = "OFPMMFC_OUT_OF_BANDS",
+}
+
+enum_v4_ofp_bsn_controller_connection_state = {
+    [0] = "OFP_BSN_CONTROLLER_CONNECTION_STATE_DISCONNECTED",
+    [1] = "OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED",
+}
+
+enum_v4_ofp_group_capabilities = {
+    [1] = "OFPGFC_SELECT_WEIGHT",
+    [2] = "OFPGFC_SELECT_LIVENESS",
+    [4] = "OFPGFC_CHAINING",
+    [8] = "OFPGFC_CHAINING_CHECKS",
+}
+
+enum_v4_ofp_bsn_decap = {
+    [0] = "OFP_BSN_DECAP_VXLAN",
+    [1] = "OFP_BSN_DECAP_ERSPAN",
+    [2] = "OFP_BSN_DECAP_L2_GRE",
+    [3] = "OFP_BSN_DECAP_NVGRE",
+    [4] = "OFP_BSN_DECAP_CAPWAP",
+    [5] = "OFP_BSN_DECAP_L2_MPLS",
+    [6] = "OFP_BSN_DECAP_L3_GRE",
+    [7] = "OFP_BSN_DECAP_GTP",
+    [8] = "OFP_BSN_DECAP_L3_MPLS",
+}
+
+enum_v4_ofp_queue_op_failed_code = {
+    [0] = "OFPQOFC_BAD_PORT",
+    [1] = "OFPQOFC_BAD_QUEUE",
+    [2] = "OFPQOFC_EPERM",
+}
+
+enum_v4_ofp_stats_type = {
+    [0] = "OFPST_DESC",
+    [1] = "OFPST_FLOW",
+    [2] = "OFPST_AGGREGATE",
+    [3] = "OFPST_TABLE",
+    [4] = "OFPST_PORT",
+    [5] = "OFPST_QUEUE",
+    [6] = "OFPST_GROUP",
+    [7] = "OFPST_GROUP_DESC",
+    [8] = "OFPST_GROUP_FEATURES",
+    [9] = "OFPST_METER",
+    [10] = "OFPST_METER_CONFIG",
+    [11] = "OFPST_METER_FEATURES",
+    [12] = "OFPST_TABLE_FEATURES",
+    [13] = "OFPST_PORT_DESC",
+    [65535] = "OFPST_EXPERIMENTER",
+}
+
+enum_v4_ofp_meter_mod_command = {
+    [0] = "OFPMC_ADD",
+    [1] = "OFPMC_MODIFY",
+    [2] = "OFPMC_DELETE",
 }
 
 enum_v4_ofp_action_type = {
@@ -1984,30 +1835,191 @@ enum_v4_ofp_action_type = {
     [65535] = "OFPAT_EXPERIMENTER",
 }
 
-enum_v4_ofp_bsn_tunnel_type = {
-    [1] = "OFP_BSN_TUNNEL_L2GRE",
-}
-
 enum_v4_ofp_group_mod_command = {
     [0] = "OFPGC_ADD",
     [1] = "OFPGC_MODIFY",
     [2] = "OFPGC_DELETE",
 }
 
-enum_v4_ofp_flow_removed_reason = {
-    [0] = "OFPRR_IDLE_TIMEOUT",
-    [1] = "OFPRR_HARD_TIMEOUT",
-    [2] = "OFPRR_DELETE",
-    [3] = "OFPRR_GROUP_DELETE",
+enum_v4_ofp_bsn_udf_anchor = {
+    [0] = "OFP_BSN_UDF_ANCHOR_PACKET_START",
+    [1] = "OFP_BSN_UDF_ANCHOR_L3_HEADER_START",
+    [2] = "OFP_BSN_UDF_ANCHOR_L4_HEADER_START",
 }
 
-enum_v4_ofp_bsn_enhanced_hash_type = {
-    [1] = "OFP_BSN_ENHANCED_HASH_L2",
-    [2] = "OFP_BSN_ENHANCED_HASH_L3",
-    [4] = "OFP_BSN_ENHANCED_HASH_L2GRE",
-    [8] = "OFP_BSN_ENHANCED_HASH_MPLS",
-    [16] = "OFP_BSN_ENHANCED_HASH_GTP",
-    [32] = "OFP_BSN_ENHANCED_HASH_SYMMETRIC",
+enum_v4_ofp_bsn_hash_select_flags = {
+    [1] = "OFP_BSN_HASH_SELECT_SRC_IP",
+    [2] = "OFP_BSN_HASH_SELECT_DST_IP",
+}
+
+enum_v4_of_bsn_hash_type = {
+    [0] = "OFP_BSN_HASH_TYPE_L2",
+    [1] = "OFP_BSN_HASH_TYPE_L3",
+    [2] = "OFP_BSN_HASH_TYPE_ENHANCED",
+}
+
+enum_v4_ofp_bad_request_code = {
+    [0] = "OFPBRC_BAD_VERSION",
+    [1] = "OFPBRC_BAD_TYPE",
+    [2] = "OFPBRC_BAD_STAT",
+    [3] = "OFPBRC_BAD_EXPERIMENTER",
+    [4] = "OFPBRC_BAD_EXPERIMENTER_TYPE",
+    [5] = "OFPBRC_EPERM",
+    [6] = "OFPBRC_BAD_LEN",
+    [7] = "OFPBRC_BUFFER_EMPTY",
+    [8] = "OFPBRC_BUFFER_UNKNOWN",
+    [9] = "OFPBRC_BAD_TABLE_ID",
+    [10] = "OFPBRC_IS_SLAVE",
+    [11] = "OFPBRC_BAD_PORT",
+    [12] = "OFPBRC_BAD_PACKET",
+    [13] = "OFPBRC_MULTIPART_BUFFER_OVERFLOW",
+}
+
+enum_v4_ofp_bsn_pktin_flag = {
+    [1] = "OFP_BSN_PKTIN_FLAG_PDU",
+    [2] = "OFP_BSN_PKTIN_FLAG_NEW_HOST",
+    [4] = "OFP_BSN_PKTIN_FLAG_STATION_MOVE",
+    [8] = "OFP_BSN_PKTIN_FLAG_ARP",
+    [16] = "OFP_BSN_PKTIN_FLAG_DHCP",
+    [32] = "OFP_BSN_PKTIN_FLAG_L2_CPU",
+    [64] = "OFP_BSN_PKTIN_FLAG_DEBUG",
+    [128] = "OFP_BSN_PKTIN_FLAG_TTL_EXPIRED",
+    [256] = "OFP_BSN_PKTIN_FLAG_L3_MISS",
+    [512] = "OFP_BSN_PKTIN_FLAG_L3_CPU",
+    [1024] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL",
+    [2048] = "OFP_BSN_PKTIN_FLAG_SFLOW",
+    [4096] = "OFP_BSN_PKTIN_FLAG_ARP_CACHE",
+    [8192] = "OFP_BSN_PKTIN_FLAG_ARP_TARGET",
+    [16384] = "OFP_BSN_PKTIN_FLAG_IGMP",
+    [32768] = "OFP_BSN_PKTIN_FLAG_PIM",
+    [65536] = "OFP_BSN_PKTIN_FLAG_VXLAN_SIP_MISS",
+    [131072] = "OFP_BSN_PKTIN_FLAG_MC_RESERVED",
+    [262144] = "OFP_BSN_PKTIN_FLAG_ANALYTICS",
+    [524288] = "OFP_BSN_PKTIN_FLAG_ICMPV6",
+    [1048576] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL",
+}
+
+enum_v4_ofp_bad_instruction_code = {
+    [0] = "OFPBIC_UNKNOWN_INST",
+    [1] = "OFPBIC_UNSUP_INST",
+    [2] = "OFPBIC_BAD_TABLE_ID",
+    [3] = "OFPBIC_UNSUP_METADATA",
+    [4] = "OFPBIC_UNSUP_METADATA_MASK",
+    [5] = "OFPBIC_BAD_EXPERIMENTER",
+    [6] = "OFPBIC_BAD_EXPERIMENTER_TYPE",
+    [7] = "OFPBIC_BAD_LEN",
+    [8] = "OFPBIC_EPERM",
+}
+
+enum_v4_ofp_controller_max_len = {
+    [65509] = "OFPCML_MAX",
+    [65535] = "OFPCML_NO_BUFFER",
+}
+
+enum_v4_of_bsn_vrf_counter = {
+    [0] = "OFP_BSN_VRF_COUNTER_BYTES",
+    [1] = "OFP_BSN_VRF_COUNTER_PACKETS",
+}
+
+enum_v4_ofp_bsn_vrf_counter_constants = {
+    [4294967295] = "OFP_BSN_VRF_ALL",
+}
+
+enum_v4_ofp_bsn_tunnel_type = {
+    [1] = "OFP_BSN_TUNNEL_L2GRE",
+}
+
+enum_v4_ofp_meter_band_type = {
+    [1] = "OFPMBT_DROP",
+    [2] = "OFPMBT_DSCP_REMARK",
+    [65535] = "OFPMBT_EXPERIMENTER",
+}
+
+enum_v4_ofp_stats_request_flags = {
+    [1] = "OFPSF_REQ_MORE",
+}
+
+enum_v4_ofp_hello_elem_type = {
+    [1] = "OFPHET_VERSIONBITMAP",
+}
+
+enum_v4_ofp_port = {
+    [4294967040] = "OFPP_MAX",
+    [4294967288] = "OFPP_IN_PORT",
+    [4294967289] = "OFPP_TABLE",
+    [4294967290] = "OFPP_NORMAL",
+    [4294967291] = "OFPP_FLOOD",
+    [4294967292] = "OFPP_ALL",
+    [4294967293] = "OFPP_CONTROLLER",
+    [4294967294] = "OFPP_LOCAL",
+    [4294967295] = "OFPP_ANY",
+}
+
+enum_v4_ofp_table_feature_prop_type = {
+    [0] = "OFPTFPT_INSTRUCTIONS",
+    [1] = "OFPTFPT_INSTRUCTIONS_MISS",
+    [2] = "OFPTFPT_NEXT_TABLES",
+    [3] = "OFPTFPT_NEXT_TABLES_MISS",
+    [4] = "OFPTFPT_WRITE_ACTIONS",
+    [5] = "OFPTFPT_WRITE_ACTIONS_MISS",
+    [6] = "OFPTFPT_APPLY_ACTIONS",
+    [7] = "OFPTFPT_APPLY_ACTIONS_MISS",
+    [8] = "OFPTFPT_MATCH",
+    [10] = "OFPTFPT_WILDCARDS",
+    [12] = "OFPTFPT_WRITE_SETFIELD",
+    [13] = "OFPTFPT_WRITE_SETFIELD_MISS",
+    [14] = "OFPTFPT_APPLY_SETFIELD",
+    [15] = "OFPTFPT_APPLY_SETFIELD_MISS",
+    [65534] = "OFPTFPT_EXPERIMENTER",
+    [65535] = "OFPTFPT_EXPERIMENTER_MISS",
+}
+
+enum_v4_ofp_type = {
+    [0] = "OFPT_HELLO",
+    [1] = "OFPT_ERROR",
+    [2] = "OFPT_ECHO_REQUEST",
+    [3] = "OFPT_ECHO_REPLY",
+    [4] = "OFPT_EXPERIMENTER",
+    [5] = "OFPT_FEATURES_REQUEST",
+    [6] = "OFPT_FEATURES_REPLY",
+    [7] = "OFPT_GET_CONFIG_REQUEST",
+    [8] = "OFPT_GET_CONFIG_REPLY",
+    [9] = "OFPT_SET_CONFIG",
+    [10] = "OFPT_PACKET_IN",
+    [11] = "OFPT_FLOW_REMOVED",
+    [12] = "OFPT_PORT_STATUS",
+    [13] = "OFPT_PACKET_OUT",
+    [14] = "OFPT_FLOW_MOD",
+    [15] = "OFPT_GROUP_MOD",
+    [16] = "OFPT_PORT_MOD",
+    [17] = "OFPT_TABLE_MOD",
+    [18] = "OFPT_STATS_REQUEST",
+    [19] = "OFPT_STATS_REPLY",
+    [20] = "OFPT_BARRIER_REQUEST",
+    [21] = "OFPT_BARRIER_REPLY",
+    [22] = "OFPT_QUEUE_GET_CONFIG_REQUEST",
+    [23] = "OFPT_QUEUE_GET_CONFIG_REPLY",
+    [24] = "OFPT_ROLE_REQUEST",
+    [25] = "OFPT_ROLE_REPLY",
+    [26] = "OFPT_GET_ASYNC_REQUEST",
+    [27] = "OFPT_GET_ASYNC_REPLY",
+    [28] = "OFPT_SET_ASYNC",
+    [29] = "OFPT_METER_MOD",
+}
+
+enum_v4_ofp_bsn_lacp_state = {
+    [1] = "OFP_BSN_LACP_STATE_ACTIVITY",
+    [2] = "OFP_BSN_LACP_STATE_TIMEOUT",
+    [4] = "OFP_BSN_LACP_STATE_AGGREGATION",
+    [8] = "OFP_BSN_LACP_STATE_SYNCHRONIZATION",
+    [16] = "OFP_BSN_LACP_STATE_COLLECTING",
+    [32] = "OFP_BSN_LACP_STATE_DISTRIBUTING",
+    [64] = "OFP_BSN_LACP_STATE_DEFAULTED",
+    [128] = "OFP_BSN_LACP_STATE_EXPIRED",
+}
+
+enum_v4_ofp_bsn_vport_q_in_q_untagged = {
+    [65535] = "OF_BSN_VPORT_Q_IN_Q_UNTAGGED",
 }
 
 enum_v4_ofp_port_features = {
@@ -2028,12 +2040,6 @@ enum_v4_ofp_port_features = {
     [16384] = "OFPPF_PAUSE",
     [32768] = "OFPPF_PAUSE_ASYM",
     [2147483648] = "OFPPF_BSN_BREAKOUT_CAPABLE",
-}
-
-enum_v4_ofp_bsn_udf_anchor = {
-    [0] = "OFP_BSN_UDF_ANCHOR_PACKET_START",
-    [1] = "OFP_BSN_UDF_ANCHOR_L3_HEADER_START",
-    [2] = "OFP_BSN_UDF_ANCHOR_L4_HEADER_START",
 }
 
 
@@ -2112,19 +2118,10 @@ enum_v5_ofp_bsn_port_vxlan_mode = {
     [1] = "OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE",
 }
 
-enum_v5_ofp_bad_match_code = {
-    [0] = "OFPBMC_BAD_TYPE",
-    [1] = "OFPBMC_BAD_LEN",
-    [2] = "OFPBMC_BAD_TAG",
-    [3] = "OFPBMC_BAD_DL_ADDR_MASK",
-    [4] = "OFPBMC_BAD_NW_ADDR_MASK",
-    [5] = "OFPBMC_BAD_WILDCARDS",
-    [6] = "OFPBMC_BAD_FIELD",
-    [7] = "OFPBMC_BAD_VALUE",
-    [8] = "OFPBMC_BAD_MASK",
-    [9] = "OFPBMC_BAD_PREREQ",
-    [10] = "OFPBMC_DUP_FIELD",
-    [11] = "OFPBMC_EPERM",
+enum_v5_of_bsn_gentable_error_code = {
+    [0] = "OF_BSN_GENTABLE_ERROR_UNKNOWN",
+    [1] = "OF_BSN_GENTABLE_ERROR_PARAM",
+    [2] = "OF_BSN_GENTABLE_ERROR_TABLE_FULL",
 }
 
 enum_v5_ofp_ipv6exthdr_flags = {
@@ -2162,9 +2159,12 @@ enum_v5_ofp_bsn_status = {
     [1] = "OFP_BSN_STATUS_ENABLE",
 }
 
-enum_v5_ofp_table = {
-    [254] = "OFPTT_MAX",
-    [255] = "OFPTT_ALL",
+enum_v5_ofp_bsn_vport_l2gre_flags = {
+    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
+    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
+    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
+    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
+    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
 }
 
 enum_v5_ofp_bsn_lua_upload_flags = {
@@ -2439,6 +2439,21 @@ enum_v5_of_bsn_hash_gtp_port_match = {
     [4] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC_AND_DST",
 }
 
+enum_v5_ofp_bad_match_code = {
+    [0] = "OFPBMC_BAD_TYPE",
+    [1] = "OFPBMC_BAD_LEN",
+    [2] = "OFPBMC_BAD_TAG",
+    [3] = "OFPBMC_BAD_DL_ADDR_MASK",
+    [4] = "OFPBMC_BAD_NW_ADDR_MASK",
+    [5] = "OFPBMC_BAD_WILDCARDS",
+    [6] = "OFPBMC_BAD_FIELD",
+    [7] = "OFPBMC_BAD_VALUE",
+    [8] = "OFPBMC_BAD_MASK",
+    [9] = "OFPBMC_BAD_PREREQ",
+    [10] = "OFPBMC_DUP_FIELD",
+    [11] = "OFPBMC_EPERM",
+}
+
 enum_v5_ofp_bsn_port_counter = {
     [0] = "OFP_BSN_PORT_COUNTER_RX_BYTES",
     [1] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST",
@@ -2597,12 +2612,9 @@ enum_v5_ofp_bsn_tcp_flag = {
     [256] = "OFP_BSN_TCP_FLAG_NS",
 }
 
-enum_v5_ofp_bsn_vport_l2gre_flags = {
-    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
-    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
-    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
-    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
-    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
+enum_v5_ofp_table = {
+    [254] = "OFPTT_MAX",
+    [255] = "OFPTT_ALL",
 }
 
 enum_v5_ofp_error_type = {
@@ -3080,19 +3092,10 @@ enum_v6_ofp_controller_status_reason = {
     [6] = "OFPCSR_EXPERIMENTER",
 }
 
-enum_v6_ofp_bad_match_code = {
-    [0] = "OFPBMC_BAD_TYPE",
-    [1] = "OFPBMC_BAD_LEN",
-    [2] = "OFPBMC_BAD_TAG",
-    [3] = "OFPBMC_BAD_DL_ADDR_MASK",
-    [4] = "OFPBMC_BAD_NW_ADDR_MASK",
-    [5] = "OFPBMC_BAD_WILDCARDS",
-    [6] = "OFPBMC_BAD_FIELD",
-    [7] = "OFPBMC_BAD_VALUE",
-    [8] = "OFPBMC_BAD_MASK",
-    [9] = "OFPBMC_BAD_PREREQ",
-    [10] = "OFPBMC_DUP_FIELD",
-    [11] = "OFPBMC_EPERM",
+enum_v6_of_bsn_gentable_error_code = {
+    [0] = "OF_BSN_GENTABLE_ERROR_UNKNOWN",
+    [1] = "OF_BSN_GENTABLE_ERROR_PARAM",
+    [2] = "OF_BSN_GENTABLE_ERROR_TABLE_FULL",
 }
 
 enum_v6_ofp_ipv6exthdr_flags = {
@@ -3130,9 +3133,12 @@ enum_v6_ofp_bsn_status = {
     [1] = "OFP_BSN_STATUS_ENABLE",
 }
 
-enum_v6_ofp_table = {
-    [254] = "OFPTT_MAX",
-    [255] = "OFPTT_ALL",
+enum_v6_ofp_bsn_vport_l2gre_flags = {
+    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
+    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
+    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
+    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
+    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
 }
 
 enum_v6_ofp_bsn_lua_upload_flags = {
@@ -3525,6 +3531,21 @@ enum_v6_of_bsn_hash_gtp_port_match = {
     [4] = "OF_BSN_HASH_GTP_PORT_MATCH_SRC_AND_DST",
 }
 
+enum_v6_ofp_bad_match_code = {
+    [0] = "OFPBMC_BAD_TYPE",
+    [1] = "OFPBMC_BAD_LEN",
+    [2] = "OFPBMC_BAD_TAG",
+    [3] = "OFPBMC_BAD_DL_ADDR_MASK",
+    [4] = "OFPBMC_BAD_NW_ADDR_MASK",
+    [5] = "OFPBMC_BAD_WILDCARDS",
+    [6] = "OFPBMC_BAD_FIELD",
+    [7] = "OFPBMC_BAD_VALUE",
+    [8] = "OFPBMC_BAD_MASK",
+    [9] = "OFPBMC_BAD_PREREQ",
+    [10] = "OFPBMC_DUP_FIELD",
+    [11] = "OFPBMC_EPERM",
+}
+
 enum_v6_ofp_bsn_port_counter = {
     [0] = "OFP_BSN_PORT_COUNTER_RX_BYTES",
     [1] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST",
@@ -3686,12 +3707,9 @@ enum_v6_ofp_bsn_tcp_flag = {
     [256] = "OFP_BSN_TCP_FLAG_NS",
 }
 
-enum_v6_ofp_bsn_vport_l2gre_flags = {
-    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
-    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
-    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
-    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
-    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
+enum_v6_ofp_table = {
+    [254] = "OFPTT_MAX",
+    [255] = "OFPTT_ALL",
 }
 
 enum_v6_ofp_queue_desc_prop_type = {
@@ -7848,6 +7866,17 @@ fields['of13.bsn_gentable_entry_stats_request.subtype'] = ProtoField.uint32("of1
 fields['of13.bsn_gentable_entry_stats_request.table_id'] = ProtoField.uint16("of13.bsn_gentable_entry_stats_request.table_id", "table_id", base.DEC, nil)
 fields['of13.bsn_gentable_entry_stats_request.checksum'] = ProtoField.bytes("of13.bsn_gentable_entry_stats_request.checksum", "checksum")
 fields['of13.bsn_gentable_entry_stats_request.checksum_mask'] = ProtoField.bytes("of13.bsn_gentable_entry_stats_request.checksum_mask", "checksum_mask")
+fields['of13.bsn_gentable_error.version'] = ProtoField.uint8("of13.bsn_gentable_error.version", "version", base.DEC, nil)
+fields['of13.bsn_gentable_error.type'] = ProtoField.uint8("of13.bsn_gentable_error.type", "type", base.DEC, nil)
+fields['of13.bsn_gentable_error.length'] = ProtoField.uint16("of13.bsn_gentable_error.length", "length", base.DEC, nil)
+fields['of13.bsn_gentable_error.xid'] = ProtoField.uint32("of13.bsn_gentable_error.xid", "xid", base.DEC, nil)
+fields['of13.bsn_gentable_error.err_type'] = ProtoField.uint16("of13.bsn_gentable_error.err_type", "err_type", base.DEC, nil)
+fields['of13.bsn_gentable_error.subtype'] = ProtoField.uint16("of13.bsn_gentable_error.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_gentable_error.experimenter'] = ProtoField.uint32("of13.bsn_gentable_error.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_gentable_error.error_code'] = ProtoField.uint32("of13.bsn_gentable_error.error_code", "error_code", base.DEC, enum_v4_of_bsn_gentable_error_code)
+fields['of13.bsn_gentable_error.table_id'] = ProtoField.uint16("of13.bsn_gentable_error.table_id", "table_id", base.DEC, nil)
+fields['of13.bsn_gentable_error.err_msg'] = ProtoField.stringz("of13.bsn_gentable_error.err_msg", "err_msg")
+fields['of13.bsn_gentable_error.data'] = ProtoField.bytes("of13.bsn_gentable_error.data", "data")
 fields['of13.bsn_gentable_set_buckets_size.version'] = ProtoField.uint8("of13.bsn_gentable_set_buckets_size.version", "version", base.DEC, nil)
 fields['of13.bsn_gentable_set_buckets_size.type'] = ProtoField.uint8("of13.bsn_gentable_set_buckets_size.type", "type", base.DEC, nil)
 fields['of13.bsn_gentable_set_buckets_size.length'] = ProtoField.uint16("of13.bsn_gentable_set_buckets_size.length", "length", base.DEC, nil)
@@ -10709,6 +10738,17 @@ fields['of14.bsn_gentable_entry_stats_request.subtype'] = ProtoField.uint32("of1
 fields['of14.bsn_gentable_entry_stats_request.table_id'] = ProtoField.uint16("of14.bsn_gentable_entry_stats_request.table_id", "table_id", base.DEC, nil)
 fields['of14.bsn_gentable_entry_stats_request.checksum'] = ProtoField.bytes("of14.bsn_gentable_entry_stats_request.checksum", "checksum")
 fields['of14.bsn_gentable_entry_stats_request.checksum_mask'] = ProtoField.bytes("of14.bsn_gentable_entry_stats_request.checksum_mask", "checksum_mask")
+fields['of14.bsn_gentable_error.version'] = ProtoField.uint8("of14.bsn_gentable_error.version", "version", base.DEC, nil)
+fields['of14.bsn_gentable_error.type'] = ProtoField.uint8("of14.bsn_gentable_error.type", "type", base.DEC, nil)
+fields['of14.bsn_gentable_error.length'] = ProtoField.uint16("of14.bsn_gentable_error.length", "length", base.DEC, nil)
+fields['of14.bsn_gentable_error.xid'] = ProtoField.uint32("of14.bsn_gentable_error.xid", "xid", base.DEC, nil)
+fields['of14.bsn_gentable_error.err_type'] = ProtoField.uint16("of14.bsn_gentable_error.err_type", "err_type", base.DEC, nil)
+fields['of14.bsn_gentable_error.subtype'] = ProtoField.uint16("of14.bsn_gentable_error.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_gentable_error.experimenter'] = ProtoField.uint32("of14.bsn_gentable_error.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_gentable_error.error_code'] = ProtoField.uint32("of14.bsn_gentable_error.error_code", "error_code", base.DEC, enum_v5_of_bsn_gentable_error_code)
+fields['of14.bsn_gentable_error.table_id'] = ProtoField.uint16("of14.bsn_gentable_error.table_id", "table_id", base.DEC, nil)
+fields['of14.bsn_gentable_error.err_msg'] = ProtoField.stringz("of14.bsn_gentable_error.err_msg", "err_msg")
+fields['of14.bsn_gentable_error.data'] = ProtoField.bytes("of14.bsn_gentable_error.data", "data")
 fields['of14.bsn_gentable_set_buckets_size.version'] = ProtoField.uint8("of14.bsn_gentable_set_buckets_size.version", "version", base.DEC, nil)
 fields['of14.bsn_gentable_set_buckets_size.type'] = ProtoField.uint8("of14.bsn_gentable_set_buckets_size.type", "type", base.DEC, nil)
 fields['of14.bsn_gentable_set_buckets_size.length'] = ProtoField.uint16("of14.bsn_gentable_set_buckets_size.length", "length", base.DEC, nil)
@@ -13786,6 +13826,17 @@ fields['of15.bsn_gentable_entry_stats_request.subtype'] = ProtoField.uint32("of1
 fields['of15.bsn_gentable_entry_stats_request.table_id'] = ProtoField.uint16("of15.bsn_gentable_entry_stats_request.table_id", "table_id", base.DEC, nil)
 fields['of15.bsn_gentable_entry_stats_request.checksum'] = ProtoField.bytes("of15.bsn_gentable_entry_stats_request.checksum", "checksum")
 fields['of15.bsn_gentable_entry_stats_request.checksum_mask'] = ProtoField.bytes("of15.bsn_gentable_entry_stats_request.checksum_mask", "checksum_mask")
+fields['of15.bsn_gentable_error.version'] = ProtoField.uint8("of15.bsn_gentable_error.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_error.type'] = ProtoField.uint8("of15.bsn_gentable_error.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_error.length'] = ProtoField.uint16("of15.bsn_gentable_error.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_error.xid'] = ProtoField.uint32("of15.bsn_gentable_error.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_error.err_type'] = ProtoField.uint16("of15.bsn_gentable_error.err_type", "err_type", base.DEC, nil)
+fields['of15.bsn_gentable_error.subtype'] = ProtoField.uint16("of15.bsn_gentable_error.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_error.experimenter'] = ProtoField.uint32("of15.bsn_gentable_error.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_error.error_code'] = ProtoField.uint32("of15.bsn_gentable_error.error_code", "error_code", base.DEC, enum_v6_of_bsn_gentable_error_code)
+fields['of15.bsn_gentable_error.table_id'] = ProtoField.uint16("of15.bsn_gentable_error.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_gentable_error.err_msg'] = ProtoField.stringz("of15.bsn_gentable_error.err_msg", "err_msg")
+fields['of15.bsn_gentable_error.data'] = ProtoField.bytes("of15.bsn_gentable_error.data", "data")
 fields['of15.bsn_gentable_set_buckets_size.version'] = ProtoField.uint8("of15.bsn_gentable_set_buckets_size.version", "version", base.DEC, nil)
 fields['of15.bsn_gentable_set_buckets_size.type'] = ProtoField.uint8("of15.bsn_gentable_set_buckets_size.type", "type", base.DEC, nil)
 fields['of15.bsn_gentable_set_buckets_size.length'] = ProtoField.uint16("of15.bsn_gentable_set_buckets_size.length", "length", base.DEC, nil)
@@ -20097,6 +20148,17 @@ p_of.fields = {
     fields['of13.bsn_gentable_entry_stats_request.table_id'],
     fields['of13.bsn_gentable_entry_stats_request.checksum'],
     fields['of13.bsn_gentable_entry_stats_request.checksum_mask'],
+    fields['of13.bsn_gentable_error.version'],
+    fields['of13.bsn_gentable_error.type'],
+    fields['of13.bsn_gentable_error.length'],
+    fields['of13.bsn_gentable_error.xid'],
+    fields['of13.bsn_gentable_error.err_type'],
+    fields['of13.bsn_gentable_error.subtype'],
+    fields['of13.bsn_gentable_error.experimenter'],
+    fields['of13.bsn_gentable_error.error_code'],
+    fields['of13.bsn_gentable_error.table_id'],
+    fields['of13.bsn_gentable_error.err_msg'],
+    fields['of13.bsn_gentable_error.data'],
     fields['of13.bsn_gentable_set_buckets_size.version'],
     fields['of13.bsn_gentable_set_buckets_size.type'],
     fields['of13.bsn_gentable_set_buckets_size.length'],
@@ -22958,6 +23020,17 @@ p_of.fields = {
     fields['of14.bsn_gentable_entry_stats_request.table_id'],
     fields['of14.bsn_gentable_entry_stats_request.checksum'],
     fields['of14.bsn_gentable_entry_stats_request.checksum_mask'],
+    fields['of14.bsn_gentable_error.version'],
+    fields['of14.bsn_gentable_error.type'],
+    fields['of14.bsn_gentable_error.length'],
+    fields['of14.bsn_gentable_error.xid'],
+    fields['of14.bsn_gentable_error.err_type'],
+    fields['of14.bsn_gentable_error.subtype'],
+    fields['of14.bsn_gentable_error.experimenter'],
+    fields['of14.bsn_gentable_error.error_code'],
+    fields['of14.bsn_gentable_error.table_id'],
+    fields['of14.bsn_gentable_error.err_msg'],
+    fields['of14.bsn_gentable_error.data'],
     fields['of14.bsn_gentable_set_buckets_size.version'],
     fields['of14.bsn_gentable_set_buckets_size.type'],
     fields['of14.bsn_gentable_set_buckets_size.length'],
@@ -26035,6 +26108,17 @@ p_of.fields = {
     fields['of15.bsn_gentable_entry_stats_request.table_id'],
     fields['of15.bsn_gentable_entry_stats_request.checksum'],
     fields['of15.bsn_gentable_entry_stats_request.checksum_mask'],
+    fields['of15.bsn_gentable_error.version'],
+    fields['of15.bsn_gentable_error.type'],
+    fields['of15.bsn_gentable_error.length'],
+    fields['of15.bsn_gentable_error.xid'],
+    fields['of15.bsn_gentable_error.err_type'],
+    fields['of15.bsn_gentable_error.subtype'],
+    fields['of15.bsn_gentable_error.experimenter'],
+    fields['of15.bsn_gentable_error.error_code'],
+    fields['of15.bsn_gentable_error.table_id'],
+    fields['of15.bsn_gentable_error.err_msg'],
+    fields['of15.bsn_gentable_error.data'],
     fields['of15.bsn_gentable_set_buckets_size.version'],
     fields['of15.bsn_gentable_set_buckets_size.type'],
     fields['of15.bsn_gentable_set_buckets_size.length'],
@@ -37273,6 +37357,27 @@ function dissect_of_bsn_gentable_entry_stats_request_v4(reader, subtree)
 end
 of_bsn_stats_request_v4_dissectors[3] = dissect_of_bsn_gentable_entry_stats_request_v4
 
+-- child class of_bsn_gentable_error
+-- Child of of_bsn_base_error
+function dissect_of_bsn_gentable_error_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_gentable_error.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_gentable_error.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_gentable_error.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_gentable_error.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_gentable_error.err_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_gentable_error.subtype')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_gentable_error.experimenter')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_gentable_error.error_code')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_gentable_error.table_id')
+    read_of_desc_str_t(reader, 4, subtree, 'of13.bsn_gentable_error.err_msg')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_gentable_error.data')
+    return 'of_bsn_gentable_error'
+end
+of_bsn_base_error_v4_dissectors[2] = dissect_of_bsn_gentable_error_v4
+
 -- child class of_bsn_gentable_set_buckets_size
 -- Child of of_bsn_header
 function dissect_of_bsn_gentable_set_buckets_size_v4(reader, subtree)
@@ -44913,6 +45018,27 @@ function dissect_of_bsn_gentable_entry_stats_request_v5(reader, subtree)
     return 'of_bsn_gentable_entry_stats_request'
 end
 of_bsn_stats_request_v5_dissectors[3] = dissect_of_bsn_gentable_entry_stats_request_v5
+
+-- child class of_bsn_gentable_error
+-- Child of of_bsn_base_error
+function dissect_of_bsn_gentable_error_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_gentable_error.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_gentable_error.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_gentable_error.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_gentable_error.xid')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_gentable_error.err_type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_gentable_error.subtype')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_gentable_error.experimenter')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_gentable_error.error_code')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_gentable_error.table_id')
+    read_of_desc_str_t(reader, 5, subtree, 'of14.bsn_gentable_error.err_msg')
+    read_of_octets_t(reader, 5, subtree, 'of14.bsn_gentable_error.data')
+    return 'of_bsn_gentable_error'
+end
+of_bsn_base_error_v5_dissectors[2] = dissect_of_bsn_gentable_error_v5
 
 -- child class of_bsn_gentable_set_buckets_size
 -- Child of of_bsn_header
@@ -53074,6 +53200,27 @@ function dissect_of_bsn_gentable_entry_stats_request_v6(reader, subtree)
     return 'of_bsn_gentable_entry_stats_request'
 end
 of_bsn_stats_request_v6_dissectors[3] = dissect_of_bsn_gentable_entry_stats_request_v6
+
+-- child class of_bsn_gentable_error
+-- Child of of_bsn_base_error
+function dissect_of_bsn_gentable_error_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_error.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_error.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_error.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_error.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_error.err_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_error.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_error.experimenter')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_error.error_code')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_error.table_id')
+    read_of_desc_str_t(reader, 6, subtree, 'of15.bsn_gentable_error.err_msg')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_gentable_error.data')
+    return 'of_bsn_gentable_error'
+end
+of_bsn_base_error_v6_dissectors[2] = dissect_of_bsn_gentable_error_v6
 
 -- child class of_bsn_gentable_set_buckets_size
 -- Child of of_bsn_header

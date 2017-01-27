@@ -219,6 +219,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_gentable_error_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_gentable_set_buckets_size_dup(
         of_object_t *src);
 
@@ -5411,6 +5415,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_gentable_error_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8004,6 +8012,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_gentable_entry_stats_request_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_gentable_error_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

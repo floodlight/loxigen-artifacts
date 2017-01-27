@@ -25,6 +25,17 @@ OFPQ_ALL = 4294967295
 OFPQ_MAX_RATE_UNCFG = 65535
 OFPQ_MIN_RATE_UNCFG = 65535
 
+# Identifiers from group of_bsn_gentable_error_code
+OF_BSN_GENTABLE_ERROR_UNKNOWN = 0
+OF_BSN_GENTABLE_ERROR_PARAM = 1
+OF_BSN_GENTABLE_ERROR_TABLE_FULL = 2
+
+of_bsn_gentable_error_code_map = {
+    0: 'OF_BSN_GENTABLE_ERROR_UNKNOWN',
+    1: 'OF_BSN_GENTABLE_ERROR_PARAM',
+    2: 'OF_BSN_GENTABLE_ERROR_TABLE_FULL',
+}
+
 # Identifiers from group of_bsn_hash_gtp_port_match
 OF_BSN_HASH_GTP_PORT_MATCH_SRC = 1
 OF_BSN_HASH_GTP_PORT_MATCH_DST = 2
