@@ -86,6 +86,14 @@ public class OFErrorMsgsVer13 implements OFErrorMsgs {
         return new OFBsnErrorVer13.Builder().setXid(nextXid());
     }
 
+    public OFBsnGentableError.Builder buildBsnGentableError() {
+        return new OFBsnGentableErrorVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableFullError.Builder buildBsnGentableFullError() {
+        return new OFBsnGentableFullErrorVer13.Builder().setXid(nextXid());
+    }
+
     public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {
         return new OFMeterModFailedErrorMsgVer13.Builder().setXid(nextXid());
     }

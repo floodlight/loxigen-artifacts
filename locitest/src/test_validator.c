@@ -3208,6 +3208,24 @@ test_validate_all(void)
     }
 
     {
+        of_bsn_gentable_full_error_t *obj = of_bsn_gentable_full_error_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_full_error_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_full_error_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_error_t *obj = of_bsn_gentable_error_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_error_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_error_delete(obj);
+    }
+
+    {
         of_bsn_gentable_entry_stats_request_t *obj = of_bsn_gentable_entry_stats_request_new(OF_VERSION_1_3);
         of_message_t msg;
         of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_populate(obj, 1);
@@ -4735,6 +4753,24 @@ test_validate_all(void)
         msg = OF_OBJECT_TO_MESSAGE(obj);
         TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
         of_bsn_gentable_set_buckets_size_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_full_error_t *obj = of_bsn_gentable_full_error_new(OF_VERSION_1_4);
+        of_message_t msg;
+        of_bsn_gentable_full_error_OF_VERSION_1_4_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_full_error_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_error_t *obj = of_bsn_gentable_error_new(OF_VERSION_1_4);
+        of_message_t msg;
+        of_bsn_gentable_error_OF_VERSION_1_4_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_error_delete(obj);
     }
 
     {

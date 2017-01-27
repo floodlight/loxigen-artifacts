@@ -2205,6 +2205,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=NULL,
         .wire_type_set=of_bsn_gentable_entry_stats_request_push_wire_types,
     },
+    [OF_BSN_GENTABLE_ERROR] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bsn_gentable_error_push_wire_types,
+    },
+    [OF_BSN_GENTABLE_FULL_ERROR] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bsn_gentable_full_error_push_wire_types,
+    },
     [OF_BSN_GENTABLE_SET_BUCKETS_SIZE] = {
         .wire_length_get=of_object_message_wire_length_get,
         .wire_length_set=of_object_message_wire_length_set,

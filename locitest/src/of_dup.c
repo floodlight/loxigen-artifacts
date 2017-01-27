@@ -20507,6 +20507,92 @@ of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_gentable_error
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_error.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_error_t *
+of_bsn_gentable_error_OF_VERSION_1_3_dup(
+    of_bsn_gentable_error_t *src)
+{
+    of_bsn_gentable_error_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    of_desc_str_t desc_str;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_gentable_error_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_error_xid_get(src, &val32);
+    of_bsn_gentable_error_xid_set(dst, val32);
+
+    of_bsn_gentable_error_subtype_get(src, &val16);
+    of_bsn_gentable_error_subtype_set(dst, val16);
+
+    of_bsn_gentable_error_experimenter_get(src, &val32);
+    of_bsn_gentable_error_experimenter_set(dst, val32);
+
+    of_bsn_gentable_error_table_id_get(src, &val32);
+    of_bsn_gentable_error_table_id_set(dst, val32);
+
+    of_bsn_gentable_error_err_msg_get(src, &desc_str);
+    of_bsn_gentable_error_err_msg_set(dst, desc_str);
+
+    of_bsn_gentable_error_data_get(src, &octets);
+    of_bsn_gentable_error_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_full_error
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_full_error.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_full_error_t *
+of_bsn_gentable_full_error_OF_VERSION_1_3_dup(
+    of_bsn_gentable_full_error_t *src)
+{
+    of_bsn_gentable_full_error_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    of_desc_str_t desc_str;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_gentable_full_error_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_full_error_xid_get(src, &val32);
+    of_bsn_gentable_full_error_xid_set(dst, val32);
+
+    of_bsn_gentable_full_error_subtype_get(src, &val16);
+    of_bsn_gentable_full_error_subtype_set(dst, val16);
+
+    of_bsn_gentable_full_error_experimenter_get(src, &val32);
+    of_bsn_gentable_full_error_experimenter_set(dst, val32);
+
+    of_bsn_gentable_full_error_table_id_get(src, &val32);
+    of_bsn_gentable_full_error_table_id_set(dst, val32);
+
+    of_bsn_gentable_full_error_err_msg_get(src, &desc_str);
+    of_bsn_gentable_full_error_err_msg_set(dst, desc_str);
+
+    of_bsn_gentable_full_error_data_get(src, &octets);
+    of_bsn_gentable_full_error_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_gentable_set_buckets_size
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -42080,6 +42166,92 @@ of_bsn_gentable_entry_stats_request_OF_VERSION_1_4_dup(
 
     of_bsn_gentable_entry_stats_request_checksum_mask_get(src, &checksum_128);
     of_bsn_gentable_entry_stats_request_checksum_mask_set(dst, checksum_128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_error
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_error.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_error_t *
+of_bsn_gentable_error_OF_VERSION_1_4_dup(
+    of_bsn_gentable_error_t *src)
+{
+    of_bsn_gentable_error_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    of_desc_str_t desc_str;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_gentable_error_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_error_xid_get(src, &val32);
+    of_bsn_gentable_error_xid_set(dst, val32);
+
+    of_bsn_gentable_error_subtype_get(src, &val16);
+    of_bsn_gentable_error_subtype_set(dst, val16);
+
+    of_bsn_gentable_error_experimenter_get(src, &val32);
+    of_bsn_gentable_error_experimenter_set(dst, val32);
+
+    of_bsn_gentable_error_table_id_get(src, &val32);
+    of_bsn_gentable_error_table_id_set(dst, val32);
+
+    of_bsn_gentable_error_err_msg_get(src, &desc_str);
+    of_bsn_gentable_error_err_msg_set(dst, desc_str);
+
+    of_bsn_gentable_error_data_get(src, &octets);
+    of_bsn_gentable_error_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_full_error
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_full_error.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_full_error_t *
+of_bsn_gentable_full_error_OF_VERSION_1_4_dup(
+    of_bsn_gentable_full_error_t *src)
+{
+    of_bsn_gentable_full_error_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    of_desc_str_t desc_str;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_gentable_full_error_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_full_error_xid_get(src, &val32);
+    of_bsn_gentable_full_error_xid_set(dst, val32);
+
+    of_bsn_gentable_full_error_subtype_get(src, &val16);
+    of_bsn_gentable_full_error_subtype_set(dst, val16);
+
+    of_bsn_gentable_full_error_experimenter_get(src, &val32);
+    of_bsn_gentable_full_error_experimenter_set(dst, val32);
+
+    of_bsn_gentable_full_error_table_id_get(src, &val32);
+    of_bsn_gentable_full_error_table_id_set(dst, val32);
+
+    of_bsn_gentable_full_error_err_msg_get(src, &desc_str);
+    of_bsn_gentable_full_error_err_msg_set(dst, desc_str);
+
+    of_bsn_gentable_full_error_data_get(src, &octets);
+    of_bsn_gentable_full_error_data_set(dst, &octets);
 
     return dst;
 }
@@ -64457,6 +64629,40 @@ of_bsn_gentable_entry_stats_request_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_gentable_entry_stats_request_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_gentable_error_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_error_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_gentable_error_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_gentable_full_error_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_full_error_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_gentable_full_error_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

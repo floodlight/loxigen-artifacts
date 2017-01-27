@@ -60,6 +60,8 @@ const char *const of_object_id_str[] = {
     "of_bsn_gentable_entry_desc_stats_request",
     "of_bsn_gentable_entry_stats_reply",
     "of_bsn_gentable_entry_stats_request",
+    "of_bsn_gentable_error",
+    "of_bsn_gentable_full_error",
     "of_bsn_gentable_set_buckets_size",
     "of_bsn_gentable_stats_reply",
     "of_bsn_gentable_stats_request",

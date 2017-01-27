@@ -63,6 +63,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_gentable_entry_desc_stats_request_init,
     (of_object_init_f)of_bsn_gentable_entry_stats_reply_init,
     (of_object_init_f)of_bsn_gentable_entry_stats_request_init,
+    (of_object_init_f)of_bsn_gentable_error_init,
+    (of_object_init_f)of_bsn_gentable_full_error_init,
     (of_object_init_f)of_bsn_gentable_set_buckets_size_init,
     (of_object_init_f)of_bsn_gentable_stats_reply_init,
     (of_object_init_f)of_bsn_gentable_stats_request_init,

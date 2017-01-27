@@ -7848,6 +7848,26 @@ fields['of13.bsn_gentable_entry_stats_request.subtype'] = ProtoField.uint32("of1
 fields['of13.bsn_gentable_entry_stats_request.table_id'] = ProtoField.uint16("of13.bsn_gentable_entry_stats_request.table_id", "table_id", base.DEC, nil)
 fields['of13.bsn_gentable_entry_stats_request.checksum'] = ProtoField.bytes("of13.bsn_gentable_entry_stats_request.checksum", "checksum")
 fields['of13.bsn_gentable_entry_stats_request.checksum_mask'] = ProtoField.bytes("of13.bsn_gentable_entry_stats_request.checksum_mask", "checksum_mask")
+fields['of13.bsn_gentable_error.version'] = ProtoField.uint8("of13.bsn_gentable_error.version", "version", base.DEC, nil)
+fields['of13.bsn_gentable_error.type'] = ProtoField.uint8("of13.bsn_gentable_error.type", "type", base.DEC, nil)
+fields['of13.bsn_gentable_error.length'] = ProtoField.uint16("of13.bsn_gentable_error.length", "length", base.DEC, nil)
+fields['of13.bsn_gentable_error.xid'] = ProtoField.uint32("of13.bsn_gentable_error.xid", "xid", base.DEC, nil)
+fields['of13.bsn_gentable_error.err_type'] = ProtoField.uint16("of13.bsn_gentable_error.err_type", "err_type", base.DEC, nil)
+fields['of13.bsn_gentable_error.subtype'] = ProtoField.uint16("of13.bsn_gentable_error.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_gentable_error.experimenter'] = ProtoField.uint32("of13.bsn_gentable_error.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_gentable_error.table_id'] = ProtoField.uint32("of13.bsn_gentable_error.table_id", "table_id", base.DEC, nil)
+fields['of13.bsn_gentable_error.err_msg'] = ProtoField.stringz("of13.bsn_gentable_error.err_msg", "err_msg")
+fields['of13.bsn_gentable_error.data'] = ProtoField.bytes("of13.bsn_gentable_error.data", "data")
+fields['of13.bsn_gentable_full_error.version'] = ProtoField.uint8("of13.bsn_gentable_full_error.version", "version", base.DEC, nil)
+fields['of13.bsn_gentable_full_error.type'] = ProtoField.uint8("of13.bsn_gentable_full_error.type", "type", base.DEC, nil)
+fields['of13.bsn_gentable_full_error.length'] = ProtoField.uint16("of13.bsn_gentable_full_error.length", "length", base.DEC, nil)
+fields['of13.bsn_gentable_full_error.xid'] = ProtoField.uint32("of13.bsn_gentable_full_error.xid", "xid", base.DEC, nil)
+fields['of13.bsn_gentable_full_error.err_type'] = ProtoField.uint16("of13.bsn_gentable_full_error.err_type", "err_type", base.DEC, nil)
+fields['of13.bsn_gentable_full_error.subtype'] = ProtoField.uint16("of13.bsn_gentable_full_error.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_gentable_full_error.experimenter'] = ProtoField.uint32("of13.bsn_gentable_full_error.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_gentable_full_error.table_id'] = ProtoField.uint32("of13.bsn_gentable_full_error.table_id", "table_id", base.DEC, nil)
+fields['of13.bsn_gentable_full_error.err_msg'] = ProtoField.stringz("of13.bsn_gentable_full_error.err_msg", "err_msg")
+fields['of13.bsn_gentable_full_error.data'] = ProtoField.bytes("of13.bsn_gentable_full_error.data", "data")
 fields['of13.bsn_gentable_set_buckets_size.version'] = ProtoField.uint8("of13.bsn_gentable_set_buckets_size.version", "version", base.DEC, nil)
 fields['of13.bsn_gentable_set_buckets_size.type'] = ProtoField.uint8("of13.bsn_gentable_set_buckets_size.type", "type", base.DEC, nil)
 fields['of13.bsn_gentable_set_buckets_size.length'] = ProtoField.uint16("of13.bsn_gentable_set_buckets_size.length", "length", base.DEC, nil)
@@ -10709,6 +10729,26 @@ fields['of14.bsn_gentable_entry_stats_request.subtype'] = ProtoField.uint32("of1
 fields['of14.bsn_gentable_entry_stats_request.table_id'] = ProtoField.uint16("of14.bsn_gentable_entry_stats_request.table_id", "table_id", base.DEC, nil)
 fields['of14.bsn_gentable_entry_stats_request.checksum'] = ProtoField.bytes("of14.bsn_gentable_entry_stats_request.checksum", "checksum")
 fields['of14.bsn_gentable_entry_stats_request.checksum_mask'] = ProtoField.bytes("of14.bsn_gentable_entry_stats_request.checksum_mask", "checksum_mask")
+fields['of14.bsn_gentable_error.version'] = ProtoField.uint8("of14.bsn_gentable_error.version", "version", base.DEC, nil)
+fields['of14.bsn_gentable_error.type'] = ProtoField.uint8("of14.bsn_gentable_error.type", "type", base.DEC, nil)
+fields['of14.bsn_gentable_error.length'] = ProtoField.uint16("of14.bsn_gentable_error.length", "length", base.DEC, nil)
+fields['of14.bsn_gentable_error.xid'] = ProtoField.uint32("of14.bsn_gentable_error.xid", "xid", base.DEC, nil)
+fields['of14.bsn_gentable_error.err_type'] = ProtoField.uint16("of14.bsn_gentable_error.err_type", "err_type", base.DEC, nil)
+fields['of14.bsn_gentable_error.subtype'] = ProtoField.uint16("of14.bsn_gentable_error.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_gentable_error.experimenter'] = ProtoField.uint32("of14.bsn_gentable_error.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_gentable_error.table_id'] = ProtoField.uint32("of14.bsn_gentable_error.table_id", "table_id", base.DEC, nil)
+fields['of14.bsn_gentable_error.err_msg'] = ProtoField.stringz("of14.bsn_gentable_error.err_msg", "err_msg")
+fields['of14.bsn_gentable_error.data'] = ProtoField.bytes("of14.bsn_gentable_error.data", "data")
+fields['of14.bsn_gentable_full_error.version'] = ProtoField.uint8("of14.bsn_gentable_full_error.version", "version", base.DEC, nil)
+fields['of14.bsn_gentable_full_error.type'] = ProtoField.uint8("of14.bsn_gentable_full_error.type", "type", base.DEC, nil)
+fields['of14.bsn_gentable_full_error.length'] = ProtoField.uint16("of14.bsn_gentable_full_error.length", "length", base.DEC, nil)
+fields['of14.bsn_gentable_full_error.xid'] = ProtoField.uint32("of14.bsn_gentable_full_error.xid", "xid", base.DEC, nil)
+fields['of14.bsn_gentable_full_error.err_type'] = ProtoField.uint16("of14.bsn_gentable_full_error.err_type", "err_type", base.DEC, nil)
+fields['of14.bsn_gentable_full_error.subtype'] = ProtoField.uint16("of14.bsn_gentable_full_error.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_gentable_full_error.experimenter'] = ProtoField.uint32("of14.bsn_gentable_full_error.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_gentable_full_error.table_id'] = ProtoField.uint32("of14.bsn_gentable_full_error.table_id", "table_id", base.DEC, nil)
+fields['of14.bsn_gentable_full_error.err_msg'] = ProtoField.stringz("of14.bsn_gentable_full_error.err_msg", "err_msg")
+fields['of14.bsn_gentable_full_error.data'] = ProtoField.bytes("of14.bsn_gentable_full_error.data", "data")
 fields['of14.bsn_gentable_set_buckets_size.version'] = ProtoField.uint8("of14.bsn_gentable_set_buckets_size.version", "version", base.DEC, nil)
 fields['of14.bsn_gentable_set_buckets_size.type'] = ProtoField.uint8("of14.bsn_gentable_set_buckets_size.type", "type", base.DEC, nil)
 fields['of14.bsn_gentable_set_buckets_size.length'] = ProtoField.uint16("of14.bsn_gentable_set_buckets_size.length", "length", base.DEC, nil)
@@ -13786,6 +13826,26 @@ fields['of15.bsn_gentable_entry_stats_request.subtype'] = ProtoField.uint32("of1
 fields['of15.bsn_gentable_entry_stats_request.table_id'] = ProtoField.uint16("of15.bsn_gentable_entry_stats_request.table_id", "table_id", base.DEC, nil)
 fields['of15.bsn_gentable_entry_stats_request.checksum'] = ProtoField.bytes("of15.bsn_gentable_entry_stats_request.checksum", "checksum")
 fields['of15.bsn_gentable_entry_stats_request.checksum_mask'] = ProtoField.bytes("of15.bsn_gentable_entry_stats_request.checksum_mask", "checksum_mask")
+fields['of15.bsn_gentable_error.version'] = ProtoField.uint8("of15.bsn_gentable_error.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_error.type'] = ProtoField.uint8("of15.bsn_gentable_error.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_error.length'] = ProtoField.uint16("of15.bsn_gentable_error.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_error.xid'] = ProtoField.uint32("of15.bsn_gentable_error.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_error.err_type'] = ProtoField.uint16("of15.bsn_gentable_error.err_type", "err_type", base.DEC, nil)
+fields['of15.bsn_gentable_error.subtype'] = ProtoField.uint16("of15.bsn_gentable_error.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_error.experimenter'] = ProtoField.uint32("of15.bsn_gentable_error.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_error.table_id'] = ProtoField.uint32("of15.bsn_gentable_error.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_gentable_error.err_msg'] = ProtoField.stringz("of15.bsn_gentable_error.err_msg", "err_msg")
+fields['of15.bsn_gentable_error.data'] = ProtoField.bytes("of15.bsn_gentable_error.data", "data")
+fields['of15.bsn_gentable_full_error.version'] = ProtoField.uint8("of15.bsn_gentable_full_error.version", "version", base.DEC, nil)
+fields['of15.bsn_gentable_full_error.type'] = ProtoField.uint8("of15.bsn_gentable_full_error.type", "type", base.DEC, nil)
+fields['of15.bsn_gentable_full_error.length'] = ProtoField.uint16("of15.bsn_gentable_full_error.length", "length", base.DEC, nil)
+fields['of15.bsn_gentable_full_error.xid'] = ProtoField.uint32("of15.bsn_gentable_full_error.xid", "xid", base.DEC, nil)
+fields['of15.bsn_gentable_full_error.err_type'] = ProtoField.uint16("of15.bsn_gentable_full_error.err_type", "err_type", base.DEC, nil)
+fields['of15.bsn_gentable_full_error.subtype'] = ProtoField.uint16("of15.bsn_gentable_full_error.subtype", "subtype", base.DEC, nil)
+fields['of15.bsn_gentable_full_error.experimenter'] = ProtoField.uint32("of15.bsn_gentable_full_error.experimenter", "experimenter", base.DEC, nil)
+fields['of15.bsn_gentable_full_error.table_id'] = ProtoField.uint32("of15.bsn_gentable_full_error.table_id", "table_id", base.DEC, nil)
+fields['of15.bsn_gentable_full_error.err_msg'] = ProtoField.stringz("of15.bsn_gentable_full_error.err_msg", "err_msg")
+fields['of15.bsn_gentable_full_error.data'] = ProtoField.bytes("of15.bsn_gentable_full_error.data", "data")
 fields['of15.bsn_gentable_set_buckets_size.version'] = ProtoField.uint8("of15.bsn_gentable_set_buckets_size.version", "version", base.DEC, nil)
 fields['of15.bsn_gentable_set_buckets_size.type'] = ProtoField.uint8("of15.bsn_gentable_set_buckets_size.type", "type", base.DEC, nil)
 fields['of15.bsn_gentable_set_buckets_size.length'] = ProtoField.uint16("of15.bsn_gentable_set_buckets_size.length", "length", base.DEC, nil)
@@ -20097,6 +20157,26 @@ p_of.fields = {
     fields['of13.bsn_gentable_entry_stats_request.table_id'],
     fields['of13.bsn_gentable_entry_stats_request.checksum'],
     fields['of13.bsn_gentable_entry_stats_request.checksum_mask'],
+    fields['of13.bsn_gentable_error.version'],
+    fields['of13.bsn_gentable_error.type'],
+    fields['of13.bsn_gentable_error.length'],
+    fields['of13.bsn_gentable_error.xid'],
+    fields['of13.bsn_gentable_error.err_type'],
+    fields['of13.bsn_gentable_error.subtype'],
+    fields['of13.bsn_gentable_error.experimenter'],
+    fields['of13.bsn_gentable_error.table_id'],
+    fields['of13.bsn_gentable_error.err_msg'],
+    fields['of13.bsn_gentable_error.data'],
+    fields['of13.bsn_gentable_full_error.version'],
+    fields['of13.bsn_gentable_full_error.type'],
+    fields['of13.bsn_gentable_full_error.length'],
+    fields['of13.bsn_gentable_full_error.xid'],
+    fields['of13.bsn_gentable_full_error.err_type'],
+    fields['of13.bsn_gentable_full_error.subtype'],
+    fields['of13.bsn_gentable_full_error.experimenter'],
+    fields['of13.bsn_gentable_full_error.table_id'],
+    fields['of13.bsn_gentable_full_error.err_msg'],
+    fields['of13.bsn_gentable_full_error.data'],
     fields['of13.bsn_gentable_set_buckets_size.version'],
     fields['of13.bsn_gentable_set_buckets_size.type'],
     fields['of13.bsn_gentable_set_buckets_size.length'],
@@ -22958,6 +23038,26 @@ p_of.fields = {
     fields['of14.bsn_gentable_entry_stats_request.table_id'],
     fields['of14.bsn_gentable_entry_stats_request.checksum'],
     fields['of14.bsn_gentable_entry_stats_request.checksum_mask'],
+    fields['of14.bsn_gentable_error.version'],
+    fields['of14.bsn_gentable_error.type'],
+    fields['of14.bsn_gentable_error.length'],
+    fields['of14.bsn_gentable_error.xid'],
+    fields['of14.bsn_gentable_error.err_type'],
+    fields['of14.bsn_gentable_error.subtype'],
+    fields['of14.bsn_gentable_error.experimenter'],
+    fields['of14.bsn_gentable_error.table_id'],
+    fields['of14.bsn_gentable_error.err_msg'],
+    fields['of14.bsn_gentable_error.data'],
+    fields['of14.bsn_gentable_full_error.version'],
+    fields['of14.bsn_gentable_full_error.type'],
+    fields['of14.bsn_gentable_full_error.length'],
+    fields['of14.bsn_gentable_full_error.xid'],
+    fields['of14.bsn_gentable_full_error.err_type'],
+    fields['of14.bsn_gentable_full_error.subtype'],
+    fields['of14.bsn_gentable_full_error.experimenter'],
+    fields['of14.bsn_gentable_full_error.table_id'],
+    fields['of14.bsn_gentable_full_error.err_msg'],
+    fields['of14.bsn_gentable_full_error.data'],
     fields['of14.bsn_gentable_set_buckets_size.version'],
     fields['of14.bsn_gentable_set_buckets_size.type'],
     fields['of14.bsn_gentable_set_buckets_size.length'],
@@ -26035,6 +26135,26 @@ p_of.fields = {
     fields['of15.bsn_gentable_entry_stats_request.table_id'],
     fields['of15.bsn_gentable_entry_stats_request.checksum'],
     fields['of15.bsn_gentable_entry_stats_request.checksum_mask'],
+    fields['of15.bsn_gentable_error.version'],
+    fields['of15.bsn_gentable_error.type'],
+    fields['of15.bsn_gentable_error.length'],
+    fields['of15.bsn_gentable_error.xid'],
+    fields['of15.bsn_gentable_error.err_type'],
+    fields['of15.bsn_gentable_error.subtype'],
+    fields['of15.bsn_gentable_error.experimenter'],
+    fields['of15.bsn_gentable_error.table_id'],
+    fields['of15.bsn_gentable_error.err_msg'],
+    fields['of15.bsn_gentable_error.data'],
+    fields['of15.bsn_gentable_full_error.version'],
+    fields['of15.bsn_gentable_full_error.type'],
+    fields['of15.bsn_gentable_full_error.length'],
+    fields['of15.bsn_gentable_full_error.xid'],
+    fields['of15.bsn_gentable_full_error.err_type'],
+    fields['of15.bsn_gentable_full_error.subtype'],
+    fields['of15.bsn_gentable_full_error.experimenter'],
+    fields['of15.bsn_gentable_full_error.table_id'],
+    fields['of15.bsn_gentable_full_error.err_msg'],
+    fields['of15.bsn_gentable_full_error.data'],
     fields['of15.bsn_gentable_set_buckets_size.version'],
     fields['of15.bsn_gentable_set_buckets_size.type'],
     fields['of15.bsn_gentable_set_buckets_size.length'],
@@ -37273,6 +37393,46 @@ function dissect_of_bsn_gentable_entry_stats_request_v4(reader, subtree)
 end
 of_bsn_stats_request_v4_dissectors[3] = dissect_of_bsn_gentable_entry_stats_request_v4
 
+-- child class of_bsn_gentable_error
+-- Child of of_bsn_base_error
+function dissect_of_bsn_gentable_error_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_gentable_error.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_gentable_error.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_gentable_error.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_gentable_error.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_gentable_error.err_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_gentable_error.subtype')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_gentable_error.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_gentable_error.table_id')
+    read_of_desc_str_t(reader, 4, subtree, 'of13.bsn_gentable_error.err_msg')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_gentable_error.data')
+    return 'of_bsn_gentable_error'
+end
+of_bsn_base_error_v4_dissectors[2] = dissect_of_bsn_gentable_error_v4
+
+-- child class of_bsn_gentable_full_error
+-- Child of of_bsn_base_error
+function dissect_of_bsn_gentable_full_error_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_gentable_full_error.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_gentable_full_error.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_gentable_full_error.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_gentable_full_error.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_gentable_full_error.err_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_gentable_full_error.subtype')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_gentable_full_error.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_gentable_full_error.table_id')
+    read_of_desc_str_t(reader, 4, subtree, 'of13.bsn_gentable_full_error.err_msg')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_gentable_full_error.data')
+    return 'of_bsn_gentable_full_error'
+end
+of_bsn_base_error_v4_dissectors[3] = dissect_of_bsn_gentable_full_error_v4
+
 -- child class of_bsn_gentable_set_buckets_size
 -- Child of of_bsn_header
 function dissect_of_bsn_gentable_set_buckets_size_v4(reader, subtree)
@@ -44913,6 +45073,46 @@ function dissect_of_bsn_gentable_entry_stats_request_v5(reader, subtree)
     return 'of_bsn_gentable_entry_stats_request'
 end
 of_bsn_stats_request_v5_dissectors[3] = dissect_of_bsn_gentable_entry_stats_request_v5
+
+-- child class of_bsn_gentable_error
+-- Child of of_bsn_base_error
+function dissect_of_bsn_gentable_error_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_gentable_error.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_gentable_error.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_gentable_error.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_gentable_error.xid')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_gentable_error.err_type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_gentable_error.subtype')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_gentable_error.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_gentable_error.table_id')
+    read_of_desc_str_t(reader, 5, subtree, 'of14.bsn_gentable_error.err_msg')
+    read_of_octets_t(reader, 5, subtree, 'of14.bsn_gentable_error.data')
+    return 'of_bsn_gentable_error'
+end
+of_bsn_base_error_v5_dissectors[2] = dissect_of_bsn_gentable_error_v5
+
+-- child class of_bsn_gentable_full_error
+-- Child of of_bsn_base_error
+function dissect_of_bsn_gentable_full_error_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_gentable_full_error.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_gentable_full_error.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_gentable_full_error.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_gentable_full_error.xid')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_gentable_full_error.err_type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_gentable_full_error.subtype')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_gentable_full_error.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_gentable_full_error.table_id')
+    read_of_desc_str_t(reader, 5, subtree, 'of14.bsn_gentable_full_error.err_msg')
+    read_of_octets_t(reader, 5, subtree, 'of14.bsn_gentable_full_error.data')
+    return 'of_bsn_gentable_full_error'
+end
+of_bsn_base_error_v5_dissectors[3] = dissect_of_bsn_gentable_full_error_v5
 
 -- child class of_bsn_gentable_set_buckets_size
 -- Child of of_bsn_header
@@ -53074,6 +53274,46 @@ function dissect_of_bsn_gentable_entry_stats_request_v6(reader, subtree)
     return 'of_bsn_gentable_entry_stats_request'
 end
 of_bsn_stats_request_v6_dissectors[3] = dissect_of_bsn_gentable_entry_stats_request_v6
+
+-- child class of_bsn_gentable_error
+-- Child of of_bsn_base_error
+function dissect_of_bsn_gentable_error_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_error.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_error.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_error.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_error.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_error.err_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_error.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_error.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_error.table_id')
+    read_of_desc_str_t(reader, 6, subtree, 'of15.bsn_gentable_error.err_msg')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_gentable_error.data')
+    return 'of_bsn_gentable_error'
+end
+of_bsn_base_error_v6_dissectors[2] = dissect_of_bsn_gentable_error_v6
+
+-- child class of_bsn_gentable_full_error
+-- Child of of_bsn_base_error
+function dissect_of_bsn_gentable_full_error_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_full_error.version')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_gentable_full_error.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_full_error.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_full_error.xid')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_full_error.err_type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_gentable_full_error.subtype')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_full_error.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_gentable_full_error.table_id')
+    read_of_desc_str_t(reader, 6, subtree, 'of15.bsn_gentable_full_error.err_msg')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_gentable_full_error.data')
+    return 'of_bsn_gentable_full_error'
+end
+of_bsn_base_error_v6_dissectors[3] = dissect_of_bsn_gentable_full_error_v6
 
 -- child class of_bsn_gentable_set_buckets_size
 -- Child of of_bsn_header

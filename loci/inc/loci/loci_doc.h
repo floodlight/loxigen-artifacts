@@ -1340,6 +1340,68 @@ typedef struct of_bsn_gentable_entry_stats_reply_s of_bsn_gentable_entry_stats_r
 typedef struct of_bsn_gentable_entry_stats_request_s of_bsn_gentable_entry_stats_request_t;
 
 /**
+ * Structure for of_bsn_gentable_error object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_error_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_error_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_error_uint32_get_f and _set_f.
+ *
+ * @param table_id_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for table_id, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_error_uint32_get_f and _set_f.
+ *
+ * @param err_msg_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for err_msg, a variable of type of_desc_str.  Functions
+ *   are of type of_bsn_gentable_error_of_desc_str_get_f and _set_f.
+ *
+ * @param data_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for data, a variable of type of_octets.  Functions
+ *   are of type of_bsn_gentable_error_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_error_s of_bsn_gentable_error_t;
+
+/**
+ * Structure for of_bsn_gentable_full_error object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_full_error_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_full_error_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_full_error_uint32_get_f and _set_f.
+ *
+ * @param table_id_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for table_id, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_full_error_uint32_get_f and _set_f.
+ *
+ * @param err_msg_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for err_msg, a variable of type of_desc_str.  Functions
+ *   are of type of_bsn_gentable_full_error_of_desc_str_get_f and _set_f.
+ *
+ * @param data_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for data, a variable of type of_octets.  Functions
+ *   are of type of_bsn_gentable_full_error_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_full_error_s of_bsn_gentable_full_error_t;
+
+/**
  * Structure for of_bsn_gentable_set_buckets_size object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
