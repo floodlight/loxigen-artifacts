@@ -63,6 +63,9 @@ abstract class OFBsnBaseErrorVer15 {
                case (short) 0x1:
                    // discriminator value 0x1=0x1 for class OFBsnErrorVer15
                    return OFBsnErrorVer15.READER.readFrom(bb);
+               case (short) 0x2:
+                   // discriminator value 0x2=0x2 for class OFBsnTableFullErrorVer15
+                   return OFBsnTableFullErrorVer15.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFBsnBaseErrorVer15: " + subtype);
             }

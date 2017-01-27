@@ -115,6 +115,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_switch_pipeline_stats_request",
     "of_bsn_table_checksum_stats_reply",
     "of_bsn_table_checksum_stats_request",
+    "of_bsn_table_full_error",
     "of_bsn_table_set_buckets_size",
     "of_bsn_takeover",
     "of_bsn_time_reply",

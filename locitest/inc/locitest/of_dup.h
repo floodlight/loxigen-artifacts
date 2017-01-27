@@ -439,6 +439,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_table_full_error_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_table_set_buckets_size_dup(
         of_object_t *src);
 
@@ -5571,6 +5575,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_table_full_error_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_table_set_buckets_size_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8160,6 +8168,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_table_checksum_stats_request_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_table_full_error_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

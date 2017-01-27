@@ -2403,6 +2403,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=NULL,
         .wire_type_set=of_bsn_table_checksum_stats_request_push_wire_types,
     },
+    [OF_BSN_TABLE_FULL_ERROR] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bsn_table_full_error_push_wire_types,
+    },
     [OF_BSN_TABLE_SET_BUCKETS_SIZE] = {
         .wire_length_get=of_object_message_wire_length_get,
         .wire_length_set=of_object_message_wire_length_set,

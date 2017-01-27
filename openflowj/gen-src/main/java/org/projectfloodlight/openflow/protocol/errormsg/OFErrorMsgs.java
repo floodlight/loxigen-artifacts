@@ -42,6 +42,7 @@ public interface OFErrorMsgs extends XidGenerator {
     OFTableModFailedErrorMsg.Builder buildTableModFailedErrorMsg() throws UnsupportedOperationException;
     OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() throws UnsupportedOperationException;
     OFBsnError.Builder buildBsnError() throws UnsupportedOperationException;
+    OFBsnTableFullError.Builder buildBsnTableFullError() throws UnsupportedOperationException;
     OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() throws UnsupportedOperationException;
     OFTableFeaturesFailedErrorMsg.Builder buildTableFeaturesFailedErrorMsg() throws UnsupportedOperationException;
     OFAsyncConfigFailedErrorMsg.Builder buildAsyncConfigFailedErrorMsg() throws UnsupportedOperationException;

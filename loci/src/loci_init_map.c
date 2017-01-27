@@ -118,6 +118,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_switch_pipeline_stats_request_init,
     (of_object_init_f)of_bsn_table_checksum_stats_reply_init,
     (of_object_init_f)of_bsn_table_checksum_stats_request_init,
+    (of_object_init_f)of_bsn_table_full_error_init,
     (of_object_init_f)of_bsn_table_set_buckets_size_init,
     (of_object_init_f)of_bsn_takeover_init,
     (of_object_init_f)of_bsn_time_reply_init,

@@ -86,6 +86,10 @@ public class OFErrorMsgsVer14 implements OFErrorMsgs {
         return new OFBsnErrorVer14.Builder().setXid(nextXid());
     }
 
+    public OFBsnTableFullError.Builder buildBsnTableFullError() {
+        return new OFBsnTableFullErrorVer14.Builder().setXid(nextXid());
+    }
+
     public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {
         return new OFMeterModFailedErrorMsgVer14.Builder().setXid(nextXid());
     }

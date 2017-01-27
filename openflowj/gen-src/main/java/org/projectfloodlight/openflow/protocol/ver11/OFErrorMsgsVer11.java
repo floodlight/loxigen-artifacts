@@ -86,6 +86,10 @@ public class OFErrorMsgsVer11 implements OFErrorMsgs {
         throw new UnsupportedOperationException("OFBsnError not supported in version 1.1");
     }
 
+    public OFBsnTableFullError.Builder buildBsnTableFullError() {
+        throw new UnsupportedOperationException("OFBsnTableFullError not supported in version 1.1");
+    }
+
     public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {
         throw new UnsupportedOperationException("OFMeterModFailedErrorMsg not supported in version 1.1");
     }

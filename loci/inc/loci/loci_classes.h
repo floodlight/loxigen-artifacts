@@ -801,6 +801,8 @@ void of_bsn_table_checksum_stats_reply_wire_object_id_get(of_object_t *obj, of_o
 void of_bsn_table_checksum_stats_reply_push_wire_types(of_object_t *obj);
 void of_bsn_table_checksum_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_table_checksum_stats_request_push_wire_types(of_object_t *obj);
+void of_bsn_table_full_error_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_table_full_error_push_wire_types(of_object_t *obj);
 void of_bsn_table_set_buckets_size_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_table_set_buckets_size_push_wire_types(of_object_t *obj);
 void of_bsn_time_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1564,6 +1566,7 @@ typedef of_object_t of_bsn_switch_pipeline_stats_reply_t;
 typedef of_object_t of_bsn_switch_pipeline_stats_request_t;
 typedef of_object_t of_bsn_table_checksum_stats_reply_t;
 typedef of_object_t of_bsn_table_checksum_stats_request_t;
+typedef of_object_t of_bsn_table_full_error_t;
 typedef of_object_t of_bsn_table_set_buckets_size_t;
 typedef of_object_t of_bsn_takeover_t;
 typedef of_object_t of_bsn_time_reply_t;
@@ -2791,6 +2794,11 @@ extern void of_bsn_table_checksum_stats_reply_init(
 extern of_object_t *
     of_bsn_table_checksum_stats_request_new(of_version_t version);
 extern void of_bsn_table_checksum_stats_request_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_table_full_error_new(of_version_t version);
+extern void of_bsn_table_full_error_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -7338,6 +7346,17 @@ of_bsn_table_checksum_stats_reply_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_table_checksum_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_table_full_error_t
+ * @param obj An instance of type of_bsn_table_full_error_t
+ *
+ * \ingroup of_bsn_table_full_error
+ */
+static inline void
+of_bsn_table_full_error_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -18506,6 +18525,43 @@ extern void of_bsn_table_checksum_stats_request_subtype_set(
 extern void of_bsn_table_checksum_stats_request_subtype_get(
     of_bsn_table_checksum_stats_request_t *obj,
     uint32_t *subtype);
+
+/* Unified accessor functions for of_bsn_table_full_error */
+
+extern void of_bsn_table_full_error_xid_set(
+    of_bsn_table_full_error_t *obj,
+    uint32_t xid);
+extern void of_bsn_table_full_error_xid_get(
+    of_bsn_table_full_error_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_table_full_error_subtype_set(
+    of_bsn_table_full_error_t *obj,
+    uint16_t subtype);
+extern void of_bsn_table_full_error_subtype_get(
+    of_bsn_table_full_error_t *obj,
+    uint16_t *subtype);
+
+extern void of_bsn_table_full_error_experimenter_set(
+    of_bsn_table_full_error_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_table_full_error_experimenter_get(
+    of_bsn_table_full_error_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_table_full_error_err_msg_set(
+    of_bsn_table_full_error_t *obj,
+    of_desc_str_t err_msg);
+extern void of_bsn_table_full_error_err_msg_get(
+    of_bsn_table_full_error_t *obj,
+    of_desc_str_t *err_msg);
+
+extern int WARN_UNUSED_RESULT of_bsn_table_full_error_data_set(
+    of_bsn_table_full_error_t *obj,
+    of_octets_t *data);
+extern void of_bsn_table_full_error_data_get(
+    of_bsn_table_full_error_t *obj,
+    of_octets_t *data);
 
 /* Unified accessor functions for of_bsn_table_set_buckets_size */
 

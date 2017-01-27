@@ -16209,6 +16209,43 @@ of_bsn_table_checksum_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, vo
 }
 
 int
+of_bsn_table_full_error_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    of_desc_str_t desc_str;
+    of_octets_t octets;
+
+    of_bsn_table_full_error_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_table_full_error_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_table_full_error_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_table_full_error_err_msg_get(obj, &desc_str);
+    out += writer(cookie, "err_msg=");
+    out += LOCI_SHOW_desc_str(writer, cookie, desc_str);
+    out += writer(cookie, " ");
+
+    of_bsn_table_full_error_data_get(obj, &octets);
+    out += writer(cookie, "data=");
+    out += LOCI_SHOW_octets(writer, cookie, octets);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_table_set_buckets_size_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -29161,6 +29198,43 @@ of_bsn_table_checksum_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, vo
 }
 
 int
+of_bsn_table_full_error_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    of_desc_str_t desc_str;
+    of_octets_t octets;
+
+    of_bsn_table_full_error_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_table_full_error_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_table_full_error_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_table_full_error_err_msg_get(obj, &desc_str);
+    out += writer(cookie, "err_msg=");
+    out += LOCI_SHOW_desc_str(writer, cookie, desc_str);
+    out += writer(cookie, " ");
+
+    of_bsn_table_full_error_data_get(obj, &octets);
+    out += writer(cookie, "data=");
+    out += LOCI_SHOW_octets(writer, cookie, octets);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_table_set_buckets_size_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -40574,6 +40648,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_virtual_port_create_reply_OF_VERSION_1_0_show,
     of_bsn_virtual_port_create_request_OF_VERSION_1_0_show,
     of_bsn_virtual_port_remove_reply_OF_VERSION_1_0_show,
@@ -41345,6 +41420,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_bsn_set_mirroring_OF_VERSION_1_1_show,
     of_bsn_set_pktin_suppression_reply_OF_VERSION_1_1_show,
     of_bsn_set_pktin_suppression_request_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -42146,6 +42222,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_virtual_port_create_reply_OF_VERSION_1_2_show,
     of_bsn_virtual_port_create_request_OF_VERSION_1_2_show,
     of_bsn_virtual_port_remove_reply_OF_VERSION_1_2_show,
@@ -42928,6 +43005,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_show,
     of_bsn_table_checksum_stats_reply_OF_VERSION_1_3_show,
     of_bsn_table_checksum_stats_request_OF_VERSION_1_3_show,
+    of_bsn_table_full_error_OF_VERSION_1_3_show,
     of_bsn_table_set_buckets_size_OF_VERSION_1_3_show,
     unknown_show,
     of_bsn_time_reply_OF_VERSION_1_3_show,
@@ -43714,6 +43792,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_switch_pipeline_stats_request_OF_VERSION_1_4_show,
     of_bsn_table_checksum_stats_reply_OF_VERSION_1_4_show,
     of_bsn_table_checksum_stats_request_OF_VERSION_1_4_show,
+    of_bsn_table_full_error_OF_VERSION_1_4_show,
     of_bsn_table_set_buckets_size_OF_VERSION_1_4_show,
     of_bsn_takeover_OF_VERSION_1_4_show,
     of_bsn_time_reply_OF_VERSION_1_4_show,
