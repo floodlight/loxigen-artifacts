@@ -15680,6 +15680,55 @@ of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_dump(loci_writer_f writer, vo
 }
 
 int
+of_bsn_gentable_error_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    of_desc_str_t desc_str;
+    of_octets_t octets;
+
+    out += writer(cookie, "Object of type of_bsn_gentable_error\n");
+
+    of_bsn_gentable_error_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_gentable_error_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_bsn_gentable_error_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_gentable_error_error_code_get(obj, &val16);
+    out += writer(cookie, "  error_code (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_bsn_gentable_error_table_id_get(obj, &val16);
+    out += writer(cookie, "  table_id (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_bsn_gentable_error_err_msg_get(obj, &desc_str);
+    out += writer(cookie, "  err_msg (of_desc_str_t):  ");
+    out += LOCI_DUMP_desc_str(writer, cookie, desc_str);
+    out += writer(cookie, "\n");
+
+    of_bsn_gentable_error_data_get(obj, &octets);
+    out += writer(cookie, "  data (of_octets_t):  ");
+    out += LOCI_DUMP_octets(writer, cookie, octets);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -29769,6 +29818,55 @@ of_bsn_gentable_entry_stats_request_OF_VERSION_1_4_dump(loci_writer_f writer, vo
 }
 
 int
+of_bsn_gentable_error_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    of_desc_str_t desc_str;
+    of_octets_t octets;
+
+    out += writer(cookie, "Object of type of_bsn_gentable_error\n");
+
+    of_bsn_gentable_error_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_gentable_error_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_bsn_gentable_error_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_gentable_error_error_code_get(obj, &val16);
+    out += writer(cookie, "  error_code (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_bsn_gentable_error_table_id_get(obj, &val16);
+    out += writer(cookie, "  table_id (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_bsn_gentable_error_err_msg_get(obj, &desc_str);
+    out += writer(cookie, "  err_msg (of_desc_str_t):  ");
+    out += LOCI_DUMP_desc_str(writer, cookie, desc_str);
+    out += writer(cookie, "\n");
+
+    of_bsn_gentable_error_data_get(obj, &octets);
+    out += writer(cookie, "  data (of_octets_t):  ");
+    out += LOCI_DUMP_octets(writer, cookie, octets);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_gentable_set_buckets_size_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -43643,6 +43741,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_bsn_get_interfaces_reply_OF_VERSION_1_0_dump,
     of_bsn_get_interfaces_request_OF_VERSION_1_0_dump,
     of_bsn_get_ip_mask_reply_OF_VERSION_1_0_dump,
@@ -44396,6 +44495,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_bsn_bw_enable_get_request_OF_VERSION_1_1_dump,
     of_bsn_bw_enable_set_reply_OF_VERSION_1_1_dump,
     of_bsn_bw_enable_set_request_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -45215,6 +45315,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_bsn_get_interfaces_reply_OF_VERSION_1_2_dump,
     of_bsn_get_interfaces_request_OF_VERSION_1_2_dump,
     unknown_dump,
@@ -45998,6 +46099,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_dump,
     of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_dump,
     of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_dump,
+    of_bsn_gentable_error_OF_VERSION_1_3_dump,
     of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_dump,
     of_bsn_gentable_stats_reply_OF_VERSION_1_3_dump,
     of_bsn_gentable_stats_request_OF_VERSION_1_3_dump,
@@ -46784,6 +46886,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_4_dump,
     of_bsn_gentable_entry_stats_reply_OF_VERSION_1_4_dump,
     of_bsn_gentable_entry_stats_request_OF_VERSION_1_4_dump,
+    of_bsn_gentable_error_OF_VERSION_1_4_dump,
     of_bsn_gentable_set_buckets_size_OF_VERSION_1_4_dump,
     of_bsn_gentable_stats_reply_OF_VERSION_1_4_dump,
     of_bsn_gentable_stats_request_OF_VERSION_1_4_dump,

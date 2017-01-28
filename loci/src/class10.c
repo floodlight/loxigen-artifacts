@@ -3371,6 +3371,9 @@ of_bsn_base_error_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x1:
             *id = OF_BSN_ERROR;
             break;
+        case 0x2:
+            *id = OF_BSN_GENTABLE_ERROR;
+            break;
         default:
             *id = OF_BSN_BASE_ERROR;
             break;
@@ -3382,6 +3385,9 @@ of_bsn_base_error_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         switch (value) {
         case 0x1:
             *id = OF_BSN_ERROR;
+            break;
+        case 0x2:
+            *id = OF_BSN_GENTABLE_ERROR;
             break;
         default:
             *id = OF_BSN_BASE_ERROR;

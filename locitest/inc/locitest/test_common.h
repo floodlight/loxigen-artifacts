@@ -5045,6 +5045,15 @@ extern int of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_check_scalars(
     of_bsn_gentable_entry_stats_request_t *obj, int value);
 
+extern int of_bsn_gentable_error_OF_VERSION_1_3_populate(
+    of_bsn_gentable_error_t *obj, int value);
+extern int of_bsn_gentable_error_OF_VERSION_1_3_check(
+    of_bsn_gentable_error_t *obj, int value);
+extern int of_bsn_gentable_error_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_error_t *obj, int value);
+extern int of_bsn_gentable_error_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_error_t *obj, int value);
+
 extern int of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_populate(
     of_bsn_gentable_set_buckets_size_t *obj, int value);
 extern int of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_check(
@@ -10777,6 +10786,15 @@ extern int of_bsn_gentable_entry_stats_request_OF_VERSION_1_4_populate_scalars(
     of_bsn_gentable_entry_stats_request_t *obj, int value);
 extern int of_bsn_gentable_entry_stats_request_OF_VERSION_1_4_check_scalars(
     of_bsn_gentable_entry_stats_request_t *obj, int value);
+
+extern int of_bsn_gentable_error_OF_VERSION_1_4_populate(
+    of_bsn_gentable_error_t *obj, int value);
+extern int of_bsn_gentable_error_OF_VERSION_1_4_check(
+    of_bsn_gentable_error_t *obj, int value);
+extern int of_bsn_gentable_error_OF_VERSION_1_4_populate_scalars(
+    of_bsn_gentable_error_t *obj, int value);
+extern int of_bsn_gentable_error_OF_VERSION_1_4_check_scalars(
+    of_bsn_gentable_error_t *obj, int value);
 
 extern int of_bsn_gentable_set_buckets_size_OF_VERSION_1_4_populate(
     of_bsn_gentable_set_buckets_size_t *obj, int value);

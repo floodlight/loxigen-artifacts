@@ -86,6 +86,10 @@ public class OFErrorMsgsVer10 implements OFErrorMsgs {
         throw new UnsupportedOperationException("OFBsnError not supported in version 1.0");
     }
 
+    public OFBsnGentableError.Builder buildBsnGentableError() {
+        throw new UnsupportedOperationException("OFBsnGentableError not supported in version 1.0");
+    }
+
     public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {
         throw new UnsupportedOperationException("OFMeterModFailedErrorMsg not supported in version 1.0");
     }
