@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -39,12 +41,20 @@ public class OFInstructionIdsVer11 implements OFInstructionIds {
         throw new UnsupportedOperationException("OFInstructionIdBsnArpOffload not supported in version 1.1");
     }
 
+    public OFInstructionIdBsnAutoNegotiation bsnAutoNegotiation() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnAutoNegotiation not supported in version 1.1");
+    }
+
     public OFInstructionIdBsnDeny bsnDeny() {
         throw new UnsupportedOperationException("OFInstructionIdBsnDeny not supported in version 1.1");
     }
 
     public OFInstructionIdBsnDhcpOffload bsnDhcpOffload() {
         throw new UnsupportedOperationException("OFInstructionIdBsnDhcpOffload not supported in version 1.1");
+    }
+
+    public OFInstructionIdBsnDisableL3 bsnDisableL3() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnDisableL3 not supported in version 1.1");
     }
 
     public OFInstructionIdBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck() {
@@ -55,12 +65,40 @@ public class OFInstructionIdsVer11 implements OFInstructionIds {
         throw new UnsupportedOperationException("OFInstructionIdBsnDisableSrcMacCheck not supported in version 1.1");
     }
 
+    public OFInstructionIdBsnDisableVlanCounters bsnDisableVlanCounters() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnDisableVlanCounters not supported in version 1.1");
+    }
+
+    public OFInstructionIdBsnHashSelect bsnHashSelect() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnHashSelect not supported in version 1.1");
+    }
+
+    public OFInstructionIdBsnInternalPriority bsnInternalPriority() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnInternalPriority not supported in version 1.1");
+    }
+
+    public OFInstructionIdBsnNdpOffload bsnNdpOffload() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnNdpOffload not supported in version 1.1");
+    }
+
     public OFInstructionIdBsnPacketOfDeath bsnPacketOfDeath() {
         throw new UnsupportedOperationException("OFInstructionIdBsnPacketOfDeath not supported in version 1.1");
     }
 
     public OFInstructionIdBsnPermit bsnPermit() {
         throw new UnsupportedOperationException("OFInstructionIdBsnPermit not supported in version 1.1");
+    }
+
+    public OFInstructionIdBsnPrioritizePdus bsnPrioritizePdus() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnPrioritizePdus not supported in version 1.1");
+    }
+
+    public OFInstructionIdBsnRequireVlanXlate bsnRequireVlanXlate() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnRequireVlanXlate not supported in version 1.1");
+    }
+
+    public OFInstructionIdBsnSpanDestination bsnSpanDestination() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnSpanDestination not supported in version 1.1");
     }
 
     public OFInstructionIdClearActions clearActions() {
@@ -81,6 +119,10 @@ public class OFInstructionIdsVer11 implements OFInstructionIds {
 
     public OFInstructionIdWriteMetadata writeMetadata() {
         throw new UnsupportedOperationException("OFInstructionIdWriteMetadata not supported in version 1.1");
+    }
+
+    public OFInstructionIdStatTrigger statTrigger() {
+        throw new UnsupportedOperationException("OFInstructionIdStatTrigger not supported in version 1.1");
     }
 
     public OFMessageReader<OFInstructionId> getReader() {

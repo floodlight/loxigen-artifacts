@@ -18,13 +18,15 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFGroupFeaturesStatsReply extends OFObject, OFStatsReply {
     OFVersion getVersion();
@@ -33,7 +35,7 @@ public interface OFGroupFeaturesStatsReply extends OFObject, OFStatsReply {
     OFStatsType getStatsType();
     Set<OFStatsReplyFlags> getFlags();
     long getTypes();
-    long getCapabilities();
+    Set<OFGroupCapabilities> getCapabilities();
     long getMaxGroupsAll();
     long getMaxGroupsSelect();
     long getMaxGroupsIndirect();
@@ -43,7 +45,7 @@ public interface OFGroupFeaturesStatsReply extends OFObject, OFStatsReply {
     long getActionsIndirect();
     long getActionsFf();
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFStatsReply.Builder {
@@ -57,8 +59,8 @@ public interface OFGroupFeaturesStatsReply extends OFObject, OFStatsReply {
         Builder setFlags(Set<OFStatsReplyFlags> flags);
         long getTypes();
         Builder setTypes(long types);
-        long getCapabilities();
-        Builder setCapabilities(long capabilities);
+        Set<OFGroupCapabilities> getCapabilities();
+        Builder setCapabilities(Set<OFGroupCapabilities> capabilities);
         long getMaxGroupsAll();
         Builder setMaxGroupsAll(long maxGroupsAll);
         long getMaxGroupsSelect();

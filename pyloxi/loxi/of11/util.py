@@ -18,6 +18,9 @@ def pretty_mac(mac):
 def pretty_ipv4(v):
     return "%d.%d.%d.%d" % ((v >> 24) & 0xFF, (v >> 16) & 0xFF, (v >> 8) & 0xFF, v & 0xFF)
 
+def pretty_ipv6(v):
+    return ":".join(["%0.2x%0.2x" % (ord(v[i]), ord(v[i+1])) for i in range(0, len(v), 2)])
+
 def pretty_flags(v, flag_names):
     set_flags = []
     for flag_name in flag_names:
@@ -88,6 +91,28 @@ def pack_bitmap_128(value):
 def unpack_bitmap_128(reader):
     hi, lo = reader.read("!QQ")
     x = (hi << 64) | lo
+    i = 0
+    value = set()
+    while x != 0:
+        if x & 1 == 1:
+            value.add(i)
+        i += 1
+        x >>= 1
+    return value
+
+def pack_bitmap_512(value):
+    words = [0] * 8
+    for v in value:
+        assert v < 512
+        words[7-v/64] |= 1 << (v % 64)
+    return struct.pack("!8Q", *words)
+
+def unpack_bitmap_512(reader):
+    words = reader.read("!8Q")
+    x = 0l
+    for word in words:
+        x <<= 64
+        x |= word
     i = 0
     value = set()
     while x != 0:

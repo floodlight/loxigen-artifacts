@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -40,7 +42,8 @@ public enum OFPortFeatures {
      PF_40GB_FD(PortSpeed.SPEED_40GB),
      PF_100GB_FD(PortSpeed.SPEED_100GB),
      PF_1TB_FD(PortSpeed.SPEED_1TB),
-     PF_OTHER(PortSpeed.SPEED_NONE);
+     PF_OTHER(PortSpeed.SPEED_NONE),
+     PF_BSN_BREAKOUT_CAPABLE(PortSpeed.SPEED_NONE);
 
      private final PortSpeed portSpeed;
 

@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -27,7 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -51,6 +53,9 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupDescStatsRequestVer12(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFGroupDescStatsRequestVer12: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }
@@ -79,6 +84,11 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
     @Override
     public Set<OFStatsRequestFlags> getFlags() {
         return flags;
+    }
+
+    @Override
+    public OFGroup getGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property group not supported in version 1.2");
     }
 
 
@@ -136,6 +146,15 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
         this.flags = flags;
         this.flagsSet = true;
         return this;
+    }
+    @Override
+    public OFGroup getGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property group not supported in version 1.2");
+    }
+
+    @Override
+    public OFGroupDescStatsRequest.Builder setGroup(OFGroup group) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property group not supported in version 1.2");
     }
 
 
@@ -199,6 +218,15 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
         this.flagsSet = true;
         return this;
     }
+    @Override
+    public OFGroup getGroup()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property group not supported in version 1.2");
+    }
+
+    @Override
+    public OFGroupDescStatsRequest.Builder setGroup(OFGroup group) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property group not supported in version 1.2");
+    }
 //
         @Override
         public OFGroupDescStatsRequest build() {
@@ -220,7 +248,7 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFGroupDescStatsRequest> {
         @Override
-        public OFGroupDescStatsRequest readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFGroupDescStatsRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -283,14 +311,14 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFGroupDescStatsRequestVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFGroupDescStatsRequestVer12 message) {
+        public void write(ByteBuf bb, OFGroupDescStatsRequestVer12 message) {
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
             // fixed value property type = 18
@@ -339,11 +367,40 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFGroupDescStatsRequestVer12 other = (OFGroupDescStatsRequestVer12) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         return result;
     }

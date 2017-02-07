@@ -18,12 +18,14 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 abstract class OFInstructionBsnVer13 {
     // version: 1.3
@@ -35,7 +37,7 @@ abstract class OFInstructionBsnVer13 {
 
     static class Reader implements OFMessageReader<OFInstructionBsn> {
         @Override
-        public OFInstructionBsn readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFInstructionBsn readFrom(ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -56,24 +58,51 @@ abstract class OFInstructionBsnVer13 {
                case 0x1:
                    // discriminator value 0x1L=0x1L for class OFInstructionBsnArpOffloadVer13
                    return OFInstructionBsnArpOffloadVer13.READER.readFrom(bb);
+               case 0xb:
+                   // discriminator value 0xbL=0xbL for class OFInstructionBsnAutoNegotiationVer13
+                   return OFInstructionBsnAutoNegotiationVer13.READER.readFrom(bb);
                case 0x5:
                    // discriminator value 0x5L=0x5L for class OFInstructionBsnDenyVer13
                    return OFInstructionBsnDenyVer13.READER.readFrom(bb);
                case 0x2:
                    // discriminator value 0x2L=0x2L for class OFInstructionBsnDhcpOffloadVer13
                    return OFInstructionBsnDhcpOffloadVer13.READER.readFrom(bb);
+               case 0xd:
+                   // discriminator value 0xdL=0xdL for class OFInstructionBsnDisableL3Ver13
+                   return OFInstructionBsnDisableL3Ver13.READER.readFrom(bb);
                case 0x3:
                    // discriminator value 0x3L=0x3L for class OFInstructionBsnDisableSplitHorizonCheckVer13
                    return OFInstructionBsnDisableSplitHorizonCheckVer13.READER.readFrom(bb);
                case 0x0:
                    // discriminator value 0x0L=0x0L for class OFInstructionBsnDisableSrcMacCheckVer13
                    return OFInstructionBsnDisableSrcMacCheckVer13.READER.readFrom(bb);
+               case 0x9:
+                   // discriminator value 0x9L=0x9L for class OFInstructionBsnDisableVlanCountersVer13
+                   return OFInstructionBsnDisableVlanCountersVer13.READER.readFrom(bb);
+               case 0xf:
+                   // discriminator value 0xfL=0xfL for class OFInstructionBsnHashSelectVer13
+                   return OFInstructionBsnHashSelectVer13.READER.readFrom(bb);
+               case 0xc:
+                   // discriminator value 0xcL=0xcL for class OFInstructionBsnInternalPriorityVer13
+                   return OFInstructionBsnInternalPriorityVer13.READER.readFrom(bb);
+               case 0xe:
+                   // discriminator value 0xeL=0xeL for class OFInstructionBsnNdpOffloadVer13
+                   return OFInstructionBsnNdpOffloadVer13.READER.readFrom(bb);
                case 0x6:
                    // discriminator value 0x6L=0x6L for class OFInstructionBsnPacketOfDeathVer13
                    return OFInstructionBsnPacketOfDeathVer13.READER.readFrom(bb);
                case 0x4:
                    // discriminator value 0x4L=0x4L for class OFInstructionBsnPermitVer13
                    return OFInstructionBsnPermitVer13.READER.readFrom(bb);
+               case 0x7:
+                   // discriminator value 0x7L=0x7L for class OFInstructionBsnPrioritizePdusVer13
+                   return OFInstructionBsnPrioritizePdusVer13.READER.readFrom(bb);
+               case 0x8:
+                   // discriminator value 0x8L=0x8L for class OFInstructionBsnRequireVlanXlateVer13
+                   return OFInstructionBsnRequireVlanXlateVer13.READER.readFrom(bb);
+               case 0xa:
+                   // discriminator value 0xaL=0xaL for class OFInstructionBsnSpanDestinationVer13
+                   return OFInstructionBsnSpanDestinationVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFInstructionBsnVer13: " + subtype);
             }

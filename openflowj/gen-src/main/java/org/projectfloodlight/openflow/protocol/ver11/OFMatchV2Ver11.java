@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -88,6 +90,39 @@ class OFMatchV2Ver11 implements OFMatchV2 {
 
     // package private constructor - used by readers, builders, and factory
     OFMatchV2Ver11(OFPort inPort, int wildcards, MacAddress ethSrc, MacAddress ethSrcMask, MacAddress ethDst, MacAddress ethDstMask, int vlanVid, short vlanPcp, int ethType, short ipDscp, short ipProto, IPv4Address ipv4Src, IPv4Address ipv4SrcMask, IPv4Address ipv4Dst, IPv4Address ipv4DstMask, int tcpSrc, int tcpDst, long mplsLabel, short mplsTc, U64 metadata, U64 metadataMask) {
+        if(inPort == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property inPort cannot be null");
+        }
+        if(ethSrc == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ethSrc cannot be null");
+        }
+        if(ethSrcMask == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ethSrcMask cannot be null");
+        }
+        if(ethDst == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ethDst cannot be null");
+        }
+        if(ethDstMask == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ethDstMask cannot be null");
+        }
+        if(ipv4Src == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ipv4Src cannot be null");
+        }
+        if(ipv4SrcMask == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ipv4SrcMask cannot be null");
+        }
+        if(ipv4Dst == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ipv4Dst cannot be null");
+        }
+        if(ipv4DstMask == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ipv4DstMask cannot be null");
+        }
+        if(metadata == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property metadata cannot be null");
+        }
+        if(metadataMask == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property metadataMask cannot be null");
+        }
         this.inPort = inPort;
         this.wildcards = wildcards;
         this.ethSrc = ethSrc;
@@ -1157,7 +1192,7 @@ class OFMatchV2Ver11 implements OFMatchV2 {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFMatchV2> {
         @Override
-        public OFMatchV2 readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFMatchV2 readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x0
             short type = bb.readShort();
@@ -1268,14 +1303,14 @@ class OFMatchV2Ver11 implements OFMatchV2 {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFMatchV2Ver11> {
         @Override
-        public void write(ChannelBuffer bb, OFMatchV2Ver11 message) {
+        public void write(ByteBuf bb, OFMatchV2Ver11 message) {
             // fixed value property type = 0x0
             bb.writeShort((short) 0x0);
             // fixed value property length = 88

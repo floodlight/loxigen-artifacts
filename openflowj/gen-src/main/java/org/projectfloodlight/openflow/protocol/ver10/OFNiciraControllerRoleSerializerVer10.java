@@ -18,13 +18,15 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFNiciraControllerRole;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFNiciraControllerRoleSerializerVer10 {
@@ -33,7 +35,7 @@ public class OFNiciraControllerRoleSerializerVer10 {
     public final static int ROLE_MASTER_VAL = 0x1;
     public final static int ROLE_SLAVE_VAL = 0x2;
 
-    public static OFNiciraControllerRole readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFNiciraControllerRole readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readInt());
         } catch (IllegalArgumentException e) {
@@ -41,7 +43,7 @@ public class OFNiciraControllerRoleSerializerVer10 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFNiciraControllerRole e) {
+    public static void writeTo(ByteBuf bb, OFNiciraControllerRole e) {
         bb.writeInt(toWireValue(e));
     }
 

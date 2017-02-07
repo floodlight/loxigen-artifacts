@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -40,5 +42,7 @@ public enum OFBadActionCode {
      BAD_TAG,
      BAD_SET_TYPE,
      BAD_SET_LEN,
-     BAD_SET_ARGUMENT;
+     BAD_SET_ARGUMENT,
+     BAD_SET_MASK,
+     BAD_METER;
 }

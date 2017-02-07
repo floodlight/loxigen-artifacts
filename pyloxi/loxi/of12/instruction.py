@@ -8,13 +8,11 @@
 
 import struct
 import loxi
-import const
-import common
-import action
-import instruction
-import oxm
 import util
 import loxi.generic_util
+
+import sys
+ofp = sys.modules['loxi.of12']
 
 class instruction(loxi.OFObject):
     subtypes = {}
@@ -47,7 +45,7 @@ class instruction(loxi.OFObject):
         obj.type = reader.read("!H")[0]
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (2 + 2))
+        reader = orig_reader.slice(_len, 4)
         reader.skip(4)
         return obj
 
@@ -92,9 +90,9 @@ class apply_actions(instruction):
         assert(_type == 4)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (2 + 2))
+        reader = orig_reader.slice(_len, 4)
         reader.skip(4)
-        obj.actions = loxi.generic_util.unpack_list(reader, action.action.unpack)
+        obj.actions = loxi.generic_util.unpack_list(reader, ofp.action.action.unpack)
         return obj
 
     def __eq__(self, other):
@@ -136,7 +134,7 @@ class clear_actions(instruction):
         assert(_type == 5)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (2 + 2))
+        reader = orig_reader.slice(_len, 4)
         reader.skip(4)
         return obj
 
@@ -192,7 +190,7 @@ class experimenter(instruction):
         assert(_type == 65535)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (2 + 2))
+        reader = orig_reader.slice(_len, 4)
         obj.experimenter = reader.read("!L")[0]
         obj.data = str(reader.read_all())
         return obj
@@ -242,7 +240,7 @@ class goto_table(instruction):
         assert(_type == 1)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (2 + 2))
+        reader = orig_reader.slice(_len, 4)
         obj.table_id = reader.read("!B")[0]
         reader.skip(3)
         return obj
@@ -291,9 +289,9 @@ class write_actions(instruction):
         assert(_type == 3)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (2 + 2))
+        reader = orig_reader.slice(_len, 4)
         reader.skip(4)
-        obj.actions = loxi.generic_util.unpack_list(reader, action.action.unpack)
+        obj.actions = loxi.generic_util.unpack_list(reader, ofp.action.action.unpack)
         return obj
 
     def __eq__(self, other):
@@ -345,7 +343,7 @@ class write_metadata(instruction):
         assert(_type == 2)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (2 + 2))
+        reader = orig_reader.slice(_len, 4)
         reader.skip(4)
         obj.metadata = reader.read("!Q")[0]
         obj.metadata_mask = reader.read("!Q")[0]

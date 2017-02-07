@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +30,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -50,6 +52,9 @@ class OFTableFeaturePropInstructionsVer13 implements OFTableFeaturePropInstructi
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturePropInstructionsVer13(List<OFInstructionId> instructionIds) {
+        if(instructionIds == null) {
+            throw new NullPointerException("OFTableFeaturePropInstructionsVer13: property instructionIds cannot be null");
+        }
         this.instructionIds = instructionIds;
     }
 
@@ -168,7 +173,7 @@ class OFTableFeaturePropInstructionsVer13 implements OFTableFeaturePropInstructi
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFTableFeaturePropInstructions> {
         @Override
-        public OFTableFeaturePropInstructions readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFTableFeaturePropInstructions readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x0
             short type = bb.readShort();
@@ -185,6 +190,8 @@ class OFTableFeaturePropInstructionsVer13 implements OFTableFeaturePropInstructi
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             List<OFInstructionId> instructionIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFInstructionIdVer13.READER);
+            // align message to 8 bytes (length does not contain alignment)
+            bb.skipBytes(((length + 7)/8 * 8 ) - length );
 
             OFTableFeaturePropInstructionsVer13 tableFeaturePropInstructionsVer13 = new OFTableFeaturePropInstructionsVer13(
                     instructionIds
@@ -212,14 +219,14 @@ class OFTableFeaturePropInstructionsVer13 implements OFTableFeaturePropInstructi
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFTableFeaturePropInstructionsVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFTableFeaturePropInstructionsVer13 message) {
+        public void write(ByteBuf bb, OFTableFeaturePropInstructionsVer13 message) {
             int startIndex = bb.writerIndex();
             // fixed value property type = 0x0
             bb.writeShort((short) 0x0);
@@ -231,7 +238,10 @@ class OFTableFeaturePropInstructionsVer13 implements OFTableFeaturePropInstructi
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            int alignedLength = ((length + 7)/8 * 8);
             bb.setShort(lengthIndex, length);
+            // align message to 8 bytes
+            bb.writeZero(alignedLength - length);
 
         }
     }

@@ -18,12 +18,14 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public final class OFFactories {
 
@@ -39,14 +41,20 @@ public final class OFFactories {
                 return org.projectfloodlight.openflow.protocol.ver12.OFFactoryVer12.INSTANCE;
             case OF_13:
                 return org.projectfloodlight.openflow.protocol.ver13.OFFactoryVer13.INSTANCE;
+            case OF_14:
+                return org.projectfloodlight.openflow.protocol.ver14.OFFactoryVer14.INSTANCE;
+            case OF_15:
+                return org.projectfloodlight.openflow.protocol.ver15.OFFactoryVer15.INSTANCE;
             default:
                 throw new IllegalArgumentException("Unknown version: "+version);
             }
     }
 
     private static class GenericReader implements OFMessageReader<OFMessage> {
-        public OFMessage readFrom(ChannelBuffer bb) throws OFParseError {
-            short wireVersion = U8.f(bb.getByte(0));
+        public OFMessage readFrom(ByteBuf bb) throws OFParseError {
+            if(!bb.isReadable())
+                return null;
+            short wireVersion = U8.f(bb.getByte(bb.readerIndex()));
             OFFactory factory;
             switch (wireVersion) {
             case 1:
@@ -60,6 +68,12 @@ public final class OFFactories {
                 break;
             case 4:
                 factory = org.projectfloodlight.openflow.protocol.ver13.OFFactoryVer13.INSTANCE;
+                break;
+            case 5:
+                factory = org.projectfloodlight.openflow.protocol.ver14.OFFactoryVer14.INSTANCE;
+                break;
+            case 6:
+                factory = org.projectfloodlight.openflow.protocol.ver15.OFFactoryVer15.INSTANCE;
                 break;
             default:
                 throw new IllegalArgumentException("Unknown wire version: " + wireVersion);

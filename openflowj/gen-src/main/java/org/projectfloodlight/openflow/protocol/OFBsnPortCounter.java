@@ -18,23 +18,79 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 
 public enum OFBsnPortCounter {
-     BSN_PORT_COUNTER_RX_BYTES,
-     BSN_PORT_COUNTER_RX_PACKETS_UNICAST,
-     BSN_PORT_COUNTER_RX_PACKETS_BROADCAST,
-     BSN_PORT_COUNTER_RX_PACKETS_MULTICAST,
-     BSN_PORT_COUNTER_RX_DROPPED,
-     BSN_PORT_COUNTER_RX_ERRORS,
-     BSN_PORT_COUNTER_TX_BYTES,
-     BSN_PORT_COUNTER_TX_PACKETS_UNICAST,
-     BSN_PORT_COUNTER_TX_PACKETS_BROADCAST,
-     BSN_PORT_COUNTER_TX_PACKETS_MULTICAST,
-     BSN_PORT_COUNTER_TX_DROPPED,
-     BSN_PORT_COUNTER_TX_ERRORS;
+     BSN_PORT_COUNTER_RX_BYTES((byte) 0x0),
+     BSN_PORT_COUNTER_RX_PACKETS_UNICAST((byte) 0x1),
+     BSN_PORT_COUNTER_RX_PACKETS_BROADCAST((byte) 0x2),
+     BSN_PORT_COUNTER_RX_PACKETS_MULTICAST((byte) 0x3),
+     BSN_PORT_COUNTER_RX_DROPPED((byte) 0x4),
+     BSN_PORT_COUNTER_RX_ERRORS((byte) 0x5),
+     BSN_PORT_COUNTER_TX_BYTES((byte) 0x6),
+     BSN_PORT_COUNTER_TX_PACKETS_UNICAST((byte) 0x7),
+     BSN_PORT_COUNTER_TX_PACKETS_BROADCAST((byte) 0x8),
+     BSN_PORT_COUNTER_TX_PACKETS_MULTICAST((byte) 0x9),
+     BSN_PORT_COUNTER_TX_DROPPED((byte) 0xa),
+     BSN_PORT_COUNTER_TX_ERRORS((byte) 0xb),
+     BSN_PORT_COUNTER_RX_RUNTS((byte) 0xc),
+     BSN_PORT_COUNTER_RX_GIANTS((byte) 0xd),
+     BSN_PORT_COUNTER_RX_CRC_ERRORS((byte) 0xe),
+     BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS((byte) 0xf),
+     BSN_PORT_COUNTER_RX_SYMBOL_ERRORS((byte) 0x10),
+     BSN_PORT_COUNTER_RX_PAUSE_INPUT((byte) 0x11),
+     BSN_PORT_COUNTER_TX_COLLISIONS((byte) 0x12),
+     BSN_PORT_COUNTER_TX_LATE_COLLISIONS((byte) 0x13),
+     BSN_PORT_COUNTER_TX_DEFERRED((byte) 0x14),
+     BSN_PORT_COUNTER_TX_PAUSE_OUTPUT((byte) 0x15),
+     BSN_PORT_COUNTER_RX_PACKETS((byte) 0x16),
+     BSN_PORT_COUNTER_TX_PACKETS((byte) 0x17),
+     BSN_PORT_COUNTER_RX_LENGTH_ERRORS((byte) 0x18),
+     BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS((byte) 0x19),
+     BSN_PORT_COUNTER_TX_CARRIER_ERRORS((byte) 0x1a),
+     BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN((byte) 0x1b),
+     BSN_PORT_COUNTER_LINK_UP((byte) 0x1c),
+     BSN_PORT_COUNTER_LINK_DOWN((byte) 0x1d),
+     BSN_PORT_COUNTER_RX_PFC_CONTROL_FRAME((byte) 0x1e),
+     BSN_PORT_COUNTER_TX_PFC_CONTROL_FRAME((byte) 0x1f),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_0((byte) 0x20),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_1((byte) 0x21),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_2((byte) 0x22),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_3((byte) 0x23),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_4((byte) 0x24),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_5((byte) 0x25),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_6((byte) 0x26),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_7((byte) 0x27),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_0((byte) 0x28),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_1((byte) 0x29),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_2((byte) 0x2a),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_3((byte) 0x2b),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_4((byte) 0x2c),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_5((byte) 0x2d),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_6((byte) 0x2e),
+     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_7((byte) 0x2f),
+     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_0((byte) 0x30),
+     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_1((byte) 0x31),
+     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_2((byte) 0x32),
+     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_3((byte) 0x33),
+     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_4((byte) 0x34),
+     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_5((byte) 0x35),
+     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_6((byte) 0x36),
+     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_7((byte) 0x37);
+
+     private final byte stableValue;
+
+     private OFBsnPortCounter(byte stableValue) {
+        this.stableValue = stableValue;
+     }
+
+     public byte getStableValue() {
+         return stableValue;
+     }
 }

@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -50,6 +52,12 @@ class OFOxmBsnInPorts128MaskedVer12 implements OFOxmBsnInPorts128Masked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnInPorts128MaskedVer12(OFBitMask128 value, OFBitMask128 mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnInPorts128MaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmBsnInPorts128MaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }
@@ -258,7 +266,7 @@ class OFOxmBsnInPorts128MaskedVer12 implements OFOxmBsnInPorts128Masked {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmBsnInPorts128Masked> {
         @Override
-        public OFOxmBsnInPorts128Masked readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFOxmBsnInPorts128Masked readFrom(ByteBuf bb) throws OFParseError {
             // fixed value property typeLen == 0x30120L
             int typeLen = bb.readInt();
             if(typeLen != 0x30120)
@@ -293,14 +301,14 @@ class OFOxmBsnInPorts128MaskedVer12 implements OFOxmBsnInPorts128Masked {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmBsnInPorts128MaskedVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFOxmBsnInPorts128MaskedVer12 message) {
+        public void write(ByteBuf bb, OFOxmBsnInPorts128MaskedVer12 message) {
             // fixed value property typeLen = 0x30120L
             bb.writeInt(0x30120);
             message.value.write16Bytes(bb);

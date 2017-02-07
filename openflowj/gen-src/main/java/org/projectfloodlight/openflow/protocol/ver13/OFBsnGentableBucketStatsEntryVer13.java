@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -36,10 +38,10 @@ class OFBsnGentableBucketStatsEntryVer13 implements OFBsnGentableBucketStatsEntr
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 16;
 
-        private final static OFChecksum128 DEFAULT_CHECKSUM = OFChecksum128.ZERO;
+        private final static U128 DEFAULT_CHECKSUM = U128.ZERO;
 
     // OF message fields
-    private final OFChecksum128 checksum;
+    private final U128 checksum;
 //
     // Immutable default instance
     final static OFBsnGentableBucketStatsEntryVer13 DEFAULT = new OFBsnGentableBucketStatsEntryVer13(
@@ -47,13 +49,16 @@ class OFBsnGentableBucketStatsEntryVer13 implements OFBsnGentableBucketStatsEntr
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnGentableBucketStatsEntryVer13(OFChecksum128 checksum) {
+    OFBsnGentableBucketStatsEntryVer13(U128 checksum) {
+        if(checksum == null) {
+            throw new NullPointerException("OFBsnGentableBucketStatsEntryVer13: property checksum cannot be null");
+        }
         this.checksum = checksum;
     }
 
     // Accessors for OF message fields
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
@@ -73,19 +78,19 @@ class OFBsnGentableBucketStatsEntryVer13 implements OFBsnGentableBucketStatsEntr
 
         // OF message fields
         private boolean checksumSet;
-        private OFChecksum128 checksum;
+        private U128 checksum;
 
         BuilderWithParent(OFBsnGentableBucketStatsEntryVer13 parentMessage) {
             this.parentMessage = parentMessage;
         }
 
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFBsnGentableBucketStatsEntry.Builder setChecksum(OFChecksum128 checksum) {
+    public OFBsnGentableBucketStatsEntry.Builder setChecksum(U128 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
         return this;
@@ -99,7 +104,7 @@ class OFBsnGentableBucketStatsEntryVer13 implements OFBsnGentableBucketStatsEntr
 
         @Override
         public OFBsnGentableBucketStatsEntry build() {
-                OFChecksum128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
+                U128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
                 if(checksum == null)
                     throw new NullPointerException("Property checksum must not be null");
 
@@ -114,15 +119,15 @@ class OFBsnGentableBucketStatsEntryVer13 implements OFBsnGentableBucketStatsEntr
     static class Builder implements OFBsnGentableBucketStatsEntry.Builder {
         // OF message fields
         private boolean checksumSet;
-        private OFChecksum128 checksum;
+        private U128 checksum;
 
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFBsnGentableBucketStatsEntry.Builder setChecksum(OFChecksum128 checksum) {
+    public OFBsnGentableBucketStatsEntry.Builder setChecksum(U128 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
         return this;
@@ -135,7 +140,7 @@ class OFBsnGentableBucketStatsEntryVer13 implements OFBsnGentableBucketStatsEntr
 //
         @Override
         public OFBsnGentableBucketStatsEntry build() {
-            OFChecksum128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
+            U128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
             if(checksum == null)
                 throw new NullPointerException("Property checksum must not be null");
 
@@ -151,8 +156,8 @@ class OFBsnGentableBucketStatsEntryVer13 implements OFBsnGentableBucketStatsEntr
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnGentableBucketStatsEntry> {
         @Override
-        public OFBsnGentableBucketStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
-            OFChecksum128 checksum = OFChecksum128.read16Bytes(bb);
+        public OFBsnGentableBucketStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+            U128 checksum = U128.read16Bytes(bb);
 
             OFBsnGentableBucketStatsEntryVer13 bsnGentableBucketStatsEntryVer13 = new OFBsnGentableBucketStatsEntryVer13(
                     checksum
@@ -177,14 +182,14 @@ class OFBsnGentableBucketStatsEntryVer13 implements OFBsnGentableBucketStatsEntr
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnGentableBucketStatsEntryVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnGentableBucketStatsEntryVer13 message) {
+        public void write(ByteBuf bb, OFBsnGentableBucketStatsEntryVer13 message) {
             message.checksum.write16Bytes(bb);
 
 

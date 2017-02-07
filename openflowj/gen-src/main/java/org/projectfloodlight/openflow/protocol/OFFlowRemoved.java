@@ -18,12 +18,14 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFFlowRemoved extends OFObject, OFMessage {
     OFVersion getVersion();
@@ -31,17 +33,18 @@ public interface OFFlowRemoved extends OFObject, OFMessage {
     long getXid();
     U64 getCookie();
     int getPriority();
-    short getReason();
+    OFFlowRemovedReason getReason();
     TableId getTableId() throws UnsupportedOperationException;
-    long getDurationSec();
-    long getDurationNsec();
+    long getDurationSec() throws UnsupportedOperationException;
+    long getDurationNsec() throws UnsupportedOperationException;
     int getIdleTimeout();
     int getHardTimeout() throws UnsupportedOperationException;
-    U64 getPacketCount();
-    U64 getByteCount();
+    U64 getPacketCount() throws UnsupportedOperationException;
+    U64 getByteCount() throws UnsupportedOperationException;
     Match getMatch();
+    Stat getStats() throws UnsupportedOperationException;
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
@@ -54,23 +57,25 @@ public interface OFFlowRemoved extends OFObject, OFMessage {
         Builder setCookie(U64 cookie);
         int getPriority();
         Builder setPriority(int priority);
-        short getReason();
-        Builder setReason(short reason);
+        OFFlowRemovedReason getReason();
+        Builder setReason(OFFlowRemovedReason reason);
         TableId getTableId() throws UnsupportedOperationException;
         Builder setTableId(TableId tableId) throws UnsupportedOperationException;
-        long getDurationSec();
-        Builder setDurationSec(long durationSec);
-        long getDurationNsec();
-        Builder setDurationNsec(long durationNsec);
+        long getDurationSec() throws UnsupportedOperationException;
+        Builder setDurationSec(long durationSec) throws UnsupportedOperationException;
+        long getDurationNsec() throws UnsupportedOperationException;
+        Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException;
         int getIdleTimeout();
         Builder setIdleTimeout(int idleTimeout);
         int getHardTimeout() throws UnsupportedOperationException;
         Builder setHardTimeout(int hardTimeout) throws UnsupportedOperationException;
-        U64 getPacketCount();
-        Builder setPacketCount(U64 packetCount);
-        U64 getByteCount();
-        Builder setByteCount(U64 byteCount);
+        U64 getPacketCount() throws UnsupportedOperationException;
+        Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException;
+        U64 getByteCount() throws UnsupportedOperationException;
+        Builder setByteCount(U64 byteCount) throws UnsupportedOperationException;
         Match getMatch();
         Builder setMatch(Match match);
+        Stat getStats() throws UnsupportedOperationException;
+        Builder setStats(Stat stats) throws UnsupportedOperationException;
     }
 }

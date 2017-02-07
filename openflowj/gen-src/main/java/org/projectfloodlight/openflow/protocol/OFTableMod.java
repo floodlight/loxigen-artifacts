@@ -18,12 +18,15 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import java.util.List;
+import io.netty.buffer.ByteBuf;
 
 public interface OFTableMod extends OFObject, OFMessage {
     OFVersion getVersion();
@@ -31,8 +34,9 @@ public interface OFTableMod extends OFObject, OFMessage {
     long getXid();
     TableId getTableId();
     long getConfig();
+    List<OFTableModProp> getProperties() throws UnsupportedOperationException;
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
@@ -45,5 +49,7 @@ public interface OFTableMod extends OFObject, OFMessage {
         Builder setTableId(TableId tableId);
         long getConfig();
         Builder setConfig(long config);
+        List<OFTableModProp> getProperties() throws UnsupportedOperationException;
+        Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException;
     }
 }

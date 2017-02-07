@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -27,9 +29,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.Iterator;
-import com.google.common.collect.UnmodifiableIterator;
+import com.google.common.collect.AbstractIterator;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -51,6 +53,9 @@ class OFMatchV3Ver13 implements OFMatchV3 {
 
     // package private constructor - used by readers, builders, and factory
     OFMatchV3Ver13(OFOxmList oxmList) {
+        if(oxmList == null) {
+            throw new NullPointerException("OFMatchV3Ver13: property oxmList cannot be null");
+        }
         this.oxmList = oxmList;
     }
 
@@ -105,6 +110,7 @@ class OFMatchV3Ver13 implements OFMatchV3 {
 
     private static boolean supportsField(MatchField<?> field) {
         switch (field.id) {
+            case ACTSET_OUTPUT:
             case ARP_OP:
             case ARP_SHA:
             case ARP_SPA:
@@ -112,11 +118,19 @@ class OFMatchV3Ver13 implements OFMatchV3 {
             case ARP_TPA:
             case BSN_EGR_PORT_GROUP_ID:
             case BSN_GLOBAL_VRF_ALLOWED:
+            case BSN_INGRESS_PORT_GROUP_ID:
+            case BSN_INNER_ETH_DST:
+            case BSN_INNER_ETH_SRC:
+            case BSN_INNER_VLAN_VID:
             case BSN_IN_PORTS_128:
+            case BSN_IN_PORTS_512:
+            case BSN_IP_FRAGMENTATION:
+            case BSN_L2_CACHE_HIT:
             case BSN_L3_DST_CLASS_ID:
             case BSN_L3_INTERFACE_CLASS_ID:
             case BSN_L3_SRC_CLASS_ID:
             case BSN_LAG_ID:
+            case BSN_TCP_FLAGS:
             case BSN_UDF0:
             case BSN_UDF1:
             case BSN_UDF2:
@@ -125,7 +139,10 @@ class OFMatchV3Ver13 implements OFMatchV3 {
             case BSN_UDF5:
             case BSN_UDF6:
             case BSN_UDF7:
+            case BSN_VFI:
+            case BSN_VLAN_XLATE_PORT_GROUP_ID:
             case BSN_VRF:
+            case BSN_VXLAN_NETWORK_ID:
             case ETH_DST:
             case ETH_SRC:
             case ETH_TYPE:
@@ -138,6 +155,7 @@ class OFMatchV3Ver13 implements OFMatchV3 {
             case IPV4_DST:
             case IPV4_SRC:
             case IPV6_DST:
+            case IPV6_EXTHDR:
             case IPV6_FLABEL:
             case IPV6_ND_SLL:
             case IPV6_ND_TARGET:
@@ -147,12 +165,20 @@ class OFMatchV3Ver13 implements OFMatchV3 {
             case IP_ECN:
             case IP_PROTO:
             case METADATA:
+            case MPLS_BOS:
             case MPLS_LABEL:
             case MPLS_TC:
+            case OVS_TCP_FLAGS:
+            case PACKET_TYPE:
+            case PBB_UCA:
             case SCTP_DST:
             case SCTP_SRC:
             case TCP_DST:
+            case TCP_FLAGS:
             case TCP_SRC:
+            case TUNNEL_ID:
+            case TUNNEL_IPV4_DST:
+            case TUNNEL_IPV4_SRC:
             case UDP_DST:
             case UDP_SRC:
             case VLAN_PCP:
@@ -178,6 +204,9 @@ class OFMatchV3Ver13 implements OFMatchV3 {
         if (!supports(field))
             throw new UnsupportedOperationException("OFMatchV3Ver13 does not support matching on field " + field.getName());
 
+        if(!field.arePrerequisitesOK(this))
+            return false;
+
         OFOxm<?> oxm = this.oxmList.get(field);
 
         return oxm != null && !oxm.isMasked();
@@ -187,6 +216,8 @@ class OFMatchV3Ver13 implements OFMatchV3 {
     public boolean isFullyWildcarded(MatchField<?> field) {
         if (!supports(field))
             throw new UnsupportedOperationException("OFMatchV3Ver13 does not support matching on field " + field.getName());
+        if(!field.arePrerequisitesOK(this))
+            return true;
 
         OFOxm<?> oxm = this.oxmList.get(field);
 
@@ -197,13 +228,15 @@ class OFMatchV3Ver13 implements OFMatchV3 {
     public boolean isPartiallyMasked(MatchField<?> field) {
         if (!supports(field))
             throw new UnsupportedOperationException("OFMatchV3Ver13 does not support matching on field " + field.getName());
+        if(!field.arePrerequisitesOK(this))
+            return false;
 
         OFOxm<?> oxm = this.oxmList.get(field);
 
         return oxm != null && oxm.isMasked();
     }
 
-    private class MatchFieldIterator extends UnmodifiableIterator<MatchField<?>> {
+    private class MatchFieldIterator extends AbstractIterator<MatchField<?>> {
         private Iterator<OFOxm<?>> oxmIterator;
 
         MatchFieldIterator() {
@@ -211,14 +244,14 @@ class OFMatchV3Ver13 implements OFMatchV3 {
         }
 
         @Override
-        public boolean hasNext() {
-            return oxmIterator.hasNext();
-        }
-
-        @Override
-        public MatchField<?> next() {
-            OFOxm<?> next = oxmIterator.next();
-            return next.getMatchField();
+        protected MatchField<?> computeNext() {
+            while(oxmIterator.hasNext()) {
+                OFOxm<?> oxm = oxmIterator.next();
+                if(oxm.getMatchField().arePrerequisitesOK(OFMatchV3Ver13.this))
+                   return oxm.getMatchField();
+            }
+            endOfData();
+            return null;
         }
     }
 
@@ -295,7 +328,7 @@ class OFMatchV3Ver13 implements OFMatchV3 {
     }
 
     private <F extends OFValueType<F>> OFOxm<F> getOxm(MatchField<F> field) {
-        return this.oxmListSet ? this.oxmList.get(field) : parentMessage.oxmList.get(field);
+        return this.oxmListSet ? this.oxmList.get(field) : null;
     }
 
     @Override
@@ -382,7 +415,6 @@ class OFMatchV3Ver13 implements OFMatchV3 {
         updateOxmList();
         return this;
     }
-
 
     }
 
@@ -527,14 +559,13 @@ class OFMatchV3Ver13 implements OFMatchV3 {
         return this;
     }
 
-
     }
 
 
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFMatchV3> {
         @Override
-        public OFMatchV3 readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFMatchV3 readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x1
             short type = bb.readShort();
@@ -580,14 +611,14 @@ class OFMatchV3Ver13 implements OFMatchV3 {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFMatchV3Ver13> {
         @Override
-        public void write(ChannelBuffer bb, OFMatchV3Ver13 message) {
+        public void write(ByteBuf bb, OFMatchV3Ver13 message) {
             int startIndex = bb.writerIndex();
             // fixed value property type = 0x1
             bb.writeShort((short) 0x1);

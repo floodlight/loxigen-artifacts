@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,8 +28,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -36,7 +38,7 @@ public class OFMeterConfigStatsReplyVer13Test {
     OFFactory factory;
 
     final static byte[] METER_CONFIG_STATS_REPLY_SERIALIZED =
-        new byte[] { 0x4, 0x13, 0x0, 0x30, 0x12, 0x34, 0x56, 0x78, 0x0, 0xa, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x10, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x2, 0x0, 0x10, 0x0, 0x0, 0x0, 0x3, 0x0, 0x0, 0x0, 0x4, 0x5, 0x0, 0x0, 0x0 };
+        new byte[] { 0x4, 0x13, 0x0, 0x28, 0x12, 0x34, 0x56, 0x78, 0x0, 0xa, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x18, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x1, 0x0, 0x10, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x2, 0x0, 0x0, 0x0, 0x0 };
 
     @Before
     public void setup() {
@@ -47,14 +49,14 @@ public class OFMeterConfigStatsReplyVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(METER_CONFIG_STATS_REPLY_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(METER_CONFIG_STATS_REPLY_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFMeterConfigStatsReply meterConfigStatsReply = OFMeterConfigStatsReplyVer13.READER.readFrom(input);
        assertEquals(METER_CONFIG_STATS_REPLY_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        meterConfigStatsReply.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

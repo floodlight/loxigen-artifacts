@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -162,7 +164,7 @@ class OFActionSetMplsTtlVer11 implements OFActionSetMplsTtl {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFActionSetMplsTtl> {
         @Override
-        public OFActionSetMplsTtl readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFActionSetMplsTtl readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 15
             short type = bb.readShort();
@@ -210,14 +212,14 @@ class OFActionSetMplsTtlVer11 implements OFActionSetMplsTtl {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFActionSetMplsTtlVer11> {
         @Override
-        public void write(ChannelBuffer bb, OFActionSetMplsTtlVer11 message) {
+        public void write(ByteBuf bb, OFActionSetMplsTtlVer11 message) {
             // fixed value property type = 15
             bb.writeShort((short) 0xf);
             // fixed value property length = 8

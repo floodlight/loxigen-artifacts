@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -34,17 +36,20 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
     private static final Logger logger = LoggerFactory.getLogger(OFBsnVirtualPortCreateRequestVer10.class);
     // version: 1.0
     final static byte WIRE_VERSION = 1;
-    final static int LENGTH = 48;
+    final static int MINIMUM_LENGTH = 20;
 
         private final static long DEFAULT_XID = 0x0L;
 
     // OF message fields
     private final long xid;
-    private final OFBsnVportQInQ vport;
+    private final OFBsnVport vport;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnVirtualPortCreateRequestVer10(long xid, OFBsnVportQInQ vport) {
+    OFBsnVirtualPortCreateRequestVer10(long xid, OFBsnVport vport) {
+        if(vport == null) {
+            throw new NullPointerException("OFBsnVirtualPortCreateRequestVer10: property vport cannot be null");
+        }
         this.xid = xid;
         this.vport = vport;
     }
@@ -76,7 +81,7 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
     }
 
     @Override
-    public OFBsnVportQInQ getVport() {
+    public OFBsnVport getVport() {
         return vport;
     }
 
@@ -93,7 +98,7 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
         private boolean xidSet;
         private long xid;
         private boolean vportSet;
-        private OFBsnVportQInQ vport;
+        private OFBsnVport vport;
 
         BuilderWithParent(OFBsnVirtualPortCreateRequestVer10 parentMessage) {
             this.parentMessage = parentMessage;
@@ -131,12 +136,12 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
     }
 
     @Override
-    public OFBsnVportQInQ getVport() {
+    public OFBsnVport getVport() {
         return vport;
     }
 
     @Override
-    public OFBsnVirtualPortCreateRequest.Builder setVport(OFBsnVportQInQ vport) {
+    public OFBsnVirtualPortCreateRequest.Builder setVport(OFBsnVport vport) {
         this.vport = vport;
         this.vportSet = true;
         return this;
@@ -146,7 +151,7 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
         @Override
         public OFBsnVirtualPortCreateRequest build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
-                OFBsnVportQInQ vport = this.vportSet ? this.vport : parentMessage.vport;
+                OFBsnVport vport = this.vportSet ? this.vport : parentMessage.vport;
                 if(vport == null)
                     throw new NullPointerException("Property vport must not be null");
 
@@ -164,7 +169,7 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
         private boolean xidSet;
         private long xid;
         private boolean vportSet;
-        private OFBsnVportQInQ vport;
+        private OFBsnVport vport;
 
     @Override
     public OFVersion getVersion() {
@@ -198,12 +203,12 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
     }
 
     @Override
-    public OFBsnVportQInQ getVport() {
+    public OFBsnVport getVport() {
         return vport;
     }
 
     @Override
-    public OFBsnVirtualPortCreateRequest.Builder setVport(OFBsnVportQInQ vport) {
+    public OFBsnVirtualPortCreateRequest.Builder setVport(OFBsnVport vport) {
         this.vport = vport;
         this.vportSet = true;
         return this;
@@ -230,7 +235,7 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnVirtualPortCreateRequest> {
         @Override
-        public OFBsnVirtualPortCreateRequest readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnVirtualPortCreateRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -241,8 +246,8 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
             if(type != (byte) 0x4)
                 throw new OFParseError("Wrong type: Expected=OFType.EXPERIMENTER(4), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 48)
-                throw new OFParseError("Wrong length: Expected=48(48), got="+length);
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -259,7 +264,7 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
             int subtype = bb.readInt();
             if(subtype != 0xf)
                 throw new OFParseError("Wrong subtype: Expected=0xfL(0xfL), got="+subtype);
-            OFBsnVportQInQ vport = OFBsnVportQInQVer10.READER.readFrom(bb);
+            OFBsnVport vport = OFBsnVportVer10.READER.readFrom(bb);
 
             OFBsnVirtualPortCreateRequestVer10 bsnVirtualPortCreateRequestVer10 = new OFBsnVirtualPortCreateRequestVer10(
                     xid,
@@ -284,8 +289,7 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
             sink.putByte((byte) 0x1);
             // fixed value property type = 4
             sink.putByte((byte) 0x4);
-            // fixed value property length = 48
-            sink.putShort((short) 0x30);
+            // FIXME: skip funnel of length
             sink.putLong(message.xid);
             // fixed value property experimenter = 0x5c16c7L
             sink.putInt(0x5c16c7);
@@ -296,20 +300,23 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnVirtualPortCreateRequestVer10> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnVirtualPortCreateRequestVer10 message) {
+        public void write(ByteBuf bb, OFBsnVirtualPortCreateRequestVer10 message) {
+            int startIndex = bb.writerIndex();
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);
             // fixed value property type = 4
             bb.writeByte((byte) 0x4);
-            // fixed value property length = 48
-            bb.writeShort((short) 0x30);
+            // length is length of variable message, will be updated at the end
+            int lengthIndex = bb.writerIndex();
+            bb.writeShort(U16.t(0));
+
             bb.writeInt(U32.t(message.xid));
             // fixed value property experimenter = 0x5c16c7L
             bb.writeInt(0x5c16c7);
@@ -317,6 +324,9 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
             bb.writeInt(0xf);
             message.vport.writeTo(bb);
 
+            // update length field
+            int length = bb.writerIndex() - startIndex;
+            bb.setShort(lengthIndex, length);
 
         }
     }
@@ -352,11 +362,40 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnVirtualPortCreateRequestVer10 other = (OFBsnVirtualPortCreateRequestVer10) obj;
+
+        // ignore XID
+        if (vport == null) {
+            if (other.vport != null)
+                return false;
+        } else if (!vport.equals(other.vport))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((vport == null) ? 0 : vport.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((vport == null) ? 0 : vport.hashCode());
         return result;
     }

@@ -18,14 +18,16 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFCapabilities;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import java.util.EnumSet;
 import java.util.Collections;
@@ -41,7 +43,7 @@ public class OFCapabilitiesSerializerVer11 {
     public final static int ARP_MATCH_IP_VAL = 0x80;
     public final static int GROUP_STATS_VAL = 0x8;
 
-    public static Set<OFCapabilities> readFrom(ChannelBuffer bb) throws OFParseError {
+    public static Set<OFCapabilities> readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readInt());
         } catch (IllegalArgumentException e) {
@@ -49,7 +51,7 @@ public class OFCapabilitiesSerializerVer11 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, Set<OFCapabilities> set) {
+    public static void writeTo(ByteBuf bb, Set<OFCapabilities> set) {
         bb.writeInt(toWireValue(set));
     }
 
