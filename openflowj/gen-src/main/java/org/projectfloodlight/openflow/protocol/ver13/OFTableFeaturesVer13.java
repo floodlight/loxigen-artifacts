@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +30,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -62,6 +64,21 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturesVer13(TableId tableId, String name, U64 metadataMatch, U64 metadataWrite, long config, long maxEntries, List<OFTableFeatureProp> properties) {
+        if(tableId == null) {
+            throw new NullPointerException("OFTableFeaturesVer13: property tableId cannot be null");
+        }
+        if(name == null) {
+            throw new NullPointerException("OFTableFeaturesVer13: property name cannot be null");
+        }
+        if(metadataMatch == null) {
+            throw new NullPointerException("OFTableFeaturesVer13: property metadataMatch cannot be null");
+        }
+        if(metadataWrite == null) {
+            throw new NullPointerException("OFTableFeaturesVer13: property metadataWrite cannot be null");
+        }
+        if(properties == null) {
+            throw new NullPointerException("OFTableFeaturesVer13: property properties cannot be null");
+        }
         this.tableId = tableId;
         this.name = name;
         this.metadataMatch = metadataMatch;
@@ -105,6 +122,21 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
     @Override
     public List<OFTableFeatureProp> getProperties() {
         return properties;
+    }
+
+    @Override
+    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property command not supported in version 1.3");
+    }
+
+    @Override
+    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    }
+
+    @Override
+    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
     }
 
     @Override
@@ -217,6 +249,33 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
         this.properties = properties;
         this.propertiesSet = true;
         return this;
+    }
+    @Override
+    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property command not supported in version 1.3");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property command not supported in version 1.3");
+    }
+    @Override
+    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    }
+    @Override
+    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {
@@ -354,6 +413,33 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
         return this;
     }
     @Override
+    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property command not supported in version 1.3");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property command not supported in version 1.3");
+    }
+    @Override
+    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property features not supported in version 1.3");
+    }
+    @Override
+    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
+    }
+
+    @Override
+    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
+    }
+    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
     }
@@ -397,7 +483,7 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFTableFeatures> {
         @Override
-        public OFTableFeatures readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFTableFeatures readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
@@ -456,14 +542,14 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFTableFeaturesVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFTableFeaturesVer13 message) {
+        public void write(ByteBuf bb, OFTableFeaturesVer13 message) {
             int startIndex = bb.writerIndex();
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();

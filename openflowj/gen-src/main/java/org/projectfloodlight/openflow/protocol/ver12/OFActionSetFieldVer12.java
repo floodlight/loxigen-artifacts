@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -43,6 +45,9 @@ class OFActionSetFieldVer12 implements OFActionSetField {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetFieldVer12(OFOxm<?> field) {
+        if(field == null) {
+            throw new NullPointerException("OFActionSetFieldVer12: property field cannot be null");
+        }
         this.field = field;
     }
 
@@ -162,7 +167,7 @@ class OFActionSetFieldVer12 implements OFActionSetField {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFActionSetField> {
         @Override
-        public OFActionSetField readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFActionSetField readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 25
             short type = bb.readShort();
@@ -208,14 +213,14 @@ class OFActionSetFieldVer12 implements OFActionSetField {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFActionSetFieldVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFActionSetFieldVer12 message) {
+        public void write(ByteBuf bb, OFActionSetFieldVer12 message) {
             int startIndex = bb.writerIndex();
             // fixed value property type = 25
             bb.writeShort((short) 0x19);

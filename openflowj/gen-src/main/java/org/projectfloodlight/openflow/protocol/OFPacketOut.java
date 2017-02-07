@@ -18,24 +18,27 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.List;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFPacketOut extends OFObject, OFMessage {
     OFVersion getVersion();
     OFType getType();
     long getXid();
     OFBufferId getBufferId();
-    OFPort getInPort();
+    OFPort getInPort() throws UnsupportedOperationException;
     List<OFAction> getActions();
     byte[] getData();
+    Match getMatch() throws UnsupportedOperationException;
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
@@ -46,11 +49,13 @@ public interface OFPacketOut extends OFObject, OFMessage {
         Builder setXid(long xid);
         OFBufferId getBufferId();
         Builder setBufferId(OFBufferId bufferId);
-        OFPort getInPort();
-        Builder setInPort(OFPort inPort);
+        OFPort getInPort() throws UnsupportedOperationException;
+        Builder setInPort(OFPort inPort) throws UnsupportedOperationException;
         List<OFAction> getActions();
         Builder setActions(List<OFAction> actions);
         byte[] getData();
         Builder setData(byte[] data);
+        Match getMatch() throws UnsupportedOperationException;
+        Builder setMatch(Match match) throws UnsupportedOperationException;
     }
 }

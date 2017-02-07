@@ -18,15 +18,18 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.List;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -56,6 +59,18 @@ class OFQueueStatsEntryVer10 implements OFQueueStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueStatsEntryVer10(OFPort portNo, long queueId, U64 txBytes, U64 txPackets, U64 txErrors) {
+        if(portNo == null) {
+            throw new NullPointerException("OFQueueStatsEntryVer10: property portNo cannot be null");
+        }
+        if(txBytes == null) {
+            throw new NullPointerException("OFQueueStatsEntryVer10: property txBytes cannot be null");
+        }
+        if(txPackets == null) {
+            throw new NullPointerException("OFQueueStatsEntryVer10: property txPackets cannot be null");
+        }
+        if(txErrors == null) {
+            throw new NullPointerException("OFQueueStatsEntryVer10: property txErrors cannot be null");
+        }
         this.portNo = portNo;
         this.queueId = queueId;
         this.txBytes = txBytes;
@@ -97,6 +112,11 @@ class OFQueueStatsEntryVer10 implements OFQueueStatsEntry {
     @Override
     public long getDurationNsec()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property durationNsec not supported in version 1.0");
+    }
+
+    @Override
+    public List<OFQueueStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.0");
     }
 
     @Override
@@ -201,6 +221,15 @@ class OFQueueStatsEntryVer10 implements OFQueueStatsEntry {
     @Override
     public OFQueueStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property durationNsec not supported in version 1.0");
+    }
+    @Override
+    public List<OFQueueStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.0");
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setProperties(List<OFQueueStatsProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.0");
     }
     @Override
     public OFVersion getVersion() {
@@ -324,6 +353,15 @@ class OFQueueStatsEntryVer10 implements OFQueueStatsEntry {
             throw new UnsupportedOperationException("Property durationNsec not supported in version 1.0");
     }
     @Override
+    public List<OFQueueStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.0");
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setProperties(List<OFQueueStatsProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.0");
+    }
+    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;
     }
@@ -361,7 +399,7 @@ class OFQueueStatsEntryVer10 implements OFQueueStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFQueueStatsEntry> {
         @Override
-        public OFQueueStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFQueueStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             OFPort portNo = OFPort.read2Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
@@ -402,14 +440,14 @@ class OFQueueStatsEntryVer10 implements OFQueueStatsEntry {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFQueueStatsEntryVer10> {
         @Override
-        public void write(ChannelBuffer bb, OFQueueStatsEntryVer10 message) {
+        public void write(ByteBuf bb, OFQueueStatsEntryVer10 message) {
             message.portNo.write2Bytes(bb);
             // pad: 2 bytes
             bb.writeZero(2);

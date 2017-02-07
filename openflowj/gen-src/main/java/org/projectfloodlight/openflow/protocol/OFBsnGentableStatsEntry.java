@@ -18,20 +18,22 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFBsnGentableStatsEntry extends OFObject {
     GenTableId getTableId();
     long getEntryCount();
-    OFChecksum128 getChecksum();
+    U128 getChecksum();
     OFVersion getVersion();
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder  {
@@ -40,8 +42,8 @@ public interface OFBsnGentableStatsEntry extends OFObject {
         Builder setTableId(GenTableId tableId);
         long getEntryCount();
         Builder setEntryCount(long entryCount);
-        OFChecksum128 getChecksum();
-        Builder setChecksum(OFChecksum128 checksum);
+        U128 getChecksum();
+        Builder setChecksum(U128 checksum);
         OFVersion getVersion();
     }
 }

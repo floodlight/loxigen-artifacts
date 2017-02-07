@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -27,8 +29,8 @@ import static org.junit.Assert.*;
 import java.util.Set;
 import org.junit.Test;
 import org.junit.Before;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -48,14 +50,14 @@ public class OFBsnGentableSetBucketsSizeVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_GENTABLE_SET_BUCKETS_SIZE_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_SET_BUCKETS_SIZE_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFBsnGentableSetBucketsSize bsnGentableSetBucketsSize = OFBsnGentableSetBucketsSizeVer13.READER.readFrom(input);
        assertEquals(BSN_GENTABLE_SET_BUCKETS_SIZE_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        bsnGentableSetBucketsSize.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

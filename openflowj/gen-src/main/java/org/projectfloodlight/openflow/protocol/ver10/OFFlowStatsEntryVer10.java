@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +30,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -70,6 +72,24 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFFlowStatsEntryVer10(TableId tableId, Match match, long durationSec, long durationNsec, int priority, int idleTimeout, int hardTimeout, U64 cookie, U64 packetCount, U64 byteCount, List<OFAction> actions) {
+        if(tableId == null) {
+            throw new NullPointerException("OFFlowStatsEntryVer10: property tableId cannot be null");
+        }
+        if(match == null) {
+            throw new NullPointerException("OFFlowStatsEntryVer10: property match cannot be null");
+        }
+        if(cookie == null) {
+            throw new NullPointerException("OFFlowStatsEntryVer10: property cookie cannot be null");
+        }
+        if(packetCount == null) {
+            throw new NullPointerException("OFFlowStatsEntryVer10: property packetCount cannot be null");
+        }
+        if(byteCount == null) {
+            throw new NullPointerException("OFFlowStatsEntryVer10: property byteCount cannot be null");
+        }
+        if(actions == null) {
+            throw new NullPointerException("OFFlowStatsEntryVer10: property actions cannot be null");
+        }
         this.tableId = tableId;
         this.match = match;
         this.durationSec = durationSec;
@@ -115,6 +135,11 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
     }
 
     @Override
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flags not supported in version 1.0");
+    }
+
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -145,8 +170,13 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
     }
 
     @Override
-    public int getFlags()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flags not supported in version 1.0");
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    }
+
+    @Override
+    public Stat getStats()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property stats not supported in version 1.0");
     }
 
     @Override
@@ -258,6 +288,15 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
         return this;
     }
     @Override
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flags not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property flags not supported in version 1.0");
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -322,13 +361,22 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public int getFlags()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flags not supported in version 1.0");
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setFlags(int flags) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flags not supported in version 1.0");
+    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    }
+    @Override
+    public Stat getStats()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property stats not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property stats not supported in version 1.0");
     }
     @Override
     public OFVersion getVersion() {
@@ -473,6 +521,15 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
         return this;
     }
     @Override
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property flags not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property flags not supported in version 1.0");
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -537,13 +594,22 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public int getFlags()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flags not supported in version 1.0");
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setFlags(int flags) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flags not supported in version 1.0");
+    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    }
+    @Override
+    public Stat getStats()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property stats not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property stats not supported in version 1.0");
     }
     @Override
     public OFVersion getVersion() {
@@ -599,7 +665,7 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFFlowStatsEntry> {
         @Override
-        public OFFlowStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFFlowStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
@@ -673,14 +739,14 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFFlowStatsEntryVer10> {
         @Override
-        public void write(ChannelBuffer bb, OFFlowStatsEntryVer10 message) {
+        public void write(ByteBuf bb, OFFlowStatsEntryVer10 message) {
             int startIndex = bb.writerIndex();
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();

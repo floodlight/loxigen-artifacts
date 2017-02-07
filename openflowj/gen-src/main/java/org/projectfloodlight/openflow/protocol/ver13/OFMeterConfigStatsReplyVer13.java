@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -29,7 +31,7 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -41,12 +43,12 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
 
         private final static long DEFAULT_XID = 0x0L;
         private final static Set<OFStatsReplyFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsReplyFlags>of();
-        private final static List<OFMeterBand> DEFAULT_ENTRIES = ImmutableList.<OFMeterBand>of();
+        private final static List<OFMeterConfig> DEFAULT_ENTRIES = ImmutableList.<OFMeterConfig>of();
 
     // OF message fields
     private final long xid;
     private final Set<OFStatsReplyFlags> flags;
-    private final List<OFMeterBand> entries;
+    private final List<OFMeterConfig> entries;
 //
     // Immutable default instance
     final static OFMeterConfigStatsReplyVer13 DEFAULT = new OFMeterConfigStatsReplyVer13(
@@ -54,7 +56,13 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFMeterConfigStatsReplyVer13(long xid, Set<OFStatsReplyFlags> flags, List<OFMeterBand> entries) {
+    OFMeterConfigStatsReplyVer13(long xid, Set<OFStatsReplyFlags> flags, List<OFMeterConfig> entries) {
+        if(flags == null) {
+            throw new NullPointerException("OFMeterConfigStatsReplyVer13: property flags cannot be null");
+        }
+        if(entries == null) {
+            throw new NullPointerException("OFMeterConfigStatsReplyVer13: property entries cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.entries = entries;
@@ -87,7 +95,7 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
     }
 
     @Override
-    public List<OFMeterBand> getEntries() {
+    public List<OFMeterConfig> getEntries() {
         return entries;
     }
 
@@ -106,7 +114,7 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
         private boolean flagsSet;
         private Set<OFStatsReplyFlags> flags;
         private boolean entriesSet;
-        private List<OFMeterBand> entries;
+        private List<OFMeterConfig> entries;
 
         BuilderWithParent(OFMeterConfigStatsReplyVer13 parentMessage) {
             this.parentMessage = parentMessage;
@@ -150,12 +158,12 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
         return this;
     }
     @Override
-    public List<OFMeterBand> getEntries() {
+    public List<OFMeterConfig> getEntries() {
         return entries;
     }
 
     @Override
-    public OFMeterConfigStatsReply.Builder setEntries(List<OFMeterBand> entries) {
+    public OFMeterConfigStatsReply.Builder setEntries(List<OFMeterConfig> entries) {
         this.entries = entries;
         this.entriesSet = true;
         return this;
@@ -168,7 +176,7 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
                 Set<OFStatsReplyFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
                 if(flags == null)
                     throw new NullPointerException("Property flags must not be null");
-                List<OFMeterBand> entries = this.entriesSet ? this.entries : parentMessage.entries;
+                List<OFMeterConfig> entries = this.entriesSet ? this.entries : parentMessage.entries;
                 if(entries == null)
                     throw new NullPointerException("Property entries must not be null");
 
@@ -189,7 +197,7 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
         private boolean flagsSet;
         private Set<OFStatsReplyFlags> flags;
         private boolean entriesSet;
-        private List<OFMeterBand> entries;
+        private List<OFMeterConfig> entries;
 
     @Override
     public OFVersion getVersion() {
@@ -229,12 +237,12 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
         return this;
     }
     @Override
-    public List<OFMeterBand> getEntries() {
+    public List<OFMeterConfig> getEntries() {
         return entries;
     }
 
     @Override
-    public OFMeterConfigStatsReply.Builder setEntries(List<OFMeterBand> entries) {
+    public OFMeterConfigStatsReply.Builder setEntries(List<OFMeterConfig> entries) {
         this.entries = entries;
         this.entriesSet = true;
         return this;
@@ -246,7 +254,7 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
             Set<OFStatsReplyFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
             if(flags == null)
                 throw new NullPointerException("Property flags must not be null");
-            List<OFMeterBand> entries = this.entriesSet ? this.entries : DEFAULT_ENTRIES;
+            List<OFMeterConfig> entries = this.entriesSet ? this.entries : DEFAULT_ENTRIES;
             if(entries == null)
                 throw new NullPointerException("Property entries must not be null");
 
@@ -264,7 +272,7 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFMeterConfigStatsReply> {
         @Override
-        public OFMeterConfigStatsReply readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFMeterConfigStatsReply readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -292,7 +300,7 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer13.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFMeterBand> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFMeterBandVer13.READER);
+            List<OFMeterConfig> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFMeterConfigVer13.READER);
 
             OFMeterConfigStatsReplyVer13 meterConfigStatsReplyVer13 = new OFMeterConfigStatsReplyVer13(
                     xid,
@@ -329,14 +337,14 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFMeterConfigStatsReplyVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFMeterConfigStatsReplyVer13 message) {
+        public void write(ByteBuf bb, OFMeterConfigStatsReplyVer13 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
@@ -399,11 +407,46 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFMeterConfigStatsReplyVer13 other = (OFMeterConfigStatsReplyVer13) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (entries == null) {
+            if (other.entries != null)
+                return false;
+        } else if (!entries.equals(other.entries))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((entries == null) ? 0 : entries.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((entries == null) ? 0 : entries.hashCode());
         return result;

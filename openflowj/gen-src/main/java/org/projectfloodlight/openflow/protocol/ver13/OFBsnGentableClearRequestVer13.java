@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -37,18 +39,27 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
     final static int LENGTH = 52;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static OFChecksum128 DEFAULT_CHECKSUM = OFChecksum128.ZERO;
-        private final static OFChecksum128 DEFAULT_CHECKSUM_MASK = OFChecksum128.ZERO;
+        private final static U128 DEFAULT_CHECKSUM = U128.ZERO;
+        private final static U128 DEFAULT_CHECKSUM_MASK = U128.ZERO;
 
     // OF message fields
     private final long xid;
     private final GenTableId tableId;
-    private final OFChecksum128 checksum;
-    private final OFChecksum128 checksumMask;
+    private final U128 checksum;
+    private final U128 checksumMask;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnGentableClearRequestVer13(long xid, GenTableId tableId, OFChecksum128 checksum, OFChecksum128 checksumMask) {
+    OFBsnGentableClearRequestVer13(long xid, GenTableId tableId, U128 checksum, U128 checksumMask) {
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnGentableClearRequestVer13: property tableId cannot be null");
+        }
+        if(checksum == null) {
+            throw new NullPointerException("OFBsnGentableClearRequestVer13: property checksum cannot be null");
+        }
+        if(checksumMask == null) {
+            throw new NullPointerException("OFBsnGentableClearRequestVer13: property checksumMask cannot be null");
+        }
         this.xid = xid;
         this.tableId = tableId;
         this.checksum = checksum;
@@ -87,12 +98,12 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
     }
 
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFChecksum128 getChecksumMask() {
+    public U128 getChecksumMask() {
         return checksumMask;
     }
 
@@ -111,9 +122,9 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
         private boolean tableIdSet;
         private GenTableId tableId;
         private boolean checksumSet;
-        private OFChecksum128 checksum;
+        private U128 checksum;
         private boolean checksumMaskSet;
-        private OFChecksum128 checksumMask;
+        private U128 checksumMask;
 
         BuilderWithParent(OFBsnGentableClearRequestVer13 parentMessage) {
             this.parentMessage = parentMessage;
@@ -162,23 +173,23 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
         return this;
     }
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFBsnGentableClearRequest.Builder setChecksum(OFChecksum128 checksum) {
+    public OFBsnGentableClearRequest.Builder setChecksum(U128 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
         return this;
     }
     @Override
-    public OFChecksum128 getChecksumMask() {
+    public U128 getChecksumMask() {
         return checksumMask;
     }
 
     @Override
-    public OFBsnGentableClearRequest.Builder setChecksumMask(OFChecksum128 checksumMask) {
+    public OFBsnGentableClearRequest.Builder setChecksumMask(U128 checksumMask) {
         this.checksumMask = checksumMask;
         this.checksumMaskSet = true;
         return this;
@@ -191,10 +202,10 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
                 GenTableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
                 if(tableId == null)
                     throw new NullPointerException("Property tableId must not be null");
-                OFChecksum128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
+                U128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
                 if(checksum == null)
                     throw new NullPointerException("Property checksum must not be null");
-                OFChecksum128 checksumMask = this.checksumMaskSet ? this.checksumMask : parentMessage.checksumMask;
+                U128 checksumMask = this.checksumMaskSet ? this.checksumMask : parentMessage.checksumMask;
                 if(checksumMask == null)
                     throw new NullPointerException("Property checksumMask must not be null");
 
@@ -216,9 +227,9 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
         private boolean tableIdSet;
         private GenTableId tableId;
         private boolean checksumSet;
-        private OFChecksum128 checksum;
+        private U128 checksum;
         private boolean checksumMaskSet;
-        private OFChecksum128 checksumMask;
+        private U128 checksumMask;
 
     @Override
     public OFVersion getVersion() {
@@ -263,23 +274,23 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
         return this;
     }
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFBsnGentableClearRequest.Builder setChecksum(OFChecksum128 checksum) {
+    public OFBsnGentableClearRequest.Builder setChecksum(U128 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
         return this;
     }
     @Override
-    public OFChecksum128 getChecksumMask() {
+    public U128 getChecksumMask() {
         return checksumMask;
     }
 
     @Override
-    public OFBsnGentableClearRequest.Builder setChecksumMask(OFChecksum128 checksumMask) {
+    public OFBsnGentableClearRequest.Builder setChecksumMask(U128 checksumMask) {
         this.checksumMask = checksumMask;
         this.checksumMaskSet = true;
         return this;
@@ -292,10 +303,10 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
                 throw new IllegalStateException("Property tableId doesn't have default value -- must be set");
             if(tableId == null)
                 throw new NullPointerException("Property tableId must not be null");
-            OFChecksum128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
+            U128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
             if(checksum == null)
                 throw new NullPointerException("Property checksum must not be null");
-            OFChecksum128 checksumMask = this.checksumMaskSet ? this.checksumMask : DEFAULT_CHECKSUM_MASK;
+            U128 checksumMask = this.checksumMaskSet ? this.checksumMask : DEFAULT_CHECKSUM_MASK;
             if(checksumMask == null)
                 throw new NullPointerException("Property checksumMask must not be null");
 
@@ -314,7 +325,7 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnGentableClearRequest> {
         @Override
-        public OFBsnGentableClearRequest readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnGentableClearRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -346,8 +357,8 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
             GenTableId tableId = GenTableId.read2Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
-            OFChecksum128 checksum = OFChecksum128.read16Bytes(bb);
-            OFChecksum128 checksumMask = OFChecksum128.read16Bytes(bb);
+            U128 checksum = U128.read16Bytes(bb);
+            U128 checksumMask = U128.read16Bytes(bb);
 
             OFBsnGentableClearRequestVer13 bsnGentableClearRequestVer13 = new OFBsnGentableClearRequestVer13(
                     xid,
@@ -389,14 +400,14 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnGentableClearRequestVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnGentableClearRequestVer13 message) {
+        public void write(ByteBuf bb, OFBsnGentableClearRequestVer13 message) {
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
             // fixed value property type = 4
@@ -463,11 +474,52 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnGentableClearRequestVer13 other = (OFBsnGentableClearRequestVer13) obj;
+
+        // ignore XID
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
+            return false;
+        if (checksum == null) {
+            if (other.checksum != null)
+                return false;
+        } else if (!checksum.equals(other.checksum))
+            return false;
+        if (checksumMask == null) {
+            if (other.checksumMask != null)
+                return false;
+        } else if (!checksumMask.equals(other.checksumMask))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
+        result = prime * result + ((checksum == null) ? 0 : checksum.hashCode());
+        result = prime * result + ((checksumMask == null) ? 0 : checksumMask.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((checksum == null) ? 0 : checksum.hashCode());
         result = prime * result + ((checksumMask == null) ? 0 : checksumMask.hashCode());

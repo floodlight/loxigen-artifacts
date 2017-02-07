@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -48,6 +50,9 @@ class OFOxmIcmpv6CodeVer12 implements OFOxmIcmpv6Code {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIcmpv6CodeVer12(U8 value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIcmpv6CodeVer12: property value cannot be null");
+        }
         this.value = value;
     }
 
@@ -226,7 +231,7 @@ class OFOxmIcmpv6CodeVer12 implements OFOxmIcmpv6Code {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmIcmpv6Code> {
         @Override
-        public OFOxmIcmpv6Code readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFOxmIcmpv6Code readFrom(ByteBuf bb) throws OFParseError {
             // fixed value property typeLen == 0x80003c01L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80003c01)
@@ -258,14 +263,14 @@ class OFOxmIcmpv6CodeVer12 implements OFOxmIcmpv6Code {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmIcmpv6CodeVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFOxmIcmpv6CodeVer12 message) {
+        public void write(ByteBuf bb, OFOxmIcmpv6CodeVer12 message) {
             // fixed value property typeLen = 0x80003c01L
             bb.writeInt((int) 0x80003c01);
             bb.writeByte(message.value.getRaw());

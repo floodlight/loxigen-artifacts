@@ -1,6 +1,6 @@
 package org.projectfloodlight.openflow.types;
 
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import org.projectfloodlight.openflow.annotations.Immutable;
 import org.projectfloodlight.openflow.exceptions.OFParseError;
 
@@ -15,7 +15,7 @@ import com.google.common.primitives.UnsignedInts;
  * called. If this port is not representable in OpenFlow 1.0, an
  * IllegalStateException is raised.
  *
- * @author Andreas Wundsam <andreas.wundsam@bigswitch.com>
+ * @author Andreas Wundsam {@literal <}andreas.wundsam@bigswitch.com{@literal >}
  */
 @Immutable
 public class OFPort implements OFValueType<OFPort> {
@@ -161,7 +161,7 @@ public class OFPort implements OFValueType<OFPort> {
      * NOTE: The port object may either be newly allocated or cached. Do not
      * rely on either behavior.
      *
-     * @param portNumber
+     * @param portNumber the integer port number
      * @return a corresponding OFPort
      */
     public static OFPort ofInt(final int portNumber) {
@@ -294,7 +294,12 @@ public class OFPort implements OFValueType<OFPort> {
         }
     }
 
-    /** convenience function: delegates to ofInt */
+    /** 
+     * convenience function: delegates to ofInt 
+     *
+     * @param portNumber the integer port number
+     * @return a corresponding OFPort
+     */
     public static OFPort of(final int portNumber) {
         return ofInt(portNumber);
     }
@@ -305,7 +310,7 @@ public class OFPort implements OFValueType<OFPort> {
      * 32-bit integer value allocated as its port number. NOTE: The port object
      * may either be newly allocated or cached. Do not rely on either behavior.
      *
-     * @param portNumber
+     * @param portNumber the short port number
      * @return a corresponding OFPort
      */
     public static OFPort ofShort(final short portNumber) {
@@ -434,23 +439,28 @@ public class OFPort implements OFValueType<OFPort> {
                 if (portNumber < 0 && portNumber > OFPP_MAX_SHORT)
                     throw new IllegalArgumentException("Unknown special port number: "
                             + portNumber);
-                return new OFPort(portNumber);
+                return new OFPort(U16.f(portNumber));
         }
     }
 
-    /** return the port number as a int32 */
+    /** 
+     * return the port number as a int32 
+     *
+     * @return the port number as an integer
+     */
     public int getPortNumber() {
         return portNumber;
     }
 
     /**
      * return the port number as int16. Special ports as defined by the OpenFlow
-     * spec will be converted to their OpenFlow 1.0 equivalent. port numbers >=
+     * spec will be converted to their OpenFlow 1.0 equivalent. port numbers {@literal >=}
      * FF00 will cause a IllegalArgumentException to be thrown
      *
      * @throws IllegalArgumentException
      *             if a regular port number exceeds the maximum value in OF1.0
-     **/
+     * @return the port number as a short
+     */
     public short getShortPortNumber() {
 
         switch (portNumber) {
@@ -530,19 +540,19 @@ public class OFPort implements OFValueType<OFPort> {
         return result;
     }
 
-    public void write2Bytes(ChannelBuffer c) {
+    public void write2Bytes(ByteBuf c) {
         c.writeShort(this.portNumber);
     }
 
-    public static OFPort read2Bytes(ChannelBuffer c) throws OFParseError {
+    public static OFPort read2Bytes(ByteBuf c) throws OFParseError {
         return OFPort.ofShort(c.readShort());
     }
 
-    public void write4Bytes(ChannelBuffer c) {
+    public void write4Bytes(ByteBuf c) {
         c.writeInt(this.portNumber);
     }
 
-    public static OFPort read4Bytes(ChannelBuffer c) throws OFParseError {
+    public static OFPort read4Bytes(ByteBuf c) throws OFParseError {
         return OFPort.of((int)(c.readUnsignedInt() & 0xFFFFFFFF));
     }
 

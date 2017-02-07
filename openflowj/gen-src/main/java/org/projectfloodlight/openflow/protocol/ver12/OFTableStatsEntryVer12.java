@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -73,6 +75,33 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFTableStatsEntryVer12(TableId tableId, String name, OFMatchBmap match, int wildcards, long writeActions, long applyActions, U64 writeSetfields, U64 applySetfields, U64 metadataMatch, U64 metadataWrite, long instructions, long config, long maxEntries, long activeCount, U64 lookupCount, U64 matchedCount) {
+        if(tableId == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property tableId cannot be null");
+        }
+        if(name == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property name cannot be null");
+        }
+        if(match == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property match cannot be null");
+        }
+        if(writeSetfields == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property writeSetfields cannot be null");
+        }
+        if(applySetfields == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property applySetfields cannot be null");
+        }
+        if(metadataMatch == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property metadataMatch cannot be null");
+        }
+        if(metadataWrite == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property metadataWrite cannot be null");
+        }
+        if(lookupCount == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property lookupCount cannot be null");
+        }
+        if(matchedCount == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property matchedCount cannot be null");
+        }
         this.tableId = tableId;
         this.name = name;
         this.match = match;
@@ -98,18 +127,38 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
     }
 
     @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
     public String getName() {
         return name;
     }
 
     @Override
-    public OFMatchBmap getMatch() {
-        return match;
+    public int getWildcards() {
+        return wildcards;
     }
 
     @Override
-    public int getWildcards() {
-        return wildcards;
+    public long getMaxEntries() {
+        return maxEntries;
+    }
+
+    @Override
+    public OFMatchBmap getMatch() {
+        return match;
     }
 
     @Override
@@ -150,26 +199,6 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
     @Override
     public long getConfig() {
         return config;
-    }
-
-    @Override
-    public long getMaxEntries() {
-        return maxEntries;
-    }
-
-    @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
     }
 
     @Override
@@ -236,6 +265,39 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
         return this;
     }
     @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
+        this.activeCount = activeCount;
+        this.activeCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
+        this.lookupCount = lookupCount;
+        this.lookupCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
+        this.matchedCount = matchedCount;
+        this.matchedCountSet = true;
+        return this;
+    }
+    @Override
     public String getName() {
         return name;
     }
@@ -247,17 +309,6 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
         return this;
     }
     @Override
-    public OFMatchBmap getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
     public int getWildcards() {
         return wildcards;
     }
@@ -266,6 +317,28 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
     public OFTableStatsEntry.Builder setWildcards(int wildcards) {
         this.wildcards = wildcards;
         this.wildcardsSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxEntries() {
+        return maxEntries;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) {
+        this.maxEntries = maxEntries;
+        this.maxEntriesSet = true;
+        return this;
+    }
+    @Override
+    public OFMatchBmap getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) {
+        this.match = match;
+        this.matchSet = true;
         return this;
     }
     @Override
@@ -354,50 +427,6 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
     public OFTableStatsEntry.Builder setConfig(long config) {
         this.config = config;
         this.configSet = true;
-        return this;
-    }
-    @Override
-    public long getMaxEntries() {
-        return maxEntries;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) {
-        this.maxEntries = maxEntries;
-        this.maxEntriesSet = true;
-        return this;
-    }
-    @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
-        this.activeCount = activeCount;
-        this.activeCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
-        this.lookupCount = lookupCount;
-        this.lookupCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
-        this.matchedCount = matchedCount;
-        this.matchedCountSet = true;
         return this;
     }
     @Override
@@ -514,6 +543,39 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
         return this;
     }
     @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
+        this.activeCount = activeCount;
+        this.activeCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
+        this.lookupCount = lookupCount;
+        this.lookupCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
+        this.matchedCount = matchedCount;
+        this.matchedCountSet = true;
+        return this;
+    }
+    @Override
     public String getName() {
         return name;
     }
@@ -525,17 +587,6 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
         return this;
     }
     @Override
-    public OFMatchBmap getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
-    }
-    @Override
     public int getWildcards() {
         return wildcards;
     }
@@ -544,6 +595,28 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
     public OFTableStatsEntry.Builder setWildcards(int wildcards) {
         this.wildcards = wildcards;
         this.wildcardsSet = true;
+        return this;
+    }
+    @Override
+    public long getMaxEntries() {
+        return maxEntries;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) {
+        this.maxEntries = maxEntries;
+        this.maxEntriesSet = true;
+        return this;
+    }
+    @Override
+    public OFMatchBmap getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) {
+        this.match = match;
+        this.matchSet = true;
         return this;
     }
     @Override
@@ -635,50 +708,6 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
         return this;
     }
     @Override
-    public long getMaxEntries() {
-        return maxEntries;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) {
-        this.maxEntries = maxEntries;
-        this.maxEntriesSet = true;
-        return this;
-    }
-    @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
-        this.activeCount = activeCount;
-        this.activeCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
-        this.lookupCount = lookupCount;
-        this.lookupCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
-        this.matchedCount = matchedCount;
-        this.matchedCountSet = true;
-        return this;
-    }
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_12;
     }
@@ -749,7 +778,7 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFTableStatsEntry> {
         @Override
-        public OFTableStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFTableStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             TableId tableId = TableId.readByte(bb);
             // pad: 7 bytes
             bb.skipBytes(7);
@@ -823,14 +852,14 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFTableStatsEntryVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFTableStatsEntryVer12 message) {
+        public void write(ByteBuf bb, OFTableStatsEntryVer12 message) {
             message.tableId.writeByte(bb);
             // pad: 7 bytes
             bb.writeZero(7);

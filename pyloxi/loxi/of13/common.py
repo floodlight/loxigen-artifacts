@@ -8,17 +8,11 @@
 
 import struct
 import loxi
-import const
-import common
-import action
-import instruction
-import oxm
-import action_id
-import instruction_id
-import meter_band
-import bsn_tlv
 import util
 import loxi.generic_util
+
+import sys
+ofp = sys.modules['loxi.of13']
 
 class bsn_controller_connection(loxi.OFObject):
 
@@ -226,6 +220,48 @@ class bsn_flow_checksum_bucket_stats_entry(loxi.OFObject):
         q.text('}')
 
 
+class bsn_generic_stats_entry(loxi.OFObject):
+
+    def __init__(self, tlvs=None):
+        if tlvs != None:
+            self.tlvs = tlvs
+        else:
+            self.tlvs = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 0
+        packed.append(loxi.generic_util.pack_list(self.tlvs))
+        length = sum([len(x) for x in packed])
+        packed[0] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_generic_stats_entry()
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 2)
+        obj.tlvs = loxi.generic_util.unpack_list(reader, ofp.bsn_tlv.bsn_tlv.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.tlvs != other.tlvs: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_generic_stats_entry {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("tlvs = ");
+                q.pp(self.tlvs)
+            q.breakable()
+        q.text('}')
+
+
 class bsn_gentable_bucket_stats_entry(loxi.OFObject):
 
     def __init__(self, checksum=None):
@@ -300,7 +336,7 @@ class bsn_gentable_desc_stats_entry(loxi.OFObject):
         obj = bsn_gentable_desc_stats_entry()
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (0 + 2))
+        reader = orig_reader.slice(_length, 2)
         obj.table_id = reader.read("!H")[0]
         obj.name = reader.read("!32s")[0].rstrip("\x00")
         obj.buckets_size = reader.read("!L")[0]
@@ -370,11 +406,11 @@ class bsn_gentable_entry_desc_stats_entry(loxi.OFObject):
         obj = bsn_gentable_entry_desc_stats_entry()
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (0 + 2))
+        reader = orig_reader.slice(_length, 2)
         _key_length = reader.read("!H")[0]
         obj.checksum = util.unpack_checksum_128(reader)
-        obj.key = loxi.generic_util.unpack_list(reader.slice(_key_length), bsn_tlv.bsn_tlv.unpack)
-        obj.value = loxi.generic_util.unpack_list(reader, bsn_tlv.bsn_tlv.unpack)
+        obj.key = loxi.generic_util.unpack_list(reader.slice(_key_length), ofp.bsn_tlv.bsn_tlv.unpack)
+        obj.value = loxi.generic_util.unpack_list(reader, ofp.bsn_tlv.bsn_tlv.unpack)
         return obj
 
     def __eq__(self, other):
@@ -430,10 +466,10 @@ class bsn_gentable_entry_stats_entry(loxi.OFObject):
         obj = bsn_gentable_entry_stats_entry()
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (0 + 2))
+        reader = orig_reader.slice(_length, 2)
         _key_length = reader.read("!H")[0]
-        obj.key = loxi.generic_util.unpack_list(reader.slice(_key_length), bsn_tlv.bsn_tlv.unpack)
-        obj.stats = loxi.generic_util.unpack_list(reader, bsn_tlv.bsn_tlv.unpack)
+        obj.key = loxi.generic_util.unpack_list(reader.slice(_key_length), ofp.bsn_tlv.bsn_tlv.unpack)
+        obj.stats = loxi.generic_util.unpack_list(reader, ofp.bsn_tlv.bsn_tlv.unpack)
         return obj
 
     def __eq__(self, other):
@@ -760,10 +796,10 @@ class bsn_port_counter_stats_entry(loxi.OFObject):
         obj = bsn_port_counter_stats_entry()
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (0 + 2))
+        reader = orig_reader.slice(_length, 2)
         reader.skip(2)
         obj.port_no = util.unpack_port_no(reader)
-        obj.values = loxi.generic_util.unpack_list(reader, common.uint64.unpack)
+        obj.values = loxi.generic_util.unpack_list(reader, ofp.common.uint64.unpack)
         return obj
 
     def __eq__(self, other):
@@ -898,7 +934,7 @@ class bsn_vport(loxi.OFObject):
         obj.type = reader.read("!H")[0]
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
+        reader = orig_reader.slice(_length, 4)
         return obj
 
     def __eq__(self, other):
@@ -914,6 +950,265 @@ class bsn_vport(loxi.OFObject):
             q.breakable()
         q.text('}')
 
+
+class bsn_vlan_counter_stats_entry(loxi.OFObject):
+
+    def __init__(self, vlan_vid=None, values=None):
+        if vlan_vid != None:
+            self.vlan_vid = vlan_vid
+        else:
+            self.vlan_vid = 0
+        if values != None:
+            self.values = values
+        else:
+            self.values = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 0
+        packed.append(struct.pack("!H", self.vlan_vid))
+        packed.append('\x00' * 4)
+        packed.append(loxi.generic_util.pack_list(self.values))
+        length = sum([len(x) for x in packed])
+        packed[0] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_vlan_counter_stats_entry()
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 2)
+        obj.vlan_vid = reader.read("!H")[0]
+        reader.skip(4)
+        obj.values = loxi.generic_util.unpack_list(reader, ofp.common.uint64.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.vlan_vid != other.vlan_vid: return False
+        if self.values != other.values: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_vlan_counter_stats_entry {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("vlan_vid = ");
+                q.text("%#x" % self.vlan_vid)
+                q.text(","); q.breakable()
+                q.text("values = ");
+                q.pp(self.values)
+            q.breakable()
+        q.text('}')
+
+
+class bsn_vlan_mac(loxi.OFObject):
+
+    def __init__(self, vlan_vid=None, mac=None):
+        if vlan_vid != None:
+            self.vlan_vid = vlan_vid
+        else:
+            self.vlan_vid = 0
+        if mac != None:
+            self.mac = mac
+        else:
+            self.mac = [0,0,0,0,0,0]
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.vlan_vid))
+        packed.append(struct.pack("!6B", *self.mac))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_vlan_mac()
+        obj.vlan_vid = reader.read("!H")[0]
+        obj.mac = list(reader.read('!6B'))
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.vlan_vid != other.vlan_vid: return False
+        if self.mac != other.mac: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_vlan_mac {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("vlan_vid = ");
+                q.text("%#x" % self.vlan_vid)
+                q.text(","); q.breakable()
+                q.text("mac = ");
+                q.text(util.pretty_mac(self.mac))
+            q.breakable()
+        q.text('}')
+
+
+class bsn_vport_l2gre(bsn_vport):
+    type = 1
+
+    def __init__(self, flags=None, port_no=None, loopback_port_no=None, local_mac=None, nh_mac=None, src_ip=None, dst_ip=None, dscp=None, ttl=None, vpn=None, rate_limit=None, if_name=None):
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if port_no != None:
+            self.port_no = port_no
+        else:
+            self.port_no = 0
+        if loopback_port_no != None:
+            self.loopback_port_no = loopback_port_no
+        else:
+            self.loopback_port_no = 0
+        if local_mac != None:
+            self.local_mac = local_mac
+        else:
+            self.local_mac = [0,0,0,0,0,0]
+        if nh_mac != None:
+            self.nh_mac = nh_mac
+        else:
+            self.nh_mac = [0,0,0,0,0,0]
+        if src_ip != None:
+            self.src_ip = src_ip
+        else:
+            self.src_ip = 0
+        if dst_ip != None:
+            self.dst_ip = dst_ip
+        else:
+            self.dst_ip = 0
+        if dscp != None:
+            self.dscp = dscp
+        else:
+            self.dscp = 0
+        if ttl != None:
+            self.ttl = ttl
+        else:
+            self.ttl = 0
+        if vpn != None:
+            self.vpn = vpn
+        else:
+            self.vpn = 0
+        if rate_limit != None:
+            self.rate_limit = rate_limit
+        else:
+            self.rate_limit = 0
+        if if_name != None:
+            self.if_name = if_name
+        else:
+            self.if_name = ""
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.flags))
+        packed.append(util.pack_port_no(self.port_no))
+        packed.append(util.pack_port_no(self.loopback_port_no))
+        packed.append(struct.pack("!6B", *self.local_mac))
+        packed.append(struct.pack("!6B", *self.nh_mac))
+        packed.append(struct.pack("!L", self.src_ip))
+        packed.append(struct.pack("!L", self.dst_ip))
+        packed.append(struct.pack("!B", self.dscp))
+        packed.append(struct.pack("!B", self.ttl))
+        packed.append('\x00' * 2)
+        packed.append(struct.pack("!L", self.vpn))
+        packed.append(struct.pack("!L", self.rate_limit))
+        packed.append(struct.pack("!16s", self.if_name))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_vport_l2gre()
+        _type = reader.read("!H")[0]
+        assert(_type == 1)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.flags = reader.read("!L")[0]
+        obj.port_no = util.unpack_port_no(reader)
+        obj.loopback_port_no = util.unpack_port_no(reader)
+        obj.local_mac = list(reader.read('!6B'))
+        obj.nh_mac = list(reader.read('!6B'))
+        obj.src_ip = reader.read("!L")[0]
+        obj.dst_ip = reader.read("!L")[0]
+        obj.dscp = reader.read("!B")[0]
+        obj.ttl = reader.read("!B")[0]
+        reader.skip(2)
+        obj.vpn = reader.read("!L")[0]
+        obj.rate_limit = reader.read("!L")[0]
+        obj.if_name = reader.read("!16s")[0].rstrip("\x00")
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.flags != other.flags: return False
+        if self.port_no != other.port_no: return False
+        if self.loopback_port_no != other.loopback_port_no: return False
+        if self.local_mac != other.local_mac: return False
+        if self.nh_mac != other.nh_mac: return False
+        if self.src_ip != other.src_ip: return False
+        if self.dst_ip != other.dst_ip: return False
+        if self.dscp != other.dscp: return False
+        if self.ttl != other.ttl: return False
+        if self.vpn != other.vpn: return False
+        if self.rate_limit != other.rate_limit: return False
+        if self.if_name != other.if_name: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_vport_l2gre {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("port_no = ");
+                q.text(util.pretty_port(self.port_no))
+                q.text(","); q.breakable()
+                q.text("loopback_port_no = ");
+                q.text(util.pretty_port(self.loopback_port_no))
+                q.text(","); q.breakable()
+                q.text("local_mac = ");
+                q.text(util.pretty_mac(self.local_mac))
+                q.text(","); q.breakable()
+                q.text("nh_mac = ");
+                q.text(util.pretty_mac(self.nh_mac))
+                q.text(","); q.breakable()
+                q.text("src_ip = ");
+                q.text(util.pretty_ipv4(self.src_ip))
+                q.text(","); q.breakable()
+                q.text("dst_ip = ");
+                q.text(util.pretty_ipv4(self.dst_ip))
+                q.text(","); q.breakable()
+                q.text("dscp = ");
+                q.text("%#x" % self.dscp)
+                q.text(","); q.breakable()
+                q.text("ttl = ");
+                q.text("%#x" % self.ttl)
+                q.text(","); q.breakable()
+                q.text("vpn = ");
+                q.text("%#x" % self.vpn)
+                q.text(","); q.breakable()
+                q.text("rate_limit = ");
+                q.text("%#x" % self.rate_limit)
+                q.text(","); q.breakable()
+                q.text("if_name = ");
+                q.pp(self.if_name)
+            q.breakable()
+        q.text('}')
+
+bsn_vport.subtypes[1] = bsn_vport_l2gre
 
 class bsn_vport_q_in_q(bsn_vport):
     type = 0
@@ -966,7 +1261,7 @@ class bsn_vport_q_in_q(bsn_vport):
         assert(_type == 0)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
+        reader = orig_reader.slice(_length, 4)
         obj.port_no = reader.read("!L")[0]
         obj.ingress_tpid = reader.read("!H")[0]
         obj.ingress_vlan_id = reader.read("!H")[0]
@@ -1012,13 +1307,13 @@ class bsn_vport_q_in_q(bsn_vport):
 
 bsn_vport.subtypes[0] = bsn_vport_q_in_q
 
-class bsn_vlan_counter_stats_entry(loxi.OFObject):
+class bsn_vrf_counter_stats_entry(loxi.OFObject):
 
-    def __init__(self, vlan_vid=None, values=None):
-        if vlan_vid != None:
-            self.vlan_vid = vlan_vid
+    def __init__(self, vrf=None, values=None):
+        if vrf != None:
+            self.vrf = vrf
         else:
-            self.vlan_vid = 0
+            self.vrf = 0
         if values != None:
             self.values = values
         else:
@@ -1028,8 +1323,8 @@ class bsn_vlan_counter_stats_entry(loxi.OFObject):
     def pack(self):
         packed = []
         packed.append(struct.pack("!H", 0)) # placeholder for length at index 0
-        packed.append(struct.pack("!H", self.vlan_vid))
-        packed.append('\x00' * 4)
+        packed.append('\x00' * 2)
+        packed.append(struct.pack("!L", self.vrf))
         packed.append(loxi.generic_util.pack_list(self.values))
         length = sum([len(x) for x in packed])
         packed[0] = struct.pack("!H", length)
@@ -1037,28 +1332,28 @@ class bsn_vlan_counter_stats_entry(loxi.OFObject):
 
     @staticmethod
     def unpack(reader):
-        obj = bsn_vlan_counter_stats_entry()
+        obj = bsn_vrf_counter_stats_entry()
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (0 + 2))
-        obj.vlan_vid = reader.read("!H")[0]
-        reader.skip(4)
-        obj.values = loxi.generic_util.unpack_list(reader, common.uint64.unpack)
+        reader = orig_reader.slice(_length, 2)
+        reader.skip(2)
+        obj.vrf = reader.read("!L")[0]
+        obj.values = loxi.generic_util.unpack_list(reader, ofp.common.uint64.unpack)
         return obj
 
     def __eq__(self, other):
         if type(self) != type(other): return False
-        if self.vlan_vid != other.vlan_vid: return False
+        if self.vrf != other.vrf: return False
         if self.values != other.values: return False
         return True
 
     def pretty_print(self, q):
-        q.text("bsn_vlan_counter_stats_entry {")
+        q.text("bsn_vrf_counter_stats_entry {")
         with q.group():
             with q.indent(2):
                 q.breakable()
-                q.text("vlan_vid = ");
-                q.text("%#x" % self.vlan_vid)
+                q.text("vrf = ");
+                q.text("%#x" % self.vrf)
                 q.text(","); q.breakable()
                 q.text("values = ");
                 q.pp(self.values)
@@ -1104,12 +1399,12 @@ class bucket(loxi.OFObject):
         obj = bucket()
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (0 + 2))
+        reader = orig_reader.slice(_len, 2)
         obj.weight = reader.read("!H")[0]
         obj.watch_port = util.unpack_port_no(reader)
         obj.watch_group = reader.read("!L")[0]
         reader.skip(4)
-        obj.actions = loxi.generic_util.unpack_list(reader, action.action.unpack)
+        obj.actions = loxi.generic_util.unpack_list(reader, ofp.action.action.unpack)
         return obj
 
     def __eq__(self, other):
@@ -1232,7 +1527,7 @@ class flow_stats_entry(loxi.OFObject):
         if match != None:
             self.match = match
         else:
-            self.match = common.match()
+            self.match = ofp.match()
         if instructions != None:
             self.instructions = instructions
         else:
@@ -1265,7 +1560,7 @@ class flow_stats_entry(loxi.OFObject):
         obj = flow_stats_entry()
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (0 + 2))
+        reader = orig_reader.slice(_length, 2)
         obj.table_id = reader.read("!B")[0]
         reader.skip(1)
         obj.duration_sec = reader.read("!L")[0]
@@ -1278,8 +1573,8 @@ class flow_stats_entry(loxi.OFObject):
         obj.cookie = reader.read("!Q")[0]
         obj.packet_count = reader.read("!Q")[0]
         obj.byte_count = reader.read("!Q")[0]
-        obj.match = common.match.unpack(reader)
-        obj.instructions = loxi.generic_util.unpack_list(reader, instruction.instruction.unpack)
+        obj.match = ofp.match.unpack(reader)
+        obj.instructions = loxi.generic_util.unpack_list(reader, ofp.instruction.instruction.unpack)
         return obj
 
     def __eq__(self, other):
@@ -1375,11 +1670,11 @@ class group_desc_stats_entry(loxi.OFObject):
         obj = group_desc_stats_entry()
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (0 + 2))
+        reader = orig_reader.slice(_length, 2)
         obj.group_type = reader.read("!B")[0]
         reader.skip(1)
         obj.group_id = reader.read("!L")[0]
-        obj.buckets = loxi.generic_util.unpack_list(reader, common.bucket.unpack)
+        obj.buckets = loxi.generic_util.unpack_list(reader, ofp.common.bucket.unpack)
         return obj
 
     def __eq__(self, other):
@@ -1460,7 +1755,7 @@ class group_stats_entry(loxi.OFObject):
         obj = group_stats_entry()
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (0 + 2))
+        reader = orig_reader.slice(_length, 2)
         reader.skip(2)
         obj.group_id = reader.read("!L")[0]
         obj.ref_count = reader.read("!L")[0]
@@ -1469,7 +1764,7 @@ class group_stats_entry(loxi.OFObject):
         obj.byte_count = reader.read("!Q")[0]
         obj.duration_sec = reader.read("!L")[0]
         obj.duration_nsec = reader.read("!L")[0]
-        obj.bucket_stats = loxi.generic_util.unpack_list(reader, common.bucket_counter.unpack)
+        obj.bucket_stats = loxi.generic_util.unpack_list(reader, ofp.common.bucket_counter.unpack)
         return obj
 
     def __eq__(self, other):
@@ -1542,7 +1837,7 @@ class hello_elem(loxi.OFObject):
         obj.type = reader.read("!H")[0]
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
+        reader = orig_reader.slice(_length, 4)
         return obj
 
     def __eq__(self, other):
@@ -1585,8 +1880,8 @@ class hello_elem_versionbitmap(hello_elem):
         assert(_type == 1)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.bitmaps = loxi.generic_util.unpack_list(reader, common.uint32.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.bitmaps = loxi.generic_util.unpack_list(reader, ofp.common.uint32.unpack)
         return obj
 
     def __eq__(self, other):
@@ -1633,8 +1928,8 @@ class match_v3(loxi.OFObject):
         assert(_type == 1)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.oxm_list = loxi.generic_util.unpack_list(reader, oxm.oxm.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.oxm_list = loxi.generic_util.unpack_list(reader, ofp.oxm.oxm.unpack)
         orig_reader.skip_align()
         return obj
 
@@ -1732,10 +2027,10 @@ class meter_config(loxi.OFObject):
         obj = meter_config()
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (0 + 2))
+        reader = orig_reader.slice(_length, 2)
         obj.flags = reader.read("!H")[0]
         obj.meter_id = reader.read("!L")[0]
-        obj.entries = loxi.generic_util.unpack_list(reader, meter_band.meter_band.unpack)
+        obj.entries = loxi.generic_util.unpack_list(reader, ofp.meter_band.meter_band.unpack)
         return obj
 
     def __eq__(self, other):
@@ -1894,14 +2189,14 @@ class meter_stats(loxi.OFObject):
         obj.meter_id = reader.read("!L")[0]
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (4 + 2))
+        reader = orig_reader.slice(_len, 6)
         reader.skip(6)
         obj.flow_count = reader.read("!L")[0]
         obj.packet_in_count = reader.read("!Q")[0]
         obj.byte_in_count = reader.read("!Q")[0]
         obj.duration_sec = reader.read("!L")[0]
         obj.duration_nsec = reader.read("!L")[0]
-        obj.band_stats = loxi.generic_util.unpack_list(reader, common.meter_band_stats.unpack)
+        obj.band_stats = loxi.generic_util.unpack_list(reader, ofp.common.meter_band_stats.unpack)
         return obj
 
     def __eq__(self, other):
@@ -1979,9 +2274,9 @@ class packet_queue(loxi.OFObject):
         obj.port = util.unpack_port_no(reader)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (8 + 2))
+        reader = orig_reader.slice(_len, 10)
         reader.skip(6)
-        obj.properties = loxi.generic_util.unpack_list(reader, common.queue_prop.unpack)
+        obj.properties = loxi.generic_util.unpack_list(reader, ofp.common.queue_prop.unpack)
         return obj
 
     def __eq__(self, other):
@@ -2357,7 +2652,7 @@ class queue_prop(loxi.OFObject):
         obj.type = reader.read("!H")[0]
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (2 + 2))
+        reader = orig_reader.slice(_len, 4)
         reader.skip(4)
         return obj
 
@@ -2415,7 +2710,7 @@ class queue_prop_experimenter(queue_prop):
         assert(_type == 65535)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (2 + 2))
+        reader = orig_reader.slice(_len, 4)
         reader.skip(4)
         obj.experimenter = reader.read("!L")[0]
         reader.skip(4)
@@ -2468,7 +2763,7 @@ class queue_prop_max_rate(queue_prop):
         assert(_type == 2)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (2 + 2))
+        reader = orig_reader.slice(_len, 4)
         reader.skip(4)
         obj.rate = reader.read("!H")[0]
         reader.skip(6)
@@ -2519,7 +2814,7 @@ class queue_prop_min_rate(queue_prop):
         assert(_type == 1)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len - (2 + 2))
+        reader = orig_reader.slice(_len, 4)
         reader.skip(4)
         obj.rate = reader.read("!H")[0]
         reader.skip(6)
@@ -2668,7 +2963,7 @@ class table_feature_prop(loxi.OFObject):
         obj.type = reader.read("!H")[0]
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
+        reader = orig_reader.slice(_length, 4)
         return obj
 
     def __eq__(self, other):
@@ -2702,6 +2997,7 @@ class table_feature_prop_apply_actions(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.action_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -2711,8 +3007,9 @@ class table_feature_prop_apply_actions(table_feature_prop):
         assert(_type == 6)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.action_ids = loxi.generic_util.unpack_list(reader, action_id.action_id.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.action_ids = loxi.generic_util.unpack_list(reader, ofp.action_id.action_id.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -2749,6 +3046,7 @@ class table_feature_prop_apply_actions_miss(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.action_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -2758,8 +3056,9 @@ class table_feature_prop_apply_actions_miss(table_feature_prop):
         assert(_type == 7)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.action_ids = loxi.generic_util.unpack_list(reader, action_id.action_id.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.action_ids = loxi.generic_util.unpack_list(reader, ofp.action_id.action_id.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -2796,6 +3095,7 @@ class table_feature_prop_apply_setfield(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.oxm_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -2805,8 +3105,9 @@ class table_feature_prop_apply_setfield(table_feature_prop):
         assert(_type == 14)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.oxm_ids = loxi.generic_util.unpack_list(reader, common.uint32.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.oxm_ids = loxi.generic_util.unpack_list(reader, ofp.common.uint32.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -2843,6 +3144,7 @@ class table_feature_prop_apply_setfield_miss(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.oxm_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -2852,8 +3154,9 @@ class table_feature_prop_apply_setfield_miss(table_feature_prop):
         assert(_type == 15)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.oxm_ids = loxi.generic_util.unpack_list(reader, common.uint32.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.oxm_ids = loxi.generic_util.unpack_list(reader, ofp.common.uint32.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -2874,6 +3177,8 @@ class table_feature_prop_apply_setfield_miss(table_feature_prop):
 table_feature_prop.subtypes[15] = table_feature_prop_apply_setfield_miss
 
 class table_feature_prop_experimenter(table_feature_prop):
+    subtypes = {}
+
     type = 65534
 
     def __init__(self, experimenter=None, subtype=None, experimenter_data=None):
@@ -2900,19 +3205,26 @@ class table_feature_prop_experimenter(table_feature_prop):
         packed.append(self.experimenter_data)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
     def unpack(reader):
+        subtype, = reader.peek('!L', 4)
+        subclass = table_feature_prop_experimenter.subtypes.get(subtype)
+        if subclass:
+            return subclass.unpack(reader)
+
         obj = table_feature_prop_experimenter()
         _type = reader.read("!H")[0]
         assert(_type == 65534)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
+        reader = orig_reader.slice(_length, 4)
         obj.experimenter = reader.read("!L")[0]
         obj.subtype = reader.read("!L")[0]
         obj.experimenter_data = str(reader.read_all())
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -2927,9 +3239,6 @@ class table_feature_prop_experimenter(table_feature_prop):
         with q.group():
             with q.indent(2):
                 q.breakable()
-                q.text("experimenter = ");
-                q.text("%#x" % self.experimenter)
-                q.text(","); q.breakable()
                 q.text("subtype = ");
                 q.text("%#x" % self.subtype)
                 q.text(","); q.breakable()
@@ -2941,6 +3250,8 @@ class table_feature_prop_experimenter(table_feature_prop):
 table_feature_prop.subtypes[65534] = table_feature_prop_experimenter
 
 class table_feature_prop_experimenter_miss(table_feature_prop):
+    subtypes = {}
+
     type = 65535
 
     def __init__(self, experimenter=None, subtype=None, experimenter_data=None):
@@ -2967,19 +3278,26 @@ class table_feature_prop_experimenter_miss(table_feature_prop):
         packed.append(self.experimenter_data)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
     def unpack(reader):
+        subtype, = reader.peek('!L', 4)
+        subclass = table_feature_prop_experimenter_miss.subtypes.get(subtype)
+        if subclass:
+            return subclass.unpack(reader)
+
         obj = table_feature_prop_experimenter_miss()
         _type = reader.read("!H")[0]
         assert(_type == 65535)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
+        reader = orig_reader.slice(_length, 4)
         obj.experimenter = reader.read("!L")[0]
         obj.subtype = reader.read("!L")[0]
         obj.experimenter_data = str(reader.read_all())
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -2994,9 +3312,6 @@ class table_feature_prop_experimenter_miss(table_feature_prop):
         with q.group():
             with q.indent(2):
                 q.breakable()
-                q.text("experimenter = ");
-                q.text("%#x" % self.experimenter)
-                q.text(","); q.breakable()
                 q.text("subtype = ");
                 q.text("%#x" % self.subtype)
                 q.text(","); q.breakable()
@@ -3024,6 +3339,7 @@ class table_feature_prop_instructions(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.instruction_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -3033,8 +3349,9 @@ class table_feature_prop_instructions(table_feature_prop):
         assert(_type == 0)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.instruction_ids = loxi.generic_util.unpack_list(reader, instruction_id.instruction_id.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.instruction_ids = loxi.generic_util.unpack_list(reader, ofp.instruction_id.instruction_id.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -3071,6 +3388,7 @@ class table_feature_prop_instructions_miss(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.instruction_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -3080,8 +3398,9 @@ class table_feature_prop_instructions_miss(table_feature_prop):
         assert(_type == 1)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.instruction_ids = loxi.generic_util.unpack_list(reader, instruction_id.instruction_id.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.instruction_ids = loxi.generic_util.unpack_list(reader, ofp.instruction_id.instruction_id.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -3118,6 +3437,7 @@ class table_feature_prop_match(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.oxm_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -3127,8 +3447,9 @@ class table_feature_prop_match(table_feature_prop):
         assert(_type == 8)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.oxm_ids = loxi.generic_util.unpack_list(reader, common.uint32.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.oxm_ids = loxi.generic_util.unpack_list(reader, ofp.common.uint32.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -3165,6 +3486,7 @@ class table_feature_prop_next_tables(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.next_table_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -3174,8 +3496,9 @@ class table_feature_prop_next_tables(table_feature_prop):
         assert(_type == 2)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.next_table_ids = loxi.generic_util.unpack_list(reader, common.uint8.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.next_table_ids = loxi.generic_util.unpack_list(reader, ofp.common.uint8.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -3212,6 +3535,7 @@ class table_feature_prop_next_tables_miss(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.next_table_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -3221,8 +3545,9 @@ class table_feature_prop_next_tables_miss(table_feature_prop):
         assert(_type == 3)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.next_table_ids = loxi.generic_util.unpack_list(reader, common.uint8.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.next_table_ids = loxi.generic_util.unpack_list(reader, ofp.common.uint8.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -3259,6 +3584,7 @@ class table_feature_prop_wildcards(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.oxm_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -3268,8 +3594,9 @@ class table_feature_prop_wildcards(table_feature_prop):
         assert(_type == 10)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.oxm_ids = loxi.generic_util.unpack_list(reader, common.uint32.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.oxm_ids = loxi.generic_util.unpack_list(reader, ofp.common.uint32.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -3306,6 +3633,7 @@ class table_feature_prop_write_actions(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.action_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -3315,8 +3643,9 @@ class table_feature_prop_write_actions(table_feature_prop):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.action_ids = loxi.generic_util.unpack_list(reader, action_id.action_id.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.action_ids = loxi.generic_util.unpack_list(reader, ofp.action_id.action_id.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -3353,6 +3682,7 @@ class table_feature_prop_write_actions_miss(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.action_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -3362,8 +3692,9 @@ class table_feature_prop_write_actions_miss(table_feature_prop):
         assert(_type == 5)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.action_ids = loxi.generic_util.unpack_list(reader, action_id.action_id.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.action_ids = loxi.generic_util.unpack_list(reader, ofp.action_id.action_id.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -3400,6 +3731,7 @@ class table_feature_prop_write_setfield(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.oxm_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -3409,8 +3741,9 @@ class table_feature_prop_write_setfield(table_feature_prop):
         assert(_type == 12)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.oxm_ids = loxi.generic_util.unpack_list(reader, common.uint32.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.oxm_ids = loxi.generic_util.unpack_list(reader, ofp.common.uint32.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -3447,6 +3780,7 @@ class table_feature_prop_write_setfield_miss(table_feature_prop):
         packed.append(loxi.generic_util.pack_list(self.oxm_ids))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
+        packed.append(loxi.generic_util.pad_to(8, length))
         return ''.join(packed)
 
     @staticmethod
@@ -3456,8 +3790,9 @@ class table_feature_prop_write_setfield_miss(table_feature_prop):
         assert(_type == 13)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (2 + 2))
-        obj.oxm_ids = loxi.generic_util.unpack_list(reader, common.uint32.unpack)
+        reader = orig_reader.slice(_length, 4)
+        obj.oxm_ids = loxi.generic_util.unpack_list(reader, ofp.common.uint32.unpack)
+        orig_reader.skip_align()
         return obj
 
     def __eq__(self, other):
@@ -3530,7 +3865,7 @@ class table_features(loxi.OFObject):
         obj = table_features()
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length - (0 + 2))
+        reader = orig_reader.slice(_length, 2)
         obj.table_id = reader.read("!B")[0]
         reader.skip(5)
         obj.name = reader.read("!32s")[0].rstrip("\x00")
@@ -3538,7 +3873,7 @@ class table_features(loxi.OFObject):
         obj.metadata_write = reader.read("!Q")[0]
         obj.config = reader.read("!L")[0]
         obj.max_entries = reader.read("!L")[0]
-        obj.properties = loxi.generic_util.unpack_list(reader, common.table_feature_prop.unpack)
+        obj.properties = loxi.generic_util.unpack_list(reader, ofp.common.table_feature_prop.unpack)
         return obj
 
     def __eq__(self, other):

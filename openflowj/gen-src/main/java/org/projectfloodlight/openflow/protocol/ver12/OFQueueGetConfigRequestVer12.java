@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -50,6 +52,9 @@ class OFQueueGetConfigRequestVer12 implements OFQueueGetConfigRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueGetConfigRequestVer12(long xid, OFPort port) {
+        if(port == null) {
+            throw new NullPointerException("OFQueueGetConfigRequestVer12: property port cannot be null");
+        }
         this.xid = xid;
         this.port = port;
     }
@@ -204,7 +209,7 @@ class OFQueueGetConfigRequestVer12 implements OFQueueGetConfigRequest {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFQueueGetConfigRequest> {
         @Override
-        public OFQueueGetConfigRequest readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFQueueGetConfigRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -261,14 +266,14 @@ class OFQueueGetConfigRequestVer12 implements OFQueueGetConfigRequest {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFQueueGetConfigRequestVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFQueueGetConfigRequestVer12 message) {
+        public void write(ByteBuf bb, OFQueueGetConfigRequestVer12 message) {
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
             // fixed value property type = 22
@@ -315,11 +320,40 @@ class OFQueueGetConfigRequestVer12 implements OFQueueGetConfigRequest {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFQueueGetConfigRequestVer12 other = (OFQueueGetConfigRequestVer12) obj;
+
+        // ignore XID
+        if (port == null) {
+            if (other.port != null)
+                return false;
+        } else if (!port.equals(other.port))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((port == null) ? 0 : port.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((port == null) ? 0 : port.hashCode());
         return result;
     }

@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,10 +28,9 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
-import java.util.Arrays;
 
 class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
     private static final Logger logger = LoggerFactory.getLogger(OFGroupModFailedErrorMsgVer13.class);
@@ -38,16 +39,22 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
     final static int MINIMUM_LENGTH = 12;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static byte[] DEFAULT_DATA = new byte[0];
+        private final static OFErrorCauseData DEFAULT_DATA = OFErrorCauseData.NONE;
 
     // OF message fields
     private final long xid;
     private final OFGroupModFailedCode code;
-    private final byte[] data;
+    private final OFErrorCauseData data;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFGroupModFailedErrorMsgVer13(long xid, OFGroupModFailedCode code, byte[] data) {
+    OFGroupModFailedErrorMsgVer13(long xid, OFGroupModFailedCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFGroupModFailedErrorMsgVer13: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFGroupModFailedErrorMsgVer13: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;
@@ -80,7 +87,7 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
     }
 
     @Override
-    public byte[] getData() {
+    public OFErrorCauseData getData() {
         return data;
     }
 
@@ -99,7 +106,7 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
         private boolean codeSet;
         private OFGroupModFailedCode code;
         private boolean dataSet;
-        private byte[] data;
+        private OFErrorCauseData data;
 
         BuilderWithParent(OFGroupModFailedErrorMsgVer13 parentMessage) {
             this.parentMessage = parentMessage;
@@ -143,12 +150,12 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
         return this;
     }
     @Override
-    public byte[] getData() {
+    public OFErrorCauseData getData() {
         return data;
     }
 
     @Override
-    public OFGroupModFailedErrorMsg.Builder setData(byte[] data) {
+    public OFGroupModFailedErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -161,7 +168,7 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
                 OFGroupModFailedCode code = this.codeSet ? this.code : parentMessage.code;
                 if(code == null)
                     throw new NullPointerException("Property code must not be null");
-                byte[] data = this.dataSet ? this.data : parentMessage.data;
+                OFErrorCauseData data = this.dataSet ? this.data : parentMessage.data;
                 if(data == null)
                     throw new NullPointerException("Property data must not be null");
 
@@ -182,7 +189,7 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
         private boolean codeSet;
         private OFGroupModFailedCode code;
         private boolean dataSet;
-        private byte[] data;
+        private OFErrorCauseData data;
 
     @Override
     public OFVersion getVersion() {
@@ -222,12 +229,12 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
         return this;
     }
     @Override
-    public byte[] getData() {
+    public OFErrorCauseData getData() {
         return data;
     }
 
     @Override
-    public OFGroupModFailedErrorMsg.Builder setData(byte[] data) {
+    public OFGroupModFailedErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -240,7 +247,7 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
                 throw new IllegalStateException("Property code doesn't have default value -- must be set");
             if(code == null)
                 throw new NullPointerException("Property code must not be null");
-            byte[] data = this.dataSet ? this.data : DEFAULT_DATA;
+            OFErrorCauseData data = this.dataSet ? this.data : DEFAULT_DATA;
             if(data == null)
                 throw new NullPointerException("Property data must not be null");
 
@@ -258,7 +265,7 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFGroupModFailedErrorMsg> {
         @Override
-        public OFGroupModFailedErrorMsg readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFGroupModFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -284,7 +291,7 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
             if(errType != (short) 0x6)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.GROUP_MOD_FAILED(6), got="+errType);
             OFGroupModFailedCode code = OFGroupModFailedCodeSerializerVer13.readFrom(bb);
-            byte[] data = ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
+            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_13);
 
             OFGroupModFailedErrorMsgVer13 groupModFailedErrorMsgVer13 = new OFGroupModFailedErrorMsgVer13(
                     xid,
@@ -315,19 +322,19 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
             // fixed value property errType = 6
             sink.putShort((short) 0x6);
             OFGroupModFailedCodeSerializerVer13.putTo(message.code, sink);
-            sink.putBytes(message.data);
+            message.data.putTo(sink);
         }
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFGroupModFailedErrorMsgVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFGroupModFailedErrorMsgVer13 message) {
+        public void write(ByteBuf bb, OFGroupModFailedErrorMsgVer13 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
@@ -341,7 +348,7 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
             // fixed value property errType = 6
             bb.writeShort((short) 0x6);
             OFGroupModFailedCodeSerializerVer13.writeTo(bb, message.code);
-            bb.writeBytes(message.data);
+            message.data.writeTo(bb);
 
             // update length field
             int length = bb.writerIndex() - startIndex;
@@ -357,7 +364,7 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
         b.append(", ");
         b.append("code=").append(code);
         b.append(", ");
-        b.append("data=").append(Arrays.toString(data));
+        b.append("data=").append(data);
         b.append(")");
         return b.toString();
     }
@@ -379,8 +386,35 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
                 return false;
         } else if (!code.equals(other.code))
             return false;
-        if (!Arrays.equals(data, other.data))
+        if (data == null) {
+            if (other.data != null)
                 return false;
+        } else if (!data.equals(other.data))
+            return false;
+        return true;
+    }
+
+    @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFGroupModFailedErrorMsgVer13 other = (OFGroupModFailedErrorMsgVer13) obj;
+
+        // ignore XID
+        if (code == null) {
+            if (other.code != null)
+                return false;
+        } else if (!code.equals(other.code))
+            return false;
+        if (data == null) {
+            if (other.data != null)
+                return false;
+        } else if (!data.equals(other.data))
+            return false;
         return true;
     }
 
@@ -391,7 +425,18 @@ class OFGroupModFailedErrorMsgVer13 implements OFGroupModFailedErrorMsg {
 
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((code == null) ? 0 : code.hashCode());
-        result = prime * result + Arrays.hashCode(data);
+        result = prime * result + ((data == null) ? 0 : data.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
+        result = prime * result + ((code == null) ? 0 : code.hashCode());
+        result = prime * result + ((data == null) ? 0 : data.hashCode());
         return result;
     }
 

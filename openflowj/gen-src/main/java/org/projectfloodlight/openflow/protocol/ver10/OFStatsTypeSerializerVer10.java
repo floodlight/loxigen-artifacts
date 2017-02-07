@@ -18,13 +18,15 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFStatsType;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFStatsTypeSerializerVer10 {
@@ -37,7 +39,7 @@ public class OFStatsTypeSerializerVer10 {
     public final static short QUEUE_VAL = (short) 0x5;
     public final static short EXPERIMENTER_VAL = (short) 0xffff;
 
-    public static OFStatsType readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFStatsType readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -45,7 +47,7 @@ public class OFStatsTypeSerializerVer10 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFStatsType e) {
+    public static void writeTo(ByteBuf bb, OFStatsType e) {
         bb.writeShort(toWireValue(e));
     }
 

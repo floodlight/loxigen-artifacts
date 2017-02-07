@@ -18,13 +18,15 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBadActionCode;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFBadActionCodeSerializerVer11 {
@@ -43,7 +45,7 @@ public class OFBadActionCodeSerializerVer11 {
     public final static short UNSUPPORTED_ORDER_VAL = (short) 0xb;
     public final static short BAD_TAG_VAL = (short) 0xc;
 
-    public static OFBadActionCode readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBadActionCode readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -51,7 +53,7 @@ public class OFBadActionCodeSerializerVer11 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBadActionCode e) {
+    public static void writeTo(ByteBuf bb, OFBadActionCode e) {
         bb.writeShort(toWireValue(e));
     }
 

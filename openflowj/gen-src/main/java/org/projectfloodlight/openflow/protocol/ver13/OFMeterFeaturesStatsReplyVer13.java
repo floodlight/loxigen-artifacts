@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -27,7 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -48,6 +50,12 @@ class OFMeterFeaturesStatsReplyVer13 implements OFMeterFeaturesStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterFeaturesStatsReplyVer13(long xid, Set<OFStatsReplyFlags> flags, OFMeterFeatures features) {
+        if(flags == null) {
+            throw new NullPointerException("OFMeterFeaturesStatsReplyVer13: property flags cannot be null");
+        }
+        if(features == null) {
+            throw new NullPointerException("OFMeterFeaturesStatsReplyVer13: property features cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.features = features;
@@ -258,7 +266,7 @@ class OFMeterFeaturesStatsReplyVer13 implements OFMeterFeaturesStatsReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFMeterFeaturesStatsReply> {
         @Override
-        public OFMeterFeaturesStatsReply readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFMeterFeaturesStatsReply readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -324,14 +332,14 @@ class OFMeterFeaturesStatsReplyVer13 implements OFMeterFeaturesStatsReply {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFMeterFeaturesStatsReplyVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFMeterFeaturesStatsReplyVer13 message) {
+        public void write(ByteBuf bb, OFMeterFeaturesStatsReplyVer13 message) {
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
             // fixed value property type = 19
@@ -388,11 +396,46 @@ class OFMeterFeaturesStatsReplyVer13 implements OFMeterFeaturesStatsReply {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFMeterFeaturesStatsReplyVer13 other = (OFMeterFeaturesStatsReplyVer13) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (features == null) {
+            if (other.features != null)
+                return false;
+        } else if (!features.equals(other.features))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((features == null) ? 0 : features.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((features == null) ? 0 : features.hashCode());
         return result;

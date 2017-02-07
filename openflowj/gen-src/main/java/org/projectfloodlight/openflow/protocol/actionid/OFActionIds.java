@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,6 +30,8 @@ import java.util.Set;
 public interface OFActionIds {
     // Subfactories
 
+    OFActionIdBsnChecksum bsnChecksum();
+    OFActionIdBsnGentable bsnGentable();
     OFActionIdBsnMirror bsnMirror();
     OFActionIdBsnSetTunnelDst bsnSetTunnelDst();
     OFActionIdCopyTtlIn copyTtlIn();
@@ -47,6 +51,7 @@ public interface OFActionIds {
     OFActionIdSetMplsTtl setMplsTtl();
     OFActionIdSetNwTtl setNwTtl();
     OFActionIdSetQueue setQueue();
+    OFActionIdMeter meter();
 
     OFMessageReader<OFActionId> getReader();
     OFVersion getVersion();
