@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -29,7 +31,7 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -55,6 +57,12 @@ class OFTableStatsReplyVer12 implements OFTableStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFTableStatsReplyVer12(long xid, Set<OFStatsReplyFlags> flags, List<OFTableStatsEntry> entries) {
+        if(flags == null) {
+            throw new NullPointerException("OFTableStatsReplyVer12: property flags cannot be null");
+        }
+        if(entries == null) {
+            throw new NullPointerException("OFTableStatsReplyVer12: property entries cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.entries = entries;
@@ -264,7 +272,7 @@ class OFTableStatsReplyVer12 implements OFTableStatsReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFTableStatsReply> {
         @Override
-        public OFTableStatsReply readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFTableStatsReply readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -329,14 +337,14 @@ class OFTableStatsReplyVer12 implements OFTableStatsReply {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFTableStatsReplyVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFTableStatsReplyVer12 message) {
+        public void write(ByteBuf bb, OFTableStatsReplyVer12 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
@@ -399,11 +407,46 @@ class OFTableStatsReplyVer12 implements OFTableStatsReply {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFTableStatsReplyVer12 other = (OFTableStatsReplyVer12) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (entries == null) {
+            if (other.entries != null)
+                return false;
+        } else if (!entries.equals(other.entries))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((entries == null) ? 0 : entries.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((entries == null) ? 0 : entries.hashCode());
         return result;

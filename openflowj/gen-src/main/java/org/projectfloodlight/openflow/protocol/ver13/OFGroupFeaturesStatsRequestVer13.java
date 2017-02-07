@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -27,7 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -51,6 +53,9 @@ class OFGroupFeaturesStatsRequestVer13 implements OFGroupFeaturesStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupFeaturesStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFGroupFeaturesStatsRequestVer13: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }
@@ -220,7 +225,7 @@ class OFGroupFeaturesStatsRequestVer13 implements OFGroupFeaturesStatsRequest {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFGroupFeaturesStatsRequest> {
         @Override
-        public OFGroupFeaturesStatsRequest readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFGroupFeaturesStatsRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -283,14 +288,14 @@ class OFGroupFeaturesStatsRequestVer13 implements OFGroupFeaturesStatsRequest {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFGroupFeaturesStatsRequestVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFGroupFeaturesStatsRequestVer13 message) {
+        public void write(ByteBuf bb, OFGroupFeaturesStatsRequestVer13 message) {
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
             // fixed value property type = 18
@@ -339,11 +344,40 @@ class OFGroupFeaturesStatsRequestVer13 implements OFGroupFeaturesStatsRequest {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFGroupFeaturesStatsRequestVer13 other = (OFGroupFeaturesStatsRequestVer13) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         return result;
     }

@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -38,10 +40,15 @@ public interface OFErrorMsgs extends XidGenerator {
     OFGroupModFailedErrorMsg.Builder buildGroupModFailedErrorMsg() throws UnsupportedOperationException;
     OFSwitchConfigFailedErrorMsg.Builder buildSwitchConfigFailedErrorMsg() throws UnsupportedOperationException;
     OFTableModFailedErrorMsg.Builder buildTableModFailedErrorMsg() throws UnsupportedOperationException;
-    OFExperimenterErrorMsg.Builder buildExperimenterErrorMsg() throws UnsupportedOperationException;
     OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() throws UnsupportedOperationException;
+    OFBsnError.Builder buildBsnError() throws UnsupportedOperationException;
+    OFBsnGentableError.Builder buildBsnGentableError() throws UnsupportedOperationException;
     OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() throws UnsupportedOperationException;
     OFTableFeaturesFailedErrorMsg.Builder buildTableFeaturesFailedErrorMsg() throws UnsupportedOperationException;
+    OFAsyncConfigFailedErrorMsg.Builder buildAsyncConfigFailedErrorMsg() throws UnsupportedOperationException;
+    OFBadPropertyErrorMsg.Builder buildBadPropertyErrorMsg() throws UnsupportedOperationException;
+    OFBundleFailedErrorMsg.Builder buildBundleFailedErrorMsg() throws UnsupportedOperationException;
+    OFFlowMonitorFailedErrorMsg.Builder buildFlowMonitorFailedErrorMsg() throws UnsupportedOperationException;
 
     OFMessageReader<OFErrorMsg> getReader();
     OFVersion getVersion();

@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -50,6 +52,9 @@ class OFBsnTimeReplyVer13 implements OFBsnTimeReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTimeReplyVer13(long xid, U64 timeMs) {
+        if(timeMs == null) {
+            throw new NullPointerException("OFBsnTimeReplyVer13: property timeMs cannot be null");
+        }
         this.xid = xid;
         this.timeMs = timeMs;
     }
@@ -234,7 +239,7 @@ class OFBsnTimeReplyVer13 implements OFBsnTimeReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnTimeReply> {
         @Override
-        public OFBsnTimeReply readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnTimeReply readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -300,14 +305,14 @@ class OFBsnTimeReplyVer13 implements OFBsnTimeReply {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnTimeReplyVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnTimeReplyVer13 message) {
+        public void write(ByteBuf bb, OFBsnTimeReplyVer13 message) {
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
             // fixed value property type = 4
@@ -356,11 +361,40 @@ class OFBsnTimeReplyVer13 implements OFBsnTimeReply {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnTimeReplyVer13 other = (OFBsnTimeReplyVer13) obj;
+
+        // ignore XID
+        if (timeMs == null) {
+            if (other.timeMs != null)
+                return false;
+        } else if (!timeMs.equals(other.timeMs))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((timeMs == null) ? 0 : timeMs.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((timeMs == null) ? 0 : timeMs.hashCode());
         return result;
     }

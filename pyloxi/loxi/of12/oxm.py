@@ -8,13 +8,11 @@
 
 import struct
 import loxi
-import const
-import common
-import action
-import instruction
-import oxm
 import util
 import loxi.generic_util
+
+import sys
+ofp = sys.modules['loxi.of12']
 
 class oxm(loxi.OFObject):
     subtypes = {}
@@ -793,6 +791,374 @@ class bsn_in_ports_128_masked(oxm):
 
 oxm.subtypes[196896] = bsn_in_ports_128_masked
 
+class bsn_in_ports_512(oxm):
+    type_len = 206400
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = set()
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(util.pack_bitmap_512(self.value))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_in_ports_512()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 206400)
+        obj.value = util.unpack_bitmap_512(reader)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_in_ports_512 {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.pp(self.value)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[206400] = bsn_in_ports_512
+
+class bsn_in_ports_512_masked(oxm):
+    type_len = 206720
+
+    def __init__(self, value=None, value_mask=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = set()
+        if value_mask != None:
+            self.value_mask = value_mask
+        else:
+            self.value_mask = set()
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(util.pack_bitmap_512(self.value))
+        packed.append(util.pack_bitmap_512(self.value_mask))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_in_ports_512_masked()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 206720)
+        obj.value = util.unpack_bitmap_512(reader)
+        obj.value_mask = util.unpack_bitmap_512(reader)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        if self.value_mask != other.value_mask: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_in_ports_512_masked {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.pp(self.value)
+                q.text(","); q.breakable()
+                q.text("value_mask = ");
+                q.pp(self.value_mask)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[206720] = bsn_in_ports_512_masked
+
+class bsn_ingress_port_group_id(oxm):
+    type_len = 206852
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!L", self.value))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_ingress_port_group_id()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 206852)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_ingress_port_group_id {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[206852] = bsn_ingress_port_group_id
+
+class bsn_ingress_port_group_id_masked(oxm):
+    type_len = 207112
+
+    def __init__(self, value=None, value_mask=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        if value_mask != None:
+            self.value_mask = value_mask
+        else:
+            self.value_mask = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!L", self.value))
+        packed.append(struct.pack("!L", self.value_mask))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_ingress_port_group_id_masked()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 207112)
+        obj.value = reader.read("!L")[0]
+        obj.value_mask = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        if self.value_mask != other.value_mask: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_ingress_port_group_id_masked {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+                q.text(","); q.breakable()
+                q.text("value_mask = ");
+                q.text("%#x" % self.value_mask)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[207112] = bsn_ingress_port_group_id_masked
+
+class bsn_ip_fragmentation(oxm):
+    type_len = 209921
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!B", self.value))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_ip_fragmentation()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 209921)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_ip_fragmentation {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[209921] = bsn_ip_fragmentation
+
+class bsn_ip_fragmentation_masked(oxm):
+    type_len = 210178
+
+    def __init__(self, value=None, value_mask=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        if value_mask != None:
+            self.value_mask = value_mask
+        else:
+            self.value_mask = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!B", self.value))
+        packed.append(struct.pack("!B", self.value_mask))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_ip_fragmentation_masked()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 210178)
+        obj.value = reader.read("!B")[0]
+        obj.value_mask = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        if self.value_mask != other.value_mask: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_ip_fragmentation_masked {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+                q.text(","); q.breakable()
+                q.text("value_mask = ");
+                q.text("%#x" % self.value_mask)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[210178] = bsn_ip_fragmentation_masked
+
+class bsn_l2_cache_hit(oxm):
+    type_len = 205825
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!B", self.value))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_l2_cache_hit()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 205825)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_l2_cache_hit {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[205825] = bsn_l2_cache_hit
+
+class bsn_l2_cache_hit_masked(oxm):
+    type_len = 206082
+
+    def __init__(self, value=None, value_mask=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        if value_mask != None:
+            self.value_mask = value_mask
+        else:
+            self.value_mask = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!B", self.value))
+        packed.append(struct.pack("!B", self.value_mask))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_l2_cache_hit_masked()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 206082)
+        obj.value = reader.read("!B")[0]
+        obj.value_mask = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        if self.value_mask != other.value_mask: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_l2_cache_hit_masked {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+                q.text(","); q.breakable()
+                q.text("value_mask = ");
+                q.text("%#x" % self.value_mask)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[206082] = bsn_l2_cache_hit_masked
+
 class bsn_l3_dst_class_id(oxm):
     type_len = 199684
 
@@ -1160,6 +1526,98 @@ class bsn_lag_id_masked(oxm):
         q.text('}')
 
 oxm.subtypes[197384] = bsn_lag_id_masked
+
+class bsn_tcp_flags(oxm):
+    type_len = 204802
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!H", self.value))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_tcp_flags()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 204802)
+        obj.value = reader.read("!H")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_tcp_flags {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[204802] = bsn_tcp_flags
+
+class bsn_tcp_flags_masked(oxm):
+    type_len = 205060
+
+    def __init__(self, value=None, value_mask=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        if value_mask != None:
+            self.value_mask = value_mask
+        else:
+            self.value_mask = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!H", self.value))
+        packed.append(struct.pack("!H", self.value_mask))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_tcp_flags_masked()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 205060)
+        obj.value = reader.read("!H")[0]
+        obj.value_mask = reader.read("!H")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        if self.value_mask != other.value_mask: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_tcp_flags_masked {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+                q.text(","); q.breakable()
+                q.text("value_mask = ");
+                q.text("%#x" % self.value_mask)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[205060] = bsn_tcp_flags_masked
 
 class bsn_udf0(oxm):
     type_len = 200708
@@ -1896,6 +2354,98 @@ class bsn_udf7_masked(oxm):
         q.text('}')
 
 oxm.subtypes[204552] = bsn_udf7_masked
+
+class bsn_vlan_xlate_port_group_id(oxm):
+    type_len = 205316
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!L", self.value))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_vlan_xlate_port_group_id()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 205316)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_vlan_xlate_port_group_id {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[205316] = bsn_vlan_xlate_port_group_id
+
+class bsn_vlan_xlate_port_group_id_masked(oxm):
+    type_len = 205576
+
+    def __init__(self, value=None, value_mask=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        if value_mask != None:
+            self.value_mask = value_mask
+        else:
+            self.value_mask = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!L", self.value))
+        packed.append(struct.pack("!L", self.value_mask))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_vlan_xlate_port_group_id_masked()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 205576)
+        obj.value = reader.read("!L")[0]
+        obj.value_mask = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        if self.value_mask != other.value_mask: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_vlan_xlate_port_group_id_masked {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+                q.text(","); q.breakable()
+                q.text("value_mask = ");
+                q.text("%#x" % self.value_mask)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[205576] = bsn_vlan_xlate_port_group_id_masked
 
 class bsn_vrf(oxm):
     type_len = 197636
@@ -3312,7 +3862,7 @@ class ipv6_dst(oxm):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
             q.breakable()
         q.text('}')
 
@@ -3360,10 +3910,10 @@ class ipv6_dst_masked(oxm):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
                 q.text(","); q.breakable()
                 q.text("value_mask = ");
-                q.pp(self.value_mask)
+                q.text(util.pretty_ipv6(self.value_mask))
             q.breakable()
         q.text('}')
 
@@ -3588,7 +4138,7 @@ class ipv6_nd_target(oxm):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
             q.breakable()
         q.text('}')
 
@@ -3636,10 +4186,10 @@ class ipv6_nd_target_masked(oxm):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
                 q.text(","); q.breakable()
                 q.text("value_mask = ");
-                q.pp(self.value_mask)
+                q.text(util.pretty_ipv6(self.value_mask))
             q.breakable()
         q.text('}')
 
@@ -3772,7 +4322,7 @@ class ipv6_src(oxm):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
             q.breakable()
         q.text('}')
 
@@ -3820,10 +4370,10 @@ class ipv6_src_masked(oxm):
             with q.indent(2):
                 q.breakable()
                 q.text("value = ");
-                q.pp(self.value)
+                q.text(util.pretty_ipv6(self.value))
                 q.text(","); q.breakable()
                 q.text("value_mask = ");
-                q.pp(self.value_mask)
+                q.text(util.pretty_ipv6(self.value_mask))
             q.breakable()
         q.text('}')
 
@@ -4104,6 +4654,106 @@ class mpls_tc_masked(oxm):
         q.text('}')
 
 oxm.subtypes[2147501826] = mpls_tc_masked
+
+class ovs_tcp_flags(oxm):
+    type_len = 4294923270
+    experimenter_id = 1330529792
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!L", self.experimenter_id))
+        packed.append(struct.pack("!H", self.value))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = ovs_tcp_flags()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 4294923270)
+        _experimenter_id = reader.read("!L")[0]
+        assert(_experimenter_id == 1330529792)
+        obj.value = reader.read("!H")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("ovs_tcp_flags {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[4294923270] = ovs_tcp_flags
+
+class ovs_tcp_flags_masked(oxm):
+    type_len = 4294923528
+    experimenter_id = 1330529792
+
+    def __init__(self, value=None, value_mask=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        if value_mask != None:
+            self.value_mask = value_mask
+        else:
+            self.value_mask = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!L", self.experimenter_id))
+        packed.append(struct.pack("!H", self.value))
+        packed.append(struct.pack("!H", self.value_mask))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = ovs_tcp_flags_masked()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 4294923528)
+        _experimenter_id = reader.read("!L")[0]
+        assert(_experimenter_id == 1330529792)
+        obj.value = reader.read("!H")[0]
+        obj.value_mask = reader.read("!H")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        if self.value_mask != other.value_mask: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("ovs_tcp_flags_masked {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+                q.text(","); q.breakable()
+                q.text("value_mask = ");
+                q.text("%#x" % self.value_mask)
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[4294923528] = ovs_tcp_flags_masked
 
 class sctp_dst(oxm):
     type_len = 2147492866
@@ -4472,6 +5122,190 @@ class tcp_src_masked(oxm):
         q.text('}')
 
 oxm.subtypes[2147490564] = tcp_src_masked
+
+class tunnel_ipv4_dst(oxm):
+    type_len = 81924
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!L", self.value))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = tunnel_ipv4_dst()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 81924)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("tunnel_ipv4_dst {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text(util.pretty_ipv4(self.value))
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[81924] = tunnel_ipv4_dst
+
+class tunnel_ipv4_dst_masked(oxm):
+    type_len = 82184
+
+    def __init__(self, value=None, value_mask=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        if value_mask != None:
+            self.value_mask = value_mask
+        else:
+            self.value_mask = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!L", self.value))
+        packed.append(struct.pack("!L", self.value_mask))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = tunnel_ipv4_dst_masked()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 82184)
+        obj.value = reader.read("!L")[0]
+        obj.value_mask = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        if self.value_mask != other.value_mask: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("tunnel_ipv4_dst_masked {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text(util.pretty_ipv4(self.value))
+                q.text(","); q.breakable()
+                q.text("value_mask = ");
+                q.text(util.pretty_ipv4(self.value_mask))
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[82184] = tunnel_ipv4_dst_masked
+
+class tunnel_ipv4_src(oxm):
+    type_len = 81412
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!L", self.value))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = tunnel_ipv4_src()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 81412)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("tunnel_ipv4_src {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text(util.pretty_ipv4(self.value))
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[81412] = tunnel_ipv4_src
+
+class tunnel_ipv4_src_masked(oxm):
+    type_len = 81672
+
+    def __init__(self, value=None, value_mask=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        if value_mask != None:
+            self.value_mask = value_mask
+        else:
+            self.value_mask = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!L", self.type_len))
+        packed.append(struct.pack("!L", self.value))
+        packed.append(struct.pack("!L", self.value_mask))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = tunnel_ipv4_src_masked()
+        _type_len = reader.read("!L")[0]
+        assert(_type_len == 81672)
+        obj.value = reader.read("!L")[0]
+        obj.value_mask = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        if self.value_mask != other.value_mask: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("tunnel_ipv4_src_masked {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text(util.pretty_ipv4(self.value))
+                q.text(","); q.breakable()
+                q.text("value_mask = ");
+                q.text(util.pretty_ipv4(self.value_mask))
+            q.breakable()
+        q.text('}')
+
+oxm.subtypes[81672] = tunnel_ipv4_src_masked
 
 class udp_dst(oxm):
     type_len = 2147491842

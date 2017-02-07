@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -50,6 +52,12 @@ class OFBucketCounterVer11 implements OFBucketCounter {
 
     // package private constructor - used by readers, builders, and factory
     OFBucketCounterVer11(U64 packetCount, U64 byteCount) {
+        if(packetCount == null) {
+            throw new NullPointerException("OFBucketCounterVer11: property packetCount cannot be null");
+        }
+        if(byteCount == null) {
+            throw new NullPointerException("OFBucketCounterVer11: property byteCount cannot be null");
+        }
         this.packetCount = packetCount;
         this.byteCount = byteCount;
     }
@@ -193,7 +201,7 @@ class OFBucketCounterVer11 implements OFBucketCounter {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBucketCounter> {
         @Override
-        public OFBucketCounter readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBucketCounter readFrom(ByteBuf bb) throws OFParseError {
             U64 packetCount = U64.ofRaw(bb.readLong());
             U64 byteCount = U64.ofRaw(bb.readLong());
 
@@ -222,14 +230,14 @@ class OFBucketCounterVer11 implements OFBucketCounter {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBucketCounterVer11> {
         @Override
-        public void write(ChannelBuffer bb, OFBucketCounterVer11 message) {
+        public void write(ByteBuf bb, OFBucketCounterVer11 message) {
             bb.writeLong(message.packetCount.getValue());
             bb.writeLong(message.byteCount.getValue());
 

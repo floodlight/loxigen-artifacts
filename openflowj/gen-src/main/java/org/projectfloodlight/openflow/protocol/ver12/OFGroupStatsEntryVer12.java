@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +30,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -58,6 +60,18 @@ class OFGroupStatsEntryVer12 implements OFGroupStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupStatsEntryVer12(OFGroup group, long refCount, U64 packetCount, U64 byteCount, List<OFBucketCounter> bucketStats) {
+        if(group == null) {
+            throw new NullPointerException("OFGroupStatsEntryVer12: property group cannot be null");
+        }
+        if(packetCount == null) {
+            throw new NullPointerException("OFGroupStatsEntryVer12: property packetCount cannot be null");
+        }
+        if(byteCount == null) {
+            throw new NullPointerException("OFGroupStatsEntryVer12: property byteCount cannot be null");
+        }
+        if(bucketStats == null) {
+            throw new NullPointerException("OFGroupStatsEntryVer12: property bucketStats cannot be null");
+        }
         this.group = group;
         this.refCount = refCount;
         this.packetCount = packetCount;
@@ -363,7 +377,7 @@ class OFGroupStatsEntryVer12 implements OFGroupStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFGroupStatsEntry> {
         @Override
-        public OFGroupStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFGroupStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
@@ -419,14 +433,14 @@ class OFGroupStatsEntryVer12 implements OFGroupStatsEntry {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFGroupStatsEntryVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFGroupStatsEntryVer12 message) {
+        public void write(ByteBuf bb, OFGroupStatsEntryVer12 message) {
             int startIndex = bb.writerIndex();
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();

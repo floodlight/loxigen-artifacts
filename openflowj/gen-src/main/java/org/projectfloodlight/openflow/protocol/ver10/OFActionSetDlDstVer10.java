@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -48,6 +50,9 @@ class OFActionSetDlDstVer10 implements OFActionSetDlDst {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetDlDstVer10(MacAddress dlAddr) {
+        if(dlAddr == null) {
+            throw new NullPointerException("OFActionSetDlDstVer10: property dlAddr cannot be null");
+        }
         this.dlAddr = dlAddr;
     }
 
@@ -166,7 +171,7 @@ class OFActionSetDlDstVer10 implements OFActionSetDlDst {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFActionSetDlDst> {
         @Override
-        public OFActionSetDlDst readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFActionSetDlDst readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 5
             short type = bb.readShort();
@@ -214,14 +219,14 @@ class OFActionSetDlDstVer10 implements OFActionSetDlDst {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFActionSetDlDstVer10> {
         @Override
-        public void write(ChannelBuffer bb, OFActionSetDlDstVer10 message) {
+        public void write(ByteBuf bb, OFActionSetDlDstVer10 message) {
             // fixed value property type = 5
             bb.writeShort((short) 0x5);
             // fixed value property length = 16

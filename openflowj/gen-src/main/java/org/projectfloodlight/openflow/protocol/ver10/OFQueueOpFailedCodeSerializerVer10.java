@@ -18,13 +18,15 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFQueueOpFailedCode;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFQueueOpFailedCodeSerializerVer10 {
@@ -33,7 +35,7 @@ public class OFQueueOpFailedCodeSerializerVer10 {
     public final static short BAD_QUEUE_VAL = (short) 0x1;
     public final static short EPERM_VAL = (short) 0x2;
 
-    public static OFQueueOpFailedCode readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFQueueOpFailedCode readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -41,7 +43,7 @@ public class OFQueueOpFailedCodeSerializerVer10 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFQueueOpFailedCode e) {
+    public static void writeTo(ByteBuf bb, OFQueueOpFailedCode e) {
         bb.writeShort(toWireValue(e));
     }
 

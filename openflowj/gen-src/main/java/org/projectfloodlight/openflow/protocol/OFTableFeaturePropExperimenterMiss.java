@@ -18,32 +18,33 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFTableFeaturePropExperimenterMiss extends OFObject, OFTableFeatureProp {
     int getType();
     long getExperimenter();
     long getSubtype();
-    byte[] getExperimenterData();
+    byte[] getExperimenterData() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFTableFeatureProp.Builder {
         OFTableFeaturePropExperimenterMiss build();
         int getType();
         long getExperimenter();
-        Builder setExperimenter(long experimenter);
         long getSubtype();
         Builder setSubtype(long subtype);
-        byte[] getExperimenterData();
-        Builder setExperimenterData(byte[] experimenterData);
+        byte[] getExperimenterData() throws UnsupportedOperationException;
+        Builder setExperimenterData(byte[] experimenterData) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

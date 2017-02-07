@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 import java.util.Arrays;
@@ -53,6 +55,9 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnShellCommandVer10(long xid, long service, byte[] data) {
+        if(data == null) {
+            throw new NullPointerException("OFBsnShellCommandVer10: property data cannot be null");
+        }
         this.xid = xid;
         this.service = service;
         this.data = data;
@@ -273,7 +278,7 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnShellCommand> {
         @Override
-        public OFBsnShellCommand readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnShellCommand readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -341,14 +346,14 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnShellCommandVer10> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnShellCommandVer10 message) {
+        public void write(ByteBuf bb, OFBsnShellCommandVer10 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);
@@ -405,11 +410,40 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnShellCommandVer10 other = (OFBsnShellCommandVer10) obj;
+
+        // ignore XID
+        if( service != other.service)
+            return false;
+        if (!Arrays.equals(data, other.data))
+                return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime *  (int) (service ^ (service >>> 32));
+        result = prime * result + Arrays.hashCode(data);
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime *  (int) (service ^ (service >>> 32));
         result = prime * result + Arrays.hashCode(data);
         return result;

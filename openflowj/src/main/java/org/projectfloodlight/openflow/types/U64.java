@@ -19,7 +19,7 @@ package org.projectfloodlight.openflow.types;
 
 import java.math.BigInteger;
 
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import org.projectfloodlight.openflow.exceptions.OFParseError;
 import org.projectfloodlight.openflow.protocol.OFMessageReader;
 import org.projectfloodlight.openflow.protocol.Writeable;
@@ -27,10 +27,14 @@ import org.projectfloodlight.openflow.protocol.Writeable;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.primitives.UnsignedLongs;
 
-public class U64 implements Writeable, OFValueType<U64> {
+public class U64 implements Writeable, OFValueType<U64>, HashValue<U64> {
     private static final long UNSIGNED_MASK = 0x7fffffffffffffffL;
     private final static long ZERO_VAL = 0;
     public final static U64 ZERO = new U64(ZERO_VAL);
+
+    private static final long NO_MASK_VAL = 0xFFffFFffFFffFFffL;
+    public final static U64 NO_MASK = new U64(NO_MASK_VAL);
+    public static final U64 FULL_MASK = ZERO;
 
     private final long raw;
 
@@ -66,7 +70,7 @@ public class U64 implements Writeable, OFValueType<U64> {
 
     @Override
     public String toString() {
-        return getBigInteger().toString();
+        return String.format("0x%016x", raw);
     }
 
     public static BigInteger f(final long value) {
@@ -110,11 +114,11 @@ public class U64 implements Writeable, OFValueType<U64> {
 
     @Override
     public U64 applyMask(U64 mask) {
-        return ofRaw(raw & mask.raw);
+        return and(mask);
     }
 
     @Override
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         bb.writeLong(raw);
     }
 
@@ -128,12 +132,106 @@ public class U64 implements Writeable, OFValueType<U64> {
         sink.putLong(raw);
     }
 
+    @Override
+    public U64 inverse() {
+        return U64.of(~raw);
+    }
+
+    @Override
+    public U64 or(U64 other) {
+        return U64.of(raw | other.raw);
+    }
+
+    @Override
+    public U64 and(U64 other) {
+        return ofRaw(raw & other.raw);
+    }
+    @Override
+    public U64 xor(U64 other) {
+        return U64.of(raw ^ other.raw);
+    }
+
+    @Override
+    public U64 add(U64 other) {
+        return U64.of(this.raw + other.raw);
+    }
+
+    @Override
+    public U64 subtract(U64 other) {
+        return U64.of(this.raw - other.raw);
+    }
+
+    /** return the "numBits" highest-order bits of the hash.
+     *  @param numBits number of higest-order bits to return [0-32].
+     *  @return a numberic value of the 0-32 highest-order bits.
+     */
+    @Override
+    public int prefixBits(int numBits) {
+        return HashValueUtils.prefixBits(raw, numBits);
+    }
+
     public final static Reader READER = new Reader();
 
     private static class Reader implements OFMessageReader<U64> {
         @Override
-        public U64 readFrom(ChannelBuffer bb) throws OFParseError {
+        public U64 readFrom(ByteBuf bb) throws OFParseError {
             return U64.ofRaw(bb.readLong());
         }
     }
+
+    @Override
+    public HashValue.Builder<U64> builder() {
+        return new U64Builder(raw);
+    }
+
+    static class U64Builder implements Builder<U64> {
+        long raw;
+
+        public U64Builder(long raw) {
+            this.raw = raw;
+        }
+
+        @Override
+        public Builder<U64> add(U64 other) {
+            raw += other.raw;
+            return this;
+        }
+
+        @Override
+        public Builder<U64> subtract(
+                U64 other) {
+            raw -= other.raw;
+            return this;
+        }
+
+        @Override
+        public Builder<U64> invert() {
+            raw = ~raw;
+            return this;
+        }
+
+        @Override
+        public Builder<U64> or(U64 other) {
+            raw |= other.raw;
+            return this;
+        }
+
+        @Override
+        public Builder<U64> and(U64 other) {
+            raw &= other.raw;
+            return this;
+        }
+
+        @Override
+        public Builder<U64> xor(U64 other) {
+            raw ^= other.raw;
+            return this;
+        }
+
+        @Override
+        public U64 build() {
+            return U64.of(raw);
+        }
+    }
+
 }

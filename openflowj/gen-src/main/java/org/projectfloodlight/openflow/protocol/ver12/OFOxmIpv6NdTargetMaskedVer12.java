@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -50,6 +52,12 @@ class OFOxmIpv6NdTargetMaskedVer12 implements OFOxmIpv6NdTargetMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv6NdTargetMaskedVer12(IPv6Address value, IPv6Address mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv6NdTargetMaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmIpv6NdTargetMaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }
@@ -258,7 +266,7 @@ class OFOxmIpv6NdTargetMaskedVer12 implements OFOxmIpv6NdTargetMasked {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmIpv6NdTargetMasked> {
         @Override
-        public OFOxmIpv6NdTargetMasked readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFOxmIpv6NdTargetMasked readFrom(ByteBuf bb) throws OFParseError {
             // fixed value property typeLen == 0x80003f20L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80003f20)
@@ -293,14 +301,14 @@ class OFOxmIpv6NdTargetMaskedVer12 implements OFOxmIpv6NdTargetMasked {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmIpv6NdTargetMaskedVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFOxmIpv6NdTargetMaskedVer12 message) {
+        public void write(ByteBuf bb, OFOxmIpv6NdTargetMaskedVer12 message) {
             // fixed value property typeLen = 0x80003f20L
             bb.writeInt((int) 0x80003f20);
             message.value.write16Bytes(bb);

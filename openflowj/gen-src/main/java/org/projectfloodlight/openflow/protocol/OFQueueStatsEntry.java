@@ -18,12 +18,15 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import java.util.List;
+import io.netty.buffer.ByteBuf;
 
 public interface OFQueueStatsEntry extends OFObject {
     OFPort getPortNo();
@@ -33,9 +36,10 @@ public interface OFQueueStatsEntry extends OFObject {
     U64 getTxErrors();
     long getDurationSec() throws UnsupportedOperationException;
     long getDurationNsec() throws UnsupportedOperationException;
+    List<OFQueueStatsProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder  {
@@ -54,6 +58,8 @@ public interface OFQueueStatsEntry extends OFObject {
         Builder setDurationSec(long durationSec) throws UnsupportedOperationException;
         long getDurationNsec() throws UnsupportedOperationException;
         Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException;
+        List<OFQueueStatsProp> getProperties() throws UnsupportedOperationException;
+        Builder setProperties(List<OFQueueStatsProp> properties) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

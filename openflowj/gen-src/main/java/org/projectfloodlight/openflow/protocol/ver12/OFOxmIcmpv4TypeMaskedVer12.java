@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -50,6 +52,12 @@ class OFOxmIcmpv4TypeMaskedVer12 implements OFOxmIcmpv4TypeMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIcmpv4TypeMaskedVer12(ICMPv4Type value, ICMPv4Type mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIcmpv4TypeMaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmIcmpv4TypeMaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }
@@ -258,7 +266,7 @@ class OFOxmIcmpv4TypeMaskedVer12 implements OFOxmIcmpv4TypeMasked {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmIcmpv4TypeMasked> {
         @Override
-        public OFOxmIcmpv4TypeMasked readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFOxmIcmpv4TypeMasked readFrom(ByteBuf bb) throws OFParseError {
             // fixed value property typeLen == 0x80002702L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80002702)
@@ -293,14 +301,14 @@ class OFOxmIcmpv4TypeMaskedVer12 implements OFOxmIcmpv4TypeMasked {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmIcmpv4TypeMaskedVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFOxmIcmpv4TypeMaskedVer12 message) {
+        public void write(ByteBuf bb, OFOxmIcmpv4TypeMaskedVer12 message) {
             // fixed value property typeLen = 0x80002702L
             bb.writeInt((int) 0x80002702);
             message.value.writeByte(bb);
