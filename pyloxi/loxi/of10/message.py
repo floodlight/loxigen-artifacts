@@ -8,11 +8,11 @@
 
 import struct
 import loxi
+import const
+import common
+import action
 import util
 import loxi.generic_util
-
-import sys
-ofp = sys.modules['loxi.of10']
 
 class message(loxi.OFObject):
     subtypes = {}
@@ -53,7 +53,7 @@ class message(loxi.OFObject):
         obj.type = reader.read("!B")[0]
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         return obj
 
@@ -124,7 +124,7 @@ class stats_reply(message):
         assert(_type == 17)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.stats_type = reader.read("!H")[0]
         obj.flags = reader.read("!H")[0]
@@ -208,7 +208,7 @@ class aggregate_stats_reply(stats_reply):
         assert(_type == 17)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 2)
@@ -302,7 +302,7 @@ class stats_request(message):
         assert(_type == 16)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.stats_type = reader.read("!H")[0]
         obj.flags = reader.read("!H")[0]
@@ -350,7 +350,7 @@ class aggregate_stats_request(stats_request):
         if match != None:
             self.match = match
         else:
-            self.match = ofp.match()
+            self.match = common.match()
         if table_id != None:
             self.table_id = table_id
         else:
@@ -386,12 +386,12 @@ class aggregate_stats_request(stats_request):
         assert(_type == 16)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 2)
         obj.flags = reader.read("!H")[0]
-        obj.match = ofp.match.unpack(reader)
+        obj.match = common.match.unpack(reader)
         obj.table_id = reader.read("!B")[0]
         reader.skip(1)
         obj.out_port = util.unpack_port_no(reader)
@@ -475,7 +475,7 @@ class error_msg(message):
         assert(_type == 1)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.err_type = reader.read("!H")[0]
         return obj
@@ -543,7 +543,7 @@ class bad_action_error_msg(error_msg):
         assert(_type == 1)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _err_type = reader.read("!H")[0]
         assert(_err_type == 2)
@@ -621,7 +621,7 @@ class bad_request_error_msg(error_msg):
         assert(_type == 1)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _err_type = reader.read("!H")[0]
         assert(_err_type == 1)
@@ -687,7 +687,7 @@ class barrier_reply(message):
         assert(_type == 19)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         return obj
 
@@ -741,7 +741,7 @@ class barrier_request(message):
         assert(_type == 18)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         return obj
 
@@ -771,7 +771,7 @@ class experimenter(message):
     version = 1
     type = 4
 
-    def __init__(self, xid=None, experimenter=None, data=None):
+    def __init__(self, xid=None, experimenter=None, subtype=None, data=None):
         if xid != None:
             self.xid = xid
         else:
@@ -780,6 +780,10 @@ class experimenter(message):
             self.experimenter = experimenter
         else:
             self.experimenter = 0
+        if subtype != None:
+            self.subtype = subtype
+        else:
+            self.subtype = 0
         if data != None:
             self.data = data
         else:
@@ -793,6 +797,7 @@ class experimenter(message):
         packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
         packed.append(struct.pack("!L", self.xid))
         packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
         packed.append(self.data)
         length = sum([len(x) for x in packed])
         packed[2] = struct.pack("!H", length)
@@ -812,9 +817,10 @@ class experimenter(message):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.experimenter = reader.read("!L")[0]
+        obj.subtype = reader.read("!L")[0]
         obj.data = str(reader.read_all())
         return obj
 
@@ -822,6 +828,7 @@ class experimenter(message):
         if type(self) != type(other): return False
         if self.xid != other.xid: return False
         if self.experimenter != other.experimenter: return False
+        if self.subtype != other.subtype: return False
         if self.data != other.data: return False
         return True
 
@@ -835,6 +842,9 @@ class experimenter(message):
                     q.text("%#x" % self.xid)
                 else:
                     q.text('None')
+                q.text(","); q.breakable()
+                q.text("subtype = ");
+                q.text("%#x" % self.subtype)
                 q.text(","); q.breakable()
                 q.text("data = ");
                 q.pp(self.data)
@@ -887,7 +897,7 @@ class bsn_header(experimenter):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -954,7 +964,7 @@ class bsn_bw_clear_data_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -1021,7 +1031,7 @@ class bsn_bw_clear_data_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -1088,7 +1098,7 @@ class bsn_bw_enable_get_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -1155,7 +1165,7 @@ class bsn_bw_enable_get_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -1227,7 +1237,7 @@ class bsn_bw_enable_set_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -1304,7 +1314,7 @@ class bsn_bw_enable_set_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -1376,13 +1386,13 @@ class bsn_get_interfaces_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
         assert(_subtype == 10)
-        obj.interfaces = loxi.generic_util.unpack_list(reader, ofp.common.bsn_interface.unpack)
+        obj.interfaces = loxi.generic_util.unpack_list(reader, common.bsn_interface.unpack)
         return obj
 
     def __eq__(self, other):
@@ -1443,7 +1453,7 @@ class bsn_get_interfaces_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -1516,7 +1526,7 @@ class bsn_get_ip_mask_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -1595,7 +1605,7 @@ class bsn_get_ip_mask_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -1675,7 +1685,7 @@ class bsn_get_l2_table_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -1749,7 +1759,7 @@ class bsn_get_l2_table_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -1817,7 +1827,7 @@ class bsn_get_mirroring_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -1891,7 +1901,7 @@ class bsn_get_mirroring_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -1971,7 +1981,7 @@ class bsn_hybrid_get_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -2045,7 +2055,7 @@ class bsn_hybrid_get_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -2122,7 +2132,7 @@ class bsn_pdu_rx_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -2220,7 +2230,7 @@ class bsn_pdu_rx_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -2313,7 +2323,7 @@ class bsn_pdu_rx_timeout(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -2400,7 +2410,7 @@ class bsn_pdu_tx_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -2498,7 +2508,7 @@ class bsn_pdu_tx_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -2592,7 +2602,7 @@ class bsn_set_ip_mask(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -2681,7 +2691,7 @@ class bsn_set_l2_table_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -2771,7 +2781,7 @@ class bsn_set_l2_table_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -2851,7 +2861,7 @@ class bsn_set_mirroring(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -2924,7 +2934,7 @@ class bsn_set_pktin_suppression_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -3017,7 +3027,7 @@ class bsn_set_pktin_suppression_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -3115,7 +3125,7 @@ class bsn_shell_command(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -3192,7 +3202,7 @@ class bsn_shell_output(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -3264,7 +3274,7 @@ class bsn_shell_status(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -3351,7 +3361,7 @@ class experimenter_stats_reply(stats_reply):
         assert(_type == 17)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 65535)
@@ -3441,7 +3451,7 @@ class bsn_stats_reply(experimenter_stats_reply):
         assert(_type == 19)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 65535)
@@ -3531,7 +3541,7 @@ class experimenter_stats_request(stats_request):
         assert(_type == 16)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 65535)
@@ -3621,7 +3631,7 @@ class bsn_stats_request(experimenter_stats_request):
         assert(_type == 18)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 65535)
@@ -3701,7 +3711,7 @@ class bsn_virtual_port_create_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -3753,7 +3763,7 @@ class bsn_virtual_port_create_request(bsn_header):
         if vport != None:
             self.vport = vport
         else:
-            self.vport = ofp.bsn_vport()
+            self.vport = common.bsn_vport_q_in_q()
         return
 
     def pack(self):
@@ -3778,13 +3788,13 @@ class bsn_virtual_port_create_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
         assert(_subtype == 15)
-        obj.vport = ofp.bsn_vport.unpack(reader)
+        obj.vport = common.bsn_vport_q_in_q.unpack(reader)
         return obj
 
     def __eq__(self, other):
@@ -3850,7 +3860,7 @@ class bsn_virtual_port_remove_reply(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -3922,7 +3932,7 @@ class bsn_virtual_port_remove_request(bsn_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
@@ -4017,7 +4027,7 @@ class desc_stats_reply(stats_reply):
         assert(_type == 17)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 0)
@@ -4110,7 +4120,7 @@ class desc_stats_request(stats_request):
         assert(_type == 16)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 0)
@@ -4176,7 +4186,7 @@ class echo_reply(message):
         assert(_type == 3)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.data = str(reader.read_all())
         return obj
@@ -4240,7 +4250,7 @@ class echo_request(message):
         assert(_type == 2)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.data = str(reader.read_all())
         return obj
@@ -4330,7 +4340,7 @@ class features_reply(message):
         assert(_type == 6)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.datapath_id = reader.read("!Q")[0]
         obj.n_buffers = reader.read("!L")[0]
@@ -4338,7 +4348,7 @@ class features_reply(message):
         reader.skip(3)
         obj.capabilities = reader.read("!L")[0]
         obj.actions = reader.read("!L")[0]
-        obj.ports = loxi.generic_util.unpack_list(reader, ofp.common.port_desc.unpack)
+        obj.ports = loxi.generic_util.unpack_list(reader, common.port_desc.unpack)
         return obj
 
     def __eq__(self, other):
@@ -4415,7 +4425,7 @@ class features_request(message):
         assert(_type == 5)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         return obj
 
@@ -4453,7 +4463,7 @@ class flow_mod(message):
         if match != None:
             self.match = match
         else:
-            self.match = ofp.match()
+            self.match = common.match()
         if cookie != None:
             self.cookie = cookie
         else:
@@ -4526,9 +4536,9 @@ class flow_mod(message):
         assert(_type == 14)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
-        obj.match = ofp.match.unpack(reader)
+        obj.match = common.match.unpack(reader)
         obj.cookie = reader.read("!Q")[0]
         obj._command = util.unpack_fm_cmd(reader)
         obj.idle_timeout = reader.read("!H")[0]
@@ -4537,7 +4547,7 @@ class flow_mod(message):
         obj.buffer_id = reader.read("!L")[0]
         obj.out_port = util.unpack_port_no(reader)
         obj.flags = reader.read("!H")[0]
-        obj.actions = loxi.generic_util.unpack_list(reader, ofp.action.action.unpack)
+        obj.actions = loxi.generic_util.unpack_list(reader, action.action.unpack)
         return obj
 
     def __eq__(self, other):
@@ -4610,7 +4620,7 @@ class flow_add(flow_mod):
         if match != None:
             self.match = match
         else:
-            self.match = ofp.match()
+            self.match = common.match()
         if cookie != None:
             self.cookie = cookie
         else:
@@ -4674,9 +4684,9 @@ class flow_add(flow_mod):
         assert(_type == 14)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
-        obj.match = ofp.match.unpack(reader)
+        obj.match = common.match.unpack(reader)
         obj.cookie = reader.read("!Q")[0]
         __command = util.unpack_fm_cmd(reader)
         assert(__command == 0)
@@ -4686,7 +4696,7 @@ class flow_add(flow_mod):
         obj.buffer_id = reader.read("!L")[0]
         obj.out_port = util.unpack_port_no(reader)
         obj.flags = reader.read("!H")[0]
-        obj.actions = loxi.generic_util.unpack_list(reader, ofp.action.action.unpack)
+        obj.actions = loxi.generic_util.unpack_list(reader, action.action.unpack)
         return obj
 
     def __eq__(self, other):
@@ -4758,7 +4768,7 @@ class flow_delete(flow_mod):
         if match != None:
             self.match = match
         else:
-            self.match = ofp.match()
+            self.match = common.match()
         if cookie != None:
             self.cookie = cookie
         else:
@@ -4822,9 +4832,9 @@ class flow_delete(flow_mod):
         assert(_type == 14)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
-        obj.match = ofp.match.unpack(reader)
+        obj.match = common.match.unpack(reader)
         obj.cookie = reader.read("!Q")[0]
         __command = util.unpack_fm_cmd(reader)
         assert(__command == 3)
@@ -4834,7 +4844,7 @@ class flow_delete(flow_mod):
         obj.buffer_id = reader.read("!L")[0]
         obj.out_port = util.unpack_port_no(reader)
         obj.flags = reader.read("!H")[0]
-        obj.actions = loxi.generic_util.unpack_list(reader, ofp.action.action.unpack)
+        obj.actions = loxi.generic_util.unpack_list(reader, action.action.unpack)
         return obj
 
     def __eq__(self, other):
@@ -4906,7 +4916,7 @@ class flow_delete_strict(flow_mod):
         if match != None:
             self.match = match
         else:
-            self.match = ofp.match()
+            self.match = common.match()
         if cookie != None:
             self.cookie = cookie
         else:
@@ -4970,9 +4980,9 @@ class flow_delete_strict(flow_mod):
         assert(_type == 14)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
-        obj.match = ofp.match.unpack(reader)
+        obj.match = common.match.unpack(reader)
         obj.cookie = reader.read("!Q")[0]
         __command = util.unpack_fm_cmd(reader)
         assert(__command == 4)
@@ -4982,7 +4992,7 @@ class flow_delete_strict(flow_mod):
         obj.buffer_id = reader.read("!L")[0]
         obj.out_port = util.unpack_port_no(reader)
         obj.flags = reader.read("!H")[0]
-        obj.actions = loxi.generic_util.unpack_list(reader, ofp.action.action.unpack)
+        obj.actions = loxi.generic_util.unpack_list(reader, action.action.unpack)
         return obj
 
     def __eq__(self, other):
@@ -5083,7 +5093,7 @@ class flow_mod_failed_error_msg(error_msg):
         assert(_type == 1)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _err_type = reader.read("!H")[0]
         assert(_err_type == 3)
@@ -5132,7 +5142,7 @@ class flow_modify(flow_mod):
         if match != None:
             self.match = match
         else:
-            self.match = ofp.match()
+            self.match = common.match()
         if cookie != None:
             self.cookie = cookie
         else:
@@ -5196,9 +5206,9 @@ class flow_modify(flow_mod):
         assert(_type == 14)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
-        obj.match = ofp.match.unpack(reader)
+        obj.match = common.match.unpack(reader)
         obj.cookie = reader.read("!Q")[0]
         __command = util.unpack_fm_cmd(reader)
         assert(__command == 1)
@@ -5208,7 +5218,7 @@ class flow_modify(flow_mod):
         obj.buffer_id = reader.read("!L")[0]
         obj.out_port = util.unpack_port_no(reader)
         obj.flags = reader.read("!H")[0]
-        obj.actions = loxi.generic_util.unpack_list(reader, ofp.action.action.unpack)
+        obj.actions = loxi.generic_util.unpack_list(reader, action.action.unpack)
         return obj
 
     def __eq__(self, other):
@@ -5280,7 +5290,7 @@ class flow_modify_strict(flow_mod):
         if match != None:
             self.match = match
         else:
-            self.match = ofp.match()
+            self.match = common.match()
         if cookie != None:
             self.cookie = cookie
         else:
@@ -5344,9 +5354,9 @@ class flow_modify_strict(flow_mod):
         assert(_type == 14)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
-        obj.match = ofp.match.unpack(reader)
+        obj.match = common.match.unpack(reader)
         obj.cookie = reader.read("!Q")[0]
         __command = util.unpack_fm_cmd(reader)
         assert(__command == 2)
@@ -5356,7 +5366,7 @@ class flow_modify_strict(flow_mod):
         obj.buffer_id = reader.read("!L")[0]
         obj.out_port = util.unpack_port_no(reader)
         obj.flags = reader.read("!H")[0]
-        obj.actions = loxi.generic_util.unpack_list(reader, ofp.action.action.unpack)
+        obj.actions = loxi.generic_util.unpack_list(reader, action.action.unpack)
         return obj
 
     def __eq__(self, other):
@@ -5427,7 +5437,7 @@ class flow_removed(message):
         if match != None:
             self.match = match
         else:
-            self.match = ofp.match()
+            self.match = common.match()
         if cookie != None:
             self.cookie = cookie
         else:
@@ -5492,9 +5502,9 @@ class flow_removed(message):
         assert(_type == 11)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
-        obj.match = ofp.match.unpack(reader)
+        obj.match = common.match.unpack(reader)
         obj.cookie = reader.read("!Q")[0]
         obj.priority = reader.read("!H")[0]
         obj.reason = reader.read("!B")[0]
@@ -5605,12 +5615,12 @@ class flow_stats_reply(stats_reply):
         assert(_type == 17)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 1)
         obj.flags = reader.read("!H")[0]
-        obj.entries = loxi.generic_util.unpack_list(reader, ofp.common.flow_stats_entry.unpack)
+        obj.entries = loxi.generic_util.unpack_list(reader, common.flow_stats_entry.unpack)
         return obj
 
     def __eq__(self, other):
@@ -5658,7 +5668,7 @@ class flow_stats_request(stats_request):
         if match != None:
             self.match = match
         else:
-            self.match = ofp.match()
+            self.match = common.match()
         if table_id != None:
             self.table_id = table_id
         else:
@@ -5694,12 +5704,12 @@ class flow_stats_request(stats_request):
         assert(_type == 16)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 1)
         obj.flags = reader.read("!H")[0]
-        obj.match = ofp.match.unpack(reader)
+        obj.match = common.match.unpack(reader)
         obj.table_id = reader.read("!B")[0]
         reader.skip(1)
         obj.out_port = util.unpack_port_no(reader)
@@ -5781,7 +5791,7 @@ class get_config_reply(message):
         assert(_type == 8)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.flags = reader.read("!H")[0]
         obj.miss_send_len = reader.read("!H")[0]
@@ -5845,7 +5855,7 @@ class get_config_request(message):
         assert(_type == 7)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         return obj
 
@@ -5899,7 +5909,7 @@ class hello(message):
         assert(_type == 0)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         return obj
 
@@ -5965,7 +5975,7 @@ class hello_failed_error_msg(error_msg):
         assert(_type == 1)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _err_type = reader.read("!H")[0]
         assert(_err_type == 0)
@@ -6045,7 +6055,7 @@ class nicira_header(experimenter):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 8992)
@@ -6112,7 +6122,7 @@ class nicira_controller_role_reply(nicira_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 8992)
@@ -6184,7 +6194,7 @@ class nicira_controller_role_request(nicira_header):
         assert(_type == 4)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 8992)
@@ -6273,7 +6283,7 @@ class packet_in(message):
         assert(_type == 10)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.buffer_id = reader.read("!L")[0]
         obj.total_len = reader.read("!H")[0]
@@ -6375,12 +6385,12 @@ class packet_out(message):
         assert(_type == 13)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.buffer_id = reader.read("!L")[0]
         obj.in_port = util.unpack_port_no(reader)
         _actions_len = reader.read("!H")[0]
-        obj.actions = loxi.generic_util.unpack_list(reader.slice(_actions_len), ofp.action.action.unpack)
+        obj.actions = loxi.generic_util.unpack_list(reader.slice(_actions_len), action.action.unpack)
         obj.data = str(reader.read_all())
         return obj
 
@@ -6476,7 +6486,7 @@ class port_mod(message):
         assert(_type == 15)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.port_no = util.unpack_port_no(reader)
         obj.hw_addr = list(reader.read('!6B'))
@@ -6568,7 +6578,7 @@ class port_mod_failed_error_msg(error_msg):
         assert(_type == 1)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _err_type = reader.read("!H")[0]
         assert(_err_type == 4)
@@ -6646,12 +6656,12 @@ class port_stats_reply(stats_reply):
         assert(_type == 17)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 4)
         obj.flags = reader.read("!H")[0]
-        obj.entries = loxi.generic_util.unpack_list(reader, ofp.common.port_stats_entry.unpack)
+        obj.entries = loxi.generic_util.unpack_list(reader, common.port_stats_entry.unpack)
         return obj
 
     def __eq__(self, other):
@@ -6725,7 +6735,7 @@ class port_stats_request(stats_request):
         assert(_type == 16)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 4)
@@ -6778,7 +6788,7 @@ class port_status(message):
         if desc != None:
             self.desc = desc
         else:
-            self.desc = ofp.port_desc()
+            self.desc = common.port_desc()
         return
 
     def pack(self):
@@ -6803,11 +6813,11 @@ class port_status(message):
         assert(_type == 12)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.reason = reader.read("!B")[0]
         reader.skip(7)
-        obj.desc = ofp.port_desc.unpack(reader)
+        obj.desc = common.port_desc.unpack(reader)
         return obj
 
     def __eq__(self, other):
@@ -6879,11 +6889,11 @@ class queue_get_config_reply(message):
         assert(_type == 21)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.port = util.unpack_port_no(reader)
         reader.skip(6)
-        obj.queues = loxi.generic_util.unpack_list(reader, ofp.common.packet_queue.unpack)
+        obj.queues = loxi.generic_util.unpack_list(reader, common.packet_queue.unpack)
         return obj
 
     def __eq__(self, other):
@@ -6950,7 +6960,7 @@ class queue_get_config_request(message):
         assert(_type == 20)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.port = util.unpack_port_no(reader)
         reader.skip(2)
@@ -7022,7 +7032,7 @@ class queue_op_failed_error_msg(error_msg):
         assert(_type == 1)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _err_type = reader.read("!H")[0]
         assert(_err_type == 5)
@@ -7100,12 +7110,12 @@ class queue_stats_reply(stats_reply):
         assert(_type == 17)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 5)
         obj.flags = reader.read("!H")[0]
-        obj.entries = loxi.generic_util.unpack_list(reader, ofp.common.queue_stats_entry.unpack)
+        obj.entries = loxi.generic_util.unpack_list(reader, common.queue_stats_entry.unpack)
         return obj
 
     def __eq__(self, other):
@@ -7184,7 +7194,7 @@ class queue_stats_request(stats_request):
         assert(_type == 16)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 5)
@@ -7266,7 +7276,7 @@ class set_config(message):
         assert(_type == 9)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.flags = reader.read("!H")[0]
         obj.miss_send_len = reader.read("!H")[0]
@@ -7341,7 +7351,7 @@ class table_mod(message):
         assert(_type == 22)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         obj.table_id = reader.read("!B")[0]
         reader.skip(3)
@@ -7418,12 +7428,12 @@ class table_stats_reply(stats_reply):
         assert(_type == 17)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 3)
         obj.flags = reader.read("!H")[0]
-        obj.entries = loxi.generic_util.unpack_list(reader, ofp.common.table_stats_entry.unpack)
+        obj.entries = loxi.generic_util.unpack_list(reader, common.table_stats_entry.unpack)
         return obj
 
     def __eq__(self, other):
@@ -7491,7 +7501,7 @@ class table_stats_request(stats_request):
         assert(_type == 16)
         _length = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
+        reader = orig_reader.slice(_length - (2 + 2))
         obj.xid = reader.read("!L")[0]
         _stats_type = reader.read("!H")[0]
         assert(_stats_type == 3)
@@ -7530,8 +7540,8 @@ def parse_header(buf):
 
 def parse_message(buf):
     msg_ver, msg_type, msg_len, msg_xid = parse_header(buf)
-    if msg_ver != ofp.OFP_VERSION and msg_type != ofp.OFPT_HELLO:
-        raise loxi.ProtocolError("wrong OpenFlow version (expected %d, got %d)" % (ofp.OFP_VERSION, msg_ver))
+    if msg_ver != const.OFP_VERSION and msg_type != const.OFPT_HELLO:
+        raise loxi.ProtocolError("wrong OpenFlow version (expected %d, got %d)" % (const.OFP_VERSION, msg_ver))
     if len(buf) != msg_len:
         raise loxi.ProtocolError("incorrect message size")
     return message.unpack(loxi.generic_util.OFReader(buf))

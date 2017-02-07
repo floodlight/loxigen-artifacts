@@ -18,18 +18,15 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.List;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -55,9 +52,6 @@ class OFTableModVer12 implements OFTableMod {
 
     // package private constructor - used by readers, builders, and factory
     OFTableModVer12(long xid, TableId tableId, long config) {
-        if(tableId == null) {
-            throw new NullPointerException("OFTableModVer12: property tableId cannot be null");
-        }
         this.xid = xid;
         this.tableId = tableId;
         this.config = config;
@@ -87,11 +81,6 @@ class OFTableModVer12 implements OFTableMod {
     @Override
     public long getConfig() {
         return config;
-    }
-
-    @Override
-    public List<OFTableModProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
 
 
@@ -157,15 +146,6 @@ class OFTableModVer12 implements OFTableMod {
         this.config = config;
         this.configSet = true;
         return this;
-    }
-    @Override
-    public List<OFTableModProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
-    }
-
-    @Override
-    public OFTableMod.Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
 
 
@@ -239,15 +219,6 @@ class OFTableModVer12 implements OFTableMod {
         this.configSet = true;
         return this;
     }
-    @Override
-    public List<OFTableModProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
-    }
-
-    @Override
-    public OFTableMod.Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.2");
-    }
 //
         @Override
         public OFTableMod build() {
@@ -271,7 +242,7 @@ class OFTableModVer12 implements OFTableMod {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFTableMod> {
         @Override
-        public OFTableMod readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableMod readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -331,14 +302,14 @@ class OFTableModVer12 implements OFTableMod {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFTableModVer12> {
         @Override
-        public void write(ByteBuf bb, OFTableModVer12 message) {
+        public void write(ChannelBuffer bb, OFTableModVer12 message) {
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
             // fixed value property type = 17
@@ -390,43 +361,11 @@ class OFTableModVer12 implements OFTableMod {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFTableModVer12 other = (OFTableModVer12) obj;
-
-        // ignore XID
-        if (tableId == null) {
-            if (other.tableId != null)
-                return false;
-        } else if (!tableId.equals(other.tableId))
-            return false;
-        if( config != other.config)
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
-        result = prime *  (int) (config ^ (config >>> 32));
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime *  (int) (config ^ (config >>> 32));
         return result;

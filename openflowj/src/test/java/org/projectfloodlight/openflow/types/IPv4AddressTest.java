@@ -8,16 +8,9 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import io.netty.buffer.Unpooled;
-
-import java.net.Inet4Address;
-import java.net.InetAddress;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
 
 import org.hamcrest.CoreMatchers;
-import org.hamcrest.Matchers;
+import org.jboss.netty.buffer.ChannelBuffers;
 import org.junit.Test;
 import org.projectfloodlight.openflow.exceptions.OFParseError;
 
@@ -231,164 +224,9 @@ public class IPv4AddressTest {
     }
 
     @Test
-    public void testOf4Integers() {
-        Map<IPv4Address, IPv4Address> map = new HashMap<>();
-        map.put(IPv4Address.of(0, 0, 0, 0), IPv4Address.of(0));
-        map.put(IPv4Address.of(1, 2, 3, 4), IPv4Address.of("1.2.3.4"));
-        map.put(IPv4Address.of(6, 7, 8, 9), IPv4Address.of("6.7.8.9"));
-        map.put(IPv4Address.of(10, 1, 2, 3), IPv4Address.of("10.1.2.3"));
-        map.put(IPv4Address.of(10, 201, 202, 203), IPv4Address.of("10.201.202.203"));
-        map.put(IPv4Address.of(192, 168, 0, 101), IPv4Address.of("192.168.0.101"));
-        map.put(IPv4Address.of(211, 212, 213, 214), IPv4Address.of("211.212.213.214"));
-        map.put(IPv4Address.of(255, 255, 255, 255), IPv4Address.of(0xFF_FF_FF_FF));
-        for (Entry<IPv4Address, IPv4Address> entry : map.entrySet()) {
-            assertThat(entry.getKey(), equalTo(entry.getValue()));
-        }
-    }
-
-    @Test(expected=IllegalArgumentException.class)
-    public void testOf4IntegersExceptionNegative1() {
-        IPv4Address.of(-3, 4, 5, 6);
-    }
-
-    @Test(expected=IllegalArgumentException.class)
-    public void testOf4IntegersExceptionNegative2() {
-        IPv4Address.of(3, -4, 5, 6);
-    }
-
-    @Test(expected=IllegalArgumentException.class)
-    public void testOf4IntegersExceptionNegative3() {
-        IPv4Address.of(3, 4, -5, 6);
-    }
-
-    @Test(expected=IllegalArgumentException.class)
-    public void testOf4IntegersExceptionNegative4() {
-        IPv4Address.of(3, 4, 5, -6);
-    }
-
-    @Test(expected=IllegalArgumentException.class)
-    public void testOf4IntegersExceptionNegative5() {
-        // ((byte) 128) is actually -128
-        IPv4Address.of(101, 102, 103, (byte) 128);
-    }
-
-    @Test(expected=IllegalArgumentException.class)
-    public void testOf4IntegersExceptionNegative6() {
-        // ((byte) 255) is actually -1
-        IPv4Address.of(101, 102, 103, (byte) 255);
-    }
-
-    @Test(expected=IllegalArgumentException.class)
-    public void testOf4IntegersExceptionNegative7() {
-        IPv4Address.of(-1, -1, -1, -1);
-    }
-
-    @Test(expected=IllegalArgumentException.class)
-    public void testOf4IntegersExceptionTooBig1() {
-        IPv4Address.of(1000, 2, 3, 4);
-    }
-
-    @Test(expected=IllegalArgumentException.class)
-    public void testOf4IntegersExceptionTooBig2() {
-        IPv4Address.of(1, 20000, 3, 4);
-    }
-
-    @Test(expected=IllegalArgumentException.class)
-    public void testOf4IntegersExceptionTooBig3() {
-        IPv4Address.of(1, 2, 300000, 4);
-    }
-
-    @Test(expected=IllegalArgumentException.class)
-    public void testOf4IntegersExceptionTooBig4() {
-        IPv4Address.of(1, 2, 3, 4000000);
-    }
-
-    @Test(expected=IllegalArgumentException.class)
-    public void testOf4IntegersExceptionTooBig5() {
-        IPv4Address.of(256, 256, 256, 256);
-    }
-
-    @Test
-    public void testOfCidrMaskLength() {
-        for (int i = 0; i <= 32; i++) {
-            assertEquals(IPv4Address.ofCidrMaskLength(i).asCidrMaskLength(), i);
-        }
-
-        assertEquals(IPv4Address.ofCidrMaskLength(0).getInt(), 0x0000_0000);
-
-        assertEquals(IPv4Address.ofCidrMaskLength(1).getInt(), 0x8000_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(2).getInt(), 0xC000_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(3).getInt(), 0xE000_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(4).getInt(), 0xF000_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(5).getInt(), 0xF800_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(6).getInt(), 0xFC00_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(7).getInt(), 0xFE00_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(8).getInt(), 0xFF00_0000);
-
-        assertEquals(IPv4Address.ofCidrMaskLength(9).getInt(), 0xFF80_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(10).getInt(), 0xFFC0_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(11).getInt(), 0xFFE0_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(12).getInt(), 0xFFF0_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(13).getInt(), 0xFFF8_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(14).getInt(), 0xFFFC_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(15).getInt(), 0xFFFE_0000);
-        assertEquals(IPv4Address.ofCidrMaskLength(16).getInt(), 0xFFFF_0000);
-
-        assertEquals(IPv4Address.ofCidrMaskLength(17).getInt(), 0xFFFF_8000);
-        assertEquals(IPv4Address.ofCidrMaskLength(18).getInt(), 0xFFFF_C000);
-        assertEquals(IPv4Address.ofCidrMaskLength(19).getInt(), 0xFFFF_E000);
-        assertEquals(IPv4Address.ofCidrMaskLength(20).getInt(), 0xFFFF_F000);
-        assertEquals(IPv4Address.ofCidrMaskLength(21).getInt(), 0xFFFF_F800);
-        assertEquals(IPv4Address.ofCidrMaskLength(22).getInt(), 0xFFFF_FC00);
-        assertEquals(IPv4Address.ofCidrMaskLength(23).getInt(), 0xFFFF_FE00);
-        assertEquals(IPv4Address.ofCidrMaskLength(24).getInt(), 0xFFFF_FF00);
-
-        assertEquals(IPv4Address.ofCidrMaskLength(25).getInt(), 0xFFFF_FF80);
-        assertEquals(IPv4Address.ofCidrMaskLength(26).getInt(), 0xFFFF_FFC0);
-        assertEquals(IPv4Address.ofCidrMaskLength(27).getInt(), 0xFFFF_FFE0);
-        assertEquals(IPv4Address.ofCidrMaskLength(28).getInt(), 0xFFFF_FFF0);
-        assertEquals(IPv4Address.ofCidrMaskLength(29).getInt(), 0xFFFF_FFF8);
-        assertEquals(IPv4Address.ofCidrMaskLength(30).getInt(), 0xFFFF_FFFC);
-        assertEquals(IPv4Address.ofCidrMaskLength(31).getInt(), 0xFFFF_FFFE);
-        assertEquals(IPv4Address.ofCidrMaskLength(32).getInt(), 0xFFFF_FFFF);
-    }
-
-    @Test
-    public void testWithMask() throws Exception {
-        // Sanity tests for the withMask*() syntactic sugars
-
-        IPv4Address original = IPv4Address.of("192.168.1.101");
-        IPv4Address expectedValue = IPv4Address.of("192.168.1.0");
-        IPv4Address expectedMask = IPv4Address.of("255.255.255.0");
-
-        IPv4AddressWithMask v;
-
-        v = original.withMask(IPv4Address.of(new byte[] {-1, -1, -1, 0}));
-        assertEquals(v.getValue(), expectedValue);
-        assertEquals(v.getMask(), expectedMask);
-
-        v = original.withMask(IPv4Address.of(0xFFFF_FF00));
-        assertEquals(v.getValue(), expectedValue);
-        assertEquals(v.getMask(), expectedMask);
-
-        v = original.withMask(IPv4Address.of("255.255.255.0"));
-        assertEquals(v.getValue(), expectedValue);
-        assertEquals(v.getMask(), expectedMask);
-
-        Inet4Address i4a = (Inet4Address) InetAddress.getByName("255.255.255.0");
-        v = original.withMask(IPv4Address.of(i4a));
-        assertEquals(v.getValue(), expectedValue);
-        assertEquals(v.getMask(), expectedMask);
-
-        v = original.withMaskOfLength(24);
-        assertEquals(v.getValue(), expectedValue);
-        assertEquals(v.getMask(), expectedMask);
-    }
-
-    @Test
     public void testReadFrom() throws OFParseError {
         for(int i=0; i < testAddresses.length; i++ ) {
-            IPv4Address ip = IPv4Address.read4Bytes(Unpooled.copiedBuffer(testAddresses[i]));
+            IPv4Address ip = IPv4Address.read4Bytes(ChannelBuffers.copiedBuffer(testAddresses[i]));
             assertEquals(testInts[i], ip.getInt());
             assertArrayEquals(testAddresses[i], ip.getBytes());
             assertEquals(testStrings[i], ip.toString());
@@ -471,21 +309,6 @@ public class IPv4AddressTest {
     }
 
     @Test
-    public void testCompareTo() {
-        assertThat(
-                IPv4Address.of("1.0.0.1").compareTo(IPv4Address.of("1.0.0.2")),
-                Matchers.lessThan(0));
-        assertThat(
-                IPv4Address.of("1.0.0.3").compareTo(IPv4Address.of("3.0.0.1")),
-                Matchers.lessThan(0));
-
-        // Make sure that unsigned comparison is used
-        assertThat(
-                IPv4Address.of("201.0.0.1").compareTo(IPv4Address.NONE),
-                Matchers.greaterThan(0));
-    }
-
-    @Test
     public void testOfExceptions() {
         // We check if the message of a caught NPE is set to a useful message
         // as a hacky way of verifying that we got an NPE thrown by use rather
@@ -540,18 +363,6 @@ public class IPv4AddressTest {
             IPv4AddressWithMask.of(IPv4Address.of("10.10.10.0"),
                                    IPv4Address.of("255.0.255.0"))
                                    .getSubnetBroadcastAddress();
-            fail("Should have thrown IllegalArgumentException");
-        } catch (IllegalArgumentException e) {
-            assertNotNull(e.getMessage());
-        }
-        try {
-            IPv4Address.ofCidrMaskLength(-1);
-            fail("Should have thrown IllegalArgumentException");
-        } catch (IllegalArgumentException e) {
-            assertNotNull(e.getMessage());
-        }
-        try {
-            IPv4Address.ofCidrMaskLength(33);
             fail("Should have thrown IllegalArgumentException");
         } catch (IllegalArgumentException e) {
             assertNotNull(e.getMessage());

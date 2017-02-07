@@ -18,15 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import java.util.List;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFPortStatsEntry extends OFObject {
     OFPort getPortNo();
@@ -38,16 +35,15 @@ public interface OFPortStatsEntry extends OFObject {
     U64 getTxDropped();
     U64 getRxErrors();
     U64 getTxErrors();
-    U64 getRxFrameErr() throws UnsupportedOperationException;
-    U64 getRxOverErr() throws UnsupportedOperationException;
-    U64 getRxCrcErr() throws UnsupportedOperationException;
-    U64 getCollisions() throws UnsupportedOperationException;
+    U64 getRxFrameErr();
+    U64 getRxOverErr();
+    U64 getRxCrcErr();
+    U64 getCollisions();
     long getDurationSec() throws UnsupportedOperationException;
     long getDurationNsec() throws UnsupportedOperationException;
-    List<OFPortStatsProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder  {
@@ -70,20 +66,18 @@ public interface OFPortStatsEntry extends OFObject {
         Builder setRxErrors(U64 rxErrors);
         U64 getTxErrors();
         Builder setTxErrors(U64 txErrors);
-        U64 getRxFrameErr() throws UnsupportedOperationException;
-        Builder setRxFrameErr(U64 rxFrameErr) throws UnsupportedOperationException;
-        U64 getRxOverErr() throws UnsupportedOperationException;
-        Builder setRxOverErr(U64 rxOverErr) throws UnsupportedOperationException;
-        U64 getRxCrcErr() throws UnsupportedOperationException;
-        Builder setRxCrcErr(U64 rxCrcErr) throws UnsupportedOperationException;
-        U64 getCollisions() throws UnsupportedOperationException;
-        Builder setCollisions(U64 collisions) throws UnsupportedOperationException;
+        U64 getRxFrameErr();
+        Builder setRxFrameErr(U64 rxFrameErr);
+        U64 getRxOverErr();
+        Builder setRxOverErr(U64 rxOverErr);
+        U64 getRxCrcErr();
+        Builder setRxCrcErr(U64 rxCrcErr);
+        U64 getCollisions();
+        Builder setCollisions(U64 collisions);
         long getDurationSec() throws UnsupportedOperationException;
         Builder setDurationSec(long durationSec) throws UnsupportedOperationException;
         long getDurationNsec() throws UnsupportedOperationException;
         Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException;
-        List<OFPortStatsProp> getProperties() throws UnsupportedOperationException;
-        Builder setProperties(List<OFPortStatsProp> properties) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

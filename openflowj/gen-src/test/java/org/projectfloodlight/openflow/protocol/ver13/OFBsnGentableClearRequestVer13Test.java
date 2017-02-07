@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,8 +26,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
+import org.jboss.netty.buffer.ChannelBuffer;
+import org.jboss.netty.buffer.ChannelBuffers;
 import org.hamcrest.CoreMatchers;
 
 
@@ -49,11 +47,11 @@ public class OFBsnGentableClearRequestVer13Test {
     public void testWrite() {
         OFBsnGentableClearRequest.Builder builder = factory.buildBsnGentableClearRequest();
         builder.setXid(0x12345678)
-    .setChecksum(U128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA990000L))
-    .setChecksumMask(U128.of(0xFFFFFFFFFFFFFFFFL, 0xFFFFFFFFFFFF0000L))
+    .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA990000L))
+    .setChecksumMask(OFChecksum128.of(0xFFFFFFFFFFFFFFFFL, 0xFFFFFFFFFFFF0000L))
     .setTableId(GenTableId.of(20));
         OFBsnGentableClearRequest bsnGentableClearRequest = builder.build();
-        ByteBuf bb = Unpooled.buffer();
+        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
         bsnGentableClearRequest.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -65,12 +63,12 @@ public class OFBsnGentableClearRequestVer13Test {
     public void testRead() throws Exception {
         OFBsnGentableClearRequest.Builder builder = factory.buildBsnGentableClearRequest();
         builder.setXid(0x12345678)
-    .setChecksum(U128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA990000L))
-    .setChecksumMask(U128.of(0xFFFFFFFFFFFFFFFFL, 0xFFFFFFFFFFFF0000L))
+    .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA990000L))
+    .setChecksumMask(OFChecksum128.of(0xFFFFFFFFFFFFFFFFL, 0xFFFFFFFFFFFF0000L))
     .setTableId(GenTableId.of(20));
         OFBsnGentableClearRequest bsnGentableClearRequestBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED);
+        ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFBsnGentableClearRequest bsnGentableClearRequestRead = OFBsnGentableClearRequestVer13.READER.readFrom(input);
@@ -81,14 +79,14 @@ public class OFBsnGentableClearRequestVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED);
+       ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFBsnGentableClearRequest bsnGentableClearRequest = OFBsnGentableClearRequestVer13.READER.readFrom(input);
        assertEquals(BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ByteBuf bb = Unpooled.buffer();
+       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
        bsnGentableClearRequest.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

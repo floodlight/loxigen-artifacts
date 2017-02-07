@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -78,16 +76,12 @@ public class OFErrorMsgsVer11 implements OFErrorMsgs {
         return new OFTableModFailedErrorMsgVer11.Builder().setXid(nextXid());
     }
 
+    public OFExperimenterErrorMsg.Builder buildExperimenterErrorMsg() {
+        throw new UnsupportedOperationException("OFExperimenterErrorMsg not supported in version 1.1");
+    }
+
     public OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() {
         throw new UnsupportedOperationException("OFRoleRequestFailedErrorMsg not supported in version 1.1");
-    }
-
-    public OFBsnError.Builder buildBsnError() {
-        throw new UnsupportedOperationException("OFBsnError not supported in version 1.1");
-    }
-
-    public OFBsnGentableError.Builder buildBsnGentableError() {
-        throw new UnsupportedOperationException("OFBsnGentableError not supported in version 1.1");
     }
 
     public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {
@@ -96,22 +90,6 @@ public class OFErrorMsgsVer11 implements OFErrorMsgs {
 
     public OFTableFeaturesFailedErrorMsg.Builder buildTableFeaturesFailedErrorMsg() {
         throw new UnsupportedOperationException("OFTableFeaturesFailedErrorMsg not supported in version 1.1");
-    }
-
-    public OFAsyncConfigFailedErrorMsg.Builder buildAsyncConfigFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFAsyncConfigFailedErrorMsg not supported in version 1.1");
-    }
-
-    public OFBadPropertyErrorMsg.Builder buildBadPropertyErrorMsg() {
-        throw new UnsupportedOperationException("OFBadPropertyErrorMsg not supported in version 1.1");
-    }
-
-    public OFBundleFailedErrorMsg.Builder buildBundleFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFBundleFailedErrorMsg not supported in version 1.1");
-    }
-
-    public OFFlowMonitorFailedErrorMsg.Builder buildFlowMonitorFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFFlowMonitorFailedErrorMsg not supported in version 1.1");
     }
 
     public OFMessageReader<OFErrorMsg> getReader() {

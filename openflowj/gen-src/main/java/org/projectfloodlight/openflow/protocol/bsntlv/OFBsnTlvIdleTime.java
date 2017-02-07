@@ -18,21 +18,19 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFBsnTlvIdleTime extends OFObject, OFBsnTlv {
     int getType();
     U64 getValue();
     OFVersion getVersion();
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnTlv.Builder {

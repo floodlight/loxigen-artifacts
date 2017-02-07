@@ -18,18 +18,15 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.List;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -79,45 +76,6 @@ class OFPortStatsEntryVer13 implements OFPortStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFPortStatsEntryVer13(OFPort portNo, U64 rxPackets, U64 txPackets, U64 rxBytes, U64 txBytes, U64 rxDropped, U64 txDropped, U64 rxErrors, U64 txErrors, U64 rxFrameErr, U64 rxOverErr, U64 rxCrcErr, U64 collisions, long durationSec, long durationNsec) {
-        if(portNo == null) {
-            throw new NullPointerException("OFPortStatsEntryVer13: property portNo cannot be null");
-        }
-        if(rxPackets == null) {
-            throw new NullPointerException("OFPortStatsEntryVer13: property rxPackets cannot be null");
-        }
-        if(txPackets == null) {
-            throw new NullPointerException("OFPortStatsEntryVer13: property txPackets cannot be null");
-        }
-        if(rxBytes == null) {
-            throw new NullPointerException("OFPortStatsEntryVer13: property rxBytes cannot be null");
-        }
-        if(txBytes == null) {
-            throw new NullPointerException("OFPortStatsEntryVer13: property txBytes cannot be null");
-        }
-        if(rxDropped == null) {
-            throw new NullPointerException("OFPortStatsEntryVer13: property rxDropped cannot be null");
-        }
-        if(txDropped == null) {
-            throw new NullPointerException("OFPortStatsEntryVer13: property txDropped cannot be null");
-        }
-        if(rxErrors == null) {
-            throw new NullPointerException("OFPortStatsEntryVer13: property rxErrors cannot be null");
-        }
-        if(txErrors == null) {
-            throw new NullPointerException("OFPortStatsEntryVer13: property txErrors cannot be null");
-        }
-        if(rxFrameErr == null) {
-            throw new NullPointerException("OFPortStatsEntryVer13: property rxFrameErr cannot be null");
-        }
-        if(rxOverErr == null) {
-            throw new NullPointerException("OFPortStatsEntryVer13: property rxOverErr cannot be null");
-        }
-        if(rxCrcErr == null) {
-            throw new NullPointerException("OFPortStatsEntryVer13: property rxCrcErr cannot be null");
-        }
-        if(collisions == null) {
-            throw new NullPointerException("OFPortStatsEntryVer13: property collisions cannot be null");
-        }
         this.portNo = portNo;
         this.rxPackets = rxPackets;
         this.txPackets = txPackets;
@@ -209,11 +167,6 @@ class OFPortStatsEntryVer13 implements OFPortStatsEntry {
     @Override
     public long getDurationNsec() {
         return durationNsec;
-    }
-
-    @Override
-    public List<OFPortStatsProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 
     @Override
@@ -430,15 +383,6 @@ class OFPortStatsEntryVer13 implements OFPortStatsEntry {
         this.durationNsec = durationNsec;
         this.durationNsecSet = true;
         return this;
-    }
-    @Override
-    public List<OFPortStatsProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setProperties(List<OFPortStatsProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {
@@ -712,15 +656,6 @@ class OFPortStatsEntryVer13 implements OFPortStatsEntry {
         return this;
     }
     @Override
-    public List<OFPortStatsProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setProperties(List<OFPortStatsProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
     }
@@ -796,7 +731,7 @@ class OFPortStatsEntryVer13 implements OFPortStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFPortStatsEntry> {
         @Override
-        public OFPortStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
             OFPort portNo = OFPort.read4Bytes(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
@@ -867,14 +802,14 @@ class OFPortStatsEntryVer13 implements OFPortStatsEntry {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFPortStatsEntryVer13> {
         @Override
-        public void write(ByteBuf bb, OFPortStatsEntryVer13 message) {
+        public void write(ChannelBuffer bb, OFPortStatsEntryVer13 message) {
             message.portNo.write4Bytes(bb);
             // pad: 4 bytes
             bb.writeZero(4);

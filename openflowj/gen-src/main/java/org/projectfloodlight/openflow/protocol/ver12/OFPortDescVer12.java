@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -29,9 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import java.util.List;
-import javax.annotation.Nonnull;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -73,33 +69,6 @@ class OFPortDescVer12 implements OFPortDesc {
 
     // package private constructor - used by readers, builders, and factory
     OFPortDescVer12(OFPort portNo, MacAddress hwAddr, String name, Set<OFPortConfig> config, Set<OFPortState> state, Set<OFPortFeatures> curr, Set<OFPortFeatures> advertised, Set<OFPortFeatures> supported, Set<OFPortFeatures> peer, long currSpeed, long maxSpeed) {
-        if(portNo == null) {
-            throw new NullPointerException("OFPortDescVer12: property portNo cannot be null");
-        }
-        if(hwAddr == null) {
-            throw new NullPointerException("OFPortDescVer12: property hwAddr cannot be null");
-        }
-        if(name == null) {
-            throw new NullPointerException("OFPortDescVer12: property name cannot be null");
-        }
-        if(config == null) {
-            throw new NullPointerException("OFPortDescVer12: property config cannot be null");
-        }
-        if(state == null) {
-            throw new NullPointerException("OFPortDescVer12: property state cannot be null");
-        }
-        if(curr == null) {
-            throw new NullPointerException("OFPortDescVer12: property curr cannot be null");
-        }
-        if(advertised == null) {
-            throw new NullPointerException("OFPortDescVer12: property advertised cannot be null");
-        }
-        if(supported == null) {
-            throw new NullPointerException("OFPortDescVer12: property supported cannot be null");
-        }
-        if(peer == null) {
-            throw new NullPointerException("OFPortDescVer12: property peer cannot be null");
-        }
         this.portNo = portNo;
         this.hwAddr = hwAddr;
         this.name = name;
@@ -170,43 +139,11 @@ class OFPortDescVer12 implements OFPortDesc {
     }
 
     @Override
-    public List<OFPortDescProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
-    }
-
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_12;
     }
 
 
-
-    /**
-     * Returns true if the port is up, i.e., it's neither administratively
-     * down nor link down. It currently does NOT take STP state into
-     * consideration
-     * @return whether the port is up
-     */
-    public boolean isEnabled() {
-        return (!state.contains(OFPortState.LINK_DOWN) && !config.contains(OFPortConfig.PORT_DOWN));
-    }
-
-    /**
-     * Returns the current generation ID of this port.
-     *
-     * The generationId is reported by the switch as a @{link OFPortDescProp} in
-     * {@link OFPortDescStatsReply} and {@link OFPortStatus} messages. If the
-     * current OFPortDesc does not contain a generation Id, returns U64.ZERO;
-     *
-     * For OpenFlow versions earlier than 1.4, always returns U64.ZERO;
-     *
-     * @return the generation ID or U64.NULL if not reported
-     * @since 1.4
-     */
-     @Nonnull
-     public U64 getBsnGenerationId() {
-         return U64.ZERO;
-     }
 
     public OFPortDesc.Builder createBuilder() {
         return new BuilderWithParent(this);
@@ -363,15 +300,6 @@ class OFPortDescVer12 implements OFPortDesc {
         this.maxSpeed = maxSpeed;
         this.maxSpeedSet = true;
         return this;
-    }
-    @Override
-    public List<OFPortDescProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
-    }
-
-    @Override
-    public OFPortDesc.Builder setProperties(List<OFPortDescProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
     @Override
     public OFVersion getVersion() {
@@ -577,15 +505,6 @@ class OFPortDescVer12 implements OFPortDesc {
         return this;
     }
     @Override
-    public List<OFPortDescProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
-    }
-
-    @Override
-    public OFPortDesc.Builder setProperties(List<OFPortDescProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.2");
-    }
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_12;
     }
@@ -645,7 +564,7 @@ class OFPortDescVer12 implements OFPortDesc {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFPortDesc> {
         @Override
-        public OFPortDesc readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortDesc readFrom(ChannelBuffer bb) throws OFParseError {
             OFPort portNo = OFPort.read4Bytes(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
@@ -707,14 +626,14 @@ class OFPortDescVer12 implements OFPortDesc {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFPortDescVer12> {
         @Override
-        public void write(ByteBuf bb, OFPortDescVer12 message) {
+        public void write(ChannelBuffer bb, OFPortDescVer12 message) {
             message.portNo.write4Bytes(bb);
             // pad: 4 bytes
             bb.writeZero(4);

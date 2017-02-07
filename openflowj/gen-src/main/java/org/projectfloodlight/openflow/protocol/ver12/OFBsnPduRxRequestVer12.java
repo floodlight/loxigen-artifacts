@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 import java.util.Arrays;
@@ -59,12 +57,6 @@ class OFBsnPduRxRequestVer12 implements OFBsnPduRxRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnPduRxRequestVer12(long xid, long timeoutMs, OFPort portNo, short slotNum, byte[] data) {
-        if(portNo == null) {
-            throw new NullPointerException("OFBsnPduRxRequestVer12: property portNo cannot be null");
-        }
-        if(data == null) {
-            throw new NullPointerException("OFBsnPduRxRequestVer12: property data cannot be null");
-        }
         this.xid = xid;
         this.timeoutMs = timeoutMs;
         this.portNo = portNo;
@@ -361,7 +353,7 @@ class OFBsnPduRxRequestVer12 implements OFBsnPduRxRequest {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnPduRxRequest> {
         @Override
-        public OFBsnPduRxRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnPduRxRequest readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -438,14 +430,14 @@ class OFBsnPduRxRequestVer12 implements OFBsnPduRxRequest {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnPduRxRequestVer12> {
         @Override
-        public void write(ByteBuf bb, OFBsnPduRxRequestVer12 message) {
+        public void write(ChannelBuffer bb, OFBsnPduRxRequestVer12 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
@@ -517,49 +509,11 @@ class OFBsnPduRxRequestVer12 implements OFBsnPduRxRequest {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnPduRxRequestVer12 other = (OFBsnPduRxRequestVer12) obj;
-
-        // ignore XID
-        if( timeoutMs != other.timeoutMs)
-            return false;
-        if (portNo == null) {
-            if (other.portNo != null)
-                return false;
-        } else if (!portNo.equals(other.portNo))
-            return false;
-        if( slotNum != other.slotNum)
-            return false;
-        if (!Arrays.equals(data, other.data))
-                return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime *  (int) (timeoutMs ^ (timeoutMs >>> 32));
-        result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
-        result = prime * result + slotNum;
-        result = prime * result + Arrays.hashCode(data);
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime *  (int) (timeoutMs ^ (timeoutMs >>> 32));
         result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
         result = prime * result + slotNum;

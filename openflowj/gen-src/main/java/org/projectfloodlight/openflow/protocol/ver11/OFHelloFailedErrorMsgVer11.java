@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,9 +26,10 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
+import java.util.Arrays;
 
 class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
     private static final Logger logger = LoggerFactory.getLogger(OFHelloFailedErrorMsgVer11.class);
@@ -39,22 +38,16 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
     final static int MINIMUM_LENGTH = 12;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static OFErrorCauseData DEFAULT_DATA = OFErrorCauseData.NONE;
+        private final static byte[] DEFAULT_DATA = new byte[0];
 
     // OF message fields
     private final long xid;
     private final OFHelloFailedCode code;
-    private final OFErrorCauseData data;
+    private final byte[] data;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFHelloFailedErrorMsgVer11(long xid, OFHelloFailedCode code, OFErrorCauseData data) {
-        if(code == null) {
-            throw new NullPointerException("OFHelloFailedErrorMsgVer11: property code cannot be null");
-        }
-        if(data == null) {
-            throw new NullPointerException("OFHelloFailedErrorMsgVer11: property data cannot be null");
-        }
+    OFHelloFailedErrorMsgVer11(long xid, OFHelloFailedCode code, byte[] data) {
         this.xid = xid;
         this.code = code;
         this.data = data;
@@ -87,7 +80,7 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
     }
 
     @Override
-    public OFErrorCauseData getData() {
+    public byte[] getData() {
         return data;
     }
 
@@ -106,7 +99,7 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
         private boolean codeSet;
         private OFHelloFailedCode code;
         private boolean dataSet;
-        private OFErrorCauseData data;
+        private byte[] data;
 
         BuilderWithParent(OFHelloFailedErrorMsgVer11 parentMessage) {
             this.parentMessage = parentMessage;
@@ -150,12 +143,12 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
         return this;
     }
     @Override
-    public OFErrorCauseData getData() {
+    public byte[] getData() {
         return data;
     }
 
     @Override
-    public OFHelloFailedErrorMsg.Builder setData(OFErrorCauseData data) {
+    public OFHelloFailedErrorMsg.Builder setData(byte[] data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -168,7 +161,7 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
                 OFHelloFailedCode code = this.codeSet ? this.code : parentMessage.code;
                 if(code == null)
                     throw new NullPointerException("Property code must not be null");
-                OFErrorCauseData data = this.dataSet ? this.data : parentMessage.data;
+                byte[] data = this.dataSet ? this.data : parentMessage.data;
                 if(data == null)
                     throw new NullPointerException("Property data must not be null");
 
@@ -189,7 +182,7 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
         private boolean codeSet;
         private OFHelloFailedCode code;
         private boolean dataSet;
-        private OFErrorCauseData data;
+        private byte[] data;
 
     @Override
     public OFVersion getVersion() {
@@ -229,12 +222,12 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
         return this;
     }
     @Override
-    public OFErrorCauseData getData() {
+    public byte[] getData() {
         return data;
     }
 
     @Override
-    public OFHelloFailedErrorMsg.Builder setData(OFErrorCauseData data) {
+    public OFHelloFailedErrorMsg.Builder setData(byte[] data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -247,7 +240,7 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
                 throw new IllegalStateException("Property code doesn't have default value -- must be set");
             if(code == null)
                 throw new NullPointerException("Property code must not be null");
-            OFErrorCauseData data = this.dataSet ? this.data : DEFAULT_DATA;
+            byte[] data = this.dataSet ? this.data : DEFAULT_DATA;
             if(data == null)
                 throw new NullPointerException("Property data must not be null");
 
@@ -265,7 +258,7 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFHelloFailedErrorMsg> {
         @Override
-        public OFHelloFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFHelloFailedErrorMsg readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -291,7 +284,7 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
             if(errType != (short) 0x0)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.HELLO_FAILED(0), got="+errType);
             OFHelloFailedCode code = OFHelloFailedCodeSerializerVer11.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_11);
+            byte[] data = ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
 
             OFHelloFailedErrorMsgVer11 helloFailedErrorMsgVer11 = new OFHelloFailedErrorMsgVer11(
                     xid,
@@ -322,19 +315,19 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
             // fixed value property errType = 0
             sink.putShort((short) 0x0);
             OFHelloFailedCodeSerializerVer11.putTo(message.code, sink);
-            message.data.putTo(sink);
+            sink.putBytes(message.data);
         }
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFHelloFailedErrorMsgVer11> {
         @Override
-        public void write(ByteBuf bb, OFHelloFailedErrorMsgVer11 message) {
+        public void write(ChannelBuffer bb, OFHelloFailedErrorMsgVer11 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 2
             bb.writeByte((byte) 0x2);
@@ -348,7 +341,7 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
             // fixed value property errType = 0
             bb.writeShort((short) 0x0);
             OFHelloFailedCodeSerializerVer11.writeTo(bb, message.code);
-            message.data.writeTo(bb);
+            bb.writeBytes(message.data);
 
             // update length field
             int length = bb.writerIndex() - startIndex;
@@ -364,7 +357,7 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
         b.append(", ");
         b.append("code=").append(code);
         b.append(", ");
-        b.append("data=").append(data);
+        b.append("data=").append(Arrays.toString(data));
         b.append(")");
         return b.toString();
     }
@@ -386,35 +379,8 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
                 return false;
         } else if (!code.equals(other.code))
             return false;
-        if (data == null) {
-            if (other.data != null)
+        if (!Arrays.equals(data, other.data))
                 return false;
-        } else if (!data.equals(other.data))
-            return false;
-        return true;
-    }
-
-    @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFHelloFailedErrorMsgVer11 other = (OFHelloFailedErrorMsgVer11) obj;
-
-        // ignore XID
-        if (code == null) {
-            if (other.code != null)
-                return false;
-        } else if (!code.equals(other.code))
-            return false;
-        if (data == null) {
-            if (other.data != null)
-                return false;
-        } else if (!data.equals(other.data))
-            return false;
         return true;
     }
 
@@ -425,18 +391,7 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
 
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((code == null) ? 0 : code.hashCode());
-        result = prime * result + ((data == null) ? 0 : data.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
-        result = prime * result + ((code == null) ? 0 : code.hashCode());
-        result = prime * result + ((data == null) ? 0 : data.hashCode());
+        result = prime * result + Arrays.hashCode(data);
         return result;
     }
 

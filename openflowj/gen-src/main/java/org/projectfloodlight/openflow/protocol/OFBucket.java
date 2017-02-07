@@ -18,42 +18,34 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.List;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFBucket extends OFObject {
-    int getWeight() throws UnsupportedOperationException;
-    OFPort getWatchPort() throws UnsupportedOperationException;
-    OFGroup getWatchGroup() throws UnsupportedOperationException;
+    int getWeight();
+    OFPort getWatchPort();
+    OFGroup getWatchGroup();
     List<OFAction> getActions();
-    OFGroupBucket getBucketId() throws UnsupportedOperationException;
-    List<OFGroupBucketProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder  {
         OFBucket build();
-        int getWeight() throws UnsupportedOperationException;
-        Builder setWeight(int weight) throws UnsupportedOperationException;
-        OFPort getWatchPort() throws UnsupportedOperationException;
-        Builder setWatchPort(OFPort watchPort) throws UnsupportedOperationException;
-        OFGroup getWatchGroup() throws UnsupportedOperationException;
-        Builder setWatchGroup(OFGroup watchGroup) throws UnsupportedOperationException;
+        int getWeight();
+        Builder setWeight(int weight);
+        OFPort getWatchPort();
+        Builder setWatchPort(OFPort watchPort);
+        OFGroup getWatchGroup();
+        Builder setWatchGroup(OFGroup watchGroup);
         List<OFAction> getActions();
         Builder setActions(List<OFAction> actions);
-        OFGroupBucket getBucketId() throws UnsupportedOperationException;
-        Builder setBucketId(OFGroupBucket bucketId) throws UnsupportedOperationException;
-        List<OFGroupBucketProp> getProperties() throws UnsupportedOperationException;
-        Builder setProperties(List<OFGroupBucketProp> properties) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

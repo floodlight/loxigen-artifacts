@@ -18,16 +18,13 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
-import java.util.List;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFPortDesc extends OFObject {
     OFPort getPortNo();
@@ -35,39 +32,15 @@ public interface OFPortDesc extends OFObject {
     String getName();
     Set<OFPortConfig> getConfig();
     Set<OFPortState> getState();
-    Set<OFPortFeatures> getCurr() throws UnsupportedOperationException;
-    Set<OFPortFeatures> getAdvertised() throws UnsupportedOperationException;
-    Set<OFPortFeatures> getSupported() throws UnsupportedOperationException;
-    Set<OFPortFeatures> getPeer() throws UnsupportedOperationException;
+    Set<OFPortFeatures> getCurr();
+    Set<OFPortFeatures> getAdvertised();
+    Set<OFPortFeatures> getSupported();
+    Set<OFPortFeatures> getPeer();
     long getCurrSpeed() throws UnsupportedOperationException;
     long getMaxSpeed() throws UnsupportedOperationException;
-    List<OFPortDescProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
-    // Additional methods
 
-    /**
-     * Returns true if the port is up, i.e., it's neither administratively
-     * down nor link down. It currently does NOT take STP state into
-     * consideration
-     * @return whether the port is up
-     */
-    boolean isEnabled();
-
-    /**
-     * Returns the current generation ID of this port.
-     *
-     * The generationId is reported by the switch as a @{link OFPortDescProp} in
-     * {@link OFPortDescStatsReply} and {@link OFPortStatus} messages. If the
-     * current OFPortDesc does not contain a generation Id, returns U64.ZERO;
-     *
-     * For OpenFlow versions earlier than 1.4, always returns U64.ZERO;
-     *
-     * @return the generation ID or U64.ZERO if not reported
-     * @since 1.4
-     */
-     public U64 getBsnGenerationId();
-
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder  {
@@ -82,20 +55,18 @@ public interface OFPortDesc extends OFObject {
         Builder setConfig(Set<OFPortConfig> config);
         Set<OFPortState> getState();
         Builder setState(Set<OFPortState> state);
-        Set<OFPortFeatures> getCurr() throws UnsupportedOperationException;
-        Builder setCurr(Set<OFPortFeatures> curr) throws UnsupportedOperationException;
-        Set<OFPortFeatures> getAdvertised() throws UnsupportedOperationException;
-        Builder setAdvertised(Set<OFPortFeatures> advertised) throws UnsupportedOperationException;
-        Set<OFPortFeatures> getSupported() throws UnsupportedOperationException;
-        Builder setSupported(Set<OFPortFeatures> supported) throws UnsupportedOperationException;
-        Set<OFPortFeatures> getPeer() throws UnsupportedOperationException;
-        Builder setPeer(Set<OFPortFeatures> peer) throws UnsupportedOperationException;
+        Set<OFPortFeatures> getCurr();
+        Builder setCurr(Set<OFPortFeatures> curr);
+        Set<OFPortFeatures> getAdvertised();
+        Builder setAdvertised(Set<OFPortFeatures> advertised);
+        Set<OFPortFeatures> getSupported();
+        Builder setSupported(Set<OFPortFeatures> supported);
+        Set<OFPortFeatures> getPeer();
+        Builder setPeer(Set<OFPortFeatures> peer);
         long getCurrSpeed() throws UnsupportedOperationException;
         Builder setCurrSpeed(long currSpeed) throws UnsupportedOperationException;
         long getMaxSpeed() throws UnsupportedOperationException;
         Builder setMaxSpeed(long maxSpeed) throws UnsupportedOperationException;
-        List<OFPortDescProp> getProperties() throws UnsupportedOperationException;
-        Builder setProperties(List<OFPortDescProp> properties) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

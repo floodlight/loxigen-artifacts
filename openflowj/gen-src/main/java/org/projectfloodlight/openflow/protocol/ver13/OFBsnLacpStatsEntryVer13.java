@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -72,15 +70,6 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnLacpStatsEntryVer13(OFPort portNo, int actorSysPriority, MacAddress actorSysMac, int actorPortPriority, int actorPortNum, int actorKey, short convergenceStatus, int partnerSysPriority, MacAddress partnerSysMac, int partnerPortPriority, int partnerPortNum, int partnerKey) {
-        if(portNo == null) {
-            throw new NullPointerException("OFBsnLacpStatsEntryVer13: property portNo cannot be null");
-        }
-        if(actorSysMac == null) {
-            throw new NullPointerException("OFBsnLacpStatsEntryVer13: property actorSysMac cannot be null");
-        }
-        if(partnerSysMac == null) {
-            throw new NullPointerException("OFBsnLacpStatsEntryVer13: property partnerSysMac cannot be null");
-        }
         this.portNo = portNo;
         this.actorSysPriority = actorSysPriority;
         this.actorSysMac = actorSysMac;
@@ -588,7 +577,7 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnLacpStatsEntry> {
         @Override
-        public OFBsnLacpStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnLacpStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
             OFPort portNo = OFPort.read4Bytes(bb);
             int actorSysPriority = U16.f(bb.readShort());
             MacAddress actorSysMac = MacAddress.read6Bytes(bb);
@@ -653,14 +642,14 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnLacpStatsEntryVer13> {
         @Override
-        public void write(ByteBuf bb, OFBsnLacpStatsEntryVer13 message) {
+        public void write(ChannelBuffer bb, OFBsnLacpStatsEntryVer13 message) {
             message.portNo.write4Bytes(bb);
             bb.writeShort(U16.t(message.actorSysPriority));
             message.actorSysMac.write6Bytes(bb);

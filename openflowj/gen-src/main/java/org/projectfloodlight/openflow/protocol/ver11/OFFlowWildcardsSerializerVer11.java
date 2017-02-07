@@ -18,16 +18,14 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFFlowWildcards;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import java.util.EnumSet;
 import java.util.Collections;
@@ -47,7 +45,7 @@ public class OFFlowWildcardsSerializerVer11 {
     public final static int MPLS_LABEL_VAL = 0x100;
     public final static int MPLS_TC_VAL = 0x200;
 
-    public static Set<OFFlowWildcards> readFrom(ByteBuf bb) throws OFParseError {
+    public static Set<OFFlowWildcards> readFrom(ChannelBuffer bb) throws OFParseError {
         try {
             return ofWireValue(bb.readInt());
         } catch (IllegalArgumentException e) {
@@ -55,7 +53,7 @@ public class OFFlowWildcardsSerializerVer11 {
         }
     }
 
-    public static void writeTo(ByteBuf bb, Set<OFFlowWildcards> set) {
+    public static void writeTo(ChannelBuffer bb, Set<OFFlowWildcards> set) {
         bb.writeInt(toWireValue(set));
     }
 

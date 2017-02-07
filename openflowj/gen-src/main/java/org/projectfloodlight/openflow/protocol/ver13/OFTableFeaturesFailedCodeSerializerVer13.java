@@ -18,15 +18,13 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFTableFeaturesFailedCode;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFTableFeaturesFailedCodeSerializerVer13 {
@@ -38,7 +36,7 @@ public class OFTableFeaturesFailedCodeSerializerVer13 {
     public final static short BAD_ARGUMENT_VAL = (short) 0x4;
     public final static short EPERM_VAL = (short) 0x5;
 
-    public static OFTableFeaturesFailedCode readFrom(ByteBuf bb) throws OFParseError {
+    public static OFTableFeaturesFailedCode readFrom(ChannelBuffer bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -46,7 +44,7 @@ public class OFTableFeaturesFailedCodeSerializerVer13 {
         }
     }
 
-    public static void writeTo(ByteBuf bb, OFTableFeaturesFailedCode e) {
+    public static void writeTo(ChannelBuffer bb, OFTableFeaturesFailedCode e) {
         bb.writeShort(toWireValue(e));
     }
 

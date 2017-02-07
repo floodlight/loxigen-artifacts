@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -89,11 +87,6 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
     @Override
     public short getMaxColor() {
         return maxColor;
-    }
-
-    @Override
-    public long getFeatures()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property features not supported in version 1.3");
     }
 
     @Override
@@ -180,15 +173,6 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
         this.maxColor = maxColor;
         this.maxColorSet = true;
         return this;
-    }
-    @Override
-    public long getFeatures()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property features not supported in version 1.3");
-    }
-
-    @Override
-    public OFMeterFeatures.Builder setFeatures(long features) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property features not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {
@@ -286,15 +270,6 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
         return this;
     }
     @Override
-    public long getFeatures()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property features not supported in version 1.3");
-    }
-
-    @Override
-    public OFMeterFeatures.Builder setFeatures(long features) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property features not supported in version 1.3");
-    }
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
     }
@@ -324,7 +299,7 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFMeterFeatures> {
         @Override
-        public OFMeterFeatures readFrom(ByteBuf bb) throws OFParseError {
+        public OFMeterFeatures readFrom(ChannelBuffer bb) throws OFParseError {
             long maxMeter = U32.f(bb.readInt());
             long bandTypes = U32.f(bb.readInt());
             long capabilities = U32.f(bb.readInt());
@@ -365,14 +340,14 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFMeterFeaturesVer13> {
         @Override
-        public void write(ByteBuf bb, OFMeterFeaturesVer13 message) {
+        public void write(ChannelBuffer bb, OFMeterFeaturesVer13 message) {
             bb.writeInt(U32.t(message.maxMeter));
             bb.writeInt(U32.t(message.bandTypes));
             bb.writeInt(U32.t(message.capabilities));

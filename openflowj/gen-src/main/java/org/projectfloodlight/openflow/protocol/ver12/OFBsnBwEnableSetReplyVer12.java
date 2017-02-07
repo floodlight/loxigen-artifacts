@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -270,7 +268,7 @@ class OFBsnBwEnableSetReplyVer12 implements OFBsnBwEnableSetReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnBwEnableSetReply> {
         @Override
-        public OFBsnBwEnableSetReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnBwEnableSetReply readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -339,14 +337,14 @@ class OFBsnBwEnableSetReplyVer12 implements OFBsnBwEnableSetReply {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnBwEnableSetReplyVer12> {
         @Override
-        public void write(ByteBuf bb, OFBsnBwEnableSetReplyVer12 message) {
+        public void write(ChannelBuffer bb, OFBsnBwEnableSetReplyVer12 message) {
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
             // fixed value property type = 4
@@ -397,40 +395,11 @@ class OFBsnBwEnableSetReplyVer12 implements OFBsnBwEnableSetReply {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnBwEnableSetReplyVer12 other = (OFBsnBwEnableSetReplyVer12) obj;
-
-        // ignore XID
-        if( enable != other.enable)
-            return false;
-        if( status != other.status)
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime *  (int) (enable ^ (enable >>> 32));
-        result = prime *  (int) (status ^ (status >>> 32));
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime *  (int) (enable ^ (enable >>> 32));
         result = prime *  (int) (status ^ (status >>> 32));
         return result;

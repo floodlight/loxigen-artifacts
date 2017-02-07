@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -41,10 +39,5 @@ public enum OFBadRequestCode {
      IS_SLAVE,
      BAD_PORT,
      BAD_PACKET,
-     MULTIPART_BUFFER_OVERFLOW,
-     MULTIPART_REQUEST_TIMEOUT,
-     MULTIPART_REPLY_TIMEOUT,
-     MULTIPART_BAD_SCHED,
-     PIPELINE_FIELDS_ONLY,
-     UNKNOWN;
+     MULTIPART_BUFFER_OVERFLOW;
 }

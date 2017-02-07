@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -30,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -41,32 +39,20 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
     final static int MINIMUM_LENGTH = 36;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static U128 DEFAULT_CHECKSUM = U128.ZERO;
+        private final static OFChecksum128 DEFAULT_CHECKSUM = OFChecksum128.ZERO;
         private final static List<OFBsnTlv> DEFAULT_KEY = ImmutableList.<OFBsnTlv>of();
         private final static List<OFBsnTlv> DEFAULT_VALUE = ImmutableList.<OFBsnTlv>of();
 
     // OF message fields
     private final long xid;
     private final GenTableId tableId;
-    private final U128 checksum;
+    private final OFChecksum128 checksum;
     private final List<OFBsnTlv> key;
     private final List<OFBsnTlv> value;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnGentableEntryAddVer13(long xid, GenTableId tableId, U128 checksum, List<OFBsnTlv> key, List<OFBsnTlv> value) {
-        if(tableId == null) {
-            throw new NullPointerException("OFBsnGentableEntryAddVer13: property tableId cannot be null");
-        }
-        if(checksum == null) {
-            throw new NullPointerException("OFBsnGentableEntryAddVer13: property checksum cannot be null");
-        }
-        if(key == null) {
-            throw new NullPointerException("OFBsnGentableEntryAddVer13: property key cannot be null");
-        }
-        if(value == null) {
-            throw new NullPointerException("OFBsnGentableEntryAddVer13: property value cannot be null");
-        }
+    OFBsnGentableEntryAddVer13(long xid, GenTableId tableId, OFChecksum128 checksum, List<OFBsnTlv> key, List<OFBsnTlv> value) {
         this.xid = xid;
         this.tableId = tableId;
         this.checksum = checksum;
@@ -106,7 +92,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
     }
 
     @Override
-    public U128 getChecksum() {
+    public OFChecksum128 getChecksum() {
         return checksum;
     }
 
@@ -135,7 +121,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         private boolean tableIdSet;
         private GenTableId tableId;
         private boolean checksumSet;
-        private U128 checksum;
+        private OFChecksum128 checksum;
         private boolean keySet;
         private List<OFBsnTlv> key;
         private boolean valueSet;
@@ -188,12 +174,12 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         return this;
     }
     @Override
-    public U128 getChecksum() {
+    public OFChecksum128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFBsnGentableEntryAdd.Builder setChecksum(U128 checksum) {
+    public OFBsnGentableEntryAdd.Builder setChecksum(OFChecksum128 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
         return this;
@@ -228,7 +214,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
                 GenTableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
                 if(tableId == null)
                     throw new NullPointerException("Property tableId must not be null");
-                U128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
+                OFChecksum128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
                 if(checksum == null)
                     throw new NullPointerException("Property checksum must not be null");
                 List<OFBsnTlv> key = this.keySet ? this.key : parentMessage.key;
@@ -257,7 +243,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         private boolean tableIdSet;
         private GenTableId tableId;
         private boolean checksumSet;
-        private U128 checksum;
+        private OFChecksum128 checksum;
         private boolean keySet;
         private List<OFBsnTlv> key;
         private boolean valueSet;
@@ -306,12 +292,12 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         return this;
     }
     @Override
-    public U128 getChecksum() {
+    public OFChecksum128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFBsnGentableEntryAdd.Builder setChecksum(U128 checksum) {
+    public OFBsnGentableEntryAdd.Builder setChecksum(OFChecksum128 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
         return this;
@@ -346,7 +332,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
                 throw new IllegalStateException("Property tableId doesn't have default value -- must be set");
             if(tableId == null)
                 throw new NullPointerException("Property tableId must not be null");
-            U128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
+            OFChecksum128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
             if(checksum == null)
                 throw new NullPointerException("Property checksum must not be null");
             List<OFBsnTlv> key = this.keySet ? this.key : DEFAULT_KEY;
@@ -372,7 +358,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnGentableEntryAdd> {
         @Override
-        public OFBsnGentableEntryAdd readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGentableEntryAdd readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -403,7 +389,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
                 throw new OFParseError("Wrong subtype: Expected=0x2eL(0x2eL), got="+subtype);
             GenTableId tableId = GenTableId.read2Bytes(bb);
             int keyLength = U16.f(bb.readShort());
-            U128 checksum = U128.read16Bytes(bb);
+            OFChecksum128 checksum = OFChecksum128.read16Bytes(bb);
             List<OFBsnTlv> key = ChannelUtils.readList(bb, keyLength, OFBsnTlvVer13.READER);
             List<OFBsnTlv> value = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnTlvVer13.READER);
 
@@ -448,14 +434,14 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnGentableEntryAddVer13> {
         @Override
-        public void write(ByteBuf bb, OFBsnGentableEntryAddVer13 message) {
+        public void write(ChannelBuffer bb, OFBsnGentableEntryAddVer13 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
@@ -542,58 +528,11 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnGentableEntryAddVer13 other = (OFBsnGentableEntryAddVer13) obj;
-
-        // ignore XID
-        if (tableId == null) {
-            if (other.tableId != null)
-                return false;
-        } else if (!tableId.equals(other.tableId))
-            return false;
-        if (checksum == null) {
-            if (other.checksum != null)
-                return false;
-        } else if (!checksum.equals(other.checksum))
-            return false;
-        if (key == null) {
-            if (other.key != null)
-                return false;
-        } else if (!key.equals(other.key))
-            return false;
-        if (value == null) {
-            if (other.value != null)
-                return false;
-        } else if (!value.equals(other.value))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
-        result = prime * result + ((checksum == null) ? 0 : checksum.hashCode());
-        result = prime * result + ((key == null) ? 0 : key.hashCode());
-        result = prime * result + ((value == null) ? 0 : value.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((checksum == null) ? 0 : checksum.hashCode());
         result = prime * result + ((key == null) ? 0 : key.hashCode());

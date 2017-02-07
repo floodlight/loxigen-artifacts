@@ -19,14 +19,31 @@ test_match_1(void)
     of_match_v2_t *m_v2;
     of_match_v3_t *m_v3;
     of_match_v4_t *m_v4;
-    of_match_v5_t *m_v5;
     of_match_t match;
     int value = 1;
     int idx;
     uint32_t exp_value;
 
     /* Verify default values for ip mask map */
-    for (idx = 0; idx < 64; idx++) {
+    for (idx = 0; idx < OF_IP_MASK_MAP_COUNT; idx++) {
+        exp_value = (idx < 32) ? ~((1 << idx) - 1) : 0;
+        TEST_ASSERT(of_ip_index_to_mask(idx) == exp_value);
+        if (idx < 32) {
+            TEST_ASSERT(of_ip_mask_to_index(exp_value) == idx);
+        }
+    }
+
+    TEST_ASSERT(of_ip_mask_map_set(17, 0xabcdef00) == OF_ERROR_NONE);
+    TEST_ASSERT(of_ip_mask_to_index(0xabcdef00) == 17);
+    TEST_ASSERT(of_ip_index_to_mask(17) == 0xabcdef00);
+
+    TEST_ASSERT(of_ip_mask_map_set(62, 0xabcdefff) == OF_ERROR_NONE);
+    TEST_ASSERT(of_ip_mask_to_index(0xabcdefff) == 62);
+    TEST_ASSERT(of_ip_index_to_mask(62) == 0xabcdefff);
+
+    /* Test re-init */
+    of_ip_mask_map_init();
+    for (idx = 0; idx < OF_IP_MASK_MAP_COUNT; idx++) {
         exp_value = (idx < 32) ? ~((1 << idx) - 1) : 0;
         TEST_ASSERT(of_ip_index_to_mask(idx) == exp_value);
         if (idx < 32) {
@@ -62,13 +79,6 @@ test_match_1(void)
     TEST_OK(of_match_to_wire_match_v4(&match, m_v4));
     of_match_v4_delete(m_v4);
 
-    /* Create/populate/convert and delete for version OF_VERSION_1_4 */
-    m_v5 = of_match_v5_new(OF_VERSION_1_4);
-    TEST_ASSERT(m_v5 != NULL);
-    TEST_ASSERT((value = of_match_populate(&match, OF_VERSION_1_4, value)) > 0);
-    TEST_OK(of_match_to_wire_match_v5(&match, m_v5));
-    of_match_v5_delete(m_v5);
-
     return TEST_PASS;
 }
 
@@ -78,8 +88,7 @@ test_match_2(void)
     of_match_v1_t *m_v1;
     of_match_v2_t *m_v2;
     of_match_v3_t *m_v3;
-    of_match_v4_t *m_v4;
-    of_match_v5_t *m_v5;
+    of_match_v3_t *m_v4;
     of_match_t match1;
     of_match_t match2;
     int value = 1;
@@ -116,14 +125,6 @@ test_match_2(void)
     TEST_ASSERT(memcmp(&match1, &match2, sizeof(match1)) == 0);
     of_match_v4_delete(m_v4);
 
-    TEST_ASSERT((value = of_match_populate(&match1, OF_VERSION_1_4, value)) > 0);
-    m_v5 = of_match_v5_new(OF_VERSION_1_4);
-    TEST_ASSERT(m_v5 != NULL);
-    TEST_OK(of_match_to_wire_match_v5(&match1, m_v5));
-    TEST_OK(of_match_v5_to_match(m_v5, &match2));
-    TEST_ASSERT(memcmp(&match1, &match2, sizeof(match1)) == 0);
-    of_match_v5_delete(m_v5);
-
     return TEST_PASS;
 }
 
@@ -134,18 +135,12 @@ test_match_3(void)
     of_match_t match2;
     int value = 1;
     of_octets_t octets;
-    of_object_storage_t storage;
-    memset(&storage, 0, sizeof(storage));
-    storage.obj.wbuf = &storage.wbuf;
 
     /* Serialize to version OF_VERSION_1_0 */
     TEST_ASSERT((value = of_match_populate(&match1, OF_VERSION_1_0, value)) > 0);
     TEST_ASSERT(of_match_serialize(OF_VERSION_1_0, &match1, &octets) ==
         OF_ERROR_NONE);
-    storage.obj.wbuf->buf = octets.data;
-    storage.obj.wbuf->alloc_bytes = octets.bytes;
-    storage.obj.wbuf->current_bytes = octets.bytes;
-    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_0, &match2, &storage.obj, 0, octets.bytes) ==
+    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_0, &match2, &octets) ==
         OF_ERROR_NONE);
     TEST_ASSERT(memcmp(&match1, &match2, sizeof(match1)) == 0);
     FREE(octets.data);
@@ -154,10 +149,7 @@ test_match_3(void)
     TEST_ASSERT((value = of_match_populate(&match1, OF_VERSION_1_1, value)) > 0);
     TEST_ASSERT(of_match_serialize(OF_VERSION_1_1, &match1, &octets) ==
         OF_ERROR_NONE);
-    storage.obj.wbuf->buf = octets.data;
-    storage.obj.wbuf->alloc_bytes = octets.bytes;
-    storage.obj.wbuf->current_bytes = octets.bytes;
-    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_1, &match2, &storage.obj, 0, octets.bytes) ==
+    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_1, &match2, &octets) ==
         OF_ERROR_NONE);
     TEST_ASSERT(memcmp(&match1, &match2, sizeof(match1)) == 0);
     FREE(octets.data);
@@ -166,10 +158,7 @@ test_match_3(void)
     TEST_ASSERT((value = of_match_populate(&match1, OF_VERSION_1_2, value)) > 0);
     TEST_ASSERT(of_match_serialize(OF_VERSION_1_2, &match1, &octets) ==
         OF_ERROR_NONE);
-    storage.obj.wbuf->buf = octets.data;
-    storage.obj.wbuf->alloc_bytes = octets.bytes;
-    storage.obj.wbuf->current_bytes = octets.bytes;
-    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_2, &match2, &storage.obj, 0, octets.bytes) ==
+    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_2, &match2, &octets) ==
         OF_ERROR_NONE);
     TEST_ASSERT(memcmp(&match1, &match2, sizeof(match1)) == 0);
     FREE(octets.data);
@@ -178,22 +167,7 @@ test_match_3(void)
     TEST_ASSERT((value = of_match_populate(&match1, OF_VERSION_1_3, value)) > 0);
     TEST_ASSERT(of_match_serialize(OF_VERSION_1_3, &match1, &octets) ==
         OF_ERROR_NONE);
-    storage.obj.wbuf->buf = octets.data;
-    storage.obj.wbuf->alloc_bytes = octets.bytes;
-    storage.obj.wbuf->current_bytes = octets.bytes;
-    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_3, &match2, &storage.obj, 0, octets.bytes) ==
-        OF_ERROR_NONE);
-    TEST_ASSERT(memcmp(&match1, &match2, sizeof(match1)) == 0);
-    FREE(octets.data);
-
-    /* Serialize to version OF_VERSION_1_4 */
-    TEST_ASSERT((value = of_match_populate(&match1, OF_VERSION_1_4, value)) > 0);
-    TEST_ASSERT(of_match_serialize(OF_VERSION_1_4, &match1, &octets) ==
-        OF_ERROR_NONE);
-    storage.obj.wbuf->buf = octets.data;
-    storage.obj.wbuf->alloc_bytes = octets.bytes;
-    storage.obj.wbuf->current_bytes = octets.bytes;
-    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_4, &match2, &storage.obj, 0, octets.bytes) ==
+    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_3, &match2, &octets) ==
         OF_ERROR_NONE);
     TEST_ASSERT(memcmp(&match1, &match2, sizeof(match1)) == 0);
     FREE(octets.data);

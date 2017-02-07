@@ -8,11 +8,17 @@
 
 import struct
 import loxi
+import const
+import common
+import action
+import instruction
+import oxm
+import action_id
+import instruction_id
+import meter_band
+import bsn_tlv
 import util
 import loxi.generic_util
-
-import sys
-ofp = sys.modules['loxi.of13']
 
 class instruction(loxi.OFObject):
     subtypes = {}
@@ -44,7 +50,7 @@ class instruction(loxi.OFObject):
         obj.type = reader.read("!H")[0]
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         return obj
 
     def __eq__(self, other):
@@ -88,9 +94,9 @@ class apply_actions(instruction):
         assert(_type == 4)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         reader.skip(4)
-        obj.actions = loxi.generic_util.unpack_list(reader, ofp.action.action.unpack)
+        obj.actions = loxi.generic_util.unpack_list(reader, action.action.unpack)
         return obj
 
     def __eq__(self, other):
@@ -148,7 +154,7 @@ class experimenter(instruction):
         assert(_type == 65535)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         obj.experimenter = reader.read("!L")[0]
         obj.data = str(reader.read_all())
         return obj
@@ -207,7 +213,7 @@ class bsn(experimenter):
         assert(_type == 65535)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
         obj.subtype = reader.read("!L")[0]
@@ -255,7 +261,7 @@ class bsn_arp_offload(bsn):
         assert(_type == 65535)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
@@ -276,54 +282,6 @@ class bsn_arp_offload(bsn):
         q.text('}')
 
 bsn.subtypes[1] = bsn_arp_offload
-
-class bsn_auto_negotiation(bsn):
-    type = 65535
-    experimenter = 6035143
-    subtype = 11
-
-    def __init__(self):
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!H", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append(struct.pack("!L", self.experimenter))
-        packed.append(struct.pack("!L", self.subtype))
-        packed.append('\x00' * 4)
-        length = sum([len(x) for x in packed])
-        packed[1] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = bsn_auto_negotiation()
-        _type = reader.read("!H")[0]
-        assert(_type == 65535)
-        _len = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
-        _experimenter = reader.read("!L")[0]
-        assert(_experimenter == 6035143)
-        _subtype = reader.read("!L")[0]
-        assert(_subtype == 11)
-        reader.skip(4)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("bsn_auto_negotiation {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-            q.breakable()
-        q.text('}')
-
-bsn.subtypes[11] = bsn_auto_negotiation
 
 class bsn_deny(bsn):
     type = 65535
@@ -351,7 +309,7 @@ class bsn_deny(bsn):
         assert(_type == 65535)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
@@ -399,7 +357,7 @@ class bsn_dhcp_offload(bsn):
         assert(_type == 65535)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
@@ -420,54 +378,6 @@ class bsn_dhcp_offload(bsn):
         q.text('}')
 
 bsn.subtypes[2] = bsn_dhcp_offload
-
-class bsn_disable_l3(bsn):
-    type = 65535
-    experimenter = 6035143
-    subtype = 13
-
-    def __init__(self):
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!H", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append(struct.pack("!L", self.experimenter))
-        packed.append(struct.pack("!L", self.subtype))
-        packed.append('\x00' * 4)
-        length = sum([len(x) for x in packed])
-        packed[1] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = bsn_disable_l3()
-        _type = reader.read("!H")[0]
-        assert(_type == 65535)
-        _len = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
-        _experimenter = reader.read("!L")[0]
-        assert(_experimenter == 6035143)
-        _subtype = reader.read("!L")[0]
-        assert(_subtype == 13)
-        reader.skip(4)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("bsn_disable_l3 {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-            q.breakable()
-        q.text('}')
-
-bsn.subtypes[13] = bsn_disable_l3
 
 class bsn_disable_split_horizon_check(bsn):
     type = 65535
@@ -495,7 +405,7 @@ class bsn_disable_split_horizon_check(bsn):
         assert(_type == 65535)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
@@ -543,7 +453,7 @@ class bsn_disable_src_mac_check(bsn):
         assert(_type == 65535)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
@@ -564,212 +474,6 @@ class bsn_disable_src_mac_check(bsn):
         q.text('}')
 
 bsn.subtypes[0] = bsn_disable_src_mac_check
-
-class bsn_disable_vlan_counters(bsn):
-    type = 65535
-    experimenter = 6035143
-    subtype = 9
-
-    def __init__(self):
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!H", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append(struct.pack("!L", self.experimenter))
-        packed.append(struct.pack("!L", self.subtype))
-        packed.append('\x00' * 4)
-        length = sum([len(x) for x in packed])
-        packed[1] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = bsn_disable_vlan_counters()
-        _type = reader.read("!H")[0]
-        assert(_type == 65535)
-        _len = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
-        _experimenter = reader.read("!L")[0]
-        assert(_experimenter == 6035143)
-        _subtype = reader.read("!L")[0]
-        assert(_subtype == 9)
-        reader.skip(4)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("bsn_disable_vlan_counters {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-            q.breakable()
-        q.text('}')
-
-bsn.subtypes[9] = bsn_disable_vlan_counters
-
-class bsn_hash_select(bsn):
-    type = 65535
-    experimenter = 6035143
-    subtype = 15
-
-    def __init__(self, flags=None):
-        if flags != None:
-            self.flags = flags
-        else:
-            self.flags = 0
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!H", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append(struct.pack("!L", self.experimenter))
-        packed.append(struct.pack("!L", self.subtype))
-        packed.append(struct.pack("!L", self.flags))
-        length = sum([len(x) for x in packed])
-        packed[1] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = bsn_hash_select()
-        _type = reader.read("!H")[0]
-        assert(_type == 65535)
-        _len = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
-        _experimenter = reader.read("!L")[0]
-        assert(_experimenter == 6035143)
-        _subtype = reader.read("!L")[0]
-        assert(_subtype == 15)
-        obj.flags = reader.read("!L")[0]
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        if self.flags != other.flags: return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("bsn_hash_select {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-                q.text("flags = ");
-                q.text("%#x" % self.flags)
-            q.breakable()
-        q.text('}')
-
-bsn.subtypes[15] = bsn_hash_select
-
-class bsn_internal_priority(bsn):
-    type = 65535
-    experimenter = 6035143
-    subtype = 12
-
-    def __init__(self, value=None):
-        if value != None:
-            self.value = value
-        else:
-            self.value = 0
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!H", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append(struct.pack("!L", self.experimenter))
-        packed.append(struct.pack("!L", self.subtype))
-        packed.append(struct.pack("!L", self.value))
-        length = sum([len(x) for x in packed])
-        packed[1] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = bsn_internal_priority()
-        _type = reader.read("!H")[0]
-        assert(_type == 65535)
-        _len = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
-        _experimenter = reader.read("!L")[0]
-        assert(_experimenter == 6035143)
-        _subtype = reader.read("!L")[0]
-        assert(_subtype == 12)
-        obj.value = reader.read("!L")[0]
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        if self.value != other.value: return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("bsn_internal_priority {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-                q.text("value = ");
-                q.text("%#x" % self.value)
-            q.breakable()
-        q.text('}')
-
-bsn.subtypes[12] = bsn_internal_priority
-
-class bsn_ndp_offload(bsn):
-    type = 65535
-    experimenter = 6035143
-    subtype = 14
-
-    def __init__(self):
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!H", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append(struct.pack("!L", self.experimenter))
-        packed.append(struct.pack("!L", self.subtype))
-        packed.append('\x00' * 4)
-        length = sum([len(x) for x in packed])
-        packed[1] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = bsn_ndp_offload()
-        _type = reader.read("!H")[0]
-        assert(_type == 65535)
-        _len = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
-        _experimenter = reader.read("!L")[0]
-        assert(_experimenter == 6035143)
-        _subtype = reader.read("!L")[0]
-        assert(_subtype == 14)
-        reader.skip(4)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("bsn_ndp_offload {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-            q.breakable()
-        q.text('}')
-
-bsn.subtypes[14] = bsn_ndp_offload
 
 class bsn_packet_of_death(bsn):
     type = 65535
@@ -797,7 +501,7 @@ class bsn_packet_of_death(bsn):
         assert(_type == 65535)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
@@ -845,7 +549,7 @@ class bsn_permit(bsn):
         assert(_type == 65535)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
@@ -866,150 +570,6 @@ class bsn_permit(bsn):
         q.text('}')
 
 bsn.subtypes[4] = bsn_permit
-
-class bsn_prioritize_pdus(bsn):
-    type = 65535
-    experimenter = 6035143
-    subtype = 7
-
-    def __init__(self):
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!H", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append(struct.pack("!L", self.experimenter))
-        packed.append(struct.pack("!L", self.subtype))
-        packed.append('\x00' * 4)
-        length = sum([len(x) for x in packed])
-        packed[1] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = bsn_prioritize_pdus()
-        _type = reader.read("!H")[0]
-        assert(_type == 65535)
-        _len = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
-        _experimenter = reader.read("!L")[0]
-        assert(_experimenter == 6035143)
-        _subtype = reader.read("!L")[0]
-        assert(_subtype == 7)
-        reader.skip(4)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("bsn_prioritize_pdus {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-            q.breakable()
-        q.text('}')
-
-bsn.subtypes[7] = bsn_prioritize_pdus
-
-class bsn_require_vlan_xlate(bsn):
-    type = 65535
-    experimenter = 6035143
-    subtype = 8
-
-    def __init__(self):
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!H", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append(struct.pack("!L", self.experimenter))
-        packed.append(struct.pack("!L", self.subtype))
-        packed.append('\x00' * 4)
-        length = sum([len(x) for x in packed])
-        packed[1] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = bsn_require_vlan_xlate()
-        _type = reader.read("!H")[0]
-        assert(_type == 65535)
-        _len = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
-        _experimenter = reader.read("!L")[0]
-        assert(_experimenter == 6035143)
-        _subtype = reader.read("!L")[0]
-        assert(_subtype == 8)
-        reader.skip(4)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("bsn_require_vlan_xlate {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-            q.breakable()
-        q.text('}')
-
-bsn.subtypes[8] = bsn_require_vlan_xlate
-
-class bsn_span_destination(bsn):
-    type = 65535
-    experimenter = 6035143
-    subtype = 10
-
-    def __init__(self):
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!H", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append(struct.pack("!L", self.experimenter))
-        packed.append(struct.pack("!L", self.subtype))
-        packed.append('\x00' * 4)
-        length = sum([len(x) for x in packed])
-        packed[1] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = bsn_span_destination()
-        _type = reader.read("!H")[0]
-        assert(_type == 65535)
-        _len = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
-        _experimenter = reader.read("!L")[0]
-        assert(_experimenter == 6035143)
-        _subtype = reader.read("!L")[0]
-        assert(_subtype == 10)
-        reader.skip(4)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("bsn_span_destination {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-            q.breakable()
-        q.text('}')
-
-bsn.subtypes[10] = bsn_span_destination
 
 class clear_actions(instruction):
     type = 5
@@ -1033,7 +593,7 @@ class clear_actions(instruction):
         assert(_type == 5)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         reader.skip(4)
         return obj
 
@@ -1078,7 +638,7 @@ class goto_table(instruction):
         assert(_type == 1)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         obj.table_id = reader.read("!B")[0]
         reader.skip(3)
         return obj
@@ -1126,7 +686,7 @@ class meter(instruction):
         assert(_type == 6)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         obj.meter_id = reader.read("!L")[0]
         return obj
 
@@ -1174,9 +734,9 @@ class write_actions(instruction):
         assert(_type == 3)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         reader.skip(4)
-        obj.actions = loxi.generic_util.unpack_list(reader, ofp.action.action.unpack)
+        obj.actions = loxi.generic_util.unpack_list(reader, action.action.unpack)
         return obj
 
     def __eq__(self, other):
@@ -1228,7 +788,7 @@ class write_metadata(instruction):
         assert(_type == 2)
         _len = reader.read("!H")[0]
         orig_reader = reader
-        reader = orig_reader.slice(_len, 4)
+        reader = orig_reader.slice(_len - (2 + 2))
         reader.skip(4)
         obj.metadata = reader.read("!Q")[0]
         obj.metadata_mask = reader.read("!Q")[0]

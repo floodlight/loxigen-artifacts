@@ -18,16 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import java.util.Set;
-import java.util.List;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFPortMod extends OFObject, OFMessage {
     OFVersion getVersion();
@@ -35,12 +31,11 @@ public interface OFPortMod extends OFObject, OFMessage {
     long getXid();
     OFPort getPortNo();
     MacAddress getHwAddr();
-    Set<OFPortConfig> getConfig();
-    Set<OFPortConfig> getMask();
-    long getAdvertise() throws UnsupportedOperationException;
-    List<OFPortModProp> getProperties() throws UnsupportedOperationException;
+    long getConfig();
+    long getMask();
+    long getAdvertise();
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
@@ -53,13 +48,11 @@ public interface OFPortMod extends OFObject, OFMessage {
         Builder setPortNo(OFPort portNo);
         MacAddress getHwAddr();
         Builder setHwAddr(MacAddress hwAddr);
-        Set<OFPortConfig> getConfig();
-        Builder setConfig(Set<OFPortConfig> config);
-        Set<OFPortConfig> getMask();
-        Builder setMask(Set<OFPortConfig> mask);
-        long getAdvertise() throws UnsupportedOperationException;
-        Builder setAdvertise(long advertise) throws UnsupportedOperationException;
-        List<OFPortModProp> getProperties() throws UnsupportedOperationException;
-        Builder setProperties(List<OFPortModProp> properties) throws UnsupportedOperationException;
+        long getConfig();
+        Builder setConfig(long config);
+        long getMask();
+        Builder setMask(long mask);
+        long getAdvertise();
+        Builder setAdvertise(long advertise);
     }
 }

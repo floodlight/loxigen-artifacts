@@ -1,7 +1,7 @@
 package org.projectfloodlight.openflow.protocol;
 
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface Writeable {
-    void writeTo(ByteBuf bb);
+    void writeTo(ChannelBuffer bb);
 }

@@ -18,28 +18,24 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import java.util.Set;
 import java.util.List;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFMeterMod extends OFObject, OFMessage {
     OFVersion getVersion();
     OFType getType();
     long getXid();
-    OFMeterModCommand getCommand();
-    Set<OFMeterFlags> getFlags();
+    int getCommand();
+    int getFlags();
     long getMeterId();
-    List<OFMeterBand> getMeters() throws UnsupportedOperationException;
-    List<OFMeterBand> getBands() throws UnsupportedOperationException;
+    List<OFMeterBand> getMeters();
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
@@ -48,15 +44,13 @@ public interface OFMeterMod extends OFObject, OFMessage {
         OFType getType();
         long getXid();
         Builder setXid(long xid);
-        OFMeterModCommand getCommand();
-        Builder setCommand(OFMeterModCommand command);
-        Set<OFMeterFlags> getFlags();
-        Builder setFlags(Set<OFMeterFlags> flags);
+        int getCommand();
+        Builder setCommand(int command);
+        int getFlags();
+        Builder setFlags(int flags);
         long getMeterId();
         Builder setMeterId(long meterId);
-        List<OFMeterBand> getMeters() throws UnsupportedOperationException;
-        Builder setMeters(List<OFMeterBand> meters) throws UnsupportedOperationException;
-        List<OFMeterBand> getBands() throws UnsupportedOperationException;
-        Builder setBands(List<OFMeterBand> bands) throws UnsupportedOperationException;
+        List<OFMeterBand> getMeters();
+        Builder setMeters(List<OFMeterBand> meters);
     }
 }

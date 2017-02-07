@@ -18,15 +18,13 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFBsnGentableEntryStatsRequest extends OFObject, OFBsnStatsRequest<OFBsnGentableEntryStatsReply>, OFRequest<OFBsnGentableEntryStatsReply> {
     OFVersion getVersion();
@@ -37,10 +35,10 @@ public interface OFBsnGentableEntryStatsRequest extends OFObject, OFBsnStatsRequ
     long getExperimenter();
     long getSubtype();
     GenTableId getTableId();
-    U128 getChecksum();
-    U128 getChecksumMask();
+    OFChecksum128 getChecksum();
+    OFChecksum128 getChecksumMask();
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnStatsRequest.Builder<OFBsnGentableEntryStatsReply> {
@@ -56,9 +54,9 @@ public interface OFBsnGentableEntryStatsRequest extends OFObject, OFBsnStatsRequ
         long getSubtype();
         GenTableId getTableId();
         Builder setTableId(GenTableId tableId);
-        U128 getChecksum();
-        Builder setChecksum(U128 checksum);
-        U128 getChecksumMask();
-        Builder setChecksumMask(U128 checksumMask);
+        OFChecksum128 getChecksum();
+        Builder setChecksum(OFChecksum128 checksum);
+        OFChecksum128 getChecksumMask();
+        Builder setChecksumMask(OFChecksum128 checksumMask);
     }
 }

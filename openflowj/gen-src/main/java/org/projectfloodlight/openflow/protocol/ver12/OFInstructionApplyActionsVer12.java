@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -30,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -52,9 +50,6 @@ class OFInstructionApplyActionsVer12 implements OFInstructionApplyActions {
 
     // package private constructor - used by readers, builders, and factory
     OFInstructionApplyActionsVer12(List<OFAction> actions) {
-        if(actions == null) {
-            throw new NullPointerException("OFInstructionApplyActionsVer12: property actions cannot be null");
-        }
         this.actions = actions;
     }
 
@@ -173,7 +168,7 @@ class OFInstructionApplyActionsVer12 implements OFInstructionApplyActions {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFInstructionApplyActions> {
         @Override
-        public OFInstructionApplyActions readFrom(ByteBuf bb) throws OFParseError {
+        public OFInstructionApplyActions readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 4
             short type = bb.readShort();
@@ -220,14 +215,14 @@ class OFInstructionApplyActionsVer12 implements OFInstructionApplyActions {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFInstructionApplyActionsVer12> {
         @Override
-        public void write(ByteBuf bb, OFInstructionApplyActionsVer12 message) {
+        public void write(ChannelBuffer bb, OFInstructionApplyActionsVer12 message) {
             int startIndex = bb.writerIndex();
             // fixed value property type = 4
             bb.writeShort((short) 0x4);

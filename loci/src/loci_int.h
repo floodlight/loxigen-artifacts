@@ -36,8 +36,8 @@ static inline int
 of_object_u16_get(of_object_t *obj, int offset) {
     uint16_t val16;
 
-    of_wire_buffer_u16_get(obj->wbuf,
-        obj->obj_offset + offset, &val16);
+    of_wire_buffer_u16_get(obj->wire_object.wbuf,
+        obj->wire_object.obj_offset + offset, &val16);
 
     return (int)val16;
 }
@@ -55,8 +55,8 @@ of_object_u16_set(of_object_t *obj, int offset, int value) {
     uint16_t val16;
 
     val16 = (uint16_t)value;
-    of_wire_buffer_u16_set(obj->wbuf,
-        obj->obj_offset + offset, val16);
+    of_wire_buffer_u16_set(obj->wire_object.wbuf,
+        obj->wire_object.obj_offset + offset, val16);
 }
 
 /**
@@ -208,16 +208,13 @@ wire_match_len(of_object_t *obj, int match_offset) {
  * @param obj An object of type of_packet_in_t
  *
  * Get length of preceding match object and add to fixed length
- * Applies only to version 1.2+
- * There are 2 bytes of padding between the match and data. The
- * _OFFSET_FOLLOWING_MATCH_V3 macro assumes the match is at the end of the
- * fixed length, so we need to subtract 2 from the fixed length we pass and
- * then add 2 to the resulting offset.
+ * Applies only to version 1.2 and 1.3
+ * The +2 comes from the 2 bytes of padding between the match and packet data.
  */
 
 #define _PACKET_IN_DATA_OFFSET(obj) \
     (_OFFSET_FOLLOWING_MATCH_V3((obj), (obj)->version == OF_VERSION_1_2 ? \
-(26 - 2) : (34 - 2)) + 2)
+24 : 32) + 2)
 
 /**
  * Macro to calculate variable offset of data (packet) member in packet_out

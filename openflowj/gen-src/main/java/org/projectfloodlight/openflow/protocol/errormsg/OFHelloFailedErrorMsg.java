@@ -18,14 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFHelloFailedErrorMsg extends OFObject, OFErrorMsg {
     OFVersion getVersion();
@@ -33,9 +31,9 @@ public interface OFHelloFailedErrorMsg extends OFObject, OFErrorMsg {
     long getXid();
     OFErrorType getErrType();
     OFHelloFailedCode getCode();
-    OFErrorCauseData getData();
+    byte[] getData();
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFErrorMsg.Builder {
@@ -47,7 +45,7 @@ public interface OFHelloFailedErrorMsg extends OFObject, OFErrorMsg {
         OFErrorType getErrType();
         OFHelloFailedCode getCode();
         Builder setCode(OFHelloFailedCode code);
-        OFErrorCauseData getData();
-        Builder setData(OFErrorCauseData data);
+        byte[] getData();
+        Builder setData(byte[] data);
     }
 }

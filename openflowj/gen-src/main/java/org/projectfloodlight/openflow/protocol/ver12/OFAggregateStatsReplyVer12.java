@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -29,7 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -59,15 +57,6 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFAggregateStatsReplyVer12(long xid, Set<OFStatsReplyFlags> flags, U64 packetCount, U64 byteCount, long flowCount) {
-        if(flags == null) {
-            throw new NullPointerException("OFAggregateStatsReplyVer12: property flags cannot be null");
-        }
-        if(packetCount == null) {
-            throw new NullPointerException("OFAggregateStatsReplyVer12: property packetCount cannot be null");
-        }
-        if(byteCount == null) {
-            throw new NullPointerException("OFAggregateStatsReplyVer12: property byteCount cannot be null");
-        }
         this.xid = xid;
         this.flags = flags;
         this.packetCount = packetCount;
@@ -114,11 +103,6 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
     @Override
     public long getFlowCount() {
         return flowCount;
-    }
-
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.2");
     }
 
 
@@ -215,15 +199,6 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
         this.flowCount = flowCount;
         this.flowCountSet = true;
         return this;
-    }
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.2");
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setStats(Stat stats) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property stats not supported in version 1.2");
     }
 
 
@@ -336,15 +311,6 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
         this.flowCountSet = true;
         return this;
     }
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.2");
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setStats(Stat stats) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property stats not supported in version 1.2");
-    }
 //
         @Override
         public OFAggregateStatsReply build() {
@@ -376,7 +342,7 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFAggregateStatsReply> {
         @Override
-        public OFAggregateStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFAggregateStatsReply readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -451,14 +417,14 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFAggregateStatsReplyVer12> {
         @Override
-        public void write(ByteBuf bb, OFAggregateStatsReplyVer12 message) {
+        public void write(ChannelBuffer bb, OFAggregateStatsReplyVer12 message) {
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
             // fixed value property type = 19
@@ -530,55 +496,11 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFAggregateStatsReplyVer12 other = (OFAggregateStatsReplyVer12) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (packetCount == null) {
-            if (other.packetCount != null)
-                return false;
-        } else if (!packetCount.equals(other.packetCount))
-            return false;
-        if (byteCount == null) {
-            if (other.byteCount != null)
-                return false;
-        } else if (!byteCount.equals(other.byteCount))
-            return false;
-        if( flowCount != other.flowCount)
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((packetCount == null) ? 0 : packetCount.hashCode());
-        result = prime * result + ((byteCount == null) ? 0 : byteCount.hashCode());
-        result = prime *  (int) (flowCount ^ (flowCount >>> 32));
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((packetCount == null) ? 0 : packetCount.hashCode());
         result = prime * result + ((byteCount == null) ? 0 : byteCount.hashCode());

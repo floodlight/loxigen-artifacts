@@ -18,15 +18,13 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFAggregateStatsReply extends OFObject, OFStatsReply {
     OFVersion getVersion();
@@ -34,12 +32,11 @@ public interface OFAggregateStatsReply extends OFObject, OFStatsReply {
     long getXid();
     OFStatsType getStatsType();
     Set<OFStatsReplyFlags> getFlags();
-    U64 getPacketCount() throws UnsupportedOperationException;
-    U64 getByteCount() throws UnsupportedOperationException;
-    long getFlowCount() throws UnsupportedOperationException;
-    Stat getStats() throws UnsupportedOperationException;
+    U64 getPacketCount();
+    U64 getByteCount();
+    long getFlowCount();
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFStatsReply.Builder {
@@ -51,13 +48,11 @@ public interface OFAggregateStatsReply extends OFObject, OFStatsReply {
         OFStatsType getStatsType();
         Set<OFStatsReplyFlags> getFlags();
         Builder setFlags(Set<OFStatsReplyFlags> flags);
-        U64 getPacketCount() throws UnsupportedOperationException;
-        Builder setPacketCount(U64 packetCount) throws UnsupportedOperationException;
-        U64 getByteCount() throws UnsupportedOperationException;
-        Builder setByteCount(U64 byteCount) throws UnsupportedOperationException;
-        long getFlowCount() throws UnsupportedOperationException;
-        Builder setFlowCount(long flowCount) throws UnsupportedOperationException;
-        Stat getStats() throws UnsupportedOperationException;
-        Builder setStats(Stat stats) throws UnsupportedOperationException;
+        U64 getPacketCount();
+        Builder setPacketCount(U64 packetCount);
+        U64 getByteCount();
+        Builder setByteCount(U64 byteCount);
+        long getFlowCount();
+        Builder setFlowCount(long flowCount);
     }
 }

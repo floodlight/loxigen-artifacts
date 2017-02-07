@@ -18,15 +18,13 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.List;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFGroupMod extends OFObject, OFMessage {
     OFVersion getVersion();
@@ -36,10 +34,8 @@ public interface OFGroupMod extends OFObject, OFMessage {
     OFGroupType getGroupType();
     OFGroup getGroup();
     List<OFBucket> getBuckets();
-    OFGroupBucket getCommandBucketId() throws UnsupportedOperationException;
-    List<OFGroupProp> getProperties() throws UnsupportedOperationException;
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
@@ -55,9 +51,5 @@ public interface OFGroupMod extends OFObject, OFMessage {
         Builder setGroup(OFGroup group);
         List<OFBucket> getBuckets();
         Builder setBuckets(List<OFBucket> buckets);
-        OFGroupBucket getCommandBucketId() throws UnsupportedOperationException;
-        Builder setCommandBucketId(OFGroupBucket commandBucketId) throws UnsupportedOperationException;
-        List<OFGroupProp> getProperties() throws UnsupportedOperationException;
-        Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException;
     }
 }

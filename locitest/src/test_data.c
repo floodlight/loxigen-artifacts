@@ -325,19 +325,19 @@ test_of10_flow_add(void) {
         of_list_action_t actions;
         of_flow_add_actions_bind(obj, &actions);
         {
-            of_object_t action;
-            of_action_output_init(&action, OF_VERSION_1_0, -1, 1);
+            of_action_t action;
+            of_action_output_init(&action.output, OF_VERSION_1_0, -1, 1);
             of_list_action_append_bind(&actions, &action);
-            of_action_output_port_set(&action, OF_PORT_DEST_FLOOD);
+            of_action_output_port_set(&action.output, OF_PORT_DEST_FLOOD);
         }
         {
-            of_object_t action;
-            of_action_nicira_dec_ttl_init(&action, OF_VERSION_1_0, -1, 1);
+            of_action_t action;
+            of_action_nicira_dec_ttl_init(&action.nicira_dec_ttl, OF_VERSION_1_0, -1, 1);
             of_list_action_append_bind(&actions, &action);
         }
         {
-            of_object_t action;
-            of_action_bsn_set_tunnel_dst_init(&action, OF_VERSION_1_0, -1, 1);
+            of_action_t action;
+            of_action_bsn_set_tunnel_dst_init(&action.bsn_set_tunnel_dst, OF_VERSION_1_0, -1, 1);
             of_list_action_append_bind(&actions, &action);
         }
     }
@@ -748,7 +748,7 @@ test_of10_port_mod(void) {
     uint8_t binary[] = {
         0x01, 0x0f, 0x00, 0x20, 0x00, 0x00, 0x00, 0x02, 
         0xff, 0xfd, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 
-        0x80, 0x00, 0x00, 0x6f, 0x80, 0x00, 0x00, 0x11, 
+        0x90, 0xab, 0xcd, 0xef, 0xff, 0x11, 0xff, 0x11, 
         0xca, 0xfe, 0x67, 0x89, 0x00, 0x00, 0x00, 0x00, 
         
     };
@@ -757,12 +757,12 @@ test_of10_port_mod(void) {
 
     obj = of_port_mod_new(OF_VERSION_1_0);
     of_port_mod_advertise_set(obj, 0xCAFE6789);
-    of_port_mod_config_set(obj, 0x8000006f);
+    of_port_mod_config_set(obj, 0x90ABCDEF);
     {
         of_mac_addr_t hw_addr = { { 1, 2, 3, 4, 5, 6 } };
         of_port_mod_hw_addr_set(obj, hw_addr);
     }
-    of_port_mod_mask_set(obj, 0x80000011);
+    of_port_mod_mask_set(obj, 0xFF11FF11);
     of_port_mod_port_no_set(obj, 65533);
     of_port_mod_xid_set(obj, 2);
 
@@ -1814,112 +1814,6 @@ test_of13_bsn_set_aux_cxns_request(void) {
     return TEST_PASS;
 }
 
-/* Generated from of13/bsn_virtual_port_create_request__l2gre.data */
-static int
-test_of13_bsn_virtual_port_create_request__l2gre(void) {
-    uint8_t binary[] = {
-        0x04, 0x04, 0x00, 0x50, 0x01, 0x02, 0x03, 0x04, 
-        0x00, 0x5c, 0x16, 0xc7, 0x00, 0x00, 0x00, 0x0f, 
-        0x00, 0x01, 0x00, 0x40, 0x00, 0x00, 0x00, 0x1b, 
-        0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x02, 
-        0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f, 0x01, 0x02, 
-        0x03, 0x04, 0x05, 0x06, 0xc0, 0x00, 0x00, 0x02, 
-        0xc0, 0x00, 0x10, 0x02, 0x01, 0x40, 0x00, 0x00, 
-        0x00, 0x00, 0xbe, 0xef, 0x00, 0x00, 0x04, 0x00, 
-        0x66, 0x6f, 0x6f, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        
-    };
-
-    of_object_t *obj;
-
-    obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_3);
-    of_bsn_virtual_port_create_request_xid_set(obj, 0x01020304);
-    {
-        of_object_t *vport = of_bsn_vport_l2gre_new(OF_VERSION_1_3);
-        {
-            of_port_name_t if_name = "foo";
-            of_mac_addr_t local_mac = { { 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f } };
-            of_mac_addr_t nh_mac = { { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06 } };
-            of_bsn_vport_l2gre_flags_set(vport,
-                OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID |
-                OF_BSN_VPORT_L2GRE_DSCP_ASSIGN |
-                OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID |
-                OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID);
-            of_bsn_vport_l2gre_port_no_set(vport, 1);
-            of_bsn_vport_l2gre_loopback_port_no_set(vport, 2);
-            of_bsn_vport_l2gre_local_mac_set(vport, local_mac);
-            of_bsn_vport_l2gre_nh_mac_set(vport, nh_mac);
-            of_bsn_vport_l2gre_src_ip_set(vport, 0xc0000002);
-            of_bsn_vport_l2gre_dst_ip_set(vport, 0xc0001002);
-            of_bsn_vport_l2gre_dscp_set(vport, 1);
-            of_bsn_vport_l2gre_ttl_set(vport, 64);
-            of_bsn_vport_l2gre_vpn_set(vport, 0xbeef);
-            of_bsn_vport_l2gre_rate_limit_set(vport, 0x400);
-            of_bsn_vport_l2gre_if_name_set(vport, if_name);
-        }
-        of_bsn_virtual_port_create_request_vport_set(obj, vport);
-        of_object_delete(vport);
-    }
-
-    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
-        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
-	show_failure(binary, sizeof(binary),
-		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
-		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
-	of_object_delete(obj);
-	return TEST_FAIL;
-    }
-
-    of_object_delete(obj);
-    return TEST_PASS;
-}
-
-/* Generated from of13/bsn_virtual_port_create_request__q_in_q.data */
-static int
-test_of13_bsn_virtual_port_create_request__q_in_q(void) {
-    uint8_t binary[] = {
-        0x04, 0x04, 0x00, 0x30, 0x01, 0x02, 0x03, 0x04, 
-        0x00, 0x5c, 0x16, 0xc7, 0x00, 0x00, 0x00, 0x0f, 
-        0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00, 0x01, 
-        0x00, 0x02, 0x00, 0x03, 0x00, 0x04, 0x00, 0x05, 
-        0x66, 0x6f, 0x6f, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        
-    };
-
-    of_object_t *obj;
-
-    obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_3);
-    of_bsn_virtual_port_create_request_xid_set(obj, 0x01020304);
-    {
-        of_object_t *vport = of_bsn_vport_q_in_q_new(OF_VERSION_1_3);
-        {
-            of_port_name_t if_name = "foo";
-            of_bsn_vport_q_in_q_port_no_set(vport, 1);
-            of_bsn_vport_q_in_q_ingress_tpid_set(vport, 2);
-            of_bsn_vport_q_in_q_ingress_vlan_id_set(vport, 3);
-            of_bsn_vport_q_in_q_egress_tpid_set(vport, 4);
-            of_bsn_vport_q_in_q_egress_vlan_id_set(vport, 5);
-            of_bsn_vport_q_in_q_if_name_set(vport, if_name);
-        }
-        of_bsn_virtual_port_create_request_vport_set(obj, vport);
-        of_object_delete(vport);
-    }
-
-    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
-        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
-	show_failure(binary, sizeof(binary),
-		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
-		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
-	of_object_delete(obj);
-	return TEST_FAIL;
-    }
-
-    of_object_delete(obj);
-    return TEST_PASS;
-}
-
 /* Generated from of13/instruction_bsn_disable_src_mac_check.data */
 static int
 test_of13_instruction_bsn_disable_src_mac_check(void) {
@@ -2031,54 +1925,6 @@ test_of13_oxm_bsn_in_ports_masked_128(void) {
     return TEST_PASS;
 }
 
-/* Generated from of13/oxm_bsn_in_ports_masked_512.data */
-static int
-test_of13_oxm_bsn_in_ports_masked_512(void) {
-    uint8_t binary[] = {
-        0x00, 0x03, 0x27, 0x80, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x7f, 0xff, 0xff, 0xff, 
-        0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 
-        0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 
-        0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 
-        0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 
-        0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 
-        0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xfe, 
-        0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 
-        0xff, 0xfd, 0xff, 0xfe, 
-    };
-
-    of_object_t *obj;
-
-    obj = of_oxm_bsn_in_ports_512_masked_new(OF_VERSION_1_3);
-    {
-        of_bitmap_512_t bmap = { { 0, 0, 0, 0, 0, 0, 0, 0 } };
-        of_oxm_bsn_in_ports_512_masked_value_set(obj, bmap);
-    }
-    {
-        of_bitmap_512_t bmap = { { 0x7fffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xfffffffeffffffff, 0xfffffffffffdfffe } };
-        of_oxm_bsn_in_ports_512_masked_value_mask_set(obj, bmap);
-    }
-
-    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
-        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
-	show_failure(binary, sizeof(binary),
-		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
-		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
-	of_object_delete(obj);
-	return TEST_FAIL;
-    }
-
-    of_object_delete(obj);
-    return TEST_PASS;
-}
-
 /* Generated from of13/oxm_bsn_l3_src_class_id.data */
 static int
 test_of13_oxm_bsn_l3_src_class_id(void) {
@@ -2131,221 +1977,6 @@ test_of13_oxm_bsn_lag_id(void) {
     return TEST_PASS;
 }
 
-/* Generated from of13/port_status.data */
-static int
-test_of13_port_status(void) {
-    uint8_t binary[] = {
-        0x04, 0x0c, 0x00, 0x50, 0x12, 0x34, 0x56, 0x78, 
-        0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00, 
-        0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x00, 0x00, 
-        0x66, 0x6f, 0x6f, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x24, 0x00, 0x00, 0x00, 0x02, 
-        0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x02, 
-        0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x08, 
-        0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00, 0x14, 
-        
-    };
-
-    of_object_t *obj;
-
-    obj = of_port_status_new(OF_VERSION_1_3);
-    of_port_status_xid_set(obj, 0x12345678);
-    of_port_status_reason_set(obj, OF_PORT_CHANGE_REASON_MODIFY);
-    {
-        of_object_t desc;
-        of_port_status_desc_bind(obj, &desc);
-        of_port_desc_port_no_set(&desc, 4);
-        of_mac_addr_t hw_addr = { { 1, 2, 3, 4, 5, 6 } };
-        of_port_desc_hw_addr_set(&desc, hw_addr);
-        of_port_name_t name = "foo";
-        of_port_desc_name_set(&desc, name);
-        of_port_desc_config_set(&desc, OF_PORT_CONFIG_FLAG_NO_FWD|OF_PORT_CONFIG_FLAG_NO_RECV);
-        of_port_desc_state_set(&desc, OF_PORT_STATE_FLAG_BLOCKED);
-        of_port_desc_curr_set(&desc, OF_PORT_FEATURE_FLAG_10MB_HD);
-        of_port_desc_advertised_set(&desc, OF_PORT_FEATURE_FLAG_10MB_FD);
-        of_port_desc_supported_set(&desc, OF_PORT_FEATURE_FLAG_100MB_HD);
-        of_port_desc_peer_set(&desc, OF_PORT_FEATURE_FLAG_100MB_FD);
-        of_port_desc_curr_speed_set(&desc, 10);
-        of_port_desc_max_speed_set(&desc, 20);
-    }
-
-    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
-        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
-	show_failure(binary, sizeof(binary),
-		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
-		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
-	of_object_delete(obj);
-	return TEST_FAIL;
-    }
-
-    of_object_delete(obj);
-    return TEST_PASS;
-}
-
-/* Generated from of14/port_stats_reply.data */
-static int
-test_of14_port_stats_reply(void) {
-    uint8_t binary[] = {
-        0x05, 0x13, 0x00, 0xd8, 0x00, 0x00, 0x00, 0x05, 
-        0x00, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 
-        0x00, 0x00, 0x00, 0x28, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 
-        0x00, 0x50, 0x00, 0x00, 0xff, 0xff, 0xff, 0xfe, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 
-        
-    };
-
-    of_object_t *obj;
-
-    obj = of_port_stats_reply_new(OF_VERSION_1_4);
-    {
-        of_object_t list;
-        of_port_stats_reply_entries_bind(obj, &list);
-        {
-            of_object_t *obj = of_port_stats_entry_new(OF_VERSION_1_4);
-            of_port_stats_entry_port_no_set(obj, 1);
-            of_port_stats_entry_rx_packets_set(obj, 1);
-            of_port_stats_entry_tx_packets_set(obj, 0);
-            of_port_stats_entry_rx_bytes_set(obj, 0);
-            of_port_stats_entry_tx_bytes_set(obj, 0);
-            of_port_stats_entry_rx_dropped_set(obj, 0);
-            of_port_stats_entry_tx_dropped_set(obj, 0);
-            of_port_stats_entry_rx_errors_set(obj, 0);
-            of_port_stats_entry_tx_errors_set(obj, 2);
-            /* Append property */
-            {
-                of_object_t list;
-                of_port_stats_entry_properties_bind(obj, &list);
-                {
-                    of_object_t *obj = of_port_stats_prop_ethernet_new(OF_VERSION_1_4);
-                    of_port_stats_prop_ethernet_rx_frame_err_set(obj, 1);
-                    of_port_stats_prop_ethernet_rx_over_err_set(obj, 2);
-                    of_port_stats_prop_ethernet_rx_crc_err_set(obj, 3);
-                    of_port_stats_prop_ethernet_collisions_set(obj, 4);
-                    of_list_append(&list, obj);
-                    of_object_delete(obj);
-                }
-            }
-            of_list_append(&list, obj);
-            of_object_delete(obj);
-        }
-        {
-            of_object_t *obj = of_port_stats_entry_new(OF_VERSION_1_4);
-            of_port_stats_entry_port_no_set(obj, OF_PORT_DEST_LOCAL);
-            of_port_stats_entry_rx_packets_set(obj, 3);
-            of_port_stats_entry_tx_packets_set(obj, 0);
-            of_port_stats_entry_rx_bytes_set(obj, 0);
-            of_port_stats_entry_tx_bytes_set(obj, 0);
-            of_port_stats_entry_rx_dropped_set(obj, 0);
-            of_port_stats_entry_tx_dropped_set(obj, 0);
-            of_port_stats_entry_rx_errors_set(obj, 0);
-            of_port_stats_entry_tx_errors_set(obj, 4);
-            of_list_append(&list, obj);
-            of_object_delete(obj);
-        }
-    }
-    of_port_stats_reply_flags_set(obj, 0);
-    of_port_stats_reply_xid_set(obj, 5);
-
-    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
-        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
-	show_failure(binary, sizeof(binary),
-		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
-		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
-	of_object_delete(obj);
-	return TEST_FAIL;
-    }
-
-    of_object_delete(obj);
-    return TEST_PASS;
-}
-
-/* Generated from of14/port_status.data */
-static int
-test_of14_port_status(void) {
-    uint8_t binary[] = {
-        0x05, 0x0c, 0x00, 0x58, 0x12, 0x34, 0x56, 0x78, 
-        0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x04, 0x00, 0x48, 0x00, 0x00, 
-        0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x00, 0x00, 
-        0x66, 0x6f, 0x6f, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x24, 0x00, 0x00, 0x00, 0x02, 
-        0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x02, 
-        0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x08, 
-        0x00, 0x00, 0x00, 0x0a, 0x00, 0x00, 0x00, 0x14, 
-        
-    };
-
-    of_object_t *obj;
-
-    obj = of_port_status_new(OF_VERSION_1_4);
-    of_port_status_xid_set(obj, 0x12345678);
-    of_port_status_reason_set(obj, OF_PORT_CHANGE_REASON_MODIFY);
-    {
-        of_object_t desc;
-        of_port_status_desc_bind(obj, &desc);
-        of_port_desc_port_no_set(&desc, 4);
-        of_mac_addr_t hw_addr = { { 1, 2, 3, 4, 5, 6 } };
-        of_port_desc_hw_addr_set(&desc, hw_addr);
-        of_port_name_t name = "foo";
-        of_port_desc_name_set(&desc, name);
-        of_port_desc_config_set(&desc, OF_PORT_CONFIG_FLAG_NO_FWD|OF_PORT_CONFIG_FLAG_NO_RECV);
-        of_port_desc_state_set(&desc, OF_PORT_STATE_FLAG_BLOCKED);
-        {
-            of_list_port_desc_prop_t list;
-            of_port_desc_properties_bind(&desc, &list);
-            {
-                of_object_t *obj = of_port_desc_prop_ethernet_new(OF_VERSION_1_4);
-                of_port_desc_prop_ethernet_curr_set(obj, OF_PORT_FEATURE_FLAG_10MB_HD);
-                of_port_desc_prop_ethernet_advertised_set(obj, OF_PORT_FEATURE_FLAG_10MB_FD);
-                of_port_desc_prop_ethernet_supported_set(obj, OF_PORT_FEATURE_FLAG_100MB_HD);
-                of_port_desc_prop_ethernet_peer_set(obj, OF_PORT_FEATURE_FLAG_100MB_FD);
-                of_port_desc_prop_ethernet_curr_speed_set(obj, 10);
-                of_port_desc_prop_ethernet_max_speed_set(obj, 20);
-                of_list_append(&list, obj);
-                of_object_delete(obj);
-            }
-        }
-    }
-
-    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
-        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
-	show_failure(binary, sizeof(binary),
-		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
-		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
-	of_object_delete(obj);
-	return TEST_FAIL;
-    }
-
-    of_object_delete(obj);
-    return TEST_PASS;
-}
-
 
 int
 test_datafiles(void)
@@ -2380,17 +2011,11 @@ test_datafiles(void)
     RUN_TEST(of13_bsn_lacp_stats_request);
     RUN_TEST(of13_bsn_set_aux_cxns_reply);
     RUN_TEST(of13_bsn_set_aux_cxns_request);
-    RUN_TEST(of13_bsn_virtual_port_create_request__l2gre);
-    RUN_TEST(of13_bsn_virtual_port_create_request__q_in_q);
     RUN_TEST(of13_instruction_bsn_disable_src_mac_check);
     RUN_TEST(of13_instruction_id_goto_table);
     RUN_TEST(of13_oxm_bsn_global_vrf_allowed);
     RUN_TEST(of13_oxm_bsn_in_ports_masked_128);
-    RUN_TEST(of13_oxm_bsn_in_ports_masked_512);
     RUN_TEST(of13_oxm_bsn_l3_src_class_id);
     RUN_TEST(of13_oxm_bsn_lag_id);
-    RUN_TEST(of13_port_status);
-    RUN_TEST(of14_port_stats_reply);
-    RUN_TEST(of14_port_status);
     return TEST_PASS;
 }

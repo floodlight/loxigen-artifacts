@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -50,9 +48,6 @@ class OFActionSetVlanPcpVer11 implements OFActionSetVlanPcp {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetVlanPcpVer11(VlanPcp vlanPcp) {
-        if(vlanPcp == null) {
-            throw new NullPointerException("OFActionSetVlanPcpVer11: property vlanPcp cannot be null");
-        }
         this.vlanPcp = vlanPcp;
     }
 
@@ -171,7 +166,7 @@ class OFActionSetVlanPcpVer11 implements OFActionSetVlanPcp {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFActionSetVlanPcp> {
         @Override
-        public OFActionSetVlanPcp readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionSetVlanPcp readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 2
             short type = bb.readShort();
@@ -219,14 +214,14 @@ class OFActionSetVlanPcpVer11 implements OFActionSetVlanPcp {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFActionSetVlanPcpVer11> {
         @Override
-        public void write(ByteBuf bb, OFActionSetVlanPcpVer11 message) {
+        public void write(ChannelBuffer bb, OFActionSetVlanPcpVer11 message) {
             // fixed value property type = 2
             bb.writeShort((short) 0x2);
             // fixed value property length = 8

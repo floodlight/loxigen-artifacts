@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -232,7 +230,7 @@ class OFBsnGetIpMaskRequestVer10 implements OFBsnGetIpMaskRequest {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnGetIpMaskRequest> {
         @Override
-        public OFBsnGetIpMaskRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGetIpMaskRequest readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -301,14 +299,14 @@ class OFBsnGetIpMaskRequestVer10 implements OFBsnGetIpMaskRequest {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnGetIpMaskRequestVer10> {
         @Override
-        public void write(ByteBuf bb, OFBsnGetIpMaskRequestVer10 message) {
+        public void write(ChannelBuffer bb, OFBsnGetIpMaskRequestVer10 message) {
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);
             // fixed value property type = 4
@@ -356,37 +354,11 @@ class OFBsnGetIpMaskRequestVer10 implements OFBsnGetIpMaskRequest {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnGetIpMaskRequestVer10 other = (OFBsnGetIpMaskRequestVer10) obj;
-
-        // ignore XID
-        if( index != other.index)
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + index;
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + index;
         return result;
     }

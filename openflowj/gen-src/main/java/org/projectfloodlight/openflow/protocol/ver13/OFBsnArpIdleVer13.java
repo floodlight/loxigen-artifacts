@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -54,9 +52,6 @@ class OFBsnArpIdleVer13 implements OFBsnArpIdle {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnArpIdleVer13(long xid, int vlanVid, IPv4Address ipv4Addr) {
-        if(ipv4Addr == null) {
-            throw new NullPointerException("OFBsnArpIdleVer13: property ipv4Addr cannot be null");
-        }
         this.xid = xid;
         this.vlanVid = vlanVid;
         this.ipv4Addr = ipv4Addr;
@@ -277,7 +272,7 @@ class OFBsnArpIdleVer13 implements OFBsnArpIdle {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnArpIdle> {
         @Override
-        public OFBsnArpIdle readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnArpIdle readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -349,14 +344,14 @@ class OFBsnArpIdleVer13 implements OFBsnArpIdle {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnArpIdleVer13> {
         @Override
-        public void write(ByteBuf bb, OFBsnArpIdleVer13 message) {
+        public void write(ChannelBuffer bb, OFBsnArpIdleVer13 message) {
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
             // fixed value property type = 4
@@ -412,43 +407,11 @@ class OFBsnArpIdleVer13 implements OFBsnArpIdle {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnArpIdleVer13 other = (OFBsnArpIdleVer13) obj;
-
-        // ignore XID
-        if( vlanVid != other.vlanVid)
-            return false;
-        if (ipv4Addr == null) {
-            if (other.ipv4Addr != null)
-                return false;
-        } else if (!ipv4Addr.equals(other.ipv4Addr))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + vlanVid;
-        result = prime * result + ((ipv4Addr == null) ? 0 : ipv4Addr.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + vlanVid;
         result = prime * result + ((ipv4Addr == null) ? 0 : ipv4Addr.hashCode());
         return result;

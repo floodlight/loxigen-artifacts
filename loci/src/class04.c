@@ -29,339 +29,7 @@
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
-of_action_pop_vlan_push_wire_types(of_object_t *obj)
-{
-    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
-    switch (obj->version) {
-    case OF_VERSION_1_1:
-    case OF_VERSION_1_2:
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x12); /* type */
-        break;
-    default:
-        UNREACHABLE();
-    }
-}
-
-
-
-/**
- * \defgroup of_action_pop_vlan of_action_pop_vlan
- */
-
-/**
- * Create a new of_action_pop_vlan object
- *
- * @param version The wire version to use for the object
- * @return Pointer to the newly create object or NULL on error
- *
- * Initializes the new object with it's default fixed length associating
- * a new underlying wire buffer.
- *
- * \ingroup of_action_pop_vlan
- */
-
-of_object_t *
-of_action_pop_vlan_new(of_version_t version)
-{
-    of_object_t *obj;
-    int bytes;
-
-    bytes = of_object_fixed_len[version][OF_ACTION_POP_VLAN];
-
-    if ((obj = of_object_new(bytes)) == NULL) {
-        return NULL;
-    }
-
-    of_action_pop_vlan_init(obj, version, bytes, 0);
-    of_action_pop_vlan_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
-
-    return obj;
-}
-
-/**
- * Initialize an object of type of_action_pop_vlan.
- *
- * @param obj Pointer to the object to initialize
- * @param version The wire version to use for the object
- * @param bytes How many bytes in the object
- * @param clean_wire Boolean: If true, clear the wire object control struct
- *
- * If bytes < 0, then the default fixed length is used for the object
- *
- * This is a "coerce" function that sets up the pointers for the
- * accessors properly.
- *
- * If anything other than 0 is passed in for the buffer size, the underlying
- * wire buffer will have 'grow' called.
- */
-
-void
-of_action_pop_vlan_init(of_object_t *obj,
-    of_version_t version, int bytes, int clean_wire)
-{
-    LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_POP_VLAN] >= 0);
-    if (clean_wire) {
-        MEMSET(obj, 0, sizeof(*obj));
-    }
-    if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_POP_VLAN];
-    }
-    obj->version = version;
-    obj->length = bytes;
-    obj->object_id = OF_ACTION_POP_VLAN;
-
-    /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
-        int tot_bytes;
-
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
-    }
-}
-/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
-/* Copyright (c) 2011, 2012 Open Networking Foundation */
-/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
-/* See the file LICENSE.loci which should have been included in the source distribution */
-#ifdef __GNUC__
-
-#ifdef __linux__
-/* glibc */
-#include <features.h>
-#else
-/* NetBSD etc */
-#include <sys/cdefs.h>
-#ifdef __GNUC_PREREQ__
-#define __GNUC_PREREQ __GNUC_PREREQ__
-#endif
-#endif
-
-#ifndef __GNUC_PREREQ
-/* fallback */
-#define __GNUC_PREREQ(maj, min) 0
-#endif
-
-#if __GNUC_PREREQ(4,6)
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
-#endif
-
-#endif
-
-#include "loci_log.h"
-#include "loci_int.h"
-
-void
-of_action_push_mpls_push_wire_types(of_object_t *obj)
-{
-    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
-    switch (obj->version) {
-    case OF_VERSION_1_1:
-    case OF_VERSION_1_2:
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x13); /* type */
-        break;
-    default:
-        UNREACHABLE();
-    }
-}
-
-
-
-/**
- * \defgroup of_action_push_mpls of_action_push_mpls
- */
-
-/**
- * Create a new of_action_push_mpls object
- *
- * @param version The wire version to use for the object
- * @return Pointer to the newly create object or NULL on error
- *
- * Initializes the new object with it's default fixed length associating
- * a new underlying wire buffer.
- *
- * \ingroup of_action_push_mpls
- */
-
-of_object_t *
-of_action_push_mpls_new(of_version_t version)
-{
-    of_object_t *obj;
-    int bytes;
-
-    bytes = of_object_fixed_len[version][OF_ACTION_PUSH_MPLS];
-
-    if ((obj = of_object_new(bytes)) == NULL) {
-        return NULL;
-    }
-
-    of_action_push_mpls_init(obj, version, bytes, 0);
-    of_action_push_mpls_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
-
-    return obj;
-}
-
-/**
- * Initialize an object of type of_action_push_mpls.
- *
- * @param obj Pointer to the object to initialize
- * @param version The wire version to use for the object
- * @param bytes How many bytes in the object
- * @param clean_wire Boolean: If true, clear the wire object control struct
- *
- * If bytes < 0, then the default fixed length is used for the object
- *
- * This is a "coerce" function that sets up the pointers for the
- * accessors properly.
- *
- * If anything other than 0 is passed in for the buffer size, the underlying
- * wire buffer will have 'grow' called.
- */
-
-void
-of_action_push_mpls_init(of_object_t *obj,
-    of_version_t version, int bytes, int clean_wire)
-{
-    LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_PUSH_MPLS] >= 0);
-    if (clean_wire) {
-        MEMSET(obj, 0, sizeof(*obj));
-    }
-    if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_PUSH_MPLS];
-    }
-    obj->version = version;
-    obj->length = bytes;
-    obj->object_id = OF_ACTION_PUSH_MPLS;
-
-    /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
-        int tot_bytes;
-
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
-    }
-}
-
-/**
- * Get ethertype from an object of type of_action_push_mpls.
- * @param obj Pointer to an object of type of_action_push_mpls.
- * @param ethertype Pointer to the child object of type
- * uint16_t to be filled out.
- *
- */
-void
-of_action_push_mpls_ethertype_get(
-    of_action_push_mpls_t *obj,
-    uint16_t *ethertype)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_ACTION_PUSH_MPLS);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_1:
-    case OF_VERSION_1_2:
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_get(wbuf, abs_offset, ethertype);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set ethertype in an object of type of_action_push_mpls.
- * @param obj Pointer to an object of type of_action_push_mpls.
- * @param ethertype The value to write into the object
- */
-void
-of_action_push_mpls_ethertype_set(
-    of_action_push_mpls_t *obj,
-    uint16_t ethertype)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_ACTION_PUSH_MPLS);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_1:
-    case OF_VERSION_1_2:
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_set(wbuf, abs_offset, ethertype);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
-/* Copyright (c) 2011, 2012 Open Networking Foundation */
-/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
-/* See the file LICENSE.loci which should have been included in the source distribution */
-#ifdef __GNUC__
-
-#ifdef __linux__
-/* glibc */
-#include <features.h>
-#else
-/* NetBSD etc */
-#include <sys/cdefs.h>
-#ifdef __GNUC_PREREQ__
-#define __GNUC_PREREQ __GNUC_PREREQ__
-#endif
-#endif
-
-#ifndef __GNUC_PREREQ
-/* fallback */
-#define __GNUC_PREREQ(maj, min) 0
-#endif
-
-#if __GNUC_PREREQ(4,6)
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
-#endif
-
-#endif
-
-#include "loci_log.h"
-#include "loci_int.h"
-
-void
+static void
 of_action_push_vlan_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -369,7 +37,6 @@ of_action_push_vlan_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x11); /* type */
         break;
     default:
@@ -384,6 +51,21 @@ of_action_push_vlan_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_action_push_vlan_push_wire_values(of_action_push_vlan_t *obj)
+{
+
+    of_action_push_vlan_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_action_push_vlan object
  *
  * @param version The wire version to use for the object
@@ -392,24 +74,30 @@ of_action_push_vlan_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_action_push_vlan
  */
 
-of_object_t *
+of_action_push_vlan_t *
 of_action_push_vlan_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_action_push_vlan_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_PUSH_VLAN];
+    bytes = of_object_fixed_len[version][OF_ACTION_PUSH_VLAN] + of_object_extra_len[version][OF_ACTION_PUSH_VLAN];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_action_push_vlan_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_push_vlan_init(obj, version, bytes, 0);
-    of_action_push_vlan_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+
+    if (of_action_push_vlan_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -432,28 +120,40 @@ of_action_push_vlan_new(of_version_t version)
  */
 
 void
-of_action_push_vlan_init(of_object_t *obj,
+of_action_push_vlan_init(of_action_push_vlan_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_PUSH_VLAN] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_PUSH_VLAN];
+        bytes = of_object_fixed_len[version][OF_ACTION_PUSH_VLAN] + of_object_extra_len[version][OF_ACTION_PUSH_VLAN];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_ACTION_PUSH_VLAN;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_action_push_vlan_push_wire_types;
+
+    obj->wire_length_set = of_tlv16_wire_length_set;
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_action_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get ethertype from an object of type of_action_push_vlan.
@@ -482,7 +182,6 @@ of_action_push_vlan_ethertype_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -523,7 +222,6 @@ of_action_push_vlan_ethertype_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -569,7 +267,7 @@ of_action_push_vlan_ethertype_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_action_set_mpls_label_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -589,6 +287,21 @@ of_action_set_mpls_label_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_action_set_mpls_label_push_wire_values(of_action_set_mpls_label_t *obj)
+{
+
+    of_action_set_mpls_label_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_action_set_mpls_label object
  *
  * @param version The wire version to use for the object
@@ -597,24 +310,30 @@ of_action_set_mpls_label_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_action_set_mpls_label
  */
 
-of_object_t *
+of_action_set_mpls_label_t *
 of_action_set_mpls_label_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_action_set_mpls_label_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_MPLS_LABEL];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_MPLS_LABEL] + of_object_extra_len[version][OF_ACTION_SET_MPLS_LABEL];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_action_set_mpls_label_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_mpls_label_init(obj, version, bytes, 0);
-    of_action_set_mpls_label_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+
+    if (of_action_set_mpls_label_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -637,28 +356,40 @@ of_action_set_mpls_label_new(of_version_t version)
  */
 
 void
-of_action_set_mpls_label_init(of_object_t *obj,
+of_action_set_mpls_label_init(of_action_set_mpls_label_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_SET_MPLS_LABEL] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_MPLS_LABEL];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_MPLS_LABEL] + of_object_extra_len[version][OF_ACTION_SET_MPLS_LABEL];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_MPLS_LABEL;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_action_set_mpls_label_push_wire_types;
+
+    obj->wire_length_set = of_tlv16_wire_length_set;
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_action_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get mpls_label from an object of type of_action_set_mpls_label.
@@ -768,7 +499,7 @@ of_action_set_mpls_label_mpls_label_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_action_set_mpls_tc_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -788,6 +519,21 @@ of_action_set_mpls_tc_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_action_set_mpls_tc_push_wire_values(of_action_set_mpls_tc_t *obj)
+{
+
+    of_action_set_mpls_tc_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_action_set_mpls_tc object
  *
  * @param version The wire version to use for the object
@@ -796,24 +542,30 @@ of_action_set_mpls_tc_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_action_set_mpls_tc
  */
 
-of_object_t *
+of_action_set_mpls_tc_t *
 of_action_set_mpls_tc_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_action_set_mpls_tc_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_MPLS_TC];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_MPLS_TC] + of_object_extra_len[version][OF_ACTION_SET_MPLS_TC];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_action_set_mpls_tc_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_mpls_tc_init(obj, version, bytes, 0);
-    of_action_set_mpls_tc_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+
+    if (of_action_set_mpls_tc_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -836,28 +588,40 @@ of_action_set_mpls_tc_new(of_version_t version)
  */
 
 void
-of_action_set_mpls_tc_init(of_object_t *obj,
+of_action_set_mpls_tc_init(of_action_set_mpls_tc_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_SET_MPLS_TC] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_MPLS_TC];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_MPLS_TC] + of_object_extra_len[version][OF_ACTION_SET_MPLS_TC];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_MPLS_TC;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_action_set_mpls_tc_push_wire_types;
+
+    obj->wire_length_set = of_tlv16_wire_length_set;
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_action_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get mpls_tc from an object of type of_action_set_mpls_tc.
@@ -967,7 +731,7 @@ of_action_set_mpls_tc_mpls_tc_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_action_set_mpls_ttl_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -975,7 +739,6 @@ of_action_set_mpls_ttl_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xf); /* type */
         break;
     default:
@@ -990,6 +753,21 @@ of_action_set_mpls_ttl_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_action_set_mpls_ttl_push_wire_values(of_action_set_mpls_ttl_t *obj)
+{
+
+    of_action_set_mpls_ttl_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_action_set_mpls_ttl object
  *
  * @param version The wire version to use for the object
@@ -998,24 +776,30 @@ of_action_set_mpls_ttl_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_action_set_mpls_ttl
  */
 
-of_object_t *
+of_action_set_mpls_ttl_t *
 of_action_set_mpls_ttl_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_action_set_mpls_ttl_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_MPLS_TTL];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_MPLS_TTL] + of_object_extra_len[version][OF_ACTION_SET_MPLS_TTL];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_action_set_mpls_ttl_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_mpls_ttl_init(obj, version, bytes, 0);
-    of_action_set_mpls_ttl_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+
+    if (of_action_set_mpls_ttl_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -1038,28 +822,40 @@ of_action_set_mpls_ttl_new(of_version_t version)
  */
 
 void
-of_action_set_mpls_ttl_init(of_object_t *obj,
+of_action_set_mpls_ttl_init(of_action_set_mpls_ttl_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_SET_MPLS_TTL] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_MPLS_TTL];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_MPLS_TTL] + of_object_extra_len[version][OF_ACTION_SET_MPLS_TTL];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_MPLS_TTL;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_action_set_mpls_ttl_push_wire_types;
+
+    obj->wire_length_set = of_tlv16_wire_length_set;
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_action_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get mpls_ttl from an object of type of_action_set_mpls_ttl.
@@ -1088,7 +884,6 @@ of_action_set_mpls_ttl_mpls_ttl_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1129,7 +924,6 @@ of_action_set_mpls_ttl_mpls_ttl_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1175,7 +969,7 @@ of_action_set_mpls_ttl_mpls_ttl_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_action_set_nw_ecn_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -1195,6 +989,21 @@ of_action_set_nw_ecn_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_action_set_nw_ecn_push_wire_values(of_action_set_nw_ecn_t *obj)
+{
+
+    of_action_set_nw_ecn_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_action_set_nw_ecn object
  *
  * @param version The wire version to use for the object
@@ -1203,24 +1012,30 @@ of_action_set_nw_ecn_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_action_set_nw_ecn
  */
 
-of_object_t *
+of_action_set_nw_ecn_t *
 of_action_set_nw_ecn_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_action_set_nw_ecn_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_ECN];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_ECN] + of_object_extra_len[version][OF_ACTION_SET_NW_ECN];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_action_set_nw_ecn_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_nw_ecn_init(obj, version, bytes, 0);
-    of_action_set_nw_ecn_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+
+    if (of_action_set_nw_ecn_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -1243,28 +1058,40 @@ of_action_set_nw_ecn_new(of_version_t version)
  */
 
 void
-of_action_set_nw_ecn_init(of_object_t *obj,
+of_action_set_nw_ecn_init(of_action_set_nw_ecn_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_SET_NW_ECN] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_ECN];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_ECN] + of_object_extra_len[version][OF_ACTION_SET_NW_ECN];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_NW_ECN;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_action_set_nw_ecn_push_wire_types;
+
+    obj->wire_length_set = of_tlv16_wire_length_set;
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_action_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get nw_ecn from an object of type of_action_set_nw_ecn.
@@ -1374,7 +1201,7 @@ of_action_set_nw_ecn_nw_ecn_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_action_set_nw_ttl_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -1382,7 +1209,6 @@ of_action_set_nw_ttl_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x17); /* type */
         break;
     default:
@@ -1397,6 +1223,21 @@ of_action_set_nw_ttl_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_action_set_nw_ttl_push_wire_values(of_action_set_nw_ttl_t *obj)
+{
+
+    of_action_set_nw_ttl_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_action_set_nw_ttl object
  *
  * @param version The wire version to use for the object
@@ -1405,24 +1246,30 @@ of_action_set_nw_ttl_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_action_set_nw_ttl
  */
 
-of_object_t *
+of_action_set_nw_ttl_t *
 of_action_set_nw_ttl_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_action_set_nw_ttl_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_TTL];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_TTL] + of_object_extra_len[version][OF_ACTION_SET_NW_TTL];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_action_set_nw_ttl_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_nw_ttl_init(obj, version, bytes, 0);
-    of_action_set_nw_ttl_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+
+    if (of_action_set_nw_ttl_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -1445,28 +1292,40 @@ of_action_set_nw_ttl_new(of_version_t version)
  */
 
 void
-of_action_set_nw_ttl_init(of_object_t *obj,
+of_action_set_nw_ttl_init(of_action_set_nw_ttl_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_SET_NW_TTL] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_TTL];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_TTL] + of_object_extra_len[version][OF_ACTION_SET_NW_TTL];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_NW_TTL;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_action_set_nw_ttl_push_wire_types;
+
+    obj->wire_length_set = of_tlv16_wire_length_set;
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_action_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get nw_ttl from an object of type of_action_set_nw_ttl.
@@ -1495,7 +1354,6 @@ of_action_set_nw_ttl_nw_ttl_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1536,7 +1394,6 @@ of_action_set_nw_ttl_nw_ttl_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1582,7 +1439,7 @@ of_action_set_nw_ttl_nw_ttl_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_action_set_queue_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -1590,7 +1447,6 @@ of_action_set_queue_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x15); /* type */
         break;
     default:
@@ -1605,6 +1461,21 @@ of_action_set_queue_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_action_set_queue_push_wire_values(of_action_set_queue_t *obj)
+{
+
+    of_action_set_queue_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_action_set_queue object
  *
  * @param version The wire version to use for the object
@@ -1613,24 +1484,30 @@ of_action_set_queue_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_action_set_queue
  */
 
-of_object_t *
+of_action_set_queue_t *
 of_action_set_queue_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_action_set_queue_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_QUEUE];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_QUEUE] + of_object_extra_len[version][OF_ACTION_SET_QUEUE];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_action_set_queue_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_queue_init(obj, version, bytes, 0);
-    of_action_set_queue_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+
+    if (of_action_set_queue_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -1653,28 +1530,40 @@ of_action_set_queue_new(of_version_t version)
  */
 
 void
-of_action_set_queue_init(of_object_t *obj,
+of_action_set_queue_init(of_action_set_queue_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_SET_QUEUE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_QUEUE];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_QUEUE] + of_object_extra_len[version][OF_ACTION_SET_QUEUE];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_QUEUE;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_action_set_queue_push_wire_types;
+
+    obj->wire_length_set = of_tlv16_wire_length_set;
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_action_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get queue_id from an object of type of_action_set_queue.
@@ -1703,7 +1592,6 @@ of_action_set_queue_queue_id_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1744,7 +1632,6 @@ of_action_set_queue_queue_id_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1790,7 +1677,7 @@ of_action_set_queue_queue_id_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_bad_instruction_error_msg_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -1798,7 +1685,6 @@ of_bad_instruction_error_msg_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x1; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x3); /* err_type */
@@ -1815,6 +1701,25 @@ of_bad_instruction_error_msg_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_bad_instruction_error_msg_push_wire_values(of_bad_instruction_error_msg_t *obj)
+{
+
+    of_bad_instruction_error_msg_push_wire_types(obj);
+
+    /* Message obj; set length */
+    of_message_t msg;
+
+    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
+        of_message_length_set(msg, obj->length);
+    }
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_bad_instruction_error_msg object
  *
  * @param version The wire version to use for the object
@@ -1823,24 +1728,30 @@ of_bad_instruction_error_msg_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_bad_instruction_error_msg
  */
 
-of_object_t *
+of_bad_instruction_error_msg_t *
 of_bad_instruction_error_msg_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_bad_instruction_error_msg_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BAD_INSTRUCTION_ERROR_MSG];
+    bytes = of_object_fixed_len[version][OF_BAD_INSTRUCTION_ERROR_MSG] + of_object_extra_len[version][OF_BAD_INSTRUCTION_ERROR_MSG];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_bad_instruction_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bad_instruction_error_msg_init(obj, version, bytes, 0);
-    of_bad_instruction_error_msg_push_wire_types(obj);
-    of_object_message_wire_length_set(obj, obj->length);
+
+    if (of_bad_instruction_error_msg_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -1863,27 +1774,76 @@ of_bad_instruction_error_msg_new(of_version_t version)
  */
 
 void
-of_bad_instruction_error_msg_init(of_object_t *obj,
+of_bad_instruction_error_msg_init(of_bad_instruction_error_msg_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_BAD_INSTRUCTION_ERROR_MSG] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BAD_INSTRUCTION_ERROR_MSG];
+        bytes = of_object_fixed_len[version][OF_BAD_INSTRUCTION_ERROR_MSG] + of_object_extra_len[version][OF_BAD_INSTRUCTION_ERROR_MSG];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_BAD_INSTRUCTION_ERROR_MSG;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_bad_instruction_error_msg_push_wire_types;
+
+    obj->wire_length_get = of_object_message_wire_length_get;
+    obj->wire_length_set = of_object_message_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
+}
+
+
+/**
+ * Create a new of_bad_instruction_error_msg object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_bad_instruction_error_msg
+ */
+
+of_bad_instruction_error_msg_t *
+of_bad_instruction_error_msg_new_from_message(of_message_t msg)
+{
+    of_bad_instruction_error_msg_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_bad_instruction_error_msg_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_bad_instruction_error_msg_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
 }
 
 /**
@@ -1913,7 +1873,6 @@ of_bad_instruction_error_msg_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1954,7 +1913,6 @@ of_bad_instruction_error_msg_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1997,7 +1955,6 @@ of_bad_instruction_error_msg_code_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -2038,7 +1995,6 @@ of_bad_instruction_error_msg_code_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -2082,7 +2038,6 @@ of_bad_instruction_error_msg_data_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -2129,7 +2084,6 @@ of_bad_instruction_error_msg_data_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -2186,7 +2140,7 @@ of_bad_instruction_error_msg_data_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_bad_match_error_msg_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -2194,7 +2148,6 @@ of_bad_match_error_msg_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x1; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x4); /* err_type */
@@ -2211,6 +2164,25 @@ of_bad_match_error_msg_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_bad_match_error_msg_push_wire_values(of_bad_match_error_msg_t *obj)
+{
+
+    of_bad_match_error_msg_push_wire_types(obj);
+
+    /* Message obj; set length */
+    of_message_t msg;
+
+    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
+        of_message_length_set(msg, obj->length);
+    }
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_bad_match_error_msg object
  *
  * @param version The wire version to use for the object
@@ -2219,24 +2191,30 @@ of_bad_match_error_msg_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_bad_match_error_msg
  */
 
-of_object_t *
+of_bad_match_error_msg_t *
 of_bad_match_error_msg_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_bad_match_error_msg_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BAD_MATCH_ERROR_MSG];
+    bytes = of_object_fixed_len[version][OF_BAD_MATCH_ERROR_MSG] + of_object_extra_len[version][OF_BAD_MATCH_ERROR_MSG];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_bad_match_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bad_match_error_msg_init(obj, version, bytes, 0);
-    of_bad_match_error_msg_push_wire_types(obj);
-    of_object_message_wire_length_set(obj, obj->length);
+
+    if (of_bad_match_error_msg_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -2259,27 +2237,76 @@ of_bad_match_error_msg_new(of_version_t version)
  */
 
 void
-of_bad_match_error_msg_init(of_object_t *obj,
+of_bad_match_error_msg_init(of_bad_match_error_msg_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_BAD_MATCH_ERROR_MSG] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BAD_MATCH_ERROR_MSG];
+        bytes = of_object_fixed_len[version][OF_BAD_MATCH_ERROR_MSG] + of_object_extra_len[version][OF_BAD_MATCH_ERROR_MSG];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_BAD_MATCH_ERROR_MSG;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_bad_match_error_msg_push_wire_types;
+
+    obj->wire_length_get = of_object_message_wire_length_get;
+    obj->wire_length_set = of_object_message_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
+}
+
+
+/**
+ * Create a new of_bad_match_error_msg object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_bad_match_error_msg
+ */
+
+of_bad_match_error_msg_t *
+of_bad_match_error_msg_new_from_message(of_message_t msg)
+{
+    of_bad_match_error_msg_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_bad_match_error_msg_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_bad_match_error_msg_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
 }
 
 /**
@@ -2309,7 +2336,6 @@ of_bad_match_error_msg_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2350,7 +2376,6 @@ of_bad_match_error_msg_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2393,7 +2418,6 @@ of_bad_match_error_msg_code_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -2434,7 +2458,6 @@ of_bad_match_error_msg_code_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -2478,7 +2501,6 @@ of_bad_match_error_msg_data_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -2525,7 +2547,6 @@ of_bad_match_error_msg_data_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -2589,6 +2610,18 @@ of_bad_match_error_msg_data_set(
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_bucket_push_wire_values(of_bucket_t *obj)
+{
+
+    obj->wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_bucket object
  *
  * @param version The wire version to use for the object
@@ -2597,23 +2630,30 @@ of_bad_match_error_msg_data_set(
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_bucket
  */
 
-of_object_t *
+of_bucket_t *
 of_bucket_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_bucket_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BUCKET];
+    bytes = of_object_fixed_len[version][OF_BUCKET] + of_object_extra_len[version][OF_BUCKET];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_bucket_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bucket_init(obj, version, bytes, 0);
-    of_u16_len_wire_length_set(obj, obj->length);
+
+    if (of_bucket_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -2636,28 +2676,35 @@ of_bucket_new(of_version_t version)
  */
 
 void
-of_bucket_init(of_object_t *obj,
+of_bucket_init(of_bucket_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_BUCKET] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BUCKET];
+        bytes = of_object_fixed_len[version][OF_BUCKET] + of_object_extra_len[version][OF_BUCKET];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_BUCKET;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_length_get = of_u16_len_wire_length_get;
+    obj->wire_length_set = of_u16_len_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get weight from an object of type of_bucket.
@@ -2686,7 +2733,6 @@ of_bucket_weight_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 2;
         break;
     default:
@@ -2727,7 +2773,6 @@ of_bucket_weight_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 2;
         break;
     default:
@@ -2770,7 +2815,6 @@ of_bucket_watch_port_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2812,7 +2856,6 @@ of_bucket_watch_port_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2855,7 +2898,6 @@ of_bucket_watch_group_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2896,7 +2938,6 @@ of_bucket_watch_group_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2945,7 +2986,6 @@ of_bucket_actions_bind(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -2960,7 +3000,11 @@ of_bucket_actions_bind(
     /* Initialize child */
     of_list_action_init(actions, obj->version, 0, 1);
     /* Attach to parent */
-    of_object_attach(obj, actions, offset, cur_len);
+    actions->parent = (of_object_t *)obj;
+    actions->wire_object.wbuf = obj->wire_object.wbuf;
+    actions->wire_object.obj_offset = abs_offset;
+    actions->wire_object.owned = 0;
+    actions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -3018,7 +3062,6 @@ of_bucket_actions_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -3033,7 +3076,7 @@ of_bucket_actions_set(
     /* LOCI object type */
     new_len = actions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wbuf == actions->wbuf) {
+    if (obj->wire_object.wbuf == actions->wire_object.wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(actions, 0));
@@ -3046,7 +3089,9 @@ of_bucket_actions_set(
         OF_OBJECT_BUFFER_INDEX(actions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    of_object_wire_length_set((of_object_t *)actions, actions->length);
+    if (actions->wire_length_set != NULL) {
+        actions->wire_length_set((of_object_t *)actions, actions->length);
+    }
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -3097,6 +3142,16 @@ of_bucket_actions_set(
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_bucket_counter_push_wire_values(of_bucket_counter_t *obj)
+{
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_bucket_counter object
  *
  * @param version The wire version to use for the object
@@ -3105,22 +3160,30 @@ of_bucket_actions_set(
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_bucket_counter
  */
 
-of_object_t *
+of_bucket_counter_t *
 of_bucket_counter_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_bucket_counter_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BUCKET_COUNTER];
+    bytes = of_object_fixed_len[version][OF_BUCKET_COUNTER] + of_object_extra_len[version][OF_BUCKET_COUNTER];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_bucket_counter_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bucket_counter_init(obj, version, bytes, 0);
+
+    if (of_bucket_counter_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -3143,28 +3206,32 @@ of_bucket_counter_new(of_version_t version)
  */
 
 void
-of_bucket_counter_init(of_object_t *obj,
+of_bucket_counter_init(of_bucket_counter_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_BUCKET_COUNTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BUCKET_COUNTER];
+        bytes = of_object_fixed_len[version][OF_BUCKET_COUNTER] + of_object_extra_len[version][OF_BUCKET_COUNTER];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_BUCKET_COUNTER;
 
+    /* Set up the object's function pointers */
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get packet_count from an object of type of_bucket_counter.
@@ -3193,7 +3260,6 @@ of_bucket_counter_packet_count_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 0;
         break;
     default:
@@ -3234,7 +3300,6 @@ of_bucket_counter_packet_count_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 0;
         break;
     default:
@@ -3277,7 +3342,6 @@ of_bucket_counter_byte_count_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3318,7 +3382,6 @@ of_bucket_counter_byte_count_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3424,24 +3487,6 @@ of_group_mod_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
-    case OF_VERSION_1_4: {
-        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* command */
-        switch (value) {
-        case 0x0:
-            *id = OF_GROUP_ADD;
-            break;
-        case 0x1:
-            *id = OF_GROUP_MODIFY;
-            break;
-        case 0x2:
-            *id = OF_GROUP_DELETE;
-            break;
-        default:
-            *id = OF_GROUP_MOD;
-            break;
-        }
-        break;
-    }
     default:
         LOCI_ASSERT(0);
     }
@@ -3461,18 +3506,21 @@ of_group_mod_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_group_mod
  */
 
-of_object_t *
+of_group_mod_t *
 of_group_mod_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_group_mod_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_GROUP_MOD];
+    bytes = of_object_fixed_len[version][OF_GROUP_MOD] + of_object_extra_len[version][OF_GROUP_MOD];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_group_mod_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -3499,27 +3547,74 @@ of_group_mod_new(of_version_t version)
  */
 
 void
-of_group_mod_init(of_object_t *obj,
+of_group_mod_init(of_group_mod_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_GROUP_MOD] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_GROUP_MOD];
+        bytes = of_object_fixed_len[version][OF_GROUP_MOD] + of_object_extra_len[version][OF_GROUP_MOD];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_GROUP_MOD;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_length_get = of_object_message_wire_length_get;
+    obj->wire_length_set = of_object_message_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
+}
+
+
+/**
+ * Create a new of_group_mod object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_group_mod
+ */
+
+of_group_mod_t *
+of_group_mod_new_from_message(of_message_t msg)
+{
+    of_group_mod_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_group_mod_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_group_mod_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
 }
 
 /**
@@ -3549,7 +3644,6 @@ of_group_mod_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3590,7 +3684,6 @@ of_group_mod_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3633,7 +3726,6 @@ of_group_mod_group_type_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -3674,7 +3766,6 @@ of_group_mod_group_type_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -3717,7 +3808,6 @@ of_group_mod_group_id_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -3758,7 +3848,6 @@ of_group_mod_group_id_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -3807,7 +3896,6 @@ of_group_mod_buckets_bind(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -3822,7 +3910,11 @@ of_group_mod_buckets_bind(
     /* Initialize child */
     of_list_bucket_init(buckets, obj->version, 0, 1);
     /* Attach to parent */
-    of_object_attach(obj, buckets, offset, cur_len);
+    buckets->parent = (of_object_t *)obj;
+    buckets->wire_object.wbuf = obj->wire_object.wbuf;
+    buckets->wire_object.obj_offset = abs_offset;
+    buckets->wire_object.owned = 0;
+    buckets->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -3880,7 +3972,6 @@ of_group_mod_buckets_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -3895,7 +3986,7 @@ of_group_mod_buckets_set(
     /* LOCI object type */
     new_len = buckets->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wbuf == buckets->wbuf) {
+    if (obj->wire_object.wbuf == buckets->wire_object.wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(buckets, 0));
@@ -3908,7 +3999,9 @@ of_group_mod_buckets_set(
         OF_OBJECT_BUFFER_INDEX(buckets, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    of_object_wire_length_set((of_object_t *)buckets, buckets->length);
+    if (buckets->wire_length_set != NULL) {
+        buckets->wire_length_set((of_object_t *)buckets, buckets->length);
+    }
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -3952,7 +4045,7 @@ of_group_mod_buckets_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_group_add_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -3960,7 +4053,6 @@ of_group_add_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0xf; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x0); /* command */
@@ -3977,6 +4069,25 @@ of_group_add_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_group_add_push_wire_values(of_group_add_t *obj)
+{
+
+    of_group_add_push_wire_types(obj);
+
+    /* Message obj; set length */
+    of_message_t msg;
+
+    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
+        of_message_length_set(msg, obj->length);
+    }
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_group_add object
  *
  * @param version The wire version to use for the object
@@ -3985,24 +4096,30 @@ of_group_add_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_group_add
  */
 
-of_object_t *
+of_group_add_t *
 of_group_add_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_group_add_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_GROUP_ADD];
+    bytes = of_object_fixed_len[version][OF_GROUP_ADD] + of_object_extra_len[version][OF_GROUP_ADD];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_group_add_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_group_add_init(obj, version, bytes, 0);
-    of_group_add_push_wire_types(obj);
-    of_object_message_wire_length_set(obj, obj->length);
+
+    if (of_group_add_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -4025,27 +4142,76 @@ of_group_add_new(of_version_t version)
  */
 
 void
-of_group_add_init(of_object_t *obj,
+of_group_add_init(of_group_add_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_GROUP_ADD] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_GROUP_ADD];
+        bytes = of_object_fixed_len[version][OF_GROUP_ADD] + of_object_extra_len[version][OF_GROUP_ADD];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_GROUP_ADD;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_group_add_push_wire_types;
+
+    obj->wire_length_get = of_object_message_wire_length_get;
+    obj->wire_length_set = of_object_message_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
+}
+
+
+/**
+ * Create a new of_group_add object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_group_add
+ */
+
+of_group_add_t *
+of_group_add_new_from_message(of_message_t msg)
+{
+    of_group_add_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_group_add_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_group_add_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
 }
 
 /**
@@ -4075,7 +4241,6 @@ of_group_add_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4116,7 +4281,6 @@ of_group_add_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4159,7 +4323,6 @@ of_group_add_group_type_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -4200,7 +4363,6 @@ of_group_add_group_type_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -4243,7 +4405,6 @@ of_group_add_group_id_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -4284,7 +4445,6 @@ of_group_add_group_id_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -4333,7 +4493,6 @@ of_group_add_buckets_bind(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -4348,7 +4507,11 @@ of_group_add_buckets_bind(
     /* Initialize child */
     of_list_bucket_init(buckets, obj->version, 0, 1);
     /* Attach to parent */
-    of_object_attach(obj, buckets, offset, cur_len);
+    buckets->parent = (of_object_t *)obj;
+    buckets->wire_object.wbuf = obj->wire_object.wbuf;
+    buckets->wire_object.obj_offset = abs_offset;
+    buckets->wire_object.owned = 0;
+    buckets->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -4406,7 +4569,6 @@ of_group_add_buckets_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -4421,7 +4583,7 @@ of_group_add_buckets_set(
     /* LOCI object type */
     new_len = buckets->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wbuf == buckets->wbuf) {
+    if (obj->wire_object.wbuf == buckets->wire_object.wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(buckets, 0));
@@ -4434,7 +4596,9 @@ of_group_add_buckets_set(
         OF_OBJECT_BUFFER_INDEX(buckets, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    of_object_wire_length_set((of_object_t *)buckets, buckets->length);
+    if (buckets->wire_length_set != NULL) {
+        buckets->wire_length_set((of_object_t *)buckets, buckets->length);
+    }
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -4478,7 +4642,7 @@ of_group_add_buckets_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_group_delete_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -4486,7 +4650,6 @@ of_group_delete_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0xf; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x2); /* command */
@@ -4503,6 +4666,25 @@ of_group_delete_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_group_delete_push_wire_values(of_group_delete_t *obj)
+{
+
+    of_group_delete_push_wire_types(obj);
+
+    /* Message obj; set length */
+    of_message_t msg;
+
+    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
+        of_message_length_set(msg, obj->length);
+    }
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_group_delete object
  *
  * @param version The wire version to use for the object
@@ -4511,24 +4693,30 @@ of_group_delete_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_group_delete
  */
 
-of_object_t *
+of_group_delete_t *
 of_group_delete_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_group_delete_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_GROUP_DELETE];
+    bytes = of_object_fixed_len[version][OF_GROUP_DELETE] + of_object_extra_len[version][OF_GROUP_DELETE];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_group_delete_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_group_delete_init(obj, version, bytes, 0);
-    of_group_delete_push_wire_types(obj);
-    of_object_message_wire_length_set(obj, obj->length);
+
+    if (of_group_delete_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -4551,27 +4739,76 @@ of_group_delete_new(of_version_t version)
  */
 
 void
-of_group_delete_init(of_object_t *obj,
+of_group_delete_init(of_group_delete_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_GROUP_DELETE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_GROUP_DELETE];
+        bytes = of_object_fixed_len[version][OF_GROUP_DELETE] + of_object_extra_len[version][OF_GROUP_DELETE];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_GROUP_DELETE;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_group_delete_push_wire_types;
+
+    obj->wire_length_get = of_object_message_wire_length_get;
+    obj->wire_length_set = of_object_message_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
+}
+
+
+/**
+ * Create a new of_group_delete object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_group_delete
+ */
+
+of_group_delete_t *
+of_group_delete_new_from_message(of_message_t msg)
+{
+    of_group_delete_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_group_delete_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_group_delete_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
 }
 
 /**
@@ -4601,7 +4838,6 @@ of_group_delete_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4642,7 +4878,6 @@ of_group_delete_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4685,7 +4920,6 @@ of_group_delete_group_type_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -4726,7 +4960,6 @@ of_group_delete_group_type_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -4769,7 +5002,6 @@ of_group_delete_group_id_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -4810,7 +5042,6 @@ of_group_delete_group_id_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -4859,7 +5090,6 @@ of_group_delete_buckets_bind(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -4874,7 +5104,11 @@ of_group_delete_buckets_bind(
     /* Initialize child */
     of_list_bucket_init(buckets, obj->version, 0, 1);
     /* Attach to parent */
-    of_object_attach(obj, buckets, offset, cur_len);
+    buckets->parent = (of_object_t *)obj;
+    buckets->wire_object.wbuf = obj->wire_object.wbuf;
+    buckets->wire_object.obj_offset = abs_offset;
+    buckets->wire_object.owned = 0;
+    buckets->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -4932,7 +5166,6 @@ of_group_delete_buckets_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -4947,7 +5180,7 @@ of_group_delete_buckets_set(
     /* LOCI object type */
     new_len = buckets->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wbuf == buckets->wbuf) {
+    if (obj->wire_object.wbuf == buckets->wire_object.wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(buckets, 0));
@@ -4960,7 +5193,9 @@ of_group_delete_buckets_set(
         OF_OBJECT_BUFFER_INDEX(buckets, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    of_object_wire_length_set((of_object_t *)buckets, buckets->length);
+    if (buckets->wire_length_set != NULL) {
+        buckets->wire_length_set((of_object_t *)buckets, buckets->length);
+    }
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -5011,6 +5246,18 @@ of_group_delete_buckets_set(
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_group_desc_stats_entry_push_wire_values(of_group_desc_stats_entry_t *obj)
+{
+
+    obj->wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_group_desc_stats_entry object
  *
  * @param version The wire version to use for the object
@@ -5019,23 +5266,30 @@ of_group_delete_buckets_set(
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_group_desc_stats_entry
  */
 
-of_object_t *
+of_group_desc_stats_entry_t *
 of_group_desc_stats_entry_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_group_desc_stats_entry_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_GROUP_DESC_STATS_ENTRY];
+    bytes = of_object_fixed_len[version][OF_GROUP_DESC_STATS_ENTRY] + of_object_extra_len[version][OF_GROUP_DESC_STATS_ENTRY];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_group_desc_stats_entry_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_group_desc_stats_entry_init(obj, version, bytes, 0);
-    of_u16_len_wire_length_set(obj, obj->length);
+
+    if (of_group_desc_stats_entry_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -5058,28 +5312,35 @@ of_group_desc_stats_entry_new(of_version_t version)
  */
 
 void
-of_group_desc_stats_entry_init(of_object_t *obj,
+of_group_desc_stats_entry_init(of_group_desc_stats_entry_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_GROUP_DESC_STATS_ENTRY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_GROUP_DESC_STATS_ENTRY];
+        bytes = of_object_fixed_len[version][OF_GROUP_DESC_STATS_ENTRY] + of_object_extra_len[version][OF_GROUP_DESC_STATS_ENTRY];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_GROUP_DESC_STATS_ENTRY;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_length_get = of_u16_len_wire_length_get;
+    obj->wire_length_set = of_u16_len_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get group_type from an object of type of_group_desc_stats_entry.
@@ -5108,7 +5369,6 @@ of_group_desc_stats_entry_group_type_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 2;
         break;
     default:
@@ -5149,7 +5409,6 @@ of_group_desc_stats_entry_group_type_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 2;
         break;
     default:
@@ -5192,7 +5451,6 @@ of_group_desc_stats_entry_group_id_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5233,7 +5491,6 @@ of_group_desc_stats_entry_group_id_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5282,7 +5539,6 @@ of_group_desc_stats_entry_buckets_bind(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -5297,7 +5553,11 @@ of_group_desc_stats_entry_buckets_bind(
     /* Initialize child */
     of_list_bucket_init(buckets, obj->version, 0, 1);
     /* Attach to parent */
-    of_object_attach(obj, buckets, offset, cur_len);
+    buckets->parent = (of_object_t *)obj;
+    buckets->wire_object.wbuf = obj->wire_object.wbuf;
+    buckets->wire_object.obj_offset = abs_offset;
+    buckets->wire_object.owned = 0;
+    buckets->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -5355,7 +5615,6 @@ of_group_desc_stats_entry_buckets_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -5370,7 +5629,7 @@ of_group_desc_stats_entry_buckets_set(
     /* LOCI object type */
     new_len = buckets->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wbuf == buckets->wbuf) {
+    if (obj->wire_object.wbuf == buckets->wire_object.wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(buckets, 0));
@@ -5383,7 +5642,9 @@ of_group_desc_stats_entry_buckets_set(
         OF_OBJECT_BUFFER_INDEX(buckets, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    of_object_wire_length_set((of_object_t *)buckets, buckets->length);
+    if (buckets->wire_length_set != NULL) {
+        buckets->wire_length_set((of_object_t *)buckets, buckets->length);
+    }
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -5427,7 +5688,7 @@ of_group_desc_stats_entry_buckets_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_group_desc_stats_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -5435,7 +5696,6 @@ of_group_desc_stats_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x7); /* stats_type */
@@ -5452,6 +5712,25 @@ of_group_desc_stats_reply_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_group_desc_stats_reply_push_wire_values(of_group_desc_stats_reply_t *obj)
+{
+
+    of_group_desc_stats_reply_push_wire_types(obj);
+
+    /* Message obj; set length */
+    of_message_t msg;
+
+    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
+        of_message_length_set(msg, obj->length);
+    }
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_group_desc_stats_reply object
  *
  * @param version The wire version to use for the object
@@ -5460,24 +5739,30 @@ of_group_desc_stats_reply_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_group_desc_stats_reply
  */
 
-of_object_t *
+of_group_desc_stats_reply_t *
 of_group_desc_stats_reply_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_group_desc_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_GROUP_DESC_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_GROUP_DESC_STATS_REPLY] + of_object_extra_len[version][OF_GROUP_DESC_STATS_REPLY];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_group_desc_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_group_desc_stats_reply_init(obj, version, bytes, 0);
-    of_group_desc_stats_reply_push_wire_types(obj);
-    of_object_message_wire_length_set(obj, obj->length);
+
+    if (of_group_desc_stats_reply_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -5500,27 +5785,76 @@ of_group_desc_stats_reply_new(of_version_t version)
  */
 
 void
-of_group_desc_stats_reply_init(of_object_t *obj,
+of_group_desc_stats_reply_init(of_group_desc_stats_reply_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_GROUP_DESC_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_GROUP_DESC_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_GROUP_DESC_STATS_REPLY] + of_object_extra_len[version][OF_GROUP_DESC_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_GROUP_DESC_STATS_REPLY;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_group_desc_stats_reply_push_wire_types;
+
+    obj->wire_length_get = of_object_message_wire_length_get;
+    obj->wire_length_set = of_object_message_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
+}
+
+
+/**
+ * Create a new of_group_desc_stats_reply object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_group_desc_stats_reply
+ */
+
+of_group_desc_stats_reply_t *
+of_group_desc_stats_reply_new_from_message(of_message_t msg)
+{
+    of_group_desc_stats_reply_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_group_desc_stats_reply_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_group_desc_stats_reply_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
 }
 
 /**
@@ -5550,7 +5884,6 @@ of_group_desc_stats_reply_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5591,7 +5924,6 @@ of_group_desc_stats_reply_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5634,7 +5966,6 @@ of_group_desc_stats_reply_flags_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -5675,7 +6006,6 @@ of_group_desc_stats_reply_flags_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -5724,7 +6054,6 @@ of_group_desc_stats_reply_entries_bind(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -5739,7 +6068,11 @@ of_group_desc_stats_reply_entries_bind(
     /* Initialize child */
     of_list_group_desc_stats_entry_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    of_object_attach(obj, entries, offset, cur_len);
+    entries->parent = (of_object_t *)obj;
+    entries->wire_object.wbuf = obj->wire_object.wbuf;
+    entries->wire_object.obj_offset = abs_offset;
+    entries->wire_object.owned = 0;
+    entries->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -5797,7 +6130,6 @@ of_group_desc_stats_reply_entries_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -5812,7 +6144,7 @@ of_group_desc_stats_reply_entries_set(
     /* LOCI object type */
     new_len = entries->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wbuf == entries->wbuf) {
+    if (obj->wire_object.wbuf == entries->wire_object.wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(entries, 0));
@@ -5825,7 +6157,9 @@ of_group_desc_stats_reply_entries_set(
         OF_OBJECT_BUFFER_INDEX(entries, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    of_object_wire_length_set((of_object_t *)entries, entries->length);
+    if (entries->wire_length_set != NULL) {
+        entries->wire_length_set((of_object_t *)entries, entries->length);
+    }
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -5869,7 +6203,7 @@ of_group_desc_stats_reply_entries_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_group_desc_stats_request_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -5877,7 +6211,6 @@ of_group_desc_stats_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x7); /* stats_type */
@@ -5894,6 +6227,25 @@ of_group_desc_stats_request_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_group_desc_stats_request_push_wire_values(of_group_desc_stats_request_t *obj)
+{
+
+    of_group_desc_stats_request_push_wire_types(obj);
+
+    /* Message obj; set length */
+    of_message_t msg;
+
+    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
+        of_message_length_set(msg, obj->length);
+    }
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_group_desc_stats_request object
  *
  * @param version The wire version to use for the object
@@ -5902,24 +6254,30 @@ of_group_desc_stats_request_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_group_desc_stats_request
  */
 
-of_object_t *
+of_group_desc_stats_request_t *
 of_group_desc_stats_request_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_group_desc_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_GROUP_DESC_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_GROUP_DESC_STATS_REQUEST] + of_object_extra_len[version][OF_GROUP_DESC_STATS_REQUEST];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_group_desc_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_group_desc_stats_request_init(obj, version, bytes, 0);
-    of_group_desc_stats_request_push_wire_types(obj);
-    of_object_message_wire_length_set(obj, obj->length);
+
+    if (of_group_desc_stats_request_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -5942,27 +6300,76 @@ of_group_desc_stats_request_new(of_version_t version)
  */
 
 void
-of_group_desc_stats_request_init(of_object_t *obj,
+of_group_desc_stats_request_init(of_group_desc_stats_request_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_GROUP_DESC_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_GROUP_DESC_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_GROUP_DESC_STATS_REQUEST] + of_object_extra_len[version][OF_GROUP_DESC_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_GROUP_DESC_STATS_REQUEST;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_group_desc_stats_request_push_wire_types;
+
+    obj->wire_length_get = of_object_message_wire_length_get;
+    obj->wire_length_set = of_object_message_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
+}
+
+
+/**
+ * Create a new of_group_desc_stats_request object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_group_desc_stats_request
+ */
+
+of_group_desc_stats_request_t *
+of_group_desc_stats_request_new_from_message(of_message_t msg)
+{
+    of_group_desc_stats_request_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_group_desc_stats_request_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_group_desc_stats_request_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
 }
 
 /**
@@ -5992,7 +6399,6 @@ of_group_desc_stats_request_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6033,7 +6439,6 @@ of_group_desc_stats_request_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6076,7 +6481,6 @@ of_group_desc_stats_request_flags_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6117,7 +6521,6 @@ of_group_desc_stats_request_flags_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6163,7 +6566,7 @@ of_group_desc_stats_request_flags_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_group_mod_failed_error_msg_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -6171,7 +6574,6 @@ of_group_mod_failed_error_msg_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x1; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x6); /* err_type */
@@ -6188,6 +6590,25 @@ of_group_mod_failed_error_msg_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_group_mod_failed_error_msg_push_wire_values(of_group_mod_failed_error_msg_t *obj)
+{
+
+    of_group_mod_failed_error_msg_push_wire_types(obj);
+
+    /* Message obj; set length */
+    of_message_t msg;
+
+    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
+        of_message_length_set(msg, obj->length);
+    }
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_group_mod_failed_error_msg object
  *
  * @param version The wire version to use for the object
@@ -6196,24 +6617,30 @@ of_group_mod_failed_error_msg_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_group_mod_failed_error_msg
  */
 
-of_object_t *
+of_group_mod_failed_error_msg_t *
 of_group_mod_failed_error_msg_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_group_mod_failed_error_msg_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_GROUP_MOD_FAILED_ERROR_MSG];
+    bytes = of_object_fixed_len[version][OF_GROUP_MOD_FAILED_ERROR_MSG] + of_object_extra_len[version][OF_GROUP_MOD_FAILED_ERROR_MSG];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_group_mod_failed_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_group_mod_failed_error_msg_init(obj, version, bytes, 0);
-    of_group_mod_failed_error_msg_push_wire_types(obj);
-    of_object_message_wire_length_set(obj, obj->length);
+
+    if (of_group_mod_failed_error_msg_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -6236,27 +6663,76 @@ of_group_mod_failed_error_msg_new(of_version_t version)
  */
 
 void
-of_group_mod_failed_error_msg_init(of_object_t *obj,
+of_group_mod_failed_error_msg_init(of_group_mod_failed_error_msg_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_GROUP_MOD_FAILED_ERROR_MSG] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_GROUP_MOD_FAILED_ERROR_MSG];
+        bytes = of_object_fixed_len[version][OF_GROUP_MOD_FAILED_ERROR_MSG] + of_object_extra_len[version][OF_GROUP_MOD_FAILED_ERROR_MSG];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_GROUP_MOD_FAILED_ERROR_MSG;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_group_mod_failed_error_msg_push_wire_types;
+
+    obj->wire_length_get = of_object_message_wire_length_get;
+    obj->wire_length_set = of_object_message_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
+}
+
+
+/**
+ * Create a new of_group_mod_failed_error_msg object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_group_mod_failed_error_msg
+ */
+
+of_group_mod_failed_error_msg_t *
+of_group_mod_failed_error_msg_new_from_message(of_message_t msg)
+{
+    of_group_mod_failed_error_msg_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_group_mod_failed_error_msg_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_group_mod_failed_error_msg_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
 }
 
 /**
@@ -6286,7 +6762,6 @@ of_group_mod_failed_error_msg_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6327,7 +6802,6 @@ of_group_mod_failed_error_msg_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6370,7 +6844,6 @@ of_group_mod_failed_error_msg_code_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6411,7 +6884,6 @@ of_group_mod_failed_error_msg_code_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6455,7 +6927,6 @@ of_group_mod_failed_error_msg_data_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -6502,7 +6973,6 @@ of_group_mod_failed_error_msg_data_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -6559,7 +7029,7 @@ of_group_mod_failed_error_msg_data_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_group_modify_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -6567,7 +7037,6 @@ of_group_modify_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0xf; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x1); /* command */
@@ -6584,6 +7053,25 @@ of_group_modify_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_group_modify_push_wire_values(of_group_modify_t *obj)
+{
+
+    of_group_modify_push_wire_types(obj);
+
+    /* Message obj; set length */
+    of_message_t msg;
+
+    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
+        of_message_length_set(msg, obj->length);
+    }
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_group_modify object
  *
  * @param version The wire version to use for the object
@@ -6592,24 +7080,30 @@ of_group_modify_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_group_modify
  */
 
-of_object_t *
+of_group_modify_t *
 of_group_modify_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_group_modify_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_GROUP_MODIFY];
+    bytes = of_object_fixed_len[version][OF_GROUP_MODIFY] + of_object_extra_len[version][OF_GROUP_MODIFY];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_group_modify_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_group_modify_init(obj, version, bytes, 0);
-    of_group_modify_push_wire_types(obj);
-    of_object_message_wire_length_set(obj, obj->length);
+
+    if (of_group_modify_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -6632,27 +7126,76 @@ of_group_modify_new(of_version_t version)
  */
 
 void
-of_group_modify_init(of_object_t *obj,
+of_group_modify_init(of_group_modify_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_GROUP_MODIFY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_GROUP_MODIFY];
+        bytes = of_object_fixed_len[version][OF_GROUP_MODIFY] + of_object_extra_len[version][OF_GROUP_MODIFY];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_GROUP_MODIFY;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_group_modify_push_wire_types;
+
+    obj->wire_length_get = of_object_message_wire_length_get;
+    obj->wire_length_set = of_object_message_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
+}
+
+
+/**
+ * Create a new of_group_modify object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_group_modify
+ */
+
+of_group_modify_t *
+of_group_modify_new_from_message(of_message_t msg)
+{
+    of_group_modify_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_group_modify_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_group_modify_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
 }
 
 /**
@@ -6682,7 +7225,6 @@ of_group_modify_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6723,7 +7265,6 @@ of_group_modify_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6766,7 +7307,6 @@ of_group_modify_group_type_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6807,7 +7347,6 @@ of_group_modify_group_type_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6850,7 +7389,6 @@ of_group_modify_group_id_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -6891,7 +7429,6 @@ of_group_modify_group_id_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -6940,7 +7477,6 @@ of_group_modify_buckets_bind(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -6955,7 +7491,11 @@ of_group_modify_buckets_bind(
     /* Initialize child */
     of_list_bucket_init(buckets, obj->version, 0, 1);
     /* Attach to parent */
-    of_object_attach(obj, buckets, offset, cur_len);
+    buckets->parent = (of_object_t *)obj;
+    buckets->wire_object.wbuf = obj->wire_object.wbuf;
+    buckets->wire_object.obj_offset = abs_offset;
+    buckets->wire_object.owned = 0;
+    buckets->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -7013,7 +7553,6 @@ of_group_modify_buckets_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -7028,7 +7567,7 @@ of_group_modify_buckets_set(
     /* LOCI object type */
     new_len = buckets->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wbuf == buckets->wbuf) {
+    if (obj->wire_object.wbuf == buckets->wire_object.wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(buckets, 0));
@@ -7041,7 +7580,9 @@ of_group_modify_buckets_set(
         OF_OBJECT_BUFFER_INDEX(buckets, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    of_object_wire_length_set((of_object_t *)buckets, buckets->length);
+    if (buckets->wire_length_set != NULL) {
+        buckets->wire_length_set((of_object_t *)buckets, buckets->length);
+    }
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -7092,6 +7633,18 @@ of_group_modify_buckets_set(
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_group_stats_entry_push_wire_values(of_group_stats_entry_t *obj)
+{
+
+    obj->wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_group_stats_entry object
  *
  * @param version The wire version to use for the object
@@ -7100,23 +7653,30 @@ of_group_modify_buckets_set(
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_group_stats_entry
  */
 
-of_object_t *
+of_group_stats_entry_t *
 of_group_stats_entry_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_group_stats_entry_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_GROUP_STATS_ENTRY];
+    bytes = of_object_fixed_len[version][OF_GROUP_STATS_ENTRY] + of_object_extra_len[version][OF_GROUP_STATS_ENTRY];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_group_stats_entry_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_group_stats_entry_init(obj, version, bytes, 0);
-    of_u16_len_wire_length_set(obj, obj->length);
+
+    if (of_group_stats_entry_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -7139,28 +7699,35 @@ of_group_stats_entry_new(of_version_t version)
  */
 
 void
-of_group_stats_entry_init(of_object_t *obj,
+of_group_stats_entry_init(of_group_stats_entry_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_GROUP_STATS_ENTRY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_GROUP_STATS_ENTRY];
+        bytes = of_object_fixed_len[version][OF_GROUP_STATS_ENTRY] + of_object_extra_len[version][OF_GROUP_STATS_ENTRY];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_GROUP_STATS_ENTRY;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_length_get = of_u16_len_wire_length_get;
+    obj->wire_length_set = of_u16_len_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get group_id from an object of type of_group_stats_entry.
@@ -7189,7 +7756,6 @@ of_group_stats_entry_group_id_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7230,7 +7796,6 @@ of_group_stats_entry_group_id_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7273,7 +7838,6 @@ of_group_stats_entry_ref_count_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -7314,7 +7878,6 @@ of_group_stats_entry_ref_count_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -7357,7 +7920,6 @@ of_group_stats_entry_packet_count_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -7398,7 +7960,6 @@ of_group_stats_entry_packet_count_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -7441,7 +8002,6 @@ of_group_stats_entry_byte_count_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 24;
         break;
     default:
@@ -7482,7 +8042,6 @@ of_group_stats_entry_byte_count_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 24;
         break;
     default:
@@ -7523,7 +8082,6 @@ of_group_stats_entry_duration_sec_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 32;
         break;
     default:
@@ -7562,7 +8120,6 @@ of_group_stats_entry_duration_sec_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 32;
         break;
     default:
@@ -7603,7 +8160,6 @@ of_group_stats_entry_duration_nsec_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 36;
         break;
     default:
@@ -7642,7 +8198,6 @@ of_group_stats_entry_duration_nsec_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 36;
         break;
     default:
@@ -7694,7 +8249,6 @@ of_group_stats_entry_bucket_stats_bind(
         cur_len = _END_LEN(obj, offset);
         break;
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 40;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -7709,7 +8263,11 @@ of_group_stats_entry_bucket_stats_bind(
     /* Initialize child */
     of_list_bucket_counter_init(bucket_stats, obj->version, 0, 1);
     /* Attach to parent */
-    of_object_attach(obj, bucket_stats, offset, cur_len);
+    bucket_stats->parent = (of_object_t *)obj;
+    bucket_stats->wire_object.wbuf = obj->wire_object.wbuf;
+    bucket_stats->wire_object.obj_offset = abs_offset;
+    bucket_stats->wire_object.owned = 0;
+    bucket_stats->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -7770,7 +8328,6 @@ of_group_stats_entry_bucket_stats_set(
         cur_len = _END_LEN(obj, offset);
         break;
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 40;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -7785,7 +8342,7 @@ of_group_stats_entry_bucket_stats_set(
     /* LOCI object type */
     new_len = bucket_stats->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wbuf == bucket_stats->wbuf) {
+    if (obj->wire_object.wbuf == bucket_stats->wire_object.wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(bucket_stats, 0));
@@ -7798,7 +8355,9 @@ of_group_stats_entry_bucket_stats_set(
         OF_OBJECT_BUFFER_INDEX(bucket_stats, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    of_object_wire_length_set((of_object_t *)bucket_stats, bucket_stats->length);
+    if (bucket_stats->wire_length_set != NULL) {
+        bucket_stats->wire_length_set((of_object_t *)bucket_stats, bucket_stats->length);
+    }
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -7842,7 +8401,7 @@ of_group_stats_entry_bucket_stats_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_group_stats_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -7850,7 +8409,6 @@ of_group_stats_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x6); /* stats_type */
@@ -7867,6 +8425,25 @@ of_group_stats_reply_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_group_stats_reply_push_wire_values(of_group_stats_reply_t *obj)
+{
+
+    of_group_stats_reply_push_wire_types(obj);
+
+    /* Message obj; set length */
+    of_message_t msg;
+
+    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
+        of_message_length_set(msg, obj->length);
+    }
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_group_stats_reply object
  *
  * @param version The wire version to use for the object
@@ -7875,24 +8452,30 @@ of_group_stats_reply_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_group_stats_reply
  */
 
-of_object_t *
+of_group_stats_reply_t *
 of_group_stats_reply_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_group_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_GROUP_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_GROUP_STATS_REPLY] + of_object_extra_len[version][OF_GROUP_STATS_REPLY];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_group_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_group_stats_reply_init(obj, version, bytes, 0);
-    of_group_stats_reply_push_wire_types(obj);
-    of_object_message_wire_length_set(obj, obj->length);
+
+    if (of_group_stats_reply_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -7915,27 +8498,76 @@ of_group_stats_reply_new(of_version_t version)
  */
 
 void
-of_group_stats_reply_init(of_object_t *obj,
+of_group_stats_reply_init(of_group_stats_reply_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_GROUP_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_GROUP_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_GROUP_STATS_REPLY] + of_object_extra_len[version][OF_GROUP_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_GROUP_STATS_REPLY;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_group_stats_reply_push_wire_types;
+
+    obj->wire_length_get = of_object_message_wire_length_get;
+    obj->wire_length_set = of_object_message_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
+}
+
+
+/**
+ * Create a new of_group_stats_reply object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_group_stats_reply
+ */
+
+of_group_stats_reply_t *
+of_group_stats_reply_new_from_message(of_message_t msg)
+{
+    of_group_stats_reply_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_group_stats_reply_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_group_stats_reply_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
 }
 
 /**
@@ -7965,7 +8597,6 @@ of_group_stats_reply_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8006,7 +8637,6 @@ of_group_stats_reply_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8049,7 +8679,6 @@ of_group_stats_reply_flags_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -8090,7 +8719,6 @@ of_group_stats_reply_flags_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -8139,7 +8767,6 @@ of_group_stats_reply_entries_bind(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -8154,7 +8781,11 @@ of_group_stats_reply_entries_bind(
     /* Initialize child */
     of_list_group_stats_entry_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    of_object_attach(obj, entries, offset, cur_len);
+    entries->parent = (of_object_t *)obj;
+    entries->wire_object.wbuf = obj->wire_object.wbuf;
+    entries->wire_object.obj_offset = abs_offset;
+    entries->wire_object.owned = 0;
+    entries->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -8212,7 +8843,6 @@ of_group_stats_reply_entries_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -8227,7 +8857,7 @@ of_group_stats_reply_entries_set(
     /* LOCI object type */
     new_len = entries->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wbuf == entries->wbuf) {
+    if (obj->wire_object.wbuf == entries->wire_object.wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(entries, 0));
@@ -8240,7 +8870,9 @@ of_group_stats_reply_entries_set(
         OF_OBJECT_BUFFER_INDEX(entries, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    of_object_wire_length_set((of_object_t *)entries, entries->length);
+    if (entries->wire_length_set != NULL) {
+        entries->wire_length_set((of_object_t *)entries, entries->length);
+    }
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -8284,7 +8916,7 @@ of_group_stats_reply_entries_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_group_stats_request_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -8292,7 +8924,6 @@ of_group_stats_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x6); /* stats_type */
@@ -8309,6 +8940,25 @@ of_group_stats_request_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_group_stats_request_push_wire_values(of_group_stats_request_t *obj)
+{
+
+    of_group_stats_request_push_wire_types(obj);
+
+    /* Message obj; set length */
+    of_message_t msg;
+
+    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
+        of_message_length_set(msg, obj->length);
+    }
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_group_stats_request object
  *
  * @param version The wire version to use for the object
@@ -8317,24 +8967,30 @@ of_group_stats_request_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_group_stats_request
  */
 
-of_object_t *
+of_group_stats_request_t *
 of_group_stats_request_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_group_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_GROUP_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_GROUP_STATS_REQUEST] + of_object_extra_len[version][OF_GROUP_STATS_REQUEST];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_group_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_group_stats_request_init(obj, version, bytes, 0);
-    of_group_stats_request_push_wire_types(obj);
-    of_object_message_wire_length_set(obj, obj->length);
+
+    if (of_group_stats_request_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -8357,27 +9013,76 @@ of_group_stats_request_new(of_version_t version)
  */
 
 void
-of_group_stats_request_init(of_object_t *obj,
+of_group_stats_request_init(of_group_stats_request_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_GROUP_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_GROUP_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_GROUP_STATS_REQUEST] + of_object_extra_len[version][OF_GROUP_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_GROUP_STATS_REQUEST;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_group_stats_request_push_wire_types;
+
+    obj->wire_length_get = of_object_message_wire_length_get;
+    obj->wire_length_set = of_object_message_wire_length_set;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
+}
+
+
+/**
+ * Create a new of_group_stats_request object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_group_stats_request
+ */
+
+of_group_stats_request_t *
+of_group_stats_request_new_from_message(of_message_t msg)
+{
+    of_group_stats_request_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_group_stats_request_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_group_stats_request_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
 }
 
 /**
@@ -8407,7 +9112,6 @@ of_group_stats_request_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8448,7 +9152,6 @@ of_group_stats_request_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8491,7 +9194,6 @@ of_group_stats_request_flags_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -8532,7 +9234,6 @@ of_group_stats_request_flags_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -8575,7 +9276,6 @@ of_group_stats_request_group_id_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -8616,7 +9316,6 @@ of_group_stats_request_group_id_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -8752,36 +9451,6 @@ of_instruction_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
-    case OF_VERSION_1_4: {
-        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
-        switch (value) {
-        case 0x1:
-            *id = OF_INSTRUCTION_GOTO_TABLE;
-            break;
-        case 0x2:
-            *id = OF_INSTRUCTION_WRITE_METADATA;
-            break;
-        case 0x3:
-            *id = OF_INSTRUCTION_WRITE_ACTIONS;
-            break;
-        case 0x4:
-            *id = OF_INSTRUCTION_APPLY_ACTIONS;
-            break;
-        case 0x5:
-            *id = OF_INSTRUCTION_CLEAR_ACTIONS;
-            break;
-        case 0x6:
-            *id = OF_INSTRUCTION_METER;
-            break;
-        case 0xffff:
-            of_instruction_experimenter_wire_object_id_get(obj, id);
-            break;
-        default:
-            *id = OF_INSTRUCTION;
-            break;
-        }
-        break;
-    }
     default:
         LOCI_ASSERT(0);
     }
@@ -8801,18 +9470,21 @@ of_instruction_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_instruction
  */
 
-of_object_t *
+of_instruction_t *
 of_instruction_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_instruction_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_INSTRUCTION];
+    bytes = of_object_fixed_len[version][OF_INSTRUCTION] + of_object_extra_len[version][OF_INSTRUCTION];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_instruction_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -8839,28 +9511,39 @@ of_instruction_new(of_version_t version)
  */
 
 void
-of_instruction_init(of_object_t *obj,
+of_instruction_init(of_instruction_t *obj_p,
     of_version_t version, int bytes, int clean_wire)
 {
+    of_instruction_header_t *obj;
+
+    obj = &obj_p->header;  /* Need instantiable subclass */
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_INSTRUCTION];
+        bytes = of_object_fixed_len[version][OF_INSTRUCTION] + of_object_extra_len[version][OF_INSTRUCTION];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_INSTRUCTION;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_instruction_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -8892,7 +9575,7 @@ of_instruction_init(of_object_t *obj,
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_instruction_apply_actions_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -8900,7 +9583,6 @@ of_instruction_apply_actions_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x4); /* type */
         break;
     default:
@@ -8915,6 +9597,21 @@ of_instruction_apply_actions_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_instruction_apply_actions_push_wire_values(of_instruction_apply_actions_t *obj)
+{
+
+    of_instruction_apply_actions_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_instruction_apply_actions object
  *
  * @param version The wire version to use for the object
@@ -8923,24 +9620,30 @@ of_instruction_apply_actions_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_instruction_apply_actions
  */
 
-of_object_t *
+of_instruction_apply_actions_t *
 of_instruction_apply_actions_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_instruction_apply_actions_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_INSTRUCTION_APPLY_ACTIONS];
+    bytes = of_object_fixed_len[version][OF_INSTRUCTION_APPLY_ACTIONS] + of_object_extra_len[version][OF_INSTRUCTION_APPLY_ACTIONS];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_instruction_apply_actions_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_instruction_apply_actions_init(obj, version, bytes, 0);
-    of_instruction_apply_actions_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+
+    if (of_instruction_apply_actions_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -8963,28 +9666,40 @@ of_instruction_apply_actions_new(of_version_t version)
  */
 
 void
-of_instruction_apply_actions_init(of_object_t *obj,
+of_instruction_apply_actions_init(of_instruction_apply_actions_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_APPLY_ACTIONS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_INSTRUCTION_APPLY_ACTIONS];
+        bytes = of_object_fixed_len[version][OF_INSTRUCTION_APPLY_ACTIONS] + of_object_extra_len[version][OF_INSTRUCTION_APPLY_ACTIONS];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_INSTRUCTION_APPLY_ACTIONS;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_instruction_apply_actions_push_wire_types;
+
+    obj->wire_length_set = of_tlv16_wire_length_set;
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_instruction_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Bind an object of type of_list_action_t to the parent of type of_instruction_apply_actions for
@@ -9019,7 +9734,6 @@ of_instruction_apply_actions_actions_bind(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9034,7 +9748,11 @@ of_instruction_apply_actions_actions_bind(
     /* Initialize child */
     of_list_action_init(actions, obj->version, 0, 1);
     /* Attach to parent */
-    of_object_attach(obj, actions, offset, cur_len);
+    actions->parent = (of_object_t *)obj;
+    actions->wire_object.wbuf = obj->wire_object.wbuf;
+    actions->wire_object.obj_offset = abs_offset;
+    actions->wire_object.owned = 0;
+    actions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -9092,7 +9810,6 @@ of_instruction_apply_actions_actions_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9107,7 +9824,7 @@ of_instruction_apply_actions_actions_set(
     /* LOCI object type */
     new_len = actions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wbuf == actions->wbuf) {
+    if (obj->wire_object.wbuf == actions->wire_object.wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(actions, 0));
@@ -9120,7 +9837,9 @@ of_instruction_apply_actions_actions_set(
         OF_OBJECT_BUFFER_INDEX(actions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    of_object_wire_length_set((of_object_t *)actions, actions->length);
+    if (actions->wire_length_set != NULL) {
+        actions->wire_length_set((of_object_t *)actions, actions->length);
+    }
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -9164,7 +9883,7 @@ of_instruction_apply_actions_actions_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_instruction_clear_actions_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -9172,7 +9891,6 @@ of_instruction_clear_actions_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x5); /* type */
         break;
     default:
@@ -9187,6 +9905,21 @@ of_instruction_clear_actions_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_instruction_clear_actions_push_wire_values(of_instruction_clear_actions_t *obj)
+{
+
+    of_instruction_clear_actions_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_instruction_clear_actions object
  *
  * @param version The wire version to use for the object
@@ -9195,24 +9928,30 @@ of_instruction_clear_actions_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_instruction_clear_actions
  */
 
-of_object_t *
+of_instruction_clear_actions_t *
 of_instruction_clear_actions_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_instruction_clear_actions_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_INSTRUCTION_CLEAR_ACTIONS];
+    bytes = of_object_fixed_len[version][OF_INSTRUCTION_CLEAR_ACTIONS] + of_object_extra_len[version][OF_INSTRUCTION_CLEAR_ACTIONS];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_instruction_clear_actions_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_instruction_clear_actions_init(obj, version, bytes, 0);
-    of_instruction_clear_actions_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+
+    if (of_instruction_clear_actions_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -9235,28 +9974,40 @@ of_instruction_clear_actions_new(of_version_t version)
  */
 
 void
-of_instruction_clear_actions_init(of_object_t *obj,
+of_instruction_clear_actions_init(of_instruction_clear_actions_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_CLEAR_ACTIONS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_INSTRUCTION_CLEAR_ACTIONS];
+        bytes = of_object_fixed_len[version][OF_INSTRUCTION_CLEAR_ACTIONS] + of_object_extra_len[version][OF_INSTRUCTION_CLEAR_ACTIONS];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_INSTRUCTION_CLEAR_ACTIONS;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_instruction_clear_actions_push_wire_types;
+
+    obj->wire_length_set = of_tlv16_wire_length_set;
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_instruction_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -9324,18 +10075,6 @@ of_instruction_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t 
         }
         break;
     }
-    case OF_VERSION_1_4: {
-        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
-        switch (value) {
-        case 0x5c16c7:
-            of_instruction_bsn_wire_object_id_get(obj, id);
-            break;
-        default:
-            *id = OF_INSTRUCTION_EXPERIMENTER;
-            break;
-        }
-        break;
-    }
     default:
         LOCI_ASSERT(0);
     }
@@ -9355,18 +10094,21 @@ of_instruction_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t 
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_instruction_experimenter
  */
 
-of_object_t *
+of_instruction_experimenter_t *
 of_instruction_experimenter_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_instruction_experimenter_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_INSTRUCTION_EXPERIMENTER];
+    bytes = of_object_fixed_len[version][OF_INSTRUCTION_EXPERIMENTER] + of_object_extra_len[version][OF_INSTRUCTION_EXPERIMENTER];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_instruction_experimenter_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -9393,28 +10135,38 @@ of_instruction_experimenter_new(of_version_t version)
  */
 
 void
-of_instruction_experimenter_init(of_object_t *obj,
+of_instruction_experimenter_init(of_instruction_experimenter_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_EXPERIMENTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_INSTRUCTION_EXPERIMENTER];
+        bytes = of_object_fixed_len[version][OF_INSTRUCTION_EXPERIMENTER] + of_object_extra_len[version][OF_INSTRUCTION_EXPERIMENTER];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_INSTRUCTION_EXPERIMENTER;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_length_set = of_tlv16_wire_length_set;
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_instruction_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get experimenter from an object of type of_instruction_experimenter.
@@ -9443,7 +10195,6 @@ of_instruction_experimenter_experimenter_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9484,7 +10235,6 @@ of_instruction_experimenter_experimenter_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9528,7 +10278,6 @@ of_instruction_experimenter_data_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9575,7 +10324,6 @@ of_instruction_experimenter_data_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9632,7 +10380,7 @@ of_instruction_experimenter_data_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_instruction_goto_table_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -9640,7 +10388,6 @@ of_instruction_goto_table_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x1); /* type */
         break;
     default:
@@ -9655,6 +10402,21 @@ of_instruction_goto_table_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_instruction_goto_table_push_wire_values(of_instruction_goto_table_t *obj)
+{
+
+    of_instruction_goto_table_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_instruction_goto_table object
  *
  * @param version The wire version to use for the object
@@ -9663,24 +10425,30 @@ of_instruction_goto_table_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_instruction_goto_table
  */
 
-of_object_t *
+of_instruction_goto_table_t *
 of_instruction_goto_table_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_instruction_goto_table_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_INSTRUCTION_GOTO_TABLE];
+    bytes = of_object_fixed_len[version][OF_INSTRUCTION_GOTO_TABLE] + of_object_extra_len[version][OF_INSTRUCTION_GOTO_TABLE];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_instruction_goto_table_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_instruction_goto_table_init(obj, version, bytes, 0);
-    of_instruction_goto_table_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+
+    if (of_instruction_goto_table_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -9703,28 +10471,40 @@ of_instruction_goto_table_new(of_version_t version)
  */
 
 void
-of_instruction_goto_table_init(of_object_t *obj,
+of_instruction_goto_table_init(of_instruction_goto_table_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_GOTO_TABLE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_INSTRUCTION_GOTO_TABLE];
+        bytes = of_object_fixed_len[version][OF_INSTRUCTION_GOTO_TABLE] + of_object_extra_len[version][OF_INSTRUCTION_GOTO_TABLE];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_INSTRUCTION_GOTO_TABLE;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_instruction_goto_table_push_wire_types;
+
+    obj->wire_length_set = of_tlv16_wire_length_set;
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_instruction_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get table_id from an object of type of_instruction_goto_table.
@@ -9753,7 +10533,6 @@ of_instruction_goto_table_table_id_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9794,7 +10573,6 @@ of_instruction_goto_table_table_id_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9840,7 +10618,7 @@ of_instruction_goto_table_table_id_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_instruction_write_actions_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -9848,7 +10626,6 @@ of_instruction_write_actions_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x3); /* type */
         break;
     default:
@@ -9863,6 +10640,21 @@ of_instruction_write_actions_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_instruction_write_actions_push_wire_values(of_instruction_write_actions_t *obj)
+{
+
+    of_instruction_write_actions_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_instruction_write_actions object
  *
  * @param version The wire version to use for the object
@@ -9871,24 +10663,30 @@ of_instruction_write_actions_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_instruction_write_actions
  */
 
-of_object_t *
+of_instruction_write_actions_t *
 of_instruction_write_actions_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_instruction_write_actions_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_INSTRUCTION_WRITE_ACTIONS];
+    bytes = of_object_fixed_len[version][OF_INSTRUCTION_WRITE_ACTIONS] + of_object_extra_len[version][OF_INSTRUCTION_WRITE_ACTIONS];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_instruction_write_actions_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_instruction_write_actions_init(obj, version, bytes, 0);
-    of_instruction_write_actions_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+
+    if (of_instruction_write_actions_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -9911,28 +10709,40 @@ of_instruction_write_actions_new(of_version_t version)
  */
 
 void
-of_instruction_write_actions_init(of_object_t *obj,
+of_instruction_write_actions_init(of_instruction_write_actions_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_WRITE_ACTIONS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_INSTRUCTION_WRITE_ACTIONS];
+        bytes = of_object_fixed_len[version][OF_INSTRUCTION_WRITE_ACTIONS] + of_object_extra_len[version][OF_INSTRUCTION_WRITE_ACTIONS];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_INSTRUCTION_WRITE_ACTIONS;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_instruction_write_actions_push_wire_types;
+
+    obj->wire_length_set = of_tlv16_wire_length_set;
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_instruction_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Bind an object of type of_list_action_t to the parent of type of_instruction_write_actions for
@@ -9967,7 +10777,6 @@ of_instruction_write_actions_actions_bind(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9982,7 +10791,11 @@ of_instruction_write_actions_actions_bind(
     /* Initialize child */
     of_list_action_init(actions, obj->version, 0, 1);
     /* Attach to parent */
-    of_object_attach(obj, actions, offset, cur_len);
+    actions->parent = (of_object_t *)obj;
+    actions->wire_object.wbuf = obj->wire_object.wbuf;
+    actions->wire_object.obj_offset = abs_offset;
+    actions->wire_object.owned = 0;
+    actions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -10040,7 +10853,6 @@ of_instruction_write_actions_actions_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -10055,7 +10867,7 @@ of_instruction_write_actions_actions_set(
     /* LOCI object type */
     new_len = actions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wbuf == actions->wbuf) {
+    if (obj->wire_object.wbuf == actions->wire_object.wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(actions, 0));
@@ -10068,7 +10880,9 @@ of_instruction_write_actions_actions_set(
         OF_OBJECT_BUFFER_INDEX(actions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    of_object_wire_length_set((of_object_t *)actions, actions->length);
+    if (actions->wire_length_set != NULL) {
+        actions->wire_length_set((of_object_t *)actions, actions->length);
+    }
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -10112,7 +10926,7 @@ of_instruction_write_actions_actions_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_instruction_write_metadata_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -10120,7 +10934,6 @@ of_instruction_write_metadata_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x2); /* type */
         break;
     default:
@@ -10135,6 +10948,21 @@ of_instruction_write_metadata_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_instruction_write_metadata_push_wire_values(of_instruction_write_metadata_t *obj)
+{
+
+    of_instruction_write_metadata_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_instruction_write_metadata object
  *
  * @param version The wire version to use for the object
@@ -10143,24 +10971,30 @@ of_instruction_write_metadata_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_instruction_write_metadata
  */
 
-of_object_t *
+of_instruction_write_metadata_t *
 of_instruction_write_metadata_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_instruction_write_metadata_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_INSTRUCTION_WRITE_METADATA];
+    bytes = of_object_fixed_len[version][OF_INSTRUCTION_WRITE_METADATA] + of_object_extra_len[version][OF_INSTRUCTION_WRITE_METADATA];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_instruction_write_metadata_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_instruction_write_metadata_init(obj, version, bytes, 0);
-    of_instruction_write_metadata_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+
+    if (of_instruction_write_metadata_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -10183,28 +11017,40 @@ of_instruction_write_metadata_new(of_version_t version)
  */
 
 void
-of_instruction_write_metadata_init(of_object_t *obj,
+of_instruction_write_metadata_init(of_instruction_write_metadata_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_WRITE_METADATA] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_INSTRUCTION_WRITE_METADATA];
+        bytes = of_object_fixed_len[version][OF_INSTRUCTION_WRITE_METADATA] + of_object_extra_len[version][OF_INSTRUCTION_WRITE_METADATA];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_INSTRUCTION_WRITE_METADATA;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_instruction_write_metadata_push_wire_types;
+
+    obj->wire_length_set = of_tlv16_wire_length_set;
+
+    obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_instruction_wire_object_id_get;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get metadata from an object of type of_instruction_write_metadata.
@@ -10233,7 +11079,6 @@ of_instruction_write_metadata_metadata_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -10274,7 +11119,6 @@ of_instruction_write_metadata_metadata_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -10317,7 +11161,6 @@ of_instruction_write_metadata_metadata_mask_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -10358,7 +11201,6 @@ of_instruction_write_metadata_metadata_mask_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -10404,7 +11246,7 @@ of_instruction_write_metadata_metadata_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-void
+static void
 of_match_v2_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -10424,6 +11266,18 @@ of_match_v2_push_wire_types(of_object_t *obj)
  */
 
 /**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_match_v2_push_wire_values(of_match_v2_t *obj)
+{
+
+    of_match_v2_push_wire_types(obj);
+
+    return OF_ERROR_NONE;
+}
+
+/**
  * Create a new of_match_v2 object
  *
  * @param version The wire version to use for the object
@@ -10432,24 +11286,30 @@ of_match_v2_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_match_v2
  */
 
-of_object_t *
+of_match_v2_t *
 of_match_v2_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_match_v2_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_MATCH_V2];
+    bytes = of_object_fixed_len[version][OF_MATCH_V2] + of_object_extra_len[version][OF_MATCH_V2];
 
-    if ((obj = of_object_new(bytes)) == NULL) {
+    if ((obj = (of_match_v2_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_match_v2_init(obj, version, bytes, 0);
-    of_match_v2_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
+
+    if (of_match_v2_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
 
     return obj;
 }
@@ -10472,28 +11332,34 @@ of_match_v2_new(of_version_t version)
  */
 
 void
-of_match_v2_init(of_object_t *obj,
+of_match_v2_init(of_match_v2_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_MATCH_V2] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_MATCH_V2];
+        bytes = of_object_fixed_len[version][OF_MATCH_V2] + of_object_extra_len[version][OF_MATCH_V2];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_MATCH_V2;
 
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_match_v2_push_wire_types;
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
 
 /**
  * Get in_port from an object of type of_match_v2.
@@ -12132,4 +12998,930 @@ of_match_v2_metadata_mask_set(
     OF_LENGTH_CHECK_ASSERT(obj);
 
     return ;
+}
+/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
+/* Copyright (c) 2011, 2012 Open Networking Foundation */
+/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
+/* See the file LICENSE.loci which should have been included in the source distribution */
+#ifdef __GNUC__
+
+#ifdef __linux__
+/* glibc */
+#include <features.h>
+#else
+/* NetBSD etc */
+#include <sys/cdefs.h>
+#ifdef __GNUC_PREREQ__
+#define __GNUC_PREREQ __GNUC_PREREQ__
+#endif
+#endif
+
+#ifndef __GNUC_PREREQ
+/* fallback */
+#define __GNUC_PREREQ(maj, min) 0
+#endif
+
+#if __GNUC_PREREQ(4,6)
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+#endif
+
+#endif
+
+#include "loci_log.h"
+#include "loci_int.h"
+
+static void
+of_switch_config_failed_error_msg_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        *(uint8_t *)(buf + 0) = obj->version; /* version */
+        *(uint8_t *)(buf + 1) = 0x1; /* type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xa); /* err_type */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+
+
+/**
+ * \defgroup of_switch_config_failed_error_msg of_switch_config_failed_error_msg
+ */
+
+/**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_switch_config_failed_error_msg_push_wire_values(of_switch_config_failed_error_msg_t *obj)
+{
+
+    of_switch_config_failed_error_msg_push_wire_types(obj);
+
+    /* Message obj; set length */
+    of_message_t msg;
+
+    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
+        of_message_length_set(msg, obj->length);
+    }
+
+    return OF_ERROR_NONE;
+}
+
+/**
+ * Create a new of_switch_config_failed_error_msg object
+ *
+ * @param version The wire version to use for the object
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * Initializes the new object with it's default fixed length associating
+ * a new underlying wire buffer.
+ *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
+ * \ingroup of_switch_config_failed_error_msg
+ */
+
+of_switch_config_failed_error_msg_t *
+of_switch_config_failed_error_msg_new(of_version_t version)
+{
+    of_switch_config_failed_error_msg_t *obj;
+    int bytes;
+
+    bytes = of_object_fixed_len[version][OF_SWITCH_CONFIG_FAILED_ERROR_MSG] + of_object_extra_len[version][OF_SWITCH_CONFIG_FAILED_ERROR_MSG];
+
+    if ((obj = (of_switch_config_failed_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+        return NULL;
+    }
+
+    of_switch_config_failed_error_msg_init(obj, version, bytes, 0);
+
+    if (of_switch_config_failed_error_msg_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
+
+    return obj;
+}
+
+/**
+ * Initialize an object of type of_switch_config_failed_error_msg.
+ *
+ * @param obj Pointer to the object to initialize
+ * @param version The wire version to use for the object
+ * @param bytes How many bytes in the object
+ * @param clean_wire Boolean: If true, clear the wire object control struct
+ *
+ * If bytes < 0, then the default fixed length is used for the object
+ *
+ * This is a "coerce" function that sets up the pointers for the
+ * accessors properly.
+ *
+ * If anything other than 0 is passed in for the buffer size, the underlying
+ * wire buffer will have 'grow' called.
+ */
+
+void
+of_switch_config_failed_error_msg_init(of_switch_config_failed_error_msg_t *obj,
+    of_version_t version, int bytes, int clean_wire)
+{
+
+    LOCI_ASSERT(of_object_fixed_len[version][OF_SWITCH_CONFIG_FAILED_ERROR_MSG] >= 0);
+    if (clean_wire) {
+        MEMSET(obj, 0, sizeof(*obj));
+    }
+    if (bytes < 0) {
+        bytes = of_object_fixed_len[version][OF_SWITCH_CONFIG_FAILED_ERROR_MSG] + of_object_extra_len[version][OF_SWITCH_CONFIG_FAILED_ERROR_MSG];
+    }
+    obj->version = version;
+    obj->length = bytes;
+    obj->object_id = OF_SWITCH_CONFIG_FAILED_ERROR_MSG;
+
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_switch_config_failed_error_msg_push_wire_types;
+
+    obj->wire_length_get = of_object_message_wire_length_get;
+    obj->wire_length_set = of_object_message_wire_length_set;
+
+    /* Grow the wire buffer */
+    if (obj->wire_object.wbuf != NULL) {
+        int tot_bytes;
+
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+    }
+}
+
+
+/**
+ * Create a new of_switch_config_failed_error_msg object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_switch_config_failed_error_msg
+ */
+
+of_switch_config_failed_error_msg_t *
+of_switch_config_failed_error_msg_new_from_message(of_message_t msg)
+{
+    of_switch_config_failed_error_msg_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_switch_config_failed_error_msg_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_switch_config_failed_error_msg_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
+}
+
+/**
+ * Get xid from an object of type of_switch_config_failed_error_msg.
+ * @param obj Pointer to an object of type of_switch_config_failed_error_msg.
+ * @param xid Pointer to the child object of type
+ * uint32_t to be filled out.
+ *
+ */
+void
+of_switch_config_failed_error_msg_xid_get(
+    of_switch_config_failed_error_msg_t *obj,
+    uint32_t *xid)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_get(wbuf, abs_offset, xid);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set xid in an object of type of_switch_config_failed_error_msg.
+ * @param obj Pointer to an object of type of_switch_config_failed_error_msg.
+ * @param xid The value to write into the object
+ */
+void
+of_switch_config_failed_error_msg_xid_set(
+    of_switch_config_failed_error_msg_t *obj,
+    uint32_t xid)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_set(wbuf, abs_offset, xid);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Get code from an object of type of_switch_config_failed_error_msg.
+ * @param obj Pointer to an object of type of_switch_config_failed_error_msg.
+ * @param code Pointer to the child object of type
+ * uint16_t to be filled out.
+ *
+ */
+void
+of_switch_config_failed_error_msg_code_get(
+    of_switch_config_failed_error_msg_t *obj,
+    uint16_t *code)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 10;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u16_get(wbuf, abs_offset, code);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set code in an object of type of_switch_config_failed_error_msg.
+ * @param obj Pointer to an object of type of_switch_config_failed_error_msg.
+ * @param code The value to write into the object
+ */
+void
+of_switch_config_failed_error_msg_code_set(
+    of_switch_config_failed_error_msg_t *obj,
+    uint16_t code)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 10;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u16_set(wbuf, abs_offset, code);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Get data from an object of type of_switch_config_failed_error_msg.
+ * @param obj Pointer to an object of type of_switch_config_failed_error_msg.
+ * @param data Pointer to the child object of type
+ * of_octets_t to be filled out.
+ *
+ */
+void
+of_switch_config_failed_error_msg_data_get(
+    of_switch_config_failed_error_msg_t *obj,
+    of_octets_t *data)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+    int cur_len = 0; /* Current length of object data */
+
+    LOCI_ASSERT(obj->object_id == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 12;
+        cur_len = _END_LEN(obj, offset);
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    LOCI_ASSERT(cur_len + abs_offset <= WBUF_CURRENT_BYTES(wbuf));
+    data->bytes = cur_len;
+    data->data = OF_WIRE_BUFFER_INDEX(wbuf, abs_offset);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set data in an object of type of_switch_config_failed_error_msg.
+ * @param obj Pointer to an object of type of_switch_config_failed_error_msg.
+ * @param data The value to write into the object
+ */
+int WARN_UNUSED_RESULT
+of_switch_config_failed_error_msg_data_set(
+    of_switch_config_failed_error_msg_t *obj,
+    of_octets_t *data)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+    int cur_len = 0; /* Current length of object data */
+    int new_len, delta; /* For set, need new length and delta */
+
+    LOCI_ASSERT(obj->object_id == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 12;
+        cur_len = _END_LEN(obj, offset);
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    new_len = data->bytes;
+    of_wire_buffer_grow(wbuf, abs_offset + (new_len - cur_len));
+    of_wire_buffer_octets_data_set(wbuf, abs_offset, data, cur_len);
+
+    /* Not scalar, update lengths if needed */
+    delta = new_len - cur_len;
+    if (delta != 0) {
+        /* Update parent(s) */
+        of_object_parent_length_update((of_object_t *)obj, delta);
+    }
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return OF_ERROR_NONE;
+}
+/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
+/* Copyright (c) 2011, 2012 Open Networking Foundation */
+/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
+/* See the file LICENSE.loci which should have been included in the source distribution */
+#ifdef __GNUC__
+
+#ifdef __linux__
+/* glibc */
+#include <features.h>
+#else
+/* NetBSD etc */
+#include <sys/cdefs.h>
+#ifdef __GNUC_PREREQ__
+#define __GNUC_PREREQ __GNUC_PREREQ__
+#endif
+#endif
+
+#ifndef __GNUC_PREREQ
+/* fallback */
+#define __GNUC_PREREQ(maj, min) 0
+#endif
+
+#if __GNUC_PREREQ(4,6)
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+#endif
+
+#endif
+
+#include "loci_log.h"
+#include "loci_int.h"
+
+static void
+of_table_mod_failed_error_msg_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        *(uint8_t *)(buf + 0) = obj->version; /* version */
+        *(uint8_t *)(buf + 1) = 0x1; /* type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0x8); /* err_type */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+
+
+/**
+ * \defgroup of_table_mod_failed_error_msg of_table_mod_failed_error_msg
+ */
+
+/**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_table_mod_failed_error_msg_push_wire_values(of_table_mod_failed_error_msg_t *obj)
+{
+
+    of_table_mod_failed_error_msg_push_wire_types(obj);
+
+    /* Message obj; set length */
+    of_message_t msg;
+
+    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
+        of_message_length_set(msg, obj->length);
+    }
+
+    return OF_ERROR_NONE;
+}
+
+/**
+ * Create a new of_table_mod_failed_error_msg object
+ *
+ * @param version The wire version to use for the object
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * Initializes the new object with it's default fixed length associating
+ * a new underlying wire buffer.
+ *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
+ * \ingroup of_table_mod_failed_error_msg
+ */
+
+of_table_mod_failed_error_msg_t *
+of_table_mod_failed_error_msg_new(of_version_t version)
+{
+    of_table_mod_failed_error_msg_t *obj;
+    int bytes;
+
+    bytes = of_object_fixed_len[version][OF_TABLE_MOD_FAILED_ERROR_MSG] + of_object_extra_len[version][OF_TABLE_MOD_FAILED_ERROR_MSG];
+
+    if ((obj = (of_table_mod_failed_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+        return NULL;
+    }
+
+    of_table_mod_failed_error_msg_init(obj, version, bytes, 0);
+
+    if (of_table_mod_failed_error_msg_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
+
+    return obj;
+}
+
+/**
+ * Initialize an object of type of_table_mod_failed_error_msg.
+ *
+ * @param obj Pointer to the object to initialize
+ * @param version The wire version to use for the object
+ * @param bytes How many bytes in the object
+ * @param clean_wire Boolean: If true, clear the wire object control struct
+ *
+ * If bytes < 0, then the default fixed length is used for the object
+ *
+ * This is a "coerce" function that sets up the pointers for the
+ * accessors properly.
+ *
+ * If anything other than 0 is passed in for the buffer size, the underlying
+ * wire buffer will have 'grow' called.
+ */
+
+void
+of_table_mod_failed_error_msg_init(of_table_mod_failed_error_msg_t *obj,
+    of_version_t version, int bytes, int clean_wire)
+{
+
+    LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_MOD_FAILED_ERROR_MSG] >= 0);
+    if (clean_wire) {
+        MEMSET(obj, 0, sizeof(*obj));
+    }
+    if (bytes < 0) {
+        bytes = of_object_fixed_len[version][OF_TABLE_MOD_FAILED_ERROR_MSG] + of_object_extra_len[version][OF_TABLE_MOD_FAILED_ERROR_MSG];
+    }
+    obj->version = version;
+    obj->length = bytes;
+    obj->object_id = OF_TABLE_MOD_FAILED_ERROR_MSG;
+
+    /* Set up the object's function pointers */
+
+    obj->wire_type_set = of_table_mod_failed_error_msg_push_wire_types;
+
+    obj->wire_length_get = of_object_message_wire_length_get;
+    obj->wire_length_set = of_object_message_wire_length_set;
+
+    /* Grow the wire buffer */
+    if (obj->wire_object.wbuf != NULL) {
+        int tot_bytes;
+
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+    }
+}
+
+
+/**
+ * Create a new of_table_mod_failed_error_msg object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_table_mod_failed_error_msg
+ */
+
+of_table_mod_failed_error_msg_t *
+of_table_mod_failed_error_msg_new_from_message(of_message_t msg)
+{
+    of_table_mod_failed_error_msg_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_table_mod_failed_error_msg_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_table_mod_failed_error_msg_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
+}
+
+/**
+ * Get xid from an object of type of_table_mod_failed_error_msg.
+ * @param obj Pointer to an object of type of_table_mod_failed_error_msg.
+ * @param xid Pointer to the child object of type
+ * uint32_t to be filled out.
+ *
+ */
+void
+of_table_mod_failed_error_msg_xid_get(
+    of_table_mod_failed_error_msg_t *obj,
+    uint32_t *xid)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_TABLE_MOD_FAILED_ERROR_MSG);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_get(wbuf, abs_offset, xid);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set xid in an object of type of_table_mod_failed_error_msg.
+ * @param obj Pointer to an object of type of_table_mod_failed_error_msg.
+ * @param xid The value to write into the object
+ */
+void
+of_table_mod_failed_error_msg_xid_set(
+    of_table_mod_failed_error_msg_t *obj,
+    uint32_t xid)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_TABLE_MOD_FAILED_ERROR_MSG);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_set(wbuf, abs_offset, xid);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Get code from an object of type of_table_mod_failed_error_msg.
+ * @param obj Pointer to an object of type of_table_mod_failed_error_msg.
+ * @param code Pointer to the child object of type
+ * uint16_t to be filled out.
+ *
+ */
+void
+of_table_mod_failed_error_msg_code_get(
+    of_table_mod_failed_error_msg_t *obj,
+    uint16_t *code)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_TABLE_MOD_FAILED_ERROR_MSG);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 10;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u16_get(wbuf, abs_offset, code);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set code in an object of type of_table_mod_failed_error_msg.
+ * @param obj Pointer to an object of type of_table_mod_failed_error_msg.
+ * @param code The value to write into the object
+ */
+void
+of_table_mod_failed_error_msg_code_set(
+    of_table_mod_failed_error_msg_t *obj,
+    uint16_t code)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_TABLE_MOD_FAILED_ERROR_MSG);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 10;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u16_set(wbuf, abs_offset, code);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Get data from an object of type of_table_mod_failed_error_msg.
+ * @param obj Pointer to an object of type of_table_mod_failed_error_msg.
+ * @param data Pointer to the child object of type
+ * of_octets_t to be filled out.
+ *
+ */
+void
+of_table_mod_failed_error_msg_data_get(
+    of_table_mod_failed_error_msg_t *obj,
+    of_octets_t *data)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+    int cur_len = 0; /* Current length of object data */
+
+    LOCI_ASSERT(obj->object_id == OF_TABLE_MOD_FAILED_ERROR_MSG);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 12;
+        cur_len = _END_LEN(obj, offset);
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    LOCI_ASSERT(cur_len + abs_offset <= WBUF_CURRENT_BYTES(wbuf));
+    data->bytes = cur_len;
+    data->data = OF_WIRE_BUFFER_INDEX(wbuf, abs_offset);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set data in an object of type of_table_mod_failed_error_msg.
+ * @param obj Pointer to an object of type of_table_mod_failed_error_msg.
+ * @param data The value to write into the object
+ */
+int WARN_UNUSED_RESULT
+of_table_mod_failed_error_msg_data_set(
+    of_table_mod_failed_error_msg_t *obj,
+    of_octets_t *data)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+    int cur_len = 0; /* Current length of object data */
+    int new_len, delta; /* For set, need new length and delta */
+
+    LOCI_ASSERT(obj->object_id == OF_TABLE_MOD_FAILED_ERROR_MSG);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 12;
+        cur_len = _END_LEN(obj, offset);
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    new_len = data->bytes;
+    of_wire_buffer_grow(wbuf, abs_offset + (new_len - cur_len));
+    of_wire_buffer_octets_data_set(wbuf, abs_offset, data, cur_len);
+
+    /* Not scalar, update lengths if needed */
+    delta = new_len - cur_len;
+    if (delta != 0) {
+        /* Update parent(s) */
+        of_object_parent_length_update((of_object_t *)obj, delta);
+    }
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return OF_ERROR_NONE;
 }

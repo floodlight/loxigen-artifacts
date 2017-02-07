@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -30,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -52,9 +50,6 @@ class OFTableFeaturePropNextTablesVer13 implements OFTableFeaturePropNextTables 
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturePropNextTablesVer13(List<U8> nextTableIds) {
-        if(nextTableIds == null) {
-            throw new NullPointerException("OFTableFeaturePropNextTablesVer13: property nextTableIds cannot be null");
-        }
         this.nextTableIds = nextTableIds;
     }
 
@@ -173,7 +168,7 @@ class OFTableFeaturePropNextTablesVer13 implements OFTableFeaturePropNextTables 
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFTableFeaturePropNextTables> {
         @Override
-        public OFTableFeaturePropNextTables readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeaturePropNextTables readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x2
             short type = bb.readShort();
@@ -190,8 +185,6 @@ class OFTableFeaturePropNextTablesVer13 implements OFTableFeaturePropNextTables 
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             List<U8> nextTableIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), U8.READER);
-            // align message to 8 bytes (length does not contain alignment)
-            bb.skipBytes(((length + 7)/8 * 8 ) - length );
 
             OFTableFeaturePropNextTablesVer13 tableFeaturePropNextTablesVer13 = new OFTableFeaturePropNextTablesVer13(
                     nextTableIds
@@ -219,14 +212,14 @@ class OFTableFeaturePropNextTablesVer13 implements OFTableFeaturePropNextTables 
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFTableFeaturePropNextTablesVer13> {
         @Override
-        public void write(ByteBuf bb, OFTableFeaturePropNextTablesVer13 message) {
+        public void write(ChannelBuffer bb, OFTableFeaturePropNextTablesVer13 message) {
             int startIndex = bb.writerIndex();
             // fixed value property type = 0x2
             bb.writeShort((short) 0x2);
@@ -238,10 +231,7 @@ class OFTableFeaturePropNextTablesVer13 implements OFTableFeaturePropNextTables 
 
             // update length field
             int length = bb.writerIndex() - startIndex;
-            int alignedLength = ((length + 7)/8 * 8);
             bb.setShort(lengthIndex, length);
-            // align message to 8 bytes
-            bb.writeZero(alignedLength - length);
 
         }
     }

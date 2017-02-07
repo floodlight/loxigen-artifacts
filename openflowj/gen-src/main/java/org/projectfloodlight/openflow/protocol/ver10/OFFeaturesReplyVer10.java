@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -31,7 +29,7 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -65,18 +63,6 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
 
     // package private constructor - used by readers, builders, and factory
     OFFeaturesReplyVer10(long xid, DatapathId datapathId, long nBuffers, short nTables, Set<OFCapabilities> capabilities, Set<OFActionType> actions, List<OFPortDesc> ports) {
-        if(datapathId == null) {
-            throw new NullPointerException("OFFeaturesReplyVer10: property datapathId cannot be null");
-        }
-        if(capabilities == null) {
-            throw new NullPointerException("OFFeaturesReplyVer10: property capabilities cannot be null");
-        }
-        if(actions == null) {
-            throw new NullPointerException("OFFeaturesReplyVer10: property actions cannot be null");
-        }
-        if(ports == null) {
-            throw new NullPointerException("OFFeaturesReplyVer10: property ports cannot be null");
-        }
         this.xid = xid;
         this.datapathId = datapathId;
         this.nBuffers = nBuffers;
@@ -118,11 +104,6 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
     }
 
     @Override
-    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
-    }
-
-    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
     }
@@ -133,13 +114,18 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
     }
 
     @Override
+    public List<OFPortDesc> getPorts() {
+        return ports;
+    }
+
+    @Override
     public Set<OFActionType> getActions() {
         return actions;
     }
 
     @Override
-    public List<OFPortDesc> getPorts() {
-        return ports;
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
     }
 
 
@@ -226,15 +212,6 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
-    }
-    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
     }
@@ -255,6 +232,17 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
             throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
     }
     @Override
+    public List<OFPortDesc> getPorts() {
+        return ports;
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) {
+        this.ports = ports;
+        this.portsSet = true;
+        return this;
+    }
+    @Override
     public Set<OFActionType> getActions() {
         return actions;
     }
@@ -266,15 +254,13 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public List<OFPortDesc> getPorts() {
-        return ports;
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
     }
 
     @Override
-    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) {
-        this.ports = ports;
-        this.portsSet = true;
-        return this;
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
     }
 
 
@@ -382,15 +368,6 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
-    }
-    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
     }
@@ -411,6 +388,17 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
             throw new UnsupportedOperationException("Property reserved not supported in version 1.0");
     }
     @Override
+    public List<OFPortDesc> getPorts() {
+        return ports;
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) {
+        this.ports = ports;
+        this.portsSet = true;
+        return this;
+    }
+    @Override
     public Set<OFActionType> getActions() {
         return actions;
     }
@@ -422,15 +410,13 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public List<OFPortDesc> getPorts() {
-        return ports;
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
     }
 
     @Override
-    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) {
-        this.ports = ports;
-        this.portsSet = true;
-        return this;
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
     }
 //
         @Override
@@ -469,7 +455,7 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFFeaturesReply> {
         @Override
-        public OFFeaturesReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFFeaturesReply readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -540,14 +526,14 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFFeaturesReplyVer10> {
         @Override
-        public void write(ByteBuf bb, OFFeaturesReplyVer10 message) {
+        public void write(ChannelBuffer bb, OFFeaturesReplyVer10 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);
@@ -634,64 +620,11 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFFeaturesReplyVer10 other = (OFFeaturesReplyVer10) obj;
-
-        // ignore XID
-        if (datapathId == null) {
-            if (other.datapathId != null)
-                return false;
-        } else if (!datapathId.equals(other.datapathId))
-            return false;
-        if( nBuffers != other.nBuffers)
-            return false;
-        if( nTables != other.nTables)
-            return false;
-        if (capabilities == null) {
-            if (other.capabilities != null)
-                return false;
-        } else if (!capabilities.equals(other.capabilities))
-            return false;
-        if (actions == null) {
-            if (other.actions != null)
-                return false;
-        } else if (!actions.equals(other.actions))
-            return false;
-        if (ports == null) {
-            if (other.ports != null)
-                return false;
-        } else if (!ports.equals(other.ports))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((datapathId == null) ? 0 : datapathId.hashCode());
-        result = prime *  (int) (nBuffers ^ (nBuffers >>> 32));
-        result = prime * result + nTables;
-        result = prime * result + ((capabilities == null) ? 0 : capabilities.hashCode());
-        result = prime * result + ((actions == null) ? 0 : actions.hashCode());
-        result = prime * result + ((ports == null) ? 0 : ports.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((datapathId == null) ? 0 : datapathId.hashCode());
         result = prime *  (int) (nBuffers ^ (nBuffers >>> 32));
         result = prime * result + nTables;

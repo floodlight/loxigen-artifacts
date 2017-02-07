@@ -18,14 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFBsnVirtualPortCreateRequest extends OFObject, OFBsnHeader, OFRequest<OFBsnVirtualPortCreateReply> {
     OFVersion getVersion();
@@ -33,9 +31,9 @@ public interface OFBsnVirtualPortCreateRequest extends OFObject, OFBsnHeader, OF
     long getXid();
     long getExperimenter();
     long getSubtype();
-    OFBsnVport getVport();
+    OFBsnVportQInQ getVport();
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {
@@ -46,7 +44,7 @@ public interface OFBsnVirtualPortCreateRequest extends OFObject, OFBsnHeader, OF
         Builder setXid(long xid);
         long getExperimenter();
         long getSubtype();
-        OFBsnVport getVport();
-        Builder setVport(OFBsnVport vport);
+        OFBsnVportQInQ getVport();
+        Builder setVport(OFBsnVportQInQ vport);
     }
 }

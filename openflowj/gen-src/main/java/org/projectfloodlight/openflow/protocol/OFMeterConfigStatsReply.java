@@ -18,16 +18,14 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import java.util.List;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFMeterConfigStatsReply extends OFObject, OFStatsReply {
     OFVersion getVersion();
@@ -35,9 +33,9 @@ public interface OFMeterConfigStatsReply extends OFObject, OFStatsReply {
     long getXid();
     OFStatsType getStatsType();
     Set<OFStatsReplyFlags> getFlags();
-    List<OFMeterConfig> getEntries();
+    List<OFMeterBand> getEntries();
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFStatsReply.Builder {
@@ -49,7 +47,7 @@ public interface OFMeterConfigStatsReply extends OFObject, OFStatsReply {
         OFStatsType getStatsType();
         Set<OFStatsReplyFlags> getFlags();
         Builder setFlags(Set<OFStatsReplyFlags> flags);
-        List<OFMeterConfig> getEntries();
-        Builder setEntries(List<OFMeterConfig> entries);
+        List<OFMeterBand> getEntries();
+        Builder setEntries(List<OFMeterBand> entries);
     }
 }

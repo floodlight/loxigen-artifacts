@@ -4,23 +4,20 @@ import java.util.Arrays;
 
 import javax.annotation.Nonnull;
 
+import org.jboss.netty.buffer.ChannelBuffer;
 import org.projectfloodlight.openflow.exceptions.OFParseError;
 import org.projectfloodlight.openflow.util.HexString;
 
-import com.google.common.base.Preconditions;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.primitives.Longs;
-
-import io.netty.buffer.ByteBuf;
 
 /**
  * Wrapper around a 6 byte mac address.
  *
- * @author Andreas Wundsam {@literal <}andreas.wundsam@bigswitch.com{@literal >}
+ * @author Andreas Wundsam <andreas.wundsam@bigswitch.com>
  */
 
 public class MacAddress implements OFValueType<MacAddress> {
-
     static final int MacAddrLen = 6;
     private final long rawValue;
 
@@ -35,15 +32,6 @@ public class MacAddress implements OFValueType<MacAddress> {
 
     private static final long LLDP_MAC_ADDRESS_MASK = 0xfffffffffff0L;
     private static final long LLDP_MAC_ADDRESS_VALUE = 0x0180c2000000L;
-    private final static MacAddress IPV4_MULTICAST_BASE_ADDRESS =
-           MacAddress.of("01:00:5E:00:00:00");
-    private final static MacAddress IPV6_MULTICAST_BASE_ADDRESS =
-           MacAddress.of("33:33:00:00:00:00");
-
-    private static final String FORMAT_ERROR = "Mac address is not well-formed. " +
-            "It must consist of 6 hex digit pairs separated by colons or hyphens: ";
-    private static final int MAC_STRING_LENGTH = 6 * 2 + 5;
-
 
     private MacAddress(final long rawValue) {
         this.rawValue = rawValue;
@@ -69,26 +57,26 @@ public class MacAddress implements OFValueType<MacAddress> {
         return new MacAddress(raw);
     }
 
-    /** Parse a mac adress from a string representation as
-     *  6 hex bytes separated by colons or hyphens (01:02:03:04:05:06,
-     *  01-02-03-04-05-06).
+    /** Parse a mac adress from the canonical string representation as
+     *  6 hex bytes separated by colons (01:02:03:04:05:06).
      *
-     * @param macString - a mac address in string representation
+     * @param macString - a mac address in canonical string representation
      * @return the parsed MacAddress
      * @throws IllegalArgumentException if macString is not a valid mac adddress
      */
     @Nonnull
     public static MacAddress of(@Nonnull final String macString) throws IllegalArgumentException {
-        Preconditions.checkNotNull(macString, "macStringmust not be null");
-        Preconditions.checkArgument(macString.length() == MAC_STRING_LENGTH,
-                FORMAT_ERROR + macString);
-        final char separator = macString.charAt(2);
-        Preconditions.checkArgument(separator == ':' || separator == '-',
-                FORMAT_ERROR + macString + " (invalid separator)");
-
+        if (macString == null) {
+            throw new NullPointerException("macString must not be null");
+        }
         int index = 0;
         int shift = 40;
+        final String FORMAT_ERROR = "Mac address is not well-formed. " +
+                "It must consist of 6 hex digit pairs separated by colons: ";
+
         long raw = 0;
+        if (macString.length() != 6 * 2 + 5)
+            throw new IllegalArgumentException(FORMAT_ERROR + macString);
 
         while (shift >= 0) {
             int digit1 = Character.digit(macString.charAt(index++), 16);
@@ -97,38 +85,13 @@ public class MacAddress implements OFValueType<MacAddress> {
                 throw new IllegalArgumentException(FORMAT_ERROR + macString);
             raw |= ((long) (digit1 << 4 | digit2)) << shift;
 
-            if (shift == 0) {
+            if (shift == 0)
                 break;
-            }
-
-            // Iterate over separators
-            if (macString.charAt(index++) != separator) {
-                throw new IllegalArgumentException(FORMAT_ERROR + macString +
-                                                   " (inconsistent separators");
-            }
-
+            if (macString.charAt(index++) != ':')
+                throw new IllegalArgumentException(FORMAT_ERROR + macString);
             shift -= 8;
         }
         return MacAddress.of(raw);
-    }
-
-    /**
-     * Creates a {@link MacAddress} from a {@link DatapathId}. This factory
-     * method assumes that the first two bytes of the {@link DatapathId} are 0 bytes.
-     * @param dpid the {@link DatapathId} to create the {@link MacAddress} from
-     * @return a {@link MacAddress} derived from the supplied {@link DatapathId}
-     */
-    public static MacAddress of(@Nonnull DatapathId dpid) {
-        Preconditions.checkNotNull(dpid, "dpid must not be null");
-
-        long raw = dpid.getLong();
-
-        // Mask out valid bytes
-        if( (raw & ~BROADCAST_VAL) != 0L) {
-            throw new IllegalArgumentException("First two bytes of supplied "
-                 + "Datapathid must be 0");
-        }
-        return of(raw);
     }
 
     private volatile byte[] bytesCache = null;
@@ -213,12 +176,12 @@ public class MacAddress implements OFValueType<MacAddress> {
         return rawValue;
     }
 
-    public void write6Bytes(ByteBuf c) {
+    public void write6Bytes(ChannelBuffer c) {
         c.writeInt((int) (this.rawValue >> 16));
         c.writeShort((int) this.rawValue & 0xFFFF);
     }
 
-    public static MacAddress read6Bytes(ByteBuf c) throws OFParseError {
+    public static MacAddress read6Bytes(ChannelBuffer c) throws OFParseError {
         long raw = c.readUnsignedInt() << 16 | c.readUnsignedShort();
         return MacAddress.of(raw);
     }
@@ -235,74 +198,10 @@ public class MacAddress implements OFValueType<MacAddress> {
 
     @Override
     public void putTo(PrimitiveSink sink) {
-        sink.putLong(rawValue);
+        sink.putInt((int) (this.rawValue >> 16));
+        sink.putShort((short) (this.rawValue & 0xFFFF));
     }
 
-    /*
-     * Parse an IPv4 Multicast address and return the macAddress
-     * corresponding to the multicast IPv4 address.
-     *
-     * For multicast forwarding, the mac addresses in the range
-     * 01-00-5E-00-00-00 to 01-00-5E-7F-FF-FF have been reserved.
-     * The most significant 25 bits of the above 48-bit mac address
-     * are fixed while the lower 23 bits are variable.
-     * These lower 23 bits are derived from the lower 23 bits
-     * of the multicast IP address.
-     *
-     * AND ipv4 address with 0x07FFFFF to extract the last 23 bits
-     * OR with 01:00:5E:00:00:00 MAC (first 25 bits)
-     *
-     * @param ipv4 - ipv4 multicast address
-     * @return the MacAddress corresponding to the multicast address
-     * @throws IllegalArgumentException if ipv4 is not a valid multicast address
-     */
-    @Nonnull
-    public static MacAddress forIPv4MulticastAddress(IPv4Address ipv4)
-            throws IllegalArgumentException {
 
-        if (!ipv4.isMulticast())
-            throw new IllegalArgumentException(
-                    "Not a Multicast IPAddress\"" + ipv4 + "\"");
 
-        long ipLong = ipv4.getInt();
-        int ipMask = 0x007FFFFF;
-        ipLong = ipLong & ipMask;
-
-        long macLong = IPV4_MULTICAST_BASE_ADDRESS.getLong(); // 01:00:5E:00:00:00
-        macLong = macLong | ipLong;
-        MacAddress returnMac = MacAddress.of(macLong);
-
-        return returnMac;
-    }
-
-    /**
-     * Generate a MAC address corresponding to multicast IPv6  address.
-     *
-     * Take the last 4 bytes of IPv6 address and copy them to the base IPv6
-     * multicast mac address - 33:33:00:00:00:00.
-     *
-     * @param ipv6 - IPv6 address corresponding to which multicast MAC addr
-     * need to be generated.
-     * @return - the generated multicast mac address.
-     * @throws IllegalArgumentException if ipv6 address is not a valid IPv6
-     * multicast address.
-     */
-    @Nonnull
-    public static MacAddress forIPv6MulticastAddr(IPv6Address ipv6)
-            throws IllegalArgumentException {
-        if (!ipv6.isMulticast()) {
-            throw new IllegalArgumentException(
-                    "Not a Multicast IPv6Address\"" + ipv6 + "\"");
-        }
-        long ipLong = ((ipv6.getUnsignedShortWord(6) << 16) |
-                                         ipv6.getUnsignedShortWord(7));
-        long ipMask = 0xFFFFFFFFl;
-        ipLong = ipLong & ipMask;
-
-        long macLong = IPV6_MULTICAST_BASE_ADDRESS.getLong();//33:33:00:00:00:00
-        macLong = macLong | ipLong;
-        MacAddress returnMac = MacAddress.of(macLong);
-
-        return returnMac;
-    }
 }

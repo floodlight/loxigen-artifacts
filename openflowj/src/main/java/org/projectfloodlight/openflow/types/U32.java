@@ -17,7 +17,7 @@
 
 package org.projectfloodlight.openflow.types;
 
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import org.projectfloodlight.openflow.exceptions.OFParseError;
 import org.projectfloodlight.openflow.protocol.OFMessageReader;
 import org.projectfloodlight.openflow.protocol.Writeable;
@@ -61,7 +61,7 @@ public class U32 implements Writeable, OFValueType<U32> {
 
     @Override
     public String toString() {
-        return String.format("0x%08x", raw);
+        return "" + f(raw);
     }
 
     @Override
@@ -96,7 +96,7 @@ public class U32 implements Writeable, OFValueType<U32> {
     }
 
     @Override
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         bb.writeInt(raw);
     }
 
@@ -104,7 +104,7 @@ public class U32 implements Writeable, OFValueType<U32> {
 
     private static class Reader implements OFMessageReader<U32> {
         @Override
-        public U32 readFrom(ByteBuf bb) throws OFParseError {
+        public U32 readFrom(ChannelBuffer bb) throws OFParseError {
             return new U32(bb.readInt());
         }
     }

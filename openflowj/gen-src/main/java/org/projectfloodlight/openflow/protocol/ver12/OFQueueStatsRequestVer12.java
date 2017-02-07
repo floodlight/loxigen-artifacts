@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -29,7 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -57,12 +55,6 @@ class OFQueueStatsRequestVer12 implements OFQueueStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueStatsRequestVer12(long xid, Set<OFStatsRequestFlags> flags, OFPort portNo, long queueId) {
-        if(flags == null) {
-            throw new NullPointerException("OFQueueStatsRequestVer12: property flags cannot be null");
-        }
-        if(portNo == null) {
-            throw new NullPointerException("OFQueueStatsRequestVer12: property portNo cannot be null");
-        }
         this.xid = xid;
         this.flags = flags;
         this.portNo = portNo;
@@ -308,7 +300,7 @@ class OFQueueStatsRequestVer12 implements OFQueueStatsRequest {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFQueueStatsRequest> {
         @Override
-        public OFQueueStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFQueueStatsRequest readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -377,14 +369,14 @@ class OFQueueStatsRequestVer12 implements OFQueueStatsRequest {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFQueueStatsRequestVer12> {
         @Override
-        public void write(ByteBuf bb, OFQueueStatsRequestVer12 message) {
+        public void write(ChannelBuffer bb, OFQueueStatsRequestVer12 message) {
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
             // fixed value property type = 18
@@ -446,49 +438,11 @@ class OFQueueStatsRequestVer12 implements OFQueueStatsRequest {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFQueueStatsRequestVer12 other = (OFQueueStatsRequestVer12) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (portNo == null) {
-            if (other.portNo != null)
-                return false;
-        } else if (!portNo.equals(other.portNo))
-            return false;
-        if( queueId != other.queueId)
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
-        result = prime *  (int) (queueId ^ (queueId >>> 32));
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
         result = prime *  (int) (queueId ^ (queueId >>> 32));

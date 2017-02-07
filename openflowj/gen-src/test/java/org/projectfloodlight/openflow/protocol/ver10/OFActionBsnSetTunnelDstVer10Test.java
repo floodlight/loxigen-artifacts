@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -29,8 +27,8 @@ import static org.junit.Assert.*;
 import java.util.Set;
 import org.junit.Test;
 import org.junit.Before;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
+import org.jboss.netty.buffer.ChannelBuffer;
+import org.jboss.netty.buffer.ChannelBuffers;
 import org.hamcrest.CoreMatchers;
 
 
@@ -50,14 +48,14 @@ public class OFActionBsnSetTunnelDstVer10Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ByteBuf input = Unpooled.copiedBuffer(ACTION_BSN_SET_TUNNEL_DST_SERIALIZED);
+       ChannelBuffer input = ChannelBuffers.copiedBuffer(ACTION_BSN_SET_TUNNEL_DST_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFActionBsnSetTunnelDst actionBsnSetTunnelDst = OFActionBsnSetTunnelDstVer10.READER.readFrom(input);
        assertEquals(ACTION_BSN_SET_TUNNEL_DST_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ByteBuf bb = Unpooled.buffer();
+       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
        actionBsnSetTunnelDst.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

@@ -1,6 +1,6 @@
 package org.projectfloodlight.openflow.types;
 
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 import com.google.common.hash.PrimitiveSink;
 
@@ -31,11 +31,11 @@ public class OFMetadata implements OFValueType<OFMetadata> {
         return u64;
     }
 
-    public static OFMetadata read8Bytes(ByteBuf cb) {
+    public static OFMetadata read8Bytes(ChannelBuffer cb) {
         return OFMetadata.ofRaw(cb.readLong());
     }
 
-    public void write8Bytes(ByteBuf cb) {
+    public void write8Bytes(ChannelBuffer cb) {
         u64.writeTo(cb);
     }
 
@@ -66,7 +66,7 @@ public class OFMetadata implements OFValueType<OFMetadata> {
 
     @Override
     public String toString() {
-        return u64.toString();
+        return "Metadata: " + u64.toString();
     }
 
     @Override

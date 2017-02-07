@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -31,7 +29,7 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -71,24 +69,6 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
 
     // package private constructor - used by readers, builders, and factory
     OFFlowDeleteVer10(long xid, Match match, U64 cookie, int idleTimeout, int hardTimeout, int priority, OFBufferId bufferId, OFPort outPort, Set<OFFlowModFlags> flags, List<OFAction> actions) {
-        if(match == null) {
-            throw new NullPointerException("OFFlowDeleteVer10: property match cannot be null");
-        }
-        if(cookie == null) {
-            throw new NullPointerException("OFFlowDeleteVer10: property cookie cannot be null");
-        }
-        if(bufferId == null) {
-            throw new NullPointerException("OFFlowDeleteVer10: property bufferId cannot be null");
-        }
-        if(outPort == null) {
-            throw new NullPointerException("OFFlowDeleteVer10: property outPort cannot be null");
-        }
-        if(flags == null) {
-            throw new NullPointerException("OFFlowDeleteVer10: property flags cannot be null");
-        }
-        if(actions == null) {
-            throw new NullPointerException("OFFlowDeleteVer10: property actions cannot be null");
-        }
         this.xid = xid;
         this.match = match;
         this.cookie = cookie;
@@ -185,11 +165,6 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
     @Override
     public List<OFAction> getActions() {
         return actions;
-    }
-
-    @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
     }
 
 
@@ -387,15 +362,6 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
         this.actions = actions;
         this.actionsSet = true;
         return this;
-    }
-    @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowDelete.Builder setImportance(int importance) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property importance not supported in version 1.0");
     }
 
 
@@ -625,15 +591,6 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
         this.actionsSet = true;
         return this;
     }
-    @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
-    }
-
-    @Override
-    public OFFlowDelete.Builder setImportance(int importance) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property importance not supported in version 1.0");
-    }
 //
         @Override
         public OFFlowDelete build() {
@@ -681,7 +638,7 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFFlowDelete> {
         @Override
-        public OFFlowDelete readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowDelete readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -764,14 +721,14 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFFlowDeleteVer10> {
         @Override
-        public void write(ByteBuf bb, OFFlowDeleteVer10 message) {
+        public void write(ChannelBuffer bb, OFFlowDeleteVer10 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);
@@ -879,79 +836,11 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFFlowDeleteVer10 other = (OFFlowDeleteVer10) obj;
-
-        // ignore XID
-        if (match == null) {
-            if (other.match != null)
-                return false;
-        } else if (!match.equals(other.match))
-            return false;
-        if (cookie == null) {
-            if (other.cookie != null)
-                return false;
-        } else if (!cookie.equals(other.cookie))
-            return false;
-        if( idleTimeout != other.idleTimeout)
-            return false;
-        if( hardTimeout != other.hardTimeout)
-            return false;
-        if( priority != other.priority)
-            return false;
-        if (bufferId == null) {
-            if (other.bufferId != null)
-                return false;
-        } else if (!bufferId.equals(other.bufferId))
-            return false;
-        if (outPort == null) {
-            if (other.outPort != null)
-                return false;
-        } else if (!outPort.equals(other.outPort))
-            return false;
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (actions == null) {
-            if (other.actions != null)
-                return false;
-        } else if (!actions.equals(other.actions))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((match == null) ? 0 : match.hashCode());
-        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
-        result = prime * result + idleTimeout;
-        result = prime * result + hardTimeout;
-        result = prime * result + priority;
-        result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
-        result = prime * result + ((outPort == null) ? 0 : outPort.hashCode());
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((actions == null) ? 0 : actions.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((match == null) ? 0 : match.hashCode());
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + idleTimeout;

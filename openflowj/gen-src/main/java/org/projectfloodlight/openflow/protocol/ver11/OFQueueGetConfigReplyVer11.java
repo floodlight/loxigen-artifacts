@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -30,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -56,12 +54,6 @@ class OFQueueGetConfigReplyVer11 implements OFQueueGetConfigReply {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueGetConfigReplyVer11(long xid, OFPort port, List<OFPacketQueue> queues) {
-        if(port == null) {
-            throw new NullPointerException("OFQueueGetConfigReplyVer11: property port cannot be null");
-        }
-        if(queues == null) {
-            throw new NullPointerException("OFQueueGetConfigReplyVer11: property queues cannot be null");
-        }
         this.xid = xid;
         this.port = port;
         this.queues = queues;
@@ -256,7 +248,7 @@ class OFQueueGetConfigReplyVer11 implements OFQueueGetConfigReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFQueueGetConfigReply> {
         @Override
-        public OFQueueGetConfigReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFQueueGetConfigReply readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -315,14 +307,14 @@ class OFQueueGetConfigReplyVer11 implements OFQueueGetConfigReply {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFQueueGetConfigReplyVer11> {
         @Override
-        public void write(ByteBuf bb, OFQueueGetConfigReplyVer11 message) {
+        public void write(ChannelBuffer bb, OFQueueGetConfigReplyVer11 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 2
             bb.writeByte((byte) 0x2);
@@ -383,46 +375,11 @@ class OFQueueGetConfigReplyVer11 implements OFQueueGetConfigReply {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFQueueGetConfigReplyVer11 other = (OFQueueGetConfigReplyVer11) obj;
-
-        // ignore XID
-        if (port == null) {
-            if (other.port != null)
-                return false;
-        } else if (!port.equals(other.port))
-            return false;
-        if (queues == null) {
-            if (other.queues != null)
-                return false;
-        } else if (!queues.equals(other.queues))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((port == null) ? 0 : port.hashCode());
-        result = prime * result + ((queues == null) ? 0 : queues.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((port == null) ? 0 : port.hashCode());
         result = prime * result + ((queues == null) ? 0 : queues.hashCode());
         return result;

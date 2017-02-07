@@ -18,14 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 abstract class OFBsnStatsRequestVer13 {
     // version: 1.3
@@ -37,7 +35,7 @@ abstract class OFBsnStatsRequestVer13 {
 
     static class Reader implements OFMessageReader<OFBsnStatsRequest<?>> {
         @Override
-        public OFBsnStatsRequest<?> readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnStatsRequest<?> readFrom(ChannelBuffer bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -76,9 +74,6 @@ abstract class OFBsnStatsRequestVer13 {
                case 0xa:
                    // discriminator value 0xaL=0xaL for class OFBsnFlowChecksumBucketStatsRequestVer13
                    return OFBsnFlowChecksumBucketStatsRequestVer13.READER.readFrom(bb);
-               case 0x10:
-                   // discriminator value 0x10L=0x10L for class OFBsnGenericStatsRequestVer13
-                   return OFBsnGenericStatsRequestVer13.READER.readFrom(bb);
                case 0x5:
                    // discriminator value 0x5L=0x5L for class OFBsnGentableBucketStatsRequestVer13
                    return OFBsnGentableBucketStatsRequestVer13.READER.readFrom(bb);
@@ -94,9 +89,6 @@ abstract class OFBsnStatsRequestVer13 {
                case 0x7:
                    // discriminator value 0x7L=0x7L for class OFBsnGentableStatsRequestVer13
                    return OFBsnGentableStatsRequestVer13.READER.readFrom(bb);
-               case 0xe:
-                   // discriminator value 0xeL=0xeL for class OFBsnImageDescStatsRequestVer13
-                   return OFBsnImageDescStatsRequestVer13.READER.readFrom(bb);
                case 0x1:
                    // discriminator value 0x1L=0x1L for class OFBsnLacpStatsRequestVer13
                    return OFBsnLacpStatsRequestVer13.READER.readFrom(bb);
@@ -112,9 +104,6 @@ abstract class OFBsnStatsRequestVer13 {
                case 0x9:
                    // discriminator value 0x9L=0x9L for class OFBsnVlanCounterStatsRequestVer13
                    return OFBsnVlanCounterStatsRequestVer13.READER.readFrom(bb);
-               case 0xf:
-                   // discriminator value 0xfL=0xfL for class OFBsnVrfCounterStatsRequestVer13
-                   return OFBsnVrfCounterStatsRequestVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFBsnStatsRequestVer13: " + subtype);
             }

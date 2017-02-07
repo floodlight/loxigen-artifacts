@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -29,7 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -55,12 +53,6 @@ class OFPortStatsRequestVer10 implements OFPortStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFPortStatsRequestVer10(long xid, Set<OFStatsRequestFlags> flags, OFPort portNo) {
-        if(flags == null) {
-            throw new NullPointerException("OFPortStatsRequestVer10: property flags cannot be null");
-        }
-        if(portNo == null) {
-            throw new NullPointerException("OFPortStatsRequestVer10: property portNo cannot be null");
-        }
         this.xid = xid;
         this.flags = flags;
         this.portNo = portNo;
@@ -270,7 +262,7 @@ class OFPortStatsRequestVer10 implements OFPortStatsRequest {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFPortStatsRequest> {
         @Override
-        public OFPortStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortStatsRequest readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -336,14 +328,14 @@ class OFPortStatsRequestVer10 implements OFPortStatsRequest {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFPortStatsRequestVer10> {
         @Override
-        public void write(ByteBuf bb, OFPortStatsRequestVer10 message) {
+        public void write(ChannelBuffer bb, OFPortStatsRequestVer10 message) {
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);
             // fixed value property type = 16
@@ -400,46 +392,11 @@ class OFPortStatsRequestVer10 implements OFPortStatsRequest {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFPortStatsRequestVer10 other = (OFPortStatsRequestVer10) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (portNo == null) {
-            if (other.portNo != null)
-                return false;
-        } else if (!portNo.equals(other.portNo))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
         return result;

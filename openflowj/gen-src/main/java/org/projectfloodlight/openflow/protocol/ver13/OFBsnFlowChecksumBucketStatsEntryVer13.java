@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -50,9 +48,6 @@ class OFBsnFlowChecksumBucketStatsEntryVer13 implements OFBsnFlowChecksumBucketS
 
     // package private constructor - used by readers, builders, and factory
     OFBsnFlowChecksumBucketStatsEntryVer13(U64 checksum) {
-        if(checksum == null) {
-            throw new NullPointerException("OFBsnFlowChecksumBucketStatsEntryVer13: property checksum cannot be null");
-        }
         this.checksum = checksum;
     }
 
@@ -156,7 +151,7 @@ class OFBsnFlowChecksumBucketStatsEntryVer13 implements OFBsnFlowChecksumBucketS
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnFlowChecksumBucketStatsEntry> {
         @Override
-        public OFBsnFlowChecksumBucketStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnFlowChecksumBucketStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
             U64 checksum = U64.ofRaw(bb.readLong());
 
             OFBsnFlowChecksumBucketStatsEntryVer13 bsnFlowChecksumBucketStatsEntryVer13 = new OFBsnFlowChecksumBucketStatsEntryVer13(
@@ -182,14 +177,14 @@ class OFBsnFlowChecksumBucketStatsEntryVer13 implements OFBsnFlowChecksumBucketS
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnFlowChecksumBucketStatsEntryVer13> {
         @Override
-        public void write(ByteBuf bb, OFBsnFlowChecksumBucketStatsEntryVer13 message) {
+        public void write(ChannelBuffer bb, OFBsnFlowChecksumBucketStatsEntryVer13 message) {
             bb.writeLong(message.checksum.getValue());
 
 

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -50,9 +48,6 @@ class OFOxmArpOpVer12 implements OFOxmArpOp {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmArpOpVer12(ArpOpcode value) {
-        if(value == null) {
-            throw new NullPointerException("OFOxmArpOpVer12: property value cannot be null");
-        }
         this.value = value;
     }
 
@@ -231,7 +226,7 @@ class OFOxmArpOpVer12 implements OFOxmArpOp {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmArpOp> {
         @Override
-        public OFOxmArpOp readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmArpOp readFrom(ChannelBuffer bb) throws OFParseError {
             // fixed value property typeLen == 0x80002a02L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80002a02)
@@ -263,14 +258,14 @@ class OFOxmArpOpVer12 implements OFOxmArpOp {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmArpOpVer12> {
         @Override
-        public void write(ByteBuf bb, OFOxmArpOpVer12 message) {
+        public void write(ChannelBuffer bb, OFOxmArpOpVer12 message) {
             // fixed value property typeLen = 0x80002a02L
             bb.writeInt((int) 0x80002a02);
             message.value.write2Bytes(bb);

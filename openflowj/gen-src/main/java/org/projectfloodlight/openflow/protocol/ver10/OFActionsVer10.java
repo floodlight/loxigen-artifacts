@@ -18,15 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
-import java.util.List;
 
 
 public class OFActionsVer10 implements OFActions {
@@ -34,15 +31,6 @@ public class OFActionsVer10 implements OFActions {
 
 
 
-
-    public OFActionBsnChecksum.Builder buildBsnChecksum() {
-        return new OFActionBsnChecksumVer10.Builder();
-    }
-    public OFActionBsnChecksum bsnChecksum(U128 checksum) {
-        return new OFActionBsnChecksumVer10(
-                checksum
-                    );
-    }
 
     public OFActionBsnMirror.Builder buildBsnMirror() {
         return new OFActionBsnMirrorVer10.Builder();
@@ -263,13 +251,6 @@ public class OFActionsVer10 implements OFActions {
         throw new UnsupportedOperationException("OFActionSetField not supported in version 1.0");
     }
 
-    public OFActionBsnGentable.Builder buildBsnGentable() {
-        throw new UnsupportedOperationException("OFActionBsnGentable not supported in version 1.0");
-    }
-    public OFActionBsnGentable bsnGentable(long tableId, List<OFBsnTlv> key) {
-        throw new UnsupportedOperationException("OFActionBsnGentable not supported in version 1.0");
-    }
-
     public OFActionPopPbb popPbb() {
         throw new UnsupportedOperationException("OFActionPopPbb not supported in version 1.0");
     }
@@ -279,13 +260,6 @@ public class OFActionsVer10 implements OFActions {
     }
     public OFActionPushPbb pushPbb(EthType ethertype) {
         throw new UnsupportedOperationException("OFActionPushPbb not supported in version 1.0");
-    }
-
-    public OFActionMeter.Builder buildMeter() {
-        throw new UnsupportedOperationException("OFActionMeter not supported in version 1.0");
-    }
-    public OFActionMeter meter(long meterId) {
-        throw new UnsupportedOperationException("OFActionMeter not supported in version 1.0");
     }
 
     public OFMessageReader<OFAction> getReader() {

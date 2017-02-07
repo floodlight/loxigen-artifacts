@@ -37,7 +37,7 @@ import javax.annotation.concurrent.Immutable;
  *  matchBuilder.setMasked(MatchField.BSN_IN_PORTS_128, portBitmap);
  *  </pre>
  *
- * @author Andreas Wundsam {@literal <}andreas.wundsam@bigswitch.com{@literal >}
+ * @author Andreas Wundsam <andreas.wundsam@bigswitch.com>
  */
 @Immutable
 public class OFPortBitMap extends Masked<OFBitMask128> {
@@ -46,13 +46,9 @@ public class OFPortBitMap extends Masked<OFBitMask128> {
         super(OFBitMask128.NONE, mask);
     }
 
-    /** 
-     * Check if the given port is logically included in the
-     * match. I.e. will a packet from in-port <em>port</em>
-     * be matched by this OXM?
-     *
-     * @param port the port to check in the match
-     * @return boolean true or false
+    /** @return whether or not the given port is logically included in the
+     *  match, i.e., whether a packet from in-port <emph>port</emph> be matched by
+     *  this OXM.
      */
     public boolean isOn(OFPort port) {
         // see the implementation note above about the logical inversion of the mask
@@ -67,19 +63,16 @@ public class OFPortBitMap extends Masked<OFBitMask128> {
         return builder.build();
     }
 
-    /** 
-     * @param mask the mask to create the bitmap from
-     * @return an OFPortBitmap based on the 'mask' part of an OFBitMask128, as, e.g., returned
-     * by the switch.
-     */
+    /** @return an OFPortBitmap based on the 'mask' part of an OFBitMask128, as, e.g., returned
+     *  by the switch.
+     **/
     public static OFPortBitMap of(OFBitMask128 mask) {
         return new OFPortBitMap(mask);
     }
 
-    /** 
-     * @return iterating over all ports that are logically included in the
-     * match, i.e., whether a packet from in-port <em>port</em> be matched by
-     * this OXM.
+    /** @return iterating over all ports that are logically included in the
+     *  match, i.e., whether a packet from in-port <emph>port</emph> be matched by
+     *  this OXM.
      */
     public Iterable<OFPort> getOnPorts() {
         ArrayList<OFPort> ports = new ArrayList<>();
@@ -111,22 +104,17 @@ public class OFPortBitMap extends Masked<OFBitMask128> {
 
         }
 
-        /** 
-         * @param port the port to check if it's being matched by the bitmask
-         * @return whether or not the given port is logically included in the
-         * match, i.e., whether a packet from in-port <em>port</em> be matched by
-         * this OXM.
+        /** @return whether or not the given port is logically included in the
+         *  match, i.e., whether a packet from in-port <emph>port</emph> be matched by
+         *  this OXM.
          */
         public boolean isOn(OFPort port) {
             // see the implementation note above about the logical inversion of the mask
             return !(OFBitMask128.isBitOn(raw1, raw2, port.getPortNumber()));
         }
 
-        /** 
-         * remove this port from the match, i.e., packets from this in-port
-         * will NOT be matched.
-         * @param port the port to remove from the match
-         * @return this mutator
+        /** remove this port from the match, i.e., packets from this in-port
+         *  will NOT be matched.
          */
         public Builder unset(OFPort port) {
             // see the implementation note above about the logical inversion of the mask
@@ -147,11 +135,8 @@ public class OFPortBitMap extends Masked<OFBitMask128> {
             return this;
         }
 
-        /** 
-         * add this port to the match, i.e., packets from this in-port
-         * will be matched.
-         * @param port the port to add to the match
-         * @return this mutator 
+        /** add this port from the match, i.e., packets from this in-port
+         *  will NOT be matched.
          */
         public Builder set(OFPort port) {
             // see the implementation note above about the logical inversion of the mask

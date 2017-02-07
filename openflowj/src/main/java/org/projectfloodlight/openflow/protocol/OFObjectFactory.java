@@ -1,7 +1,7 @@
 package org.projectfloodlight.openflow.protocol;
 
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFObjectFactory<T extends OFObject> {
-    T read(ByteBuf buffer);
+    T read(ChannelBuffer buffer);
 }

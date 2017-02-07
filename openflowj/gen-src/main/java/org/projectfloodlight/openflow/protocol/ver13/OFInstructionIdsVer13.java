@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -41,20 +39,12 @@ public class OFInstructionIdsVer13 implements OFInstructionIds {
         return OFInstructionIdBsnArpOffloadVer13.INSTANCE;
     }
 
-    public OFInstructionIdBsnAutoNegotiation bsnAutoNegotiation() {
-        return OFInstructionIdBsnAutoNegotiationVer13.INSTANCE;
-    }
-
     public OFInstructionIdBsnDeny bsnDeny() {
         return OFInstructionIdBsnDenyVer13.INSTANCE;
     }
 
     public OFInstructionIdBsnDhcpOffload bsnDhcpOffload() {
         return OFInstructionIdBsnDhcpOffloadVer13.INSTANCE;
-    }
-
-    public OFInstructionIdBsnDisableL3 bsnDisableL3() {
-        return OFInstructionIdBsnDisableL3Ver13.INSTANCE;
     }
 
     public OFInstructionIdBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck() {
@@ -65,40 +55,12 @@ public class OFInstructionIdsVer13 implements OFInstructionIds {
         return OFInstructionIdBsnDisableSrcMacCheckVer13.INSTANCE;
     }
 
-    public OFInstructionIdBsnDisableVlanCounters bsnDisableVlanCounters() {
-        return OFInstructionIdBsnDisableVlanCountersVer13.INSTANCE;
-    }
-
-    public OFInstructionIdBsnHashSelect bsnHashSelect() {
-        return OFInstructionIdBsnHashSelectVer13.INSTANCE;
-    }
-
-    public OFInstructionIdBsnInternalPriority bsnInternalPriority() {
-        return OFInstructionIdBsnInternalPriorityVer13.INSTANCE;
-    }
-
-    public OFInstructionIdBsnNdpOffload bsnNdpOffload() {
-        return OFInstructionIdBsnNdpOffloadVer13.INSTANCE;
-    }
-
     public OFInstructionIdBsnPacketOfDeath bsnPacketOfDeath() {
         return OFInstructionIdBsnPacketOfDeathVer13.INSTANCE;
     }
 
     public OFInstructionIdBsnPermit bsnPermit() {
         return OFInstructionIdBsnPermitVer13.INSTANCE;
-    }
-
-    public OFInstructionIdBsnPrioritizePdus bsnPrioritizePdus() {
-        return OFInstructionIdBsnPrioritizePdusVer13.INSTANCE;
-    }
-
-    public OFInstructionIdBsnRequireVlanXlate bsnRequireVlanXlate() {
-        return OFInstructionIdBsnRequireVlanXlateVer13.INSTANCE;
-    }
-
-    public OFInstructionIdBsnSpanDestination bsnSpanDestination() {
-        return OFInstructionIdBsnSpanDestinationVer13.INSTANCE;
     }
 
     public OFInstructionIdClearActions clearActions() {
@@ -119,10 +81,6 @@ public class OFInstructionIdsVer13 implements OFInstructionIds {
 
     public OFInstructionIdWriteMetadata writeMetadata() {
         return OFInstructionIdWriteMetadataVer13.INSTANCE;
-    }
-
-    public OFInstructionIdStatTrigger statTrigger() {
-        throw new UnsupportedOperationException("OFInstructionIdStatTrigger not supported in version 1.3");
     }
 
     public OFMessageReader<OFInstructionId> getReader() {

@@ -18,14 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 abstract class OFBsnVportVer13 {
     // version: 1.3
@@ -37,16 +35,13 @@ abstract class OFBsnVportVer13 {
 
     static class Reader implements OFMessageReader<OFBsnVport> {
         @Override
-        public OFBsnVport readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnVport readFrom(ChannelBuffer bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
             bb.readerIndex(start);
             switch(type) {
-               case (short) 0x1:
-                   // discriminator value 0x1=0x1 for class OFBsnVportL2GreVer13
-                   return OFBsnVportL2GreVer13.READER.readFrom(bb);
                case (short) 0x0:
                    // discriminator value 0x0=0x0 for class OFBsnVportQInQVer13
                    return OFBsnVportQInQVer13.READER.readFrom(bb);

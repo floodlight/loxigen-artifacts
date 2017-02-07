@@ -38,6 +38,21 @@ typedef struct of_wire_buffer_s {
     of_buffer_free_f free;
 } of_wire_buffer_t;
 
+/**
+ * Decouples object from underlying wire buffer
+ *
+ * Called a 'slice' in some places.
+ */
+typedef struct of_wire_object_s {
+    /** A pointer to the underlying buffer's management structure. */
+    of_wire_buffer_t *wbuf;  
+    /** The start offset for this object relative to the start of the
+     * underlying buffer */
+    int obj_offset;
+    /* Boolean, whether the object owns the wire buffer. */
+    char owned;
+} of_wire_object_t;
+
 #define WBUF_BUF(wbuf) (wbuf)->buf
 #define WBUF_ALLOC_BYTES(wbuf) (wbuf)->alloc_bytes
 #define WBUF_CURRENT_BYTES(wbuf) (wbuf)->current_bytes
@@ -65,6 +80,15 @@ typedef struct of_wire_buffer_s {
  */
 #define OF_WIRE_BUFFER_INDEX(wbuf, offset) (&((WBUF_BUF(wbuf))[offset]))
 
+/**
+ * Return a pointer to a particular offset in the underlying buffer
+ * associated with a wire object
+ * @param wobj Pointer to an of_wire_object_t structure
+ * @param offset The location to reference relative to the start of the object
+ */
+#define OF_WIRE_OBJECT_INDEX(wobj, offset) \
+    OF_WIRE_BUFFER_INDEX((wobj)->wbuf, (offset) + (wobj)->obj_offset)
+
 /****************************************************************
  * Object specific macros; of_object_t includes a wire_object
  ****************************************************************/
@@ -76,7 +100,7 @@ typedef struct of_wire_buffer_s {
  * @param offset The location to reference relative to the start of the object
  */
 #define OF_OBJECT_BUFFER_INDEX(obj, offset) \
-    OF_WIRE_BUFFER_INDEX((obj)->wbuf, (obj)->obj_offset + offset)
+    OF_WIRE_OBJECT_INDEX(&((obj)->wire_object), offset)
 
 /**
  * Return the absolute offset as an integer from a object-relative offset
@@ -84,7 +108,7 @@ typedef struct of_wire_buffer_s {
  * @param offset The location to reference relative to the start of the object
  */
 #define OF_OBJECT_ABSOLUTE_OFFSET(obj, offset) \
-    ((obj)->obj_offset + offset)
+    ((obj)->wire_object.obj_offset + offset)
 
 
 /**
@@ -92,8 +116,14 @@ typedef struct of_wire_buffer_s {
  *
  * Treat as private
  */
-#define OF_OBJECT_TO_WBUF(obj) ((obj)->wbuf)
+#define OF_OBJECT_TO_WBUF(obj) ((obj)->wire_object.wbuf)
 
+
+
+/**
+ * Minimum allocation size for wire buffer object
+ */
+#define OF_WIRE_BUFFER_MIN_ALLOC_BYTES 128
 
 /**
  * Allocate a wire buffer object and the underlying data buffer.
@@ -112,10 +142,15 @@ of_wire_buffer_new(int a_bytes)
     }
     MEMSET(wbuf, 0, sizeof(of_wire_buffer_t));
 
+    if (a_bytes < OF_WIRE_BUFFER_MIN_ALLOC_BYTES) {
+        a_bytes = OF_WIRE_BUFFER_MIN_ALLOC_BYTES;
+    }
+
     if ((wbuf->buf = (uint8_t *)MALLOC(a_bytes)) == NULL) {
         FREE(wbuf);
         return NULL;
     }
+    MEMSET(wbuf->buf, 0, a_bytes);
     wbuf->current_bytes = 0;
     wbuf->alloc_bytes = a_bytes;
 
@@ -186,7 +221,6 @@ of_wire_buffer_grow(of_wire_buffer_t *wbuf, int bytes)
     LOCI_ASSERT(wbuf != NULL);
     LOCI_ASSERT(wbuf->alloc_bytes >= bytes);
     if (bytes > wbuf->current_bytes) {
-        MEMSET(wbuf->buf + wbuf->current_bytes, 0, bytes - wbuf->current_bytes);
         wbuf->current_bytes = bytes;
     }
 }
@@ -445,10 +479,14 @@ of_wire_buffer_port_no_get(int version, of_wire_buffer_t *wbuf, int offset,
         of_wire_buffer_u16_get(wbuf, offset, &v16);
         *value = v16;
         break;
-    default:
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
         of_wire_buffer_u32_get(wbuf, offset, &v32);
         *value = v32;
         break;
+    default:
+        LOCI_ASSERT(0);
     }
 }
 
@@ -470,9 +508,13 @@ of_wire_buffer_port_no_set(int version, of_wire_buffer_t *wbuf, int offset,
     case OF_VERSION_1_0:
         of_wire_buffer_u16_set(wbuf, offset, (uint16_t)value);
         break;
-    default:
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
         of_wire_buffer_u32_set(wbuf, offset, (uint32_t)value);
         break;
+    default:
+        LOCI_ASSERT(0);
     }
 }
 
@@ -495,10 +537,14 @@ of_wire_buffer_fm_cmd_get(int version, of_wire_buffer_t *wbuf, int offset,
         of_wire_buffer_u16_get(wbuf, offset, &v16);
         *value = v16;
         break;
-    default:
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
         of_wire_buffer_u8_get(wbuf, offset, &v8);
         *value = v8;
         break;
+    default:
+        LOCI_ASSERT(0);
     }
 }
 
@@ -517,9 +563,13 @@ of_wire_buffer_fm_cmd_set(int version, of_wire_buffer_t *wbuf, int offset,
     case OF_VERSION_1_0:
         of_wire_buffer_u16_set(wbuf, offset, (uint16_t)value);
         break;
-    default:
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
         of_wire_buffer_u8_set(wbuf, offset, (uint8_t)value);
         break;
+    default:
+        LOCI_ASSERT(0);
     }
 }
 
@@ -543,10 +593,13 @@ of_wire_buffer_wc_bmap_get(int version, of_wire_buffer_t *wbuf, int offset,
         of_wire_buffer_u32_get(wbuf, offset, &v32);
         *value = v32;
         break;
-    default:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
         of_wire_buffer_u64_get(wbuf, offset, &v64);
         *value = v64;
         break;
+    default:
+        LOCI_ASSERT(0);
     }
 }
 
@@ -566,9 +619,12 @@ of_wire_buffer_wc_bmap_set(int version, of_wire_buffer_t *wbuf, int offset,
     case OF_VERSION_1_1:
         of_wire_buffer_u32_set(wbuf, offset, (uint32_t)value);
         break;
-    default:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
         of_wire_buffer_u64_set(wbuf, offset, (uint64_t)value);
         break;
+    default:
+        LOCI_ASSERT(0);
     }
 }
 
@@ -863,45 +919,6 @@ _wbuf_octets_get(of_wire_buffer_t *wbuf, int offset, uint8_t *dst, int bytes) {
 
 #define of_wire_buffer_checksum_128_set(buf, offset, checksum) \
     (of_wire_buffer_u64_set(buf, offset, checksum.hi), of_wire_buffer_u64_set(buf, offset+8, checksum.lo))
-
-
-/**
- * Get a bitmap_512 from a wire buffer
- * @param wbuf The pointer to the wire buffer structure
- * @param offset Offset in the wire buffer
- * @param value Pointer to where to put value
- *
- * The underlying buffer accessor funtions handle endian and alignment.
- */
-
-static inline void
-of_wire_buffer_bitmap_512_get(of_wire_buffer_t *wbuf, int offset, of_bitmap_512_t *value)
-{
-    OF_WIRE_BUFFER_ACCESS_CHECK(wbuf, offset + (int) sizeof(of_bitmap_512_t));
-    int i;
-    for (i = 0; i < 8; i++) {
-        buf_u64_get(OF_WIRE_BUFFER_INDEX(wbuf, offset+i*8), &value->words[i]);
-    }
-}
-
-/**
- * Set a bitmap_512 in a wire buffer
- * @param wbuf The pointer to the wire buffer structure
- * @param offset Offset in the wire buffer
- * @param value The value to store
- *
- * The underlying buffer accessor funtions handle endian and alignment.
- */
-
-static inline void
-of_wire_buffer_bitmap_512_set(of_wire_buffer_t *wbuf, int offset, of_bitmap_512_t value)
-{
-    OF_WIRE_BUFFER_ACCESS_CHECK(wbuf, offset + (int) sizeof(of_bitmap_512_t));
-    int i;
-    for (i = 0; i < 8; i++) {
-        buf_u64_set(OF_WIRE_BUFFER_INDEX(wbuf, offset+i*8), value.words[i]);
-    }
-}
 
 /* Relocate data from start offset to the end of the buffer to a new position */
 static inline void

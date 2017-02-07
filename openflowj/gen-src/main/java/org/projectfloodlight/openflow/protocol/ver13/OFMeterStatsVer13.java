@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -30,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -64,15 +62,6 @@ class OFMeterStatsVer13 implements OFMeterStats {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterStatsVer13(long meterId, long flowCount, U64 packetInCount, U64 byteInCount, long durationSec, long durationNsec, List<OFMeterBandStats> bandStats) {
-        if(packetInCount == null) {
-            throw new NullPointerException("OFMeterStatsVer13: property packetInCount cannot be null");
-        }
-        if(byteInCount == null) {
-            throw new NullPointerException("OFMeterStatsVer13: property byteInCount cannot be null");
-        }
-        if(bandStats == null) {
-            throw new NullPointerException("OFMeterStatsVer13: property bandStats cannot be null");
-        }
         this.meterId = meterId;
         this.flowCount = flowCount;
         this.packetInCount = packetInCount;
@@ -116,11 +105,6 @@ class OFMeterStatsVer13 implements OFMeterStats {
     @Override
     public List<OFMeterBandStats> getBandStats() {
         return bandStats;
-    }
-
-    @Override
-    public long getRefCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property refCount not supported in version 1.3");
     }
 
     @Override
@@ -233,15 +217,6 @@ class OFMeterStatsVer13 implements OFMeterStats {
         this.bandStats = bandStats;
         this.bandStatsSet = true;
         return this;
-    }
-    @Override
-    public long getRefCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property refCount not supported in version 1.3");
-    }
-
-    @Override
-    public OFMeterStats.Builder setRefCount(long refCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property refCount not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {
@@ -375,15 +350,6 @@ class OFMeterStatsVer13 implements OFMeterStats {
         return this;
     }
     @Override
-    public long getRefCount()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property refCount not supported in version 1.3");
-    }
-
-    @Override
-    public OFMeterStats.Builder setRefCount(long refCount) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property refCount not supported in version 1.3");
-    }
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
     }
@@ -423,7 +389,7 @@ class OFMeterStatsVer13 implements OFMeterStats {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFMeterStats> {
         @Override
-        public OFMeterStats readFrom(ByteBuf bb) throws OFParseError {
+        public OFMeterStats readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             long meterId = U32.f(bb.readInt());
             int length = U16.f(bb.readShort());
@@ -482,14 +448,14 @@ class OFMeterStatsVer13 implements OFMeterStats {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFMeterStatsVer13> {
         @Override
-        public void write(ByteBuf bb, OFMeterStatsVer13 message) {
+        public void write(ChannelBuffer bb, OFMeterStatsVer13 message) {
             int startIndex = bb.writerIndex();
             bb.writeInt(U32.t(message.meterId));
             // length is length of variable message, will be updated at the end

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -30,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -54,9 +52,6 @@ class OFHelloVer13 implements OFHello {
 
     // package private constructor - used by readers, builders, and factory
     OFHelloVer13(long xid, List<OFHelloElem> elements) {
-        if(elements == null) {
-            throw new NullPointerException("OFHelloVer13: property elements cannot be null");
-        }
         this.xid = xid;
         this.elements = elements;
     }
@@ -211,7 +206,7 @@ class OFHelloVer13 implements OFHello {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFHello> {
         @Override
-        public OFHello readFrom(ByteBuf bb) throws OFParseError {
+        public OFHello readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -264,14 +259,14 @@ class OFHelloVer13 implements OFHello {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFHelloVer13> {
         @Override
-        public void write(ByteBuf bb, OFHelloVer13 message) {
+        public void write(ChannelBuffer bb, OFHelloVer13 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
@@ -322,40 +317,11 @@ class OFHelloVer13 implements OFHello {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFHelloVer13 other = (OFHelloVer13) obj;
-
-        // ignore XID
-        if (elements == null) {
-            if (other.elements != null)
-                return false;
-        } else if (!elements.equals(other.elements))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((elements == null) ? 0 : elements.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((elements == null) ? 0 : elements.hashCode());
         return result;
     }

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -54,15 +52,6 @@ class OFBsnDebugCounterDescStatsEntryVer13 implements OFBsnDebugCounterDescStats
 
     // package private constructor - used by readers, builders, and factory
     OFBsnDebugCounterDescStatsEntryVer13(U64 counterId, String name, String description) {
-        if(counterId == null) {
-            throw new NullPointerException("OFBsnDebugCounterDescStatsEntryVer13: property counterId cannot be null");
-        }
-        if(name == null) {
-            throw new NullPointerException("OFBsnDebugCounterDescStatsEntryVer13: property name cannot be null");
-        }
-        if(description == null) {
-            throw new NullPointerException("OFBsnDebugCounterDescStatsEntryVer13: property description cannot be null");
-        }
         this.counterId = counterId;
         this.name = name;
         this.description = description;
@@ -246,7 +235,7 @@ class OFBsnDebugCounterDescStatsEntryVer13 implements OFBsnDebugCounterDescStats
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnDebugCounterDescStatsEntry> {
         @Override
-        public OFBsnDebugCounterDescStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnDebugCounterDescStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
             U64 counterId = U64.ofRaw(bb.readLong());
             String name = ChannelUtils.readFixedLengthString(bb, 64);
             String description = ChannelUtils.readFixedLengthString(bb, 256);
@@ -278,14 +267,14 @@ class OFBsnDebugCounterDescStatsEntryVer13 implements OFBsnDebugCounterDescStats
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnDebugCounterDescStatsEntryVer13> {
         @Override
-        public void write(ByteBuf bb, OFBsnDebugCounterDescStatsEntryVer13 message) {
+        public void write(ChannelBuffer bb, OFBsnDebugCounterDescStatsEntryVer13 message) {
             bb.writeLong(message.counterId.getValue());
             ChannelUtils.writeFixedLengthString(bb, message.name, 64);
             ChannelUtils.writeFixedLengthString(bb, message.description, 256);

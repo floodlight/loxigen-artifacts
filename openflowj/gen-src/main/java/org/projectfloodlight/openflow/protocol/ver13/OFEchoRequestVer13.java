@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 import java.util.Arrays;
@@ -53,9 +51,6 @@ class OFEchoRequestVer13 implements OFEchoRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFEchoRequestVer13(long xid, byte[] data) {
-        if(data == null) {
-            throw new NullPointerException("OFEchoRequestVer13: property data cannot be null");
-        }
         this.xid = xid;
         this.data = data;
     }
@@ -210,7 +205,7 @@ class OFEchoRequestVer13 implements OFEchoRequest {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFEchoRequest> {
         @Override
-        public OFEchoRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFEchoRequest readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -263,14 +258,14 @@ class OFEchoRequestVer13 implements OFEchoRequest {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFEchoRequestVer13> {
         @Override
-        public void write(ByteBuf bb, OFEchoRequestVer13 message) {
+        public void write(ChannelBuffer bb, OFEchoRequestVer13 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
@@ -318,37 +313,11 @@ class OFEchoRequestVer13 implements OFEchoRequest {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFEchoRequestVer13 other = (OFEchoRequestVer13) obj;
-
-        // ignore XID
-        if (!Arrays.equals(data, other.data))
-                return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + Arrays.hashCode(data);
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + Arrays.hashCode(data);
         return result;
     }

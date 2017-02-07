@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,9 +26,10 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
+import java.util.Arrays;
 
 class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg {
     private static final Logger logger = LoggerFactory.getLogger(OFSwitchConfigFailedErrorMsgVer12.class);
@@ -39,22 +38,16 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
     final static int MINIMUM_LENGTH = 12;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static OFErrorCauseData DEFAULT_DATA = OFErrorCauseData.NONE;
+        private final static byte[] DEFAULT_DATA = new byte[0];
 
     // OF message fields
     private final long xid;
     private final OFSwitchConfigFailedCode code;
-    private final OFErrorCauseData data;
+    private final byte[] data;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFSwitchConfigFailedErrorMsgVer12(long xid, OFSwitchConfigFailedCode code, OFErrorCauseData data) {
-        if(code == null) {
-            throw new NullPointerException("OFSwitchConfigFailedErrorMsgVer12: property code cannot be null");
-        }
-        if(data == null) {
-            throw new NullPointerException("OFSwitchConfigFailedErrorMsgVer12: property data cannot be null");
-        }
+    OFSwitchConfigFailedErrorMsgVer12(long xid, OFSwitchConfigFailedCode code, byte[] data) {
         this.xid = xid;
         this.code = code;
         this.data = data;
@@ -87,7 +80,7 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
     }
 
     @Override
-    public OFErrorCauseData getData() {
+    public byte[] getData() {
         return data;
     }
 
@@ -106,7 +99,7 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
         private boolean codeSet;
         private OFSwitchConfigFailedCode code;
         private boolean dataSet;
-        private OFErrorCauseData data;
+        private byte[] data;
 
         BuilderWithParent(OFSwitchConfigFailedErrorMsgVer12 parentMessage) {
             this.parentMessage = parentMessage;
@@ -150,12 +143,12 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
         return this;
     }
     @Override
-    public OFErrorCauseData getData() {
+    public byte[] getData() {
         return data;
     }
 
     @Override
-    public OFSwitchConfigFailedErrorMsg.Builder setData(OFErrorCauseData data) {
+    public OFSwitchConfigFailedErrorMsg.Builder setData(byte[] data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -168,7 +161,7 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
                 OFSwitchConfigFailedCode code = this.codeSet ? this.code : parentMessage.code;
                 if(code == null)
                     throw new NullPointerException("Property code must not be null");
-                OFErrorCauseData data = this.dataSet ? this.data : parentMessage.data;
+                byte[] data = this.dataSet ? this.data : parentMessage.data;
                 if(data == null)
                     throw new NullPointerException("Property data must not be null");
 
@@ -189,7 +182,7 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
         private boolean codeSet;
         private OFSwitchConfigFailedCode code;
         private boolean dataSet;
-        private OFErrorCauseData data;
+        private byte[] data;
 
     @Override
     public OFVersion getVersion() {
@@ -229,12 +222,12 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
         return this;
     }
     @Override
-    public OFErrorCauseData getData() {
+    public byte[] getData() {
         return data;
     }
 
     @Override
-    public OFSwitchConfigFailedErrorMsg.Builder setData(OFErrorCauseData data) {
+    public OFSwitchConfigFailedErrorMsg.Builder setData(byte[] data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -247,7 +240,7 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
                 throw new IllegalStateException("Property code doesn't have default value -- must be set");
             if(code == null)
                 throw new NullPointerException("Property code must not be null");
-            OFErrorCauseData data = this.dataSet ? this.data : DEFAULT_DATA;
+            byte[] data = this.dataSet ? this.data : DEFAULT_DATA;
             if(data == null)
                 throw new NullPointerException("Property data must not be null");
 
@@ -265,7 +258,7 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFSwitchConfigFailedErrorMsg> {
         @Override
-        public OFSwitchConfigFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFSwitchConfigFailedErrorMsg readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -291,7 +284,7 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
             if(errType != (short) 0xa)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.SWITCH_CONFIG_FAILED(10), got="+errType);
             OFSwitchConfigFailedCode code = OFSwitchConfigFailedCodeSerializerVer12.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_12);
+            byte[] data = ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
 
             OFSwitchConfigFailedErrorMsgVer12 switchConfigFailedErrorMsgVer12 = new OFSwitchConfigFailedErrorMsgVer12(
                     xid,
@@ -322,19 +315,19 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
             // fixed value property errType = 10
             sink.putShort((short) 0xa);
             OFSwitchConfigFailedCodeSerializerVer12.putTo(message.code, sink);
-            message.data.putTo(sink);
+            sink.putBytes(message.data);
         }
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFSwitchConfigFailedErrorMsgVer12> {
         @Override
-        public void write(ByteBuf bb, OFSwitchConfigFailedErrorMsgVer12 message) {
+        public void write(ChannelBuffer bb, OFSwitchConfigFailedErrorMsgVer12 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
@@ -348,7 +341,7 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
             // fixed value property errType = 10
             bb.writeShort((short) 0xa);
             OFSwitchConfigFailedCodeSerializerVer12.writeTo(bb, message.code);
-            message.data.writeTo(bb);
+            bb.writeBytes(message.data);
 
             // update length field
             int length = bb.writerIndex() - startIndex;
@@ -364,7 +357,7 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
         b.append(", ");
         b.append("code=").append(code);
         b.append(", ");
-        b.append("data=").append(data);
+        b.append("data=").append(Arrays.toString(data));
         b.append(")");
         return b.toString();
     }
@@ -386,35 +379,8 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
                 return false;
         } else if (!code.equals(other.code))
             return false;
-        if (data == null) {
-            if (other.data != null)
+        if (!Arrays.equals(data, other.data))
                 return false;
-        } else if (!data.equals(other.data))
-            return false;
-        return true;
-    }
-
-    @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFSwitchConfigFailedErrorMsgVer12 other = (OFSwitchConfigFailedErrorMsgVer12) obj;
-
-        // ignore XID
-        if (code == null) {
-            if (other.code != null)
-                return false;
-        } else if (!code.equals(other.code))
-            return false;
-        if (data == null) {
-            if (other.data != null)
-                return false;
-        } else if (!data.equals(other.data))
-            return false;
         return true;
     }
 
@@ -425,18 +391,7 @@ class OFSwitchConfigFailedErrorMsgVer12 implements OFSwitchConfigFailedErrorMsg 
 
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((code == null) ? 0 : code.hashCode());
-        result = prime * result + ((data == null) ? 0 : data.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
-        result = prime * result + ((code == null) ? 0 : code.hashCode());
-        result = prime * result + ((data == null) ? 0 : data.hashCode());
+        result = prime * result + Arrays.hashCode(data);
         return result;
     }
 

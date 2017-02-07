@@ -1,6 +1,6 @@
 package org.projectfloodlight.openflow.types;
 
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import org.projectfloodlight.openflow.exceptions.OFParseError;
 
 import com.google.common.hash.PrimitiveSink;
@@ -32,8 +32,6 @@ public class TransportPort implements OFValueType<TransportPort> {
     public static TransportPort of(int port) {
         if(port == NONE_VAL)
             return NONE;
-        else if (port == NO_MASK.port)
-            return NO_MASK;
         else if (port < MIN_PORT || port > MAX_PORT) {
             throw new IllegalArgumentException("Illegal transport layer port number: " + port);
         }
@@ -72,11 +70,11 @@ public class TransportPort implements OFValueType<TransportPort> {
         return Integer.toString(port);
     }
 
-    public void write2Bytes(ByteBuf c) {
+    public void write2Bytes(ChannelBuffer c) {
         c.writeShort(this.port);
     }
 
-    public static TransportPort read2Bytes(ByteBuf c) throws OFParseError {
+    public static TransportPort read2Bytes(ChannelBuffer c) throws OFParseError {
         return TransportPort.of((c.readUnsignedShort() & 0x0FFFF));
     }
 

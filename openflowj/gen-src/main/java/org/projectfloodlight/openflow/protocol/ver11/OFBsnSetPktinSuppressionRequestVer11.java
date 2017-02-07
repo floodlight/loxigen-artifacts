@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -60,9 +58,6 @@ class OFBsnSetPktinSuppressionRequestVer11 implements OFBsnSetPktinSuppressionRe
 
     // package private constructor - used by readers, builders, and factory
     OFBsnSetPktinSuppressionRequestVer11(long xid, boolean enabled, int idleTimeout, int hardTimeout, int priority, U64 cookie) {
-        if(cookie == null) {
-            throw new NullPointerException("OFBsnSetPktinSuppressionRequestVer11: property cookie cannot be null");
-        }
         this.xid = xid;
         this.enabled = enabled;
         this.idleTimeout = idleTimeout;
@@ -391,7 +386,7 @@ class OFBsnSetPktinSuppressionRequestVer11 implements OFBsnSetPktinSuppressionRe
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnSetPktinSuppressionRequest> {
         @Override
-        public OFBsnSetPktinSuppressionRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnSetPktinSuppressionRequest readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -472,14 +467,14 @@ class OFBsnSetPktinSuppressionRequestVer11 implements OFBsnSetPktinSuppressionRe
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnSetPktinSuppressionRequestVer11> {
         @Override
-        public void write(ByteBuf bb, OFBsnSetPktinSuppressionRequestVer11 message) {
+        public void write(ChannelBuffer bb, OFBsnSetPktinSuppressionRequestVer11 message) {
             // fixed value property version = 2
             bb.writeByte((byte) 0x2);
             // fixed value property type = 4
@@ -550,52 +545,11 @@ class OFBsnSetPktinSuppressionRequestVer11 implements OFBsnSetPktinSuppressionRe
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnSetPktinSuppressionRequestVer11 other = (OFBsnSetPktinSuppressionRequestVer11) obj;
-
-        // ignore XID
-        if( enabled != other.enabled)
-            return false;
-        if( idleTimeout != other.idleTimeout)
-            return false;
-        if( hardTimeout != other.hardTimeout)
-            return false;
-        if( priority != other.priority)
-            return false;
-        if (cookie == null) {
-            if (other.cookie != null)
-                return false;
-        } else if (!cookie.equals(other.cookie))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + (enabled ? 1231 : 1237);
-        result = prime * result + idleTimeout;
-        result = prime * result + hardTimeout;
-        result = prime * result + priority;
-        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + (enabled ? 1231 : 1237);
         result = prime * result + idleTimeout;
         result = prime * result + hardTimeout;

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -74,15 +72,6 @@ class OFBsnLacpConvergenceNotifVer13 implements OFBsnLacpConvergenceNotif {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnLacpConvergenceNotifVer13(long xid, short convergenceStatus, OFPort portNo, int actorSysPriority, MacAddress actorSysMac, int actorPortPriority, int actorPortNum, int actorKey, int partnerSysPriority, MacAddress partnerSysMac, int partnerPortPriority, int partnerPortNum, int partnerKey) {
-        if(portNo == null) {
-            throw new NullPointerException("OFBsnLacpConvergenceNotifVer13: property portNo cannot be null");
-        }
-        if(actorSysMac == null) {
-            throw new NullPointerException("OFBsnLacpConvergenceNotifVer13: property actorSysMac cannot be null");
-        }
-        if(partnerSysMac == null) {
-            throw new NullPointerException("OFBsnLacpConvergenceNotifVer13: property partnerSysMac cannot be null");
-        }
         this.xid = xid;
         this.convergenceStatus = convergenceStatus;
         this.portNo = portNo;
@@ -671,7 +660,7 @@ class OFBsnLacpConvergenceNotifVer13 implements OFBsnLacpConvergenceNotif {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnLacpConvergenceNotif> {
         @Override
-        public OFBsnLacpConvergenceNotif readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnLacpConvergenceNotif readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -773,14 +762,14 @@ class OFBsnLacpConvergenceNotifVer13 implements OFBsnLacpConvergenceNotif {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnLacpConvergenceNotifVer13> {
         @Override
-        public void write(ByteBuf bb, OFBsnLacpConvergenceNotifVer13 message) {
+        public void write(ChannelBuffer bb, OFBsnLacpConvergenceNotifVer13 message) {
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
             // fixed value property type = 4
@@ -892,79 +881,11 @@ class OFBsnLacpConvergenceNotifVer13 implements OFBsnLacpConvergenceNotif {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnLacpConvergenceNotifVer13 other = (OFBsnLacpConvergenceNotifVer13) obj;
-
-        // ignore XID
-        if( convergenceStatus != other.convergenceStatus)
-            return false;
-        if (portNo == null) {
-            if (other.portNo != null)
-                return false;
-        } else if (!portNo.equals(other.portNo))
-            return false;
-        if( actorSysPriority != other.actorSysPriority)
-            return false;
-        if (actorSysMac == null) {
-            if (other.actorSysMac != null)
-                return false;
-        } else if (!actorSysMac.equals(other.actorSysMac))
-            return false;
-        if( actorPortPriority != other.actorPortPriority)
-            return false;
-        if( actorPortNum != other.actorPortNum)
-            return false;
-        if( actorKey != other.actorKey)
-            return false;
-        if( partnerSysPriority != other.partnerSysPriority)
-            return false;
-        if (partnerSysMac == null) {
-            if (other.partnerSysMac != null)
-                return false;
-        } else if (!partnerSysMac.equals(other.partnerSysMac))
-            return false;
-        if( partnerPortPriority != other.partnerPortPriority)
-            return false;
-        if( partnerPortNum != other.partnerPortNum)
-            return false;
-        if( partnerKey != other.partnerKey)
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + convergenceStatus;
-        result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
-        result = prime * result + actorSysPriority;
-        result = prime * result + ((actorSysMac == null) ? 0 : actorSysMac.hashCode());
-        result = prime * result + actorPortPriority;
-        result = prime * result + actorPortNum;
-        result = prime * result + actorKey;
-        result = prime * result + partnerSysPriority;
-        result = prime * result + ((partnerSysMac == null) ? 0 : partnerSysMac.hashCode());
-        result = prime * result + partnerPortPriority;
-        result = prime * result + partnerPortNum;
-        result = prime * result + partnerKey;
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + convergenceStatus;
         result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
         result = prime * result + actorSysPriority;

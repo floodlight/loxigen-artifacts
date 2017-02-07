@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -52,12 +50,6 @@ class OFOxmBsnL3DstClassIdMaskedVer12 implements OFOxmBsnL3DstClassIdMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnL3DstClassIdMaskedVer12(ClassId value, ClassId mask) {
-        if(value == null) {
-            throw new NullPointerException("OFOxmBsnL3DstClassIdMaskedVer12: property value cannot be null");
-        }
-        if(mask == null) {
-            throw new NullPointerException("OFOxmBsnL3DstClassIdMaskedVer12: property mask cannot be null");
-        }
         this.value = value;
         this.mask = mask;
     }
@@ -266,7 +258,7 @@ class OFOxmBsnL3DstClassIdMaskedVer12 implements OFOxmBsnL3DstClassIdMasked {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmBsnL3DstClassIdMasked> {
         @Override
-        public OFOxmBsnL3DstClassIdMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnL3DstClassIdMasked readFrom(ChannelBuffer bb) throws OFParseError {
             // fixed value property typeLen == 0x30d08L
             int typeLen = bb.readInt();
             if(typeLen != 0x30d08)
@@ -301,14 +293,14 @@ class OFOxmBsnL3DstClassIdMaskedVer12 implements OFOxmBsnL3DstClassIdMasked {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmBsnL3DstClassIdMaskedVer12> {
         @Override
-        public void write(ByteBuf bb, OFOxmBsnL3DstClassIdMaskedVer12 message) {
+        public void write(ChannelBuffer bb, OFOxmBsnL3DstClassIdMaskedVer12 message) {
             // fixed value property typeLen = 0x30d08L
             bb.writeInt(0x30d08);
             message.value.write4Bytes(bb);

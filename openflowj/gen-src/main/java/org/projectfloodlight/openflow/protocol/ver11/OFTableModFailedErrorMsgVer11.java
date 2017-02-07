@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,9 +26,10 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
+import java.util.Arrays;
 
 class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
     private static final Logger logger = LoggerFactory.getLogger(OFTableModFailedErrorMsgVer11.class);
@@ -39,22 +38,16 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
     final static int MINIMUM_LENGTH = 12;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static OFErrorCauseData DEFAULT_DATA = OFErrorCauseData.NONE;
+        private final static byte[] DEFAULT_DATA = new byte[0];
 
     // OF message fields
     private final long xid;
     private final OFTableModFailedCode code;
-    private final OFErrorCauseData data;
+    private final byte[] data;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFTableModFailedErrorMsgVer11(long xid, OFTableModFailedCode code, OFErrorCauseData data) {
-        if(code == null) {
-            throw new NullPointerException("OFTableModFailedErrorMsgVer11: property code cannot be null");
-        }
-        if(data == null) {
-            throw new NullPointerException("OFTableModFailedErrorMsgVer11: property data cannot be null");
-        }
+    OFTableModFailedErrorMsgVer11(long xid, OFTableModFailedCode code, byte[] data) {
         this.xid = xid;
         this.code = code;
         this.data = data;
@@ -87,7 +80,7 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
     }
 
     @Override
-    public OFErrorCauseData getData() {
+    public byte[] getData() {
         return data;
     }
 
@@ -106,7 +99,7 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
         private boolean codeSet;
         private OFTableModFailedCode code;
         private boolean dataSet;
-        private OFErrorCauseData data;
+        private byte[] data;
 
         BuilderWithParent(OFTableModFailedErrorMsgVer11 parentMessage) {
             this.parentMessage = parentMessage;
@@ -150,12 +143,12 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
         return this;
     }
     @Override
-    public OFErrorCauseData getData() {
+    public byte[] getData() {
         return data;
     }
 
     @Override
-    public OFTableModFailedErrorMsg.Builder setData(OFErrorCauseData data) {
+    public OFTableModFailedErrorMsg.Builder setData(byte[] data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -168,7 +161,7 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
                 OFTableModFailedCode code = this.codeSet ? this.code : parentMessage.code;
                 if(code == null)
                     throw new NullPointerException("Property code must not be null");
-                OFErrorCauseData data = this.dataSet ? this.data : parentMessage.data;
+                byte[] data = this.dataSet ? this.data : parentMessage.data;
                 if(data == null)
                     throw new NullPointerException("Property data must not be null");
 
@@ -189,7 +182,7 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
         private boolean codeSet;
         private OFTableModFailedCode code;
         private boolean dataSet;
-        private OFErrorCauseData data;
+        private byte[] data;
 
     @Override
     public OFVersion getVersion() {
@@ -229,12 +222,12 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
         return this;
     }
     @Override
-    public OFErrorCauseData getData() {
+    public byte[] getData() {
         return data;
     }
 
     @Override
-    public OFTableModFailedErrorMsg.Builder setData(OFErrorCauseData data) {
+    public OFTableModFailedErrorMsg.Builder setData(byte[] data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -247,7 +240,7 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
                 throw new IllegalStateException("Property code doesn't have default value -- must be set");
             if(code == null)
                 throw new NullPointerException("Property code must not be null");
-            OFErrorCauseData data = this.dataSet ? this.data : DEFAULT_DATA;
+            byte[] data = this.dataSet ? this.data : DEFAULT_DATA;
             if(data == null)
                 throw new NullPointerException("Property data must not be null");
 
@@ -265,7 +258,7 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFTableModFailedErrorMsg> {
         @Override
-        public OFTableModFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableModFailedErrorMsg readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -291,7 +284,7 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
             if(errType != (short) 0x8)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.TABLE_MOD_FAILED(8), got="+errType);
             OFTableModFailedCode code = OFTableModFailedCodeSerializerVer11.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_11);
+            byte[] data = ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
 
             OFTableModFailedErrorMsgVer11 tableModFailedErrorMsgVer11 = new OFTableModFailedErrorMsgVer11(
                     xid,
@@ -322,19 +315,19 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
             // fixed value property errType = 8
             sink.putShort((short) 0x8);
             OFTableModFailedCodeSerializerVer11.putTo(message.code, sink);
-            message.data.putTo(sink);
+            sink.putBytes(message.data);
         }
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFTableModFailedErrorMsgVer11> {
         @Override
-        public void write(ByteBuf bb, OFTableModFailedErrorMsgVer11 message) {
+        public void write(ChannelBuffer bb, OFTableModFailedErrorMsgVer11 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 2
             bb.writeByte((byte) 0x2);
@@ -348,7 +341,7 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
             // fixed value property errType = 8
             bb.writeShort((short) 0x8);
             OFTableModFailedCodeSerializerVer11.writeTo(bb, message.code);
-            message.data.writeTo(bb);
+            bb.writeBytes(message.data);
 
             // update length field
             int length = bb.writerIndex() - startIndex;
@@ -364,7 +357,7 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
         b.append(", ");
         b.append("code=").append(code);
         b.append(", ");
-        b.append("data=").append(data);
+        b.append("data=").append(Arrays.toString(data));
         b.append(")");
         return b.toString();
     }
@@ -386,35 +379,8 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
                 return false;
         } else if (!code.equals(other.code))
             return false;
-        if (data == null) {
-            if (other.data != null)
+        if (!Arrays.equals(data, other.data))
                 return false;
-        } else if (!data.equals(other.data))
-            return false;
-        return true;
-    }
-
-    @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFTableModFailedErrorMsgVer11 other = (OFTableModFailedErrorMsgVer11) obj;
-
-        // ignore XID
-        if (code == null) {
-            if (other.code != null)
-                return false;
-        } else if (!code.equals(other.code))
-            return false;
-        if (data == null) {
-            if (other.data != null)
-                return false;
-        } else if (!data.equals(other.data))
-            return false;
         return true;
     }
 
@@ -425,18 +391,7 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
 
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((code == null) ? 0 : code.hashCode());
-        result = prime * result + ((data == null) ? 0 : data.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
-        result = prime * result + ((code == null) ? 0 : code.hashCode());
-        result = prime * result + ((data == null) ? 0 : data.hashCode());
+        result = prime * result + Arrays.hashCode(data);
         return result;
     }
 

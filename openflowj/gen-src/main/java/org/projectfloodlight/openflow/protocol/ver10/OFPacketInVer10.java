@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 import java.util.Arrays;
@@ -56,18 +54,6 @@ class OFPacketInVer10 implements OFPacketIn {
 
     // package private constructor - used by readers, builders, and factory
     OFPacketInVer10(long xid, OFBufferId bufferId, int totalLen, OFPort inPort, OFPacketInReason reason, byte[] data) {
-        if(bufferId == null) {
-            throw new NullPointerException("OFPacketInVer10: property bufferId cannot be null");
-        }
-        if(inPort == null) {
-            throw new NullPointerException("OFPacketInVer10: property inPort cannot be null");
-        }
-        if(reason == null) {
-            throw new NullPointerException("OFPacketInVer10: property reason cannot be null");
-        }
-        if(data == null) {
-            throw new NullPointerException("OFPacketInVer10: property data cannot be null");
-        }
         this.xid = xid;
         this.bufferId = bufferId;
         this.totalLen = totalLen;
@@ -113,11 +99,6 @@ class OFPacketInVer10 implements OFPacketIn {
     }
 
     @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-
-    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
@@ -135,6 +116,11 @@ class OFPacketInVer10 implements OFPacketIn {
     @Override
     public OFPort getInPhyPort()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property inPhyPort not supported in version 1.0");
+    }
+
+    @Override
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
     }
 
 
@@ -228,15 +214,6 @@ class OFPacketInVer10 implements OFPacketIn {
             throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
     }
     @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-
-    @Override
-    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
@@ -275,6 +252,15 @@ class OFPacketInVer10 implements OFPacketIn {
     @Override
     public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property inPhyPort not supported in version 1.0");
+    }
+    @Override
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
+    }
+
+    @Override
+    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
     }
 
 
@@ -387,15 +373,6 @@ class OFPacketInVer10 implements OFPacketIn {
             throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
     }
     @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-
-    @Override
-    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
@@ -435,6 +412,15 @@ class OFPacketInVer10 implements OFPacketIn {
     public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property inPhyPort not supported in version 1.0");
     }
+    @Override
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
+    }
+
+    @Override
+    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
+    }
 //
         @Override
         public OFPacketIn build() {
@@ -471,7 +457,7 @@ class OFPacketInVer10 implements OFPacketIn {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFPacketIn> {
         @Override
-        public OFPacketIn readFrom(ByteBuf bb) throws OFParseError {
+        public OFPacketIn readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -539,14 +525,14 @@ class OFPacketInVer10 implements OFPacketIn {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFPacketInVer10> {
         @Override
-        public void write(ByteBuf bb, OFPacketInVer10 message) {
+        public void write(ChannelBuffer bb, OFPacketInVer10 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);
@@ -625,58 +611,11 @@ class OFPacketInVer10 implements OFPacketIn {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFPacketInVer10 other = (OFPacketInVer10) obj;
-
-        // ignore XID
-        if (bufferId == null) {
-            if (other.bufferId != null)
-                return false;
-        } else if (!bufferId.equals(other.bufferId))
-            return false;
-        if( totalLen != other.totalLen)
-            return false;
-        if (inPort == null) {
-            if (other.inPort != null)
-                return false;
-        } else if (!inPort.equals(other.inPort))
-            return false;
-        if (reason == null) {
-            if (other.reason != null)
-                return false;
-        } else if (!reason.equals(other.reason))
-            return false;
-        if (!Arrays.equals(data, other.data))
-                return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
-        result = prime * result + totalLen;
-        result = prime * result + ((inPort == null) ? 0 : inPort.hashCode());
-        result = prime * result + ((reason == null) ? 0 : reason.hashCode());
-        result = prime * result + Arrays.hashCode(data);
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
         result = prime * result + totalLen;
         result = prime * result + ((inPort == null) ? 0 : inPort.hashCode());

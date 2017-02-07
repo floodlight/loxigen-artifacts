@@ -18,14 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFRoleRequest extends OFObject, OFMessage, OFRequest<OFRoleReply> {
     OFVersion getVersion();
@@ -33,9 +31,8 @@ public interface OFRoleRequest extends OFObject, OFMessage, OFRequest<OFRoleRepl
     long getXid();
     OFControllerRole getRole();
     U64 getGenerationId();
-    int getShortId() throws UnsupportedOperationException;
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
@@ -48,7 +45,5 @@ public interface OFRoleRequest extends OFObject, OFMessage, OFRequest<OFRoleRepl
         Builder setRole(OFControllerRole role);
         U64 getGenerationId();
         Builder setGenerationId(U64 generationId);
-        int getShortId() throws UnsupportedOperationException;
-        Builder setShortId(int shortId) throws UnsupportedOperationException;
     }
 }

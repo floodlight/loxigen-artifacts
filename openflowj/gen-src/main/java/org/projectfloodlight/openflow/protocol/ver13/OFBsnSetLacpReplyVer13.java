@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -54,9 +52,6 @@ class OFBsnSetLacpReplyVer13 implements OFBsnSetLacpReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnSetLacpReplyVer13(long xid, long status, OFPort portNo) {
-        if(portNo == null) {
-            throw new NullPointerException("OFBsnSetLacpReplyVer13: property portNo cannot be null");
-        }
         this.xid = xid;
         this.status = status;
         this.portNo = portNo;
@@ -277,7 +272,7 @@ class OFBsnSetLacpReplyVer13 implements OFBsnSetLacpReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnSetLacpReply> {
         @Override
-        public OFBsnSetLacpReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnSetLacpReply readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -346,14 +341,14 @@ class OFBsnSetLacpReplyVer13 implements OFBsnSetLacpReply {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnSetLacpReplyVer13> {
         @Override
-        public void write(ByteBuf bb, OFBsnSetLacpReplyVer13 message) {
+        public void write(ChannelBuffer bb, OFBsnSetLacpReplyVer13 message) {
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
             // fixed value property type = 4
@@ -407,43 +402,11 @@ class OFBsnSetLacpReplyVer13 implements OFBsnSetLacpReply {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnSetLacpReplyVer13 other = (OFBsnSetLacpReplyVer13) obj;
-
-        // ignore XID
-        if( status != other.status)
-            return false;
-        if (portNo == null) {
-            if (other.portNo != null)
-                return false;
-        } else if (!portNo.equals(other.portNo))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime *  (int) (status ^ (status >>> 32));
-        result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime *  (int) (status ^ (status >>> 32));
         result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
         return result;

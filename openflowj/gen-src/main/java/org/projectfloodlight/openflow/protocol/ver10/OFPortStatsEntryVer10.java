@@ -18,18 +18,15 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.List;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -75,45 +72,6 @@ class OFPortStatsEntryVer10 implements OFPortStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFPortStatsEntryVer10(OFPort portNo, U64 rxPackets, U64 txPackets, U64 rxBytes, U64 txBytes, U64 rxDropped, U64 txDropped, U64 rxErrors, U64 txErrors, U64 rxFrameErr, U64 rxOverErr, U64 rxCrcErr, U64 collisions) {
-        if(portNo == null) {
-            throw new NullPointerException("OFPortStatsEntryVer10: property portNo cannot be null");
-        }
-        if(rxPackets == null) {
-            throw new NullPointerException("OFPortStatsEntryVer10: property rxPackets cannot be null");
-        }
-        if(txPackets == null) {
-            throw new NullPointerException("OFPortStatsEntryVer10: property txPackets cannot be null");
-        }
-        if(rxBytes == null) {
-            throw new NullPointerException("OFPortStatsEntryVer10: property rxBytes cannot be null");
-        }
-        if(txBytes == null) {
-            throw new NullPointerException("OFPortStatsEntryVer10: property txBytes cannot be null");
-        }
-        if(rxDropped == null) {
-            throw new NullPointerException("OFPortStatsEntryVer10: property rxDropped cannot be null");
-        }
-        if(txDropped == null) {
-            throw new NullPointerException("OFPortStatsEntryVer10: property txDropped cannot be null");
-        }
-        if(rxErrors == null) {
-            throw new NullPointerException("OFPortStatsEntryVer10: property rxErrors cannot be null");
-        }
-        if(txErrors == null) {
-            throw new NullPointerException("OFPortStatsEntryVer10: property txErrors cannot be null");
-        }
-        if(rxFrameErr == null) {
-            throw new NullPointerException("OFPortStatsEntryVer10: property rxFrameErr cannot be null");
-        }
-        if(rxOverErr == null) {
-            throw new NullPointerException("OFPortStatsEntryVer10: property rxOverErr cannot be null");
-        }
-        if(rxCrcErr == null) {
-            throw new NullPointerException("OFPortStatsEntryVer10: property rxCrcErr cannot be null");
-        }
-        if(collisions == null) {
-            throw new NullPointerException("OFPortStatsEntryVer10: property collisions cannot be null");
-        }
         this.portNo = portNo;
         this.rxPackets = rxPackets;
         this.txPackets = txPackets;
@@ -203,11 +161,6 @@ class OFPortStatsEntryVer10 implements OFPortStatsEntry {
     @Override
     public long getDurationNsec()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property durationNsec not supported in version 1.0");
-    }
-
-    @Override
-    public List<OFPortStatsProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.0");
     }
 
     @Override
@@ -416,15 +369,6 @@ class OFPortStatsEntryVer10 implements OFPortStatsEntry {
     @Override
     public OFPortStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property durationNsec not supported in version 1.0");
-    }
-    @Override
-    public List<OFPortStatsProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.0");
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setProperties(List<OFPortStatsProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.0");
     }
     @Override
     public OFVersion getVersion() {
@@ -686,15 +630,6 @@ class OFPortStatsEntryVer10 implements OFPortStatsEntry {
             throw new UnsupportedOperationException("Property durationNsec not supported in version 1.0");
     }
     @Override
-    public List<OFPortStatsProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.0");
-    }
-
-    @Override
-    public OFPortStatsEntry.Builder setProperties(List<OFPortStatsProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.0");
-    }
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_10;
     }
@@ -766,7 +701,7 @@ class OFPortStatsEntryVer10 implements OFPortStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFPortStatsEntry> {
         @Override
-        public OFPortStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
             OFPort portNo = OFPort.read2Bytes(bb);
             // pad: 6 bytes
             bb.skipBytes(6);
@@ -831,14 +766,14 @@ class OFPortStatsEntryVer10 implements OFPortStatsEntry {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFPortStatsEntryVer10> {
         @Override
-        public void write(ByteBuf bb, OFPortStatsEntryVer10 message) {
+        public void write(ChannelBuffer bb, OFPortStatsEntryVer10 message) {
             message.portNo.write2Bytes(bb);
             // pad: 6 bytes
             bb.writeZero(6);

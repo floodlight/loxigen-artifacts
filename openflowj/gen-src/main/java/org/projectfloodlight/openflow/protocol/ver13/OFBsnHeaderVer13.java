@@ -18,14 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import java.util.Set;
 
 abstract class OFBsnHeaderVer13 {
@@ -38,7 +36,7 @@ abstract class OFBsnHeaderVer13 {
 
     static class Reader implements OFMessageReader<OFBsnHeader> {
         @Override
-        public OFBsnHeader readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnHeader readFrom(ChannelBuffer bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -175,21 +173,6 @@ abstract class OFBsnHeaderVer13 {
                case 0x2b:
                    // discriminator value 0x2bL=0x2bL for class OFBsnLacpConvergenceNotifVer13
                    return OFBsnLacpConvergenceNotifVer13.READER.readFrom(bb);
-               case 0x3f:
-                   // discriminator value 0x3fL=0x3fL for class OFBsnLogVer13
-                   return OFBsnLogVer13.READER.readFrom(bb);
-               case 0x42:
-                   // discriminator value 0x42L=0x42L for class OFBsnLuaCommandReplyVer13
-                   return OFBsnLuaCommandReplyVer13.READER.readFrom(bb);
-               case 0x41:
-                   // discriminator value 0x41L=0x41L for class OFBsnLuaCommandRequestVer13
-                   return OFBsnLuaCommandRequestVer13.READER.readFrom(bb);
-               case 0x43:
-                   // discriminator value 0x43L=0x43L for class OFBsnLuaNotificationVer13
-                   return OFBsnLuaNotificationVer13.READER.readFrom(bb);
-               case 0x40:
-                   // discriminator value 0x40L=0x40L for class OFBsnLuaUploadVer13
-                   return OFBsnLuaUploadVer13.READER.readFrom(bb);
                case 0x37:
                    // discriminator value 0x37L=0x37L for class OFBsnRoleStatusVer13
                    return OFBsnRoleStatusVer13.READER.readFrom(bb);
@@ -220,9 +203,6 @@ abstract class OFBsnHeaderVer13 {
                case 0x2c:
                    // discriminator value 0x2cL=0x2cL for class OFBsnTimeRequestVer13
                    return OFBsnTimeRequestVer13.READER.readFrom(bb);
-               case 0x46:
-                   // discriminator value 0x46L=0x46L for class OFBsnVlanCounterClearVer13
-                   return OFBsnVlanCounterClearVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFBsnHeaderVer13: " + subtype);
             }

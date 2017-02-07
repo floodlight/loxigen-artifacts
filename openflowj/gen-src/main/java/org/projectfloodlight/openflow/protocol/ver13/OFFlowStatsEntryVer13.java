@@ -18,20 +18,17 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.Set;
-import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import io.netty.buffer.ByteBuf;
+import java.util.Set;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -47,7 +44,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         private final static int DEFAULT_PRIORITY = 0x0;
         private final static int DEFAULT_IDLE_TIMEOUT = 0x0;
         private final static int DEFAULT_HARD_TIMEOUT = 0x0;
-        private final static Set<OFFlowModFlags> DEFAULT_FLAGS = ImmutableSet.<OFFlowModFlags>of();
+        private final static int DEFAULT_FLAGS = 0x0;
         private final static U64 DEFAULT_COOKIE = U64.ZERO;
         private final static U64 DEFAULT_PACKET_COUNT = U64.ZERO;
         private final static U64 DEFAULT_BYTE_COUNT = U64.ZERO;
@@ -61,7 +58,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     private final int priority;
     private final int idleTimeout;
     private final int hardTimeout;
-    private final Set<OFFlowModFlags> flags;
+    private final int flags;
     private final U64 cookie;
     private final U64 packetCount;
     private final U64 byteCount;
@@ -74,28 +71,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFFlowStatsEntryVer13(TableId tableId, long durationSec, long durationNsec, int priority, int idleTimeout, int hardTimeout, Set<OFFlowModFlags> flags, U64 cookie, U64 packetCount, U64 byteCount, Match match, List<OFInstruction> instructions) {
-        if(tableId == null) {
-            throw new NullPointerException("OFFlowStatsEntryVer13: property tableId cannot be null");
-        }
-        if(flags == null) {
-            throw new NullPointerException("OFFlowStatsEntryVer13: property flags cannot be null");
-        }
-        if(cookie == null) {
-            throw new NullPointerException("OFFlowStatsEntryVer13: property cookie cannot be null");
-        }
-        if(packetCount == null) {
-            throw new NullPointerException("OFFlowStatsEntryVer13: property packetCount cannot be null");
-        }
-        if(byteCount == null) {
-            throw new NullPointerException("OFFlowStatsEntryVer13: property byteCount cannot be null");
-        }
-        if(match == null) {
-            throw new NullPointerException("OFFlowStatsEntryVer13: property match cannot be null");
-        }
-        if(instructions == null) {
-            throw new NullPointerException("OFFlowStatsEntryVer13: property instructions cannot be null");
-        }
+    OFFlowStatsEntryVer13(TableId tableId, long durationSec, long durationNsec, int priority, int idleTimeout, int hardTimeout, int flags, U64 cookie, U64 packetCount, U64 byteCount, Match match, List<OFInstruction> instructions) {
         this.tableId = tableId;
         this.durationSec = durationSec;
         this.durationNsec = durationNsec;
@@ -142,11 +118,6 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     }
 
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -177,13 +148,8 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     }
 
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.3");
-    }
-
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.3");
+    public int getFlags() {
+        return flags;
     }
 
     @Override
@@ -214,7 +180,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         private boolean hardTimeoutSet;
         private int hardTimeout;
         private boolean flagsSet;
-        private Set<OFFlowModFlags> flags;
+        private int flags;
         private boolean cookieSet;
         private U64 cookie;
         private boolean packetCountSet;
@@ -297,17 +263,6 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -372,22 +327,15 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    public int getFlags() {
+        return flags;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property importance not supported in version 1.3");
-    }
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.3");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property stats not supported in version 1.3");
+    public OFFlowStatsEntry.Builder setFlags(int flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -406,9 +354,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
                 int priority = this.prioritySet ? this.priority : parentMessage.priority;
                 int idleTimeout = this.idleTimeoutSet ? this.idleTimeout : parentMessage.idleTimeout;
                 int hardTimeout = this.hardTimeoutSet ? this.hardTimeout : parentMessage.hardTimeout;
-                Set<OFFlowModFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
-                if(flags == null)
-                    throw new NullPointerException("Property flags must not be null");
+                int flags = this.flagsSet ? this.flags : parentMessage.flags;
                 U64 cookie = this.cookieSet ? this.cookie : parentMessage.cookie;
                 if(cookie == null)
                     throw new NullPointerException("Property cookie must not be null");
@@ -459,7 +405,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         private boolean hardTimeoutSet;
         private int hardTimeout;
         private boolean flagsSet;
-        private Set<OFFlowModFlags> flags;
+        private int flags;
         private boolean cookieSet;
         private U64 cookie;
         private boolean packetCountSet;
@@ -538,17 +484,6 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -613,22 +548,15 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    public int getFlags() {
+        return flags;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property importance not supported in version 1.3");
-    }
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.3");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property stats not supported in version 1.3");
+    public OFFlowStatsEntry.Builder setFlags(int flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -646,9 +574,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             int priority = this.prioritySet ? this.priority : DEFAULT_PRIORITY;
             int idleTimeout = this.idleTimeoutSet ? this.idleTimeout : DEFAULT_IDLE_TIMEOUT;
             int hardTimeout = this.hardTimeoutSet ? this.hardTimeout : DEFAULT_HARD_TIMEOUT;
-            Set<OFFlowModFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
-            if(flags == null)
-                throw new NullPointerException("Property flags must not be null");
+            int flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
             U64 cookie = this.cookieSet ? this.cookie : DEFAULT_COOKIE;
             if(cookie == null)
                 throw new NullPointerException("Property cookie must not be null");
@@ -688,7 +614,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFFlowStatsEntry> {
         @Override
-        public OFFlowStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
@@ -708,7 +634,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             int priority = U16.f(bb.readShort());
             int idleTimeout = U16.f(bb.readShort());
             int hardTimeout = U16.f(bb.readShort());
-            Set<OFFlowModFlags> flags = OFFlowModFlagsSerializerVer13.readFrom(bb);
+            int flags = U16.f(bb.readShort());
             // pad: 4 bytes
             bb.skipBytes(4);
             U64 cookie = U64.ofRaw(bb.readLong());
@@ -754,7 +680,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             sink.putInt(message.priority);
             sink.putInt(message.idleTimeout);
             sink.putInt(message.hardTimeout);
-            OFFlowModFlagsSerializerVer13.putTo(message.flags, sink);
+            sink.putInt(message.flags);
             // skip pad (4 bytes)
             message.cookie.putTo(sink);
             message.packetCount.putTo(sink);
@@ -765,14 +691,14 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFFlowStatsEntryVer13> {
         @Override
-        public void write(ByteBuf bb, OFFlowStatsEntryVer13 message) {
+        public void write(ChannelBuffer bb, OFFlowStatsEntryVer13 message) {
             int startIndex = bb.writerIndex();
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();
@@ -786,7 +712,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             bb.writeShort(U16.t(message.priority));
             bb.writeShort(U16.t(message.idleTimeout));
             bb.writeShort(U16.t(message.hardTimeout));
-            OFFlowModFlagsSerializerVer13.writeTo(bb, message.flags);
+            bb.writeShort(U16.t(message.flags));
             // pad: 4 bytes
             bb.writeZero(4);
             bb.writeLong(message.cookie.getValue());
@@ -857,10 +783,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             return false;
         if( hardTimeout != other.hardTimeout)
             return false;
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
+        if( flags != other.flags)
             return false;
         if (cookie == null) {
             if (other.cookie != null)
@@ -901,7 +824,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         result = prime * result + priority;
         result = prime * result + idleTimeout;
         result = prime * result + hardTimeout;
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + flags;
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + ((packetCount == null) ? 0 : packetCount.hashCode());
         result = prime * result + ((byteCount == null) ? 0 : byteCount.hashCode());

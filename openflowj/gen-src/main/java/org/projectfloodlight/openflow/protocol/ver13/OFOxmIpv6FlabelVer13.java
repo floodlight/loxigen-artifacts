@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -50,9 +48,6 @@ class OFOxmIpv6FlabelVer13 implements OFOxmIpv6Flabel {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv6FlabelVer13(IPv6FlowLabel value) {
-        if(value == null) {
-            throw new NullPointerException("OFOxmIpv6FlabelVer13: property value cannot be null");
-        }
         this.value = value;
     }
 
@@ -231,7 +226,7 @@ class OFOxmIpv6FlabelVer13 implements OFOxmIpv6Flabel {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmIpv6Flabel> {
         @Override
-        public OFOxmIpv6Flabel readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmIpv6Flabel readFrom(ChannelBuffer bb) throws OFParseError {
             // fixed value property typeLen == 0x80003804L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80003804)
@@ -263,14 +258,14 @@ class OFOxmIpv6FlabelVer13 implements OFOxmIpv6Flabel {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmIpv6FlabelVer13> {
         @Override
-        public void write(ByteBuf bb, OFOxmIpv6FlabelVer13 message) {
+        public void write(ChannelBuffer bb, OFOxmIpv6FlabelVer13 message) {
             // fixed value property typeLen = 0x80003804L
             bb.writeInt((int) 0x80003804);
             message.value.write4Bytes(bb);

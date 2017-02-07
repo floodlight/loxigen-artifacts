@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -41,6 +39,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         private final static long DEFAULT_XID = 0x0L;
         private final static U64 DEFAULT_COOKIE = U64.ZERO;
         private final static int DEFAULT_PRIORITY = 0x0;
+        private final static short DEFAULT_REASON = (short) 0x0;
         private final static TableId DEFAULT_TABLE_ID = TableId.ALL;
         private final static long DEFAULT_DURATION_SEC = 0x0L;
         private final static long DEFAULT_DURATION_NSEC = 0x0L;
@@ -53,7 +52,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
     private final long xid;
     private final U64 cookie;
     private final int priority;
-    private final OFFlowRemovedReason reason;
+    private final short reason;
     private final TableId tableId;
     private final long durationSec;
     private final long durationNsec;
@@ -62,27 +61,13 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
     private final U64 byteCount;
     private final Match match;
 //
+    // Immutable default instance
+    final static OFFlowRemovedVer11 DEFAULT = new OFFlowRemovedVer11(
+        DEFAULT_XID, DEFAULT_COOKIE, DEFAULT_PRIORITY, DEFAULT_REASON, DEFAULT_TABLE_ID, DEFAULT_DURATION_SEC, DEFAULT_DURATION_NSEC, DEFAULT_IDLE_TIMEOUT, DEFAULT_PACKET_COUNT, DEFAULT_BYTE_COUNT, DEFAULT_MATCH
+    );
 
     // package private constructor - used by readers, builders, and factory
-    OFFlowRemovedVer11(long xid, U64 cookie, int priority, OFFlowRemovedReason reason, TableId tableId, long durationSec, long durationNsec, int idleTimeout, U64 packetCount, U64 byteCount, Match match) {
-        if(cookie == null) {
-            throw new NullPointerException("OFFlowRemovedVer11: property cookie cannot be null");
-        }
-        if(reason == null) {
-            throw new NullPointerException("OFFlowRemovedVer11: property reason cannot be null");
-        }
-        if(tableId == null) {
-            throw new NullPointerException("OFFlowRemovedVer11: property tableId cannot be null");
-        }
-        if(packetCount == null) {
-            throw new NullPointerException("OFFlowRemovedVer11: property packetCount cannot be null");
-        }
-        if(byteCount == null) {
-            throw new NullPointerException("OFFlowRemovedVer11: property byteCount cannot be null");
-        }
-        if(match == null) {
-            throw new NullPointerException("OFFlowRemovedVer11: property match cannot be null");
-        }
+    OFFlowRemovedVer11(long xid, U64 cookie, int priority, short reason, TableId tableId, long durationSec, long durationNsec, int idleTimeout, U64 packetCount, U64 byteCount, Match match) {
         this.xid = xid;
         this.cookie = cookie;
         this.priority = priority;
@@ -123,7 +108,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
     }
 
     @Override
-    public OFFlowRemovedReason getReason() {
+    public short getReason() {
         return reason;
     }
 
@@ -167,11 +152,6 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         return match;
     }
 
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.1");
-    }
-
 
 
     public OFFlowRemoved.Builder createBuilder() {
@@ -189,7 +169,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         private boolean prioritySet;
         private int priority;
         private boolean reasonSet;
-        private OFFlowRemovedReason reason;
+        private short reason;
         private boolean tableIdSet;
         private TableId tableId;
         private boolean durationSecSet;
@@ -253,12 +233,12 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public OFFlowRemovedReason getReason() {
+    public short getReason() {
         return reason;
     }
 
     @Override
-    public OFFlowRemoved.Builder setReason(OFFlowRemovedReason reason) {
+    public OFFlowRemoved.Builder setReason(short reason) {
         this.reason = reason;
         this.reasonSet = true;
         return this;
@@ -349,15 +329,6 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         this.matchSet = true;
         return this;
     }
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.1");
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setStats(Stat stats) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property stats not supported in version 1.1");
-    }
 
 
         @Override
@@ -367,9 +338,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
                 if(cookie == null)
                     throw new NullPointerException("Property cookie must not be null");
                 int priority = this.prioritySet ? this.priority : parentMessage.priority;
-                OFFlowRemovedReason reason = this.reasonSet ? this.reason : parentMessage.reason;
-                if(reason == null)
-                    throw new NullPointerException("Property reason must not be null");
+                short reason = this.reasonSet ? this.reason : parentMessage.reason;
                 TableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
                 if(tableId == null)
                     throw new NullPointerException("Property tableId must not be null");
@@ -413,7 +382,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         private boolean prioritySet;
         private int priority;
         private boolean reasonSet;
-        private OFFlowRemovedReason reason;
+        private short reason;
         private boolean tableIdSet;
         private TableId tableId;
         private boolean durationSecSet;
@@ -473,12 +442,12 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public OFFlowRemovedReason getReason() {
+    public short getReason() {
         return reason;
     }
 
     @Override
-    public OFFlowRemoved.Builder setReason(OFFlowRemovedReason reason) {
+    public OFFlowRemoved.Builder setReason(short reason) {
         this.reason = reason;
         this.reasonSet = true;
         return this;
@@ -569,15 +538,6 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         this.matchSet = true;
         return this;
     }
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.1");
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setStats(Stat stats) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property stats not supported in version 1.1");
-    }
 //
         @Override
         public OFFlowRemoved build() {
@@ -586,10 +546,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
             if(cookie == null)
                 throw new NullPointerException("Property cookie must not be null");
             int priority = this.prioritySet ? this.priority : DEFAULT_PRIORITY;
-            if(!this.reasonSet)
-                throw new IllegalStateException("Property reason doesn't have default value -- must be set");
-            if(reason == null)
-                throw new NullPointerException("Property reason must not be null");
+            short reason = this.reasonSet ? this.reason : DEFAULT_REASON;
             TableId tableId = this.tableIdSet ? this.tableId : DEFAULT_TABLE_ID;
             if(tableId == null)
                 throw new NullPointerException("Property tableId must not be null");
@@ -628,7 +585,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFFlowRemoved> {
         @Override
-        public OFFlowRemoved readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowRemoved readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -651,7 +608,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
             long xid = U32.f(bb.readInt());
             U64 cookie = U64.ofRaw(bb.readLong());
             int priority = U16.f(bb.readShort());
-            OFFlowRemovedReason reason = OFFlowRemovedReasonSerializerVer11.readFrom(bb);
+            short reason = U8.f(bb.readByte());
             TableId tableId = TableId.readByte(bb);
             long durationSec = U32.f(bb.readInt());
             long durationNsec = U32.f(bb.readInt());
@@ -699,7 +656,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
             sink.putLong(message.xid);
             message.cookie.putTo(sink);
             sink.putInt(message.priority);
-            OFFlowRemovedReasonSerializerVer11.putTo(message.reason, sink);
+            sink.putShort(message.reason);
             message.tableId.putTo(sink);
             sink.putLong(message.durationSec);
             sink.putLong(message.durationNsec);
@@ -712,14 +669,14 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFFlowRemovedVer11> {
         @Override
-        public void write(ByteBuf bb, OFFlowRemovedVer11 message) {
+        public void write(ChannelBuffer bb, OFFlowRemovedVer11 message) {
             // fixed value property version = 2
             bb.writeByte((byte) 0x2);
             // fixed value property type = 11
@@ -729,7 +686,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
             bb.writeInt(U32.t(message.xid));
             bb.writeLong(message.cookie.getValue());
             bb.writeShort(U16.t(message.priority));
-            OFFlowRemovedReasonSerializerVer11.writeTo(bb, message.reason);
+            bb.writeByte(U8.t(message.reason));
             message.tableId.writeByte(bb);
             bb.writeInt(U32.t(message.durationSec));
             bb.writeInt(U32.t(message.durationNsec));
@@ -791,62 +748,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
             return false;
         if( priority != other.priority)
             return false;
-        if (reason == null) {
-            if (other.reason != null)
-                return false;
-        } else if (!reason.equals(other.reason))
-            return false;
-        if (tableId == null) {
-            if (other.tableId != null)
-                return false;
-        } else if (!tableId.equals(other.tableId))
-            return false;
-        if( durationSec != other.durationSec)
-            return false;
-        if( durationNsec != other.durationNsec)
-            return false;
-        if( idleTimeout != other.idleTimeout)
-            return false;
-        if (packetCount == null) {
-            if (other.packetCount != null)
-                return false;
-        } else if (!packetCount.equals(other.packetCount))
-            return false;
-        if (byteCount == null) {
-            if (other.byteCount != null)
-                return false;
-        } else if (!byteCount.equals(other.byteCount))
-            return false;
-        if (match == null) {
-            if (other.match != null)
-                return false;
-        } else if (!match.equals(other.match))
-            return false;
-        return true;
-    }
-
-    @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFFlowRemovedVer11 other = (OFFlowRemovedVer11) obj;
-
-        // ignore XID
-        if (cookie == null) {
-            if (other.cookie != null)
-                return false;
-        } else if (!cookie.equals(other.cookie))
-            return false;
-        if( priority != other.priority)
-            return false;
-        if (reason == null) {
-            if (other.reason != null)
-                return false;
-        } else if (!reason.equals(other.reason))
+        if( reason != other.reason)
             return false;
         if (tableId == null) {
             if (other.tableId != null)
@@ -885,26 +787,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + priority;
-        result = prime * result + ((reason == null) ? 0 : reason.hashCode());
-        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
-        result = prime *  (int) (durationSec ^ (durationSec >>> 32));
-        result = prime *  (int) (durationNsec ^ (durationNsec >>> 32));
-        result = prime * result + idleTimeout;
-        result = prime * result + ((packetCount == null) ? 0 : packetCount.hashCode());
-        result = prime * result + ((byteCount == null) ? 0 : byteCount.hashCode());
-        result = prime * result + ((match == null) ? 0 : match.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
-        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
-        result = prime * result + priority;
-        result = prime * result + ((reason == null) ? 0 : reason.hashCode());
+        result = prime * result + reason;
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime *  (int) (durationSec ^ (durationSec >>> 32));
         result = prime *  (int) (durationNsec ^ (durationNsec >>> 32));

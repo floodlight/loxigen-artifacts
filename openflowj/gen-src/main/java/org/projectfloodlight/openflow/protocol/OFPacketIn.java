@@ -18,14 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFPacketIn extends OFObject, OFMessage {
     OFVersion getVersion();
@@ -35,13 +33,13 @@ public interface OFPacketIn extends OFObject, OFMessage {
     int getTotalLen();
     OFPacketInReason getReason();
     TableId getTableId() throws UnsupportedOperationException;
-    U64 getCookie() throws UnsupportedOperationException;
     Match getMatch() throws UnsupportedOperationException;
     byte[] getData();
     OFPort getInPort() throws UnsupportedOperationException;
     OFPort getInPhyPort() throws UnsupportedOperationException;
+    U64 getCookie() throws UnsupportedOperationException;
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {
@@ -58,8 +56,6 @@ public interface OFPacketIn extends OFObject, OFMessage {
         Builder setReason(OFPacketInReason reason);
         TableId getTableId() throws UnsupportedOperationException;
         Builder setTableId(TableId tableId) throws UnsupportedOperationException;
-        U64 getCookie() throws UnsupportedOperationException;
-        Builder setCookie(U64 cookie) throws UnsupportedOperationException;
         Match getMatch() throws UnsupportedOperationException;
         Builder setMatch(Match match) throws UnsupportedOperationException;
         byte[] getData();
@@ -68,5 +64,7 @@ public interface OFPacketIn extends OFObject, OFMessage {
         Builder setInPort(OFPort inPort) throws UnsupportedOperationException;
         OFPort getInPhyPort() throws UnsupportedOperationException;
         Builder setInPhyPort(OFPort inPhyPort) throws UnsupportedOperationException;
+        U64 getCookie() throws UnsupportedOperationException;
+        Builder setCookie(U64 cookie) throws UnsupportedOperationException;
     }
 }

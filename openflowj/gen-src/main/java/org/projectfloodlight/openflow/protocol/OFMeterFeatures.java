@@ -18,14 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFMeterFeatures extends OFObject {
     long getMaxMeter();
@@ -33,10 +31,9 @@ public interface OFMeterFeatures extends OFObject {
     long getCapabilities();
     short getMaxBands();
     short getMaxColor();
-    long getFeatures() throws UnsupportedOperationException;
     OFVersion getVersion();
 
-    void writeTo(ByteBuf channelBuffer);
+    void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
     public interface Builder  {
@@ -51,8 +48,6 @@ public interface OFMeterFeatures extends OFObject {
         Builder setMaxBands(short maxBands);
         short getMaxColor();
         Builder setMaxColor(short maxColor);
-        long getFeatures() throws UnsupportedOperationException;
-        Builder setFeatures(long features) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

@@ -18,15 +18,13 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFType;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFTypeSerializerVer11 {
@@ -56,7 +54,7 @@ public class OFTypeSerializerVer11 {
     public final static byte QUEUE_GET_CONFIG_REQUEST_VAL = (byte) 0x16;
     public final static byte QUEUE_GET_CONFIG_REPLY_VAL = (byte) 0x17;
 
-    public static OFType readFrom(ByteBuf bb) throws OFParseError {
+    public static OFType readFrom(ChannelBuffer bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -64,7 +62,7 @@ public class OFTypeSerializerVer11 {
         }
     }
 
-    public static void writeTo(ByteBuf bb, OFType e) {
+    public static void writeTo(ChannelBuffer bb, OFType e) {
         bb.writeByte(toWireValue(e));
     }
 

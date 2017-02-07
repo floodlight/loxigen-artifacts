@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -50,9 +48,6 @@ class OFBsnTlvTxPacketsVer13 implements OFBsnTlvTxPackets {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvTxPacketsVer13(U64 value) {
-        if(value == null) {
-            throw new NullPointerException("OFBsnTlvTxPacketsVer13: property value cannot be null");
-        }
         this.value = value;
     }
 
@@ -171,7 +166,7 @@ class OFBsnTlvTxPacketsVer13 implements OFBsnTlvTxPackets {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnTlvTxPackets> {
         @Override
-        public OFBsnTlvTxPackets readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvTxPackets readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x3
             short type = bb.readShort();
@@ -216,14 +211,14 @@ class OFBsnTlvTxPacketsVer13 implements OFBsnTlvTxPackets {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnTlvTxPacketsVer13> {
         @Override
-        public void write(ByteBuf bb, OFBsnTlvTxPacketsVer13 message) {
+        public void write(ChannelBuffer bb, OFBsnTlvTxPacketsVer13 message) {
             // fixed value property type = 0x3
             bb.writeShort((short) 0x3);
             // fixed value property length = 12

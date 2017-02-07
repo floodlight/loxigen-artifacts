@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -52,12 +50,6 @@ class OFOxmInPhyPortMaskedVer13 implements OFOxmInPhyPortMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmInPhyPortMaskedVer13(OFPort value, OFPort mask) {
-        if(value == null) {
-            throw new NullPointerException("OFOxmInPhyPortMaskedVer13: property value cannot be null");
-        }
-        if(mask == null) {
-            throw new NullPointerException("OFOxmInPhyPortMaskedVer13: property mask cannot be null");
-        }
         this.value = value;
         this.mask = mask;
     }
@@ -266,7 +258,7 @@ class OFOxmInPhyPortMaskedVer13 implements OFOxmInPhyPortMasked {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmInPhyPortMasked> {
         @Override
-        public OFOxmInPhyPortMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmInPhyPortMasked readFrom(ChannelBuffer bb) throws OFParseError {
             // fixed value property typeLen == 0x80000308L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80000308)
@@ -301,14 +293,14 @@ class OFOxmInPhyPortMaskedVer13 implements OFOxmInPhyPortMasked {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmInPhyPortMaskedVer13> {
         @Override
-        public void write(ByteBuf bb, OFOxmInPhyPortMaskedVer13 message) {
+        public void write(ChannelBuffer bb, OFOxmInPhyPortMaskedVer13 message) {
             // fixed value property typeLen = 0x80000308L
             bb.writeInt((int) 0x80000308);
             message.value.write4Bytes(bb);

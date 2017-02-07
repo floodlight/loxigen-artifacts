@@ -18,15 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.List;
-import java.util.Set;
 
 
 public class OFInstructionsVer10 implements OFInstructions {
@@ -71,20 +68,12 @@ public class OFInstructionsVer10 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnArpOffload not supported in version 1.0");
     }
 
-    public OFInstructionBsnAutoNegotiation bsnAutoNegotiation() {
-        throw new UnsupportedOperationException("OFInstructionBsnAutoNegotiation not supported in version 1.0");
-    }
-
     public OFInstructionBsnDeny bsnDeny() {
         throw new UnsupportedOperationException("OFInstructionBsnDeny not supported in version 1.0");
     }
 
     public OFInstructionBsnDhcpOffload bsnDhcpOffload() {
         throw new UnsupportedOperationException("OFInstructionBsnDhcpOffload not supported in version 1.0");
-    }
-
-    public OFInstructionBsnDisableL3 bsnDisableL3() {
-        throw new UnsupportedOperationException("OFInstructionBsnDisableL3 not supported in version 1.0");
     }
 
     public OFInstructionBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck() {
@@ -95,28 +84,6 @@ public class OFInstructionsVer10 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnDisableSrcMacCheck not supported in version 1.0");
     }
 
-    public OFInstructionBsnDisableVlanCounters bsnDisableVlanCounters() {
-        throw new UnsupportedOperationException("OFInstructionBsnDisableVlanCounters not supported in version 1.0");
-    }
-
-    public OFInstructionBsnHashSelect.Builder buildBsnHashSelect() {
-        throw new UnsupportedOperationException("OFInstructionBsnHashSelect not supported in version 1.0");
-    }
-    public OFInstructionBsnHashSelect bsnHashSelect(Set<OFBsnHashSelectFlags> flags) {
-        throw new UnsupportedOperationException("OFInstructionBsnHashSelect not supported in version 1.0");
-    }
-
-    public OFInstructionBsnInternalPriority.Builder buildBsnInternalPriority() {
-        throw new UnsupportedOperationException("OFInstructionBsnInternalPriority not supported in version 1.0");
-    }
-    public OFInstructionBsnInternalPriority bsnInternalPriority(long value) {
-        throw new UnsupportedOperationException("OFInstructionBsnInternalPriority not supported in version 1.0");
-    }
-
-    public OFInstructionBsnNdpOffload bsnNdpOffload() {
-        throw new UnsupportedOperationException("OFInstructionBsnNdpOffload not supported in version 1.0");
-    }
-
     public OFInstructionBsnPacketOfDeath bsnPacketOfDeath() {
         throw new UnsupportedOperationException("OFInstructionBsnPacketOfDeath not supported in version 1.0");
     }
@@ -125,30 +92,11 @@ public class OFInstructionsVer10 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnPermit not supported in version 1.0");
     }
 
-    public OFInstructionBsnPrioritizePdus bsnPrioritizePdus() {
-        throw new UnsupportedOperationException("OFInstructionBsnPrioritizePdus not supported in version 1.0");
-    }
-
-    public OFInstructionBsnRequireVlanXlate bsnRequireVlanXlate() {
-        throw new UnsupportedOperationException("OFInstructionBsnRequireVlanXlate not supported in version 1.0");
-    }
-
-    public OFInstructionBsnSpanDestination bsnSpanDestination() {
-        throw new UnsupportedOperationException("OFInstructionBsnSpanDestination not supported in version 1.0");
-    }
-
     public OFInstructionMeter.Builder buildMeter() {
         throw new UnsupportedOperationException("OFInstructionMeter not supported in version 1.0");
     }
     public OFInstructionMeter meter(long meterId) {
         throw new UnsupportedOperationException("OFInstructionMeter not supported in version 1.0");
-    }
-
-    public OFInstructionStatTrigger.Builder buildStatTrigger() {
-        throw new UnsupportedOperationException("OFInstructionStatTrigger not supported in version 1.0");
-    }
-    public OFInstructionStatTrigger statTrigger(Set<OFStatTriggerFlags> flags, OFOxsList thresholds) {
-        throw new UnsupportedOperationException("OFInstructionStatTrigger not supported in version 1.0");
     }
 
     public OFMessageReader<OFInstruction> getReader() {

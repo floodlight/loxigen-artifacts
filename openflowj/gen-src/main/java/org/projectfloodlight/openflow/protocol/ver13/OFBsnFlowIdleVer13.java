@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -58,15 +56,6 @@ class OFBsnFlowIdleVer13 implements OFBsnFlowIdle {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnFlowIdleVer13(long xid, U64 cookie, int priority, TableId tableId, Match match) {
-        if(cookie == null) {
-            throw new NullPointerException("OFBsnFlowIdleVer13: property cookie cannot be null");
-        }
-        if(tableId == null) {
-            throw new NullPointerException("OFBsnFlowIdleVer13: property tableId cannot be null");
-        }
-        if(match == null) {
-            throw new NullPointerException("OFBsnFlowIdleVer13: property match cannot be null");
-        }
         this.xid = xid;
         this.cookie = cookie;
         this.priority = priority;
@@ -367,7 +356,7 @@ class OFBsnFlowIdleVer13 implements OFBsnFlowIdle {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnFlowIdle> {
         @Override
-        public OFBsnFlowIdle readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnFlowIdle readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -444,14 +433,14 @@ class OFBsnFlowIdleVer13 implements OFBsnFlowIdle {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnFlowIdleVer13> {
         @Override
-        public void write(ByteBuf bb, OFBsnFlowIdleVer13 message) {
+        public void write(ChannelBuffer bb, OFBsnFlowIdleVer13 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
@@ -529,55 +518,11 @@ class OFBsnFlowIdleVer13 implements OFBsnFlowIdle {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnFlowIdleVer13 other = (OFBsnFlowIdleVer13) obj;
-
-        // ignore XID
-        if (cookie == null) {
-            if (other.cookie != null)
-                return false;
-        } else if (!cookie.equals(other.cookie))
-            return false;
-        if( priority != other.priority)
-            return false;
-        if (tableId == null) {
-            if (other.tableId != null)
-                return false;
-        } else if (!tableId.equals(other.tableId))
-            return false;
-        if (match == null) {
-            if (other.match != null)
-                return false;
-        } else if (!match.equals(other.match))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
-        result = prime * result + priority;
-        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
-        result = prime * result + ((match == null) ? 0 : match.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + priority;
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());

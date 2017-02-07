@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -52,12 +50,6 @@ class OFOxmBsnUdf3MaskedVer13 implements OFOxmBsnUdf3Masked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnUdf3MaskedVer13(UDF value, UDF mask) {
-        if(value == null) {
-            throw new NullPointerException("OFOxmBsnUdf3MaskedVer13: property value cannot be null");
-        }
-        if(mask == null) {
-            throw new NullPointerException("OFOxmBsnUdf3MaskedVer13: property mask cannot be null");
-        }
         this.value = value;
         this.mask = mask;
     }
@@ -266,7 +258,7 @@ class OFOxmBsnUdf3MaskedVer13 implements OFOxmBsnUdf3Masked {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmBsnUdf3Masked> {
         @Override
-        public OFOxmBsnUdf3Masked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnUdf3Masked readFrom(ChannelBuffer bb) throws OFParseError {
             // fixed value property typeLen == 0x31708L
             int typeLen = bb.readInt();
             if(typeLen != 0x31708)
@@ -301,14 +293,14 @@ class OFOxmBsnUdf3MaskedVer13 implements OFOxmBsnUdf3Masked {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmBsnUdf3MaskedVer13> {
         @Override
-        public void write(ByteBuf bb, OFOxmBsnUdf3MaskedVer13 message) {
+        public void write(ChannelBuffer bb, OFOxmBsnUdf3MaskedVer13 message) {
             // fixed value property typeLen = 0x31708L
             bb.writeInt(0x31708);
             message.value.write4Bytes(bb);

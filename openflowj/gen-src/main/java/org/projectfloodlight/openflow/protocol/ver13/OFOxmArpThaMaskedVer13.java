@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -52,12 +50,6 @@ class OFOxmArpThaMaskedVer13 implements OFOxmArpThaMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmArpThaMaskedVer13(MacAddress value, MacAddress mask) {
-        if(value == null) {
-            throw new NullPointerException("OFOxmArpThaMaskedVer13: property value cannot be null");
-        }
-        if(mask == null) {
-            throw new NullPointerException("OFOxmArpThaMaskedVer13: property mask cannot be null");
-        }
         this.value = value;
         this.mask = mask;
     }
@@ -266,7 +258,7 @@ class OFOxmArpThaMaskedVer13 implements OFOxmArpThaMasked {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmArpThaMasked> {
         @Override
-        public OFOxmArpThaMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmArpThaMasked readFrom(ChannelBuffer bb) throws OFParseError {
             // fixed value property typeLen == 0x8000330cL
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x8000330c)
@@ -301,14 +293,14 @@ class OFOxmArpThaMaskedVer13 implements OFOxmArpThaMasked {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmArpThaMaskedVer13> {
         @Override
-        public void write(ByteBuf bb, OFOxmArpThaMaskedVer13 message) {
+        public void write(ChannelBuffer bb, OFOxmArpThaMaskedVer13 message) {
             // fixed value property typeLen = 0x8000330cL
             bb.writeInt((int) 0x8000330c);
             message.value.write6Bytes(bb);

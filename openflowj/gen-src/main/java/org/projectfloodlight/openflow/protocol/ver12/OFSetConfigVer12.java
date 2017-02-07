@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -29,7 +27,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.google.common.collect.ImmutableSet;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -55,9 +53,6 @@ class OFSetConfigVer12 implements OFSetConfig {
 
     // package private constructor - used by readers, builders, and factory
     OFSetConfigVer12(long xid, Set<OFConfigFlags> flags, int missSendLen) {
-        if(flags == null) {
-            throw new NullPointerException("OFSetConfigVer12: property flags cannot be null");
-        }
         this.xid = xid;
         this.flags = flags;
         this.missSendLen = missSendLen;
@@ -248,7 +243,7 @@ class OFSetConfigVer12 implements OFSetConfig {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFSetConfig> {
         @Override
-        public OFSetConfig readFrom(ByteBuf bb) throws OFParseError {
+        public OFSetConfig readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -305,14 +300,14 @@ class OFSetConfigVer12 implements OFSetConfig {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFSetConfigVer12> {
         @Override
-        public void write(ByteBuf bb, OFSetConfigVer12 message) {
+        public void write(ChannelBuffer bb, OFSetConfigVer12 message) {
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
             // fixed value property type = 9
@@ -362,43 +357,11 @@ class OFSetConfigVer12 implements OFSetConfig {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFSetConfigVer12 other = (OFSetConfigVer12) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if( missSendLen != other.missSendLen)
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + missSendLen;
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + missSendLen;
         return result;

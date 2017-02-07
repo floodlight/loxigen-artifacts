@@ -29,88 +29,7 @@
 #include "loci_log.h"
 #include "loci_int.h"
 
-/**
- * Associate an iterator with a list
- * @param list The list to iterate over
- * @param obj The list entry iteration pointer
- * @return OF_ERROR_RANGE if the list is empty (end of list)
- *
- * The obj instance is completely initialized.  The caller is responsible
- * for cleaning up any wire buffers associated with obj before this call
- */
 
-int
-of_list_instruction_id_first(of_list_instruction_id_t *list, of_object_t *obj)
-{
-    int rv;
-
-    of_instruction_id_init(obj, list->version, -1, 1);
-
-    if ((rv = of_list_first(list, obj)) < 0) {
-        return rv;
-    }
-
-    of_instruction_id_wire_object_id_get(obj, &obj->object_id);
-
-    of_tlv16_wire_length_get(obj, &obj->length);
-
-    return rv;
-}
-
-/**
- * Advance an iterator to the next element in a list
- * @param list The list being iterated
- * @param obj The list entry iteration pointer
- * @return OF_ERROR_RANGE if already at the last entry on the list
- *
- */
-
-int
-of_list_instruction_id_next(of_list_instruction_id_t *list, of_object_t *obj)
-{
-    int rv;
-
-    if ((rv = of_list_next(list, obj)) < 0) {
-        return rv;
-    }
-
-    of_instruction_id_wire_object_id_get(obj, &obj->object_id);
-
-    of_tlv16_wire_length_get(obj, &obj->length);
-
-    return rv;
-}
-
-/**
- * Set up to append an object of type of_instruction_id to an of_list_instruction_id.
- * @param list The list that is prepared for append
- * @param obj Pointer to object to hold data to append
- *
- * The obj instance is completely initialized.  The caller is responsible
- * for cleaning up any wire buffers associated with obj before this call.
- *
- * See the generic documentation for of_list_append_bind.
- */
-
-int
-of_list_instruction_id_append_bind(of_list_instruction_id_t *list, of_object_t *obj)
-{
-    return of_list_append_bind(list, obj);
-}
-
-/**
- * Append an object to a of_list_instruction_id list.
- *
- * This copies data from obj and leaves item untouched.
- *
- * See the generic documentation for of_list_append.
- */
-
-int
-of_list_instruction_id_append(of_list_instruction_id_t *list, of_object_t *obj)
-{
-    return of_list_append(list, obj);
-}
 
 /**
  * \defgroup of_list_instruction_id of_list_instruction_id
@@ -125,18 +44,21 @@ of_list_instruction_id_append(of_list_instruction_id_t *list, of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
+ * Use new_from_message to bind an existing message to a message object,
+ * or a _get function for non-message objects.
+ *
  * \ingroup of_list_instruction_id
  */
 
-of_object_t *
+of_list_instruction_id_t *
 of_list_instruction_id_new(of_version_t version)
 {
-    of_object_t *obj;
+    of_list_instruction_id_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_LIST_INSTRUCTION_ID];
+    bytes = of_object_fixed_len[version][OF_LIST_INSTRUCTION_ID] + of_object_extra_len[version][OF_LIST_INSTRUCTION_ID];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_list_instruction_id_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -163,25 +85,122 @@ of_list_instruction_id_new(of_version_t version)
  */
 
 void
-of_list_instruction_id_init(of_object_t *obj,
+of_list_instruction_id_init(of_list_instruction_id_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
+
     LOCI_ASSERT(of_object_fixed_len[version][OF_LIST_INSTRUCTION_ID] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_LIST_INSTRUCTION_ID];
+        bytes = of_object_fixed_len[version][OF_LIST_INSTRUCTION_ID] + of_object_extra_len[version][OF_LIST_INSTRUCTION_ID];
     }
     obj->version = version;
     obj->length = bytes;
     obj->object_id = OF_LIST_INSTRUCTION_ID;
 
+    /* Set up the object's function pointers */
+
     /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
+    if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+        tot_bytes = bytes + obj->wire_object.obj_offset;
+        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
     }
 }
+
+
+/**
+ * Associate an iterator with a list
+ * @param list The list to iterate over
+ * @param obj The list entry iteration pointer
+ * @return OF_ERROR_RANGE if the list is empty (end of list)
+ *
+ * The obj instance is completely initialized.  The caller is responsible
+ * for cleaning up any wire buffers associated with obj before this call
+ */
+
+int
+of_list_instruction_id_first(of_list_instruction_id_t *list,
+    of_instruction_id_t *obj)
+{
+    int rv;
+
+    of_instruction_id_header_init((of_instruction_id_header_t *)obj,
+            list->version, 0, 1);
+    if ((rv = of_list_first((of_object_t *)list, (of_object_t *)obj)) < 0) {
+        return rv;
+    }
+
+    of_object_wire_init((of_object_t *) obj, OF_INSTRUCTION_ID,
+                        list->length);
+    if (obj->header.length == 0) {
+        return OF_ERROR_PARSE;
+    }
+
+    return rv;
+}
+
+/**
+ * Advance an iterator to the next element in a list
+ * @param list The list being iterated
+ * @param obj The list entry iteration pointer
+ * @return OF_ERROR_RANGE if already at the last entry on the list
+ *
+ */
+
+int
+of_list_instruction_id_next(of_list_instruction_id_t *list,
+    of_instruction_id_t *obj)
+{
+    int rv;
+
+    if ((rv = of_list_next((of_object_t *)list, (of_object_t *)obj)) < 0) {
+        return rv;
+    }
+
+    rv = of_object_wire_init((of_object_t *) obj, OF_INSTRUCTION_ID,
+        list->length);
+
+    if ((rv == OF_ERROR_NONE) && (obj->header.length == 0)) {
+        return OF_ERROR_PARSE;
+    }
+
+    return rv;
+}
+
+/**
+ * Set up to append an object of type of_instruction_id to an of_list_instruction_id.
+ * @param list The list that is prepared for append
+ * @param obj Pointer to object to hold data to append
+ *
+ * The obj instance is completely initialized.  The caller is responsible
+ * for cleaning up any wire buffers associated with obj before this call.
+ *
+ * See the generic documentation for of_list_append_bind.
+ */
+
+int
+of_list_instruction_id_append_bind(of_list_instruction_id_t *list,
+    of_instruction_id_t *obj)
+{
+    return of_list_append_bind((of_object_t *)list, (of_object_t *)obj);
+}
+
+/**
+ * Append an item to a of_list_instruction_id list.
+ *
+ * This copies data from item and leaves item untouched.
+ *
+ * See the generic documentation for of_list_append.
+ */
+
+int
+of_list_instruction_id_append(of_list_instruction_id_t *list,
+    of_instruction_id_t *item)
+{
+    return of_list_append((of_object_t *)list, (of_object_t *)item);
+}
+

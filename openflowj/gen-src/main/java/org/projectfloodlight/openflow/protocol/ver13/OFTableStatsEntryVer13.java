@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -56,15 +54,6 @@ class OFTableStatsEntryVer13 implements OFTableStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFTableStatsEntryVer13(TableId tableId, long activeCount, U64 lookupCount, U64 matchedCount) {
-        if(tableId == null) {
-            throw new NullPointerException("OFTableStatsEntryVer13: property tableId cannot be null");
-        }
-        if(lookupCount == null) {
-            throw new NullPointerException("OFTableStatsEntryVer13: property lookupCount cannot be null");
-        }
-        if(matchedCount == null) {
-            throw new NullPointerException("OFTableStatsEntryVer13: property matchedCount cannot be null");
-        }
         this.tableId = tableId;
         this.activeCount = activeCount;
         this.lookupCount = lookupCount;
@@ -78,38 +67,18 @@ class OFTableStatsEntryVer13 implements OFTableStatsEntry {
     }
 
     @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
     public String getName()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property name not supported in version 1.3");
     }
 
     @Override
-    public int getWildcards()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property wildcards not supported in version 1.3");
-    }
-
-    @Override
-    public long getMaxEntries()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property maxEntries not supported in version 1.3");
-    }
-
-    @Override
     public OFMatchBmap getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.3");
+    }
+
+    @Override
+    public int getWildcards()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property wildcards not supported in version 1.3");
     }
 
     @Override
@@ -153,6 +122,26 @@ class OFTableStatsEntryVer13 implements OFTableStatsEntry {
     }
 
     @Override
+    public long getMaxEntries()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property maxEntries not supported in version 1.3");
+    }
+
+    @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
     }
@@ -192,39 +181,6 @@ class OFTableStatsEntryVer13 implements OFTableStatsEntry {
         return this;
     }
     @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
-        this.activeCount = activeCount;
-        this.activeCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
-        this.lookupCount = lookupCount;
-        this.lookupCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
-        this.matchedCount = matchedCount;
-        this.matchedCountSet = true;
-        return this;
-    }
-    @Override
     public String getName()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property name not supported in version 1.3");
     }
@@ -234,24 +190,6 @@ class OFTableStatsEntryVer13 implements OFTableStatsEntry {
             throw new UnsupportedOperationException("Property name not supported in version 1.3");
     }
     @Override
-    public int getWildcards()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property wildcards not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setWildcards(int wildcards) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property wildcards not supported in version 1.3");
-    }
-    @Override
-    public long getMaxEntries()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property maxEntries not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property maxEntries not supported in version 1.3");
-    }
-    @Override
     public OFMatchBmap getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.3");
     }
@@ -259,6 +197,15 @@ class OFTableStatsEntryVer13 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property match not supported in version 1.3");
+    }
+    @Override
+    public int getWildcards()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property wildcards not supported in version 1.3");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setWildcards(int wildcards) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property wildcards not supported in version 1.3");
     }
     @Override
     public long getWriteActions()throws UnsupportedOperationException {
@@ -331,6 +278,48 @@ class OFTableStatsEntryVer13 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setConfig(long config) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property config not supported in version 1.3");
+    }
+    @Override
+    public long getMaxEntries()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property maxEntries not supported in version 1.3");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property maxEntries not supported in version 1.3");
+    }
+    @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
+        this.activeCount = activeCount;
+        this.activeCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
+        this.lookupCount = lookupCount;
+        this.lookupCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
+        this.matchedCount = matchedCount;
+        this.matchedCountSet = true;
+        return this;
     }
     @Override
     public OFVersion getVersion() {
@@ -386,39 +375,6 @@ class OFTableStatsEntryVer13 implements OFTableStatsEntry {
         return this;
     }
     @Override
-    public long getActiveCount() {
-        return activeCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
-        this.activeCount = activeCount;
-        this.activeCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getLookupCount() {
-        return lookupCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
-        this.lookupCount = lookupCount;
-        this.lookupCountSet = true;
-        return this;
-    }
-    @Override
-    public U64 getMatchedCount() {
-        return matchedCount;
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
-        this.matchedCount = matchedCount;
-        this.matchedCountSet = true;
-        return this;
-    }
-    @Override
     public String getName()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property name not supported in version 1.3");
     }
@@ -428,24 +384,6 @@ class OFTableStatsEntryVer13 implements OFTableStatsEntry {
             throw new UnsupportedOperationException("Property name not supported in version 1.3");
     }
     @Override
-    public int getWildcards()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property wildcards not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setWildcards(int wildcards) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property wildcards not supported in version 1.3");
-    }
-    @Override
-    public long getMaxEntries()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property maxEntries not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property maxEntries not supported in version 1.3");
-    }
-    @Override
     public OFMatchBmap getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.3");
     }
@@ -453,6 +391,15 @@ class OFTableStatsEntryVer13 implements OFTableStatsEntry {
     @Override
     public OFTableStatsEntry.Builder setMatch(OFMatchBmap match) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property match not supported in version 1.3");
+    }
+    @Override
+    public int getWildcards()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property wildcards not supported in version 1.3");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setWildcards(int wildcards) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property wildcards not supported in version 1.3");
     }
     @Override
     public long getWriteActions()throws UnsupportedOperationException {
@@ -527,6 +474,48 @@ class OFTableStatsEntryVer13 implements OFTableStatsEntry {
             throw new UnsupportedOperationException("Property config not supported in version 1.3");
     }
     @Override
+    public long getMaxEntries()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property maxEntries not supported in version 1.3");
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMaxEntries(long maxEntries) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property maxEntries not supported in version 1.3");
+    }
+    @Override
+    public long getActiveCount() {
+        return activeCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setActiveCount(long activeCount) {
+        this.activeCount = activeCount;
+        this.activeCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getLookupCount() {
+        return lookupCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setLookupCount(U64 lookupCount) {
+        this.lookupCount = lookupCount;
+        this.lookupCountSet = true;
+        return this;
+    }
+    @Override
+    public U64 getMatchedCount() {
+        return matchedCount;
+    }
+
+    @Override
+    public OFTableStatsEntry.Builder setMatchedCount(U64 matchedCount) {
+        this.matchedCount = matchedCount;
+        this.matchedCountSet = true;
+        return this;
+    }
+    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
     }
@@ -560,7 +549,7 @@ class OFTableStatsEntryVer13 implements OFTableStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFTableStatsEntry> {
         @Override
-        public OFTableStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
             TableId tableId = TableId.readByte(bb);
             // pad: 3 bytes
             bb.skipBytes(3);
@@ -598,14 +587,14 @@ class OFTableStatsEntryVer13 implements OFTableStatsEntry {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFTableStatsEntryVer13> {
         @Override
-        public void write(ByteBuf bb, OFTableStatsEntryVer13 message) {
+        public void write(ChannelBuffer bb, OFTableStatsEntryVer13 message) {
             message.tableId.writeByte(bb);
             // pad: 3 bytes
             bb.writeZero(3);

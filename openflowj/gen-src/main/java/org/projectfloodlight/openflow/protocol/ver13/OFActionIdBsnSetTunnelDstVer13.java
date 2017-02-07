@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -83,7 +81,7 @@ class OFActionIdBsnSetTunnelDstVer13 implements OFActionIdBsnSetTunnelDst {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFActionIdBsnSetTunnelDst> {
         @Override
-        public OFActionIdBsnSetTunnelDst readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionIdBsnSetTunnelDst readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 65535
             short type = bb.readShort();
@@ -135,14 +133,14 @@ class OFActionIdBsnSetTunnelDstVer13 implements OFActionIdBsnSetTunnelDst {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFActionIdBsnSetTunnelDstVer13> {
         @Override
-        public void write(ByteBuf bb, OFActionIdBsnSetTunnelDstVer13 message) {
+        public void write(ChannelBuffer bb, OFActionIdBsnSetTunnelDstVer13 message) {
             // fixed value property type = 65535
             bb.writeShort((short) 0xffff);
             // fixed value property length = 12

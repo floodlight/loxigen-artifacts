@@ -18,15 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
-import java.util.List;
 
 
 public class OFActionsVer13 implements OFActions {
@@ -34,15 +31,6 @@ public class OFActionsVer13 implements OFActions {
 
 
 
-
-    public OFActionBsnChecksum.Builder buildBsnChecksum() {
-        return new OFActionBsnChecksumVer13.Builder();
-    }
-    public OFActionBsnChecksum bsnChecksum(U128 checksum) {
-        return new OFActionBsnChecksumVer13(
-                checksum
-                    );
-    }
 
     public OFActionBsnMirror.Builder buildBsnMirror() {
         return new OFActionBsnMirrorVer13.Builder();
@@ -258,16 +246,6 @@ public class OFActionsVer13 implements OFActions {
                     );
     }
 
-    public OFActionBsnGentable.Builder buildBsnGentable() {
-        return new OFActionBsnGentableVer13.Builder();
-    }
-    public OFActionBsnGentable bsnGentable(long tableId, List<OFBsnTlv> key) {
-        return new OFActionBsnGentableVer13(
-                tableId,
-                      key
-                    );
-    }
-
     public OFActionPopPbb popPbb() {
         return OFActionPopPbbVer13.INSTANCE;
     }
@@ -279,13 +257,6 @@ public class OFActionsVer13 implements OFActions {
         return new OFActionPushPbbVer13(
                 ethertype
                     );
-    }
-
-    public OFActionMeter.Builder buildMeter() {
-        throw new UnsupportedOperationException("OFActionMeter not supported in version 1.3");
-    }
-    public OFActionMeter meter(long meterId) {
-        throw new UnsupportedOperationException("OFActionMeter not supported in version 1.3");
     }
 
     public OFMessageReader<OFAction> getReader() {

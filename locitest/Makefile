@@ -10,7 +10,7 @@ CFLAGS += -Iinc -I../loci/inc -I ../loci/src
 all: locitest
 
 locitest: $(LOCITEST_OBJS) loci.a
-	$(CC) -Wl,--whole-archive $^ -Wl,--no-whole-archive -o $@
+	$(CC) $^ -o $@
 
 loci.a: $(LOCI_OBJS)
 	ar rc $@ $^

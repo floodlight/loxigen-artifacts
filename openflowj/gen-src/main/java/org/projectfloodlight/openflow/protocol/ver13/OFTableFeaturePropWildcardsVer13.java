@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -30,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -52,9 +50,6 @@ class OFTableFeaturePropWildcardsVer13 implements OFTableFeaturePropWildcards {
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturePropWildcardsVer13(List<U32> oxmIds) {
-        if(oxmIds == null) {
-            throw new NullPointerException("OFTableFeaturePropWildcardsVer13: property oxmIds cannot be null");
-        }
         this.oxmIds = oxmIds;
     }
 
@@ -173,7 +168,7 @@ class OFTableFeaturePropWildcardsVer13 implements OFTableFeaturePropWildcards {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFTableFeaturePropWildcards> {
         @Override
-        public OFTableFeaturePropWildcards readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeaturePropWildcards readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0xa
             short type = bb.readShort();
@@ -190,8 +185,6 @@ class OFTableFeaturePropWildcardsVer13 implements OFTableFeaturePropWildcards {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             List<U32> oxmIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), U32.READER);
-            // align message to 8 bytes (length does not contain alignment)
-            bb.skipBytes(((length + 7)/8 * 8 ) - length );
 
             OFTableFeaturePropWildcardsVer13 tableFeaturePropWildcardsVer13 = new OFTableFeaturePropWildcardsVer13(
                     oxmIds
@@ -219,14 +212,14 @@ class OFTableFeaturePropWildcardsVer13 implements OFTableFeaturePropWildcards {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFTableFeaturePropWildcardsVer13> {
         @Override
-        public void write(ByteBuf bb, OFTableFeaturePropWildcardsVer13 message) {
+        public void write(ChannelBuffer bb, OFTableFeaturePropWildcardsVer13 message) {
             int startIndex = bb.writerIndex();
             // fixed value property type = 0xa
             bb.writeShort((short) 0xa);
@@ -238,10 +231,7 @@ class OFTableFeaturePropWildcardsVer13 implements OFTableFeaturePropWildcards {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
-            int alignedLength = ((length + 7)/8 * 8);
             bb.setShort(lengthIndex, length);
-            // align message to 8 bytes
-            bb.writeZero(alignedLength - length);
 
         }
     }

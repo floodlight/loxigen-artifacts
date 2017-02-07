@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -30,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -56,12 +54,6 @@ class OFPacketQueueVer12 implements OFPacketQueue {
 
     // package private constructor - used by readers, builders, and factory
     OFPacketQueueVer12(long queueId, OFPort port, List<OFQueueProp> properties) {
-        if(port == null) {
-            throw new NullPointerException("OFPacketQueueVer12: property port cannot be null");
-        }
-        if(properties == null) {
-            throw new NullPointerException("OFPacketQueueVer12: property properties cannot be null");
-        }
         this.queueId = queueId;
         this.port = port;
         this.properties = properties;
@@ -241,7 +233,7 @@ class OFPacketQueueVer12 implements OFPacketQueue {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFPacketQueue> {
         @Override
-        public OFPacketQueue readFrom(ByteBuf bb) throws OFParseError {
+        public OFPacketQueue readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             long queueId = U32.f(bb.readInt());
             OFPort port = OFPort.read4Bytes(bb);
@@ -288,14 +280,14 @@ class OFPacketQueueVer12 implements OFPacketQueue {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFPacketQueueVer12> {
         @Override
-        public void write(ByteBuf bb, OFPacketQueueVer12 message) {
+        public void write(ChannelBuffer bb, OFPacketQueueVer12 message) {
             int startIndex = bb.writerIndex();
             bb.writeInt(U32.t(message.queueId));
             message.port.write4Bytes(bb);

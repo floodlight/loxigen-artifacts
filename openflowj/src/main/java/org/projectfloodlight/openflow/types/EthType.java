@@ -1,6 +1,6 @@
 package org.projectfloodlight.openflow.types;
 
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.primitives.UnsignedInts;
@@ -59,7 +59,6 @@ public class EthType implements OFValueType<EthType> {
     static final int VAL_CONF_TEST         = 0x9000; // Ethernet Configuration Testing Protocol[6]
     static final int VAL_Q_IN_Q            = 0x9100; // Q-in-Q
     static final int VAL_LLT               = 0xCAFE; // Veritas Low Latency Transport (LLT)[7] for Veritas Cluster Server
-    static final int VAL_PBB               = 0x88E7; // Provider Backbone Bridges (PBB)
 
     public static final EthType IPv4               = new EthType(VAL_IPv4);
     public static final EthType ARP                = new EthType(VAL_ARP);
@@ -104,7 +103,6 @@ public class EthType implements OFValueType<EthType> {
     public static final EthType CONF_TEST          = new EthType(VAL_CONF_TEST );
     public static final EthType Q_IN_Q             = new EthType(VAL_Q_IN_Q );
     public static final EthType LLT                = new EthType(VAL_LLT );
-    public static final EthType PBB                = new EthType(VAL_PBB );
 
 
     private static final int NONE_VAL = 0x0;
@@ -212,8 +210,6 @@ public class EthType implements OFValueType<EthType> {
                 return Q_IN_Q;
             case VAL_LLT:
                 return LLT;
-            case VAL_PBB:
-                return PBB;
             default:
                 // TODO: What's here?
                 return new EthType(type);
@@ -222,14 +218,14 @@ public class EthType implements OFValueType<EthType> {
 
     @Override
     public String toString() {
-        return "0x" + Integer.toHexString(rawValue);
+        return Integer.toHexString(rawValue);
     }
 
-    public void write2Bytes(ByteBuf c) {
+    public void write2Bytes(ChannelBuffer c) {
         c.writeShort(this.rawValue);
     }
 
-    public static EthType read2Bytes(ByteBuf c) {
+    public static EthType read2Bytes(ChannelBuffer c) {
         return EthType.of(c.readUnsignedShort());
     }
 

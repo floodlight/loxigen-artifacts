@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -270,7 +268,7 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnGetL2TableReply> {
         @Override
-        public OFBsnGetL2TableReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGetL2TableReply readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -345,14 +343,14 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnGetL2TableReplyVer10> {
         @Override
-        public void write(ByteBuf bb, OFBsnGetL2TableReplyVer10 message) {
+        public void write(ChannelBuffer bb, OFBsnGetL2TableReplyVer10 message) {
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);
             // fixed value property type = 4
@@ -407,40 +405,11 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnGetL2TableReplyVer10 other = (OFBsnGetL2TableReplyVer10) obj;
-
-        // ignore XID
-        if( l2TableEnable != other.l2TableEnable)
-            return false;
-        if( l2TablePriority != other.l2TablePriority)
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + l2TableEnable;
-        result = prime * result + l2TablePriority;
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + l2TableEnable;
         result = prime * result + l2TablePriority;
         return result;

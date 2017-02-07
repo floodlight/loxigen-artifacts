@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -31,8 +29,8 @@ import org.junit.Before;
 import java.util.EnumSet;
 import java.util.Set;
 import com.google.common.collect.Sets;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
+import org.jboss.netty.buffer.ChannelBuffer;
+import org.jboss.netty.buffer.ChannelBuffers;
 import org.hamcrest.CoreMatchers;
 
 
@@ -56,7 +54,7 @@ public class OFGetConfigReplyVer13Test {
     .setMissSendLen(0xffff)
     .build();
         OFGetConfigReply getConfigReply = builder.build();
-        ByteBuf bb = Unpooled.buffer();
+        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
         getConfigReply.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -73,7 +71,7 @@ public class OFGetConfigReplyVer13Test {
     .build();
         OFGetConfigReply getConfigReplyBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(GET_CONFIG_REPLY_SERIALIZED);
+        ChannelBuffer input = ChannelBuffers.copiedBuffer(GET_CONFIG_REPLY_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFGetConfigReply getConfigReplyRead = OFGetConfigReplyVer13.READER.readFrom(input);
@@ -84,14 +82,14 @@ public class OFGetConfigReplyVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ByteBuf input = Unpooled.copiedBuffer(GET_CONFIG_REPLY_SERIALIZED);
+       ChannelBuffer input = ChannelBuffers.copiedBuffer(GET_CONFIG_REPLY_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFGetConfigReply getConfigReply = OFGetConfigReplyVer13.READER.readFrom(input);
        assertEquals(GET_CONFIG_REPLY_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ByteBuf bb = Unpooled.buffer();
+       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
        getConfigReply.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -30,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -51,15 +49,6 @@ class OFGroupDescStatsEntryVer13 implements OFGroupDescStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupDescStatsEntryVer13(OFGroupType groupType, OFGroup group, List<OFBucket> buckets) {
-        if(groupType == null) {
-            throw new NullPointerException("OFGroupDescStatsEntryVer13: property groupType cannot be null");
-        }
-        if(group == null) {
-            throw new NullPointerException("OFGroupDescStatsEntryVer13: property group cannot be null");
-        }
-        if(buckets == null) {
-            throw new NullPointerException("OFGroupDescStatsEntryVer13: property buckets cannot be null");
-        }
         this.groupType = groupType;
         this.group = group;
         this.buckets = buckets;
@@ -79,11 +68,6 @@ class OFGroupDescStatsEntryVer13 implements OFGroupDescStatsEntry {
     @Override
     public List<OFBucket> getBuckets() {
         return buckets;
-    }
-
-    @Override
-    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 
     @Override
@@ -144,15 +128,6 @@ class OFGroupDescStatsEntryVer13 implements OFGroupDescStatsEntry {
         this.buckets = buckets;
         this.bucketsSet = true;
         return this;
-    }
-    @Override
-    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-
-    @Override
-    public OFGroupDescStatsEntry.Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {
@@ -226,15 +201,6 @@ class OFGroupDescStatsEntryVer13 implements OFGroupDescStatsEntry {
         return this;
     }
     @Override
-    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-
-    @Override
-    public OFGroupDescStatsEntry.Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
     }
@@ -267,7 +233,7 @@ class OFGroupDescStatsEntryVer13 implements OFGroupDescStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFGroupDescStatsEntry> {
         @Override
-        public OFGroupDescStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupDescStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
@@ -314,14 +280,14 @@ class OFGroupDescStatsEntryVer13 implements OFGroupDescStatsEntry {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFGroupDescStatsEntryVer13> {
         @Override
-        public void write(ByteBuf bb, OFGroupDescStatsEntryVer13 message) {
+        public void write(ChannelBuffer bb, OFGroupDescStatsEntryVer13 message) {
             int startIndex = bb.writerIndex();
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();

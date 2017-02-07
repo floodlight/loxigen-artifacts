@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -52,12 +50,6 @@ class OFMeterBandStatsVer13 implements OFMeterBandStats {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterBandStatsVer13(U64 packetBandCount, U64 byteBandCount) {
-        if(packetBandCount == null) {
-            throw new NullPointerException("OFMeterBandStatsVer13: property packetBandCount cannot be null");
-        }
-        if(byteBandCount == null) {
-            throw new NullPointerException("OFMeterBandStatsVer13: property byteBandCount cannot be null");
-        }
         this.packetBandCount = packetBandCount;
         this.byteBandCount = byteBandCount;
     }
@@ -201,7 +193,7 @@ class OFMeterBandStatsVer13 implements OFMeterBandStats {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFMeterBandStats> {
         @Override
-        public OFMeterBandStats readFrom(ByteBuf bb) throws OFParseError {
+        public OFMeterBandStats readFrom(ChannelBuffer bb) throws OFParseError {
             U64 packetBandCount = U64.ofRaw(bb.readLong());
             U64 byteBandCount = U64.ofRaw(bb.readLong());
 
@@ -230,14 +222,14 @@ class OFMeterBandStatsVer13 implements OFMeterBandStats {
     }
 
 
-    public void writeTo(ByteBuf bb) {
+    public void writeTo(ChannelBuffer bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFMeterBandStatsVer13> {
         @Override
-        public void write(ByteBuf bb, OFMeterBandStatsVer13 message) {
+        public void write(ChannelBuffer bb, OFMeterBandStatsVer13 message) {
             bb.writeLong(message.packetBandCount.getValue());
             bb.writeLong(message.byteBandCount.getValue());
 

@@ -1,6 +1,6 @@
 package org.projectfloodlight.openflow.types;
 
-import io.netty.buffer.ByteBuf;
+import org.jboss.netty.buffer.ChannelBuffer;
 
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.primitives.Shorts;
@@ -155,11 +155,11 @@ public class ICMPv4Type implements OFValueType<ICMPv4Type> {
         return type;
     }
 
-    public void writeByte(ByteBuf c) {
+    public void writeByte(ChannelBuffer c) {
         c.writeByte(this.type);
     }
 
-    public static ICMPv4Type readByte(ByteBuf c) {
+    public static ICMPv4Type readByte(ChannelBuffer c) {
         return ICMPv4Type.of(c.readUnsignedByte());
     }
 
@@ -200,8 +200,4 @@ public class ICMPv4Type implements OFValueType<ICMPv4Type> {
         sink.putShort(type);
     }
 
-    @Override
-    public String toString() {
-        return String.valueOf(this.type);
-    }
 }

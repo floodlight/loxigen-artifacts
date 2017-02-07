@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,8 +26,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
+import org.jboss.netty.buffer.ChannelBuffer;
+import org.jboss.netty.buffer.ChannelBuffers;
 import org.hamcrest.CoreMatchers;
 
 
@@ -50,9 +48,9 @@ public class OFBadRequestErrorMsgVer13Test {
         OFBadRequestErrorMsg.Builder builder = factory.buildBadRequestErrorMsg();
         builder.setXid(0x12345678)
     .setCode(OFBadRequestCode.BUFFER_UNKNOWN)
-    .setData(OFErrorCauseData.of(new byte[] { 0x61, 0x62, 0x63 }, OFVersion.OF_13));;
+    .setData(new byte[] { 0x61, 0x62, 0x63 });;
         OFBadRequestErrorMsg badRequestErrorMsg = builder.build();
-        ByteBuf bb = Unpooled.buffer();
+        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
         badRequestErrorMsg.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -65,10 +63,10 @@ public class OFBadRequestErrorMsgVer13Test {
         OFBadRequestErrorMsg.Builder builder = factory.buildBadRequestErrorMsg();
         builder.setXid(0x12345678)
     .setCode(OFBadRequestCode.BUFFER_UNKNOWN)
-    .setData(OFErrorCauseData.of(new byte[] { 0x61, 0x62, 0x63 }, OFVersion.OF_13));;
+    .setData(new byte[] { 0x61, 0x62, 0x63 });;
         OFBadRequestErrorMsg badRequestErrorMsgBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(BAD_REQUEST_ERROR_MSG_SERIALIZED);
+        ChannelBuffer input = ChannelBuffers.copiedBuffer(BAD_REQUEST_ERROR_MSG_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFBadRequestErrorMsg badRequestErrorMsgRead = OFBadRequestErrorMsgVer13.READER.readFrom(input);
@@ -79,14 +77,14 @@ public class OFBadRequestErrorMsgVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ByteBuf input = Unpooled.copiedBuffer(BAD_REQUEST_ERROR_MSG_SERIALIZED);
+       ChannelBuffer input = ChannelBuffers.copiedBuffer(BAD_REQUEST_ERROR_MSG_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFBadRequestErrorMsg badRequestErrorMsg = OFBadRequestErrorMsgVer13.READER.readFrom(input);
        assertEquals(BAD_REQUEST_ERROR_MSG_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ByteBuf bb = Unpooled.buffer();
+       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
        badRequestErrorMsg.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);
