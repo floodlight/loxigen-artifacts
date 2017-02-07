@@ -145,7 +145,7 @@ class experimenter(port_stats_prop):
 
     type = 65535
 
-    def __init__(self, experimenter=None, exp_type=None, experimenter_data=None):
+    def __init__(self, experimenter=None, exp_type=None):
         if experimenter != None:
             self.experimenter = experimenter
         else:
@@ -154,10 +154,6 @@ class experimenter(port_stats_prop):
             self.exp_type = exp_type
         else:
             self.exp_type = 0
-        if experimenter_data != None:
-            self.experimenter_data = experimenter_data
-        else:
-            self.experimenter_data = ''
         return
 
     def pack(self):
@@ -166,7 +162,6 @@ class experimenter(port_stats_prop):
         packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
         packed.append(struct.pack("!L", self.experimenter))
         packed.append(struct.pack("!L", self.exp_type))
-        packed.append(self.experimenter_data)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -186,14 +181,12 @@ class experimenter(port_stats_prop):
         reader = orig_reader.slice(_length, 4)
         obj.experimenter = reader.read("!L")[0]
         obj.exp_type = reader.read("!L")[0]
-        obj.experimenter_data = str(reader.read_all())
         return obj
 
     def __eq__(self, other):
         if type(self) != type(other): return False
         if self.experimenter != other.experimenter: return False
         if self.exp_type != other.exp_type: return False
-        if self.experimenter_data != other.experimenter_data: return False
         return True
 
     def pretty_print(self, q):
@@ -203,13 +196,267 @@ class experimenter(port_stats_prop):
                 q.breakable()
                 q.text("exp_type = ");
                 q.text("%#x" % self.exp_type)
-                q.text(","); q.breakable()
-                q.text("experimenter_data = ");
-                q.pp(self.experimenter_data)
             q.breakable()
         q.text('}')
 
 port_stats_prop.subtypes[65535] = experimenter
+
+class experimenter_intel(experimenter):
+    type = 65535
+    experimenter = 43521
+    exp_type = 1
+
+    def __init__(self, rx_1_to_64_packets=None, rx_65_to_127_packets=None, rx_128_to_255_packets=None, rx_256_to_511_packets=None, rx_512_to_1023_packets=None, rx_1024_to_1522_packets=None, rx_1523_to_max_packets=None, tx_1_to_64_packets=None, tx_65_to_127_packets=None, tx_128_to_255_packets=None, tx_256_to_511_packets=None, tx_512_to_1023_packets=None, tx_1024_to_1522_packets=None, tx_1523_to_max_packets=None, tx_multicast_packets=None, rx_broadcast_packets=None, tx_broadcast_packets=None, rx_undersized_errors=None, rx_oversize_errors=None, rx_fragmented_errors=None, rx_jabber_errors=None):
+        if rx_1_to_64_packets != None:
+            self.rx_1_to_64_packets = rx_1_to_64_packets
+        else:
+            self.rx_1_to_64_packets = 0
+        if rx_65_to_127_packets != None:
+            self.rx_65_to_127_packets = rx_65_to_127_packets
+        else:
+            self.rx_65_to_127_packets = 0
+        if rx_128_to_255_packets != None:
+            self.rx_128_to_255_packets = rx_128_to_255_packets
+        else:
+            self.rx_128_to_255_packets = 0
+        if rx_256_to_511_packets != None:
+            self.rx_256_to_511_packets = rx_256_to_511_packets
+        else:
+            self.rx_256_to_511_packets = 0
+        if rx_512_to_1023_packets != None:
+            self.rx_512_to_1023_packets = rx_512_to_1023_packets
+        else:
+            self.rx_512_to_1023_packets = 0
+        if rx_1024_to_1522_packets != None:
+            self.rx_1024_to_1522_packets = rx_1024_to_1522_packets
+        else:
+            self.rx_1024_to_1522_packets = 0
+        if rx_1523_to_max_packets != None:
+            self.rx_1523_to_max_packets = rx_1523_to_max_packets
+        else:
+            self.rx_1523_to_max_packets = 0
+        if tx_1_to_64_packets != None:
+            self.tx_1_to_64_packets = tx_1_to_64_packets
+        else:
+            self.tx_1_to_64_packets = 0
+        if tx_65_to_127_packets != None:
+            self.tx_65_to_127_packets = tx_65_to_127_packets
+        else:
+            self.tx_65_to_127_packets = 0
+        if tx_128_to_255_packets != None:
+            self.tx_128_to_255_packets = tx_128_to_255_packets
+        else:
+            self.tx_128_to_255_packets = 0
+        if tx_256_to_511_packets != None:
+            self.tx_256_to_511_packets = tx_256_to_511_packets
+        else:
+            self.tx_256_to_511_packets = 0
+        if tx_512_to_1023_packets != None:
+            self.tx_512_to_1023_packets = tx_512_to_1023_packets
+        else:
+            self.tx_512_to_1023_packets = 0
+        if tx_1024_to_1522_packets != None:
+            self.tx_1024_to_1522_packets = tx_1024_to_1522_packets
+        else:
+            self.tx_1024_to_1522_packets = 0
+        if tx_1523_to_max_packets != None:
+            self.tx_1523_to_max_packets = tx_1523_to_max_packets
+        else:
+            self.tx_1523_to_max_packets = 0
+        if tx_multicast_packets != None:
+            self.tx_multicast_packets = tx_multicast_packets
+        else:
+            self.tx_multicast_packets = 0
+        if rx_broadcast_packets != None:
+            self.rx_broadcast_packets = rx_broadcast_packets
+        else:
+            self.rx_broadcast_packets = 0
+        if tx_broadcast_packets != None:
+            self.tx_broadcast_packets = tx_broadcast_packets
+        else:
+            self.tx_broadcast_packets = 0
+        if rx_undersized_errors != None:
+            self.rx_undersized_errors = rx_undersized_errors
+        else:
+            self.rx_undersized_errors = 0
+        if rx_oversize_errors != None:
+            self.rx_oversize_errors = rx_oversize_errors
+        else:
+            self.rx_oversize_errors = 0
+        if rx_fragmented_errors != None:
+            self.rx_fragmented_errors = rx_fragmented_errors
+        else:
+            self.rx_fragmented_errors = 0
+        if rx_jabber_errors != None:
+            self.rx_jabber_errors = rx_jabber_errors
+        else:
+            self.rx_jabber_errors = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.exp_type))
+        packed.append('\x00' * 4)
+        packed.append(struct.pack("!Q", self.rx_1_to_64_packets))
+        packed.append(struct.pack("!Q", self.rx_65_to_127_packets))
+        packed.append(struct.pack("!Q", self.rx_128_to_255_packets))
+        packed.append(struct.pack("!Q", self.rx_256_to_511_packets))
+        packed.append(struct.pack("!Q", self.rx_512_to_1023_packets))
+        packed.append(struct.pack("!Q", self.rx_1024_to_1522_packets))
+        packed.append(struct.pack("!Q", self.rx_1523_to_max_packets))
+        packed.append(struct.pack("!Q", self.tx_1_to_64_packets))
+        packed.append(struct.pack("!Q", self.tx_65_to_127_packets))
+        packed.append(struct.pack("!Q", self.tx_128_to_255_packets))
+        packed.append(struct.pack("!Q", self.tx_256_to_511_packets))
+        packed.append(struct.pack("!Q", self.tx_512_to_1023_packets))
+        packed.append(struct.pack("!Q", self.tx_1024_to_1522_packets))
+        packed.append(struct.pack("!Q", self.tx_1523_to_max_packets))
+        packed.append(struct.pack("!Q", self.tx_multicast_packets))
+        packed.append(struct.pack("!Q", self.rx_broadcast_packets))
+        packed.append(struct.pack("!Q", self.tx_broadcast_packets))
+        packed.append(struct.pack("!Q", self.rx_undersized_errors))
+        packed.append(struct.pack("!Q", self.rx_oversize_errors))
+        packed.append(struct.pack("!Q", self.rx_fragmented_errors))
+        packed.append(struct.pack("!Q", self.rx_jabber_errors))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = experimenter_intel()
+        _type = reader.read("!H")[0]
+        assert(_type == 65535)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 43521)
+        _exp_type = reader.read("!L")[0]
+        assert(_exp_type == 1)
+        reader.skip(4)
+        obj.rx_1_to_64_packets = reader.read("!Q")[0]
+        obj.rx_65_to_127_packets = reader.read("!Q")[0]
+        obj.rx_128_to_255_packets = reader.read("!Q")[0]
+        obj.rx_256_to_511_packets = reader.read("!Q")[0]
+        obj.rx_512_to_1023_packets = reader.read("!Q")[0]
+        obj.rx_1024_to_1522_packets = reader.read("!Q")[0]
+        obj.rx_1523_to_max_packets = reader.read("!Q")[0]
+        obj.tx_1_to_64_packets = reader.read("!Q")[0]
+        obj.tx_65_to_127_packets = reader.read("!Q")[0]
+        obj.tx_128_to_255_packets = reader.read("!Q")[0]
+        obj.tx_256_to_511_packets = reader.read("!Q")[0]
+        obj.tx_512_to_1023_packets = reader.read("!Q")[0]
+        obj.tx_1024_to_1522_packets = reader.read("!Q")[0]
+        obj.tx_1523_to_max_packets = reader.read("!Q")[0]
+        obj.tx_multicast_packets = reader.read("!Q")[0]
+        obj.rx_broadcast_packets = reader.read("!Q")[0]
+        obj.tx_broadcast_packets = reader.read("!Q")[0]
+        obj.rx_undersized_errors = reader.read("!Q")[0]
+        obj.rx_oversize_errors = reader.read("!Q")[0]
+        obj.rx_fragmented_errors = reader.read("!Q")[0]
+        obj.rx_jabber_errors = reader.read("!Q")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.rx_1_to_64_packets != other.rx_1_to_64_packets: return False
+        if self.rx_65_to_127_packets != other.rx_65_to_127_packets: return False
+        if self.rx_128_to_255_packets != other.rx_128_to_255_packets: return False
+        if self.rx_256_to_511_packets != other.rx_256_to_511_packets: return False
+        if self.rx_512_to_1023_packets != other.rx_512_to_1023_packets: return False
+        if self.rx_1024_to_1522_packets != other.rx_1024_to_1522_packets: return False
+        if self.rx_1523_to_max_packets != other.rx_1523_to_max_packets: return False
+        if self.tx_1_to_64_packets != other.tx_1_to_64_packets: return False
+        if self.tx_65_to_127_packets != other.tx_65_to_127_packets: return False
+        if self.tx_128_to_255_packets != other.tx_128_to_255_packets: return False
+        if self.tx_256_to_511_packets != other.tx_256_to_511_packets: return False
+        if self.tx_512_to_1023_packets != other.tx_512_to_1023_packets: return False
+        if self.tx_1024_to_1522_packets != other.tx_1024_to_1522_packets: return False
+        if self.tx_1523_to_max_packets != other.tx_1523_to_max_packets: return False
+        if self.tx_multicast_packets != other.tx_multicast_packets: return False
+        if self.rx_broadcast_packets != other.rx_broadcast_packets: return False
+        if self.tx_broadcast_packets != other.tx_broadcast_packets: return False
+        if self.rx_undersized_errors != other.rx_undersized_errors: return False
+        if self.rx_oversize_errors != other.rx_oversize_errors: return False
+        if self.rx_fragmented_errors != other.rx_fragmented_errors: return False
+        if self.rx_jabber_errors != other.rx_jabber_errors: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("experimenter_intel {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("rx_1_to_64_packets = ");
+                q.text("%#x" % self.rx_1_to_64_packets)
+                q.text(","); q.breakable()
+                q.text("rx_65_to_127_packets = ");
+                q.text("%#x" % self.rx_65_to_127_packets)
+                q.text(","); q.breakable()
+                q.text("rx_128_to_255_packets = ");
+                q.text("%#x" % self.rx_128_to_255_packets)
+                q.text(","); q.breakable()
+                q.text("rx_256_to_511_packets = ");
+                q.text("%#x" % self.rx_256_to_511_packets)
+                q.text(","); q.breakable()
+                q.text("rx_512_to_1023_packets = ");
+                q.text("%#x" % self.rx_512_to_1023_packets)
+                q.text(","); q.breakable()
+                q.text("rx_1024_to_1522_packets = ");
+                q.text("%#x" % self.rx_1024_to_1522_packets)
+                q.text(","); q.breakable()
+                q.text("rx_1523_to_max_packets = ");
+                q.text("%#x" % self.rx_1523_to_max_packets)
+                q.text(","); q.breakable()
+                q.text("tx_1_to_64_packets = ");
+                q.text("%#x" % self.tx_1_to_64_packets)
+                q.text(","); q.breakable()
+                q.text("tx_65_to_127_packets = ");
+                q.text("%#x" % self.tx_65_to_127_packets)
+                q.text(","); q.breakable()
+                q.text("tx_128_to_255_packets = ");
+                q.text("%#x" % self.tx_128_to_255_packets)
+                q.text(","); q.breakable()
+                q.text("tx_256_to_511_packets = ");
+                q.text("%#x" % self.tx_256_to_511_packets)
+                q.text(","); q.breakable()
+                q.text("tx_512_to_1023_packets = ");
+                q.text("%#x" % self.tx_512_to_1023_packets)
+                q.text(","); q.breakable()
+                q.text("tx_1024_to_1522_packets = ");
+                q.text("%#x" % self.tx_1024_to_1522_packets)
+                q.text(","); q.breakable()
+                q.text("tx_1523_to_max_packets = ");
+                q.text("%#x" % self.tx_1523_to_max_packets)
+                q.text(","); q.breakable()
+                q.text("tx_multicast_packets = ");
+                q.text("%#x" % self.tx_multicast_packets)
+                q.text(","); q.breakable()
+                q.text("rx_broadcast_packets = ");
+                q.text("%#x" % self.rx_broadcast_packets)
+                q.text(","); q.breakable()
+                q.text("tx_broadcast_packets = ");
+                q.text("%#x" % self.tx_broadcast_packets)
+                q.text(","); q.breakable()
+                q.text("rx_undersized_errors = ");
+                q.text("%#x" % self.rx_undersized_errors)
+                q.text(","); q.breakable()
+                q.text("rx_oversize_errors = ");
+                q.text("%#x" % self.rx_oversize_errors)
+                q.text(","); q.breakable()
+                q.text("rx_fragmented_errors = ");
+                q.text("%#x" % self.rx_fragmented_errors)
+                q.text(","); q.breakable()
+                q.text("rx_jabber_errors = ");
+                q.text("%#x" % self.rx_jabber_errors)
+            q.breakable()
+        q.text('}')
+
+experimenter.subtypes[43521] = experimenter_intel
 
 class optical(port_stats_prop):
     type = 1

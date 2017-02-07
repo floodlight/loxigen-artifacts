@@ -1407,6 +1407,8 @@ void of_port_stats_prop_ethernet_wire_object_id_get(of_object_t *obj, of_object_
 void of_port_stats_prop_ethernet_push_wire_types(of_object_t *obj);
 void of_port_stats_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_stats_prop_experimenter_push_wire_types(of_object_t *obj);
+void of_port_stats_prop_experimenter_intel_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_stats_prop_experimenter_intel_push_wire_types(of_object_t *obj);
 void of_port_stats_prop_optical_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_stats_prop_optical_push_wire_types(of_object_t *obj);
 void of_queue_desc_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2141,6 +2143,7 @@ typedef of_object_t of_port_stats_entry_t;
 typedef of_object_t of_port_stats_prop_t;
 typedef of_object_t of_port_stats_prop_ethernet_t;
 typedef of_object_t of_port_stats_prop_experimenter_t;
+typedef of_object_t of_port_stats_prop_experimenter_intel_t;
 typedef of_object_t of_port_stats_prop_optical_t;
 typedef of_object_t of_queue_desc_t;
 typedef of_object_t of_queue_desc_prop_t;
@@ -5669,6 +5672,11 @@ extern void of_port_stats_prop_ethernet_init(
 extern of_object_t *
     of_port_stats_prop_experimenter_new(of_version_t version);
 extern void of_port_stats_prop_experimenter_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_port_stats_prop_experimenter_intel_new(of_version_t version);
+extern void of_port_stats_prop_experimenter_intel_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -13671,6 +13679,17 @@ of_port_stats_prop_ethernet_delete(of_object_t *obj) {
  */
 static inline void
 of_port_stats_prop_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_port_stats_prop_experimenter_intel_t
+ * @param obj An instance of type of_port_stats_prop_experimenter_intel_t
+ *
+ * \ingroup of_port_stats_prop_experimenter_intel
+ */
+static inline void
+of_port_stats_prop_experimenter_intel_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -27449,6 +27468,169 @@ extern void of_port_stats_prop_ethernet_collisions_set(
 extern void of_port_stats_prop_ethernet_collisions_get(
     of_port_stats_prop_ethernet_t *obj,
     uint64_t *collisions);
+
+/* Unified accessor functions for of_port_stats_prop_experimenter_intel */
+
+extern void of_port_stats_prop_experimenter_intel_experimenter_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint32_t experimenter);
+extern void of_port_stats_prop_experimenter_intel_experimenter_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint32_t *experimenter);
+
+extern void of_port_stats_prop_experimenter_intel_exp_type_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint32_t exp_type);
+extern void of_port_stats_prop_experimenter_intel_exp_type_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint32_t *exp_type);
+
+extern void of_port_stats_prop_experimenter_intel_rx_1_to_64_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t rx_1_to_64_packets);
+extern void of_port_stats_prop_experimenter_intel_rx_1_to_64_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *rx_1_to_64_packets);
+
+extern void of_port_stats_prop_experimenter_intel_rx_65_to_127_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t rx_65_to_127_packets);
+extern void of_port_stats_prop_experimenter_intel_rx_65_to_127_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *rx_65_to_127_packets);
+
+extern void of_port_stats_prop_experimenter_intel_rx_128_to_255_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t rx_128_to_255_packets);
+extern void of_port_stats_prop_experimenter_intel_rx_128_to_255_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *rx_128_to_255_packets);
+
+extern void of_port_stats_prop_experimenter_intel_rx_256_to_511_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t rx_256_to_511_packets);
+extern void of_port_stats_prop_experimenter_intel_rx_256_to_511_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *rx_256_to_511_packets);
+
+extern void of_port_stats_prop_experimenter_intel_rx_512_to_1023_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t rx_512_to_1023_packets);
+extern void of_port_stats_prop_experimenter_intel_rx_512_to_1023_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *rx_512_to_1023_packets);
+
+extern void of_port_stats_prop_experimenter_intel_rx_1024_to_1522_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t rx_1024_to_1522_packets);
+extern void of_port_stats_prop_experimenter_intel_rx_1024_to_1522_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *rx_1024_to_1522_packets);
+
+extern void of_port_stats_prop_experimenter_intel_rx_1523_to_max_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t rx_1523_to_max_packets);
+extern void of_port_stats_prop_experimenter_intel_rx_1523_to_max_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *rx_1523_to_max_packets);
+
+extern void of_port_stats_prop_experimenter_intel_tx_1_to_64_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t tx_1_to_64_packets);
+extern void of_port_stats_prop_experimenter_intel_tx_1_to_64_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *tx_1_to_64_packets);
+
+extern void of_port_stats_prop_experimenter_intel_tx_65_to_127_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t tx_65_to_127_packets);
+extern void of_port_stats_prop_experimenter_intel_tx_65_to_127_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *tx_65_to_127_packets);
+
+extern void of_port_stats_prop_experimenter_intel_tx_128_to_255_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t tx_128_to_255_packets);
+extern void of_port_stats_prop_experimenter_intel_tx_128_to_255_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *tx_128_to_255_packets);
+
+extern void of_port_stats_prop_experimenter_intel_tx_256_to_511_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t tx_256_to_511_packets);
+extern void of_port_stats_prop_experimenter_intel_tx_256_to_511_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *tx_256_to_511_packets);
+
+extern void of_port_stats_prop_experimenter_intel_tx_512_to_1023_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t tx_512_to_1023_packets);
+extern void of_port_stats_prop_experimenter_intel_tx_512_to_1023_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *tx_512_to_1023_packets);
+
+extern void of_port_stats_prop_experimenter_intel_tx_1024_to_1522_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t tx_1024_to_1522_packets);
+extern void of_port_stats_prop_experimenter_intel_tx_1024_to_1522_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *tx_1024_to_1522_packets);
+
+extern void of_port_stats_prop_experimenter_intel_tx_1523_to_max_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t tx_1523_to_max_packets);
+extern void of_port_stats_prop_experimenter_intel_tx_1523_to_max_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *tx_1523_to_max_packets);
+
+extern void of_port_stats_prop_experimenter_intel_tx_multicast_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t tx_multicast_packets);
+extern void of_port_stats_prop_experimenter_intel_tx_multicast_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *tx_multicast_packets);
+
+extern void of_port_stats_prop_experimenter_intel_rx_broadcast_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t rx_broadcast_packets);
+extern void of_port_stats_prop_experimenter_intel_rx_broadcast_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *rx_broadcast_packets);
+
+extern void of_port_stats_prop_experimenter_intel_tx_broadcast_packets_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t tx_broadcast_packets);
+extern void of_port_stats_prop_experimenter_intel_tx_broadcast_packets_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *tx_broadcast_packets);
+
+extern void of_port_stats_prop_experimenter_intel_rx_undersized_errors_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t rx_undersized_errors);
+extern void of_port_stats_prop_experimenter_intel_rx_undersized_errors_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *rx_undersized_errors);
+
+extern void of_port_stats_prop_experimenter_intel_rx_oversize_errors_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t rx_oversize_errors);
+extern void of_port_stats_prop_experimenter_intel_rx_oversize_errors_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *rx_oversize_errors);
+
+extern void of_port_stats_prop_experimenter_intel_rx_fragmented_errors_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t rx_fragmented_errors);
+extern void of_port_stats_prop_experimenter_intel_rx_fragmented_errors_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *rx_fragmented_errors);
+
+extern void of_port_stats_prop_experimenter_intel_rx_jabber_errors_set(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t rx_jabber_errors);
+extern void of_port_stats_prop_experimenter_intel_rx_jabber_errors_get(
+    of_port_stats_prop_experimenter_intel_t *obj,
+    uint64_t *rx_jabber_errors);
 
 /* Unified accessor functions for of_port_stats_prop_optical */
 

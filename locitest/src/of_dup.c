@@ -60403,6 +60403,10 @@ of_port_stats_prop_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
+    if (src->object_id == OF_PORT_STATS_PROP_EXPERIMENTER_INTEL) {
+        return of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_PORT_STATS_PROP_ETHERNET) {
         return of_port_stats_prop_ethernet_OF_VERSION_1_4_dup(src);
     }
@@ -60444,6 +60448,98 @@ of_port_stats_prop_ethernet_OF_VERSION_1_4_dup(
 
     of_port_stats_prop_ethernet_collisions_get(src, &val64);
     of_port_stats_prop_ethernet_collisions_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_port_stats_prop_experimenter_intel
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_port_stats_prop_experimenter_intel.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_port_stats_prop_experimenter_intel_t *
+of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_dup(
+    of_port_stats_prop_experimenter_intel_t *src)
+{
+    of_port_stats_prop_experimenter_intel_t *dst;
+    uint32_t val32;
+    uint64_t val64;
+
+    if ((dst = of_port_stats_prop_experimenter_intel_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_port_stats_prop_experimenter_intel_experimenter_get(src, &val32);
+    of_port_stats_prop_experimenter_intel_experimenter_set(dst, val32);
+
+    of_port_stats_prop_experimenter_intel_exp_type_get(src, &val32);
+    of_port_stats_prop_experimenter_intel_exp_type_set(dst, val32);
+
+    of_port_stats_prop_experimenter_intel_rx_1_to_64_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_rx_1_to_64_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_rx_65_to_127_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_rx_65_to_127_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_rx_128_to_255_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_rx_128_to_255_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_rx_256_to_511_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_rx_256_to_511_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_rx_512_to_1023_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_rx_512_to_1023_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_rx_1024_to_1522_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_rx_1024_to_1522_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_rx_1523_to_max_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_rx_1523_to_max_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_tx_1_to_64_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_tx_1_to_64_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_tx_65_to_127_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_tx_65_to_127_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_tx_128_to_255_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_tx_128_to_255_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_tx_256_to_511_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_tx_256_to_511_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_tx_512_to_1023_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_tx_512_to_1023_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_tx_1024_to_1522_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_tx_1024_to_1522_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_tx_1523_to_max_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_tx_1523_to_max_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_tx_multicast_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_tx_multicast_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_rx_broadcast_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_rx_broadcast_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_tx_broadcast_packets_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_tx_broadcast_packets_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_rx_undersized_errors_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_rx_undersized_errors_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_rx_oversize_errors_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_rx_oversize_errors_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_rx_fragmented_errors_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_rx_fragmented_errors_set(dst, val64);
+
+    of_port_stats_prop_experimenter_intel_rx_jabber_errors_get(src, &val64);
+    of_port_stats_prop_experimenter_intel_rx_jabber_errors_set(dst, val64);
 
     return dst;
 }
@@ -76320,6 +76416,19 @@ of_object_t *
 of_port_stats_prop_experimenter_dup(
     of_object_t *src)
 {
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_port_stats_prop_experimenter_intel_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_dup(src);
+    }
 
     /* Class not supported in given version */
     return NULL;

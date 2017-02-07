@@ -42367,6 +42367,133 @@ of_port_stats_prop_ethernet_OF_VERSION_1_4_dump(loci_writer_f writer, void* cook
 }
 
 int
+of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint64_t val64;
+
+    out += writer(cookie, "Object of type of_port_stats_prop_experimenter_intel\n");
+
+    of_port_stats_prop_experimenter_intel_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_exp_type_get(obj, &val32);
+    out += writer(cookie, "  exp_type (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_rx_1_to_64_packets_get(obj, &val64);
+    out += writer(cookie, "  rx_1_to_64_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_rx_65_to_127_packets_get(obj, &val64);
+    out += writer(cookie, "  rx_65_to_127_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_rx_128_to_255_packets_get(obj, &val64);
+    out += writer(cookie, "  rx_128_to_255_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_rx_256_to_511_packets_get(obj, &val64);
+    out += writer(cookie, "  rx_256_to_511_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_rx_512_to_1023_packets_get(obj, &val64);
+    out += writer(cookie, "  rx_512_to_1023_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_rx_1024_to_1522_packets_get(obj, &val64);
+    out += writer(cookie, "  rx_1024_to_1522_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_rx_1523_to_max_packets_get(obj, &val64);
+    out += writer(cookie, "  rx_1523_to_max_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_tx_1_to_64_packets_get(obj, &val64);
+    out += writer(cookie, "  tx_1_to_64_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_tx_65_to_127_packets_get(obj, &val64);
+    out += writer(cookie, "  tx_65_to_127_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_tx_128_to_255_packets_get(obj, &val64);
+    out += writer(cookie, "  tx_128_to_255_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_tx_256_to_511_packets_get(obj, &val64);
+    out += writer(cookie, "  tx_256_to_511_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_tx_512_to_1023_packets_get(obj, &val64);
+    out += writer(cookie, "  tx_512_to_1023_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_tx_1024_to_1522_packets_get(obj, &val64);
+    out += writer(cookie, "  tx_1024_to_1522_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_tx_1523_to_max_packets_get(obj, &val64);
+    out += writer(cookie, "  tx_1523_to_max_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_tx_multicast_packets_get(obj, &val64);
+    out += writer(cookie, "  tx_multicast_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_rx_broadcast_packets_get(obj, &val64);
+    out += writer(cookie, "  rx_broadcast_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_tx_broadcast_packets_get(obj, &val64);
+    out += writer(cookie, "  tx_broadcast_packets (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_rx_undersized_errors_get(obj, &val64);
+    out += writer(cookie, "  rx_undersized_errors (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_rx_oversize_errors_get(obj, &val64);
+    out += writer(cookie, "  rx_oversize_errors (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_rx_fragmented_errors_get(obj, &val64);
+    out += writer(cookie, "  rx_fragmented_errors (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_stats_prop_experimenter_intel_rx_jabber_errors_get(obj, &val64);
+    out += writer(cookie, "  rx_jabber_errors (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_port_stats_prop_optical_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -44379,6 +44506,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_queue_prop_min_rate_OF_VERSION_1_0_dump,
     of_queue_stats_entry_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -45152,6 +45280,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_port_stats_entry_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -45952,6 +46081,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_queue_prop_max_rate_OF_VERSION_1_2_dump,
     of_queue_prop_min_rate_OF_VERSION_1_2_dump,
     of_queue_stats_entry_OF_VERSION_1_2_dump,
@@ -46726,6 +46856,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_port_stats_entry_OF_VERSION_1_3_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -47516,6 +47647,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     unknown_dump,
     of_port_stats_prop_ethernet_OF_VERSION_1_4_dump,
     unknown_dump,
+    of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_dump,
     of_port_stats_prop_optical_OF_VERSION_1_4_dump,
     of_queue_desc_OF_VERSION_1_4_dump,
     unknown_dump,

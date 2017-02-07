@@ -12784,7 +12784,31 @@ fields['of14.port_stats_prop_experimenter.type'] = ProtoField.uint16("of14.port_
 fields['of14.port_stats_prop_experimenter.length'] = ProtoField.uint16("of14.port_stats_prop_experimenter.length", "length", base.DEC, nil)
 fields['of14.port_stats_prop_experimenter.experimenter'] = ProtoField.uint32("of14.port_stats_prop_experimenter.experimenter", "experimenter", base.DEC, nil)
 fields['of14.port_stats_prop_experimenter.exp_type'] = ProtoField.uint32("of14.port_stats_prop_experimenter.exp_type", "exp_type", base.DEC, nil)
-fields['of14.port_stats_prop_experimenter.experimenter_data'] = ProtoField.bytes("of14.port_stats_prop_experimenter.experimenter_data", "experimenter_data")
+fields['of14.port_stats_prop_experimenter_intel.type'] = ProtoField.uint16("of14.port_stats_prop_experimenter_intel.type", "type", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.length'] = ProtoField.uint16("of14.port_stats_prop_experimenter_intel.length", "length", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.experimenter'] = ProtoField.uint32("of14.port_stats_prop_experimenter_intel.experimenter", "experimenter", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.exp_type'] = ProtoField.uint32("of14.port_stats_prop_experimenter_intel.exp_type", "exp_type", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.rx_1_to_64_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.rx_1_to_64_packets", "rx_1_to_64_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.rx_65_to_127_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.rx_65_to_127_packets", "rx_65_to_127_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.rx_128_to_255_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.rx_128_to_255_packets", "rx_128_to_255_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.rx_256_to_511_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.rx_256_to_511_packets", "rx_256_to_511_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.rx_512_to_1023_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.rx_512_to_1023_packets", "rx_512_to_1023_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.rx_1024_to_1522_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.rx_1024_to_1522_packets", "rx_1024_to_1522_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.rx_1523_to_max_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.rx_1523_to_max_packets", "rx_1523_to_max_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.tx_1_to_64_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.tx_1_to_64_packets", "tx_1_to_64_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.tx_65_to_127_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.tx_65_to_127_packets", "tx_65_to_127_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.tx_128_to_255_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.tx_128_to_255_packets", "tx_128_to_255_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.tx_256_to_511_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.tx_256_to_511_packets", "tx_256_to_511_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.tx_512_to_1023_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.tx_512_to_1023_packets", "tx_512_to_1023_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.tx_1024_to_1522_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.tx_1024_to_1522_packets", "tx_1024_to_1522_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.tx_1523_to_max_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.tx_1523_to_max_packets", "tx_1523_to_max_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.tx_multicast_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.tx_multicast_packets", "tx_multicast_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.rx_broadcast_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.rx_broadcast_packets", "rx_broadcast_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.tx_broadcast_packets'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.tx_broadcast_packets", "tx_broadcast_packets", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.rx_undersized_errors'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.rx_undersized_errors", "rx_undersized_errors", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.rx_oversize_errors'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.rx_oversize_errors", "rx_oversize_errors", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.rx_fragmented_errors'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.rx_fragmented_errors", "rx_fragmented_errors", base.DEC, nil)
+fields['of14.port_stats_prop_experimenter_intel.rx_jabber_errors'] = ProtoField.uint64("of14.port_stats_prop_experimenter_intel.rx_jabber_errors", "rx_jabber_errors", base.DEC, nil)
 fields['of14.port_stats_prop_optical.type'] = ProtoField.uint16("of14.port_stats_prop_optical.type", "type", base.DEC, nil)
 fields['of14.port_stats_prop_optical.length'] = ProtoField.uint16("of14.port_stats_prop_optical.length", "length", base.DEC, nil)
 fields['of14.port_stats_prop_optical.flags'] = ProtoField.uint32("of14.port_stats_prop_optical.flags", "flags", base.DEC, nil)
@@ -16067,6 +16091,31 @@ fields['of15.port_stats_prop_experimenter.type'] = ProtoField.uint16("of15.port_
 fields['of15.port_stats_prop_experimenter.length'] = ProtoField.uint16("of15.port_stats_prop_experimenter.length", "length", base.DEC, nil)
 fields['of15.port_stats_prop_experimenter.experimenter'] = ProtoField.uint32("of15.port_stats_prop_experimenter.experimenter", "experimenter", base.DEC, nil)
 fields['of15.port_stats_prop_experimenter.exp_type'] = ProtoField.uint32("of15.port_stats_prop_experimenter.exp_type", "exp_type", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.type'] = ProtoField.uint16("of15.port_stats_prop_experimenter_intel.type", "type", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.length'] = ProtoField.uint16("of15.port_stats_prop_experimenter_intel.length", "length", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.experimenter'] = ProtoField.uint32("of15.port_stats_prop_experimenter_intel.experimenter", "experimenter", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.exp_type'] = ProtoField.uint32("of15.port_stats_prop_experimenter_intel.exp_type", "exp_type", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.rx_1_to_64_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.rx_1_to_64_packets", "rx_1_to_64_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.rx_65_to_127_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.rx_65_to_127_packets", "rx_65_to_127_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.rx_128_to_255_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.rx_128_to_255_packets", "rx_128_to_255_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.rx_256_to_511_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.rx_256_to_511_packets", "rx_256_to_511_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.rx_512_to_1023_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.rx_512_to_1023_packets", "rx_512_to_1023_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.rx_1024_to_1522_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.rx_1024_to_1522_packets", "rx_1024_to_1522_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.rx_1523_to_max_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.rx_1523_to_max_packets", "rx_1523_to_max_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.tx_1_to_64_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.tx_1_to_64_packets", "tx_1_to_64_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.tx_65_to_127_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.tx_65_to_127_packets", "tx_65_to_127_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.tx_128_to_255_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.tx_128_to_255_packets", "tx_128_to_255_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.tx_256_to_511_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.tx_256_to_511_packets", "tx_256_to_511_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.tx_512_to_1023_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.tx_512_to_1023_packets", "tx_512_to_1023_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.tx_1024_to_1522_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.tx_1024_to_1522_packets", "tx_1024_to_1522_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.tx_1523_to_max_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.tx_1523_to_max_packets", "tx_1523_to_max_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.tx_multicast_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.tx_multicast_packets", "tx_multicast_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.rx_broadcast_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.rx_broadcast_packets", "rx_broadcast_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.tx_broadcast_packets'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.tx_broadcast_packets", "tx_broadcast_packets", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.rx_undersized_errors'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.rx_undersized_errors", "rx_undersized_errors", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.rx_oversize_errors'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.rx_oversize_errors", "rx_oversize_errors", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.rx_fragmented_errors'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.rx_fragmented_errors", "rx_fragmented_errors", base.DEC, nil)
+fields['of15.port_stats_prop_experimenter_intel.rx_jabber_errors'] = ProtoField.uint64("of15.port_stats_prop_experimenter_intel.rx_jabber_errors", "rx_jabber_errors", base.DEC, nil)
 fields['of15.port_stats_prop_optical.type'] = ProtoField.uint16("of15.port_stats_prop_optical.type", "type", base.DEC, nil)
 fields['of15.port_stats_prop_optical.length'] = ProtoField.uint16("of15.port_stats_prop_optical.length", "length", base.DEC, nil)
 fields['of15.port_stats_prop_optical.flags'] = ProtoField.uint32("of15.port_stats_prop_optical.flags", "flags", base.DEC, nil)
@@ -25066,7 +25115,31 @@ p_of.fields = {
     fields['of14.port_stats_prop_experimenter.length'],
     fields['of14.port_stats_prop_experimenter.experimenter'],
     fields['of14.port_stats_prop_experimenter.exp_type'],
-    fields['of14.port_stats_prop_experimenter.experimenter_data'],
+    fields['of14.port_stats_prop_experimenter_intel.type'],
+    fields['of14.port_stats_prop_experimenter_intel.length'],
+    fields['of14.port_stats_prop_experimenter_intel.experimenter'],
+    fields['of14.port_stats_prop_experimenter_intel.exp_type'],
+    fields['of14.port_stats_prop_experimenter_intel.rx_1_to_64_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.rx_65_to_127_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.rx_128_to_255_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.rx_256_to_511_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.rx_512_to_1023_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.rx_1024_to_1522_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.rx_1523_to_max_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.tx_1_to_64_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.tx_65_to_127_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.tx_128_to_255_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.tx_256_to_511_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.tx_512_to_1023_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.tx_1024_to_1522_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.tx_1523_to_max_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.tx_multicast_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.rx_broadcast_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.tx_broadcast_packets'],
+    fields['of14.port_stats_prop_experimenter_intel.rx_undersized_errors'],
+    fields['of14.port_stats_prop_experimenter_intel.rx_oversize_errors'],
+    fields['of14.port_stats_prop_experimenter_intel.rx_fragmented_errors'],
+    fields['of14.port_stats_prop_experimenter_intel.rx_jabber_errors'],
     fields['of14.port_stats_prop_optical.type'],
     fields['of14.port_stats_prop_optical.length'],
     fields['of14.port_stats_prop_optical.flags'],
@@ -28349,6 +28422,31 @@ p_of.fields = {
     fields['of15.port_stats_prop_experimenter.length'],
     fields['of15.port_stats_prop_experimenter.experimenter'],
     fields['of15.port_stats_prop_experimenter.exp_type'],
+    fields['of15.port_stats_prop_experimenter_intel.type'],
+    fields['of15.port_stats_prop_experimenter_intel.length'],
+    fields['of15.port_stats_prop_experimenter_intel.experimenter'],
+    fields['of15.port_stats_prop_experimenter_intel.exp_type'],
+    fields['of15.port_stats_prop_experimenter_intel.rx_1_to_64_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.rx_65_to_127_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.rx_128_to_255_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.rx_256_to_511_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.rx_512_to_1023_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.rx_1024_to_1522_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.rx_1523_to_max_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.tx_1_to_64_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.tx_65_to_127_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.tx_128_to_255_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.tx_256_to_511_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.tx_512_to_1023_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.tx_1024_to_1522_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.tx_1523_to_max_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.tx_multicast_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.rx_broadcast_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.tx_broadcast_packets'],
+    fields['of15.port_stats_prop_experimenter_intel.rx_undersized_errors'],
+    fields['of15.port_stats_prop_experimenter_intel.rx_oversize_errors'],
+    fields['of15.port_stats_prop_experimenter_intel.rx_fragmented_errors'],
+    fields['of15.port_stats_prop_experimenter_intel.rx_jabber_errors'],
     fields['of15.port_stats_prop_optical.type'],
     fields['of15.port_stats_prop_optical.length'],
     fields['of15.port_stats_prop_optical.flags'],
@@ -50589,6 +50687,39 @@ function dissect_of_port_stats_prop_experimenter_v5(reader, subtree)
 end
 of_port_stats_prop_v5_dissectors[65535] = dissect_of_port_stats_prop_experimenter_v5
 
+-- child class of_port_stats_prop_experimenter_intel
+-- Child of of_port_stats_prop_experimenter
+function dissect_of_port_stats_prop_experimenter_intel_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.type')
+    read_uint16_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.length')
+    read_uint32_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.exp_type')
+    reader.skip(4)
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.rx_1_to_64_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.rx_65_to_127_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.rx_128_to_255_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.rx_256_to_511_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.rx_512_to_1023_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.rx_1024_to_1522_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.rx_1523_to_max_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.tx_1_to_64_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.tx_65_to_127_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.tx_128_to_255_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.tx_256_to_511_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.tx_512_to_1023_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.tx_1024_to_1522_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.tx_1523_to_max_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.tx_multicast_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.rx_broadcast_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.tx_broadcast_packets')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.rx_undersized_errors')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.rx_oversize_errors')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.rx_fragmented_errors')
+    read_uint64_t(reader, 5, subtree, 'of14.port_stats_prop_experimenter_intel.rx_jabber_errors')
+    return 'of_port_stats_prop_experimenter_intel'
+end
+of_port_stats_prop_experimenter_v5_dissectors[43521] = dissect_of_port_stats_prop_experimenter_intel_v5
+
 -- child class of_port_stats_prop_optical
 -- Child of of_port_stats_prop
 function dissect_of_port_stats_prop_optical_v5(reader, subtree)
@@ -59284,6 +59415,39 @@ function dissect_of_port_stats_prop_experimenter_v6(reader, subtree)
     return of_port_stats_prop_experimenter_v6_dissectors[reader.peek(4,4):uint()](reader, subtree)
 end
 of_port_stats_prop_v6_dissectors[65535] = dissect_of_port_stats_prop_experimenter_v6
+
+-- child class of_port_stats_prop_experimenter_intel
+-- Child of of_port_stats_prop_experimenter
+function dissect_of_port_stats_prop_experimenter_intel_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.type')
+    read_uint16_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.length')
+    read_uint32_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.exp_type')
+    reader.skip(4)
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.rx_1_to_64_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.rx_65_to_127_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.rx_128_to_255_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.rx_256_to_511_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.rx_512_to_1023_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.rx_1024_to_1522_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.rx_1523_to_max_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.tx_1_to_64_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.tx_65_to_127_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.tx_128_to_255_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.tx_256_to_511_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.tx_512_to_1023_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.tx_1024_to_1522_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.tx_1523_to_max_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.tx_multicast_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.rx_broadcast_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.tx_broadcast_packets')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.rx_undersized_errors')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.rx_oversize_errors')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.rx_fragmented_errors')
+    read_uint64_t(reader, 6, subtree, 'of15.port_stats_prop_experimenter_intel.rx_jabber_errors')
+    return 'of_port_stats_prop_experimenter_intel'
+end
+of_port_stats_prop_experimenter_v6_dissectors[43521] = dissect_of_port_stats_prop_experimenter_intel_v6
 
 -- child class of_port_stats_prop_optical
 -- Child of of_port_stats_prop
