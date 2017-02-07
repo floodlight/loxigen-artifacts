@@ -31,7 +31,6 @@ public interface OFPortStatsPropExperimenter extends OFObject, OFPortStatsProp {
     int getType();
     long getExperimenter();
     long getExpType();
-    byte[] getExperimenterData() throws UnsupportedOperationException;
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -43,8 +42,6 @@ public interface OFPortStatsPropExperimenter extends OFObject, OFPortStatsProp {
         long getExperimenter();
         long getExpType();
         Builder setExpType(long expType);
-        byte[] getExperimenterData() throws UnsupportedOperationException;
-        Builder setExperimenterData(byte[] experimenterData) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

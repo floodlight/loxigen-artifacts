@@ -2739,6 +2739,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_port_stats_prop_experimenter_intel_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_port_stats_prop_optical_dup(
         of_object_t *src);
 
@@ -10264,6 +10268,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_port_stats_prop_ethernet_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

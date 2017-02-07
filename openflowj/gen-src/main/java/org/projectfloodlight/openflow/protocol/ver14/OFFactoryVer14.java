@@ -1587,6 +1587,10 @@ public class OFFactoryVer14 implements OFFactory {
         return new OFPortStatsPropEthernetVer14.Builder();
     }
 
+    public OFPortStatsPropExperimenterIntel.Builder buildPortStatsPropExperimenterIntel() {
+        return new OFPortStatsPropExperimenterIntelVer14.Builder();
+    }
+
     public OFPortStatsPropOptical.Builder buildPortStatsPropOptical() {
         return new OFPortStatsPropOpticalVer14.Builder();
     }

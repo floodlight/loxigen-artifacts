@@ -11526,12 +11526,107 @@ typedef struct of_port_stats_prop_ethernet_s of_port_stats_prop_ethernet_t;
  *   Accessors for exp_type, a variable of type uint32.  Functions
  *   are of type of_port_stats_prop_experimenter_uint32_get_f and _set_f.
  *
- * @param experimenter_data_get/set ( OF_1_4).
- *   Accessors for experimenter_data, a variable of type of_octets.  Functions
- *   are of type of_port_stats_prop_experimenter_of_octets_get_f and _set_f.
- *
  */
 typedef struct of_port_stats_prop_experimenter_s of_port_stats_prop_experimenter_t;
+
+/**
+ * Structure for of_port_stats_prop_experimenter_intel object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint32_get_f and _set_f.
+ *
+ * @param rx_1_to_64_packets_get/set ( OF_1_4).
+ *   Accessors for rx_1_to_64_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param rx_65_to_127_packets_get/set ( OF_1_4).
+ *   Accessors for rx_65_to_127_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param rx_128_to_255_packets_get/set ( OF_1_4).
+ *   Accessors for rx_128_to_255_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param rx_256_to_511_packets_get/set ( OF_1_4).
+ *   Accessors for rx_256_to_511_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param rx_512_to_1023_packets_get/set ( OF_1_4).
+ *   Accessors for rx_512_to_1023_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param rx_1024_to_1522_packets_get/set ( OF_1_4).
+ *   Accessors for rx_1024_to_1522_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param rx_1523_to_max_packets_get/set ( OF_1_4).
+ *   Accessors for rx_1523_to_max_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param tx_1_to_64_packets_get/set ( OF_1_4).
+ *   Accessors for tx_1_to_64_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param tx_65_to_127_packets_get/set ( OF_1_4).
+ *   Accessors for tx_65_to_127_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param tx_128_to_255_packets_get/set ( OF_1_4).
+ *   Accessors for tx_128_to_255_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param tx_256_to_511_packets_get/set ( OF_1_4).
+ *   Accessors for tx_256_to_511_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param tx_512_to_1023_packets_get/set ( OF_1_4).
+ *   Accessors for tx_512_to_1023_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param tx_1024_to_1522_packets_get/set ( OF_1_4).
+ *   Accessors for tx_1024_to_1522_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param tx_1523_to_max_packets_get/set ( OF_1_4).
+ *   Accessors for tx_1523_to_max_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param tx_multicast_packets_get/set ( OF_1_4).
+ *   Accessors for tx_multicast_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param rx_broadcast_packets_get/set ( OF_1_4).
+ *   Accessors for rx_broadcast_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param tx_broadcast_packets_get/set ( OF_1_4).
+ *   Accessors for tx_broadcast_packets, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param rx_undersized_errors_get/set ( OF_1_4).
+ *   Accessors for rx_undersized_errors, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param rx_oversize_errors_get/set ( OF_1_4).
+ *   Accessors for rx_oversize_errors, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param rx_fragmented_errors_get/set ( OF_1_4).
+ *   Accessors for rx_fragmented_errors, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ * @param rx_jabber_errors_get/set ( OF_1_4).
+ *   Accessors for rx_jabber_errors, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_experimenter_intel_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_port_stats_prop_experimenter_intel_s of_port_stats_prop_experimenter_intel_t;
 
 /**
  * Structure for of_port_stats_prop_optical object.  Get/set

@@ -15719,6 +15719,15 @@ extern int of_port_stats_prop_ethernet_OF_VERSION_1_4_populate_scalars(
 extern int of_port_stats_prop_ethernet_OF_VERSION_1_4_check_scalars(
     of_port_stats_prop_ethernet_t *obj, int value);
 
+extern int of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_populate(
+    of_port_stats_prop_experimenter_intel_t *obj, int value);
+extern int of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_check(
+    of_port_stats_prop_experimenter_intel_t *obj, int value);
+extern int of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_populate_scalars(
+    of_port_stats_prop_experimenter_intel_t *obj, int value);
+extern int of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_check_scalars(
+    of_port_stats_prop_experimenter_intel_t *obj, int value);
+
 extern int of_port_stats_prop_optical_OF_VERSION_1_4_populate(
     of_port_stats_prop_optical_t *obj, int value);
 extern int of_port_stats_prop_optical_OF_VERSION_1_4_check(

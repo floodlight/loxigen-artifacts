@@ -1698,6 +1698,7 @@ int of_port_mod_prop_ethernet_OF_VERSION_1_4_dump(loci_writer_f writer, void* co
 int of_port_mod_prop_optical_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_stats_entry_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_stats_prop_ethernet_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_stats_prop_optical_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_queue_desc_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);

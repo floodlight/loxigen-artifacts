@@ -1796,6 +1796,7 @@ static int __attribute__((unused)) loci_validate_of_port_stats_entry_OF_VERSION_
 static int __attribute__((unused)) loci_validate_of_port_stats_prop_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_stats_prop_ethernet_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_stats_prop_experimenter_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_port_stats_prop_experimenter_intel_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_stats_prop_optical_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -45873,7 +45874,31 @@ loci_validate_of_port_stats_prop_experimenter_OF_VERSION_1_4(uint8_t *data, int 
     uint32_t wire_type;
     buf_u32_get(data + 4, &wire_type);
     switch (wire_type) {
+    case 0xaa01:
+        return loci_validate_of_port_stats_prop_experimenter_intel_OF_VERSION_1_4(data, len, out_len);
     }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_port_stats_prop_experimenter_intel_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 184) {
+        return -1;
+    }
+
+    len = 184;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 184) {
+        return -1;
+    }
+
+
 
 
     *out_len = len;

@@ -1432,6 +1432,10 @@ public class OFFactoryVer10 implements OFFactory {
         throw new UnsupportedOperationException("OFPortStatsPropEthernet not supported in version 1.0");
     }
 
+    public OFPortStatsPropExperimenterIntel.Builder buildPortStatsPropExperimenterIntel() {
+        throw new UnsupportedOperationException("OFPortStatsPropExperimenterIntel not supported in version 1.0");
+    }
+
     public OFPortStatsPropOptical.Builder buildPortStatsPropOptical() {
         throw new UnsupportedOperationException("OFPortStatsPropOptical not supported in version 1.0");
     }

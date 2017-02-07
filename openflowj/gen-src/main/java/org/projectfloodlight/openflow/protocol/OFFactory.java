@@ -385,6 +385,7 @@ public interface OFFactory extends XidGenerator {
     OFPortModPropEthernet portModPropEthernet(Set<OFPortFeatures> advertise);
     OFPortModPropOptical.Builder buildPortModPropOptical() throws UnsupportedOperationException;
     OFPortStatsPropEthernet.Builder buildPortStatsPropEthernet() throws UnsupportedOperationException;
+    OFPortStatsPropExperimenterIntel.Builder buildPortStatsPropExperimenterIntel() throws UnsupportedOperationException;
     OFPortStatsPropOptical.Builder buildPortStatsPropOptical() throws UnsupportedOperationException;
     OFQueueDesc.Builder buildQueueDesc() throws UnsupportedOperationException;
     OFQueueDescPropBsnQueueName.Builder buildQueueDescPropBsnQueueName() throws UnsupportedOperationException;

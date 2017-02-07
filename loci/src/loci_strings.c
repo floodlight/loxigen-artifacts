@@ -690,6 +690,7 @@ const char *const of_object_id_str[] = {
     "of_port_stats_prop",
     "of_port_stats_prop_ethernet",
     "of_port_stats_prop_experimenter",
+    "of_port_stats_prop_experimenter_intel",
     "of_port_stats_prop_optical",
     "of_queue_desc",
     "of_queue_desc_prop",

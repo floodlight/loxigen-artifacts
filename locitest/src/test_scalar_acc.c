@@ -60705,6 +60705,43 @@ test_of_port_stats_prop_ethernet_OF_VERSION_1_4_scalar(void)
 }
 
 static int
+test_of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_scalar(void)
+{
+    of_port_stats_prop_experimenter_intel_t *obj;
+
+    obj = of_port_stats_prop_experimenter_intel_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 184);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_PORT_STATS_PROP_EXPERIMENTER_INTEL);
+
+    {
+        of_object_id_t object_id;
+        of_port_stats_prop_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_PORT_STATS_PROP_EXPERIMENTER_INTEL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 184);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_port_stats_prop_experimenter_intel_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_port_stats_prop_optical_OF_VERSION_1_4_scalar(void)
 {
     of_port_stats_prop_optical_t *obj;
@@ -63450,6 +63487,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_port_mod_prop_optical_OF_VERSION_1_4_scalar);
     RUN_TEST(of_port_stats_entry_OF_VERSION_1_4_scalar);
     RUN_TEST(of_port_stats_prop_ethernet_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_scalar);
     RUN_TEST(of_port_stats_prop_optical_OF_VERSION_1_4_scalar);
     RUN_TEST(of_queue_desc_OF_VERSION_1_4_scalar);
     RUN_TEST(of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_scalar);
