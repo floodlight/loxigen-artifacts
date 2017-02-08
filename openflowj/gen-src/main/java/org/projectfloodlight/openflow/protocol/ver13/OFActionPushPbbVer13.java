@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -48,6 +50,9 @@ class OFActionPushPbbVer13 implements OFActionPushPbb {
 
     // package private constructor - used by readers, builders, and factory
     OFActionPushPbbVer13(EthType ethertype) {
+        if(ethertype == null) {
+            throw new NullPointerException("OFActionPushPbbVer13: property ethertype cannot be null");
+        }
         this.ethertype = ethertype;
     }
 
@@ -166,7 +171,7 @@ class OFActionPushPbbVer13 implements OFActionPushPbb {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFActionPushPbb> {
         @Override
-        public OFActionPushPbb readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFActionPushPbb readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 26
             short type = bb.readShort();
@@ -214,14 +219,14 @@ class OFActionPushPbbVer13 implements OFActionPushPbb {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFActionPushPbbVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFActionPushPbbVer13 message) {
+        public void write(ByteBuf bb, OFActionPushPbbVer13 message) {
             // fixed value property type = 26
             bb.writeShort((short) 0x1a);
             // fixed value property length = 8

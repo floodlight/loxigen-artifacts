@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -27,7 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -40,7 +42,7 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
         private final static long DEFAULT_XID = 0x0L;
         private final static Set<OFStatsReplyFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsReplyFlags>of();
         private final static long DEFAULT_TYPES = 0x0L;
-        private final static long DEFAULT_CAPABILITIES = 0x0L;
+        private final static Set<OFGroupCapabilities> DEFAULT_CAPABILITIES = ImmutableSet.<OFGroupCapabilities>of();
         private final static long DEFAULT_MAX_GROUPS_ALL = 0x0L;
         private final static long DEFAULT_MAX_GROUPS_SELECT = 0x0L;
         private final static long DEFAULT_MAX_GROUPS_INDIRECT = 0x0L;
@@ -54,7 +56,7 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
     private final long xid;
     private final Set<OFStatsReplyFlags> flags;
     private final long types;
-    private final long capabilities;
+    private final Set<OFGroupCapabilities> capabilities;
     private final long maxGroupsAll;
     private final long maxGroupsSelect;
     private final long maxGroupsIndirect;
@@ -70,7 +72,13 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFGroupFeaturesStatsReplyVer12(long xid, Set<OFStatsReplyFlags> flags, long types, long capabilities, long maxGroupsAll, long maxGroupsSelect, long maxGroupsIndirect, long maxGroupsFf, long actionsAll, long actionsSelect, long actionsIndirect, long actionsFf) {
+    OFGroupFeaturesStatsReplyVer12(long xid, Set<OFStatsReplyFlags> flags, long types, Set<OFGroupCapabilities> capabilities, long maxGroupsAll, long maxGroupsSelect, long maxGroupsIndirect, long maxGroupsFf, long actionsAll, long actionsSelect, long actionsIndirect, long actionsFf) {
+        if(flags == null) {
+            throw new NullPointerException("OFGroupFeaturesStatsReplyVer12: property flags cannot be null");
+        }
+        if(capabilities == null) {
+            throw new NullPointerException("OFGroupFeaturesStatsReplyVer12: property capabilities cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.types = types;
@@ -117,7 +125,7 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
     }
 
     @Override
-    public long getCapabilities() {
+    public Set<OFGroupCapabilities> getCapabilities() {
         return capabilities;
     }
 
@@ -178,7 +186,7 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
         private boolean typesSet;
         private long types;
         private boolean capabilitiesSet;
-        private long capabilities;
+        private Set<OFGroupCapabilities> capabilities;
         private boolean maxGroupsAllSet;
         private long maxGroupsAll;
         private boolean maxGroupsSelectSet;
@@ -249,12 +257,12 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
         return this;
     }
     @Override
-    public long getCapabilities() {
+    public Set<OFGroupCapabilities> getCapabilities() {
         return capabilities;
     }
 
     @Override
-    public OFGroupFeaturesStatsReply.Builder setCapabilities(long capabilities) {
+    public OFGroupFeaturesStatsReply.Builder setCapabilities(Set<OFGroupCapabilities> capabilities) {
         this.capabilities = capabilities;
         this.capabilitiesSet = true;
         return this;
@@ -356,7 +364,9 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
                 if(flags == null)
                     throw new NullPointerException("Property flags must not be null");
                 long types = this.typesSet ? this.types : parentMessage.types;
-                long capabilities = this.capabilitiesSet ? this.capabilities : parentMessage.capabilities;
+                Set<OFGroupCapabilities> capabilities = this.capabilitiesSet ? this.capabilities : parentMessage.capabilities;
+                if(capabilities == null)
+                    throw new NullPointerException("Property capabilities must not be null");
                 long maxGroupsAll = this.maxGroupsAllSet ? this.maxGroupsAll : parentMessage.maxGroupsAll;
                 long maxGroupsSelect = this.maxGroupsSelectSet ? this.maxGroupsSelect : parentMessage.maxGroupsSelect;
                 long maxGroupsIndirect = this.maxGroupsIndirectSet ? this.maxGroupsIndirect : parentMessage.maxGroupsIndirect;
@@ -394,7 +404,7 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
         private boolean typesSet;
         private long types;
         private boolean capabilitiesSet;
-        private long capabilities;
+        private Set<OFGroupCapabilities> capabilities;
         private boolean maxGroupsAllSet;
         private long maxGroupsAll;
         private boolean maxGroupsSelectSet;
@@ -461,12 +471,12 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
         return this;
     }
     @Override
-    public long getCapabilities() {
+    public Set<OFGroupCapabilities> getCapabilities() {
         return capabilities;
     }
 
     @Override
-    public OFGroupFeaturesStatsReply.Builder setCapabilities(long capabilities) {
+    public OFGroupFeaturesStatsReply.Builder setCapabilities(Set<OFGroupCapabilities> capabilities) {
         this.capabilities = capabilities;
         this.capabilitiesSet = true;
         return this;
@@ -567,7 +577,9 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
             if(flags == null)
                 throw new NullPointerException("Property flags must not be null");
             long types = this.typesSet ? this.types : DEFAULT_TYPES;
-            long capabilities = this.capabilitiesSet ? this.capabilities : DEFAULT_CAPABILITIES;
+            Set<OFGroupCapabilities> capabilities = this.capabilitiesSet ? this.capabilities : DEFAULT_CAPABILITIES;
+            if(capabilities == null)
+                throw new NullPointerException("Property capabilities must not be null");
             long maxGroupsAll = this.maxGroupsAllSet ? this.maxGroupsAll : DEFAULT_MAX_GROUPS_ALL;
             long maxGroupsSelect = this.maxGroupsSelectSet ? this.maxGroupsSelect : DEFAULT_MAX_GROUPS_SELECT;
             long maxGroupsIndirect = this.maxGroupsIndirectSet ? this.maxGroupsIndirect : DEFAULT_MAX_GROUPS_INDIRECT;
@@ -600,7 +612,7 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFGroupFeaturesStatsReply> {
         @Override
-        public OFGroupFeaturesStatsReply readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFGroupFeaturesStatsReply readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -629,7 +641,7 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
             // pad: 4 bytes
             bb.skipBytes(4);
             long types = U32.f(bb.readInt());
-            long capabilities = U32.f(bb.readInt());
+            Set<OFGroupCapabilities> capabilities = OFGroupCapabilitiesSerializerVer12.readFrom(bb);
             long maxGroupsAll = U32.f(bb.readInt());
             long maxGroupsSelect = U32.f(bb.readInt());
             long maxGroupsIndirect = U32.f(bb.readInt());
@@ -680,7 +692,7 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
             OFStatsReplyFlagsSerializerVer12.putTo(message.flags, sink);
             // skip pad (4 bytes)
             sink.putLong(message.types);
-            sink.putLong(message.capabilities);
+            OFGroupCapabilitiesSerializerVer12.putTo(message.capabilities, sink);
             sink.putLong(message.maxGroupsAll);
             sink.putLong(message.maxGroupsSelect);
             sink.putLong(message.maxGroupsIndirect);
@@ -693,14 +705,14 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFGroupFeaturesStatsReplyVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFGroupFeaturesStatsReplyVer12 message) {
+        public void write(ByteBuf bb, OFGroupFeaturesStatsReplyVer12 message) {
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
             // fixed value property type = 19
@@ -714,7 +726,7 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
             // pad: 4 bytes
             bb.writeZero(4);
             bb.writeInt(U32.t(message.types));
-            bb.writeInt(U32.t(message.capabilities));
+            OFGroupCapabilitiesSerializerVer12.writeTo(bb, message.capabilities);
             bb.writeInt(U32.t(message.maxGroupsAll));
             bb.writeInt(U32.t(message.maxGroupsSelect));
             bb.writeInt(U32.t(message.maxGroupsIndirect));
@@ -777,7 +789,52 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
             return false;
         if( types != other.types)
             return false;
-        if( capabilities != other.capabilities)
+        if (capabilities == null) {
+            if (other.capabilities != null)
+                return false;
+        } else if (!capabilities.equals(other.capabilities))
+            return false;
+        if( maxGroupsAll != other.maxGroupsAll)
+            return false;
+        if( maxGroupsSelect != other.maxGroupsSelect)
+            return false;
+        if( maxGroupsIndirect != other.maxGroupsIndirect)
+            return false;
+        if( maxGroupsFf != other.maxGroupsFf)
+            return false;
+        if( actionsAll != other.actionsAll)
+            return false;
+        if( actionsSelect != other.actionsSelect)
+            return false;
+        if( actionsIndirect != other.actionsIndirect)
+            return false;
+        if( actionsFf != other.actionsFf)
+            return false;
+        return true;
+    }
+
+    @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFGroupFeaturesStatsReplyVer12 other = (OFGroupFeaturesStatsReplyVer12) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if( types != other.types)
+            return false;
+        if (capabilities == null) {
+            if (other.capabilities != null)
+                return false;
+        } else if (!capabilities.equals(other.capabilities))
             return false;
         if( maxGroupsAll != other.maxGroupsAll)
             return false;
@@ -806,7 +863,27 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime *  (int) (types ^ (types >>> 32));
-        result = prime *  (int) (capabilities ^ (capabilities >>> 32));
+        result = prime * result + ((capabilities == null) ? 0 : capabilities.hashCode());
+        result = prime *  (int) (maxGroupsAll ^ (maxGroupsAll >>> 32));
+        result = prime *  (int) (maxGroupsSelect ^ (maxGroupsSelect >>> 32));
+        result = prime *  (int) (maxGroupsIndirect ^ (maxGroupsIndirect >>> 32));
+        result = prime *  (int) (maxGroupsFf ^ (maxGroupsFf >>> 32));
+        result = prime *  (int) (actionsAll ^ (actionsAll >>> 32));
+        result = prime *  (int) (actionsSelect ^ (actionsSelect >>> 32));
+        result = prime *  (int) (actionsIndirect ^ (actionsIndirect >>> 32));
+        result = prime *  (int) (actionsFf ^ (actionsFf >>> 32));
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime *  (int) (types ^ (types >>> 32));
+        result = prime * result + ((capabilities == null) ? 0 : capabilities.hashCode());
         result = prime *  (int) (maxGroupsAll ^ (maxGroupsAll >>> 32));
         result = prime *  (int) (maxGroupsSelect ^ (maxGroupsSelect >>> 32));
         result = prime *  (int) (maxGroupsIndirect ^ (maxGroupsIndirect >>> 32));

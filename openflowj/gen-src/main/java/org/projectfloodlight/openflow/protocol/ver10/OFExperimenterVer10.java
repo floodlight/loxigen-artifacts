@@ -18,24 +18,26 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 abstract class OFExperimenterVer10 {
     // version: 1.0
     final static byte WIRE_VERSION = 1;
-    final static int MINIMUM_LENGTH = 16;
+    final static int MINIMUM_LENGTH = 12;
 
 
     public final static OFExperimenterVer10.Reader READER = new Reader();
 
     static class Reader implements OFMessageReader<OFExperimenter> {
         @Override
-        public OFExperimenter readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFExperimenter readFrom(ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();

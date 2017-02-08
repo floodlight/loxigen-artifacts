@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -162,7 +164,7 @@ class OFBsnTlvBroadcastQueryTimeoutVer13 implements OFBsnTlvBroadcastQueryTimeou
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnTlvBroadcastQueryTimeout> {
         @Override
-        public OFBsnTlvBroadcastQueryTimeout readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnTlvBroadcastQueryTimeout readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0xa
             short type = bb.readShort();
@@ -207,14 +209,14 @@ class OFBsnTlvBroadcastQueryTimeoutVer13 implements OFBsnTlvBroadcastQueryTimeou
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnTlvBroadcastQueryTimeoutVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnTlvBroadcastQueryTimeoutVer13 message) {
+        public void write(ByteBuf bb, OFBsnTlvBroadcastQueryTimeoutVer13 message) {
             // fixed value property type = 0xa
             bb.writeShort((short) 0xa);
             // fixed value property length = 8

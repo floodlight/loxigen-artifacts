@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -27,7 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -61,6 +63,24 @@ class OFDescStatsReplyVer10 implements OFDescStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFDescStatsReplyVer10(long xid, Set<OFStatsReplyFlags> flags, String mfrDesc, String hwDesc, String swDesc, String serialNum, String dpDesc) {
+        if(flags == null) {
+            throw new NullPointerException("OFDescStatsReplyVer10: property flags cannot be null");
+        }
+        if(mfrDesc == null) {
+            throw new NullPointerException("OFDescStatsReplyVer10: property mfrDesc cannot be null");
+        }
+        if(hwDesc == null) {
+            throw new NullPointerException("OFDescStatsReplyVer10: property hwDesc cannot be null");
+        }
+        if(swDesc == null) {
+            throw new NullPointerException("OFDescStatsReplyVer10: property swDesc cannot be null");
+        }
+        if(serialNum == null) {
+            throw new NullPointerException("OFDescStatsReplyVer10: property serialNum cannot be null");
+        }
+        if(dpDesc == null) {
+            throw new NullPointerException("OFDescStatsReplyVer10: property dpDesc cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.mfrDesc = mfrDesc;
@@ -430,7 +450,7 @@ class OFDescStatsReplyVer10 implements OFDescStatsReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFDescStatsReply> {
         @Override
-        public OFDescStatsReply readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFDescStatsReply readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -505,14 +525,14 @@ class OFDescStatsReplyVer10 implements OFDescStatsReply {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFDescStatsReplyVer10> {
         @Override
-        public void write(ChannelBuffer bb, OFDescStatsReplyVer10 message) {
+        public void write(ByteBuf bb, OFDescStatsReplyVer10 message) {
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);
             // fixed value property type = 17
@@ -599,11 +619,70 @@ class OFDescStatsReplyVer10 implements OFDescStatsReply {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFDescStatsReplyVer10 other = (OFDescStatsReplyVer10) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (mfrDesc == null) {
+            if (other.mfrDesc != null)
+                return false;
+        } else if (!mfrDesc.equals(other.mfrDesc))
+            return false;
+        if (hwDesc == null) {
+            if (other.hwDesc != null)
+                return false;
+        } else if (!hwDesc.equals(other.hwDesc))
+            return false;
+        if (swDesc == null) {
+            if (other.swDesc != null)
+                return false;
+        } else if (!swDesc.equals(other.swDesc))
+            return false;
+        if (serialNum == null) {
+            if (other.serialNum != null)
+                return false;
+        } else if (!serialNum.equals(other.serialNum))
+            return false;
+        if (dpDesc == null) {
+            if (other.dpDesc != null)
+                return false;
+        } else if (!dpDesc.equals(other.dpDesc))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((mfrDesc == null) ? 0 : mfrDesc.hashCode());
+        result = prime * result + ((hwDesc == null) ? 0 : hwDesc.hashCode());
+        result = prime * result + ((swDesc == null) ? 0 : swDesc.hashCode());
+        result = prime * result + ((serialNum == null) ? 0 : serialNum.hashCode());
+        result = prime * result + ((dpDesc == null) ? 0 : dpDesc.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((mfrDesc == null) ? 0 : mfrDesc.hashCode());
         result = prime * result + ((hwDesc == null) ? 0 : hwDesc.hashCode());

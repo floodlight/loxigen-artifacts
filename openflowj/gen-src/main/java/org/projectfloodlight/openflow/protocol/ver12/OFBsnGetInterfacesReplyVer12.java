@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +30,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -52,6 +54,9 @@ class OFBsnGetInterfacesReplyVer12 implements OFBsnGetInterfacesReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGetInterfacesReplyVer12(long xid, List<OFBsnInterface> interfaces) {
+        if(interfaces == null) {
+            throw new NullPointerException("OFBsnGetInterfacesReplyVer12: property interfaces cannot be null");
+        }
         this.xid = xid;
         this.interfaces = interfaces;
     }
@@ -236,7 +241,7 @@ class OFBsnGetInterfacesReplyVer12 implements OFBsnGetInterfacesReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnGetInterfacesReply> {
         @Override
-        public OFBsnGetInterfacesReply readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnGetInterfacesReply readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -301,14 +306,14 @@ class OFBsnGetInterfacesReplyVer12 implements OFBsnGetInterfacesReply {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnGetInterfacesReplyVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnGetInterfacesReplyVer12 message) {
+        public void write(ByteBuf bb, OFBsnGetInterfacesReplyVer12 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
@@ -363,11 +368,40 @@ class OFBsnGetInterfacesReplyVer12 implements OFBsnGetInterfacesReply {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnGetInterfacesReplyVer12 other = (OFBsnGetInterfacesReplyVer12) obj;
+
+        // ignore XID
+        if (interfaces == null) {
+            if (other.interfaces != null)
+                return false;
+        } else if (!interfaces.equals(other.interfaces))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((interfaces == null) ? 0 : interfaces.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((interfaces == null) ? 0 : interfaces.hashCode());
         return result;
     }

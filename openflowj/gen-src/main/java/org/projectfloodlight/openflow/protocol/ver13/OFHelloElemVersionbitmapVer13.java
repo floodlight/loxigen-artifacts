@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +30,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -50,6 +52,9 @@ class OFHelloElemVersionbitmapVer13 implements OFHelloElemVersionbitmap {
 
     // package private constructor - used by readers, builders, and factory
     OFHelloElemVersionbitmapVer13(List<U32> bitmaps) {
+        if(bitmaps == null) {
+            throw new NullPointerException("OFHelloElemVersionbitmapVer13: property bitmaps cannot be null");
+        }
         this.bitmaps = bitmaps;
     }
 
@@ -168,7 +173,7 @@ class OFHelloElemVersionbitmapVer13 implements OFHelloElemVersionbitmap {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFHelloElemVersionbitmap> {
         @Override
-        public OFHelloElemVersionbitmap readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFHelloElemVersionbitmap readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x1
             short type = bb.readShort();
@@ -212,14 +217,14 @@ class OFHelloElemVersionbitmapVer13 implements OFHelloElemVersionbitmap {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFHelloElemVersionbitmapVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFHelloElemVersionbitmapVer13 message) {
+        public void write(ByteBuf bb, OFHelloElemVersionbitmapVer13 message) {
             int startIndex = bb.writerIndex();
             // fixed value property type = 0x1
             bb.writeShort((short) 0x1);

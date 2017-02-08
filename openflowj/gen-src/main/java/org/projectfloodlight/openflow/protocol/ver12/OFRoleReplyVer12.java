@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -47,6 +49,12 @@ class OFRoleReplyVer12 implements OFRoleReply {
 
     // package private constructor - used by readers, builders, and factory
     OFRoleReplyVer12(long xid, OFControllerRole role, U64 generationId) {
+        if(role == null) {
+            throw new NullPointerException("OFRoleReplyVer12: property role cannot be null");
+        }
+        if(generationId == null) {
+            throw new NullPointerException("OFRoleReplyVer12: property generationId cannot be null");
+        }
         this.xid = xid;
         this.role = role;
         this.generationId = generationId;
@@ -76,6 +84,11 @@ class OFRoleReplyVer12 implements OFRoleReply {
     @Override
     public U64 getGenerationId() {
         return generationId;
+    }
+
+    @Override
+    public int getShortId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property shortId not supported in version 1.2");
     }
 
 
@@ -141,6 +154,15 @@ class OFRoleReplyVer12 implements OFRoleReply {
         this.generationId = generationId;
         this.generationIdSet = true;
         return this;
+    }
+    @Override
+    public int getShortId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property shortId not supported in version 1.2");
+    }
+
+    @Override
+    public OFRoleReply.Builder setShortId(int shortId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property shortId not supported in version 1.2");
     }
 
 
@@ -216,6 +238,15 @@ class OFRoleReplyVer12 implements OFRoleReply {
         this.generationIdSet = true;
         return this;
     }
+    @Override
+    public int getShortId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property shortId not supported in version 1.2");
+    }
+
+    @Override
+    public OFRoleReply.Builder setShortId(int shortId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property shortId not supported in version 1.2");
+    }
 //
         @Override
         public OFRoleReply build() {
@@ -242,7 +273,7 @@ class OFRoleReplyVer12 implements OFRoleReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFRoleReply> {
         @Override
-        public OFRoleReply readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFRoleReply readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -302,14 +333,14 @@ class OFRoleReplyVer12 implements OFRoleReply {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFRoleReplyVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFRoleReplyVer12 message) {
+        public void write(ByteBuf bb, OFRoleReplyVer12 message) {
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
             // fixed value property type = 25
@@ -364,11 +395,46 @@ class OFRoleReplyVer12 implements OFRoleReply {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFRoleReplyVer12 other = (OFRoleReplyVer12) obj;
+
+        // ignore XID
+        if (role == null) {
+            if (other.role != null)
+                return false;
+        } else if (!role.equals(other.role))
+            return false;
+        if (generationId == null) {
+            if (other.generationId != null)
+                return false;
+        } else if (!generationId.equals(other.generationId))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((role == null) ? 0 : role.hashCode());
+        result = prime * result + ((generationId == null) ? 0 : generationId.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((role == null) ? 0 : role.hashCode());
         result = prime * result + ((generationId == null) ? 0 : generationId.hashCode());
         return result;

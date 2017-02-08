@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 import java.util.Arrays;
@@ -51,6 +53,9 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnShellOutputVer10(long xid, byte[] data) {
+        if(data == null) {
+            throw new NullPointerException("OFBsnShellOutputVer10: property data cannot be null");
+        }
         this.xid = xid;
         this.data = data;
     }
@@ -235,7 +240,7 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnShellOutput> {
         @Override
-        public OFBsnShellOutput readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnShellOutput readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -300,14 +305,14 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnShellOutputVer10> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnShellOutputVer10 message) {
+        public void write(ByteBuf bb, OFBsnShellOutputVer10 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);
@@ -359,11 +364,37 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFBsnShellOutputVer10 other = (OFBsnShellOutputVer10) obj;
+
+        // ignore XID
+        if (!Arrays.equals(data, other.data))
+                return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + Arrays.hashCode(data);
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + Arrays.hashCode(data);
         return result;
     }

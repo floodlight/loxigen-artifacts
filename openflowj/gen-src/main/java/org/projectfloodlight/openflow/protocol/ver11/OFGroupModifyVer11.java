@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +30,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -51,6 +53,15 @@ class OFGroupModifyVer11 implements OFGroupModify {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupModifyVer11(long xid, OFGroupType groupType, OFGroup group, List<OFBucket> buckets) {
+        if(groupType == null) {
+            throw new NullPointerException("OFGroupModifyVer11: property groupType cannot be null");
+        }
+        if(group == null) {
+            throw new NullPointerException("OFGroupModifyVer11: property group cannot be null");
+        }
+        if(buckets == null) {
+            throw new NullPointerException("OFGroupModifyVer11: property buckets cannot be null");
+        }
         this.xid = xid;
         this.groupType = groupType;
         this.group = group;
@@ -91,6 +102,16 @@ class OFGroupModifyVer11 implements OFGroupModify {
     @Override
     public List<OFBucket> getBuckets() {
         return buckets;
+    }
+
+    @Override
+    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.1");
+    }
+
+    @Override
+    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.1");
     }
 
 
@@ -174,6 +195,24 @@ class OFGroupModifyVer11 implements OFGroupModify {
         this.buckets = buckets;
         this.bucketsSet = true;
         return this;
+    }
+    @Override
+    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.1");
+    }
+
+    @Override
+    public OFGroupModify.Builder setCommandBucketId(OFGroupBucket commandBucketId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.1");
+    }
+    @Override
+    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    }
+
+    @Override
+    public OFGroupModify.Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.1");
     }
 
 
@@ -271,6 +310,24 @@ class OFGroupModifyVer11 implements OFGroupModify {
         this.bucketsSet = true;
         return this;
     }
+    @Override
+    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.1");
+    }
+
+    @Override
+    public OFGroupModify.Builder setCommandBucketId(OFGroupBucket commandBucketId) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.1");
+    }
+    @Override
+    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    }
+
+    @Override
+    public OFGroupModify.Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.1");
+    }
 //
         @Override
         public OFGroupModify build() {
@@ -301,7 +358,7 @@ class OFGroupModifyVer11 implements OFGroupModify {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFGroupModify> {
         @Override
-        public OFGroupModify readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFGroupModify readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -369,14 +426,14 @@ class OFGroupModifyVer11 implements OFGroupModify {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFGroupModifyVer11> {
         @Override
-        public void write(ChannelBuffer bb, OFGroupModifyVer11 message) {
+        public void write(ByteBuf bb, OFGroupModifyVer11 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 2
             bb.writeByte((byte) 0x2);
@@ -447,11 +504,52 @@ class OFGroupModifyVer11 implements OFGroupModify {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFGroupModifyVer11 other = (OFGroupModifyVer11) obj;
+
+        // ignore XID
+        if (groupType == null) {
+            if (other.groupType != null)
+                return false;
+        } else if (!groupType.equals(other.groupType))
+            return false;
+        if (group == null) {
+            if (other.group != null)
+                return false;
+        } else if (!group.equals(other.group))
+            return false;
+        if (buckets == null) {
+            if (other.buckets != null)
+                return false;
+        } else if (!buckets.equals(other.buckets))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((groupType == null) ? 0 : groupType.hashCode());
+        result = prime * result + ((group == null) ? 0 : group.hashCode());
+        result = prime * result + ((buckets == null) ? 0 : buckets.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((groupType == null) ? 0 : groupType.hashCode());
         result = prime * result + ((group == null) ? 0 : group.hashCode());
         result = prime * result + ((buckets == null) ? 0 : buckets.hashCode());

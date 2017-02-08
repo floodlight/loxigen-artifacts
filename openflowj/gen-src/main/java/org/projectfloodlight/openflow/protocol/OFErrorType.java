@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -39,5 +41,9 @@ public enum OFErrorType {
      ROLE_REQUEST_FAILED,
      EXPERIMENTER,
      METER_MOD_FAILED,
-     TABLE_FEATURES_FAILED;
+     TABLE_FEATURES_FAILED,
+     BAD_PROPERTY,
+     ASYNC_CONFIG_FAILED,
+     FLOW_MONITOR_FAILED,
+     BUNDLE_FAILED;
 }

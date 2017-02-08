@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +30,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -74,6 +76,42 @@ class OFMatchV1Ver10 implements OFMatchV1 {
 
     // package private constructor - used by readers, builders, and factory
     OFMatchV1Ver10(int wildcards, OFPort inPort, MacAddress ethSrc, MacAddress ethDst, OFVlanVidMatch vlanVid, VlanPcp vlanPcp, EthType ethType, IpDscp ipDscp, IpProtocol ipProto, IPv4Address ipv4Src, IPv4Address ipv4Dst, TransportPort tcpSrc, TransportPort tcpDst) {
+        if(inPort == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property inPort cannot be null");
+        }
+        if(ethSrc == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ethSrc cannot be null");
+        }
+        if(ethDst == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ethDst cannot be null");
+        }
+        if(vlanVid == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property vlanVid cannot be null");
+        }
+        if(vlanPcp == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property vlanPcp cannot be null");
+        }
+        if(ethType == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ethType cannot be null");
+        }
+        if(ipDscp == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ipDscp cannot be null");
+        }
+        if(ipProto == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ipProto cannot be null");
+        }
+        if(ipv4Src == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ipv4Src cannot be null");
+        }
+        if(ipv4Dst == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ipv4Dst cannot be null");
+        }
+        if(tcpSrc == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property tcpSrc cannot be null");
+        }
+        if(tcpDst == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property tcpDst cannot be null");
+        }
         this.wildcards = wildcards;
         this.inPort = inPort;
         this.ethSrc = ethSrc;
@@ -264,10 +302,10 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                 result = tcpDst;
                 break;
             case ICMPV4_TYPE:
-                result = tcpSrc;
+                result = ICMPv4Type.of((short) tcpSrc.getPort());
                 break;
             case ICMPV4_CODE:
-                result = tcpDst;
+                result = ICMPv4Code.of((short) tcpDst.getPort());
                 break;
             // NOT SUPPORTED:
             default:
@@ -528,6 +566,8 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                 builder.add(MatchField.TCP_SRC);
             } else if (ipProto == IpProtocol.SCTP) {
                 builder.add(MatchField.SCTP_SRC);
+            } else if (ipProto == IpProtocol.ICMP) {
+                builder.add(MatchField.ICMPV4_TYPE);
             } else {
                 throw new UnsupportedOperationException(
                         "Unsupported IP protocol for matching on source port " + ipProto);
@@ -540,6 +580,8 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                 builder.add(MatchField.TCP_DST);
             } else if (ipProto == IpProtocol.SCTP) {
                 builder.add(MatchField.SCTP_DST);
+            } else if (ipProto == IpProtocol.ICMP) {
+                builder.add(MatchField.ICMPV4_CODE);
             } else {
                 throw new UnsupportedOperationException(
                         "Unsupported IP protocol for matching on destination port " + ipProto);
@@ -937,11 +979,11 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                 case SCTP_DST:
                     result = tcpDst;
                     break;
-                case ICMPV4_TYPE:
-                    result = tcpSrc;
+               case ICMPV4_TYPE:
+                    result = ICMPv4Type.of((short) tcpSrc.getPort());
                     break;
-                case ICMPV4_CODE:
-                    result = tcpDst;
+               case ICMPV4_CODE:
+                    result = ICMPv4Code.of((short) tcpDst.getPort());
                     break;
                 // NOT SUPPORTED:
                 default:
@@ -1726,11 +1768,11 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                 case SCTP_DST:
                     result = tcpDst;
                     break;
-                case ICMPV4_TYPE:
-                    result = tcpSrc;
+               case ICMPV4_TYPE:
+                    result = ICMPv4Type.of((short) tcpSrc.getPort());
                     break;
-                case ICMPV4_CODE:
-                    result = tcpDst;
+               case ICMPV4_CODE:
+                    result = ICMPv4Code.of((short) tcpDst.getPort());
                     break;
                 // NOT SUPPORTED:
                 default:
@@ -2165,7 +2207,7 @@ class OFMatchV1Ver10 implements OFMatchV1 {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFMatchV1> {
         @Override
-        public OFMatchV1 readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFMatchV1 readFrom(ByteBuf bb) throws OFParseError {
             int wildcards = bb.readInt();
             OFPort inPort = OFPort.read2Bytes(bb);
             MacAddress ethSrc = MacAddress.read6Bytes(bb);
@@ -2286,14 +2328,14 @@ class OFMatchV1Ver10 implements OFMatchV1 {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFMatchV1Ver10> {
         @Override
-        public void write(ChannelBuffer bb, OFMatchV1Ver10 message) {
+        public void write(ByteBuf bb, OFMatchV1Ver10 message) {
             bb.writeInt(message.wildcards);
             message.inPort.write2Bytes(bb);
             message.ethSrc.write6Bytes(bb);

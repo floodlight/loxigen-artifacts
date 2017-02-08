@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -162,7 +164,7 @@ class OFActionSetNwTosVer11 implements OFActionSetNwTos {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFActionSetNwTos> {
         @Override
-        public OFActionSetNwTos readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFActionSetNwTos readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 7
             short type = bb.readShort();
@@ -210,14 +212,14 @@ class OFActionSetNwTosVer11 implements OFActionSetNwTos {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFActionSetNwTosVer11> {
         @Override
-        public void write(ChannelBuffer bb, OFActionSetNwTosVer11 message) {
+        public void write(ByteBuf bb, OFActionSetNwTosVer11 message) {
             // fixed value property type = 7
             bb.writeShort((short) 0x7);
             // fixed value property length = 8

@@ -17,7 +17,7 @@
 
 package org.projectfloodlight.openflow.types;
 
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import org.projectfloodlight.openflow.exceptions.OFParseError;
 import org.projectfloodlight.openflow.protocol.OFMessageReader;
 import org.projectfloodlight.openflow.protocol.Writeable;
@@ -28,6 +28,10 @@ import com.google.common.primitives.Ints;
 public class U16 implements Writeable, OFValueType<U16> {
     private final static short ZERO_VAL = 0;
     public final static U16 ZERO = new U16(ZERO_VAL);
+
+    private static final short NO_MASK_VAL = (short)0xFFff;
+    public final static U16 NO_MASK = new U16(NO_MASK_VAL);
+    public static final U16 FULL_MASK = ZERO;
 
     public static int f(final short i) {
         return i & 0xffff;
@@ -63,7 +67,7 @@ public class U16 implements Writeable, OFValueType<U16> {
 
     @Override
     public String toString() {
-        return Integer.toString(f(raw));
+        return String.format("0x%04x", raw);
     }
 
     @Override
@@ -90,7 +94,7 @@ public class U16 implements Writeable, OFValueType<U16> {
 
 
     @Override
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         bb.writeShort(raw);
     }
 
@@ -99,7 +103,7 @@ public class U16 implements Writeable, OFValueType<U16> {
 
     private static class Reader implements OFMessageReader<U16> {
         @Override
-        public U16 readFrom(ChannelBuffer bb) throws OFParseError {
+        public U16 readFrom(ByteBuf bb) throws OFParseError {
             return ofRaw(bb.readShort());
         }
     }

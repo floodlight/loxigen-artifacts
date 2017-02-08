@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -27,7 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -57,6 +59,18 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFAggregateStatsRequestVer10(long xid, Set<OFStatsRequestFlags> flags, Match match, TableId tableId, OFPort outPort) {
+        if(flags == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer10: property flags cannot be null");
+        }
+        if(match == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer10: property match cannot be null");
+        }
+        if(tableId == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer10: property tableId cannot be null");
+        }
+        if(outPort == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer10: property outPort cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.match = match;
@@ -415,7 +429,7 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFAggregateStatsRequest> {
         @Override
-        public OFAggregateStatsRequest readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFAggregateStatsRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -487,14 +501,14 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFAggregateStatsRequestVer10> {
         @Override
-        public void write(ChannelBuffer bb, OFAggregateStatsRequestVer10 message) {
+        public void write(ByteBuf bb, OFAggregateStatsRequestVer10 message) {
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);
             // fixed value property type = 16
@@ -567,11 +581,58 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFAggregateStatsRequestVer10 other = (OFAggregateStatsRequestVer10) obj;
+
+        // ignore XID
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
+        if (match == null) {
+            if (other.match != null)
+                return false;
+        } else if (!match.equals(other.match))
+            return false;
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
+            return false;
+        if (outPort == null) {
+            if (other.outPort != null)
+                return false;
+        } else if (!outPort.equals(other.outPort))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + ((match == null) ? 0 : match.hashCode());
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
+        result = prime * result + ((outPort == null) ? 0 : outPort.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((match == null) ? 0 : match.hashCode());
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());

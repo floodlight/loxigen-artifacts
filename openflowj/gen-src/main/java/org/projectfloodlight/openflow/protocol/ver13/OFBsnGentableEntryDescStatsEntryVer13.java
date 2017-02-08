@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -28,7 +30,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -38,12 +40,12 @@ class OFBsnGentableEntryDescStatsEntryVer13 implements OFBsnGentableEntryDescSta
     final static byte WIRE_VERSION = 4;
     final static int MINIMUM_LENGTH = 20;
 
-        private final static OFChecksum128 DEFAULT_CHECKSUM = OFChecksum128.ZERO;
+        private final static U128 DEFAULT_CHECKSUM = U128.ZERO;
         private final static List<OFBsnTlv> DEFAULT_KEY = ImmutableList.<OFBsnTlv>of();
         private final static List<OFBsnTlv> DEFAULT_VALUE = ImmutableList.<OFBsnTlv>of();
 
     // OF message fields
-    private final OFChecksum128 checksum;
+    private final U128 checksum;
     private final List<OFBsnTlv> key;
     private final List<OFBsnTlv> value;
 //
@@ -53,7 +55,16 @@ class OFBsnGentableEntryDescStatsEntryVer13 implements OFBsnGentableEntryDescSta
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnGentableEntryDescStatsEntryVer13(OFChecksum128 checksum, List<OFBsnTlv> key, List<OFBsnTlv> value) {
+    OFBsnGentableEntryDescStatsEntryVer13(U128 checksum, List<OFBsnTlv> key, List<OFBsnTlv> value) {
+        if(checksum == null) {
+            throw new NullPointerException("OFBsnGentableEntryDescStatsEntryVer13: property checksum cannot be null");
+        }
+        if(key == null) {
+            throw new NullPointerException("OFBsnGentableEntryDescStatsEntryVer13: property key cannot be null");
+        }
+        if(value == null) {
+            throw new NullPointerException("OFBsnGentableEntryDescStatsEntryVer13: property value cannot be null");
+        }
         this.checksum = checksum;
         this.key = key;
         this.value = value;
@@ -61,7 +72,7 @@ class OFBsnGentableEntryDescStatsEntryVer13 implements OFBsnGentableEntryDescSta
 
     // Accessors for OF message fields
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
@@ -91,7 +102,7 @@ class OFBsnGentableEntryDescStatsEntryVer13 implements OFBsnGentableEntryDescSta
 
         // OF message fields
         private boolean checksumSet;
-        private OFChecksum128 checksum;
+        private U128 checksum;
         private boolean keySet;
         private List<OFBsnTlv> key;
         private boolean valueSet;
@@ -102,12 +113,12 @@ class OFBsnGentableEntryDescStatsEntryVer13 implements OFBsnGentableEntryDescSta
         }
 
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFBsnGentableEntryDescStatsEntry.Builder setChecksum(OFChecksum128 checksum) {
+    public OFBsnGentableEntryDescStatsEntry.Builder setChecksum(U128 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
         return this;
@@ -143,7 +154,7 @@ class OFBsnGentableEntryDescStatsEntryVer13 implements OFBsnGentableEntryDescSta
 
         @Override
         public OFBsnGentableEntryDescStatsEntry build() {
-                OFChecksum128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
+                U128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
                 if(checksum == null)
                     throw new NullPointerException("Property checksum must not be null");
                 List<OFBsnTlv> key = this.keySet ? this.key : parentMessage.key;
@@ -166,19 +177,19 @@ class OFBsnGentableEntryDescStatsEntryVer13 implements OFBsnGentableEntryDescSta
     static class Builder implements OFBsnGentableEntryDescStatsEntry.Builder {
         // OF message fields
         private boolean checksumSet;
-        private OFChecksum128 checksum;
+        private U128 checksum;
         private boolean keySet;
         private List<OFBsnTlv> key;
         private boolean valueSet;
         private List<OFBsnTlv> value;
 
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFBsnGentableEntryDescStatsEntry.Builder setChecksum(OFChecksum128 checksum) {
+    public OFBsnGentableEntryDescStatsEntry.Builder setChecksum(U128 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
         return this;
@@ -213,7 +224,7 @@ class OFBsnGentableEntryDescStatsEntryVer13 implements OFBsnGentableEntryDescSta
 //
         @Override
         public OFBsnGentableEntryDescStatsEntry build() {
-            OFChecksum128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
+            U128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
             if(checksum == null)
                 throw new NullPointerException("Property checksum must not be null");
             List<OFBsnTlv> key = this.keySet ? this.key : DEFAULT_KEY;
@@ -237,7 +248,7 @@ class OFBsnGentableEntryDescStatsEntryVer13 implements OFBsnGentableEntryDescSta
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnGentableEntryDescStatsEntry> {
         @Override
-        public OFBsnGentableEntryDescStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnGentableEntryDescStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
@@ -250,7 +261,7 @@ class OFBsnGentableEntryDescStatsEntryVer13 implements OFBsnGentableEntryDescSta
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             int keyLength = U16.f(bb.readShort());
-            OFChecksum128 checksum = OFChecksum128.read16Bytes(bb);
+            U128 checksum = U128.read16Bytes(bb);
             List<OFBsnTlv> key = ChannelUtils.readList(bb, keyLength, OFBsnTlvVer13.READER);
             List<OFBsnTlv> value = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnTlvVer13.READER);
 
@@ -283,14 +294,14 @@ class OFBsnGentableEntryDescStatsEntryVer13 implements OFBsnGentableEntryDescSta
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnGentableEntryDescStatsEntryVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnGentableEntryDescStatsEntryVer13 message) {
+        public void write(ByteBuf bb, OFBsnGentableEntryDescStatsEntryVer13 message) {
             int startIndex = bb.writerIndex();
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();

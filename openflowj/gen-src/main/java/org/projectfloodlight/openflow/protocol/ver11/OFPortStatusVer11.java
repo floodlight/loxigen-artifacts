@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -46,6 +48,12 @@ class OFPortStatusVer11 implements OFPortStatus {
 
     // package private constructor - used by readers, builders, and factory
     OFPortStatusVer11(long xid, OFPortReason reason, OFPortDesc desc) {
+        if(reason == null) {
+            throw new NullPointerException("OFPortStatusVer11: property reason cannot be null");
+        }
+        if(desc == null) {
+            throw new NullPointerException("OFPortStatusVer11: property desc cannot be null");
+        }
         this.xid = xid;
         this.reason = reason;
         this.desc = desc;
@@ -242,7 +250,7 @@ class OFPortStatusVer11 implements OFPortStatus {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFPortStatus> {
         @Override
-        public OFPortStatus readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFPortStatus readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -302,14 +310,14 @@ class OFPortStatusVer11 implements OFPortStatus {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFPortStatusVer11> {
         @Override
-        public void write(ChannelBuffer bb, OFPortStatusVer11 message) {
+        public void write(ByteBuf bb, OFPortStatusVer11 message) {
             // fixed value property version = 2
             bb.writeByte((byte) 0x2);
             // fixed value property type = 12
@@ -364,11 +372,46 @@ class OFPortStatusVer11 implements OFPortStatus {
     }
 
     @Override
+    public boolean equalsIgnoreXid(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        OFPortStatusVer11 other = (OFPortStatusVer11) obj;
+
+        // ignore XID
+        if (reason == null) {
+            if (other.reason != null)
+                return false;
+        } else if (!reason.equals(other.reason))
+            return false;
+        if (desc == null) {
+            if (other.desc != null)
+                return false;
+        } else if (!desc.equals(other.desc))
+            return false;
+        return true;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
+        result = prime * result + ((reason == null) ? 0 : reason.hashCode());
+        result = prime * result + ((desc == null) ? 0 : desc.hashCode());
+        return result;
+    }
+
+    @Override
+    public int hashCodeIgnoreXid() {
+        final int prime = 31;
+        int result = 1;
+
+        // ignore XID
         result = prime * result + ((reason == null) ? 0 : reason.hashCode());
         result = prime * result + ((desc == null) ? 0 : desc.hashCode());
         return result;

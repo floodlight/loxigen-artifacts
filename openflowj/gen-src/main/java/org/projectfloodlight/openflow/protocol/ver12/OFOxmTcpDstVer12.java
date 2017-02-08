@@ -18,7 +18,9 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -26,7 +28,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -48,6 +50,9 @@ class OFOxmTcpDstVer12 implements OFOxmTcpDst {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmTcpDstVer12(TransportPort value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmTcpDstVer12: property value cannot be null");
+        }
         this.value = value;
     }
 
@@ -226,7 +231,7 @@ class OFOxmTcpDstVer12 implements OFOxmTcpDst {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmTcpDst> {
         @Override
-        public OFOxmTcpDst readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFOxmTcpDst readFrom(ByteBuf bb) throws OFParseError {
             // fixed value property typeLen == 0x80001c02L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80001c02)
@@ -258,14 +263,14 @@ class OFOxmTcpDstVer12 implements OFOxmTcpDst {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmTcpDstVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFOxmTcpDstVer12 message) {
+        public void write(ByteBuf bb, OFOxmTcpDstVer12 message) {
             // fixed value property typeLen = 0x80001c02L
             bb.writeInt((int) 0x80001c02);
             message.value.write2Bytes(bb);

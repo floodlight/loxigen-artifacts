@@ -18,13 +18,15 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
+import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
+import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFFlowRemovedReason;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFFlowRemovedReasonSerializerVer13 {
@@ -34,7 +36,7 @@ public class OFFlowRemovedReasonSerializerVer13 {
     public final static byte DELETE_VAL = (byte) 0x2;
     public final static byte GROUP_DELETE_VAL = (byte) 0x3;
 
-    public static OFFlowRemovedReason readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFFlowRemovedReason readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -42,7 +44,7 @@ public class OFFlowRemovedReasonSerializerVer13 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFFlowRemovedReason e) {
+    public static void writeTo(ByteBuf bb, OFFlowRemovedReason e) {
         bb.writeByte(toWireValue(e));
     }
 
