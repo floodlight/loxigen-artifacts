@@ -883,6 +883,8 @@ void of_bsn_tlv_external_netmask_wire_object_id_get(of_object_t *obj, of_object_
 void of_bsn_tlv_external_netmask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_generation_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_generation_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_hash_algorithm_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_hash_algorithm_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_hash_gtp_header_match_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_hash_gtp_header_match_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_hash_gtp_port_match_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1800,6 +1802,7 @@ typedef of_object_t of_bsn_tlv_external_ip_t;
 typedef of_object_t of_bsn_tlv_external_mac_t;
 typedef of_object_t of_bsn_tlv_external_netmask_t;
 typedef of_object_t of_bsn_tlv_generation_id_t;
+typedef of_object_t of_bsn_tlv_hash_algorithm_t;
 typedef of_object_t of_bsn_tlv_hash_gtp_header_match_t;
 typedef of_object_t of_bsn_tlv_hash_gtp_port_match_t;
 typedef of_object_t of_bsn_tlv_hash_packet_field_t;
@@ -3957,6 +3960,11 @@ extern void of_bsn_tlv_external_netmask_init(
 extern of_object_t *
     of_bsn_tlv_generation_id_new(of_version_t version);
 extern void of_bsn_tlv_generation_id_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_hash_algorithm_new(of_version_t version);
+extern void of_bsn_tlv_hash_algorithm_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9906,6 +9914,17 @@ of_bsn_tlv_external_netmask_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_generation_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_hash_algorithm_t
+ * @param obj An instance of type of_bsn_tlv_hash_algorithm_t
+ *
+ * \ingroup of_bsn_tlv_hash_algorithm
+ */
+static inline void
+of_bsn_tlv_hash_algorithm_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22841,6 +22860,15 @@ extern void of_bsn_tlv_generation_id_value_set(
 extern void of_bsn_tlv_generation_id_value_get(
     of_bsn_tlv_generation_id_t *obj,
     uint64_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_hash_algorithm */
+
+extern void of_bsn_tlv_hash_algorithm_value_set(
+    of_bsn_tlv_hash_algorithm_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_hash_algorithm_value_get(
+    of_bsn_tlv_hash_algorithm_t *obj,
+    uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_hash_gtp_header_match */
 

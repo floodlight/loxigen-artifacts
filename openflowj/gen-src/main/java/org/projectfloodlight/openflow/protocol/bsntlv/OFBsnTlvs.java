@@ -99,6 +99,8 @@ public interface OFBsnTlvs {
     OFBsnTlvExternalNetmask externalNetmask(IPv4Address value);
     OFBsnTlvGenerationId.Builder buildGenerationId() throws UnsupportedOperationException;
     OFBsnTlvGenerationId generationId(U64 value);
+    OFBsnTlvHashAlgorithm.Builder buildHashAlgorithm() throws UnsupportedOperationException;
+    OFBsnTlvHashAlgorithm hashAlgorithm(OFBsnHashAlgorithmType value);
     OFBsnTlvHashGtpHeaderMatch.Builder buildHashGtpHeaderMatch() throws UnsupportedOperationException;
     OFBsnTlvHashGtpHeaderMatch hashGtpHeaderMatch(short firstHeaderByte, short firstHeaderMask);
     OFBsnTlvHashGtpPortMatch.Builder buildHashGtpPortMatch() throws UnsupportedOperationException;

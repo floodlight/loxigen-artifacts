@@ -275,6 +275,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvGenerationId not supported in version 1.2");
     }
 
+    public OFBsnTlvHashAlgorithm.Builder buildHashAlgorithm() {
+        throw new UnsupportedOperationException("OFBsnTlvHashAlgorithm not supported in version 1.2");
+    }
+    public OFBsnTlvHashAlgorithm hashAlgorithm(OFBsnHashAlgorithmType value) {
+        throw new UnsupportedOperationException("OFBsnTlvHashAlgorithm not supported in version 1.2");
+    }
+
     public OFBsnTlvHashGtpHeaderMatch.Builder buildHashGtpHeaderMatch() {
         throw new UnsupportedOperationException("OFBsnTlvHashGtpHeaderMatch not supported in version 1.2");
     }
