@@ -154,6 +154,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x50:
                    // discriminator value 0x50=0x50 for class OFBsnTlvGenerationIdVer13
                    return OFBsnTlvGenerationIdVer13.READER.readFrom(bb);
+               case (short) 0x91:
+                   // discriminator value 0x91=0x91 for class OFBsnTlvHashAlgorithmVer13
+                   return OFBsnTlvHashAlgorithmVer13.READER.readFrom(bb);
                case (short) 0x68:
                    // discriminator value 0x68=0x68 for class OFBsnTlvHashGtpHeaderMatchVer13
                    return OFBsnTlvHashGtpHeaderMatchVer13.READER.readFrom(bb);

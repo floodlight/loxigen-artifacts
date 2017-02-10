@@ -1367,6 +1367,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_hash_algorithm_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_hash_gtp_header_match_dup(
         of_object_t *src);
 
@@ -6271,6 +6275,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_hash_algorithm_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8964,6 +8972,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_hash_algorithm_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

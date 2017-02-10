@@ -339,6 +339,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvHashAlgorithm.Builder buildHashAlgorithm() {
+        return new OFBsnTlvHashAlgorithmVer15.Builder();
+    }
+    public OFBsnTlvHashAlgorithm hashAlgorithm(OFBsnHashAlgorithmType value) {
+        return new OFBsnTlvHashAlgorithmVer15(
+                value
+                    );
+    }
+
     public OFBsnTlvHashGtpHeaderMatch.Builder buildHashGtpHeaderMatch() {
         return new OFBsnTlvHashGtpHeaderMatchVer15.Builder();
     }
