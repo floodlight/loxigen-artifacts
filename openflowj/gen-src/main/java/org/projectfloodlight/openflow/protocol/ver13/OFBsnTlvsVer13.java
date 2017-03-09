@@ -628,6 +628,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvLoopbackMode.Builder buildLoopbackMode() {
+        return new OFBsnTlvLoopbackModeVer13.Builder();
+    }
+    public OFBsnTlvLoopbackMode loopbackMode(OFBsnLoopbackMode value) {
+        return new OFBsnTlvLoopbackModeVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvLoopbackPort.Builder buildLoopbackPort() {
         return new OFBsnTlvLoopbackPortVer13.Builder();
     }

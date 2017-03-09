@@ -27137,6 +27137,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_generation_id_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_LOOPBACK_MODE) {
+        return of_bsn_tlv_loopback_mode_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
         return of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(src);
     }
@@ -29304,6 +29308,31 @@ of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_l3_src_class_id_value_get(src, &val32);
     of_bsn_tlv_l3_src_class_id_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_loopback_mode
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_loopback_mode.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_loopback_mode_t *
+of_bsn_tlv_loopback_mode_OF_VERSION_1_3_dup(
+    of_bsn_tlv_loopback_mode_t *src)
+{
+    of_bsn_tlv_loopback_mode_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_loopback_mode_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_loopback_mode_value_get(src, &val8);
+    of_bsn_tlv_loopback_mode_value_set(dst, val8);
 
     return dst;
 }
@@ -49584,6 +49613,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_LOOPBACK_MODE) {
+        return of_bsn_tlv_loopback_mode_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
         return of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(src);
     }
@@ -51751,6 +51784,31 @@ of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_l3_src_class_id_value_get(src, &val32);
     of_bsn_tlv_l3_src_class_id_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_loopback_mode
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_loopback_mode.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_loopback_mode_t *
+of_bsn_tlv_loopback_mode_OF_VERSION_1_4_dup(
+    of_bsn_tlv_loopback_mode_t *src)
+{
+    of_bsn_tlv_loopback_mode_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_loopback_mode_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_loopback_mode_value_get(src, &val8);
+    of_bsn_tlv_loopback_mode_value_set(dst, val8);
 
     return dst;
 }
@@ -70720,6 +70778,23 @@ of_bsn_tlv_l3_src_class_id_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_loopback_mode_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_loopback_mode_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_loopback_mode_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

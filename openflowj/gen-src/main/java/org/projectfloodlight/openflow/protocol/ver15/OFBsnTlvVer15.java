@@ -256,6 +256,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x87:
                    // discriminator value 0x87=0x87 for class OFBsnTlvL3SrcClassIdVer15
                    return OFBsnTlvL3SrcClassIdVer15.READER.readFrom(bb);
+               case (short) 0x92:
+                   // discriminator value 0x92=0x92 for class OFBsnTlvLoopbackModeVer15
+                   return OFBsnTlvLoopbackModeVer15.READER.readFrom(bb);
                case (short) 0x6e:
                    // discriminator value 0x6e=0x6e for class OFBsnTlvLoopbackPortVer15
                    return OFBsnTlvLoopbackPortVer15.READER.readFrom(bb);

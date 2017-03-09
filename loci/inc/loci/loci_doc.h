@@ -7195,6 +7195,17 @@ typedef struct of_bsn_tlv_l3_interface_class_id_s of_bsn_tlv_l3_interface_class_
 typedef struct of_bsn_tlv_l3_src_class_id_s of_bsn_tlv_l3_src_class_id_t;
 
 /**
+ * Structure for of_bsn_tlv_loopback_mode object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_loopback_mode_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_loopback_mode_s of_bsn_tlv_loopback_mode_t;
+
+/**
  * Structure for of_bsn_tlv_loopback_port object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

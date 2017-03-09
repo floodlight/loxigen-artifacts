@@ -381,6 +381,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_l3_dst_class_id",
     "of_bsn_tlv_l3_interface_class_id",
     "of_bsn_tlv_l3_src_class_id",
+    "of_bsn_tlv_loopback_mode",
     "of_bsn_tlv_loopback_port",
     "of_bsn_tlv_mac",
     "of_bsn_tlv_mac_mask",

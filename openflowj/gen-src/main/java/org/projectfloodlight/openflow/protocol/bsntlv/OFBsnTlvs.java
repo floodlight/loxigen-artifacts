@@ -163,6 +163,8 @@ public interface OFBsnTlvs {
     OFBsnTlvL3InterfaceClassId l3InterfaceClassId(long value);
     OFBsnTlvL3SrcClassId.Builder buildL3SrcClassId() throws UnsupportedOperationException;
     OFBsnTlvL3SrcClassId l3SrcClassId(long value);
+    OFBsnTlvLoopbackMode.Builder buildLoopbackMode() throws UnsupportedOperationException;
+    OFBsnTlvLoopbackMode loopbackMode(OFBsnLoopbackMode value);
     OFBsnTlvLoopbackPort.Builder buildLoopbackPort() throws UnsupportedOperationException;
     OFBsnTlvLoopbackPort loopbackPort(OFPort value);
     OFBsnTlvMac.Builder buildMac() throws UnsupportedOperationException;

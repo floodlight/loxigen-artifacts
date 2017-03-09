@@ -501,6 +501,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvL3SrcClassId not supported in version 1.2");
     }
 
+    public OFBsnTlvLoopbackMode.Builder buildLoopbackMode() {
+        throw new UnsupportedOperationException("OFBsnTlvLoopbackMode not supported in version 1.2");
+    }
+    public OFBsnTlvLoopbackMode loopbackMode(OFBsnLoopbackMode value) {
+        throw new UnsupportedOperationException("OFBsnTlvLoopbackMode not supported in version 1.2");
+    }
+
     public OFBsnTlvLoopbackPort.Builder buildLoopbackPort() {
         throw new UnsupportedOperationException("OFBsnTlvLoopbackPort not supported in version 1.2");
     }

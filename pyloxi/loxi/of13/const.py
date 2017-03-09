@@ -473,6 +473,19 @@ ofp_bsn_loglevel_map = {
     5: 'OFP_BSN_LOGLEVEL_TRACE',
 }
 
+# Identifiers from group ofp_bsn_loopback_mode
+OFP_BSN_LOOPBACK_MODE_NONE = 0
+OFP_BSN_LOOPBACK_MODE_MAC = 1
+OFP_BSN_LOOPBACK_MODE_PHY = 2
+OFP_BSN_LOOPBACK_MODE_PHY_REMOTE = 3
+
+ofp_bsn_loopback_mode_map = {
+    0: 'OFP_BSN_LOOPBACK_MODE_NONE',
+    1: 'OFP_BSN_LOOPBACK_MODE_MAC',
+    2: 'OFP_BSN_LOOPBACK_MODE_PHY',
+    3: 'OFP_BSN_LOOPBACK_MODE_PHY_REMOTE',
+}
+
 # Identifiers from group ofp_bsn_lua_upload_flags
 OFP_BSN_LUA_UPLOAD_MORE = 1
 OFP_BSN_LUA_UPLOAD_FORCE = 2

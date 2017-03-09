@@ -1444,10 +1444,11 @@ enum_v4_ofp_hello_failed_code = {
     [1] = "OFPHFC_EPERM",
 }
 
-enum_v4_ofp_role_request_failed_code = {
-    [0] = "OFPRRFC_STALE",
-    [1] = "OFPRRFC_UNSUP",
-    [2] = "OFPRRFC_BAD_ROLE",
+enum_v4_ofp_bsn_loopback_mode = {
+    [0] = "OFP_BSN_LOOPBACK_MODE_NONE",
+    [1] = "OFP_BSN_LOOPBACK_MODE_MAC",
+    [2] = "OFP_BSN_LOOPBACK_MODE_PHY",
+    [3] = "OFP_BSN_LOOPBACK_MODE_PHY_REMOTE",
 }
 
 enum_v4_ofp_capabilities = {
@@ -1947,6 +1948,12 @@ enum_v4_ofp_meter_band_type = {
     [65535] = "OFPMBT_EXPERIMENTER",
 }
 
+enum_v4_ofp_role_request_failed_code = {
+    [0] = "OFPRRFC_STALE",
+    [1] = "OFPRRFC_UNSUP",
+    [2] = "OFPRRFC_BAD_ROLE",
+}
+
 enum_v4_ofp_stats_request_flags = {
     [1] = "OFPSF_REQ_MORE",
 }
@@ -2322,10 +2329,11 @@ enum_v5_ofp_hello_failed_code = {
     [1] = "OFPHFC_EPERM",
 }
 
-enum_v5_ofp_role_request_failed_code = {
-    [0] = "OFPRRFC_STALE",
-    [1] = "OFPRRFC_UNSUP",
-    [2] = "OFPRRFC_BAD_ROLE",
+enum_v5_ofp_bsn_loopback_mode = {
+    [0] = "OFP_BSN_LOOPBACK_MODE_NONE",
+    [1] = "OFP_BSN_LOOPBACK_MODE_MAC",
+    [2] = "OFP_BSN_LOOPBACK_MODE_PHY",
+    [3] = "OFP_BSN_LOOPBACK_MODE_PHY_REMOTE",
 }
 
 enum_v5_ofp_capabilities = {
@@ -2904,6 +2912,12 @@ enum_v5_ofp_requestforward_reason = {
     [1] = "OFPRFR_METER_MOD",
 }
 
+enum_v5_ofp_role_request_failed_code = {
+    [0] = "OFPRRFC_STALE",
+    [1] = "OFPRRFC_UNSUP",
+    [2] = "OFPRRFC_BAD_ROLE",
+}
+
 enum_v5_ofp_stats_request_flags = {
     [1] = "OFPSF_REQ_MORE",
 }
@@ -3395,10 +3409,11 @@ enum_v6_ofp_role_prop_type = {
     [65535] = "OFPRPT_EXPERIMENTER",
 }
 
-enum_v6_ofp_role_request_failed_code = {
-    [0] = "OFPRRFC_STALE",
-    [1] = "OFPRRFC_UNSUP",
-    [2] = "OFPRRFC_BAD_ROLE",
+enum_v6_ofp_bsn_loopback_mode = {
+    [0] = "OFP_BSN_LOOPBACK_MODE_NONE",
+    [1] = "OFP_BSN_LOOPBACK_MODE_MAC",
+    [2] = "OFP_BSN_LOOPBACK_MODE_PHY",
+    [3] = "OFP_BSN_LOOPBACK_MODE_PHY_REMOTE",
 }
 
 enum_v6_ofp_capabilities = {
@@ -4052,6 +4067,12 @@ enum_v6_ofp_controller_max_len = {
 enum_v6_ofp_requestforward_reason = {
     [0] = "OFPRFR_GROUP_MOD",
     [1] = "OFPRFR_METER_MOD",
+}
+
+enum_v6_ofp_role_request_failed_code = {
+    [0] = "OFPRRFC_STALE",
+    [1] = "OFPRRFC_UNSUP",
+    [2] = "OFPRRFC_BAD_ROLE",
 }
 
 enum_v6_ofp_stats_request_flags = {
@@ -8507,6 +8528,9 @@ fields['of13.bsn_tlv_l3_interface_class_id.value'] = ProtoField.uint32("of13.bsn
 fields['of13.bsn_tlv_l3_src_class_id.type'] = ProtoField.uint16("of13.bsn_tlv_l3_src_class_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_l3_src_class_id.length'] = ProtoField.uint16("of13.bsn_tlv_l3_src_class_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_l3_src_class_id.value'] = ProtoField.uint32("of13.bsn_tlv_l3_src_class_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_loopback_mode.type'] = ProtoField.uint16("of13.bsn_tlv_loopback_mode.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_loopback_mode.length'] = ProtoField.uint16("of13.bsn_tlv_loopback_mode.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of13.bsn_tlv_loopback_mode.value", "value", base.DEC, enum_v4_ofp_bsn_loopback_mode)
 fields['of13.bsn_tlv_loopback_port.type'] = ProtoField.uint16("of13.bsn_tlv_loopback_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_port.length'] = ProtoField.uint16("of13.bsn_tlv_loopback_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_port.value'] = ProtoField.uint32("of13.bsn_tlv_loopback_port.value", "value", base.DEC, nil)
@@ -11379,6 +11403,9 @@ fields['of14.bsn_tlv_l3_interface_class_id.value'] = ProtoField.uint32("of14.bsn
 fields['of14.bsn_tlv_l3_src_class_id.type'] = ProtoField.uint16("of14.bsn_tlv_l3_src_class_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_l3_src_class_id.length'] = ProtoField.uint16("of14.bsn_tlv_l3_src_class_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_l3_src_class_id.value'] = ProtoField.uint32("of14.bsn_tlv_l3_src_class_id.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_loopback_mode.type'] = ProtoField.uint16("of14.bsn_tlv_loopback_mode.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_loopback_mode.length'] = ProtoField.uint16("of14.bsn_tlv_loopback_mode.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of14.bsn_tlv_loopback_mode.value", "value", base.DEC, enum_v5_ofp_bsn_loopback_mode)
 fields['of14.bsn_tlv_loopback_port.type'] = ProtoField.uint16("of14.bsn_tlv_loopback_port.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_port.length'] = ProtoField.uint16("of14.bsn_tlv_loopback_port.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_port.value'] = ProtoField.uint32("of14.bsn_tlv_loopback_port.value", "value", base.DEC, nil)
@@ -14494,6 +14521,9 @@ fields['of15.bsn_tlv_l3_interface_class_id.value'] = ProtoField.uint32("of15.bsn
 fields['of15.bsn_tlv_l3_src_class_id.type'] = ProtoField.uint16("of15.bsn_tlv_l3_src_class_id.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_l3_src_class_id.length'] = ProtoField.uint16("of15.bsn_tlv_l3_src_class_id.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_l3_src_class_id.value'] = ProtoField.uint32("of15.bsn_tlv_l3_src_class_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_loopback_mode.type'] = ProtoField.uint16("of15.bsn_tlv_loopback_mode.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_loopback_mode.length'] = ProtoField.uint16("of15.bsn_tlv_loopback_mode.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of15.bsn_tlv_loopback_mode.value", "value", base.DEC, enum_v6_ofp_bsn_loopback_mode)
 fields['of15.bsn_tlv_loopback_port.type'] = ProtoField.uint16("of15.bsn_tlv_loopback_port.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_port.length'] = ProtoField.uint16("of15.bsn_tlv_loopback_port.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_port.value'] = ProtoField.uint32("of15.bsn_tlv_loopback_port.value", "value", base.DEC, nil)
@@ -20847,6 +20877,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_l3_src_class_id.type'],
     fields['of13.bsn_tlv_l3_src_class_id.length'],
     fields['of13.bsn_tlv_l3_src_class_id.value'],
+    fields['of13.bsn_tlv_loopback_mode.type'],
+    fields['of13.bsn_tlv_loopback_mode.length'],
+    fields['of13.bsn_tlv_loopback_mode.value'],
     fields['of13.bsn_tlv_loopback_port.type'],
     fields['of13.bsn_tlv_loopback_port.length'],
     fields['of13.bsn_tlv_loopback_port.value'],
@@ -23719,6 +23752,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_l3_src_class_id.type'],
     fields['of14.bsn_tlv_l3_src_class_id.length'],
     fields['of14.bsn_tlv_l3_src_class_id.value'],
+    fields['of14.bsn_tlv_loopback_mode.type'],
+    fields['of14.bsn_tlv_loopback_mode.length'],
+    fields['of14.bsn_tlv_loopback_mode.value'],
     fields['of14.bsn_tlv_loopback_port.type'],
     fields['of14.bsn_tlv_loopback_port.length'],
     fields['of14.bsn_tlv_loopback_port.value'],
@@ -26834,6 +26870,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_l3_src_class_id.type'],
     fields['of15.bsn_tlv_l3_src_class_id.length'],
     fields['of15.bsn_tlv_l3_src_class_id.value'],
+    fields['of15.bsn_tlv_loopback_mode.type'],
+    fields['of15.bsn_tlv_loopback_mode.length'],
+    fields['of15.bsn_tlv_loopback_mode.value'],
     fields['of15.bsn_tlv_loopback_port.type'],
     fields['of15.bsn_tlv_loopback_port.length'],
     fields['of15.bsn_tlv_loopback_port.value'],
@@ -39025,6 +39064,16 @@ function dissect_of_bsn_tlv_l3_src_class_id_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[135] = dissect_of_bsn_tlv_l3_src_class_id_v4
 
+-- child class of_bsn_tlv_loopback_mode
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_loopback_mode_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_loopback_mode.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_loopback_mode.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_loopback_mode.value')
+    return 'of_bsn_tlv_loopback_mode'
+end
+of_bsn_tlv_v4_dissectors[146] = dissect_of_bsn_tlv_loopback_mode_v4
+
 -- child class of_bsn_tlv_loopback_port
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_loopback_port_v4(reader, subtree)
@@ -46692,6 +46741,16 @@ function dissect_of_bsn_tlv_l3_src_class_id_v5(reader, subtree)
     return 'of_bsn_tlv_l3_src_class_id'
 end
 of_bsn_tlv_v5_dissectors[135] = dissect_of_bsn_tlv_l3_src_class_id_v5
+
+-- child class of_bsn_tlv_loopback_mode
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_loopback_mode_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_loopback_mode.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_loopback_mode.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_loopback_mode.value')
+    return 'of_bsn_tlv_loopback_mode'
+end
+of_bsn_tlv_v5_dissectors[146] = dissect_of_bsn_tlv_loopback_mode_v5
 
 -- child class of_bsn_tlv_loopback_port
 -- Child of of_bsn_tlv
@@ -54917,6 +54976,16 @@ function dissect_of_bsn_tlv_l3_src_class_id_v6(reader, subtree)
     return 'of_bsn_tlv_l3_src_class_id'
 end
 of_bsn_tlv_v6_dissectors[135] = dissect_of_bsn_tlv_l3_src_class_id_v6
+
+-- child class of_bsn_tlv_loopback_mode
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_loopback_mode_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_loopback_mode.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_loopback_mode.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_loopback_mode.value')
+    return 'of_bsn_tlv_loopback_mode'
+end
+of_bsn_tlv_v6_dissectors[146] = dissect_of_bsn_tlv_loopback_mode_v6
 
 -- child class of_bsn_tlv_loopback_port
 -- Child of of_bsn_tlv

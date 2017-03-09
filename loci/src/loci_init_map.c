@@ -384,6 +384,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_l3_dst_class_id_init,
     (of_object_init_f)of_bsn_tlv_l3_interface_class_id_init,
     (of_object_init_f)of_bsn_tlv_l3_src_class_id_init,
+    (of_object_init_f)of_bsn_tlv_loopback_mode_init,
     (of_object_init_f)of_bsn_tlv_loopback_port_init,
     (of_object_init_f)of_bsn_tlv_mac_init,
     (of_object_init_f)of_bsn_tlv_mac_mask_init,
