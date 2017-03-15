@@ -605,6 +605,14 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvNexthopTypeVxlan not supported in version 1.0");
     }
 
+    public OFBsnTlvNoArpResponse noArpResponse() {
+        throw new UnsupportedOperationException("OFBsnTlvNoArpResponse not supported in version 1.0");
+    }
+
+    public OFBsnTlvNoNsResponse noNsResponse() {
+        throw new UnsupportedOperationException("OFBsnTlvNoNsResponse not supported in version 1.0");
+    }
+
     public OFBsnTlvOffset.Builder buildOffset() {
         throw new UnsupportedOperationException("OFBsnTlvOffset not supported in version 1.0");
     }

@@ -8574,6 +8574,10 @@ fields['of13.bsn_tlv_next_hop_mac.length'] = ProtoField.uint16("of13.bsn_tlv_nex
 fields['of13.bsn_tlv_next_hop_mac.value'] = ProtoField.ether("of13.bsn_tlv_next_hop_mac.value", "value")
 fields['of13.bsn_tlv_nexthop_type_vxlan.type'] = ProtoField.uint16("of13.bsn_tlv_nexthop_type_vxlan.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_nexthop_type_vxlan.length'] = ProtoField.uint16("of13.bsn_tlv_nexthop_type_vxlan.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_no_arp_response.type'] = ProtoField.uint16("of13.bsn_tlv_no_arp_response.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_no_arp_response.length'] = ProtoField.uint16("of13.bsn_tlv_no_arp_response.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_no_ns_response.type'] = ProtoField.uint16("of13.bsn_tlv_no_ns_response.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_no_ns_response.length'] = ProtoField.uint16("of13.bsn_tlv_no_ns_response.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_offset.type'] = ProtoField.uint16("of13.bsn_tlv_offset.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_offset.length'] = ProtoField.uint16("of13.bsn_tlv_offset.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_offset.value'] = ProtoField.uint16("of13.bsn_tlv_offset.value", "value", base.DEC, nil)
@@ -11449,6 +11453,10 @@ fields['of14.bsn_tlv_next_hop_mac.length'] = ProtoField.uint16("of14.bsn_tlv_nex
 fields['of14.bsn_tlv_next_hop_mac.value'] = ProtoField.ether("of14.bsn_tlv_next_hop_mac.value", "value")
 fields['of14.bsn_tlv_nexthop_type_vxlan.type'] = ProtoField.uint16("of14.bsn_tlv_nexthop_type_vxlan.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_nexthop_type_vxlan.length'] = ProtoField.uint16("of14.bsn_tlv_nexthop_type_vxlan.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_no_arp_response.type'] = ProtoField.uint16("of14.bsn_tlv_no_arp_response.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_no_arp_response.length'] = ProtoField.uint16("of14.bsn_tlv_no_arp_response.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_no_ns_response.type'] = ProtoField.uint16("of14.bsn_tlv_no_ns_response.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_no_ns_response.length'] = ProtoField.uint16("of14.bsn_tlv_no_ns_response.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_offset.type'] = ProtoField.uint16("of14.bsn_tlv_offset.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_offset.length'] = ProtoField.uint16("of14.bsn_tlv_offset.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_offset.value'] = ProtoField.uint16("of14.bsn_tlv_offset.value", "value", base.DEC, nil)
@@ -14567,6 +14575,10 @@ fields['of15.bsn_tlv_next_hop_mac.length'] = ProtoField.uint16("of15.bsn_tlv_nex
 fields['of15.bsn_tlv_next_hop_mac.value'] = ProtoField.ether("of15.bsn_tlv_next_hop_mac.value", "value")
 fields['of15.bsn_tlv_nexthop_type_vxlan.type'] = ProtoField.uint16("of15.bsn_tlv_nexthop_type_vxlan.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_nexthop_type_vxlan.length'] = ProtoField.uint16("of15.bsn_tlv_nexthop_type_vxlan.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_no_arp_response.type'] = ProtoField.uint16("of15.bsn_tlv_no_arp_response.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_no_arp_response.length'] = ProtoField.uint16("of15.bsn_tlv_no_arp_response.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_no_ns_response.type'] = ProtoField.uint16("of15.bsn_tlv_no_ns_response.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_no_ns_response.length'] = ProtoField.uint16("of15.bsn_tlv_no_ns_response.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_offset.type'] = ProtoField.uint16("of15.bsn_tlv_offset.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_offset.length'] = ProtoField.uint16("of15.bsn_tlv_offset.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_offset.value'] = ProtoField.uint16("of15.bsn_tlv_offset.value", "value", base.DEC, nil)
@@ -20923,6 +20935,10 @@ p_of.fields = {
     fields['of13.bsn_tlv_next_hop_mac.value'],
     fields['of13.bsn_tlv_nexthop_type_vxlan.type'],
     fields['of13.bsn_tlv_nexthop_type_vxlan.length'],
+    fields['of13.bsn_tlv_no_arp_response.type'],
+    fields['of13.bsn_tlv_no_arp_response.length'],
+    fields['of13.bsn_tlv_no_ns_response.type'],
+    fields['of13.bsn_tlv_no_ns_response.length'],
     fields['of13.bsn_tlv_offset.type'],
     fields['of13.bsn_tlv_offset.length'],
     fields['of13.bsn_tlv_offset.value'],
@@ -23798,6 +23814,10 @@ p_of.fields = {
     fields['of14.bsn_tlv_next_hop_mac.value'],
     fields['of14.bsn_tlv_nexthop_type_vxlan.type'],
     fields['of14.bsn_tlv_nexthop_type_vxlan.length'],
+    fields['of14.bsn_tlv_no_arp_response.type'],
+    fields['of14.bsn_tlv_no_arp_response.length'],
+    fields['of14.bsn_tlv_no_ns_response.type'],
+    fields['of14.bsn_tlv_no_ns_response.length'],
     fields['of14.bsn_tlv_offset.type'],
     fields['of14.bsn_tlv_offset.length'],
     fields['of14.bsn_tlv_offset.value'],
@@ -26916,6 +26936,10 @@ p_of.fields = {
     fields['of15.bsn_tlv_next_hop_mac.value'],
     fields['of15.bsn_tlv_nexthop_type_vxlan.type'],
     fields['of15.bsn_tlv_nexthop_type_vxlan.length'],
+    fields['of15.bsn_tlv_no_arp_response.type'],
+    fields['of15.bsn_tlv_no_arp_response.length'],
+    fields['of15.bsn_tlv_no_ns_response.type'],
+    fields['of15.bsn_tlv_no_ns_response.length'],
     fields['of15.bsn_tlv_offset.type'],
     fields['of15.bsn_tlv_offset.length'],
     fields['of15.bsn_tlv_offset.value'],
@@ -39232,6 +39256,24 @@ function dissect_of_bsn_tlv_nexthop_type_vxlan_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[94] = dissect_of_bsn_tlv_nexthop_type_vxlan_v4
 
+-- child class of_bsn_tlv_no_arp_response
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_no_arp_response_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_no_arp_response.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_no_arp_response.length')
+    return 'of_bsn_tlv_no_arp_response'
+end
+of_bsn_tlv_v4_dissectors[147] = dissect_of_bsn_tlv_no_arp_response_v4
+
+-- child class of_bsn_tlv_no_ns_response
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_no_ns_response_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_no_ns_response.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_no_ns_response.length')
+    return 'of_bsn_tlv_no_ns_response'
+end
+of_bsn_tlv_v4_dissectors[148] = dissect_of_bsn_tlv_no_ns_response_v4
+
 -- child class of_bsn_tlv_offset
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_offset_v4(reader, subtree)
@@ -46909,6 +46951,24 @@ function dissect_of_bsn_tlv_nexthop_type_vxlan_v5(reader, subtree)
     return 'of_bsn_tlv_nexthop_type_vxlan'
 end
 of_bsn_tlv_v5_dissectors[94] = dissect_of_bsn_tlv_nexthop_type_vxlan_v5
+
+-- child class of_bsn_tlv_no_arp_response
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_no_arp_response_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_no_arp_response.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_no_arp_response.length')
+    return 'of_bsn_tlv_no_arp_response'
+end
+of_bsn_tlv_v5_dissectors[147] = dissect_of_bsn_tlv_no_arp_response_v5
+
+-- child class of_bsn_tlv_no_ns_response
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_no_ns_response_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_no_ns_response.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_no_ns_response.length')
+    return 'of_bsn_tlv_no_ns_response'
+end
+of_bsn_tlv_v5_dissectors[148] = dissect_of_bsn_tlv_no_ns_response_v5
 
 -- child class of_bsn_tlv_offset
 -- Child of of_bsn_tlv
@@ -55144,6 +55204,24 @@ function dissect_of_bsn_tlv_nexthop_type_vxlan_v6(reader, subtree)
     return 'of_bsn_tlv_nexthop_type_vxlan'
 end
 of_bsn_tlv_v6_dissectors[94] = dissect_of_bsn_tlv_nexthop_type_vxlan_v6
+
+-- child class of_bsn_tlv_no_arp_response
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_no_arp_response_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_no_arp_response.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_no_arp_response.length')
+    return 'of_bsn_tlv_no_arp_response'
+end
+of_bsn_tlv_v6_dissectors[147] = dissect_of_bsn_tlv_no_arp_response_v6
+
+-- child class of_bsn_tlv_no_ns_response
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_no_ns_response_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_no_ns_response.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_no_ns_response.length')
+    return 'of_bsn_tlv_no_ns_response'
+end
+of_bsn_tlv_v6_dissectors[148] = dissect_of_bsn_tlv_no_ns_response_v6
 
 -- child class of_bsn_tlv_offset
 -- Child of of_bsn_tlv

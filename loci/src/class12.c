@@ -9356,6 +9356,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x92:
             *id = OF_BSN_TLV_LOOPBACK_MODE;
             break;
+        case 0x93:
+            *id = OF_BSN_TLV_NO_ARP_RESPONSE;
+            break;
+        case 0x94:
+            *id = OF_BSN_TLV_NO_NS_RESPONSE;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -9802,6 +9808,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x92:
             *id = OF_BSN_TLV_LOOPBACK_MODE;
+            break;
+        case 0x93:
+            *id = OF_BSN_TLV_NO_ARP_RESPONSE;
+            break;
+        case 0x94:
+            *id = OF_BSN_TLV_NO_NS_RESPONSE;
             break;
         default:
             *id = OF_BSN_TLV;

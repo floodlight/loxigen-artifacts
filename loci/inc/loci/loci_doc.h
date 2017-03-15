@@ -7362,6 +7362,20 @@ typedef struct of_bsn_tlv_next_hop_mac_s of_bsn_tlv_next_hop_mac_t;
 typedef struct of_bsn_tlv_nexthop_type_vxlan_s of_bsn_tlv_nexthop_type_vxlan_t;
 
 /**
+ * Structure for of_bsn_tlv_no_arp_response object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_no_arp_response_s of_bsn_tlv_no_arp_response_t;
+
+/**
+ * Structure for of_bsn_tlv_no_ns_response object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_no_ns_response_s of_bsn_tlv_no_ns_response_t;
+
+/**
  * Structure for of_bsn_tlv_offset object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

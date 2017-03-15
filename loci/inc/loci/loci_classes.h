@@ -985,6 +985,10 @@ void of_bsn_tlv_next_hop_mac_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_bsn_tlv_next_hop_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_nexthop_type_vxlan_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_nexthop_type_vxlan_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_no_arp_response_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_no_arp_response_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_no_ns_response_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_no_ns_response_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_offset_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_offset_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_parent_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1855,6 +1859,8 @@ typedef of_object_t of_bsn_tlv_negate_t;
 typedef of_object_t of_bsn_tlv_next_hop_ipv4_t;
 typedef of_object_t of_bsn_tlv_next_hop_mac_t;
 typedef of_object_t of_bsn_tlv_nexthop_type_vxlan_t;
+typedef of_object_t of_bsn_tlv_no_arp_response_t;
+typedef of_object_t of_bsn_tlv_no_ns_response_t;
 typedef of_object_t of_bsn_tlv_offset_t;
 typedef of_object_t of_bsn_tlv_parent_port_t;
 typedef of_object_t of_bsn_tlv_partner_key_t;
@@ -4218,6 +4224,16 @@ extern void of_bsn_tlv_next_hop_mac_init(
 extern of_object_t *
     of_bsn_tlv_nexthop_type_vxlan_new(of_version_t version);
 extern void of_bsn_tlv_nexthop_type_vxlan_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_no_arp_response_new(of_version_t version);
+extern void of_bsn_tlv_no_arp_response_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_no_ns_response_new(of_version_t version);
+extern void of_bsn_tlv_no_ns_response_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10483,6 +10499,28 @@ of_bsn_tlv_next_hop_mac_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_nexthop_type_vxlan_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_no_arp_response_t
+ * @param obj An instance of type of_bsn_tlv_no_arp_response_t
+ *
+ * \ingroup of_bsn_tlv_no_arp_response
+ */
+static inline void
+of_bsn_tlv_no_arp_response_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_no_ns_response_t
+ * @param obj An instance of type of_bsn_tlv_no_ns_response_t
+ *
+ * \ingroup of_bsn_tlv_no_ns_response
+ */
+static inline void
+of_bsn_tlv_no_ns_response_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23317,6 +23355,10 @@ extern void of_bsn_tlv_next_hop_mac_value_get(
     of_mac_addr_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_nexthop_type_vxlan */
+
+/* Unified accessor functions for of_bsn_tlv_no_arp_response */
+
+/* Unified accessor functions for of_bsn_tlv_no_ns_response */
 
 /* Unified accessor functions for of_bsn_tlv_offset */
 

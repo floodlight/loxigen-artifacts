@@ -307,6 +307,12 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x5e:
                    // discriminator value 0x5e=0x5e for class OFBsnTlvNexthopTypeVxlanVer15
                    return OFBsnTlvNexthopTypeVxlanVer15.READER.readFrom(bb);
+               case (short) 0x93:
+                   // discriminator value 0x93=0x93 for class OFBsnTlvNoArpResponseVer15
+                   return OFBsnTlvNoArpResponseVer15.READER.readFrom(bb);
+               case (short) 0x94:
+                   // discriminator value 0x94=0x94 for class OFBsnTlvNoNsResponseVer15
+                   return OFBsnTlvNoNsResponseVer15.READER.readFrom(bb);
                case (short) 0x52:
                    // discriminator value 0x52=0x52 for class OFBsnTlvOffsetVer15
                    return OFBsnTlvOffsetVer15.READER.readFrom(bb);

@@ -1,1 +1,1 @@
-f0361bb84bd48ab48aac8f3c0b0e91c9c762acc4 Merge into master from pull request #541: Add new tlv for loopback_mode (https://github.com/floodlight/loxigen/pull/541)
+112202d8ec23aa63bc1a503980733dc3619bd6e9 Merge into master from pull request #543: SWL-3685: Add new TLV types for router_ip table and prefix table flag (https://github.com/floodlight/loxigen/pull/543)

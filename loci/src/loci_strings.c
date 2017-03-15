@@ -398,6 +398,8 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_next_hop_ipv4",
     "of_bsn_tlv_next_hop_mac",
     "of_bsn_tlv_nexthop_type_vxlan",
+    "of_bsn_tlv_no_arp_response",
+    "of_bsn_tlv_no_ns_response",
     "of_bsn_tlv_offset",
     "of_bsn_tlv_parent_port",
     "of_bsn_tlv_partner_key",

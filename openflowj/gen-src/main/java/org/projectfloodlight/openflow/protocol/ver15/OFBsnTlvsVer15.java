@@ -756,6 +756,14 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
         return OFBsnTlvNexthopTypeVxlanVer15.INSTANCE;
     }
 
+    public OFBsnTlvNoArpResponse noArpResponse() {
+        return OFBsnTlvNoArpResponseVer15.INSTANCE;
+    }
+
+    public OFBsnTlvNoNsResponse noNsResponse() {
+        return OFBsnTlvNoNsResponseVer15.INSTANCE;
+    }
+
     public OFBsnTlvOffset.Builder buildOffset() {
         return new OFBsnTlvOffsetVer15.Builder();
     }

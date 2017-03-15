@@ -192,6 +192,8 @@ public interface OFBsnTlvs {
     OFBsnTlvNextHopMac.Builder buildNextHopMac() throws UnsupportedOperationException;
     OFBsnTlvNextHopMac nextHopMac(MacAddress value);
     OFBsnTlvNexthopTypeVxlan nexthopTypeVxlan();
+    OFBsnTlvNoArpResponse noArpResponse();
+    OFBsnTlvNoNsResponse noNsResponse();
     OFBsnTlvOffset.Builder buildOffset() throws UnsupportedOperationException;
     OFBsnTlvOffset offset(int value);
     OFBsnTlvParentPort.Builder buildParentPort() throws UnsupportedOperationException;
