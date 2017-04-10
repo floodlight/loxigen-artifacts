@@ -27085,6 +27085,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_eth_src_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_FORWARD_ERROR_CORRECTION) {
+        return of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_STATUS) {
         return of_bsn_tlv_status_OF_VERSION_1_3_dup(src);
     }
@@ -27403,6 +27407,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_TTL) {
         return of_bsn_tlv_ttl_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_OPTICS_ALWAYS_ENABLED) {
+        return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ETH_DST) {
@@ -28436,6 +28444,31 @@ of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_external_netmask_value_get(src, &ipv4);
     of_bsn_tlv_external_netmask_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_forward_error_correction
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_forward_error_correction.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_forward_error_correction_t *
+of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_dup(
+    of_bsn_tlv_forward_error_correction_t *src)
+{
+    of_bsn_tlv_forward_error_correction_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_forward_error_correction_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_forward_error_correction_value_get(src, &val8);
+    of_bsn_tlv_forward_error_correction_value_set(dst, val8);
 
     return dst;
 }
@@ -29788,6 +29821,27 @@ of_bsn_tlv_offset_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_offset_value_get(src, &val16);
     of_bsn_tlv_offset_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_optics_always_enabled
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_optics_always_enabled.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_optics_always_enabled_t *
+of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_dup(
+    of_bsn_tlv_optics_always_enabled_t *src)
+{
+    of_bsn_tlv_optics_always_enabled_t *dst;
+
+    if ((dst = of_bsn_tlv_optics_always_enabled_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -49611,6 +49665,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_eth_src_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_FORWARD_ERROR_CORRECTION) {
+        return of_bsn_tlv_forward_error_correction_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_STATUS) {
         return of_bsn_tlv_status_OF_VERSION_1_4_dup(src);
     }
@@ -49929,6 +49987,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_TTL) {
         return of_bsn_tlv_ttl_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_OPTICS_ALWAYS_ENABLED) {
+        return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ETH_DST) {
@@ -50962,6 +51024,31 @@ of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_external_netmask_value_get(src, &ipv4);
     of_bsn_tlv_external_netmask_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_forward_error_correction
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_forward_error_correction.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_forward_error_correction_t *
+of_bsn_tlv_forward_error_correction_OF_VERSION_1_4_dup(
+    of_bsn_tlv_forward_error_correction_t *src)
+{
+    of_bsn_tlv_forward_error_correction_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_forward_error_correction_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_forward_error_correction_value_get(src, &val8);
+    of_bsn_tlv_forward_error_correction_value_set(dst, val8);
 
     return dst;
 }
@@ -52314,6 +52401,27 @@ of_bsn_tlv_offset_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_offset_value_get(src, &val16);
     of_bsn_tlv_offset_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_optics_always_enabled
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_optics_always_enabled.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_optics_always_enabled_t *
+of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_dup(
+    of_bsn_tlv_optics_always_enabled_t *src)
+{
+    of_bsn_tlv_optics_always_enabled_t *dst;
+
+    if ((dst = of_bsn_tlv_optics_always_enabled_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -70290,6 +70398,23 @@ of_bsn_tlv_external_netmask_dup(
 }
 
 of_object_t *
+of_bsn_tlv_forward_error_correction_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_forward_error_correction_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_generation_id_dup(
     of_object_t *src)
 {
@@ -71218,6 +71343,23 @@ of_bsn_tlv_offset_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_offset_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_optics_always_enabled_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

@@ -6802,6 +6802,17 @@ typedef struct of_bsn_tlv_external_mac_s of_bsn_tlv_external_mac_t;
 typedef struct of_bsn_tlv_external_netmask_s of_bsn_tlv_external_netmask_t;
 
 /**
+ * Structure for of_bsn_tlv_forward_error_correction object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_forward_error_correction_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_forward_error_correction_s of_bsn_tlv_forward_error_correction_t;
+
+/**
  * Structure for of_bsn_tlv_generation_id object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7385,6 +7396,13 @@ typedef struct of_bsn_tlv_no_ns_response_s of_bsn_tlv_no_ns_response_t;
  *
  */
 typedef struct of_bsn_tlv_offset_s of_bsn_tlv_offset_t;
+
+/**
+ * Structure for of_bsn_tlv_optics_always_enabled object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_optics_always_enabled_s of_bsn_tlv_optics_always_enabled_t;
 
 /**
  * Structure for of_bsn_tlv_parent_port object.  Get/set

@@ -151,6 +151,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x19:
                    // discriminator value 0x19=0x19 for class OFBsnTlvExternalNetmaskVer15
                    return OFBsnTlvExternalNetmaskVer15.READER.readFrom(bb);
+               case (short) 0x95:
+                   // discriminator value 0x95=0x95 for class OFBsnTlvForwardErrorCorrectionVer15
+                   return OFBsnTlvForwardErrorCorrectionVer15.READER.readFrom(bb);
                case (short) 0x50:
                    // discriminator value 0x50=0x50 for class OFBsnTlvGenerationIdVer15
                    return OFBsnTlvGenerationIdVer15.READER.readFrom(bb);
@@ -316,6 +319,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x52:
                    // discriminator value 0x52=0x52 for class OFBsnTlvOffsetVer15
                    return OFBsnTlvOffsetVer15.READER.readFrom(bb);
+               case (short) 0x96:
+                   // discriminator value 0x96=0x96 for class OFBsnTlvOpticsAlwaysEnabledVer15
+                   return OFBsnTlvOpticsAlwaysEnabledVer15.READER.readFrom(bb);
                case (short) 0x6d:
                    // discriminator value 0x6d=0x6d for class OFBsnTlvParentPortVer15
                    return OFBsnTlvParentPortVer15.READER.readFrom(bb);

@@ -330,6 +330,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvForwardErrorCorrection.Builder buildForwardErrorCorrection() {
+        return new OFBsnTlvForwardErrorCorrectionVer13.Builder();
+    }
+    public OFBsnTlvForwardErrorCorrection forwardErrorCorrection(OFBsnForwardErrorCorrectionType value) {
+        return new OFBsnTlvForwardErrorCorrectionVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvGenerationId.Builder buildGenerationId() {
         return new OFBsnTlvGenerationIdVer13.Builder();
     }
@@ -771,6 +780,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return new OFBsnTlvOffsetVer13(
                 value
                     );
+    }
+
+    public OFBsnTlvOpticsAlwaysEnabled opticsAlwaysEnabled() {
+        return OFBsnTlvOpticsAlwaysEnabledVer13.INSTANCE;
     }
 
     public OFBsnTlvParentPort.Builder buildParentPort() {

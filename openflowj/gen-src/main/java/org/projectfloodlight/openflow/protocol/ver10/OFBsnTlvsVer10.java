@@ -268,6 +268,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvExternalNetmask not supported in version 1.0");
     }
 
+    public OFBsnTlvForwardErrorCorrection.Builder buildForwardErrorCorrection() {
+        throw new UnsupportedOperationException("OFBsnTlvForwardErrorCorrection not supported in version 1.0");
+    }
+    public OFBsnTlvForwardErrorCorrection forwardErrorCorrection(OFBsnForwardErrorCorrectionType value) {
+        throw new UnsupportedOperationException("OFBsnTlvForwardErrorCorrection not supported in version 1.0");
+    }
+
     public OFBsnTlvGenerationId.Builder buildGenerationId() {
         throw new UnsupportedOperationException("OFBsnTlvGenerationId not supported in version 1.0");
     }
@@ -618,6 +625,10 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvOffset offset(int value) {
         throw new UnsupportedOperationException("OFBsnTlvOffset not supported in version 1.0");
+    }
+
+    public OFBsnTlvOpticsAlwaysEnabled opticsAlwaysEnabled() {
+        throw new UnsupportedOperationException("OFBsnTlvOpticsAlwaysEnabled not supported in version 1.0");
     }
 
     public OFBsnTlvParentPort.Builder buildParentPort() {

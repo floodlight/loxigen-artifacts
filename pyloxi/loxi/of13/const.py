@@ -403,6 +403,17 @@ ofp_bsn_enhanced_hash_type_map = {
     32: 'OFP_BSN_ENHANCED_HASH_SYMMETRIC',
 }
 
+# Identifiers from group ofp_bsn_forward_error_correction_type
+OFP_BSN_FORWARD_ERROR_CORRECTION_DEFAULT = 0
+OFP_BSN_FORWARD_ERROR_CORRECTION_ENABLE = 1
+OFP_BSN_FORWARD_ERROR_CORRECTION_DISABLE = 2
+
+ofp_bsn_forward_error_correction_type_map = {
+    0: 'OFP_BSN_FORWARD_ERROR_CORRECTION_DEFAULT',
+    1: 'OFP_BSN_FORWARD_ERROR_CORRECTION_ENABLE',
+    2: 'OFP_BSN_FORWARD_ERROR_CORRECTION_DISABLE',
+}
+
 # Identifiers from group ofp_bsn_hash_algorithm_type
 OFP_BSN_HASH_ALGORITHM_CRC16XOR8 = 0
 OFP_BSN_HASH_ALGORITHM_CRC16XOR4 = 1

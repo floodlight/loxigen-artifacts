@@ -9362,6 +9362,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x94:
             *id = OF_BSN_TLV_NO_NS_RESPONSE;
             break;
+        case 0x95:
+            *id = OF_BSN_TLV_FORWARD_ERROR_CORRECTION;
+            break;
+        case 0x96:
+            *id = OF_BSN_TLV_OPTICS_ALWAYS_ENABLED;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -9814,6 +9820,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x94:
             *id = OF_BSN_TLV_NO_NS_RESPONSE;
+            break;
+        case 0x95:
+            *id = OF_BSN_TLV_FORWARD_ERROR_CORRECTION;
+            break;
+        case 0x96:
+            *id = OF_BSN_TLV_OPTICS_ALWAYS_ENABLED;
             break;
         default:
             *id = OF_BSN_TLV;

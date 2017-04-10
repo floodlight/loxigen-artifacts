@@ -1251,6 +1251,12 @@ enum_v4_ofp_oxm_class = {
     [65535] = "OFPXMC_EXPERIMENTER",
 }
 
+enum_v4_ofp_bsn_forward_error_correction_type = {
+    [0] = "OFP_BSN_FORWARD_ERROR_CORRECTION_DEFAULT",
+    [1] = "OFP_BSN_FORWARD_ERROR_CORRECTION_ENABLE",
+    [2] = "OFP_BSN_FORWARD_ERROR_CORRECTION_DISABLE",
+}
+
 enum_v4_ofp_switch_config_failed_code = {
     [0] = "OFPSCFC_BAD_FLAGS",
     [1] = "OFPSCFC_BAD_LEN",
@@ -2124,6 +2130,12 @@ enum_v5_ofp_port_stats_prop_type = {
     [0] = "OFPPSPT_ETHERNET",
     [1] = "OFPPSPT_OPTICAL",
     [65535] = "OFPPSPT_EXPERIMENTER",
+}
+
+enum_v5_ofp_bsn_forward_error_correction_type = {
+    [0] = "OFP_BSN_FORWARD_ERROR_CORRECTION_DEFAULT",
+    [1] = "OFP_BSN_FORWARD_ERROR_CORRECTION_ENABLE",
+    [2] = "OFP_BSN_FORWARD_ERROR_CORRECTION_DISABLE",
 }
 
 enum_v5_ofp_switch_config_failed_code = {
@@ -3099,6 +3111,12 @@ enum_v6_ofp_port_stats_prop_type = {
     [0] = "OFPPSPT_ETHERNET",
     [1] = "OFPPSPT_OPTICAL",
     [65535] = "OFPPSPT_EXPERIMENTER",
+}
+
+enum_v6_ofp_bsn_forward_error_correction_type = {
+    [0] = "OFP_BSN_FORWARD_ERROR_CORRECTION_DEFAULT",
+    [1] = "OFP_BSN_FORWARD_ERROR_CORRECTION_ENABLE",
+    [2] = "OFP_BSN_FORWARD_ERROR_CORRECTION_DISABLE",
 }
 
 enum_v6_ofp_switch_config_failed_code = {
@@ -8421,6 +8439,9 @@ fields['of13.bsn_tlv_external_mac.value'] = ProtoField.ether("of13.bsn_tlv_exter
 fields['of13.bsn_tlv_external_netmask.type'] = ProtoField.uint16("of13.bsn_tlv_external_netmask.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_external_netmask.length'] = ProtoField.uint16("of13.bsn_tlv_external_netmask.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of13.bsn_tlv_external_netmask.value", "value")
+fields['of13.bsn_tlv_forward_error_correction.type'] = ProtoField.uint16("of13.bsn_tlv_forward_error_correction.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_forward_error_correction.length'] = ProtoField.uint16("of13.bsn_tlv_forward_error_correction.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_forward_error_correction.value'] = ProtoField.uint32("of13.bsn_tlv_forward_error_correction.value", "value", base.DEC, enum_v4_ofp_bsn_forward_error_correction_type)
 fields['of13.bsn_tlv_generation_id.type'] = ProtoField.uint16("of13.bsn_tlv_generation_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_generation_id.length'] = ProtoField.uint16("of13.bsn_tlv_generation_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_generation_id.value'] = ProtoField.uint64("of13.bsn_tlv_generation_id.value", "value", base.DEC, nil)
@@ -8581,6 +8602,8 @@ fields['of13.bsn_tlv_no_ns_response.length'] = ProtoField.uint16("of13.bsn_tlv_n
 fields['of13.bsn_tlv_offset.type'] = ProtoField.uint16("of13.bsn_tlv_offset.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_offset.length'] = ProtoField.uint16("of13.bsn_tlv_offset.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_offset.value'] = ProtoField.uint16("of13.bsn_tlv_offset.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_optics_always_enabled.type'] = ProtoField.uint16("of13.bsn_tlv_optics_always_enabled.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_optics_always_enabled.length'] = ProtoField.uint16("of13.bsn_tlv_optics_always_enabled.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_parent_port.type'] = ProtoField.uint16("of13.bsn_tlv_parent_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_parent_port.length'] = ProtoField.uint16("of13.bsn_tlv_parent_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_parent_port.value'] = ProtoField.uint32("of13.bsn_tlv_parent_port.value", "value", base.DEC, nil)
@@ -11300,6 +11323,9 @@ fields['of14.bsn_tlv_external_mac.value'] = ProtoField.ether("of14.bsn_tlv_exter
 fields['of14.bsn_tlv_external_netmask.type'] = ProtoField.uint16("of14.bsn_tlv_external_netmask.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_external_netmask.length'] = ProtoField.uint16("of14.bsn_tlv_external_netmask.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of14.bsn_tlv_external_netmask.value", "value")
+fields['of14.bsn_tlv_forward_error_correction.type'] = ProtoField.uint16("of14.bsn_tlv_forward_error_correction.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_forward_error_correction.length'] = ProtoField.uint16("of14.bsn_tlv_forward_error_correction.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_forward_error_correction.value'] = ProtoField.uint32("of14.bsn_tlv_forward_error_correction.value", "value", base.DEC, enum_v5_ofp_bsn_forward_error_correction_type)
 fields['of14.bsn_tlv_generation_id.type'] = ProtoField.uint16("of14.bsn_tlv_generation_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_generation_id.length'] = ProtoField.uint16("of14.bsn_tlv_generation_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_generation_id.value'] = ProtoField.uint64("of14.bsn_tlv_generation_id.value", "value", base.DEC, nil)
@@ -11460,6 +11486,8 @@ fields['of14.bsn_tlv_no_ns_response.length'] = ProtoField.uint16("of14.bsn_tlv_n
 fields['of14.bsn_tlv_offset.type'] = ProtoField.uint16("of14.bsn_tlv_offset.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_offset.length'] = ProtoField.uint16("of14.bsn_tlv_offset.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_offset.value'] = ProtoField.uint16("of14.bsn_tlv_offset.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_optics_always_enabled.type'] = ProtoField.uint16("of14.bsn_tlv_optics_always_enabled.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_optics_always_enabled.length'] = ProtoField.uint16("of14.bsn_tlv_optics_always_enabled.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_parent_port.type'] = ProtoField.uint16("of14.bsn_tlv_parent_port.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_parent_port.length'] = ProtoField.uint16("of14.bsn_tlv_parent_port.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_parent_port.value'] = ProtoField.uint32("of14.bsn_tlv_parent_port.value", "value", base.DEC, nil)
@@ -14422,6 +14450,9 @@ fields['of15.bsn_tlv_external_mac.value'] = ProtoField.ether("of15.bsn_tlv_exter
 fields['of15.bsn_tlv_external_netmask.type'] = ProtoField.uint16("of15.bsn_tlv_external_netmask.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_external_netmask.length'] = ProtoField.uint16("of15.bsn_tlv_external_netmask.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of15.bsn_tlv_external_netmask.value", "value")
+fields['of15.bsn_tlv_forward_error_correction.type'] = ProtoField.uint16("of15.bsn_tlv_forward_error_correction.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_forward_error_correction.length'] = ProtoField.uint16("of15.bsn_tlv_forward_error_correction.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_forward_error_correction.value'] = ProtoField.uint32("of15.bsn_tlv_forward_error_correction.value", "value", base.DEC, enum_v6_ofp_bsn_forward_error_correction_type)
 fields['of15.bsn_tlv_generation_id.type'] = ProtoField.uint16("of15.bsn_tlv_generation_id.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_generation_id.length'] = ProtoField.uint16("of15.bsn_tlv_generation_id.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_generation_id.value'] = ProtoField.uint64("of15.bsn_tlv_generation_id.value", "value", base.DEC, nil)
@@ -14582,6 +14613,8 @@ fields['of15.bsn_tlv_no_ns_response.length'] = ProtoField.uint16("of15.bsn_tlv_n
 fields['of15.bsn_tlv_offset.type'] = ProtoField.uint16("of15.bsn_tlv_offset.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_offset.length'] = ProtoField.uint16("of15.bsn_tlv_offset.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_offset.value'] = ProtoField.uint16("of15.bsn_tlv_offset.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_optics_always_enabled.type'] = ProtoField.uint16("of15.bsn_tlv_optics_always_enabled.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_optics_always_enabled.length'] = ProtoField.uint16("of15.bsn_tlv_optics_always_enabled.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_parent_port.type'] = ProtoField.uint16("of15.bsn_tlv_parent_port.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_parent_port.length'] = ProtoField.uint16("of15.bsn_tlv_parent_port.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_parent_port.value'] = ProtoField.uint32("of15.bsn_tlv_parent_port.value", "value", base.DEC, nil)
@@ -20782,6 +20815,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_external_netmask.type'],
     fields['of13.bsn_tlv_external_netmask.length'],
     fields['of13.bsn_tlv_external_netmask.value'],
+    fields['of13.bsn_tlv_forward_error_correction.type'],
+    fields['of13.bsn_tlv_forward_error_correction.length'],
+    fields['of13.bsn_tlv_forward_error_correction.value'],
     fields['of13.bsn_tlv_generation_id.type'],
     fields['of13.bsn_tlv_generation_id.length'],
     fields['of13.bsn_tlv_generation_id.value'],
@@ -20942,6 +20978,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_offset.type'],
     fields['of13.bsn_tlv_offset.length'],
     fields['of13.bsn_tlv_offset.value'],
+    fields['of13.bsn_tlv_optics_always_enabled.type'],
+    fields['of13.bsn_tlv_optics_always_enabled.length'],
     fields['of13.bsn_tlv_parent_port.type'],
     fields['of13.bsn_tlv_parent_port.length'],
     fields['of13.bsn_tlv_parent_port.value'],
@@ -23661,6 +23699,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_external_netmask.type'],
     fields['of14.bsn_tlv_external_netmask.length'],
     fields['of14.bsn_tlv_external_netmask.value'],
+    fields['of14.bsn_tlv_forward_error_correction.type'],
+    fields['of14.bsn_tlv_forward_error_correction.length'],
+    fields['of14.bsn_tlv_forward_error_correction.value'],
     fields['of14.bsn_tlv_generation_id.type'],
     fields['of14.bsn_tlv_generation_id.length'],
     fields['of14.bsn_tlv_generation_id.value'],
@@ -23821,6 +23862,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_offset.type'],
     fields['of14.bsn_tlv_offset.length'],
     fields['of14.bsn_tlv_offset.value'],
+    fields['of14.bsn_tlv_optics_always_enabled.type'],
+    fields['of14.bsn_tlv_optics_always_enabled.length'],
     fields['of14.bsn_tlv_parent_port.type'],
     fields['of14.bsn_tlv_parent_port.length'],
     fields['of14.bsn_tlv_parent_port.value'],
@@ -26783,6 +26826,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_external_netmask.type'],
     fields['of15.bsn_tlv_external_netmask.length'],
     fields['of15.bsn_tlv_external_netmask.value'],
+    fields['of15.bsn_tlv_forward_error_correction.type'],
+    fields['of15.bsn_tlv_forward_error_correction.length'],
+    fields['of15.bsn_tlv_forward_error_correction.value'],
     fields['of15.bsn_tlv_generation_id.type'],
     fields['of15.bsn_tlv_generation_id.length'],
     fields['of15.bsn_tlv_generation_id.value'],
@@ -26943,6 +26989,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_offset.type'],
     fields['of15.bsn_tlv_offset.length'],
     fields['of15.bsn_tlv_offset.value'],
+    fields['of15.bsn_tlv_optics_always_enabled.type'],
+    fields['of15.bsn_tlv_optics_always_enabled.length'],
     fields['of15.bsn_tlv_parent_port.type'],
     fields['of15.bsn_tlv_parent_port.length'],
     fields['of15.bsn_tlv_parent_port.value'],
@@ -38736,6 +38784,16 @@ function dissect_of_bsn_tlv_external_netmask_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[25] = dissect_of_bsn_tlv_external_netmask_v4
 
+-- child class of_bsn_tlv_forward_error_correction
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_forward_error_correction_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_forward_error_correction.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_forward_error_correction.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_forward_error_correction.value')
+    return 'of_bsn_tlv_forward_error_correction'
+end
+of_bsn_tlv_v4_dissectors[149] = dissect_of_bsn_tlv_forward_error_correction_v4
+
 -- child class of_bsn_tlv_generation_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_generation_id_v4(reader, subtree)
@@ -39283,6 +39341,15 @@ function dissect_of_bsn_tlv_offset_v4(reader, subtree)
     return 'of_bsn_tlv_offset'
 end
 of_bsn_tlv_v4_dissectors[82] = dissect_of_bsn_tlv_offset_v4
+
+-- child class of_bsn_tlv_optics_always_enabled
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_optics_always_enabled_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_optics_always_enabled.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_optics_always_enabled.length')
+    return 'of_bsn_tlv_optics_always_enabled'
+end
+of_bsn_tlv_v4_dissectors[150] = dissect_of_bsn_tlv_optics_always_enabled_v4
 
 -- child class of_bsn_tlv_parent_port
 -- Child of of_bsn_tlv
@@ -46432,6 +46499,16 @@ function dissect_of_bsn_tlv_external_netmask_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[25] = dissect_of_bsn_tlv_external_netmask_v5
 
+-- child class of_bsn_tlv_forward_error_correction
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_forward_error_correction_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_forward_error_correction.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_forward_error_correction.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_forward_error_correction.value')
+    return 'of_bsn_tlv_forward_error_correction'
+end
+of_bsn_tlv_v5_dissectors[149] = dissect_of_bsn_tlv_forward_error_correction_v5
+
 -- child class of_bsn_tlv_generation_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_generation_id_v5(reader, subtree)
@@ -46979,6 +47056,15 @@ function dissect_of_bsn_tlv_offset_v5(reader, subtree)
     return 'of_bsn_tlv_offset'
 end
 of_bsn_tlv_v5_dissectors[82] = dissect_of_bsn_tlv_offset_v5
+
+-- child class of_bsn_tlv_optics_always_enabled
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_optics_always_enabled_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_optics_always_enabled.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_optics_always_enabled.length')
+    return 'of_bsn_tlv_optics_always_enabled'
+end
+of_bsn_tlv_v5_dissectors[150] = dissect_of_bsn_tlv_optics_always_enabled_v5
 
 -- child class of_bsn_tlv_parent_port
 -- Child of of_bsn_tlv
@@ -54685,6 +54771,16 @@ function dissect_of_bsn_tlv_external_netmask_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[25] = dissect_of_bsn_tlv_external_netmask_v6
 
+-- child class of_bsn_tlv_forward_error_correction
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_forward_error_correction_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_forward_error_correction.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_forward_error_correction.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_forward_error_correction.value')
+    return 'of_bsn_tlv_forward_error_correction'
+end
+of_bsn_tlv_v6_dissectors[149] = dissect_of_bsn_tlv_forward_error_correction_v6
+
 -- child class of_bsn_tlv_generation_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_generation_id_v6(reader, subtree)
@@ -55232,6 +55328,15 @@ function dissect_of_bsn_tlv_offset_v6(reader, subtree)
     return 'of_bsn_tlv_offset'
 end
 of_bsn_tlv_v6_dissectors[82] = dissect_of_bsn_tlv_offset_v6
+
+-- child class of_bsn_tlv_optics_always_enabled
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_optics_always_enabled_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_optics_always_enabled.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_optics_always_enabled.length')
+    return 'of_bsn_tlv_optics_always_enabled'
+end
+of_bsn_tlv_v6_dissectors[150] = dissect_of_bsn_tlv_optics_always_enabled_v6
 
 -- child class of_bsn_tlv_parent_port
 -- Child of of_bsn_tlv

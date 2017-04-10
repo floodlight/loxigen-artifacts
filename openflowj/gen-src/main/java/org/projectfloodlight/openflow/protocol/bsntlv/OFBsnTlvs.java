@@ -97,6 +97,8 @@ public interface OFBsnTlvs {
     OFBsnTlvExternalMac externalMac(MacAddress value);
     OFBsnTlvExternalNetmask.Builder buildExternalNetmask() throws UnsupportedOperationException;
     OFBsnTlvExternalNetmask externalNetmask(IPv4Address value);
+    OFBsnTlvForwardErrorCorrection.Builder buildForwardErrorCorrection() throws UnsupportedOperationException;
+    OFBsnTlvForwardErrorCorrection forwardErrorCorrection(OFBsnForwardErrorCorrectionType value);
     OFBsnTlvGenerationId.Builder buildGenerationId() throws UnsupportedOperationException;
     OFBsnTlvGenerationId generationId(U64 value);
     OFBsnTlvHashAlgorithm.Builder buildHashAlgorithm() throws UnsupportedOperationException;
@@ -196,6 +198,7 @@ public interface OFBsnTlvs {
     OFBsnTlvNoNsResponse noNsResponse();
     OFBsnTlvOffset.Builder buildOffset() throws UnsupportedOperationException;
     OFBsnTlvOffset offset(int value);
+    OFBsnTlvOpticsAlwaysEnabled opticsAlwaysEnabled();
     OFBsnTlvParentPort.Builder buildParentPort() throws UnsupportedOperationException;
     OFBsnTlvParentPort parentPort(OFPort value);
     OFBsnTlvPartnerKey.Builder buildPartnerKey() throws UnsupportedOperationException;

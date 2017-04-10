@@ -881,6 +881,8 @@ void of_bsn_tlv_external_mac_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_bsn_tlv_external_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_external_netmask_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_external_netmask_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_forward_error_correction_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_forward_error_correction_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_generation_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_generation_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_hash_algorithm_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -991,6 +993,8 @@ void of_bsn_tlv_no_ns_response_wire_object_id_get(of_object_t *obj, of_object_id
 void of_bsn_tlv_no_ns_response_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_offset_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_offset_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_optics_always_enabled_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_optics_always_enabled_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_parent_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_parent_port_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_partner_key_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1807,6 +1811,7 @@ typedef of_object_t of_bsn_tlv_external_gateway_mac_t;
 typedef of_object_t of_bsn_tlv_external_ip_t;
 typedef of_object_t of_bsn_tlv_external_mac_t;
 typedef of_object_t of_bsn_tlv_external_netmask_t;
+typedef of_object_t of_bsn_tlv_forward_error_correction_t;
 typedef of_object_t of_bsn_tlv_generation_id_t;
 typedef of_object_t of_bsn_tlv_hash_algorithm_t;
 typedef of_object_t of_bsn_tlv_hash_gtp_header_match_t;
@@ -1862,6 +1867,7 @@ typedef of_object_t of_bsn_tlv_nexthop_type_vxlan_t;
 typedef of_object_t of_bsn_tlv_no_arp_response_t;
 typedef of_object_t of_bsn_tlv_no_ns_response_t;
 typedef of_object_t of_bsn_tlv_offset_t;
+typedef of_object_t of_bsn_tlv_optics_always_enabled_t;
 typedef of_object_t of_bsn_tlv_parent_port_t;
 typedef of_object_t of_bsn_tlv_partner_key_t;
 typedef of_object_t of_bsn_tlv_partner_port_num_t;
@@ -3967,6 +3973,11 @@ extern void of_bsn_tlv_external_netmask_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_forward_error_correction_new(of_version_t version);
+extern void of_bsn_tlv_forward_error_correction_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_generation_id_new(of_version_t version);
 extern void of_bsn_tlv_generation_id_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4239,6 +4250,11 @@ extern void of_bsn_tlv_no_ns_response_init(
 extern of_object_t *
     of_bsn_tlv_offset_new(of_version_t version);
 extern void of_bsn_tlv_offset_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_optics_always_enabled_new(of_version_t version);
+extern void of_bsn_tlv_optics_always_enabled_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9931,6 +9947,17 @@ of_bsn_tlv_external_netmask_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_forward_error_correction_t
+ * @param obj An instance of type of_bsn_tlv_forward_error_correction_t
+ *
+ * \ingroup of_bsn_tlv_forward_error_correction
+ */
+static inline void
+of_bsn_tlv_forward_error_correction_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_generation_id_t
  * @param obj An instance of type of_bsn_tlv_generation_id_t
  *
@@ -10532,6 +10559,17 @@ of_bsn_tlv_no_ns_response_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_offset_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_optics_always_enabled_t
+ * @param obj An instance of type of_bsn_tlv_optics_always_enabled_t
+ *
+ * \ingroup of_bsn_tlv_optics_always_enabled
+ */
+static inline void
+of_bsn_tlv_optics_always_enabled_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22909,6 +22947,15 @@ extern void of_bsn_tlv_external_netmask_value_get(
     of_bsn_tlv_external_netmask_t *obj,
     of_ipv4_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_forward_error_correction */
+
+extern void of_bsn_tlv_forward_error_correction_value_set(
+    of_bsn_tlv_forward_error_correction_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_forward_error_correction_value_get(
+    of_bsn_tlv_forward_error_correction_t *obj,
+    uint8_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_generation_id */
 
 extern void of_bsn_tlv_generation_id_value_set(
@@ -23368,6 +23415,8 @@ extern void of_bsn_tlv_offset_value_set(
 extern void of_bsn_tlv_offset_value_get(
     of_bsn_tlv_offset_t *obj,
     uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_optics_always_enabled */
 
 /* Unified accessor functions for of_bsn_tlv_parent_port */
 
