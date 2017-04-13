@@ -1363,6 +1363,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_force_link_up_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_forward_error_correction_dup(
         of_object_t *src);
 
@@ -6291,6 +6295,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_force_link_up_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9008,6 +9016,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_force_link_up_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

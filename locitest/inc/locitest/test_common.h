@@ -6917,6 +6917,15 @@ extern int of_bsn_tlv_external_netmask_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_external_netmask_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_external_netmask_t *obj, int value);
 
+extern int of_bsn_tlv_force_link_up_OF_VERSION_1_3_populate(
+    of_bsn_tlv_force_link_up_t *obj, int value);
+extern int of_bsn_tlv_force_link_up_OF_VERSION_1_3_check(
+    of_bsn_tlv_force_link_up_t *obj, int value);
+extern int of_bsn_tlv_force_link_up_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_force_link_up_t *obj, int value);
+extern int of_bsn_tlv_force_link_up_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_force_link_up_t *obj, int value);
+
 extern int of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_populate(
     of_bsn_tlv_forward_error_correction_t *obj, int value);
 extern int of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_check(
@@ -12919,6 +12928,15 @@ extern int of_bsn_tlv_external_netmask_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_external_netmask_t *obj, int value);
 extern int of_bsn_tlv_external_netmask_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_external_netmask_t *obj, int value);
+
+extern int of_bsn_tlv_force_link_up_OF_VERSION_1_4_populate(
+    of_bsn_tlv_force_link_up_t *obj, int value);
+extern int of_bsn_tlv_force_link_up_OF_VERSION_1_4_check(
+    of_bsn_tlv_force_link_up_t *obj, int value);
+extern int of_bsn_tlv_force_link_up_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_force_link_up_t *obj, int value);
+extern int of_bsn_tlv_force_link_up_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_force_link_up_t *obj, int value);
 
 extern int of_bsn_tlv_forward_error_correction_OF_VERSION_1_4_populate(
     of_bsn_tlv_forward_error_correction_t *obj, int value);

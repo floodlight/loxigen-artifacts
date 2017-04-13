@@ -268,6 +268,10 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvExternalNetmask not supported in version 1.0");
     }
 
+    public OFBsnTlvForceLinkUp forceLinkUp() {
+        throw new UnsupportedOperationException("OFBsnTlvForceLinkUp not supported in version 1.0");
+    }
+
     public OFBsnTlvForwardErrorCorrection.Builder buildForwardErrorCorrection() {
         throw new UnsupportedOperationException("OFBsnTlvForwardErrorCorrection not supported in version 1.0");
     }

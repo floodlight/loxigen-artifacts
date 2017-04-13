@@ -27005,10 +27005,6 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_request_packets_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_ANCHOR) {
-        return of_bsn_tlv_anchor_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_BSN_TLV_PARTNER_PORT_NUM) {
         return of_bsn_tlv_partner_port_num_OF_VERSION_1_3_dup(src);
     }
@@ -27027,6 +27023,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_BROADCAST_RATE) {
         return of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
+        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
@@ -27113,8 +27113,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
-        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_ANCHOR) {
+        return of_bsn_tlv_anchor_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_IPV4_NETMASK) {
@@ -27447,6 +27447,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_IPV4_DST) {
         return of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FORCE_LINK_UP) {
+        return of_bsn_tlv_force_link_up_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
@@ -28444,6 +28448,27 @@ of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_external_netmask_value_get(src, &ipv4);
     of_bsn_tlv_external_netmask_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_force_link_up
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_force_link_up.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_force_link_up_t *
+of_bsn_tlv_force_link_up_OF_VERSION_1_3_dup(
+    of_bsn_tlv_force_link_up_t *src)
+{
+    of_bsn_tlv_force_link_up_t *dst;
+
+    if ((dst = of_bsn_tlv_force_link_up_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -49585,10 +49610,6 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_request_packets_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_ANCHOR) {
-        return of_bsn_tlv_anchor_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_BSN_TLV_PARTNER_PORT_NUM) {
         return of_bsn_tlv_partner_port_num_OF_VERSION_1_4_dup(src);
     }
@@ -49607,6 +49628,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_BROADCAST_RATE) {
         return of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
+        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
@@ -49693,8 +49718,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
-        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_ANCHOR) {
+        return of_bsn_tlv_anchor_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_IPV4_NETMASK) {
@@ -50027,6 +50052,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_IPV4_DST) {
         return of_bsn_tlv_ipv4_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FORCE_LINK_UP) {
+        return of_bsn_tlv_force_link_up_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
@@ -51024,6 +51053,27 @@ of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_external_netmask_value_get(src, &ipv4);
     of_bsn_tlv_external_netmask_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_force_link_up
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_force_link_up.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_force_link_up_t *
+of_bsn_tlv_force_link_up_OF_VERSION_1_4_dup(
+    of_bsn_tlv_force_link_up_t *src)
+{
+    of_bsn_tlv_force_link_up_t *dst;
+
+    if ((dst = of_bsn_tlv_force_link_up_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -70391,6 +70441,23 @@ of_bsn_tlv_external_netmask_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_force_link_up_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_force_link_up_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_force_link_up_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

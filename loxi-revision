@@ -1,1 +1,1 @@
-0f662f260c86ef8f5a5ac0f7acf34efd4a40dd8d Merge into master from pull request #546: push-artifacts: make MAKE configurable (https://github.com/floodlight/loxigen/pull/546)
+72569023213f58dc45b4ea0af769d32845ee8b58 Merge into master from pull request #547: [SWL-3678] Add a new TLV force_link_up for port_config gentable (https://github.com/floodlight/loxigen/pull/547)

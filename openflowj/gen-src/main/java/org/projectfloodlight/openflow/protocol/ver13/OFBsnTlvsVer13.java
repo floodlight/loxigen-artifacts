@@ -330,6 +330,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvForceLinkUp forceLinkUp() {
+        return OFBsnTlvForceLinkUpVer13.INSTANCE;
+    }
+
     public OFBsnTlvForwardErrorCorrection.Builder buildForwardErrorCorrection() {
         return new OFBsnTlvForwardErrorCorrectionVer13.Builder();
     }

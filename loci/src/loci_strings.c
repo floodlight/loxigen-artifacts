@@ -346,6 +346,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_external_ip",
     "of_bsn_tlv_external_mac",
     "of_bsn_tlv_external_netmask",
+    "of_bsn_tlv_force_link_up",
     "of_bsn_tlv_forward_error_correction",
     "of_bsn_tlv_generation_id",
     "of_bsn_tlv_hash_algorithm",

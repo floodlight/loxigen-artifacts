@@ -97,6 +97,7 @@ public interface OFBsnTlvs {
     OFBsnTlvExternalMac externalMac(MacAddress value);
     OFBsnTlvExternalNetmask.Builder buildExternalNetmask() throws UnsupportedOperationException;
     OFBsnTlvExternalNetmask externalNetmask(IPv4Address value);
+    OFBsnTlvForceLinkUp forceLinkUp();
     OFBsnTlvForwardErrorCorrection.Builder buildForwardErrorCorrection() throws UnsupportedOperationException;
     OFBsnTlvForwardErrorCorrection forwardErrorCorrection(OFBsnForwardErrorCorrectionType value);
     OFBsnTlvGenerationId.Builder buildGenerationId() throws UnsupportedOperationException;

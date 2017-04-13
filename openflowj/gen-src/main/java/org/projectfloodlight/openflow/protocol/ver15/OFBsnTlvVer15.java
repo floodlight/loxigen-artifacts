@@ -151,6 +151,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x19:
                    // discriminator value 0x19=0x19 for class OFBsnTlvExternalNetmaskVer15
                    return OFBsnTlvExternalNetmaskVer15.READER.readFrom(bb);
+               case (short) 0x97:
+                   // discriminator value 0x97=0x97 for class OFBsnTlvForceLinkUpVer15
+                   return OFBsnTlvForceLinkUpVer15.READER.readFrom(bb);
                case (short) 0x95:
                    // discriminator value 0x95=0x95 for class OFBsnTlvForwardErrorCorrectionVer15
                    return OFBsnTlvForwardErrorCorrectionVer15.READER.readFrom(bb);
