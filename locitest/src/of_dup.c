@@ -27185,6 +27185,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_external_ip_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_USE_PEER_WHEN_EMPTY) {
+        return of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_IPV4_SRC) {
         return of_bsn_tlv_ipv4_src_OF_VERSION_1_3_dup(src);
     }
@@ -31094,6 +31098,27 @@ of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_use_packet_state_value_get(src, &val8);
     of_bsn_tlv_use_packet_state_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_use_peer_when_empty
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_use_peer_when_empty.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_use_peer_when_empty_t *
+of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_dup(
+    of_bsn_tlv_use_peer_when_empty_t *src)
+{
+    of_bsn_tlv_use_peer_when_empty_t *dst;
+
+    if ((dst = of_bsn_tlv_use_peer_when_empty_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -49819,6 +49844,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_external_ip_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_USE_PEER_WHEN_EMPTY) {
+        return of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_IPV4_SRC) {
         return of_bsn_tlv_ipv4_src_OF_VERSION_1_4_dup(src);
     }
@@ -53728,6 +53757,27 @@ of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_use_packet_state_value_get(src, &val8);
     of_bsn_tlv_use_packet_state_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_use_peer_when_empty
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_use_peer_when_empty.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_use_peer_when_empty_t *
+of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_dup(
+    of_bsn_tlv_use_peer_when_empty_t *src)
+{
+    of_bsn_tlv_use_peer_when_empty_t *dst;
+
+    if ((dst = of_bsn_tlv_use_peer_when_empty_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -72318,6 +72368,23 @@ of_bsn_tlv_use_packet_state_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_use_peer_when_empty_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

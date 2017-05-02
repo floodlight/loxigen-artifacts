@@ -292,6 +292,7 @@ public interface OFBsnTlvs {
     OFBsnTlvUntagged untagged();
     OFBsnTlvUsePacketState.Builder buildUsePacketState() throws UnsupportedOperationException;
     OFBsnTlvUsePacketState usePacketState(short value);
+    OFBsnTlvUsePeerWhenEmpty usePeerWhenEmpty();
     OFBsnTlvVfi.Builder buildVfi() throws UnsupportedOperationException;
     OFBsnTlvVfi vfi(int value);
     OFBsnTlvVfpClassId.Builder buildVfpClassId() throws UnsupportedOperationException;

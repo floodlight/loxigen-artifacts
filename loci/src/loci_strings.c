@@ -453,6 +453,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_unknown_multicast_rate",
     "of_bsn_tlv_untagged",
     "of_bsn_tlv_use_packet_state",
+    "of_bsn_tlv_use_peer_when_empty",
     "of_bsn_tlv_vfi",
     "of_bsn_tlv_vfp_class_id",
     "of_bsn_tlv_vlan_mac_list",

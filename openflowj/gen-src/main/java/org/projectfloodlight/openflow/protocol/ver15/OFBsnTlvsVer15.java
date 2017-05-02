@@ -1202,6 +1202,10 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvUsePeerWhenEmpty usePeerWhenEmpty() {
+        return OFBsnTlvUsePeerWhenEmptyVer15.INSTANCE;
+    }
+
     public OFBsnTlvVfi.Builder buildVfi() {
         return new OFBsnTlvVfiVer15.Builder();
     }

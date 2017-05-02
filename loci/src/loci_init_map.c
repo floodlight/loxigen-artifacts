@@ -456,6 +456,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_unknown_multicast_rate_init,
     (of_object_init_f)of_bsn_tlv_untagged_init,
     (of_object_init_f)of_bsn_tlv_use_packet_state_init,
+    (of_object_init_f)of_bsn_tlv_use_peer_when_empty_init,
     (of_object_init_f)of_bsn_tlv_vfi_init,
     (of_object_init_f)of_bsn_tlv_vfp_class_id_init,
     (of_object_init_f)of_bsn_tlv_vlan_mac_list_init,

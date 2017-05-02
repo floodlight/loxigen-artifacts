@@ -472,6 +472,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x60:
                    // discriminator value 0x60=0x60 for class OFBsnTlvUsePacketStateVer14
                    return OFBsnTlvUsePacketStateVer14.READER.readFrom(bb);
+               case (short) 0x9c:
+                   // discriminator value 0x9c=0x9c for class OFBsnTlvUsePeerWhenEmptyVer14
+                   return OFBsnTlvUsePeerWhenEmptyVer14.READER.readFrom(bb);
                case (short) 0x63:
                    // discriminator value 0x63=0x63 for class OFBsnTlvVfiVer14
                    return OFBsnTlvVfiVer14.READER.readFrom(bb);

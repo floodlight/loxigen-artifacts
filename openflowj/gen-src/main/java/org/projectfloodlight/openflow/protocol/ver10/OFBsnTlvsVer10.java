@@ -960,6 +960,10 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvUsePacketState not supported in version 1.0");
     }
 
+    public OFBsnTlvUsePeerWhenEmpty usePeerWhenEmpty() {
+        throw new UnsupportedOperationException("OFBsnTlvUsePeerWhenEmpty not supported in version 1.0");
+    }
+
     public OFBsnTlvVfi.Builder buildVfi() {
         throw new UnsupportedOperationException("OFBsnTlvVfi not supported in version 1.0");
     }

@@ -1095,6 +1095,8 @@ void of_bsn_tlv_untagged_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_bsn_tlv_untagged_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_use_packet_state_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_use_packet_state_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_use_peer_when_empty_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_use_peer_when_empty_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vfi_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vfi_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vfp_class_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1922,6 +1924,7 @@ typedef of_object_t of_bsn_tlv_unicast_rate_t;
 typedef of_object_t of_bsn_tlv_unknown_multicast_rate_t;
 typedef of_object_t of_bsn_tlv_untagged_t;
 typedef of_object_t of_bsn_tlv_use_packet_state_t;
+typedef of_object_t of_bsn_tlv_use_peer_when_empty_t;
 typedef of_object_t of_bsn_tlv_vfi_t;
 typedef of_object_t of_bsn_tlv_vfp_class_id_t;
 typedef of_object_t of_bsn_tlv_vlan_mac_list_t;
@@ -4511,6 +4514,11 @@ extern void of_bsn_tlv_untagged_init(
 extern of_object_t *
     of_bsn_tlv_use_packet_state_new(of_version_t version);
 extern void of_bsn_tlv_use_packet_state_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_use_peer_when_empty_new(of_version_t version);
+extern void of_bsn_tlv_use_peer_when_empty_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11136,6 +11144,17 @@ of_bsn_tlv_untagged_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_use_packet_state_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_use_peer_when_empty_t
+ * @param obj An instance of type of_bsn_tlv_use_peer_when_empty_t
+ *
+ * \ingroup of_bsn_tlv_use_peer_when_empty
+ */
+static inline void
+of_bsn_tlv_use_peer_when_empty_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23867,6 +23886,8 @@ extern void of_bsn_tlv_use_packet_state_value_set(
 extern void of_bsn_tlv_use_packet_state_value_get(
     of_bsn_tlv_use_packet_state_t *obj,
     uint8_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_use_peer_when_empty */
 
 /* Unified accessor functions for of_bsn_tlv_vfi */
 

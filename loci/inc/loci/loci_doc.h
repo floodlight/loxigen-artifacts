@@ -7931,6 +7931,13 @@ typedef struct of_bsn_tlv_untagged_s of_bsn_tlv_untagged_t;
 typedef struct of_bsn_tlv_use_packet_state_s of_bsn_tlv_use_packet_state_t;
 
 /**
+ * Structure for of_bsn_tlv_use_peer_when_empty object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_use_peer_when_empty_s of_bsn_tlv_use_peer_when_empty_t;
+
+/**
  * Structure for of_bsn_tlv_vfi object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
