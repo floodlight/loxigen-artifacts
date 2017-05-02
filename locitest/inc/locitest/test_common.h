@@ -7727,6 +7727,15 @@ extern int of_bsn_tlv_tcp_src_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_tcp_src_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_tcp_src_t *obj, int value);
 
+extern int of_bsn_tlv_timestamp_OF_VERSION_1_3_populate(
+    of_bsn_tlv_timestamp_t *obj, int value);
+extern int of_bsn_tlv_timestamp_OF_VERSION_1_3_check(
+    of_bsn_tlv_timestamp_t *obj, int value);
+extern int of_bsn_tlv_timestamp_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_timestamp_t *obj, int value);
+extern int of_bsn_tlv_timestamp_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_timestamp_t *obj, int value);
+
 extern int of_bsn_tlv_ttl_OF_VERSION_1_3_populate(
     of_bsn_tlv_ttl_t *obj, int value);
 extern int of_bsn_tlv_ttl_OF_VERSION_1_3_check(
@@ -13738,6 +13747,15 @@ extern int of_bsn_tlv_tcp_src_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_tcp_src_t *obj, int value);
 extern int of_bsn_tlv_tcp_src_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_tcp_src_t *obj, int value);
+
+extern int of_bsn_tlv_timestamp_OF_VERSION_1_4_populate(
+    of_bsn_tlv_timestamp_t *obj, int value);
+extern int of_bsn_tlv_timestamp_OF_VERSION_1_4_check(
+    of_bsn_tlv_timestamp_t *obj, int value);
+extern int of_bsn_tlv_timestamp_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_timestamp_t *obj, int value);
+extern int of_bsn_tlv_timestamp_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_timestamp_t *obj, int value);
 
 extern int of_bsn_tlv_ttl_OF_VERSION_1_4_populate(
     of_bsn_tlv_ttl_t *obj, int value);

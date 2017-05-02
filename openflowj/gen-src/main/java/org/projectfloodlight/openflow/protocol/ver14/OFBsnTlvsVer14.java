@@ -1054,6 +1054,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvTimestamp.Builder buildTimestamp() {
+        return new OFBsnTlvTimestampVer14.Builder();
+    }
+    public OFBsnTlvTimestamp timestamp(U64 value) {
+        return new OFBsnTlvTimestampVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvTtl.Builder buildTtl() {
         return new OFBsnTlvTtlVer14.Builder();
     }

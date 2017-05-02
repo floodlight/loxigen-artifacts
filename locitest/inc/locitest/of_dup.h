@@ -1723,6 +1723,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_timestamp_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_ttl_dup(
         of_object_t *src);
 
@@ -6655,6 +6659,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_timestamp_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_ttl_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9376,6 +9384,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_timestamp_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

@@ -844,6 +844,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvTcpSrc not supported in version 1.1");
     }
 
+    public OFBsnTlvTimestamp.Builder buildTimestamp() {
+        throw new UnsupportedOperationException("OFBsnTlvTimestamp not supported in version 1.1");
+    }
+    public OFBsnTlvTimestamp timestamp(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvTimestamp not supported in version 1.1");
+    }
+
     public OFBsnTlvTtl.Builder buildTtl() {
         throw new UnsupportedOperationException("OFBsnTlvTtl not supported in version 1.1");
     }

@@ -855,6 +855,7 @@ int of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cook
 int of_bsn_tlv_tcp_dst_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_tcp_flags_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_tcp_src_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_timestamp_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_ttl_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_tx_bytes_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1478,6 +1479,7 @@ int of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cook
 int of_bsn_tlv_tcp_dst_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_tcp_flags_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_tcp_src_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_timestamp_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_ttl_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_tx_bytes_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);

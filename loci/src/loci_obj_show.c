@@ -21439,6 +21439,20 @@ of_bsn_tlv_tcp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ob
 }
 
 int
+of_bsn_tlv_timestamp_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint64_t val64;
+
+    of_bsn_tlv_timestamp_value_get(obj, &val64);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -35045,6 +35059,20 @@ of_bsn_tlv_tcp_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ob
 }
 
 int
+of_bsn_tlv_timestamp_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint64_t val64;
+
+    of_bsn_tlv_timestamp_value_get(obj, &val64);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -41287,6 +41315,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_0_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_show,
     unknown_show,
@@ -41923,6 +41952,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_bsn_interface_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -42877,6 +42907,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_2_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_show,
     unknown_show,
@@ -43643,6 +43674,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_tcp_dst_OF_VERSION_1_3_show,
     of_bsn_tlv_tcp_flags_OF_VERSION_1_3_show,
     of_bsn_tlv_tcp_src_OF_VERSION_1_3_show,
+    of_bsn_tlv_timestamp_OF_VERSION_1_3_show,
     of_bsn_tlv_ttl_OF_VERSION_1_3_show,
     of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_show,
     of_bsn_tlv_tx_bytes_OF_VERSION_1_3_show,
@@ -44438,6 +44470,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_tcp_dst_OF_VERSION_1_4_show,
     of_bsn_tlv_tcp_flags_OF_VERSION_1_4_show,
     of_bsn_tlv_tcp_src_OF_VERSION_1_4_show,
+    of_bsn_tlv_timestamp_OF_VERSION_1_4_show,
     of_bsn_tlv_ttl_OF_VERSION_1_4_show,
     of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_show,
     of_bsn_tlv_tx_bytes_OF_VERSION_1_4_show,

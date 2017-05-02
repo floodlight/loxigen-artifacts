@@ -259,6 +259,8 @@ public interface OFBsnTlvs {
     OFBsnTlvTcpFlags tcpFlags(int value);
     OFBsnTlvTcpSrc.Builder buildTcpSrc() throws UnsupportedOperationException;
     OFBsnTlvTcpSrc tcpSrc(int value);
+    OFBsnTlvTimestamp.Builder buildTimestamp() throws UnsupportedOperationException;
+    OFBsnTlvTimestamp timestamp(U64 value);
     OFBsnTlvTtl.Builder buildTtl() throws UnsupportedOperationException;
     OFBsnTlvTtl ttl(int value);
     OFBsnTlvTunnelCapability.Builder buildTunnelCapability() throws UnsupportedOperationException;

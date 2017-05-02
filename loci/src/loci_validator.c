@@ -845,6 +845,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_sub_agent_id_OF_VERS
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_tcp_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_tcp_flags_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_tcp_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_timestamp_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_ttl_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_tunnel_capability_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_tx_bytes_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1499,6 +1500,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_sub_agent_id_OF_VERS
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_tcp_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_tcp_flags_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_tcp_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_timestamp_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_ttl_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_tunnel_capability_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_tx_bytes_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -20663,6 +20665,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_tcp_flags_OF_VERSION_1_3(data, len, out_len);
     case 0x41:
         return loci_validate_of_bsn_tlv_tcp_src_OF_VERSION_1_3(data, len, out_len);
+    case 0x9a:
+        return loci_validate_of_bsn_tlv_timestamp_OF_VERSION_1_3(data, len, out_len);
     case 0x71:
         return loci_validate_of_bsn_tlv_ttl_OF_VERSION_1_3(data, len, out_len);
     case 0x8e:
@@ -23478,6 +23482,28 @@ loci_validate_of_bsn_tlv_tcp_src_OF_VERSION_1_3(uint8_t *data, int len, int *out
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_timestamp_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 12) {
         return -1;
     }
 
@@ -36909,6 +36935,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_tcp_flags_OF_VERSION_1_4(data, len, out_len);
     case 0x41:
         return loci_validate_of_bsn_tlv_tcp_src_OF_VERSION_1_4(data, len, out_len);
+    case 0x9a:
+        return loci_validate_of_bsn_tlv_timestamp_OF_VERSION_1_4(data, len, out_len);
     case 0x71:
         return loci_validate_of_bsn_tlv_ttl_OF_VERSION_1_4(data, len, out_len);
     case 0x8e:
@@ -39724,6 +39752,28 @@ loci_validate_of_bsn_tlv_tcp_src_OF_VERSION_1_4(uint8_t *data, int len, int *out
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_timestamp_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 12) {
         return -1;
     }
 

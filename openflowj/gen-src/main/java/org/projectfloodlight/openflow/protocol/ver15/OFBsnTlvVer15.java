@@ -421,6 +421,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x41:
                    // discriminator value 0x41=0x41 for class OFBsnTlvTcpSrcVer15
                    return OFBsnTlvTcpSrcVer15.READER.readFrom(bb);
+               case (short) 0x9a:
+                   // discriminator value 0x9a=0x9a for class OFBsnTlvTimestampVer15
+                   return OFBsnTlvTimestampVer15.READER.readFrom(bb);
                case (short) 0x71:
                    // discriminator value 0x71=0x71 for class OFBsnTlvTtlVer15
                    return OFBsnTlvTtlVer15.READER.readFrom(bb);

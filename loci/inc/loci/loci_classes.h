@@ -1061,6 +1061,8 @@ void of_bsn_tlv_tcp_flags_wire_object_id_get(of_object_t *obj, of_object_id_t *i
 void of_bsn_tlv_tcp_flags_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tcp_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_tcp_src_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_timestamp_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_timestamp_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ttl_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ttl_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tunnel_capability_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1903,6 +1905,7 @@ typedef of_object_t of_bsn_tlv_sub_agent_id_t;
 typedef of_object_t of_bsn_tlv_tcp_dst_t;
 typedef of_object_t of_bsn_tlv_tcp_flags_t;
 typedef of_object_t of_bsn_tlv_tcp_src_t;
+typedef of_object_t of_bsn_tlv_timestamp_t;
 typedef of_object_t of_bsn_tlv_ttl_t;
 typedef of_object_t of_bsn_tlv_tunnel_capability_t;
 typedef of_object_t of_bsn_tlv_tx_bytes_t;
@@ -4423,6 +4426,11 @@ extern void of_bsn_tlv_tcp_flags_init(
 extern of_object_t *
     of_bsn_tlv_tcp_src_new(of_version_t version);
 extern void of_bsn_tlv_tcp_src_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_timestamp_new(of_version_t version);
+extern void of_bsn_tlv_timestamp_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10941,6 +10949,17 @@ of_bsn_tlv_tcp_flags_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_tcp_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_timestamp_t
+ * @param obj An instance of type of_bsn_tlv_timestamp_t
+ *
+ * \ingroup of_bsn_tlv_timestamp
+ */
+static inline void
+of_bsn_tlv_timestamp_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23700,6 +23719,15 @@ extern void of_bsn_tlv_tcp_src_value_set(
 extern void of_bsn_tlv_tcp_src_value_get(
     of_bsn_tlv_tcp_src_t *obj,
     uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_timestamp */
+
+extern void of_bsn_tlv_timestamp_value_set(
+    of_bsn_tlv_timestamp_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_timestamp_value_get(
+    of_bsn_tlv_timestamp_t *obj,
+    uint64_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_ttl */
 

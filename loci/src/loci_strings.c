@@ -436,6 +436,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_tcp_dst",
     "of_bsn_tlv_tcp_flags",
     "of_bsn_tlv_tcp_src",
+    "of_bsn_tlv_timestamp",
     "of_bsn_tlv_ttl",
     "of_bsn_tlv_tunnel_capability",
     "of_bsn_tlv_tx_bytes",

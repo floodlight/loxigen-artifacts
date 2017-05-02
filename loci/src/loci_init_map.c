@@ -439,6 +439,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_tcp_dst_init,
     (of_object_init_f)of_bsn_tlv_tcp_flags_init,
     (of_object_init_f)of_bsn_tlv_tcp_src_init,
+    (of_object_init_f)of_bsn_tlv_timestamp_init,
     (of_object_init_f)of_bsn_tlv_ttl_init,
     (of_object_init_f)of_bsn_tlv_tunnel_capability_init,
     (of_object_init_f)of_bsn_tlv_tx_bytes_init,
