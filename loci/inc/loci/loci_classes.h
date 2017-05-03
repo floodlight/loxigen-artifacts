@@ -1031,12 +1031,16 @@ void of_bsn_tlv_rate_limit_wire_object_id_get(of_object_t *obj, of_object_id_t *
 void of_bsn_tlv_rate_limit_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_rate_unit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_rate_unit_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_record_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_record_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_reference_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_reference_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_reply_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_reply_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_request_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_request_packets_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_rest_server_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_rest_server_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_rx_bytes_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_rx_bytes_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_rx_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1093,6 +1097,8 @@ void of_bsn_tlv_unknown_multicast_rate_wire_object_id_get(of_object_t *obj, of_o
 void of_bsn_tlv_unknown_multicast_rate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_untagged_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_untagged_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_uri_scheme_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_uri_scheme_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_use_packet_state_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_use_packet_state_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_use_peer_when_empty_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1892,9 +1898,11 @@ typedef of_object_t of_bsn_tlv_queue_id_t;
 typedef of_object_t of_bsn_tlv_queue_weight_t;
 typedef of_object_t of_bsn_tlv_rate_limit_t;
 typedef of_object_t of_bsn_tlv_rate_unit_t;
+typedef of_object_t of_bsn_tlv_record_packets_t;
 typedef of_object_t of_bsn_tlv_reference_t;
 typedef of_object_t of_bsn_tlv_reply_packets_t;
 typedef of_object_t of_bsn_tlv_request_packets_t;
+typedef of_object_t of_bsn_tlv_rest_server_t;
 typedef of_object_t of_bsn_tlv_rx_bytes_t;
 typedef of_object_t of_bsn_tlv_rx_packets_t;
 typedef of_object_t of_bsn_tlv_sampling_rate_t;
@@ -1923,6 +1931,7 @@ typedef of_object_t of_bsn_tlv_unicast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_unicast_rate_t;
 typedef of_object_t of_bsn_tlv_unknown_multicast_rate_t;
 typedef of_object_t of_bsn_tlv_untagged_t;
+typedef of_object_t of_bsn_tlv_uri_scheme_t;
 typedef of_object_t of_bsn_tlv_use_packet_state_t;
 typedef of_object_t of_bsn_tlv_use_peer_when_empty_t;
 typedef of_object_t of_bsn_tlv_vfi_t;
@@ -4357,6 +4366,11 @@ extern void of_bsn_tlv_rate_unit_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_record_packets_new(of_version_t version);
+extern void of_bsn_tlv_record_packets_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_reference_new(of_version_t version);
 extern void of_bsn_tlv_reference_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4369,6 +4383,11 @@ extern void of_bsn_tlv_reply_packets_init(
 extern of_object_t *
     of_bsn_tlv_request_packets_new(of_version_t version);
 extern void of_bsn_tlv_request_packets_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_rest_server_new(of_version_t version);
+extern void of_bsn_tlv_rest_server_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -4509,6 +4528,11 @@ extern void of_bsn_tlv_unknown_multicast_rate_init(
 extern of_object_t *
     of_bsn_tlv_untagged_new(of_version_t version);
 extern void of_bsn_tlv_untagged_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_uri_scheme_new(of_version_t version);
+extern void of_bsn_tlv_uri_scheme_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10796,6 +10820,17 @@ of_bsn_tlv_rate_unit_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_record_packets_t
+ * @param obj An instance of type of_bsn_tlv_record_packets_t
+ *
+ * \ingroup of_bsn_tlv_record_packets
+ */
+static inline void
+of_bsn_tlv_record_packets_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_reference_t
  * @param obj An instance of type of_bsn_tlv_reference_t
  *
@@ -10825,6 +10860,17 @@ of_bsn_tlv_reply_packets_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_request_packets_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_rest_server_t
+ * @param obj An instance of type of_bsn_tlv_rest_server_t
+ *
+ * \ingroup of_bsn_tlv_rest_server
+ */
+static inline void
+of_bsn_tlv_rest_server_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -11133,6 +11179,17 @@ of_bsn_tlv_unknown_multicast_rate_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_untagged_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_uri_scheme_t
+ * @param obj An instance of type of_bsn_tlv_uri_scheme_t
+ *
+ * \ingroup of_bsn_tlv_uri_scheme
+ */
+static inline void
+of_bsn_tlv_uri_scheme_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23623,6 +23680,15 @@ extern void of_bsn_tlv_rate_unit_value_get(
     of_bsn_tlv_rate_unit_t *obj,
     uint8_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_record_packets */
+
+extern void of_bsn_tlv_record_packets_value_set(
+    of_bsn_tlv_record_packets_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_record_packets_value_get(
+    of_bsn_tlv_record_packets_t *obj,
+    uint32_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_reference */
 
 extern void of_bsn_tlv_reference_table_id_set(
@@ -23658,6 +23724,8 @@ extern void of_bsn_tlv_request_packets_value_set(
 extern void of_bsn_tlv_request_packets_value_get(
     of_bsn_tlv_request_packets_t *obj,
     uint64_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_rest_server */
 
 /* Unified accessor functions for of_bsn_tlv_rx_bytes */
 
@@ -23877,6 +23945,15 @@ extern void of_bsn_tlv_unknown_multicast_rate_value_get(
     uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_untagged */
+
+/* Unified accessor functions for of_bsn_tlv_uri_scheme */
+
+extern int WARN_UNUSED_RESULT of_bsn_tlv_uri_scheme_value_set(
+    of_bsn_tlv_uri_scheme_t *obj,
+    of_octets_t *value);
+extern void of_bsn_tlv_uri_scheme_value_get(
+    of_bsn_tlv_uri_scheme_t *obj,
+    of_octets_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_use_packet_state */
 

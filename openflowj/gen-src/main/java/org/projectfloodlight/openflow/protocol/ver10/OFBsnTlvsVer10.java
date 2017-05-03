@@ -751,6 +751,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvRateUnit not supported in version 1.0");
     }
 
+    public OFBsnTlvRecordPackets.Builder buildRecordPackets() {
+        throw new UnsupportedOperationException("OFBsnTlvRecordPackets not supported in version 1.0");
+    }
+    public OFBsnTlvRecordPackets recordPackets(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvRecordPackets not supported in version 1.0");
+    }
+
     public OFBsnTlvReference.Builder buildReference() {
         throw new UnsupportedOperationException("OFBsnTlvReference not supported in version 1.0");
     }
@@ -770,6 +777,10 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvRequestPackets requestPackets(U64 value) {
         throw new UnsupportedOperationException("OFBsnTlvRequestPackets not supported in version 1.0");
+    }
+
+    public OFBsnTlvRestServer restServer() {
+        throw new UnsupportedOperationException("OFBsnTlvRestServer not supported in version 1.0");
     }
 
     public OFBsnTlvRxBytes.Builder buildRxBytes() {
@@ -951,6 +962,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
 
     public OFBsnTlvUntagged untagged() {
         throw new UnsupportedOperationException("OFBsnTlvUntagged not supported in version 1.0");
+    }
+
+    public OFBsnTlvUriScheme.Builder buildUriScheme() {
+        throw new UnsupportedOperationException("OFBsnTlvUriScheme not supported in version 1.0");
+    }
+    public OFBsnTlvUriScheme uriScheme(byte[] value) {
+        throw new UnsupportedOperationException("OFBsnTlvUriScheme not supported in version 1.0");
     }
 
     public OFBsnTlvUsePacketState.Builder buildUsePacketState() {

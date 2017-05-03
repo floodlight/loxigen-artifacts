@@ -27257,6 +27257,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_RECORD_PACKETS) {
+        return of_bsn_tlv_record_packets_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MPLS_CONTROL_WORD) {
         return of_bsn_tlv_mpls_control_word_OF_VERSION_1_3_dup(src);
     }
@@ -27385,6 +27389,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_REST_SERVER) {
+        return of_bsn_tlv_rest_server_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ICMP_TYPE) {
         return of_bsn_tlv_icmp_type_OF_VERSION_1_3_dup(src);
     }
@@ -27459,6 +27467,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_FORCE_LINK_UP) {
         return of_bsn_tlv_force_link_up_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_URI_SCHEME) {
+        return of_bsn_tlv_uri_scheme_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
@@ -30301,6 +30313,31 @@ of_bsn_tlv_rate_unit_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_record_packets
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_record_packets.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_record_packets_t *
+of_bsn_tlv_record_packets_OF_VERSION_1_3_dup(
+    of_bsn_tlv_record_packets_t *src)
+{
+    of_bsn_tlv_record_packets_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_record_packets_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_record_packets_value_get(src, &val32);
+    of_bsn_tlv_record_packets_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_reference
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -30384,6 +30421,27 @@ of_bsn_tlv_request_packets_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_request_packets_value_get(src, &val64);
     of_bsn_tlv_request_packets_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_rest_server
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_rest_server.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_rest_server_t *
+of_bsn_tlv_rest_server_OF_VERSION_1_3_dup(
+    of_bsn_tlv_rest_server_t *src)
+{
+    of_bsn_tlv_rest_server_t *dst;
+
+    if ((dst = of_bsn_tlv_rest_server_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -31073,6 +31131,31 @@ of_bsn_tlv_untagged_OF_VERSION_1_3_dup(
     if ((dst = of_bsn_tlv_untagged_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_uri_scheme
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_uri_scheme.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_uri_scheme_t *
+of_bsn_tlv_uri_scheme_OF_VERSION_1_3_dup(
+    of_bsn_tlv_uri_scheme_t *src)
+{
+    of_bsn_tlv_uri_scheme_t *dst;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_tlv_uri_scheme_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_uri_scheme_value_get(src, &octets);
+    of_bsn_tlv_uri_scheme_value_set(dst, &octets);
 
     return dst;
 }
@@ -49916,6 +49999,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_RECORD_PACKETS) {
+        return of_bsn_tlv_record_packets_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MPLS_CONTROL_WORD) {
         return of_bsn_tlv_mpls_control_word_OF_VERSION_1_4_dup(src);
     }
@@ -50044,6 +50131,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_REST_SERVER) {
+        return of_bsn_tlv_rest_server_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ICMP_TYPE) {
         return of_bsn_tlv_icmp_type_OF_VERSION_1_4_dup(src);
     }
@@ -50118,6 +50209,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_FORCE_LINK_UP) {
         return of_bsn_tlv_force_link_up_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_URI_SCHEME) {
+        return of_bsn_tlv_uri_scheme_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
@@ -52960,6 +53055,31 @@ of_bsn_tlv_rate_unit_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_record_packets
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_record_packets.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_record_packets_t *
+of_bsn_tlv_record_packets_OF_VERSION_1_4_dup(
+    of_bsn_tlv_record_packets_t *src)
+{
+    of_bsn_tlv_record_packets_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_record_packets_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_record_packets_value_get(src, &val32);
+    of_bsn_tlv_record_packets_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_reference
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -53043,6 +53163,27 @@ of_bsn_tlv_request_packets_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_request_packets_value_get(src, &val64);
     of_bsn_tlv_request_packets_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_rest_server
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_rest_server.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_rest_server_t *
+of_bsn_tlv_rest_server_OF_VERSION_1_4_dup(
+    of_bsn_tlv_rest_server_t *src)
+{
+    of_bsn_tlv_rest_server_t *dst;
+
+    if ((dst = of_bsn_tlv_rest_server_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -53732,6 +53873,31 @@ of_bsn_tlv_untagged_OF_VERSION_1_4_dup(
     if ((dst = of_bsn_tlv_untagged_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_uri_scheme
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_uri_scheme.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_uri_scheme_t *
+of_bsn_tlv_uri_scheme_OF_VERSION_1_4_dup(
+    of_bsn_tlv_uri_scheme_t *src)
+{
+    of_bsn_tlv_uri_scheme_t *dst;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_tlv_uri_scheme_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_uri_scheme_value_get(src, &octets);
+    of_bsn_tlv_uri_scheme_value_set(dst, &octets);
 
     return dst;
 }
@@ -71831,6 +71997,23 @@ of_bsn_tlv_rate_unit_dup(
 }
 
 of_object_t *
+of_bsn_tlv_record_packets_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_record_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_record_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_reference_dup(
     of_object_t *src)
 {
@@ -71875,6 +72058,23 @@ of_bsn_tlv_request_packets_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_request_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_rest_server_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_rest_server_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_rest_server_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -72351,6 +72551,23 @@ of_bsn_tlv_untagged_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_untagged_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_uri_scheme_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_uri_scheme_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_uri_scheme_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

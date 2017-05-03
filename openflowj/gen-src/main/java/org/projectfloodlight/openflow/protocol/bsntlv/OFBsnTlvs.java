@@ -233,12 +233,15 @@ public interface OFBsnTlvs {
     OFBsnTlvRateLimit rateLimit(long value);
     OFBsnTlvRateUnit.Builder buildRateUnit() throws UnsupportedOperationException;
     OFBsnTlvRateUnit rateUnit(OFBsnRateUnit value);
+    OFBsnTlvRecordPackets.Builder buildRecordPackets() throws UnsupportedOperationException;
+    OFBsnTlvRecordPackets recordPackets(long value);
     OFBsnTlvReference.Builder buildReference() throws UnsupportedOperationException;
     OFBsnTlvReference reference(int tableId, List<OFBsnTlv> key);
     OFBsnTlvReplyPackets.Builder buildReplyPackets() throws UnsupportedOperationException;
     OFBsnTlvReplyPackets replyPackets(U64 value);
     OFBsnTlvRequestPackets.Builder buildRequestPackets() throws UnsupportedOperationException;
     OFBsnTlvRequestPackets requestPackets(U64 value);
+    OFBsnTlvRestServer restServer();
     OFBsnTlvRxBytes.Builder buildRxBytes() throws UnsupportedOperationException;
     OFBsnTlvRxBytes rxBytes(U64 value);
     OFBsnTlvRxPackets.Builder buildRxPackets() throws UnsupportedOperationException;
@@ -290,6 +293,8 @@ public interface OFBsnTlvs {
     OFBsnTlvUnknownMulticastRate.Builder buildUnknownMulticastRate() throws UnsupportedOperationException;
     OFBsnTlvUnknownMulticastRate unknownMulticastRate(long value);
     OFBsnTlvUntagged untagged();
+    OFBsnTlvUriScheme.Builder buildUriScheme() throws UnsupportedOperationException;
+    OFBsnTlvUriScheme uriScheme(byte[] value);
     OFBsnTlvUsePacketState.Builder buildUsePacketState() throws UnsupportedOperationException;
     OFBsnTlvUsePacketState usePacketState(short value);
     OFBsnTlvUsePeerWhenEmpty usePeerWhenEmpty();

@@ -376,6 +376,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x59:
                    // discriminator value 0x59=0x59 for class OFBsnTlvRateUnitVer15
                    return OFBsnTlvRateUnitVer15.READER.readFrom(bb);
+               case (short) 0x9b:
+                   // discriminator value 0x9b=0x9b for class OFBsnTlvRecordPacketsVer15
+                   return OFBsnTlvRecordPacketsVer15.READER.readFrom(bb);
                case (short) 0x3b:
                    // discriminator value 0x3b=0x3b for class OFBsnTlvReferenceVer15
                    return OFBsnTlvReferenceVer15.READER.readFrom(bb);
@@ -385,6 +388,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0xb:
                    // discriminator value 0xb=0xb for class OFBsnTlvRequestPacketsVer15
                    return OFBsnTlvRequestPacketsVer15.READER.readFrom(bb);
+               case (short) 0x98:
+                   // discriminator value 0x98=0x98 for class OFBsnTlvRestServerVer15
+                   return OFBsnTlvRestServerVer15.READER.readFrom(bb);
                case (short) 0x47:
                    // discriminator value 0x47=0x47 for class OFBsnTlvRxBytesVer15
                    return OFBsnTlvRxBytesVer15.READER.readFrom(bb);
@@ -469,6 +475,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x6a:
                    // discriminator value 0x6a=0x6a for class OFBsnTlvUntaggedVer15
                    return OFBsnTlvUntaggedVer15.READER.readFrom(bb);
+               case (short) 0x99:
+                   // discriminator value 0x99=0x99 for class OFBsnTlvUriSchemeVer15
+                   return OFBsnTlvUriSchemeVer15.READER.readFrom(bb);
                case (short) 0x60:
                    // discriminator value 0x60=0x60 for class OFBsnTlvUsePacketStateVer15
                    return OFBsnTlvUsePacketStateVer15.READER.readFrom(bb);

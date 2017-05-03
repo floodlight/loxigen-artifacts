@@ -7595,6 +7595,17 @@ typedef struct of_bsn_tlv_rate_limit_s of_bsn_tlv_rate_limit_t;
 typedef struct of_bsn_tlv_rate_unit_s of_bsn_tlv_rate_unit_t;
 
 /**
+ * Structure for of_bsn_tlv_record_packets object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_record_packets_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_record_packets_s of_bsn_tlv_record_packets_t;
+
+/**
  * Structure for of_bsn_tlv_reference object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7630,6 +7641,13 @@ typedef struct of_bsn_tlv_reply_packets_s of_bsn_tlv_reply_packets_t;
  *
  */
 typedef struct of_bsn_tlv_request_packets_s of_bsn_tlv_request_packets_t;
+
+/**
+ * Structure for of_bsn_tlv_rest_server object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_rest_server_s of_bsn_tlv_rest_server_t;
 
 /**
  * Structure for of_bsn_tlv_rx_bytes object.  Get/set
@@ -7918,6 +7936,17 @@ typedef struct of_bsn_tlv_unknown_multicast_rate_s of_bsn_tlv_unknown_multicast_
  *
  */
 typedef struct of_bsn_tlv_untagged_s of_bsn_tlv_untagged_t;
+
+/**
+ * Structure for of_bsn_tlv_uri_scheme object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_octets.  Functions
+ *   are of type of_bsn_tlv_uri_scheme_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_uri_scheme_s of_bsn_tlv_uri_scheme_t;
 
 /**
  * Structure for of_bsn_tlv_use_packet_state object.  Get/set

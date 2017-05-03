@@ -22720,6 +22720,22 @@ of_bsn_tlv_rate_unit_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_
 }
 
 int
+of_bsn_tlv_record_packets_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_record_packets\n");
+
+    of_bsn_tlv_record_packets_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_reference_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -22773,6 +22789,16 @@ of_bsn_tlv_request_packets_OF_VERSION_1_3_dump(loci_writer_f writer, void* cooki
     out += writer(cookie, "  value (uint64_t):  ");
     out += LOCI_DUMP_u64(writer, cookie, val64);
     out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_rest_server_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_rest_server\n");
 
     return out;
 }
@@ -23195,6 +23221,22 @@ of_bsn_tlv_untagged_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_o
     int out = 0;
 
     out += writer(cookie, "Object of type of_bsn_tlv_untagged\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_uri_scheme_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_octets_t octets;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_uri_scheme\n");
+
+    of_bsn_tlv_uri_scheme_value_get(obj, &octets);
+    out += writer(cookie, "  value (of_octets_t):  ");
+    out += LOCI_DUMP_octets(writer, cookie, octets);
+    out += writer(cookie, "\n");
 
     return out;
 }
@@ -37505,6 +37547,22 @@ of_bsn_tlv_rate_unit_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_
 }
 
 int
+of_bsn_tlv_record_packets_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_record_packets\n");
+
+    of_bsn_tlv_record_packets_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_reference_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -37558,6 +37616,16 @@ of_bsn_tlv_request_packets_OF_VERSION_1_4_dump(loci_writer_f writer, void* cooki
     out += writer(cookie, "  value (uint64_t):  ");
     out += LOCI_DUMP_u64(writer, cookie, val64);
     out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_rest_server_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_rest_server\n");
 
     return out;
 }
@@ -37980,6 +38048,22 @@ of_bsn_tlv_untagged_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_o
     int out = 0;
 
     out += writer(cookie, "Object of type of_bsn_tlv_untagged\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_uri_scheme_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_octets_t octets;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_uri_scheme\n");
+
+    of_bsn_tlv_uri_scheme_value_get(obj, &octets);
+    out += writer(cookie, "  value (of_octets_t):  ");
+    out += LOCI_DUMP_octets(writer, cookie, octets);
+    out += writer(cookie, "\n");
 
     return out;
 }
@@ -44500,6 +44584,9 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_0_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -45136,6 +45223,9 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_interface_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -46094,6 +46184,9 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_2_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dump,
     unknown_dump,
@@ -46845,9 +46938,11 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_queue_weight_OF_VERSION_1_3_dump,
     of_bsn_tlv_rate_limit_OF_VERSION_1_3_dump,
     of_bsn_tlv_rate_unit_OF_VERSION_1_3_dump,
+    of_bsn_tlv_record_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_reference_OF_VERSION_1_3_dump,
     of_bsn_tlv_reply_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_request_packets_OF_VERSION_1_3_dump,
+    of_bsn_tlv_rest_server_OF_VERSION_1_3_dump,
     of_bsn_tlv_rx_bytes_OF_VERSION_1_3_dump,
     of_bsn_tlv_rx_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dump,
@@ -46876,6 +46971,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_unicast_rate_OF_VERSION_1_3_dump,
     of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_dump,
     of_bsn_tlv_untagged_OF_VERSION_1_3_dump,
+    of_bsn_tlv_uri_scheme_OF_VERSION_1_3_dump,
     of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dump,
     of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_dump,
     of_bsn_tlv_vfi_OF_VERSION_1_3_dump,
@@ -47642,9 +47738,11 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_queue_weight_OF_VERSION_1_4_dump,
     of_bsn_tlv_rate_limit_OF_VERSION_1_4_dump,
     of_bsn_tlv_rate_unit_OF_VERSION_1_4_dump,
+    of_bsn_tlv_record_packets_OF_VERSION_1_4_dump,
     of_bsn_tlv_reference_OF_VERSION_1_4_dump,
     of_bsn_tlv_reply_packets_OF_VERSION_1_4_dump,
     of_bsn_tlv_request_packets_OF_VERSION_1_4_dump,
+    of_bsn_tlv_rest_server_OF_VERSION_1_4_dump,
     of_bsn_tlv_rx_bytes_OF_VERSION_1_4_dump,
     of_bsn_tlv_rx_packets_OF_VERSION_1_4_dump,
     of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dump,
@@ -47673,6 +47771,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_unicast_rate_OF_VERSION_1_4_dump,
     of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_dump,
     of_bsn_tlv_untagged_OF_VERSION_1_4_dump,
+    of_bsn_tlv_uri_scheme_OF_VERSION_1_4_dump,
     of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dump,
     of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_dump,
     of_bsn_tlv_vfi_OF_VERSION_1_4_dump,

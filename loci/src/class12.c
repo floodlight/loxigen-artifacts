@@ -9371,8 +9371,17 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x97:
             *id = OF_BSN_TLV_FORCE_LINK_UP;
             break;
+        case 0x98:
+            *id = OF_BSN_TLV_REST_SERVER;
+            break;
+        case 0x99:
+            *id = OF_BSN_TLV_URI_SCHEME;
+            break;
         case 0x9a:
             *id = OF_BSN_TLV_TIMESTAMP;
+            break;
+        case 0x9b:
+            *id = OF_BSN_TLV_RECORD_PACKETS;
             break;
         case 0x9c:
             *id = OF_BSN_TLV_USE_PEER_WHEN_EMPTY;
@@ -9839,8 +9848,17 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x97:
             *id = OF_BSN_TLV_FORCE_LINK_UP;
             break;
+        case 0x98:
+            *id = OF_BSN_TLV_REST_SERVER;
+            break;
+        case 0x99:
+            *id = OF_BSN_TLV_URI_SCHEME;
+            break;
         case 0x9a:
             *id = OF_BSN_TLV_TIMESTAMP;
+            break;
+        case 0x9b:
+            *id = OF_BSN_TLV_RECORD_PACKETS;
             break;
         case 0x9c:
             *id = OF_BSN_TLV_USE_PEER_WHEN_EMPTY;

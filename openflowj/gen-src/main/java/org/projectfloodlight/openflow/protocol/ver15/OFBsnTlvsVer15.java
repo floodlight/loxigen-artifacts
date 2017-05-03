@@ -938,6 +938,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvRecordPackets.Builder buildRecordPackets() {
+        return new OFBsnTlvRecordPacketsVer15.Builder();
+    }
+    public OFBsnTlvRecordPackets recordPackets(long value) {
+        return new OFBsnTlvRecordPacketsVer15(
+                value
+                    );
+    }
+
     public OFBsnTlvReference.Builder buildReference() {
         return new OFBsnTlvReferenceVer15.Builder();
     }
@@ -964,6 +973,10 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
         return new OFBsnTlvRequestPacketsVer15(
                 value
                     );
+    }
+
+    public OFBsnTlvRestServer restServer() {
+        return OFBsnTlvRestServerVer15.INSTANCE;
     }
 
     public OFBsnTlvRxBytes.Builder buildRxBytes() {
@@ -1191,6 +1204,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
 
     public OFBsnTlvUntagged untagged() {
         return OFBsnTlvUntaggedVer15.INSTANCE;
+    }
+
+    public OFBsnTlvUriScheme.Builder buildUriScheme() {
+        return new OFBsnTlvUriSchemeVer15.Builder();
+    }
+    public OFBsnTlvUriScheme uriScheme(byte[] value) {
+        return new OFBsnTlvUriSchemeVer15(
+                value
+                    );
     }
 
     public OFBsnTlvUsePacketState.Builder buildUsePacketState() {

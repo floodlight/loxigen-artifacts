@@ -7592,6 +7592,15 @@ extern int of_bsn_tlv_rate_unit_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_rate_unit_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_rate_unit_t *obj, int value);
 
+extern int of_bsn_tlv_record_packets_OF_VERSION_1_3_populate(
+    of_bsn_tlv_record_packets_t *obj, int value);
+extern int of_bsn_tlv_record_packets_OF_VERSION_1_3_check(
+    of_bsn_tlv_record_packets_t *obj, int value);
+extern int of_bsn_tlv_record_packets_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_record_packets_t *obj, int value);
+extern int of_bsn_tlv_record_packets_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_record_packets_t *obj, int value);
+
 extern int of_bsn_tlv_reference_OF_VERSION_1_3_populate(
     of_bsn_tlv_reference_t *obj, int value);
 extern int of_bsn_tlv_reference_OF_VERSION_1_3_check(
@@ -7618,6 +7627,15 @@ extern int of_bsn_tlv_request_packets_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_request_packets_t *obj, int value);
 extern int of_bsn_tlv_request_packets_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_request_packets_t *obj, int value);
+
+extern int of_bsn_tlv_rest_server_OF_VERSION_1_3_populate(
+    of_bsn_tlv_rest_server_t *obj, int value);
+extern int of_bsn_tlv_rest_server_OF_VERSION_1_3_check(
+    of_bsn_tlv_rest_server_t *obj, int value);
+extern int of_bsn_tlv_rest_server_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_rest_server_t *obj, int value);
+extern int of_bsn_tlv_rest_server_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_rest_server_t *obj, int value);
 
 extern int of_bsn_tlv_rx_bytes_OF_VERSION_1_3_populate(
     of_bsn_tlv_rx_bytes_t *obj, int value);
@@ -7870,6 +7888,15 @@ extern int of_bsn_tlv_untagged_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_untagged_t *obj, int value);
 extern int of_bsn_tlv_untagged_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_untagged_t *obj, int value);
+
+extern int of_bsn_tlv_uri_scheme_OF_VERSION_1_3_populate(
+    of_bsn_tlv_uri_scheme_t *obj, int value);
+extern int of_bsn_tlv_uri_scheme_OF_VERSION_1_3_check(
+    of_bsn_tlv_uri_scheme_t *obj, int value);
+extern int of_bsn_tlv_uri_scheme_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_uri_scheme_t *obj, int value);
+extern int of_bsn_tlv_uri_scheme_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_uri_scheme_t *obj, int value);
 
 extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_3_populate(
     of_bsn_tlv_use_packet_state_t *obj, int value);
@@ -13622,6 +13649,15 @@ extern int of_bsn_tlv_rate_unit_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_rate_unit_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_rate_unit_t *obj, int value);
 
+extern int of_bsn_tlv_record_packets_OF_VERSION_1_4_populate(
+    of_bsn_tlv_record_packets_t *obj, int value);
+extern int of_bsn_tlv_record_packets_OF_VERSION_1_4_check(
+    of_bsn_tlv_record_packets_t *obj, int value);
+extern int of_bsn_tlv_record_packets_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_record_packets_t *obj, int value);
+extern int of_bsn_tlv_record_packets_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_record_packets_t *obj, int value);
+
 extern int of_bsn_tlv_reference_OF_VERSION_1_4_populate(
     of_bsn_tlv_reference_t *obj, int value);
 extern int of_bsn_tlv_reference_OF_VERSION_1_4_check(
@@ -13648,6 +13684,15 @@ extern int of_bsn_tlv_request_packets_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_request_packets_t *obj, int value);
 extern int of_bsn_tlv_request_packets_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_request_packets_t *obj, int value);
+
+extern int of_bsn_tlv_rest_server_OF_VERSION_1_4_populate(
+    of_bsn_tlv_rest_server_t *obj, int value);
+extern int of_bsn_tlv_rest_server_OF_VERSION_1_4_check(
+    of_bsn_tlv_rest_server_t *obj, int value);
+extern int of_bsn_tlv_rest_server_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_rest_server_t *obj, int value);
+extern int of_bsn_tlv_rest_server_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_rest_server_t *obj, int value);
 
 extern int of_bsn_tlv_rx_bytes_OF_VERSION_1_4_populate(
     of_bsn_tlv_rx_bytes_t *obj, int value);
@@ -13900,6 +13945,15 @@ extern int of_bsn_tlv_untagged_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_untagged_t *obj, int value);
 extern int of_bsn_tlv_untagged_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_untagged_t *obj, int value);
+
+extern int of_bsn_tlv_uri_scheme_OF_VERSION_1_4_populate(
+    of_bsn_tlv_uri_scheme_t *obj, int value);
+extern int of_bsn_tlv_uri_scheme_OF_VERSION_1_4_check(
+    of_bsn_tlv_uri_scheme_t *obj, int value);
+extern int of_bsn_tlv_uri_scheme_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_uri_scheme_t *obj, int value);
+extern int of_bsn_tlv_uri_scheme_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_uri_scheme_t *obj, int value);
 
 extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_4_populate(
     of_bsn_tlv_use_packet_state_t *obj, int value);
