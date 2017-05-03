@@ -60682,6 +60682,10 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
         return of_port_desc_prop_ethernet_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_BREAKOUT) {
+        return of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_PORT_DESC_PROP_OPTICAL) {
         return of_port_desc_prop_optical_OF_VERSION_1_4_dup(src);
     }
@@ -60699,6 +60703,41 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
     }
 
     return NULL;
+}
+
+/**
+ * Duplicate an object of type of_port_desc_prop_bsn_breakout
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_port_desc_prop_bsn_breakout.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_port_desc_prop_bsn_breakout_t *
+of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(
+    of_port_desc_prop_bsn_breakout_t *src)
+{
+    of_port_desc_prop_bsn_breakout_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_port_desc_prop_bsn_breakout_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_port_desc_prop_bsn_breakout_experimenter_get(src, &val32);
+    of_port_desc_prop_bsn_breakout_experimenter_set(dst, val32);
+
+    of_port_desc_prop_bsn_breakout_exp_type_get(src, &val32);
+    of_port_desc_prop_bsn_breakout_exp_type_set(dst, val32);
+
+    of_port_desc_prop_bsn_breakout_sub_interface_count_get(src, &val16);
+    of_port_desc_prop_bsn_breakout_sub_interface_count_set(dst, val16);
+
+    of_port_desc_prop_bsn_breakout_sub_interface_speed_gbps_get(src, &val16);
+    of_port_desc_prop_bsn_breakout_sub_interface_speed_gbps_set(dst, val16);
+
+    return dst;
 }
 
 /**
@@ -77082,6 +77121,19 @@ of_object_t *
 of_port_desc_prop_bsn_dup(
     of_object_t *src)
 {
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_port_desc_prop_bsn_breakout_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(src);
+    }
 
     /* Class not supported in given version */
     return NULL;

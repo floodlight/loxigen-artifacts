@@ -169,6 +169,71 @@ class bsn(experimenter):
 
 experimenter.subtypes[6035143] = bsn
 
+class bsn_breakout(bsn):
+    type = 65535
+    experimenter = 6035143
+    exp_type = 3
+
+    def __init__(self, sub_interface_count=None, sub_interface_speed_gbps=None):
+        if sub_interface_count != None:
+            self.sub_interface_count = sub_interface_count
+        else:
+            self.sub_interface_count = 0
+        if sub_interface_speed_gbps != None:
+            self.sub_interface_speed_gbps = sub_interface_speed_gbps
+        else:
+            self.sub_interface_speed_gbps = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.exp_type))
+        packed.append(struct.pack("!H", self.sub_interface_count))
+        packed.append(struct.pack("!H", self.sub_interface_speed_gbps))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_breakout()
+        _type = reader.read("!H")[0]
+        assert(_type == 65535)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _exp_type = reader.read("!L")[0]
+        assert(_exp_type == 3)
+        obj.sub_interface_count = reader.read("!H")[0]
+        obj.sub_interface_speed_gbps = reader.read("!H")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.sub_interface_count != other.sub_interface_count: return False
+        if self.sub_interface_speed_gbps != other.sub_interface_speed_gbps: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_breakout {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("sub_interface_count = ");
+                q.text("%#x" % self.sub_interface_count)
+                q.text(","); q.breakable()
+                q.text("sub_interface_speed_gbps = ");
+                q.text("%#x" % self.sub_interface_speed_gbps)
+            q.breakable()
+        q.text('}')
+
+bsn.subtypes[3] = bsn_breakout
+
 class bsn_forward_error_correction(bsn):
     type = 65535
     experimenter = 6035143

@@ -1391,6 +1391,13 @@ public class OFFactoryVer10 implements OFFactory {
         throw new UnsupportedOperationException("OFBundleCtrlMsg not supported in version 1.0");
     }
 
+    public OFPortDescPropBsnBreakout.Builder buildPortDescPropBsnBreakout() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnBreakout not supported in version 1.0");
+    }
+    public OFPortDescPropBsnBreakout portDescPropBsnBreakout(int subInterfaceCount, int subInterfaceSpeedGbps) {
+        throw new UnsupportedOperationException("OFPortDescPropBsnBreakout not supported in version 1.0");
+    }
+
     public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
         throw new UnsupportedOperationException("OFPortDescPropBsnForwardErrorCorrection not supported in version 1.0");
     }

@@ -11320,6 +11320,29 @@ typedef struct of_port_desc_prop_s of_port_desc_prop_t;
 typedef struct of_port_desc_prop_bsn_s of_port_desc_prop_bsn_t;
 
 /**
+ * Structure for of_port_desc_prop_bsn_breakout object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_bsn_breakout_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_bsn_breakout_uint32_get_f and _set_f.
+ *
+ * @param sub_interface_count_get/set ( OF_1_4).
+ *   Accessors for sub_interface_count, a variable of type uint16.  Functions
+ *   are of type of_port_desc_prop_bsn_breakout_uint16_get_f and _set_f.
+ *
+ * @param sub_interface_speed_gbps_get/set ( OF_1_4).
+ *   Accessors for sub_interface_speed_gbps, a variable of type uint16.  Functions
+ *   are of type of_port_desc_prop_bsn_breakout_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_port_desc_prop_bsn_breakout_s of_port_desc_prop_bsn_breakout_t;
+
+/**
  * Structure for of_port_desc_prop_bsn_forward_error_correction object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

@@ -12815,6 +12815,12 @@ fields['of14.port_desc_prop_bsn.type'] = ProtoField.uint16("of14.port_desc_prop_
 fields['of14.port_desc_prop_bsn.length'] = ProtoField.uint16("of14.port_desc_prop_bsn.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn.experimenter", "experimenter", base.DEC, nil)
 fields['of14.port_desc_prop_bsn.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn.exp_type", "exp_type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_breakout.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_breakout.type", "type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_breakout.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_breakout.length", "length", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_breakout.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_breakout.experimenter", "experimenter", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_breakout.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_breakout.exp_type", "exp_type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_breakout.sub_interface_count'] = ProtoField.uint16("of14.port_desc_prop_bsn_breakout.sub_interface_count", "sub_interface_count", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_breakout.sub_interface_speed_gbps'] = ProtoField.uint16("of14.port_desc_prop_bsn_breakout.sub_interface_speed_gbps", "sub_interface_speed_gbps", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_forward_error_correction.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_forward_error_correction.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_forward_error_correction.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_forward_error_correction.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_forward_error_correction.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_forward_error_correction.experimenter", "experimenter", base.DEC, nil)
@@ -16145,6 +16151,12 @@ fields['of15.port_desc_prop_bsn.type'] = ProtoField.uint16("of15.port_desc_prop_
 fields['of15.port_desc_prop_bsn.length'] = ProtoField.uint16("of15.port_desc_prop_bsn.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_bsn.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn.experimenter", "experimenter", base.DEC, nil)
 fields['of15.port_desc_prop_bsn.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn.exp_type", "exp_type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_breakout.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_breakout.type", "type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_breakout.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_breakout.length", "length", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_breakout.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_breakout.experimenter", "experimenter", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_breakout.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_breakout.exp_type", "exp_type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_breakout.sub_interface_count'] = ProtoField.uint16("of15.port_desc_prop_bsn_breakout.sub_interface_count", "sub_interface_count", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_breakout.sub_interface_speed_gbps'] = ProtoField.uint16("of15.port_desc_prop_bsn_breakout.sub_interface_speed_gbps", "sub_interface_speed_gbps", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_forward_error_correction.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_forward_error_correction.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_forward_error_correction.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_forward_error_correction.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_forward_error_correction.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_forward_error_correction.experimenter", "experimenter", base.DEC, nil)
@@ -25236,6 +25248,12 @@ p_of.fields = {
     fields['of14.port_desc_prop_bsn.length'],
     fields['of14.port_desc_prop_bsn.experimenter'],
     fields['of14.port_desc_prop_bsn.exp_type'],
+    fields['of14.port_desc_prop_bsn_breakout.type'],
+    fields['of14.port_desc_prop_bsn_breakout.length'],
+    fields['of14.port_desc_prop_bsn_breakout.experimenter'],
+    fields['of14.port_desc_prop_bsn_breakout.exp_type'],
+    fields['of14.port_desc_prop_bsn_breakout.sub_interface_count'],
+    fields['of14.port_desc_prop_bsn_breakout.sub_interface_speed_gbps'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.type'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.length'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.experimenter'],
@@ -28566,6 +28584,12 @@ p_of.fields = {
     fields['of15.port_desc_prop_bsn.length'],
     fields['of15.port_desc_prop_bsn.experimenter'],
     fields['of15.port_desc_prop_bsn.exp_type'],
+    fields['of15.port_desc_prop_bsn_breakout.type'],
+    fields['of15.port_desc_prop_bsn_breakout.length'],
+    fields['of15.port_desc_prop_bsn_breakout.experimenter'],
+    fields['of15.port_desc_prop_bsn_breakout.exp_type'],
+    fields['of15.port_desc_prop_bsn_breakout.sub_interface_count'],
+    fields['of15.port_desc_prop_bsn_breakout.sub_interface_speed_gbps'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.type'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.length'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.experimenter'],
@@ -50950,6 +50974,19 @@ function dissect_of_port_desc_prop_bsn_v5(reader, subtree)
 end
 of_port_desc_prop_experimenter_v5_dissectors[6035143] = dissect_of_port_desc_prop_bsn_v5
 
+-- child class of_port_desc_prop_bsn_breakout
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_breakout_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_breakout.type')
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_breakout.length')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_breakout.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_breakout.exp_type')
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_breakout.sub_interface_count')
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_breakout.sub_interface_speed_gbps')
+    return 'of_port_desc_prop_bsn_breakout'
+end
+of_port_desc_prop_bsn_v5_dissectors[3] = dissect_of_port_desc_prop_bsn_breakout_v5
+
 -- child class of_port_desc_prop_bsn_forward_error_correction
 -- Child of of_port_desc_prop_bsn
 function dissect_of_port_desc_prop_bsn_forward_error_correction_v5(reader, subtree)
@@ -59773,6 +59810,19 @@ function dissect_of_port_desc_prop_bsn_v6(reader, subtree)
     return of_port_desc_prop_bsn_v6_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_port_desc_prop_experimenter_v6_dissectors[6035143] = dissect_of_port_desc_prop_bsn_v6
+
+-- child class of_port_desc_prop_bsn_breakout
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_breakout_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_breakout.type')
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_breakout.length')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_breakout.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_breakout.exp_type')
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_breakout.sub_interface_count')
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_breakout.sub_interface_speed_gbps')
+    return 'of_port_desc_prop_bsn_breakout'
+end
+of_port_desc_prop_bsn_v6_dissectors[3] = dissect_of_port_desc_prop_bsn_breakout_v6
 
 -- child class of_port_desc_prop_bsn_forward_error_correction
 -- Child of of_port_desc_prop_bsn

@@ -1539,6 +1539,16 @@ public class OFFactoryVer15 implements OFFactory {
         return new OFBundleCtrlMsgVer15.Builder().setXid(nextXid());
     }
 
+    public OFPortDescPropBsnBreakout.Builder buildPortDescPropBsnBreakout() {
+        return new OFPortDescPropBsnBreakoutVer15.Builder();
+    }
+    public OFPortDescPropBsnBreakout portDescPropBsnBreakout(int subInterfaceCount, int subInterfaceSpeedGbps) {
+        return new OFPortDescPropBsnBreakoutVer15(
+                subInterfaceCount,
+                      subInterfaceSpeedGbps
+                    );
+    }
+
     public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
         return new OFPortDescPropBsnForwardErrorCorrectionVer15.Builder();
     }
