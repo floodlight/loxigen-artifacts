@@ -1013,6 +1013,8 @@ void of_bsn_tlv_partner_system_priority_wire_object_id_get(of_object_t *obj, of_
 void of_bsn_tlv_partner_system_priority_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_port_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_port_speed_gbps_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_port_speed_gbps_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_port_usage_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_port_usage_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_port_vxlan_mode_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1101,8 +1103,6 @@ void of_bsn_tlv_uri_scheme_wire_object_id_get(of_object_t *obj, of_object_id_t *
 void of_bsn_tlv_uri_scheme_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_use_packet_state_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_use_packet_state_push_wire_types(of_object_t *obj);
-void of_bsn_tlv_use_peer_when_empty_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
-void of_bsn_tlv_use_peer_when_empty_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vfi_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vfi_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vfp_class_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1413,6 +1413,8 @@ void of_port_desc_prop_bsn_forward_error_correction_wire_object_id_get(of_object
 void of_port_desc_prop_bsn_forward_error_correction_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_generation_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_bsn_generation_id_push_wire_types(of_object_t *obj);
+void of_port_desc_prop_bsn_speed_capabilities_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_desc_prop_bsn_speed_capabilities_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_uplink_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_bsn_uplink_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_ethernet_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1891,6 +1893,7 @@ typedef of_object_t of_bsn_tlv_partner_state_t;
 typedef of_object_t of_bsn_tlv_partner_system_mac_t;
 typedef of_object_t of_bsn_tlv_partner_system_priority_t;
 typedef of_object_t of_bsn_tlv_port_t;
+typedef of_object_t of_bsn_tlv_port_speed_gbps_t;
 typedef of_object_t of_bsn_tlv_port_usage_t;
 typedef of_object_t of_bsn_tlv_port_vxlan_mode_t;
 typedef of_object_t of_bsn_tlv_priority_t;
@@ -1935,7 +1938,6 @@ typedef of_object_t of_bsn_tlv_unknown_multicast_rate_t;
 typedef of_object_t of_bsn_tlv_untagged_t;
 typedef of_object_t of_bsn_tlv_uri_scheme_t;
 typedef of_object_t of_bsn_tlv_use_packet_state_t;
-typedef of_object_t of_bsn_tlv_use_peer_when_empty_t;
 typedef of_object_t of_bsn_tlv_vfi_t;
 typedef of_object_t of_bsn_tlv_vfp_class_id_t;
 typedef of_object_t of_bsn_tlv_vlan_mac_list_t;
@@ -2170,6 +2172,7 @@ typedef of_object_t of_port_desc_prop_bsn_t;
 typedef of_object_t of_port_desc_prop_bsn_breakout_t;
 typedef of_object_t of_port_desc_prop_bsn_forward_error_correction_t;
 typedef of_object_t of_port_desc_prop_bsn_generation_id_t;
+typedef of_object_t of_port_desc_prop_bsn_speed_capabilities_t;
 typedef of_object_t of_port_desc_prop_bsn_uplink_t;
 typedef of_object_t of_port_desc_prop_ethernet_t;
 typedef of_object_t of_port_desc_prop_experimenter_t;
@@ -4324,6 +4327,11 @@ extern void of_bsn_tlv_port_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_port_speed_gbps_new(of_version_t version);
+extern void of_bsn_tlv_port_speed_gbps_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_port_usage_new(of_version_t version);
 extern void of_bsn_tlv_port_usage_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4541,11 +4549,6 @@ extern void of_bsn_tlv_uri_scheme_init(
 extern of_object_t *
     of_bsn_tlv_use_packet_state_new(of_version_t version);
 extern void of_bsn_tlv_use_packet_state_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
-    of_bsn_tlv_use_peer_when_empty_new(of_version_t version);
-extern void of_bsn_tlv_use_peer_when_empty_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -5716,6 +5719,11 @@ extern void of_port_desc_prop_bsn_forward_error_correction_init(
 extern of_object_t *
     of_port_desc_prop_bsn_generation_id_new(of_version_t version);
 extern void of_port_desc_prop_bsn_generation_id_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_port_desc_prop_bsn_speed_capabilities_new(of_version_t version);
+extern void of_port_desc_prop_bsn_speed_capabilities_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10729,6 +10737,17 @@ of_bsn_tlv_port_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_port_speed_gbps_t
+ * @param obj An instance of type of_bsn_tlv_port_speed_gbps_t
+ *
+ * \ingroup of_bsn_tlv_port_speed_gbps
+ */
+static inline void
+of_bsn_tlv_port_speed_gbps_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_port_usage_t
  * @param obj An instance of type of_bsn_tlv_port_usage_t
  *
@@ -11209,17 +11228,6 @@ of_bsn_tlv_uri_scheme_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_use_packet_state_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
- * Delete an object of type of_bsn_tlv_use_peer_when_empty_t
- * @param obj An instance of type of_bsn_tlv_use_peer_when_empty_t
- *
- * \ingroup of_bsn_tlv_use_peer_when_empty
- */
-static inline void
-of_bsn_tlv_use_peer_when_empty_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -13794,6 +13802,17 @@ of_port_desc_prop_bsn_forward_error_correction_delete(of_object_t *obj) {
  */
 static inline void
 of_port_desc_prop_bsn_generation_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_port_desc_prop_bsn_speed_capabilities_t
+ * @param obj An instance of type of_port_desc_prop_bsn_speed_capabilities_t
+ *
+ * \ingroup of_port_desc_prop_bsn_speed_capabilities
+ */
+static inline void
+of_port_desc_prop_bsn_speed_capabilities_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23625,6 +23644,15 @@ extern void of_bsn_tlv_port_value_get(
     of_bsn_tlv_port_t *obj,
     of_port_no_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_port_speed_gbps */
+
+extern void of_bsn_tlv_port_speed_gbps_value_set(
+    of_bsn_tlv_port_speed_gbps_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_port_speed_gbps_value_get(
+    of_bsn_tlv_port_speed_gbps_t *obj,
+    uint32_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_port_usage */
 
 extern void of_bsn_tlv_port_usage_value_set(
@@ -23982,8 +24010,6 @@ extern void of_bsn_tlv_use_packet_state_value_set(
 extern void of_bsn_tlv_use_packet_state_value_get(
     of_bsn_tlv_use_packet_state_t *obj,
     uint8_t *value);
-
-/* Unified accessor functions for of_bsn_tlv_use_peer_when_empty */
 
 /* Unified accessor functions for of_bsn_tlv_vfi */
 
@@ -27494,6 +27520,43 @@ extern void of_port_desc_prop_bsn_generation_id_generation_id_set(
 extern void of_port_desc_prop_bsn_generation_id_generation_id_get(
     of_port_desc_prop_bsn_generation_id_t *obj,
     uint64_t *generation_id);
+
+/* Unified accessor functions for of_port_desc_prop_bsn_speed_capabilities */
+
+extern void of_port_desc_prop_bsn_speed_capabilities_experimenter_set(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj,
+    uint32_t experimenter);
+extern void of_port_desc_prop_bsn_speed_capabilities_experimenter_get(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj,
+    uint32_t *experimenter);
+
+extern void of_port_desc_prop_bsn_speed_capabilities_exp_type_set(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj,
+    uint32_t exp_type);
+extern void of_port_desc_prop_bsn_speed_capabilities_exp_type_get(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj,
+    uint32_t *exp_type);
+
+extern void of_port_desc_prop_bsn_speed_capabilities_current_set(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj,
+    uint64_t current);
+extern void of_port_desc_prop_bsn_speed_capabilities_current_get(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj,
+    uint64_t *current);
+
+extern void of_port_desc_prop_bsn_speed_capabilities_available_set(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj,
+    uint64_t available);
+extern void of_port_desc_prop_bsn_speed_capabilities_available_get(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj,
+    uint64_t *available);
+
+extern void of_port_desc_prop_bsn_speed_capabilities_supported_set(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj,
+    uint64_t supported);
+extern void of_port_desc_prop_bsn_speed_capabilities_supported_get(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj,
+    uint64_t *supported);
 
 /* Unified accessor functions for of_port_desc_prop_bsn_uplink */
 

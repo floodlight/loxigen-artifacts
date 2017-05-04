@@ -3039,6 +3039,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_port_push_wire_types,
     },
+    [OF_BSN_TLV_PORT_SPEED_GBPS] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_port_speed_gbps_push_wire_types,
+    },
     [OF_BSN_TLV_PORT_USAGE] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -3302,12 +3308,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_use_packet_state_push_wire_types,
-    },
-    [OF_BSN_TLV_USE_PEER_WHEN_EMPTY] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_bsn_tlv_wire_object_id_get,
-        .wire_type_set=of_bsn_tlv_use_peer_when_empty_push_wire_types,
     },
     [OF_BSN_TLV_VFI] = {
         .wire_length_get=of_tlv16_wire_length_get,
@@ -4238,6 +4238,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_port_desc_prop_wire_object_id_get,
         .wire_type_set=of_port_desc_prop_bsn_generation_id_push_wire_types,
+    },
+    [OF_PORT_DESC_PROP_BSN_SPEED_CAPABILITIES] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_port_desc_prop_wire_object_id_get,
+        .wire_type_set=of_port_desc_prop_bsn_speed_capabilities_push_wire_types,
     },
     [OF_PORT_DESC_PROP_BSN_UPLINK] = {
         .wire_length_get=of_tlv16_wire_length_get,

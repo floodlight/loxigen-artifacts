@@ -216,6 +216,8 @@ public interface OFBsnTlvs {
     OFBsnTlvPartnerSystemPriority partnerSystemPriority(int value);
     OFBsnTlvPort.Builder buildPort() throws UnsupportedOperationException;
     OFBsnTlvPort port(OFPort value);
+    OFBsnTlvPortSpeedGbps.Builder buildPortSpeedGbps() throws UnsupportedOperationException;
+    OFBsnTlvPortSpeedGbps portSpeedGbps(long value);
     OFBsnTlvPortUsage.Builder buildPortUsage() throws UnsupportedOperationException;
     OFBsnTlvPortUsage portUsage(OFBsnPortUsage value);
     OFBsnTlvPortVxlanMode.Builder buildPortVxlanMode() throws UnsupportedOperationException;
@@ -297,7 +299,6 @@ public interface OFBsnTlvs {
     OFBsnTlvUriScheme uriScheme(byte[] value);
     OFBsnTlvUsePacketState.Builder buildUsePacketState() throws UnsupportedOperationException;
     OFBsnTlvUsePacketState usePacketState(short value);
-    OFBsnTlvUsePeerWhenEmpty usePeerWhenEmpty();
     OFBsnTlvVfi.Builder buildVfi() throws UnsupportedOperationException;
     OFBsnTlvVfi vfi(int value);
     OFBsnTlvVfpClassId.Builder buildVfpClassId() throws UnsupportedOperationException;

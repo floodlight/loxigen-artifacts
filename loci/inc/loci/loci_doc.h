@@ -7500,6 +7500,17 @@ typedef struct of_bsn_tlv_partner_system_priority_s of_bsn_tlv_partner_system_pr
 typedef struct of_bsn_tlv_port_s of_bsn_tlv_port_t;
 
 /**
+ * Structure for of_bsn_tlv_port_speed_gbps object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_port_speed_gbps_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_port_speed_gbps_s of_bsn_tlv_port_speed_gbps_t;
+
+/**
  * Structure for of_bsn_tlv_port_usage object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7958,13 +7969,6 @@ typedef struct of_bsn_tlv_uri_scheme_s of_bsn_tlv_uri_scheme_t;
  *
  */
 typedef struct of_bsn_tlv_use_packet_state_s of_bsn_tlv_use_packet_state_t;
-
-/**
- * Structure for of_bsn_tlv_use_peer_when_empty object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_bsn_tlv_use_peer_when_empty_s of_bsn_tlv_use_peer_when_empty_t;
 
 /**
  * Structure for of_bsn_tlv_vfi object.  Get/set
@@ -11383,6 +11387,33 @@ typedef struct of_port_desc_prop_bsn_forward_error_correction_s of_port_desc_pro
  *
  */
 typedef struct of_port_desc_prop_bsn_generation_id_s of_port_desc_prop_bsn_generation_id_t;
+
+/**
+ * Structure for of_port_desc_prop_bsn_speed_capabilities object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_bsn_speed_capabilities_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_bsn_speed_capabilities_uint32_get_f and _set_f.
+ *
+ * @param current_get/set ( OF_1_4).
+ *   Accessors for current, a variable of type uint64.  Functions
+ *   are of type of_port_desc_prop_bsn_speed_capabilities_uint64_get_f and _set_f.
+ *
+ * @param available_get/set ( OF_1_4).
+ *   Accessors for available, a variable of type uint64.  Functions
+ *   are of type of_port_desc_prop_bsn_speed_capabilities_uint64_get_f and _set_f.
+ *
+ * @param supported_get/set ( OF_1_4).
+ *   Accessors for supported, a variable of type uint64.  Functions
+ *   are of type of_port_desc_prop_bsn_speed_capabilities_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_port_desc_prop_bsn_speed_capabilities_s of_port_desc_prop_bsn_speed_capabilities_t;
 
 /**
  * Structure for of_port_desc_prop_bsn_uplink object.  Get/set

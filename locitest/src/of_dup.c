@@ -26997,6 +26997,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_port_usage_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_PORT_SPEED_GBPS) {
+        return of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC) {
         return of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_dup(src);
     }
@@ -27183,10 +27187,6 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_EXTERNAL_IP) {
         return of_bsn_tlv_external_ip_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_USE_PEER_WHEN_EMPTY) {
-        return of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_IPV4_SRC) {
@@ -30092,6 +30092,31 @@ of_bsn_tlv_port_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_port_speed_gbps
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_port_speed_gbps.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_port_speed_gbps_t *
+of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_dup(
+    of_bsn_tlv_port_speed_gbps_t *src)
+{
+    of_bsn_tlv_port_speed_gbps_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_port_speed_gbps_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_port_speed_gbps_value_get(src, &val32);
+    of_bsn_tlv_port_speed_gbps_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_port_usage
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -31181,27 +31206,6 @@ of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_use_packet_state_value_get(src, &val8);
     of_bsn_tlv_use_packet_state_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_use_peer_when_empty
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_use_peer_when_empty.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_use_peer_when_empty_t *
-of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_dup(
-    of_bsn_tlv_use_peer_when_empty_t *src)
-{
-    of_bsn_tlv_use_peer_when_empty_t *dst;
-
-    if ((dst = of_bsn_tlv_use_peer_when_empty_new(src->version)) == NULL) {
-        return NULL;
-    }
 
     return dst;
 }
@@ -49739,6 +49743,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_port_usage_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_PORT_SPEED_GBPS) {
+        return of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC) {
         return of_bsn_tlv_actor_system_mac_OF_VERSION_1_4_dup(src);
     }
@@ -49925,10 +49933,6 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_EXTERNAL_IP) {
         return of_bsn_tlv_external_ip_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_USE_PEER_WHEN_EMPTY) {
-        return of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_IPV4_SRC) {
@@ -52834,6 +52838,31 @@ of_bsn_tlv_port_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_port_speed_gbps
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_port_speed_gbps.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_port_speed_gbps_t *
+of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_dup(
+    of_bsn_tlv_port_speed_gbps_t *src)
+{
+    of_bsn_tlv_port_speed_gbps_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_port_speed_gbps_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_port_speed_gbps_value_get(src, &val32);
+    of_bsn_tlv_port_speed_gbps_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_port_usage
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -53923,27 +53952,6 @@ of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_use_packet_state_value_get(src, &val8);
     of_bsn_tlv_use_packet_state_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_use_peer_when_empty
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_use_peer_when_empty.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_use_peer_when_empty_t *
-of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_dup(
-    of_bsn_tlv_use_peer_when_empty_t *src)
-{
-    of_bsn_tlv_use_peer_when_empty_t *dst;
-
-    if ((dst = of_bsn_tlv_use_peer_when_empty_new(src->version)) == NULL) {
-        return NULL;
-    }
 
     return dst;
 }
@@ -60678,6 +60686,10 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_SPEED_CAPABILITIES) {
+        return of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_PORT_DESC_PROP_ETHERNET) {
         return of_port_desc_prop_ethernet_OF_VERSION_1_4_dup(src);
     }
@@ -60802,6 +60814,44 @@ of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(
 
     of_port_desc_prop_bsn_generation_id_generation_id_get(src, &val64);
     of_port_desc_prop_bsn_generation_id_generation_id_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_port_desc_prop_bsn_speed_capabilities
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_port_desc_prop_bsn_speed_capabilities.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_port_desc_prop_bsn_speed_capabilities_t *
+of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dup(
+    of_port_desc_prop_bsn_speed_capabilities_t *src)
+{
+    of_port_desc_prop_bsn_speed_capabilities_t *dst;
+    uint32_t val32;
+    uint64_t val64;
+
+    if ((dst = of_port_desc_prop_bsn_speed_capabilities_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_port_desc_prop_bsn_speed_capabilities_experimenter_get(src, &val32);
+    of_port_desc_prop_bsn_speed_capabilities_experimenter_set(dst, val32);
+
+    of_port_desc_prop_bsn_speed_capabilities_exp_type_get(src, &val32);
+    of_port_desc_prop_bsn_speed_capabilities_exp_type_set(dst, val32);
+
+    of_port_desc_prop_bsn_speed_capabilities_current_get(src, &val64);
+    of_port_desc_prop_bsn_speed_capabilities_current_set(dst, val64);
+
+    of_port_desc_prop_bsn_speed_capabilities_available_get(src, &val64);
+    of_port_desc_prop_bsn_speed_capabilities_available_set(dst, val64);
+
+    of_port_desc_prop_bsn_speed_capabilities_supported_get(src, &val64);
+    of_port_desc_prop_bsn_speed_capabilities_supported_set(dst, val64);
 
     return dst;
 }
@@ -71883,6 +71933,23 @@ of_bsn_tlv_port_dup(
 }
 
 of_object_t *
+of_bsn_tlv_port_speed_gbps_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_port_usage_dup(
     of_object_t *src)
 {
@@ -72624,23 +72691,6 @@ of_bsn_tlv_use_packet_state_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_use_peer_when_empty_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -77159,6 +77209,19 @@ of_port_desc_prop_bsn_generation_id_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_port_desc_prop_bsn_speed_capabilities_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

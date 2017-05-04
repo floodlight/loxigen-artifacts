@@ -754,6 +754,23 @@ ofp_bsn_port_counter_map = {
     55: 'OFP_BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_7',
 }
 
+# Identifiers from group ofp_bsn_port_speed_gbps_type
+OFP_BSN_PORT_SPEED_GBPS_1 = 1
+OFP_BSN_PORT_SPEED_GBPS_10 = 10
+OFP_BSN_PORT_SPEED_GBPS_25 = 25
+OFP_BSN_PORT_SPEED_GBPS_40 = 40
+OFP_BSN_PORT_SPEED_GBPS_50 = 50
+OFP_BSN_PORT_SPEED_GBPS_100 = 100
+
+ofp_bsn_port_speed_gbps_type_map = {
+    1: 'OFP_BSN_PORT_SPEED_GBPS_1',
+    10: 'OFP_BSN_PORT_SPEED_GBPS_10',
+    25: 'OFP_BSN_PORT_SPEED_GBPS_25',
+    40: 'OFP_BSN_PORT_SPEED_GBPS_40',
+    50: 'OFP_BSN_PORT_SPEED_GBPS_50',
+    100: 'OFP_BSN_PORT_SPEED_GBPS_100',
+}
+
 # Identifiers from group ofp_bsn_port_usage
 OFP_BSN_PORT_UNUSED = 0
 OFP_BSN_PORT_TRANSMIT_ONLY = 1
@@ -783,6 +800,27 @@ OFP_BSN_RATE_UNIT_KBITPS = 1
 ofp_bsn_rate_unit_map = {
     0: 'OFP_BSN_RATE_UNIT_PPS',
     1: 'OFP_BSN_RATE_UNIT_KBITPS',
+}
+
+# Identifiers from group ofp_bsn_speed_capabilities
+OFP_BSN_SPEED_CAP_10M = 1
+OFP_BSN_SPEED_CAP_100M = 2
+OFP_BSN_SPEED_CAP_1GB = 4
+OFP_BSN_SPEED_CAP_10GB = 8
+OFP_BSN_SPEED_CAP_25GB = 16
+OFP_BSN_SPEED_CAP_40GB = 32
+OFP_BSN_SPEED_CAP_50GB = 64
+OFP_BSN_SPEED_CAP_100GB = 128
+
+ofp_bsn_speed_capabilities_map = {
+    1: 'OFP_BSN_SPEED_CAP_10M',
+    2: 'OFP_BSN_SPEED_CAP_100M',
+    4: 'OFP_BSN_SPEED_CAP_1GB',
+    8: 'OFP_BSN_SPEED_CAP_10GB',
+    16: 'OFP_BSN_SPEED_CAP_25GB',
+    32: 'OFP_BSN_SPEED_CAP_40GB',
+    64: 'OFP_BSN_SPEED_CAP_50GB',
+    128: 'OFP_BSN_SPEED_CAP_100GB',
 }
 
 # Identifiers from group ofp_bsn_status

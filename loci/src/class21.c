@@ -7570,6 +7570,9 @@ of_port_desc_prop_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x3:
             *id = OF_PORT_DESC_PROP_BSN_BREAKOUT;
             break;
+        case 0x4:
+            *id = OF_PORT_DESC_PROP_BSN_SPEED_CAPABILITIES;
+            break;
         default:
             *id = OF_PORT_DESC_PROP_BSN;
             break;

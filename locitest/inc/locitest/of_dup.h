@@ -1627,6 +1627,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_port_speed_gbps_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_port_usage_dup(
         of_object_t *src);
 
@@ -1800,10 +1804,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_use_packet_state_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_use_peer_when_empty_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2740,6 +2740,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_port_desc_prop_bsn_generation_id_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_port_desc_prop_bsn_speed_capabilities_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6583,6 +6587,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_port_usage_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6756,10 +6764,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9327,6 +9331,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_port_usage_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -9500,10 +9508,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10384,6 +10388,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

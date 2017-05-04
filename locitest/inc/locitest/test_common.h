@@ -7511,6 +7511,15 @@ extern int of_bsn_tlv_port_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_port_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_port_t *obj, int value);
 
+extern int of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_populate(
+    of_bsn_tlv_port_speed_gbps_t *obj, int value);
+extern int of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_check(
+    of_bsn_tlv_port_speed_gbps_t *obj, int value);
+extern int of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_port_speed_gbps_t *obj, int value);
+extern int of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_port_speed_gbps_t *obj, int value);
+
 extern int of_bsn_tlv_port_usage_OF_VERSION_1_3_populate(
     of_bsn_tlv_port_usage_t *obj, int value);
 extern int of_bsn_tlv_port_usage_OF_VERSION_1_3_check(
@@ -7906,15 +7915,6 @@ extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_use_packet_state_t *obj, int value);
 extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_use_packet_state_t *obj, int value);
-
-extern int of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_populate(
-    of_bsn_tlv_use_peer_when_empty_t *obj, int value);
-extern int of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_check(
-    of_bsn_tlv_use_peer_when_empty_t *obj, int value);
-extern int of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_populate_scalars(
-    of_bsn_tlv_use_peer_when_empty_t *obj, int value);
-extern int of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_check_scalars(
-    of_bsn_tlv_use_peer_when_empty_t *obj, int value);
 
 extern int of_bsn_tlv_vfi_OF_VERSION_1_3_populate(
     of_bsn_tlv_vfi_t *obj, int value);
@@ -13568,6 +13568,15 @@ extern int of_bsn_tlv_port_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_port_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_port_t *obj, int value);
 
+extern int of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_populate(
+    of_bsn_tlv_port_speed_gbps_t *obj, int value);
+extern int of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_check(
+    of_bsn_tlv_port_speed_gbps_t *obj, int value);
+extern int of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_port_speed_gbps_t *obj, int value);
+extern int of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_port_speed_gbps_t *obj, int value);
+
 extern int of_bsn_tlv_port_usage_OF_VERSION_1_4_populate(
     of_bsn_tlv_port_usage_t *obj, int value);
 extern int of_bsn_tlv_port_usage_OF_VERSION_1_4_check(
@@ -13963,15 +13972,6 @@ extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_use_packet_state_t *obj, int value);
 extern int of_bsn_tlv_use_packet_state_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_use_packet_state_t *obj, int value);
-
-extern int of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_populate(
-    of_bsn_tlv_use_peer_when_empty_t *obj, int value);
-extern int of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_check(
-    of_bsn_tlv_use_peer_when_empty_t *obj, int value);
-extern int of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_populate_scalars(
-    of_bsn_tlv_use_peer_when_empty_t *obj, int value);
-extern int of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_check_scalars(
-    of_bsn_tlv_use_peer_when_empty_t *obj, int value);
 
 extern int of_bsn_tlv_vfi_OF_VERSION_1_4_populate(
     of_bsn_tlv_vfi_t *obj, int value);
@@ -15880,6 +15880,15 @@ extern int of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_populate_scalars(
     of_port_desc_prop_bsn_generation_id_t *obj, int value);
 extern int of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_check_scalars(
     of_port_desc_prop_bsn_generation_id_t *obj, int value);
+
+extern int of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_populate(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj, int value);
+extern int of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_check(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj, int value);
+extern int of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_populate_scalars(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj, int value);
+extern int of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_check_scalars(
+    of_port_desc_prop_bsn_speed_capabilities_t *obj, int value);
 
 extern int of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_populate(
     of_port_desc_prop_bsn_uplink_t *obj, int value);

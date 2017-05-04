@@ -22582,6 +22582,22 @@ of_bsn_tlv_port_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_objec
 }
 
 int
+of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_port_speed_gbps\n");
+
+    of_bsn_tlv_port_speed_gbps_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_port_usage_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -23253,16 +23269,6 @@ of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dump(loci_writer_f writer, void* cook
     out += writer(cookie, "  value (uint8_t):  ");
     out += LOCI_DUMP_u8(writer, cookie, val8);
     out += writer(cookie, "\n");
-
-    return out;
-}
-
-int
-of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-
-    out += writer(cookie, "Object of type of_bsn_tlv_use_peer_when_empty\n");
 
     return out;
 }
@@ -37409,6 +37415,22 @@ of_bsn_tlv_port_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_objec
 }
 
 int
+of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_port_speed_gbps\n");
+
+    of_bsn_tlv_port_speed_gbps_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_port_usage_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -38080,16 +38102,6 @@ of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dump(loci_writer_f writer, void* cook
     out += writer(cookie, "  value (uint8_t):  ");
     out += LOCI_DUMP_u8(writer, cookie, val8);
     out += writer(cookie, "\n");
-
-    return out;
-}
-
-int
-of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-
-    out += writer(cookie, "Object of type of_bsn_tlv_use_peer_when_empty\n");
 
     return out;
 }
@@ -42432,6 +42444,43 @@ of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dump(loci_writer_f writer, vo
 }
 
 int
+of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint64_t val64;
+
+    out += writer(cookie, "Object of type of_port_desc_prop_bsn_speed_capabilities\n");
+
+    of_port_desc_prop_bsn_speed_capabilities_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_port_desc_prop_bsn_speed_capabilities_exp_type_get(obj, &val32);
+    out += writer(cookie, "  exp_type (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_port_desc_prop_bsn_speed_capabilities_current_get(obj, &val64);
+    out += writer(cookie, "  current (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_desc_prop_bsn_speed_capabilities_available_get(obj, &val64);
+    out += writer(cookie, "  available (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    of_port_desc_prop_bsn_speed_capabilities_supported_get(obj, &val64);
+    out += writer(cookie, "  supported (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -44848,6 +44897,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_port_stats_entry_OF_VERSION_1_0_dump,
     unknown_dump,
     unknown_dump,
@@ -45636,6 +45686,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     of_packet_queue_OF_VERSION_1_1_dump,
     of_port_desc_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -46450,6 +46501,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_port_stats_entry_OF_VERSION_1_2_dump,
     unknown_dump,
     unknown_dump,
@@ -46964,6 +47016,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_dump,
     of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_dump,
     of_bsn_tlv_port_OF_VERSION_1_3_dump,
+    of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_dump,
     of_bsn_tlv_port_usage_OF_VERSION_1_3_dump,
     of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_dump,
     of_bsn_tlv_priority_OF_VERSION_1_3_dump,
@@ -47008,7 +47061,6 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_untagged_OF_VERSION_1_3_dump,
     of_bsn_tlv_uri_scheme_OF_VERSION_1_3_dump,
     of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dump,
-    of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3_dump,
     of_bsn_tlv_vfi_OF_VERSION_1_3_dump,
     of_bsn_tlv_vfp_class_id_OF_VERSION_1_3_dump,
     of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_dump,
@@ -47238,6 +47290,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_oxm_vlan_vid_masked_OF_VERSION_1_3_dump,
     of_packet_queue_OF_VERSION_1_3_dump,
     of_port_desc_OF_VERSION_1_3_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -47765,6 +47818,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_partner_system_mac_OF_VERSION_1_4_dump,
     of_bsn_tlv_partner_system_priority_OF_VERSION_1_4_dump,
     of_bsn_tlv_port_OF_VERSION_1_4_dump,
+    of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_dump,
     of_bsn_tlv_port_usage_OF_VERSION_1_4_dump,
     of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4_dump,
     of_bsn_tlv_priority_OF_VERSION_1_4_dump,
@@ -47809,7 +47863,6 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_untagged_OF_VERSION_1_4_dump,
     of_bsn_tlv_uri_scheme_OF_VERSION_1_4_dump,
     of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dump,
-    of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4_dump,
     of_bsn_tlv_vfi_OF_VERSION_1_4_dump,
     of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_dump,
     of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_dump,
@@ -48044,6 +48097,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dump,
     of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_dump,
     of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dump,
+    of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dump,
     of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_dump,
     of_port_desc_prop_ethernet_OF_VERSION_1_4_dump,
     unknown_dump,

@@ -9384,7 +9384,7 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             *id = OF_BSN_TLV_RECORD_PACKETS;
             break;
         case 0x9c:
-            *id = OF_BSN_TLV_USE_PEER_WHEN_EMPTY;
+            *id = OF_BSN_TLV_PORT_SPEED_GBPS;
             break;
         default:
             *id = OF_BSN_TLV;
@@ -9861,7 +9861,7 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             *id = OF_BSN_TLV_RECORD_PACKETS;
             break;
         case 0x9c:
-            *id = OF_BSN_TLV_USE_PEER_WHEN_EMPTY;
+            *id = OF_BSN_TLV_PORT_SPEED_GBPS;
             break;
         default:
             *id = OF_BSN_TLV;

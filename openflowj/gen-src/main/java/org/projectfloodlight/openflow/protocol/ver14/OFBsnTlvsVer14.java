@@ -862,6 +862,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvPortSpeedGbps.Builder buildPortSpeedGbps() {
+        return new OFBsnTlvPortSpeedGbpsVer14.Builder();
+    }
+    public OFBsnTlvPortSpeedGbps portSpeedGbps(long value) {
+        return new OFBsnTlvPortSpeedGbpsVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvPortUsage.Builder buildPortUsage() {
         return new OFBsnTlvPortUsageVer14.Builder();
     }
@@ -1222,10 +1231,6 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
         return new OFBsnTlvUsePacketStateVer14(
                 value
                     );
-    }
-
-    public OFBsnTlvUsePeerWhenEmpty usePeerWhenEmpty() {
-        return OFBsnTlvUsePeerWhenEmptyVer14.INSTANCE;
     }
 
     public OFBsnTlvVfi.Builder buildVfi() {

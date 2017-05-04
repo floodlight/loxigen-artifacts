@@ -1,1 +1,1 @@
-0e49fcba02c472b3d2c07b70ed0b7344967a8739 Merge into master from pull request #553: SWL-3735 breakout bsn port description property. (https://github.com/floodlight/loxigen/pull/553)
+185524cda8374eef1cc9633c68cfef60a55fe6d6 Merge into master from pull request #554: SWL-3735 speed_capabilities bsn port description property, port_speed_gbps TLV. (https://github.com/floodlight/loxigen/pull/554)

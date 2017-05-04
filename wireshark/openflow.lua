@@ -1527,6 +1527,15 @@ enum_v4_ofp_vlan_id = {
     [4096] = "OFPVID_PRESENT",
 }
 
+enum_v4_ofp_bsn_port_speed_gbps_type = {
+    [1] = "OFP_BSN_PORT_SPEED_GBPS_1",
+    [10] = "OFP_BSN_PORT_SPEED_GBPS_10",
+    [25] = "OFP_BSN_PORT_SPEED_GBPS_25",
+    [40] = "OFP_BSN_PORT_SPEED_GBPS_40",
+    [50] = "OFP_BSN_PORT_SPEED_GBPS_50",
+    [100] = "OFP_BSN_PORT_SPEED_GBPS_100",
+}
+
 enum_v4_ofp_bsn_controller_role_reason = {
     [0] = "OFP_BSN_CONTROLLER_ROLE_REASON_MASTER_REQUEST",
     [1] = "OFP_BSN_CONTROLLER_ROLE_REASON_CONFIG",
@@ -2068,22 +2077,25 @@ enum_v4_ofp_port_features = {
 }
 
 
-enum_v5_macro_definitions = {
-    [32] = "OFP_MAX_TABLE_NAME_LEN",
-    [16] = "OFP_MAX_PORT_NAME_LEN",
-    [6653] = "OFP_TCP_PORT",
-    [6653] = "OFP_SSL_PORT",
-    [6] = "OFP_ETH_ALEN",
-    [128] = "OFP_DEFAULT_MISS_SEND_LEN",
-    [0] = "OFP_VLAN_NONE",
-    [0] = "OFP_FLOW_PERMANENT",
-    [32768] = "OFP_DEFAULT_PRIORITY",
-    [4294967295] = "OFP_NO_BUFFER",
-    [256] = "DESC_STR_LEN",
-    [32] = "SERIAL_NUM_LEN",
-    [4294967295] = "OFPQ_ALL",
-    [65535] = "OFPQ_MAX_RATE_UNCFG",
-    [65535] = "OFPQ_MIN_RATE_UNCFG",
+enum_v5_ofp_stats_type = {
+    [0] = "OFPST_DESC",
+    [1] = "OFPST_FLOW",
+    [2] = "OFPST_AGGREGATE",
+    [3] = "OFPST_TABLE",
+    [4] = "OFPST_PORT",
+    [5] = "OFPST_QUEUE",
+    [6] = "OFPST_GROUP",
+    [7] = "OFPST_GROUP_DESC",
+    [8] = "OFPST_GROUP_FEATURES",
+    [9] = "OFPST_METER",
+    [10] = "OFPST_METER_CONFIG",
+    [11] = "OFPST_METER_FEATURES",
+    [12] = "OFPST_TABLE_FEATURES",
+    [13] = "OFPST_PORT_DESC",
+    [14] = "OFPMP_TABLE_DESC",
+    [15] = "OFPMP_QUEUE_DESC",
+    [16] = "OFPMP_FLOW_MONITOR",
+    [65535] = "OFPST_EXPERIMENTER",
 }
 
 enum_v5_ofp_flow_mod_flags = {
@@ -2436,6 +2448,15 @@ enum_v5_ofp_vlan_id = {
     [4096] = "OFPVID_PRESENT",
 }
 
+enum_v5_ofp_bsn_port_speed_gbps_type = {
+    [1] = "OFP_BSN_PORT_SPEED_GBPS_1",
+    [10] = "OFP_BSN_PORT_SPEED_GBPS_10",
+    [25] = "OFP_BSN_PORT_SPEED_GBPS_25",
+    [40] = "OFP_BSN_PORT_SPEED_GBPS_40",
+    [50] = "OFP_BSN_PORT_SPEED_GBPS_50",
+    [100] = "OFP_BSN_PORT_SPEED_GBPS_100",
+}
+
 enum_v5_ofp_group_mod_failed_code = {
     [0] = "OFPGMFC_GROUP_EXISTS",
     [1] = "OFPGMFC_INVALID_GROUP",
@@ -2748,25 +2769,22 @@ enum_v5_ofp_queue_op_failed_code = {
     [2] = "OFPQOFC_EPERM",
 }
 
-enum_v5_ofp_stats_type = {
-    [0] = "OFPST_DESC",
-    [1] = "OFPST_FLOW",
-    [2] = "OFPST_AGGREGATE",
-    [3] = "OFPST_TABLE",
-    [4] = "OFPST_PORT",
-    [5] = "OFPST_QUEUE",
-    [6] = "OFPST_GROUP",
-    [7] = "OFPST_GROUP_DESC",
-    [8] = "OFPST_GROUP_FEATURES",
-    [9] = "OFPST_METER",
-    [10] = "OFPST_METER_CONFIG",
-    [11] = "OFPST_METER_FEATURES",
-    [12] = "OFPST_TABLE_FEATURES",
-    [13] = "OFPST_PORT_DESC",
-    [14] = "OFPMP_TABLE_DESC",
-    [15] = "OFPMP_QUEUE_DESC",
-    [16] = "OFPMP_FLOW_MONITOR",
-    [65535] = "OFPST_EXPERIMENTER",
+enum_v5_macro_definitions = {
+    [32] = "OFP_MAX_TABLE_NAME_LEN",
+    [16] = "OFP_MAX_PORT_NAME_LEN",
+    [6653] = "OFP_TCP_PORT",
+    [6653] = "OFP_SSL_PORT",
+    [6] = "OFP_ETH_ALEN",
+    [128] = "OFP_DEFAULT_MISS_SEND_LEN",
+    [0] = "OFP_VLAN_NONE",
+    [0] = "OFP_FLOW_PERMANENT",
+    [32768] = "OFP_DEFAULT_PRIORITY",
+    [4294967295] = "OFP_NO_BUFFER",
+    [256] = "DESC_STR_LEN",
+    [32] = "SERIAL_NUM_LEN",
+    [4294967295] = "OFPQ_ALL",
+    [65535] = "OFPQ_MAX_RATE_UNCFG",
+    [65535] = "OFPQ_MIN_RATE_UNCFG",
 }
 
 enum_v5_ofp_meter_mod_command = {
@@ -2806,6 +2824,17 @@ enum_v5_ofp_group_mod_command = {
     [0] = "OFPGC_ADD",
     [1] = "OFPGC_MODIFY",
     [2] = "OFPGC_DELETE",
+}
+
+enum_v5_ofp_bsn_speed_capabilities = {
+    [1] = "OFP_BSN_SPEED_CAP_10M",
+    [2] = "OFP_BSN_SPEED_CAP_100M",
+    [4] = "OFP_BSN_SPEED_CAP_1GB",
+    [8] = "OFP_BSN_SPEED_CAP_10GB",
+    [16] = "OFP_BSN_SPEED_CAP_25GB",
+    [32] = "OFP_BSN_SPEED_CAP_40GB",
+    [64] = "OFP_BSN_SPEED_CAP_50GB",
+    [128] = "OFP_BSN_SPEED_CAP_100GB",
 }
 
 enum_v5_ofp_bsn_udf_anchor = {
@@ -3550,6 +3579,15 @@ enum_v6_ofp_vlan_id = {
     [4096] = "OFPVID_PRESENT",
 }
 
+enum_v6_ofp_bsn_port_speed_gbps_type = {
+    [1] = "OFP_BSN_PORT_SPEED_GBPS_1",
+    [10] = "OFP_BSN_PORT_SPEED_GBPS_10",
+    [25] = "OFP_BSN_PORT_SPEED_GBPS_25",
+    [40] = "OFP_BSN_PORT_SPEED_GBPS_40",
+    [50] = "OFP_BSN_PORT_SPEED_GBPS_50",
+    [100] = "OFP_BSN_PORT_SPEED_GBPS_100",
+}
+
 enum_v6_ofp_group_mod_failed_code = {
     [0] = "OFPGMFC_GROUP_EXISTS",
     [1] = "OFPGMFC_INVALID_GROUP",
@@ -3944,6 +3982,17 @@ enum_v6_ofp_group_mod_command = {
     [2] = "OFPGC_DELETE",
     [3] = "OFPGC_INSERT_BUCKET",
     [5] = "OFPGC_REMOVE_BUCKET",
+}
+
+enum_v6_ofp_bsn_speed_capabilities = {
+    [1] = "OFP_BSN_SPEED_CAP_10M",
+    [2] = "OFP_BSN_SPEED_CAP_100M",
+    [4] = "OFP_BSN_SPEED_CAP_1GB",
+    [8] = "OFP_BSN_SPEED_CAP_10GB",
+    [16] = "OFP_BSN_SPEED_CAP_25GB",
+    [32] = "OFP_BSN_SPEED_CAP_40GB",
+    [64] = "OFP_BSN_SPEED_CAP_50GB",
+    [128] = "OFP_BSN_SPEED_CAP_100GB",
 }
 
 enum_v6_ofp_queue_stats_prop_type = {
@@ -8630,6 +8679,9 @@ fields['of13.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of13.b
 fields['of13.bsn_tlv_port.type'] = ProtoField.uint16("of13.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port.length'] = ProtoField.uint16("of13.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port.value'] = ProtoField.uint32("of13.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_port_speed_gbps.type'] = ProtoField.uint16("of13.bsn_tlv_port_speed_gbps.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_port_speed_gbps.length'] = ProtoField.uint16("of13.bsn_tlv_port_speed_gbps.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_port_speed_gbps.value'] = ProtoField.uint32("of13.bsn_tlv_port_speed_gbps.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_port_usage.type'] = ProtoField.uint16("of13.bsn_tlv_port_usage.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port_usage.length'] = ProtoField.uint16("of13.bsn_tlv_port_usage.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port_usage.value'] = ProtoField.uint32("of13.bsn_tlv_port_usage.value", "value", base.DEC, enum_v4_ofp_bsn_port_usage)
@@ -8756,8 +8808,6 @@ fields['of13.bsn_tlv_uri_scheme.value'] = ProtoField.bytes("of13.bsn_tlv_uri_sch
 fields['of13.bsn_tlv_use_packet_state.type'] = ProtoField.uint16("of13.bsn_tlv_use_packet_state.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_use_packet_state.length'] = ProtoField.uint16("of13.bsn_tlv_use_packet_state.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of13.bsn_tlv_use_packet_state.value", "value", base.DEC, nil)
-fields['of13.bsn_tlv_use_peer_when_empty.type'] = ProtoField.uint16("of13.bsn_tlv_use_peer_when_empty.type", "type", base.DEC, nil)
-fields['of13.bsn_tlv_use_peer_when_empty.length'] = ProtoField.uint16("of13.bsn_tlv_use_peer_when_empty.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vfi.type'] = ProtoField.uint16("of13.bsn_tlv_vfi.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vfi.length'] = ProtoField.uint16("of13.bsn_tlv_vfi.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vfi.value'] = ProtoField.uint16("of13.bsn_tlv_vfi.value", "value", base.DEC, nil)
@@ -11529,6 +11579,9 @@ fields['of14.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of14.b
 fields['of14.bsn_tlv_port.type'] = ProtoField.uint16("of14.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_port.length'] = ProtoField.uint16("of14.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_port.value'] = ProtoField.uint32("of14.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_port_speed_gbps.type'] = ProtoField.uint16("of14.bsn_tlv_port_speed_gbps.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_port_speed_gbps.length'] = ProtoField.uint16("of14.bsn_tlv_port_speed_gbps.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_port_speed_gbps.value'] = ProtoField.uint32("of14.bsn_tlv_port_speed_gbps.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_port_usage.type'] = ProtoField.uint16("of14.bsn_tlv_port_usage.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_port_usage.length'] = ProtoField.uint16("of14.bsn_tlv_port_usage.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_port_usage.value'] = ProtoField.uint32("of14.bsn_tlv_port_usage.value", "value", base.DEC, enum_v5_ofp_bsn_port_usage)
@@ -11655,8 +11708,6 @@ fields['of14.bsn_tlv_uri_scheme.value'] = ProtoField.bytes("of14.bsn_tlv_uri_sch
 fields['of14.bsn_tlv_use_packet_state.type'] = ProtoField.uint16("of14.bsn_tlv_use_packet_state.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_use_packet_state.length'] = ProtoField.uint16("of14.bsn_tlv_use_packet_state.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of14.bsn_tlv_use_packet_state.value", "value", base.DEC, nil)
-fields['of14.bsn_tlv_use_peer_when_empty.type'] = ProtoField.uint16("of14.bsn_tlv_use_peer_when_empty.type", "type", base.DEC, nil)
-fields['of14.bsn_tlv_use_peer_when_empty.length'] = ProtoField.uint16("of14.bsn_tlv_use_peer_when_empty.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vfi.type'] = ProtoField.uint16("of14.bsn_tlv_vfi.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vfi.length'] = ProtoField.uint16("of14.bsn_tlv_vfi.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vfi.value'] = ProtoField.uint16("of14.bsn_tlv_vfi.value", "value", base.DEC, nil)
@@ -12832,6 +12883,13 @@ fields['of14.port_desc_prop_bsn_generation_id.length'] = ProtoField.uint16("of14
 fields['of14.port_desc_prop_bsn_generation_id.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_generation_id.experimenter", "experimenter", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_generation_id.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_generation_id.exp_type", "exp_type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_generation_id.generation_id'] = ProtoField.uint64("of14.port_desc_prop_bsn_generation_id.generation_id", "generation_id", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_speed_capabilities.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_speed_capabilities.type", "type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_speed_capabilities.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_speed_capabilities.length", "length", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_speed_capabilities.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_speed_capabilities.experimenter", "experimenter", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_speed_capabilities.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_speed_capabilities.exp_type", "exp_type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_speed_capabilities.current'] = ProtoField.uint64("of14.port_desc_prop_bsn_speed_capabilities.current", "current", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_speed_capabilities.available'] = ProtoField.uint64("of14.port_desc_prop_bsn_speed_capabilities.available", "available", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_speed_capabilities.supported'] = ProtoField.uint64("of14.port_desc_prop_bsn_speed_capabilities.supported", "supported", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_uplink.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_uplink.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_uplink.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_uplink.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_uplink.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_uplink.experimenter", "experimenter", base.DEC, nil)
@@ -14677,6 +14735,9 @@ fields['of15.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of15.b
 fields['of15.bsn_tlv_port.type'] = ProtoField.uint16("of15.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_port.length'] = ProtoField.uint16("of15.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_port.value'] = ProtoField.uint32("of15.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_port_speed_gbps.type'] = ProtoField.uint16("of15.bsn_tlv_port_speed_gbps.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_port_speed_gbps.length'] = ProtoField.uint16("of15.bsn_tlv_port_speed_gbps.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_port_speed_gbps.value'] = ProtoField.uint32("of15.bsn_tlv_port_speed_gbps.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_port_usage.type'] = ProtoField.uint16("of15.bsn_tlv_port_usage.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_port_usage.length'] = ProtoField.uint16("of15.bsn_tlv_port_usage.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_port_usage.value'] = ProtoField.uint32("of15.bsn_tlv_port_usage.value", "value", base.DEC, enum_v6_ofp_bsn_port_usage)
@@ -14803,8 +14864,6 @@ fields['of15.bsn_tlv_uri_scheme.value'] = ProtoField.bytes("of15.bsn_tlv_uri_sch
 fields['of15.bsn_tlv_use_packet_state.type'] = ProtoField.uint16("of15.bsn_tlv_use_packet_state.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_use_packet_state.length'] = ProtoField.uint16("of15.bsn_tlv_use_packet_state.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of15.bsn_tlv_use_packet_state.value", "value", base.DEC, nil)
-fields['of15.bsn_tlv_use_peer_when_empty.type'] = ProtoField.uint16("of15.bsn_tlv_use_peer_when_empty.type", "type", base.DEC, nil)
-fields['of15.bsn_tlv_use_peer_when_empty.length'] = ProtoField.uint16("of15.bsn_tlv_use_peer_when_empty.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_vfi.type'] = ProtoField.uint16("of15.bsn_tlv_vfi.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_vfi.length'] = ProtoField.uint16("of15.bsn_tlv_vfi.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_vfi.value'] = ProtoField.uint16("of15.bsn_tlv_vfi.value", "value", base.DEC, nil)
@@ -16168,6 +16227,13 @@ fields['of15.port_desc_prop_bsn_generation_id.length'] = ProtoField.uint16("of15
 fields['of15.port_desc_prop_bsn_generation_id.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_generation_id.experimenter", "experimenter", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_generation_id.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_generation_id.exp_type", "exp_type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_generation_id.generation_id'] = ProtoField.uint64("of15.port_desc_prop_bsn_generation_id.generation_id", "generation_id", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_speed_capabilities.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_speed_capabilities.type", "type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_speed_capabilities.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_speed_capabilities.length", "length", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_speed_capabilities.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_speed_capabilities.experimenter", "experimenter", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_speed_capabilities.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_speed_capabilities.exp_type", "exp_type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_speed_capabilities.current'] = ProtoField.uint64("of15.port_desc_prop_bsn_speed_capabilities.current", "current", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_speed_capabilities.available'] = ProtoField.uint64("of15.port_desc_prop_bsn_speed_capabilities.available", "available", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_speed_capabilities.supported'] = ProtoField.uint64("of15.port_desc_prop_bsn_speed_capabilities.supported", "supported", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_uplink.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_uplink.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_uplink.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_uplink.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_uplink.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_uplink.experimenter", "experimenter", base.DEC, nil)
@@ -21063,6 +21129,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_port.type'],
     fields['of13.bsn_tlv_port.length'],
     fields['of13.bsn_tlv_port.value'],
+    fields['of13.bsn_tlv_port_speed_gbps.type'],
+    fields['of13.bsn_tlv_port_speed_gbps.length'],
+    fields['of13.bsn_tlv_port_speed_gbps.value'],
     fields['of13.bsn_tlv_port_usage.type'],
     fields['of13.bsn_tlv_port_usage.length'],
     fields['of13.bsn_tlv_port_usage.value'],
@@ -21189,8 +21258,6 @@ p_of.fields = {
     fields['of13.bsn_tlv_use_packet_state.type'],
     fields['of13.bsn_tlv_use_packet_state.length'],
     fields['of13.bsn_tlv_use_packet_state.value'],
-    fields['of13.bsn_tlv_use_peer_when_empty.type'],
-    fields['of13.bsn_tlv_use_peer_when_empty.length'],
     fields['of13.bsn_tlv_vfi.type'],
     fields['of13.bsn_tlv_vfi.length'],
     fields['of13.bsn_tlv_vfi.value'],
@@ -23962,6 +24029,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_port.type'],
     fields['of14.bsn_tlv_port.length'],
     fields['of14.bsn_tlv_port.value'],
+    fields['of14.bsn_tlv_port_speed_gbps.type'],
+    fields['of14.bsn_tlv_port_speed_gbps.length'],
+    fields['of14.bsn_tlv_port_speed_gbps.value'],
     fields['of14.bsn_tlv_port_usage.type'],
     fields['of14.bsn_tlv_port_usage.length'],
     fields['of14.bsn_tlv_port_usage.value'],
@@ -24088,8 +24158,6 @@ p_of.fields = {
     fields['of14.bsn_tlv_use_packet_state.type'],
     fields['of14.bsn_tlv_use_packet_state.length'],
     fields['of14.bsn_tlv_use_packet_state.value'],
-    fields['of14.bsn_tlv_use_peer_when_empty.type'],
-    fields['of14.bsn_tlv_use_peer_when_empty.length'],
     fields['of14.bsn_tlv_vfi.type'],
     fields['of14.bsn_tlv_vfi.length'],
     fields['of14.bsn_tlv_vfi.value'],
@@ -25265,6 +25333,13 @@ p_of.fields = {
     fields['of14.port_desc_prop_bsn_generation_id.experimenter'],
     fields['of14.port_desc_prop_bsn_generation_id.exp_type'],
     fields['of14.port_desc_prop_bsn_generation_id.generation_id'],
+    fields['of14.port_desc_prop_bsn_speed_capabilities.type'],
+    fields['of14.port_desc_prop_bsn_speed_capabilities.length'],
+    fields['of14.port_desc_prop_bsn_speed_capabilities.experimenter'],
+    fields['of14.port_desc_prop_bsn_speed_capabilities.exp_type'],
+    fields['of14.port_desc_prop_bsn_speed_capabilities.current'],
+    fields['of14.port_desc_prop_bsn_speed_capabilities.available'],
+    fields['of14.port_desc_prop_bsn_speed_capabilities.supported'],
     fields['of14.port_desc_prop_bsn_uplink.type'],
     fields['of14.port_desc_prop_bsn_uplink.length'],
     fields['of14.port_desc_prop_bsn_uplink.experimenter'],
@@ -27110,6 +27185,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_port.type'],
     fields['of15.bsn_tlv_port.length'],
     fields['of15.bsn_tlv_port.value'],
+    fields['of15.bsn_tlv_port_speed_gbps.type'],
+    fields['of15.bsn_tlv_port_speed_gbps.length'],
+    fields['of15.bsn_tlv_port_speed_gbps.value'],
     fields['of15.bsn_tlv_port_usage.type'],
     fields['of15.bsn_tlv_port_usage.length'],
     fields['of15.bsn_tlv_port_usage.value'],
@@ -27236,8 +27314,6 @@ p_of.fields = {
     fields['of15.bsn_tlv_use_packet_state.type'],
     fields['of15.bsn_tlv_use_packet_state.length'],
     fields['of15.bsn_tlv_use_packet_state.value'],
-    fields['of15.bsn_tlv_use_peer_when_empty.type'],
-    fields['of15.bsn_tlv_use_peer_when_empty.length'],
     fields['of15.bsn_tlv_vfi.type'],
     fields['of15.bsn_tlv_vfi.length'],
     fields['of15.bsn_tlv_vfi.value'],
@@ -28601,6 +28677,13 @@ p_of.fields = {
     fields['of15.port_desc_prop_bsn_generation_id.experimenter'],
     fields['of15.port_desc_prop_bsn_generation_id.exp_type'],
     fields['of15.port_desc_prop_bsn_generation_id.generation_id'],
+    fields['of15.port_desc_prop_bsn_speed_capabilities.type'],
+    fields['of15.port_desc_prop_bsn_speed_capabilities.length'],
+    fields['of15.port_desc_prop_bsn_speed_capabilities.experimenter'],
+    fields['of15.port_desc_prop_bsn_speed_capabilities.exp_type'],
+    fields['of15.port_desc_prop_bsn_speed_capabilities.current'],
+    fields['of15.port_desc_prop_bsn_speed_capabilities.available'],
+    fields['of15.port_desc_prop_bsn_speed_capabilities.supported'],
     fields['of15.port_desc_prop_bsn_uplink.type'],
     fields['of15.port_desc_prop_bsn_uplink.length'],
     fields['of15.port_desc_prop_bsn_uplink.experimenter'],
@@ -39554,6 +39637,16 @@ function dissect_of_bsn_tlv_port_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[0] = dissect_of_bsn_tlv_port_v4
 
+-- child class of_bsn_tlv_port_speed_gbps
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_speed_gbps_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_speed_gbps.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_speed_gbps.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_port_speed_gbps.value')
+    return 'of_bsn_tlv_port_speed_gbps'
+end
+of_bsn_tlv_v4_dissectors[156] = dissect_of_bsn_tlv_port_speed_gbps_v4
+
 -- child class of_bsn_tlv_port_usage
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_port_usage_v4(reader, subtree)
@@ -39996,15 +40089,6 @@ function dissect_of_bsn_tlv_use_packet_state_v4(reader, subtree)
     return 'of_bsn_tlv_use_packet_state'
 end
 of_bsn_tlv_v4_dissectors[96] = dissect_of_bsn_tlv_use_packet_state_v4
-
--- child class of_bsn_tlv_use_peer_when_empty
--- Child of of_bsn_tlv
-function dissect_of_bsn_tlv_use_peer_when_empty_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_use_peer_when_empty.type')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_use_peer_when_empty.length')
-    return 'of_bsn_tlv_use_peer_when_empty'
-end
-of_bsn_tlv_v4_dissectors[156] = dissect_of_bsn_tlv_use_peer_when_empty_v4
 
 -- child class of_bsn_tlv_vfi
 -- Child of of_bsn_tlv
@@ -47329,6 +47413,16 @@ function dissect_of_bsn_tlv_port_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[0] = dissect_of_bsn_tlv_port_v5
 
+-- child class of_bsn_tlv_port_speed_gbps
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_speed_gbps_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_port_speed_gbps.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_port_speed_gbps.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_port_speed_gbps.value')
+    return 'of_bsn_tlv_port_speed_gbps'
+end
+of_bsn_tlv_v5_dissectors[156] = dissect_of_bsn_tlv_port_speed_gbps_v5
+
 -- child class of_bsn_tlv_port_usage
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_port_usage_v5(reader, subtree)
@@ -47771,15 +47865,6 @@ function dissect_of_bsn_tlv_use_packet_state_v5(reader, subtree)
     return 'of_bsn_tlv_use_packet_state'
 end
 of_bsn_tlv_v5_dissectors[96] = dissect_of_bsn_tlv_use_packet_state_v5
-
--- child class of_bsn_tlv_use_peer_when_empty
--- Child of of_bsn_tlv
-function dissect_of_bsn_tlv_use_peer_when_empty_v5(reader, subtree)
-    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_use_peer_when_empty.type')
-    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_use_peer_when_empty.length')
-    return 'of_bsn_tlv_use_peer_when_empty'
-end
-of_bsn_tlv_v5_dissectors[156] = dissect_of_bsn_tlv_use_peer_when_empty_v5
 
 -- child class of_bsn_tlv_vfi
 -- Child of of_bsn_tlv
@@ -51011,6 +51096,20 @@ function dissect_of_port_desc_prop_bsn_generation_id_v5(reader, subtree)
     return 'of_port_desc_prop_bsn_generation_id'
 end
 of_port_desc_prop_bsn_v5_dissectors[1] = dissect_of_port_desc_prop_bsn_generation_id_v5
+
+-- child class of_port_desc_prop_bsn_speed_capabilities
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_speed_capabilities_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_speed_capabilities.type')
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_speed_capabilities.length')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_speed_capabilities.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_speed_capabilities.exp_type')
+    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_speed_capabilities.current')
+    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_speed_capabilities.available')
+    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_speed_capabilities.supported')
+    return 'of_port_desc_prop_bsn_speed_capabilities'
+end
+of_port_desc_prop_bsn_v5_dissectors[4] = dissect_of_port_desc_prop_bsn_speed_capabilities_v5
 
 -- child class of_port_desc_prop_bsn_uplink
 -- Child of of_port_desc_prop_bsn
@@ -55674,6 +55773,16 @@ function dissect_of_bsn_tlv_port_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[0] = dissect_of_bsn_tlv_port_v6
 
+-- child class of_bsn_tlv_port_speed_gbps
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_speed_gbps_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_port_speed_gbps.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_port_speed_gbps.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_port_speed_gbps.value')
+    return 'of_bsn_tlv_port_speed_gbps'
+end
+of_bsn_tlv_v6_dissectors[156] = dissect_of_bsn_tlv_port_speed_gbps_v6
+
 -- child class of_bsn_tlv_port_usage
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_port_usage_v6(reader, subtree)
@@ -56116,15 +56225,6 @@ function dissect_of_bsn_tlv_use_packet_state_v6(reader, subtree)
     return 'of_bsn_tlv_use_packet_state'
 end
 of_bsn_tlv_v6_dissectors[96] = dissect_of_bsn_tlv_use_packet_state_v6
-
--- child class of_bsn_tlv_use_peer_when_empty
--- Child of of_bsn_tlv
-function dissect_of_bsn_tlv_use_peer_when_empty_v6(reader, subtree)
-    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_use_peer_when_empty.type')
-    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_use_peer_when_empty.length')
-    return 'of_bsn_tlv_use_peer_when_empty'
-end
-of_bsn_tlv_v6_dissectors[156] = dissect_of_bsn_tlv_use_peer_when_empty_v6
 
 -- child class of_bsn_tlv_vfi
 -- Child of of_bsn_tlv
@@ -59848,6 +59948,20 @@ function dissect_of_port_desc_prop_bsn_generation_id_v6(reader, subtree)
     return 'of_port_desc_prop_bsn_generation_id'
 end
 of_port_desc_prop_bsn_v6_dissectors[1] = dissect_of_port_desc_prop_bsn_generation_id_v6
+
+-- child class of_port_desc_prop_bsn_speed_capabilities
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_speed_capabilities_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_speed_capabilities.type')
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_speed_capabilities.length')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_speed_capabilities.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_speed_capabilities.exp_type')
+    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_speed_capabilities.current')
+    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_speed_capabilities.available')
+    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_speed_capabilities.supported')
+    return 'of_port_desc_prop_bsn_speed_capabilities'
+end
+of_port_desc_prop_bsn_v6_dissectors[4] = dissect_of_port_desc_prop_bsn_speed_capabilities_v6
 
 -- child class of_port_desc_prop_bsn_uplink
 -- Child of of_port_desc_prop_bsn

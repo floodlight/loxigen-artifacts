@@ -821,6 +821,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_state_OF_VER
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_system_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_system_priority_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_usage_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_priority_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -865,7 +866,6 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_unknown_multicast_ra
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_untagged_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_uri_scheme_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_use_packet_state_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
-static int __attribute__((unused)) loci_validate_of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vfi_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vfp_class_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1480,6 +1480,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_state_OF_VER
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_system_mac_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_system_priority_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_usage_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_priority_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -1524,7 +1525,6 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_unknown_multicast_ra
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_untagged_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_uri_scheme_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_use_packet_state_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
-static int __attribute__((unused)) loci_validate_of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vfi_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vfp_class_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -1806,6 +1806,7 @@ static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_OF_VERSIO
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_breakout_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_uplink_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_ethernet_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_optical_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -20626,6 +20627,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_partner_system_priority_OF_VERSION_1_3(data, len, out_len);
     case 0x0:
         return loci_validate_of_bsn_tlv_port_OF_VERSION_1_3(data, len, out_len);
+    case 0x9c:
+        return loci_validate_of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3(data, len, out_len);
     case 0x8d:
         return loci_validate_of_bsn_tlv_port_usage_OF_VERSION_1_3(data, len, out_len);
     case 0x58:
@@ -20714,8 +20717,6 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_uri_scheme_OF_VERSION_1_3(data, len, out_len);
     case 0x60:
         return loci_validate_of_bsn_tlv_use_packet_state_OF_VERSION_1_3(data, len, out_len);
-    case 0x9c:
-        return loci_validate_of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3(data, len, out_len);
     case 0x63:
         return loci_validate_of_bsn_tlv_vfi_OF_VERSION_1_3(data, len, out_len);
     case 0x6b:
@@ -22976,6 +22977,28 @@ loci_validate_of_bsn_tlv_port_OF_VERSION_1_3(uint8_t *data, int len, int *out_le
 }
 
 static int
+loci_validate_of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_bsn_tlv_port_usage_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 6) {
@@ -23946,28 +23969,6 @@ loci_validate_of_bsn_tlv_use_packet_state_OF_VERSION_1_3(uint8_t *data, int len,
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 5) {
-        return -1;
-    }
-
-
-
-
-    *out_len = len;
-    return 0;
-}
-
-static int
-loci_validate_of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
-{
-    if (len < 4) {
-        return -1;
-    }
-
-    len = 4;
-
-    uint16_t wire_len;
-    buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 4) {
         return -1;
     }
 
@@ -36993,6 +36994,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_partner_system_priority_OF_VERSION_1_4(data, len, out_len);
     case 0x0:
         return loci_validate_of_bsn_tlv_port_OF_VERSION_1_4(data, len, out_len);
+    case 0x9c:
+        return loci_validate_of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4(data, len, out_len);
     case 0x8d:
         return loci_validate_of_bsn_tlv_port_usage_OF_VERSION_1_4(data, len, out_len);
     case 0x58:
@@ -37081,8 +37084,6 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_uri_scheme_OF_VERSION_1_4(data, len, out_len);
     case 0x60:
         return loci_validate_of_bsn_tlv_use_packet_state_OF_VERSION_1_4(data, len, out_len);
-    case 0x9c:
-        return loci_validate_of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4(data, len, out_len);
     case 0x63:
         return loci_validate_of_bsn_tlv_vfi_OF_VERSION_1_4(data, len, out_len);
     case 0x6b:
@@ -39343,6 +39344,28 @@ loci_validate_of_bsn_tlv_port_OF_VERSION_1_4(uint8_t *data, int len, int *out_le
 }
 
 static int
+loci_validate_of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_bsn_tlv_port_usage_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 6) {
@@ -40313,28 +40336,6 @@ loci_validate_of_bsn_tlv_use_packet_state_OF_VERSION_1_4(uint8_t *data, int len,
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 5) {
-        return -1;
-    }
-
-
-
-
-    *out_len = len;
-    return 0;
-}
-
-static int
-loci_validate_of_bsn_tlv_use_peer_when_empty_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
-{
-    if (len < 4) {
-        return -1;
-    }
-
-    len = 4;
-
-    uint16_t wire_len;
-    buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 4) {
         return -1;
     }
 
@@ -46052,6 +46053,8 @@ loci_validate_of_port_desc_prop_bsn_OF_VERSION_1_4(uint8_t *data, int len, int *
         return loci_validate_of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4(data, len, out_len);
     case 0x1:
         return loci_validate_of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4(data, len, out_len);
+    case 0x4:
+        return loci_validate_of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4(data, len, out_len);
     case 0x0:
         return loci_validate_of_port_desc_prop_bsn_uplink_OF_VERSION_1_4(data, len, out_len);
     }
@@ -46117,6 +46120,28 @@ loci_validate_of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4(uint8_t *data, 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 20) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 36) {
         return -1;
     }
 

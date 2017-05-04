@@ -691,6 +691,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.2");
     }
 
+    public OFBsnTlvPortSpeedGbps.Builder buildPortSpeedGbps() {
+        throw new UnsupportedOperationException("OFBsnTlvPortSpeedGbps not supported in version 1.2");
+    }
+    public OFBsnTlvPortSpeedGbps portSpeedGbps(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvPortSpeedGbps not supported in version 1.2");
+    }
+
     public OFBsnTlvPortUsage.Builder buildPortUsage() {
         throw new UnsupportedOperationException("OFBsnTlvPortUsage not supported in version 1.2");
     }
@@ -976,10 +983,6 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvUsePacketState usePacketState(short value) {
         throw new UnsupportedOperationException("OFBsnTlvUsePacketState not supported in version 1.2");
-    }
-
-    public OFBsnTlvUsePeerWhenEmpty usePeerWhenEmpty() {
-        throw new UnsupportedOperationException("OFBsnTlvUsePeerWhenEmpty not supported in version 1.2");
     }
 
     public OFBsnTlvVfi.Builder buildVfi() {
