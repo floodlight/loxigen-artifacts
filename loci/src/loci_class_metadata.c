@@ -2991,6 +2991,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_optics_always_enabled_push_wire_types,
     },
+    [OF_BSN_TLV_OUTER_SRC_MAC] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_outer_src_mac_push_wire_types,
+    },
     [OF_BSN_TLV_PARENT_PORT] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -3320,6 +3326,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_vfp_class_id_push_wire_types,
+    },
+    [OF_BSN_TLV_VIRTUAL] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_virtual_push_wire_types,
     },
     [OF_BSN_TLV_VLAN_MAC_LIST] = {
         .wire_length_get=of_tlv16_wire_length_get,

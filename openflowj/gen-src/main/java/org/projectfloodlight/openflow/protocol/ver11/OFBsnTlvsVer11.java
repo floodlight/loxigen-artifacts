@@ -635,6 +635,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvOpticsAlwaysEnabled not supported in version 1.1");
     }
 
+    public OFBsnTlvOuterSrcMac.Builder buildOuterSrcMac() {
+        throw new UnsupportedOperationException("OFBsnTlvOuterSrcMac not supported in version 1.1");
+    }
+    public OFBsnTlvOuterSrcMac outerSrcMac(MacAddress value) {
+        throw new UnsupportedOperationException("OFBsnTlvOuterSrcMac not supported in version 1.1");
+    }
+
     public OFBsnTlvParentPort.Builder buildParentPort() {
         throw new UnsupportedOperationException("OFBsnTlvParentPort not supported in version 1.1");
     }
@@ -997,6 +1004,10 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvVfpClassId vfpClassId(long value) {
         throw new UnsupportedOperationException("OFBsnTlvVfpClassId not supported in version 1.1");
+    }
+
+    public OFBsnTlvVirtual virtual() {
+        throw new UnsupportedOperationException("OFBsnTlvVirtual not supported in version 1.1");
     }
 
     public OFBsnTlvVlanMacList.Builder buildVlanMacList() {

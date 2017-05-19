@@ -22454,6 +22454,22 @@ of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_dump(loci_writer_f writer, void*
 }
 
 int
+of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_mac_addr_t mac_addr;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_outer_src_mac\n");
+
+    of_bsn_tlv_outer_src_mac_value_get(obj, &mac_addr);
+    out += writer(cookie, "  value (of_mac_addr_t):  ");
+    out += LOCI_DUMP_mac(writer, cookie, mac_addr);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_parent_port_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -23301,6 +23317,16 @@ of_bsn_tlv_vfp_class_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, 
     out += writer(cookie, "  value (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_virtual_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_virtual\n");
 
     return out;
 }
@@ -37287,6 +37313,22 @@ of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_dump(loci_writer_f writer, void*
 }
 
 int
+of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_mac_addr_t mac_addr;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_outer_src_mac\n");
+
+    of_bsn_tlv_outer_src_mac_value_get(obj, &mac_addr);
+    out += writer(cookie, "  value (of_mac_addr_t):  ");
+    out += LOCI_DUMP_mac(writer, cookie, mac_addr);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_parent_port_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -38134,6 +38176,16 @@ of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, 
     out += writer(cookie, "  value (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_virtual_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_virtual\n");
 
     return out;
 }
@@ -44668,6 +44720,8 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_0_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -45306,6 +45360,8 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_interface_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -46272,6 +46328,8 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_2_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dump,
     unknown_dump,
@@ -47008,6 +47066,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_no_ns_response_OF_VERSION_1_3_dump,
     of_bsn_tlv_offset_OF_VERSION_1_3_dump,
     of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_dump,
+    of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dump,
     of_bsn_tlv_parent_port_OF_VERSION_1_3_dump,
     of_bsn_tlv_partner_key_OF_VERSION_1_3_dump,
     of_bsn_tlv_partner_port_num_OF_VERSION_1_3_dump,
@@ -47063,6 +47122,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dump,
     of_bsn_tlv_vfi_OF_VERSION_1_3_dump,
     of_bsn_tlv_vfp_class_id_OF_VERSION_1_3_dump,
+    of_bsn_tlv_virtual_OF_VERSION_1_3_dump,
     of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_dump,
     of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_dump,
     of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dump,
@@ -47810,6 +47870,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_no_ns_response_OF_VERSION_1_4_dump,
     of_bsn_tlv_offset_OF_VERSION_1_4_dump,
     of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_dump,
+    of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dump,
     of_bsn_tlv_parent_port_OF_VERSION_1_4_dump,
     of_bsn_tlv_partner_key_OF_VERSION_1_4_dump,
     of_bsn_tlv_partner_port_num_OF_VERSION_1_4_dump,
@@ -47865,6 +47926,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dump,
     of_bsn_tlv_vfi_OF_VERSION_1_4_dump,
     of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_dump,
+    of_bsn_tlv_virtual_OF_VERSION_1_4_dump,
     of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_dump,
     of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_dump,
     of_bsn_tlv_vlan_vid_OF_VERSION_1_4_dump,

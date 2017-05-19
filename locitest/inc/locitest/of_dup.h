@@ -1595,6 +1595,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_outer_src_mac_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_parent_port_dup(
         of_object_t *src);
 
@@ -1812,6 +1816,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_vfp_class_id_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_virtual_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6555,6 +6563,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_parent_port_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6772,6 +6784,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_vfp_class_id_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_virtual_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9299,6 +9315,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_parent_port_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -9516,6 +9536,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_virtual_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

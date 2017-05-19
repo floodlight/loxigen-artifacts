@@ -325,6 +325,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x96:
                    // discriminator value 0x96=0x96 for class OFBsnTlvOpticsAlwaysEnabledVer13
                    return OFBsnTlvOpticsAlwaysEnabledVer13.READER.readFrom(bb);
+               case (short) 0x9d:
+                   // discriminator value 0x9d=0x9d for class OFBsnTlvOuterSrcMacVer13
+                   return OFBsnTlvOuterSrcMacVer13.READER.readFrom(bb);
                case (short) 0x6d:
                    // discriminator value 0x6d=0x6d for class OFBsnTlvParentPortVer13
                    return OFBsnTlvParentPortVer13.READER.readFrom(bb);
@@ -490,6 +493,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x6b:
                    // discriminator value 0x6b=0x6b for class OFBsnTlvVfpClassIdVer13
                    return OFBsnTlvVfpClassIdVer13.READER.readFrom(bb);
+               case (short) 0x9e:
+                   // discriminator value 0x9e=0x9e for class OFBsnTlvVirtualVer13
+                   return OFBsnTlvVirtualVer13.READER.readFrom(bb);
                case (short) 0x62:
                    // discriminator value 0x62=0x62 for class OFBsnTlvVlanMacListVer13
                    return OFBsnTlvVlanMacListVer13.READER.readFrom(bb);

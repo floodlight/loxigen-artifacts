@@ -9386,6 +9386,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x9c:
             *id = OF_BSN_TLV_PORT_SPEED_GBPS;
             break;
+        case 0x9d:
+            *id = OF_BSN_TLV_OUTER_SRC_MAC;
+            break;
+        case 0x9e:
+            *id = OF_BSN_TLV_VIRTUAL;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -9862,6 +9868,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x9c:
             *id = OF_BSN_TLV_PORT_SPEED_GBPS;
+            break;
+        case 0x9d:
+            *id = OF_BSN_TLV_OUTER_SRC_MAC;
+            break;
+        case 0x9e:
+            *id = OF_BSN_TLV_VIRTUAL;
             break;
         default:
             *id = OF_BSN_TLV;

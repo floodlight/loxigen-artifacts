@@ -27177,6 +27177,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_tcp_flags_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_OUTER_SRC_MAC) {
+        return of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_HASH_SEED) {
         return of_bsn_tlv_hash_seed_OF_VERSION_1_3_dup(src);
     }
@@ -27319,6 +27323,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
         return of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VIRTUAL) {
+        return of_bsn_tlv_virtual_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT) {
@@ -29892,6 +29900,31 @@ of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_outer_src_mac
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_outer_src_mac.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_outer_src_mac_t *
+of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dup(
+    of_bsn_tlv_outer_src_mac_t *src)
+{
+    of_bsn_tlv_outer_src_mac_t *dst;
+    of_mac_addr_t mac_addr;
+
+    if ((dst = of_bsn_tlv_outer_src_mac_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_outer_src_mac_value_get(src, &mac_addr);
+    of_bsn_tlv_outer_src_mac_value_set(dst, mac_addr);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_parent_port
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -31256,6 +31289,27 @@ of_bsn_tlv_vfp_class_id_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_vfp_class_id_value_get(src, &val32);
     of_bsn_tlv_vfp_class_id_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_virtual
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_virtual.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_virtual_t *
+of_bsn_tlv_virtual_OF_VERSION_1_3_dup(
+    of_bsn_tlv_virtual_t *src)
+{
+    of_bsn_tlv_virtual_t *dst;
+
+    if ((dst = of_bsn_tlv_virtual_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -49923,6 +49977,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_tcp_flags_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_OUTER_SRC_MAC) {
+        return of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_HASH_SEED) {
         return of_bsn_tlv_hash_seed_OF_VERSION_1_4_dup(src);
     }
@@ -50065,6 +50123,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
         return of_bsn_tlv_tx_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VIRTUAL) {
+        return of_bsn_tlv_virtual_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT) {
@@ -52638,6 +52700,31 @@ of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_outer_src_mac
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_outer_src_mac.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_outer_src_mac_t *
+of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dup(
+    of_bsn_tlv_outer_src_mac_t *src)
+{
+    of_bsn_tlv_outer_src_mac_t *dst;
+    of_mac_addr_t mac_addr;
+
+    if ((dst = of_bsn_tlv_outer_src_mac_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_outer_src_mac_value_get(src, &mac_addr);
+    of_bsn_tlv_outer_src_mac_value_set(dst, mac_addr);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_parent_port
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -54002,6 +54089,27 @@ of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_vfp_class_id_value_get(src, &val32);
     of_bsn_tlv_vfp_class_id_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_virtual
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_virtual.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_virtual_t *
+of_bsn_tlv_virtual_OF_VERSION_1_4_dup(
+    of_bsn_tlv_virtual_t *src)
+{
+    of_bsn_tlv_virtual_t *dst;
+
+    if ((dst = of_bsn_tlv_virtual_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -71797,6 +71905,23 @@ of_bsn_tlv_optics_always_enabled_dup(
 }
 
 of_object_t *
+of_bsn_tlv_outer_src_mac_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_parent_port_dup(
     of_object_t *src)
 {
@@ -72725,6 +72850,23 @@ of_bsn_tlv_vfp_class_id_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_virtual_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_virtual_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_virtual_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

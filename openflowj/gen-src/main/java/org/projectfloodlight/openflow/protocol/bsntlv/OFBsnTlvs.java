@@ -200,6 +200,8 @@ public interface OFBsnTlvs {
     OFBsnTlvOffset.Builder buildOffset() throws UnsupportedOperationException;
     OFBsnTlvOffset offset(int value);
     OFBsnTlvOpticsAlwaysEnabled opticsAlwaysEnabled();
+    OFBsnTlvOuterSrcMac.Builder buildOuterSrcMac() throws UnsupportedOperationException;
+    OFBsnTlvOuterSrcMac outerSrcMac(MacAddress value);
     OFBsnTlvParentPort.Builder buildParentPort() throws UnsupportedOperationException;
     OFBsnTlvParentPort parentPort(OFPort value);
     OFBsnTlvPartnerKey.Builder buildPartnerKey() throws UnsupportedOperationException;
@@ -303,6 +305,7 @@ public interface OFBsnTlvs {
     OFBsnTlvVfi vfi(int value);
     OFBsnTlvVfpClassId.Builder buildVfpClassId() throws UnsupportedOperationException;
     OFBsnTlvVfpClassId vfpClassId(long value);
+    OFBsnTlvVirtual virtual();
     OFBsnTlvVlanMacList.Builder buildVlanMacList() throws UnsupportedOperationException;
     OFBsnTlvVlanMacList vlanMacList(List<OFBsnVlanMac> key);
     OFBsnTlvVlanPcp.Builder buildVlanPcp() throws UnsupportedOperationException;

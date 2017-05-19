@@ -813,6 +813,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_no_arp_response_OF_V
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_no_ns_response_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_offset_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_outer_src_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_parent_port_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_key_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_port_num_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -868,6 +869,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_uri_scheme_OF_VERSIO
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_use_packet_state_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vfi_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vfp_class_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_virtual_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_pcp_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_vid_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1472,6 +1474,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_no_arp_response_OF_V
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_no_ns_response_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_offset_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_outer_src_mac_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_parent_port_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_key_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_port_num_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -1527,6 +1530,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_uri_scheme_OF_VERSIO
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_use_packet_state_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vfi_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vfp_class_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_virtual_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_pcp_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_vid_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -20611,6 +20615,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_offset_OF_VERSION_1_3(data, len, out_len);
     case 0x96:
         return loci_validate_of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3(data, len, out_len);
+    case 0x9d:
+        return loci_validate_of_bsn_tlv_outer_src_mac_OF_VERSION_1_3(data, len, out_len);
     case 0x6d:
         return loci_validate_of_bsn_tlv_parent_port_OF_VERSION_1_3(data, len, out_len);
     case 0x33:
@@ -20721,6 +20727,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_vfi_OF_VERSION_1_3(data, len, out_len);
     case 0x6b:
         return loci_validate_of_bsn_tlv_vfp_class_id_OF_VERSION_1_3(data, len, out_len);
+    case 0x9e:
+        return loci_validate_of_bsn_tlv_virtual_OF_VERSION_1_3(data, len, out_len);
     case 0x62:
         return loci_validate_of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3(data, len, out_len);
     case 0x48:
@@ -22801,6 +22809,28 @@ loci_validate_of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3(uint8_t *data, int
 }
 
 static int
+loci_validate_of_bsn_tlv_outer_src_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 10) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_bsn_tlv_parent_port_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 8) {
@@ -24013,6 +24043,28 @@ loci_validate_of_bsn_tlv_vfp_class_id_OF_VERSION_1_3(uint8_t *data, int len, int
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_virtual_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
         return -1;
     }
 
@@ -36978,6 +37030,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_offset_OF_VERSION_1_4(data, len, out_len);
     case 0x96:
         return loci_validate_of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4(data, len, out_len);
+    case 0x9d:
+        return loci_validate_of_bsn_tlv_outer_src_mac_OF_VERSION_1_4(data, len, out_len);
     case 0x6d:
         return loci_validate_of_bsn_tlv_parent_port_OF_VERSION_1_4(data, len, out_len);
     case 0x33:
@@ -37088,6 +37142,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_vfi_OF_VERSION_1_4(data, len, out_len);
     case 0x6b:
         return loci_validate_of_bsn_tlv_vfp_class_id_OF_VERSION_1_4(data, len, out_len);
+    case 0x9e:
+        return loci_validate_of_bsn_tlv_virtual_OF_VERSION_1_4(data, len, out_len);
     case 0x62:
         return loci_validate_of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4(data, len, out_len);
     case 0x48:
@@ -39168,6 +39224,28 @@ loci_validate_of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4(uint8_t *data, int
 }
 
 static int
+loci_validate_of_bsn_tlv_outer_src_mac_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 10) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_bsn_tlv_parent_port_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 8) {
@@ -40380,6 +40458,28 @@ loci_validate_of_bsn_tlv_vfp_class_id_OF_VERSION_1_4(uint8_t *data, int len, int
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_virtual_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
         return -1;
     }
 

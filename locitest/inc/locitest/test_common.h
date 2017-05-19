@@ -7439,6 +7439,15 @@ extern int of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_optics_always_enabled_t *obj, int value);
 
+extern int of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_populate(
+    of_bsn_tlv_outer_src_mac_t *obj, int value);
+extern int of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_check(
+    of_bsn_tlv_outer_src_mac_t *obj, int value);
+extern int of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_outer_src_mac_t *obj, int value);
+extern int of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_outer_src_mac_t *obj, int value);
+
 extern int of_bsn_tlv_parent_port_OF_VERSION_1_3_populate(
     of_bsn_tlv_parent_port_t *obj, int value);
 extern int of_bsn_tlv_parent_port_OF_VERSION_1_3_check(
@@ -7933,6 +7942,15 @@ extern int of_bsn_tlv_vfp_class_id_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_vfp_class_id_t *obj, int value);
 extern int of_bsn_tlv_vfp_class_id_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_vfp_class_id_t *obj, int value);
+
+extern int of_bsn_tlv_virtual_OF_VERSION_1_3_populate(
+    of_bsn_tlv_virtual_t *obj, int value);
+extern int of_bsn_tlv_virtual_OF_VERSION_1_3_check(
+    of_bsn_tlv_virtual_t *obj, int value);
+extern int of_bsn_tlv_virtual_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_virtual_t *obj, int value);
+extern int of_bsn_tlv_virtual_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_virtual_t *obj, int value);
 
 extern int of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_populate(
     of_bsn_tlv_vlan_mac_list_t *obj, int value);
@@ -13496,6 +13514,15 @@ extern int of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_optics_always_enabled_t *obj, int value);
 
+extern int of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_populate(
+    of_bsn_tlv_outer_src_mac_t *obj, int value);
+extern int of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_check(
+    of_bsn_tlv_outer_src_mac_t *obj, int value);
+extern int of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_outer_src_mac_t *obj, int value);
+extern int of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_outer_src_mac_t *obj, int value);
+
 extern int of_bsn_tlv_parent_port_OF_VERSION_1_4_populate(
     of_bsn_tlv_parent_port_t *obj, int value);
 extern int of_bsn_tlv_parent_port_OF_VERSION_1_4_check(
@@ -13990,6 +14017,15 @@ extern int of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_vfp_class_id_t *obj, int value);
 extern int of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_vfp_class_id_t *obj, int value);
+
+extern int of_bsn_tlv_virtual_OF_VERSION_1_4_populate(
+    of_bsn_tlv_virtual_t *obj, int value);
+extern int of_bsn_tlv_virtual_OF_VERSION_1_4_check(
+    of_bsn_tlv_virtual_t *obj, int value);
+extern int of_bsn_tlv_virtual_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_virtual_t *obj, int value);
+extern int of_bsn_tlv_virtual_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_virtual_t *obj, int value);
 
 extern int of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_populate(
     of_bsn_tlv_vlan_mac_list_t *obj, int value);

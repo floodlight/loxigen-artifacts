@@ -7412,6 +7412,17 @@ typedef struct of_bsn_tlv_offset_s of_bsn_tlv_offset_t;
 typedef struct of_bsn_tlv_optics_always_enabled_s of_bsn_tlv_optics_always_enabled_t;
 
 /**
+ * Structure for of_bsn_tlv_outer_src_mac object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_mac_addr.  Functions
+ *   are of type of_bsn_tlv_outer_src_mac_of_mac_addr_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_outer_src_mac_s of_bsn_tlv_outer_src_mac_t;
+
+/**
  * Structure for of_bsn_tlv_parent_port object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7991,6 +8002,13 @@ typedef struct of_bsn_tlv_vfi_s of_bsn_tlv_vfi_t;
  *
  */
 typedef struct of_bsn_tlv_vfp_class_id_s of_bsn_tlv_vfp_class_id_t;
+
+/**
+ * Structure for of_bsn_tlv_virtual object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_virtual_s of_bsn_tlv_virtual_t;
 
 /**
  * Structure for of_bsn_tlv_vlan_mac_list object.  Get/set

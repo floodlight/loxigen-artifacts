@@ -1,1 +1,1 @@
-185524cda8374eef1cc9633c68cfef60a55fe6d6 Merge into master from pull request #554: SWL-3735 speed_capabilities bsn port description property, port_speed_gbps TLV. (https://github.com/floodlight/loxigen/pull/554)
+bec5ec03459ae60c8da0ef6a4791e9ceeb7c1939 Merge into master from pull request #556: SWL-3777 outer_src_mac, virtual_ip tlvs. (https://github.com/floodlight/loxigen/pull/556)

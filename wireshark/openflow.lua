@@ -8655,6 +8655,9 @@ fields['of13.bsn_tlv_offset.length'] = ProtoField.uint16("of13.bsn_tlv_offset.le
 fields['of13.bsn_tlv_offset.value'] = ProtoField.uint16("of13.bsn_tlv_offset.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_optics_always_enabled.type'] = ProtoField.uint16("of13.bsn_tlv_optics_always_enabled.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_optics_always_enabled.length'] = ProtoField.uint16("of13.bsn_tlv_optics_always_enabled.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_outer_src_mac.type'] = ProtoField.uint16("of13.bsn_tlv_outer_src_mac.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_outer_src_mac.length'] = ProtoField.uint16("of13.bsn_tlv_outer_src_mac.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_outer_src_mac.value'] = ProtoField.ether("of13.bsn_tlv_outer_src_mac.value", "value")
 fields['of13.bsn_tlv_parent_port.type'] = ProtoField.uint16("of13.bsn_tlv_parent_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_parent_port.length'] = ProtoField.uint16("of13.bsn_tlv_parent_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_parent_port.value'] = ProtoField.uint32("of13.bsn_tlv_parent_port.value", "value", base.DEC, nil)
@@ -8814,6 +8817,8 @@ fields['of13.bsn_tlv_vfi.value'] = ProtoField.uint16("of13.bsn_tlv_vfi.value", "
 fields['of13.bsn_tlv_vfp_class_id.type'] = ProtoField.uint16("of13.bsn_tlv_vfp_class_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vfp_class_id.length'] = ProtoField.uint16("of13.bsn_tlv_vfp_class_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vfp_class_id.value'] = ProtoField.uint32("of13.bsn_tlv_vfp_class_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_virtual.type'] = ProtoField.uint16("of13.bsn_tlv_virtual.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_virtual.length'] = ProtoField.uint16("of13.bsn_tlv_virtual.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_mac_list.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_mac_list.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_mac_list.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_mac_list.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_mac_list.key'] = ProtoField.bytes("of13.bsn_tlv_vlan_mac_list.key", "key")
@@ -11555,6 +11560,9 @@ fields['of14.bsn_tlv_offset.length'] = ProtoField.uint16("of14.bsn_tlv_offset.le
 fields['of14.bsn_tlv_offset.value'] = ProtoField.uint16("of14.bsn_tlv_offset.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_optics_always_enabled.type'] = ProtoField.uint16("of14.bsn_tlv_optics_always_enabled.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_optics_always_enabled.length'] = ProtoField.uint16("of14.bsn_tlv_optics_always_enabled.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_outer_src_mac.type'] = ProtoField.uint16("of14.bsn_tlv_outer_src_mac.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_outer_src_mac.length'] = ProtoField.uint16("of14.bsn_tlv_outer_src_mac.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_outer_src_mac.value'] = ProtoField.ether("of14.bsn_tlv_outer_src_mac.value", "value")
 fields['of14.bsn_tlv_parent_port.type'] = ProtoField.uint16("of14.bsn_tlv_parent_port.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_parent_port.length'] = ProtoField.uint16("of14.bsn_tlv_parent_port.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_parent_port.value'] = ProtoField.uint32("of14.bsn_tlv_parent_port.value", "value", base.DEC, nil)
@@ -11714,6 +11722,8 @@ fields['of14.bsn_tlv_vfi.value'] = ProtoField.uint16("of14.bsn_tlv_vfi.value", "
 fields['of14.bsn_tlv_vfp_class_id.type'] = ProtoField.uint16("of14.bsn_tlv_vfp_class_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vfp_class_id.length'] = ProtoField.uint16("of14.bsn_tlv_vfp_class_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vfp_class_id.value'] = ProtoField.uint32("of14.bsn_tlv_vfp_class_id.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_virtual.type'] = ProtoField.uint16("of14.bsn_tlv_virtual.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_virtual.length'] = ProtoField.uint16("of14.bsn_tlv_virtual.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_mac_list.type'] = ProtoField.uint16("of14.bsn_tlv_vlan_mac_list.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_mac_list.length'] = ProtoField.uint16("of14.bsn_tlv_vlan_mac_list.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_mac_list.key'] = ProtoField.bytes("of14.bsn_tlv_vlan_mac_list.key", "key")
@@ -14711,6 +14721,9 @@ fields['of15.bsn_tlv_offset.length'] = ProtoField.uint16("of15.bsn_tlv_offset.le
 fields['of15.bsn_tlv_offset.value'] = ProtoField.uint16("of15.bsn_tlv_offset.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_optics_always_enabled.type'] = ProtoField.uint16("of15.bsn_tlv_optics_always_enabled.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_optics_always_enabled.length'] = ProtoField.uint16("of15.bsn_tlv_optics_always_enabled.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_outer_src_mac.type'] = ProtoField.uint16("of15.bsn_tlv_outer_src_mac.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_outer_src_mac.length'] = ProtoField.uint16("of15.bsn_tlv_outer_src_mac.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_outer_src_mac.value'] = ProtoField.ether("of15.bsn_tlv_outer_src_mac.value", "value")
 fields['of15.bsn_tlv_parent_port.type'] = ProtoField.uint16("of15.bsn_tlv_parent_port.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_parent_port.length'] = ProtoField.uint16("of15.bsn_tlv_parent_port.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_parent_port.value'] = ProtoField.uint32("of15.bsn_tlv_parent_port.value", "value", base.DEC, nil)
@@ -14870,6 +14883,8 @@ fields['of15.bsn_tlv_vfi.value'] = ProtoField.uint16("of15.bsn_tlv_vfi.value", "
 fields['of15.bsn_tlv_vfp_class_id.type'] = ProtoField.uint16("of15.bsn_tlv_vfp_class_id.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_vfp_class_id.length'] = ProtoField.uint16("of15.bsn_tlv_vfp_class_id.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_vfp_class_id.value'] = ProtoField.uint32("of15.bsn_tlv_vfp_class_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_virtual.type'] = ProtoField.uint16("of15.bsn_tlv_virtual.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_virtual.length'] = ProtoField.uint16("of15.bsn_tlv_virtual.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_vlan_mac_list.type'] = ProtoField.uint16("of15.bsn_tlv_vlan_mac_list.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_vlan_mac_list.length'] = ProtoField.uint16("of15.bsn_tlv_vlan_mac_list.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_vlan_mac_list.key'] = ProtoField.bytes("of15.bsn_tlv_vlan_mac_list.key", "key")
@@ -21105,6 +21120,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_offset.value'],
     fields['of13.bsn_tlv_optics_always_enabled.type'],
     fields['of13.bsn_tlv_optics_always_enabled.length'],
+    fields['of13.bsn_tlv_outer_src_mac.type'],
+    fields['of13.bsn_tlv_outer_src_mac.length'],
+    fields['of13.bsn_tlv_outer_src_mac.value'],
     fields['of13.bsn_tlv_parent_port.type'],
     fields['of13.bsn_tlv_parent_port.length'],
     fields['of13.bsn_tlv_parent_port.value'],
@@ -21264,6 +21282,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_vfp_class_id.type'],
     fields['of13.bsn_tlv_vfp_class_id.length'],
     fields['of13.bsn_tlv_vfp_class_id.value'],
+    fields['of13.bsn_tlv_virtual.type'],
+    fields['of13.bsn_tlv_virtual.length'],
     fields['of13.bsn_tlv_vlan_mac_list.type'],
     fields['of13.bsn_tlv_vlan_mac_list.length'],
     fields['of13.bsn_tlv_vlan_mac_list.key'],
@@ -24005,6 +24025,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_offset.value'],
     fields['of14.bsn_tlv_optics_always_enabled.type'],
     fields['of14.bsn_tlv_optics_always_enabled.length'],
+    fields['of14.bsn_tlv_outer_src_mac.type'],
+    fields['of14.bsn_tlv_outer_src_mac.length'],
+    fields['of14.bsn_tlv_outer_src_mac.value'],
     fields['of14.bsn_tlv_parent_port.type'],
     fields['of14.bsn_tlv_parent_port.length'],
     fields['of14.bsn_tlv_parent_port.value'],
@@ -24164,6 +24187,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_vfp_class_id.type'],
     fields['of14.bsn_tlv_vfp_class_id.length'],
     fields['of14.bsn_tlv_vfp_class_id.value'],
+    fields['of14.bsn_tlv_virtual.type'],
+    fields['of14.bsn_tlv_virtual.length'],
     fields['of14.bsn_tlv_vlan_mac_list.type'],
     fields['of14.bsn_tlv_vlan_mac_list.length'],
     fields['of14.bsn_tlv_vlan_mac_list.key'],
@@ -27161,6 +27186,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_offset.value'],
     fields['of15.bsn_tlv_optics_always_enabled.type'],
     fields['of15.bsn_tlv_optics_always_enabled.length'],
+    fields['of15.bsn_tlv_outer_src_mac.type'],
+    fields['of15.bsn_tlv_outer_src_mac.length'],
+    fields['of15.bsn_tlv_outer_src_mac.value'],
     fields['of15.bsn_tlv_parent_port.type'],
     fields['of15.bsn_tlv_parent_port.length'],
     fields['of15.bsn_tlv_parent_port.value'],
@@ -27320,6 +27348,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_vfp_class_id.type'],
     fields['of15.bsn_tlv_vfp_class_id.length'],
     fields['of15.bsn_tlv_vfp_class_id.value'],
+    fields['of15.bsn_tlv_virtual.type'],
+    fields['of15.bsn_tlv_virtual.length'],
     fields['of15.bsn_tlv_vlan_mac_list.type'],
     fields['of15.bsn_tlv_vlan_mac_list.length'],
     fields['of15.bsn_tlv_vlan_mac_list.key'],
@@ -39557,6 +39587,16 @@ function dissect_of_bsn_tlv_optics_always_enabled_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[150] = dissect_of_bsn_tlv_optics_always_enabled_v4
 
+-- child class of_bsn_tlv_outer_src_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_outer_src_mac_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_outer_src_mac.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_outer_src_mac.length')
+    read_of_mac_addr_t(reader, 4, subtree, 'of13.bsn_tlv_outer_src_mac.value')
+    return 'of_bsn_tlv_outer_src_mac'
+end
+of_bsn_tlv_v4_dissectors[157] = dissect_of_bsn_tlv_outer_src_mac_v4
+
 -- child class of_bsn_tlv_parent_port
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_parent_port_v4(reader, subtree)
@@ -40109,6 +40149,15 @@ function dissect_of_bsn_tlv_vfp_class_id_v4(reader, subtree)
     return 'of_bsn_tlv_vfp_class_id'
 end
 of_bsn_tlv_v4_dissectors[107] = dissect_of_bsn_tlv_vfp_class_id_v4
+
+-- child class of_bsn_tlv_virtual
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_virtual_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_virtual.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_virtual.length')
+    return 'of_bsn_tlv_virtual'
+end
+of_bsn_tlv_v4_dissectors[158] = dissect_of_bsn_tlv_virtual_v4
 
 -- child class of_bsn_tlv_vlan_mac_list
 -- Child of of_bsn_tlv
@@ -47333,6 +47382,16 @@ function dissect_of_bsn_tlv_optics_always_enabled_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[150] = dissect_of_bsn_tlv_optics_always_enabled_v5
 
+-- child class of_bsn_tlv_outer_src_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_outer_src_mac_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_outer_src_mac.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_outer_src_mac.length')
+    read_of_mac_addr_t(reader, 5, subtree, 'of14.bsn_tlv_outer_src_mac.value')
+    return 'of_bsn_tlv_outer_src_mac'
+end
+of_bsn_tlv_v5_dissectors[157] = dissect_of_bsn_tlv_outer_src_mac_v5
+
 -- child class of_bsn_tlv_parent_port
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_parent_port_v5(reader, subtree)
@@ -47885,6 +47944,15 @@ function dissect_of_bsn_tlv_vfp_class_id_v5(reader, subtree)
     return 'of_bsn_tlv_vfp_class_id'
 end
 of_bsn_tlv_v5_dissectors[107] = dissect_of_bsn_tlv_vfp_class_id_v5
+
+-- child class of_bsn_tlv_virtual
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_virtual_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_virtual.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_virtual.length')
+    return 'of_bsn_tlv_virtual'
+end
+of_bsn_tlv_v5_dissectors[158] = dissect_of_bsn_tlv_virtual_v5
 
 -- child class of_bsn_tlv_vlan_mac_list
 -- Child of of_bsn_tlv
@@ -55693,6 +55761,16 @@ function dissect_of_bsn_tlv_optics_always_enabled_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[150] = dissect_of_bsn_tlv_optics_always_enabled_v6
 
+-- child class of_bsn_tlv_outer_src_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_outer_src_mac_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_outer_src_mac.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_outer_src_mac.length')
+    read_of_mac_addr_t(reader, 6, subtree, 'of15.bsn_tlv_outer_src_mac.value')
+    return 'of_bsn_tlv_outer_src_mac'
+end
+of_bsn_tlv_v6_dissectors[157] = dissect_of_bsn_tlv_outer_src_mac_v6
+
 -- child class of_bsn_tlv_parent_port
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_parent_port_v6(reader, subtree)
@@ -56245,6 +56323,15 @@ function dissect_of_bsn_tlv_vfp_class_id_v6(reader, subtree)
     return 'of_bsn_tlv_vfp_class_id'
 end
 of_bsn_tlv_v6_dissectors[107] = dissect_of_bsn_tlv_vfp_class_id_v6
+
+-- child class of_bsn_tlv_virtual
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_virtual_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_virtual.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_virtual.length')
+    return 'of_bsn_tlv_virtual'
+end
+of_bsn_tlv_v6_dissectors[158] = dissect_of_bsn_tlv_virtual_v6
 
 -- child class of_bsn_tlv_vlan_mac_list
 -- Child of of_bsn_tlv

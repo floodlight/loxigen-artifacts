@@ -790,6 +790,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
         return OFBsnTlvOpticsAlwaysEnabledVer15.INSTANCE;
     }
 
+    public OFBsnTlvOuterSrcMac.Builder buildOuterSrcMac() {
+        return new OFBsnTlvOuterSrcMacVer15.Builder();
+    }
+    public OFBsnTlvOuterSrcMac outerSrcMac(MacAddress value) {
+        return new OFBsnTlvOuterSrcMacVer15(
+                value
+                    );
+    }
+
     public OFBsnTlvParentPort.Builder buildParentPort() {
         return new OFBsnTlvParentPortVer15.Builder();
     }
@@ -1249,6 +1258,10 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
         return new OFBsnTlvVfpClassIdVer15(
                 value
                     );
+    }
+
+    public OFBsnTlvVirtual virtual() {
+        return OFBsnTlvVirtualVer15.INSTANCE;
     }
 
     public OFBsnTlvVlanMacList.Builder buildVlanMacList() {
