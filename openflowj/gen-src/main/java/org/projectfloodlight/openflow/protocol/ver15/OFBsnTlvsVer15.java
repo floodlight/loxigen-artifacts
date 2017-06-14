@@ -1045,8 +1045,13 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
         return OFBsnTlvStripMplsL3OnIngressVer15.INSTANCE;
     }
 
-    public OFBsnTlvStripVlanOnEgress stripVlanOnEgress() {
-        return OFBsnTlvStripVlanOnEgressVer15.INSTANCE;
+    public OFBsnTlvStripVlanOnEgress.Builder buildStripVlanOnEgress() {
+        return new OFBsnTlvStripVlanOnEgressVer15.Builder();
+    }
+    public OFBsnTlvStripVlanOnEgress stripVlanOnEgress(Set<OFBsnStripVlan> flags) {
+        return new OFBsnTlvStripVlanOnEgressVer15(
+                flags
+                    );
     }
 
     public OFBsnTlvSubAgentId.Builder buildSubAgentId() {

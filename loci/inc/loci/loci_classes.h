@@ -23865,6 +23865,13 @@ extern void of_bsn_tlv_status_value_get(
 
 /* Unified accessor functions for of_bsn_tlv_strip_vlan_on_egress */
 
+extern void of_bsn_tlv_strip_vlan_on_egress_flags_set(
+    of_bsn_tlv_strip_vlan_on_egress_t *obj,
+    uint8_t flags);
+extern void of_bsn_tlv_strip_vlan_on_egress_flags_get(
+    of_bsn_tlv_strip_vlan_on_egress_t *obj,
+    uint8_t *flags);
+
 /* Unified accessor functions for of_bsn_tlv_sub_agent_id */
 
 extern void of_bsn_tlv_sub_agent_id_value_set(

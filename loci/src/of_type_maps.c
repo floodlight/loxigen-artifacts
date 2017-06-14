@@ -2860,7 +2860,7 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     5,    /* 424: of_bsn_tlv_status */
     4,    /* 425: of_bsn_tlv_strip_mpls_l2_on_ingress */
     4,    /* 426: of_bsn_tlv_strip_mpls_l3_on_ingress */
-    4,    /* 427: of_bsn_tlv_strip_vlan_on_egress */
+    5,    /* 427: of_bsn_tlv_strip_vlan_on_egress */
     8,    /* 428: of_bsn_tlv_sub_agent_id */
     6,    /* 429: of_bsn_tlv_tcp_dst */
     6,    /* 430: of_bsn_tlv_tcp_flags */
@@ -3664,7 +3664,7 @@ of_object_fixed_len_v5[OF_OBJECT_COUNT] = {
     5,    /* 424: of_bsn_tlv_status */
     4,    /* 425: of_bsn_tlv_strip_mpls_l2_on_ingress */
     4,    /* 426: of_bsn_tlv_strip_mpls_l3_on_ingress */
-    4,    /* 427: of_bsn_tlv_strip_vlan_on_egress */
+    5,    /* 427: of_bsn_tlv_strip_vlan_on_egress */
     8,    /* 428: of_bsn_tlv_sub_agent_id */
     6,    /* 429: of_bsn_tlv_tcp_dst */
     6,    /* 430: of_bsn_tlv_tcp_flags */

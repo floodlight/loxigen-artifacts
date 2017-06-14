@@ -30875,7 +30875,7 @@ test_of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3(void)
     obj = of_bsn_tlv_strip_vlan_on_egress_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->length == 5);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS);
 
@@ -30883,7 +30883,7 @@ test_of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 4);
+        TEST_ASSERT(length == 5);
     }
     if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -54815,7 +54815,7 @@ test_of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4(void)
     obj = of_bsn_tlv_strip_vlan_on_egress_new(OF_VERSION_1_4);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->length == 5);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS);
 
@@ -54823,7 +54823,7 @@ test_of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 4);
+        TEST_ASSERT(length == 5);
     }
     if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
         of_object_id_t obj_id;

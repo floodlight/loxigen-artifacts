@@ -257,7 +257,8 @@ public interface OFBsnTlvs {
     OFBsnTlvStatus status(OFBsnStatus value);
     OFBsnTlvStripMplsL2OnIngress stripMplsL2OnIngress();
     OFBsnTlvStripMplsL3OnIngress stripMplsL3OnIngress();
-    OFBsnTlvStripVlanOnEgress stripVlanOnEgress();
+    OFBsnTlvStripVlanOnEgress.Builder buildStripVlanOnEgress() throws UnsupportedOperationException;
+    OFBsnTlvStripVlanOnEgress stripVlanOnEgress(Set<OFBsnStripVlan> flags);
     OFBsnTlvSubAgentId.Builder buildSubAgentId() throws UnsupportedOperationException;
     OFBsnTlvSubAgentId subAgentId(long value);
     OFBsnTlvTcpDst.Builder buildTcpDst() throws UnsupportedOperationException;

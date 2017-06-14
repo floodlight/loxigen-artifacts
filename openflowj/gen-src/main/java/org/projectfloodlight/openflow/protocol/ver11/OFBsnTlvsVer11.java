@@ -837,7 +837,10 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvStripMplsL3OnIngress not supported in version 1.1");
     }
 
-    public OFBsnTlvStripVlanOnEgress stripVlanOnEgress() {
+    public OFBsnTlvStripVlanOnEgress.Builder buildStripVlanOnEgress() {
+        throw new UnsupportedOperationException("OFBsnTlvStripVlanOnEgress not supported in version 1.1");
+    }
+    public OFBsnTlvStripVlanOnEgress stripVlanOnEgress(Set<OFBsnStripVlan> flags) {
         throw new UnsupportedOperationException("OFBsnTlvStripVlanOnEgress not supported in version 1.1");
     }
 

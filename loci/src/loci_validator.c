@@ -23499,15 +23499,15 @@ loci_validate_of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3(uint8_t *data, 
 static int
 loci_validate_of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
-    if (len < 4) {
+    if (len < 5) {
         return -1;
     }
 
-    len = 4;
+    len = 5;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 4) {
+    if (wire_len > len || wire_len < 5) {
         return -1;
     }
 
@@ -39914,15 +39914,15 @@ loci_validate_of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4(uint8_t *data, 
 static int
 loci_validate_of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
-    if (len < 4) {
+    if (len < 5) {
         return -1;
     }
 
-    len = 4;
+    len = 5;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 4) {
+    if (wire_len > len || wire_len < 5) {
         return -1;
     }
 

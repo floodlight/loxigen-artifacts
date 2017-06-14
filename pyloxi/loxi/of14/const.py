@@ -777,6 +777,17 @@ ofp_bsn_status_map = {
     1: 'OFP_BSN_STATUS_ENABLE',
 }
 
+# Identifiers from group ofp_bsn_strip_vlan
+OFP_BSN_STRIP_VLAN_FIRST = 1
+OFP_BSN_STRIP_VLAN_SECOND = 2
+OFP_BSN_STRIP_VLAN_THIRD = 4
+
+ofp_bsn_strip_vlan_map = {
+    1: 'OFP_BSN_STRIP_VLAN_FIRST',
+    2: 'OFP_BSN_STRIP_VLAN_SECOND',
+    4: 'OFP_BSN_STRIP_VLAN_THIRD',
+}
+
 # Identifiers from group ofp_bsn_tcp_flag
 OFP_BSN_TCP_FLAG_FIN = 1
 OFP_BSN_TCP_FLAG_SYN = 2

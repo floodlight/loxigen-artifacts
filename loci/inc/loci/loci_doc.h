@@ -7740,6 +7740,10 @@ typedef struct of_bsn_tlv_strip_mpls_l3_on_ingress_s of_bsn_tlv_strip_mpls_l3_on
  * Structure for of_bsn_tlv_strip_vlan_on_egress object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
+ * @param flags_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for flags, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_strip_vlan_on_egress_uint8_get_f and _set_f.
+ *
  */
 typedef struct of_bsn_tlv_strip_vlan_on_egress_s of_bsn_tlv_strip_vlan_on_egress_t;
 
