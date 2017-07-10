@@ -412,6 +412,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_partner_state",
     "of_bsn_tlv_partner_system_mac",
     "of_bsn_tlv_partner_system_priority",
+    "of_bsn_tlv_pdua_rx_instance",
     "of_bsn_tlv_port",
     "of_bsn_tlv_port_speed_gbps",
     "of_bsn_tlv_port_usage",

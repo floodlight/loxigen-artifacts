@@ -8697,6 +8697,9 @@ fields['of13.bsn_tlv_partner_system_mac.value'] = ProtoField.ether("of13.bsn_tlv
 fields['of13.bsn_tlv_partner_system_priority.type'] = ProtoField.uint16("of13.bsn_tlv_partner_system_priority.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_partner_system_priority.length'] = ProtoField.uint16("of13.bsn_tlv_partner_system_priority.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of13.bsn_tlv_partner_system_priority.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_pdua_rx_instance.type'] = ProtoField.uint16("of13.bsn_tlv_pdua_rx_instance.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_pdua_rx_instance.length'] = ProtoField.uint16("of13.bsn_tlv_pdua_rx_instance.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_pdua_rx_instance.value'] = ProtoField.bytes("of13.bsn_tlv_pdua_rx_instance.value", "value")
 fields['of13.bsn_tlv_port.type'] = ProtoField.uint16("of13.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port.length'] = ProtoField.uint16("of13.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port.value'] = ProtoField.uint32("of13.bsn_tlv_port.value", "value", base.DEC, nil)
@@ -11603,6 +11606,9 @@ fields['of14.bsn_tlv_partner_system_mac.value'] = ProtoField.ether("of14.bsn_tlv
 fields['of14.bsn_tlv_partner_system_priority.type'] = ProtoField.uint16("of14.bsn_tlv_partner_system_priority.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_partner_system_priority.length'] = ProtoField.uint16("of14.bsn_tlv_partner_system_priority.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of14.bsn_tlv_partner_system_priority.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_pdua_rx_instance.type'] = ProtoField.uint16("of14.bsn_tlv_pdua_rx_instance.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_pdua_rx_instance.length'] = ProtoField.uint16("of14.bsn_tlv_pdua_rx_instance.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_pdua_rx_instance.value'] = ProtoField.bytes("of14.bsn_tlv_pdua_rx_instance.value", "value")
 fields['of14.bsn_tlv_port.type'] = ProtoField.uint16("of14.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_port.length'] = ProtoField.uint16("of14.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_port.value'] = ProtoField.uint32("of14.bsn_tlv_port.value", "value", base.DEC, nil)
@@ -14765,6 +14771,9 @@ fields['of15.bsn_tlv_partner_system_mac.value'] = ProtoField.ether("of15.bsn_tlv
 fields['of15.bsn_tlv_partner_system_priority.type'] = ProtoField.uint16("of15.bsn_tlv_partner_system_priority.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_partner_system_priority.length'] = ProtoField.uint16("of15.bsn_tlv_partner_system_priority.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of15.bsn_tlv_partner_system_priority.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_pdua_rx_instance.type'] = ProtoField.uint16("of15.bsn_tlv_pdua_rx_instance.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_pdua_rx_instance.length'] = ProtoField.uint16("of15.bsn_tlv_pdua_rx_instance.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_pdua_rx_instance.value'] = ProtoField.bytes("of15.bsn_tlv_pdua_rx_instance.value", "value")
 fields['of15.bsn_tlv_port.type'] = ProtoField.uint16("of15.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_port.length'] = ProtoField.uint16("of15.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_port.value'] = ProtoField.uint32("of15.bsn_tlv_port.value", "value", base.DEC, nil)
@@ -21165,6 +21174,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_partner_system_priority.type'],
     fields['of13.bsn_tlv_partner_system_priority.length'],
     fields['of13.bsn_tlv_partner_system_priority.value'],
+    fields['of13.bsn_tlv_pdua_rx_instance.type'],
+    fields['of13.bsn_tlv_pdua_rx_instance.length'],
+    fields['of13.bsn_tlv_pdua_rx_instance.value'],
     fields['of13.bsn_tlv_port.type'],
     fields['of13.bsn_tlv_port.length'],
     fields['of13.bsn_tlv_port.value'],
@@ -24071,6 +24083,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_partner_system_priority.type'],
     fields['of14.bsn_tlv_partner_system_priority.length'],
     fields['of14.bsn_tlv_partner_system_priority.value'],
+    fields['of14.bsn_tlv_pdua_rx_instance.type'],
+    fields['of14.bsn_tlv_pdua_rx_instance.length'],
+    fields['of14.bsn_tlv_pdua_rx_instance.value'],
     fields['of14.bsn_tlv_port.type'],
     fields['of14.bsn_tlv_port.length'],
     fields['of14.bsn_tlv_port.value'],
@@ -27233,6 +27248,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_partner_system_priority.type'],
     fields['of15.bsn_tlv_partner_system_priority.length'],
     fields['of15.bsn_tlv_partner_system_priority.value'],
+    fields['of15.bsn_tlv_pdua_rx_instance.type'],
+    fields['of15.bsn_tlv_pdua_rx_instance.length'],
+    fields['of15.bsn_tlv_pdua_rx_instance.value'],
     fields['of15.bsn_tlv_port.type'],
     fields['of15.bsn_tlv_port.length'],
     fields['of15.bsn_tlv_port.value'],
@@ -39691,6 +39709,19 @@ function dissect_of_bsn_tlv_partner_system_priority_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[47] = dissect_of_bsn_tlv_partner_system_priority_v4
 
+-- child class of_bsn_tlv_pdua_rx_instance
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_pdua_rx_instance_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_pdua_rx_instance.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_pdua_rx_instance.length')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_tlv_pdua_rx_instance.value')
+    return 'of_bsn_tlv_pdua_rx_instance'
+end
+of_bsn_tlv_v4_dissectors[159] = dissect_of_bsn_tlv_pdua_rx_instance_v4
+
 -- child class of_bsn_tlv_port
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_port_v4(reader, subtree)
@@ -47486,6 +47517,19 @@ function dissect_of_bsn_tlv_partner_system_priority_v5(reader, subtree)
     return 'of_bsn_tlv_partner_system_priority'
 end
 of_bsn_tlv_v5_dissectors[47] = dissect_of_bsn_tlv_partner_system_priority_v5
+
+-- child class of_bsn_tlv_pdua_rx_instance
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_pdua_rx_instance_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_pdua_rx_instance.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_pdua_rx_instance.length')
+    read_of_octets_t(reader, 5, subtree, 'of14.bsn_tlv_pdua_rx_instance.value')
+    return 'of_bsn_tlv_pdua_rx_instance'
+end
+of_bsn_tlv_v5_dissectors[159] = dissect_of_bsn_tlv_pdua_rx_instance_v5
 
 -- child class of_bsn_tlv_port
 -- Child of of_bsn_tlv
@@ -55866,6 +55910,19 @@ function dissect_of_bsn_tlv_partner_system_priority_v6(reader, subtree)
     return 'of_bsn_tlv_partner_system_priority'
 end
 of_bsn_tlv_v6_dissectors[47] = dissect_of_bsn_tlv_partner_system_priority_v6
+
+-- child class of_bsn_tlv_pdua_rx_instance
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_pdua_rx_instance_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_pdua_rx_instance.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_pdua_rx_instance.length')
+    read_of_octets_t(reader, 6, subtree, 'of15.bsn_tlv_pdua_rx_instance.value')
+    return 'of_bsn_tlv_pdua_rx_instance'
+end
+of_bsn_tlv_v6_dissectors[159] = dissect_of_bsn_tlv_pdua_rx_instance_v6
 
 -- child class of_bsn_tlv_port
 -- Child of of_bsn_tlv

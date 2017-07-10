@@ -415,6 +415,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_partner_state_init,
     (of_object_init_f)of_bsn_tlv_partner_system_mac_init,
     (of_object_init_f)of_bsn_tlv_partner_system_priority_init,
+    (of_object_init_f)of_bsn_tlv_pdua_rx_instance_init,
     (of_object_init_f)of_bsn_tlv_port_init,
     (of_object_init_f)of_bsn_tlv_port_speed_gbps_init,
     (of_object_init_f)of_bsn_tlv_port_usage_init,

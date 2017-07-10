@@ -7500,6 +7500,17 @@ typedef struct of_bsn_tlv_partner_system_mac_s of_bsn_tlv_partner_system_mac_t;
 typedef struct of_bsn_tlv_partner_system_priority_s of_bsn_tlv_partner_system_priority_t;
 
 /**
+ * Structure for of_bsn_tlv_pdua_rx_instance object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_octets.  Functions
+ *   are of type of_bsn_tlv_pdua_rx_instance_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_pdua_rx_instance_s of_bsn_tlv_pdua_rx_instance_t;
+
+/**
  * Structure for of_bsn_tlv_port object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

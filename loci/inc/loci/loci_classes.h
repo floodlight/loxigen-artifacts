@@ -1013,6 +1013,8 @@ void of_bsn_tlv_partner_system_mac_wire_object_id_get(of_object_t *obj, of_objec
 void of_bsn_tlv_partner_system_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_partner_system_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_partner_system_priority_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_pdua_rx_instance_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_pdua_rx_instance_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_port_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_port_speed_gbps_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1897,6 +1899,7 @@ typedef of_object_t of_bsn_tlv_partner_port_priority_t;
 typedef of_object_t of_bsn_tlv_partner_state_t;
 typedef of_object_t of_bsn_tlv_partner_system_mac_t;
 typedef of_object_t of_bsn_tlv_partner_system_priority_t;
+typedef of_object_t of_bsn_tlv_pdua_rx_instance_t;
 typedef of_object_t of_bsn_tlv_port_t;
 typedef of_object_t of_bsn_tlv_port_speed_gbps_t;
 typedef of_object_t of_bsn_tlv_port_usage_t;
@@ -4330,6 +4333,11 @@ extern void of_bsn_tlv_partner_system_mac_init(
 extern of_object_t *
     of_bsn_tlv_partner_system_priority_new(of_version_t version);
 extern void of_bsn_tlv_partner_system_priority_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_pdua_rx_instance_new(of_version_t version);
+extern void of_bsn_tlv_pdua_rx_instance_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10749,6 +10757,17 @@ of_bsn_tlv_partner_system_mac_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_partner_system_priority_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_pdua_rx_instance_t
+ * @param obj An instance of type of_bsn_tlv_pdua_rx_instance_t
+ *
+ * \ingroup of_bsn_tlv_pdua_rx_instance
+ */
+static inline void
+of_bsn_tlv_pdua_rx_instance_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23681,6 +23700,15 @@ extern void of_bsn_tlv_partner_system_priority_value_set(
 extern void of_bsn_tlv_partner_system_priority_value_get(
     of_bsn_tlv_partner_system_priority_t *obj,
     uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_pdua_rx_instance */
+
+extern int WARN_UNUSED_RESULT of_bsn_tlv_pdua_rx_instance_value_set(
+    of_bsn_tlv_pdua_rx_instance_t *obj,
+    of_octets_t *value);
+extern void of_bsn_tlv_pdua_rx_instance_value_get(
+    of_bsn_tlv_pdua_rx_instance_t *obj,
+    of_octets_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_port */
 

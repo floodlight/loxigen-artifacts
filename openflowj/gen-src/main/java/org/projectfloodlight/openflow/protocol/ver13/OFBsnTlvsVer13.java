@@ -862,6 +862,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvPduaRxInstance.Builder buildPduaRxInstance() {
+        return new OFBsnTlvPduaRxInstanceVer13.Builder();
+    }
+    public OFBsnTlvPduaRxInstance pduaRxInstance(byte[] value) {
+        return new OFBsnTlvPduaRxInstanceVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvPort.Builder buildPort() {
         return new OFBsnTlvPortVer13.Builder();
     }

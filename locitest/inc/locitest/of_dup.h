@@ -1627,6 +1627,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_pdua_rx_instance_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_port_dup(
         of_object_t *src);
 
@@ -6595,6 +6599,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_port_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9344,6 +9352,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_partner_system_priority_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

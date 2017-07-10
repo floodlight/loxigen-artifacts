@@ -27409,6 +27409,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_queue_id_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_PDUA_RX_INSTANCE) {
+        return of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_HASH_TYPE) {
         return of_bsn_tlv_hash_type_OF_VERSION_1_3_dup(src);
     }
@@ -30095,6 +30099,31 @@ of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_partner_system_priority_value_get(src, &val16);
     of_bsn_tlv_partner_system_priority_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_pdua_rx_instance
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_pdua_rx_instance.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_pdua_rx_instance_t *
+of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_3_dup(
+    of_bsn_tlv_pdua_rx_instance_t *src)
+{
+    of_bsn_tlv_pdua_rx_instance_t *dst;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_tlv_pdua_rx_instance_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_pdua_rx_instance_value_get(src, &octets);
+    of_bsn_tlv_pdua_rx_instance_value_set(dst, &octets);
 
     return dst;
 }
@@ -50213,6 +50242,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_queue_id_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_PDUA_RX_INSTANCE) {
+        return of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_HASH_TYPE) {
         return of_bsn_tlv_hash_type_OF_VERSION_1_4_dup(src);
     }
@@ -52899,6 +52932,31 @@ of_bsn_tlv_partner_system_priority_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_partner_system_priority_value_get(src, &val16);
     of_bsn_tlv_partner_system_priority_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_pdua_rx_instance
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_pdua_rx_instance.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_pdua_rx_instance_t *
+of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_4_dup(
+    of_bsn_tlv_pdua_rx_instance_t *src)
+{
+    of_bsn_tlv_pdua_rx_instance_t *dst;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_tlv_pdua_rx_instance_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_pdua_rx_instance_value_get(src, &octets);
+    of_bsn_tlv_pdua_rx_instance_value_set(dst, &octets);
 
     return dst;
 }
@@ -72042,6 +72100,23 @@ of_bsn_tlv_partner_system_priority_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_partner_system_priority_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_pdua_rx_instance_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

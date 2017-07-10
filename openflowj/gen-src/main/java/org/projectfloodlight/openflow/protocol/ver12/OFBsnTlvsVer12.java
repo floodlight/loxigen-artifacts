@@ -691,6 +691,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPartnerSystemPriority not supported in version 1.2");
     }
 
+    public OFBsnTlvPduaRxInstance.Builder buildPduaRxInstance() {
+        throw new UnsupportedOperationException("OFBsnTlvPduaRxInstance not supported in version 1.2");
+    }
+    public OFBsnTlvPduaRxInstance pduaRxInstance(byte[] value) {
+        throw new UnsupportedOperationException("OFBsnTlvPduaRxInstance not supported in version 1.2");
+    }
+
     public OFBsnTlvPort.Builder buildPort() {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.2");
     }
