@@ -641,6 +641,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvLagOptions.Builder buildLagOptions() {
+        return new OFBsnTlvLagOptionsVer14.Builder();
+    }
+    public OFBsnTlvLagOptions lagOptions(Set<OFBsnLagFlag> flags) {
+        return new OFBsnTlvLagOptionsVer14(
+                flags
+                    );
+    }
+
     public OFBsnTlvLoopbackMode.Builder buildLoopbackMode() {
         return new OFBsnTlvLoopbackModeVer14.Builder();
     }

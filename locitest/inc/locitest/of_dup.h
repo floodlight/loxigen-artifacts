@@ -1511,6 +1511,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_lag_options_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_loopback_mode_dup(
         of_object_t *src);
 
@@ -6483,6 +6487,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_lag_options_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_loopback_mode_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9236,6 +9244,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_lag_options_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

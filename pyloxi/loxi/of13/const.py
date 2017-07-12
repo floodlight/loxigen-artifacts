@@ -467,6 +467,13 @@ ofp_bsn_lacp_state_map = {
     128: 'OFP_BSN_LACP_STATE_EXPIRED',
 }
 
+# Identifiers from group ofp_bsn_lag_flag
+OFP_BSN_LAG_FLAG_AUTO_RECOVERY = 1
+
+ofp_bsn_lag_flag_map = {
+    1: 'OFP_BSN_LAG_FLAG_AUTO_RECOVERY',
+}
+
 # Identifiers from group ofp_bsn_loglevel
 OFP_BSN_LOGLEVEL_MSG = 0
 OFP_BSN_LOGLEVEL_ERROR = 1

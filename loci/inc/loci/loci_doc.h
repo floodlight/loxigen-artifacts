@@ -7213,6 +7213,17 @@ typedef struct of_bsn_tlv_l3_interface_class_id_s of_bsn_tlv_l3_interface_class_
 typedef struct of_bsn_tlv_l3_src_class_id_s of_bsn_tlv_l3_src_class_id_t;
 
 /**
+ * Structure for of_bsn_tlv_lag_options object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param flags_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_lag_options_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_lag_options_s of_bsn_tlv_lag_options_t;
+
+/**
  * Structure for of_bsn_tlv_loopback_mode object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

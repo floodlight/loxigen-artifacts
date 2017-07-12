@@ -955,6 +955,8 @@ void of_bsn_tlv_l3_interface_class_id_wire_object_id_get(of_object_t *obj, of_ob
 void of_bsn_tlv_l3_interface_class_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_l3_src_class_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_l3_src_class_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_lag_options_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_lag_options_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_loopback_mode_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_loopback_mode_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_loopback_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1870,6 +1872,7 @@ typedef of_object_t of_bsn_tlv_l2_multicast_lookup_t;
 typedef of_object_t of_bsn_tlv_l3_dst_class_id_t;
 typedef of_object_t of_bsn_tlv_l3_interface_class_id_t;
 typedef of_object_t of_bsn_tlv_l3_src_class_id_t;
+typedef of_object_t of_bsn_tlv_lag_options_t;
 typedef of_object_t of_bsn_tlv_loopback_mode_t;
 typedef of_object_t of_bsn_tlv_loopback_port_t;
 typedef of_object_t of_bsn_tlv_mac_t;
@@ -4188,6 +4191,11 @@ extern void of_bsn_tlv_l3_interface_class_id_init(
 extern of_object_t *
     of_bsn_tlv_l3_src_class_id_new(of_version_t version);
 extern void of_bsn_tlv_l3_src_class_id_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_lag_options_new(of_version_t version);
+extern void of_bsn_tlv_lag_options_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10438,6 +10446,17 @@ of_bsn_tlv_l3_interface_class_id_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_l3_src_class_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_lag_options_t
+ * @param obj An instance of type of_bsn_tlv_lag_options_t
+ *
+ * \ingroup of_bsn_tlv_lag_options
+ */
+static inline void
+of_bsn_tlv_lag_options_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23495,6 +23514,15 @@ extern void of_bsn_tlv_l3_src_class_id_value_set(
 extern void of_bsn_tlv_l3_src_class_id_value_get(
     of_bsn_tlv_l3_src_class_id_t *obj,
     uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_lag_options */
+
+extern void of_bsn_tlv_lag_options_flags_set(
+    of_bsn_tlv_lag_options_t *obj,
+    uint16_t flags);
+extern void of_bsn_tlv_lag_options_flags_get(
+    of_bsn_tlv_lag_options_t *obj,
+    uint16_t *flags);
 
 /* Unified accessor functions for of_bsn_tlv_loopback_mode */
 
