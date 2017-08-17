@@ -809,6 +809,15 @@ ofp_bsn_rate_unit_map = {
     1: 'OFP_BSN_RATE_UNIT_KBITPS',
 }
 
+# Identifiers from group ofp_bsn_routing_param
+OFP_BSN_ROUTING_PARAM_OSPF_UCAST = 1
+OFP_BSN_ROUTING_PARAM_OSPF_MCAST = 2
+
+ofp_bsn_routing_param_map = {
+    1: 'OFP_BSN_ROUTING_PARAM_OSPF_UCAST',
+    2: 'OFP_BSN_ROUTING_PARAM_OSPF_MCAST',
+}
+
 # Identifiers from group ofp_bsn_speed_capabilities
 OFP_BSN_SPEED_CAP_10M = 1
 OFP_BSN_SPEED_CAP_100M = 2

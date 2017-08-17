@@ -2062,6 +2062,11 @@ enum_v4_ofp_bsn_lacp_state = {
     [128] = "OFP_BSN_LACP_STATE_EXPIRED",
 }
 
+enum_v4_ofp_bsn_routing_param = {
+    [1] = "OFP_BSN_ROUTING_PARAM_OSPF_UCAST",
+    [2] = "OFP_BSN_ROUTING_PARAM_OSPF_MCAST",
+}
+
 enum_v4_ofp_bsn_vport_q_in_q_untagged = {
     [65535] = "OF_BSN_VPORT_Q_IN_Q_UNTAGGED",
 }
@@ -2356,6 +2361,12 @@ enum_v5_of_bsn_vlan_counter = {
     [1] = "OFP_BSN_VLAN_COUNTER_RX_PACKETS",
     [2] = "OFP_BSN_VLAN_COUNTER_TX_BYTES",
     [3] = "OFP_BSN_VLAN_COUNTER_TX_PACKETS",
+}
+
+enum_v5_ofp_async_config_failed_code = {
+    [0] = "OFPACFC_INVALID",
+    [1] = "OFPACFC_UNSUPPORTED",
+    [2] = "OFPACFC_EPERM",
 }
 
 enum_v5_ofp_hello_failed_code = {
@@ -2754,10 +2765,6 @@ enum_v5_ofp_bsn_controller_connection_state = {
     [1] = "OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED",
 }
 
-enum_v5_ofp_bsn_tunnel_type = {
-    [1] = "OFP_BSN_TUNNEL_L2GRE",
-}
-
 enum_v5_ofp_group_capabilities = {
     [1] = "OFPGFC_SELECT_WEIGHT",
     [2] = "OFPGFC_SELECT_LIVENESS",
@@ -2950,10 +2957,8 @@ enum_v5_ofp_bsn_vrf_counter_constants = {
     [4294967295] = "OFP_BSN_VRF_ALL",
 }
 
-enum_v5_ofp_async_config_failed_code = {
-    [0] = "OFPACFC_INVALID",
-    [1] = "OFPACFC_UNSUPPORTED",
-    [2] = "OFPACFC_EPERM",
+enum_v5_ofp_bsn_tunnel_type = {
+    [1] = "OFP_BSN_TUNNEL_L2GRE",
 }
 
 enum_v5_ofp_meter_band_type = {
@@ -3064,6 +3069,11 @@ enum_v5_ofp_bsn_lacp_state = {
     [32] = "OFP_BSN_LACP_STATE_DISTRIBUTING",
     [64] = "OFP_BSN_LACP_STATE_DEFAULTED",
     [128] = "OFP_BSN_LACP_STATE_EXPIRED",
+}
+
+enum_v5_ofp_bsn_routing_param = {
+    [1] = "OFP_BSN_ROUTING_PARAM_OSPF_UCAST",
+    [2] = "OFP_BSN_ROUTING_PARAM_OSPF_MCAST",
 }
 
 enum_v5_ofp_bsn_vport_q_in_q_untagged = {
@@ -4277,6 +4287,11 @@ enum_v6_ofp_bsn_lacp_state = {
     [32] = "OFP_BSN_LACP_STATE_DISTRIBUTING",
     [64] = "OFP_BSN_LACP_STATE_DEFAULTED",
     [128] = "OFP_BSN_LACP_STATE_EXPIRED",
+}
+
+enum_v6_ofp_bsn_routing_param = {
+    [1] = "OFP_BSN_ROUTING_PARAM_OSPF_UCAST",
+    [2] = "OFP_BSN_ROUTING_PARAM_OSPF_MCAST",
 }
 
 enum_v6_ofp_bsn_vport_q_in_q_untagged = {
@@ -8762,6 +8777,9 @@ fields['of13.bsn_tlv_request_packets.length'] = ProtoField.uint16("of13.bsn_tlv_
 fields['of13.bsn_tlv_request_packets.value'] = ProtoField.uint64("of13.bsn_tlv_request_packets.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_rest_server.type'] = ProtoField.uint16("of13.bsn_tlv_rest_server.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_rest_server.length'] = ProtoField.uint16("of13.bsn_tlv_rest_server.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_routing_param.type'] = ProtoField.uint16("of13.bsn_tlv_routing_param.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_routing_param.length'] = ProtoField.uint16("of13.bsn_tlv_routing_param.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_routing_param.value'] = ProtoField.uint32("of13.bsn_tlv_routing_param.value", "value", base.DEC, enum_v4_ofp_bsn_routing_param)
 fields['of13.bsn_tlv_rx_bytes.type'] = ProtoField.uint16("of13.bsn_tlv_rx_bytes.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_rx_bytes.length'] = ProtoField.uint16("of13.bsn_tlv_rx_bytes.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_rx_bytes.value'] = ProtoField.uint64("of13.bsn_tlv_rx_bytes.value", "value", base.DEC, nil)
@@ -11674,6 +11692,9 @@ fields['of14.bsn_tlv_request_packets.length'] = ProtoField.uint16("of14.bsn_tlv_
 fields['of14.bsn_tlv_request_packets.value'] = ProtoField.uint64("of14.bsn_tlv_request_packets.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_rest_server.type'] = ProtoField.uint16("of14.bsn_tlv_rest_server.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_rest_server.length'] = ProtoField.uint16("of14.bsn_tlv_rest_server.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_routing_param.type'] = ProtoField.uint16("of14.bsn_tlv_routing_param.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_routing_param.length'] = ProtoField.uint16("of14.bsn_tlv_routing_param.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_routing_param.value'] = ProtoField.uint32("of14.bsn_tlv_routing_param.value", "value", base.DEC, enum_v5_ofp_bsn_routing_param)
 fields['of14.bsn_tlv_rx_bytes.type'] = ProtoField.uint16("of14.bsn_tlv_rx_bytes.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_rx_bytes.length'] = ProtoField.uint16("of14.bsn_tlv_rx_bytes.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_rx_bytes.value'] = ProtoField.uint64("of14.bsn_tlv_rx_bytes.value", "value", base.DEC, nil)
@@ -14842,6 +14863,9 @@ fields['of15.bsn_tlv_request_packets.length'] = ProtoField.uint16("of15.bsn_tlv_
 fields['of15.bsn_tlv_request_packets.value'] = ProtoField.uint64("of15.bsn_tlv_request_packets.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_rest_server.type'] = ProtoField.uint16("of15.bsn_tlv_rest_server.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_rest_server.length'] = ProtoField.uint16("of15.bsn_tlv_rest_server.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_routing_param.type'] = ProtoField.uint16("of15.bsn_tlv_routing_param.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_routing_param.length'] = ProtoField.uint16("of15.bsn_tlv_routing_param.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_routing_param.value'] = ProtoField.uint32("of15.bsn_tlv_routing_param.value", "value", base.DEC, enum_v6_ofp_bsn_routing_param)
 fields['of15.bsn_tlv_rx_bytes.type'] = ProtoField.uint16("of15.bsn_tlv_rx_bytes.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_rx_bytes.length'] = ProtoField.uint16("of15.bsn_tlv_rx_bytes.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_rx_bytes.value'] = ProtoField.uint64("of15.bsn_tlv_rx_bytes.value", "value", base.DEC, nil)
@@ -21248,6 +21272,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_request_packets.value'],
     fields['of13.bsn_tlv_rest_server.type'],
     fields['of13.bsn_tlv_rest_server.length'],
+    fields['of13.bsn_tlv_routing_param.type'],
+    fields['of13.bsn_tlv_routing_param.length'],
+    fields['of13.bsn_tlv_routing_param.value'],
     fields['of13.bsn_tlv_rx_bytes.type'],
     fields['of13.bsn_tlv_rx_bytes.length'],
     fields['of13.bsn_tlv_rx_bytes.value'],
@@ -24160,6 +24187,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_request_packets.value'],
     fields['of14.bsn_tlv_rest_server.type'],
     fields['of14.bsn_tlv_rest_server.length'],
+    fields['of14.bsn_tlv_routing_param.type'],
+    fields['of14.bsn_tlv_routing_param.length'],
+    fields['of14.bsn_tlv_routing_param.value'],
     fields['of14.bsn_tlv_rx_bytes.type'],
     fields['of14.bsn_tlv_rx_bytes.length'],
     fields['of14.bsn_tlv_rx_bytes.value'],
@@ -27328,6 +27358,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_request_packets.value'],
     fields['of15.bsn_tlv_rest_server.type'],
     fields['of15.bsn_tlv_rest_server.length'],
+    fields['of15.bsn_tlv_routing_param.type'],
+    fields['of15.bsn_tlv_routing_param.length'],
+    fields['of15.bsn_tlv_routing_param.value'],
     fields['of15.bsn_tlv_rx_bytes.type'],
     fields['of15.bsn_tlv_rx_bytes.length'],
     fields['of15.bsn_tlv_rx_bytes.value'],
@@ -39924,6 +39957,16 @@ function dissect_of_bsn_tlv_rest_server_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[152] = dissect_of_bsn_tlv_rest_server_v4
 
+-- child class of_bsn_tlv_routing_param
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_routing_param_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_routing_param.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_routing_param.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_routing_param.value')
+    return 'of_bsn_tlv_routing_param'
+end
+of_bsn_tlv_v4_dissectors[161] = dissect_of_bsn_tlv_routing_param_v4
+
 -- child class of_bsn_tlv_rx_bytes
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_rx_bytes_v4(reader, subtree)
@@ -47742,6 +47785,16 @@ function dissect_of_bsn_tlv_rest_server_v5(reader, subtree)
     return 'of_bsn_tlv_rest_server'
 end
 of_bsn_tlv_v5_dissectors[152] = dissect_of_bsn_tlv_rest_server_v5
+
+-- child class of_bsn_tlv_routing_param
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_routing_param_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_routing_param.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_routing_param.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_routing_param.value')
+    return 'of_bsn_tlv_routing_param'
+end
+of_bsn_tlv_v5_dissectors[161] = dissect_of_bsn_tlv_routing_param_v5
 
 -- child class of_bsn_tlv_rx_bytes
 -- Child of of_bsn_tlv
@@ -56145,6 +56198,16 @@ function dissect_of_bsn_tlv_rest_server_v6(reader, subtree)
     return 'of_bsn_tlv_rest_server'
 end
 of_bsn_tlv_v6_dissectors[152] = dissect_of_bsn_tlv_rest_server_v6
+
+-- child class of_bsn_tlv_routing_param
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_routing_param_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_routing_param.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_routing_param.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_routing_param.value')
+    return 'of_bsn_tlv_routing_param'
+end
+of_bsn_tlv_v6_dissectors[161] = dissect_of_bsn_tlv_routing_param_v6
 
 -- child class of_bsn_tlv_rx_bytes
 -- Child of of_bsn_tlv

@@ -811,6 +811,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvRestServer not supported in version 1.2");
     }
 
+    public OFBsnTlvRoutingParam.Builder buildRoutingParam() {
+        throw new UnsupportedOperationException("OFBsnTlvRoutingParam not supported in version 1.2");
+    }
+    public OFBsnTlvRoutingParam routingParam(OFBsnRoutingParam value) {
+        throw new UnsupportedOperationException("OFBsnTlvRoutingParam not supported in version 1.2");
+    }
+
     public OFBsnTlvRxBytes.Builder buildRxBytes() {
         throw new UnsupportedOperationException("OFBsnTlvRxBytes not supported in version 1.2");
     }

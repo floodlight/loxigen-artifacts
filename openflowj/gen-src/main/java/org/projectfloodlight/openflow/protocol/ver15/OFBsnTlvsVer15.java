@@ -1015,6 +1015,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
         return OFBsnTlvRestServerVer15.INSTANCE;
     }
 
+    public OFBsnTlvRoutingParam.Builder buildRoutingParam() {
+        return new OFBsnTlvRoutingParamVer15.Builder();
+    }
+    public OFBsnTlvRoutingParam routingParam(OFBsnRoutingParam value) {
+        return new OFBsnTlvRoutingParamVer15(
+                value
+                    );
+    }
+
     public OFBsnTlvRxBytes.Builder buildRxBytes() {
         return new OFBsnTlvRxBytesVer15.Builder();
     }

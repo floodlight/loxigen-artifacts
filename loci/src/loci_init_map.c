@@ -433,6 +433,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_reply_packets_init,
     (of_object_init_f)of_bsn_tlv_request_packets_init,
     (of_object_init_f)of_bsn_tlv_rest_server_init,
+    (of_object_init_f)of_bsn_tlv_routing_param_init,
     (of_object_init_f)of_bsn_tlv_rx_bytes_init,
     (of_object_init_f)of_bsn_tlv_rx_packets_init,
     (of_object_init_f)of_bsn_tlv_sampling_rate_init,

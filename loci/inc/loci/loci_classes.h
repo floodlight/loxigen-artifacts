@@ -1049,6 +1049,8 @@ void of_bsn_tlv_request_packets_wire_object_id_get(of_object_t *obj, of_object_i
 void of_bsn_tlv_request_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_rest_server_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_rest_server_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_routing_param_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_routing_param_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_rx_bytes_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_rx_bytes_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_rx_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1919,6 +1921,7 @@ typedef of_object_t of_bsn_tlv_reference_t;
 typedef of_object_t of_bsn_tlv_reply_packets_t;
 typedef of_object_t of_bsn_tlv_request_packets_t;
 typedef of_object_t of_bsn_tlv_rest_server_t;
+typedef of_object_t of_bsn_tlv_routing_param_t;
 typedef of_object_t of_bsn_tlv_rx_bytes_t;
 typedef of_object_t of_bsn_tlv_rx_packets_t;
 typedef of_object_t of_bsn_tlv_sampling_rate_t;
@@ -4426,6 +4429,11 @@ extern void of_bsn_tlv_request_packets_init(
 extern of_object_t *
     of_bsn_tlv_rest_server_new(of_version_t version);
 extern void of_bsn_tlv_rest_server_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_routing_param_new(of_version_t version);
+extern void of_bsn_tlv_routing_param_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10963,6 +10971,17 @@ of_bsn_tlv_request_packets_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_rest_server_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_routing_param_t
+ * @param obj An instance of type of_bsn_tlv_routing_param_t
+ *
+ * \ingroup of_bsn_tlv_routing_param
+ */
+static inline void
+of_bsn_tlv_routing_param_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23876,6 +23895,15 @@ extern void of_bsn_tlv_request_packets_value_get(
     uint64_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_rest_server */
+
+/* Unified accessor functions for of_bsn_tlv_routing_param */
+
+extern void of_bsn_tlv_routing_param_value_set(
+    of_bsn_tlv_routing_param_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_routing_param_value_get(
+    of_bsn_tlv_routing_param_t *obj,
+    uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_rx_bytes */
 

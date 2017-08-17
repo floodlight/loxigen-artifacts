@@ -250,6 +250,8 @@ public interface OFBsnTlvs {
     OFBsnTlvRequestPackets.Builder buildRequestPackets() throws UnsupportedOperationException;
     OFBsnTlvRequestPackets requestPackets(U64 value);
     OFBsnTlvRestServer restServer();
+    OFBsnTlvRoutingParam.Builder buildRoutingParam() throws UnsupportedOperationException;
+    OFBsnTlvRoutingParam routingParam(OFBsnRoutingParam value);
     OFBsnTlvRxBytes.Builder buildRxBytes() throws UnsupportedOperationException;
     OFBsnTlvRxBytes rxBytes(U64 value);
     OFBsnTlvRxPackets.Builder buildRxPackets() throws UnsupportedOperationException;

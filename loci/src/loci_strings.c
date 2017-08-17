@@ -430,6 +430,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_reply_packets",
     "of_bsn_tlv_request_packets",
     "of_bsn_tlv_rest_server",
+    "of_bsn_tlv_routing_param",
     "of_bsn_tlv_rx_bytes",
     "of_bsn_tlv_rx_packets",
     "of_bsn_tlv_sampling_rate",

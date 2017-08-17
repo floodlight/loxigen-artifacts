@@ -403,6 +403,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x98:
                    // discriminator value 0x98=0x98 for class OFBsnTlvRestServerVer14
                    return OFBsnTlvRestServerVer14.READER.readFrom(bb);
+               case (short) 0xa1:
+                   // discriminator value 0xa1=0xa1 for class OFBsnTlvRoutingParamVer14
+                   return OFBsnTlvRoutingParamVer14.READER.readFrom(bb);
                case (short) 0x47:
                    // discriminator value 0x47=0x47 for class OFBsnTlvRxBytesVer14
                    return OFBsnTlvRxBytesVer14.READER.readFrom(bb);

@@ -27029,6 +27029,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_ROUTING_PARAM) {
+        return of_bsn_tlv_routing_param_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
         return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_dup(src);
     }
@@ -30558,6 +30562,31 @@ of_bsn_tlv_rest_server_OF_VERSION_1_3_dup(
     if ((dst = of_bsn_tlv_rest_server_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_routing_param
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_routing_param.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_routing_param_t *
+of_bsn_tlv_routing_param_OF_VERSION_1_3_dup(
+    of_bsn_tlv_routing_param_t *src)
+{
+    of_bsn_tlv_routing_param_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_routing_param_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_routing_param_value_get(src, &val16);
+    of_bsn_tlv_routing_param_value_set(dst, val16);
 
     return dst;
 }
@@ -49891,6 +49920,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_ROUTING_PARAM) {
+        return of_bsn_tlv_routing_param_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
         return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_dup(src);
     }
@@ -53420,6 +53453,31 @@ of_bsn_tlv_rest_server_OF_VERSION_1_4_dup(
     if ((dst = of_bsn_tlv_rest_server_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_routing_param
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_routing_param.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_routing_param_t *
+of_bsn_tlv_routing_param_OF_VERSION_1_4_dup(
+    of_bsn_tlv_routing_param_t *src)
+{
+    of_bsn_tlv_routing_param_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_routing_param_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_routing_param_value_get(src, &val16);
+    of_bsn_tlv_routing_param_value_set(dst, val16);
 
     return dst;
 }
@@ -72464,6 +72522,23 @@ of_bsn_tlv_rest_server_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_rest_server_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_routing_param_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_routing_param_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_routing_param_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

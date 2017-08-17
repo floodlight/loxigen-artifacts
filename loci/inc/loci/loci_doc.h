@@ -7694,6 +7694,17 @@ typedef struct of_bsn_tlv_request_packets_s of_bsn_tlv_request_packets_t;
 typedef struct of_bsn_tlv_rest_server_s of_bsn_tlv_rest_server_t;
 
 /**
+ * Structure for of_bsn_tlv_routing_param object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_routing_param_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_routing_param_s of_bsn_tlv_routing_param_t;
+
+/**
  * Structure for of_bsn_tlv_rx_bytes object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
