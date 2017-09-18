@@ -40127,6 +40127,43 @@ of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_4_dump(loci_writer_f writer, vo
 }
 
 int
+of_oxm_bsn_ifp_class_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_ifp_class_id\n");
+
+    of_oxm_bsn_ifp_class_id_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_ifp_class_id_masked\n");
+
+    of_oxm_bsn_ifp_class_id_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_ifp_class_id_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_oxm_bsn_in_ports_128_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -43826,6 +43863,14 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, "\n");
     }
 
+    if (OF_MATCH_MASK_BSN_IFP_CLASS_ID_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  bsn_ifp_class_id (uint32_t) active: Value ");
+        out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_ifp_class_id);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_ifp_class_id);
+        out += writer(cookie, "\n");
+    }
+
     if (OF_MATCH_MASK_VLAN_PCP_ACTIVE_TEST(match)) {
         out += writer(cookie, "  vlan_pcp (uint8_t) active: Value ");
         out += LOCI_DUMP_u8(writer, cookie, match->fields.vlan_pcp);
@@ -45047,6 +45092,8 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_packet_queue_OF_VERSION_1_0_dump,
     of_port_desc_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -45704,6 +45751,8 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_instruction_write_metadata_OF_VERSION_1_1_dump,
     unknown_dump,
     of_match_v2_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -46535,6 +46584,8 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_dump,
     of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_dump,
     of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_2_dump,
+    unknown_dump,
+    unknown_dump,
     of_oxm_bsn_in_ports_128_OF_VERSION_1_2_dump,
     of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_dump,
     of_oxm_bsn_in_ports_512_OF_VERSION_1_2_dump,
@@ -47342,6 +47393,8 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_dump,
     of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_dump,
     of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_3_dump,
+    unknown_dump,
+    unknown_dump,
     of_oxm_bsn_in_ports_128_OF_VERSION_1_3_dump,
     of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_dump,
     of_oxm_bsn_in_ports_512_OF_VERSION_1_3_dump,
@@ -48149,6 +48202,8 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_4_dump,
     unknown_dump,
     unknown_dump,
+    of_oxm_bsn_ifp_class_id_OF_VERSION_1_4_dump,
+    of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_dump,
     of_oxm_bsn_in_ports_128_OF_VERSION_1_4_dump,
     of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_4_dump,
     of_oxm_bsn_in_ports_512_OF_VERSION_1_4_dump,

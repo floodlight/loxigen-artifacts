@@ -90,6 +90,7 @@ typedef struct of_match_fields_s {
     uint16_t             bsn_inner_vlan_vid;
     uint16_t             bsn_vfi;
     uint8_t              bsn_ip_fragmentation;
+    uint32_t             bsn_ifp_class_id;
     uint16_t             ovs_tcp_flags;
 
 } of_match_fields_t;

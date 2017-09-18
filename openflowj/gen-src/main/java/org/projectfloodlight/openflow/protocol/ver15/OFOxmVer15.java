@@ -446,6 +446,12 @@ abstract class OFOxmVer15 {
                case (int) 0x80004d10:
                    // discriminator value 0x80004d10L=0x80004d10L for class OFOxmTunnelIdMaskedVer15
                    return OFOxmTunnelIdMaskedVer15.READER.readFrom(bb);
+               case 0x33604:
+                   // discriminator value 0x33604L=0x33604L for class OFOxmBsnIfpClassIdVer15
+                   return OFOxmBsnIfpClassIdVer15.READER.readFrom(bb);
+               case 0x33708:
+                   // discriminator value 0x33708L=0x33708L for class OFOxmBsnIfpClassIdMaskedVer15
+                   return OFOxmBsnIfpClassIdMaskedVer15.READER.readFrom(bb);
                case (int) 0x80005201:
                    // discriminator value 0x80005201L=0x80005201L for class OFOxmPbbUcaVer15
                    return OFOxmPbbUcaVer15.READER.readFrom(bb);

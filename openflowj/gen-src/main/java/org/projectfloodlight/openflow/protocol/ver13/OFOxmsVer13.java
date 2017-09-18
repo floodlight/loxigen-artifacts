@@ -1344,6 +1344,20 @@ public class OFOxmsVer13 implements OFOxms {
                     );
     }
 
+    public OFOxmBsnIfpClassId.Builder buildBsnIfpClassId() {
+        throw new UnsupportedOperationException("OFOxmBsnIfpClassId not supported in version 1.3");
+    }
+    public OFOxmBsnIfpClassId bsnIfpClassId(ClassId value) {
+        throw new UnsupportedOperationException("OFOxmBsnIfpClassId not supported in version 1.3");
+    }
+
+    public OFOxmBsnIfpClassIdMasked.Builder buildBsnIfpClassIdMasked() {
+        throw new UnsupportedOperationException("OFOxmBsnIfpClassIdMasked not supported in version 1.3");
+    }
+    public OFOxmBsnIfpClassIdMasked bsnIfpClassIdMasked(ClassId value, ClassId mask) {
+        throw new UnsupportedOperationException("OFOxmBsnIfpClassIdMasked not supported in version 1.3");
+    }
+
     public OFOxmPbbUca.Builder buildPbbUca() {
         throw new UnsupportedOperationException("OFOxmPbbUca not supported in version 1.3");
     }
@@ -1545,6 +1559,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsBos((OFBooleanValue)((Object)value)));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelId((U64)((Object)value)));
+            case BSN_IFP_CLASS_ID:
+                return (OFOxm<F>)((Object)bsnIfpClassId((ClassId)((Object)value)));
             case PBB_UCA:
                 return (OFOxm<F>)((Object)pbbUca((OFBooleanValue)((Object)value)));
             case ACTSET_OUTPUT:
@@ -1699,6 +1715,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)value), (U64)((Object)mask)));
+            case BSN_IFP_CLASS_ID:
+                return (OFOxm<F>)((Object)bsnIfpClassIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case PBB_UCA:
                 return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case ACTSET_OUTPUT:
@@ -1853,6 +1871,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)(masked.getValue())), (U64)((Object)(masked.getMask()))));
+            case BSN_IFP_CLASS_ID:
+                return (OFOxm<F>)((Object)bsnIfpClassIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case PBB_UCA:
                 return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case ACTSET_OUTPUT:

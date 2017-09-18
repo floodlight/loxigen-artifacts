@@ -14810,6 +14810,24 @@ extern int of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_4_populate_scalars(
 extern int of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_4_check_scalars(
     of_oxm_bsn_egr_port_group_id_masked_t *obj, int value);
 
+extern int of_oxm_bsn_ifp_class_id_OF_VERSION_1_4_populate(
+    of_oxm_bsn_ifp_class_id_t *obj, int value);
+extern int of_oxm_bsn_ifp_class_id_OF_VERSION_1_4_check(
+    of_oxm_bsn_ifp_class_id_t *obj, int value);
+extern int of_oxm_bsn_ifp_class_id_OF_VERSION_1_4_populate_scalars(
+    of_oxm_bsn_ifp_class_id_t *obj, int value);
+extern int of_oxm_bsn_ifp_class_id_OF_VERSION_1_4_check_scalars(
+    of_oxm_bsn_ifp_class_id_t *obj, int value);
+
+extern int of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_populate(
+    of_oxm_bsn_ifp_class_id_masked_t *obj, int value);
+extern int of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_check(
+    of_oxm_bsn_ifp_class_id_masked_t *obj, int value);
+extern int of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_bsn_ifp_class_id_masked_t *obj, int value);
+extern int of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_bsn_ifp_class_id_masked_t *obj, int value);
+
 extern int of_oxm_bsn_in_ports_128_OF_VERSION_1_4_populate(
     of_oxm_bsn_in_ports_128_t *obj, int value);
 extern int of_oxm_bsn_in_ports_128_OF_VERSION_1_4_check(

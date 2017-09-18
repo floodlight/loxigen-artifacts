@@ -4221,6 +4221,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=NULL,
         .wire_type_set=of_flow_monitor_failed_error_msg_push_wire_types,
     },
+    [OF_OXM_BSN_IFP_CLASS_ID] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_ifp_class_id_push_wire_types,
+    },
+    [OF_OXM_BSN_IFP_CLASS_ID_MASKED] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_ifp_class_id_masked_push_wire_types,
+    },
     [OF_OXM_PBB_UCA] = {
         .wire_length_get=of_oxm_wire_length_get,
         .wire_length_set=NULL,

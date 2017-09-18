@@ -12589,6 +12589,11 @@ fields['of14.oxm_bsn_egr_port_group_id.value'] = ProtoField.uint32("of14.oxm_bsn
 fields['of14.oxm_bsn_egr_port_group_id_masked.type_len'] = ProtoField.uint32("of14.oxm_bsn_egr_port_group_id_masked.type_len", "type_len", base.DEC, nil)
 fields['of14.oxm_bsn_egr_port_group_id_masked.value'] = ProtoField.uint32("of14.oxm_bsn_egr_port_group_id_masked.value", "value", base.DEC, nil)
 fields['of14.oxm_bsn_egr_port_group_id_masked.value_mask'] = ProtoField.uint32("of14.oxm_bsn_egr_port_group_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of14.oxm_bsn_ifp_class_id.type_len'] = ProtoField.uint32("of14.oxm_bsn_ifp_class_id.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_bsn_ifp_class_id.value'] = ProtoField.uint32("of14.oxm_bsn_ifp_class_id.value", "value", base.DEC, nil)
+fields['of14.oxm_bsn_ifp_class_id_masked.type_len'] = ProtoField.uint32("of14.oxm_bsn_ifp_class_id_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_bsn_ifp_class_id_masked.value'] = ProtoField.uint32("of14.oxm_bsn_ifp_class_id_masked.value", "value", base.DEC, nil)
+fields['of14.oxm_bsn_ifp_class_id_masked.value_mask'] = ProtoField.uint32("of14.oxm_bsn_ifp_class_id_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of14.oxm_bsn_in_ports_128.type_len'] = ProtoField.uint32("of14.oxm_bsn_in_ports_128.type_len", "type_len", base.DEC, nil)
 fields['of14.oxm_bsn_in_ports_128.value'] = ProtoField.bytes("of14.oxm_bsn_in_ports_128.value", "value")
 fields['of14.oxm_bsn_in_ports_128_masked.type_len'] = ProtoField.uint32("of14.oxm_bsn_in_ports_128_masked.type_len", "type_len", base.DEC, nil)
@@ -15926,6 +15931,11 @@ fields['of15.oxm_bsn_egr_port_group_id.value'] = ProtoField.uint32("of15.oxm_bsn
 fields['of15.oxm_bsn_egr_port_group_id_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_egr_port_group_id_masked.type_len", "type_len", base.DEC, nil)
 fields['of15.oxm_bsn_egr_port_group_id_masked.value'] = ProtoField.uint32("of15.oxm_bsn_egr_port_group_id_masked.value", "value", base.DEC, nil)
 fields['of15.oxm_bsn_egr_port_group_id_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_egr_port_group_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_bsn_ifp_class_id.type_len'] = ProtoField.uint32("of15.oxm_bsn_ifp_class_id.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_ifp_class_id.value'] = ProtoField.uint32("of15.oxm_bsn_ifp_class_id.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_ifp_class_id_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_ifp_class_id_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_bsn_ifp_class_id_masked.value'] = ProtoField.uint32("of15.oxm_bsn_ifp_class_id_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_bsn_ifp_class_id_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_ifp_class_id_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of15.oxm_bsn_in_ports_128.type_len'] = ProtoField.uint32("of15.oxm_bsn_in_ports_128.type_len", "type_len", base.DEC, nil)
 fields['of15.oxm_bsn_in_ports_128.value'] = ProtoField.bytes("of15.oxm_bsn_in_ports_128.value", "value")
 fields['of15.oxm_bsn_in_ports_128_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_in_ports_128_masked.type_len", "type_len", base.DEC, nil)
@@ -25084,6 +25094,11 @@ p_of.fields = {
     fields['of14.oxm_bsn_egr_port_group_id_masked.type_len'],
     fields['of14.oxm_bsn_egr_port_group_id_masked.value'],
     fields['of14.oxm_bsn_egr_port_group_id_masked.value_mask'],
+    fields['of14.oxm_bsn_ifp_class_id.type_len'],
+    fields['of14.oxm_bsn_ifp_class_id.value'],
+    fields['of14.oxm_bsn_ifp_class_id_masked.type_len'],
+    fields['of14.oxm_bsn_ifp_class_id_masked.value'],
+    fields['of14.oxm_bsn_ifp_class_id_masked.value_mask'],
     fields['of14.oxm_bsn_in_ports_128.type_len'],
     fields['of14.oxm_bsn_in_ports_128.value'],
     fields['of14.oxm_bsn_in_ports_128_masked.type_len'],
@@ -28421,6 +28436,11 @@ p_of.fields = {
     fields['of15.oxm_bsn_egr_port_group_id_masked.type_len'],
     fields['of15.oxm_bsn_egr_port_group_id_masked.value'],
     fields['of15.oxm_bsn_egr_port_group_id_masked.value_mask'],
+    fields['of15.oxm_bsn_ifp_class_id.type_len'],
+    fields['of15.oxm_bsn_ifp_class_id.value'],
+    fields['of15.oxm_bsn_ifp_class_id_masked.type_len'],
+    fields['of15.oxm_bsn_ifp_class_id_masked.value'],
+    fields['of15.oxm_bsn_ifp_class_id_masked.value_mask'],
     fields['of15.oxm_bsn_in_ports_128.type_len'],
     fields['of15.oxm_bsn_in_ports_128.value'],
     fields['of15.oxm_bsn_in_ports_128_masked.type_len'],
@@ -50028,6 +50048,25 @@ function dissect_of_oxm_bsn_egr_port_group_id_masked_v5(reader, subtree)
 end
 of_oxm_v5_dissectors[200456] = dissect_of_oxm_bsn_egr_port_group_id_masked_v5
 
+-- child class of_oxm_bsn_ifp_class_id
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ifp_class_id_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_bsn_ifp_class_id.type_len')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_bsn_ifp_class_id.value')
+    return 'of_oxm_bsn_ifp_class_id'
+end
+of_oxm_v5_dissectors[210436] = dissect_of_oxm_bsn_ifp_class_id_v5
+
+-- child class of_oxm_bsn_ifp_class_id_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ifp_class_id_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_bsn_ifp_class_id_masked.type_len')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_bsn_ifp_class_id_masked.value')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_bsn_ifp_class_id_masked.value_mask')
+    return 'of_oxm_bsn_ifp_class_id_masked'
+end
+of_oxm_v5_dissectors[210696] = dissect_of_oxm_bsn_ifp_class_id_masked_v5
+
 -- child class of_oxm_bsn_in_ports_128
 -- Child of of_oxm
 function dissect_of_oxm_bsn_in_ports_128_v5(reader, subtree)
@@ -58844,6 +58883,25 @@ function dissect_of_oxm_bsn_egr_port_group_id_masked_v6(reader, subtree)
     return 'of_oxm_bsn_egr_port_group_id_masked'
 end
 of_oxm_v6_dissectors[200456] = dissect_of_oxm_bsn_egr_port_group_id_masked_v6
+
+-- child class of_oxm_bsn_ifp_class_id
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ifp_class_id_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_ifp_class_id.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_ifp_class_id.value')
+    return 'of_oxm_bsn_ifp_class_id'
+end
+of_oxm_v6_dissectors[210436] = dissect_of_oxm_bsn_ifp_class_id_v6
+
+-- child class of_oxm_bsn_ifp_class_id_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_ifp_class_id_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_ifp_class_id_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_ifp_class_id_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_bsn_ifp_class_id_masked.value_mask')
+    return 'of_oxm_bsn_ifp_class_id_masked'
+end
+of_oxm_v6_dissectors[210696] = dissect_of_oxm_bsn_ifp_class_id_masked_v6
 
 -- child class of_oxm_bsn_in_ports_128
 -- Child of of_oxm

@@ -305,6 +305,10 @@ public interface OFOxms {
     OFOxmTunnelId tunnelId(U64 value);
     OFOxmTunnelIdMasked.Builder buildTunnelIdMasked() throws UnsupportedOperationException;
     OFOxmTunnelIdMasked tunnelIdMasked(U64 value, U64 mask);
+    OFOxmBsnIfpClassId.Builder buildBsnIfpClassId() throws UnsupportedOperationException;
+    OFOxmBsnIfpClassId bsnIfpClassId(ClassId value);
+    OFOxmBsnIfpClassIdMasked.Builder buildBsnIfpClassIdMasked() throws UnsupportedOperationException;
+    OFOxmBsnIfpClassIdMasked bsnIfpClassIdMasked(ClassId value, ClassId mask);
     OFOxmPbbUca.Builder buildPbbUca() throws UnsupportedOperationException;
     OFOxmPbbUca pbbUca(OFBooleanValue value);
     OFOxmPbbUcaMasked.Builder buildPbbUcaMasked() throws UnsupportedOperationException;

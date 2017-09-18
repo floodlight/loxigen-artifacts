@@ -563,6 +563,8 @@ const char *const of_object_id_str[] = {
     "of_oxm_bsn_egr_port_group_id_masked",
     "of_oxm_bsn_global_vrf_allowed",
     "of_oxm_bsn_global_vrf_allowed_masked",
+    "of_oxm_bsn_ifp_class_id",
+    "of_oxm_bsn_ifp_class_id_masked",
     "of_oxm_bsn_in_ports_128",
     "of_oxm_bsn_in_ports_128_masked",
     "of_oxm_bsn_in_ports_512",

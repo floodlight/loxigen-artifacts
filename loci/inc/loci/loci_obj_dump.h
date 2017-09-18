@@ -1597,6 +1597,8 @@ int of_oxm_arp_tpa_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_ob
 int of_oxm_arp_tpa_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_egr_port_group_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_ifp_class_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_in_ports_128_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_in_ports_512_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);

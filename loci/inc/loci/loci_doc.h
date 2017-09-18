@@ -9637,6 +9637,32 @@ typedef struct of_oxm_bsn_global_vrf_allowed_s of_oxm_bsn_global_vrf_allowed_t;
 typedef struct of_oxm_bsn_global_vrf_allowed_masked_s of_oxm_bsn_global_vrf_allowed_masked_t;
 
 /**
+ * Structure for of_oxm_bsn_ifp_class_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_ifp_class_id_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_ifp_class_id_s of_oxm_bsn_ifp_class_id_t;
+
+/**
+ * Structure for of_oxm_bsn_ifp_class_id_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_ifp_class_id_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_4).
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_ifp_class_id_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_ifp_class_id_masked_s of_oxm_bsn_ifp_class_id_masked_t;
+
+/**
  * Structure for of_oxm_bsn_in_ports_128 object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
