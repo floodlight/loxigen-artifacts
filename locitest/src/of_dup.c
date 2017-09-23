@@ -27281,6 +27281,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_eth_type_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_DIGEST_ALG) {
+        return of_bsn_tlv_digest_alg_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
         return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(src);
     }
@@ -28125,6 +28129,31 @@ of_bsn_tlv_decap_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_decap_value_get(src, &val16);
     of_bsn_tlv_decap_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_digest_alg
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_digest_alg.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_digest_alg_t *
+of_bsn_tlv_digest_alg_OF_VERSION_1_3_dup(
+    of_bsn_tlv_digest_alg_t *src)
+{
+    of_bsn_tlv_digest_alg_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_digest_alg_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_digest_alg_value_get(src, &val8);
+    of_bsn_tlv_digest_alg_value_set(dst, val8);
 
     return dst;
 }
@@ -50172,6 +50201,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_eth_type_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_DIGEST_ALG) {
+        return of_bsn_tlv_digest_alg_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
         return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(src);
     }
@@ -51016,6 +51049,31 @@ of_bsn_tlv_decap_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_decap_value_get(src, &val16);
     of_bsn_tlv_decap_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_digest_alg
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_digest_alg.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_digest_alg_t *
+of_bsn_tlv_digest_alg_OF_VERSION_1_4_dup(
+    of_bsn_tlv_digest_alg_t *src)
+{
+    of_bsn_tlv_digest_alg_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_digest_alg_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_digest_alg_value_get(src, &val8);
+    of_bsn_tlv_digest_alg_value_set(dst, val8);
 
     return dst;
 }
@@ -70900,6 +70958,23 @@ of_bsn_tlv_decap_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_decap_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_digest_alg_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_digest_alg_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_digest_alg_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

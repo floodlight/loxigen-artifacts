@@ -1210,22 +1210,22 @@ enum_v3_ofp_port_features = {
 }
 
 
-enum_v4_macro_definitions = {
-    [32] = "OFP_MAX_TABLE_NAME_LEN",
-    [16] = "OFP_MAX_PORT_NAME_LEN",
-    [6653] = "OFP_TCP_PORT",
-    [6653] = "OFP_SSL_PORT",
-    [6] = "OFP_ETH_ALEN",
-    [128] = "OFP_DEFAULT_MISS_SEND_LEN",
-    [0] = "OFP_VLAN_NONE",
-    [0] = "OFP_FLOW_PERMANENT",
-    [32768] = "OFP_DEFAULT_PRIORITY",
-    [4294967295] = "OFP_NO_BUFFER",
-    [256] = "DESC_STR_LEN",
-    [32] = "SERIAL_NUM_LEN",
-    [4294967295] = "OFPQ_ALL",
-    [65535] = "OFPQ_MAX_RATE_UNCFG",
-    [65535] = "OFPQ_MIN_RATE_UNCFG",
+enum_v4_ofp_stats_type = {
+    [0] = "OFPST_DESC",
+    [1] = "OFPST_FLOW",
+    [2] = "OFPST_AGGREGATE",
+    [3] = "OFPST_TABLE",
+    [4] = "OFPST_PORT",
+    [5] = "OFPST_QUEUE",
+    [6] = "OFPST_GROUP",
+    [7] = "OFPST_GROUP_DESC",
+    [8] = "OFPST_GROUP_FEATURES",
+    [9] = "OFPST_METER",
+    [10] = "OFPST_METER_CONFIG",
+    [11] = "OFPST_METER_FEATURES",
+    [12] = "OFPST_TABLE_FEATURES",
+    [13] = "OFPST_PORT_DESC",
+    [65535] = "OFPST_EXPERIMENTER",
 }
 
 enum_v4_ofp_flow_mod_flags = {
@@ -1370,6 +1370,11 @@ enum_v4_ofp_match_type = {
 
 enum_v4_ofp_stats_reply_flags = {
     [1] = "OFPSF_REPLY_MORE",
+}
+
+enum_v4_of_bsn_digest_alg = {
+    [1] = "OF_BSN_DIGEST_ALG_MD5",
+    [2] = "OF_BSN_DIGEST_ALG_SHA256",
 }
 
 enum_v4_ofp_table_features_failed_code = {
@@ -1811,22 +1816,22 @@ enum_v4_ofp_queue_op_failed_code = {
     [2] = "OFPQOFC_EPERM",
 }
 
-enum_v4_ofp_stats_type = {
-    [0] = "OFPST_DESC",
-    [1] = "OFPST_FLOW",
-    [2] = "OFPST_AGGREGATE",
-    [3] = "OFPST_TABLE",
-    [4] = "OFPST_PORT",
-    [5] = "OFPST_QUEUE",
-    [6] = "OFPST_GROUP",
-    [7] = "OFPST_GROUP_DESC",
-    [8] = "OFPST_GROUP_FEATURES",
-    [9] = "OFPST_METER",
-    [10] = "OFPST_METER_CONFIG",
-    [11] = "OFPST_METER_FEATURES",
-    [12] = "OFPST_TABLE_FEATURES",
-    [13] = "OFPST_PORT_DESC",
-    [65535] = "OFPST_EXPERIMENTER",
+enum_v4_macro_definitions = {
+    [32] = "OFP_MAX_TABLE_NAME_LEN",
+    [16] = "OFP_MAX_PORT_NAME_LEN",
+    [6653] = "OFP_TCP_PORT",
+    [6653] = "OFP_SSL_PORT",
+    [6] = "OFP_ETH_ALEN",
+    [128] = "OFP_DEFAULT_MISS_SEND_LEN",
+    [0] = "OFP_VLAN_NONE",
+    [0] = "OFP_FLOW_PERMANENT",
+    [32768] = "OFP_DEFAULT_PRIORITY",
+    [4294967295] = "OFP_NO_BUFFER",
+    [256] = "DESC_STR_LEN",
+    [32] = "SERIAL_NUM_LEN",
+    [4294967295] = "OFPQ_ALL",
+    [65535] = "OFPQ_MAX_RATE_UNCFG",
+    [65535] = "OFPQ_MIN_RATE_UNCFG",
 }
 
 enum_v4_ofp_meter_mod_command = {
@@ -2260,6 +2265,11 @@ enum_v5_ofp_match_type = {
 
 enum_v5_ofp_stats_reply_flags = {
     [1] = "OFPSF_REPLY_MORE",
+}
+
+enum_v5_of_bsn_digest_alg = {
+    [1] = "OF_BSN_DIGEST_ALG_MD5",
+    [2] = "OF_BSN_DIGEST_ALG_SHA256",
 }
 
 enum_v5_ofp_table_features_failed_code = {
@@ -3313,6 +3323,11 @@ enum_v6_ofp_match_type = {
 
 enum_v6_ofp_stats_reply_flags = {
     [1] = "OFPSF_REPLY_MORE",
+}
+
+enum_v6_of_bsn_digest_alg = {
+    [1] = "OF_BSN_DIGEST_ALG_MD5",
+    [2] = "OF_BSN_DIGEST_ALG_SHA256",
 }
 
 enum_v6_ofp_table_features_failed_code = {
@@ -8491,6 +8506,9 @@ fields['of13.bsn_tlv_data_mask.value'] = ProtoField.bytes("of13.bsn_tlv_data_mas
 fields['of13.bsn_tlv_decap.type'] = ProtoField.uint16("of13.bsn_tlv_decap.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_decap.length'] = ProtoField.uint16("of13.bsn_tlv_decap.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_decap.value'] = ProtoField.uint32("of13.bsn_tlv_decap.value", "value", base.DEC, enum_v4_ofp_bsn_decap)
+fields['of13.bsn_tlv_digest_alg.type'] = ProtoField.uint16("of13.bsn_tlv_digest_alg.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_digest_alg.length'] = ProtoField.uint16("of13.bsn_tlv_digest_alg.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_digest_alg.value'] = ProtoField.uint32("of13.bsn_tlv_digest_alg.value", "value", base.DEC, enum_v4_of_bsn_digest_alg)
 fields['of13.bsn_tlv_disable_src_mac_check.type'] = ProtoField.uint16("of13.bsn_tlv_disable_src_mac_check.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_disable_src_mac_check.length'] = ProtoField.uint16("of13.bsn_tlv_disable_src_mac_check.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_drop.type'] = ProtoField.uint16("of13.bsn_tlv_drop.type", "type", base.DEC, nil)
@@ -11406,6 +11424,9 @@ fields['of14.bsn_tlv_data_mask.value'] = ProtoField.bytes("of14.bsn_tlv_data_mas
 fields['of14.bsn_tlv_decap.type'] = ProtoField.uint16("of14.bsn_tlv_decap.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_decap.length'] = ProtoField.uint16("of14.bsn_tlv_decap.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_decap.value'] = ProtoField.uint32("of14.bsn_tlv_decap.value", "value", base.DEC, enum_v5_ofp_bsn_decap)
+fields['of14.bsn_tlv_digest_alg.type'] = ProtoField.uint16("of14.bsn_tlv_digest_alg.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_digest_alg.length'] = ProtoField.uint16("of14.bsn_tlv_digest_alg.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_digest_alg.value'] = ProtoField.uint32("of14.bsn_tlv_digest_alg.value", "value", base.DEC, enum_v5_of_bsn_digest_alg)
 fields['of14.bsn_tlv_disable_src_mac_check.type'] = ProtoField.uint16("of14.bsn_tlv_disable_src_mac_check.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_disable_src_mac_check.length'] = ProtoField.uint16("of14.bsn_tlv_disable_src_mac_check.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_drop.type'] = ProtoField.uint16("of14.bsn_tlv_drop.type", "type", base.DEC, nil)
@@ -14582,6 +14603,9 @@ fields['of15.bsn_tlv_data_mask.value'] = ProtoField.bytes("of15.bsn_tlv_data_mas
 fields['of15.bsn_tlv_decap.type'] = ProtoField.uint16("of15.bsn_tlv_decap.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_decap.length'] = ProtoField.uint16("of15.bsn_tlv_decap.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_decap.value'] = ProtoField.uint32("of15.bsn_tlv_decap.value", "value", base.DEC, enum_v6_ofp_bsn_decap)
+fields['of15.bsn_tlv_digest_alg.type'] = ProtoField.uint16("of15.bsn_tlv_digest_alg.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_digest_alg.length'] = ProtoField.uint16("of15.bsn_tlv_digest_alg.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_digest_alg.value'] = ProtoField.uint32("of15.bsn_tlv_digest_alg.value", "value", base.DEC, enum_v6_of_bsn_digest_alg)
 fields['of15.bsn_tlv_disable_src_mac_check.type'] = ProtoField.uint16("of15.bsn_tlv_disable_src_mac_check.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_disable_src_mac_check.length'] = ProtoField.uint16("of15.bsn_tlv_disable_src_mac_check.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_drop.type'] = ProtoField.uint16("of15.bsn_tlv_drop.type", "type", base.DEC, nil)
@@ -20996,6 +21020,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_decap.type'],
     fields['of13.bsn_tlv_decap.length'],
     fields['of13.bsn_tlv_decap.value'],
+    fields['of13.bsn_tlv_digest_alg.type'],
+    fields['of13.bsn_tlv_digest_alg.length'],
+    fields['of13.bsn_tlv_digest_alg.value'],
     fields['of13.bsn_tlv_disable_src_mac_check.type'],
     fields['of13.bsn_tlv_disable_src_mac_check.length'],
     fields['of13.bsn_tlv_drop.type'],
@@ -23911,6 +23938,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_decap.type'],
     fields['of14.bsn_tlv_decap.length'],
     fields['of14.bsn_tlv_decap.value'],
+    fields['of14.bsn_tlv_digest_alg.type'],
+    fields['of14.bsn_tlv_digest_alg.length'],
+    fields['of14.bsn_tlv_digest_alg.value'],
     fields['of14.bsn_tlv_disable_src_mac_check.type'],
     fields['of14.bsn_tlv_disable_src_mac_check.length'],
     fields['of14.bsn_tlv_drop.type'],
@@ -27087,6 +27117,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_decap.type'],
     fields['of15.bsn_tlv_decap.length'],
     fields['of15.bsn_tlv_decap.value'],
+    fields['of15.bsn_tlv_digest_alg.type'],
+    fields['of15.bsn_tlv_digest_alg.length'],
+    fields['of15.bsn_tlv_digest_alg.value'],
     fields['of15.bsn_tlv_disable_src_mac_check.type'],
     fields['of15.bsn_tlv_disable_src_mac_check.length'],
     fields['of15.bsn_tlv_drop.type'],
@@ -38989,6 +39022,16 @@ function dissect_of_bsn_tlv_decap_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[85] = dissect_of_bsn_tlv_decap_v4
 
+-- child class of_bsn_tlv_digest_alg
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_digest_alg_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_digest_alg.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_digest_alg.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_digest_alg.value')
+    return 'of_bsn_tlv_digest_alg'
+end
+of_bsn_tlv_v4_dissectors[162] = dissect_of_bsn_tlv_digest_alg_v4
+
 -- child class of_bsn_tlv_disable_src_mac_check
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_disable_src_mac_check_v4(reader, subtree)
@@ -46817,6 +46860,16 @@ function dissect_of_bsn_tlv_decap_v5(reader, subtree)
     return 'of_bsn_tlv_decap'
 end
 of_bsn_tlv_v5_dissectors[85] = dissect_of_bsn_tlv_decap_v5
+
+-- child class of_bsn_tlv_digest_alg
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_digest_alg_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_digest_alg.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_digest_alg.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_digest_alg.value')
+    return 'of_bsn_tlv_digest_alg'
+end
+of_bsn_tlv_v5_dissectors[162] = dissect_of_bsn_tlv_digest_alg_v5
 
 -- child class of_bsn_tlv_disable_src_mac_check
 -- Child of of_bsn_tlv
@@ -55249,6 +55302,16 @@ function dissect_of_bsn_tlv_decap_v6(reader, subtree)
     return 'of_bsn_tlv_decap'
 end
 of_bsn_tlv_v6_dissectors[85] = dissect_of_bsn_tlv_decap_v6
+
+-- child class of_bsn_tlv_digest_alg
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_digest_alg_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_digest_alg.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_digest_alg.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_digest_alg.value')
+    return 'of_bsn_tlv_digest_alg'
+end
+of_bsn_tlv_v6_dissectors[162] = dissect_of_bsn_tlv_digest_alg_v6
 
 -- child class of_bsn_tlv_disable_src_mac_check
 -- Child of of_bsn_tlv

@@ -172,6 +172,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvDecap not supported in version 1.1");
     }
 
+    public OFBsnTlvDigestAlg.Builder buildDigestAlg() {
+        throw new UnsupportedOperationException("OFBsnTlvDigestAlg not supported in version 1.1");
+    }
+    public OFBsnTlvDigestAlg digestAlg(OFBsnDigestAlg value) {
+        throw new UnsupportedOperationException("OFBsnTlvDigestAlg not supported in version 1.1");
+    }
+
     public OFBsnTlvDisableSrcMacCheck disableSrcMacCheck() {
         throw new UnsupportedOperationException("OFBsnTlvDisableSrcMacCheck not supported in version 1.1");
     }
