@@ -1,1 +1,1 @@
-48de0a4852272346b5c1336de9601581b028c3a9 Merge into master from pull request #567: SWLVX-30: adding digest algorithm tlv to loxigen (https://github.com/floodlight/loxigen/pull/567)
+ef5b9949802af196ed35896769040f353f3f68b2 Merge into master from pull request #568: SWLVX-30: reverting the addition of TLV for digest algorithm (https://github.com/floodlight/loxigen/pull/568)

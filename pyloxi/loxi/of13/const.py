@@ -25,15 +25,6 @@ OFPQ_ALL = 4294967295
 OFPQ_MAX_RATE_UNCFG = 65535
 OFPQ_MIN_RATE_UNCFG = 65535
 
-# Identifiers from group of_bsn_digest_alg
-OF_BSN_DIGEST_ALG_MD5 = 1
-OF_BSN_DIGEST_ALG_SHA256 = 2
-
-of_bsn_digest_alg_map = {
-    1: 'OF_BSN_DIGEST_ALG_MD5',
-    2: 'OF_BSN_DIGEST_ALG_SHA256',
-}
-
 # Identifiers from group of_bsn_gentable_error_code
 OF_BSN_GENTABLE_ERROR_UNKNOWN = 0
 OF_BSN_GENTABLE_ERROR_PARAM = 1

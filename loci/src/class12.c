@@ -9401,9 +9401,6 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xa1:
             *id = OF_BSN_TLV_ROUTING_PARAM;
             break;
-        case 0xa2:
-            *id = OF_BSN_TLV_DIGEST_ALG;
-            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -9895,9 +9892,6 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xa1:
             *id = OF_BSN_TLV_ROUTING_PARAM;
-            break;
-        case 0xa2:
-            *id = OF_BSN_TLV_DIGEST_ALG;
             break;
         default:
             *id = OF_BSN_TLV;

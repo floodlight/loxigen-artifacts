@@ -851,8 +851,6 @@ void of_bsn_tlv_data_mask_wire_object_id_get(of_object_t *obj, of_object_id_t *i
 void of_bsn_tlv_data_mask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_decap_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_decap_push_wire_types(of_object_t *obj);
-void of_bsn_tlv_digest_alg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
-void of_bsn_tlv_digest_alg_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_disable_src_mac_check_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_disable_src_mac_check_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_drop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1828,7 +1826,6 @@ typedef of_object_t of_bsn_tlv_crc_enabled_t;
 typedef of_object_t of_bsn_tlv_data_t;
 typedef of_object_t of_bsn_tlv_data_mask_t;
 typedef of_object_t of_bsn_tlv_decap_t;
-typedef of_object_t of_bsn_tlv_digest_alg_t;
 typedef of_object_t of_bsn_tlv_disable_src_mac_check_t;
 typedef of_object_t of_bsn_tlv_drop_t;
 typedef of_object_t of_bsn_tlv_dscp_t;
@@ -3943,11 +3940,6 @@ extern void of_bsn_tlv_data_mask_init(
 extern of_object_t *
     of_bsn_tlv_decap_new(of_version_t version);
 extern void of_bsn_tlv_decap_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
-    of_bsn_tlv_digest_alg_new(of_version_t version);
-extern void of_bsn_tlv_digest_alg_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9906,17 +9898,6 @@ of_bsn_tlv_data_mask_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_decap_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
- * Delete an object of type of_bsn_tlv_digest_alg_t
- * @param obj An instance of type of_bsn_tlv_digest_alg_t
- *
- * \ingroup of_bsn_tlv_digest_alg
- */
-static inline void
-of_bsn_tlv_digest_alg_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23136,15 +23117,6 @@ extern void of_bsn_tlv_decap_value_set(
 extern void of_bsn_tlv_decap_value_get(
     of_bsn_tlv_decap_t *obj,
     uint16_t *value);
-
-/* Unified accessor functions for of_bsn_tlv_digest_alg */
-
-extern void of_bsn_tlv_digest_alg_value_set(
-    of_bsn_tlv_digest_alg_t *obj,
-    uint8_t value);
-extern void of_bsn_tlv_digest_alg_value_get(
-    of_bsn_tlv_digest_alg_t *obj,
-    uint8_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_disable_src_mac_check */
 

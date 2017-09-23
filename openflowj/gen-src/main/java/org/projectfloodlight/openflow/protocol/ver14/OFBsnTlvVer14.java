@@ -106,9 +106,6 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x55:
                    // discriminator value 0x55=0x55 for class OFBsnTlvDecapVer14
                    return OFBsnTlvDecapVer14.READER.readFrom(bb);
-               case (short) 0xa2:
-                   // discriminator value 0xa2=0xa2 for class OFBsnTlvDigestAlgVer14
-                   return OFBsnTlvDigestAlgVer14.READER.readFrom(bb);
                case (short) 0x78:
                    // discriminator value 0x78=0x78 for class OFBsnTlvDisableSrcMacCheckVer14
                    return OFBsnTlvDisableSrcMacCheckVer14.READER.readFrom(bb);

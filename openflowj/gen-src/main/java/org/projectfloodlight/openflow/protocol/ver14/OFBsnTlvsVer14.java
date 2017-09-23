@@ -210,15 +210,6 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvDigestAlg.Builder buildDigestAlg() {
-        return new OFBsnTlvDigestAlgVer14.Builder();
-    }
-    public OFBsnTlvDigestAlg digestAlg(OFBsnDigestAlg value) {
-        return new OFBsnTlvDigestAlgVer14(
-                value
-                    );
-    }
-
     public OFBsnTlvDisableSrcMacCheck disableSrcMacCheck() {
         return OFBsnTlvDisableSrcMacCheckVer14.INSTANCE;
     }
