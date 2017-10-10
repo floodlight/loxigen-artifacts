@@ -2065,6 +2065,7 @@ enum_v4_ofp_bsn_lacp_state = {
 enum_v4_ofp_bsn_routing_param = {
     [1] = "OFP_BSN_ROUTING_PARAM_OSPF_UCAST",
     [2] = "OFP_BSN_ROUTING_PARAM_OSPF_MCAST",
+    [3] = "OFP_BSN_ROUTING_PARAM_ARP_FRR",
 }
 
 enum_v4_ofp_bsn_vport_q_in_q_untagged = {
@@ -3074,6 +3075,7 @@ enum_v5_ofp_bsn_lacp_state = {
 enum_v5_ofp_bsn_routing_param = {
     [1] = "OFP_BSN_ROUTING_PARAM_OSPF_UCAST",
     [2] = "OFP_BSN_ROUTING_PARAM_OSPF_MCAST",
+    [3] = "OFP_BSN_ROUTING_PARAM_ARP_FRR",
 }
 
 enum_v5_ofp_bsn_vport_q_in_q_untagged = {
@@ -4292,6 +4294,7 @@ enum_v6_ofp_bsn_lacp_state = {
 enum_v6_ofp_bsn_routing_param = {
     [1] = "OFP_BSN_ROUTING_PARAM_OSPF_UCAST",
     [2] = "OFP_BSN_ROUTING_PARAM_OSPF_MCAST",
+    [3] = "OFP_BSN_ROUTING_PARAM_ARP_FRR",
 }
 
 enum_v6_ofp_bsn_vport_q_in_q_untagged = {

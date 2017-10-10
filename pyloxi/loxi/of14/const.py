@@ -757,10 +757,12 @@ ofp_bsn_rate_unit_map = {
 # Identifiers from group ofp_bsn_routing_param
 OFP_BSN_ROUTING_PARAM_OSPF_UCAST = 1
 OFP_BSN_ROUTING_PARAM_OSPF_MCAST = 2
+OFP_BSN_ROUTING_PARAM_ARP_FRR = 3
 
 ofp_bsn_routing_param_map = {
     1: 'OFP_BSN_ROUTING_PARAM_OSPF_UCAST',
     2: 'OFP_BSN_ROUTING_PARAM_OSPF_MCAST',
+    3: 'OFP_BSN_ROUTING_PARAM_ARP_FRR',
 }
 
 # Identifiers from group ofp_bsn_speed_capabilities

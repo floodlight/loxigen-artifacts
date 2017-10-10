@@ -33,6 +33,7 @@ public class OFBsnRoutingParamSerializerVer14 {
 
     public final static short BSN_ROUTING_PARAM_OSPF_UCAST_VAL = (short) 0x1;
     public final static short BSN_ROUTING_PARAM_OSPF_MCAST_VAL = (short) 0x2;
+    public final static short BSN_ROUTING_PARAM_ARP_FRR_VAL = (short) 0x3;
 
     public static OFBsnRoutingParam readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -56,6 +57,8 @@ public class OFBsnRoutingParamSerializerVer14 {
                 return OFBsnRoutingParam.BSN_ROUTING_PARAM_OSPF_UCAST;
             case BSN_ROUTING_PARAM_OSPF_MCAST_VAL:
                 return OFBsnRoutingParam.BSN_ROUTING_PARAM_OSPF_MCAST;
+            case BSN_ROUTING_PARAM_ARP_FRR_VAL:
+                return OFBsnRoutingParam.BSN_ROUTING_PARAM_ARP_FRR;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFBsnRoutingParam in version 1.4: " + val);
         }
@@ -68,6 +71,8 @@ public class OFBsnRoutingParamSerializerVer14 {
                 return BSN_ROUTING_PARAM_OSPF_UCAST_VAL;
             case BSN_ROUTING_PARAM_OSPF_MCAST:
                 return BSN_ROUTING_PARAM_OSPF_MCAST_VAL;
+            case BSN_ROUTING_PARAM_ARP_FRR:
+                return BSN_ROUTING_PARAM_ARP_FRR_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFBsnRoutingParam in version 1.4: " + e);
         }
