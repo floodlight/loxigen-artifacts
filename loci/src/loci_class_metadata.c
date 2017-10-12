@@ -4281,6 +4281,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_port_desc_prop_wire_object_id_get,
         .wire_type_set=of_port_desc_prop_bsn_generation_id_push_wire_types,
     },
+    [OF_PORT_DESC_PROP_BSN_MISC_CAPABILITIES] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_port_desc_prop_wire_object_id_get,
+        .wire_type_set=of_port_desc_prop_bsn_misc_capabilities_push_wire_types,
+    },
     [OF_PORT_DESC_PROP_BSN_SPEED_CAPABILITIES] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,

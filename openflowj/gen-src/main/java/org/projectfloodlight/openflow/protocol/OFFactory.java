@@ -380,6 +380,7 @@ public interface OFFactory extends XidGenerator {
     OFPortDescPropBsnForwardErrorCorrection portDescPropBsnForwardErrorCorrection(long configured, long enabled);
     OFPortDescPropBsnGenerationId.Builder buildPortDescPropBsnGenerationId() throws UnsupportedOperationException;
     OFPortDescPropBsnGenerationId portDescPropBsnGenerationId(U64 generationId);
+    OFPortDescPropBsnMiscCapabilities.Builder buildPortDescPropBsnMiscCapabilities() throws UnsupportedOperationException;
     OFPortDescPropBsnSpeedCapabilities.Builder buildPortDescPropBsnSpeedCapabilities() throws UnsupportedOperationException;
     OFPortDescPropBsnUplink portDescPropBsnUplink();
     OFPortDescPropEthernet.Builder buildPortDescPropEthernet() throws UnsupportedOperationException;

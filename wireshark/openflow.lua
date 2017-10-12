@@ -2954,8 +2954,8 @@ enum_v5_of_bsn_vrf_counter = {
     [1] = "OFP_BSN_VRF_COUNTER_PACKETS",
 }
 
-enum_v5_ofp_bsn_vrf_counter_constants = {
-    [4294967295] = "OFP_BSN_VRF_ALL",
+enum_v5_ofp_bsn_misc_capabilities = {
+    [1] = "OFP_BSN_MISC_CAP_FEC",
 }
 
 enum_v5_ofp_bsn_tunnel_type = {
@@ -2991,6 +2991,10 @@ enum_v5_ofp_bsn_strip_vlan = {
     [1] = "OFP_BSN_STRIP_VLAN_FIRST",
     [2] = "OFP_BSN_STRIP_VLAN_SECOND",
     [4] = "OFP_BSN_STRIP_VLAN_THIRD",
+}
+
+enum_v5_ofp_bsn_vrf_counter_constants = {
+    [4294967295] = "OFP_BSN_VRF_ALL",
 }
 
 enum_v5_ofp_port = {
@@ -3263,10 +3267,9 @@ enum_v6_ofp_bsn_lua_upload_flags = {
     [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
 }
 
-enum_v6_ofp_group = {
-    [4294967040] = "OFPG_MAX",
-    [4294967292] = "OFPG_ALL",
-    [4294967295] = "OFPG_ANY",
+enum_v6_ofp_bsn_vport_status = {
+    [0] = "OF_BSN_VPORT_STATUS_OK",
+    [1] = "OF_BSN_VPORT_STATUS_FAILED",
 }
 
 enum_v6_ofp_bsn_auto_negotiation_type = {
@@ -3565,9 +3568,10 @@ enum_v6_ofp_bundle_ctrl_type = {
     [7] = "OFPBCT_DISCARD_REPLY",
 }
 
-enum_v6_ofp_bsn_vport_status = {
-    [0] = "OF_BSN_VPORT_STATUS_OK",
-    [1] = "OF_BSN_VPORT_STATUS_FAILED",
+enum_v6_ofp_group = {
+    [4294967040] = "OFPG_MAX",
+    [4294967292] = "OFPG_ALL",
+    [4294967295] = "OFPG_ANY",
 }
 
 enum_v6_ofp_stat_trigger_flags = {
@@ -4149,8 +4153,8 @@ enum_v6_of_bsn_vrf_counter = {
     [1] = "OFP_BSN_VRF_COUNTER_PACKETS",
 }
 
-enum_v6_ofp_bsn_vrf_counter_constants = {
-    [4294967295] = "OFP_BSN_VRF_ALL",
+enum_v6_ofp_bsn_misc_capabilities = {
+    [1] = "OFP_BSN_MISC_CAP_FEC",
 }
 
 enum_v6_ofp_bundle_features_prop_type = {
@@ -4190,6 +4194,10 @@ enum_v6_ofp_bsn_strip_vlan = {
     [1] = "OFP_BSN_STRIP_VLAN_FIRST",
     [2] = "OFP_BSN_STRIP_VLAN_SECOND",
     [4] = "OFP_BSN_STRIP_VLAN_THIRD",
+}
+
+enum_v6_ofp_bsn_vrf_counter_constants = {
+    [4294967295] = "OFP_BSN_VRF_ALL",
 }
 
 enum_v6_ofp_port = {
@@ -12966,6 +12974,13 @@ fields['of14.port_desc_prop_bsn_generation_id.length'] = ProtoField.uint16("of14
 fields['of14.port_desc_prop_bsn_generation_id.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_generation_id.experimenter", "experimenter", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_generation_id.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_generation_id.exp_type", "exp_type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_generation_id.generation_id'] = ProtoField.uint64("of14.port_desc_prop_bsn_generation_id.generation_id", "generation_id", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_misc_capabilities.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_misc_capabilities.type", "type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_misc_capabilities.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_misc_capabilities.length", "length", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_misc_capabilities.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_misc_capabilities.experimenter", "experimenter", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_misc_capabilities.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_misc_capabilities.exp_type", "exp_type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_misc_capabilities.current'] = ProtoField.uint64("of14.port_desc_prop_bsn_misc_capabilities.current", "current", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_misc_capabilities.available'] = ProtoField.uint64("of14.port_desc_prop_bsn_misc_capabilities.available", "available", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_misc_capabilities.supported'] = ProtoField.uint64("of14.port_desc_prop_bsn_misc_capabilities.supported", "supported", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_speed_capabilities.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_speed_capabilities.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_speed_capabilities.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_speed_capabilities.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_speed_capabilities.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_speed_capabilities.experimenter", "experimenter", base.DEC, nil)
@@ -16330,6 +16345,13 @@ fields['of15.port_desc_prop_bsn_generation_id.length'] = ProtoField.uint16("of15
 fields['of15.port_desc_prop_bsn_generation_id.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_generation_id.experimenter", "experimenter", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_generation_id.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_generation_id.exp_type", "exp_type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_generation_id.generation_id'] = ProtoField.uint64("of15.port_desc_prop_bsn_generation_id.generation_id", "generation_id", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_misc_capabilities.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_misc_capabilities.type", "type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_misc_capabilities.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_misc_capabilities.length", "length", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_misc_capabilities.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_misc_capabilities.experimenter", "experimenter", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_misc_capabilities.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_misc_capabilities.exp_type", "exp_type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_misc_capabilities.current'] = ProtoField.uint64("of15.port_desc_prop_bsn_misc_capabilities.current", "current", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_misc_capabilities.available'] = ProtoField.uint64("of15.port_desc_prop_bsn_misc_capabilities.available", "available", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_misc_capabilities.supported'] = ProtoField.uint64("of15.port_desc_prop_bsn_misc_capabilities.supported", "supported", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_speed_capabilities.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_speed_capabilities.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_speed_capabilities.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_speed_capabilities.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_speed_capabilities.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_speed_capabilities.experimenter", "experimenter", base.DEC, nil)
@@ -25471,6 +25493,13 @@ p_of.fields = {
     fields['of14.port_desc_prop_bsn_generation_id.experimenter'],
     fields['of14.port_desc_prop_bsn_generation_id.exp_type'],
     fields['of14.port_desc_prop_bsn_generation_id.generation_id'],
+    fields['of14.port_desc_prop_bsn_misc_capabilities.type'],
+    fields['of14.port_desc_prop_bsn_misc_capabilities.length'],
+    fields['of14.port_desc_prop_bsn_misc_capabilities.experimenter'],
+    fields['of14.port_desc_prop_bsn_misc_capabilities.exp_type'],
+    fields['of14.port_desc_prop_bsn_misc_capabilities.current'],
+    fields['of14.port_desc_prop_bsn_misc_capabilities.available'],
+    fields['of14.port_desc_prop_bsn_misc_capabilities.supported'],
     fields['of14.port_desc_prop_bsn_speed_capabilities.type'],
     fields['of14.port_desc_prop_bsn_speed_capabilities.length'],
     fields['of14.port_desc_prop_bsn_speed_capabilities.experimenter'],
@@ -28835,6 +28864,13 @@ p_of.fields = {
     fields['of15.port_desc_prop_bsn_generation_id.experimenter'],
     fields['of15.port_desc_prop_bsn_generation_id.exp_type'],
     fields['of15.port_desc_prop_bsn_generation_id.generation_id'],
+    fields['of15.port_desc_prop_bsn_misc_capabilities.type'],
+    fields['of15.port_desc_prop_bsn_misc_capabilities.length'],
+    fields['of15.port_desc_prop_bsn_misc_capabilities.experimenter'],
+    fields['of15.port_desc_prop_bsn_misc_capabilities.exp_type'],
+    fields['of15.port_desc_prop_bsn_misc_capabilities.current'],
+    fields['of15.port_desc_prop_bsn_misc_capabilities.available'],
+    fields['of15.port_desc_prop_bsn_misc_capabilities.supported'],
     fields['of15.port_desc_prop_bsn_speed_capabilities.type'],
     fields['of15.port_desc_prop_bsn_speed_capabilities.length'],
     fields['of15.port_desc_prop_bsn_speed_capabilities.experimenter'],
@@ -51380,6 +51416,20 @@ function dissect_of_port_desc_prop_bsn_generation_id_v5(reader, subtree)
 end
 of_port_desc_prop_bsn_v5_dissectors[1] = dissect_of_port_desc_prop_bsn_generation_id_v5
 
+-- child class of_port_desc_prop_bsn_misc_capabilities
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_misc_capabilities_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_misc_capabilities.type')
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_misc_capabilities.length')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_misc_capabilities.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_misc_capabilities.exp_type')
+    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_misc_capabilities.current')
+    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_misc_capabilities.available')
+    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_misc_capabilities.supported')
+    return 'of_port_desc_prop_bsn_misc_capabilities'
+end
+of_port_desc_prop_bsn_v5_dissectors[5] = dissect_of_port_desc_prop_bsn_misc_capabilities_v5
+
 -- child class of_port_desc_prop_bsn_speed_capabilities
 -- Child of of_port_desc_prop_bsn
 function dissect_of_port_desc_prop_bsn_speed_capabilities_v5(reader, subtree)
@@ -60303,6 +60353,20 @@ function dissect_of_port_desc_prop_bsn_generation_id_v6(reader, subtree)
     return 'of_port_desc_prop_bsn_generation_id'
 end
 of_port_desc_prop_bsn_v6_dissectors[1] = dissect_of_port_desc_prop_bsn_generation_id_v6
+
+-- child class of_port_desc_prop_bsn_misc_capabilities
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_misc_capabilities_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_misc_capabilities.type')
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_misc_capabilities.length')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_misc_capabilities.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_misc_capabilities.exp_type')
+    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_misc_capabilities.current')
+    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_misc_capabilities.available')
+    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_misc_capabilities.supported')
+    return 'of_port_desc_prop_bsn_misc_capabilities'
+end
+of_port_desc_prop_bsn_v6_dissectors[5] = dissect_of_port_desc_prop_bsn_misc_capabilities_v6
 
 -- child class of_port_desc_prop_bsn_speed_capabilities
 -- Child of of_port_desc_prop_bsn

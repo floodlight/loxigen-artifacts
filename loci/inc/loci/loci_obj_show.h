@@ -1728,6 +1728,7 @@ int of_port_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_obje
 int of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_ethernet_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);

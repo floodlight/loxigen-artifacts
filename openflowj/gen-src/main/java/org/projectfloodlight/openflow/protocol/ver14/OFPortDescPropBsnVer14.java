@@ -64,6 +64,9 @@ abstract class OFPortDescPropBsnVer14 {
                case 0x1:
                    // discriminator value 0x1L=0x1L for class OFPortDescPropBsnGenerationIdVer14
                    return OFPortDescPropBsnGenerationIdVer14.READER.readFrom(bb);
+               case 0x5:
+                   // discriminator value 0x5L=0x5L for class OFPortDescPropBsnMiscCapabilitiesVer14
+                   return OFPortDescPropBsnMiscCapabilitiesVer14.READER.readFrom(bb);
                case 0x4:
                    // discriminator value 0x4L=0x4L for class OFPortDescPropBsnSpeedCapabilitiesVer14
                    return OFPortDescPropBsnSpeedCapabilitiesVer14.READER.readFrom(bb);

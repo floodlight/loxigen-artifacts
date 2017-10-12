@@ -11470,6 +11470,33 @@ typedef struct of_port_desc_prop_bsn_forward_error_correction_s of_port_desc_pro
 typedef struct of_port_desc_prop_bsn_generation_id_s of_port_desc_prop_bsn_generation_id_t;
 
 /**
+ * Structure for of_port_desc_prop_bsn_misc_capabilities object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_bsn_misc_capabilities_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_bsn_misc_capabilities_uint32_get_f and _set_f.
+ *
+ * @param current_get/set ( OF_1_4).
+ *   Accessors for current, a variable of type uint64.  Functions
+ *   are of type of_port_desc_prop_bsn_misc_capabilities_uint64_get_f and _set_f.
+ *
+ * @param available_get/set ( OF_1_4).
+ *   Accessors for available, a variable of type uint64.  Functions
+ *   are of type of_port_desc_prop_bsn_misc_capabilities_uint64_get_f and _set_f.
+ *
+ * @param supported_get/set ( OF_1_4).
+ *   Accessors for supported, a variable of type uint64.  Functions
+ *   are of type of_port_desc_prop_bsn_misc_capabilities_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_port_desc_prop_bsn_misc_capabilities_s of_port_desc_prop_bsn_misc_capabilities_t;
+
+/**
  * Structure for of_port_desc_prop_bsn_speed_capabilities object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

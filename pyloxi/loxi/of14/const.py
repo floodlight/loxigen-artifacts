@@ -542,6 +542,13 @@ ofp_bsn_lua_upload_flags_map = {
     2: 'OFP_BSN_LUA_UPLOAD_FORCE',
 }
 
+# Identifiers from group ofp_bsn_misc_capabilities
+OFP_BSN_MISC_CAP_FEC = 1
+
+ofp_bsn_misc_capabilities_map = {
+    1: 'OFP_BSN_MISC_CAP_FEC',
+}
+
 # Identifiers from group ofp_bsn_pktin_flag
 OFP_BSN_PKTIN_FLAG_PDU = 1
 OFP_BSN_PKTIN_FLAG_NEW_HOST = 2

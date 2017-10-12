@@ -15989,6 +15989,15 @@ extern int of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_populate_scalars(
 extern int of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_check_scalars(
     of_port_desc_prop_bsn_generation_id_t *obj, int value);
 
+extern int of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_populate(
+    of_port_desc_prop_bsn_misc_capabilities_t *obj, int value);
+extern int of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_check(
+    of_port_desc_prop_bsn_misc_capabilities_t *obj, int value);
+extern int of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_populate_scalars(
+    of_port_desc_prop_bsn_misc_capabilities_t *obj, int value);
+extern int of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_check_scalars(
+    of_port_desc_prop_bsn_misc_capabilities_t *obj, int value);
+
 extern int of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_populate(
     of_port_desc_prop_bsn_speed_capabilities_t *obj, int value);
 extern int of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_check(

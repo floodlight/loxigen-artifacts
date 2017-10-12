@@ -1818,6 +1818,7 @@ static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_OF_VERSIO
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_breakout_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_uplink_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_ethernet_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -46343,6 +46344,8 @@ loci_validate_of_port_desc_prop_bsn_OF_VERSION_1_4(uint8_t *data, int len, int *
         return loci_validate_of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4(data, len, out_len);
     case 0x1:
         return loci_validate_of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4(data, len, out_len);
+    case 0x5:
+        return loci_validate_of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4(data, len, out_len);
     case 0x4:
         return loci_validate_of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4(data, len, out_len);
     case 0x0:
@@ -46410,6 +46413,28 @@ loci_validate_of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4(uint8_t *data, 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 20) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 36) {
         return -1;
     }
 

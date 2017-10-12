@@ -1537,6 +1537,10 @@ public class OFFactoryVer13 implements OFFactory {
         throw new UnsupportedOperationException("OFPortDescPropBsnGenerationId not supported in version 1.3");
     }
 
+    public OFPortDescPropBsnMiscCapabilities.Builder buildPortDescPropBsnMiscCapabilities() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnMiscCapabilities not supported in version 1.3");
+    }
+
     public OFPortDescPropBsnSpeedCapabilities.Builder buildPortDescPropBsnSpeedCapabilities() {
         throw new UnsupportedOperationException("OFPortDescPropBsnSpeedCapabilities not supported in version 1.3");
     }

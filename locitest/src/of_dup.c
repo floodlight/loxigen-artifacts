@@ -61057,6 +61057,10 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
         return of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_MISC_CAPABILITIES) {
+        return of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_PORT_DESC_PROP_BSN_UPLINK) {
         return of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_dup(src);
     }
@@ -61165,6 +61169,44 @@ of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(
 
     of_port_desc_prop_bsn_generation_id_generation_id_get(src, &val64);
     of_port_desc_prop_bsn_generation_id_generation_id_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_port_desc_prop_bsn_misc_capabilities
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_port_desc_prop_bsn_misc_capabilities.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_port_desc_prop_bsn_misc_capabilities_t *
+of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(
+    of_port_desc_prop_bsn_misc_capabilities_t *src)
+{
+    of_port_desc_prop_bsn_misc_capabilities_t *dst;
+    uint32_t val32;
+    uint64_t val64;
+
+    if ((dst = of_port_desc_prop_bsn_misc_capabilities_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_port_desc_prop_bsn_misc_capabilities_experimenter_get(src, &val32);
+    of_port_desc_prop_bsn_misc_capabilities_experimenter_set(dst, val32);
+
+    of_port_desc_prop_bsn_misc_capabilities_exp_type_get(src, &val32);
+    of_port_desc_prop_bsn_misc_capabilities_exp_type_set(dst, val32);
+
+    of_port_desc_prop_bsn_misc_capabilities_current_get(src, &val64);
+    of_port_desc_prop_bsn_misc_capabilities_current_set(dst, val64);
+
+    of_port_desc_prop_bsn_misc_capabilities_available_get(src, &val64);
+    of_port_desc_prop_bsn_misc_capabilities_available_set(dst, val64);
+
+    of_port_desc_prop_bsn_misc_capabilities_supported_get(src, &val64);
+    of_port_desc_prop_bsn_misc_capabilities_supported_set(dst, val64);
 
     return dst;
 }
@@ -77671,6 +77713,19 @@ of_port_desc_prop_bsn_generation_id_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_port_desc_prop_bsn_misc_capabilities_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
