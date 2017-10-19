@@ -1655,6 +1655,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_push_vlan_on_egress_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_push_vlan_on_ingress_dup(
         of_object_t *src);
 
@@ -2436,6 +2440,94 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_vxlan_network_id_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_dst_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_dst_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_src_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_src_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_label_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_label_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_mark_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_mark_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_dst_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_dst_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_proto_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_proto_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_src_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_src_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_state_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_state_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_dst_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_dst_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_src_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_src_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_zone_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_zone_masked_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -4959,6 +5051,94 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_label_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_mark_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_state_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_zone_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_oxm_eth_dst_OF_VERSION_1_2_dup(
         of_object_t *src);
 
@@ -6647,6 +6827,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -7388,6 +7572,94 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_label_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_mark_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_state_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_zone_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9411,6 +9683,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -10140,6 +10416,94 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_label_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_mark_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_state_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_zone_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

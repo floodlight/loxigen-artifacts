@@ -411,6 +411,160 @@ public class OFOxmsVer10 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmBsnVrfMasked not supported in version 1.0");
     }
 
+    public OFOxmConnTrackingIpv6Dst.Builder buildConnTrackingIpv6Dst() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingIpv6Dst not supported in version 1.0");
+    }
+    public OFOxmConnTrackingIpv6Dst connTrackingIpv6Dst(IPv6Address value) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingIpv6Dst not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingIpv6DstMasked.Builder buildConnTrackingIpv6DstMasked() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingIpv6DstMasked not supported in version 1.0");
+    }
+    public OFOxmConnTrackingIpv6DstMasked connTrackingIpv6DstMasked(IPv6Address value, IPv6Address mask) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingIpv6DstMasked not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingIpv6Src.Builder buildConnTrackingIpv6Src() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingIpv6Src not supported in version 1.0");
+    }
+    public OFOxmConnTrackingIpv6Src connTrackingIpv6Src(IPv6Address value) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingIpv6Src not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingIpv6SrcMasked.Builder buildConnTrackingIpv6SrcMasked() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingIpv6SrcMasked not supported in version 1.0");
+    }
+    public OFOxmConnTrackingIpv6SrcMasked connTrackingIpv6SrcMasked(IPv6Address value, IPv6Address mask) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingIpv6SrcMasked not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingLabel.Builder buildConnTrackingLabel() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingLabel not supported in version 1.0");
+    }
+    public OFOxmConnTrackingLabel connTrackingLabel(U128 value) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingLabel not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingLabelMasked.Builder buildConnTrackingLabelMasked() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingLabelMasked not supported in version 1.0");
+    }
+    public OFOxmConnTrackingLabelMasked connTrackingLabelMasked(U128 value, U128 mask) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingLabelMasked not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingMark.Builder buildConnTrackingMark() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingMark not supported in version 1.0");
+    }
+    public OFOxmConnTrackingMark connTrackingMark(U32 value) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingMark not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingMarkMasked.Builder buildConnTrackingMarkMasked() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingMarkMasked not supported in version 1.0");
+    }
+    public OFOxmConnTrackingMarkMasked connTrackingMarkMasked(U32 value, U32 mask) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingMarkMasked not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingNwDst.Builder buildConnTrackingNwDst() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingNwDst not supported in version 1.0");
+    }
+    public OFOxmConnTrackingNwDst connTrackingNwDst(U32 value) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingNwDst not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingNwDstMasked.Builder buildConnTrackingNwDstMasked() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingNwDstMasked not supported in version 1.0");
+    }
+    public OFOxmConnTrackingNwDstMasked connTrackingNwDstMasked(U32 value, U32 mask) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingNwDstMasked not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingNwProto.Builder buildConnTrackingNwProto() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingNwProto not supported in version 1.0");
+    }
+    public OFOxmConnTrackingNwProto connTrackingNwProto(U8 value) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingNwProto not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingNwProtoMasked.Builder buildConnTrackingNwProtoMasked() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingNwProtoMasked not supported in version 1.0");
+    }
+    public OFOxmConnTrackingNwProtoMasked connTrackingNwProtoMasked(U8 value, U8 mask) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingNwProtoMasked not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingNwSrc.Builder buildConnTrackingNwSrc() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingNwSrc not supported in version 1.0");
+    }
+    public OFOxmConnTrackingNwSrc connTrackingNwSrc(U32 value) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingNwSrc not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingNwSrcMasked.Builder buildConnTrackingNwSrcMasked() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingNwSrcMasked not supported in version 1.0");
+    }
+    public OFOxmConnTrackingNwSrcMasked connTrackingNwSrcMasked(U32 value, U32 mask) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingNwSrcMasked not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingState.Builder buildConnTrackingState() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingState not supported in version 1.0");
+    }
+    public OFOxmConnTrackingState connTrackingState(U32 value) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingState not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingStateMasked.Builder buildConnTrackingStateMasked() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingStateMasked not supported in version 1.0");
+    }
+    public OFOxmConnTrackingStateMasked connTrackingStateMasked(U32 value, U32 mask) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingStateMasked not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingTpDst.Builder buildConnTrackingTpDst() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingTpDst not supported in version 1.0");
+    }
+    public OFOxmConnTrackingTpDst connTrackingTpDst(TransportPort value) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingTpDst not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingTpDstMasked.Builder buildConnTrackingTpDstMasked() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingTpDstMasked not supported in version 1.0");
+    }
+    public OFOxmConnTrackingTpDstMasked connTrackingTpDstMasked(TransportPort value, TransportPort mask) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingTpDstMasked not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingTpSrc.Builder buildConnTrackingTpSrc() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingTpSrc not supported in version 1.0");
+    }
+    public OFOxmConnTrackingTpSrc connTrackingTpSrc(TransportPort value) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingTpSrc not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingTpSrcMasked.Builder buildConnTrackingTpSrcMasked() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingTpSrcMasked not supported in version 1.0");
+    }
+    public OFOxmConnTrackingTpSrcMasked connTrackingTpSrcMasked(TransportPort value, TransportPort mask) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingTpSrcMasked not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingZone.Builder buildConnTrackingZone() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingZone not supported in version 1.0");
+    }
+    public OFOxmConnTrackingZone connTrackingZone(U16 value) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingZone not supported in version 1.0");
+    }
+
+    public OFOxmConnTrackingZoneMasked.Builder buildConnTrackingZoneMasked() {
+        throw new UnsupportedOperationException("OFOxmConnTrackingZoneMasked not supported in version 1.0");
+    }
+    public OFOxmConnTrackingZoneMasked connTrackingZoneMasked(U16 value, U16 mask) {
+        throw new UnsupportedOperationException("OFOxmConnTrackingZoneMasked not supported in version 1.0");
+    }
+
     public OFOxmEthDst.Builder buildEthDst() {
         throw new UnsupportedOperationException("OFOxmEthDst not supported in version 1.0");
     }
@@ -1130,6 +1284,28 @@ public class OFOxmsVer10 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnVlanXlatePortGroupId((ClassId)((Object)value)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrf((VRF)((Object)value)));
+            case CONN_TRACKING_IPV6_DST:
+                return (OFOxm<F>)((Object)connTrackingIpv6Dst((IPv6Address)((Object)value)));
+            case CONN_TRACKING_IPV6_SRC:
+                return (OFOxm<F>)((Object)connTrackingIpv6Src((IPv6Address)((Object)value)));
+            case CONN_TRACKING_LABEL:
+                return (OFOxm<F>)((Object)connTrackingLabel((U128)((Object)value)));
+            case CONN_TRACKING_MARK:
+                return (OFOxm<F>)((Object)connTrackingMark((U32)((Object)value)));
+            case CONN_TRACKING_NW_DST:
+                return (OFOxm<F>)((Object)connTrackingNwDst((U32)((Object)value)));
+            case CONN_TRACKING_NW_PROTO:
+                return (OFOxm<F>)((Object)connTrackingNwProto((U8)((Object)value)));
+            case CONN_TRACKING_NW_SRC:
+                return (OFOxm<F>)((Object)connTrackingNwSrc((U32)((Object)value)));
+            case CONN_TRACKING_STATE:
+                return (OFOxm<F>)((Object)connTrackingState((U32)((Object)value)));
+            case CONN_TRACKING_TP_DST:
+                return (OFOxm<F>)((Object)connTrackingTpDst((TransportPort)((Object)value)));
+            case CONN_TRACKING_TP_SRC:
+                return (OFOxm<F>)((Object)connTrackingTpSrc((TransportPort)((Object)value)));
+            case CONN_TRACKING_ZONE:
+                return (OFOxm<F>)((Object)connTrackingZone((U16)((Object)value)));
             case ETH_DST:
                 return (OFOxm<F>)((Object)ethDst((MacAddress)((Object)value)));
             case ETH_SRC:
@@ -1286,6 +1462,28 @@ public class OFOxmsVer10 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnVlanXlatePortGroupIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)value), (VRF)((Object)mask)));
+            case CONN_TRACKING_IPV6_DST:
+                return (OFOxm<F>)((Object)connTrackingIpv6DstMasked((IPv6Address)((Object)value), (IPv6Address)((Object)mask)));
+            case CONN_TRACKING_IPV6_SRC:
+                return (OFOxm<F>)((Object)connTrackingIpv6SrcMasked((IPv6Address)((Object)value), (IPv6Address)((Object)mask)));
+            case CONN_TRACKING_LABEL:
+                return (OFOxm<F>)((Object)connTrackingLabelMasked((U128)((Object)value), (U128)((Object)mask)));
+            case CONN_TRACKING_MARK:
+                return (OFOxm<F>)((Object)connTrackingMarkMasked((U32)((Object)value), (U32)((Object)mask)));
+            case CONN_TRACKING_NW_DST:
+                return (OFOxm<F>)((Object)connTrackingNwDstMasked((U32)((Object)value), (U32)((Object)mask)));
+            case CONN_TRACKING_NW_PROTO:
+                return (OFOxm<F>)((Object)connTrackingNwProtoMasked((U8)((Object)value), (U8)((Object)mask)));
+            case CONN_TRACKING_NW_SRC:
+                return (OFOxm<F>)((Object)connTrackingNwSrcMasked((U32)((Object)value), (U32)((Object)mask)));
+            case CONN_TRACKING_STATE:
+                return (OFOxm<F>)((Object)connTrackingStateMasked((U32)((Object)value), (U32)((Object)mask)));
+            case CONN_TRACKING_TP_DST:
+                return (OFOxm<F>)((Object)connTrackingTpDstMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
+            case CONN_TRACKING_TP_SRC:
+                return (OFOxm<F>)((Object)connTrackingTpSrcMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
+            case CONN_TRACKING_ZONE:
+                return (OFOxm<F>)((Object)connTrackingZoneMasked((U16)((Object)value), (U16)((Object)mask)));
             case ETH_DST:
                 return (OFOxm<F>)((Object)ethDstMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
             case ETH_SRC:
@@ -1442,6 +1640,28 @@ public class OFOxmsVer10 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnVlanXlatePortGroupIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)(masked.getValue())), (VRF)((Object)(masked.getMask()))));
+            case CONN_TRACKING_IPV6_DST:
+                return (OFOxm<F>)((Object)connTrackingIpv6DstMasked((IPv6Address)((Object)(masked.getValue())), (IPv6Address)((Object)(masked.getMask()))));
+            case CONN_TRACKING_IPV6_SRC:
+                return (OFOxm<F>)((Object)connTrackingIpv6SrcMasked((IPv6Address)((Object)(masked.getValue())), (IPv6Address)((Object)(masked.getMask()))));
+            case CONN_TRACKING_LABEL:
+                return (OFOxm<F>)((Object)connTrackingLabelMasked((U128)((Object)(masked.getValue())), (U128)((Object)(masked.getMask()))));
+            case CONN_TRACKING_MARK:
+                return (OFOxm<F>)((Object)connTrackingMarkMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
+            case CONN_TRACKING_NW_DST:
+                return (OFOxm<F>)((Object)connTrackingNwDstMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
+            case CONN_TRACKING_NW_PROTO:
+                return (OFOxm<F>)((Object)connTrackingNwProtoMasked((U8)((Object)(masked.getValue())), (U8)((Object)(masked.getMask()))));
+            case CONN_TRACKING_NW_SRC:
+                return (OFOxm<F>)((Object)connTrackingNwSrcMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
+            case CONN_TRACKING_STATE:
+                return (OFOxm<F>)((Object)connTrackingStateMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
+            case CONN_TRACKING_TP_DST:
+                return (OFOxm<F>)((Object)connTrackingTpDstMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
+            case CONN_TRACKING_TP_SRC:
+                return (OFOxm<F>)((Object)connTrackingTpSrcMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
+            case CONN_TRACKING_ZONE:
+                return (OFOxm<F>)((Object)connTrackingZoneMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             case ETH_DST:
                 return (OFOxm<F>)((Object)ethDstMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
             case ETH_SRC:

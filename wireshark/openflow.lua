@@ -7028,6 +7028,61 @@ fields['of12.oxm_bsn_vrf.value'] = ProtoField.uint32("of12.oxm_bsn_vrf.value", "
 fields['of12.oxm_bsn_vrf_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_vrf_masked.type_len", "type_len", base.DEC, nil)
 fields['of12.oxm_bsn_vrf_masked.value'] = ProtoField.uint32("of12.oxm_bsn_vrf_masked.value", "value", base.DEC, nil)
 fields['of12.oxm_bsn_vrf_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_vrf_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_conn_tracking_ipv6_dst.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_ipv6_dst.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_ipv6_dst.value'] = ProtoField.ipv6("of12.oxm_conn_tracking_ipv6_dst.value", "value")
+fields['of12.oxm_conn_tracking_ipv6_dst_masked.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_ipv6_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_ipv6_dst_masked.value'] = ProtoField.ipv6("of12.oxm_conn_tracking_ipv6_dst_masked.value", "value")
+fields['of12.oxm_conn_tracking_ipv6_dst_masked.value_mask'] = ProtoField.ipv6("of12.oxm_conn_tracking_ipv6_dst_masked.value_mask", "value_mask")
+fields['of12.oxm_conn_tracking_ipv6_src.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_ipv6_src.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_ipv6_src.value'] = ProtoField.ipv6("of12.oxm_conn_tracking_ipv6_src.value", "value")
+fields['of12.oxm_conn_tracking_ipv6_src_masked.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_ipv6_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_ipv6_src_masked.value'] = ProtoField.ipv6("of12.oxm_conn_tracking_ipv6_src_masked.value", "value")
+fields['of12.oxm_conn_tracking_ipv6_src_masked.value_mask'] = ProtoField.ipv6("of12.oxm_conn_tracking_ipv6_src_masked.value_mask", "value_mask")
+fields['of12.oxm_conn_tracking_label.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_label.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_label.value'] = ProtoField.bytes("of12.oxm_conn_tracking_label.value", "value")
+fields['of12.oxm_conn_tracking_label_masked.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_label_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_label_masked.value'] = ProtoField.bytes("of12.oxm_conn_tracking_label_masked.value", "value")
+fields['of12.oxm_conn_tracking_label_masked.value_mask'] = ProtoField.bytes("of12.oxm_conn_tracking_label_masked.value_mask", "value_mask")
+fields['of12.oxm_conn_tracking_mark.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_mark.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_mark.value'] = ProtoField.uint32("of12.oxm_conn_tracking_mark.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_mark_masked.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_mark_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_mark_masked.value'] = ProtoField.uint32("of12.oxm_conn_tracking_mark_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_mark_masked.value_mask'] = ProtoField.uint32("of12.oxm_conn_tracking_mark_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_dst.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_nw_dst.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_dst.value'] = ProtoField.uint32("of12.oxm_conn_tracking_nw_dst.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_dst_masked.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_nw_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_dst_masked.value'] = ProtoField.uint32("of12.oxm_conn_tracking_nw_dst_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_dst_masked.value_mask'] = ProtoField.uint32("of12.oxm_conn_tracking_nw_dst_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_proto.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_nw_proto.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_proto.value'] = ProtoField.uint8("of12.oxm_conn_tracking_nw_proto.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_proto_masked.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_nw_proto_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_proto_masked.value'] = ProtoField.uint8("of12.oxm_conn_tracking_nw_proto_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_proto_masked.value_mask'] = ProtoField.uint8("of12.oxm_conn_tracking_nw_proto_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_src.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_nw_src.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_src.value'] = ProtoField.uint32("of12.oxm_conn_tracking_nw_src.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_src_masked.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_nw_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_src_masked.value'] = ProtoField.uint32("of12.oxm_conn_tracking_nw_src_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_nw_src_masked.value_mask'] = ProtoField.uint32("of12.oxm_conn_tracking_nw_src_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_conn_tracking_state.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_state.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_state.value'] = ProtoField.uint32("of12.oxm_conn_tracking_state.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_state_masked.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_state_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_state_masked.value'] = ProtoField.uint32("of12.oxm_conn_tracking_state_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_state_masked.value_mask'] = ProtoField.uint32("of12.oxm_conn_tracking_state_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_conn_tracking_tp_dst.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_tp_dst.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_tp_dst.value'] = ProtoField.uint16("of12.oxm_conn_tracking_tp_dst.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_tp_dst_masked.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_tp_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_tp_dst_masked.value'] = ProtoField.uint16("of12.oxm_conn_tracking_tp_dst_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_tp_dst_masked.value_mask'] = ProtoField.uint16("of12.oxm_conn_tracking_tp_dst_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_conn_tracking_tp_src.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_tp_src.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_tp_src.value'] = ProtoField.uint16("of12.oxm_conn_tracking_tp_src.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_tp_src_masked.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_tp_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_tp_src_masked.value'] = ProtoField.uint16("of12.oxm_conn_tracking_tp_src_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_tp_src_masked.value_mask'] = ProtoField.uint16("of12.oxm_conn_tracking_tp_src_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_conn_tracking_zone.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_zone.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_zone.value'] = ProtoField.uint16("of12.oxm_conn_tracking_zone.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_zone_masked.type_len'] = ProtoField.uint32("of12.oxm_conn_tracking_zone_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_conn_tracking_zone_masked.value'] = ProtoField.uint16("of12.oxm_conn_tracking_zone_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_conn_tracking_zone_masked.value_mask'] = ProtoField.uint16("of12.oxm_conn_tracking_zone_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of12.oxm_eth_dst.type_len'] = ProtoField.uint32("of12.oxm_eth_dst.type_len", "type_len", base.DEC, nil)
 fields['of12.oxm_eth_dst.value'] = ProtoField.ether("of12.oxm_eth_dst.value", "value")
 fields['of12.oxm_eth_dst_masked.type_len'] = ProtoField.uint32("of12.oxm_eth_dst_masked.type_len", "type_len", base.DEC, nil)
@@ -8756,6 +8811,8 @@ fields['of13.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of13.bsn_tlv_p
 fields['of13.bsn_tlv_priority.type'] = ProtoField.uint16("of13.bsn_tlv_priority.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_priority.length'] = ProtoField.uint16("of13.bsn_tlv_priority.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_priority.value'] = ProtoField.uint32("of13.bsn_tlv_priority.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_push_vlan_on_egress.type'] = ProtoField.uint16("of13.bsn_tlv_push_vlan_on_egress.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_push_vlan_on_egress.length'] = ProtoField.uint16("of13.bsn_tlv_push_vlan_on_egress.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_push_vlan_on_ingress.type'] = ProtoField.uint16("of13.bsn_tlv_push_vlan_on_ingress.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_push_vlan_on_ingress.length'] = ProtoField.uint16("of13.bsn_tlv_push_vlan_on_ingress.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_qos_priority.type'] = ProtoField.uint16("of13.bsn_tlv_qos_priority.type", "type", base.DEC, nil)
@@ -9782,6 +9839,61 @@ fields['of13.oxm_bsn_vxlan_network_id.value'] = ProtoField.uint32("of13.oxm_bsn_
 fields['of13.oxm_bsn_vxlan_network_id_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_vxlan_network_id_masked.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_bsn_vxlan_network_id_masked.value'] = ProtoField.uint32("of13.oxm_bsn_vxlan_network_id_masked.value", "value", base.DEC, nil)
 fields['of13.oxm_bsn_vxlan_network_id_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_vxlan_network_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_conn_tracking_ipv6_dst.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_ipv6_dst.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_ipv6_dst.value'] = ProtoField.ipv6("of13.oxm_conn_tracking_ipv6_dst.value", "value")
+fields['of13.oxm_conn_tracking_ipv6_dst_masked.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_ipv6_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_ipv6_dst_masked.value'] = ProtoField.ipv6("of13.oxm_conn_tracking_ipv6_dst_masked.value", "value")
+fields['of13.oxm_conn_tracking_ipv6_dst_masked.value_mask'] = ProtoField.ipv6("of13.oxm_conn_tracking_ipv6_dst_masked.value_mask", "value_mask")
+fields['of13.oxm_conn_tracking_ipv6_src.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_ipv6_src.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_ipv6_src.value'] = ProtoField.ipv6("of13.oxm_conn_tracking_ipv6_src.value", "value")
+fields['of13.oxm_conn_tracking_ipv6_src_masked.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_ipv6_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_ipv6_src_masked.value'] = ProtoField.ipv6("of13.oxm_conn_tracking_ipv6_src_masked.value", "value")
+fields['of13.oxm_conn_tracking_ipv6_src_masked.value_mask'] = ProtoField.ipv6("of13.oxm_conn_tracking_ipv6_src_masked.value_mask", "value_mask")
+fields['of13.oxm_conn_tracking_label.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_label.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_label.value'] = ProtoField.bytes("of13.oxm_conn_tracking_label.value", "value")
+fields['of13.oxm_conn_tracking_label_masked.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_label_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_label_masked.value'] = ProtoField.bytes("of13.oxm_conn_tracking_label_masked.value", "value")
+fields['of13.oxm_conn_tracking_label_masked.value_mask'] = ProtoField.bytes("of13.oxm_conn_tracking_label_masked.value_mask", "value_mask")
+fields['of13.oxm_conn_tracking_mark.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_mark.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_mark.value'] = ProtoField.uint32("of13.oxm_conn_tracking_mark.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_mark_masked.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_mark_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_mark_masked.value'] = ProtoField.uint32("of13.oxm_conn_tracking_mark_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_mark_masked.value_mask'] = ProtoField.uint32("of13.oxm_conn_tracking_mark_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_dst.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_nw_dst.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_dst.value'] = ProtoField.uint32("of13.oxm_conn_tracking_nw_dst.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_dst_masked.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_nw_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_dst_masked.value'] = ProtoField.uint32("of13.oxm_conn_tracking_nw_dst_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_dst_masked.value_mask'] = ProtoField.uint32("of13.oxm_conn_tracking_nw_dst_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_proto.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_nw_proto.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_proto.value'] = ProtoField.uint8("of13.oxm_conn_tracking_nw_proto.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_proto_masked.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_nw_proto_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_proto_masked.value'] = ProtoField.uint8("of13.oxm_conn_tracking_nw_proto_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_proto_masked.value_mask'] = ProtoField.uint8("of13.oxm_conn_tracking_nw_proto_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_src.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_nw_src.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_src.value'] = ProtoField.uint32("of13.oxm_conn_tracking_nw_src.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_src_masked.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_nw_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_src_masked.value'] = ProtoField.uint32("of13.oxm_conn_tracking_nw_src_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_nw_src_masked.value_mask'] = ProtoField.uint32("of13.oxm_conn_tracking_nw_src_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_conn_tracking_state.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_state.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_state.value'] = ProtoField.uint32("of13.oxm_conn_tracking_state.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_state_masked.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_state_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_state_masked.value'] = ProtoField.uint32("of13.oxm_conn_tracking_state_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_state_masked.value_mask'] = ProtoField.uint32("of13.oxm_conn_tracking_state_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_conn_tracking_tp_dst.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_tp_dst.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_tp_dst.value'] = ProtoField.uint16("of13.oxm_conn_tracking_tp_dst.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_tp_dst_masked.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_tp_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_tp_dst_masked.value'] = ProtoField.uint16("of13.oxm_conn_tracking_tp_dst_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_tp_dst_masked.value_mask'] = ProtoField.uint16("of13.oxm_conn_tracking_tp_dst_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_conn_tracking_tp_src.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_tp_src.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_tp_src.value'] = ProtoField.uint16("of13.oxm_conn_tracking_tp_src.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_tp_src_masked.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_tp_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_tp_src_masked.value'] = ProtoField.uint16("of13.oxm_conn_tracking_tp_src_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_tp_src_masked.value_mask'] = ProtoField.uint16("of13.oxm_conn_tracking_tp_src_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_conn_tracking_zone.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_zone.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_zone.value'] = ProtoField.uint16("of13.oxm_conn_tracking_zone.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_zone_masked.type_len'] = ProtoField.uint32("of13.oxm_conn_tracking_zone_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_conn_tracking_zone_masked.value'] = ProtoField.uint16("of13.oxm_conn_tracking_zone_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_conn_tracking_zone_masked.value_mask'] = ProtoField.uint16("of13.oxm_conn_tracking_zone_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of13.oxm_eth_dst.type_len'] = ProtoField.uint32("of13.oxm_eth_dst.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_eth_dst.value'] = ProtoField.ether("of13.oxm_eth_dst.value", "value")
 fields['of13.oxm_eth_dst_masked.type_len'] = ProtoField.uint32("of13.oxm_eth_dst_masked.type_len", "type_len", base.DEC, nil)
@@ -11671,6 +11783,8 @@ fields['of14.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of14.bsn_tlv_p
 fields['of14.bsn_tlv_priority.type'] = ProtoField.uint16("of14.bsn_tlv_priority.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_priority.length'] = ProtoField.uint16("of14.bsn_tlv_priority.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_priority.value'] = ProtoField.uint32("of14.bsn_tlv_priority.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_push_vlan_on_egress.type'] = ProtoField.uint16("of14.bsn_tlv_push_vlan_on_egress.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_push_vlan_on_egress.length'] = ProtoField.uint16("of14.bsn_tlv_push_vlan_on_egress.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_push_vlan_on_ingress.type'] = ProtoField.uint16("of14.bsn_tlv_push_vlan_on_ingress.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_push_vlan_on_ingress.length'] = ProtoField.uint16("of14.bsn_tlv_push_vlan_on_ingress.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_qos_priority.type'] = ProtoField.uint16("of14.bsn_tlv_qos_priority.type", "type", base.DEC, nil)
@@ -12725,6 +12839,61 @@ fields['of14.oxm_bsn_vxlan_network_id.value'] = ProtoField.uint32("of14.oxm_bsn_
 fields['of14.oxm_bsn_vxlan_network_id_masked.type_len'] = ProtoField.uint32("of14.oxm_bsn_vxlan_network_id_masked.type_len", "type_len", base.DEC, nil)
 fields['of14.oxm_bsn_vxlan_network_id_masked.value'] = ProtoField.uint32("of14.oxm_bsn_vxlan_network_id_masked.value", "value", base.DEC, nil)
 fields['of14.oxm_bsn_vxlan_network_id_masked.value_mask'] = ProtoField.uint32("of14.oxm_bsn_vxlan_network_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of14.oxm_conn_tracking_ipv6_dst.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_ipv6_dst.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_ipv6_dst.value'] = ProtoField.ipv6("of14.oxm_conn_tracking_ipv6_dst.value", "value")
+fields['of14.oxm_conn_tracking_ipv6_dst_masked.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_ipv6_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_ipv6_dst_masked.value'] = ProtoField.ipv6("of14.oxm_conn_tracking_ipv6_dst_masked.value", "value")
+fields['of14.oxm_conn_tracking_ipv6_dst_masked.value_mask'] = ProtoField.ipv6("of14.oxm_conn_tracking_ipv6_dst_masked.value_mask", "value_mask")
+fields['of14.oxm_conn_tracking_ipv6_src.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_ipv6_src.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_ipv6_src.value'] = ProtoField.ipv6("of14.oxm_conn_tracking_ipv6_src.value", "value")
+fields['of14.oxm_conn_tracking_ipv6_src_masked.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_ipv6_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_ipv6_src_masked.value'] = ProtoField.ipv6("of14.oxm_conn_tracking_ipv6_src_masked.value", "value")
+fields['of14.oxm_conn_tracking_ipv6_src_masked.value_mask'] = ProtoField.ipv6("of14.oxm_conn_tracking_ipv6_src_masked.value_mask", "value_mask")
+fields['of14.oxm_conn_tracking_label.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_label.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_label.value'] = ProtoField.bytes("of14.oxm_conn_tracking_label.value", "value")
+fields['of14.oxm_conn_tracking_label_masked.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_label_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_label_masked.value'] = ProtoField.bytes("of14.oxm_conn_tracking_label_masked.value", "value")
+fields['of14.oxm_conn_tracking_label_masked.value_mask'] = ProtoField.bytes("of14.oxm_conn_tracking_label_masked.value_mask", "value_mask")
+fields['of14.oxm_conn_tracking_mark.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_mark.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_mark.value'] = ProtoField.uint32("of14.oxm_conn_tracking_mark.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_mark_masked.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_mark_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_mark_masked.value'] = ProtoField.uint32("of14.oxm_conn_tracking_mark_masked.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_mark_masked.value_mask'] = ProtoField.uint32("of14.oxm_conn_tracking_mark_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_dst.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_nw_dst.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_dst.value'] = ProtoField.uint32("of14.oxm_conn_tracking_nw_dst.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_dst_masked.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_nw_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_dst_masked.value'] = ProtoField.uint32("of14.oxm_conn_tracking_nw_dst_masked.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_dst_masked.value_mask'] = ProtoField.uint32("of14.oxm_conn_tracking_nw_dst_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_proto.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_nw_proto.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_proto.value'] = ProtoField.uint8("of14.oxm_conn_tracking_nw_proto.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_proto_masked.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_nw_proto_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_proto_masked.value'] = ProtoField.uint8("of14.oxm_conn_tracking_nw_proto_masked.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_proto_masked.value_mask'] = ProtoField.uint8("of14.oxm_conn_tracking_nw_proto_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_src.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_nw_src.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_src.value'] = ProtoField.uint32("of14.oxm_conn_tracking_nw_src.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_src_masked.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_nw_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_src_masked.value'] = ProtoField.uint32("of14.oxm_conn_tracking_nw_src_masked.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_nw_src_masked.value_mask'] = ProtoField.uint32("of14.oxm_conn_tracking_nw_src_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of14.oxm_conn_tracking_state.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_state.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_state.value'] = ProtoField.uint32("of14.oxm_conn_tracking_state.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_state_masked.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_state_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_state_masked.value'] = ProtoField.uint32("of14.oxm_conn_tracking_state_masked.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_state_masked.value_mask'] = ProtoField.uint32("of14.oxm_conn_tracking_state_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of14.oxm_conn_tracking_tp_dst.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_tp_dst.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_tp_dst.value'] = ProtoField.uint16("of14.oxm_conn_tracking_tp_dst.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_tp_dst_masked.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_tp_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_tp_dst_masked.value'] = ProtoField.uint16("of14.oxm_conn_tracking_tp_dst_masked.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_tp_dst_masked.value_mask'] = ProtoField.uint16("of14.oxm_conn_tracking_tp_dst_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of14.oxm_conn_tracking_tp_src.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_tp_src.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_tp_src.value'] = ProtoField.uint16("of14.oxm_conn_tracking_tp_src.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_tp_src_masked.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_tp_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_tp_src_masked.value'] = ProtoField.uint16("of14.oxm_conn_tracking_tp_src_masked.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_tp_src_masked.value_mask'] = ProtoField.uint16("of14.oxm_conn_tracking_tp_src_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of14.oxm_conn_tracking_zone.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_zone.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_zone.value'] = ProtoField.uint16("of14.oxm_conn_tracking_zone.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_zone_masked.type_len'] = ProtoField.uint32("of14.oxm_conn_tracking_zone_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_conn_tracking_zone_masked.value'] = ProtoField.uint16("of14.oxm_conn_tracking_zone_masked.value", "value", base.DEC, nil)
+fields['of14.oxm_conn_tracking_zone_masked.value_mask'] = ProtoField.uint16("of14.oxm_conn_tracking_zone_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of14.oxm_eth_dst.type_len'] = ProtoField.uint32("of14.oxm_eth_dst.type_len", "type_len", base.DEC, nil)
 fields['of14.oxm_eth_dst.value'] = ProtoField.ether("of14.oxm_eth_dst.value", "value")
 fields['of14.oxm_eth_dst_masked.type_len'] = ProtoField.uint32("of14.oxm_eth_dst_masked.type_len", "type_len", base.DEC, nil)
@@ -14854,6 +15023,8 @@ fields['of15.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of15.bsn_tlv_p
 fields['of15.bsn_tlv_priority.type'] = ProtoField.uint16("of15.bsn_tlv_priority.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_priority.length'] = ProtoField.uint16("of15.bsn_tlv_priority.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_priority.value'] = ProtoField.uint32("of15.bsn_tlv_priority.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_push_vlan_on_egress.type'] = ProtoField.uint16("of15.bsn_tlv_push_vlan_on_egress.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_push_vlan_on_egress.length'] = ProtoField.uint16("of15.bsn_tlv_push_vlan_on_egress.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_push_vlan_on_ingress.type'] = ProtoField.uint16("of15.bsn_tlv_push_vlan_on_ingress.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_push_vlan_on_ingress.length'] = ProtoField.uint16("of15.bsn_tlv_push_vlan_on_ingress.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_qos_priority.type'] = ProtoField.uint16("of15.bsn_tlv_qos_priority.type", "type", base.DEC, nil)
@@ -16074,6 +16245,61 @@ fields['of15.oxm_bsn_vxlan_network_id.value'] = ProtoField.uint32("of15.oxm_bsn_
 fields['of15.oxm_bsn_vxlan_network_id_masked.type_len'] = ProtoField.uint32("of15.oxm_bsn_vxlan_network_id_masked.type_len", "type_len", base.DEC, nil)
 fields['of15.oxm_bsn_vxlan_network_id_masked.value'] = ProtoField.uint32("of15.oxm_bsn_vxlan_network_id_masked.value", "value", base.DEC, nil)
 fields['of15.oxm_bsn_vxlan_network_id_masked.value_mask'] = ProtoField.uint32("of15.oxm_bsn_vxlan_network_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_conn_tracking_ipv6_dst.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_ipv6_dst.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_ipv6_dst.value'] = ProtoField.ipv6("of15.oxm_conn_tracking_ipv6_dst.value", "value")
+fields['of15.oxm_conn_tracking_ipv6_dst_masked.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_ipv6_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_ipv6_dst_masked.value'] = ProtoField.ipv6("of15.oxm_conn_tracking_ipv6_dst_masked.value", "value")
+fields['of15.oxm_conn_tracking_ipv6_dst_masked.value_mask'] = ProtoField.ipv6("of15.oxm_conn_tracking_ipv6_dst_masked.value_mask", "value_mask")
+fields['of15.oxm_conn_tracking_ipv6_src.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_ipv6_src.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_ipv6_src.value'] = ProtoField.ipv6("of15.oxm_conn_tracking_ipv6_src.value", "value")
+fields['of15.oxm_conn_tracking_ipv6_src_masked.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_ipv6_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_ipv6_src_masked.value'] = ProtoField.ipv6("of15.oxm_conn_tracking_ipv6_src_masked.value", "value")
+fields['of15.oxm_conn_tracking_ipv6_src_masked.value_mask'] = ProtoField.ipv6("of15.oxm_conn_tracking_ipv6_src_masked.value_mask", "value_mask")
+fields['of15.oxm_conn_tracking_label.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_label.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_label.value'] = ProtoField.bytes("of15.oxm_conn_tracking_label.value", "value")
+fields['of15.oxm_conn_tracking_label_masked.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_label_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_label_masked.value'] = ProtoField.bytes("of15.oxm_conn_tracking_label_masked.value", "value")
+fields['of15.oxm_conn_tracking_label_masked.value_mask'] = ProtoField.bytes("of15.oxm_conn_tracking_label_masked.value_mask", "value_mask")
+fields['of15.oxm_conn_tracking_mark.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_mark.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_mark.value'] = ProtoField.uint32("of15.oxm_conn_tracking_mark.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_mark_masked.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_mark_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_mark_masked.value'] = ProtoField.uint32("of15.oxm_conn_tracking_mark_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_mark_masked.value_mask'] = ProtoField.uint32("of15.oxm_conn_tracking_mark_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_dst.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_nw_dst.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_dst.value'] = ProtoField.uint32("of15.oxm_conn_tracking_nw_dst.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_dst_masked.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_nw_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_dst_masked.value'] = ProtoField.uint32("of15.oxm_conn_tracking_nw_dst_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_dst_masked.value_mask'] = ProtoField.uint32("of15.oxm_conn_tracking_nw_dst_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_proto.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_nw_proto.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_proto.value'] = ProtoField.uint8("of15.oxm_conn_tracking_nw_proto.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_proto_masked.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_nw_proto_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_proto_masked.value'] = ProtoField.uint8("of15.oxm_conn_tracking_nw_proto_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_proto_masked.value_mask'] = ProtoField.uint8("of15.oxm_conn_tracking_nw_proto_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_src.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_nw_src.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_src.value'] = ProtoField.uint32("of15.oxm_conn_tracking_nw_src.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_src_masked.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_nw_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_src_masked.value'] = ProtoField.uint32("of15.oxm_conn_tracking_nw_src_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_nw_src_masked.value_mask'] = ProtoField.uint32("of15.oxm_conn_tracking_nw_src_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_conn_tracking_state.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_state.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_state.value'] = ProtoField.uint32("of15.oxm_conn_tracking_state.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_state_masked.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_state_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_state_masked.value'] = ProtoField.uint32("of15.oxm_conn_tracking_state_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_state_masked.value_mask'] = ProtoField.uint32("of15.oxm_conn_tracking_state_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_conn_tracking_tp_dst.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_tp_dst.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_tp_dst.value'] = ProtoField.uint16("of15.oxm_conn_tracking_tp_dst.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_tp_dst_masked.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_tp_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_tp_dst_masked.value'] = ProtoField.uint16("of15.oxm_conn_tracking_tp_dst_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_tp_dst_masked.value_mask'] = ProtoField.uint16("of15.oxm_conn_tracking_tp_dst_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_conn_tracking_tp_src.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_tp_src.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_tp_src.value'] = ProtoField.uint16("of15.oxm_conn_tracking_tp_src.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_tp_src_masked.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_tp_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_tp_src_masked.value'] = ProtoField.uint16("of15.oxm_conn_tracking_tp_src_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_tp_src_masked.value_mask'] = ProtoField.uint16("of15.oxm_conn_tracking_tp_src_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of15.oxm_conn_tracking_zone.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_zone.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_zone.value'] = ProtoField.uint16("of15.oxm_conn_tracking_zone.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_zone_masked.type_len'] = ProtoField.uint32("of15.oxm_conn_tracking_zone_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_conn_tracking_zone_masked.value'] = ProtoField.uint16("of15.oxm_conn_tracking_zone_masked.value", "value", base.DEC, nil)
+fields['of15.oxm_conn_tracking_zone_masked.value_mask'] = ProtoField.uint16("of15.oxm_conn_tracking_zone_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of15.oxm_eth_dst.type_len'] = ProtoField.uint32("of15.oxm_eth_dst.type_len", "type_len", base.DEC, nil)
 fields['of15.oxm_eth_dst.value'] = ProtoField.ether("of15.oxm_eth_dst.value", "value")
 fields['of15.oxm_eth_dst_masked.type_len'] = ProtoField.uint32("of15.oxm_eth_dst_masked.type_len", "type_len", base.DEC, nil)
@@ -19547,6 +19773,61 @@ p_of.fields = {
     fields['of12.oxm_bsn_vrf_masked.type_len'],
     fields['of12.oxm_bsn_vrf_masked.value'],
     fields['of12.oxm_bsn_vrf_masked.value_mask'],
+    fields['of12.oxm_conn_tracking_ipv6_dst.type_len'],
+    fields['of12.oxm_conn_tracking_ipv6_dst.value'],
+    fields['of12.oxm_conn_tracking_ipv6_dst_masked.type_len'],
+    fields['of12.oxm_conn_tracking_ipv6_dst_masked.value'],
+    fields['of12.oxm_conn_tracking_ipv6_dst_masked.value_mask'],
+    fields['of12.oxm_conn_tracking_ipv6_src.type_len'],
+    fields['of12.oxm_conn_tracking_ipv6_src.value'],
+    fields['of12.oxm_conn_tracking_ipv6_src_masked.type_len'],
+    fields['of12.oxm_conn_tracking_ipv6_src_masked.value'],
+    fields['of12.oxm_conn_tracking_ipv6_src_masked.value_mask'],
+    fields['of12.oxm_conn_tracking_label.type_len'],
+    fields['of12.oxm_conn_tracking_label.value'],
+    fields['of12.oxm_conn_tracking_label_masked.type_len'],
+    fields['of12.oxm_conn_tracking_label_masked.value'],
+    fields['of12.oxm_conn_tracking_label_masked.value_mask'],
+    fields['of12.oxm_conn_tracking_mark.type_len'],
+    fields['of12.oxm_conn_tracking_mark.value'],
+    fields['of12.oxm_conn_tracking_mark_masked.type_len'],
+    fields['of12.oxm_conn_tracking_mark_masked.value'],
+    fields['of12.oxm_conn_tracking_mark_masked.value_mask'],
+    fields['of12.oxm_conn_tracking_nw_dst.type_len'],
+    fields['of12.oxm_conn_tracking_nw_dst.value'],
+    fields['of12.oxm_conn_tracking_nw_dst_masked.type_len'],
+    fields['of12.oxm_conn_tracking_nw_dst_masked.value'],
+    fields['of12.oxm_conn_tracking_nw_dst_masked.value_mask'],
+    fields['of12.oxm_conn_tracking_nw_proto.type_len'],
+    fields['of12.oxm_conn_tracking_nw_proto.value'],
+    fields['of12.oxm_conn_tracking_nw_proto_masked.type_len'],
+    fields['of12.oxm_conn_tracking_nw_proto_masked.value'],
+    fields['of12.oxm_conn_tracking_nw_proto_masked.value_mask'],
+    fields['of12.oxm_conn_tracking_nw_src.type_len'],
+    fields['of12.oxm_conn_tracking_nw_src.value'],
+    fields['of12.oxm_conn_tracking_nw_src_masked.type_len'],
+    fields['of12.oxm_conn_tracking_nw_src_masked.value'],
+    fields['of12.oxm_conn_tracking_nw_src_masked.value_mask'],
+    fields['of12.oxm_conn_tracking_state.type_len'],
+    fields['of12.oxm_conn_tracking_state.value'],
+    fields['of12.oxm_conn_tracking_state_masked.type_len'],
+    fields['of12.oxm_conn_tracking_state_masked.value'],
+    fields['of12.oxm_conn_tracking_state_masked.value_mask'],
+    fields['of12.oxm_conn_tracking_tp_dst.type_len'],
+    fields['of12.oxm_conn_tracking_tp_dst.value'],
+    fields['of12.oxm_conn_tracking_tp_dst_masked.type_len'],
+    fields['of12.oxm_conn_tracking_tp_dst_masked.value'],
+    fields['of12.oxm_conn_tracking_tp_dst_masked.value_mask'],
+    fields['of12.oxm_conn_tracking_tp_src.type_len'],
+    fields['of12.oxm_conn_tracking_tp_src.value'],
+    fields['of12.oxm_conn_tracking_tp_src_masked.type_len'],
+    fields['of12.oxm_conn_tracking_tp_src_masked.value'],
+    fields['of12.oxm_conn_tracking_tp_src_masked.value_mask'],
+    fields['of12.oxm_conn_tracking_zone.type_len'],
+    fields['of12.oxm_conn_tracking_zone.value'],
+    fields['of12.oxm_conn_tracking_zone_masked.type_len'],
+    fields['of12.oxm_conn_tracking_zone_masked.value'],
+    fields['of12.oxm_conn_tracking_zone_masked.value_mask'],
     fields['of12.oxm_eth_dst.type_len'],
     fields['of12.oxm_eth_dst.value'],
     fields['of12.oxm_eth_dst_masked.type_len'],
@@ -21275,6 +21556,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_priority.type'],
     fields['of13.bsn_tlv_priority.length'],
     fields['of13.bsn_tlv_priority.value'],
+    fields['of13.bsn_tlv_push_vlan_on_egress.type'],
+    fields['of13.bsn_tlv_push_vlan_on_egress.length'],
     fields['of13.bsn_tlv_push_vlan_on_ingress.type'],
     fields['of13.bsn_tlv_push_vlan_on_ingress.length'],
     fields['of13.bsn_tlv_qos_priority.type'],
@@ -22301,6 +22584,61 @@ p_of.fields = {
     fields['of13.oxm_bsn_vxlan_network_id_masked.type_len'],
     fields['of13.oxm_bsn_vxlan_network_id_masked.value'],
     fields['of13.oxm_bsn_vxlan_network_id_masked.value_mask'],
+    fields['of13.oxm_conn_tracking_ipv6_dst.type_len'],
+    fields['of13.oxm_conn_tracking_ipv6_dst.value'],
+    fields['of13.oxm_conn_tracking_ipv6_dst_masked.type_len'],
+    fields['of13.oxm_conn_tracking_ipv6_dst_masked.value'],
+    fields['of13.oxm_conn_tracking_ipv6_dst_masked.value_mask'],
+    fields['of13.oxm_conn_tracking_ipv6_src.type_len'],
+    fields['of13.oxm_conn_tracking_ipv6_src.value'],
+    fields['of13.oxm_conn_tracking_ipv6_src_masked.type_len'],
+    fields['of13.oxm_conn_tracking_ipv6_src_masked.value'],
+    fields['of13.oxm_conn_tracking_ipv6_src_masked.value_mask'],
+    fields['of13.oxm_conn_tracking_label.type_len'],
+    fields['of13.oxm_conn_tracking_label.value'],
+    fields['of13.oxm_conn_tracking_label_masked.type_len'],
+    fields['of13.oxm_conn_tracking_label_masked.value'],
+    fields['of13.oxm_conn_tracking_label_masked.value_mask'],
+    fields['of13.oxm_conn_tracking_mark.type_len'],
+    fields['of13.oxm_conn_tracking_mark.value'],
+    fields['of13.oxm_conn_tracking_mark_masked.type_len'],
+    fields['of13.oxm_conn_tracking_mark_masked.value'],
+    fields['of13.oxm_conn_tracking_mark_masked.value_mask'],
+    fields['of13.oxm_conn_tracking_nw_dst.type_len'],
+    fields['of13.oxm_conn_tracking_nw_dst.value'],
+    fields['of13.oxm_conn_tracking_nw_dst_masked.type_len'],
+    fields['of13.oxm_conn_tracking_nw_dst_masked.value'],
+    fields['of13.oxm_conn_tracking_nw_dst_masked.value_mask'],
+    fields['of13.oxm_conn_tracking_nw_proto.type_len'],
+    fields['of13.oxm_conn_tracking_nw_proto.value'],
+    fields['of13.oxm_conn_tracking_nw_proto_masked.type_len'],
+    fields['of13.oxm_conn_tracking_nw_proto_masked.value'],
+    fields['of13.oxm_conn_tracking_nw_proto_masked.value_mask'],
+    fields['of13.oxm_conn_tracking_nw_src.type_len'],
+    fields['of13.oxm_conn_tracking_nw_src.value'],
+    fields['of13.oxm_conn_tracking_nw_src_masked.type_len'],
+    fields['of13.oxm_conn_tracking_nw_src_masked.value'],
+    fields['of13.oxm_conn_tracking_nw_src_masked.value_mask'],
+    fields['of13.oxm_conn_tracking_state.type_len'],
+    fields['of13.oxm_conn_tracking_state.value'],
+    fields['of13.oxm_conn_tracking_state_masked.type_len'],
+    fields['of13.oxm_conn_tracking_state_masked.value'],
+    fields['of13.oxm_conn_tracking_state_masked.value_mask'],
+    fields['of13.oxm_conn_tracking_tp_dst.type_len'],
+    fields['of13.oxm_conn_tracking_tp_dst.value'],
+    fields['of13.oxm_conn_tracking_tp_dst_masked.type_len'],
+    fields['of13.oxm_conn_tracking_tp_dst_masked.value'],
+    fields['of13.oxm_conn_tracking_tp_dst_masked.value_mask'],
+    fields['of13.oxm_conn_tracking_tp_src.type_len'],
+    fields['of13.oxm_conn_tracking_tp_src.value'],
+    fields['of13.oxm_conn_tracking_tp_src_masked.type_len'],
+    fields['of13.oxm_conn_tracking_tp_src_masked.value'],
+    fields['of13.oxm_conn_tracking_tp_src_masked.value_mask'],
+    fields['of13.oxm_conn_tracking_zone.type_len'],
+    fields['of13.oxm_conn_tracking_zone.value'],
+    fields['of13.oxm_conn_tracking_zone_masked.type_len'],
+    fields['of13.oxm_conn_tracking_zone_masked.value'],
+    fields['of13.oxm_conn_tracking_zone_masked.value_mask'],
     fields['of13.oxm_eth_dst.type_len'],
     fields['of13.oxm_eth_dst.value'],
     fields['of13.oxm_eth_dst_masked.type_len'],
@@ -24190,6 +24528,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_priority.type'],
     fields['of14.bsn_tlv_priority.length'],
     fields['of14.bsn_tlv_priority.value'],
+    fields['of14.bsn_tlv_push_vlan_on_egress.type'],
+    fields['of14.bsn_tlv_push_vlan_on_egress.length'],
     fields['of14.bsn_tlv_push_vlan_on_ingress.type'],
     fields['of14.bsn_tlv_push_vlan_on_ingress.length'],
     fields['of14.bsn_tlv_qos_priority.type'],
@@ -25244,6 +25584,61 @@ p_of.fields = {
     fields['of14.oxm_bsn_vxlan_network_id_masked.type_len'],
     fields['of14.oxm_bsn_vxlan_network_id_masked.value'],
     fields['of14.oxm_bsn_vxlan_network_id_masked.value_mask'],
+    fields['of14.oxm_conn_tracking_ipv6_dst.type_len'],
+    fields['of14.oxm_conn_tracking_ipv6_dst.value'],
+    fields['of14.oxm_conn_tracking_ipv6_dst_masked.type_len'],
+    fields['of14.oxm_conn_tracking_ipv6_dst_masked.value'],
+    fields['of14.oxm_conn_tracking_ipv6_dst_masked.value_mask'],
+    fields['of14.oxm_conn_tracking_ipv6_src.type_len'],
+    fields['of14.oxm_conn_tracking_ipv6_src.value'],
+    fields['of14.oxm_conn_tracking_ipv6_src_masked.type_len'],
+    fields['of14.oxm_conn_tracking_ipv6_src_masked.value'],
+    fields['of14.oxm_conn_tracking_ipv6_src_masked.value_mask'],
+    fields['of14.oxm_conn_tracking_label.type_len'],
+    fields['of14.oxm_conn_tracking_label.value'],
+    fields['of14.oxm_conn_tracking_label_masked.type_len'],
+    fields['of14.oxm_conn_tracking_label_masked.value'],
+    fields['of14.oxm_conn_tracking_label_masked.value_mask'],
+    fields['of14.oxm_conn_tracking_mark.type_len'],
+    fields['of14.oxm_conn_tracking_mark.value'],
+    fields['of14.oxm_conn_tracking_mark_masked.type_len'],
+    fields['of14.oxm_conn_tracking_mark_masked.value'],
+    fields['of14.oxm_conn_tracking_mark_masked.value_mask'],
+    fields['of14.oxm_conn_tracking_nw_dst.type_len'],
+    fields['of14.oxm_conn_tracking_nw_dst.value'],
+    fields['of14.oxm_conn_tracking_nw_dst_masked.type_len'],
+    fields['of14.oxm_conn_tracking_nw_dst_masked.value'],
+    fields['of14.oxm_conn_tracking_nw_dst_masked.value_mask'],
+    fields['of14.oxm_conn_tracking_nw_proto.type_len'],
+    fields['of14.oxm_conn_tracking_nw_proto.value'],
+    fields['of14.oxm_conn_tracking_nw_proto_masked.type_len'],
+    fields['of14.oxm_conn_tracking_nw_proto_masked.value'],
+    fields['of14.oxm_conn_tracking_nw_proto_masked.value_mask'],
+    fields['of14.oxm_conn_tracking_nw_src.type_len'],
+    fields['of14.oxm_conn_tracking_nw_src.value'],
+    fields['of14.oxm_conn_tracking_nw_src_masked.type_len'],
+    fields['of14.oxm_conn_tracking_nw_src_masked.value'],
+    fields['of14.oxm_conn_tracking_nw_src_masked.value_mask'],
+    fields['of14.oxm_conn_tracking_state.type_len'],
+    fields['of14.oxm_conn_tracking_state.value'],
+    fields['of14.oxm_conn_tracking_state_masked.type_len'],
+    fields['of14.oxm_conn_tracking_state_masked.value'],
+    fields['of14.oxm_conn_tracking_state_masked.value_mask'],
+    fields['of14.oxm_conn_tracking_tp_dst.type_len'],
+    fields['of14.oxm_conn_tracking_tp_dst.value'],
+    fields['of14.oxm_conn_tracking_tp_dst_masked.type_len'],
+    fields['of14.oxm_conn_tracking_tp_dst_masked.value'],
+    fields['of14.oxm_conn_tracking_tp_dst_masked.value_mask'],
+    fields['of14.oxm_conn_tracking_tp_src.type_len'],
+    fields['of14.oxm_conn_tracking_tp_src.value'],
+    fields['of14.oxm_conn_tracking_tp_src_masked.type_len'],
+    fields['of14.oxm_conn_tracking_tp_src_masked.value'],
+    fields['of14.oxm_conn_tracking_tp_src_masked.value_mask'],
+    fields['of14.oxm_conn_tracking_zone.type_len'],
+    fields['of14.oxm_conn_tracking_zone.value'],
+    fields['of14.oxm_conn_tracking_zone_masked.type_len'],
+    fields['of14.oxm_conn_tracking_zone_masked.value'],
+    fields['of14.oxm_conn_tracking_zone_masked.value_mask'],
     fields['of14.oxm_eth_dst.type_len'],
     fields['of14.oxm_eth_dst.value'],
     fields['of14.oxm_eth_dst_masked.type_len'],
@@ -27373,6 +27768,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_priority.type'],
     fields['of15.bsn_tlv_priority.length'],
     fields['of15.bsn_tlv_priority.value'],
+    fields['of15.bsn_tlv_push_vlan_on_egress.type'],
+    fields['of15.bsn_tlv_push_vlan_on_egress.length'],
     fields['of15.bsn_tlv_push_vlan_on_ingress.type'],
     fields['of15.bsn_tlv_push_vlan_on_ingress.length'],
     fields['of15.bsn_tlv_qos_priority.type'],
@@ -28593,6 +28990,61 @@ p_of.fields = {
     fields['of15.oxm_bsn_vxlan_network_id_masked.type_len'],
     fields['of15.oxm_bsn_vxlan_network_id_masked.value'],
     fields['of15.oxm_bsn_vxlan_network_id_masked.value_mask'],
+    fields['of15.oxm_conn_tracking_ipv6_dst.type_len'],
+    fields['of15.oxm_conn_tracking_ipv6_dst.value'],
+    fields['of15.oxm_conn_tracking_ipv6_dst_masked.type_len'],
+    fields['of15.oxm_conn_tracking_ipv6_dst_masked.value'],
+    fields['of15.oxm_conn_tracking_ipv6_dst_masked.value_mask'],
+    fields['of15.oxm_conn_tracking_ipv6_src.type_len'],
+    fields['of15.oxm_conn_tracking_ipv6_src.value'],
+    fields['of15.oxm_conn_tracking_ipv6_src_masked.type_len'],
+    fields['of15.oxm_conn_tracking_ipv6_src_masked.value'],
+    fields['of15.oxm_conn_tracking_ipv6_src_masked.value_mask'],
+    fields['of15.oxm_conn_tracking_label.type_len'],
+    fields['of15.oxm_conn_tracking_label.value'],
+    fields['of15.oxm_conn_tracking_label_masked.type_len'],
+    fields['of15.oxm_conn_tracking_label_masked.value'],
+    fields['of15.oxm_conn_tracking_label_masked.value_mask'],
+    fields['of15.oxm_conn_tracking_mark.type_len'],
+    fields['of15.oxm_conn_tracking_mark.value'],
+    fields['of15.oxm_conn_tracking_mark_masked.type_len'],
+    fields['of15.oxm_conn_tracking_mark_masked.value'],
+    fields['of15.oxm_conn_tracking_mark_masked.value_mask'],
+    fields['of15.oxm_conn_tracking_nw_dst.type_len'],
+    fields['of15.oxm_conn_tracking_nw_dst.value'],
+    fields['of15.oxm_conn_tracking_nw_dst_masked.type_len'],
+    fields['of15.oxm_conn_tracking_nw_dst_masked.value'],
+    fields['of15.oxm_conn_tracking_nw_dst_masked.value_mask'],
+    fields['of15.oxm_conn_tracking_nw_proto.type_len'],
+    fields['of15.oxm_conn_tracking_nw_proto.value'],
+    fields['of15.oxm_conn_tracking_nw_proto_masked.type_len'],
+    fields['of15.oxm_conn_tracking_nw_proto_masked.value'],
+    fields['of15.oxm_conn_tracking_nw_proto_masked.value_mask'],
+    fields['of15.oxm_conn_tracking_nw_src.type_len'],
+    fields['of15.oxm_conn_tracking_nw_src.value'],
+    fields['of15.oxm_conn_tracking_nw_src_masked.type_len'],
+    fields['of15.oxm_conn_tracking_nw_src_masked.value'],
+    fields['of15.oxm_conn_tracking_nw_src_masked.value_mask'],
+    fields['of15.oxm_conn_tracking_state.type_len'],
+    fields['of15.oxm_conn_tracking_state.value'],
+    fields['of15.oxm_conn_tracking_state_masked.type_len'],
+    fields['of15.oxm_conn_tracking_state_masked.value'],
+    fields['of15.oxm_conn_tracking_state_masked.value_mask'],
+    fields['of15.oxm_conn_tracking_tp_dst.type_len'],
+    fields['of15.oxm_conn_tracking_tp_dst.value'],
+    fields['of15.oxm_conn_tracking_tp_dst_masked.type_len'],
+    fields['of15.oxm_conn_tracking_tp_dst_masked.value'],
+    fields['of15.oxm_conn_tracking_tp_dst_masked.value_mask'],
+    fields['of15.oxm_conn_tracking_tp_src.type_len'],
+    fields['of15.oxm_conn_tracking_tp_src.value'],
+    fields['of15.oxm_conn_tracking_tp_src_masked.type_len'],
+    fields['of15.oxm_conn_tracking_tp_src_masked.value'],
+    fields['of15.oxm_conn_tracking_tp_src_masked.value_mask'],
+    fields['of15.oxm_conn_tracking_zone.type_len'],
+    fields['of15.oxm_conn_tracking_zone.value'],
+    fields['of15.oxm_conn_tracking_zone_masked.type_len'],
+    fields['of15.oxm_conn_tracking_zone_masked.value'],
+    fields['of15.oxm_conn_tracking_zone_masked.value_mask'],
     fields['of15.oxm_eth_dst.type_len'],
     fields['of15.oxm_eth_dst.value'],
     fields['of15.oxm_eth_dst_masked.type_len'],
@@ -35448,6 +35900,215 @@ function dissect_of_oxm_bsn_vrf_masked_v3(reader, subtree)
 end
 of_oxm_v3_dissectors[197896] = dissect_of_oxm_bsn_vrf_masked_v3
 
+-- child class of_oxm_conn_tracking_ipv6_dst
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_dst_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_ipv6_dst.type_len')
+    read_of_ipv6_t(reader, 3, subtree, 'of12.oxm_conn_tracking_ipv6_dst.value')
+    return 'of_oxm_conn_tracking_ipv6_dst'
+end
+of_oxm_v3_dissectors[128528] = dissect_of_oxm_conn_tracking_ipv6_dst_v3
+
+-- child class of_oxm_conn_tracking_ipv6_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_dst_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_ipv6_dst_masked.type_len')
+    read_of_ipv6_t(reader, 3, subtree, 'of12.oxm_conn_tracking_ipv6_dst_masked.value')
+    read_of_ipv6_t(reader, 3, subtree, 'of12.oxm_conn_tracking_ipv6_dst_masked.value_mask')
+    return 'of_oxm_conn_tracking_ipv6_dst_masked'
+end
+of_oxm_v3_dissectors[128800] = dissect_of_oxm_conn_tracking_ipv6_dst_masked_v3
+
+-- child class of_oxm_conn_tracking_ipv6_src
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_src_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_ipv6_src.type_len')
+    read_of_ipv6_t(reader, 3, subtree, 'of12.oxm_conn_tracking_ipv6_src.value')
+    return 'of_oxm_conn_tracking_ipv6_src'
+end
+of_oxm_v3_dissectors[128016] = dissect_of_oxm_conn_tracking_ipv6_src_v3
+
+-- child class of_oxm_conn_tracking_ipv6_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_src_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_ipv6_src_masked.type_len')
+    read_of_ipv6_t(reader, 3, subtree, 'of12.oxm_conn_tracking_ipv6_src_masked.value')
+    read_of_ipv6_t(reader, 3, subtree, 'of12.oxm_conn_tracking_ipv6_src_masked.value_mask')
+    return 'of_oxm_conn_tracking_ipv6_src_masked'
+end
+of_oxm_v3_dissectors[128288] = dissect_of_oxm_conn_tracking_ipv6_src_masked_v3
+
+-- child class of_oxm_conn_tracking_label
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_label_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_label.type_len')
+    read_uint128_t(reader, 3, subtree, 'of12.oxm_conn_tracking_label.value')
+    return 'of_oxm_conn_tracking_label'
+end
+of_oxm_v3_dissectors[120848] = dissect_of_oxm_conn_tracking_label_v3
+
+-- child class of_oxm_conn_tracking_label_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_label_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_label_masked.type_len')
+    read_uint128_t(reader, 3, subtree, 'of12.oxm_conn_tracking_label_masked.value')
+    read_uint128_t(reader, 3, subtree, 'of12.oxm_conn_tracking_label_masked.value_mask')
+    return 'of_oxm_conn_tracking_label_masked'
+end
+of_oxm_v3_dissectors[121120] = dissect_of_oxm_conn_tracking_label_masked_v3
+
+-- child class of_oxm_conn_tracking_mark
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_mark_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_mark.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_mark.value')
+    return 'of_oxm_conn_tracking_mark'
+end
+of_oxm_v3_dissectors[120324] = dissect_of_oxm_conn_tracking_mark_v3
+
+-- child class of_oxm_conn_tracking_mark_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_mark_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_mark_masked.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_mark_masked.value')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_mark_masked.value_mask')
+    return 'of_oxm_conn_tracking_mark_masked'
+end
+of_oxm_v3_dissectors[120584] = dissect_of_oxm_conn_tracking_mark_masked_v3
+
+-- child class of_oxm_conn_tracking_nw_dst
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_dst_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_dst.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_dst.value')
+    return 'of_oxm_conn_tracking_nw_dst'
+end
+of_oxm_v3_dissectors[127492] = dissect_of_oxm_conn_tracking_nw_dst_v3
+
+-- child class of_oxm_conn_tracking_nw_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_dst_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_dst_masked.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_dst_masked.value')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_dst_masked.value_mask')
+    return 'of_oxm_conn_tracking_nw_dst_masked'
+end
+of_oxm_v3_dissectors[127752] = dissect_of_oxm_conn_tracking_nw_dst_masked_v3
+
+-- child class of_oxm_conn_tracking_nw_proto
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_proto_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_proto.type_len')
+    read_uint8_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_proto.value')
+    return 'of_oxm_conn_tracking_nw_proto'
+end
+of_oxm_v3_dissectors[126465] = dissect_of_oxm_conn_tracking_nw_proto_v3
+
+-- child class of_oxm_conn_tracking_nw_proto_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_proto_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_proto_masked.type_len')
+    read_uint8_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_proto_masked.value')
+    read_uint8_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_proto_masked.value_mask')
+    return 'of_oxm_conn_tracking_nw_proto_masked'
+end
+of_oxm_v3_dissectors[126722] = dissect_of_oxm_conn_tracking_nw_proto_masked_v3
+
+-- child class of_oxm_conn_tracking_nw_src
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_src_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_src.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_src.value')
+    return 'of_oxm_conn_tracking_nw_src'
+end
+of_oxm_v3_dissectors[126980] = dissect_of_oxm_conn_tracking_nw_src_v3
+
+-- child class of_oxm_conn_tracking_nw_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_src_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_src_masked.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_src_masked.value')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_nw_src_masked.value_mask')
+    return 'of_oxm_conn_tracking_nw_src_masked'
+end
+of_oxm_v3_dissectors[127240] = dissect_of_oxm_conn_tracking_nw_src_masked_v3
+
+-- child class of_oxm_conn_tracking_state
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_state_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_state.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_state.value')
+    return 'of_oxm_conn_tracking_state'
+end
+of_oxm_v3_dissectors[119300] = dissect_of_oxm_conn_tracking_state_v3
+
+-- child class of_oxm_conn_tracking_state_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_state_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_state_masked.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_state_masked.value')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_state_masked.value_mask')
+    return 'of_oxm_conn_tracking_state_masked'
+end
+of_oxm_v3_dissectors[119560] = dissect_of_oxm_conn_tracking_state_masked_v3
+
+-- child class of_oxm_conn_tracking_tp_dst
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_dst_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_tp_dst.type_len')
+    read_uint16_t(reader, 3, subtree, 'of12.oxm_conn_tracking_tp_dst.value')
+    return 'of_oxm_conn_tracking_tp_dst'
+end
+of_oxm_v3_dissectors[129538] = dissect_of_oxm_conn_tracking_tp_dst_v3
+
+-- child class of_oxm_conn_tracking_tp_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_dst_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_tp_dst_masked.type_len')
+    read_uint16_t(reader, 3, subtree, 'of12.oxm_conn_tracking_tp_dst_masked.value')
+    read_uint16_t(reader, 3, subtree, 'of12.oxm_conn_tracking_tp_dst_masked.value_mask')
+    return 'of_oxm_conn_tracking_tp_dst_masked'
+end
+of_oxm_v3_dissectors[129796] = dissect_of_oxm_conn_tracking_tp_dst_masked_v3
+
+-- child class of_oxm_conn_tracking_tp_src
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_src_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_tp_src.type_len')
+    read_uint16_t(reader, 3, subtree, 'of12.oxm_conn_tracking_tp_src.value')
+    return 'of_oxm_conn_tracking_tp_src'
+end
+of_oxm_v3_dissectors[129026] = dissect_of_oxm_conn_tracking_tp_src_v3
+
+-- child class of_oxm_conn_tracking_tp_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_src_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_tp_src_masked.type_len')
+    read_uint16_t(reader, 3, subtree, 'of12.oxm_conn_tracking_tp_src_masked.value')
+    read_uint16_t(reader, 3, subtree, 'of12.oxm_conn_tracking_tp_src_masked.value_mask')
+    return 'of_oxm_conn_tracking_tp_src_masked'
+end
+of_oxm_v3_dissectors[129284] = dissect_of_oxm_conn_tracking_tp_src_masked_v3
+
+-- child class of_oxm_conn_tracking_zone
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_zone_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_zone.type_len')
+    read_uint16_t(reader, 3, subtree, 'of12.oxm_conn_tracking_zone.value')
+    return 'of_oxm_conn_tracking_zone'
+end
+of_oxm_v3_dissectors[119810] = dissect_of_oxm_conn_tracking_zone_v3
+
+-- child class of_oxm_conn_tracking_zone_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_zone_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_conn_tracking_zone_masked.type_len')
+    read_uint16_t(reader, 3, subtree, 'of12.oxm_conn_tracking_zone_masked.value')
+    read_uint16_t(reader, 3, subtree, 'of12.oxm_conn_tracking_zone_masked.value_mask')
+    return 'of_oxm_conn_tracking_zone_masked'
+end
+of_oxm_v3_dissectors[120068] = dissect_of_oxm_conn_tracking_zone_masked_v3
+
 -- child class of_oxm_eth_dst
 -- Child of of_oxm
 function dissect_of_oxm_eth_dst_v3(reader, subtree)
@@ -39904,6 +40565,15 @@ function dissect_of_bsn_tlv_priority_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[57] = dissect_of_bsn_tlv_priority_v4
 
+-- child class of_bsn_tlv_push_vlan_on_egress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_push_vlan_on_egress_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_push_vlan_on_egress.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_push_vlan_on_egress.length')
+    return 'of_bsn_tlv_push_vlan_on_egress'
+end
+of_bsn_tlv_v4_dissectors[162] = dissect_of_bsn_tlv_push_vlan_on_egress_v4
+
 -- child class of_bsn_tlv_push_vlan_on_ingress
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_push_vlan_on_ingress_v4(reader, subtree)
@@ -42690,6 +43360,215 @@ function dissect_of_oxm_bsn_vxlan_network_id_masked_v4(reader, subtree)
     return 'of_oxm_bsn_vxlan_network_id_masked'
 end
 of_oxm_v4_dissectors[207624] = dissect_of_oxm_bsn_vxlan_network_id_masked_v4
+
+-- child class of_oxm_conn_tracking_ipv6_dst
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_dst_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_ipv6_dst.type_len')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.oxm_conn_tracking_ipv6_dst.value')
+    return 'of_oxm_conn_tracking_ipv6_dst'
+end
+of_oxm_v4_dissectors[128528] = dissect_of_oxm_conn_tracking_ipv6_dst_v4
+
+-- child class of_oxm_conn_tracking_ipv6_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_dst_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_ipv6_dst_masked.type_len')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.oxm_conn_tracking_ipv6_dst_masked.value')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.oxm_conn_tracking_ipv6_dst_masked.value_mask')
+    return 'of_oxm_conn_tracking_ipv6_dst_masked'
+end
+of_oxm_v4_dissectors[128800] = dissect_of_oxm_conn_tracking_ipv6_dst_masked_v4
+
+-- child class of_oxm_conn_tracking_ipv6_src
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_src_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_ipv6_src.type_len')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.oxm_conn_tracking_ipv6_src.value')
+    return 'of_oxm_conn_tracking_ipv6_src'
+end
+of_oxm_v4_dissectors[128016] = dissect_of_oxm_conn_tracking_ipv6_src_v4
+
+-- child class of_oxm_conn_tracking_ipv6_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_src_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_ipv6_src_masked.type_len')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.oxm_conn_tracking_ipv6_src_masked.value')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.oxm_conn_tracking_ipv6_src_masked.value_mask')
+    return 'of_oxm_conn_tracking_ipv6_src_masked'
+end
+of_oxm_v4_dissectors[128288] = dissect_of_oxm_conn_tracking_ipv6_src_masked_v4
+
+-- child class of_oxm_conn_tracking_label
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_label_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_label.type_len')
+    read_uint128_t(reader, 4, subtree, 'of13.oxm_conn_tracking_label.value')
+    return 'of_oxm_conn_tracking_label'
+end
+of_oxm_v4_dissectors[120848] = dissect_of_oxm_conn_tracking_label_v4
+
+-- child class of_oxm_conn_tracking_label_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_label_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_label_masked.type_len')
+    read_uint128_t(reader, 4, subtree, 'of13.oxm_conn_tracking_label_masked.value')
+    read_uint128_t(reader, 4, subtree, 'of13.oxm_conn_tracking_label_masked.value_mask')
+    return 'of_oxm_conn_tracking_label_masked'
+end
+of_oxm_v4_dissectors[121120] = dissect_of_oxm_conn_tracking_label_masked_v4
+
+-- child class of_oxm_conn_tracking_mark
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_mark_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_mark.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_mark.value')
+    return 'of_oxm_conn_tracking_mark'
+end
+of_oxm_v4_dissectors[120324] = dissect_of_oxm_conn_tracking_mark_v4
+
+-- child class of_oxm_conn_tracking_mark_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_mark_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_mark_masked.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_mark_masked.value')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_mark_masked.value_mask')
+    return 'of_oxm_conn_tracking_mark_masked'
+end
+of_oxm_v4_dissectors[120584] = dissect_of_oxm_conn_tracking_mark_masked_v4
+
+-- child class of_oxm_conn_tracking_nw_dst
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_dst_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_dst.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_dst.value')
+    return 'of_oxm_conn_tracking_nw_dst'
+end
+of_oxm_v4_dissectors[127492] = dissect_of_oxm_conn_tracking_nw_dst_v4
+
+-- child class of_oxm_conn_tracking_nw_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_dst_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_dst_masked.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_dst_masked.value')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_dst_masked.value_mask')
+    return 'of_oxm_conn_tracking_nw_dst_masked'
+end
+of_oxm_v4_dissectors[127752] = dissect_of_oxm_conn_tracking_nw_dst_masked_v4
+
+-- child class of_oxm_conn_tracking_nw_proto
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_proto_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_proto.type_len')
+    read_uint8_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_proto.value')
+    return 'of_oxm_conn_tracking_nw_proto'
+end
+of_oxm_v4_dissectors[126465] = dissect_of_oxm_conn_tracking_nw_proto_v4
+
+-- child class of_oxm_conn_tracking_nw_proto_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_proto_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_proto_masked.type_len')
+    read_uint8_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_proto_masked.value')
+    read_uint8_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_proto_masked.value_mask')
+    return 'of_oxm_conn_tracking_nw_proto_masked'
+end
+of_oxm_v4_dissectors[126722] = dissect_of_oxm_conn_tracking_nw_proto_masked_v4
+
+-- child class of_oxm_conn_tracking_nw_src
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_src_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_src.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_src.value')
+    return 'of_oxm_conn_tracking_nw_src'
+end
+of_oxm_v4_dissectors[126980] = dissect_of_oxm_conn_tracking_nw_src_v4
+
+-- child class of_oxm_conn_tracking_nw_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_src_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_src_masked.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_src_masked.value')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_nw_src_masked.value_mask')
+    return 'of_oxm_conn_tracking_nw_src_masked'
+end
+of_oxm_v4_dissectors[127240] = dissect_of_oxm_conn_tracking_nw_src_masked_v4
+
+-- child class of_oxm_conn_tracking_state
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_state_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_state.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_state.value')
+    return 'of_oxm_conn_tracking_state'
+end
+of_oxm_v4_dissectors[119300] = dissect_of_oxm_conn_tracking_state_v4
+
+-- child class of_oxm_conn_tracking_state_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_state_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_state_masked.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_state_masked.value')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_state_masked.value_mask')
+    return 'of_oxm_conn_tracking_state_masked'
+end
+of_oxm_v4_dissectors[119560] = dissect_of_oxm_conn_tracking_state_masked_v4
+
+-- child class of_oxm_conn_tracking_tp_dst
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_dst_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_tp_dst.type_len')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_conn_tracking_tp_dst.value')
+    return 'of_oxm_conn_tracking_tp_dst'
+end
+of_oxm_v4_dissectors[129538] = dissect_of_oxm_conn_tracking_tp_dst_v4
+
+-- child class of_oxm_conn_tracking_tp_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_dst_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_tp_dst_masked.type_len')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_conn_tracking_tp_dst_masked.value')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_conn_tracking_tp_dst_masked.value_mask')
+    return 'of_oxm_conn_tracking_tp_dst_masked'
+end
+of_oxm_v4_dissectors[129796] = dissect_of_oxm_conn_tracking_tp_dst_masked_v4
+
+-- child class of_oxm_conn_tracking_tp_src
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_src_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_tp_src.type_len')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_conn_tracking_tp_src.value')
+    return 'of_oxm_conn_tracking_tp_src'
+end
+of_oxm_v4_dissectors[129026] = dissect_of_oxm_conn_tracking_tp_src_v4
+
+-- child class of_oxm_conn_tracking_tp_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_src_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_tp_src_masked.type_len')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_conn_tracking_tp_src_masked.value')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_conn_tracking_tp_src_masked.value_mask')
+    return 'of_oxm_conn_tracking_tp_src_masked'
+end
+of_oxm_v4_dissectors[129284] = dissect_of_oxm_conn_tracking_tp_src_masked_v4
+
+-- child class of_oxm_conn_tracking_zone
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_zone_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_zone.type_len')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_conn_tracking_zone.value')
+    return 'of_oxm_conn_tracking_zone'
+end
+of_oxm_v4_dissectors[119810] = dissect_of_oxm_conn_tracking_zone_v4
+
+-- child class of_oxm_conn_tracking_zone_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_zone_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_conn_tracking_zone_masked.type_len')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_conn_tracking_zone_masked.value')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_conn_tracking_zone_masked.value_mask')
+    return 'of_oxm_conn_tracking_zone_masked'
+end
+of_oxm_v4_dissectors[120068] = dissect_of_oxm_conn_tracking_zone_masked_v4
 
 -- child class of_oxm_eth_dst
 -- Child of of_oxm
@@ -47733,6 +48612,15 @@ function dissect_of_bsn_tlv_priority_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[57] = dissect_of_bsn_tlv_priority_v5
 
+-- child class of_bsn_tlv_push_vlan_on_egress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_push_vlan_on_egress_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_push_vlan_on_egress.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_push_vlan_on_egress.length')
+    return 'of_bsn_tlv_push_vlan_on_egress'
+end
+of_bsn_tlv_v5_dissectors[162] = dissect_of_bsn_tlv_push_vlan_on_egress_v5
+
 -- child class of_bsn_tlv_push_vlan_on_ingress
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_push_vlan_on_ingress_v5(reader, subtree)
@@ -50561,6 +51449,215 @@ function dissect_of_oxm_bsn_vxlan_network_id_masked_v5(reader, subtree)
     return 'of_oxm_bsn_vxlan_network_id_masked'
 end
 of_oxm_v5_dissectors[207624] = dissect_of_oxm_bsn_vxlan_network_id_masked_v5
+
+-- child class of_oxm_conn_tracking_ipv6_dst
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_dst_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_ipv6_dst.type_len')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.oxm_conn_tracking_ipv6_dst.value')
+    return 'of_oxm_conn_tracking_ipv6_dst'
+end
+of_oxm_v5_dissectors[128528] = dissect_of_oxm_conn_tracking_ipv6_dst_v5
+
+-- child class of_oxm_conn_tracking_ipv6_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_dst_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_ipv6_dst_masked.type_len')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.oxm_conn_tracking_ipv6_dst_masked.value')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.oxm_conn_tracking_ipv6_dst_masked.value_mask')
+    return 'of_oxm_conn_tracking_ipv6_dst_masked'
+end
+of_oxm_v5_dissectors[128800] = dissect_of_oxm_conn_tracking_ipv6_dst_masked_v5
+
+-- child class of_oxm_conn_tracking_ipv6_src
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_src_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_ipv6_src.type_len')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.oxm_conn_tracking_ipv6_src.value')
+    return 'of_oxm_conn_tracking_ipv6_src'
+end
+of_oxm_v5_dissectors[128016] = dissect_of_oxm_conn_tracking_ipv6_src_v5
+
+-- child class of_oxm_conn_tracking_ipv6_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_src_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_ipv6_src_masked.type_len')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.oxm_conn_tracking_ipv6_src_masked.value')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.oxm_conn_tracking_ipv6_src_masked.value_mask')
+    return 'of_oxm_conn_tracking_ipv6_src_masked'
+end
+of_oxm_v5_dissectors[128288] = dissect_of_oxm_conn_tracking_ipv6_src_masked_v5
+
+-- child class of_oxm_conn_tracking_label
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_label_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_label.type_len')
+    read_uint128_t(reader, 5, subtree, 'of14.oxm_conn_tracking_label.value')
+    return 'of_oxm_conn_tracking_label'
+end
+of_oxm_v5_dissectors[120848] = dissect_of_oxm_conn_tracking_label_v5
+
+-- child class of_oxm_conn_tracking_label_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_label_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_label_masked.type_len')
+    read_uint128_t(reader, 5, subtree, 'of14.oxm_conn_tracking_label_masked.value')
+    read_uint128_t(reader, 5, subtree, 'of14.oxm_conn_tracking_label_masked.value_mask')
+    return 'of_oxm_conn_tracking_label_masked'
+end
+of_oxm_v5_dissectors[121120] = dissect_of_oxm_conn_tracking_label_masked_v5
+
+-- child class of_oxm_conn_tracking_mark
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_mark_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_mark.type_len')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_mark.value')
+    return 'of_oxm_conn_tracking_mark'
+end
+of_oxm_v5_dissectors[120324] = dissect_of_oxm_conn_tracking_mark_v5
+
+-- child class of_oxm_conn_tracking_mark_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_mark_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_mark_masked.type_len')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_mark_masked.value')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_mark_masked.value_mask')
+    return 'of_oxm_conn_tracking_mark_masked'
+end
+of_oxm_v5_dissectors[120584] = dissect_of_oxm_conn_tracking_mark_masked_v5
+
+-- child class of_oxm_conn_tracking_nw_dst
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_dst_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_dst.type_len')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_dst.value')
+    return 'of_oxm_conn_tracking_nw_dst'
+end
+of_oxm_v5_dissectors[127492] = dissect_of_oxm_conn_tracking_nw_dst_v5
+
+-- child class of_oxm_conn_tracking_nw_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_dst_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_dst_masked.type_len')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_dst_masked.value')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_dst_masked.value_mask')
+    return 'of_oxm_conn_tracking_nw_dst_masked'
+end
+of_oxm_v5_dissectors[127752] = dissect_of_oxm_conn_tracking_nw_dst_masked_v5
+
+-- child class of_oxm_conn_tracking_nw_proto
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_proto_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_proto.type_len')
+    read_uint8_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_proto.value')
+    return 'of_oxm_conn_tracking_nw_proto'
+end
+of_oxm_v5_dissectors[126465] = dissect_of_oxm_conn_tracking_nw_proto_v5
+
+-- child class of_oxm_conn_tracking_nw_proto_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_proto_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_proto_masked.type_len')
+    read_uint8_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_proto_masked.value')
+    read_uint8_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_proto_masked.value_mask')
+    return 'of_oxm_conn_tracking_nw_proto_masked'
+end
+of_oxm_v5_dissectors[126722] = dissect_of_oxm_conn_tracking_nw_proto_masked_v5
+
+-- child class of_oxm_conn_tracking_nw_src
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_src_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_src.type_len')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_src.value')
+    return 'of_oxm_conn_tracking_nw_src'
+end
+of_oxm_v5_dissectors[126980] = dissect_of_oxm_conn_tracking_nw_src_v5
+
+-- child class of_oxm_conn_tracking_nw_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_src_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_src_masked.type_len')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_src_masked.value')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_nw_src_masked.value_mask')
+    return 'of_oxm_conn_tracking_nw_src_masked'
+end
+of_oxm_v5_dissectors[127240] = dissect_of_oxm_conn_tracking_nw_src_masked_v5
+
+-- child class of_oxm_conn_tracking_state
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_state_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_state.type_len')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_state.value')
+    return 'of_oxm_conn_tracking_state'
+end
+of_oxm_v5_dissectors[119300] = dissect_of_oxm_conn_tracking_state_v5
+
+-- child class of_oxm_conn_tracking_state_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_state_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_state_masked.type_len')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_state_masked.value')
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_state_masked.value_mask')
+    return 'of_oxm_conn_tracking_state_masked'
+end
+of_oxm_v5_dissectors[119560] = dissect_of_oxm_conn_tracking_state_masked_v5
+
+-- child class of_oxm_conn_tracking_tp_dst
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_dst_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_tp_dst.type_len')
+    read_uint16_t(reader, 5, subtree, 'of14.oxm_conn_tracking_tp_dst.value')
+    return 'of_oxm_conn_tracking_tp_dst'
+end
+of_oxm_v5_dissectors[129538] = dissect_of_oxm_conn_tracking_tp_dst_v5
+
+-- child class of_oxm_conn_tracking_tp_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_dst_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_tp_dst_masked.type_len')
+    read_uint16_t(reader, 5, subtree, 'of14.oxm_conn_tracking_tp_dst_masked.value')
+    read_uint16_t(reader, 5, subtree, 'of14.oxm_conn_tracking_tp_dst_masked.value_mask')
+    return 'of_oxm_conn_tracking_tp_dst_masked'
+end
+of_oxm_v5_dissectors[129796] = dissect_of_oxm_conn_tracking_tp_dst_masked_v5
+
+-- child class of_oxm_conn_tracking_tp_src
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_src_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_tp_src.type_len')
+    read_uint16_t(reader, 5, subtree, 'of14.oxm_conn_tracking_tp_src.value')
+    return 'of_oxm_conn_tracking_tp_src'
+end
+of_oxm_v5_dissectors[129026] = dissect_of_oxm_conn_tracking_tp_src_v5
+
+-- child class of_oxm_conn_tracking_tp_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_src_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_tp_src_masked.type_len')
+    read_uint16_t(reader, 5, subtree, 'of14.oxm_conn_tracking_tp_src_masked.value')
+    read_uint16_t(reader, 5, subtree, 'of14.oxm_conn_tracking_tp_src_masked.value_mask')
+    return 'of_oxm_conn_tracking_tp_src_masked'
+end
+of_oxm_v5_dissectors[129284] = dissect_of_oxm_conn_tracking_tp_src_masked_v5
+
+-- child class of_oxm_conn_tracking_zone
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_zone_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_zone.type_len')
+    read_uint16_t(reader, 5, subtree, 'of14.oxm_conn_tracking_zone.value')
+    return 'of_oxm_conn_tracking_zone'
+end
+of_oxm_v5_dissectors[119810] = dissect_of_oxm_conn_tracking_zone_v5
+
+-- child class of_oxm_conn_tracking_zone_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_zone_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_conn_tracking_zone_masked.type_len')
+    read_uint16_t(reader, 5, subtree, 'of14.oxm_conn_tracking_zone_masked.value')
+    read_uint16_t(reader, 5, subtree, 'of14.oxm_conn_tracking_zone_masked.value_mask')
+    return 'of_oxm_conn_tracking_zone_masked'
+end
+of_oxm_v5_dissectors[120068] = dissect_of_oxm_conn_tracking_zone_masked_v5
 
 -- child class of_oxm_eth_dst
 -- Child of of_oxm
@@ -56179,6 +57276,15 @@ function dissect_of_bsn_tlv_priority_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[57] = dissect_of_bsn_tlv_priority_v6
 
+-- child class of_bsn_tlv_push_vlan_on_egress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_push_vlan_on_egress_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_push_vlan_on_egress.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_push_vlan_on_egress.length')
+    return 'of_bsn_tlv_push_vlan_on_egress'
+end
+of_bsn_tlv_v6_dissectors[162] = dissect_of_bsn_tlv_push_vlan_on_egress_v6
+
 -- child class of_bsn_tlv_push_vlan_on_ingress
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_push_vlan_on_ingress_v6(reader, subtree)
@@ -59411,6 +60517,215 @@ function dissect_of_oxm_bsn_vxlan_network_id_masked_v6(reader, subtree)
     return 'of_oxm_bsn_vxlan_network_id_masked'
 end
 of_oxm_v6_dissectors[207624] = dissect_of_oxm_bsn_vxlan_network_id_masked_v6
+
+-- child class of_oxm_conn_tracking_ipv6_dst
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_dst_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_ipv6_dst.type_len')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.oxm_conn_tracking_ipv6_dst.value')
+    return 'of_oxm_conn_tracking_ipv6_dst'
+end
+of_oxm_v6_dissectors[128528] = dissect_of_oxm_conn_tracking_ipv6_dst_v6
+
+-- child class of_oxm_conn_tracking_ipv6_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_dst_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_ipv6_dst_masked.type_len')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.oxm_conn_tracking_ipv6_dst_masked.value')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.oxm_conn_tracking_ipv6_dst_masked.value_mask')
+    return 'of_oxm_conn_tracking_ipv6_dst_masked'
+end
+of_oxm_v6_dissectors[128800] = dissect_of_oxm_conn_tracking_ipv6_dst_masked_v6
+
+-- child class of_oxm_conn_tracking_ipv6_src
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_src_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_ipv6_src.type_len')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.oxm_conn_tracking_ipv6_src.value')
+    return 'of_oxm_conn_tracking_ipv6_src'
+end
+of_oxm_v6_dissectors[128016] = dissect_of_oxm_conn_tracking_ipv6_src_v6
+
+-- child class of_oxm_conn_tracking_ipv6_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_ipv6_src_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_ipv6_src_masked.type_len')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.oxm_conn_tracking_ipv6_src_masked.value')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.oxm_conn_tracking_ipv6_src_masked.value_mask')
+    return 'of_oxm_conn_tracking_ipv6_src_masked'
+end
+of_oxm_v6_dissectors[128288] = dissect_of_oxm_conn_tracking_ipv6_src_masked_v6
+
+-- child class of_oxm_conn_tracking_label
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_label_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_label.type_len')
+    read_uint128_t(reader, 6, subtree, 'of15.oxm_conn_tracking_label.value')
+    return 'of_oxm_conn_tracking_label'
+end
+of_oxm_v6_dissectors[120848] = dissect_of_oxm_conn_tracking_label_v6
+
+-- child class of_oxm_conn_tracking_label_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_label_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_label_masked.type_len')
+    read_uint128_t(reader, 6, subtree, 'of15.oxm_conn_tracking_label_masked.value')
+    read_uint128_t(reader, 6, subtree, 'of15.oxm_conn_tracking_label_masked.value_mask')
+    return 'of_oxm_conn_tracking_label_masked'
+end
+of_oxm_v6_dissectors[121120] = dissect_of_oxm_conn_tracking_label_masked_v6
+
+-- child class of_oxm_conn_tracking_mark
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_mark_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_mark.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_mark.value')
+    return 'of_oxm_conn_tracking_mark'
+end
+of_oxm_v6_dissectors[120324] = dissect_of_oxm_conn_tracking_mark_v6
+
+-- child class of_oxm_conn_tracking_mark_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_mark_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_mark_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_mark_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_mark_masked.value_mask')
+    return 'of_oxm_conn_tracking_mark_masked'
+end
+of_oxm_v6_dissectors[120584] = dissect_of_oxm_conn_tracking_mark_masked_v6
+
+-- child class of_oxm_conn_tracking_nw_dst
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_dst_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_dst.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_dst.value')
+    return 'of_oxm_conn_tracking_nw_dst'
+end
+of_oxm_v6_dissectors[127492] = dissect_of_oxm_conn_tracking_nw_dst_v6
+
+-- child class of_oxm_conn_tracking_nw_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_dst_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_dst_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_dst_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_dst_masked.value_mask')
+    return 'of_oxm_conn_tracking_nw_dst_masked'
+end
+of_oxm_v6_dissectors[127752] = dissect_of_oxm_conn_tracking_nw_dst_masked_v6
+
+-- child class of_oxm_conn_tracking_nw_proto
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_proto_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_proto.type_len')
+    read_uint8_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_proto.value')
+    return 'of_oxm_conn_tracking_nw_proto'
+end
+of_oxm_v6_dissectors[126465] = dissect_of_oxm_conn_tracking_nw_proto_v6
+
+-- child class of_oxm_conn_tracking_nw_proto_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_proto_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_proto_masked.type_len')
+    read_uint8_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_proto_masked.value')
+    read_uint8_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_proto_masked.value_mask')
+    return 'of_oxm_conn_tracking_nw_proto_masked'
+end
+of_oxm_v6_dissectors[126722] = dissect_of_oxm_conn_tracking_nw_proto_masked_v6
+
+-- child class of_oxm_conn_tracking_nw_src
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_src_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_src.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_src.value')
+    return 'of_oxm_conn_tracking_nw_src'
+end
+of_oxm_v6_dissectors[126980] = dissect_of_oxm_conn_tracking_nw_src_v6
+
+-- child class of_oxm_conn_tracking_nw_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_nw_src_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_src_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_src_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_nw_src_masked.value_mask')
+    return 'of_oxm_conn_tracking_nw_src_masked'
+end
+of_oxm_v6_dissectors[127240] = dissect_of_oxm_conn_tracking_nw_src_masked_v6
+
+-- child class of_oxm_conn_tracking_state
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_state_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_state.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_state.value')
+    return 'of_oxm_conn_tracking_state'
+end
+of_oxm_v6_dissectors[119300] = dissect_of_oxm_conn_tracking_state_v6
+
+-- child class of_oxm_conn_tracking_state_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_state_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_state_masked.type_len')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_state_masked.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_state_masked.value_mask')
+    return 'of_oxm_conn_tracking_state_masked'
+end
+of_oxm_v6_dissectors[119560] = dissect_of_oxm_conn_tracking_state_masked_v6
+
+-- child class of_oxm_conn_tracking_tp_dst
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_dst_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_tp_dst.type_len')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_conn_tracking_tp_dst.value')
+    return 'of_oxm_conn_tracking_tp_dst'
+end
+of_oxm_v6_dissectors[129538] = dissect_of_oxm_conn_tracking_tp_dst_v6
+
+-- child class of_oxm_conn_tracking_tp_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_dst_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_tp_dst_masked.type_len')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_conn_tracking_tp_dst_masked.value')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_conn_tracking_tp_dst_masked.value_mask')
+    return 'of_oxm_conn_tracking_tp_dst_masked'
+end
+of_oxm_v6_dissectors[129796] = dissect_of_oxm_conn_tracking_tp_dst_masked_v6
+
+-- child class of_oxm_conn_tracking_tp_src
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_src_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_tp_src.type_len')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_conn_tracking_tp_src.value')
+    return 'of_oxm_conn_tracking_tp_src'
+end
+of_oxm_v6_dissectors[129026] = dissect_of_oxm_conn_tracking_tp_src_v6
+
+-- child class of_oxm_conn_tracking_tp_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_tp_src_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_tp_src_masked.type_len')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_conn_tracking_tp_src_masked.value')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_conn_tracking_tp_src_masked.value_mask')
+    return 'of_oxm_conn_tracking_tp_src_masked'
+end
+of_oxm_v6_dissectors[129284] = dissect_of_oxm_conn_tracking_tp_src_masked_v6
+
+-- child class of_oxm_conn_tracking_zone
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_zone_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_zone.type_len')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_conn_tracking_zone.value')
+    return 'of_oxm_conn_tracking_zone'
+end
+of_oxm_v6_dissectors[119810] = dissect_of_oxm_conn_tracking_zone_v6
+
+-- child class of_oxm_conn_tracking_zone_masked
+-- Child of of_oxm
+function dissect_of_oxm_conn_tracking_zone_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_conn_tracking_zone_masked.type_len')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_conn_tracking_zone_masked.value')
+    read_uint16_t(reader, 6, subtree, 'of15.oxm_conn_tracking_zone_masked.value_mask')
+    return 'of_oxm_conn_tracking_zone_masked'
+end
+of_oxm_v6_dissectors[120068] = dissect_of_oxm_conn_tracking_zone_masked_v6
 
 -- child class of_oxm_eth_dst
 -- Child of of_oxm

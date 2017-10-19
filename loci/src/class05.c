@@ -842,6 +842,72 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x14108:
             *id = OF_OXM_TUNNEL_IPV4_DST_MASKED;
             break;
+        case 0x1d204:
+            *id = OF_OXM_CONN_TRACKING_STATE;
+            break;
+        case 0x1d308:
+            *id = OF_OXM_CONN_TRACKING_STATE_MASKED;
+            break;
+        case 0x1d402:
+            *id = OF_OXM_CONN_TRACKING_ZONE;
+            break;
+        case 0x1d504:
+            *id = OF_OXM_CONN_TRACKING_ZONE_MASKED;
+            break;
+        case 0x1d604:
+            *id = OF_OXM_CONN_TRACKING_MARK;
+            break;
+        case 0x1d708:
+            *id = OF_OXM_CONN_TRACKING_MARK_MASKED;
+            break;
+        case 0x1d810:
+            *id = OF_OXM_CONN_TRACKING_LABEL;
+            break;
+        case 0x1d920:
+            *id = OF_OXM_CONN_TRACKING_LABEL_MASKED;
+            break;
+        case 0x1ee01:
+            *id = OF_OXM_CONN_TRACKING_NW_PROTO;
+            break;
+        case 0x1ef02:
+            *id = OF_OXM_CONN_TRACKING_NW_PROTO_MASKED;
+            break;
+        case 0x1f004:
+            *id = OF_OXM_CONN_TRACKING_NW_SRC;
+            break;
+        case 0x1f108:
+            *id = OF_OXM_CONN_TRACKING_NW_SRC_MASKED;
+            break;
+        case 0x1f204:
+            *id = OF_OXM_CONN_TRACKING_NW_DST;
+            break;
+        case 0x1f308:
+            *id = OF_OXM_CONN_TRACKING_NW_DST_MASKED;
+            break;
+        case 0x1f410:
+            *id = OF_OXM_CONN_TRACKING_IPV6_SRC;
+            break;
+        case 0x1f520:
+            *id = OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED;
+            break;
+        case 0x1f610:
+            *id = OF_OXM_CONN_TRACKING_IPV6_DST;
+            break;
+        case 0x1f720:
+            *id = OF_OXM_CONN_TRACKING_IPV6_DST_MASKED;
+            break;
+        case 0x1f802:
+            *id = OF_OXM_CONN_TRACKING_TP_SRC;
+            break;
+        case 0x1f904:
+            *id = OF_OXM_CONN_TRACKING_TP_SRC_MASKED;
+            break;
+        case 0x1fa02:
+            *id = OF_OXM_CONN_TRACKING_TP_DST;
+            break;
+        case 0x1fb04:
+            *id = OF_OXM_CONN_TRACKING_TP_DST_MASKED;
+            break;
         case 0x30010:
             *id = OF_OXM_BSN_IN_PORTS_128;
             break;
@@ -1216,6 +1282,72 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x14108:
             *id = OF_OXM_TUNNEL_IPV4_DST_MASKED;
+            break;
+        case 0x1d204:
+            *id = OF_OXM_CONN_TRACKING_STATE;
+            break;
+        case 0x1d308:
+            *id = OF_OXM_CONN_TRACKING_STATE_MASKED;
+            break;
+        case 0x1d402:
+            *id = OF_OXM_CONN_TRACKING_ZONE;
+            break;
+        case 0x1d504:
+            *id = OF_OXM_CONN_TRACKING_ZONE_MASKED;
+            break;
+        case 0x1d604:
+            *id = OF_OXM_CONN_TRACKING_MARK;
+            break;
+        case 0x1d708:
+            *id = OF_OXM_CONN_TRACKING_MARK_MASKED;
+            break;
+        case 0x1d810:
+            *id = OF_OXM_CONN_TRACKING_LABEL;
+            break;
+        case 0x1d920:
+            *id = OF_OXM_CONN_TRACKING_LABEL_MASKED;
+            break;
+        case 0x1ee01:
+            *id = OF_OXM_CONN_TRACKING_NW_PROTO;
+            break;
+        case 0x1ef02:
+            *id = OF_OXM_CONN_TRACKING_NW_PROTO_MASKED;
+            break;
+        case 0x1f004:
+            *id = OF_OXM_CONN_TRACKING_NW_SRC;
+            break;
+        case 0x1f108:
+            *id = OF_OXM_CONN_TRACKING_NW_SRC_MASKED;
+            break;
+        case 0x1f204:
+            *id = OF_OXM_CONN_TRACKING_NW_DST;
+            break;
+        case 0x1f308:
+            *id = OF_OXM_CONN_TRACKING_NW_DST_MASKED;
+            break;
+        case 0x1f410:
+            *id = OF_OXM_CONN_TRACKING_IPV6_SRC;
+            break;
+        case 0x1f520:
+            *id = OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED;
+            break;
+        case 0x1f610:
+            *id = OF_OXM_CONN_TRACKING_IPV6_DST;
+            break;
+        case 0x1f720:
+            *id = OF_OXM_CONN_TRACKING_IPV6_DST_MASKED;
+            break;
+        case 0x1f802:
+            *id = OF_OXM_CONN_TRACKING_TP_SRC;
+            break;
+        case 0x1f904:
+            *id = OF_OXM_CONN_TRACKING_TP_SRC_MASKED;
+            break;
+        case 0x1fa02:
+            *id = OF_OXM_CONN_TRACKING_TP_DST;
+            break;
+        case 0x1fb04:
+            *id = OF_OXM_CONN_TRACKING_TP_DST_MASKED;
             break;
         case 0x30010:
             *id = OF_OXM_BSN_IN_PORTS_128;
@@ -1639,6 +1771,72 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x14108:
             *id = OF_OXM_TUNNEL_IPV4_DST_MASKED;
+            break;
+        case 0x1d204:
+            *id = OF_OXM_CONN_TRACKING_STATE;
+            break;
+        case 0x1d308:
+            *id = OF_OXM_CONN_TRACKING_STATE_MASKED;
+            break;
+        case 0x1d402:
+            *id = OF_OXM_CONN_TRACKING_ZONE;
+            break;
+        case 0x1d504:
+            *id = OF_OXM_CONN_TRACKING_ZONE_MASKED;
+            break;
+        case 0x1d604:
+            *id = OF_OXM_CONN_TRACKING_MARK;
+            break;
+        case 0x1d708:
+            *id = OF_OXM_CONN_TRACKING_MARK_MASKED;
+            break;
+        case 0x1d810:
+            *id = OF_OXM_CONN_TRACKING_LABEL;
+            break;
+        case 0x1d920:
+            *id = OF_OXM_CONN_TRACKING_LABEL_MASKED;
+            break;
+        case 0x1ee01:
+            *id = OF_OXM_CONN_TRACKING_NW_PROTO;
+            break;
+        case 0x1ef02:
+            *id = OF_OXM_CONN_TRACKING_NW_PROTO_MASKED;
+            break;
+        case 0x1f004:
+            *id = OF_OXM_CONN_TRACKING_NW_SRC;
+            break;
+        case 0x1f108:
+            *id = OF_OXM_CONN_TRACKING_NW_SRC_MASKED;
+            break;
+        case 0x1f204:
+            *id = OF_OXM_CONN_TRACKING_NW_DST;
+            break;
+        case 0x1f308:
+            *id = OF_OXM_CONN_TRACKING_NW_DST_MASKED;
+            break;
+        case 0x1f410:
+            *id = OF_OXM_CONN_TRACKING_IPV6_SRC;
+            break;
+        case 0x1f520:
+            *id = OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED;
+            break;
+        case 0x1f610:
+            *id = OF_OXM_CONN_TRACKING_IPV6_DST;
+            break;
+        case 0x1f720:
+            *id = OF_OXM_CONN_TRACKING_IPV6_DST_MASKED;
+            break;
+        case 0x1f802:
+            *id = OF_OXM_CONN_TRACKING_TP_SRC;
+            break;
+        case 0x1f904:
+            *id = OF_OXM_CONN_TRACKING_TP_SRC_MASKED;
+            break;
+        case 0x1fa02:
+            *id = OF_OXM_CONN_TRACKING_TP_DST;
+            break;
+        case 0x1fb04:
+            *id = OF_OXM_CONN_TRACKING_TP_DST_MASKED;
             break;
         case 0x30010:
             *id = OF_OXM_BSN_IN_PORTS_128;

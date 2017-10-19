@@ -5043,6 +5043,44 @@ class priority(bsn_tlv):
 
 bsn_tlv.subtypes[57] = priority
 
+class push_vlan_on_egress(bsn_tlv):
+    type = 162
+
+    def __init__(self):
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = push_vlan_on_egress()
+        _type = reader.read("!H")[0]
+        assert(_type == 162)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("push_vlan_on_egress {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[162] = push_vlan_on_egress
+
 class push_vlan_on_ingress(bsn_tlv):
     type = 128
 

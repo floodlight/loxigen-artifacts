@@ -14441,6 +14441,820 @@ test_of_oxm_bsn_vrf_masked_OF_VERSION_1_2_scalar(void)
 }
 
 static int
+test_of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_ipv6_dst_t *obj;
+
+    obj = of_oxm_conn_tracking_ipv6_dst_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_DST);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_IPV6_DST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_ipv6_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_ipv6_dst_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_ipv6_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_ipv6_src_t *obj;
+
+    obj = of_oxm_conn_tracking_ipv6_src_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_IPV6_SRC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_ipv6_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_ipv6_src_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_ipv6_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_label_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_label_t *obj;
+
+    obj = of_oxm_conn_tracking_label_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_LABEL);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_LABEL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_label_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_label_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_label_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_label_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_label_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_label_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_mark_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_mark_t *obj;
+
+    obj = of_oxm_conn_tracking_mark_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_MARK);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_MARK);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_mark_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_mark_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_mark_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_mark_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_mark_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_MARK_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_mark_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_nw_dst_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_dst_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_DST);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_DST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_nw_dst_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_dst_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_nw_proto_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_proto_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_PROTO);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_PROTO);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_proto_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_nw_proto_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_proto_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_proto_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_nw_src_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_src_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_SRC);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_SRC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_nw_src_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_src_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_state_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_state_t *obj;
+
+    obj = of_oxm_conn_tracking_state_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_STATE);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_STATE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_state_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_state_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_state_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_state_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_state_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_STATE_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_state_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_tp_dst_t *obj;
+
+    obj = of_oxm_conn_tracking_tp_dst_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_TP_DST);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_TP_DST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_tp_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_tp_dst_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_tp_dst_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_tp_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_tp_src_t *obj;
+
+    obj = of_oxm_conn_tracking_tp_src_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_TP_SRC);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_TP_SRC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_tp_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_tp_src_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_tp_src_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_tp_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_zone_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_zone_t *obj;
+
+    obj = of_oxm_conn_tracking_zone_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_ZONE);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_ZONE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_zone_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_zone_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_zone_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_conn_tracking_zone_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_zone_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_zone_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_oxm_eth_dst_OF_VERSION_1_2_scalar(void)
 {
     of_oxm_eth_dst_t *obj;
@@ -29199,6 +30013,43 @@ test_of_bsn_tlv_priority_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_push_vlan_on_egress_t *obj;
+
+    obj = of_bsn_tlv_push_vlan_on_egress_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_PUSH_VLAN_ON_EGRESS);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_PUSH_VLAN_ON_EGRESS);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_push_vlan_on_egress_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_scalar(void)
 {
     of_bsn_tlv_push_vlan_on_ingress_t *obj;
@@ -35775,6 +36626,820 @@ test_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_oxm_bsn_vxlan_network_id_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_ipv6_dst_t *obj;
+
+    obj = of_oxm_conn_tracking_ipv6_dst_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_DST);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_IPV6_DST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_ipv6_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_ipv6_dst_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_ipv6_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_ipv6_src_t *obj;
+
+    obj = of_oxm_conn_tracking_ipv6_src_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_IPV6_SRC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_ipv6_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_ipv6_src_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_ipv6_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_label_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_label_t *obj;
+
+    obj = of_oxm_conn_tracking_label_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_LABEL);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_LABEL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_label_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_label_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_label_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_label_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_label_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_label_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_mark_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_mark_t *obj;
+
+    obj = of_oxm_conn_tracking_mark_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_MARK);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_MARK);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_mark_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_mark_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_mark_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_mark_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_mark_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_MARK_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_mark_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_nw_dst_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_dst_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_DST);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_DST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_nw_dst_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_dst_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_nw_proto_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_proto_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_PROTO);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_PROTO);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_proto_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_nw_proto_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_proto_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_proto_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_nw_src_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_src_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_SRC);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_SRC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_nw_src_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_src_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_state_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_state_t *obj;
+
+    obj = of_oxm_conn_tracking_state_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_STATE);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_STATE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_state_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_state_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_state_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_state_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_state_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_STATE_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_state_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_tp_dst_t *obj;
+
+    obj = of_oxm_conn_tracking_tp_dst_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_TP_DST);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_TP_DST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_tp_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_tp_dst_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_tp_dst_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_tp_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_tp_src_t *obj;
+
+    obj = of_oxm_conn_tracking_tp_src_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_TP_SRC);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_TP_SRC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_tp_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_tp_src_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_tp_src_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_tp_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_zone_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_zone_t *obj;
+
+    obj = of_oxm_conn_tracking_zone_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_ZONE);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_ZONE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_zone_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_zone_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_zone_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_conn_tracking_zone_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_zone_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_zone_masked_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -52402,6 +54067,43 @@ test_of_bsn_tlv_priority_OF_VERSION_1_4_scalar(void)
 }
 
 static int
+test_of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_push_vlan_on_egress_t *obj;
+
+    obj = of_bsn_tlv_push_vlan_on_egress_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_PUSH_VLAN_ON_EGRESS);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_PUSH_VLAN_ON_EGRESS);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_push_vlan_on_egress_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_scalar(void)
 {
     of_bsn_tlv_push_vlan_on_ingress_t *obj;
@@ -58836,6 +60538,820 @@ test_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_scalar(void)
 }
 
 static int
+test_of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_ipv6_dst_t *obj;
+
+    obj = of_oxm_conn_tracking_ipv6_dst_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_DST);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_IPV6_DST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_ipv6_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_ipv6_dst_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_ipv6_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_ipv6_src_t *obj;
+
+    obj = of_oxm_conn_tracking_ipv6_src_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_IPV6_SRC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_ipv6_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_ipv6_src_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_ipv6_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_label_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_label_t *obj;
+
+    obj = of_oxm_conn_tracking_label_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_LABEL);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_LABEL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_label_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_label_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_label_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_label_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_label_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_label_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_mark_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_mark_t *obj;
+
+    obj = of_oxm_conn_tracking_mark_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_MARK);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_MARK);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_mark_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_mark_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_mark_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_mark_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_mark_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_MARK_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_mark_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_nw_dst_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_dst_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_DST);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_DST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_nw_dst_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_dst_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_nw_proto_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_proto_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_PROTO);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_PROTO);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_proto_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_nw_proto_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_proto_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_proto_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_nw_src_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_src_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_SRC);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_SRC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_nw_src_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_nw_src_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_nw_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_state_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_state_t *obj;
+
+    obj = of_oxm_conn_tracking_state_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_STATE);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_STATE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_state_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_state_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_state_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_state_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_state_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_STATE_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_state_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_tp_dst_t *obj;
+
+    obj = of_oxm_conn_tracking_tp_dst_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_TP_DST);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_TP_DST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_tp_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_tp_dst_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_tp_dst_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_tp_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_tp_src_t *obj;
+
+    obj = of_oxm_conn_tracking_tp_src_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_TP_SRC);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_TP_SRC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_tp_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_tp_src_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_tp_src_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_tp_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_zone_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_zone_t *obj;
+
+    obj = of_oxm_conn_tracking_zone_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_ZONE);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_ZONE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_zone_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_zone_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_zone_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_conn_tracking_zone_masked_t *obj;
+
+    obj = of_oxm_conn_tracking_zone_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_conn_tracking_zone_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_oxm_eth_dst_OF_VERSION_1_4_scalar(void)
 {
     of_oxm_eth_dst_t *obj;
@@ -63668,6 +66184,28 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_bsn_vrf_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_bsn_vrf_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_label_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_mark_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_state_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_zone_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_eth_dst_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_eth_dst_masked_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_eth_src_OF_VERSION_1_2_scalar);
@@ -64070,6 +66608,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_port_usage_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_priority_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_qos_priority_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_queue_id_OF_VERSION_1_3_scalar);
@@ -64250,6 +66789,28 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_oxm_bsn_vrf_masked_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_bsn_vxlan_network_id_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_label_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_mark_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_state_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_zone_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_eth_dst_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_eth_dst_masked_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_eth_src_OF_VERSION_1_3_scalar);
@@ -64703,6 +67264,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_port_usage_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_priority_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_qos_priority_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_queue_id_OF_VERSION_1_4_scalar);
@@ -64879,6 +67441,28 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_oxm_bsn_vrf_masked_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_bsn_vxlan_network_id_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_label_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_mark_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_state_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_zone_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_eth_dst_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_eth_dst_masked_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_eth_src_OF_VERSION_1_4_scalar);

@@ -925,6 +925,10 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvPushVlanOnEgress pushVlanOnEgress() {
+        return OFBsnTlvPushVlanOnEgressVer14.INSTANCE;
+    }
+
     public OFBsnTlvPushVlanOnIngress pushVlanOnIngress() {
         return OFBsnTlvPushVlanOnIngressVer14.INSTANCE;
     }

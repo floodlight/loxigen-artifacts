@@ -7372,14 +7372,14 @@ of_oxm_bsn_vrf_masked_value_mask_set(
 #include "loci_int.h"
 
 void
-of_oxm_eth_dst_push_wire_types(of_object_t *obj)
+of_oxm_conn_tracking_ipv6_dst_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
-        *(uint32_t *)(buf + 0) = U32_HTON(0x80000606); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x1f610); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -7389,11 +7389,11 @@ of_oxm_eth_dst_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_oxm_eth_dst of_oxm_eth_dst
+ * \defgroup of_oxm_conn_tracking_ipv6_dst of_oxm_conn_tracking_ipv6_dst
  */
 
 /**
- * Create a new of_oxm_eth_dst object
+ * Create a new of_oxm_conn_tracking_ipv6_dst object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -7401,29 +7401,29 @@ of_oxm_eth_dst_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_oxm_eth_dst
+ * \ingroup of_oxm_conn_tracking_ipv6_dst
  */
 
 of_object_t *
-of_oxm_eth_dst_new(of_version_t version)
+of_oxm_conn_tracking_ipv6_dst_new(of_version_t version)
 {
     of_object_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ETH_DST];
+    bytes = of_object_fixed_len[version][OF_OXM_CONN_TRACKING_IPV6_DST];
 
     if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_oxm_eth_dst_init(obj, version, bytes, 0);
-    of_oxm_eth_dst_push_wire_types(obj);
+    of_oxm_conn_tracking_ipv6_dst_init(obj, version, bytes, 0);
+    of_oxm_conn_tracking_ipv6_dst_push_wire_types(obj);
 
     return obj;
 }
 
 /**
- * Initialize an object of type of_oxm_eth_dst.
+ * Initialize an object of type of_oxm_conn_tracking_ipv6_dst.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -7440,19 +7440,19 @@ of_oxm_eth_dst_new(of_version_t version)
  */
 
 void
-of_oxm_eth_dst_init(of_object_t *obj,
+of_oxm_conn_tracking_ipv6_dst_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_ETH_DST] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_CONN_TRACKING_IPV6_DST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ETH_DST];
+        bytes = of_object_fixed_len[version][OF_OXM_CONN_TRACKING_IPV6_DST];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_OXM_ETH_DST;
+    obj->object_id = OF_OXM_CONN_TRACKING_IPV6_DST;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -7464,23 +7464,23 @@ of_oxm_eth_dst_init(of_object_t *obj,
 }
 
 /**
- * Get value from an object of type of_oxm_eth_dst.
- * @param obj Pointer to an object of type of_oxm_eth_dst.
+ * Get value from an object of type of_oxm_conn_tracking_ipv6_dst.
+ * @param obj Pointer to an object of type of_oxm_conn_tracking_ipv6_dst.
  * @param value Pointer to the child object of type
- * of_mac_addr_t to be filled out.
+ * of_ipv6_t to be filled out.
  *
  */
 void
-of_oxm_eth_dst_value_get(
-    of_oxm_eth_dst_t *obj,
-    of_mac_addr_t *value)
+of_oxm_conn_tracking_ipv6_dst_value_get(
+    of_oxm_conn_tracking_ipv6_dst_t *obj,
+    of_ipv6_t *value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_ETH_DST);
+    LOCI_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_DST);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -7498,7 +7498,7 @@ of_oxm_eth_dst_value_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_mac_get(wbuf, abs_offset, value);
+    of_wire_buffer_ipv6_get(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -7506,21 +7506,21 @@ of_oxm_eth_dst_value_get(
 }
 
 /**
- * Set value in an object of type of_oxm_eth_dst.
- * @param obj Pointer to an object of type of_oxm_eth_dst.
+ * Set value in an object of type of_oxm_conn_tracking_ipv6_dst.
+ * @param obj Pointer to an object of type of_oxm_conn_tracking_ipv6_dst.
  * @param value The value to write into the object
  */
 void
-of_oxm_eth_dst_value_set(
-    of_oxm_eth_dst_t *obj,
-    of_mac_addr_t value)
+of_oxm_conn_tracking_ipv6_dst_value_set(
+    of_oxm_conn_tracking_ipv6_dst_t *obj,
+    of_ipv6_t value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_ETH_DST);
+    LOCI_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_DST);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -7538,7 +7538,7 @@ of_oxm_eth_dst_value_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_mac_set(wbuf, abs_offset, value);
+    of_wire_buffer_ipv6_set(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -7576,14 +7576,14 @@ of_oxm_eth_dst_value_set(
 #include "loci_int.h"
 
 void
-of_oxm_eth_dst_masked_push_wire_types(of_object_t *obj)
+of_oxm_conn_tracking_ipv6_dst_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
-        *(uint32_t *)(buf + 0) = U32_HTON(0x8000070c); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x1f720); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -7593,11 +7593,11 @@ of_oxm_eth_dst_masked_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_oxm_eth_dst_masked of_oxm_eth_dst_masked
+ * \defgroup of_oxm_conn_tracking_ipv6_dst_masked of_oxm_conn_tracking_ipv6_dst_masked
  */
 
 /**
- * Create a new of_oxm_eth_dst_masked object
+ * Create a new of_oxm_conn_tracking_ipv6_dst_masked object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -7605,29 +7605,29 @@ of_oxm_eth_dst_masked_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_oxm_eth_dst_masked
+ * \ingroup of_oxm_conn_tracking_ipv6_dst_masked
  */
 
 of_object_t *
-of_oxm_eth_dst_masked_new(of_version_t version)
+of_oxm_conn_tracking_ipv6_dst_masked_new(of_version_t version)
 {
     of_object_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ETH_DST_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_CONN_TRACKING_IPV6_DST_MASKED];
 
     if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_oxm_eth_dst_masked_init(obj, version, bytes, 0);
-    of_oxm_eth_dst_masked_push_wire_types(obj);
+    of_oxm_conn_tracking_ipv6_dst_masked_init(obj, version, bytes, 0);
+    of_oxm_conn_tracking_ipv6_dst_masked_push_wire_types(obj);
 
     return obj;
 }
 
 /**
- * Initialize an object of type of_oxm_eth_dst_masked.
+ * Initialize an object of type of_oxm_conn_tracking_ipv6_dst_masked.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -7644,19 +7644,19 @@ of_oxm_eth_dst_masked_new(of_version_t version)
  */
 
 void
-of_oxm_eth_dst_masked_init(of_object_t *obj,
+of_oxm_conn_tracking_ipv6_dst_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_ETH_DST_MASKED] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_CONN_TRACKING_IPV6_DST_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ETH_DST_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_CONN_TRACKING_IPV6_DST_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_OXM_ETH_DST_MASKED;
+    obj->object_id = OF_OXM_CONN_TRACKING_IPV6_DST_MASKED;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -7668,23 +7668,23 @@ of_oxm_eth_dst_masked_init(of_object_t *obj,
 }
 
 /**
- * Get value from an object of type of_oxm_eth_dst_masked.
- * @param obj Pointer to an object of type of_oxm_eth_dst_masked.
+ * Get value from an object of type of_oxm_conn_tracking_ipv6_dst_masked.
+ * @param obj Pointer to an object of type of_oxm_conn_tracking_ipv6_dst_masked.
  * @param value Pointer to the child object of type
- * of_mac_addr_t to be filled out.
+ * of_ipv6_t to be filled out.
  *
  */
 void
-of_oxm_eth_dst_masked_value_get(
-    of_oxm_eth_dst_masked_t *obj,
-    of_mac_addr_t *value)
+of_oxm_conn_tracking_ipv6_dst_masked_value_get(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj,
+    of_ipv6_t *value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_ETH_DST_MASKED);
+    LOCI_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -7702,7 +7702,7 @@ of_oxm_eth_dst_masked_value_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_mac_get(wbuf, abs_offset, value);
+    of_wire_buffer_ipv6_get(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -7710,21 +7710,21 @@ of_oxm_eth_dst_masked_value_get(
 }
 
 /**
- * Set value in an object of type of_oxm_eth_dst_masked.
- * @param obj Pointer to an object of type of_oxm_eth_dst_masked.
+ * Set value in an object of type of_oxm_conn_tracking_ipv6_dst_masked.
+ * @param obj Pointer to an object of type of_oxm_conn_tracking_ipv6_dst_masked.
  * @param value The value to write into the object
  */
 void
-of_oxm_eth_dst_masked_value_set(
-    of_oxm_eth_dst_masked_t *obj,
-    of_mac_addr_t value)
+of_oxm_conn_tracking_ipv6_dst_masked_value_set(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj,
+    of_ipv6_t value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_ETH_DST_MASKED);
+    LOCI_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -7742,7 +7742,7 @@ of_oxm_eth_dst_masked_value_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_mac_set(wbuf, abs_offset, value);
+    of_wire_buffer_ipv6_set(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -7750,23 +7750,23 @@ of_oxm_eth_dst_masked_value_set(
 }
 
 /**
- * Get value_mask from an object of type of_oxm_eth_dst_masked.
- * @param obj Pointer to an object of type of_oxm_eth_dst_masked.
+ * Get value_mask from an object of type of_oxm_conn_tracking_ipv6_dst_masked.
+ * @param obj Pointer to an object of type of_oxm_conn_tracking_ipv6_dst_masked.
  * @param value_mask Pointer to the child object of type
- * of_mac_addr_t to be filled out.
+ * of_ipv6_t to be filled out.
  *
  */
 void
-of_oxm_eth_dst_masked_value_mask_get(
-    of_oxm_eth_dst_masked_t *obj,
-    of_mac_addr_t *value_mask)
+of_oxm_conn_tracking_ipv6_dst_masked_value_mask_get(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj,
+    of_ipv6_t *value_mask)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_ETH_DST_MASKED);
+    LOCI_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -7776,7 +7776,7 @@ of_oxm_eth_dst_masked_value_mask_get(
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
-        offset = 10;
+        offset = 20;
         break;
     default:
         LOCI_ASSERT(0);
@@ -7784,7 +7784,7 @@ of_oxm_eth_dst_masked_value_mask_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_mac_get(wbuf, abs_offset, value_mask);
+    of_wire_buffer_ipv6_get(wbuf, abs_offset, value_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -7792,21 +7792,21 @@ of_oxm_eth_dst_masked_value_mask_get(
 }
 
 /**
- * Set value_mask in an object of type of_oxm_eth_dst_masked.
- * @param obj Pointer to an object of type of_oxm_eth_dst_masked.
+ * Set value_mask in an object of type of_oxm_conn_tracking_ipv6_dst_masked.
+ * @param obj Pointer to an object of type of_oxm_conn_tracking_ipv6_dst_masked.
  * @param value_mask The value to write into the object
  */
 void
-of_oxm_eth_dst_masked_value_mask_set(
-    of_oxm_eth_dst_masked_t *obj,
-    of_mac_addr_t value_mask)
+of_oxm_conn_tracking_ipv6_dst_masked_value_mask_set(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj,
+    of_ipv6_t value_mask)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_ETH_DST_MASKED);
+    LOCI_ASSERT(obj->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -7816,7 +7816,7 @@ of_oxm_eth_dst_masked_value_mask_set(
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
-        offset = 10;
+        offset = 20;
         break;
     default:
         LOCI_ASSERT(0);
@@ -7824,7 +7824,7 @@ of_oxm_eth_dst_masked_value_mask_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_mac_set(wbuf, abs_offset, value_mask);
+    of_wire_buffer_ipv6_set(wbuf, abs_offset, value_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 

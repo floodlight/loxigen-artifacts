@@ -63,6 +63,17 @@ typedef struct of_match_fields_s {
     uint8_t              pbb_uca;
     of_ipv4_t            tunnel_ipv4_src;
     of_ipv4_t            tunnel_ipv4_dst;
+    uint32_t             conn_tracking_state;
+    uint16_t             conn_tracking_zone;
+    uint32_t             conn_tracking_mark;
+    uint128_t            conn_tracking_label;
+    uint8_t              conn_tracking_nw_proto;
+    uint32_t             conn_tracking_nw_src;
+    uint32_t             conn_tracking_nw_dst;
+    of_ipv6_t            conn_tracking_ipv6_src;
+    of_ipv6_t            conn_tracking_ipv6_dst;
+    uint16_t             conn_tracking_tp_src;
+    uint16_t             conn_tracking_tp_dst;
     of_bitmap_128_t      bsn_in_ports_128;
     uint32_t             bsn_lag_id;
     uint32_t             bsn_vrf;

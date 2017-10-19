@@ -7577,6 +7577,13 @@ typedef struct of_bsn_tlv_port_vxlan_mode_s of_bsn_tlv_port_vxlan_mode_t;
 typedef struct of_bsn_tlv_priority_s of_bsn_tlv_priority_t;
 
 /**
+ * Structure for of_bsn_tlv_push_vlan_on_egress object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_push_vlan_on_egress_s of_bsn_tlv_push_vlan_on_egress_t;
+
+/**
  * Structure for of_bsn_tlv_push_vlan_on_ingress object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -10311,6 +10318,292 @@ typedef struct of_oxm_bsn_vxlan_network_id_s of_oxm_bsn_vxlan_network_id_t;
  *
  */
 typedef struct of_oxm_bsn_vxlan_network_id_masked_s of_oxm_bsn_vxlan_network_id_masked_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_ipv6_dst object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type of_ipv6.  Functions
+ *   are of type of_oxm_conn_tracking_ipv6_dst_of_ipv6_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_ipv6_dst_s of_oxm_conn_tracking_ipv6_dst_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_ipv6_dst_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type of_ipv6.  Functions
+ *   are of type of_oxm_conn_tracking_ipv6_dst_masked_of_ipv6_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type of_ipv6.  Functions
+ *   are of type of_oxm_conn_tracking_ipv6_dst_masked_of_ipv6_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_ipv6_dst_masked_s of_oxm_conn_tracking_ipv6_dst_masked_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_ipv6_src object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type of_ipv6.  Functions
+ *   are of type of_oxm_conn_tracking_ipv6_src_of_ipv6_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_ipv6_src_s of_oxm_conn_tracking_ipv6_src_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_ipv6_src_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type of_ipv6.  Functions
+ *   are of type of_oxm_conn_tracking_ipv6_src_masked_of_ipv6_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type of_ipv6.  Functions
+ *   are of type of_oxm_conn_tracking_ipv6_src_masked_of_ipv6_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_ipv6_src_masked_s of_oxm_conn_tracking_ipv6_src_masked_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_label object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint128.  Functions
+ *   are of type of_oxm_conn_tracking_label_uint128_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_label_s of_oxm_conn_tracking_label_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_label_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint128.  Functions
+ *   are of type of_oxm_conn_tracking_label_masked_uint128_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type uint128.  Functions
+ *   are of type of_oxm_conn_tracking_label_masked_uint128_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_label_masked_s of_oxm_conn_tracking_label_masked_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_mark object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_conn_tracking_mark_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_mark_s of_oxm_conn_tracking_mark_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_mark_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_conn_tracking_mark_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_conn_tracking_mark_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_mark_masked_s of_oxm_conn_tracking_mark_masked_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_nw_dst object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_conn_tracking_nw_dst_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_nw_dst_s of_oxm_conn_tracking_nw_dst_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_nw_dst_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_conn_tracking_nw_dst_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_conn_tracking_nw_dst_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_nw_dst_masked_s of_oxm_conn_tracking_nw_dst_masked_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_nw_proto object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_oxm_conn_tracking_nw_proto_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_nw_proto_s of_oxm_conn_tracking_nw_proto_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_nw_proto_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_oxm_conn_tracking_nw_proto_masked_uint8_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type uint8.  Functions
+ *   are of type of_oxm_conn_tracking_nw_proto_masked_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_nw_proto_masked_s of_oxm_conn_tracking_nw_proto_masked_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_nw_src object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_conn_tracking_nw_src_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_nw_src_s of_oxm_conn_tracking_nw_src_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_nw_src_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_conn_tracking_nw_src_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_conn_tracking_nw_src_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_nw_src_masked_s of_oxm_conn_tracking_nw_src_masked_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_state object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_conn_tracking_state_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_state_s of_oxm_conn_tracking_state_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_state_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_conn_tracking_state_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_conn_tracking_state_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_state_masked_s of_oxm_conn_tracking_state_masked_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_tp_dst object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_oxm_conn_tracking_tp_dst_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_tp_dst_s of_oxm_conn_tracking_tp_dst_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_tp_dst_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_oxm_conn_tracking_tp_dst_masked_uint16_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type uint16.  Functions
+ *   are of type of_oxm_conn_tracking_tp_dst_masked_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_tp_dst_masked_s of_oxm_conn_tracking_tp_dst_masked_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_tp_src object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_oxm_conn_tracking_tp_src_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_tp_src_s of_oxm_conn_tracking_tp_src_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_tp_src_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_oxm_conn_tracking_tp_src_masked_uint16_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type uint16.  Functions
+ *   are of type of_oxm_conn_tracking_tp_src_masked_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_tp_src_masked_s of_oxm_conn_tracking_tp_src_masked_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_zone object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_oxm_conn_tracking_zone_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_zone_s of_oxm_conn_tracking_zone_t;
+
+/**
+ * Structure for of_oxm_conn_tracking_zone_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_oxm_conn_tracking_zone_masked_uint16_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type uint16.  Functions
+ *   are of type of_oxm_conn_tracking_zone_masked_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_conn_tracking_zone_masked_s of_oxm_conn_tracking_zone_masked_t;
 
 /**
  * Structure for of_oxm_eth_dst object.  Get/set

@@ -144,6 +144,17 @@ class OFMatchV3Ver15 implements OFMatchV3 {
             case BSN_VLAN_XLATE_PORT_GROUP_ID:
             case BSN_VRF:
             case BSN_VXLAN_NETWORK_ID:
+            case CONN_TRACKING_IPV6_DST:
+            case CONN_TRACKING_IPV6_SRC:
+            case CONN_TRACKING_LABEL:
+            case CONN_TRACKING_MARK:
+            case CONN_TRACKING_NW_DST:
+            case CONN_TRACKING_NW_PROTO:
+            case CONN_TRACKING_NW_SRC:
+            case CONN_TRACKING_STATE:
+            case CONN_TRACKING_TP_DST:
+            case CONN_TRACKING_TP_SRC:
+            case CONN_TRACKING_ZONE:
             case ETH_DST:
             case ETH_SRC:
             case ETH_TYPE:

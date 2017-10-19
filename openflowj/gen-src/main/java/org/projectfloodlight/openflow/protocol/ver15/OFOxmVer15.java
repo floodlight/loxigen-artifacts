@@ -194,6 +194,72 @@ abstract class OFOxmVer15 {
                case 0x30508:
                    // discriminator value 0x30508L=0x30508L for class OFOxmBsnVrfMaskedVer15
                    return OFOxmBsnVrfMaskedVer15.READER.readFrom(bb);
+               case 0x1f610:
+                   // discriminator value 0x1f610L=0x1f610L for class OFOxmConnTrackingIpv6DstVer15
+                   return OFOxmConnTrackingIpv6DstVer15.READER.readFrom(bb);
+               case 0x1f720:
+                   // discriminator value 0x1f720L=0x1f720L for class OFOxmConnTrackingIpv6DstMaskedVer15
+                   return OFOxmConnTrackingIpv6DstMaskedVer15.READER.readFrom(bb);
+               case 0x1f410:
+                   // discriminator value 0x1f410L=0x1f410L for class OFOxmConnTrackingIpv6SrcVer15
+                   return OFOxmConnTrackingIpv6SrcVer15.READER.readFrom(bb);
+               case 0x1f520:
+                   // discriminator value 0x1f520L=0x1f520L for class OFOxmConnTrackingIpv6SrcMaskedVer15
+                   return OFOxmConnTrackingIpv6SrcMaskedVer15.READER.readFrom(bb);
+               case 0x1d810:
+                   // discriminator value 0x1d810L=0x1d810L for class OFOxmConnTrackingLabelVer15
+                   return OFOxmConnTrackingLabelVer15.READER.readFrom(bb);
+               case 0x1d920:
+                   // discriminator value 0x1d920L=0x1d920L for class OFOxmConnTrackingLabelMaskedVer15
+                   return OFOxmConnTrackingLabelMaskedVer15.READER.readFrom(bb);
+               case 0x1d604:
+                   // discriminator value 0x1d604L=0x1d604L for class OFOxmConnTrackingMarkVer15
+                   return OFOxmConnTrackingMarkVer15.READER.readFrom(bb);
+               case 0x1d708:
+                   // discriminator value 0x1d708L=0x1d708L for class OFOxmConnTrackingMarkMaskedVer15
+                   return OFOxmConnTrackingMarkMaskedVer15.READER.readFrom(bb);
+               case 0x1f204:
+                   // discriminator value 0x1f204L=0x1f204L for class OFOxmConnTrackingNwDstVer15
+                   return OFOxmConnTrackingNwDstVer15.READER.readFrom(bb);
+               case 0x1f308:
+                   // discriminator value 0x1f308L=0x1f308L for class OFOxmConnTrackingNwDstMaskedVer15
+                   return OFOxmConnTrackingNwDstMaskedVer15.READER.readFrom(bb);
+               case 0x1ee01:
+                   // discriminator value 0x1ee01L=0x1ee01L for class OFOxmConnTrackingNwProtoVer15
+                   return OFOxmConnTrackingNwProtoVer15.READER.readFrom(bb);
+               case 0x1ef02:
+                   // discriminator value 0x1ef02L=0x1ef02L for class OFOxmConnTrackingNwProtoMaskedVer15
+                   return OFOxmConnTrackingNwProtoMaskedVer15.READER.readFrom(bb);
+               case 0x1f004:
+                   // discriminator value 0x1f004L=0x1f004L for class OFOxmConnTrackingNwSrcVer15
+                   return OFOxmConnTrackingNwSrcVer15.READER.readFrom(bb);
+               case 0x1f108:
+                   // discriminator value 0x1f108L=0x1f108L for class OFOxmConnTrackingNwSrcMaskedVer15
+                   return OFOxmConnTrackingNwSrcMaskedVer15.READER.readFrom(bb);
+               case 0x1d204:
+                   // discriminator value 0x1d204L=0x1d204L for class OFOxmConnTrackingStateVer15
+                   return OFOxmConnTrackingStateVer15.READER.readFrom(bb);
+               case 0x1d308:
+                   // discriminator value 0x1d308L=0x1d308L for class OFOxmConnTrackingStateMaskedVer15
+                   return OFOxmConnTrackingStateMaskedVer15.READER.readFrom(bb);
+               case 0x1fa02:
+                   // discriminator value 0x1fa02L=0x1fa02L for class OFOxmConnTrackingTpDstVer15
+                   return OFOxmConnTrackingTpDstVer15.READER.readFrom(bb);
+               case 0x1fb04:
+                   // discriminator value 0x1fb04L=0x1fb04L for class OFOxmConnTrackingTpDstMaskedVer15
+                   return OFOxmConnTrackingTpDstMaskedVer15.READER.readFrom(bb);
+               case 0x1f802:
+                   // discriminator value 0x1f802L=0x1f802L for class OFOxmConnTrackingTpSrcVer15
+                   return OFOxmConnTrackingTpSrcVer15.READER.readFrom(bb);
+               case 0x1f904:
+                   // discriminator value 0x1f904L=0x1f904L for class OFOxmConnTrackingTpSrcMaskedVer15
+                   return OFOxmConnTrackingTpSrcMaskedVer15.READER.readFrom(bb);
+               case 0x1d402:
+                   // discriminator value 0x1d402L=0x1d402L for class OFOxmConnTrackingZoneVer15
+                   return OFOxmConnTrackingZoneVer15.READER.readFrom(bb);
+               case 0x1d504:
+                   // discriminator value 0x1d504L=0x1d504L for class OFOxmConnTrackingZoneMaskedVer15
+                   return OFOxmConnTrackingZoneMaskedVer15.READER.readFrom(bb);
                case (int) 0x80000606:
                    // discriminator value 0x80000606L=0x80000606L for class OFOxmEthDstVer15
                    return OFOxmEthDstVer15.READER.readFrom(bb);

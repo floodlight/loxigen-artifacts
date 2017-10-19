@@ -3821,6 +3821,204 @@ extern int of_oxm_bsn_vrf_masked_OF_VERSION_1_2_populate_scalars(
 extern int of_oxm_bsn_vrf_masked_OF_VERSION_1_2_check_scalars(
     of_oxm_bsn_vrf_masked_t *obj, int value);
 
+extern int of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_ipv6_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_ipv6_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_ipv6_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_ipv6_dst_t *obj, int value);
+
+extern int of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_ipv6_src_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_ipv6_src_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_ipv6_src_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_ipv6_src_t *obj, int value);
+
+extern int of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_label_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_label_t *obj, int value);
+extern int of_oxm_conn_tracking_label_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_label_t *obj, int value);
+extern int of_oxm_conn_tracking_label_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_label_t *obj, int value);
+extern int of_oxm_conn_tracking_label_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_label_t *obj, int value);
+
+extern int of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_label_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_label_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_label_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_label_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_mark_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_mark_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_mark_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_mark_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_mark_t *obj, int value);
+
+extern int of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_mark_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_mark_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_mark_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_mark_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_nw_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_nw_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_nw_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_nw_dst_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_nw_proto_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_nw_proto_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_nw_proto_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_nw_proto_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_nw_src_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_nw_src_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_nw_src_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_nw_src_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_nw_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_nw_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_nw_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_nw_src_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_state_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_state_t *obj, int value);
+extern int of_oxm_conn_tracking_state_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_state_t *obj, int value);
+extern int of_oxm_conn_tracking_state_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_state_t *obj, int value);
+extern int of_oxm_conn_tracking_state_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_state_t *obj, int value);
+
+extern int of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_state_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_state_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_state_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_state_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_tp_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_tp_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_tp_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_tp_dst_t *obj, int value);
+
+extern int of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_tp_src_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_tp_src_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_tp_src_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_tp_src_t *obj, int value);
+
+extern int of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_tp_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_tp_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_tp_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_tp_src_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_zone_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_zone_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_zone_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_zone_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_zone_t *obj, int value);
+
+extern int of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_populate(
+    of_oxm_conn_tracking_zone_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_check(
+    of_oxm_conn_tracking_zone_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_conn_tracking_zone_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_conn_tracking_zone_masked_t *obj, int value);
+
 extern int of_oxm_eth_dst_OF_VERSION_1_2_populate(
     of_oxm_eth_dst_t *obj, int value);
 extern int of_oxm_eth_dst_OF_VERSION_1_2_check(
@@ -7574,6 +7772,15 @@ extern int of_bsn_tlv_priority_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_priority_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_priority_t *obj, int value);
 
+extern int of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_populate(
+    of_bsn_tlv_push_vlan_on_egress_t *obj, int value);
+extern int of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_check(
+    of_bsn_tlv_push_vlan_on_egress_t *obj, int value);
+extern int of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_push_vlan_on_egress_t *obj, int value);
+extern int of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_push_vlan_on_egress_t *obj, int value);
+
 extern int of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_populate(
     of_bsn_tlv_push_vlan_on_ingress_t *obj, int value);
 extern int of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_check(
@@ -9193,6 +9400,204 @@ extern int of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_populate_scalars(
     of_oxm_bsn_vxlan_network_id_masked_t *obj, int value);
 extern int of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_check_scalars(
     of_oxm_bsn_vxlan_network_id_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_ipv6_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_ipv6_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_ipv6_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_ipv6_dst_t *obj, int value);
+
+extern int of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_ipv6_src_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_ipv6_src_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_ipv6_src_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_ipv6_src_t *obj, int value);
+
+extern int of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_label_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_label_t *obj, int value);
+extern int of_oxm_conn_tracking_label_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_label_t *obj, int value);
+extern int of_oxm_conn_tracking_label_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_label_t *obj, int value);
+extern int of_oxm_conn_tracking_label_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_label_t *obj, int value);
+
+extern int of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_label_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_label_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_label_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_label_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_mark_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_mark_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_mark_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_mark_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_mark_t *obj, int value);
+
+extern int of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_mark_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_mark_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_mark_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_mark_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_nw_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_nw_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_nw_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_nw_dst_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_nw_proto_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_nw_proto_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_nw_proto_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_nw_proto_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_nw_src_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_nw_src_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_nw_src_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_nw_src_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_nw_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_nw_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_nw_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_nw_src_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_state_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_state_t *obj, int value);
+extern int of_oxm_conn_tracking_state_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_state_t *obj, int value);
+extern int of_oxm_conn_tracking_state_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_state_t *obj, int value);
+extern int of_oxm_conn_tracking_state_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_state_t *obj, int value);
+
+extern int of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_state_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_state_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_state_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_state_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_tp_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_tp_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_tp_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_tp_dst_t *obj, int value);
+
+extern int of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_tp_src_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_tp_src_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_tp_src_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_tp_src_t *obj, int value);
+
+extern int of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_tp_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_tp_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_tp_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_tp_src_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_zone_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_zone_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_zone_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_zone_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_zone_t *obj, int value);
+
+extern int of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_populate(
+    of_oxm_conn_tracking_zone_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_check(
+    of_oxm_conn_tracking_zone_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_conn_tracking_zone_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_conn_tracking_zone_masked_t *obj, int value);
 
 extern int of_oxm_eth_dst_OF_VERSION_1_3_populate(
     of_oxm_eth_dst_t *obj, int value);
@@ -13676,6 +14081,15 @@ extern int of_bsn_tlv_priority_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_priority_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_priority_t *obj, int value);
 
+extern int of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_populate(
+    of_bsn_tlv_push_vlan_on_egress_t *obj, int value);
+extern int of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_check(
+    of_bsn_tlv_push_vlan_on_egress_t *obj, int value);
+extern int of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_push_vlan_on_egress_t *obj, int value);
+extern int of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_push_vlan_on_egress_t *obj, int value);
+
 extern int of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_populate(
     of_bsn_tlv_push_vlan_on_ingress_t *obj, int value);
 extern int of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_check(
@@ -15259,6 +15673,204 @@ extern int of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_populate_scalars(
     of_oxm_bsn_vxlan_network_id_masked_t *obj, int value);
 extern int of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_check_scalars(
     of_oxm_bsn_vxlan_network_id_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_ipv6_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_ipv6_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_ipv6_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_ipv6_dst_t *obj, int value);
+
+extern int of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_ipv6_src_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_ipv6_src_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_ipv6_src_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_ipv6_src_t *obj, int value);
+
+extern int of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_label_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_label_t *obj, int value);
+extern int of_oxm_conn_tracking_label_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_label_t *obj, int value);
+extern int of_oxm_conn_tracking_label_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_label_t *obj, int value);
+extern int of_oxm_conn_tracking_label_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_label_t *obj, int value);
+
+extern int of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_label_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_label_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_label_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_label_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_mark_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_mark_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_mark_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_mark_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_mark_t *obj, int value);
+
+extern int of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_mark_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_mark_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_mark_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_mark_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_nw_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_nw_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_nw_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_nw_dst_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_nw_proto_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_nw_proto_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_nw_proto_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_nw_proto_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_nw_src_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_nw_src_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_nw_src_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_nw_src_t *obj, int value);
+
+extern int of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_nw_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_nw_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_nw_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_nw_src_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_state_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_state_t *obj, int value);
+extern int of_oxm_conn_tracking_state_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_state_t *obj, int value);
+extern int of_oxm_conn_tracking_state_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_state_t *obj, int value);
+extern int of_oxm_conn_tracking_state_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_state_t *obj, int value);
+
+extern int of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_state_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_state_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_state_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_state_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_tp_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_tp_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_tp_dst_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_tp_dst_t *obj, int value);
+
+extern int of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_tp_src_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_tp_src_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_tp_src_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_tp_src_t *obj, int value);
+
+extern int of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_tp_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_tp_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_tp_src_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_tp_src_masked_t *obj, int value);
+
+extern int of_oxm_conn_tracking_zone_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_zone_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_zone_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_zone_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_zone_t *obj, int value);
+
+extern int of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_populate(
+    of_oxm_conn_tracking_zone_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_check(
+    of_oxm_conn_tracking_zone_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_populate_scalars(
+    of_oxm_conn_tracking_zone_masked_t *obj, int value);
+extern int of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_check_scalars(
+    of_oxm_conn_tracking_zone_masked_t *obj, int value);
 
 extern int of_oxm_eth_dst_OF_VERSION_1_4_populate(
     of_oxm_eth_dst_t *obj, int value);

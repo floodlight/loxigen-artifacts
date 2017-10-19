@@ -453,6 +453,28 @@ static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_grou
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_label_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_label_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_mark_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_src_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_state_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_state_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_tp_src_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_zone_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_dst_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_src_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
@@ -828,6 +850,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_speed_gbps_OF_V
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_usage_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_priority_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_qos_priority_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_queue_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1066,6 +1089,28 @@ static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_3(u
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vxlan_network_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_label_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_label_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_mark_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_state_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_state_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_tp_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_zone_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1492,6 +1537,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_speed_gbps_OF_V
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_usage_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_priority_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_qos_priority_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_queue_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -1732,6 +1778,28 @@ static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_4(u
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vxlan_network_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_label_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_label_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_mark_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_state_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_state_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_tp_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_zone_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -9855,6 +9923,50 @@ loci_validate_of_oxm_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_2(data, len, out_len);
     case 0x30508:
         return loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x1f610:
+        return loci_validate_of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2(data, len, out_len);
+    case 0x1f720:
+        return loci_validate_of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x1f410:
+        return loci_validate_of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2(data, len, out_len);
+    case 0x1f520:
+        return loci_validate_of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x1d810:
+        return loci_validate_of_oxm_conn_tracking_label_OF_VERSION_1_2(data, len, out_len);
+    case 0x1d920:
+        return loci_validate_of_oxm_conn_tracking_label_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x1d604:
+        return loci_validate_of_oxm_conn_tracking_mark_OF_VERSION_1_2(data, len, out_len);
+    case 0x1d708:
+        return loci_validate_of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x1f204:
+        return loci_validate_of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2(data, len, out_len);
+    case 0x1f308:
+        return loci_validate_of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x1ee01:
+        return loci_validate_of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2(data, len, out_len);
+    case 0x1ef02:
+        return loci_validate_of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x1f004:
+        return loci_validate_of_oxm_conn_tracking_nw_src_OF_VERSION_1_2(data, len, out_len);
+    case 0x1f108:
+        return loci_validate_of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x1d204:
+        return loci_validate_of_oxm_conn_tracking_state_OF_VERSION_1_2(data, len, out_len);
+    case 0x1d308:
+        return loci_validate_of_oxm_conn_tracking_state_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x1fa02:
+        return loci_validate_of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2(data, len, out_len);
+    case 0x1fb04:
+        return loci_validate_of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x1f802:
+        return loci_validate_of_oxm_conn_tracking_tp_src_OF_VERSION_1_2(data, len, out_len);
+    case 0x1f904:
+        return loci_validate_of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x1d402:
+        return loci_validate_of_oxm_conn_tracking_zone_OF_VERSION_1_2(data, len, out_len);
+    case 0x1d504:
+        return loci_validate_of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2(data, len, out_len);
     case 0x80000606:
         return loci_validate_of_oxm_eth_dst_OF_VERSION_1_2(data, len, out_len);
     case 0x8000070c:
@@ -13326,6 +13438,358 @@ loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_2(uint8_t *data, int len, int *
     }
 
     len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_label_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_label_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_mark_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 5) {
+        return -1;
+    }
+
+    len = 5;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_src_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_state_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_state_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_tp_src_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_zone_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
 
 
 
@@ -17006,6 +17470,50 @@ loci_validate_of_oxm_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_bsn_vxlan_network_id_OF_VERSION_1_3(data, len, out_len);
     case 0x32b08:
         return loci_validate_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x1f610:
+        return loci_validate_of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3(data, len, out_len);
+    case 0x1f720:
+        return loci_validate_of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x1f410:
+        return loci_validate_of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3(data, len, out_len);
+    case 0x1f520:
+        return loci_validate_of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x1d810:
+        return loci_validate_of_oxm_conn_tracking_label_OF_VERSION_1_3(data, len, out_len);
+    case 0x1d920:
+        return loci_validate_of_oxm_conn_tracking_label_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x1d604:
+        return loci_validate_of_oxm_conn_tracking_mark_OF_VERSION_1_3(data, len, out_len);
+    case 0x1d708:
+        return loci_validate_of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x1f204:
+        return loci_validate_of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3(data, len, out_len);
+    case 0x1f308:
+        return loci_validate_of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x1ee01:
+        return loci_validate_of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3(data, len, out_len);
+    case 0x1ef02:
+        return loci_validate_of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x1f004:
+        return loci_validate_of_oxm_conn_tracking_nw_src_OF_VERSION_1_3(data, len, out_len);
+    case 0x1f108:
+        return loci_validate_of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x1d204:
+        return loci_validate_of_oxm_conn_tracking_state_OF_VERSION_1_3(data, len, out_len);
+    case 0x1d308:
+        return loci_validate_of_oxm_conn_tracking_state_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x1fa02:
+        return loci_validate_of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3(data, len, out_len);
+    case 0x1fb04:
+        return loci_validate_of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x1f802:
+        return loci_validate_of_oxm_conn_tracking_tp_src_OF_VERSION_1_3(data, len, out_len);
+    case 0x1f904:
+        return loci_validate_of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x1d402:
+        return loci_validate_of_oxm_conn_tracking_zone_OF_VERSION_1_3(data, len, out_len);
+    case 0x1d504:
+        return loci_validate_of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3(data, len, out_len);
     case 0x80000606:
         return loci_validate_of_oxm_eth_dst_OF_VERSION_1_3(data, len, out_len);
     case 0x8000070c:
@@ -20654,6 +21162,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3(data, len, out_len);
     case 0x39:
         return loci_validate_of_bsn_tlv_priority_OF_VERSION_1_3(data, len, out_len);
+    case 0xa2:
+        return loci_validate_of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3(data, len, out_len);
     case 0x80:
         return loci_validate_of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3(data, len, out_len);
     case 0x6c:
@@ -23144,6 +23654,28 @@ loci_validate_of_bsn_tlv_priority_OF_VERSION_1_3(uint8_t *data, int len, int *ou
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
         return -1;
     }
 
@@ -28362,6 +28894,358 @@ loci_validate_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3(uint8_t *data, i
 }
 
 static int
+loci_validate_of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_label_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_label_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_mark_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 5) {
+        return -1;
+    }
+
+    len = 5;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_state_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_state_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_tp_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_zone_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_oxm_eth_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 10) {
@@ -32985,6 +33869,50 @@ loci_validate_of_oxm_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_bsn_vxlan_network_id_OF_VERSION_1_4(data, len, out_len);
     case 0x32b08:
         return loci_validate_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x1f610:
+        return loci_validate_of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4(data, len, out_len);
+    case 0x1f720:
+        return loci_validate_of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x1f410:
+        return loci_validate_of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4(data, len, out_len);
+    case 0x1f520:
+        return loci_validate_of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x1d810:
+        return loci_validate_of_oxm_conn_tracking_label_OF_VERSION_1_4(data, len, out_len);
+    case 0x1d920:
+        return loci_validate_of_oxm_conn_tracking_label_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x1d604:
+        return loci_validate_of_oxm_conn_tracking_mark_OF_VERSION_1_4(data, len, out_len);
+    case 0x1d708:
+        return loci_validate_of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x1f204:
+        return loci_validate_of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4(data, len, out_len);
+    case 0x1f308:
+        return loci_validate_of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x1ee01:
+        return loci_validate_of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4(data, len, out_len);
+    case 0x1ef02:
+        return loci_validate_of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x1f004:
+        return loci_validate_of_oxm_conn_tracking_nw_src_OF_VERSION_1_4(data, len, out_len);
+    case 0x1f108:
+        return loci_validate_of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x1d204:
+        return loci_validate_of_oxm_conn_tracking_state_OF_VERSION_1_4(data, len, out_len);
+    case 0x1d308:
+        return loci_validate_of_oxm_conn_tracking_state_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x1fa02:
+        return loci_validate_of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4(data, len, out_len);
+    case 0x1fb04:
+        return loci_validate_of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x1f802:
+        return loci_validate_of_oxm_conn_tracking_tp_src_OF_VERSION_1_4(data, len, out_len);
+    case 0x1f904:
+        return loci_validate_of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x1d402:
+        return loci_validate_of_oxm_conn_tracking_zone_OF_VERSION_1_4(data, len, out_len);
+    case 0x1d504:
+        return loci_validate_of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4(data, len, out_len);
     case 0x80000606:
         return loci_validate_of_oxm_eth_dst_OF_VERSION_1_4(data, len, out_len);
     case 0x8000070c:
@@ -37146,6 +38074,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4(data, len, out_len);
     case 0x39:
         return loci_validate_of_bsn_tlv_priority_OF_VERSION_1_4(data, len, out_len);
+    case 0xa2:
+        return loci_validate_of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4(data, len, out_len);
     case 0x80:
         return loci_validate_of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4(data, len, out_len);
     case 0x6c:
@@ -39636,6 +40566,28 @@ loci_validate_of_bsn_tlv_priority_OF_VERSION_1_4(uint8_t *data, int len, int *ou
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
         return -1;
     }
 
@@ -44918,6 +45870,358 @@ loci_validate_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4(uint8_t *data, i
     }
 
     len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_label_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_label_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_mark_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 5) {
+        return -1;
+    }
+
+    len = 5;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_state_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_state_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_tp_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_zone_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
 
 
 

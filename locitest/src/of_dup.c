@@ -14091,6 +14091,10 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
+        return of_oxm_vlan_vid_masked_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_IN_PHY_PORT) {
         return of_oxm_in_phy_port_OF_VERSION_1_2_dup(src);
     }
@@ -14135,12 +14139,24 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_ipv6_flabel_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
+        return of_oxm_icmpv4_type_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_UDP_DST) {
         return of_oxm_udp_dst_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
+        return of_oxm_conn_tracking_state_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
         return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED) {
+        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_ETH_TYPE) {
@@ -14153,6 +14169,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_VLAN_PCP) {
         return of_oxm_vlan_pcp_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED) {
+        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_TLL) {
@@ -14171,8 +14191,8 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
-        return of_oxm_icmpv4_type_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED) {
+        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
@@ -14195,32 +14215,36 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_vlan_pcp_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_SHA) {
-        return of_oxm_arp_sha_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
         return of_oxm_eth_type_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SHA) {
+        return of_oxm_arp_sha_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_DST) {
         return of_oxm_tcp_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
-        return of_oxm_ip_proto_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF6) {
+        return of_oxm_bsn_udf6_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IP_ECN_MASKED) {
         return of_oxm_ip_ecn_masked_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST) {
+        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_METADATA_MASKED) {
         return of_oxm_metadata_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
+        return of_oxm_icmpv6_type_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED) {
@@ -14229,10 +14253,6 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
         return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
-        return of_oxm_arp_spa_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_SCTP_SRC) {
@@ -14255,16 +14275,24 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
-        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC) {
+        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED) {
+        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
         return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
-        return of_oxm_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
+        return of_oxm_ip_proto_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
@@ -14311,8 +14339,20 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_DST) {
-        return of_oxm_ipv4_dst_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED) {
+        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST) {
+        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED) {
+        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
@@ -14325,6 +14365,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
         return of_oxm_ipv4_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED) {
+        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV4_SRC) {
@@ -14375,12 +14419,12 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_mpls_label_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF6) {
-        return of_oxm_bsn_udf6_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_OXM_IN_PORT) {
         return of_oxm_in_port_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED) {
+        return of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF7_MASKED) {
@@ -14397,6 +14441,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_TCP_SRC) {
         return of_oxm_tcp_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
+        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_UDP_SRC_MASKED) {
@@ -14419,12 +14467,20 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_eth_src_masked_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL) {
+        return of_oxm_conn_tracking_label_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC) {
+        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_VRF) {
         return of_oxm_bsn_vrf_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
@@ -14435,12 +14491,16 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_ipv6_src_masked_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST) {
+        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_IP_DSCP) {
         return of_oxm_ip_dscp_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
-        return of_oxm_vlan_vid_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE) {
+        return of_oxm_conn_tracking_zone_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_SLL) {
@@ -14451,8 +14511,20 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_ipv6_flabel_masked_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED) {
+        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC) {
+        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
         return of_oxm_mpls_tc_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_MARK) {
+        return of_oxm_conn_tracking_mark_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_DST_MASKED) {
@@ -14465,6 +14537,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
         return of_oxm_sctp_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO) {
+        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
@@ -14503,12 +14579,16 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
+        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_VLAN_VID) {
         return of_oxm_vlan_vid_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
-        return of_oxm_icmpv6_type_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
@@ -14517,6 +14597,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED) {
         return of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_METADATA) {
@@ -14529,6 +14613,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
         return of_oxm_bsn_udf0_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED) {
+        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
@@ -15993,6 +16081,589 @@ of_oxm_bsn_vrf_masked_OF_VERSION_1_2_dup(
 
     of_oxm_bsn_vrf_masked_value_mask_get(src, &val32);
     of_oxm_bsn_vrf_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_ipv6_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_ipv6_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_ipv6_dst_t *
+of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_ipv6_dst_t *src)
+{
+    of_oxm_conn_tracking_ipv6_dst_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_conn_tracking_ipv6_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_ipv6_dst_value_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_dst_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_ipv6_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_ipv6_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_ipv6_dst_masked_t *
+of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *src)
+{
+    of_oxm_conn_tracking_ipv6_dst_masked_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_conn_tracking_ipv6_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_ipv6_dst_masked_value_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_dst_masked_value_set(dst, ipv6);
+
+    of_oxm_conn_tracking_ipv6_dst_masked_value_mask_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_dst_masked_value_mask_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_ipv6_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_ipv6_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_ipv6_src_t *
+of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_ipv6_src_t *src)
+{
+    of_oxm_conn_tracking_ipv6_src_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_conn_tracking_ipv6_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_ipv6_src_value_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_src_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_ipv6_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_ipv6_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_ipv6_src_masked_t *
+of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_ipv6_src_masked_t *src)
+{
+    of_oxm_conn_tracking_ipv6_src_masked_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_conn_tracking_ipv6_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_ipv6_src_masked_value_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_src_masked_value_set(dst, ipv6);
+
+    of_oxm_conn_tracking_ipv6_src_masked_value_mask_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_src_masked_value_mask_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_label
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_label.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_label_t *
+of_oxm_conn_tracking_label_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_label_t *src)
+{
+    of_oxm_conn_tracking_label_t *dst;
+    uint128_t val128;
+
+    if ((dst = of_oxm_conn_tracking_label_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_label_value_get(src, &val128);
+    of_oxm_conn_tracking_label_value_set(dst, val128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_label_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_label_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_label_masked_t *
+of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_label_masked_t *src)
+{
+    of_oxm_conn_tracking_label_masked_t *dst;
+    uint128_t val128;
+
+    if ((dst = of_oxm_conn_tracking_label_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_label_masked_value_get(src, &val128);
+    of_oxm_conn_tracking_label_masked_value_set(dst, val128);
+
+    of_oxm_conn_tracking_label_masked_value_mask_get(src, &val128);
+    of_oxm_conn_tracking_label_masked_value_mask_set(dst, val128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_mark
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_mark.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_mark_t *
+of_oxm_conn_tracking_mark_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_mark_t *src)
+{
+    of_oxm_conn_tracking_mark_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_mark_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_mark_value_get(src, &val32);
+    of_oxm_conn_tracking_mark_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_mark_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_mark_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_mark_masked_t *
+of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_mark_masked_t *src)
+{
+    of_oxm_conn_tracking_mark_masked_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_mark_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_mark_masked_value_get(src, &val32);
+    of_oxm_conn_tracking_mark_masked_value_set(dst, val32);
+
+    of_oxm_conn_tracking_mark_masked_value_mask_get(src, &val32);
+    of_oxm_conn_tracking_mark_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_dst_t *
+of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_nw_dst_t *src)
+{
+    of_oxm_conn_tracking_nw_dst_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_nw_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_dst_value_get(src, &val32);
+    of_oxm_conn_tracking_nw_dst_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_dst_masked_t *
+of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_nw_dst_masked_t *src)
+{
+    of_oxm_conn_tracking_nw_dst_masked_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_nw_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_dst_masked_value_get(src, &val32);
+    of_oxm_conn_tracking_nw_dst_masked_value_set(dst, val32);
+
+    of_oxm_conn_tracking_nw_dst_masked_value_mask_get(src, &val32);
+    of_oxm_conn_tracking_nw_dst_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_proto
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_proto.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_proto_t *
+of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_nw_proto_t *src)
+{
+    of_oxm_conn_tracking_nw_proto_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_oxm_conn_tracking_nw_proto_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_proto_value_get(src, &val8);
+    of_oxm_conn_tracking_nw_proto_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_proto_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_proto_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_proto_masked_t *
+of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_nw_proto_masked_t *src)
+{
+    of_oxm_conn_tracking_nw_proto_masked_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_oxm_conn_tracking_nw_proto_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_proto_masked_value_get(src, &val8);
+    of_oxm_conn_tracking_nw_proto_masked_value_set(dst, val8);
+
+    of_oxm_conn_tracking_nw_proto_masked_value_mask_get(src, &val8);
+    of_oxm_conn_tracking_nw_proto_masked_value_mask_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_src_t *
+of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_nw_src_t *src)
+{
+    of_oxm_conn_tracking_nw_src_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_nw_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_src_value_get(src, &val32);
+    of_oxm_conn_tracking_nw_src_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_src_masked_t *
+of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_nw_src_masked_t *src)
+{
+    of_oxm_conn_tracking_nw_src_masked_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_nw_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_src_masked_value_get(src, &val32);
+    of_oxm_conn_tracking_nw_src_masked_value_set(dst, val32);
+
+    of_oxm_conn_tracking_nw_src_masked_value_mask_get(src, &val32);
+    of_oxm_conn_tracking_nw_src_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_state
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_state.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_state_t *
+of_oxm_conn_tracking_state_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_state_t *src)
+{
+    of_oxm_conn_tracking_state_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_state_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_state_value_get(src, &val32);
+    of_oxm_conn_tracking_state_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_state_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_state_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_state_masked_t *
+of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_state_masked_t *src)
+{
+    of_oxm_conn_tracking_state_masked_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_state_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_state_masked_value_get(src, &val32);
+    of_oxm_conn_tracking_state_masked_value_set(dst, val32);
+
+    of_oxm_conn_tracking_state_masked_value_mask_get(src, &val32);
+    of_oxm_conn_tracking_state_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_tp_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_tp_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_tp_dst_t *
+of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_tp_dst_t *src)
+{
+    of_oxm_conn_tracking_tp_dst_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_tp_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_tp_dst_value_get(src, &val16);
+    of_oxm_conn_tracking_tp_dst_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_tp_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_tp_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_tp_dst_masked_t *
+of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_tp_dst_masked_t *src)
+{
+    of_oxm_conn_tracking_tp_dst_masked_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_tp_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_tp_dst_masked_value_get(src, &val16);
+    of_oxm_conn_tracking_tp_dst_masked_value_set(dst, val16);
+
+    of_oxm_conn_tracking_tp_dst_masked_value_mask_get(src, &val16);
+    of_oxm_conn_tracking_tp_dst_masked_value_mask_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_tp_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_tp_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_tp_src_t *
+of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_tp_src_t *src)
+{
+    of_oxm_conn_tracking_tp_src_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_tp_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_tp_src_value_get(src, &val16);
+    of_oxm_conn_tracking_tp_src_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_tp_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_tp_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_tp_src_masked_t *
+of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_tp_src_masked_t *src)
+{
+    of_oxm_conn_tracking_tp_src_masked_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_tp_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_tp_src_masked_value_get(src, &val16);
+    of_oxm_conn_tracking_tp_src_masked_value_set(dst, val16);
+
+    of_oxm_conn_tracking_tp_src_masked_value_mask_get(src, &val16);
+    of_oxm_conn_tracking_tp_src_masked_value_mask_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_zone
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_zone.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_zone_t *
+of_oxm_conn_tracking_zone_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_zone_t *src)
+{
+    of_oxm_conn_tracking_zone_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_zone_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_zone_value_get(src, &val16);
+    of_oxm_conn_tracking_zone_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_zone_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_zone_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_zone_masked_t *
+of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_dup(
+    of_oxm_conn_tracking_zone_masked_t *src)
+{
+    of_oxm_conn_tracking_zone_masked_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_zone_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_zone_masked_value_get(src, &val16);
+    of_oxm_conn_tracking_zone_masked_value_set(dst, val16);
+
+    of_oxm_conn_tracking_zone_masked_value_mask_get(src, &val16);
+    of_oxm_conn_tracking_zone_masked_value_mask_set(dst, val16);
 
     return dst;
 }
@@ -27609,6 +28280,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_PUSH_VLAN_ON_EGRESS) {
+        return of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_APPLY_BYTES) {
         return of_bsn_tlv_apply_bytes_OF_VERSION_1_3_dup(src);
     }
@@ -30282,6 +30957,27 @@ of_bsn_tlv_priority_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_priority_value_get(src, &val32);
     of_bsn_tlv_priority_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_push_vlan_on_egress
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_push_vlan_on_egress.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_push_vlan_on_egress_t *
+of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_dup(
+    of_bsn_tlv_push_vlan_on_egress_t *src)
+{
+    of_bsn_tlv_push_vlan_on_egress_t *dst;
+
+    if ((dst = of_bsn_tlv_push_vlan_on_egress_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -33885,6 +34581,10 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
+        return of_oxm_vlan_vid_masked_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_MPLS_BOS_MASKED) {
         return of_oxm_mpls_bos_masked_OF_VERSION_1_3_dup(src);
     }
@@ -33941,12 +34641,24 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_ipv6_flabel_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
+        return of_oxm_icmpv4_type_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_UDP_DST) {
         return of_oxm_udp_dst_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
+        return of_oxm_conn_tracking_state_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
         return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED) {
+        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_ETH_TYPE) {
@@ -33959,6 +34671,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_VLAN_PCP) {
         return of_oxm_vlan_pcp_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED) {
+        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_TLL) {
@@ -33977,8 +34693,8 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
-        return of_oxm_icmpv4_type_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED) {
+        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
@@ -34001,32 +34717,36 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_vlan_pcp_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_SHA) {
-        return of_oxm_arp_sha_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
         return of_oxm_eth_type_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SHA) {
+        return of_oxm_arp_sha_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_DST) {
         return of_oxm_tcp_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
-        return of_oxm_ip_proto_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF6) {
+        return of_oxm_bsn_udf6_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IP_ECN_MASKED) {
         return of_oxm_ip_ecn_masked_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST) {
+        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_METADATA_MASKED) {
         return of_oxm_metadata_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
+        return of_oxm_icmpv6_type_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED) {
@@ -34035,10 +34755,6 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
         return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
-        return of_oxm_arp_spa_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_SCTP_SRC) {
@@ -34061,20 +34777,24 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
-        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC) {
+        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_MPLS_BOS) {
-        return of_oxm_mpls_bos_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED) {
+        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
         return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
-        return of_oxm_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
+        return of_oxm_ip_proto_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
@@ -34105,10 +34825,6 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_udf5_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED) {
-        return of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
         return of_oxm_icmpv4_type_masked_OF_VERSION_1_3_dup(src);
     }
@@ -34125,8 +34841,20 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_DST) {
-        return of_oxm_ipv4_dst_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED) {
+        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST) {
+        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED) {
+        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
@@ -34147,6 +34875,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED) {
         return of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED) {
+        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_INNER_ETH_DST) {
@@ -34209,12 +34941,16 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF6) {
-        return of_oxm_bsn_udf6_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED) {
+        return of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IN_PORT) {
         return of_oxm_in_port_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED) {
+        return of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF7_MASKED) {
@@ -34231,6 +34967,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_TCP_SRC) {
         return of_oxm_tcp_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
+        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_UDP_SRC_MASKED) {
@@ -34253,12 +34993,20 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_eth_src_masked_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL) {
+        return of_oxm_conn_tracking_label_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC) {
+        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_VRF) {
         return of_oxm_bsn_vrf_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
@@ -34269,12 +35017,16 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_ipv6_src_masked_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST) {
+        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_IP_DSCP) {
         return of_oxm_ip_dscp_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
-        return of_oxm_vlan_vid_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE) {
+        return of_oxm_conn_tracking_zone_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_SLL) {
@@ -34285,8 +35037,20 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_ipv6_flabel_masked_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED) {
+        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC) {
+        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
         return of_oxm_mpls_tc_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_MARK) {
+        return of_oxm_conn_tracking_mark_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_DST_MASKED) {
@@ -34299,6 +35063,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
         return of_oxm_sctp_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO) {
+        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
@@ -34345,12 +35113,20 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
+        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_VLAN_VID) {
         return of_oxm_vlan_vid_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
-        return of_oxm_icmpv6_type_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_MPLS_BOS) {
+        return of_oxm_mpls_bos_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
@@ -34359,6 +35135,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED) {
         return of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_TUNNEL_ID) {
@@ -34375,6 +35155,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
         return of_oxm_bsn_udf0_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED) {
+        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
@@ -36112,6 +36896,589 @@ of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_dup(
 
     of_oxm_bsn_vxlan_network_id_masked_value_mask_get(src, &val32);
     of_oxm_bsn_vxlan_network_id_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_ipv6_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_ipv6_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_ipv6_dst_t *
+of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_ipv6_dst_t *src)
+{
+    of_oxm_conn_tracking_ipv6_dst_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_conn_tracking_ipv6_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_ipv6_dst_value_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_dst_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_ipv6_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_ipv6_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_ipv6_dst_masked_t *
+of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *src)
+{
+    of_oxm_conn_tracking_ipv6_dst_masked_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_conn_tracking_ipv6_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_ipv6_dst_masked_value_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_dst_masked_value_set(dst, ipv6);
+
+    of_oxm_conn_tracking_ipv6_dst_masked_value_mask_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_dst_masked_value_mask_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_ipv6_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_ipv6_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_ipv6_src_t *
+of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_ipv6_src_t *src)
+{
+    of_oxm_conn_tracking_ipv6_src_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_conn_tracking_ipv6_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_ipv6_src_value_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_src_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_ipv6_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_ipv6_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_ipv6_src_masked_t *
+of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_ipv6_src_masked_t *src)
+{
+    of_oxm_conn_tracking_ipv6_src_masked_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_conn_tracking_ipv6_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_ipv6_src_masked_value_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_src_masked_value_set(dst, ipv6);
+
+    of_oxm_conn_tracking_ipv6_src_masked_value_mask_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_src_masked_value_mask_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_label
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_label.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_label_t *
+of_oxm_conn_tracking_label_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_label_t *src)
+{
+    of_oxm_conn_tracking_label_t *dst;
+    uint128_t val128;
+
+    if ((dst = of_oxm_conn_tracking_label_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_label_value_get(src, &val128);
+    of_oxm_conn_tracking_label_value_set(dst, val128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_label_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_label_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_label_masked_t *
+of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_label_masked_t *src)
+{
+    of_oxm_conn_tracking_label_masked_t *dst;
+    uint128_t val128;
+
+    if ((dst = of_oxm_conn_tracking_label_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_label_masked_value_get(src, &val128);
+    of_oxm_conn_tracking_label_masked_value_set(dst, val128);
+
+    of_oxm_conn_tracking_label_masked_value_mask_get(src, &val128);
+    of_oxm_conn_tracking_label_masked_value_mask_set(dst, val128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_mark
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_mark.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_mark_t *
+of_oxm_conn_tracking_mark_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_mark_t *src)
+{
+    of_oxm_conn_tracking_mark_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_mark_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_mark_value_get(src, &val32);
+    of_oxm_conn_tracking_mark_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_mark_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_mark_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_mark_masked_t *
+of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_mark_masked_t *src)
+{
+    of_oxm_conn_tracking_mark_masked_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_mark_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_mark_masked_value_get(src, &val32);
+    of_oxm_conn_tracking_mark_masked_value_set(dst, val32);
+
+    of_oxm_conn_tracking_mark_masked_value_mask_get(src, &val32);
+    of_oxm_conn_tracking_mark_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_dst_t *
+of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_nw_dst_t *src)
+{
+    of_oxm_conn_tracking_nw_dst_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_nw_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_dst_value_get(src, &val32);
+    of_oxm_conn_tracking_nw_dst_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_dst_masked_t *
+of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_nw_dst_masked_t *src)
+{
+    of_oxm_conn_tracking_nw_dst_masked_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_nw_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_dst_masked_value_get(src, &val32);
+    of_oxm_conn_tracking_nw_dst_masked_value_set(dst, val32);
+
+    of_oxm_conn_tracking_nw_dst_masked_value_mask_get(src, &val32);
+    of_oxm_conn_tracking_nw_dst_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_proto
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_proto.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_proto_t *
+of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_nw_proto_t *src)
+{
+    of_oxm_conn_tracking_nw_proto_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_oxm_conn_tracking_nw_proto_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_proto_value_get(src, &val8);
+    of_oxm_conn_tracking_nw_proto_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_proto_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_proto_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_proto_masked_t *
+of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_nw_proto_masked_t *src)
+{
+    of_oxm_conn_tracking_nw_proto_masked_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_oxm_conn_tracking_nw_proto_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_proto_masked_value_get(src, &val8);
+    of_oxm_conn_tracking_nw_proto_masked_value_set(dst, val8);
+
+    of_oxm_conn_tracking_nw_proto_masked_value_mask_get(src, &val8);
+    of_oxm_conn_tracking_nw_proto_masked_value_mask_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_src_t *
+of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_nw_src_t *src)
+{
+    of_oxm_conn_tracking_nw_src_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_nw_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_src_value_get(src, &val32);
+    of_oxm_conn_tracking_nw_src_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_src_masked_t *
+of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_nw_src_masked_t *src)
+{
+    of_oxm_conn_tracking_nw_src_masked_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_nw_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_src_masked_value_get(src, &val32);
+    of_oxm_conn_tracking_nw_src_masked_value_set(dst, val32);
+
+    of_oxm_conn_tracking_nw_src_masked_value_mask_get(src, &val32);
+    of_oxm_conn_tracking_nw_src_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_state
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_state.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_state_t *
+of_oxm_conn_tracking_state_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_state_t *src)
+{
+    of_oxm_conn_tracking_state_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_state_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_state_value_get(src, &val32);
+    of_oxm_conn_tracking_state_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_state_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_state_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_state_masked_t *
+of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_state_masked_t *src)
+{
+    of_oxm_conn_tracking_state_masked_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_state_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_state_masked_value_get(src, &val32);
+    of_oxm_conn_tracking_state_masked_value_set(dst, val32);
+
+    of_oxm_conn_tracking_state_masked_value_mask_get(src, &val32);
+    of_oxm_conn_tracking_state_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_tp_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_tp_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_tp_dst_t *
+of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_tp_dst_t *src)
+{
+    of_oxm_conn_tracking_tp_dst_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_tp_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_tp_dst_value_get(src, &val16);
+    of_oxm_conn_tracking_tp_dst_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_tp_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_tp_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_tp_dst_masked_t *
+of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_tp_dst_masked_t *src)
+{
+    of_oxm_conn_tracking_tp_dst_masked_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_tp_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_tp_dst_masked_value_get(src, &val16);
+    of_oxm_conn_tracking_tp_dst_masked_value_set(dst, val16);
+
+    of_oxm_conn_tracking_tp_dst_masked_value_mask_get(src, &val16);
+    of_oxm_conn_tracking_tp_dst_masked_value_mask_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_tp_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_tp_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_tp_src_t *
+of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_tp_src_t *src)
+{
+    of_oxm_conn_tracking_tp_src_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_tp_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_tp_src_value_get(src, &val16);
+    of_oxm_conn_tracking_tp_src_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_tp_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_tp_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_tp_src_masked_t *
+of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_tp_src_masked_t *src)
+{
+    of_oxm_conn_tracking_tp_src_masked_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_tp_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_tp_src_masked_value_get(src, &val16);
+    of_oxm_conn_tracking_tp_src_masked_value_set(dst, val16);
+
+    of_oxm_conn_tracking_tp_src_masked_value_mask_get(src, &val16);
+    of_oxm_conn_tracking_tp_src_masked_value_mask_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_zone
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_zone.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_zone_t *
+of_oxm_conn_tracking_zone_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_zone_t *src)
+{
+    of_oxm_conn_tracking_zone_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_zone_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_zone_value_get(src, &val16);
+    of_oxm_conn_tracking_zone_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_zone_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_zone_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_zone_masked_t *
+of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_dup(
+    of_oxm_conn_tracking_zone_masked_t *src)
+{
+    of_oxm_conn_tracking_zone_masked_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_zone_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_zone_masked_value_get(src, &val16);
+    of_oxm_conn_tracking_zone_masked_value_set(dst, val16);
+
+    of_oxm_conn_tracking_zone_masked_value_mask_get(src, &val16);
+    of_oxm_conn_tracking_zone_masked_value_mask_set(dst, val16);
 
     return dst;
 }
@@ -50500,6 +51867,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_PUSH_VLAN_ON_EGRESS) {
+        return of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_APPLY_BYTES) {
         return of_bsn_tlv_apply_bytes_OF_VERSION_1_4_dup(src);
     }
@@ -53173,6 +54544,27 @@ of_bsn_tlv_priority_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_priority_value_get(src, &val32);
     of_bsn_tlv_priority_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_push_vlan_on_egress
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_push_vlan_on_egress.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_push_vlan_on_egress_t *
+of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_dup(
+    of_bsn_tlv_push_vlan_on_egress_t *src)
+{
+    of_bsn_tlv_push_vlan_on_egress_t *dst;
+
+    if ((dst = of_bsn_tlv_push_vlan_on_egress_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -56726,6 +58118,10 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
+        return of_oxm_vlan_vid_masked_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_MPLS_BOS_MASKED) {
         return of_oxm_mpls_bos_masked_OF_VERSION_1_4_dup(src);
     }
@@ -56782,12 +58178,24 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_ipv6_flabel_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
+        return of_oxm_icmpv4_type_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_UDP_DST) {
         return of_oxm_udp_dst_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
+        return of_oxm_conn_tracking_state_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
         return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED) {
+        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_ETH_TYPE) {
@@ -56800,6 +58208,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_VLAN_PCP) {
         return of_oxm_vlan_pcp_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED) {
+        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_TLL) {
@@ -56818,8 +58230,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
-        return of_oxm_icmpv4_type_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED) {
+        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
@@ -56842,20 +58254,20 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_vlan_pcp_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_SHA) {
-        return of_oxm_arp_sha_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
         return of_oxm_eth_type_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SHA) {
+        return of_oxm_arp_sha_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_DST) {
         return of_oxm_tcp_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
-        return of_oxm_ip_proto_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF6) {
+        return of_oxm_bsn_udf6_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IP_ECN_MASKED) {
@@ -56866,16 +58278,16 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_pbb_uca_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST) {
+        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_METADATA_MASKED) {
         return of_oxm_metadata_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
-        return of_oxm_arp_spa_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
+        return of_oxm_icmpv6_type_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_SCTP_SRC) {
@@ -56894,20 +58306,24 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
-        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC) {
+        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_MPLS_BOS) {
-        return of_oxm_mpls_bos_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED) {
+        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
         return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
-        return of_oxm_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
+        return of_oxm_ip_proto_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
@@ -56942,10 +58358,6 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_udf5_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED) {
-        return of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
         return of_oxm_icmpv4_type_masked_OF_VERSION_1_4_dup(src);
     }
@@ -56962,8 +58374,20 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_DST) {
-        return of_oxm_ipv4_dst_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED) {
+        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST) {
+        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED) {
+        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
@@ -56984,6 +58408,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED) {
         return of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED) {
+        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_INNER_ETH_DST) {
@@ -57046,12 +58474,16 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF6) {
-        return of_oxm_bsn_udf6_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED) {
+        return of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IN_PORT) {
         return of_oxm_in_port_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED) {
+        return of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF7_MASKED) {
@@ -57068,6 +58500,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_TCP_SRC) {
         return of_oxm_tcp_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
+        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_UDP_SRC_MASKED) {
@@ -57090,12 +58526,20 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_eth_src_masked_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL) {
+        return of_oxm_conn_tracking_label_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC) {
+        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_VRF) {
         return of_oxm_bsn_vrf_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return of_oxm_bsn_udf3_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
@@ -57106,12 +58550,16 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_ipv6_src_masked_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST) {
+        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_IP_DSCP) {
         return of_oxm_ip_dscp_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
-        return of_oxm_vlan_vid_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE) {
+        return of_oxm_conn_tracking_zone_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_SLL) {
@@ -57122,8 +58570,20 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_ipv6_flabel_masked_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED) {
+        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC) {
+        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
         return of_oxm_mpls_tc_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_MARK) {
+        return of_oxm_conn_tracking_mark_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_DST_MASKED) {
@@ -57136,6 +58596,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
         return of_oxm_sctp_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO) {
+        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
@@ -57182,6 +58646,10 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
+        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_VLAN_VID) {
         return of_oxm_vlan_vid_OF_VERSION_1_4_dup(src);
     }
@@ -57190,8 +58658,12 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
-        return of_oxm_icmpv6_type_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_MPLS_BOS) {
+        return of_oxm_mpls_bos_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
@@ -57200,6 +58672,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED) {
         return of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_TUNNEL_ID) {
@@ -57216,6 +58692,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
         return of_oxm_bsn_udf0_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED) {
+        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
@@ -58904,6 +60384,589 @@ of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_dup(
 
     of_oxm_bsn_vxlan_network_id_masked_value_mask_get(src, &val32);
     of_oxm_bsn_vxlan_network_id_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_ipv6_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_ipv6_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_ipv6_dst_t *
+of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_ipv6_dst_t *src)
+{
+    of_oxm_conn_tracking_ipv6_dst_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_conn_tracking_ipv6_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_ipv6_dst_value_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_dst_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_ipv6_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_ipv6_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_ipv6_dst_masked_t *
+of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *src)
+{
+    of_oxm_conn_tracking_ipv6_dst_masked_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_conn_tracking_ipv6_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_ipv6_dst_masked_value_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_dst_masked_value_set(dst, ipv6);
+
+    of_oxm_conn_tracking_ipv6_dst_masked_value_mask_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_dst_masked_value_mask_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_ipv6_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_ipv6_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_ipv6_src_t *
+of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_ipv6_src_t *src)
+{
+    of_oxm_conn_tracking_ipv6_src_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_conn_tracking_ipv6_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_ipv6_src_value_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_src_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_ipv6_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_ipv6_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_ipv6_src_masked_t *
+of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_ipv6_src_masked_t *src)
+{
+    of_oxm_conn_tracking_ipv6_src_masked_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_conn_tracking_ipv6_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_ipv6_src_masked_value_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_src_masked_value_set(dst, ipv6);
+
+    of_oxm_conn_tracking_ipv6_src_masked_value_mask_get(src, &ipv6);
+    of_oxm_conn_tracking_ipv6_src_masked_value_mask_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_label
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_label.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_label_t *
+of_oxm_conn_tracking_label_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_label_t *src)
+{
+    of_oxm_conn_tracking_label_t *dst;
+    uint128_t val128;
+
+    if ((dst = of_oxm_conn_tracking_label_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_label_value_get(src, &val128);
+    of_oxm_conn_tracking_label_value_set(dst, val128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_label_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_label_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_label_masked_t *
+of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_label_masked_t *src)
+{
+    of_oxm_conn_tracking_label_masked_t *dst;
+    uint128_t val128;
+
+    if ((dst = of_oxm_conn_tracking_label_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_label_masked_value_get(src, &val128);
+    of_oxm_conn_tracking_label_masked_value_set(dst, val128);
+
+    of_oxm_conn_tracking_label_masked_value_mask_get(src, &val128);
+    of_oxm_conn_tracking_label_masked_value_mask_set(dst, val128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_mark
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_mark.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_mark_t *
+of_oxm_conn_tracking_mark_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_mark_t *src)
+{
+    of_oxm_conn_tracking_mark_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_mark_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_mark_value_get(src, &val32);
+    of_oxm_conn_tracking_mark_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_mark_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_mark_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_mark_masked_t *
+of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_mark_masked_t *src)
+{
+    of_oxm_conn_tracking_mark_masked_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_mark_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_mark_masked_value_get(src, &val32);
+    of_oxm_conn_tracking_mark_masked_value_set(dst, val32);
+
+    of_oxm_conn_tracking_mark_masked_value_mask_get(src, &val32);
+    of_oxm_conn_tracking_mark_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_dst_t *
+of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_nw_dst_t *src)
+{
+    of_oxm_conn_tracking_nw_dst_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_nw_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_dst_value_get(src, &val32);
+    of_oxm_conn_tracking_nw_dst_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_dst_masked_t *
+of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_nw_dst_masked_t *src)
+{
+    of_oxm_conn_tracking_nw_dst_masked_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_nw_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_dst_masked_value_get(src, &val32);
+    of_oxm_conn_tracking_nw_dst_masked_value_set(dst, val32);
+
+    of_oxm_conn_tracking_nw_dst_masked_value_mask_get(src, &val32);
+    of_oxm_conn_tracking_nw_dst_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_proto
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_proto.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_proto_t *
+of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_nw_proto_t *src)
+{
+    of_oxm_conn_tracking_nw_proto_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_oxm_conn_tracking_nw_proto_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_proto_value_get(src, &val8);
+    of_oxm_conn_tracking_nw_proto_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_proto_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_proto_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_proto_masked_t *
+of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_nw_proto_masked_t *src)
+{
+    of_oxm_conn_tracking_nw_proto_masked_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_oxm_conn_tracking_nw_proto_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_proto_masked_value_get(src, &val8);
+    of_oxm_conn_tracking_nw_proto_masked_value_set(dst, val8);
+
+    of_oxm_conn_tracking_nw_proto_masked_value_mask_get(src, &val8);
+    of_oxm_conn_tracking_nw_proto_masked_value_mask_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_src_t *
+of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_nw_src_t *src)
+{
+    of_oxm_conn_tracking_nw_src_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_nw_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_src_value_get(src, &val32);
+    of_oxm_conn_tracking_nw_src_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_nw_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_nw_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_nw_src_masked_t *
+of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_nw_src_masked_t *src)
+{
+    of_oxm_conn_tracking_nw_src_masked_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_nw_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_nw_src_masked_value_get(src, &val32);
+    of_oxm_conn_tracking_nw_src_masked_value_set(dst, val32);
+
+    of_oxm_conn_tracking_nw_src_masked_value_mask_get(src, &val32);
+    of_oxm_conn_tracking_nw_src_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_state
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_state.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_state_t *
+of_oxm_conn_tracking_state_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_state_t *src)
+{
+    of_oxm_conn_tracking_state_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_state_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_state_value_get(src, &val32);
+    of_oxm_conn_tracking_state_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_state_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_state_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_state_masked_t *
+of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_state_masked_t *src)
+{
+    of_oxm_conn_tracking_state_masked_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_oxm_conn_tracking_state_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_state_masked_value_get(src, &val32);
+    of_oxm_conn_tracking_state_masked_value_set(dst, val32);
+
+    of_oxm_conn_tracking_state_masked_value_mask_get(src, &val32);
+    of_oxm_conn_tracking_state_masked_value_mask_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_tp_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_tp_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_tp_dst_t *
+of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_tp_dst_t *src)
+{
+    of_oxm_conn_tracking_tp_dst_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_tp_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_tp_dst_value_get(src, &val16);
+    of_oxm_conn_tracking_tp_dst_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_tp_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_tp_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_tp_dst_masked_t *
+of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_tp_dst_masked_t *src)
+{
+    of_oxm_conn_tracking_tp_dst_masked_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_tp_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_tp_dst_masked_value_get(src, &val16);
+    of_oxm_conn_tracking_tp_dst_masked_value_set(dst, val16);
+
+    of_oxm_conn_tracking_tp_dst_masked_value_mask_get(src, &val16);
+    of_oxm_conn_tracking_tp_dst_masked_value_mask_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_tp_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_tp_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_tp_src_t *
+of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_tp_src_t *src)
+{
+    of_oxm_conn_tracking_tp_src_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_tp_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_tp_src_value_get(src, &val16);
+    of_oxm_conn_tracking_tp_src_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_tp_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_tp_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_tp_src_masked_t *
+of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_tp_src_masked_t *src)
+{
+    of_oxm_conn_tracking_tp_src_masked_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_tp_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_tp_src_masked_value_get(src, &val16);
+    of_oxm_conn_tracking_tp_src_masked_value_set(dst, val16);
+
+    of_oxm_conn_tracking_tp_src_masked_value_mask_get(src, &val16);
+    of_oxm_conn_tracking_tp_src_masked_value_mask_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_zone
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_zone.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_zone_t *
+of_oxm_conn_tracking_zone_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_zone_t *src)
+{
+    of_oxm_conn_tracking_zone_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_zone_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_zone_value_get(src, &val16);
+    of_oxm_conn_tracking_zone_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_conn_tracking_zone_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_conn_tracking_zone_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_conn_tracking_zone_masked_t *
+of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_dup(
+    of_oxm_conn_tracking_zone_masked_t *src)
+{
+    of_oxm_conn_tracking_zone_masked_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_oxm_conn_tracking_zone_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_conn_tracking_zone_masked_value_get(src, &val16);
+    of_oxm_conn_tracking_zone_masked_value_set(dst, val16);
+
+    of_oxm_conn_tracking_zone_masked_value_mask_get(src, &val16);
+    of_oxm_conn_tracking_zone_masked_value_mask_set(dst, val16);
 
     return dst;
 }
@@ -72445,6 +74508,23 @@ of_bsn_tlv_priority_dup(
 }
 
 of_object_t *
+of_bsn_tlv_push_vlan_on_egress_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_push_vlan_on_ingress_dup(
     of_object_t *src)
 {
@@ -76038,6 +78118,468 @@ of_oxm_bsn_vxlan_network_id_masked_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_ipv6_dst_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_ipv6_dst_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_ipv6_src_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_ipv6_src_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_label_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_label_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_label_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_label_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_label_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_mark_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_mark_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_mark_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_mark_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_mark_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_nw_dst_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_nw_dst_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_nw_proto_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_nw_proto_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_nw_src_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_nw_src_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_state_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_state_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_state_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_state_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_state_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_tp_dst_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_tp_dst_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_tp_src_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_tp_src_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_zone_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_zone_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_zone_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_zone_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_conn_tracking_zone_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

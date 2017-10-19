@@ -740,6 +740,10 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPriority not supported in version 1.2");
     }
 
+    public OFBsnTlvPushVlanOnEgress pushVlanOnEgress() {
+        throw new UnsupportedOperationException("OFBsnTlvPushVlanOnEgress not supported in version 1.2");
+    }
+
     public OFBsnTlvPushVlanOnIngress pushVlanOnIngress() {
         throw new UnsupportedOperationException("OFBsnTlvPushVlanOnIngress not supported in version 1.2");
     }

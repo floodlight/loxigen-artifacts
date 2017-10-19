@@ -536,6 +536,215 @@ public class OFOxmsVer15 implements OFOxms {
                     );
     }
 
+    public OFOxmConnTrackingIpv6Dst.Builder buildConnTrackingIpv6Dst() {
+        return new OFOxmConnTrackingIpv6DstVer15.Builder();
+    }
+    public OFOxmConnTrackingIpv6Dst connTrackingIpv6Dst(IPv6Address value) {
+        return new OFOxmConnTrackingIpv6DstVer15(
+                value
+                    );
+    }
+
+    public OFOxmConnTrackingIpv6DstMasked.Builder buildConnTrackingIpv6DstMasked() {
+        return new OFOxmConnTrackingIpv6DstMaskedVer15.Builder();
+    }
+    public OFOxmConnTrackingIpv6DstMasked connTrackingIpv6DstMasked(IPv6Address value, IPv6Address mask) {
+        return new OFOxmConnTrackingIpv6DstMaskedVer15(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmConnTrackingIpv6Src.Builder buildConnTrackingIpv6Src() {
+        return new OFOxmConnTrackingIpv6SrcVer15.Builder();
+    }
+    public OFOxmConnTrackingIpv6Src connTrackingIpv6Src(IPv6Address value) {
+        return new OFOxmConnTrackingIpv6SrcVer15(
+                value
+                    );
+    }
+
+    public OFOxmConnTrackingIpv6SrcMasked.Builder buildConnTrackingIpv6SrcMasked() {
+        return new OFOxmConnTrackingIpv6SrcMaskedVer15.Builder();
+    }
+    public OFOxmConnTrackingIpv6SrcMasked connTrackingIpv6SrcMasked(IPv6Address value, IPv6Address mask) {
+        return new OFOxmConnTrackingIpv6SrcMaskedVer15(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmConnTrackingLabel.Builder buildConnTrackingLabel() {
+        return new OFOxmConnTrackingLabelVer15.Builder();
+    }
+    public OFOxmConnTrackingLabel connTrackingLabel(U128 value) {
+        return new OFOxmConnTrackingLabelVer15(
+                value
+                    );
+    }
+
+    public OFOxmConnTrackingLabelMasked.Builder buildConnTrackingLabelMasked() {
+        return new OFOxmConnTrackingLabelMaskedVer15.Builder();
+    }
+    public OFOxmConnTrackingLabelMasked connTrackingLabelMasked(U128 value, U128 mask) {
+        return new OFOxmConnTrackingLabelMaskedVer15(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmConnTrackingMark.Builder buildConnTrackingMark() {
+        return new OFOxmConnTrackingMarkVer15.Builder();
+    }
+    public OFOxmConnTrackingMark connTrackingMark(U32 value) {
+        return new OFOxmConnTrackingMarkVer15(
+                value
+                    );
+    }
+
+    public OFOxmConnTrackingMarkMasked.Builder buildConnTrackingMarkMasked() {
+        return new OFOxmConnTrackingMarkMaskedVer15.Builder();
+    }
+    public OFOxmConnTrackingMarkMasked connTrackingMarkMasked(U32 value, U32 mask) {
+        return new OFOxmConnTrackingMarkMaskedVer15(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmConnTrackingNwDst.Builder buildConnTrackingNwDst() {
+        return new OFOxmConnTrackingNwDstVer15.Builder();
+    }
+    public OFOxmConnTrackingNwDst connTrackingNwDst(U32 value) {
+        return new OFOxmConnTrackingNwDstVer15(
+                value
+                    );
+    }
+
+    public OFOxmConnTrackingNwDstMasked.Builder buildConnTrackingNwDstMasked() {
+        return new OFOxmConnTrackingNwDstMaskedVer15.Builder();
+    }
+    public OFOxmConnTrackingNwDstMasked connTrackingNwDstMasked(U32 value, U32 mask) {
+        return new OFOxmConnTrackingNwDstMaskedVer15(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmConnTrackingNwProto.Builder buildConnTrackingNwProto() {
+        return new OFOxmConnTrackingNwProtoVer15.Builder();
+    }
+    public OFOxmConnTrackingNwProto connTrackingNwProto(U8 value) {
+        return new OFOxmConnTrackingNwProtoVer15(
+                value
+                    );
+    }
+
+    public OFOxmConnTrackingNwProtoMasked.Builder buildConnTrackingNwProtoMasked() {
+        return new OFOxmConnTrackingNwProtoMaskedVer15.Builder();
+    }
+    public OFOxmConnTrackingNwProtoMasked connTrackingNwProtoMasked(U8 value, U8 mask) {
+        return new OFOxmConnTrackingNwProtoMaskedVer15(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmConnTrackingNwSrc.Builder buildConnTrackingNwSrc() {
+        return new OFOxmConnTrackingNwSrcVer15.Builder();
+    }
+    public OFOxmConnTrackingNwSrc connTrackingNwSrc(U32 value) {
+        return new OFOxmConnTrackingNwSrcVer15(
+                value
+                    );
+    }
+
+    public OFOxmConnTrackingNwSrcMasked.Builder buildConnTrackingNwSrcMasked() {
+        return new OFOxmConnTrackingNwSrcMaskedVer15.Builder();
+    }
+    public OFOxmConnTrackingNwSrcMasked connTrackingNwSrcMasked(U32 value, U32 mask) {
+        return new OFOxmConnTrackingNwSrcMaskedVer15(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmConnTrackingState.Builder buildConnTrackingState() {
+        return new OFOxmConnTrackingStateVer15.Builder();
+    }
+    public OFOxmConnTrackingState connTrackingState(U32 value) {
+        return new OFOxmConnTrackingStateVer15(
+                value
+                    );
+    }
+
+    public OFOxmConnTrackingStateMasked.Builder buildConnTrackingStateMasked() {
+        return new OFOxmConnTrackingStateMaskedVer15.Builder();
+    }
+    public OFOxmConnTrackingStateMasked connTrackingStateMasked(U32 value, U32 mask) {
+        return new OFOxmConnTrackingStateMaskedVer15(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmConnTrackingTpDst.Builder buildConnTrackingTpDst() {
+        return new OFOxmConnTrackingTpDstVer15.Builder();
+    }
+    public OFOxmConnTrackingTpDst connTrackingTpDst(TransportPort value) {
+        return new OFOxmConnTrackingTpDstVer15(
+                value
+                    );
+    }
+
+    public OFOxmConnTrackingTpDstMasked.Builder buildConnTrackingTpDstMasked() {
+        return new OFOxmConnTrackingTpDstMaskedVer15.Builder();
+    }
+    public OFOxmConnTrackingTpDstMasked connTrackingTpDstMasked(TransportPort value, TransportPort mask) {
+        return new OFOxmConnTrackingTpDstMaskedVer15(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmConnTrackingTpSrc.Builder buildConnTrackingTpSrc() {
+        return new OFOxmConnTrackingTpSrcVer15.Builder();
+    }
+    public OFOxmConnTrackingTpSrc connTrackingTpSrc(TransportPort value) {
+        return new OFOxmConnTrackingTpSrcVer15(
+                value
+                    );
+    }
+
+    public OFOxmConnTrackingTpSrcMasked.Builder buildConnTrackingTpSrcMasked() {
+        return new OFOxmConnTrackingTpSrcMaskedVer15.Builder();
+    }
+    public OFOxmConnTrackingTpSrcMasked connTrackingTpSrcMasked(TransportPort value, TransportPort mask) {
+        return new OFOxmConnTrackingTpSrcMaskedVer15(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmConnTrackingZone.Builder buildConnTrackingZone() {
+        return new OFOxmConnTrackingZoneVer15.Builder();
+    }
+    public OFOxmConnTrackingZone connTrackingZone(U16 value) {
+        return new OFOxmConnTrackingZoneVer15(
+                value
+                    );
+    }
+
+    public OFOxmConnTrackingZoneMasked.Builder buildConnTrackingZoneMasked() {
+        return new OFOxmConnTrackingZoneMaskedVer15.Builder();
+    }
+    public OFOxmConnTrackingZoneMasked connTrackingZoneMasked(U16 value, U16 mask) {
+        return new OFOxmConnTrackingZoneMaskedVer15(
+                value,
+                      mask
+                    );
+    }
+
     public OFOxmEthDst.Builder buildEthDst() {
         return new OFOxmEthDstVer15.Builder();
     }
@@ -1490,6 +1699,28 @@ public class OFOxmsVer15 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnVlanXlatePortGroupId((ClassId)((Object)value)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrf((VRF)((Object)value)));
+            case CONN_TRACKING_IPV6_DST:
+                return (OFOxm<F>)((Object)connTrackingIpv6Dst((IPv6Address)((Object)value)));
+            case CONN_TRACKING_IPV6_SRC:
+                return (OFOxm<F>)((Object)connTrackingIpv6Src((IPv6Address)((Object)value)));
+            case CONN_TRACKING_LABEL:
+                return (OFOxm<F>)((Object)connTrackingLabel((U128)((Object)value)));
+            case CONN_TRACKING_MARK:
+                return (OFOxm<F>)((Object)connTrackingMark((U32)((Object)value)));
+            case CONN_TRACKING_NW_DST:
+                return (OFOxm<F>)((Object)connTrackingNwDst((U32)((Object)value)));
+            case CONN_TRACKING_NW_PROTO:
+                return (OFOxm<F>)((Object)connTrackingNwProto((U8)((Object)value)));
+            case CONN_TRACKING_NW_SRC:
+                return (OFOxm<F>)((Object)connTrackingNwSrc((U32)((Object)value)));
+            case CONN_TRACKING_STATE:
+                return (OFOxm<F>)((Object)connTrackingState((U32)((Object)value)));
+            case CONN_TRACKING_TP_DST:
+                return (OFOxm<F>)((Object)connTrackingTpDst((TransportPort)((Object)value)));
+            case CONN_TRACKING_TP_SRC:
+                return (OFOxm<F>)((Object)connTrackingTpSrc((TransportPort)((Object)value)));
+            case CONN_TRACKING_ZONE:
+                return (OFOxm<F>)((Object)connTrackingZone((U16)((Object)value)));
             case ETH_DST:
                 return (OFOxm<F>)((Object)ethDst((MacAddress)((Object)value)));
             case ETH_SRC:
@@ -1646,6 +1877,28 @@ public class OFOxmsVer15 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnVlanXlatePortGroupIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)value), (VRF)((Object)mask)));
+            case CONN_TRACKING_IPV6_DST:
+                return (OFOxm<F>)((Object)connTrackingIpv6DstMasked((IPv6Address)((Object)value), (IPv6Address)((Object)mask)));
+            case CONN_TRACKING_IPV6_SRC:
+                return (OFOxm<F>)((Object)connTrackingIpv6SrcMasked((IPv6Address)((Object)value), (IPv6Address)((Object)mask)));
+            case CONN_TRACKING_LABEL:
+                return (OFOxm<F>)((Object)connTrackingLabelMasked((U128)((Object)value), (U128)((Object)mask)));
+            case CONN_TRACKING_MARK:
+                return (OFOxm<F>)((Object)connTrackingMarkMasked((U32)((Object)value), (U32)((Object)mask)));
+            case CONN_TRACKING_NW_DST:
+                return (OFOxm<F>)((Object)connTrackingNwDstMasked((U32)((Object)value), (U32)((Object)mask)));
+            case CONN_TRACKING_NW_PROTO:
+                return (OFOxm<F>)((Object)connTrackingNwProtoMasked((U8)((Object)value), (U8)((Object)mask)));
+            case CONN_TRACKING_NW_SRC:
+                return (OFOxm<F>)((Object)connTrackingNwSrcMasked((U32)((Object)value), (U32)((Object)mask)));
+            case CONN_TRACKING_STATE:
+                return (OFOxm<F>)((Object)connTrackingStateMasked((U32)((Object)value), (U32)((Object)mask)));
+            case CONN_TRACKING_TP_DST:
+                return (OFOxm<F>)((Object)connTrackingTpDstMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
+            case CONN_TRACKING_TP_SRC:
+                return (OFOxm<F>)((Object)connTrackingTpSrcMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
+            case CONN_TRACKING_ZONE:
+                return (OFOxm<F>)((Object)connTrackingZoneMasked((U16)((Object)value), (U16)((Object)mask)));
             case ETH_DST:
                 return (OFOxm<F>)((Object)ethDstMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
             case ETH_SRC:
@@ -1802,6 +2055,28 @@ public class OFOxmsVer15 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnVlanXlatePortGroupIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)(masked.getValue())), (VRF)((Object)(masked.getMask()))));
+            case CONN_TRACKING_IPV6_DST:
+                return (OFOxm<F>)((Object)connTrackingIpv6DstMasked((IPv6Address)((Object)(masked.getValue())), (IPv6Address)((Object)(masked.getMask()))));
+            case CONN_TRACKING_IPV6_SRC:
+                return (OFOxm<F>)((Object)connTrackingIpv6SrcMasked((IPv6Address)((Object)(masked.getValue())), (IPv6Address)((Object)(masked.getMask()))));
+            case CONN_TRACKING_LABEL:
+                return (OFOxm<F>)((Object)connTrackingLabelMasked((U128)((Object)(masked.getValue())), (U128)((Object)(masked.getMask()))));
+            case CONN_TRACKING_MARK:
+                return (OFOxm<F>)((Object)connTrackingMarkMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
+            case CONN_TRACKING_NW_DST:
+                return (OFOxm<F>)((Object)connTrackingNwDstMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
+            case CONN_TRACKING_NW_PROTO:
+                return (OFOxm<F>)((Object)connTrackingNwProtoMasked((U8)((Object)(masked.getValue())), (U8)((Object)(masked.getMask()))));
+            case CONN_TRACKING_NW_SRC:
+                return (OFOxm<F>)((Object)connTrackingNwSrcMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
+            case CONN_TRACKING_STATE:
+                return (OFOxm<F>)((Object)connTrackingStateMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
+            case CONN_TRACKING_TP_DST:
+                return (OFOxm<F>)((Object)connTrackingTpDstMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
+            case CONN_TRACKING_TP_SRC:
+                return (OFOxm<F>)((Object)connTrackingTpSrcMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
+            case CONN_TRACKING_ZONE:
+                return (OFOxm<F>)((Object)connTrackingZoneMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             case ETH_DST:
                 return (OFOxm<F>)((Object)ethDstMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
             case ETH_SRC:

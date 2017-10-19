@@ -449,6 +449,50 @@ void of_oxm_bsn_vrf_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_vrf_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_vrf_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_vrf_masked_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_ipv6_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_ipv6_dst_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_ipv6_dst_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_ipv6_dst_masked_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_ipv6_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_ipv6_src_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_ipv6_src_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_ipv6_src_masked_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_label_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_label_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_label_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_label_masked_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_mark_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_mark_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_mark_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_mark_masked_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_nw_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_nw_dst_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_nw_dst_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_nw_dst_masked_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_nw_proto_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_nw_proto_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_nw_proto_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_nw_proto_masked_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_nw_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_nw_src_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_nw_src_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_nw_src_masked_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_state_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_state_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_state_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_state_masked_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_tp_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_tp_dst_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_tp_dst_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_tp_dst_masked_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_tp_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_tp_src_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_tp_src_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_tp_src_masked_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_zone_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_zone_push_wire_types(of_object_t *obj);
+void of_oxm_conn_tracking_zone_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_conn_tracking_zone_masked_push_wire_types(of_object_t *obj);
 void of_oxm_eth_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_eth_dst_push_wire_types(of_object_t *obj);
 void of_oxm_eth_dst_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1027,6 +1071,8 @@ void of_bsn_tlv_port_vxlan_mode_wire_object_id_get(of_object_t *obj, of_object_i
 void of_bsn_tlv_port_vxlan_mode_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_priority_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_push_vlan_on_egress_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_push_vlan_on_egress_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_push_vlan_on_ingress_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_push_vlan_on_ingress_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_qos_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1916,6 +1962,7 @@ typedef of_object_t of_bsn_tlv_port_speed_gbps_t;
 typedef of_object_t of_bsn_tlv_port_usage_t;
 typedef of_object_t of_bsn_tlv_port_vxlan_mode_t;
 typedef of_object_t of_bsn_tlv_priority_t;
+typedef of_object_t of_bsn_tlv_push_vlan_on_egress_t;
 typedef of_object_t of_bsn_tlv_push_vlan_on_ingress_t;
 typedef of_object_t of_bsn_tlv_qos_priority_t;
 typedef of_object_t of_bsn_tlv_queue_id_t;
@@ -2112,6 +2159,28 @@ typedef of_object_t of_oxm_bsn_vrf_t;
 typedef of_object_t of_oxm_bsn_vrf_masked_t;
 typedef of_object_t of_oxm_bsn_vxlan_network_id_t;
 typedef of_object_t of_oxm_bsn_vxlan_network_id_masked_t;
+typedef of_object_t of_oxm_conn_tracking_ipv6_dst_t;
+typedef of_object_t of_oxm_conn_tracking_ipv6_dst_masked_t;
+typedef of_object_t of_oxm_conn_tracking_ipv6_src_t;
+typedef of_object_t of_oxm_conn_tracking_ipv6_src_masked_t;
+typedef of_object_t of_oxm_conn_tracking_label_t;
+typedef of_object_t of_oxm_conn_tracking_label_masked_t;
+typedef of_object_t of_oxm_conn_tracking_mark_t;
+typedef of_object_t of_oxm_conn_tracking_mark_masked_t;
+typedef of_object_t of_oxm_conn_tracking_nw_dst_t;
+typedef of_object_t of_oxm_conn_tracking_nw_dst_masked_t;
+typedef of_object_t of_oxm_conn_tracking_nw_proto_t;
+typedef of_object_t of_oxm_conn_tracking_nw_proto_masked_t;
+typedef of_object_t of_oxm_conn_tracking_nw_src_t;
+typedef of_object_t of_oxm_conn_tracking_nw_src_masked_t;
+typedef of_object_t of_oxm_conn_tracking_state_t;
+typedef of_object_t of_oxm_conn_tracking_state_masked_t;
+typedef of_object_t of_oxm_conn_tracking_tp_dst_t;
+typedef of_object_t of_oxm_conn_tracking_tp_dst_masked_t;
+typedef of_object_t of_oxm_conn_tracking_tp_src_t;
+typedef of_object_t of_oxm_conn_tracking_tp_src_masked_t;
+typedef of_object_t of_oxm_conn_tracking_zone_t;
+typedef of_object_t of_oxm_conn_tracking_zone_masked_t;
 typedef of_object_t of_oxm_eth_dst_t;
 typedef of_object_t of_oxm_eth_dst_masked_t;
 typedef of_object_t of_oxm_eth_src_t;
@@ -4386,6 +4455,11 @@ extern void of_bsn_tlv_priority_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_push_vlan_on_egress_new(of_version_t version);
+extern void of_bsn_tlv_push_vlan_on_egress_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_push_vlan_on_ingress_new(of_version_t version);
 extern void of_bsn_tlv_push_vlan_on_ingress_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -5363,6 +5437,116 @@ extern void of_oxm_bsn_vxlan_network_id_init(
 extern of_object_t *
     of_oxm_bsn_vxlan_network_id_masked_new(of_version_t version);
 extern void of_oxm_bsn_vxlan_network_id_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_dst_new(of_version_t version);
+extern void of_oxm_conn_tracking_ipv6_dst_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_dst_masked_new(of_version_t version);
+extern void of_oxm_conn_tracking_ipv6_dst_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_src_new(of_version_t version);
+extern void of_oxm_conn_tracking_ipv6_src_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_ipv6_src_masked_new(of_version_t version);
+extern void of_oxm_conn_tracking_ipv6_src_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_label_new(of_version_t version);
+extern void of_oxm_conn_tracking_label_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_label_masked_new(of_version_t version);
+extern void of_oxm_conn_tracking_label_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_mark_new(of_version_t version);
+extern void of_oxm_conn_tracking_mark_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_mark_masked_new(of_version_t version);
+extern void of_oxm_conn_tracking_mark_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_dst_new(of_version_t version);
+extern void of_oxm_conn_tracking_nw_dst_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_dst_masked_new(of_version_t version);
+extern void of_oxm_conn_tracking_nw_dst_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_proto_new(of_version_t version);
+extern void of_oxm_conn_tracking_nw_proto_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_proto_masked_new(of_version_t version);
+extern void of_oxm_conn_tracking_nw_proto_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_src_new(of_version_t version);
+extern void of_oxm_conn_tracking_nw_src_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_nw_src_masked_new(of_version_t version);
+extern void of_oxm_conn_tracking_nw_src_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_state_new(of_version_t version);
+extern void of_oxm_conn_tracking_state_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_state_masked_new(of_version_t version);
+extern void of_oxm_conn_tracking_state_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_dst_new(of_version_t version);
+extern void of_oxm_conn_tracking_tp_dst_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_dst_masked_new(of_version_t version);
+extern void of_oxm_conn_tracking_tp_dst_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_src_new(of_version_t version);
+extern void of_oxm_conn_tracking_tp_src_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_tp_src_masked_new(of_version_t version);
+extern void of_oxm_conn_tracking_tp_src_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_zone_new(of_version_t version);
+extern void of_oxm_conn_tracking_zone_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_conn_tracking_zone_masked_new(of_version_t version);
+extern void of_oxm_conn_tracking_zone_masked_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10878,6 +11062,17 @@ of_bsn_tlv_priority_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_push_vlan_on_egress_t
+ * @param obj An instance of type of_bsn_tlv_push_vlan_on_egress_t
+ *
+ * \ingroup of_bsn_tlv_push_vlan_on_egress
+ */
+static inline void
+of_bsn_tlv_push_vlan_on_egress_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_push_vlan_on_ingress_t
  * @param obj An instance of type of_bsn_tlv_push_vlan_on_ingress_t
  *
@@ -13030,6 +13225,248 @@ of_oxm_bsn_vxlan_network_id_delete(of_object_t *obj) {
  */
 static inline void
 of_oxm_bsn_vxlan_network_id_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_ipv6_dst_t
+ * @param obj An instance of type of_oxm_conn_tracking_ipv6_dst_t
+ *
+ * \ingroup of_oxm_conn_tracking_ipv6_dst
+ */
+static inline void
+of_oxm_conn_tracking_ipv6_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_ipv6_dst_masked_t
+ * @param obj An instance of type of_oxm_conn_tracking_ipv6_dst_masked_t
+ *
+ * \ingroup of_oxm_conn_tracking_ipv6_dst_masked
+ */
+static inline void
+of_oxm_conn_tracking_ipv6_dst_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_ipv6_src_t
+ * @param obj An instance of type of_oxm_conn_tracking_ipv6_src_t
+ *
+ * \ingroup of_oxm_conn_tracking_ipv6_src
+ */
+static inline void
+of_oxm_conn_tracking_ipv6_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_ipv6_src_masked_t
+ * @param obj An instance of type of_oxm_conn_tracking_ipv6_src_masked_t
+ *
+ * \ingroup of_oxm_conn_tracking_ipv6_src_masked
+ */
+static inline void
+of_oxm_conn_tracking_ipv6_src_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_label_t
+ * @param obj An instance of type of_oxm_conn_tracking_label_t
+ *
+ * \ingroup of_oxm_conn_tracking_label
+ */
+static inline void
+of_oxm_conn_tracking_label_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_label_masked_t
+ * @param obj An instance of type of_oxm_conn_tracking_label_masked_t
+ *
+ * \ingroup of_oxm_conn_tracking_label_masked
+ */
+static inline void
+of_oxm_conn_tracking_label_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_mark_t
+ * @param obj An instance of type of_oxm_conn_tracking_mark_t
+ *
+ * \ingroup of_oxm_conn_tracking_mark
+ */
+static inline void
+of_oxm_conn_tracking_mark_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_mark_masked_t
+ * @param obj An instance of type of_oxm_conn_tracking_mark_masked_t
+ *
+ * \ingroup of_oxm_conn_tracking_mark_masked
+ */
+static inline void
+of_oxm_conn_tracking_mark_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_nw_dst_t
+ * @param obj An instance of type of_oxm_conn_tracking_nw_dst_t
+ *
+ * \ingroup of_oxm_conn_tracking_nw_dst
+ */
+static inline void
+of_oxm_conn_tracking_nw_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_nw_dst_masked_t
+ * @param obj An instance of type of_oxm_conn_tracking_nw_dst_masked_t
+ *
+ * \ingroup of_oxm_conn_tracking_nw_dst_masked
+ */
+static inline void
+of_oxm_conn_tracking_nw_dst_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_nw_proto_t
+ * @param obj An instance of type of_oxm_conn_tracking_nw_proto_t
+ *
+ * \ingroup of_oxm_conn_tracking_nw_proto
+ */
+static inline void
+of_oxm_conn_tracking_nw_proto_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_nw_proto_masked_t
+ * @param obj An instance of type of_oxm_conn_tracking_nw_proto_masked_t
+ *
+ * \ingroup of_oxm_conn_tracking_nw_proto_masked
+ */
+static inline void
+of_oxm_conn_tracking_nw_proto_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_nw_src_t
+ * @param obj An instance of type of_oxm_conn_tracking_nw_src_t
+ *
+ * \ingroup of_oxm_conn_tracking_nw_src
+ */
+static inline void
+of_oxm_conn_tracking_nw_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_nw_src_masked_t
+ * @param obj An instance of type of_oxm_conn_tracking_nw_src_masked_t
+ *
+ * \ingroup of_oxm_conn_tracking_nw_src_masked
+ */
+static inline void
+of_oxm_conn_tracking_nw_src_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_state_t
+ * @param obj An instance of type of_oxm_conn_tracking_state_t
+ *
+ * \ingroup of_oxm_conn_tracking_state
+ */
+static inline void
+of_oxm_conn_tracking_state_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_state_masked_t
+ * @param obj An instance of type of_oxm_conn_tracking_state_masked_t
+ *
+ * \ingroup of_oxm_conn_tracking_state_masked
+ */
+static inline void
+of_oxm_conn_tracking_state_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_tp_dst_t
+ * @param obj An instance of type of_oxm_conn_tracking_tp_dst_t
+ *
+ * \ingroup of_oxm_conn_tracking_tp_dst
+ */
+static inline void
+of_oxm_conn_tracking_tp_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_tp_dst_masked_t
+ * @param obj An instance of type of_oxm_conn_tracking_tp_dst_masked_t
+ *
+ * \ingroup of_oxm_conn_tracking_tp_dst_masked
+ */
+static inline void
+of_oxm_conn_tracking_tp_dst_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_tp_src_t
+ * @param obj An instance of type of_oxm_conn_tracking_tp_src_t
+ *
+ * \ingroup of_oxm_conn_tracking_tp_src
+ */
+static inline void
+of_oxm_conn_tracking_tp_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_tp_src_masked_t
+ * @param obj An instance of type of_oxm_conn_tracking_tp_src_masked_t
+ *
+ * \ingroup of_oxm_conn_tracking_tp_src_masked
+ */
+static inline void
+of_oxm_conn_tracking_tp_src_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_zone_t
+ * @param obj An instance of type of_oxm_conn_tracking_zone_t
+ *
+ * \ingroup of_oxm_conn_tracking_zone
+ */
+static inline void
+of_oxm_conn_tracking_zone_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_conn_tracking_zone_masked_t
+ * @param obj An instance of type of_oxm_conn_tracking_zone_masked_t
+ *
+ * \ingroup of_oxm_conn_tracking_zone_masked
+ */
+static inline void
+of_oxm_conn_tracking_zone_masked_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23859,6 +24296,8 @@ extern void of_bsn_tlv_priority_value_get(
     of_bsn_tlv_priority_t *obj,
     uint32_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_push_vlan_on_egress */
+
 /* Unified accessor functions for of_bsn_tlv_push_vlan_on_ingress */
 
 /* Unified accessor functions for of_bsn_tlv_qos_priority */
@@ -26582,6 +27021,281 @@ extern void of_oxm_bsn_vxlan_network_id_masked_value_mask_set(
 extern void of_oxm_bsn_vxlan_network_id_masked_value_mask_get(
     of_oxm_bsn_vxlan_network_id_masked_t *obj,
     uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_conn_tracking_ipv6_dst */
+
+extern void of_oxm_conn_tracking_ipv6_dst_value_set(
+    of_oxm_conn_tracking_ipv6_dst_t *obj,
+    of_ipv6_t value);
+extern void of_oxm_conn_tracking_ipv6_dst_value_get(
+    of_oxm_conn_tracking_ipv6_dst_t *obj,
+    of_ipv6_t *value);
+
+/* Unified accessor functions for of_oxm_conn_tracking_ipv6_dst_masked */
+
+extern void of_oxm_conn_tracking_ipv6_dst_masked_value_set(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj,
+    of_ipv6_t value);
+extern void of_oxm_conn_tracking_ipv6_dst_masked_value_get(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj,
+    of_ipv6_t *value);
+
+extern void of_oxm_conn_tracking_ipv6_dst_masked_value_mask_set(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj,
+    of_ipv6_t value_mask);
+extern void of_oxm_conn_tracking_ipv6_dst_masked_value_mask_get(
+    of_oxm_conn_tracking_ipv6_dst_masked_t *obj,
+    of_ipv6_t *value_mask);
+
+/* Unified accessor functions for of_oxm_conn_tracking_ipv6_src */
+
+extern void of_oxm_conn_tracking_ipv6_src_value_set(
+    of_oxm_conn_tracking_ipv6_src_t *obj,
+    of_ipv6_t value);
+extern void of_oxm_conn_tracking_ipv6_src_value_get(
+    of_oxm_conn_tracking_ipv6_src_t *obj,
+    of_ipv6_t *value);
+
+/* Unified accessor functions for of_oxm_conn_tracking_ipv6_src_masked */
+
+extern void of_oxm_conn_tracking_ipv6_src_masked_value_set(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj,
+    of_ipv6_t value);
+extern void of_oxm_conn_tracking_ipv6_src_masked_value_get(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj,
+    of_ipv6_t *value);
+
+extern void of_oxm_conn_tracking_ipv6_src_masked_value_mask_set(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj,
+    of_ipv6_t value_mask);
+extern void of_oxm_conn_tracking_ipv6_src_masked_value_mask_get(
+    of_oxm_conn_tracking_ipv6_src_masked_t *obj,
+    of_ipv6_t *value_mask);
+
+/* Unified accessor functions for of_oxm_conn_tracking_label */
+
+extern void of_oxm_conn_tracking_label_value_set(
+    of_oxm_conn_tracking_label_t *obj,
+    uint128_t value);
+extern void of_oxm_conn_tracking_label_value_get(
+    of_oxm_conn_tracking_label_t *obj,
+    uint128_t *value);
+
+/* Unified accessor functions for of_oxm_conn_tracking_label_masked */
+
+extern void of_oxm_conn_tracking_label_masked_value_set(
+    of_oxm_conn_tracking_label_masked_t *obj,
+    uint128_t value);
+extern void of_oxm_conn_tracking_label_masked_value_get(
+    of_oxm_conn_tracking_label_masked_t *obj,
+    uint128_t *value);
+
+extern void of_oxm_conn_tracking_label_masked_value_mask_set(
+    of_oxm_conn_tracking_label_masked_t *obj,
+    uint128_t value_mask);
+extern void of_oxm_conn_tracking_label_masked_value_mask_get(
+    of_oxm_conn_tracking_label_masked_t *obj,
+    uint128_t *value_mask);
+
+/* Unified accessor functions for of_oxm_conn_tracking_mark */
+
+extern void of_oxm_conn_tracking_mark_value_set(
+    of_oxm_conn_tracking_mark_t *obj,
+    uint32_t value);
+extern void of_oxm_conn_tracking_mark_value_get(
+    of_oxm_conn_tracking_mark_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_conn_tracking_mark_masked */
+
+extern void of_oxm_conn_tracking_mark_masked_value_set(
+    of_oxm_conn_tracking_mark_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_conn_tracking_mark_masked_value_get(
+    of_oxm_conn_tracking_mark_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_conn_tracking_mark_masked_value_mask_set(
+    of_oxm_conn_tracking_mark_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_conn_tracking_mark_masked_value_mask_get(
+    of_oxm_conn_tracking_mark_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_conn_tracking_nw_dst */
+
+extern void of_oxm_conn_tracking_nw_dst_value_set(
+    of_oxm_conn_tracking_nw_dst_t *obj,
+    uint32_t value);
+extern void of_oxm_conn_tracking_nw_dst_value_get(
+    of_oxm_conn_tracking_nw_dst_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_conn_tracking_nw_dst_masked */
+
+extern void of_oxm_conn_tracking_nw_dst_masked_value_set(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_conn_tracking_nw_dst_masked_value_get(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_conn_tracking_nw_dst_masked_value_mask_set(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_conn_tracking_nw_dst_masked_value_mask_get(
+    of_oxm_conn_tracking_nw_dst_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_conn_tracking_nw_proto */
+
+extern void of_oxm_conn_tracking_nw_proto_value_set(
+    of_oxm_conn_tracking_nw_proto_t *obj,
+    uint8_t value);
+extern void of_oxm_conn_tracking_nw_proto_value_get(
+    of_oxm_conn_tracking_nw_proto_t *obj,
+    uint8_t *value);
+
+/* Unified accessor functions for of_oxm_conn_tracking_nw_proto_masked */
+
+extern void of_oxm_conn_tracking_nw_proto_masked_value_set(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj,
+    uint8_t value);
+extern void of_oxm_conn_tracking_nw_proto_masked_value_get(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj,
+    uint8_t *value);
+
+extern void of_oxm_conn_tracking_nw_proto_masked_value_mask_set(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj,
+    uint8_t value_mask);
+extern void of_oxm_conn_tracking_nw_proto_masked_value_mask_get(
+    of_oxm_conn_tracking_nw_proto_masked_t *obj,
+    uint8_t *value_mask);
+
+/* Unified accessor functions for of_oxm_conn_tracking_nw_src */
+
+extern void of_oxm_conn_tracking_nw_src_value_set(
+    of_oxm_conn_tracking_nw_src_t *obj,
+    uint32_t value);
+extern void of_oxm_conn_tracking_nw_src_value_get(
+    of_oxm_conn_tracking_nw_src_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_conn_tracking_nw_src_masked */
+
+extern void of_oxm_conn_tracking_nw_src_masked_value_set(
+    of_oxm_conn_tracking_nw_src_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_conn_tracking_nw_src_masked_value_get(
+    of_oxm_conn_tracking_nw_src_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_conn_tracking_nw_src_masked_value_mask_set(
+    of_oxm_conn_tracking_nw_src_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_conn_tracking_nw_src_masked_value_mask_get(
+    of_oxm_conn_tracking_nw_src_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_conn_tracking_state */
+
+extern void of_oxm_conn_tracking_state_value_set(
+    of_oxm_conn_tracking_state_t *obj,
+    uint32_t value);
+extern void of_oxm_conn_tracking_state_value_get(
+    of_oxm_conn_tracking_state_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_conn_tracking_state_masked */
+
+extern void of_oxm_conn_tracking_state_masked_value_set(
+    of_oxm_conn_tracking_state_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_conn_tracking_state_masked_value_get(
+    of_oxm_conn_tracking_state_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_conn_tracking_state_masked_value_mask_set(
+    of_oxm_conn_tracking_state_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_conn_tracking_state_masked_value_mask_get(
+    of_oxm_conn_tracking_state_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_conn_tracking_tp_dst */
+
+extern void of_oxm_conn_tracking_tp_dst_value_set(
+    of_oxm_conn_tracking_tp_dst_t *obj,
+    uint16_t value);
+extern void of_oxm_conn_tracking_tp_dst_value_get(
+    of_oxm_conn_tracking_tp_dst_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_oxm_conn_tracking_tp_dst_masked */
+
+extern void of_oxm_conn_tracking_tp_dst_masked_value_set(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj,
+    uint16_t value);
+extern void of_oxm_conn_tracking_tp_dst_masked_value_get(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj,
+    uint16_t *value);
+
+extern void of_oxm_conn_tracking_tp_dst_masked_value_mask_set(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj,
+    uint16_t value_mask);
+extern void of_oxm_conn_tracking_tp_dst_masked_value_mask_get(
+    of_oxm_conn_tracking_tp_dst_masked_t *obj,
+    uint16_t *value_mask);
+
+/* Unified accessor functions for of_oxm_conn_tracking_tp_src */
+
+extern void of_oxm_conn_tracking_tp_src_value_set(
+    of_oxm_conn_tracking_tp_src_t *obj,
+    uint16_t value);
+extern void of_oxm_conn_tracking_tp_src_value_get(
+    of_oxm_conn_tracking_tp_src_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_oxm_conn_tracking_tp_src_masked */
+
+extern void of_oxm_conn_tracking_tp_src_masked_value_set(
+    of_oxm_conn_tracking_tp_src_masked_t *obj,
+    uint16_t value);
+extern void of_oxm_conn_tracking_tp_src_masked_value_get(
+    of_oxm_conn_tracking_tp_src_masked_t *obj,
+    uint16_t *value);
+
+extern void of_oxm_conn_tracking_tp_src_masked_value_mask_set(
+    of_oxm_conn_tracking_tp_src_masked_t *obj,
+    uint16_t value_mask);
+extern void of_oxm_conn_tracking_tp_src_masked_value_mask_get(
+    of_oxm_conn_tracking_tp_src_masked_t *obj,
+    uint16_t *value_mask);
+
+/* Unified accessor functions for of_oxm_conn_tracking_zone */
+
+extern void of_oxm_conn_tracking_zone_value_set(
+    of_oxm_conn_tracking_zone_t *obj,
+    uint16_t value);
+extern void of_oxm_conn_tracking_zone_value_get(
+    of_oxm_conn_tracking_zone_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_oxm_conn_tracking_zone_masked */
+
+extern void of_oxm_conn_tracking_zone_masked_value_set(
+    of_oxm_conn_tracking_zone_masked_t *obj,
+    uint16_t value);
+extern void of_oxm_conn_tracking_zone_masked_value_get(
+    of_oxm_conn_tracking_zone_masked_t *obj,
+    uint16_t *value);
+
+extern void of_oxm_conn_tracking_zone_masked_value_mask_set(
+    of_oxm_conn_tracking_zone_masked_t *obj,
+    uint16_t value_mask);
+extern void of_oxm_conn_tracking_zone_masked_value_mask_get(
+    of_oxm_conn_tracking_zone_masked_t *obj,
+    uint16_t *value_mask);
 
 /* Unified accessor functions for of_oxm_eth_dst */
 
