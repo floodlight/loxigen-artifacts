@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -233,9 +231,11 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGentableStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGentableStatsEntry> {
         @Override
-        public OFBsnGentableStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGentableStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             GenTableId tableId = GenTableId.read2Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);

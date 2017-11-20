@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -264,9 +262,11 @@ class OFOxmBsnInPorts128MaskedVer12 implements OFOxmBsnInPorts128Masked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnInPorts128Masked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnInPorts128Masked> {
         @Override
-        public OFOxmBsnInPorts128Masked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnInPorts128Masked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x30120L
             int typeLen = bb.readInt();
             if(typeLen != 0x30120)

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -427,9 +425,11 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFAggregateStatsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFAggregateStatsRequest> {
         @Override
-        public OFAggregateStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFAggregateStatsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -442,6 +442,7 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
             int length = U16.f(bb.readShort());
             if(length != 56)
                 throw new OFParseError("Wrong length: Expected=56(56), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -455,7 +456,7 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
             if(statsType != (short) 0x2)
                 throw new OFParseError("Wrong statsType: Expected=OFStatsType.AGGREGATE(2), got="+statsType);
             Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer10.readFrom(bb);
-            Match match = ChannelUtilsVer10.readOFMatch(bb);
+            Match match = ChannelUtilsVer10.readOFMatch(context, bb);
             TableId tableId = TableId.readByte(bb);
             // pad: 1 bytes
             bb.skipBytes(1);
@@ -581,58 +582,11 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFAggregateStatsRequestVer10 other = (OFAggregateStatsRequestVer10) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (match == null) {
-            if (other.match != null)
-                return false;
-        } else if (!match.equals(other.match))
-            return false;
-        if (tableId == null) {
-            if (other.tableId != null)
-                return false;
-        } else if (!tableId.equals(other.tableId))
-            return false;
-        if (outPort == null) {
-            if (other.outPort != null)
-                return false;
-        } else if (!outPort.equals(other.outPort))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((match == null) ? 0 : match.hashCode());
-        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
-        result = prime * result + ((outPort == null) ? 0 : outPort.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((match == null) ? 0 : match.hashCode());
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());

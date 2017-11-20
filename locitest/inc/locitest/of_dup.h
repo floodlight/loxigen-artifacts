@@ -71,10 +71,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_base_error_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_bw_clear_data_reply_dup(
         of_object_t *src);
 
@@ -123,10 +119,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_error_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_flow_checksum_bucket_stats_reply_dup(
         of_object_t *src);
 
@@ -156,10 +148,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_generic_async_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_generic_command_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -216,10 +204,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_gentable_entry_stats_request_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_gentable_error_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1251,23 +1235,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_apply_bytes_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_apply_packets_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_auto_negotiation_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_broadcast_query_timeout_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_broadcast_rate_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1283,10 +1251,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_cpu_lag_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_crc_enabled_dup(
         of_object_t *src);
 
@@ -1295,51 +1259,11 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_data_mask_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_decap_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_disable_src_mac_check_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_drop_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_dscp_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ecn_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_egress_only_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_egress_port_group_id_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_enhanced_hash_capability_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_eth_dst_dup(
         of_object_t *src);
 
 extern of_object_t *
     of_bsn_tlv_eth_src_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_eth_type_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1363,43 +1287,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_force_link_up_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_forward_error_correction_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_generation_id_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_algorithm_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_gtp_header_match_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_gtp_port_match_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_packet_field_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_packet_type_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_seed_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_type_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1419,10 +1307,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_icmpv6_chksum_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_idle_notification_dup(
         of_object_t *src);
 
@@ -1436,10 +1320,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_igmp_snooping_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ingress_port_group_id_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1479,47 +1359,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_ipv6_dst_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ipv6_prefix_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ipv6_src_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_known_multicast_rate_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_l2_multicast_lookup_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_l3_dst_class_id_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_l3_interface_class_id_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_l3_src_class_id_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_lag_options_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_loopback_mode_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_loopback_port_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1528,10 +1368,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_mac_mask_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_mcg_type_vxlan_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1551,19 +1387,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_multicast_interface_id_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_name_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ndp_offload_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ndp_static_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1571,39 +1395,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_next_hop_ipv4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_next_hop_mac_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_nexthop_type_vxlan_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_no_arp_response_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_no_ns_response_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_offset_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_optics_always_enabled_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_outer_src_mac_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_parent_port_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1631,39 +1423,11 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_pdua_rx_instance_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_port_dup(
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_port_speed_gbps_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_port_usage_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_port_vxlan_mode_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_priority_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_push_vlan_on_egress_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_push_vlan_on_ingress_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_qos_priority_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1672,18 +1436,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_queue_weight_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_rate_limit_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_rate_unit_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_record_packets_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1696,14 +1448,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_request_packets_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_rest_server_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_routing_param_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1720,10 +1464,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_set_loopback_mode_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_status_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1747,23 +1487,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_tcp_flags_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_tcp_src_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_timestamp_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ttl_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_tunnel_capability_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1799,47 +1523,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_uint64_list_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_unicast_query_timeout_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_unicast_rate_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_unknown_multicast_rate_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_untagged_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_uri_scheme_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_use_packet_state_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_vfi_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_vfp_class_id_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_virtual_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_vlan_mac_list_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1855,27 +1539,11 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_vni_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_vpn_key_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_vrf_dup(
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_vxlan_egress_lag_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_vlan_counter_stats_entry_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_vlan_mac_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1975,15 +1643,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_bsn_hash_select_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_bsn_internal_priority_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_bsn_ndp_offload_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2063,15 +1723,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_id_bsn_hash_select_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_id_bsn_internal_priority_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_id_bsn_ndp_offload_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2235,14 +1887,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_oxm_bsn_ifp_class_id_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_bsn_ifp_class_id_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_oxm_bsn_in_ports_128_dup(
         of_object_t *src);
 
@@ -2288,14 +1932,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_inner_vlan_vid_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_bsn_ip_fragmentation_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_bsn_ip_fragmentation_masked_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2411,14 +2047,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_oxm_bsn_vfi_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_bsn_vfi_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_oxm_bsn_vlan_xlate_port_group_id_dup(
         of_object_t *src);
 
@@ -2440,94 +2068,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_vxlan_network_id_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_dst_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_dst_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_src_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_src_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_label_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_label_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_mark_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_mark_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_dst_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_dst_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_proto_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_proto_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_src_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_src_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_state_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_state_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_dst_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_dst_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_src_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_src_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_zone_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_zone_masked_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2731,14 +2271,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_oxm_ovs_tcp_flags_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_ovs_tcp_flags_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_oxm_pbb_uca_dup(
         of_object_t *src);
 
@@ -2851,23 +2383,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_port_desc_prop_bsn_breakout_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_port_desc_prop_bsn_forward_error_correction_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_port_desc_prop_bsn_generation_id_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_port_desc_prop_bsn_misc_capabilities_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_port_desc_prop_bsn_speed_capabilities_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2919,10 +2435,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_port_stats_prop_experimenter_intel_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_port_stats_prop_optical_dup(
         of_object_t *src);
 
@@ -2932,14 +2444,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_queue_desc_prop_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_queue_desc_prop_bsn_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_queue_desc_prop_bsn_queue_name_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -3180,10 +2684,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_list_bsn_vlan_counter_stats_entry_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_list_bsn_vlan_mac_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -4503,6 +4003,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_experimenter_error_msg_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_features_reply_OF_VERSION_1_2_dup(
         of_object_t *src);
 
@@ -4915,14 +4419,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_dup(
         of_object_t *src);
 
@@ -5048,94 +4544,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_vrf_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_label_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_mark_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_state_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_zone_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5320,14 +4728,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_mpls_tc_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_ovs_tcp_flags_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5599,10 +4999,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_error_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -5684,10 +5080,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_gentable_error_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5912,6 +5304,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_echo_request_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_experimenter_error_msg_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6423,23 +5819,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_apply_bytes_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_apply_packets_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6455,10 +5835,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_cpu_lag_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6467,51 +5843,11 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_data_mask_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_decap_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_drop_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_dscp_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ecn_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_egress_only_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
     of_bsn_tlv_eth_src_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_eth_type_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6535,43 +5871,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_force_link_up_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_generation_id_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_algorithm_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_seed_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_type_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6591,10 +5891,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6608,10 +5904,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_igmp_snooping_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6651,47 +5943,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_ipv6_dst_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ipv6_src_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_lag_options_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_loopback_mode_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_loopback_port_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6700,10 +5952,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_mac_mask_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6723,19 +5971,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_name_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ndp_offload_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ndp_static_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6743,39 +5979,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_next_hop_mac_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_no_arp_response_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_no_ns_response_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_offset_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_parent_port_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6803,39 +6007,11 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_port_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_port_usage_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_priority_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_qos_priority_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6844,18 +6020,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_rate_limit_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_rate_unit_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_record_packets_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6868,14 +6032,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_request_packets_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_rest_server_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_routing_param_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6892,10 +6048,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_status_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6919,23 +6071,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_tcp_flags_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_tcp_src_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_timestamp_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ttl_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6971,47 +6107,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_uint64_list_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_unicast_rate_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_untagged_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_uri_scheme_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_vfi_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_vfp_class_id_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_virtual_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7027,27 +6123,11 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_vni_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_vpn_key_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_vrf_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_vlan_mac_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7135,15 +6215,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_bsn_hash_select_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_bsn_internal_priority_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_bsn_ndp_offload_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7215,15 +6287,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_id_bsn_hash_select_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_id_bsn_internal_priority_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_id_bsn_ndp_offload_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7423,14 +6487,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -7543,14 +6599,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_oxm_bsn_vfi_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_bsn_vfi_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -7572,94 +6620,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_label_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_mark_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_state_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_zone_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7860,14 +6820,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_mpls_tc_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_ovs_tcp_flags_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8143,10 +7095,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_list_bsn_vlan_mac_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8351,10 +7299,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_error_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8384,10 +7328,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_generic_async_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_generic_command_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8444,10 +7384,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_gentable_entry_stats_request_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_gentable_error_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8684,6 +7620,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_echo_request_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_experimenter_error_msg_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9279,23 +8219,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_apply_bytes_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_apply_packets_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9311,10 +8235,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_cpu_lag_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_crc_enabled_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -9323,51 +8243,11 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_data_mask_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_decap_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_drop_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_dscp_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ecn_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_egress_only_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_eth_dst_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
     of_bsn_tlv_eth_src_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_eth_type_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9391,43 +8271,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_force_link_up_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_forward_error_correction_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_algorithm_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_seed_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_hash_type_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9447,10 +8291,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_idle_notification_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -9464,10 +8304,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_igmp_snooping_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9507,47 +8343,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_ipv6_dst_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ipv6_src_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_lag_options_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_loopback_mode_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_loopback_port_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9556,10 +8352,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_mac_mask_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9579,19 +8371,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_name_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ndp_offload_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ndp_static_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9599,39 +8379,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_next_hop_mac_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_no_arp_response_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_no_ns_response_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_offset_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_parent_port_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9659,39 +8407,11 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_port_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_port_usage_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_priority_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_qos_priority_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9700,18 +8420,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_rate_limit_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_rate_unit_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_record_packets_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9724,14 +8432,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_request_packets_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_rest_server_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_routing_param_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9748,10 +8448,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_status_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9775,23 +8471,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_tcp_flags_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_timestamp_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_ttl_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9827,47 +8507,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_uint64_list_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_unicast_rate_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_untagged_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_uri_scheme_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_vfi_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_virtual_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9883,27 +8523,11 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_vni_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_tlv_vpn_key_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_vrf_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_vlan_mac_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9991,15 +8615,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_bsn_hash_select_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_bsn_internal_priority_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_bsn_ndp_offload_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10067,15 +8683,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_id_bsn_hash_select_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_id_bsn_ndp_offload_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10219,14 +8827,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_oxm_bsn_ifp_class_id_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_oxm_bsn_in_ports_128_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -10272,22 +8872,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_bsn_l2_cache_hit_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10387,14 +8971,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_oxm_bsn_vfi_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_bsn_vfi_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -10416,94 +8992,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_label_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_mark_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_state_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_zone_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10707,14 +9195,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_oxm_ovs_tcp_flags_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_oxm_pbb_uca_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -10823,23 +9303,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10879,10 +9343,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_port_stats_prop_optical_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -10892,10 +9352,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_queue_desc_prop_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -11112,10 +9568,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_list_bsn_vlan_mac_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

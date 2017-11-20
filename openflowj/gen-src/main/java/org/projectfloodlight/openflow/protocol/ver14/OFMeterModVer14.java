@@ -18,19 +18,16 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.Set;
-import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
+import java.util.Set;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -42,26 +39,25 @@ class OFMeterModVer14 implements OFMeterMod {
     final static int MINIMUM_LENGTH = 16;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static Set<OFMeterFlags> DEFAULT_FLAGS = ImmutableSet.<OFMeterFlags>of();
+        private final static int DEFAULT_COMMAND = 0x0;
+        private final static int DEFAULT_FLAGS = 0x0;
         private final static long DEFAULT_METER_ID = 0x0L;
         private final static List<OFMeterBand> DEFAULT_BANDS = ImmutableList.<OFMeterBand>of();
 
     // OF message fields
     private final long xid;
-    private final OFMeterModCommand command;
-    private final Set<OFMeterFlags> flags;
+    private final int command;
+    private final int flags;
     private final long meterId;
     private final List<OFMeterBand> bands;
 //
+    // Immutable default instance
+    final static OFMeterModVer14 DEFAULT = new OFMeterModVer14(
+        DEFAULT_XID, DEFAULT_COMMAND, DEFAULT_FLAGS, DEFAULT_METER_ID, DEFAULT_BANDS
+    );
 
     // package private constructor - used by readers, builders, and factory
-    OFMeterModVer14(long xid, OFMeterModCommand command, Set<OFMeterFlags> flags, long meterId, List<OFMeterBand> bands) {
-        if(command == null) {
-            throw new NullPointerException("OFMeterModVer14: property command cannot be null");
-        }
-        if(flags == null) {
-            throw new NullPointerException("OFMeterModVer14: property flags cannot be null");
-        }
+    OFMeterModVer14(long xid, int command, int flags, long meterId, List<OFMeterBand> bands) {
         if(bands == null) {
             throw new NullPointerException("OFMeterModVer14: property bands cannot be null");
         }
@@ -89,12 +85,12 @@ class OFMeterModVer14 implements OFMeterMod {
     }
 
     @Override
-    public OFMeterModCommand getCommand() {
+    public int getCommand() {
         return command;
     }
 
     @Override
-    public Set<OFMeterFlags> getFlags() {
+    public int getFlags() {
         return flags;
     }
 
@@ -126,9 +122,9 @@ class OFMeterModVer14 implements OFMeterMod {
         private boolean xidSet;
         private long xid;
         private boolean commandSet;
-        private OFMeterModCommand command;
+        private int command;
         private boolean flagsSet;
-        private Set<OFMeterFlags> flags;
+        private int flags;
         private boolean meterIdSet;
         private long meterId;
         private boolean bandsSet;
@@ -160,23 +156,23 @@ class OFMeterModVer14 implements OFMeterMod {
         return this;
     }
     @Override
-    public OFMeterModCommand getCommand() {
+    public int getCommand() {
         return command;
     }
 
     @Override
-    public OFMeterMod.Builder setCommand(OFMeterModCommand command) {
+    public OFMeterMod.Builder setCommand(int command) {
         this.command = command;
         this.commandSet = true;
         return this;
     }
     @Override
-    public Set<OFMeterFlags> getFlags() {
+    public int getFlags() {
         return flags;
     }
 
     @Override
-    public OFMeterMod.Builder setFlags(Set<OFMeterFlags> flags) {
+    public OFMeterMod.Builder setFlags(int flags) {
         this.flags = flags;
         this.flagsSet = true;
         return this;
@@ -217,12 +213,8 @@ class OFMeterModVer14 implements OFMeterMod {
         @Override
         public OFMeterMod build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
-                OFMeterModCommand command = this.commandSet ? this.command : parentMessage.command;
-                if(command == null)
-                    throw new NullPointerException("Property command must not be null");
-                Set<OFMeterFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
-                if(flags == null)
-                    throw new NullPointerException("Property flags must not be null");
+                int command = this.commandSet ? this.command : parentMessage.command;
+                int flags = this.flagsSet ? this.flags : parentMessage.flags;
                 long meterId = this.meterIdSet ? this.meterId : parentMessage.meterId;
                 List<OFMeterBand> bands = this.bandsSet ? this.bands : parentMessage.bands;
                 if(bands == null)
@@ -245,9 +237,9 @@ class OFMeterModVer14 implements OFMeterMod {
         private boolean xidSet;
         private long xid;
         private boolean commandSet;
-        private OFMeterModCommand command;
+        private int command;
         private boolean flagsSet;
-        private Set<OFMeterFlags> flags;
+        private int flags;
         private boolean meterIdSet;
         private long meterId;
         private boolean bandsSet;
@@ -275,23 +267,23 @@ class OFMeterModVer14 implements OFMeterMod {
         return this;
     }
     @Override
-    public OFMeterModCommand getCommand() {
+    public int getCommand() {
         return command;
     }
 
     @Override
-    public OFMeterMod.Builder setCommand(OFMeterModCommand command) {
+    public OFMeterMod.Builder setCommand(int command) {
         this.command = command;
         this.commandSet = true;
         return this;
     }
     @Override
-    public Set<OFMeterFlags> getFlags() {
+    public int getFlags() {
         return flags;
     }
 
     @Override
-    public OFMeterMod.Builder setFlags(Set<OFMeterFlags> flags) {
+    public OFMeterMod.Builder setFlags(int flags) {
         this.flags = flags;
         this.flagsSet = true;
         return this;
@@ -331,13 +323,8 @@ class OFMeterModVer14 implements OFMeterMod {
         @Override
         public OFMeterMod build() {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
-            if(!this.commandSet)
-                throw new IllegalStateException("Property command doesn't have default value -- must be set");
-            if(command == null)
-                throw new NullPointerException("Property command must not be null");
-            Set<OFMeterFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
-            if(flags == null)
-                throw new NullPointerException("Property flags must not be null");
+            int command = this.commandSet ? this.command : DEFAULT_COMMAND;
+            int flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
             long meterId = this.meterIdSet ? this.meterId : DEFAULT_METER_ID;
             List<OFMeterBand> bands = this.bandsSet ? this.bands : DEFAULT_BANDS;
             if(bands == null)
@@ -357,9 +344,11 @@ class OFMeterModVer14 implements OFMeterMod {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFMeterMod> {
+    static class Reader extends AbstractOFMessageReader<OFMeterMod> {
         @Override
-        public OFMeterMod readFrom(ByteBuf bb) throws OFParseError {
+        public OFMeterMod readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -372,6 +361,7 @@ class OFMeterModVer14 implements OFMeterMod {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -380,10 +370,10 @@ class OFMeterModVer14 implements OFMeterMod {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            OFMeterModCommand command = OFMeterModCommandSerializerVer14.readFrom(bb);
-            Set<OFMeterFlags> flags = OFMeterFlagsSerializerVer14.readFrom(bb);
+            int command = U16.f(bb.readShort());
+            int flags = U16.f(bb.readShort());
             long meterId = U32.f(bb.readInt());
-            List<OFMeterBand> bands = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFMeterBandVer14.READER);
+            List<OFMeterBand> bands = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFMeterBandVer14.READER);
 
             OFMeterModVer14 meterModVer14 = new OFMeterModVer14(
                     xid,
@@ -413,8 +403,8 @@ class OFMeterModVer14 implements OFMeterMod {
             sink.putByte((byte) 0x1d);
             // FIXME: skip funnel of length
             sink.putLong(message.xid);
-            OFMeterModCommandSerializerVer14.putTo(message.command, sink);
-            OFMeterFlagsSerializerVer14.putTo(message.flags, sink);
+            sink.putInt(message.command);
+            sink.putInt(message.flags);
             sink.putLong(message.meterId);
             FunnelUtils.putList(message.bands, sink);
         }
@@ -439,8 +429,8 @@ class OFMeterModVer14 implements OFMeterMod {
             bb.writeShort(U16.t(0));
 
             bb.writeInt(U32.t(message.xid));
-            OFMeterModCommandSerializerVer14.writeTo(bb, message.command);
-            OFMeterFlagsSerializerVer14.writeTo(bb, message.flags);
+            bb.writeShort(U16.t(message.command));
+            bb.writeShort(U16.t(message.flags));
             bb.writeInt(U32.t(message.meterId));
             ChannelUtils.writeList(bb, message.bands);
 
@@ -479,46 +469,9 @@ class OFMeterModVer14 implements OFMeterMod {
 
         if( xid != other.xid)
             return false;
-        if (command == null) {
-            if (other.command != null)
-                return false;
-        } else if (!command.equals(other.command))
+        if( command != other.command)
             return false;
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if( meterId != other.meterId)
-            return false;
-        if (bands == null) {
-            if (other.bands != null)
-                return false;
-        } else if (!bands.equals(other.bands))
-            return false;
-        return true;
-    }
-
-    @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFMeterModVer14 other = (OFMeterModVer14) obj;
-
-        // ignore XID
-        if (command == null) {
-            if (other.command != null)
-                return false;
-        } else if (!command.equals(other.command))
-            return false;
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
+        if( flags != other.flags)
             return false;
         if( meterId != other.meterId)
             return false;
@@ -536,21 +489,8 @@ class OFMeterModVer14 implements OFMeterMod {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((command == null) ? 0 : command.hashCode());
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime *  (int) (meterId ^ (meterId >>> 32));
-        result = prime * result + ((bands == null) ? 0 : bands.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
-        result = prime * result + ((command == null) ? 0 : command.hashCode());
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + command;
+        result = prime * result + flags;
         result = prime *  (int) (meterId ^ (meterId >>> 32));
         result = prime * result + ((bands == null) ? 0 : bands.hashCode());
         return result;

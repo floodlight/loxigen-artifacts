@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -110,7 +108,6 @@ class OFMatchV3Ver12 implements OFMatchV3 {
 
     private static boolean supportsField(MatchField<?> field) {
         switch (field.id) {
-            case ACTSET_OUTPUT:
             case ARP_OP:
             case ARP_SHA:
             case ARP_SPA:
@@ -118,14 +115,12 @@ class OFMatchV3Ver12 implements OFMatchV3 {
             case ARP_TPA:
             case BSN_EGR_PORT_GROUP_ID:
             case BSN_GLOBAL_VRF_ALLOWED:
-            case BSN_IFP_CLASS_ID:
             case BSN_INGRESS_PORT_GROUP_ID:
             case BSN_INNER_ETH_DST:
             case BSN_INNER_ETH_SRC:
             case BSN_INNER_VLAN_VID:
             case BSN_IN_PORTS_128:
             case BSN_IN_PORTS_512:
-            case BSN_IP_FRAGMENTATION:
             case BSN_L2_CACHE_HIT:
             case BSN_L3_DST_CLASS_ID:
             case BSN_L3_INTERFACE_CLASS_ID:
@@ -140,21 +135,9 @@ class OFMatchV3Ver12 implements OFMatchV3 {
             case BSN_UDF5:
             case BSN_UDF6:
             case BSN_UDF7:
-            case BSN_VFI:
             case BSN_VLAN_XLATE_PORT_GROUP_ID:
             case BSN_VRF:
             case BSN_VXLAN_NETWORK_ID:
-            case CONN_TRACKING_IPV6_DST:
-            case CONN_TRACKING_IPV6_SRC:
-            case CONN_TRACKING_LABEL:
-            case CONN_TRACKING_MARK:
-            case CONN_TRACKING_NW_DST:
-            case CONN_TRACKING_NW_PROTO:
-            case CONN_TRACKING_NW_SRC:
-            case CONN_TRACKING_STATE:
-            case CONN_TRACKING_TP_DST:
-            case CONN_TRACKING_TP_SRC:
-            case CONN_TRACKING_ZONE:
             case ETH_DST:
             case ETH_SRC:
             case ETH_TYPE:
@@ -180,13 +163,10 @@ class OFMatchV3Ver12 implements OFMatchV3 {
             case MPLS_BOS:
             case MPLS_LABEL:
             case MPLS_TC:
-            case OVS_TCP_FLAGS:
-            case PACKET_TYPE:
             case PBB_UCA:
             case SCTP_DST:
             case SCTP_SRC:
             case TCP_DST:
-            case TCP_FLAGS:
             case TCP_SRC:
             case TUNNEL_ID:
             case TUNNEL_IPV4_DST:
@@ -216,9 +196,6 @@ class OFMatchV3Ver12 implements OFMatchV3 {
         if (!supports(field))
             throw new UnsupportedOperationException("OFMatchV3Ver12 does not support matching on field " + field.getName());
 
-        if(!field.arePrerequisitesOK(this))
-            return false;
-
         OFOxm<?> oxm = this.oxmList.get(field);
 
         return oxm != null && !oxm.isMasked();
@@ -228,8 +205,6 @@ class OFMatchV3Ver12 implements OFMatchV3 {
     public boolean isFullyWildcarded(MatchField<?> field) {
         if (!supports(field))
             throw new UnsupportedOperationException("OFMatchV3Ver12 does not support matching on field " + field.getName());
-        if(!field.arePrerequisitesOK(this))
-            return true;
 
         OFOxm<?> oxm = this.oxmList.get(field);
 
@@ -240,8 +215,6 @@ class OFMatchV3Ver12 implements OFMatchV3 {
     public boolean isPartiallyMasked(MatchField<?> field) {
         if (!supports(field))
             throw new UnsupportedOperationException("OFMatchV3Ver12 does not support matching on field " + field.getName());
-        if(!field.arePrerequisitesOK(this))
-            return false;
 
         OFOxm<?> oxm = this.oxmList.get(field);
 
@@ -575,9 +548,11 @@ class OFMatchV3Ver12 implements OFMatchV3 {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFMatchV3> {
+    static class Reader extends AbstractOFMessageReader<OFMatchV3> {
         @Override
-        public OFMatchV3 readFrom(ByteBuf bb) throws OFParseError {
+        public OFMatchV3 readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x1
             short type = bb.readShort();
@@ -586,16 +561,17 @@ class OFMatchV3Ver12 implements OFMatchV3 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
-            if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
+            //
+            if(bb.readableBytes() + (bb.readerIndex() - start) < ((length + 7) / 8) * 8) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
                 return null;
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            OFOxmList oxmList = OFOxmList.readFrom(bb, length - (bb.readerIndex() - start), OFOxmVer12.READER);
+            OFOxmList oxmList = OFOxmList.readFrom(context, bb, length - (bb.readerIndex() - start), OFOxmVer12.READER);
             // align message to 8 bytes (length does not contain alignment)
-            bb.skipBytes(((length + 7)/8 * 8 ) - length );
+            bb.skipBytes(((length + 7) / 8) * 8 - length );
 
             OFMatchV3Ver12 matchV3Ver12 = new OFMatchV3Ver12(
                     oxmList

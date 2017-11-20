@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -98,47 +96,11 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvApplyBytes.Builder buildApplyBytes() {
-        return new OFBsnTlvApplyBytesVer13.Builder();
-    }
-    public OFBsnTlvApplyBytes applyBytes(U64 value) {
-        return new OFBsnTlvApplyBytesVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvApplyPackets.Builder buildApplyPackets() {
-        return new OFBsnTlvApplyPacketsVer13.Builder();
-    }
-    public OFBsnTlvApplyPackets applyPackets(U64 value) {
-        return new OFBsnTlvApplyPacketsVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvAutoNegotiation.Builder buildAutoNegotiation() {
-        return new OFBsnTlvAutoNegotiationVer13.Builder();
-    }
-    public OFBsnTlvAutoNegotiation autoNegotiation(OFBsnAutoNegotiationType value) {
-        return new OFBsnTlvAutoNegotiationVer13(
-                value
-                    );
-    }
-
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         return new OFBsnTlvBroadcastQueryTimeoutVer13.Builder();
     }
     public OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value) {
         return new OFBsnTlvBroadcastQueryTimeoutVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvBroadcastRate.Builder buildBroadcastRate() {
-        return new OFBsnTlvBroadcastRateVer13.Builder();
-    }
-    public OFBsnTlvBroadcastRate broadcastRate(long value) {
-        return new OFBsnTlvBroadcastRateVer13(
                 value
                     );
     }
@@ -170,10 +132,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvCpuLag cpuLag() {
-        return OFBsnTlvCpuLagVer13.INSTANCE;
-    }
-
     public OFBsnTlvCrcEnabled.Builder buildCrcEnabled() {
         return new OFBsnTlvCrcEnabledVer13.Builder();
     }
@@ -192,72 +150,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvDataMask.Builder buildDataMask() {
-        return new OFBsnTlvDataMaskVer13.Builder();
-    }
-    public OFBsnTlvDataMask dataMask(byte[] value) {
-        return new OFBsnTlvDataMaskVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvDecap.Builder buildDecap() {
-        return new OFBsnTlvDecapVer13.Builder();
-    }
-    public OFBsnTlvDecap decap(OFBsnDecap value) {
-        return new OFBsnTlvDecapVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvDisableSrcMacCheck disableSrcMacCheck() {
-        return OFBsnTlvDisableSrcMacCheckVer13.INSTANCE;
-    }
-
-    public OFBsnTlvDrop drop() {
-        return OFBsnTlvDropVer13.INSTANCE;
-    }
-
-    public OFBsnTlvDscp.Builder buildDscp() {
-        return new OFBsnTlvDscpVer13.Builder();
-    }
-    public OFBsnTlvDscp dscp(int value) {
-        return new OFBsnTlvDscpVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvEcn.Builder buildEcn() {
-        return new OFBsnTlvEcnVer13.Builder();
-    }
-    public OFBsnTlvEcn ecn(short value) {
-        return new OFBsnTlvEcnVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvEgressOnly egressOnly() {
-        return OFBsnTlvEgressOnlyVer13.INSTANCE;
-    }
-
-    public OFBsnTlvEgressPortGroupId.Builder buildEgressPortGroupId() {
-        return new OFBsnTlvEgressPortGroupIdVer13.Builder();
-    }
-    public OFBsnTlvEgressPortGroupId egressPortGroupId(long value) {
-        return new OFBsnTlvEgressPortGroupIdVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvEnhancedHashCapability.Builder buildEnhancedHashCapability() {
-        return new OFBsnTlvEnhancedHashCapabilityVer13.Builder();
-    }
-    public OFBsnTlvEnhancedHashCapability enhancedHashCapability(Set<OFBsnEnhancedHashType> value) {
-        return new OFBsnTlvEnhancedHashCapabilityVer13(
-                value
-                    );
-    }
-
     public OFBsnTlvEthDst.Builder buildEthDst() {
         return new OFBsnTlvEthDstVer13.Builder();
     }
@@ -272,15 +164,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvEthSrc ethSrc(MacAddress value) {
         return new OFBsnTlvEthSrcVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvEthType.Builder buildEthType() {
-        return new OFBsnTlvEthTypeVer13.Builder();
-    }
-    public OFBsnTlvEthType ethType(int value) {
-        return new OFBsnTlvEthTypeVer13(
                 value
                     );
     }
@@ -330,84 +213,11 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvForceLinkUp forceLinkUp() {
-        return OFBsnTlvForceLinkUpVer13.INSTANCE;
-    }
-
-    public OFBsnTlvForwardErrorCorrection.Builder buildForwardErrorCorrection() {
-        return new OFBsnTlvForwardErrorCorrectionVer13.Builder();
-    }
-    public OFBsnTlvForwardErrorCorrection forwardErrorCorrection(OFBsnForwardErrorCorrectionType value) {
-        return new OFBsnTlvForwardErrorCorrectionVer13(
-                value
-                    );
-    }
-
     public OFBsnTlvGenerationId.Builder buildGenerationId() {
         return new OFBsnTlvGenerationIdVer13.Builder();
     }
     public OFBsnTlvGenerationId generationId(U64 value) {
         return new OFBsnTlvGenerationIdVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvHashAlgorithm.Builder buildHashAlgorithm() {
-        return new OFBsnTlvHashAlgorithmVer13.Builder();
-    }
-    public OFBsnTlvHashAlgorithm hashAlgorithm(OFBsnHashAlgorithmType value) {
-        return new OFBsnTlvHashAlgorithmVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvHashGtpHeaderMatch.Builder buildHashGtpHeaderMatch() {
-        return new OFBsnTlvHashGtpHeaderMatchVer13.Builder();
-    }
-    public OFBsnTlvHashGtpHeaderMatch hashGtpHeaderMatch(short firstHeaderByte, short firstHeaderMask) {
-        return new OFBsnTlvHashGtpHeaderMatchVer13(
-                firstHeaderByte,
-                      firstHeaderMask
-                    );
-    }
-
-    public OFBsnTlvHashGtpPortMatch.Builder buildHashGtpPortMatch() {
-        return new OFBsnTlvHashGtpPortMatchVer13.Builder();
-    }
-
-    public OFBsnTlvHashPacketField.Builder buildHashPacketField() {
-        return new OFBsnTlvHashPacketFieldVer13.Builder();
-    }
-    public OFBsnTlvHashPacketField hashPacketField(Set<OFBsnHashPacketField> value) {
-        return new OFBsnTlvHashPacketFieldVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvHashPacketType.Builder buildHashPacketType() {
-        return new OFBsnTlvHashPacketTypeVer13.Builder();
-    }
-    public OFBsnTlvHashPacketType hashPacketType(OFBsnHashPacketType value) {
-        return new OFBsnTlvHashPacketTypeVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvHashSeed.Builder buildHashSeed() {
-        return new OFBsnTlvHashSeedVer13.Builder();
-    }
-    public OFBsnTlvHashSeed hashSeed(long seed1, long seed2) {
-        return new OFBsnTlvHashSeedVer13(
-                seed1,
-                      seed2
-                    );
-    }
-
-    public OFBsnTlvHashType.Builder buildHashType() {
-        return new OFBsnTlvHashTypeVer13.Builder();
-    }
-    public OFBsnTlvHashType hashType(OFBsnHashType value) {
-        return new OFBsnTlvHashTypeVer13(
                 value
                     );
     }
@@ -448,15 +258,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvIcmpv6Chksum.Builder buildIcmpv6Chksum() {
-        return new OFBsnTlvIcmpv6ChksumVer13.Builder();
-    }
-    public OFBsnTlvIcmpv6Chksum icmpv6Chksum(int value) {
-        return new OFBsnTlvIcmpv6ChksumVer13(
-                value
-                    );
-    }
-
     public OFBsnTlvIdleNotification idleNotification() {
         return OFBsnTlvIdleNotificationVer13.INSTANCE;
     }
@@ -481,15 +282,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
 
     public OFBsnTlvIgmpSnooping igmpSnooping() {
         return OFBsnTlvIgmpSnoopingVer13.INSTANCE;
-    }
-
-    public OFBsnTlvIngressPortGroupId.Builder buildIngressPortGroupId() {
-        return new OFBsnTlvIngressPortGroupIdVer13.Builder();
-    }
-    public OFBsnTlvIngressPortGroupId ingressPortGroupId(long value) {
-        return new OFBsnTlvIngressPortGroupIdVer13(
-                value
-                    );
     }
 
     public OFBsnTlvInternalGatewayMac.Builder buildInternalGatewayMac() {
@@ -573,99 +365,8 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvIpv6Dst.Builder buildIpv6Dst() {
-        return new OFBsnTlvIpv6DstVer13.Builder();
-    }
-    public OFBsnTlvIpv6Dst ipv6Dst(IPv6Address value) {
-        return new OFBsnTlvIpv6DstVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvIpv6Prefix.Builder buildIpv6Prefix() {
-        return new OFBsnTlvIpv6PrefixVer13.Builder();
-    }
-    public OFBsnTlvIpv6Prefix ipv6Prefix(IPv6Address value, short prefixLength) {
-        return new OFBsnTlvIpv6PrefixVer13(
-                value,
-                      prefixLength
-                    );
-    }
-
-    public OFBsnTlvIpv6Src.Builder buildIpv6Src() {
-        return new OFBsnTlvIpv6SrcVer13.Builder();
-    }
-    public OFBsnTlvIpv6Src ipv6Src(IPv6Address value) {
-        return new OFBsnTlvIpv6SrcVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvKnownMulticastRate.Builder buildKnownMulticastRate() {
-        return new OFBsnTlvKnownMulticastRateVer13.Builder();
-    }
-    public OFBsnTlvKnownMulticastRate knownMulticastRate(long value) {
-        return new OFBsnTlvKnownMulticastRateVer13(
-                value
-                    );
-    }
-
     public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
         return OFBsnTlvL2MulticastLookupVer13.INSTANCE;
-    }
-
-    public OFBsnTlvL3DstClassId.Builder buildL3DstClassId() {
-        return new OFBsnTlvL3DstClassIdVer13.Builder();
-    }
-    public OFBsnTlvL3DstClassId l3DstClassId(long value) {
-        return new OFBsnTlvL3DstClassIdVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvL3InterfaceClassId.Builder buildL3InterfaceClassId() {
-        return new OFBsnTlvL3InterfaceClassIdVer13.Builder();
-    }
-    public OFBsnTlvL3InterfaceClassId l3InterfaceClassId(long value) {
-        return new OFBsnTlvL3InterfaceClassIdVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvL3SrcClassId.Builder buildL3SrcClassId() {
-        return new OFBsnTlvL3SrcClassIdVer13.Builder();
-    }
-    public OFBsnTlvL3SrcClassId l3SrcClassId(long value) {
-        return new OFBsnTlvL3SrcClassIdVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvLagOptions.Builder buildLagOptions() {
-        return new OFBsnTlvLagOptionsVer13.Builder();
-    }
-    public OFBsnTlvLagOptions lagOptions(Set<OFBsnLagFlag> flags) {
-        return new OFBsnTlvLagOptionsVer13(
-                flags
-                    );
-    }
-
-    public OFBsnTlvLoopbackMode.Builder buildLoopbackMode() {
-        return new OFBsnTlvLoopbackModeVer13.Builder();
-    }
-    public OFBsnTlvLoopbackMode loopbackMode(OFBsnLoopbackMode value) {
-        return new OFBsnTlvLoopbackModeVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvLoopbackPort.Builder buildLoopbackPort() {
-        return new OFBsnTlvLoopbackPortVer13.Builder();
-    }
-    public OFBsnTlvLoopbackPort loopbackPort(OFPort value) {
-        return new OFBsnTlvLoopbackPortVer13(
-                value
-                    );
     }
 
     public OFBsnTlvMac.Builder buildMac() {
@@ -684,10 +385,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return new OFBsnTlvMacMaskVer13(
                 value
                     );
-    }
-
-    public OFBsnTlvMcgTypeVxlan mcgTypeVxlan() {
-        return OFBsnTlvMcgTypeVxlanVer13.INSTANCE;
     }
 
     public OFBsnTlvMissPackets.Builder buildMissPackets() {
@@ -726,15 +423,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvMulticastInterfaceId.Builder buildMulticastInterfaceId() {
-        return new OFBsnTlvMulticastInterfaceIdVer13.Builder();
-    }
-    public OFBsnTlvMulticastInterfaceId multicastInterfaceId(long value) {
-        return new OFBsnTlvMulticastInterfaceIdVer13(
-                value
-                    );
-    }
-
     public OFBsnTlvName.Builder buildName() {
         return new OFBsnTlvNameVer13.Builder();
     }
@@ -744,46 +432,8 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvNdpOffload ndpOffload() {
-        return OFBsnTlvNdpOffloadVer13.INSTANCE;
-    }
-
-    public OFBsnTlvNdpStatic ndpStatic() {
-        return OFBsnTlvNdpStaticVer13.INSTANCE;
-    }
-
     public OFBsnTlvNegate negate() {
         return OFBsnTlvNegateVer13.INSTANCE;
-    }
-
-    public OFBsnTlvNextHopIpv4.Builder buildNextHopIpv4() {
-        return new OFBsnTlvNextHopIpv4Ver13.Builder();
-    }
-    public OFBsnTlvNextHopIpv4 nextHopIpv4(IPv4Address value) {
-        return new OFBsnTlvNextHopIpv4Ver13(
-                value
-                    );
-    }
-
-    public OFBsnTlvNextHopMac.Builder buildNextHopMac() {
-        return new OFBsnTlvNextHopMacVer13.Builder();
-    }
-    public OFBsnTlvNextHopMac nextHopMac(MacAddress value) {
-        return new OFBsnTlvNextHopMacVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvNexthopTypeVxlan nexthopTypeVxlan() {
-        return OFBsnTlvNexthopTypeVxlanVer13.INSTANCE;
-    }
-
-    public OFBsnTlvNoArpResponse noArpResponse() {
-        return OFBsnTlvNoArpResponseVer13.INSTANCE;
-    }
-
-    public OFBsnTlvNoNsResponse noNsResponse() {
-        return OFBsnTlvNoNsResponseVer13.INSTANCE;
     }
 
     public OFBsnTlvOffset.Builder buildOffset() {
@@ -791,28 +441,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvOffset offset(int value) {
         return new OFBsnTlvOffsetVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvOpticsAlwaysEnabled opticsAlwaysEnabled() {
-        return OFBsnTlvOpticsAlwaysEnabledVer13.INSTANCE;
-    }
-
-    public OFBsnTlvOuterSrcMac.Builder buildOuterSrcMac() {
-        return new OFBsnTlvOuterSrcMacVer13.Builder();
-    }
-    public OFBsnTlvOuterSrcMac outerSrcMac(MacAddress value) {
-        return new OFBsnTlvOuterSrcMacVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvParentPort.Builder buildParentPort() {
-        return new OFBsnTlvParentPortVer13.Builder();
-    }
-    public OFBsnTlvParentPort parentPort(OFPort value) {
-        return new OFBsnTlvParentPortVer13(
                 value
                     );
     }
@@ -871,15 +499,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvPduaRxInstance.Builder buildPduaRxInstance() {
-        return new OFBsnTlvPduaRxInstanceVer13.Builder();
-    }
-    public OFBsnTlvPduaRxInstance pduaRxInstance(byte[] value) {
-        return new OFBsnTlvPduaRxInstanceVer13(
-                value
-                    );
-    }
-
     public OFBsnTlvPort.Builder buildPort() {
         return new OFBsnTlvPortVer13.Builder();
     }
@@ -889,55 +508,11 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvPortSpeedGbps.Builder buildPortSpeedGbps() {
-        return new OFBsnTlvPortSpeedGbpsVer13.Builder();
-    }
-    public OFBsnTlvPortSpeedGbps portSpeedGbps(long value) {
-        return new OFBsnTlvPortSpeedGbpsVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvPortUsage.Builder buildPortUsage() {
-        return new OFBsnTlvPortUsageVer13.Builder();
-    }
-    public OFBsnTlvPortUsage portUsage(OFBsnPortUsage value) {
-        return new OFBsnTlvPortUsageVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvPortVxlanMode.Builder buildPortVxlanMode() {
-        return new OFBsnTlvPortVxlanModeVer13.Builder();
-    }
-    public OFBsnTlvPortVxlanMode portVxlanMode(OFBsnPortVxlanMode value) {
-        return new OFBsnTlvPortVxlanModeVer13(
-                value
-                    );
-    }
-
     public OFBsnTlvPriority.Builder buildPriority() {
         return new OFBsnTlvPriorityVer13.Builder();
     }
     public OFBsnTlvPriority priority(long value) {
         return new OFBsnTlvPriorityVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvPushVlanOnEgress pushVlanOnEgress() {
-        return OFBsnTlvPushVlanOnEgressVer13.INSTANCE;
-    }
-
-    public OFBsnTlvPushVlanOnIngress pushVlanOnIngress() {
-        return OFBsnTlvPushVlanOnIngressVer13.INSTANCE;
-    }
-
-    public OFBsnTlvQosPriority.Builder buildQosPriority() {
-        return new OFBsnTlvQosPriorityVer13.Builder();
-    }
-    public OFBsnTlvQosPriority qosPriority(long value) {
-        return new OFBsnTlvQosPriorityVer13(
                 value
                     );
     }
@@ -956,33 +531,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvQueueWeight queueWeight(long value) {
         return new OFBsnTlvQueueWeightVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvRateLimit.Builder buildRateLimit() {
-        return new OFBsnTlvRateLimitVer13.Builder();
-    }
-    public OFBsnTlvRateLimit rateLimit(long value) {
-        return new OFBsnTlvRateLimitVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvRateUnit.Builder buildRateUnit() {
-        return new OFBsnTlvRateUnitVer13.Builder();
-    }
-    public OFBsnTlvRateUnit rateUnit(OFBsnRateUnit value) {
-        return new OFBsnTlvRateUnitVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvRecordPackets.Builder buildRecordPackets() {
-        return new OFBsnTlvRecordPacketsVer13.Builder();
-    }
-    public OFBsnTlvRecordPackets recordPackets(long value) {
-        return new OFBsnTlvRecordPacketsVer13(
                 value
                     );
     }
@@ -1011,19 +559,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvRequestPackets requestPackets(U64 value) {
         return new OFBsnTlvRequestPacketsVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvRestServer restServer() {
-        return OFBsnTlvRestServerVer13.INSTANCE;
-    }
-
-    public OFBsnTlvRoutingParam.Builder buildRoutingParam() {
-        return new OFBsnTlvRoutingParamVer13.Builder();
-    }
-    public OFBsnTlvRoutingParam routingParam(OFBsnRoutingParam value) {
-        return new OFBsnTlvRoutingParamVer13(
                 value
                     );
     }
@@ -1059,15 +594,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return OFBsnTlvSetLoopbackModeVer13.INSTANCE;
     }
 
-    public OFBsnTlvStatus.Builder buildStatus() {
-        return new OFBsnTlvStatusVer13.Builder();
-    }
-    public OFBsnTlvStatus status(OFBsnStatus value) {
-        return new OFBsnTlvStatusVer13(
-                value
-                    );
-    }
-
     public OFBsnTlvStripMplsL2OnIngress stripMplsL2OnIngress() {
         return OFBsnTlvStripMplsL2OnIngressVer13.INSTANCE;
     }
@@ -1076,13 +602,8 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return OFBsnTlvStripMplsL3OnIngressVer13.INSTANCE;
     }
 
-    public OFBsnTlvStripVlanOnEgress.Builder buildStripVlanOnEgress() {
-        return new OFBsnTlvStripVlanOnEgressVer13.Builder();
-    }
-    public OFBsnTlvStripVlanOnEgress stripVlanOnEgress(Set<OFBsnStripVlan> flags) {
-        return new OFBsnTlvStripVlanOnEgressVer13(
-                flags
-                    );
+    public OFBsnTlvStripVlanOnEgress stripVlanOnEgress() {
+        return OFBsnTlvStripVlanOnEgressVer13.INSTANCE;
     }
 
     public OFBsnTlvSubAgentId.Builder buildSubAgentId() {
@@ -1103,47 +624,11 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvTcpFlags.Builder buildTcpFlags() {
-        return new OFBsnTlvTcpFlagsVer13.Builder();
-    }
-    public OFBsnTlvTcpFlags tcpFlags(int value) {
-        return new OFBsnTlvTcpFlagsVer13(
-                value
-                    );
-    }
-
     public OFBsnTlvTcpSrc.Builder buildTcpSrc() {
         return new OFBsnTlvTcpSrcVer13.Builder();
     }
     public OFBsnTlvTcpSrc tcpSrc(int value) {
         return new OFBsnTlvTcpSrcVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvTimestamp.Builder buildTimestamp() {
-        return new OFBsnTlvTimestampVer13.Builder();
-    }
-    public OFBsnTlvTimestamp timestamp(U64 value) {
-        return new OFBsnTlvTimestampVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvTtl.Builder buildTtl() {
-        return new OFBsnTlvTtlVer13.Builder();
-    }
-    public OFBsnTlvTtl ttl(int value) {
-        return new OFBsnTlvTtlVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvTunnelCapability.Builder buildTunnelCapability() {
-        return new OFBsnTlvTunnelCapabilityVer13.Builder();
-    }
-    public OFBsnTlvTunnelCapability tunnelCapability(Set<OFBsnTunnelType> value) {
-        return new OFBsnTlvTunnelCapabilityVer13(
                 value
                     );
     }
@@ -1220,92 +705,12 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvUint64List.Builder buildUint64List() {
-        return new OFBsnTlvUint64ListVer13.Builder();
-    }
-    public OFBsnTlvUint64List uint64List(List<U64> value) {
-        return new OFBsnTlvUint64ListVer13(
-                value
-                    );
-    }
-
     public OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() {
         return new OFBsnTlvUnicastQueryTimeoutVer13.Builder();
     }
     public OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value) {
         return new OFBsnTlvUnicastQueryTimeoutVer13(
                 value
-                    );
-    }
-
-    public OFBsnTlvUnicastRate.Builder buildUnicastRate() {
-        return new OFBsnTlvUnicastRateVer13.Builder();
-    }
-    public OFBsnTlvUnicastRate unicastRate(long value) {
-        return new OFBsnTlvUnicastRateVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvUnknownMulticastRate.Builder buildUnknownMulticastRate() {
-        return new OFBsnTlvUnknownMulticastRateVer13.Builder();
-    }
-    public OFBsnTlvUnknownMulticastRate unknownMulticastRate(long value) {
-        return new OFBsnTlvUnknownMulticastRateVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvUntagged untagged() {
-        return OFBsnTlvUntaggedVer13.INSTANCE;
-    }
-
-    public OFBsnTlvUriScheme.Builder buildUriScheme() {
-        return new OFBsnTlvUriSchemeVer13.Builder();
-    }
-    public OFBsnTlvUriScheme uriScheme(byte[] value) {
-        return new OFBsnTlvUriSchemeVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvUsePacketState.Builder buildUsePacketState() {
-        return new OFBsnTlvUsePacketStateVer13.Builder();
-    }
-    public OFBsnTlvUsePacketState usePacketState(short value) {
-        return new OFBsnTlvUsePacketStateVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvVfi.Builder buildVfi() {
-        return new OFBsnTlvVfiVer13.Builder();
-    }
-    public OFBsnTlvVfi vfi(int value) {
-        return new OFBsnTlvVfiVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvVfpClassId.Builder buildVfpClassId() {
-        return new OFBsnTlvVfpClassIdVer13.Builder();
-    }
-    public OFBsnTlvVfpClassId vfpClassId(long value) {
-        return new OFBsnTlvVfpClassIdVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvVirtual virtual() {
-        return OFBsnTlvVirtualVer13.INSTANCE;
-    }
-
-    public OFBsnTlvVlanMacList.Builder buildVlanMacList() {
-        return new OFBsnTlvVlanMacListVer13.Builder();
-    }
-    public OFBsnTlvVlanMacList vlanMacList(List<OFBsnVlanMac> key) {
-        return new OFBsnTlvVlanMacListVer13(
-                key
                     );
     }
 
@@ -1336,24 +741,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
-    public OFBsnTlvVni.Builder buildVni() {
-        return new OFBsnTlvVniVer13.Builder();
-    }
-    public OFBsnTlvVni vni(long value) {
-        return new OFBsnTlvVniVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvVpnKey.Builder buildVpnKey() {
-        return new OFBsnTlvVpnKeyVer13.Builder();
-    }
-    public OFBsnTlvVpnKey vpnKey(long value) {
-        return new OFBsnTlvVpnKeyVer13(
-                value
-                    );
-    }
-
     public OFBsnTlvVrf.Builder buildVrf() {
         return new OFBsnTlvVrfVer13.Builder();
     }
@@ -1361,10 +748,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return new OFBsnTlvVrfVer13(
                 value
                     );
-    }
-
-    public OFBsnTlvVxlanEgressLag vxlanEgressLag() {
-        return OFBsnTlvVxlanEgressLagVer13.INSTANCE;
     }
 
     public OFMessageReader<OFBsnTlv> getReader() {

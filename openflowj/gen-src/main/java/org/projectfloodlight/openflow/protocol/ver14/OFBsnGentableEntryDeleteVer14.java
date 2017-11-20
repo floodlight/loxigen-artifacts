@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -280,9 +278,11 @@ class OFBsnGentableEntryDeleteVer14 implements OFBsnGentableEntryDelete {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGentableEntryDelete> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGentableEntryDelete> {
         @Override
-        public OFBsnGentableEntryDelete readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGentableEntryDelete readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -295,6 +295,7 @@ class OFBsnGentableEntryDeleteVer14 implements OFBsnGentableEntryDelete {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -312,7 +313,7 @@ class OFBsnGentableEntryDeleteVer14 implements OFBsnGentableEntryDelete {
             if(subtype != 0x2f)
                 throw new OFParseError("Wrong subtype: Expected=0x2fL(0x2fL), got="+subtype);
             GenTableId tableId = GenTableId.read2Bytes(bb);
-            List<OFBsnTlv> key = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnTlvVer14.READER);
+            List<OFBsnTlv> key = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnTlvVer14.READER);
 
             OFBsnGentableEntryDeleteVer14 bsnGentableEntryDeleteVer14 = new OFBsnGentableEntryDeleteVer14(
                     xid,
@@ -420,46 +421,11 @@ class OFBsnGentableEntryDeleteVer14 implements OFBsnGentableEntryDelete {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnGentableEntryDeleteVer14 other = (OFBsnGentableEntryDeleteVer14) obj;
-
-        // ignore XID
-        if (tableId == null) {
-            if (other.tableId != null)
-                return false;
-        } else if (!tableId.equals(other.tableId))
-            return false;
-        if (key == null) {
-            if (other.key != null)
-                return false;
-        } else if (!key.equals(other.key))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
-        result = prime * result + ((key == null) ? 0 : key.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((key == null) ? 0 : key.hashCode());
         return result;

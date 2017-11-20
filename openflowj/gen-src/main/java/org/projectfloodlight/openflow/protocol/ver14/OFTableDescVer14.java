@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -29,7 +27,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import java.util.List;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -73,11 +70,6 @@ class OFTableDescVer14 implements OFTableDesc {
     @Override
     public Set<OFTableConfig> getConfig() {
         return config;
-    }
-
-    @Override
-    public List<OFTableModProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
     }
 
     @Override
@@ -125,15 +117,6 @@ class OFTableDescVer14 implements OFTableDesc {
         this.config = config;
         this.configSet = true;
         return this;
-    }
-    @Override
-    public List<OFTableModProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
-    }
-
-    @Override
-    public OFTableDesc.Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.4");
     }
     @Override
     public OFVersion getVersion() {
@@ -190,15 +173,6 @@ class OFTableDescVer14 implements OFTableDesc {
         return this;
     }
     @Override
-    public List<OFTableModProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
-    }
-
-    @Override
-    public OFTableDesc.Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.4");
-    }
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
     }
@@ -224,13 +198,16 @@ class OFTableDescVer14 implements OFTableDesc {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableDesc> {
+    static class Reader extends AbstractOFMessageReader<OFTableDesc> {
         @Override
-        public OFTableDesc readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableDesc readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length != 8)
                 throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

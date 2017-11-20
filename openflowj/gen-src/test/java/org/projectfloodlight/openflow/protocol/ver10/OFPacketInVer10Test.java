@@ -18,27 +18,47 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.junit.Test;
-import org.junit.Before;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import org.junit.runners.Parameterized.Parameters;
+import java.util.List;
+import com.google.common.collect.ImmutableList;
+import org.junit.Before;
 import org.hamcrest.CoreMatchers;
 
 
-
+@RunWith(Parameterized.class)
 public class OFPacketInVer10Test {
     OFFactory factory;
 
     final static byte[] PACKET_IN_SERIALIZED =
         new byte[] { 0x1, 0xa, 0x0, 0x15, 0x12, 0x34, 0x56, 0x78, (byte) 0xab, (byte) 0xcd, (byte) 0xef, 0x1, 0x0, 0x9, (byte) 0xff, (byte) 0xfe, 0x1, 0x0, 0x61, 0x62, 0x63 };
+
+
+    private final static int[] PREFIX_BYTES = { 0, 1, 4, 255, 65335 };
+    private final static ByteBuf EMPTY_BUFFER = Unpooled.wrappedBuffer(new byte[65535]);
+
+    private final OFMessageReader<?> messageReader;
+
+    @Parameters(name="{index}.MessageReader={0}")
+    public static Iterable<Object> data() {
+        return ImmutableList.<Object>of(
+                OFPacketInVer10.READER, OFMessageVer10.READER
+        );
+    }
+
+    public OFPacketInVer10Test(OFMessageReader<?> messageReader) {
+        this.messageReader = messageReader;
+    }
 
     @Before
     public void setup() {
@@ -64,8 +84,13 @@ public class OFPacketInVer10Test {
         assertThat(written, CoreMatchers.equalTo(PACKET_IN_SERIALIZED));
     }
 
+
     @Test
     public void testRead() throws Exception {
+        ByteBuf input = Unpooled.copiedBuffer(PACKET_IN_SERIALIZED);
+
+        Object packetInRead = messageReader.readFrom(input);
+        assertThat(packetInRead, CoreMatchers.instanceOf(OFPacketInVer10.class));
         OFPacketIn.Builder builder = factory.buildPacketIn();
         builder
    .setXid(0x12345678)
@@ -76,13 +101,37 @@ public class OFPacketInVer10Test {
    .setData(new byte[] { 0x61, 0x62, 0x63 } );;
         OFPacketIn packetInBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(PACKET_IN_SERIALIZED);
-
-        // FIXME should invoke the overall reader once implemented
-        OFPacketIn packetInRead = OFPacketInVer10.READER.readFrom(input);
         assertEquals(PACKET_IN_SERIALIZED.length, input.readerIndex());
 
         assertEquals(packetInBuilt, packetInRead);
+        // FIXME: No java stanza in test_data for this class. Add to enable validation of read message
+   }
+
+    /**
+     * Validates Reader handling of partial messages in the buffer.
+     *
+     * Ensures that readers deal with partially available messages, and that buffers
+     * are returned unmodified. Also checks compatibility when the data is not at the start of
+     * the buffer (readerIndex=0), but somewhere else (with the readerIndex appropriately set).
+     */
+   @Test
+   public void testPartialRead() throws Exception {
+       ByteBuf msgBuffer = Unpooled.copiedBuffer(PACKET_IN_SERIALIZED);
+        for(int prefixLength: PREFIX_BYTES) {
+            ByteBuf prefixBuffer = EMPTY_BUFFER.slice(0, prefixLength);
+            ByteBuf wholeBuffer = Unpooled.wrappedBuffer(prefixBuffer, msgBuffer);
+            for(int partialLength = 0; partialLength < PACKET_IN_SERIALIZED.length - 1; partialLength++) {
+                int length = prefixLength + partialLength;
+                ByteBuf slice = wholeBuffer.slice(0, length);
+                slice.readerIndex(prefixLength);
+
+                Object read = messageReader.readFrom(slice);
+
+                assertNull("partial message should not be read", read);
+                assertEquals("Reader index should be back at the start", prefixLength, slice.readerIndex());
+            }
+
+        }
    }
 
    @Test
@@ -90,7 +139,7 @@ public class OFPacketInVer10Test {
        ByteBuf input = Unpooled.copiedBuffer(PACKET_IN_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
-       OFPacketIn packetIn = OFPacketInVer10.READER.readFrom(input);
+       OFPacketIn packetIn = (OFPacketIn) messageReader.readFrom(input);
        assertEquals(PACKET_IN_SERIALIZED.length, input.readerIndex());
 
        // write message again

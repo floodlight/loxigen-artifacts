@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -323,9 +321,11 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGentableClearRequest> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGentableClearRequest> {
         @Override
-        public OFBsnGentableClearRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGentableClearRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -338,6 +338,7 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
             int length = U16.f(bb.readShort());
             if(length != 52)
                 throw new OFParseError("Wrong length: Expected=52(52), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -474,52 +475,11 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnGentableClearRequestVer13 other = (OFBsnGentableClearRequestVer13) obj;
-
-        // ignore XID
-        if (tableId == null) {
-            if (other.tableId != null)
-                return false;
-        } else if (!tableId.equals(other.tableId))
-            return false;
-        if (checksum == null) {
-            if (other.checksum != null)
-                return false;
-        } else if (!checksum.equals(other.checksum))
-            return false;
-        if (checksumMask == null) {
-            if (other.checksumMask != null)
-                return false;
-        } else if (!checksumMask.equals(other.checksumMask))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
-        result = prime * result + ((checksum == null) ? 0 : checksum.hashCode());
-        result = prime * result + ((checksumMask == null) ? 0 : checksumMask.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((checksum == null) ? 0 : checksum.hashCode());
         result = prime * result + ((checksumMask == null) ? 0 : checksumMask.hashCode());

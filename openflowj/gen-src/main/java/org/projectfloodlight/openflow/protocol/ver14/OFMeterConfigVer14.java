@@ -18,19 +18,16 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.Set;
-import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
+import java.util.Set;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -41,12 +38,12 @@ class OFMeterConfigVer14 implements OFMeterConfig {
     final static byte WIRE_VERSION = 5;
     final static int MINIMUM_LENGTH = 8;
 
-        private final static Set<OFMeterFlags> DEFAULT_FLAGS = ImmutableSet.<OFMeterFlags>of();
+        private final static int DEFAULT_FLAGS = 0x0;
         private final static long DEFAULT_METER_ID = 0x0L;
         private final static List<OFMeterBand> DEFAULT_ENTRIES = ImmutableList.<OFMeterBand>of();
 
     // OF message fields
-    private final Set<OFMeterFlags> flags;
+    private final int flags;
     private final long meterId;
     private final List<OFMeterBand> entries;
 //
@@ -56,10 +53,7 @@ class OFMeterConfigVer14 implements OFMeterConfig {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFMeterConfigVer14(Set<OFMeterFlags> flags, long meterId, List<OFMeterBand> entries) {
-        if(flags == null) {
-            throw new NullPointerException("OFMeterConfigVer14: property flags cannot be null");
-        }
+    OFMeterConfigVer14(int flags, long meterId, List<OFMeterBand> entries) {
         if(entries == null) {
             throw new NullPointerException("OFMeterConfigVer14: property entries cannot be null");
         }
@@ -70,7 +64,7 @@ class OFMeterConfigVer14 implements OFMeterConfig {
 
     // Accessors for OF message fields
     @Override
-    public Set<OFMeterFlags> getFlags() {
+    public int getFlags() {
         return flags;
     }
 
@@ -100,7 +94,7 @@ class OFMeterConfigVer14 implements OFMeterConfig {
 
         // OF message fields
         private boolean flagsSet;
-        private Set<OFMeterFlags> flags;
+        private int flags;
         private boolean meterIdSet;
         private long meterId;
         private boolean entriesSet;
@@ -111,12 +105,12 @@ class OFMeterConfigVer14 implements OFMeterConfig {
         }
 
     @Override
-    public Set<OFMeterFlags> getFlags() {
+    public int getFlags() {
         return flags;
     }
 
     @Override
-    public OFMeterConfig.Builder setFlags(Set<OFMeterFlags> flags) {
+    public OFMeterConfig.Builder setFlags(int flags) {
         this.flags = flags;
         this.flagsSet = true;
         return this;
@@ -152,9 +146,7 @@ class OFMeterConfigVer14 implements OFMeterConfig {
 
         @Override
         public OFMeterConfig build() {
-                Set<OFMeterFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
-                if(flags == null)
-                    throw new NullPointerException("Property flags must not be null");
+                int flags = this.flagsSet ? this.flags : parentMessage.flags;
                 long meterId = this.meterIdSet ? this.meterId : parentMessage.meterId;
                 List<OFMeterBand> entries = this.entriesSet ? this.entries : parentMessage.entries;
                 if(entries == null)
@@ -173,19 +165,19 @@ class OFMeterConfigVer14 implements OFMeterConfig {
     static class Builder implements OFMeterConfig.Builder {
         // OF message fields
         private boolean flagsSet;
-        private Set<OFMeterFlags> flags;
+        private int flags;
         private boolean meterIdSet;
         private long meterId;
         private boolean entriesSet;
         private List<OFMeterBand> entries;
 
     @Override
-    public Set<OFMeterFlags> getFlags() {
+    public int getFlags() {
         return flags;
     }
 
     @Override
-    public OFMeterConfig.Builder setFlags(Set<OFMeterFlags> flags) {
+    public OFMeterConfig.Builder setFlags(int flags) {
         this.flags = flags;
         this.flagsSet = true;
         return this;
@@ -220,9 +212,7 @@ class OFMeterConfigVer14 implements OFMeterConfig {
 //
         @Override
         public OFMeterConfig build() {
-            Set<OFMeterFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
-            if(flags == null)
-                throw new NullPointerException("Property flags must not be null");
+            int flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
             long meterId = this.meterIdSet ? this.meterId : DEFAULT_METER_ID;
             List<OFMeterBand> entries = this.entriesSet ? this.entries : DEFAULT_ENTRIES;
             if(entries == null)
@@ -240,13 +230,16 @@ class OFMeterConfigVer14 implements OFMeterConfig {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFMeterConfig> {
+    static class Reader extends AbstractOFMessageReader<OFMeterConfig> {
         @Override
-        public OFMeterConfig readFrom(ByteBuf bb) throws OFParseError {
+        public OFMeterConfig readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -254,9 +247,9 @@ class OFMeterConfigVer14 implements OFMeterConfig {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            Set<OFMeterFlags> flags = OFMeterFlagsSerializerVer14.readFrom(bb);
+            int flags = U16.f(bb.readShort());
             long meterId = U32.f(bb.readInt());
-            List<OFMeterBand> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFMeterBandVer14.READER);
+            List<OFMeterBand> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFMeterBandVer14.READER);
 
             OFMeterConfigVer14 meterConfigVer14 = new OFMeterConfigVer14(
                     flags,
@@ -279,7 +272,7 @@ class OFMeterConfigVer14 implements OFMeterConfig {
         @Override
         public void funnel(OFMeterConfigVer14 message, PrimitiveSink sink) {
             // FIXME: skip funnel of length
-            OFMeterFlagsSerializerVer14.putTo(message.flags, sink);
+            sink.putInt(message.flags);
             sink.putLong(message.meterId);
             FunnelUtils.putList(message.entries, sink);
         }
@@ -299,7 +292,7 @@ class OFMeterConfigVer14 implements OFMeterConfig {
             int lengthIndex = bb.writerIndex();
             bb.writeShort(U16.t(0));
 
-            OFMeterFlagsSerializerVer14.writeTo(bb, message.flags);
+            bb.writeShort(U16.t(message.flags));
             bb.writeInt(U32.t(message.meterId));
             ChannelUtils.writeList(bb, message.entries);
 
@@ -332,10 +325,7 @@ class OFMeterConfigVer14 implements OFMeterConfig {
             return false;
         OFMeterConfigVer14 other = (OFMeterConfigVer14) obj;
 
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
+        if( flags != other.flags)
             return false;
         if( meterId != other.meterId)
             return false;
@@ -352,7 +342,7 @@ class OFMeterConfigVer14 implements OFMeterConfig {
         final int prime = 31;
         int result = 1;
 
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
+        result = prime * result + flags;
         result = prime *  (int) (meterId ^ (meterId >>> 32));
         result = prime * result + ((entries == null) ? 0 : entries.hashCode());
         return result;

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -414,9 +412,11 @@ class OFAsyncGetRequestVer13 implements OFAsyncGetRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFAsyncGetRequest> {
+    static class Reader extends AbstractOFMessageReader<OFAsyncGetRequest> {
         @Override
-        public OFAsyncGetRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFAsyncGetRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -429,6 +429,7 @@ class OFAsyncGetRequestVer13 implements OFAsyncGetRequest {
             int length = U16.f(bb.readShort());
             if(length != 32)
                 throw new OFParseError("Wrong length: Expected=32(32), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -559,52 +560,11 @@ class OFAsyncGetRequestVer13 implements OFAsyncGetRequest {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFAsyncGetRequestVer13 other = (OFAsyncGetRequestVer13) obj;
-
-        // ignore XID
-        if( packetInMaskEqualMaster != other.packetInMaskEqualMaster)
-            return false;
-        if( packetInMaskSlave != other.packetInMaskSlave)
-            return false;
-        if( portStatusMaskEqualMaster != other.portStatusMaskEqualMaster)
-            return false;
-        if( portStatusMaskSlave != other.portStatusMaskSlave)
-            return false;
-        if( flowRemovedMaskEqualMaster != other.flowRemovedMaskEqualMaster)
-            return false;
-        if( flowRemovedMaskSlave != other.flowRemovedMaskSlave)
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime *  (int) (packetInMaskEqualMaster ^ (packetInMaskEqualMaster >>> 32));
-        result = prime *  (int) (packetInMaskSlave ^ (packetInMaskSlave >>> 32));
-        result = prime *  (int) (portStatusMaskEqualMaster ^ (portStatusMaskEqualMaster >>> 32));
-        result = prime *  (int) (portStatusMaskSlave ^ (portStatusMaskSlave >>> 32));
-        result = prime *  (int) (flowRemovedMaskEqualMaster ^ (flowRemovedMaskEqualMaster >>> 32));
-        result = prime *  (int) (flowRemovedMaskSlave ^ (flowRemovedMaskSlave >>> 32));
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime *  (int) (packetInMaskEqualMaster ^ (packetInMaskEqualMaster >>> 32));
         result = prime *  (int) (packetInMaskSlave ^ (packetInMaskSlave >>> 32));
         result = prime *  (int) (portStatusMaskEqualMaster ^ (portStatusMaskEqualMaster >>> 32));

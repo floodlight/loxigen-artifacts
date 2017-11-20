@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -113,11 +111,6 @@ class OFPacketInVer10 implements OFPacketIn {
     }
 
     @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-
-    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
@@ -135,6 +128,11 @@ class OFPacketInVer10 implements OFPacketIn {
     @Override
     public OFPort getInPhyPort()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property inPhyPort not supported in version 1.0");
+    }
+
+    @Override
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
     }
 
 
@@ -228,15 +226,6 @@ class OFPacketInVer10 implements OFPacketIn {
             throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
     }
     @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-
-    @Override
-    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
@@ -275,6 +264,15 @@ class OFPacketInVer10 implements OFPacketIn {
     @Override
     public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property inPhyPort not supported in version 1.0");
+    }
+    @Override
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
+    }
+
+    @Override
+    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
     }
 
 
@@ -387,15 +385,6 @@ class OFPacketInVer10 implements OFPacketIn {
             throw new UnsupportedOperationException("Property tableId not supported in version 1.0");
     }
     @Override
-    public U64 getCookie()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-
-    @Override
-    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
-    }
-    @Override
     public Match getMatch()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property match not supported in version 1.0");
     }
@@ -435,6 +424,15 @@ class OFPacketInVer10 implements OFPacketIn {
     public OFPacketIn.Builder setInPhyPort(OFPort inPhyPort) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property inPhyPort not supported in version 1.0");
     }
+    @Override
+    public U64 getCookie()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
+    }
+
+    @Override
+    public OFPacketIn.Builder setCookie(U64 cookie) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property cookie not supported in version 1.0");
+    }
 //
         @Override
         public OFPacketIn build() {
@@ -469,9 +467,11 @@ class OFPacketInVer10 implements OFPacketIn {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPacketIn> {
+    static class Reader extends AbstractOFMessageReader<OFPacketIn> {
         @Override
-        public OFPacketIn readFrom(ByteBuf bb) throws OFParseError {
+        public OFPacketIn readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -484,6 +484,7 @@ class OFPacketInVer10 implements OFPacketIn {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -625,58 +626,11 @@ class OFPacketInVer10 implements OFPacketIn {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFPacketInVer10 other = (OFPacketInVer10) obj;
-
-        // ignore XID
-        if (bufferId == null) {
-            if (other.bufferId != null)
-                return false;
-        } else if (!bufferId.equals(other.bufferId))
-            return false;
-        if( totalLen != other.totalLen)
-            return false;
-        if (inPort == null) {
-            if (other.inPort != null)
-                return false;
-        } else if (!inPort.equals(other.inPort))
-            return false;
-        if (reason == null) {
-            if (other.reason != null)
-                return false;
-        } else if (!reason.equals(other.reason))
-            return false;
-        if (!Arrays.equals(data, other.data))
-                return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
-        result = prime * result + totalLen;
-        result = prime * result + ((inPort == null) ? 0 : inPort.hashCode());
-        result = prime * result + ((reason == null) ? 0 : reason.hashCode());
-        result = prime * result + Arrays.hashCode(data);
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
         result = prime * result + totalLen;
         result = prime * result + ((inPort == null) ? 0 : inPort.hashCode());

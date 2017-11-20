@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -264,9 +262,11 @@ class OFOxmEthDstMaskedVer13 implements OFOxmEthDstMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmEthDstMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmEthDstMasked> {
         @Override
-        public OFOxmEthDstMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmEthDstMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x8000070cL
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x8000070c)

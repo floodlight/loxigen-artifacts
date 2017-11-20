@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -49,13 +47,6 @@ public class OFBsnPktinFlagSerializerVer14 {
     public final static long BSN_PKTIN_FLAG_SFLOW_VAL = 0x800L;
     public final static long BSN_PKTIN_FLAG_ARP_CACHE_VAL = 0x1000L;
     public final static long BSN_PKTIN_FLAG_ARP_TARGET_VAL = 0x2000L;
-    public final static long BSN_PKTIN_FLAG_IGMP_VAL = 0x4000L;
-    public final static long BSN_PKTIN_FLAG_PIM_VAL = 0x8000L;
-    public final static long BSN_PKTIN_FLAG_VXLAN_SIP_MISS_VAL = 0x10000L;
-    public final static long BSN_PKTIN_FLAG_MC_RESERVED_VAL = 0x20000L;
-    public final static long BSN_PKTIN_FLAG_ANALYTICS_VAL = 0x40000L;
-    public final static long BSN_PKTIN_FLAG_ICMPV6_VAL = 0x80000L;
-    public final static long BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL_VAL = 0x100000L;
 
     public static Set<OFBsnPktinFlag> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -105,20 +96,6 @@ public class OFBsnPktinFlagSerializerVer14 {
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_ARP_CACHE);
         if((val & BSN_PKTIN_FLAG_ARP_TARGET_VAL) != 0)
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_ARP_TARGET);
-        if((val & BSN_PKTIN_FLAG_IGMP_VAL) != 0)
-            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_IGMP);
-        if((val & BSN_PKTIN_FLAG_PIM_VAL) != 0)
-            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_PIM);
-        if((val & BSN_PKTIN_FLAG_VXLAN_SIP_MISS_VAL) != 0)
-            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_VXLAN_SIP_MISS);
-        if((val & BSN_PKTIN_FLAG_MC_RESERVED_VAL) != 0)
-            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_MC_RESERVED);
-        if((val & BSN_PKTIN_FLAG_ANALYTICS_VAL) != 0)
-            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_ANALYTICS);
-        if((val & BSN_PKTIN_FLAG_ICMPV6_VAL) != 0)
-            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_ICMPV6);
-        if((val & BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL_VAL) != 0)
-            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL);
         return Collections.unmodifiableSet(set);
     }
 
@@ -168,27 +145,6 @@ public class OFBsnPktinFlagSerializerVer14 {
                     break;
                 case BSN_PKTIN_FLAG_ARP_TARGET:
                     wireValue |= BSN_PKTIN_FLAG_ARP_TARGET_VAL;
-                    break;
-                case BSN_PKTIN_FLAG_IGMP:
-                    wireValue |= BSN_PKTIN_FLAG_IGMP_VAL;
-                    break;
-                case BSN_PKTIN_FLAG_PIM:
-                    wireValue |= BSN_PKTIN_FLAG_PIM_VAL;
-                    break;
-                case BSN_PKTIN_FLAG_VXLAN_SIP_MISS:
-                    wireValue |= BSN_PKTIN_FLAG_VXLAN_SIP_MISS_VAL;
-                    break;
-                case BSN_PKTIN_FLAG_MC_RESERVED:
-                    wireValue |= BSN_PKTIN_FLAG_MC_RESERVED_VAL;
-                    break;
-                case BSN_PKTIN_FLAG_ANALYTICS:
-                    wireValue |= BSN_PKTIN_FLAG_ANALYTICS_VAL;
-                    break;
-                case BSN_PKTIN_FLAG_ICMPV6:
-                    wireValue |= BSN_PKTIN_FLAG_ICMPV6_VAL;
-                    break;
-                case BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL:
-                    wireValue |= BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnPktinFlag in version 1.4: " + e);

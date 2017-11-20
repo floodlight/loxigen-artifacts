@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -122,21 +120,6 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
     @Override
     public List<OFTableFeatureProp> getProperties() {
         return properties;
-    }
-
-    @Override
-    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property command not supported in version 1.3");
-    }
-
-    @Override
-    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property features not supported in version 1.3");
-    }
-
-    @Override
-    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
     }
 
     @Override
@@ -249,33 +232,6 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
         this.properties = properties;
         this.propertiesSet = true;
         return this;
-    }
-    @Override
-    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property command not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property command not supported in version 1.3");
-    }
-    @Override
-    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property features not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property features not supported in version 1.3");
-    }
-    @Override
-    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {
@@ -413,33 +369,6 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
         return this;
     }
     @Override
-    public OFTableFeaturesCommand getCommand()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property command not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableFeatures.Builder setCommand(OFTableFeaturesCommand command) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property command not supported in version 1.3");
-    }
-    @Override
-    public Set<OFTableFeatureFlag> getFeatures()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property features not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableFeatures.Builder setFeatures(Set<OFTableFeatureFlag> features) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property features not supported in version 1.3");
-    }
-    @Override
-    public Set<OFTableConfig> getCapabilities()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
-    }
-
-    @Override
-    public OFTableFeatures.Builder setCapabilities(Set<OFTableConfig> capabilities) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property capabilities not supported in version 1.3");
-    }
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
     }
@@ -481,13 +410,16 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableFeatures> {
+    static class Reader extends AbstractOFMessageReader<OFTableFeatures> {
         @Override
-        public OFTableFeatures readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeatures readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -503,7 +435,7 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
             U64 metadataWrite = U64.ofRaw(bb.readLong());
             long config = U32.f(bb.readInt());
             long maxEntries = U32.f(bb.readInt());
-            List<OFTableFeatureProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFTableFeaturePropVer13.READER);
+            List<OFTableFeatureProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFTableFeaturePropVer13.READER);
 
             OFTableFeaturesVer13 tableFeaturesVer13 = new OFTableFeaturesVer13(
                     tableId,

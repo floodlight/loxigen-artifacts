@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -142,11 +140,6 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     }
 
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -177,13 +170,13 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     }
 
     @Override
-    public int getImportance()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
     }
 
     @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.3");
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.3");
     }
 
     @Override
@@ -297,17 +290,6 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -372,6 +354,17 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.3");
     }
@@ -379,15 +372,6 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     @Override
     public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property importance not supported in version 1.3");
-    }
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.3");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property stats not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {
@@ -538,17 +522,6 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         return this;
     }
     @Override
-    public Set<OFFlowModFlags> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -613,6 +586,17 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
+    public Set<OFFlowModFlags> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.3");
     }
@@ -620,15 +604,6 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     @Override
     public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property importance not supported in version 1.3");
-    }
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.3");
-    }
-
-    @Override
-    public OFFlowStatsEntry.Builder setStats(Stat stats) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property stats not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {
@@ -686,13 +661,16 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFFlowStatsEntry> {
         @Override
-        public OFFlowStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -714,8 +692,8 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             U64 cookie = U64.ofRaw(bb.readLong());
             U64 packetCount = U64.ofRaw(bb.readLong());
             U64 byteCount = U64.ofRaw(bb.readLong());
-            Match match = ChannelUtilsVer13.readOFMatch(bb);
-            List<OFInstruction> instructions = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFInstructionVer13.READER);
+            Match match = ChannelUtilsVer13.readOFMatch(context, bb);
+            List<OFInstruction> instructions = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFInstructionVer13.READER);
 
             OFFlowStatsEntryVer13 flowStatsEntryVer13 = new OFFlowStatsEntryVer13(
                     tableId,

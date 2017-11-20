@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -302,10 +300,10 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                 result = tcpDst;
                 break;
             case ICMPV4_TYPE:
-                result = ICMPv4Type.of((short) tcpSrc.getPort());
+                result = tcpSrc;
                 break;
             case ICMPV4_CODE:
-                result = ICMPv4Code.of((short) tcpDst.getPort());
+                result = tcpDst;
                 break;
             // NOT SUPPORTED:
             default:
@@ -566,8 +564,6 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                 builder.add(MatchField.TCP_SRC);
             } else if (ipProto == IpProtocol.SCTP) {
                 builder.add(MatchField.SCTP_SRC);
-            } else if (ipProto == IpProtocol.ICMP) {
-                builder.add(MatchField.ICMPV4_TYPE);
             } else {
                 throw new UnsupportedOperationException(
                         "Unsupported IP protocol for matching on source port " + ipProto);
@@ -580,8 +576,6 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                 builder.add(MatchField.TCP_DST);
             } else if (ipProto == IpProtocol.SCTP) {
                 builder.add(MatchField.SCTP_DST);
-            } else if (ipProto == IpProtocol.ICMP) {
-                builder.add(MatchField.ICMPV4_CODE);
             } else {
                 throw new UnsupportedOperationException(
                         "Unsupported IP protocol for matching on destination port " + ipProto);
@@ -979,11 +973,11 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                 case SCTP_DST:
                     result = tcpDst;
                     break;
-               case ICMPV4_TYPE:
-                    result = ICMPv4Type.of((short) tcpSrc.getPort());
+                case ICMPV4_TYPE:
+                    result = tcpSrc;
                     break;
-               case ICMPV4_CODE:
-                    result = ICMPv4Code.of((short) tcpDst.getPort());
+                case ICMPV4_CODE:
+                    result = tcpDst;
                     break;
                 // NOT SUPPORTED:
                 default:
@@ -1768,11 +1762,11 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                 case SCTP_DST:
                     result = tcpDst;
                     break;
-               case ICMPV4_TYPE:
-                    result = ICMPv4Type.of((short) tcpSrc.getPort());
+                case ICMPV4_TYPE:
+                    result = tcpSrc;
                     break;
-               case ICMPV4_CODE:
-                    result = ICMPv4Code.of((short) tcpDst.getPort());
+                case ICMPV4_CODE:
+                    result = tcpDst;
                     break;
                 // NOT SUPPORTED:
                 default:
@@ -2205,9 +2199,11 @@ class OFMatchV1Ver10 implements OFMatchV1 {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFMatchV1> {
+    static class Reader extends AbstractOFMessageReader<OFMatchV1> {
         @Override
-        public OFMatchV1 readFrom(ByteBuf bb) throws OFParseError {
+        public OFMatchV1 readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int wildcards = bb.readInt();
             OFPort inPort = OFPort.read2Bytes(bb);
             MacAddress ethSrc = MacAddress.read6Bytes(bb);

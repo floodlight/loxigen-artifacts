@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -199,9 +197,11 @@ class OFBsnDebugCounterStatsEntryVer14 implements OFBsnDebugCounterStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnDebugCounterStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFBsnDebugCounterStatsEntry> {
         @Override
-        public OFBsnDebugCounterStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnDebugCounterStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             U64 counterId = U64.ofRaw(bb.readLong());
             U64 value = U64.ofRaw(bb.readLong());
 

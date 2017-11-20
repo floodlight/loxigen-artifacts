@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -35,9 +33,9 @@ abstract class OFStatsRequestVer10 {
 
     public final static OFStatsRequestVer10.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFStatsRequest<?>> {
+    static class Reader extends AbstractOFMessageReader<OFStatsRequest<?>> {
         @Override
-        public OFStatsRequest<?> readFrom(ByteBuf bb) throws OFParseError {
+        public OFStatsRequest<?> readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -52,34 +50,49 @@ abstract class OFStatsRequestVer10 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             U32.f(bb.readInt());
             short statsType = bb.readShort();
-            bb.readerIndex(start);
             switch(statsType) {
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value OFStatsType.AGGREGATE=2 for class OFAggregateStatsRequestVer10
-                   return OFAggregateStatsRequestVer10.READER.readFrom(bb);
+                   return OFAggregateStatsRequestVer10.READER.readFrom(context, bb);
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value OFStatsType.EXPERIMENTER=65535 for class OFExperimenterStatsRequestVer10
-                   return OFExperimenterStatsRequestVer10.READER.readFrom(bb);
+                   return OFExperimenterStatsRequestVer10.READER.readFrom(context, bb);
                case (short) 0x0:
+                   bb.readerIndex(start);
                    // discriminator value OFStatsType.DESC=0 for class OFDescStatsRequestVer10
-                   return OFDescStatsRequestVer10.READER.readFrom(bb);
+                   return OFDescStatsRequestVer10.READER.readFrom(context, bb);
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value OFStatsType.FLOW=1 for class OFFlowStatsRequestVer10
-                   return OFFlowStatsRequestVer10.READER.readFrom(bb);
+                   return OFFlowStatsRequestVer10.READER.readFrom(context, bb);
                case (short) 0x4:
+                   bb.readerIndex(start);
                    // discriminator value OFStatsType.PORT=4 for class OFPortStatsRequestVer10
-                   return OFPortStatsRequestVer10.READER.readFrom(bb);
+                   return OFPortStatsRequestVer10.READER.readFrom(context, bb);
                case (short) 0x5:
+                   bb.readerIndex(start);
                    // discriminator value OFStatsType.QUEUE=5 for class OFQueueStatsRequestVer10
-                   return OFQueueStatsRequestVer10.READER.readFrom(bb);
+                   return OFQueueStatsRequestVer10.READER.readFrom(context, bb);
                case (short) 0x3:
+                   bb.readerIndex(start);
                    // discriminator value OFStatsType.TABLE=3 for class OFTableStatsRequestVer10
-                   return OFTableStatsRequestVer10.READER.readFrom(bb);
+                   return OFTableStatsRequestVer10.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator statsType of class OFStatsRequestVer10: " + statsType);
+                   context.getUnparsedHandler().unparsedMessage(OFStatsRequestVer10.class, "statsType", statsType);
             }
+            OFStatsRequestFlagsSerializerVer10.readFrom(bb);
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

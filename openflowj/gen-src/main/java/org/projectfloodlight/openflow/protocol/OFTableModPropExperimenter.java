@@ -18,25 +18,24 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
 
-public interface OFTableModPropExperimenter extends OFObject, OFTableModProp {
+public interface OFTableModPropExperimenter extends OFObject {
     int getType();
     long getExperimenter();
     long getExpType();
     OFVersion getVersion();
 
+
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
-    public interface Builder extends OFTableModProp.Builder {
+    public interface Builder  {
         OFTableModPropExperimenter build();
         int getType();
         long getExperimenter();

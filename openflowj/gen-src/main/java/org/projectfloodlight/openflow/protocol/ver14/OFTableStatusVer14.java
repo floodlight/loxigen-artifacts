@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -79,6 +77,11 @@ class OFTableStatusVer14 implements OFTableStatus {
     }
 
     @Override
+    public long getRole() {
+        return role;
+    }
+
+    @Override
     public OFTableReason getReason() {
         return reason;
     }
@@ -86,11 +89,6 @@ class OFTableStatusVer14 implements OFTableStatus {
     @Override
     public OFTableDesc getTable() {
         return table;
-    }
-
-    @Override
-    public long getRole() {
-        return role;
     }
 
 
@@ -138,6 +136,17 @@ class OFTableStatusVer14 implements OFTableStatus {
         return this;
     }
     @Override
+    public long getRole() {
+        return role;
+    }
+
+    @Override
+    public OFTableStatus.Builder setRole(long role) {
+        this.role = role;
+        this.roleSet = true;
+        return this;
+    }
+    @Override
     public OFTableReason getReason() {
         return reason;
     }
@@ -157,17 +166,6 @@ class OFTableStatusVer14 implements OFTableStatus {
     public OFTableStatus.Builder setTable(OFTableDesc table) {
         this.table = table;
         this.tableSet = true;
-        return this;
-    }
-    @Override
-    public long getRole() {
-        return role;
-    }
-
-    @Override
-    public OFTableStatus.Builder setRole(long role) {
-        this.role = role;
-        this.roleSet = true;
         return this;
     }
 
@@ -227,6 +225,17 @@ class OFTableStatusVer14 implements OFTableStatus {
         return this;
     }
     @Override
+    public long getRole() {
+        return role;
+    }
+
+    @Override
+    public OFTableStatus.Builder setRole(long role) {
+        this.role = role;
+        this.roleSet = true;
+        return this;
+    }
+    @Override
     public OFTableReason getReason() {
         return reason;
     }
@@ -246,17 +255,6 @@ class OFTableStatusVer14 implements OFTableStatus {
     public OFTableStatus.Builder setTable(OFTableDesc table) {
         this.table = table;
         this.tableSet = true;
-        return this;
-    }
-    @Override
-    public long getRole() {
-        return role;
-    }
-
-    @Override
-    public OFTableStatus.Builder setRole(long role) {
-        this.role = role;
-        this.roleSet = true;
         return this;
     }
 //
@@ -286,9 +284,11 @@ class OFTableStatusVer14 implements OFTableStatus {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableStatus> {
+    static class Reader extends AbstractOFMessageReader<OFTableStatus> {
         @Override
-        public OFTableStatus readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableStatus readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -301,6 +301,7 @@ class OFTableStatusVer14 implements OFTableStatus {
             int length = U16.f(bb.readShort());
             if(length != 28)
                 throw new OFParseError("Wrong length: Expected=28(28), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -418,49 +419,11 @@ class OFTableStatusVer14 implements OFTableStatus {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFTableStatusVer14 other = (OFTableStatusVer14) obj;
-
-        // ignore XID
-        if( role != other.role)
-            return false;
-        if (reason == null) {
-            if (other.reason != null)
-                return false;
-        } else if (!reason.equals(other.reason))
-            return false;
-        if (table == null) {
-            if (other.table != null)
-                return false;
-        } else if (!table.equals(other.table))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime *  (int) (role ^ (role >>> 32));
-        result = prime * result + ((reason == null) ? 0 : reason.hashCode());
-        result = prime * result + ((table == null) ? 0 : table.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime *  (int) (role ^ (role >>> 32));
         result = prime * result + ((reason == null) ? 0 : reason.hashCode());
         result = prime * result + ((table == null) ? 0 : table.hashCode());

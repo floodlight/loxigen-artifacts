@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -69,16 +67,8 @@ public class OFInstructionIdsVer11 implements OFInstructionIds {
         throw new UnsupportedOperationException("OFInstructionIdBsnDisableVlanCounters not supported in version 1.1");
     }
 
-    public OFInstructionIdBsnHashSelect bsnHashSelect() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnHashSelect not supported in version 1.1");
-    }
-
     public OFInstructionIdBsnInternalPriority bsnInternalPriority() {
         throw new UnsupportedOperationException("OFInstructionIdBsnInternalPriority not supported in version 1.1");
-    }
-
-    public OFInstructionIdBsnNdpOffload bsnNdpOffload() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnNdpOffload not supported in version 1.1");
     }
 
     public OFInstructionIdBsnPacketOfDeath bsnPacketOfDeath() {
@@ -119,10 +109,6 @@ public class OFInstructionIdsVer11 implements OFInstructionIds {
 
     public OFInstructionIdWriteMetadata writeMetadata() {
         throw new UnsupportedOperationException("OFInstructionIdWriteMetadata not supported in version 1.1");
-    }
-
-    public OFInstructionIdStatTrigger statTrigger() {
-        throw new UnsupportedOperationException("OFInstructionIdStatTrigger not supported in version 1.1");
     }
 
     public OFMessageReader<OFInstructionId> getReader() {

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -36,6 +34,7 @@ public interface OFExperimenterErrorMsg extends OFObject, OFErrorMsg {
     long getExperimenter();
     OFErrorCauseData getData();
 
+
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
@@ -49,6 +48,7 @@ public interface OFExperimenterErrorMsg extends OFObject, OFErrorMsg {
         int getSubtype();
         Builder setSubtype(int subtype);
         long getExperimenter();
+        Builder setExperimenter(long experimenter);
         OFErrorCauseData getData();
         Builder setData(OFErrorCauseData data);
     }

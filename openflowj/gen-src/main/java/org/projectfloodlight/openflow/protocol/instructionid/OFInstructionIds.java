@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -38,9 +36,7 @@ public interface OFInstructionIds {
     OFInstructionIdBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck();
     OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
     OFInstructionIdBsnDisableVlanCounters bsnDisableVlanCounters();
-    OFInstructionIdBsnHashSelect bsnHashSelect();
     OFInstructionIdBsnInternalPriority bsnInternalPriority();
-    OFInstructionIdBsnNdpOffload bsnNdpOffload();
     OFInstructionIdBsnPacketOfDeath bsnPacketOfDeath();
     OFInstructionIdBsnPermit bsnPermit();
     OFInstructionIdBsnPrioritizePdus bsnPrioritizePdus();
@@ -51,7 +47,6 @@ public interface OFInstructionIds {
     OFInstructionIdMeter meter();
     OFInstructionIdWriteActions writeActions();
     OFInstructionIdWriteMetadata writeMetadata();
-    OFInstructionIdStatTrigger statTrigger();
 
     OFMessageReader<OFInstructionId> getReader();
     OFVersion getVersion();

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -270,9 +268,11 @@ class OFTableStatsReplyVer10 implements OFTableStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFTableStatsReply> {
         @Override
-        public OFTableStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -285,6 +285,7 @@ class OFTableStatsReplyVer10 implements OFTableStatsReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -298,7 +299,7 @@ class OFTableStatsReplyVer10 implements OFTableStatsReply {
             if(statsType != (short) 0x3)
                 throw new OFParseError("Wrong statsType: Expected=OFStatsType.TABLE(3), got="+statsType);
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer10.readFrom(bb);
-            List<OFTableStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFTableStatsEntryVer10.READER);
+            List<OFTableStatsEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFTableStatsEntryVer10.READER);
 
             OFTableStatsReplyVer10 tableStatsReplyVer10 = new OFTableStatsReplyVer10(
                     xid,
@@ -402,46 +403,11 @@ class OFTableStatsReplyVer10 implements OFTableStatsReply {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFTableStatsReplyVer10 other = (OFTableStatsReplyVer10) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (entries == null) {
-            if (other.entries != null)
-                return false;
-        } else if (!entries.equals(other.entries))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((entries == null) ? 0 : entries.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((entries == null) ? 0 : entries.hashCode());
         return result;

@@ -18,30 +18,28 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import java.util.Set;
 import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFMeterConfig extends OFObject {
-    Set<OFMeterFlags> getFlags();
+    int getFlags();
     long getMeterId();
     List<OFMeterBand> getEntries();
     OFVersion getVersion();
+
 
     void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder  {
         OFMeterConfig build();
-        Set<OFMeterFlags> getFlags();
-        Builder setFlags(Set<OFMeterFlags> flags);
+        int getFlags();
+        Builder setFlags(int flags);
         long getMeterId();
         Builder setMeterId(long meterId);
         List<OFMeterBand> getEntries();

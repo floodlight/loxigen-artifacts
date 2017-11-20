@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -300,9 +298,11 @@ class OFBsnVrfCounterStatsReplyVer13 implements OFBsnVrfCounterStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnVrfCounterStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnVrfCounterStatsReply> {
         @Override
-        public OFBsnVrfCounterStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnVrfCounterStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -315,6 +315,7 @@ class OFBsnVrfCounterStatsReplyVer13 implements OFBsnVrfCounterStatsReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -338,7 +339,7 @@ class OFBsnVrfCounterStatsReplyVer13 implements OFBsnVrfCounterStatsReply {
             int subtype = bb.readInt();
             if(subtype != 0xf)
                 throw new OFParseError("Wrong subtype: Expected=0xfL(0xfL), got="+subtype);
-            List<OFBsnVrfCounterStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnVrfCounterStatsEntryVer13.READER);
+            List<OFBsnVrfCounterStatsEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnVrfCounterStatsEntryVer13.READER);
 
             OFBsnVrfCounterStatsReplyVer13 bsnVrfCounterStatsReplyVer13 = new OFBsnVrfCounterStatsReplyVer13(
                     xid,
@@ -453,46 +454,11 @@ class OFBsnVrfCounterStatsReplyVer13 implements OFBsnVrfCounterStatsReply {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnVrfCounterStatsReplyVer13 other = (OFBsnVrfCounterStatsReplyVer13) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (entries == null) {
-            if (other.entries != null)
-                return false;
-        } else if (!entries.equals(other.entries))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((entries == null) ? 0 : entries.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((entries == null) ? 0 : entries.hashCode());
         return result;

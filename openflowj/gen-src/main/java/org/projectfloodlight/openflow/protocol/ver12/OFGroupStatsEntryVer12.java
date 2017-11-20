@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -375,13 +373,16 @@ class OFGroupStatsEntryVer12 implements OFGroupStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFGroupStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFGroupStatsEntry> {
         @Override
-        public OFGroupStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -397,7 +398,7 @@ class OFGroupStatsEntryVer12 implements OFGroupStatsEntry {
             bb.skipBytes(4);
             U64 packetCount = U64.ofRaw(bb.readLong());
             U64 byteCount = U64.ofRaw(bb.readLong());
-            List<OFBucketCounter> bucketStats = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBucketCounterVer12.READER);
+            List<OFBucketCounter> bucketStats = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBucketCounterVer12.READER);
 
             OFGroupStatsEntryVer12 groupStatsEntryVer12 = new OFGroupStatsEntryVer12(
                     group,

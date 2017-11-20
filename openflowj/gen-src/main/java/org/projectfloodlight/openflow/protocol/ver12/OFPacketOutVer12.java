@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -116,11 +114,6 @@ class OFPacketOutVer12 implements OFPacketOut {
         return data;
     }
 
-    @Override
-    public Match getMatch()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property match not supported in version 1.2");
-    }
-
 
 
     public OFPacketOut.Builder createBuilder() {
@@ -210,15 +203,6 @@ class OFPacketOutVer12 implements OFPacketOut {
         this.data = data;
         this.dataSet = true;
         return this;
-    }
-    @Override
-    public Match getMatch()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property match not supported in version 1.2");
-    }
-
-    @Override
-    public OFPacketOut.Builder setMatch(Match match) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property match not supported in version 1.2");
     }
 
 
@@ -328,15 +312,6 @@ class OFPacketOutVer12 implements OFPacketOut {
         this.dataSet = true;
         return this;
     }
-    @Override
-    public Match getMatch()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property match not supported in version 1.2");
-    }
-
-    @Override
-    public OFPacketOut.Builder setMatch(Match match) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property match not supported in version 1.2");
-    }
 //
         @Override
         public OFPacketOut build() {
@@ -368,9 +343,11 @@ class OFPacketOutVer12 implements OFPacketOut {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPacketOut> {
+    static class Reader extends AbstractOFMessageReader<OFPacketOut> {
         @Override
-        public OFPacketOut readFrom(ByteBuf bb) throws OFParseError {
+        public OFPacketOut readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -383,6 +360,7 @@ class OFPacketOutVer12 implements OFPacketOut {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -396,7 +374,7 @@ class OFPacketOutVer12 implements OFPacketOut {
             int actionsLen = U16.f(bb.readShort());
             // pad: 6 bytes
             bb.skipBytes(6);
-            List<OFAction> actions = ChannelUtils.readList(bb, actionsLen, OFActionVer12.READER);
+            List<OFAction> actions = ChannelUtils.readList(context, bb, actionsLen, OFActionVer12.READER);
             byte[] data = ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
 
             OFPacketOutVer12 packetOutVer12 = new OFPacketOutVer12(
@@ -526,55 +504,11 @@ class OFPacketOutVer12 implements OFPacketOut {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFPacketOutVer12 other = (OFPacketOutVer12) obj;
-
-        // ignore XID
-        if (bufferId == null) {
-            if (other.bufferId != null)
-                return false;
-        } else if (!bufferId.equals(other.bufferId))
-            return false;
-        if (inPort == null) {
-            if (other.inPort != null)
-                return false;
-        } else if (!inPort.equals(other.inPort))
-            return false;
-        if (actions == null) {
-            if (other.actions != null)
-                return false;
-        } else if (!actions.equals(other.actions))
-            return false;
-        if (!Arrays.equals(data, other.data))
-                return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
-        result = prime * result + ((inPort == null) ? 0 : inPort.hashCode());
-        result = prime * result + ((actions == null) ? 0 : actions.hashCode());
-        result = prime * result + Arrays.hashCode(data);
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
         result = prime * result + ((inPort == null) ? 0 : inPort.hashCode());
         result = prime * result + ((actions == null) ? 0 : actions.hashCode());

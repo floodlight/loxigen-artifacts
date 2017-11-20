@@ -161,7 +161,7 @@ public class OFPort implements OFValueType<OFPort> {
      * NOTE: The port object may either be newly allocated or cached. Do not
      * rely on either behavior.
      *
-     * @param portNumber the integer port number
+     * @param portNumber
      * @return a corresponding OFPort
      */
     public static OFPort ofInt(final int portNumber) {
@@ -294,12 +294,7 @@ public class OFPort implements OFValueType<OFPort> {
         }
     }
 
-    /** 
-     * convenience function: delegates to ofInt 
-     *
-     * @param portNumber the integer port number
-     * @return a corresponding OFPort
-     */
+    /** convenience function: delegates to ofInt */
     public static OFPort of(final int portNumber) {
         return ofInt(portNumber);
     }
@@ -310,7 +305,7 @@ public class OFPort implements OFValueType<OFPort> {
      * 32-bit integer value allocated as its port number. NOTE: The port object
      * may either be newly allocated or cached. Do not rely on either behavior.
      *
-     * @param portNumber the short port number
+     * @param portNumber
      * @return a corresponding OFPort
      */
     public static OFPort ofShort(final short portNumber) {
@@ -443,11 +438,7 @@ public class OFPort implements OFValueType<OFPort> {
         }
     }
 
-    /** 
-     * return the port number as a int32 
-     *
-     * @return the port number as an integer
-     */
+    /** return the port number as a int32 */
     public int getPortNumber() {
         return portNumber;
     }
@@ -459,8 +450,7 @@ public class OFPort implements OFValueType<OFPort> {
      *
      * @throws IllegalArgumentException
      *             if a regular port number exceeds the maximum value in OF1.0
-     * @return the port number as a short
-     */
+     **/
     public short getShortPortNumber() {
 
         switch (portNumber) {

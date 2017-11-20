@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -169,9 +167,11 @@ class OFActionSetDlDstVer10 implements OFActionSetDlDst {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFActionSetDlDst> {
+    static class Reader extends AbstractOFMessageReader<OFActionSetDlDst> {
         @Override
-        public OFActionSetDlDst readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionSetDlDst readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 5
             short type = bb.readShort();
@@ -180,6 +180,7 @@ class OFActionSetDlDstVer10 implements OFActionSetDlDst {
             int length = U16.f(bb.readShort());
             if(length != 16)
                 throw new OFParseError("Wrong length: Expected=16(16), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

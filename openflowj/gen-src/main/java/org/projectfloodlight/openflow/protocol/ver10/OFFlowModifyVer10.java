@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -679,9 +677,11 @@ class OFFlowModifyVer10 implements OFFlowModify {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowModify> {
+    static class Reader extends AbstractOFMessageReader<OFFlowModify> {
         @Override
-        public OFFlowModify readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowModify readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -694,6 +694,7 @@ class OFFlowModifyVer10 implements OFFlowModify {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -702,7 +703,7 @@ class OFFlowModifyVer10 implements OFFlowModify {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            Match match = ChannelUtilsVer10.readOFMatch(bb);
+            Match match = ChannelUtilsVer10.readOFMatch(context, bb);
             U64 cookie = U64.ofRaw(bb.readLong());
             // fixed value property command == 1
             short command = bb.readShort();
@@ -714,7 +715,7 @@ class OFFlowModifyVer10 implements OFFlowModify {
             OFBufferId bufferId = OFBufferId.of(bb.readInt());
             OFPort outPort = OFPort.read2Bytes(bb);
             Set<OFFlowModFlags> flags = OFFlowModFlagsSerializerVer10.readFrom(bb);
-            List<OFAction> actions = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFActionVer10.READER);
+            List<OFAction> actions = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFActionVer10.READER);
 
             OFFlowModifyVer10 flowModifyVer10 = new OFFlowModifyVer10(
                     xid,
@@ -879,79 +880,11 @@ class OFFlowModifyVer10 implements OFFlowModify {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFFlowModifyVer10 other = (OFFlowModifyVer10) obj;
-
-        // ignore XID
-        if (match == null) {
-            if (other.match != null)
-                return false;
-        } else if (!match.equals(other.match))
-            return false;
-        if (cookie == null) {
-            if (other.cookie != null)
-                return false;
-        } else if (!cookie.equals(other.cookie))
-            return false;
-        if( idleTimeout != other.idleTimeout)
-            return false;
-        if( hardTimeout != other.hardTimeout)
-            return false;
-        if( priority != other.priority)
-            return false;
-        if (bufferId == null) {
-            if (other.bufferId != null)
-                return false;
-        } else if (!bufferId.equals(other.bufferId))
-            return false;
-        if (outPort == null) {
-            if (other.outPort != null)
-                return false;
-        } else if (!outPort.equals(other.outPort))
-            return false;
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (actions == null) {
-            if (other.actions != null)
-                return false;
-        } else if (!actions.equals(other.actions))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((match == null) ? 0 : match.hashCode());
-        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
-        result = prime * result + idleTimeout;
-        result = prime * result + hardTimeout;
-        result = prime * result + priority;
-        result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
-        result = prime * result + ((outPort == null) ? 0 : outPort.hashCode());
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((actions == null) ? 0 : actions.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((match == null) ? 0 : match.hashCode());
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + idleTimeout;

@@ -18,15 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.List;
-import java.util.Set;
 
 public interface OFInstructions {
     // Subfactories
@@ -48,11 +45,8 @@ public interface OFInstructions {
     OFInstructionBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck();
     OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
     OFInstructionBsnDisableVlanCounters bsnDisableVlanCounters();
-    OFInstructionBsnHashSelect.Builder buildBsnHashSelect() throws UnsupportedOperationException;
-    OFInstructionBsnHashSelect bsnHashSelect(Set<OFBsnHashSelectFlags> flags);
     OFInstructionBsnInternalPriority.Builder buildBsnInternalPriority() throws UnsupportedOperationException;
     OFInstructionBsnInternalPriority bsnInternalPriority(long value);
-    OFInstructionBsnNdpOffload bsnNdpOffload();
     OFInstructionBsnPacketOfDeath bsnPacketOfDeath();
     OFInstructionBsnPermit bsnPermit();
     OFInstructionBsnPrioritizePdus bsnPrioritizePdus();
@@ -60,8 +54,6 @@ public interface OFInstructions {
     OFInstructionBsnSpanDestination bsnSpanDestination();
     OFInstructionMeter.Builder buildMeter() throws UnsupportedOperationException;
     OFInstructionMeter meter(long meterId);
-    OFInstructionStatTrigger.Builder buildStatTrigger() throws UnsupportedOperationException;
-    OFInstructionStatTrigger statTrigger(Set<OFStatTriggerFlags> flags, OFOxsList thresholds);
 
     OFMessageReader<OFInstruction> getReader();
     OFVersion getVersion();

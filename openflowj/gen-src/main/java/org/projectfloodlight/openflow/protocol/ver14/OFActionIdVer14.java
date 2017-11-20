@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -36,69 +34,96 @@ abstract class OFActionIdVer14 {
 
     public final static OFActionIdVer14.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFActionId> {
+    static class Reader extends AbstractOFMessageReader<OFActionId> {
         @Override
-        public OFActionId readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionId readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
-            bb.readerIndex(start);
             switch(type) {
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.EXPERIMENTER=65535 for class OFActionIdExperimenterVer14
-                   return OFActionIdExperimenterVer14.READER.readFrom(bb);
+                   return OFActionIdExperimenterVer14.READER.readFrom(context, bb);
                case (short) 0xc:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.COPY_TTL_IN=12 for class OFActionIdCopyTtlInVer14
-                   return OFActionIdCopyTtlInVer14.READER.readFrom(bb);
+                   return OFActionIdCopyTtlInVer14.READER.readFrom(context, bb);
                case (short) 0xb:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.COPY_TTL_OUT=11 for class OFActionIdCopyTtlOutVer14
-                   return OFActionIdCopyTtlOutVer14.READER.readFrom(bb);
+                   return OFActionIdCopyTtlOutVer14.READER.readFrom(context, bb);
                case (short) 0x10:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.DEC_MPLS_TTL=16 for class OFActionIdDecMplsTtlVer14
-                   return OFActionIdDecMplsTtlVer14.READER.readFrom(bb);
+                   return OFActionIdDecMplsTtlVer14.READER.readFrom(context, bb);
                case (short) 0x18:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.DEC_NW_TTL=24 for class OFActionIdDecNwTtlVer14
-                   return OFActionIdDecNwTtlVer14.READER.readFrom(bb);
+                   return OFActionIdDecNwTtlVer14.READER.readFrom(context, bb);
                case (short) 0x16:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.GROUP=22 for class OFActionIdGroupVer14
-                   return OFActionIdGroupVer14.READER.readFrom(bb);
+                   return OFActionIdGroupVer14.READER.readFrom(context, bb);
                case (short) 0x0:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.OUTPUT=0 for class OFActionIdOutputVer14
-                   return OFActionIdOutputVer14.READER.readFrom(bb);
+                   return OFActionIdOutputVer14.READER.readFrom(context, bb);
                case (short) 0x14:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.POP_MPLS=20 for class OFActionIdPopMplsVer14
-                   return OFActionIdPopMplsVer14.READER.readFrom(bb);
+                   return OFActionIdPopMplsVer14.READER.readFrom(context, bb);
                case (short) 0x1b:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.POP_PBB=27 for class OFActionIdPopPbbVer14
-                   return OFActionIdPopPbbVer14.READER.readFrom(bb);
+                   return OFActionIdPopPbbVer14.READER.readFrom(context, bb);
                case (short) 0x12:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.POP_VLAN=18 for class OFActionIdPopVlanVer14
-                   return OFActionIdPopVlanVer14.READER.readFrom(bb);
+                   return OFActionIdPopVlanVer14.READER.readFrom(context, bb);
                case (short) 0x13:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.PUSH_MPLS=19 for class OFActionIdPushMplsVer14
-                   return OFActionIdPushMplsVer14.READER.readFrom(bb);
+                   return OFActionIdPushMplsVer14.READER.readFrom(context, bb);
                case (short) 0x1a:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.PUSH_PBB=26 for class OFActionIdPushPbbVer14
-                   return OFActionIdPushPbbVer14.READER.readFrom(bb);
+                   return OFActionIdPushPbbVer14.READER.readFrom(context, bb);
                case (short) 0x11:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.PUSH_VLAN=17 for class OFActionIdPushVlanVer14
-                   return OFActionIdPushVlanVer14.READER.readFrom(bb);
+                   return OFActionIdPushVlanVer14.READER.readFrom(context, bb);
                case (short) 0x19:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.SET_FIELD=25 for class OFActionIdSetFieldVer14
-                   return OFActionIdSetFieldVer14.READER.readFrom(bb);
+                   return OFActionIdSetFieldVer14.READER.readFrom(context, bb);
                case (short) 0xf:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.SET_MPLS_TTL=15 for class OFActionIdSetMplsTtlVer14
-                   return OFActionIdSetMplsTtlVer14.READER.readFrom(bb);
+                   return OFActionIdSetMplsTtlVer14.READER.readFrom(context, bb);
                case (short) 0x17:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.SET_NW_TTL=23 for class OFActionIdSetNwTtlVer14
-                   return OFActionIdSetNwTtlVer14.READER.readFrom(bb);
+                   return OFActionIdSetNwTtlVer14.READER.readFrom(context, bb);
                case (short) 0x15:
+                   bb.readerIndex(start);
                    // discriminator value OFActionType.SET_QUEUE=21 for class OFActionIdSetQueueVer14
-                   return OFActionIdSetQueueVer14.READER.readFrom(bb);
+                   return OFActionIdSetQueueVer14.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFActionIdVer14: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFActionIdVer14.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

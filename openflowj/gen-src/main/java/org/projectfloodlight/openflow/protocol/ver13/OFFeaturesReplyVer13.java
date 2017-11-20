@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -114,11 +112,6 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
     }
 
     @Override
-    public OFAuxId getAuxiliaryId() {
-        return auxiliaryId;
-    }
-
-    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
     }
@@ -129,13 +122,18 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
     }
 
     @Override
+    public List<OFPortDesc> getPorts()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property ports not supported in version 1.3");
+    }
+
+    @Override
     public Set<OFActionType> getActions()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
 
     @Override
-    public List<OFPortDesc> getPorts()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property ports not supported in version 1.3");
+    public OFAuxId getAuxiliaryId() {
+        return auxiliaryId;
     }
 
 
@@ -222,17 +220,6 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public OFAuxId getAuxiliaryId() {
-        return auxiliaryId;
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) {
-        this.auxiliaryId = auxiliaryId;
-        this.auxiliaryIdSet = true;
-        return this;
-    }
-    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
     }
@@ -255,6 +242,15 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
         return this;
     }
     @Override
+    public List<OFPortDesc> getPorts()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property ports not supported in version 1.3");
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property ports not supported in version 1.3");
+    }
+    @Override
     public Set<OFActionType> getActions()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
@@ -264,13 +260,15 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
             throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
-    public List<OFPortDesc> getPorts()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property ports not supported in version 1.3");
+    public OFAuxId getAuxiliaryId() {
+        return auxiliaryId;
     }
 
     @Override
-    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property ports not supported in version 1.3");
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) {
+        this.auxiliaryId = auxiliaryId;
+        this.auxiliaryIdSet = true;
+        return this;
     }
 
 
@@ -376,17 +374,6 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public OFAuxId getAuxiliaryId() {
-        return auxiliaryId;
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) {
-        this.auxiliaryId = auxiliaryId;
-        this.auxiliaryIdSet = true;
-        return this;
-    }
-    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
     }
@@ -409,6 +396,15 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
         return this;
     }
     @Override
+    public List<OFPortDesc> getPorts()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property ports not supported in version 1.3");
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property ports not supported in version 1.3");
+    }
+    @Override
     public Set<OFActionType> getActions()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
@@ -418,13 +414,15 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
             throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
-    public List<OFPortDesc> getPorts()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property ports not supported in version 1.3");
+    public OFAuxId getAuxiliaryId() {
+        return auxiliaryId;
     }
 
     @Override
-    public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property ports not supported in version 1.3");
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) {
+        this.auxiliaryId = auxiliaryId;
+        this.auxiliaryIdSet = true;
+        return this;
     }
 //
         @Override
@@ -459,9 +457,11 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFeaturesReply> {
+    static class Reader extends AbstractOFMessageReader<OFFeaturesReply> {
         @Override
-        public OFFeaturesReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFFeaturesReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -474,6 +474,7 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
             int length = U16.f(bb.readShort());
             if(length != 32)
                 throw new OFParseError("Wrong length: Expected=32(32), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -618,61 +619,11 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFFeaturesReplyVer13 other = (OFFeaturesReplyVer13) obj;
-
-        // ignore XID
-        if (datapathId == null) {
-            if (other.datapathId != null)
-                return false;
-        } else if (!datapathId.equals(other.datapathId))
-            return false;
-        if( nBuffers != other.nBuffers)
-            return false;
-        if( nTables != other.nTables)
-            return false;
-        if (auxiliaryId == null) {
-            if (other.auxiliaryId != null)
-                return false;
-        } else if (!auxiliaryId.equals(other.auxiliaryId))
-            return false;
-        if (capabilities == null) {
-            if (other.capabilities != null)
-                return false;
-        } else if (!capabilities.equals(other.capabilities))
-            return false;
-        if( reserved != other.reserved)
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((datapathId == null) ? 0 : datapathId.hashCode());
-        result = prime *  (int) (nBuffers ^ (nBuffers >>> 32));
-        result = prime * result + nTables;
-        result = prime * result + ((auxiliaryId == null) ? 0 : auxiliaryId.hashCode());
-        result = prime * result + ((capabilities == null) ? 0 : capabilities.hashCode());
-        result = prime *  (int) (reserved ^ (reserved >>> 32));
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((datapathId == null) ? 0 : datapathId.hashCode());
         result = prime *  (int) (nBuffers ^ (nBuffers >>> 32));
         result = prime * result + nTables;

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -104,16 +102,6 @@ class OFGroupModifyVer13 implements OFGroupModify {
         return buckets;
     }
 
-    @Override
-    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
-    }
-
-    @Override
-    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-
 
 
     public OFGroupModify.Builder createBuilder() {
@@ -195,24 +183,6 @@ class OFGroupModifyVer13 implements OFGroupModify {
         this.buckets = buckets;
         this.bucketsSet = true;
         return this;
-    }
-    @Override
-    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
-    }
-
-    @Override
-    public OFGroupModify.Builder setCommandBucketId(OFGroupBucket commandBucketId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
-    }
-    @Override
-    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-
-    @Override
-    public OFGroupModify.Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 
 
@@ -310,24 +280,6 @@ class OFGroupModifyVer13 implements OFGroupModify {
         this.bucketsSet = true;
         return this;
     }
-    @Override
-    public OFGroupBucket getCommandBucketId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
-    }
-
-    @Override
-    public OFGroupModify.Builder setCommandBucketId(OFGroupBucket commandBucketId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property commandBucketId not supported in version 1.3");
-    }
-    @Override
-    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-
-    @Override
-    public OFGroupModify.Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
 //
         @Override
         public OFGroupModify build() {
@@ -356,9 +308,11 @@ class OFGroupModifyVer13 implements OFGroupModify {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFGroupModify> {
+    static class Reader extends AbstractOFMessageReader<OFGroupModify> {
         @Override
-        public OFGroupModify readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupModify readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -371,6 +325,7 @@ class OFGroupModifyVer13 implements OFGroupModify {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -387,7 +342,7 @@ class OFGroupModifyVer13 implements OFGroupModify {
             // pad: 1 bytes
             bb.skipBytes(1);
             OFGroup group = OFGroup.read4Bytes(bb);
-            List<OFBucket> buckets = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBucketVer13.READER);
+            List<OFBucket> buckets = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBucketVer13.READER);
 
             OFGroupModifyVer13 groupModifyVer13 = new OFGroupModifyVer13(
                     xid,
@@ -504,52 +459,11 @@ class OFGroupModifyVer13 implements OFGroupModify {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFGroupModifyVer13 other = (OFGroupModifyVer13) obj;
-
-        // ignore XID
-        if (groupType == null) {
-            if (other.groupType != null)
-                return false;
-        } else if (!groupType.equals(other.groupType))
-            return false;
-        if (group == null) {
-            if (other.group != null)
-                return false;
-        } else if (!group.equals(other.group))
-            return false;
-        if (buckets == null) {
-            if (other.buckets != null)
-                return false;
-        } else if (!buckets.equals(other.buckets))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((groupType == null) ? 0 : groupType.hashCode());
-        result = prime * result + ((group == null) ? 0 : group.hashCode());
-        result = prime * result + ((buckets == null) ? 0 : buckets.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((groupType == null) ? 0 : groupType.hashCode());
         result = prime * result + ((group == null) ? 0 : group.hashCode());
         result = prime * result + ((buckets == null) ? 0 : buckets.hashCode());

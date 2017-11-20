@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -192,9 +190,11 @@ class OFBsnFlowIdleEnableGetRequestVer13 implements OFBsnFlowIdleEnableGetReques
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnFlowIdleEnableGetRequest> {
+    static class Reader extends AbstractOFMessageReader<OFBsnFlowIdleEnableGetRequest> {
         @Override
-        public OFBsnFlowIdleEnableGetRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnFlowIdleEnableGetRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -207,6 +207,7 @@ class OFBsnFlowIdleEnableGetRequestVer13 implements OFBsnFlowIdleEnableGetReques
             int length = U16.f(bb.readShort());
             if(length != 16)
                 throw new OFParseError("Wrong length: Expected=16(16), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -305,34 +306,11 @@ class OFBsnFlowIdleEnableGetRequestVer13 implements OFBsnFlowIdleEnableGetReques
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnFlowIdleEnableGetRequestVer13 other = (OFBsnFlowIdleEnableGetRequestVer13) obj;
-
-        // ignore XID
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         return result;
     }
 

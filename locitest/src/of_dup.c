@@ -10949,6 +10949,42 @@ of_echo_request_OF_VERSION_1_2_dup(
 }
 
 /**
+ * Duplicate an object of type of_experimenter_error_msg
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_experimenter_error_msg.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_experimenter_error_msg_t *
+of_experimenter_error_msg_OF_VERSION_1_2_dup(
+    of_experimenter_error_msg_t *src)
+{
+    of_experimenter_error_msg_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    of_octets_t octets;
+
+    if ((dst = of_experimenter_error_msg_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_experimenter_error_msg_xid_get(src, &val32);
+    of_experimenter_error_msg_xid_set(dst, val32);
+
+    of_experimenter_error_msg_subtype_get(src, &val16);
+    of_experimenter_error_msg_subtype_set(dst, val16);
+
+    of_experimenter_error_msg_experimenter_get(src, &val32);
+    of_experimenter_error_msg_experimenter_set(dst, val32);
+
+    of_experimenter_error_msg_data_get(src, &octets);
+    of_experimenter_error_msg_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_features_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -14083,16 +14119,12 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_ipv6_nd_target_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION_MASKED) {
-        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_ICMPV4_CODE) {
+        return of_oxm_icmpv4_code_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID_MASKED) {
         return of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
-        return of_oxm_vlan_vid_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IN_PHY_PORT) {
@@ -14123,10 +14155,6 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_lag_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV4_CODE) {
-        return of_oxm_icmpv4_code_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
         return of_oxm_bsn_udf2_masked_OF_VERSION_1_2_dup(src);
     }
@@ -14139,24 +14167,12 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_ipv6_flabel_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
-        return of_oxm_icmpv4_type_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_OXM_UDP_DST) {
         return of_oxm_udp_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
-        return of_oxm_conn_tracking_state_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
-        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED) {
-        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
+        return of_oxm_ipv6_nd_sll_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_ETH_TYPE) {
@@ -14169,10 +14185,6 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_VLAN_PCP) {
         return of_oxm_vlan_pcp_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED) {
-        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_TLL) {
@@ -14191,8 +14203,8 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED) {
-        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
+        return of_oxm_icmpv4_type_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
@@ -14215,36 +14227,32 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_vlan_pcp_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
-        return of_oxm_eth_type_masked_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_OXM_ARP_SHA) {
         return of_oxm_arp_sha_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
+        return of_oxm_eth_type_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_DST) {
         return of_oxm_tcp_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF6) {
-        return of_oxm_bsn_udf6_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
+        return of_oxm_ip_proto_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IP_ECN_MASKED) {
         return of_oxm_ip_ecn_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST) {
-        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_OXM_METADATA_MASKED) {
         return of_oxm_metadata_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
-        return of_oxm_icmpv6_type_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED) {
@@ -14253,6 +14261,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
         return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_SCTP_SRC) {
@@ -14275,24 +14287,16 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC) {
-        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED) {
-        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
+        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
         return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
-        return of_oxm_arp_spa_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
-        return of_oxm_ip_proto_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
@@ -14335,24 +14339,8 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_icmpv4_code_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_OVS_TCP_FLAGS_MASKED) {
-        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED) {
-        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST) {
-        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED) {
-        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
@@ -14365,10 +14353,6 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
         return of_oxm_ipv4_src_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED) {
-        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV4_SRC) {
@@ -14419,12 +14403,12 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_mpls_label_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IN_PORT) {
-        return of_oxm_in_port_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF6) {
+        return of_oxm_bsn_udf6_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED) {
-        return of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IN_PORT) {
+        return of_oxm_in_port_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF7_MASKED) {
@@ -14441,10 +14425,6 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_TCP_SRC) {
         return of_oxm_tcp_src_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
-        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_UDP_SRC_MASKED) {
@@ -14467,64 +14447,36 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_eth_src_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL) {
-        return of_oxm_conn_tracking_label_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC) {
-        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_VRF) {
         return of_oxm_bsn_vrf_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_DST) {
-        return of_oxm_ipv4_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
-        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
         return of_oxm_ipv6_src_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST) {
-        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
+        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IP_DSCP) {
         return of_oxm_ip_dscp_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE) {
-        return of_oxm_conn_tracking_zone_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
-        return of_oxm_ipv6_nd_sll_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
+        return of_oxm_vlan_vid_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
         return of_oxm_ipv6_flabel_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED) {
-        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC) {
-        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
         return of_oxm_mpls_tc_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_MARK) {
-        return of_oxm_conn_tracking_mark_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_DST_MASKED) {
@@ -14537,10 +14489,6 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
         return of_oxm_sctp_src_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO) {
-        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
@@ -14579,16 +14527,12 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
-        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_OXM_VLAN_VID) {
         return of_oxm_vlan_vid_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
+        return of_oxm_icmpv6_type_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
@@ -14599,24 +14543,12 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
-        return of_oxm_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_OXM_METADATA) {
         return of_oxm_metadata_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_OVS_TCP_FLAGS) {
-        return of_oxm_ovs_tcp_flags_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
         return of_oxm_bsn_udf0_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED) {
-        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
@@ -15180,59 +15112,6 @@ of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_dup(
 
     of_oxm_bsn_ingress_port_group_id_masked_value_mask_get(src, &val32);
     of_oxm_bsn_ingress_port_group_id_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_bsn_ip_fragmentation
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_ip_fragmentation.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_ip_fragmentation_t *
-of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_dup(
-    of_oxm_bsn_ip_fragmentation_t *src)
-{
-    of_oxm_bsn_ip_fragmentation_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_bsn_ip_fragmentation_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_ip_fragmentation_value_get(src, &val8);
-    of_oxm_bsn_ip_fragmentation_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_bsn_ip_fragmentation_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_ip_fragmentation_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_ip_fragmentation_masked_t *
-of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_dup(
-    of_oxm_bsn_ip_fragmentation_masked_t *src)
-{
-    of_oxm_bsn_ip_fragmentation_masked_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_bsn_ip_fragmentation_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_ip_fragmentation_masked_value_get(src, &val8);
-    of_oxm_bsn_ip_fragmentation_masked_value_set(dst, val8);
-
-    of_oxm_bsn_ip_fragmentation_masked_value_mask_get(src, &val8);
-    of_oxm_bsn_ip_fragmentation_masked_value_mask_set(dst, val8);
 
     return dst;
 }
@@ -16081,589 +15960,6 @@ of_oxm_bsn_vrf_masked_OF_VERSION_1_2_dup(
 
     of_oxm_bsn_vrf_masked_value_mask_get(src, &val32);
     of_oxm_bsn_vrf_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_ipv6_dst
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_ipv6_dst.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_ipv6_dst_t *
-of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_ipv6_dst_t *src)
-{
-    of_oxm_conn_tracking_ipv6_dst_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_oxm_conn_tracking_ipv6_dst_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_ipv6_dst_value_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_dst_value_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_ipv6_dst_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_ipv6_dst_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_ipv6_dst_masked_t *
-of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_ipv6_dst_masked_t *src)
-{
-    of_oxm_conn_tracking_ipv6_dst_masked_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_oxm_conn_tracking_ipv6_dst_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_ipv6_dst_masked_value_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_dst_masked_value_set(dst, ipv6);
-
-    of_oxm_conn_tracking_ipv6_dst_masked_value_mask_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_dst_masked_value_mask_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_ipv6_src
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_ipv6_src.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_ipv6_src_t *
-of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_ipv6_src_t *src)
-{
-    of_oxm_conn_tracking_ipv6_src_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_oxm_conn_tracking_ipv6_src_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_ipv6_src_value_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_src_value_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_ipv6_src_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_ipv6_src_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_ipv6_src_masked_t *
-of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_ipv6_src_masked_t *src)
-{
-    of_oxm_conn_tracking_ipv6_src_masked_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_oxm_conn_tracking_ipv6_src_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_ipv6_src_masked_value_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_src_masked_value_set(dst, ipv6);
-
-    of_oxm_conn_tracking_ipv6_src_masked_value_mask_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_src_masked_value_mask_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_label
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_label.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_label_t *
-of_oxm_conn_tracking_label_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_label_t *src)
-{
-    of_oxm_conn_tracking_label_t *dst;
-    uint128_t val128;
-
-    if ((dst = of_oxm_conn_tracking_label_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_label_value_get(src, &val128);
-    of_oxm_conn_tracking_label_value_set(dst, val128);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_label_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_label_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_label_masked_t *
-of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_label_masked_t *src)
-{
-    of_oxm_conn_tracking_label_masked_t *dst;
-    uint128_t val128;
-
-    if ((dst = of_oxm_conn_tracking_label_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_label_masked_value_get(src, &val128);
-    of_oxm_conn_tracking_label_masked_value_set(dst, val128);
-
-    of_oxm_conn_tracking_label_masked_value_mask_get(src, &val128);
-    of_oxm_conn_tracking_label_masked_value_mask_set(dst, val128);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_mark
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_mark.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_mark_t *
-of_oxm_conn_tracking_mark_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_mark_t *src)
-{
-    of_oxm_conn_tracking_mark_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_mark_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_mark_value_get(src, &val32);
-    of_oxm_conn_tracking_mark_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_mark_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_mark_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_mark_masked_t *
-of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_mark_masked_t *src)
-{
-    of_oxm_conn_tracking_mark_masked_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_mark_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_mark_masked_value_get(src, &val32);
-    of_oxm_conn_tracking_mark_masked_value_set(dst, val32);
-
-    of_oxm_conn_tracking_mark_masked_value_mask_get(src, &val32);
-    of_oxm_conn_tracking_mark_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_dst
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_dst.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_dst_t *
-of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_nw_dst_t *src)
-{
-    of_oxm_conn_tracking_nw_dst_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_nw_dst_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_dst_value_get(src, &val32);
-    of_oxm_conn_tracking_nw_dst_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_dst_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_dst_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_dst_masked_t *
-of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_nw_dst_masked_t *src)
-{
-    of_oxm_conn_tracking_nw_dst_masked_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_nw_dst_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_dst_masked_value_get(src, &val32);
-    of_oxm_conn_tracking_nw_dst_masked_value_set(dst, val32);
-
-    of_oxm_conn_tracking_nw_dst_masked_value_mask_get(src, &val32);
-    of_oxm_conn_tracking_nw_dst_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_proto
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_proto.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_proto_t *
-of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_nw_proto_t *src)
-{
-    of_oxm_conn_tracking_nw_proto_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_conn_tracking_nw_proto_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_proto_value_get(src, &val8);
-    of_oxm_conn_tracking_nw_proto_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_proto_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_proto_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_proto_masked_t *
-of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_nw_proto_masked_t *src)
-{
-    of_oxm_conn_tracking_nw_proto_masked_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_conn_tracking_nw_proto_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_proto_masked_value_get(src, &val8);
-    of_oxm_conn_tracking_nw_proto_masked_value_set(dst, val8);
-
-    of_oxm_conn_tracking_nw_proto_masked_value_mask_get(src, &val8);
-    of_oxm_conn_tracking_nw_proto_masked_value_mask_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_src
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_src.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_src_t *
-of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_nw_src_t *src)
-{
-    of_oxm_conn_tracking_nw_src_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_nw_src_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_src_value_get(src, &val32);
-    of_oxm_conn_tracking_nw_src_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_src_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_src_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_src_masked_t *
-of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_nw_src_masked_t *src)
-{
-    of_oxm_conn_tracking_nw_src_masked_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_nw_src_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_src_masked_value_get(src, &val32);
-    of_oxm_conn_tracking_nw_src_masked_value_set(dst, val32);
-
-    of_oxm_conn_tracking_nw_src_masked_value_mask_get(src, &val32);
-    of_oxm_conn_tracking_nw_src_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_state
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_state.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_state_t *
-of_oxm_conn_tracking_state_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_state_t *src)
-{
-    of_oxm_conn_tracking_state_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_state_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_state_value_get(src, &val32);
-    of_oxm_conn_tracking_state_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_state_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_state_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_state_masked_t *
-of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_state_masked_t *src)
-{
-    of_oxm_conn_tracking_state_masked_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_state_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_state_masked_value_get(src, &val32);
-    of_oxm_conn_tracking_state_masked_value_set(dst, val32);
-
-    of_oxm_conn_tracking_state_masked_value_mask_get(src, &val32);
-    of_oxm_conn_tracking_state_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_tp_dst
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_tp_dst.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_tp_dst_t *
-of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_tp_dst_t *src)
-{
-    of_oxm_conn_tracking_tp_dst_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_tp_dst_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_tp_dst_value_get(src, &val16);
-    of_oxm_conn_tracking_tp_dst_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_tp_dst_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_tp_dst_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_tp_dst_masked_t *
-of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_tp_dst_masked_t *src)
-{
-    of_oxm_conn_tracking_tp_dst_masked_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_tp_dst_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_tp_dst_masked_value_get(src, &val16);
-    of_oxm_conn_tracking_tp_dst_masked_value_set(dst, val16);
-
-    of_oxm_conn_tracking_tp_dst_masked_value_mask_get(src, &val16);
-    of_oxm_conn_tracking_tp_dst_masked_value_mask_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_tp_src
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_tp_src.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_tp_src_t *
-of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_tp_src_t *src)
-{
-    of_oxm_conn_tracking_tp_src_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_tp_src_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_tp_src_value_get(src, &val16);
-    of_oxm_conn_tracking_tp_src_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_tp_src_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_tp_src_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_tp_src_masked_t *
-of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_tp_src_masked_t *src)
-{
-    of_oxm_conn_tracking_tp_src_masked_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_tp_src_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_tp_src_masked_value_get(src, &val16);
-    of_oxm_conn_tracking_tp_src_masked_value_set(dst, val16);
-
-    of_oxm_conn_tracking_tp_src_masked_value_mask_get(src, &val16);
-    of_oxm_conn_tracking_tp_src_masked_value_mask_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_zone
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_zone.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_zone_t *
-of_oxm_conn_tracking_zone_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_zone_t *src)
-{
-    of_oxm_conn_tracking_zone_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_zone_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_zone_value_get(src, &val16);
-    of_oxm_conn_tracking_zone_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_zone_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_zone_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_zone_masked_t *
-of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_dup(
-    of_oxm_conn_tracking_zone_masked_t *src)
-{
-    of_oxm_conn_tracking_zone_masked_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_zone_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_zone_masked_value_get(src, &val16);
-    of_oxm_conn_tracking_zone_masked_value_set(dst, val16);
-
-    of_oxm_conn_tracking_zone_masked_value_mask_get(src, &val16);
-    of_oxm_conn_tracking_zone_masked_value_mask_set(dst, val16);
 
     return dst;
 }
@@ -17883,67 +17179,6 @@ of_oxm_mpls_tc_masked_OF_VERSION_1_2_dup(
 
     of_oxm_mpls_tc_masked_value_mask_get(src, &val8);
     of_oxm_mpls_tc_masked_value_mask_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_ovs_tcp_flags
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_ovs_tcp_flags.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_ovs_tcp_flags_t *
-of_oxm_ovs_tcp_flags_OF_VERSION_1_2_dup(
-    of_oxm_ovs_tcp_flags_t *src)
-{
-    of_oxm_ovs_tcp_flags_t *dst;
-    uint32_t val32;
-    uint16_t val16;
-
-    if ((dst = of_oxm_ovs_tcp_flags_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_ovs_tcp_flags_experimenter_id_get(src, &val32);
-    of_oxm_ovs_tcp_flags_experimenter_id_set(dst, val32);
-
-    of_oxm_ovs_tcp_flags_value_get(src, &val16);
-    of_oxm_ovs_tcp_flags_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_ovs_tcp_flags_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_ovs_tcp_flags_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_ovs_tcp_flags_masked_t *
-of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_dup(
-    of_oxm_ovs_tcp_flags_masked_t *src)
-{
-    of_oxm_ovs_tcp_flags_masked_t *dst;
-    uint32_t val32;
-    uint16_t val16;
-
-    if ((dst = of_oxm_ovs_tcp_flags_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_ovs_tcp_flags_masked_experimenter_id_get(src, &val32);
-    of_oxm_ovs_tcp_flags_masked_experimenter_id_set(dst, val32);
-
-    of_oxm_ovs_tcp_flags_masked_value_get(src, &val16);
-    of_oxm_ovs_tcp_flags_masked_value_set(dst, val16);
-
-    of_oxm_ovs_tcp_flags_masked_value_mask_get(src, &val16);
-    of_oxm_ovs_tcp_flags_masked_value_mask_set(dst, val16);
 
     return dst;
 }
@@ -20220,46 +19455,6 @@ of_bsn_debug_counter_stats_request_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_error
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_error.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_error_t *
-of_bsn_error_OF_VERSION_1_3_dup(
-    of_bsn_error_t *src)
-{
-    of_bsn_error_t *dst;
-    uint32_t val32;
-    uint16_t val16;
-    of_desc_str_t desc_str;
-    of_octets_t octets;
-
-    if ((dst = of_bsn_error_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_error_xid_get(src, &val32);
-    of_bsn_error_xid_set(dst, val32);
-
-    of_bsn_error_subtype_get(src, &val16);
-    of_bsn_error_subtype_set(dst, val16);
-
-    of_bsn_error_experimenter_get(src, &val32);
-    of_bsn_error_experimenter_set(dst, val32);
-
-    of_bsn_error_err_msg_get(src, &desc_str);
-    of_bsn_error_err_msg_set(dst, desc_str);
-
-    of_bsn_error_data_get(src, &octets);
-    of_bsn_error_data_set(dst, &octets);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_flow_checksum_bucket_stats_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -21173,52 +20368,6 @@ of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_dup(
 
     of_bsn_gentable_entry_stats_request_checksum_mask_get(src, &checksum_128);
     of_bsn_gentable_entry_stats_request_checksum_mask_set(dst, checksum_128);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_gentable_error
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_gentable_error.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_gentable_error_t *
-of_bsn_gentable_error_OF_VERSION_1_3_dup(
-    of_bsn_gentable_error_t *src)
-{
-    of_bsn_gentable_error_t *dst;
-    uint32_t val32;
-    uint16_t val16;
-    of_desc_str_t desc_str;
-    of_octets_t octets;
-
-    if ((dst = of_bsn_gentable_error_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_error_xid_get(src, &val32);
-    of_bsn_gentable_error_xid_set(dst, val32);
-
-    of_bsn_gentable_error_subtype_get(src, &val16);
-    of_bsn_gentable_error_subtype_set(dst, val16);
-
-    of_bsn_gentable_error_experimenter_get(src, &val32);
-    of_bsn_gentable_error_experimenter_set(dst, val32);
-
-    of_bsn_gentable_error_error_code_get(src, &val16);
-    of_bsn_gentable_error_error_code_set(dst, val16);
-
-    of_bsn_gentable_error_table_id_get(src, &val16);
-    of_bsn_gentable_error_table_id_set(dst, val16);
-
-    of_bsn_gentable_error_err_msg_get(src, &desc_str);
-    of_bsn_gentable_error_err_msg_set(dst, desc_str);
-
-    of_bsn_gentable_error_data_get(src, &octets);
-    of_bsn_gentable_error_data_set(dst, &octets);
 
     return dst;
 }
@@ -23424,6 +22573,42 @@ of_echo_request_OF_VERSION_1_3_dup(
 
     of_echo_request_data_get(src, &octets);
     of_echo_request_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_experimenter_error_msg
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_experimenter_error_msg.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_experimenter_error_msg_t *
+of_experimenter_error_msg_OF_VERSION_1_3_dup(
+    of_experimenter_error_msg_t *src)
+{
+    of_experimenter_error_msg_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    of_octets_t octets;
+
+    if ((dst = of_experimenter_error_msg_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_experimenter_error_msg_xid_get(src, &val32);
+    of_experimenter_error_msg_xid_set(dst, val32);
+
+    of_experimenter_error_msg_subtype_get(src, &val16);
+    of_experimenter_error_msg_subtype_set(dst, val16);
+
+    of_experimenter_error_msg_experimenter_get(src, &val32);
+    of_experimenter_error_msg_experimenter_set(dst, val32);
+
+    of_experimenter_error_msg_data_get(src, &octets);
+    of_experimenter_error_msg_data_set(dst, &octets);
 
     return dst;
 }
@@ -27648,12 +26833,60 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
+    if (src->object_id == OF_BSN_TLV_MAC_MASK) {
+        return of_bsn_tlv_mac_mask_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_VID) {
+        return of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTOR_STATE) {
+        return of_bsn_tlv_actor_state_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MAC) {
+        return of_bsn_tlv_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_PCP) {
+        return of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
+        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_CONVERGENCE_STATUS) {
         return of_bsn_tlv_convergence_status_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_DROP) {
-        return of_bsn_tlv_drop_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
+        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ANCHOR) {
+        return of_bsn_tlv_anchor_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TX_BYTES) {
+        return of_bsn_tlv_tx_bytes_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
+        return of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4_DST) {
+        return of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TCP_SRC) {
+        return of_bsn_tlv_tcp_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DATA) {
+        return of_bsn_tlv_data_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_CIRCUIT_ID) {
@@ -27664,12 +26897,44 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PORT_USAGE) {
-        return of_bsn_tlv_port_usage_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_OFFSET) {
+        return of_bsn_tlv_offset_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PORT_SPEED_GBPS) {
-        return of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
+        return of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_OFFSET) {
+        return of_bsn_tlv_udf_offset_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MPLS_CONTROL_WORD) {
+        return of_bsn_tlv_mpls_control_word_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RX_BYTES) {
+        return of_bsn_tlv_rx_bytes_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ICMP_TYPE) {
+        return of_bsn_tlv_icmp_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
+        return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
+        return of_bsn_tlv_partner_state_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RX_PACKETS) {
+        return of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS) {
+        return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC) {
@@ -27680,200 +26945,44 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_request_packets_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_NUM) {
-        return of_bsn_tlv_partner_port_num_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT) {
+        return of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_UINT64_LIST) {
-        return of_bsn_tlv_uint64_list_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS) {
-        return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L3_INTERFACE_CLASS_ID) {
-        return of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_BROADCAST_RATE) {
-        return of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ROUTING_PARAM) {
-        return of_bsn_tlv_routing_param_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
-        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
-        return of_bsn_tlv_udf_length_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LOOPBACK_PORT) {
-        return of_bsn_tlv_loopback_port_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_GTP_HEADER_MATCH) {
-        return of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NO_NS_RESPONSE) {
-        return of_bsn_tlv_no_ns_response_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC) {
-        return of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RATE_UNIT) {
-        return of_bsn_tlv_rate_unit_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ECN) {
-        return of_bsn_tlv_ecn_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VLAN_VID) {
-        return of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_ALGORITHM) {
-        return of_bsn_tlv_hash_algorithm_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INTERNAL_MAC) {
-        return of_bsn_tlv_internal_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HEADER_SIZE) {
-        return of_bsn_tlv_header_size_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VFI) {
-        return of_bsn_tlv_vfi_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_PRIORITY) {
-        return of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ETH_SRC) {
-        return of_bsn_tlv_eth_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LAG_OPTIONS) {
-        return of_bsn_tlv_lag_options_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FORWARD_ERROR_CORRECTION) {
-        return of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STATUS) {
-        return of_bsn_tlv_status_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4) {
-        return of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV6) {
-        return of_bsn_tlv_ipv6_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_NUM) {
-        return of_bsn_tlv_actor_port_num_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EGRESS_ONLY) {
-        return of_bsn_tlv_egress_only_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_KNOWN_MULTICAST_RATE) {
-        return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ANCHOR) {
-        return of_bsn_tlv_anchor_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4_NETMASK) {
-        return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L3_DST_CLASS_ID) {
-        return of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_REPLY_PACKETS) {
-        return of_bsn_tlv_reply_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_GTP_PORT_MATCH) {
-        return of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_CPU_LAG) {
-        return of_bsn_tlv_cpu_lag_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
-        return of_bsn_tlv_generation_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LOOPBACK_MODE) {
-        return of_bsn_tlv_loopback_mode_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
-        return of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EGRESS_PORT_GROUP_ID) {
-        return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TCP_SRC) {
-        return of_bsn_tlv_tcp_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MPLS_LABEL) {
-        return of_bsn_tlv_mpls_label_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RX_BYTES) {
-        return of_bsn_tlv_rx_bytes_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RX_PACKETS) {
-        return of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TCP_FLAGS) {
-        return of_bsn_tlv_tcp_flags_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_OUTER_SRC_MAC) {
-        return of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_SEED) {
-        return of_bsn_tlv_hash_seed_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_NAME) {
+        return of_bsn_tlv_name_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_MISS_PACKETS) {
         return of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_IPV4_SRC) {
+        return of_bsn_tlv_ipv4_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_NUM) {
+        return of_bsn_tlv_partner_port_num_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IDLE_TIME) {
+        return of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_EXTERNAL_IP) {
         return of_bsn_tlv_external_ip_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_IPV4_SRC) {
-        return of_bsn_tlv_ipv4_src_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_IDLE_NOTIFICATION) {
+        return of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC) {
+        return of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VRF) {
+        return of_bsn_tlv_vrf_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY) {
@@ -27884,348 +26993,60 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_igmp_snooping_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_INGRESS_PORT_GROUP_ID) {
-        return of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_MAC) {
-        return of_bsn_tlv_external_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEGATE) {
-        return of_bsn_tlv_negate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMPV6_CHKSUM) {
-        return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
-        return of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IP_PROTO) {
-        return of_bsn_tlv_ip_proto_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TIMESTAMP) {
-        return of_bsn_tlv_timestamp_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_STATE) {
-        return of_bsn_tlv_actor_state_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NO_ARP_RESPONSE) {
-        return of_bsn_tlv_no_arp_response_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_ID) {
-        return of_bsn_tlv_udf_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV6_PREFIX) {
-        return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
-        return of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DISABLE_SRC_MAC_CHECK) {
-        return of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ENHANCED_HASH_CAPABILITY) {
-        return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RECORD_PACKETS) {
-        return of_bsn_tlv_record_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MPLS_CONTROL_WORD) {
-        return of_bsn_tlv_mpls_control_word_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ETH_TYPE) {
-        return of_bsn_tlv_eth_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
-        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT) {
-        return of_bsn_tlv_port_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MAC_MASK) {
-        return of_bsn_tlv_mac_mask_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_KEY) {
-        return of_bsn_tlv_actor_key_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VPN_KEY) {
-        return of_bsn_tlv_vpn_key_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS) {
-        return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEXTHOP_TYPE_VXLAN) {
-        return of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MCG_TYPE_VXLAN) {
-        return of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DECAP) {
-        return of_bsn_tlv_decap_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DATA) {
-        return of_bsn_tlv_data_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VLAN_VID_MASK) {
-        return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_QOS_PRIORITY) {
-        return of_bsn_tlv_qos_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
-        return of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VIRTUAL) {
-        return of_bsn_tlv_virtual_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT) {
-        return of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NAME) {
-        return of_bsn_tlv_name_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TCP_DST) {
-        return of_bsn_tlv_tcp_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_OFFSET) {
-        return of_bsn_tlv_offset_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IDLE_TIME) {
-        return of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IDLE_NOTIFICATION) {
-        return of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
+        return of_bsn_tlv_udf_length_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_L2_MULTICAST_LOOKUP) {
         return of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_HASH_PACKET_TYPE) {
-        return of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEXT_HOP_MAC) {
-        return of_bsn_tlv_next_hop_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UNICAST_RATE) {
-        return of_bsn_tlv_unicast_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_OFFSET) {
-        return of_bsn_tlv_udf_offset_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
-        return of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_APPLY_PACKETS) {
-        return of_bsn_tlv_apply_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV6_SRC) {
-        return of_bsn_tlv_ipv6_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_USE_PACKET_STATE) {
-        return of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDP_SRC) {
-        return of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
-        return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_REST_SERVER) {
-        return of_bsn_tlv_rest_server_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMP_TYPE) {
-        return of_bsn_tlv_icmp_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_QUEUE_ID) {
-        return of_bsn_tlv_queue_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PDUA_RX_INSTANCE) {
-        return of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_TYPE) {
-        return of_bsn_tlv_hash_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MULTICAST_INTERFACE_ID) {
-        return of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP) {
-        return of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMP_ID) {
-        return of_bsn_tlv_icmp_id_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_BSN_TLV_PARTNER_PORT_PRIORITY) {
         return of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TTL) {
-        return of_bsn_tlv_ttl_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_OPTICS_ALWAYS_ENABLED) {
-        return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ETH_DST) {
-        return of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DATA_MASK) {
-        return of_bsn_tlv_data_mask_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
-        return of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MAC) {
-        return of_bsn_tlv_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
-        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RATE_LIMIT) {
-        return of_bsn_tlv_rate_limit_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TX_BYTES) {
-        return of_bsn_tlv_tx_bytes_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_AUTO_NEGOTIATION) {
-        return of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4_DST) {
-        return of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FORCE_LINK_UP) {
-        return of_bsn_tlv_force_link_up_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_URI_SCHEME) {
-        return of_bsn_tlv_uri_scheme_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
-        return of_bsn_tlv_udf_anchor_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT_VXLAN_MODE) {
-        return of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_PACKET_FIELD) {
-        return of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC) {
-        return of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L3_SRC_CLASS_ID) {
-        return of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
-        return of_bsn_tlv_partner_state_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DSCP) {
-        return of_bsn_tlv_dscp_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UNKNOWN_MULTICAST_RATE) {
-        return of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
-        return of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PARTNER_KEY) {
         return of_bsn_tlv_partner_key_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VFP_CLASS_ID) {
-        return of_bsn_tlv_vfp_class_id_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_MAC) {
+        return of_bsn_tlv_external_mac_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UDP_DST) {
         return of_bsn_tlv_udp_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VRF) {
-        return of_bsn_tlv_vrf_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_QUEUE_ID) {
+        return of_bsn_tlv_queue_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
+        return of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MPLS_LABEL) {
+        return of_bsn_tlv_mpls_label_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NEGATE) {
+        return of_bsn_tlv_negate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TCP_DST) {
+        return of_bsn_tlv_tcp_dst_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_INTERVAL) {
         return of_bsn_tlv_interval_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VNI) {
-        return of_bsn_tlv_vni_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
+        return of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_TUNNEL_CAPABILITY) {
-        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS) {
+        return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
@@ -28236,36 +27057,64 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_NDP_OFFLOAD) {
-        return of_bsn_tlv_ndp_offload_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_IP_PROTO) {
+        return of_bsn_tlv_ip_proto_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PARENT_PORT) {
-        return of_bsn_tlv_parent_port_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_UDP_SRC) {
+        return of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VXLAN_EGRESS_LAG) {
-        return of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_KEY) {
+        return of_bsn_tlv_actor_key_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_INTERNAL_MAC) {
+        return of_bsn_tlv_internal_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_VID_MASK) {
+        return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
+        return of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HEADER_SIZE) {
+        return of_bsn_tlv_header_size_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
+        return of_bsn_tlv_generation_id_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_PRIORITY) {
+        return of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4) {
+        return of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PRIORITY) {
         return of_bsn_tlv_priority_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VLAN_PCP) {
-        return of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_UDF_ID) {
+        return of_bsn_tlv_udf_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_IPV6_DST) {
-        return of_bsn_tlv_ipv6_dst_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_ETH_SRC) {
+        return of_bsn_tlv_eth_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_ICMP_CODE) {
-        return of_bsn_tlv_icmp_code_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_IPV6) {
+        return of_bsn_tlv_ipv6_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_NDP_STATIC) {
-        return of_bsn_tlv_ndp_static_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_NUM) {
+        return of_bsn_tlv_actor_port_num_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_REFERENCE) {
@@ -28276,24 +27125,48 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_bucket_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PUSH_VLAN_ON_INGRESS) {
-        return of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP) {
+        return of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PUSH_VLAN_ON_EGRESS) {
-        return of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC) {
+        return of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_APPLY_BYTES) {
-        return of_bsn_tlv_apply_bytes_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_ICMP_CODE) {
+        return of_bsn_tlv_icmp_code_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_UNTAGGED) {
-        return of_bsn_tlv_untagged_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_ICMP_ID) {
+        return of_bsn_tlv_icmp_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VLAN_MAC_LIST) {
-        return of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
+        return of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4_NETMASK) {
+        return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ETH_DST) {
+        return of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_REPLY_PACKETS) {
+        return of_bsn_tlv_reply_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
+        return of_bsn_tlv_udf_anchor_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PORT) {
+        return of_bsn_tlv_port_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
+        return of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -28475,81 +27348,6 @@ of_bsn_tlv_anchor_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_apply_bytes
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_apply_bytes.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_apply_bytes_t *
-of_bsn_tlv_apply_bytes_OF_VERSION_1_3_dup(
-    of_bsn_tlv_apply_bytes_t *src)
-{
-    of_bsn_tlv_apply_bytes_t *dst;
-    uint64_t val64;
-
-    if ((dst = of_bsn_tlv_apply_bytes_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_apply_bytes_value_get(src, &val64);
-    of_bsn_tlv_apply_bytes_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_apply_packets
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_apply_packets.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_apply_packets_t *
-of_bsn_tlv_apply_packets_OF_VERSION_1_3_dup(
-    of_bsn_tlv_apply_packets_t *src)
-{
-    of_bsn_tlv_apply_packets_t *dst;
-    uint64_t val64;
-
-    if ((dst = of_bsn_tlv_apply_packets_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_apply_packets_value_get(src, &val64);
-    of_bsn_tlv_apply_packets_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_auto_negotiation
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_auto_negotiation.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_auto_negotiation_t *
-of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dup(
-    of_bsn_tlv_auto_negotiation_t *src)
-{
-    of_bsn_tlv_auto_negotiation_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_auto_negotiation_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_auto_negotiation_value_get(src, &val8);
-    of_bsn_tlv_auto_negotiation_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_broadcast_query_timeout
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -28570,31 +27368,6 @@ of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_broadcast_query_timeout_value_get(src, &val32);
     of_bsn_tlv_broadcast_query_timeout_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_broadcast_rate
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_broadcast_rate.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_broadcast_rate_t *
-of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dup(
-    of_bsn_tlv_broadcast_rate_t *src)
-{
-    of_bsn_tlv_broadcast_rate_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_broadcast_rate_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_broadcast_rate_value_get(src, &val32);
-    of_bsn_tlv_broadcast_rate_value_set(dst, val32);
 
     return dst;
 }
@@ -28684,27 +27457,6 @@ of_bsn_tlv_convergence_status_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_cpu_lag
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_cpu_lag.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_cpu_lag_t *
-of_bsn_tlv_cpu_lag_OF_VERSION_1_3_dup(
-    of_bsn_tlv_cpu_lag_t *src)
-{
-    of_bsn_tlv_cpu_lag_t *dst;
-
-    if ((dst = of_bsn_tlv_cpu_lag_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_crc_enabled
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -28755,219 +27507,6 @@ of_bsn_tlv_data_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_data_mask
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_data_mask.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_data_mask_t *
-of_bsn_tlv_data_mask_OF_VERSION_1_3_dup(
-    of_bsn_tlv_data_mask_t *src)
-{
-    of_bsn_tlv_data_mask_t *dst;
-    of_octets_t octets;
-
-    if ((dst = of_bsn_tlv_data_mask_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_data_mask_value_get(src, &octets);
-    of_bsn_tlv_data_mask_value_set(dst, &octets);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_decap
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_decap.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_decap_t *
-of_bsn_tlv_decap_OF_VERSION_1_3_dup(
-    of_bsn_tlv_decap_t *src)
-{
-    of_bsn_tlv_decap_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_decap_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_decap_value_get(src, &val16);
-    of_bsn_tlv_decap_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_disable_src_mac_check
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_disable_src_mac_check.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_disable_src_mac_check_t *
-of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_dup(
-    of_bsn_tlv_disable_src_mac_check_t *src)
-{
-    of_bsn_tlv_disable_src_mac_check_t *dst;
-
-    if ((dst = of_bsn_tlv_disable_src_mac_check_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_drop
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_drop.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_drop_t *
-of_bsn_tlv_drop_OF_VERSION_1_3_dup(
-    of_bsn_tlv_drop_t *src)
-{
-    of_bsn_tlv_drop_t *dst;
-
-    if ((dst = of_bsn_tlv_drop_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_dscp
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_dscp.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_dscp_t *
-of_bsn_tlv_dscp_OF_VERSION_1_3_dup(
-    of_bsn_tlv_dscp_t *src)
-{
-    of_bsn_tlv_dscp_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_dscp_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_dscp_value_get(src, &val16);
-    of_bsn_tlv_dscp_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_ecn
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ecn.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ecn_t *
-of_bsn_tlv_ecn_OF_VERSION_1_3_dup(
-    of_bsn_tlv_ecn_t *src)
-{
-    of_bsn_tlv_ecn_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_ecn_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_ecn_value_get(src, &val8);
-    of_bsn_tlv_ecn_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_egress_only
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_egress_only.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_egress_only_t *
-of_bsn_tlv_egress_only_OF_VERSION_1_3_dup(
-    of_bsn_tlv_egress_only_t *src)
-{
-    of_bsn_tlv_egress_only_t *dst;
-
-    if ((dst = of_bsn_tlv_egress_only_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_egress_port_group_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_egress_port_group_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_egress_port_group_id_t *
-of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dup(
-    of_bsn_tlv_egress_port_group_id_t *src)
-{
-    of_bsn_tlv_egress_port_group_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_egress_port_group_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_egress_port_group_id_value_get(src, &val32);
-    of_bsn_tlv_egress_port_group_id_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_enhanced_hash_capability
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_enhanced_hash_capability.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_enhanced_hash_capability_t *
-of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_dup(
-    of_bsn_tlv_enhanced_hash_capability_t *src)
-{
-    of_bsn_tlv_enhanced_hash_capability_t *dst;
-    uint64_t val64;
-
-    if ((dst = of_bsn_tlv_enhanced_hash_capability_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_enhanced_hash_capability_value_get(src, &val64);
-    of_bsn_tlv_enhanced_hash_capability_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_eth_dst
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -29013,31 +27552,6 @@ of_bsn_tlv_eth_src_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_eth_src_value_get(src, &mac_addr);
     of_bsn_tlv_eth_src_value_set(dst, mac_addr);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_eth_type
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_eth_type.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_eth_type_t *
-of_bsn_tlv_eth_type_OF_VERSION_1_3_dup(
-    of_bsn_tlv_eth_type_t *src)
-{
-    of_bsn_tlv_eth_type_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_eth_type_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_eth_type_value_get(src, &val16);
-    of_bsn_tlv_eth_type_value_set(dst, val16);
 
     return dst;
 }
@@ -29168,52 +27682,6 @@ of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_force_link_up
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_force_link_up.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_force_link_up_t *
-of_bsn_tlv_force_link_up_OF_VERSION_1_3_dup(
-    of_bsn_tlv_force_link_up_t *src)
-{
-    of_bsn_tlv_force_link_up_t *dst;
-
-    if ((dst = of_bsn_tlv_force_link_up_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_forward_error_correction
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_forward_error_correction.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_forward_error_correction_t *
-of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_dup(
-    of_bsn_tlv_forward_error_correction_t *src)
-{
-    of_bsn_tlv_forward_error_correction_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_forward_error_correction_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_forward_error_correction_value_get(src, &val8);
-    of_bsn_tlv_forward_error_correction_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_generation_id
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -29234,194 +27702,6 @@ of_bsn_tlv_generation_id_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_generation_id_value_get(src, &val64);
     of_bsn_tlv_generation_id_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_algorithm
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_algorithm.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_algorithm_t *
-of_bsn_tlv_hash_algorithm_OF_VERSION_1_3_dup(
-    of_bsn_tlv_hash_algorithm_t *src)
-{
-    of_bsn_tlv_hash_algorithm_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_hash_algorithm_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_algorithm_value_get(src, &val16);
-    of_bsn_tlv_hash_algorithm_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_gtp_header_match
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_gtp_header_match.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_gtp_header_match_t *
-of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_dup(
-    of_bsn_tlv_hash_gtp_header_match_t *src)
-{
-    of_bsn_tlv_hash_gtp_header_match_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_hash_gtp_header_match_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_gtp_header_match_first_header_byte_get(src, &val8);
-    of_bsn_tlv_hash_gtp_header_match_first_header_byte_set(dst, val8);
-
-    of_bsn_tlv_hash_gtp_header_match_first_header_mask_get(src, &val8);
-    of_bsn_tlv_hash_gtp_header_match_first_header_mask_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_gtp_port_match
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_gtp_port_match.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_gtp_port_match_t *
-of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_dup(
-    of_bsn_tlv_hash_gtp_port_match_t *src)
-{
-    of_bsn_tlv_hash_gtp_port_match_t *dst;
-    uint8_t val8;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_hash_gtp_port_match_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_gtp_port_match_match_get(src, &val8);
-    of_bsn_tlv_hash_gtp_port_match_match_set(dst, val8);
-
-    of_bsn_tlv_hash_gtp_port_match_src_port_get(src, &val16);
-    of_bsn_tlv_hash_gtp_port_match_src_port_set(dst, val16);
-
-    of_bsn_tlv_hash_gtp_port_match_dst_port_get(src, &val16);
-    of_bsn_tlv_hash_gtp_port_match_dst_port_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_packet_field
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_packet_field.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_packet_field_t *
-of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_dup(
-    of_bsn_tlv_hash_packet_field_t *src)
-{
-    of_bsn_tlv_hash_packet_field_t *dst;
-    uint64_t val64;
-
-    if ((dst = of_bsn_tlv_hash_packet_field_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_packet_field_value_get(src, &val64);
-    of_bsn_tlv_hash_packet_field_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_packet_type
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_packet_type.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_packet_type_t *
-of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_dup(
-    of_bsn_tlv_hash_packet_type_t *src)
-{
-    of_bsn_tlv_hash_packet_type_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_hash_packet_type_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_packet_type_value_get(src, &val8);
-    of_bsn_tlv_hash_packet_type_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_seed
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_seed.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_seed_t *
-of_bsn_tlv_hash_seed_OF_VERSION_1_3_dup(
-    of_bsn_tlv_hash_seed_t *src)
-{
-    of_bsn_tlv_hash_seed_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_hash_seed_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_seed_seed1_get(src, &val32);
-    of_bsn_tlv_hash_seed_seed1_set(dst, val32);
-
-    of_bsn_tlv_hash_seed_seed2_get(src, &val32);
-    of_bsn_tlv_hash_seed_seed2_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_type
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_type.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_type_t *
-of_bsn_tlv_hash_type_OF_VERSION_1_3_dup(
-    of_bsn_tlv_hash_type_t *src)
-{
-    of_bsn_tlv_hash_type_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_hash_type_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_type_value_get(src, &val8);
-    of_bsn_tlv_hash_type_value_set(dst, val8);
 
     return dst;
 }
@@ -29527,31 +27807,6 @@ of_bsn_tlv_icmp_type_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_icmpv6_chksum
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_icmpv6_chksum.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_icmpv6_chksum_t *
-of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dup(
-    of_bsn_tlv_icmpv6_chksum_t *src)
-{
-    of_bsn_tlv_icmpv6_chksum_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_icmpv6_chksum_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_icmpv6_chksum_value_get(src, &val16);
-    of_bsn_tlv_icmpv6_chksum_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_idle_notification
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -29639,31 +27894,6 @@ of_bsn_tlv_igmp_snooping_OF_VERSION_1_3_dup(
     if ((dst = of_bsn_tlv_igmp_snooping_new(src->version)) == NULL) {
         return NULL;
     }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_ingress_port_group_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ingress_port_group_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ingress_port_group_id_t *
-of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3_dup(
-    of_bsn_tlv_ingress_port_group_id_t *src)
-{
-    of_bsn_tlv_ingress_port_group_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_ingress_port_group_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_ingress_port_group_id_value_get(src, &val32);
-    of_bsn_tlv_ingress_port_group_id_value_set(dst, val32);
 
     return dst;
 }
@@ -29894,110 +28124,6 @@ of_bsn_tlv_ipv6_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_ipv6_dst
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ipv6_dst.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ipv6_dst_t *
-of_bsn_tlv_ipv6_dst_OF_VERSION_1_3_dup(
-    of_bsn_tlv_ipv6_dst_t *src)
-{
-    of_bsn_tlv_ipv6_dst_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_bsn_tlv_ipv6_dst_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_ipv6_dst_value_get(src, &ipv6);
-    of_bsn_tlv_ipv6_dst_value_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_ipv6_prefix
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ipv6_prefix.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ipv6_prefix_t *
-of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_dup(
-    of_bsn_tlv_ipv6_prefix_t *src)
-{
-    of_bsn_tlv_ipv6_prefix_t *dst;
-    of_ipv6_t ipv6;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_ipv6_prefix_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_ipv6_prefix_value_get(src, &ipv6);
-    of_bsn_tlv_ipv6_prefix_value_set(dst, ipv6);
-
-    of_bsn_tlv_ipv6_prefix_prefix_length_get(src, &val8);
-    of_bsn_tlv_ipv6_prefix_prefix_length_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_ipv6_src
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ipv6_src.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ipv6_src_t *
-of_bsn_tlv_ipv6_src_OF_VERSION_1_3_dup(
-    of_bsn_tlv_ipv6_src_t *src)
-{
-    of_bsn_tlv_ipv6_src_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_bsn_tlv_ipv6_src_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_ipv6_src_value_get(src, &ipv6);
-    of_bsn_tlv_ipv6_src_value_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_known_multicast_rate
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_known_multicast_rate.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_known_multicast_rate_t *
-of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dup(
-    of_bsn_tlv_known_multicast_rate_t *src)
-{
-    of_bsn_tlv_known_multicast_rate_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_known_multicast_rate_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_known_multicast_rate_value_get(src, &val32);
-    of_bsn_tlv_known_multicast_rate_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_l2_multicast_lookup
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -30014,156 +28140,6 @@ of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_dup(
     if ((dst = of_bsn_tlv_l2_multicast_lookup_new(src->version)) == NULL) {
         return NULL;
     }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_l3_dst_class_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_l3_dst_class_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_l3_dst_class_id_t *
-of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_3_dup(
-    of_bsn_tlv_l3_dst_class_id_t *src)
-{
-    of_bsn_tlv_l3_dst_class_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_l3_dst_class_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_l3_dst_class_id_value_get(src, &val32);
-    of_bsn_tlv_l3_dst_class_id_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_l3_interface_class_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_l3_interface_class_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_l3_interface_class_id_t *
-of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_3_dup(
-    of_bsn_tlv_l3_interface_class_id_t *src)
-{
-    of_bsn_tlv_l3_interface_class_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_l3_interface_class_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_l3_interface_class_id_value_get(src, &val32);
-    of_bsn_tlv_l3_interface_class_id_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_l3_src_class_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_l3_src_class_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_l3_src_class_id_t *
-of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3_dup(
-    of_bsn_tlv_l3_src_class_id_t *src)
-{
-    of_bsn_tlv_l3_src_class_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_l3_src_class_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_l3_src_class_id_value_get(src, &val32);
-    of_bsn_tlv_l3_src_class_id_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_lag_options
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_lag_options.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_lag_options_t *
-of_bsn_tlv_lag_options_OF_VERSION_1_3_dup(
-    of_bsn_tlv_lag_options_t *src)
-{
-    of_bsn_tlv_lag_options_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_lag_options_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_lag_options_flags_get(src, &val16);
-    of_bsn_tlv_lag_options_flags_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_loopback_mode
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_loopback_mode.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_loopback_mode_t *
-of_bsn_tlv_loopback_mode_OF_VERSION_1_3_dup(
-    of_bsn_tlv_loopback_mode_t *src)
-{
-    of_bsn_tlv_loopback_mode_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_loopback_mode_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_loopback_mode_value_get(src, &val8);
-    of_bsn_tlv_loopback_mode_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_loopback_port
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_loopback_port.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_loopback_port_t *
-of_bsn_tlv_loopback_port_OF_VERSION_1_3_dup(
-    of_bsn_tlv_loopback_port_t *src)
-{
-    of_bsn_tlv_loopback_port_t *dst;
-    of_port_no_t port_no;
-
-    if ((dst = of_bsn_tlv_loopback_port_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_loopback_port_value_get(src, &port_no);
-    of_bsn_tlv_loopback_port_value_set(dst, port_no);
 
     return dst;
 }
@@ -30214,27 +28190,6 @@ of_bsn_tlv_mac_mask_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_mac_mask_value_get(src, &mac_addr);
     of_bsn_tlv_mac_mask_value_set(dst, mac_addr);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_mcg_type_vxlan
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_mcg_type_vxlan.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_mcg_type_vxlan_t *
-of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_dup(
-    of_bsn_tlv_mcg_type_vxlan_t *src)
-{
-    of_bsn_tlv_mcg_type_vxlan_t *dst;
-
-    if ((dst = of_bsn_tlv_mcg_type_vxlan_new(src->version)) == NULL) {
-        return NULL;
-    }
 
     return dst;
 }
@@ -30340,31 +28295,6 @@ of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_multicast_interface_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_multicast_interface_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_multicast_interface_id_t *
-of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_dup(
-    of_bsn_tlv_multicast_interface_id_t *src)
-{
-    of_bsn_tlv_multicast_interface_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_multicast_interface_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_multicast_interface_id_value_get(src, &val32);
-    of_bsn_tlv_multicast_interface_id_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_name
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -30390,48 +28320,6 @@ of_bsn_tlv_name_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_ndp_offload
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ndp_offload.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ndp_offload_t *
-of_bsn_tlv_ndp_offload_OF_VERSION_1_3_dup(
-    of_bsn_tlv_ndp_offload_t *src)
-{
-    of_bsn_tlv_ndp_offload_t *dst;
-
-    if ((dst = of_bsn_tlv_ndp_offload_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_ndp_static
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ndp_static.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ndp_static_t *
-of_bsn_tlv_ndp_static_OF_VERSION_1_3_dup(
-    of_bsn_tlv_ndp_static_t *src)
-{
-    of_bsn_tlv_ndp_static_t *dst;
-
-    if ((dst = of_bsn_tlv_ndp_static_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_negate
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -30446,119 +28334,6 @@ of_bsn_tlv_negate_OF_VERSION_1_3_dup(
     of_bsn_tlv_negate_t *dst;
 
     if ((dst = of_bsn_tlv_negate_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_next_hop_ipv4
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_next_hop_ipv4.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_next_hop_ipv4_t *
-of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_dup(
-    of_bsn_tlv_next_hop_ipv4_t *src)
-{
-    of_bsn_tlv_next_hop_ipv4_t *dst;
-    of_ipv4_t ipv4;
-
-    if ((dst = of_bsn_tlv_next_hop_ipv4_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_next_hop_ipv4_value_get(src, &ipv4);
-    of_bsn_tlv_next_hop_ipv4_value_set(dst, ipv4);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_next_hop_mac
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_next_hop_mac.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_next_hop_mac_t *
-of_bsn_tlv_next_hop_mac_OF_VERSION_1_3_dup(
-    of_bsn_tlv_next_hop_mac_t *src)
-{
-    of_bsn_tlv_next_hop_mac_t *dst;
-    of_mac_addr_t mac_addr;
-
-    if ((dst = of_bsn_tlv_next_hop_mac_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_next_hop_mac_value_get(src, &mac_addr);
-    of_bsn_tlv_next_hop_mac_value_set(dst, mac_addr);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_nexthop_type_vxlan
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_nexthop_type_vxlan.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_nexthop_type_vxlan_t *
-of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3_dup(
-    of_bsn_tlv_nexthop_type_vxlan_t *src)
-{
-    of_bsn_tlv_nexthop_type_vxlan_t *dst;
-
-    if ((dst = of_bsn_tlv_nexthop_type_vxlan_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_no_arp_response
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_no_arp_response.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_no_arp_response_t *
-of_bsn_tlv_no_arp_response_OF_VERSION_1_3_dup(
-    of_bsn_tlv_no_arp_response_t *src)
-{
-    of_bsn_tlv_no_arp_response_t *dst;
-
-    if ((dst = of_bsn_tlv_no_arp_response_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_no_ns_response
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_no_ns_response.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_no_ns_response_t *
-of_bsn_tlv_no_ns_response_OF_VERSION_1_3_dup(
-    of_bsn_tlv_no_ns_response_t *src)
-{
-    of_bsn_tlv_no_ns_response_t *dst;
-
-    if ((dst = of_bsn_tlv_no_ns_response_new(src->version)) == NULL) {
         return NULL;
     }
 
@@ -30586,77 +28361,6 @@ of_bsn_tlv_offset_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_offset_value_get(src, &val16);
     of_bsn_tlv_offset_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_optics_always_enabled
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_optics_always_enabled.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_optics_always_enabled_t *
-of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_dup(
-    of_bsn_tlv_optics_always_enabled_t *src)
-{
-    of_bsn_tlv_optics_always_enabled_t *dst;
-
-    if ((dst = of_bsn_tlv_optics_always_enabled_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_outer_src_mac
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_outer_src_mac.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_outer_src_mac_t *
-of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dup(
-    of_bsn_tlv_outer_src_mac_t *src)
-{
-    of_bsn_tlv_outer_src_mac_t *dst;
-    of_mac_addr_t mac_addr;
-
-    if ((dst = of_bsn_tlv_outer_src_mac_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_outer_src_mac_value_get(src, &mac_addr);
-    of_bsn_tlv_outer_src_mac_value_set(dst, mac_addr);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_parent_port
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_parent_port.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_parent_port_t *
-of_bsn_tlv_parent_port_OF_VERSION_1_3_dup(
-    of_bsn_tlv_parent_port_t *src)
-{
-    of_bsn_tlv_parent_port_t *dst;
-    of_port_no_t port_no;
-
-    if ((dst = of_bsn_tlv_parent_port_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_parent_port_value_get(src, &port_no);
-    of_bsn_tlv_parent_port_value_set(dst, port_no);
 
     return dst;
 }
@@ -30812,31 +28516,6 @@ of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_pdua_rx_instance
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_pdua_rx_instance.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_pdua_rx_instance_t *
-of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_3_dup(
-    of_bsn_tlv_pdua_rx_instance_t *src)
-{
-    of_bsn_tlv_pdua_rx_instance_t *dst;
-    of_octets_t octets;
-
-    if ((dst = of_bsn_tlv_pdua_rx_instance_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_pdua_rx_instance_value_get(src, &octets);
-    of_bsn_tlv_pdua_rx_instance_value_set(dst, &octets);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_port
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -30862,81 +28541,6 @@ of_bsn_tlv_port_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_port_speed_gbps
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_port_speed_gbps.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_port_speed_gbps_t *
-of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_dup(
-    of_bsn_tlv_port_speed_gbps_t *src)
-{
-    of_bsn_tlv_port_speed_gbps_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_port_speed_gbps_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_port_speed_gbps_value_get(src, &val32);
-    of_bsn_tlv_port_speed_gbps_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_port_usage
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_port_usage.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_port_usage_t *
-of_bsn_tlv_port_usage_OF_VERSION_1_3_dup(
-    of_bsn_tlv_port_usage_t *src)
-{
-    of_bsn_tlv_port_usage_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_port_usage_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_port_usage_value_get(src, &val16);
-    of_bsn_tlv_port_usage_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_port_vxlan_mode
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_port_vxlan_mode.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_port_vxlan_mode_t *
-of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_dup(
-    of_bsn_tlv_port_vxlan_mode_t *src)
-{
-    of_bsn_tlv_port_vxlan_mode_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_port_vxlan_mode_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_port_vxlan_mode_value_get(src, &val8);
-    of_bsn_tlv_port_vxlan_mode_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_priority
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -30957,73 +28561,6 @@ of_bsn_tlv_priority_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_priority_value_get(src, &val32);
     of_bsn_tlv_priority_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_push_vlan_on_egress
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_push_vlan_on_egress.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_push_vlan_on_egress_t *
-of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_dup(
-    of_bsn_tlv_push_vlan_on_egress_t *src)
-{
-    of_bsn_tlv_push_vlan_on_egress_t *dst;
-
-    if ((dst = of_bsn_tlv_push_vlan_on_egress_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_push_vlan_on_ingress
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_push_vlan_on_ingress.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_push_vlan_on_ingress_t *
-of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_dup(
-    of_bsn_tlv_push_vlan_on_ingress_t *src)
-{
-    of_bsn_tlv_push_vlan_on_ingress_t *dst;
-
-    if ((dst = of_bsn_tlv_push_vlan_on_ingress_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_qos_priority
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_qos_priority.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_qos_priority_t *
-of_bsn_tlv_qos_priority_OF_VERSION_1_3_dup(
-    of_bsn_tlv_qos_priority_t *src)
-{
-    of_bsn_tlv_qos_priority_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_qos_priority_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_qos_priority_value_get(src, &val32);
-    of_bsn_tlv_qos_priority_value_set(dst, val32);
 
     return dst;
 }
@@ -31074,81 +28611,6 @@ of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_queue_weight_value_get(src, &val32);
     of_bsn_tlv_queue_weight_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_rate_limit
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_rate_limit.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_rate_limit_t *
-of_bsn_tlv_rate_limit_OF_VERSION_1_3_dup(
-    of_bsn_tlv_rate_limit_t *src)
-{
-    of_bsn_tlv_rate_limit_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_rate_limit_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_rate_limit_value_get(src, &val32);
-    of_bsn_tlv_rate_limit_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_rate_unit
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_rate_unit.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_rate_unit_t *
-of_bsn_tlv_rate_unit_OF_VERSION_1_3_dup(
-    of_bsn_tlv_rate_unit_t *src)
-{
-    of_bsn_tlv_rate_unit_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_rate_unit_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_rate_unit_value_get(src, &val8);
-    of_bsn_tlv_rate_unit_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_record_packets
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_record_packets.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_record_packets_t *
-of_bsn_tlv_record_packets_OF_VERSION_1_3_dup(
-    of_bsn_tlv_record_packets_t *src)
-{
-    of_bsn_tlv_record_packets_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_record_packets_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_record_packets_value_get(src, &val32);
-    of_bsn_tlv_record_packets_value_set(dst, val32);
 
     return dst;
 }
@@ -31237,52 +28699,6 @@ of_bsn_tlv_request_packets_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_request_packets_value_get(src, &val64);
     of_bsn_tlv_request_packets_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_rest_server
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_rest_server.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_rest_server_t *
-of_bsn_tlv_rest_server_OF_VERSION_1_3_dup(
-    of_bsn_tlv_rest_server_t *src)
-{
-    of_bsn_tlv_rest_server_t *dst;
-
-    if ((dst = of_bsn_tlv_rest_server_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_routing_param
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_routing_param.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_routing_param_t *
-of_bsn_tlv_routing_param_OF_VERSION_1_3_dup(
-    of_bsn_tlv_routing_param_t *src)
-{
-    of_bsn_tlv_routing_param_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_routing_param_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_routing_param_value_get(src, &val16);
-    of_bsn_tlv_routing_param_value_set(dst, val16);
 
     return dst;
 }
@@ -31384,31 +28800,6 @@ of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_status
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_status.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_status_t *
-of_bsn_tlv_status_OF_VERSION_1_3_dup(
-    of_bsn_tlv_status_t *src)
-{
-    of_bsn_tlv_status_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_status_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_status_value_get(src, &val8);
-    of_bsn_tlv_status_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_strip_mpls_l2_on_ingress
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -31463,14 +28854,10 @@ of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_dup(
     of_bsn_tlv_strip_vlan_on_egress_t *src)
 {
     of_bsn_tlv_strip_vlan_on_egress_t *dst;
-    uint8_t val8;
 
     if ((dst = of_bsn_tlv_strip_vlan_on_egress_new(src->version)) == NULL) {
         return NULL;
     }
-
-    of_bsn_tlv_strip_vlan_on_egress_flags_get(src, &val8);
-    of_bsn_tlv_strip_vlan_on_egress_flags_set(dst, val8);
 
     return dst;
 }
@@ -31526,31 +28913,6 @@ of_bsn_tlv_tcp_dst_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_tcp_flags
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_tcp_flags.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_tcp_flags_t *
-of_bsn_tlv_tcp_flags_OF_VERSION_1_3_dup(
-    of_bsn_tlv_tcp_flags_t *src)
-{
-    of_bsn_tlv_tcp_flags_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_tcp_flags_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_tcp_flags_value_get(src, &val16);
-    of_bsn_tlv_tcp_flags_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_tcp_src
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -31571,81 +28933,6 @@ of_bsn_tlv_tcp_src_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_tcp_src_value_get(src, &val16);
     of_bsn_tlv_tcp_src_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_timestamp
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_timestamp.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_timestamp_t *
-of_bsn_tlv_timestamp_OF_VERSION_1_3_dup(
-    of_bsn_tlv_timestamp_t *src)
-{
-    of_bsn_tlv_timestamp_t *dst;
-    uint64_t val64;
-
-    if ((dst = of_bsn_tlv_timestamp_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_timestamp_value_get(src, &val64);
-    of_bsn_tlv_timestamp_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_ttl
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ttl.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ttl_t *
-of_bsn_tlv_ttl_OF_VERSION_1_3_dup(
-    of_bsn_tlv_ttl_t *src)
-{
-    of_bsn_tlv_ttl_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_ttl_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_ttl_value_get(src, &val16);
-    of_bsn_tlv_ttl_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_tunnel_capability
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_tunnel_capability.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_tunnel_capability_t *
-of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_dup(
-    of_bsn_tlv_tunnel_capability_t *src)
-{
-    of_bsn_tlv_tunnel_capability_t *dst;
-    uint64_t val64;
-
-    if ((dst = of_bsn_tlv_tunnel_capability_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_tunnel_capability_value_get(src, &val64);
-    of_bsn_tlv_tunnel_capability_value_set(dst, val64);
 
     return dst;
 }
@@ -31851,40 +29138,6 @@ of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_uint64_list
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_uint64_list.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_uint64_list_t *
-of_bsn_tlv_uint64_list_OF_VERSION_1_3_dup(
-    of_bsn_tlv_uint64_list_t *src)
-{
-    of_bsn_tlv_uint64_list_t *dst;
-
-    of_list_uint64_t src_list;
-    of_list_uint64_t *dst_list;
-
-    if ((dst = of_bsn_tlv_uint64_list_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_uint64_list_value_bind(
-        src, &src_list);
-    dst_list = of_list_uint64_OF_VERSION_1_3_dup(&src_list);
-    if (dst_list == NULL) {
-        of_bsn_tlv_uint64_list_delete(dst);
-        return NULL;
-    }
-    of_bsn_tlv_uint64_list_value_set(dst, dst_list);
-    of_list_uint64_delete(dst_list);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_unicast_query_timeout
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -31905,232 +29158,6 @@ of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_unicast_query_timeout_value_get(src, &val32);
     of_bsn_tlv_unicast_query_timeout_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_unicast_rate
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_unicast_rate.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_unicast_rate_t *
-of_bsn_tlv_unicast_rate_OF_VERSION_1_3_dup(
-    of_bsn_tlv_unicast_rate_t *src)
-{
-    of_bsn_tlv_unicast_rate_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_unicast_rate_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_unicast_rate_value_get(src, &val32);
-    of_bsn_tlv_unicast_rate_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_unknown_multicast_rate
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_unknown_multicast_rate.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_unknown_multicast_rate_t *
-of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_dup(
-    of_bsn_tlv_unknown_multicast_rate_t *src)
-{
-    of_bsn_tlv_unknown_multicast_rate_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_unknown_multicast_rate_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_unknown_multicast_rate_value_get(src, &val32);
-    of_bsn_tlv_unknown_multicast_rate_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_untagged
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_untagged.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_untagged_t *
-of_bsn_tlv_untagged_OF_VERSION_1_3_dup(
-    of_bsn_tlv_untagged_t *src)
-{
-    of_bsn_tlv_untagged_t *dst;
-
-    if ((dst = of_bsn_tlv_untagged_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_uri_scheme
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_uri_scheme.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_uri_scheme_t *
-of_bsn_tlv_uri_scheme_OF_VERSION_1_3_dup(
-    of_bsn_tlv_uri_scheme_t *src)
-{
-    of_bsn_tlv_uri_scheme_t *dst;
-    of_octets_t octets;
-
-    if ((dst = of_bsn_tlv_uri_scheme_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_uri_scheme_value_get(src, &octets);
-    of_bsn_tlv_uri_scheme_value_set(dst, &octets);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_use_packet_state
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_use_packet_state.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_use_packet_state_t *
-of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dup(
-    of_bsn_tlv_use_packet_state_t *src)
-{
-    of_bsn_tlv_use_packet_state_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_use_packet_state_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_use_packet_state_value_get(src, &val8);
-    of_bsn_tlv_use_packet_state_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_vfi
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_vfi.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_vfi_t *
-of_bsn_tlv_vfi_OF_VERSION_1_3_dup(
-    of_bsn_tlv_vfi_t *src)
-{
-    of_bsn_tlv_vfi_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_vfi_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_vfi_value_get(src, &val16);
-    of_bsn_tlv_vfi_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_vfp_class_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_vfp_class_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_vfp_class_id_t *
-of_bsn_tlv_vfp_class_id_OF_VERSION_1_3_dup(
-    of_bsn_tlv_vfp_class_id_t *src)
-{
-    of_bsn_tlv_vfp_class_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_vfp_class_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_vfp_class_id_value_get(src, &val32);
-    of_bsn_tlv_vfp_class_id_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_virtual
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_virtual.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_virtual_t *
-of_bsn_tlv_virtual_OF_VERSION_1_3_dup(
-    of_bsn_tlv_virtual_t *src)
-{
-    of_bsn_tlv_virtual_t *dst;
-
-    if ((dst = of_bsn_tlv_virtual_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_vlan_mac_list
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_vlan_mac_list.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_vlan_mac_list_t *
-of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_dup(
-    of_bsn_tlv_vlan_mac_list_t *src)
-{
-    of_bsn_tlv_vlan_mac_list_t *dst;
-
-    of_list_bsn_vlan_mac_t src_list;
-    of_list_bsn_vlan_mac_t *dst_list;
-
-    if ((dst = of_bsn_tlv_vlan_mac_list_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_vlan_mac_list_key_bind(
-        src, &src_list);
-    dst_list = of_list_bsn_vlan_mac_OF_VERSION_1_3_dup(&src_list);
-    if (dst_list == NULL) {
-        of_bsn_tlv_vlan_mac_list_delete(dst);
-        return NULL;
-    }
-    of_bsn_tlv_vlan_mac_list_key_set(dst, dst_list);
-    of_list_bsn_vlan_mac_delete(dst_list);
 
     return dst;
 }
@@ -32211,56 +29238,6 @@ of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_vni
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_vni.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_vni_t *
-of_bsn_tlv_vni_OF_VERSION_1_3_dup(
-    of_bsn_tlv_vni_t *src)
-{
-    of_bsn_tlv_vni_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_vni_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_vni_value_get(src, &val32);
-    of_bsn_tlv_vni_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_vpn_key
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_vpn_key.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_vpn_key_t *
-of_bsn_tlv_vpn_key_OF_VERSION_1_3_dup(
-    of_bsn_tlv_vpn_key_t *src)
-{
-    of_bsn_tlv_vpn_key_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_vpn_key_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_vpn_key_value_get(src, &val32);
-    of_bsn_tlv_vpn_key_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_vrf
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -32281,27 +29258,6 @@ of_bsn_tlv_vrf_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_vrf_value_get(src, &val32);
     of_bsn_tlv_vrf_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_vxlan_egress_lag
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_vxlan_egress_lag.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_vxlan_egress_lag_t *
-of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_3_dup(
-    of_bsn_tlv_vxlan_egress_lag_t *src)
-{
-    of_bsn_tlv_vxlan_egress_lag_t *dst;
-
-    if ((dst = of_bsn_tlv_vxlan_egress_lag_new(src->version)) == NULL) {
-        return NULL;
-    }
 
     return dst;
 }
@@ -32340,35 +29296,6 @@ of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
     }
     of_bsn_vlan_counter_stats_entry_values_set(dst, dst_list);
     of_list_uint64_delete(dst_list);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_vlan_mac
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_vlan_mac.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_vlan_mac_t *
-of_bsn_vlan_mac_OF_VERSION_1_3_dup(
-    of_bsn_vlan_mac_t *src)
-{
-    of_bsn_vlan_mac_t *dst;
-    uint16_t val16;
-    of_mac_addr_t mac_addr;
-
-    if ((dst = of_bsn_vlan_mac_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_vlan_mac_vlan_vid_get(src, &val16);
-    of_bsn_vlan_mac_vlan_vid_set(dst, val16);
-
-    of_bsn_vlan_mac_mac_get(src, &mac_addr);
-    of_bsn_vlan_mac_mac_set(dst, mac_addr);
 
     return dst;
 }
@@ -32894,10 +29821,6 @@ of_instruction_OF_VERSION_1_3_dup(
         return of_instruction_bsn_internal_priority_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_BSN_HASH_SELECT) {
-        return of_instruction_bsn_hash_select_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_INSTRUCTION_BSN_DHCP_OFFLOAD) {
         return of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_dup(src);
     }
@@ -32912,10 +29835,6 @@ of_instruction_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_INSTRUCTION_METER) {
         return of_instruction_meter_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_NDP_OFFLOAD) {
-        return of_instruction_bsn_ndp_offload_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS) {
@@ -33196,37 +30115,6 @@ of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_instruction_bsn_hash_select
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_instruction_bsn_hash_select.
- *
- * The caller is responsible for deleting the returned value
- */
-of_instruction_bsn_hash_select_t *
-of_instruction_bsn_hash_select_OF_VERSION_1_3_dup(
-    of_instruction_bsn_hash_select_t *src)
-{
-    of_instruction_bsn_hash_select_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_instruction_bsn_hash_select_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_instruction_bsn_hash_select_experimenter_get(src, &val32);
-    of_instruction_bsn_hash_select_experimenter_set(dst, val32);
-
-    of_instruction_bsn_hash_select_subtype_get(src, &val32);
-    of_instruction_bsn_hash_select_subtype_set(dst, val32);
-
-    of_instruction_bsn_hash_select_flags_get(src, &val32);
-    of_instruction_bsn_hash_select_flags_set(dst, val32);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_instruction_bsn_internal_priority
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -33253,34 +30141,6 @@ of_instruction_bsn_internal_priority_OF_VERSION_1_3_dup(
 
     of_instruction_bsn_internal_priority_value_get(src, &val32);
     of_instruction_bsn_internal_priority_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_instruction_bsn_ndp_offload
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_instruction_bsn_ndp_offload.
- *
- * The caller is responsible for deleting the returned value
- */
-of_instruction_bsn_ndp_offload_t *
-of_instruction_bsn_ndp_offload_OF_VERSION_1_3_dup(
-    of_instruction_bsn_ndp_offload_t *src)
-{
-    of_instruction_bsn_ndp_offload_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_instruction_bsn_ndp_offload_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_instruction_bsn_ndp_offload_experimenter_get(src, &val32);
-    of_instruction_bsn_ndp_offload_experimenter_set(dst, val32);
-
-    of_instruction_bsn_ndp_offload_subtype_get(src, &val32);
-    of_instruction_bsn_ndp_offload_subtype_set(dst, val32);
 
     return dst;
 }
@@ -33483,8 +30343,8 @@ of_instruction_id_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_NDP_OFFLOAD) {
-        return of_instruction_id_bsn_ndp_offload_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
+        return of_instruction_id_write_metadata_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY) {
@@ -33505,10 +30365,6 @@ of_instruction_id_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE) {
         return of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_HASH_SELECT) {
-        return of_instruction_id_bsn_hash_select_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS) {
@@ -33539,20 +30395,16 @@ of_instruction_id_OF_VERSION_1_3_dup(
         return of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS) {
-        return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_INSTRUCTION_ID_BSN_PERMIT) {
         return of_instruction_id_bsn_permit_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DENY) {
-        return of_instruction_id_bsn_deny_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS) {
+        return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
-        return of_instruction_id_write_metadata_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DENY) {
+        return of_instruction_id_bsn_deny_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
@@ -33820,34 +30672,6 @@ of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_instruction_id_bsn_hash_select
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_instruction_id_bsn_hash_select.
- *
- * The caller is responsible for deleting the returned value
- */
-of_instruction_id_bsn_hash_select_t *
-of_instruction_id_bsn_hash_select_OF_VERSION_1_3_dup(
-    of_instruction_id_bsn_hash_select_t *src)
-{
-    of_instruction_id_bsn_hash_select_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_instruction_id_bsn_hash_select_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_instruction_id_bsn_hash_select_experimenter_get(src, &val32);
-    of_instruction_id_bsn_hash_select_experimenter_set(dst, val32);
-
-    of_instruction_id_bsn_hash_select_subtype_get(src, &val32);
-    of_instruction_id_bsn_hash_select_subtype_set(dst, val32);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_instruction_id_bsn_internal_priority
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -33871,34 +30695,6 @@ of_instruction_id_bsn_internal_priority_OF_VERSION_1_3_dup(
 
     of_instruction_id_bsn_internal_priority_subtype_get(src, &val32);
     of_instruction_id_bsn_internal_priority_subtype_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_instruction_id_bsn_ndp_offload
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_instruction_id_bsn_ndp_offload.
- *
- * The caller is responsible for deleting the returned value
- */
-of_instruction_id_bsn_ndp_offload_t *
-of_instruction_id_bsn_ndp_offload_OF_VERSION_1_3_dup(
-    of_instruction_id_bsn_ndp_offload_t *src)
-{
-    of_instruction_id_bsn_ndp_offload_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_instruction_id_bsn_ndp_offload_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_instruction_id_bsn_ndp_offload_experimenter_get(src, &val32);
-    of_instruction_id_bsn_ndp_offload_experimenter_set(dst, val32);
-
-    of_instruction_id_bsn_ndp_offload_subtype_get(src, &val32);
-    of_instruction_id_bsn_ndp_offload_subtype_set(dst, val32);
 
     return dst;
 }
@@ -34573,16 +31369,12 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_ipv6_nd_target_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION_MASKED) {
-        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_ICMPV4_CODE) {
+        return of_oxm_icmpv4_code_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID_MASKED) {
         return of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
-        return of_oxm_vlan_vid_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_MPLS_BOS_MASKED) {
@@ -34599,10 +31391,6 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID) {
         return of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_VFI_MASKED) {
-        return of_oxm_bsn_vfi_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_INNER_VLAN_VID) {
@@ -34625,10 +31413,6 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_lag_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV4_CODE) {
-        return of_oxm_icmpv4_code_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
         return of_oxm_bsn_udf2_masked_OF_VERSION_1_3_dup(src);
     }
@@ -34641,24 +31425,12 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_ipv6_flabel_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
-        return of_oxm_icmpv4_type_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_UDP_DST) {
         return of_oxm_udp_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
-        return of_oxm_conn_tracking_state_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
-        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED) {
-        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
+        return of_oxm_ipv6_nd_sll_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_ETH_TYPE) {
@@ -34671,10 +31443,6 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_VLAN_PCP) {
         return of_oxm_vlan_pcp_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED) {
-        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_TLL) {
@@ -34693,8 +31461,8 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED) {
-        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
+        return of_oxm_icmpv4_type_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
@@ -34717,36 +31485,32 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_vlan_pcp_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
-        return of_oxm_eth_type_masked_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_ARP_SHA) {
         return of_oxm_arp_sha_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
+        return of_oxm_eth_type_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_DST) {
         return of_oxm_tcp_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF6) {
-        return of_oxm_bsn_udf6_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
+        return of_oxm_ip_proto_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IP_ECN_MASKED) {
         return of_oxm_ip_ecn_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST) {
-        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_METADATA_MASKED) {
         return of_oxm_metadata_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
-        return of_oxm_icmpv6_type_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED) {
@@ -34755,6 +31519,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
         return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_SCTP_SRC) {
@@ -34777,24 +31545,20 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC) {
-        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
+        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED) {
-        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_MPLS_BOS) {
+        return of_oxm_mpls_bos_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
         return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
-        return of_oxm_arp_spa_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
-        return of_oxm_ip_proto_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
@@ -34825,6 +31589,10 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_udf5_masked_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED) {
+        return of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
         return of_oxm_icmpv4_type_masked_OF_VERSION_1_3_dup(src);
     }
@@ -34837,24 +31605,8 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_icmpv4_code_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_OVS_TCP_FLAGS_MASKED) {
-        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED) {
-        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST) {
-        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED) {
-        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
@@ -34875,10 +31627,6 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED) {
         return of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED) {
-        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_INNER_ETH_DST) {
@@ -34941,16 +31689,12 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED) {
-        return of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF6) {
+        return of_oxm_bsn_udf6_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IN_PORT) {
         return of_oxm_in_port_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED) {
-        return of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF7_MASKED) {
@@ -34967,10 +31711,6 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_TCP_SRC) {
         return of_oxm_tcp_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
-        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_UDP_SRC_MASKED) {
@@ -34993,64 +31733,36 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_eth_src_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL) {
-        return of_oxm_conn_tracking_label_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC) {
-        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_VRF) {
         return of_oxm_bsn_vrf_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_DST) {
-        return of_oxm_ipv4_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
-        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
         return of_oxm_ipv6_src_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST) {
-        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
+        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IP_DSCP) {
         return of_oxm_ip_dscp_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE) {
-        return of_oxm_conn_tracking_zone_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
-        return of_oxm_ipv6_nd_sll_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
+        return of_oxm_vlan_vid_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
         return of_oxm_ipv6_flabel_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED) {
-        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC) {
-        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
         return of_oxm_mpls_tc_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_MARK) {
-        return of_oxm_conn_tracking_mark_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_DST_MASKED) {
@@ -35063,10 +31775,6 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
         return of_oxm_sctp_src_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO) {
-        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
@@ -35093,10 +31801,6 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_udp_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_VFI) {
-        return of_oxm_bsn_vfi_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_ARP_SPA) {
         return of_oxm_arp_spa_OF_VERSION_1_3_dup(src);
     }
@@ -35113,20 +31817,12 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
-        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_VLAN_VID) {
         return of_oxm_vlan_vid_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_MPLS_BOS) {
-        return of_oxm_mpls_bos_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
+        return of_oxm_icmpv6_type_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
@@ -35137,10 +31833,6 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
-        return of_oxm_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_TUNNEL_ID) {
         return of_oxm_tunnel_id_OF_VERSION_1_3_dup(src);
     }
@@ -35149,16 +31841,8 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_metadata_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_OVS_TCP_FLAGS) {
-        return of_oxm_ovs_tcp_flags_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
         return of_oxm_bsn_udf0_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED) {
-        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
@@ -35889,59 +32573,6 @@ of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_3_dup(
 
     of_oxm_bsn_inner_vlan_vid_masked_value_mask_get(src, &val16);
     of_oxm_bsn_inner_vlan_vid_masked_value_mask_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_bsn_ip_fragmentation
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_ip_fragmentation.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_ip_fragmentation_t *
-of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_dup(
-    of_oxm_bsn_ip_fragmentation_t *src)
-{
-    of_oxm_bsn_ip_fragmentation_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_bsn_ip_fragmentation_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_ip_fragmentation_value_get(src, &val8);
-    of_oxm_bsn_ip_fragmentation_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_bsn_ip_fragmentation_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_ip_fragmentation_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_ip_fragmentation_masked_t *
-of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_dup(
-    of_oxm_bsn_ip_fragmentation_masked_t *src)
-{
-    of_oxm_bsn_ip_fragmentation_masked_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_bsn_ip_fragmentation_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_ip_fragmentation_masked_value_get(src, &val8);
-    of_oxm_bsn_ip_fragmentation_masked_value_set(dst, val8);
-
-    of_oxm_bsn_ip_fragmentation_masked_value_mask_get(src, &val8);
-    of_oxm_bsn_ip_fragmentation_masked_value_mask_set(dst, val8);
 
     return dst;
 }
@@ -36689,59 +33320,6 @@ of_oxm_bsn_udf7_masked_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_oxm_bsn_vfi
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_vfi.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_vfi_t *
-of_oxm_bsn_vfi_OF_VERSION_1_3_dup(
-    of_oxm_bsn_vfi_t *src)
-{
-    of_oxm_bsn_vfi_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_bsn_vfi_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_vfi_value_get(src, &val16);
-    of_oxm_bsn_vfi_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_bsn_vfi_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_vfi_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_vfi_masked_t *
-of_oxm_bsn_vfi_masked_OF_VERSION_1_3_dup(
-    of_oxm_bsn_vfi_masked_t *src)
-{
-    of_oxm_bsn_vfi_masked_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_bsn_vfi_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_vfi_masked_value_get(src, &val16);
-    of_oxm_bsn_vfi_masked_value_set(dst, val16);
-
-    of_oxm_bsn_vfi_masked_value_mask_get(src, &val16);
-    of_oxm_bsn_vfi_masked_value_mask_set(dst, val16);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_oxm_bsn_vlan_xlate_port_group_id
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -36896,589 +33474,6 @@ of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_dup(
 
     of_oxm_bsn_vxlan_network_id_masked_value_mask_get(src, &val32);
     of_oxm_bsn_vxlan_network_id_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_ipv6_dst
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_ipv6_dst.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_ipv6_dst_t *
-of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_ipv6_dst_t *src)
-{
-    of_oxm_conn_tracking_ipv6_dst_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_oxm_conn_tracking_ipv6_dst_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_ipv6_dst_value_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_dst_value_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_ipv6_dst_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_ipv6_dst_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_ipv6_dst_masked_t *
-of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_ipv6_dst_masked_t *src)
-{
-    of_oxm_conn_tracking_ipv6_dst_masked_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_oxm_conn_tracking_ipv6_dst_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_ipv6_dst_masked_value_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_dst_masked_value_set(dst, ipv6);
-
-    of_oxm_conn_tracking_ipv6_dst_masked_value_mask_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_dst_masked_value_mask_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_ipv6_src
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_ipv6_src.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_ipv6_src_t *
-of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_ipv6_src_t *src)
-{
-    of_oxm_conn_tracking_ipv6_src_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_oxm_conn_tracking_ipv6_src_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_ipv6_src_value_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_src_value_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_ipv6_src_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_ipv6_src_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_ipv6_src_masked_t *
-of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_ipv6_src_masked_t *src)
-{
-    of_oxm_conn_tracking_ipv6_src_masked_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_oxm_conn_tracking_ipv6_src_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_ipv6_src_masked_value_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_src_masked_value_set(dst, ipv6);
-
-    of_oxm_conn_tracking_ipv6_src_masked_value_mask_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_src_masked_value_mask_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_label
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_label.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_label_t *
-of_oxm_conn_tracking_label_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_label_t *src)
-{
-    of_oxm_conn_tracking_label_t *dst;
-    uint128_t val128;
-
-    if ((dst = of_oxm_conn_tracking_label_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_label_value_get(src, &val128);
-    of_oxm_conn_tracking_label_value_set(dst, val128);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_label_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_label_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_label_masked_t *
-of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_label_masked_t *src)
-{
-    of_oxm_conn_tracking_label_masked_t *dst;
-    uint128_t val128;
-
-    if ((dst = of_oxm_conn_tracking_label_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_label_masked_value_get(src, &val128);
-    of_oxm_conn_tracking_label_masked_value_set(dst, val128);
-
-    of_oxm_conn_tracking_label_masked_value_mask_get(src, &val128);
-    of_oxm_conn_tracking_label_masked_value_mask_set(dst, val128);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_mark
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_mark.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_mark_t *
-of_oxm_conn_tracking_mark_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_mark_t *src)
-{
-    of_oxm_conn_tracking_mark_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_mark_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_mark_value_get(src, &val32);
-    of_oxm_conn_tracking_mark_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_mark_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_mark_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_mark_masked_t *
-of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_mark_masked_t *src)
-{
-    of_oxm_conn_tracking_mark_masked_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_mark_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_mark_masked_value_get(src, &val32);
-    of_oxm_conn_tracking_mark_masked_value_set(dst, val32);
-
-    of_oxm_conn_tracking_mark_masked_value_mask_get(src, &val32);
-    of_oxm_conn_tracking_mark_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_dst
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_dst.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_dst_t *
-of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_nw_dst_t *src)
-{
-    of_oxm_conn_tracking_nw_dst_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_nw_dst_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_dst_value_get(src, &val32);
-    of_oxm_conn_tracking_nw_dst_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_dst_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_dst_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_dst_masked_t *
-of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_nw_dst_masked_t *src)
-{
-    of_oxm_conn_tracking_nw_dst_masked_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_nw_dst_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_dst_masked_value_get(src, &val32);
-    of_oxm_conn_tracking_nw_dst_masked_value_set(dst, val32);
-
-    of_oxm_conn_tracking_nw_dst_masked_value_mask_get(src, &val32);
-    of_oxm_conn_tracking_nw_dst_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_proto
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_proto.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_proto_t *
-of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_nw_proto_t *src)
-{
-    of_oxm_conn_tracking_nw_proto_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_conn_tracking_nw_proto_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_proto_value_get(src, &val8);
-    of_oxm_conn_tracking_nw_proto_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_proto_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_proto_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_proto_masked_t *
-of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_nw_proto_masked_t *src)
-{
-    of_oxm_conn_tracking_nw_proto_masked_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_conn_tracking_nw_proto_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_proto_masked_value_get(src, &val8);
-    of_oxm_conn_tracking_nw_proto_masked_value_set(dst, val8);
-
-    of_oxm_conn_tracking_nw_proto_masked_value_mask_get(src, &val8);
-    of_oxm_conn_tracking_nw_proto_masked_value_mask_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_src
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_src.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_src_t *
-of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_nw_src_t *src)
-{
-    of_oxm_conn_tracking_nw_src_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_nw_src_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_src_value_get(src, &val32);
-    of_oxm_conn_tracking_nw_src_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_src_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_src_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_src_masked_t *
-of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_nw_src_masked_t *src)
-{
-    of_oxm_conn_tracking_nw_src_masked_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_nw_src_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_src_masked_value_get(src, &val32);
-    of_oxm_conn_tracking_nw_src_masked_value_set(dst, val32);
-
-    of_oxm_conn_tracking_nw_src_masked_value_mask_get(src, &val32);
-    of_oxm_conn_tracking_nw_src_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_state
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_state.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_state_t *
-of_oxm_conn_tracking_state_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_state_t *src)
-{
-    of_oxm_conn_tracking_state_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_state_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_state_value_get(src, &val32);
-    of_oxm_conn_tracking_state_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_state_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_state_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_state_masked_t *
-of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_state_masked_t *src)
-{
-    of_oxm_conn_tracking_state_masked_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_state_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_state_masked_value_get(src, &val32);
-    of_oxm_conn_tracking_state_masked_value_set(dst, val32);
-
-    of_oxm_conn_tracking_state_masked_value_mask_get(src, &val32);
-    of_oxm_conn_tracking_state_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_tp_dst
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_tp_dst.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_tp_dst_t *
-of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_tp_dst_t *src)
-{
-    of_oxm_conn_tracking_tp_dst_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_tp_dst_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_tp_dst_value_get(src, &val16);
-    of_oxm_conn_tracking_tp_dst_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_tp_dst_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_tp_dst_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_tp_dst_masked_t *
-of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_tp_dst_masked_t *src)
-{
-    of_oxm_conn_tracking_tp_dst_masked_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_tp_dst_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_tp_dst_masked_value_get(src, &val16);
-    of_oxm_conn_tracking_tp_dst_masked_value_set(dst, val16);
-
-    of_oxm_conn_tracking_tp_dst_masked_value_mask_get(src, &val16);
-    of_oxm_conn_tracking_tp_dst_masked_value_mask_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_tp_src
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_tp_src.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_tp_src_t *
-of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_tp_src_t *src)
-{
-    of_oxm_conn_tracking_tp_src_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_tp_src_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_tp_src_value_get(src, &val16);
-    of_oxm_conn_tracking_tp_src_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_tp_src_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_tp_src_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_tp_src_masked_t *
-of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_tp_src_masked_t *src)
-{
-    of_oxm_conn_tracking_tp_src_masked_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_tp_src_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_tp_src_masked_value_get(src, &val16);
-    of_oxm_conn_tracking_tp_src_masked_value_set(dst, val16);
-
-    of_oxm_conn_tracking_tp_src_masked_value_mask_get(src, &val16);
-    of_oxm_conn_tracking_tp_src_masked_value_mask_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_zone
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_zone.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_zone_t *
-of_oxm_conn_tracking_zone_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_zone_t *src)
-{
-    of_oxm_conn_tracking_zone_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_zone_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_zone_value_get(src, &val16);
-    of_oxm_conn_tracking_zone_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_zone_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_zone_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_zone_masked_t *
-of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_dup(
-    of_oxm_conn_tracking_zone_masked_t *src)
-{
-    of_oxm_conn_tracking_zone_masked_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_zone_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_zone_masked_value_get(src, &val16);
-    of_oxm_conn_tracking_zone_masked_value_set(dst, val16);
-
-    of_oxm_conn_tracking_zone_masked_value_mask_get(src, &val16);
-    of_oxm_conn_tracking_zone_masked_value_mask_set(dst, val16);
 
     return dst;
 }
@@ -38804,67 +34799,6 @@ of_oxm_mpls_tc_masked_OF_VERSION_1_3_dup(
 
     of_oxm_mpls_tc_masked_value_mask_get(src, &val8);
     of_oxm_mpls_tc_masked_value_mask_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_ovs_tcp_flags
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_ovs_tcp_flags.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_ovs_tcp_flags_t *
-of_oxm_ovs_tcp_flags_OF_VERSION_1_3_dup(
-    of_oxm_ovs_tcp_flags_t *src)
-{
-    of_oxm_ovs_tcp_flags_t *dst;
-    uint32_t val32;
-    uint16_t val16;
-
-    if ((dst = of_oxm_ovs_tcp_flags_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_ovs_tcp_flags_experimenter_id_get(src, &val32);
-    of_oxm_ovs_tcp_flags_experimenter_id_set(dst, val32);
-
-    of_oxm_ovs_tcp_flags_value_get(src, &val16);
-    of_oxm_ovs_tcp_flags_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_ovs_tcp_flags_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_ovs_tcp_flags_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_ovs_tcp_flags_masked_t *
-of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_dup(
-    of_oxm_ovs_tcp_flags_masked_t *src)
-{
-    of_oxm_ovs_tcp_flags_masked_t *dst;
-    uint32_t val32;
-    uint16_t val16;
-
-    if ((dst = of_oxm_ovs_tcp_flags_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_ovs_tcp_flags_masked_experimenter_id_get(src, &val32);
-    of_oxm_ovs_tcp_flags_masked_experimenter_id_set(dst, val32);
-
-    of_oxm_ovs_tcp_flags_masked_value_get(src, &val16);
-    of_oxm_ovs_tcp_flags_masked_value_set(dst, val16);
-
-    of_oxm_ovs_tcp_flags_masked_value_mask_get(src, &val16);
-    of_oxm_ovs_tcp_flags_masked_value_mask_set(dst, val16);
 
     return dst;
 }
@@ -41100,40 +37034,6 @@ of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate a list of type of_list_bsn_vlan_mac
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_list_bsn_vlan_mac.
- *
- * The caller is responsible for deleting the returned value
- */
-of_list_bsn_vlan_mac_t *
-of_list_bsn_vlan_mac_OF_VERSION_1_3_dup(
-    of_list_bsn_vlan_mac_t *src)
-{
-    of_object_t src_elt;
-    of_object_t *dst_elt;
-    int rv;
-    of_list_bsn_vlan_mac_t *dst;
-
-    if ((dst = of_list_bsn_vlan_mac_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    OF_LIST_BSN_VLAN_MAC_ITER(src, &src_elt, rv) {
-        if ((dst_elt = of_bsn_vlan_mac_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
-            of_object_delete((of_object_t *)dst);
-            return NULL;
-        }
-        _TRY_FREE(of_list_bsn_vlan_mac_append(dst, dst_elt),
-            dst, NULL);
-        of_object_delete((of_object_t *)dst_elt);
-    }
-
-    return dst;
-}
-
-/**
  * Duplicate a list of type of_list_bsn_vrf_counter_stats_entry
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -42917,46 +38817,6 @@ of_bsn_debug_counter_stats_request_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_error
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_error.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_error_t *
-of_bsn_error_OF_VERSION_1_4_dup(
-    of_bsn_error_t *src)
-{
-    of_bsn_error_t *dst;
-    uint32_t val32;
-    uint16_t val16;
-    of_desc_str_t desc_str;
-    of_octets_t octets;
-
-    if ((dst = of_bsn_error_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_error_xid_get(src, &val32);
-    of_bsn_error_xid_set(dst, val32);
-
-    of_bsn_error_subtype_get(src, &val16);
-    of_bsn_error_subtype_set(dst, val16);
-
-    of_bsn_error_experimenter_get(src, &val32);
-    of_bsn_error_experimenter_set(dst, val32);
-
-    of_bsn_error_err_msg_get(src, &desc_str);
-    of_bsn_error_err_msg_set(dst, desc_str);
-
-    of_bsn_error_data_get(src, &octets);
-    of_bsn_error_data_set(dst, &octets);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_flow_checksum_bucket_stats_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -43269,54 +39129,6 @@ of_bsn_generic_async_OF_VERSION_1_4_dup(
         return NULL;
     }
     of_bsn_generic_async_tlvs_set(dst, dst_list);
-    of_list_bsn_tlv_delete(dst_list);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_generic_command
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_generic_command.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_generic_command_t *
-of_bsn_generic_command_OF_VERSION_1_4_dup(
-    of_bsn_generic_command_t *src)
-{
-    of_bsn_generic_command_t *dst;
-    uint32_t val32;
-    of_str64_t str64;
-
-    of_list_bsn_tlv_t src_list;
-    of_list_bsn_tlv_t *dst_list;
-
-    if ((dst = of_bsn_generic_command_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_generic_command_xid_get(src, &val32);
-    of_bsn_generic_command_xid_set(dst, val32);
-
-    of_bsn_generic_command_experimenter_get(src, &val32);
-    of_bsn_generic_command_experimenter_set(dst, val32);
-
-    of_bsn_generic_command_subtype_get(src, &val32);
-    of_bsn_generic_command_subtype_set(dst, val32);
-
-    of_bsn_generic_command_name_get(src, &str64);
-    of_bsn_generic_command_name_set(dst, str64);
-
-    of_bsn_generic_command_tlvs_bind(
-        src, &src_list);
-    dst_list = of_list_bsn_tlv_OF_VERSION_1_4_dup(&src_list);
-    if (dst_list == NULL) {
-        of_bsn_generic_command_delete(dst);
-        return NULL;
-    }
-    of_bsn_generic_command_tlvs_set(dst, dst_list);
     of_list_bsn_tlv_delete(dst_list);
 
     return dst;
@@ -43966,52 +39778,6 @@ of_bsn_gentable_entry_stats_request_OF_VERSION_1_4_dup(
 
     of_bsn_gentable_entry_stats_request_checksum_mask_get(src, &checksum_128);
     of_bsn_gentable_entry_stats_request_checksum_mask_set(dst, checksum_128);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_gentable_error
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_gentable_error.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_gentable_error_t *
-of_bsn_gentable_error_OF_VERSION_1_4_dup(
-    of_bsn_gentable_error_t *src)
-{
-    of_bsn_gentable_error_t *dst;
-    uint32_t val32;
-    uint16_t val16;
-    of_desc_str_t desc_str;
-    of_octets_t octets;
-
-    if ((dst = of_bsn_gentable_error_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_error_xid_get(src, &val32);
-    of_bsn_gentable_error_xid_set(dst, val32);
-
-    of_bsn_gentable_error_subtype_get(src, &val16);
-    of_bsn_gentable_error_subtype_set(dst, val16);
-
-    of_bsn_gentable_error_experimenter_get(src, &val32);
-    of_bsn_gentable_error_experimenter_set(dst, val32);
-
-    of_bsn_gentable_error_error_code_get(src, &val16);
-    of_bsn_gentable_error_error_code_set(dst, val16);
-
-    of_bsn_gentable_error_table_id_get(src, &val16);
-    of_bsn_gentable_error_table_id_set(dst, val16);
-
-    of_bsn_gentable_error_err_msg_get(src, &desc_str);
-    of_bsn_gentable_error_err_msg_set(dst, desc_str);
-
-    of_bsn_gentable_error_data_get(src, &octets);
-    of_bsn_gentable_error_data_set(dst, &octets);
 
     return dst;
 }
@@ -46328,6 +42094,42 @@ of_echo_request_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_experimenter_error_msg
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_experimenter_error_msg.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_experimenter_error_msg_t *
+of_experimenter_error_msg_OF_VERSION_1_4_dup(
+    of_experimenter_error_msg_t *src)
+{
+    of_experimenter_error_msg_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    of_octets_t octets;
+
+    if ((dst = of_experimenter_error_msg_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_experimenter_error_msg_xid_get(src, &val32);
+    of_experimenter_error_msg_xid_set(dst, val32);
+
+    of_experimenter_error_msg_subtype_get(src, &val16);
+    of_experimenter_error_msg_subtype_set(dst, val16);
+
+    of_experimenter_error_msg_experimenter_get(src, &val32);
+    of_experimenter_error_msg_experimenter_set(dst, val32);
+
+    of_experimenter_error_msg_data_get(src, &octets);
+    of_experimenter_error_msg_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_features_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -48284,7 +44086,6 @@ of_queue_desc_stats_request_OF_VERSION_1_4_dup(
     of_queue_desc_stats_request_t *dst;
     uint32_t val32;
     uint16_t val16;
-    of_port_no_t port_no;
 
     if ((dst = of_queue_desc_stats_request_new(src->version)) == NULL) {
         return NULL;
@@ -48295,12 +44096,6 @@ of_queue_desc_stats_request_OF_VERSION_1_4_dup(
 
     of_queue_desc_stats_request_flags_get(src, &val16);
     of_queue_desc_stats_request_flags_set(dst, val16);
-
-    of_queue_desc_stats_request_port_no_get(src, &port_no);
-    of_queue_desc_stats_request_port_no_set(dst, port_no);
-
-    of_queue_desc_stats_request_queue_id_get(src, &val32);
-    of_queue_desc_stats_request_queue_id_set(dst, val32);
 
     return dst;
 }
@@ -51235,12 +47030,60 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
+    if (src->object_id == OF_BSN_TLV_MAC_MASK) {
+        return of_bsn_tlv_mac_mask_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_VID) {
+        return of_bsn_tlv_vlan_vid_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ACTOR_STATE) {
+        return of_bsn_tlv_actor_state_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MAC) {
+        return of_bsn_tlv_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_PCP) {
+        return of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
+        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_CONVERGENCE_STATUS) {
         return of_bsn_tlv_convergence_status_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_DROP) {
-        return of_bsn_tlv_drop_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
+        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ANCHOR) {
+        return of_bsn_tlv_anchor_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TX_BYTES) {
+        return of_bsn_tlv_tx_bytes_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
+        return of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4_DST) {
+        return of_bsn_tlv_ipv4_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TCP_SRC) {
+        return of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_DATA) {
+        return of_bsn_tlv_data_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_CIRCUIT_ID) {
@@ -51251,12 +47094,44 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PORT_USAGE) {
-        return of_bsn_tlv_port_usage_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_OFFSET) {
+        return of_bsn_tlv_offset_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PORT_SPEED_GBPS) {
-        return of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
+        return of_bsn_tlv_partner_system_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_OFFSET) {
+        return of_bsn_tlv_udf_offset_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MPLS_CONTROL_WORD) {
+        return of_bsn_tlv_mpls_control_word_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RX_BYTES) {
+        return of_bsn_tlv_rx_bytes_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ICMP_TYPE) {
+        return of_bsn_tlv_icmp_type_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
+        return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
+        return of_bsn_tlv_partner_state_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_RX_PACKETS) {
+        return of_bsn_tlv_rx_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS) {
+        return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC) {
@@ -51267,200 +47142,44 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_request_packets_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_NUM) {
-        return of_bsn_tlv_partner_port_num_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT) {
+        return of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_UINT64_LIST) {
-        return of_bsn_tlv_uint64_list_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS) {
-        return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L3_INTERFACE_CLASS_ID) {
-        return of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_BROADCAST_RATE) {
-        return of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ROUTING_PARAM) {
-        return of_bsn_tlv_routing_param_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEXT_HOP_IPV4) {
-        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
-        return of_bsn_tlv_udf_length_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LOOPBACK_PORT) {
-        return of_bsn_tlv_loopback_port_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_GTP_HEADER_MATCH) {
-        return of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NO_NS_RESPONSE) {
-        return of_bsn_tlv_no_ns_response_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC) {
-        return of_bsn_tlv_external_gateway_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RATE_UNIT) {
-        return of_bsn_tlv_rate_unit_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ECN) {
-        return of_bsn_tlv_ecn_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VLAN_VID) {
-        return of_bsn_tlv_vlan_vid_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_ALGORITHM) {
-        return of_bsn_tlv_hash_algorithm_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INTERNAL_MAC) {
-        return of_bsn_tlv_internal_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HEADER_SIZE) {
-        return of_bsn_tlv_header_size_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VFI) {
-        return of_bsn_tlv_vfi_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_PRIORITY) {
-        return of_bsn_tlv_partner_system_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ETH_SRC) {
-        return of_bsn_tlv_eth_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LAG_OPTIONS) {
-        return of_bsn_tlv_lag_options_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FORWARD_ERROR_CORRECTION) {
-        return of_bsn_tlv_forward_error_correction_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STATUS) {
-        return of_bsn_tlv_status_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4) {
-        return of_bsn_tlv_ipv4_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV6) {
-        return of_bsn_tlv_ipv6_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_NUM) {
-        return of_bsn_tlv_actor_port_num_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EGRESS_ONLY) {
-        return of_bsn_tlv_egress_only_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_KNOWN_MULTICAST_RATE) {
-        return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ANCHOR) {
-        return of_bsn_tlv_anchor_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4_NETMASK) {
-        return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L3_DST_CLASS_ID) {
-        return of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_REPLY_PACKETS) {
-        return of_bsn_tlv_reply_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_GTP_PORT_MATCH) {
-        return of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_CPU_LAG) {
-        return of_bsn_tlv_cpu_lag_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
-        return of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_LOOPBACK_MODE) {
-        return of_bsn_tlv_loopback_mode_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
-        return of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EGRESS_PORT_GROUP_ID) {
-        return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TCP_SRC) {
-        return of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MPLS_LABEL) {
-        return of_bsn_tlv_mpls_label_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RX_BYTES) {
-        return of_bsn_tlv_rx_bytes_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RX_PACKETS) {
-        return of_bsn_tlv_rx_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TCP_FLAGS) {
-        return of_bsn_tlv_tcp_flags_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_OUTER_SRC_MAC) {
-        return of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_SEED) {
-        return of_bsn_tlv_hash_seed_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_NAME) {
+        return of_bsn_tlv_name_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_MISS_PACKETS) {
         return of_bsn_tlv_miss_packets_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_IPV4_SRC) {
+        return of_bsn_tlv_ipv4_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_NUM) {
+        return of_bsn_tlv_partner_port_num_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IDLE_TIME) {
+        return of_bsn_tlv_idle_time_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_EXTERNAL_IP) {
         return of_bsn_tlv_external_ip_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_IPV4_SRC) {
-        return of_bsn_tlv_ipv4_src_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_IDLE_NOTIFICATION) {
+        return of_bsn_tlv_idle_notification_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC) {
+        return of_bsn_tlv_external_gateway_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VRF) {
+        return of_bsn_tlv_vrf_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY) {
@@ -51471,348 +47190,60 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_igmp_snooping_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_INGRESS_PORT_GROUP_ID) {
-        return of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_MAC) {
-        return of_bsn_tlv_external_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEGATE) {
-        return of_bsn_tlv_negate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMPV6_CHKSUM) {
-        return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
-        return of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IP_PROTO) {
-        return of_bsn_tlv_ip_proto_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TIMESTAMP) {
-        return of_bsn_tlv_timestamp_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_STATE) {
-        return of_bsn_tlv_actor_state_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NO_ARP_RESPONSE) {
-        return of_bsn_tlv_no_arp_response_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_ID) {
-        return of_bsn_tlv_udf_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV6_PREFIX) {
-        return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
-        return of_bsn_tlv_partner_system_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DISABLE_SRC_MAC_CHECK) {
-        return of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ENHANCED_HASH_CAPABILITY) {
-        return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RECORD_PACKETS) {
-        return of_bsn_tlv_record_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MPLS_CONTROL_WORD) {
-        return of_bsn_tlv_mpls_control_word_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ETH_TYPE) {
-        return of_bsn_tlv_eth_type_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
-        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT) {
-        return of_bsn_tlv_port_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MAC_MASK) {
-        return of_bsn_tlv_mac_mask_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_KEY) {
-        return of_bsn_tlv_actor_key_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VPN_KEY) {
-        return of_bsn_tlv_vpn_key_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS) {
-        return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEXTHOP_TYPE_VXLAN) {
-        return of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MCG_TYPE_VXLAN) {
-        return of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DECAP) {
-        return of_bsn_tlv_decap_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DATA) {
-        return of_bsn_tlv_data_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VLAN_VID_MASK) {
-        return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_QOS_PRIORITY) {
-        return of_bsn_tlv_qos_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
-        return of_bsn_tlv_tx_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_VIRTUAL) {
-        return of_bsn_tlv_virtual_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT) {
-        return of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NAME) {
-        return of_bsn_tlv_name_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TCP_DST) {
-        return of_bsn_tlv_tcp_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_OFFSET) {
-        return of_bsn_tlv_offset_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IDLE_TIME) {
-        return of_bsn_tlv_idle_time_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IDLE_NOTIFICATION) {
-        return of_bsn_tlv_idle_notification_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
+        return of_bsn_tlv_udf_length_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_L2_MULTICAST_LOOKUP) {
         return of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_HASH_PACKET_TYPE) {
-        return of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_NEXT_HOP_MAC) {
-        return of_bsn_tlv_next_hop_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UNICAST_RATE) {
-        return of_bsn_tlv_unicast_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_OFFSET) {
-        return of_bsn_tlv_udf_offset_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
-        return of_bsn_tlv_actor_port_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_APPLY_PACKETS) {
-        return of_bsn_tlv_apply_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV6_SRC) {
-        return of_bsn_tlv_ipv6_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_USE_PACKET_STATE) {
-        return of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDP_SRC) {
-        return of_bsn_tlv_udp_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
-        return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_REST_SERVER) {
-        return of_bsn_tlv_rest_server_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMP_TYPE) {
-        return of_bsn_tlv_icmp_type_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_QUEUE_ID) {
-        return of_bsn_tlv_queue_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PDUA_RX_INSTANCE) {
-        return of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_TYPE) {
-        return of_bsn_tlv_hash_type_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MULTICAST_INTERFACE_ID) {
-        return of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP) {
-        return of_bsn_tlv_external_gateway_ip_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ICMP_ID) {
-        return of_bsn_tlv_icmp_id_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_BSN_TLV_PARTNER_PORT_PRIORITY) {
         return of_bsn_tlv_partner_port_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TTL) {
-        return of_bsn_tlv_ttl_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_OPTICS_ALWAYS_ENABLED) {
-        return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_ETH_DST) {
-        return of_bsn_tlv_eth_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DATA_MASK) {
-        return of_bsn_tlv_data_mask_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
-        return of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_MAC) {
-        return of_bsn_tlv_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
-        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_RATE_LIMIT) {
-        return of_bsn_tlv_rate_limit_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_TX_BYTES) {
-        return of_bsn_tlv_tx_bytes_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_AUTO_NEGOTIATION) {
-        return of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_IPV4_DST) {
-        return of_bsn_tlv_ipv4_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_FORCE_LINK_UP) {
-        return of_bsn_tlv_force_link_up_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_URI_SCHEME) {
-        return of_bsn_tlv_uri_scheme_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
-        return of_bsn_tlv_udf_anchor_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PORT_VXLAN_MODE) {
-        return of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_HASH_PACKET_FIELD) {
-        return of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC) {
-        return of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_L3_SRC_CLASS_ID) {
-        return of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
-        return of_bsn_tlv_partner_state_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_DSCP) {
-        return of_bsn_tlv_dscp_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UNKNOWN_MULTICAST_RATE) {
-        return of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
-        return of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PARTNER_KEY) {
         return of_bsn_tlv_partner_key_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VFP_CLASS_ID) {
-        return of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_MAC) {
+        return of_bsn_tlv_external_mac_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UDP_DST) {
         return of_bsn_tlv_udp_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VRF) {
-        return of_bsn_tlv_vrf_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_QUEUE_ID) {
+        return of_bsn_tlv_queue_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
+        return of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MPLS_LABEL) {
+        return of_bsn_tlv_mpls_label_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_NEGATE) {
+        return of_bsn_tlv_negate_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TCP_DST) {
+        return of_bsn_tlv_tcp_dst_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_INTERVAL) {
         return of_bsn_tlv_interval_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VNI) {
-        return of_bsn_tlv_vni_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
+        return of_bsn_tlv_actor_port_priority_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_TUNNEL_CAPABILITY) {
-        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS) {
+        return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
@@ -51823,36 +47254,64 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_crc_enabled_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_NDP_OFFLOAD) {
-        return of_bsn_tlv_ndp_offload_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_IP_PROTO) {
+        return of_bsn_tlv_ip_proto_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PARENT_PORT) {
-        return of_bsn_tlv_parent_port_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_UDP_SRC) {
+        return of_bsn_tlv_udp_src_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VXLAN_EGRESS_LAG) {
-        return of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_KEY) {
+        return of_bsn_tlv_actor_key_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_INTERNAL_MAC) {
+        return of_bsn_tlv_internal_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_VLAN_VID_MASK) {
+        return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
+        return of_bsn_tlv_tx_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_HEADER_SIZE) {
+        return of_bsn_tlv_header_size_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
+        return of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_PRIORITY) {
+        return of_bsn_tlv_partner_system_priority_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4) {
+        return of_bsn_tlv_ipv4_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PRIORITY) {
         return of_bsn_tlv_priority_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VLAN_PCP) {
-        return of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_UDF_ID) {
+        return of_bsn_tlv_udf_id_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_IPV6_DST) {
-        return of_bsn_tlv_ipv6_dst_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_ETH_SRC) {
+        return of_bsn_tlv_eth_src_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_ICMP_CODE) {
-        return of_bsn_tlv_icmp_code_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_IPV6) {
+        return of_bsn_tlv_ipv6_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_NDP_STATIC) {
-        return of_bsn_tlv_ndp_static_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_NUM) {
+        return of_bsn_tlv_actor_port_num_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_REFERENCE) {
@@ -51863,24 +47322,48 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_bucket_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PUSH_VLAN_ON_INGRESS) {
-        return of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP) {
+        return of_bsn_tlv_external_gateway_ip_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PUSH_VLAN_ON_EGRESS) {
-        return of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC) {
+        return of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_APPLY_BYTES) {
-        return of_bsn_tlv_apply_bytes_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_ICMP_CODE) {
+        return of_bsn_tlv_icmp_code_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_UNTAGGED) {
-        return of_bsn_tlv_untagged_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_ICMP_ID) {
+        return of_bsn_tlv_icmp_id_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VLAN_MAC_LIST) {
-        return of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
+        return of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_IPV4_NETMASK) {
+        return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_ETH_DST) {
+        return of_bsn_tlv_eth_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_REPLY_PACKETS) {
+        return of_bsn_tlv_reply_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
+        return of_bsn_tlv_udf_anchor_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_PORT) {
+        return of_bsn_tlv_port_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
+        return of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -52062,81 +47545,6 @@ of_bsn_tlv_anchor_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_apply_bytes
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_apply_bytes.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_apply_bytes_t *
-of_bsn_tlv_apply_bytes_OF_VERSION_1_4_dup(
-    of_bsn_tlv_apply_bytes_t *src)
-{
-    of_bsn_tlv_apply_bytes_t *dst;
-    uint64_t val64;
-
-    if ((dst = of_bsn_tlv_apply_bytes_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_apply_bytes_value_get(src, &val64);
-    of_bsn_tlv_apply_bytes_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_apply_packets
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_apply_packets.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_apply_packets_t *
-of_bsn_tlv_apply_packets_OF_VERSION_1_4_dup(
-    of_bsn_tlv_apply_packets_t *src)
-{
-    of_bsn_tlv_apply_packets_t *dst;
-    uint64_t val64;
-
-    if ((dst = of_bsn_tlv_apply_packets_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_apply_packets_value_get(src, &val64);
-    of_bsn_tlv_apply_packets_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_auto_negotiation
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_auto_negotiation.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_auto_negotiation_t *
-of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dup(
-    of_bsn_tlv_auto_negotiation_t *src)
-{
-    of_bsn_tlv_auto_negotiation_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_auto_negotiation_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_auto_negotiation_value_get(src, &val8);
-    of_bsn_tlv_auto_negotiation_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_broadcast_query_timeout
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -52157,31 +47565,6 @@ of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_broadcast_query_timeout_value_get(src, &val32);
     of_bsn_tlv_broadcast_query_timeout_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_broadcast_rate
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_broadcast_rate.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_broadcast_rate_t *
-of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dup(
-    of_bsn_tlv_broadcast_rate_t *src)
-{
-    of_bsn_tlv_broadcast_rate_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_broadcast_rate_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_broadcast_rate_value_get(src, &val32);
-    of_bsn_tlv_broadcast_rate_value_set(dst, val32);
 
     return dst;
 }
@@ -52271,27 +47654,6 @@ of_bsn_tlv_convergence_status_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_cpu_lag
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_cpu_lag.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_cpu_lag_t *
-of_bsn_tlv_cpu_lag_OF_VERSION_1_4_dup(
-    of_bsn_tlv_cpu_lag_t *src)
-{
-    of_bsn_tlv_cpu_lag_t *dst;
-
-    if ((dst = of_bsn_tlv_cpu_lag_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_crc_enabled
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -52342,219 +47704,6 @@ of_bsn_tlv_data_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_data_mask
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_data_mask.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_data_mask_t *
-of_bsn_tlv_data_mask_OF_VERSION_1_4_dup(
-    of_bsn_tlv_data_mask_t *src)
-{
-    of_bsn_tlv_data_mask_t *dst;
-    of_octets_t octets;
-
-    if ((dst = of_bsn_tlv_data_mask_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_data_mask_value_get(src, &octets);
-    of_bsn_tlv_data_mask_value_set(dst, &octets);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_decap
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_decap.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_decap_t *
-of_bsn_tlv_decap_OF_VERSION_1_4_dup(
-    of_bsn_tlv_decap_t *src)
-{
-    of_bsn_tlv_decap_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_decap_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_decap_value_get(src, &val16);
-    of_bsn_tlv_decap_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_disable_src_mac_check
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_disable_src_mac_check.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_disable_src_mac_check_t *
-of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4_dup(
-    of_bsn_tlv_disable_src_mac_check_t *src)
-{
-    of_bsn_tlv_disable_src_mac_check_t *dst;
-
-    if ((dst = of_bsn_tlv_disable_src_mac_check_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_drop
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_drop.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_drop_t *
-of_bsn_tlv_drop_OF_VERSION_1_4_dup(
-    of_bsn_tlv_drop_t *src)
-{
-    of_bsn_tlv_drop_t *dst;
-
-    if ((dst = of_bsn_tlv_drop_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_dscp
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_dscp.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_dscp_t *
-of_bsn_tlv_dscp_OF_VERSION_1_4_dup(
-    of_bsn_tlv_dscp_t *src)
-{
-    of_bsn_tlv_dscp_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_dscp_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_dscp_value_get(src, &val16);
-    of_bsn_tlv_dscp_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_ecn
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ecn.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ecn_t *
-of_bsn_tlv_ecn_OF_VERSION_1_4_dup(
-    of_bsn_tlv_ecn_t *src)
-{
-    of_bsn_tlv_ecn_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_ecn_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_ecn_value_get(src, &val8);
-    of_bsn_tlv_ecn_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_egress_only
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_egress_only.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_egress_only_t *
-of_bsn_tlv_egress_only_OF_VERSION_1_4_dup(
-    of_bsn_tlv_egress_only_t *src)
-{
-    of_bsn_tlv_egress_only_t *dst;
-
-    if ((dst = of_bsn_tlv_egress_only_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_egress_port_group_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_egress_port_group_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_egress_port_group_id_t *
-of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(
-    of_bsn_tlv_egress_port_group_id_t *src)
-{
-    of_bsn_tlv_egress_port_group_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_egress_port_group_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_egress_port_group_id_value_get(src, &val32);
-    of_bsn_tlv_egress_port_group_id_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_enhanced_hash_capability
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_enhanced_hash_capability.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_enhanced_hash_capability_t *
-of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_dup(
-    of_bsn_tlv_enhanced_hash_capability_t *src)
-{
-    of_bsn_tlv_enhanced_hash_capability_t *dst;
-    uint64_t val64;
-
-    if ((dst = of_bsn_tlv_enhanced_hash_capability_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_enhanced_hash_capability_value_get(src, &val64);
-    of_bsn_tlv_enhanced_hash_capability_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_eth_dst
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -52600,31 +47749,6 @@ of_bsn_tlv_eth_src_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_eth_src_value_get(src, &mac_addr);
     of_bsn_tlv_eth_src_value_set(dst, mac_addr);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_eth_type
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_eth_type.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_eth_type_t *
-of_bsn_tlv_eth_type_OF_VERSION_1_4_dup(
-    of_bsn_tlv_eth_type_t *src)
-{
-    of_bsn_tlv_eth_type_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_eth_type_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_eth_type_value_get(src, &val16);
-    of_bsn_tlv_eth_type_value_set(dst, val16);
 
     return dst;
 }
@@ -52755,52 +47879,6 @@ of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_force_link_up
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_force_link_up.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_force_link_up_t *
-of_bsn_tlv_force_link_up_OF_VERSION_1_4_dup(
-    of_bsn_tlv_force_link_up_t *src)
-{
-    of_bsn_tlv_force_link_up_t *dst;
-
-    if ((dst = of_bsn_tlv_force_link_up_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_forward_error_correction
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_forward_error_correction.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_forward_error_correction_t *
-of_bsn_tlv_forward_error_correction_OF_VERSION_1_4_dup(
-    of_bsn_tlv_forward_error_correction_t *src)
-{
-    of_bsn_tlv_forward_error_correction_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_forward_error_correction_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_forward_error_correction_value_get(src, &val8);
-    of_bsn_tlv_forward_error_correction_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_generation_id
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -52821,194 +47899,6 @@ of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_generation_id_value_get(src, &val64);
     of_bsn_tlv_generation_id_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_algorithm
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_algorithm.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_algorithm_t *
-of_bsn_tlv_hash_algorithm_OF_VERSION_1_4_dup(
-    of_bsn_tlv_hash_algorithm_t *src)
-{
-    of_bsn_tlv_hash_algorithm_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_hash_algorithm_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_algorithm_value_get(src, &val16);
-    of_bsn_tlv_hash_algorithm_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_gtp_header_match
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_gtp_header_match.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_gtp_header_match_t *
-of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4_dup(
-    of_bsn_tlv_hash_gtp_header_match_t *src)
-{
-    of_bsn_tlv_hash_gtp_header_match_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_hash_gtp_header_match_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_gtp_header_match_first_header_byte_get(src, &val8);
-    of_bsn_tlv_hash_gtp_header_match_first_header_byte_set(dst, val8);
-
-    of_bsn_tlv_hash_gtp_header_match_first_header_mask_get(src, &val8);
-    of_bsn_tlv_hash_gtp_header_match_first_header_mask_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_gtp_port_match
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_gtp_port_match.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_gtp_port_match_t *
-of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_dup(
-    of_bsn_tlv_hash_gtp_port_match_t *src)
-{
-    of_bsn_tlv_hash_gtp_port_match_t *dst;
-    uint8_t val8;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_hash_gtp_port_match_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_gtp_port_match_match_get(src, &val8);
-    of_bsn_tlv_hash_gtp_port_match_match_set(dst, val8);
-
-    of_bsn_tlv_hash_gtp_port_match_src_port_get(src, &val16);
-    of_bsn_tlv_hash_gtp_port_match_src_port_set(dst, val16);
-
-    of_bsn_tlv_hash_gtp_port_match_dst_port_get(src, &val16);
-    of_bsn_tlv_hash_gtp_port_match_dst_port_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_packet_field
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_packet_field.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_packet_field_t *
-of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_dup(
-    of_bsn_tlv_hash_packet_field_t *src)
-{
-    of_bsn_tlv_hash_packet_field_t *dst;
-    uint64_t val64;
-
-    if ((dst = of_bsn_tlv_hash_packet_field_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_packet_field_value_get(src, &val64);
-    of_bsn_tlv_hash_packet_field_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_packet_type
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_packet_type.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_packet_type_t *
-of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_dup(
-    of_bsn_tlv_hash_packet_type_t *src)
-{
-    of_bsn_tlv_hash_packet_type_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_hash_packet_type_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_packet_type_value_get(src, &val8);
-    of_bsn_tlv_hash_packet_type_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_seed
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_seed.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_seed_t *
-of_bsn_tlv_hash_seed_OF_VERSION_1_4_dup(
-    of_bsn_tlv_hash_seed_t *src)
-{
-    of_bsn_tlv_hash_seed_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_hash_seed_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_seed_seed1_get(src, &val32);
-    of_bsn_tlv_hash_seed_seed1_set(dst, val32);
-
-    of_bsn_tlv_hash_seed_seed2_get(src, &val32);
-    of_bsn_tlv_hash_seed_seed2_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_hash_type
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_hash_type.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_hash_type_t *
-of_bsn_tlv_hash_type_OF_VERSION_1_4_dup(
-    of_bsn_tlv_hash_type_t *src)
-{
-    of_bsn_tlv_hash_type_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_hash_type_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_hash_type_value_get(src, &val8);
-    of_bsn_tlv_hash_type_value_set(dst, val8);
 
     return dst;
 }
@@ -53114,31 +48004,6 @@ of_bsn_tlv_icmp_type_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_icmpv6_chksum
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_icmpv6_chksum.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_icmpv6_chksum_t *
-of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dup(
-    of_bsn_tlv_icmpv6_chksum_t *src)
-{
-    of_bsn_tlv_icmpv6_chksum_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_icmpv6_chksum_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_icmpv6_chksum_value_get(src, &val16);
-    of_bsn_tlv_icmpv6_chksum_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_idle_notification
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -53226,31 +48091,6 @@ of_bsn_tlv_igmp_snooping_OF_VERSION_1_4_dup(
     if ((dst = of_bsn_tlv_igmp_snooping_new(src->version)) == NULL) {
         return NULL;
     }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_ingress_port_group_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ingress_port_group_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ingress_port_group_id_t *
-of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4_dup(
-    of_bsn_tlv_ingress_port_group_id_t *src)
-{
-    of_bsn_tlv_ingress_port_group_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_ingress_port_group_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_ingress_port_group_id_value_get(src, &val32);
-    of_bsn_tlv_ingress_port_group_id_value_set(dst, val32);
 
     return dst;
 }
@@ -53481,110 +48321,6 @@ of_bsn_tlv_ipv6_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_ipv6_dst
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ipv6_dst.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ipv6_dst_t *
-of_bsn_tlv_ipv6_dst_OF_VERSION_1_4_dup(
-    of_bsn_tlv_ipv6_dst_t *src)
-{
-    of_bsn_tlv_ipv6_dst_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_bsn_tlv_ipv6_dst_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_ipv6_dst_value_get(src, &ipv6);
-    of_bsn_tlv_ipv6_dst_value_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_ipv6_prefix
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ipv6_prefix.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ipv6_prefix_t *
-of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_dup(
-    of_bsn_tlv_ipv6_prefix_t *src)
-{
-    of_bsn_tlv_ipv6_prefix_t *dst;
-    of_ipv6_t ipv6;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_ipv6_prefix_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_ipv6_prefix_value_get(src, &ipv6);
-    of_bsn_tlv_ipv6_prefix_value_set(dst, ipv6);
-
-    of_bsn_tlv_ipv6_prefix_prefix_length_get(src, &val8);
-    of_bsn_tlv_ipv6_prefix_prefix_length_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_ipv6_src
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ipv6_src.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ipv6_src_t *
-of_bsn_tlv_ipv6_src_OF_VERSION_1_4_dup(
-    of_bsn_tlv_ipv6_src_t *src)
-{
-    of_bsn_tlv_ipv6_src_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_bsn_tlv_ipv6_src_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_ipv6_src_value_get(src, &ipv6);
-    of_bsn_tlv_ipv6_src_value_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_known_multicast_rate
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_known_multicast_rate.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_known_multicast_rate_t *
-of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dup(
-    of_bsn_tlv_known_multicast_rate_t *src)
-{
-    of_bsn_tlv_known_multicast_rate_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_known_multicast_rate_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_known_multicast_rate_value_get(src, &val32);
-    of_bsn_tlv_known_multicast_rate_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_l2_multicast_lookup
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -53601,156 +48337,6 @@ of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_dup(
     if ((dst = of_bsn_tlv_l2_multicast_lookup_new(src->version)) == NULL) {
         return NULL;
     }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_l3_dst_class_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_l3_dst_class_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_l3_dst_class_id_t *
-of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_4_dup(
-    of_bsn_tlv_l3_dst_class_id_t *src)
-{
-    of_bsn_tlv_l3_dst_class_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_l3_dst_class_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_l3_dst_class_id_value_get(src, &val32);
-    of_bsn_tlv_l3_dst_class_id_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_l3_interface_class_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_l3_interface_class_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_l3_interface_class_id_t *
-of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_4_dup(
-    of_bsn_tlv_l3_interface_class_id_t *src)
-{
-    of_bsn_tlv_l3_interface_class_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_l3_interface_class_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_l3_interface_class_id_value_get(src, &val32);
-    of_bsn_tlv_l3_interface_class_id_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_l3_src_class_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_l3_src_class_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_l3_src_class_id_t *
-of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4_dup(
-    of_bsn_tlv_l3_src_class_id_t *src)
-{
-    of_bsn_tlv_l3_src_class_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_l3_src_class_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_l3_src_class_id_value_get(src, &val32);
-    of_bsn_tlv_l3_src_class_id_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_lag_options
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_lag_options.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_lag_options_t *
-of_bsn_tlv_lag_options_OF_VERSION_1_4_dup(
-    of_bsn_tlv_lag_options_t *src)
-{
-    of_bsn_tlv_lag_options_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_lag_options_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_lag_options_flags_get(src, &val16);
-    of_bsn_tlv_lag_options_flags_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_loopback_mode
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_loopback_mode.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_loopback_mode_t *
-of_bsn_tlv_loopback_mode_OF_VERSION_1_4_dup(
-    of_bsn_tlv_loopback_mode_t *src)
-{
-    of_bsn_tlv_loopback_mode_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_loopback_mode_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_loopback_mode_value_get(src, &val8);
-    of_bsn_tlv_loopback_mode_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_loopback_port
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_loopback_port.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_loopback_port_t *
-of_bsn_tlv_loopback_port_OF_VERSION_1_4_dup(
-    of_bsn_tlv_loopback_port_t *src)
-{
-    of_bsn_tlv_loopback_port_t *dst;
-    of_port_no_t port_no;
-
-    if ((dst = of_bsn_tlv_loopback_port_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_loopback_port_value_get(src, &port_no);
-    of_bsn_tlv_loopback_port_value_set(dst, port_no);
 
     return dst;
 }
@@ -53801,27 +48387,6 @@ of_bsn_tlv_mac_mask_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_mac_mask_value_get(src, &mac_addr);
     of_bsn_tlv_mac_mask_value_set(dst, mac_addr);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_mcg_type_vxlan
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_mcg_type_vxlan.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_mcg_type_vxlan_t *
-of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_dup(
-    of_bsn_tlv_mcg_type_vxlan_t *src)
-{
-    of_bsn_tlv_mcg_type_vxlan_t *dst;
-
-    if ((dst = of_bsn_tlv_mcg_type_vxlan_new(src->version)) == NULL) {
-        return NULL;
-    }
 
     return dst;
 }
@@ -53927,31 +48492,6 @@ of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_multicast_interface_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_multicast_interface_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_multicast_interface_id_t *
-of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_dup(
-    of_bsn_tlv_multicast_interface_id_t *src)
-{
-    of_bsn_tlv_multicast_interface_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_multicast_interface_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_multicast_interface_id_value_get(src, &val32);
-    of_bsn_tlv_multicast_interface_id_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_name
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -53977,48 +48517,6 @@ of_bsn_tlv_name_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_ndp_offload
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ndp_offload.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ndp_offload_t *
-of_bsn_tlv_ndp_offload_OF_VERSION_1_4_dup(
-    of_bsn_tlv_ndp_offload_t *src)
-{
-    of_bsn_tlv_ndp_offload_t *dst;
-
-    if ((dst = of_bsn_tlv_ndp_offload_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_ndp_static
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ndp_static.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ndp_static_t *
-of_bsn_tlv_ndp_static_OF_VERSION_1_4_dup(
-    of_bsn_tlv_ndp_static_t *src)
-{
-    of_bsn_tlv_ndp_static_t *dst;
-
-    if ((dst = of_bsn_tlv_ndp_static_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_negate
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -54033,119 +48531,6 @@ of_bsn_tlv_negate_OF_VERSION_1_4_dup(
     of_bsn_tlv_negate_t *dst;
 
     if ((dst = of_bsn_tlv_negate_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_next_hop_ipv4
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_next_hop_ipv4.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_next_hop_ipv4_t *
-of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_dup(
-    of_bsn_tlv_next_hop_ipv4_t *src)
-{
-    of_bsn_tlv_next_hop_ipv4_t *dst;
-    of_ipv4_t ipv4;
-
-    if ((dst = of_bsn_tlv_next_hop_ipv4_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_next_hop_ipv4_value_get(src, &ipv4);
-    of_bsn_tlv_next_hop_ipv4_value_set(dst, ipv4);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_next_hop_mac
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_next_hop_mac.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_next_hop_mac_t *
-of_bsn_tlv_next_hop_mac_OF_VERSION_1_4_dup(
-    of_bsn_tlv_next_hop_mac_t *src)
-{
-    of_bsn_tlv_next_hop_mac_t *dst;
-    of_mac_addr_t mac_addr;
-
-    if ((dst = of_bsn_tlv_next_hop_mac_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_next_hop_mac_value_get(src, &mac_addr);
-    of_bsn_tlv_next_hop_mac_value_set(dst, mac_addr);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_nexthop_type_vxlan
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_nexthop_type_vxlan.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_nexthop_type_vxlan_t *
-of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4_dup(
-    of_bsn_tlv_nexthop_type_vxlan_t *src)
-{
-    of_bsn_tlv_nexthop_type_vxlan_t *dst;
-
-    if ((dst = of_bsn_tlv_nexthop_type_vxlan_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_no_arp_response
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_no_arp_response.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_no_arp_response_t *
-of_bsn_tlv_no_arp_response_OF_VERSION_1_4_dup(
-    of_bsn_tlv_no_arp_response_t *src)
-{
-    of_bsn_tlv_no_arp_response_t *dst;
-
-    if ((dst = of_bsn_tlv_no_arp_response_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_no_ns_response
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_no_ns_response.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_no_ns_response_t *
-of_bsn_tlv_no_ns_response_OF_VERSION_1_4_dup(
-    of_bsn_tlv_no_ns_response_t *src)
-{
-    of_bsn_tlv_no_ns_response_t *dst;
-
-    if ((dst = of_bsn_tlv_no_ns_response_new(src->version)) == NULL) {
         return NULL;
     }
 
@@ -54173,77 +48558,6 @@ of_bsn_tlv_offset_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_offset_value_get(src, &val16);
     of_bsn_tlv_offset_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_optics_always_enabled
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_optics_always_enabled.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_optics_always_enabled_t *
-of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_dup(
-    of_bsn_tlv_optics_always_enabled_t *src)
-{
-    of_bsn_tlv_optics_always_enabled_t *dst;
-
-    if ((dst = of_bsn_tlv_optics_always_enabled_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_outer_src_mac
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_outer_src_mac.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_outer_src_mac_t *
-of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dup(
-    of_bsn_tlv_outer_src_mac_t *src)
-{
-    of_bsn_tlv_outer_src_mac_t *dst;
-    of_mac_addr_t mac_addr;
-
-    if ((dst = of_bsn_tlv_outer_src_mac_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_outer_src_mac_value_get(src, &mac_addr);
-    of_bsn_tlv_outer_src_mac_value_set(dst, mac_addr);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_parent_port
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_parent_port.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_parent_port_t *
-of_bsn_tlv_parent_port_OF_VERSION_1_4_dup(
-    of_bsn_tlv_parent_port_t *src)
-{
-    of_bsn_tlv_parent_port_t *dst;
-    of_port_no_t port_no;
-
-    if ((dst = of_bsn_tlv_parent_port_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_parent_port_value_get(src, &port_no);
-    of_bsn_tlv_parent_port_value_set(dst, port_no);
 
     return dst;
 }
@@ -54399,31 +48713,6 @@ of_bsn_tlv_partner_system_priority_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_pdua_rx_instance
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_pdua_rx_instance.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_pdua_rx_instance_t *
-of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_4_dup(
-    of_bsn_tlv_pdua_rx_instance_t *src)
-{
-    of_bsn_tlv_pdua_rx_instance_t *dst;
-    of_octets_t octets;
-
-    if ((dst = of_bsn_tlv_pdua_rx_instance_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_pdua_rx_instance_value_get(src, &octets);
-    of_bsn_tlv_pdua_rx_instance_value_set(dst, &octets);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_port
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -54449,81 +48738,6 @@ of_bsn_tlv_port_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_port_speed_gbps
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_port_speed_gbps.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_port_speed_gbps_t *
-of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_dup(
-    of_bsn_tlv_port_speed_gbps_t *src)
-{
-    of_bsn_tlv_port_speed_gbps_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_port_speed_gbps_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_port_speed_gbps_value_get(src, &val32);
-    of_bsn_tlv_port_speed_gbps_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_port_usage
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_port_usage.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_port_usage_t *
-of_bsn_tlv_port_usage_OF_VERSION_1_4_dup(
-    of_bsn_tlv_port_usage_t *src)
-{
-    of_bsn_tlv_port_usage_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_port_usage_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_port_usage_value_get(src, &val16);
-    of_bsn_tlv_port_usage_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_port_vxlan_mode
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_port_vxlan_mode.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_port_vxlan_mode_t *
-of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4_dup(
-    of_bsn_tlv_port_vxlan_mode_t *src)
-{
-    of_bsn_tlv_port_vxlan_mode_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_port_vxlan_mode_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_port_vxlan_mode_value_get(src, &val8);
-    of_bsn_tlv_port_vxlan_mode_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_priority
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -54544,73 +48758,6 @@ of_bsn_tlv_priority_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_priority_value_get(src, &val32);
     of_bsn_tlv_priority_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_push_vlan_on_egress
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_push_vlan_on_egress.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_push_vlan_on_egress_t *
-of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_dup(
-    of_bsn_tlv_push_vlan_on_egress_t *src)
-{
-    of_bsn_tlv_push_vlan_on_egress_t *dst;
-
-    if ((dst = of_bsn_tlv_push_vlan_on_egress_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_push_vlan_on_ingress
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_push_vlan_on_ingress.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_push_vlan_on_ingress_t *
-of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_dup(
-    of_bsn_tlv_push_vlan_on_ingress_t *src)
-{
-    of_bsn_tlv_push_vlan_on_ingress_t *dst;
-
-    if ((dst = of_bsn_tlv_push_vlan_on_ingress_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_qos_priority
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_qos_priority.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_qos_priority_t *
-of_bsn_tlv_qos_priority_OF_VERSION_1_4_dup(
-    of_bsn_tlv_qos_priority_t *src)
-{
-    of_bsn_tlv_qos_priority_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_qos_priority_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_qos_priority_value_get(src, &val32);
-    of_bsn_tlv_qos_priority_value_set(dst, val32);
 
     return dst;
 }
@@ -54661,81 +48808,6 @@ of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_queue_weight_value_get(src, &val32);
     of_bsn_tlv_queue_weight_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_rate_limit
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_rate_limit.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_rate_limit_t *
-of_bsn_tlv_rate_limit_OF_VERSION_1_4_dup(
-    of_bsn_tlv_rate_limit_t *src)
-{
-    of_bsn_tlv_rate_limit_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_rate_limit_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_rate_limit_value_get(src, &val32);
-    of_bsn_tlv_rate_limit_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_rate_unit
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_rate_unit.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_rate_unit_t *
-of_bsn_tlv_rate_unit_OF_VERSION_1_4_dup(
-    of_bsn_tlv_rate_unit_t *src)
-{
-    of_bsn_tlv_rate_unit_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_rate_unit_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_rate_unit_value_get(src, &val8);
-    of_bsn_tlv_rate_unit_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_record_packets
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_record_packets.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_record_packets_t *
-of_bsn_tlv_record_packets_OF_VERSION_1_4_dup(
-    of_bsn_tlv_record_packets_t *src)
-{
-    of_bsn_tlv_record_packets_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_record_packets_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_record_packets_value_get(src, &val32);
-    of_bsn_tlv_record_packets_value_set(dst, val32);
 
     return dst;
 }
@@ -54824,52 +48896,6 @@ of_bsn_tlv_request_packets_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_request_packets_value_get(src, &val64);
     of_bsn_tlv_request_packets_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_rest_server
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_rest_server.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_rest_server_t *
-of_bsn_tlv_rest_server_OF_VERSION_1_4_dup(
-    of_bsn_tlv_rest_server_t *src)
-{
-    of_bsn_tlv_rest_server_t *dst;
-
-    if ((dst = of_bsn_tlv_rest_server_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_routing_param
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_routing_param.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_routing_param_t *
-of_bsn_tlv_routing_param_OF_VERSION_1_4_dup(
-    of_bsn_tlv_routing_param_t *src)
-{
-    of_bsn_tlv_routing_param_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_routing_param_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_routing_param_value_get(src, &val16);
-    of_bsn_tlv_routing_param_value_set(dst, val16);
 
     return dst;
 }
@@ -54971,31 +48997,6 @@ of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_status
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_status.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_status_t *
-of_bsn_tlv_status_OF_VERSION_1_4_dup(
-    of_bsn_tlv_status_t *src)
-{
-    of_bsn_tlv_status_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_status_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_status_value_get(src, &val8);
-    of_bsn_tlv_status_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_strip_mpls_l2_on_ingress
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -55050,14 +49051,10 @@ of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_dup(
     of_bsn_tlv_strip_vlan_on_egress_t *src)
 {
     of_bsn_tlv_strip_vlan_on_egress_t *dst;
-    uint8_t val8;
 
     if ((dst = of_bsn_tlv_strip_vlan_on_egress_new(src->version)) == NULL) {
         return NULL;
     }
-
-    of_bsn_tlv_strip_vlan_on_egress_flags_get(src, &val8);
-    of_bsn_tlv_strip_vlan_on_egress_flags_set(dst, val8);
 
     return dst;
 }
@@ -55113,31 +49110,6 @@ of_bsn_tlv_tcp_dst_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_tcp_flags
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_tcp_flags.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_tcp_flags_t *
-of_bsn_tlv_tcp_flags_OF_VERSION_1_4_dup(
-    of_bsn_tlv_tcp_flags_t *src)
-{
-    of_bsn_tlv_tcp_flags_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_tcp_flags_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_tcp_flags_value_get(src, &val16);
-    of_bsn_tlv_tcp_flags_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_tcp_src
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -55158,81 +49130,6 @@ of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_tcp_src_value_get(src, &val16);
     of_bsn_tlv_tcp_src_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_timestamp
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_timestamp.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_timestamp_t *
-of_bsn_tlv_timestamp_OF_VERSION_1_4_dup(
-    of_bsn_tlv_timestamp_t *src)
-{
-    of_bsn_tlv_timestamp_t *dst;
-    uint64_t val64;
-
-    if ((dst = of_bsn_tlv_timestamp_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_timestamp_value_get(src, &val64);
-    of_bsn_tlv_timestamp_value_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_ttl
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_ttl.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_ttl_t *
-of_bsn_tlv_ttl_OF_VERSION_1_4_dup(
-    of_bsn_tlv_ttl_t *src)
-{
-    of_bsn_tlv_ttl_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_ttl_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_ttl_value_get(src, &val16);
-    of_bsn_tlv_ttl_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_tunnel_capability
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_tunnel_capability.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_tunnel_capability_t *
-of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_dup(
-    of_bsn_tlv_tunnel_capability_t *src)
-{
-    of_bsn_tlv_tunnel_capability_t *dst;
-    uint64_t val64;
-
-    if ((dst = of_bsn_tlv_tunnel_capability_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_tunnel_capability_value_get(src, &val64);
-    of_bsn_tlv_tunnel_capability_value_set(dst, val64);
 
     return dst;
 }
@@ -55438,40 +49335,6 @@ of_bsn_tlv_udp_src_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_uint64_list
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_uint64_list.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_uint64_list_t *
-of_bsn_tlv_uint64_list_OF_VERSION_1_4_dup(
-    of_bsn_tlv_uint64_list_t *src)
-{
-    of_bsn_tlv_uint64_list_t *dst;
-
-    of_list_uint64_t src_list;
-    of_list_uint64_t *dst_list;
-
-    if ((dst = of_bsn_tlv_uint64_list_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_uint64_list_value_bind(
-        src, &src_list);
-    dst_list = of_list_uint64_OF_VERSION_1_4_dup(&src_list);
-    if (dst_list == NULL) {
-        of_bsn_tlv_uint64_list_delete(dst);
-        return NULL;
-    }
-    of_bsn_tlv_uint64_list_value_set(dst, dst_list);
-    of_list_uint64_delete(dst_list);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_unicast_query_timeout
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -55492,232 +49355,6 @@ of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_unicast_query_timeout_value_get(src, &val32);
     of_bsn_tlv_unicast_query_timeout_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_unicast_rate
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_unicast_rate.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_unicast_rate_t *
-of_bsn_tlv_unicast_rate_OF_VERSION_1_4_dup(
-    of_bsn_tlv_unicast_rate_t *src)
-{
-    of_bsn_tlv_unicast_rate_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_unicast_rate_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_unicast_rate_value_get(src, &val32);
-    of_bsn_tlv_unicast_rate_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_unknown_multicast_rate
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_unknown_multicast_rate.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_unknown_multicast_rate_t *
-of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_dup(
-    of_bsn_tlv_unknown_multicast_rate_t *src)
-{
-    of_bsn_tlv_unknown_multicast_rate_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_unknown_multicast_rate_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_unknown_multicast_rate_value_get(src, &val32);
-    of_bsn_tlv_unknown_multicast_rate_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_untagged
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_untagged.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_untagged_t *
-of_bsn_tlv_untagged_OF_VERSION_1_4_dup(
-    of_bsn_tlv_untagged_t *src)
-{
-    of_bsn_tlv_untagged_t *dst;
-
-    if ((dst = of_bsn_tlv_untagged_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_uri_scheme
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_uri_scheme.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_uri_scheme_t *
-of_bsn_tlv_uri_scheme_OF_VERSION_1_4_dup(
-    of_bsn_tlv_uri_scheme_t *src)
-{
-    of_bsn_tlv_uri_scheme_t *dst;
-    of_octets_t octets;
-
-    if ((dst = of_bsn_tlv_uri_scheme_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_uri_scheme_value_get(src, &octets);
-    of_bsn_tlv_uri_scheme_value_set(dst, &octets);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_use_packet_state
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_use_packet_state.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_use_packet_state_t *
-of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(
-    of_bsn_tlv_use_packet_state_t *src)
-{
-    of_bsn_tlv_use_packet_state_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_bsn_tlv_use_packet_state_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_use_packet_state_value_get(src, &val8);
-    of_bsn_tlv_use_packet_state_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_vfi
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_vfi.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_vfi_t *
-of_bsn_tlv_vfi_OF_VERSION_1_4_dup(
-    of_bsn_tlv_vfi_t *src)
-{
-    of_bsn_tlv_vfi_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_vfi_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_vfi_value_get(src, &val16);
-    of_bsn_tlv_vfi_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_vfp_class_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_vfp_class_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_vfp_class_id_t *
-of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_dup(
-    of_bsn_tlv_vfp_class_id_t *src)
-{
-    of_bsn_tlv_vfp_class_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_vfp_class_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_vfp_class_id_value_get(src, &val32);
-    of_bsn_tlv_vfp_class_id_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_virtual
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_virtual.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_virtual_t *
-of_bsn_tlv_virtual_OF_VERSION_1_4_dup(
-    of_bsn_tlv_virtual_t *src)
-{
-    of_bsn_tlv_virtual_t *dst;
-
-    if ((dst = of_bsn_tlv_virtual_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_vlan_mac_list
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_vlan_mac_list.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_vlan_mac_list_t *
-of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_dup(
-    of_bsn_tlv_vlan_mac_list_t *src)
-{
-    of_bsn_tlv_vlan_mac_list_t *dst;
-
-    of_list_bsn_vlan_mac_t src_list;
-    of_list_bsn_vlan_mac_t *dst_list;
-
-    if ((dst = of_bsn_tlv_vlan_mac_list_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_vlan_mac_list_key_bind(
-        src, &src_list);
-    dst_list = of_list_bsn_vlan_mac_OF_VERSION_1_4_dup(&src_list);
-    if (dst_list == NULL) {
-        of_bsn_tlv_vlan_mac_list_delete(dst);
-        return NULL;
-    }
-    of_bsn_tlv_vlan_mac_list_key_set(dst, dst_list);
-    of_list_bsn_vlan_mac_delete(dst_list);
 
     return dst;
 }
@@ -55798,56 +49435,6 @@ of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_tlv_vni
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_vni.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_vni_t *
-of_bsn_tlv_vni_OF_VERSION_1_4_dup(
-    of_bsn_tlv_vni_t *src)
-{
-    of_bsn_tlv_vni_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_vni_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_vni_value_get(src, &val32);
-    of_bsn_tlv_vni_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_vpn_key
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_vpn_key.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_vpn_key_t *
-of_bsn_tlv_vpn_key_OF_VERSION_1_4_dup(
-    of_bsn_tlv_vpn_key_t *src)
-{
-    of_bsn_tlv_vpn_key_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_bsn_tlv_vpn_key_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_vpn_key_value_get(src, &val32);
-    of_bsn_tlv_vpn_key_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_tlv_vrf
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -55868,27 +49455,6 @@ of_bsn_tlv_vrf_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_vrf_value_get(src, &val32);
     of_bsn_tlv_vrf_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_vxlan_egress_lag
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_vxlan_egress_lag.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_vxlan_egress_lag_t *
-of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_dup(
-    of_bsn_tlv_vxlan_egress_lag_t *src)
-{
-    of_bsn_tlv_vxlan_egress_lag_t *dst;
-
-    if ((dst = of_bsn_tlv_vxlan_egress_lag_new(src->version)) == NULL) {
-        return NULL;
-    }
 
     return dst;
 }
@@ -55927,35 +49493,6 @@ of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dup(
     }
     of_bsn_vlan_counter_stats_entry_values_set(dst, dst_list);
     of_list_uint64_delete(dst_list);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_vlan_mac
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_vlan_mac.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_vlan_mac_t *
-of_bsn_vlan_mac_OF_VERSION_1_4_dup(
-    of_bsn_vlan_mac_t *src)
-{
-    of_bsn_vlan_mac_t *dst;
-    uint16_t val16;
-    of_mac_addr_t mac_addr;
-
-    if ((dst = of_bsn_vlan_mac_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_vlan_mac_vlan_vid_get(src, &val16);
-    of_bsn_vlan_mac_vlan_vid_set(dst, val16);
-
-    of_bsn_vlan_mac_mac_get(src, &mac_addr);
-    of_bsn_vlan_mac_mac_set(dst, mac_addr);
 
     return dst;
 }
@@ -56499,10 +50036,6 @@ of_instruction_OF_VERSION_1_4_dup(
         return of_instruction_bsn_internal_priority_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_BSN_HASH_SELECT) {
-        return of_instruction_bsn_hash_select_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_INSTRUCTION_BSN_DHCP_OFFLOAD) {
         return of_instruction_bsn_dhcp_offload_OF_VERSION_1_4_dup(src);
     }
@@ -56517,10 +50050,6 @@ of_instruction_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_INSTRUCTION_METER) {
         return of_instruction_meter_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_NDP_OFFLOAD) {
-        return of_instruction_bsn_ndp_offload_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS) {
@@ -56769,37 +50298,6 @@ of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_instruction_bsn_hash_select
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_instruction_bsn_hash_select.
- *
- * The caller is responsible for deleting the returned value
- */
-of_instruction_bsn_hash_select_t *
-of_instruction_bsn_hash_select_OF_VERSION_1_4_dup(
-    of_instruction_bsn_hash_select_t *src)
-{
-    of_instruction_bsn_hash_select_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_instruction_bsn_hash_select_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_instruction_bsn_hash_select_experimenter_get(src, &val32);
-    of_instruction_bsn_hash_select_experimenter_set(dst, val32);
-
-    of_instruction_bsn_hash_select_subtype_get(src, &val32);
-    of_instruction_bsn_hash_select_subtype_set(dst, val32);
-
-    of_instruction_bsn_hash_select_flags_get(src, &val32);
-    of_instruction_bsn_hash_select_flags_set(dst, val32);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_instruction_bsn_internal_priority
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -56826,34 +50324,6 @@ of_instruction_bsn_internal_priority_OF_VERSION_1_4_dup(
 
     of_instruction_bsn_internal_priority_value_get(src, &val32);
     of_instruction_bsn_internal_priority_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_instruction_bsn_ndp_offload
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_instruction_bsn_ndp_offload.
- *
- * The caller is responsible for deleting the returned value
- */
-of_instruction_bsn_ndp_offload_t *
-of_instruction_bsn_ndp_offload_OF_VERSION_1_4_dup(
-    of_instruction_bsn_ndp_offload_t *src)
-{
-    of_instruction_bsn_ndp_offload_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_instruction_bsn_ndp_offload_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_instruction_bsn_ndp_offload_experimenter_get(src, &val32);
-    of_instruction_bsn_ndp_offload_experimenter_set(dst, val32);
-
-    of_instruction_bsn_ndp_offload_subtype_get(src, &val32);
-    of_instruction_bsn_ndp_offload_subtype_set(dst, val32);
 
     return dst;
 }
@@ -57056,8 +50526,8 @@ of_instruction_id_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_NDP_OFFLOAD) {
-        return of_instruction_id_bsn_ndp_offload_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
+        return of_instruction_id_write_metadata_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY) {
@@ -57078,10 +50548,6 @@ of_instruction_id_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE) {
         return of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_HASH_SELECT) {
-        return of_instruction_id_bsn_hash_select_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS) {
@@ -57108,20 +50574,16 @@ of_instruction_id_OF_VERSION_1_4_dup(
         return of_instruction_id_bsn_arp_offload_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS) {
-        return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_INSTRUCTION_ID_BSN_PERMIT) {
         return of_instruction_id_bsn_permit_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DENY) {
-        return of_instruction_id_bsn_deny_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS) {
+        return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
-        return of_instruction_id_write_metadata_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DENY) {
+        return of_instruction_id_bsn_deny_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
@@ -57361,34 +50823,6 @@ of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_instruction_id_bsn_hash_select
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_instruction_id_bsn_hash_select.
- *
- * The caller is responsible for deleting the returned value
- */
-of_instruction_id_bsn_hash_select_t *
-of_instruction_id_bsn_hash_select_OF_VERSION_1_4_dup(
-    of_instruction_id_bsn_hash_select_t *src)
-{
-    of_instruction_id_bsn_hash_select_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_instruction_id_bsn_hash_select_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_instruction_id_bsn_hash_select_experimenter_get(src, &val32);
-    of_instruction_id_bsn_hash_select_experimenter_set(dst, val32);
-
-    of_instruction_id_bsn_hash_select_subtype_get(src, &val32);
-    of_instruction_id_bsn_hash_select_subtype_set(dst, val32);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_instruction_id_bsn_internal_priority
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -57412,34 +50846,6 @@ of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_dup(
 
     of_instruction_id_bsn_internal_priority_subtype_get(src, &val32);
     of_instruction_id_bsn_internal_priority_subtype_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_instruction_id_bsn_ndp_offload
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_instruction_id_bsn_ndp_offload.
- *
- * The caller is responsible for deleting the returned value
- */
-of_instruction_id_bsn_ndp_offload_t *
-of_instruction_id_bsn_ndp_offload_OF_VERSION_1_4_dup(
-    of_instruction_id_bsn_ndp_offload_t *src)
-{
-    of_instruction_id_bsn_ndp_offload_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_instruction_id_bsn_ndp_offload_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_instruction_id_bsn_ndp_offload_experimenter_get(src, &val32);
-    of_instruction_id_bsn_ndp_offload_experimenter_set(dst, val32);
-
-    of_instruction_id_bsn_ndp_offload_subtype_get(src, &val32);
-    of_instruction_id_bsn_ndp_offload_subtype_set(dst, val32);
 
     return dst;
 }
@@ -58114,12 +51520,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_ipv6_nd_target_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION_MASKED) {
-        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
-        return of_oxm_vlan_vid_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_ICMPV4_CODE) {
+        return of_oxm_icmpv4_code_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_MPLS_BOS_MASKED) {
@@ -58138,16 +51540,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_egr_port_group_id_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_VFI_MASKED) {
-        return of_oxm_bsn_vfi_masked_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_INNER_VLAN_VID) {
         return of_oxm_bsn_inner_vlan_vid_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT) {
-        return of_oxm_bsn_l2_cache_hit_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_ICMPV6_CODE_MASKED) {
@@ -58162,10 +51556,6 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_lag_id_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV4_CODE) {
-        return of_oxm_icmpv4_code_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
         return of_oxm_bsn_udf2_masked_OF_VERSION_1_4_dup(src);
     }
@@ -58178,24 +51568,12 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_ipv6_flabel_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
-        return of_oxm_icmpv4_type_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_UDP_DST) {
         return of_oxm_udp_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
-        return of_oxm_conn_tracking_state_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
-        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC_MASKED) {
-        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
+        return of_oxm_ipv6_nd_sll_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_ETH_TYPE) {
@@ -58208,10 +51586,6 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_VLAN_PCP) {
         return of_oxm_vlan_pcp_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO_MASKED) {
-        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_TLL) {
@@ -58230,8 +51604,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST_MASKED) {
-        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
+        return of_oxm_icmpv4_type_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
@@ -58254,20 +51628,20 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_vlan_pcp_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
-        return of_oxm_eth_type_masked_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_ARP_SHA) {
         return of_oxm_arp_sha_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
+        return of_oxm_eth_type_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_DST) {
         return of_oxm_tcp_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF6) {
-        return of_oxm_bsn_udf6_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
+        return of_oxm_ip_proto_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IP_ECN_MASKED) {
@@ -58278,16 +51652,16 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_pbb_uca_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST) {
-        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_METADATA_MASKED) {
         return of_oxm_metadata_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
-        return of_oxm_icmpv6_type_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_SCTP_SRC) {
@@ -58306,32 +51680,24 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC) {
-        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
+        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST_MASKED) {
-        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_MPLS_BOS) {
+        return of_oxm_mpls_bos_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
         return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
-        return of_oxm_arp_spa_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
-        return of_oxm_ip_proto_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
         return of_oxm_bsn_tcp_flags_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IFP_CLASS_ID) {
-        return of_oxm_bsn_ifp_class_id_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_ARP_SHA_MASKED) {
@@ -58358,6 +51724,10 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_udf5_masked_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED) {
+        return of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
         return of_oxm_icmpv4_type_masked_OF_VERSION_1_4_dup(src);
     }
@@ -58370,24 +51740,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_icmpv4_code_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_OVS_TCP_FLAGS_MASKED) {
-        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_STATE_MASKED) {
-        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_DST) {
-        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_MARK_MASKED) {
-        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return of_oxm_bsn_udf3_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
@@ -58408,10 +51762,6 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED) {
         return of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_DST_MASKED) {
-        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_INNER_ETH_DST) {
@@ -58474,16 +51824,12 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED) {
-        return of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF6) {
+        return of_oxm_bsn_udf6_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IN_PORT) {
         return of_oxm_in_port_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE_MASKED) {
-        return of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF7_MASKED) {
@@ -58500,10 +51846,6 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_TCP_SRC) {
         return of_oxm_tcp_src_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
-        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_UDP_SRC_MASKED) {
@@ -58526,64 +51868,36 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_eth_src_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL) {
-        return of_oxm_conn_tracking_label_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_SRC) {
-        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_VRF) {
         return of_oxm_bsn_vrf_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_DST) {
-        return of_oxm_ipv4_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_IP_FRAGMENTATION) {
-        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
         return of_oxm_ipv6_src_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_IPV6_DST) {
-        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
+        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IP_DSCP) {
         return of_oxm_ip_dscp_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_ZONE) {
-        return of_oxm_conn_tracking_zone_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
-        return of_oxm_ipv6_nd_sll_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
+        return of_oxm_vlan_vid_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
         return of_oxm_ipv6_flabel_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC_MASKED) {
-        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_SRC) {
-        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
         return of_oxm_mpls_tc_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_MARK) {
-        return of_oxm_conn_tracking_mark_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_DST_MASKED) {
@@ -58598,16 +51912,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_sctp_src_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_CONN_TRACKING_NW_PROTO) {
-        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
         return of_oxm_bsn_lag_id_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_L2_CACHE_HIT_MASKED) {
-        return of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IP_PROTO) {
@@ -58626,10 +51932,6 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_udp_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_VFI) {
-        return of_oxm_bsn_vfi_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_ARP_SPA) {
         return of_oxm_arp_spa_OF_VERSION_1_4_dup(src);
     }
@@ -58646,24 +51948,12 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
-        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_VLAN_VID) {
         return of_oxm_vlan_vid_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_IFP_CLASS_ID_MASKED) {
-        return of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_MPLS_BOS) {
-        return of_oxm_mpls_bos_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
-        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
+        return of_oxm_icmpv6_type_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
@@ -58674,10 +51964,6 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
-        return of_oxm_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_TUNNEL_ID) {
         return of_oxm_tunnel_id_OF_VERSION_1_4_dup(src);
     }
@@ -58686,16 +51972,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_metadata_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_OVS_TCP_FLAGS) {
-        return of_oxm_ovs_tcp_flags_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
         return of_oxm_bsn_udf0_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_CONN_TRACKING_LABEL_MASKED) {
-        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
@@ -59064,59 +52342,6 @@ of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_oxm_bsn_ifp_class_id
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_ifp_class_id.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_ifp_class_id_t *
-of_oxm_bsn_ifp_class_id_OF_VERSION_1_4_dup(
-    of_oxm_bsn_ifp_class_id_t *src)
-{
-    of_oxm_bsn_ifp_class_id_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_bsn_ifp_class_id_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_ifp_class_id_value_get(src, &val32);
-    of_oxm_bsn_ifp_class_id_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_bsn_ifp_class_id_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_ifp_class_id_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_ifp_class_id_masked_t *
-of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_dup(
-    of_oxm_bsn_ifp_class_id_masked_t *src)
-{
-    of_oxm_bsn_ifp_class_id_masked_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_bsn_ifp_class_id_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_ifp_class_id_masked_value_get(src, &val32);
-    of_oxm_bsn_ifp_class_id_masked_value_set(dst, val32);
-
-    of_oxm_bsn_ifp_class_id_masked_value_mask_get(src, &val32);
-    of_oxm_bsn_ifp_class_id_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_oxm_bsn_in_ports_128
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -59430,112 +52655,6 @@ of_oxm_bsn_inner_vlan_vid_masked_OF_VERSION_1_4_dup(
 
     of_oxm_bsn_inner_vlan_vid_masked_value_mask_get(src, &val16);
     of_oxm_bsn_inner_vlan_vid_masked_value_mask_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_bsn_ip_fragmentation
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_ip_fragmentation.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_ip_fragmentation_t *
-of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_dup(
-    of_oxm_bsn_ip_fragmentation_t *src)
-{
-    of_oxm_bsn_ip_fragmentation_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_bsn_ip_fragmentation_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_ip_fragmentation_value_get(src, &val8);
-    of_oxm_bsn_ip_fragmentation_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_bsn_ip_fragmentation_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_ip_fragmentation_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_ip_fragmentation_masked_t *
-of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_dup(
-    of_oxm_bsn_ip_fragmentation_masked_t *src)
-{
-    of_oxm_bsn_ip_fragmentation_masked_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_bsn_ip_fragmentation_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_ip_fragmentation_masked_value_get(src, &val8);
-    of_oxm_bsn_ip_fragmentation_masked_value_set(dst, val8);
-
-    of_oxm_bsn_ip_fragmentation_masked_value_mask_get(src, &val8);
-    of_oxm_bsn_ip_fragmentation_masked_value_mask_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_bsn_l2_cache_hit
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_l2_cache_hit.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_l2_cache_hit_t *
-of_oxm_bsn_l2_cache_hit_OF_VERSION_1_4_dup(
-    of_oxm_bsn_l2_cache_hit_t *src)
-{
-    of_oxm_bsn_l2_cache_hit_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_bsn_l2_cache_hit_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_l2_cache_hit_value_get(src, &val8);
-    of_oxm_bsn_l2_cache_hit_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_bsn_l2_cache_hit_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_l2_cache_hit_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_l2_cache_hit_masked_t *
-of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_4_dup(
-    of_oxm_bsn_l2_cache_hit_masked_t *src)
-{
-    of_oxm_bsn_l2_cache_hit_masked_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_bsn_l2_cache_hit_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_l2_cache_hit_masked_value_get(src, &val8);
-    of_oxm_bsn_l2_cache_hit_masked_value_set(dst, val8);
-
-    of_oxm_bsn_l2_cache_hit_masked_value_mask_get(src, &val8);
-    of_oxm_bsn_l2_cache_hit_masked_value_mask_set(dst, val8);
 
     return dst;
 }
@@ -60177,59 +53296,6 @@ of_oxm_bsn_udf7_masked_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_oxm_bsn_vfi
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_vfi.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_vfi_t *
-of_oxm_bsn_vfi_OF_VERSION_1_4_dup(
-    of_oxm_bsn_vfi_t *src)
-{
-    of_oxm_bsn_vfi_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_bsn_vfi_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_vfi_value_get(src, &val16);
-    of_oxm_bsn_vfi_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_bsn_vfi_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_bsn_vfi_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_bsn_vfi_masked_t *
-of_oxm_bsn_vfi_masked_OF_VERSION_1_4_dup(
-    of_oxm_bsn_vfi_masked_t *src)
-{
-    of_oxm_bsn_vfi_masked_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_bsn_vfi_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_bsn_vfi_masked_value_get(src, &val16);
-    of_oxm_bsn_vfi_masked_value_set(dst, val16);
-
-    of_oxm_bsn_vfi_masked_value_mask_get(src, &val16);
-    of_oxm_bsn_vfi_masked_value_mask_set(dst, val16);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_oxm_bsn_vlan_xlate_port_group_id
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -60384,589 +53450,6 @@ of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_dup(
 
     of_oxm_bsn_vxlan_network_id_masked_value_mask_get(src, &val32);
     of_oxm_bsn_vxlan_network_id_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_ipv6_dst
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_ipv6_dst.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_ipv6_dst_t *
-of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_ipv6_dst_t *src)
-{
-    of_oxm_conn_tracking_ipv6_dst_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_oxm_conn_tracking_ipv6_dst_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_ipv6_dst_value_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_dst_value_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_ipv6_dst_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_ipv6_dst_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_ipv6_dst_masked_t *
-of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_ipv6_dst_masked_t *src)
-{
-    of_oxm_conn_tracking_ipv6_dst_masked_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_oxm_conn_tracking_ipv6_dst_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_ipv6_dst_masked_value_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_dst_masked_value_set(dst, ipv6);
-
-    of_oxm_conn_tracking_ipv6_dst_masked_value_mask_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_dst_masked_value_mask_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_ipv6_src
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_ipv6_src.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_ipv6_src_t *
-of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_ipv6_src_t *src)
-{
-    of_oxm_conn_tracking_ipv6_src_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_oxm_conn_tracking_ipv6_src_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_ipv6_src_value_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_src_value_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_ipv6_src_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_ipv6_src_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_ipv6_src_masked_t *
-of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_ipv6_src_masked_t *src)
-{
-    of_oxm_conn_tracking_ipv6_src_masked_t *dst;
-    of_ipv6_t ipv6;
-
-    if ((dst = of_oxm_conn_tracking_ipv6_src_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_ipv6_src_masked_value_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_src_masked_value_set(dst, ipv6);
-
-    of_oxm_conn_tracking_ipv6_src_masked_value_mask_get(src, &ipv6);
-    of_oxm_conn_tracking_ipv6_src_masked_value_mask_set(dst, ipv6);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_label
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_label.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_label_t *
-of_oxm_conn_tracking_label_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_label_t *src)
-{
-    of_oxm_conn_tracking_label_t *dst;
-    uint128_t val128;
-
-    if ((dst = of_oxm_conn_tracking_label_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_label_value_get(src, &val128);
-    of_oxm_conn_tracking_label_value_set(dst, val128);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_label_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_label_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_label_masked_t *
-of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_label_masked_t *src)
-{
-    of_oxm_conn_tracking_label_masked_t *dst;
-    uint128_t val128;
-
-    if ((dst = of_oxm_conn_tracking_label_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_label_masked_value_get(src, &val128);
-    of_oxm_conn_tracking_label_masked_value_set(dst, val128);
-
-    of_oxm_conn_tracking_label_masked_value_mask_get(src, &val128);
-    of_oxm_conn_tracking_label_masked_value_mask_set(dst, val128);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_mark
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_mark.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_mark_t *
-of_oxm_conn_tracking_mark_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_mark_t *src)
-{
-    of_oxm_conn_tracking_mark_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_mark_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_mark_value_get(src, &val32);
-    of_oxm_conn_tracking_mark_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_mark_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_mark_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_mark_masked_t *
-of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_mark_masked_t *src)
-{
-    of_oxm_conn_tracking_mark_masked_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_mark_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_mark_masked_value_get(src, &val32);
-    of_oxm_conn_tracking_mark_masked_value_set(dst, val32);
-
-    of_oxm_conn_tracking_mark_masked_value_mask_get(src, &val32);
-    of_oxm_conn_tracking_mark_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_dst
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_dst.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_dst_t *
-of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_nw_dst_t *src)
-{
-    of_oxm_conn_tracking_nw_dst_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_nw_dst_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_dst_value_get(src, &val32);
-    of_oxm_conn_tracking_nw_dst_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_dst_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_dst_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_dst_masked_t *
-of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_nw_dst_masked_t *src)
-{
-    of_oxm_conn_tracking_nw_dst_masked_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_nw_dst_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_dst_masked_value_get(src, &val32);
-    of_oxm_conn_tracking_nw_dst_masked_value_set(dst, val32);
-
-    of_oxm_conn_tracking_nw_dst_masked_value_mask_get(src, &val32);
-    of_oxm_conn_tracking_nw_dst_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_proto
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_proto.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_proto_t *
-of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_nw_proto_t *src)
-{
-    of_oxm_conn_tracking_nw_proto_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_conn_tracking_nw_proto_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_proto_value_get(src, &val8);
-    of_oxm_conn_tracking_nw_proto_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_proto_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_proto_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_proto_masked_t *
-of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_nw_proto_masked_t *src)
-{
-    of_oxm_conn_tracking_nw_proto_masked_t *dst;
-    uint8_t val8;
-
-    if ((dst = of_oxm_conn_tracking_nw_proto_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_proto_masked_value_get(src, &val8);
-    of_oxm_conn_tracking_nw_proto_masked_value_set(dst, val8);
-
-    of_oxm_conn_tracking_nw_proto_masked_value_mask_get(src, &val8);
-    of_oxm_conn_tracking_nw_proto_masked_value_mask_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_src
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_src.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_src_t *
-of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_nw_src_t *src)
-{
-    of_oxm_conn_tracking_nw_src_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_nw_src_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_src_value_get(src, &val32);
-    of_oxm_conn_tracking_nw_src_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_nw_src_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_nw_src_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_nw_src_masked_t *
-of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_nw_src_masked_t *src)
-{
-    of_oxm_conn_tracking_nw_src_masked_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_nw_src_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_nw_src_masked_value_get(src, &val32);
-    of_oxm_conn_tracking_nw_src_masked_value_set(dst, val32);
-
-    of_oxm_conn_tracking_nw_src_masked_value_mask_get(src, &val32);
-    of_oxm_conn_tracking_nw_src_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_state
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_state.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_state_t *
-of_oxm_conn_tracking_state_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_state_t *src)
-{
-    of_oxm_conn_tracking_state_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_state_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_state_value_get(src, &val32);
-    of_oxm_conn_tracking_state_value_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_state_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_state_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_state_masked_t *
-of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_state_masked_t *src)
-{
-    of_oxm_conn_tracking_state_masked_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_oxm_conn_tracking_state_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_state_masked_value_get(src, &val32);
-    of_oxm_conn_tracking_state_masked_value_set(dst, val32);
-
-    of_oxm_conn_tracking_state_masked_value_mask_get(src, &val32);
-    of_oxm_conn_tracking_state_masked_value_mask_set(dst, val32);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_tp_dst
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_tp_dst.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_tp_dst_t *
-of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_tp_dst_t *src)
-{
-    of_oxm_conn_tracking_tp_dst_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_tp_dst_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_tp_dst_value_get(src, &val16);
-    of_oxm_conn_tracking_tp_dst_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_tp_dst_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_tp_dst_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_tp_dst_masked_t *
-of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_tp_dst_masked_t *src)
-{
-    of_oxm_conn_tracking_tp_dst_masked_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_tp_dst_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_tp_dst_masked_value_get(src, &val16);
-    of_oxm_conn_tracking_tp_dst_masked_value_set(dst, val16);
-
-    of_oxm_conn_tracking_tp_dst_masked_value_mask_get(src, &val16);
-    of_oxm_conn_tracking_tp_dst_masked_value_mask_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_tp_src
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_tp_src.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_tp_src_t *
-of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_tp_src_t *src)
-{
-    of_oxm_conn_tracking_tp_src_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_tp_src_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_tp_src_value_get(src, &val16);
-    of_oxm_conn_tracking_tp_src_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_tp_src_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_tp_src_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_tp_src_masked_t *
-of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_tp_src_masked_t *src)
-{
-    of_oxm_conn_tracking_tp_src_masked_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_tp_src_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_tp_src_masked_value_get(src, &val16);
-    of_oxm_conn_tracking_tp_src_masked_value_set(dst, val16);
-
-    of_oxm_conn_tracking_tp_src_masked_value_mask_get(src, &val16);
-    of_oxm_conn_tracking_tp_src_masked_value_mask_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_zone
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_zone.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_zone_t *
-of_oxm_conn_tracking_zone_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_zone_t *src)
-{
-    of_oxm_conn_tracking_zone_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_zone_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_zone_value_get(src, &val16);
-    of_oxm_conn_tracking_zone_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_conn_tracking_zone_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_conn_tracking_zone_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_conn_tracking_zone_masked_t *
-of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_dup(
-    of_oxm_conn_tracking_zone_masked_t *src)
-{
-    of_oxm_conn_tracking_zone_masked_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_oxm_conn_tracking_zone_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_conn_tracking_zone_masked_value_get(src, &val16);
-    of_oxm_conn_tracking_zone_masked_value_set(dst, val16);
-
-    of_oxm_conn_tracking_zone_masked_value_mask_get(src, &val16);
-    of_oxm_conn_tracking_zone_masked_value_mask_set(dst, val16);
 
     return dst;
 }
@@ -62297,67 +54780,6 @@ of_oxm_mpls_tc_masked_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_oxm_ovs_tcp_flags
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_ovs_tcp_flags.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_ovs_tcp_flags_t *
-of_oxm_ovs_tcp_flags_OF_VERSION_1_4_dup(
-    of_oxm_ovs_tcp_flags_t *src)
-{
-    of_oxm_ovs_tcp_flags_t *dst;
-    uint32_t val32;
-    uint16_t val16;
-
-    if ((dst = of_oxm_ovs_tcp_flags_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_ovs_tcp_flags_experimenter_id_get(src, &val32);
-    of_oxm_ovs_tcp_flags_experimenter_id_set(dst, val32);
-
-    of_oxm_ovs_tcp_flags_value_get(src, &val16);
-    of_oxm_ovs_tcp_flags_value_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_oxm_ovs_tcp_flags_masked
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_oxm_ovs_tcp_flags_masked.
- *
- * The caller is responsible for deleting the returned value
- */
-of_oxm_ovs_tcp_flags_masked_t *
-of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_dup(
-    of_oxm_ovs_tcp_flags_masked_t *src)
-{
-    of_oxm_ovs_tcp_flags_masked_t *dst;
-    uint32_t val32;
-    uint16_t val16;
-
-    if ((dst = of_oxm_ovs_tcp_flags_masked_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_oxm_ovs_tcp_flags_masked_experimenter_id_get(src, &val32);
-    of_oxm_ovs_tcp_flags_masked_experimenter_id_set(dst, val32);
-
-    of_oxm_ovs_tcp_flags_masked_value_get(src, &val16);
-    of_oxm_ovs_tcp_flags_masked_value_set(dst, val16);
-
-    of_oxm_ovs_tcp_flags_masked_value_mask_get(src, &val16);
-    of_oxm_ovs_tcp_flags_masked_value_mask_set(dst, val16);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_oxm_pbb_uca
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -63100,16 +55522,8 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_SPEED_CAPABILITIES) {
-        return of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_PORT_DESC_PROP_ETHERNET) {
         return of_port_desc_prop_ethernet_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_BREAKOUT) {
-        return of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_PORT_DESC_PROP_OPTICAL) {
@@ -63120,88 +55534,11 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
         return of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_MISC_CAPABILITIES) {
-        return of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_PORT_DESC_PROP_BSN_UPLINK) {
         return of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_FORWARD_ERROR_CORRECTION) {
-        return of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_dup(src);
-    }
-
     return NULL;
-}
-
-/**
- * Duplicate an object of type of_port_desc_prop_bsn_breakout
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_port_desc_prop_bsn_breakout.
- *
- * The caller is responsible for deleting the returned value
- */
-of_port_desc_prop_bsn_breakout_t *
-of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(
-    of_port_desc_prop_bsn_breakout_t *src)
-{
-    of_port_desc_prop_bsn_breakout_t *dst;
-    uint32_t val32;
-    uint16_t val16;
-
-    if ((dst = of_port_desc_prop_bsn_breakout_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_port_desc_prop_bsn_breakout_experimenter_get(src, &val32);
-    of_port_desc_prop_bsn_breakout_experimenter_set(dst, val32);
-
-    of_port_desc_prop_bsn_breakout_exp_type_get(src, &val32);
-    of_port_desc_prop_bsn_breakout_exp_type_set(dst, val32);
-
-    of_port_desc_prop_bsn_breakout_sub_interface_count_get(src, &val16);
-    of_port_desc_prop_bsn_breakout_sub_interface_count_set(dst, val16);
-
-    of_port_desc_prop_bsn_breakout_sub_interface_speed_gbps_get(src, &val16);
-    of_port_desc_prop_bsn_breakout_sub_interface_speed_gbps_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_port_desc_prop_bsn_forward_error_correction
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_port_desc_prop_bsn_forward_error_correction.
- *
- * The caller is responsible for deleting the returned value
- */
-of_port_desc_prop_bsn_forward_error_correction_t *
-of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_dup(
-    of_port_desc_prop_bsn_forward_error_correction_t *src)
-{
-    of_port_desc_prop_bsn_forward_error_correction_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_port_desc_prop_bsn_forward_error_correction_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_port_desc_prop_bsn_forward_error_correction_experimenter_get(src, &val32);
-    of_port_desc_prop_bsn_forward_error_correction_experimenter_set(dst, val32);
-
-    of_port_desc_prop_bsn_forward_error_correction_exp_type_get(src, &val32);
-    of_port_desc_prop_bsn_forward_error_correction_exp_type_set(dst, val32);
-
-    of_port_desc_prop_bsn_forward_error_correction_configured_get(src, &val32);
-    of_port_desc_prop_bsn_forward_error_correction_configured_set(dst, val32);
-
-    of_port_desc_prop_bsn_forward_error_correction_enabled_get(src, &val32);
-    of_port_desc_prop_bsn_forward_error_correction_enabled_set(dst, val32);
-
-    return dst;
 }
 
 /**
@@ -63232,82 +55569,6 @@ of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(
 
     of_port_desc_prop_bsn_generation_id_generation_id_get(src, &val64);
     of_port_desc_prop_bsn_generation_id_generation_id_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_port_desc_prop_bsn_misc_capabilities
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_port_desc_prop_bsn_misc_capabilities.
- *
- * The caller is responsible for deleting the returned value
- */
-of_port_desc_prop_bsn_misc_capabilities_t *
-of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(
-    of_port_desc_prop_bsn_misc_capabilities_t *src)
-{
-    of_port_desc_prop_bsn_misc_capabilities_t *dst;
-    uint32_t val32;
-    uint64_t val64;
-
-    if ((dst = of_port_desc_prop_bsn_misc_capabilities_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_port_desc_prop_bsn_misc_capabilities_experimenter_get(src, &val32);
-    of_port_desc_prop_bsn_misc_capabilities_experimenter_set(dst, val32);
-
-    of_port_desc_prop_bsn_misc_capabilities_exp_type_get(src, &val32);
-    of_port_desc_prop_bsn_misc_capabilities_exp_type_set(dst, val32);
-
-    of_port_desc_prop_bsn_misc_capabilities_current_get(src, &val64);
-    of_port_desc_prop_bsn_misc_capabilities_current_set(dst, val64);
-
-    of_port_desc_prop_bsn_misc_capabilities_available_get(src, &val64);
-    of_port_desc_prop_bsn_misc_capabilities_available_set(dst, val64);
-
-    of_port_desc_prop_bsn_misc_capabilities_supported_get(src, &val64);
-    of_port_desc_prop_bsn_misc_capabilities_supported_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_port_desc_prop_bsn_speed_capabilities
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_port_desc_prop_bsn_speed_capabilities.
- *
- * The caller is responsible for deleting the returned value
- */
-of_port_desc_prop_bsn_speed_capabilities_t *
-of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dup(
-    of_port_desc_prop_bsn_speed_capabilities_t *src)
-{
-    of_port_desc_prop_bsn_speed_capabilities_t *dst;
-    uint32_t val32;
-    uint64_t val64;
-
-    if ((dst = of_port_desc_prop_bsn_speed_capabilities_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_port_desc_prop_bsn_speed_capabilities_experimenter_get(src, &val32);
-    of_port_desc_prop_bsn_speed_capabilities_experimenter_set(dst, val32);
-
-    of_port_desc_prop_bsn_speed_capabilities_exp_type_get(src, &val32);
-    of_port_desc_prop_bsn_speed_capabilities_exp_type_set(dst, val32);
-
-    of_port_desc_prop_bsn_speed_capabilities_current_get(src, &val64);
-    of_port_desc_prop_bsn_speed_capabilities_current_set(dst, val64);
-
-    of_port_desc_prop_bsn_speed_capabilities_available_get(src, &val64);
-    of_port_desc_prop_bsn_speed_capabilities_available_set(dst, val64);
-
-    of_port_desc_prop_bsn_speed_capabilities_supported_get(src, &val64);
-    of_port_desc_prop_bsn_speed_capabilities_supported_set(dst, val64);
 
     return dst;
 }
@@ -63596,10 +55857,6 @@ of_port_stats_prop_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_PORT_STATS_PROP_EXPERIMENTER_INTEL) {
-        return of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_PORT_STATS_PROP_ETHERNET) {
         return of_port_stats_prop_ethernet_OF_VERSION_1_4_dup(src);
     }
@@ -63641,98 +55898,6 @@ of_port_stats_prop_ethernet_OF_VERSION_1_4_dup(
 
     of_port_stats_prop_ethernet_collisions_get(src, &val64);
     of_port_stats_prop_ethernet_collisions_set(dst, val64);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_port_stats_prop_experimenter_intel
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_port_stats_prop_experimenter_intel.
- *
- * The caller is responsible for deleting the returned value
- */
-of_port_stats_prop_experimenter_intel_t *
-of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_dup(
-    of_port_stats_prop_experimenter_intel_t *src)
-{
-    of_port_stats_prop_experimenter_intel_t *dst;
-    uint32_t val32;
-    uint64_t val64;
-
-    if ((dst = of_port_stats_prop_experimenter_intel_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_port_stats_prop_experimenter_intel_experimenter_get(src, &val32);
-    of_port_stats_prop_experimenter_intel_experimenter_set(dst, val32);
-
-    of_port_stats_prop_experimenter_intel_exp_type_get(src, &val32);
-    of_port_stats_prop_experimenter_intel_exp_type_set(dst, val32);
-
-    of_port_stats_prop_experimenter_intel_rx_1_to_64_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_rx_1_to_64_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_rx_65_to_127_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_rx_65_to_127_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_rx_128_to_255_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_rx_128_to_255_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_rx_256_to_511_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_rx_256_to_511_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_rx_512_to_1023_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_rx_512_to_1023_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_rx_1024_to_1522_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_rx_1024_to_1522_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_rx_1523_to_max_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_rx_1523_to_max_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_tx_1_to_64_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_tx_1_to_64_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_tx_65_to_127_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_tx_65_to_127_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_tx_128_to_255_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_tx_128_to_255_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_tx_256_to_511_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_tx_256_to_511_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_tx_512_to_1023_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_tx_512_to_1023_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_tx_1024_to_1522_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_tx_1024_to_1522_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_tx_1523_to_max_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_tx_1523_to_max_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_tx_multicast_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_tx_multicast_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_rx_broadcast_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_rx_broadcast_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_tx_broadcast_packets_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_tx_broadcast_packets_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_rx_undersized_errors_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_rx_undersized_errors_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_rx_oversize_errors_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_rx_oversize_errors_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_rx_fragmented_errors_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_rx_fragmented_errors_set(dst, val64);
-
-    of_port_stats_prop_experimenter_intel_rx_jabber_errors_get(src, &val64);
-    of_port_stats_prop_experimenter_intel_rx_jabber_errors_set(dst, val64);
 
     return dst;
 }
@@ -63850,47 +56015,11 @@ of_queue_desc_prop_OF_VERSION_1_4_dup(
         return of_queue_desc_prop_min_rate_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_QUEUE_DESC_PROP_BSN_QUEUE_NAME) {
-        return of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_QUEUE_DESC_PROP_MAX_RATE) {
         return of_queue_desc_prop_max_rate_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
-}
-
-/**
- * Duplicate an object of type of_queue_desc_prop_bsn_queue_name
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_queue_desc_prop_bsn_queue_name.
- *
- * The caller is responsible for deleting the returned value
- */
-of_queue_desc_prop_bsn_queue_name_t *
-of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_dup(
-    of_queue_desc_prop_bsn_queue_name_t *src)
-{
-    of_queue_desc_prop_bsn_queue_name_t *dst;
-    uint32_t val32;
-    of_octets_t octets;
-
-    if ((dst = of_queue_desc_prop_bsn_queue_name_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_queue_desc_prop_bsn_queue_name_experimenter_get(src, &val32);
-    of_queue_desc_prop_bsn_queue_name_experimenter_set(dst, val32);
-
-    of_queue_desc_prop_bsn_queue_name_exp_type_get(src, &val32);
-    of_queue_desc_prop_bsn_queue_name_exp_type_set(dst, val32);
-
-    of_queue_desc_prop_bsn_queue_name_name_get(src, &octets);
-    of_queue_desc_prop_bsn_queue_name_name_set(dst, &octets);
-
-    return dst;
 }
 
 /**
@@ -65652,40 +57781,6 @@ of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate a list of type of_list_bsn_vlan_mac
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_list_bsn_vlan_mac.
- *
- * The caller is responsible for deleting the returned value
- */
-of_list_bsn_vlan_mac_t *
-of_list_bsn_vlan_mac_OF_VERSION_1_4_dup(
-    of_list_bsn_vlan_mac_t *src)
-{
-    of_object_t src_elt;
-    of_object_t *dst_elt;
-    int rv;
-    of_list_bsn_vlan_mac_t *dst;
-
-    if ((dst = of_list_bsn_vlan_mac_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    OF_LIST_BSN_VLAN_MAC_ITER(src, &src_elt, rv) {
-        if ((dst_elt = of_bsn_vlan_mac_OF_VERSION_1_4_dup(&src_elt)) == NULL) {
-            of_object_delete((of_object_t *)dst);
-            return NULL;
-        }
-        _TRY_FREE(of_list_bsn_vlan_mac_append(dst, dst_elt),
-            dst, NULL);
-        of_object_delete((of_object_t *)dst_elt);
-    }
-
-    return dst;
-}
-
-/**
  * Duplicate a list of type of_list_bsn_vrf_counter_stats_entry
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -67160,15 +59255,6 @@ of_bsn_arp_idle_dup(
 }
 
 of_object_t *
-of_bsn_base_error_dup(
-    of_object_t *src)
-{
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_bw_clear_data_reply_dup(
     of_object_t *src)
 {
@@ -67445,23 +59531,6 @@ of_bsn_debug_counter_stats_request_dup(
 }
 
 of_object_t *
-of_bsn_error_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_error_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_error_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_flow_checksum_bucket_stats_reply_dup(
     of_object_t *src)
 {
@@ -67587,19 +59656,6 @@ of_bsn_generic_async_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_generic_async_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_generic_command_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_generic_command_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -67838,23 +59894,6 @@ of_bsn_gentable_entry_stats_request_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_gentable_entry_stats_request_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_gentable_error_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_gentable_error_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_gentable_error_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -69306,6 +61345,18 @@ of_object_t *
 of_experimenter_error_msg_dup(
     of_object_t *src)
 {
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_experimenter_error_msg_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_experimenter_error_msg_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_experimenter_error_msg_OF_VERSION_1_4_dup(src);
+    }
 
     /* Class not supported in given version */
     return NULL;
@@ -72791,57 +64842,6 @@ of_bsn_tlv_anchor_dup(
 }
 
 of_object_t *
-of_bsn_tlv_apply_bytes_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_apply_bytes_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_apply_bytes_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_apply_packets_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_apply_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_apply_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_auto_negotiation_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_tlv_broadcast_query_timeout_dup(
     of_object_t *src)
 {
@@ -72852,23 +64852,6 @@ of_bsn_tlv_broadcast_query_timeout_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_broadcast_rate_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -72927,23 +64910,6 @@ of_bsn_tlv_convergence_status_dup(
 }
 
 of_object_t *
-of_bsn_tlv_cpu_lag_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_cpu_lag_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_cpu_lag_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_tlv_crc_enabled_dup(
     of_object_t *src)
 {
@@ -72978,159 +64944,6 @@ of_bsn_tlv_data_dup(
 }
 
 of_object_t *
-of_bsn_tlv_data_mask_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_data_mask_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_data_mask_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_decap_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_decap_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_decap_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_disable_src_mac_check_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_drop_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_drop_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_drop_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_dscp_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_dscp_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_dscp_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_ecn_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_ecn_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_ecn_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_egress_only_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_egress_only_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_egress_only_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_egress_port_group_id_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_enhanced_hash_capability_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_tlv_eth_dst_dup(
     of_object_t *src)
 {
@@ -73158,23 +64971,6 @@ of_bsn_tlv_eth_src_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_eth_src_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_eth_type_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_eth_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_eth_type_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -73267,40 +65063,6 @@ of_bsn_tlv_external_netmask_dup(
 }
 
 of_object_t *
-of_bsn_tlv_force_link_up_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_force_link_up_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_force_link_up_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_forward_error_correction_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_forward_error_correction_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_forward_error_correction_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_tlv_generation_id_dup(
     of_object_t *src)
 {
@@ -73311,125 +65073,6 @@ of_bsn_tlv_generation_id_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_generation_id_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_hash_algorithm_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_hash_algorithm_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_hash_algorithm_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_hash_gtp_header_match_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_hash_gtp_header_match_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_hash_gtp_port_match_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_hash_packet_field_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_hash_packet_field_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_hash_packet_field_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_hash_packet_type_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_hash_packet_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_hash_packet_type_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_hash_seed_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_hash_seed_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_hash_seed_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_hash_type_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_hash_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_hash_type_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -73505,23 +65148,6 @@ of_bsn_tlv_icmp_type_dup(
 }
 
 of_object_t *
-of_bsn_tlv_icmpv6_chksum_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_tlv_idle_notification_dup(
     of_object_t *src)
 {
@@ -73583,23 +65209,6 @@ of_bsn_tlv_igmp_snooping_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_igmp_snooping_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_ingress_port_group_id_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -73760,74 +65369,6 @@ of_bsn_tlv_ipv6_dup(
 }
 
 of_object_t *
-of_bsn_tlv_ipv6_dst_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_ipv6_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_ipv6_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_ipv6_prefix_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_ipv6_src_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_ipv6_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_ipv6_src_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_known_multicast_rate_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_tlv_l2_multicast_lookup_dup(
     of_object_t *src)
 {
@@ -73838,108 +65379,6 @@ of_bsn_tlv_l2_multicast_lookup_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_l3_dst_class_id_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_l3_interface_class_id_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_l3_src_class_id_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_lag_options_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_lag_options_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_lag_options_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_loopback_mode_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_loopback_mode_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_loopback_mode_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_loopback_port_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_loopback_port_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_loopback_port_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -73974,23 +65413,6 @@ of_bsn_tlv_mac_mask_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_mac_mask_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_mcg_type_vxlan_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -74066,23 +65488,6 @@ of_bsn_tlv_mpls_sequenced_dup(
 }
 
 of_object_t *
-of_bsn_tlv_multicast_interface_id_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_tlv_name_dup(
     of_object_t *src)
 {
@@ -74093,40 +65498,6 @@ of_bsn_tlv_name_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_name_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_ndp_offload_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_ndp_offload_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_ndp_offload_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_ndp_static_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_ndp_static_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_ndp_static_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -74151,91 +65522,6 @@ of_bsn_tlv_negate_dup(
 }
 
 of_object_t *
-of_bsn_tlv_next_hop_ipv4_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_next_hop_ipv4_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_next_hop_mac_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_next_hop_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_next_hop_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_nexthop_type_vxlan_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_nexthop_type_vxlan_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_no_arp_response_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_no_arp_response_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_no_arp_response_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_no_ns_response_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_no_ns_response_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_no_ns_response_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_tlv_offset_dup(
     of_object_t *src)
 {
@@ -74246,57 +65532,6 @@ of_bsn_tlv_offset_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_offset_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_optics_always_enabled_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_outer_src_mac_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_outer_src_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_outer_src_mac_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_parent_port_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_parent_port_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_parent_port_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -74406,23 +65641,6 @@ of_bsn_tlv_partner_system_priority_dup(
 }
 
 of_object_t *
-of_bsn_tlv_pdua_rx_instance_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_tlv_port_dup(
     of_object_t *src)
 {
@@ -74440,57 +65658,6 @@ of_bsn_tlv_port_dup(
 }
 
 of_object_t *
-of_bsn_tlv_port_speed_gbps_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_port_usage_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_port_usage_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_port_usage_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_port_vxlan_mode_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_tlv_priority_dup(
     of_object_t *src)
 {
@@ -74501,57 +65668,6 @@ of_bsn_tlv_priority_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_push_vlan_on_egress_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_push_vlan_on_egress_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_push_vlan_on_ingress_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_qos_priority_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_qos_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_qos_priority_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -74586,57 +65702,6 @@ of_bsn_tlv_queue_weight_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_rate_limit_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_rate_limit_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_rate_limit_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_rate_unit_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_rate_unit_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_rate_unit_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_record_packets_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_record_packets_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_record_packets_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -74688,40 +65753,6 @@ of_bsn_tlv_request_packets_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_request_packets_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_rest_server_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_rest_server_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_rest_server_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_routing_param_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_routing_param_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_routing_param_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -74790,23 +65821,6 @@ of_bsn_tlv_set_loopback_mode_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_status_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_status_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_status_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -74899,23 +65913,6 @@ of_bsn_tlv_tcp_dst_dup(
 }
 
 of_object_t *
-of_bsn_tlv_tcp_flags_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_tcp_flags_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_tcp_flags_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_tlv_tcp_src_dup(
     of_object_t *src)
 {
@@ -74926,57 +65923,6 @@ of_bsn_tlv_tcp_src_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_timestamp_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_timestamp_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_timestamp_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_ttl_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_ttl_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_ttl_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_tunnel_capability_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -75120,23 +66066,6 @@ of_bsn_tlv_udp_src_dup(
 }
 
 of_object_t *
-of_bsn_tlv_uint64_list_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_uint64_list_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_uint64_list_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_tlv_unicast_query_timeout_dup(
     of_object_t *src)
 {
@@ -75147,159 +66076,6 @@ of_bsn_tlv_unicast_query_timeout_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_unicast_rate_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_unicast_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_unicast_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_unknown_multicast_rate_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_unknown_multicast_rate_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_untagged_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_untagged_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_untagged_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_uri_scheme_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_uri_scheme_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_uri_scheme_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_use_packet_state_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_use_packet_state_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_vfi_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_vfi_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_vfi_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_vfp_class_id_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_vfp_class_id_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_vfp_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_virtual_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_virtual_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_virtual_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_vlan_mac_list_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_vlan_mac_list_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_vlan_mac_list_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -75358,40 +66134,6 @@ of_bsn_tlv_vlan_vid_mask_dup(
 }
 
 of_object_t *
-of_bsn_tlv_vni_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_vni_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_vni_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_vpn_key_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_vpn_key_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_vpn_key_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_tlv_vrf_dup(
     of_object_t *src)
 {
@@ -75409,23 +66151,6 @@ of_bsn_tlv_vrf_dup(
 }
 
 of_object_t *
-of_bsn_tlv_vxlan_egress_lag_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_vlan_counter_stats_entry_dup(
     of_object_t *src)
 {
@@ -75436,23 +66161,6 @@ of_bsn_vlan_counter_stats_entry_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_vlan_mac_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_vlan_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_vlan_mac_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -75940,23 +66648,6 @@ of_instruction_bsn_disable_vlan_counters_dup(
 }
 
 of_object_t *
-of_instruction_bsn_hash_select_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_instruction_bsn_hash_select_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_instruction_bsn_hash_select_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_instruction_bsn_internal_priority_dup(
     of_object_t *src)
 {
@@ -75967,23 +66658,6 @@ of_instruction_bsn_internal_priority_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_instruction_bsn_internal_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_instruction_bsn_ndp_offload_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_instruction_bsn_ndp_offload_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_instruction_bsn_ndp_offload_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -76310,23 +66984,6 @@ of_instruction_id_bsn_disable_vlan_counters_dup(
 }
 
 of_object_t *
-of_instruction_id_bsn_hash_select_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_instruction_id_bsn_hash_select_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_instruction_id_bsn_hash_select_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_instruction_id_bsn_internal_priority_dup(
     of_object_t *src)
 {
@@ -76337,23 +66994,6 @@ of_instruction_id_bsn_internal_priority_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_instruction_id_bsn_ndp_offload_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_instruction_id_bsn_ndp_offload_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_instruction_id_bsn_ndp_offload_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -77097,32 +67737,6 @@ of_oxm_bsn_global_vrf_allowed_masked_dup(
 }
 
 of_object_t *
-of_oxm_bsn_ifp_class_id_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_bsn_ifp_class_id_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_bsn_ifp_class_id_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_bsn_ifp_class_id_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_oxm_bsn_in_ports_128_dup(
     of_object_t *src)
 {
@@ -77351,48 +67965,6 @@ of_oxm_bsn_inner_vlan_vid_masked_dup(
 }
 
 of_object_t *
-of_oxm_bsn_ip_fragmentation_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_bsn_ip_fragmentation_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_bsn_ip_fragmentation_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_oxm_bsn_l2_cache_hit_dup(
     of_object_t *src)
 {
@@ -77403,10 +67975,6 @@ of_oxm_bsn_l2_cache_hit_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_bsn_l2_cache_hit_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -77424,10 +67992,6 @@ of_oxm_bsn_l2_cache_hit_masked_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -77973,40 +68537,6 @@ of_oxm_bsn_udf7_masked_dup(
 }
 
 of_object_t *
-of_oxm_bsn_vfi_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_bsn_vfi_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_bsn_vfi_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_bsn_vfi_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_bsn_vfi_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_bsn_vfi_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_oxm_bsn_vlan_xlate_port_group_id_dup(
     of_object_t *src)
 {
@@ -78118,468 +68648,6 @@ of_oxm_bsn_vxlan_network_id_masked_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_ipv6_dst_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_ipv6_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_ipv6_dst_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_ipv6_src_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_ipv6_src_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_ipv6_src_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_ipv6_src_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_label_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_label_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_label_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_label_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_label_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_label_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_mark_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_mark_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_mark_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_mark_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_mark_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_mark_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_nw_dst_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_nw_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_nw_dst_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_nw_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_nw_proto_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_nw_proto_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_nw_proto_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_nw_proto_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_nw_src_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_nw_src_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_nw_src_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_nw_src_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_state_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_state_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_state_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_state_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_state_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_state_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_tp_dst_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_tp_dst_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_tp_dst_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_tp_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_tp_src_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_tp_src_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_tp_src_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_zone_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_zone_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_zone_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_zone_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_conn_tracking_zone_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_conn_tracking_zone_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_conn_tracking_zone_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_conn_tracking_zone_masked_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -79621,48 +69689,6 @@ of_oxm_mpls_tc_masked_dup(
 }
 
 of_object_t *
-of_oxm_ovs_tcp_flags_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_ovs_tcp_flags_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_ovs_tcp_flags_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_ovs_tcp_flags_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_oxm_ovs_tcp_flags_masked_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_oxm_ovs_tcp_flags_masked_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_oxm_pbb_uca_dup(
     of_object_t *src)
 {
@@ -80223,64 +70249,12 @@ of_port_desc_prop_bsn_dup(
 }
 
 of_object_t *
-of_port_desc_prop_bsn_breakout_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_port_desc_prop_bsn_forward_error_correction_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_port_desc_prop_bsn_generation_id_dup(
     of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
         return of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_port_desc_prop_bsn_misc_capabilities_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_port_desc_prop_bsn_speed_capabilities_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -80448,19 +70422,6 @@ of_port_stats_prop_experimenter_dup(
 }
 
 of_object_t *
-of_port_stats_prop_experimenter_intel_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_port_stats_prop_experimenter_intel_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_port_stats_prop_optical_dup(
     of_object_t *src)
 {
@@ -80493,28 +70454,6 @@ of_queue_desc_prop_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_queue_desc_prop_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_queue_desc_prop_bsn_dup(
-    of_object_t *src)
-{
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_queue_desc_prop_bsn_queue_name_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_queue_desc_prop_bsn_queue_name_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -81519,23 +71458,6 @@ of_list_bsn_vlan_counter_stats_entry_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_list_bsn_vlan_mac_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_list_bsn_vlan_mac_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_list_bsn_vlan_mac_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

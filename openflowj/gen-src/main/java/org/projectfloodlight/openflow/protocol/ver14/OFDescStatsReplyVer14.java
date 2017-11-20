@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -448,9 +446,11 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFDescStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFDescStatsReply> {
         @Override
-        public OFDescStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFDescStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -463,6 +463,7 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
             int length = U16.f(bb.readShort());
             if(length != 1072)
                 throw new OFParseError("Wrong length: Expected=1072(1072), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -624,70 +625,11 @@ class OFDescStatsReplyVer14 implements OFDescStatsReply {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFDescStatsReplyVer14 other = (OFDescStatsReplyVer14) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (mfrDesc == null) {
-            if (other.mfrDesc != null)
-                return false;
-        } else if (!mfrDesc.equals(other.mfrDesc))
-            return false;
-        if (hwDesc == null) {
-            if (other.hwDesc != null)
-                return false;
-        } else if (!hwDesc.equals(other.hwDesc))
-            return false;
-        if (swDesc == null) {
-            if (other.swDesc != null)
-                return false;
-        } else if (!swDesc.equals(other.swDesc))
-            return false;
-        if (serialNum == null) {
-            if (other.serialNum != null)
-                return false;
-        } else if (!serialNum.equals(other.serialNum))
-            return false;
-        if (dpDesc == null) {
-            if (other.dpDesc != null)
-                return false;
-        } else if (!dpDesc.equals(other.dpDesc))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((mfrDesc == null) ? 0 : mfrDesc.hashCode());
-        result = prime * result + ((hwDesc == null) ? 0 : hwDesc.hashCode());
-        result = prime * result + ((swDesc == null) ? 0 : swDesc.hashCode());
-        result = prime * result + ((serialNum == null) ? 0 : serialNum.hashCode());
-        result = prime * result + ((dpDesc == null) ? 0 : dpDesc.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((mfrDesc == null) ? 0 : mfrDesc.hashCode());
         result = prime * result + ((hwDesc == null) ? 0 : hwDesc.hashCode());

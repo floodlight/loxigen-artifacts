@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -171,9 +169,11 @@ class OFTableFeaturePropApplyActionsMissVer14 implements OFTableFeaturePropApply
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableFeaturePropApplyActionsMiss> {
+    static class Reader extends AbstractOFMessageReader<OFTableFeaturePropApplyActionsMiss> {
         @Override
-        public OFTableFeaturePropApplyActionsMiss readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeaturePropApplyActionsMiss readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x7
             short type = bb.readShort();
@@ -182,6 +182,7 @@ class OFTableFeaturePropApplyActionsMissVer14 implements OFTableFeaturePropApply
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -189,9 +190,7 @@ class OFTableFeaturePropApplyActionsMissVer14 implements OFTableFeaturePropApply
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            List<OFActionId> actionIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFActionIdVer14.READER);
-            // align message to 8 bytes (length does not contain alignment)
-            bb.skipBytes(((length + 7)/8 * 8 ) - length );
+            List<OFActionId> actionIds = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFActionIdVer14.READER);
 
             OFTableFeaturePropApplyActionsMissVer14 tableFeaturePropApplyActionsMissVer14 = new OFTableFeaturePropApplyActionsMissVer14(
                     actionIds
@@ -238,10 +237,7 @@ class OFTableFeaturePropApplyActionsMissVer14 implements OFTableFeaturePropApply
 
             // update length field
             int length = bb.writerIndex() - startIndex;
-            int alignedLength = ((length + 7)/8 * 8);
             bb.setShort(lengthIndex, length);
-            // align message to 8 bytes
-            bb.writeZero(alignedLength - length);
 
         }
     }

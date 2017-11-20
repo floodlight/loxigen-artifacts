@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -171,9 +169,11 @@ class OFBsnTlvBucketVer14 implements OFBsnTlvBucket {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvBucket> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvBucket> {
         @Override
-        public OFBsnTlvBucket readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvBucket readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x40
             short type = bb.readShort();
@@ -182,6 +182,7 @@ class OFBsnTlvBucketVer14 implements OFBsnTlvBucket {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -189,7 +190,7 @@ class OFBsnTlvBucketVer14 implements OFBsnTlvBucket {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            List<OFBsnTlv> value = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnTlvVer14.READER);
+            List<OFBsnTlv> value = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnTlvVer14.READER);
 
             OFBsnTlvBucketVer14 bsnTlvBucketVer14 = new OFBsnTlvBucketVer14(
                     value

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -35,9 +33,9 @@ abstract class OFErrorMsgVer12 {
 
     public final static OFErrorMsgVer12.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFErrorMsg> {
         @Override
-        public OFErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -52,52 +50,72 @@ abstract class OFErrorMsgVer12 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             U32.f(bb.readInt());
             short errType = bb.readShort();
-            bb.readerIndex(start);
             switch(errType) {
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.BAD_ACTION=2 for class OFBadActionErrorMsgVer12
-                   return OFBadActionErrorMsgVer12.READER.readFrom(bb);
+                   return OFBadActionErrorMsgVer12.READER.readFrom(context, bb);
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.BAD_REQUEST=1 for class OFBadRequestErrorMsgVer12
-                   return OFBadRequestErrorMsgVer12.READER.readFrom(bb);
+                   return OFBadRequestErrorMsgVer12.READER.readFrom(context, bb);
                case (short) 0x5:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.FLOW_MOD_FAILED=5 for class OFFlowModFailedErrorMsgVer12
-                   return OFFlowModFailedErrorMsgVer12.READER.readFrom(bb);
+                   return OFFlowModFailedErrorMsgVer12.READER.readFrom(context, bb);
                case (short) 0x0:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.HELLO_FAILED=0 for class OFHelloFailedErrorMsgVer12
-                   return OFHelloFailedErrorMsgVer12.READER.readFrom(bb);
+                   return OFHelloFailedErrorMsgVer12.READER.readFrom(context, bb);
                case (short) 0x7:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.PORT_MOD_FAILED=7 for class OFPortModFailedErrorMsgVer12
-                   return OFPortModFailedErrorMsgVer12.READER.readFrom(bb);
+                   return OFPortModFailedErrorMsgVer12.READER.readFrom(context, bb);
                case (short) 0x9:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.QUEUE_OP_FAILED=9 for class OFQueueOpFailedErrorMsgVer12
-                   return OFQueueOpFailedErrorMsgVer12.READER.readFrom(bb);
+                   return OFQueueOpFailedErrorMsgVer12.READER.readFrom(context, bb);
                case (short) 0x3:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.BAD_INSTRUCTION=3 for class OFBadInstructionErrorMsgVer12
-                   return OFBadInstructionErrorMsgVer12.READER.readFrom(bb);
+                   return OFBadInstructionErrorMsgVer12.READER.readFrom(context, bb);
                case (short) 0x4:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.BAD_MATCH=4 for class OFBadMatchErrorMsgVer12
-                   return OFBadMatchErrorMsgVer12.READER.readFrom(bb);
+                   return OFBadMatchErrorMsgVer12.READER.readFrom(context, bb);
                case (short) 0x6:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.GROUP_MOD_FAILED=6 for class OFGroupModFailedErrorMsgVer12
-                   return OFGroupModFailedErrorMsgVer12.READER.readFrom(bb);
+                   return OFGroupModFailedErrorMsgVer12.READER.readFrom(context, bb);
                case (short) 0xa:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.SWITCH_CONFIG_FAILED=10 for class OFSwitchConfigFailedErrorMsgVer12
-                   return OFSwitchConfigFailedErrorMsgVer12.READER.readFrom(bb);
+                   return OFSwitchConfigFailedErrorMsgVer12.READER.readFrom(context, bb);
                case (short) 0x8:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.TABLE_MOD_FAILED=8 for class OFTableModFailedErrorMsgVer12
-                   return OFTableModFailedErrorMsgVer12.READER.readFrom(bb);
+                   return OFTableModFailedErrorMsgVer12.READER.readFrom(context, bb);
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.EXPERIMENTER=65535 for class OFExperimenterErrorMsgVer12
-                   return OFExperimenterErrorMsgVer12.READER.readFrom(bb);
+                   return OFExperimenterErrorMsgVer12.READER.readFrom(context, bb);
                case (short) 0xb:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.ROLE_REQUEST_FAILED=11 for class OFRoleRequestFailedErrorMsgVer12
-                   return OFRoleRequestFailedErrorMsgVer12.READER.readFrom(bb);
+                   return OFRoleRequestFailedErrorMsgVer12.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator errType of class OFErrorMsgVer12: " + errType);
+                   context.getUnparsedHandler().unparsedMessage(OFErrorMsgVer12.class, "errType", errType);
             }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

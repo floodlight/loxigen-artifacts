@@ -2,8 +2,6 @@ package org.projectfloodlight.openflow.protocol.match;
 
 // MUST BE ORDERED BY THE ORDER OF OF SPEC!!!
 public enum MatchFields {
-    // if present, PacketType must appear as the first OXM in the list (OF 1.5., 7.2.3.11)
-    PACKET_TYPE,
     IN_PORT,
     IN_PHY_PORT,
     METADATA,
@@ -44,9 +42,6 @@ public enum MatchFields {
     TUNNEL_ID,
     IPV6_EXTHDR,
     PBB_UCA,
-    TCP_FLAGS,
-    OVS_TCP_FLAGS,
-    ACTSET_OUTPUT,
     TUNNEL_IPV4_SRC,
     TUNNEL_IPV4_DST,
     BSN_IN_PORTS_128,
@@ -74,18 +69,4 @@ public enum MatchFields {
     BSN_INNER_ETH_DST,
     BSN_INNER_ETH_SRC,
     BSN_INNER_VLAN_VID,
-    BSN_VFI,
-    BSN_IP_FRAGMENTATION,
-    BSN_IFP_CLASS_ID,
-    CONN_TRACKING_STATE,
-    CONN_TRACKING_ZONE,
-    CONN_TRACKING_MARK,
-    CONN_TRACKING_LABEL,
-    CONN_TRACKING_NW_PROTO,
-    CONN_TRACKING_NW_SRC,
-    CONN_TRACKING_NW_DST,
-    CONN_TRACKING_IPV6_SRC,
-    CONN_TRACKING_IPV6_DST,
-    CONN_TRACKING_TP_SRC,
-    CONN_TRACKING_TP_DST,
 }

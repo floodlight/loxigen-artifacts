@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -229,9 +227,11 @@ class OFOxmIpv6ExthdrVer13 implements OFOxmIpv6Exthdr {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmIpv6Exthdr> {
+    static class Reader extends AbstractOFMessageReader<OFOxmIpv6Exthdr> {
         @Override
-        public OFOxmIpv6Exthdr readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmIpv6Exthdr readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80004e02L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80004e02)

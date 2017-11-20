@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -82,11 +80,6 @@ class OFGroupDescStatsEntryVer14 implements OFGroupDescStatsEntry {
     }
 
     @Override
-    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
-    }
-
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
     }
@@ -144,15 +137,6 @@ class OFGroupDescStatsEntryVer14 implements OFGroupDescStatsEntry {
         this.buckets = buckets;
         this.bucketsSet = true;
         return this;
-    }
-    @Override
-    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
-    }
-
-    @Override
-    public OFGroupDescStatsEntry.Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.4");
     }
     @Override
     public OFVersion getVersion() {
@@ -226,15 +210,6 @@ class OFGroupDescStatsEntryVer14 implements OFGroupDescStatsEntry {
         return this;
     }
     @Override
-    public List<OFGroupProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
-    }
-
-    @Override
-    public OFGroupDescStatsEntry.Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.4");
-    }
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
     }
@@ -265,13 +240,16 @@ class OFGroupDescStatsEntryVer14 implements OFGroupDescStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFGroupDescStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFGroupDescStatsEntry> {
         @Override
-        public OFGroupDescStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupDescStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -283,7 +261,7 @@ class OFGroupDescStatsEntryVer14 implements OFGroupDescStatsEntry {
             // pad: 1 bytes
             bb.skipBytes(1);
             OFGroup group = OFGroup.read4Bytes(bb);
-            List<OFBucket> buckets = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBucketVer14.READER);
+            List<OFBucket> buckets = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBucketVer14.READER);
 
             OFGroupDescStatsEntryVer14 groupDescStatsEntryVer14 = new OFGroupDescStatsEntryVer14(
                     groupType,

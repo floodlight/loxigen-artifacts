@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -493,9 +491,11 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFAggregateStatsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFAggregateStatsRequest> {
         @Override
-        public OFAggregateStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFAggregateStatsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -508,6 +508,7 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
             int length = U16.f(bb.readShort());
             if(length != 136)
                 throw new OFParseError("Wrong length: Expected=136(136), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -532,7 +533,7 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
             bb.skipBytes(4);
             U64 cookie = U64.ofRaw(bb.readLong());
             U64 cookieMask = U64.ofRaw(bb.readLong());
-            Match match = ChannelUtilsVer11.readOFMatch(bb);
+            Match match = ChannelUtilsVer11.readOFMatch(context, bb);
 
             OFAggregateStatsRequestVer11 aggregateStatsRequestVer11 = new OFAggregateStatsRequestVer11(
                     xid,
@@ -690,76 +691,11 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFAggregateStatsRequestVer11 other = (OFAggregateStatsRequestVer11) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (tableId == null) {
-            if (other.tableId != null)
-                return false;
-        } else if (!tableId.equals(other.tableId))
-            return false;
-        if (outPort == null) {
-            if (other.outPort != null)
-                return false;
-        } else if (!outPort.equals(other.outPort))
-            return false;
-        if (outGroup == null) {
-            if (other.outGroup != null)
-                return false;
-        } else if (!outGroup.equals(other.outGroup))
-            return false;
-        if (cookie == null) {
-            if (other.cookie != null)
-                return false;
-        } else if (!cookie.equals(other.cookie))
-            return false;
-        if (cookieMask == null) {
-            if (other.cookieMask != null)
-                return false;
-        } else if (!cookieMask.equals(other.cookieMask))
-            return false;
-        if (match == null) {
-            if (other.match != null)
-                return false;
-        } else if (!match.equals(other.match))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
-        result = prime * result + ((outPort == null) ? 0 : outPort.hashCode());
-        result = prime * result + ((outGroup == null) ? 0 : outGroup.hashCode());
-        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
-        result = prime * result + ((cookieMask == null) ? 0 : cookieMask.hashCode());
-        result = prime * result + ((match == null) ? 0 : match.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((outPort == null) ? 0 : outPort.hashCode());

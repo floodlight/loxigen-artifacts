@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -238,9 +236,11 @@ class OFBsnLuaCommandRequestVer13 implements OFBsnLuaCommandRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnLuaCommandRequest> {
+    static class Reader extends AbstractOFMessageReader<OFBsnLuaCommandRequest> {
         @Override
-        public OFBsnLuaCommandRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnLuaCommandRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -253,6 +253,7 @@ class OFBsnLuaCommandRequestVer13 implements OFBsnLuaCommandRequest {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -364,37 +365,11 @@ class OFBsnLuaCommandRequestVer13 implements OFBsnLuaCommandRequest {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnLuaCommandRequestVer13 other = (OFBsnLuaCommandRequestVer13) obj;
-
-        // ignore XID
-        if (!Arrays.equals(data, other.data))
-                return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + Arrays.hashCode(data);
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + Arrays.hashCode(data);
         return result;
     }

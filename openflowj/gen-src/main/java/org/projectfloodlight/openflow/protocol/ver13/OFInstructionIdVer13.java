@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -35,39 +33,56 @@ abstract class OFInstructionIdVer13 {
 
     public final static OFInstructionIdVer13.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFInstructionId> {
+    static class Reader extends AbstractOFMessageReader<OFInstructionId> {
         @Override
-        public OFInstructionId readFrom(ByteBuf bb) throws OFParseError {
+        public OFInstructionId readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
-            bb.readerIndex(start);
             switch(type) {
                case (short) 0x4:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.APPLY_ACTIONS=4 for class OFInstructionIdApplyActionsVer13
-                   return OFInstructionIdApplyActionsVer13.READER.readFrom(bb);
+                   return OFInstructionIdApplyActionsVer13.READER.readFrom(context, bb);
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.EXPERIMENTER=65535 for class OFInstructionIdExperimenterVer13
-                   return OFInstructionIdExperimenterVer13.READER.readFrom(bb);
+                   return OFInstructionIdExperimenterVer13.READER.readFrom(context, bb);
                case (short) 0x5:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.CLEAR_ACTIONS=5 for class OFInstructionIdClearActionsVer13
-                   return OFInstructionIdClearActionsVer13.READER.readFrom(bb);
+                   return OFInstructionIdClearActionsVer13.READER.readFrom(context, bb);
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.GOTO_TABLE=1 for class OFInstructionIdGotoTableVer13
-                   return OFInstructionIdGotoTableVer13.READER.readFrom(bb);
+                   return OFInstructionIdGotoTableVer13.READER.readFrom(context, bb);
                case (short) 0x6:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.METER=6 for class OFInstructionIdMeterVer13
-                   return OFInstructionIdMeterVer13.READER.readFrom(bb);
+                   return OFInstructionIdMeterVer13.READER.readFrom(context, bb);
                case (short) 0x3:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.WRITE_ACTIONS=3 for class OFInstructionIdWriteActionsVer13
-                   return OFInstructionIdWriteActionsVer13.READER.readFrom(bb);
+                   return OFInstructionIdWriteActionsVer13.READER.readFrom(context, bb);
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.WRITE_METADATA=2 for class OFInstructionIdWriteMetadataVer13
-                   return OFInstructionIdWriteMetadataVer13.READER.readFrom(bb);
+                   return OFInstructionIdWriteMetadataVer13.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFInstructionIdVer13: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFInstructionIdVer13.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

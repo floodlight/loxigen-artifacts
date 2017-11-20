@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -285,9 +283,11 @@ class OFBsnControllerConnectionVer14 implements OFBsnControllerConnection {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnControllerConnection> {
+    static class Reader extends AbstractOFMessageReader<OFBsnControllerConnection> {
         @Override
-        public OFBsnControllerConnection readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnControllerConnection readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             OFBsnControllerConnectionState state = OFBsnControllerConnectionStateSerializerVer14.readFrom(bb);
             OFAuxId auxiliaryId = OFAuxId.readByte(bb);
             // pad: 2 bytes

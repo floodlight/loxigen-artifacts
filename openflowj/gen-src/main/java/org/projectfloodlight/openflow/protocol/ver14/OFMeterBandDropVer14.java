@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -200,9 +198,11 @@ class OFMeterBandDropVer14 implements OFMeterBandDrop {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFMeterBandDrop> {
+    static class Reader extends AbstractOFMessageReader<OFMeterBandDrop> {
         @Override
-        public OFMeterBandDrop readFrom(ByteBuf bb) throws OFParseError {
+        public OFMeterBandDrop readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x1
             short type = bb.readShort();
@@ -211,6 +211,7 @@ class OFMeterBandDropVer14 implements OFMeterBandDrop {
             int length = U16.f(bb.readShort());
             if(length != 16)
                 throw new OFParseError("Wrong length: Expected=16(16), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

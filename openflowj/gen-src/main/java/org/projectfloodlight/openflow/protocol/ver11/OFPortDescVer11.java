@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -195,7 +193,7 @@ class OFPortDescVer11 implements OFPortDesc {
      * Returns the current generation ID of this port.
      *
      * The generationId is reported by the switch as a @{link OFPortDescProp} in
-     * {@link OFPortDescStatsReply} and {@link OFPortStatus} messages. If the
+     * @link{OFPortDescStatsReply} and @link{OFPortStatus} messages. If the
      * current OFPortDesc does not contain a generation Id, returns U64.ZERO;
      *
      * For OpenFlow versions earlier than 1.4, always returns U64.ZERO;
@@ -643,9 +641,11 @@ class OFPortDescVer11 implements OFPortDesc {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPortDesc> {
+    static class Reader extends AbstractOFMessageReader<OFPortDesc> {
         @Override
-        public OFPortDesc readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortDesc readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             OFPort portNo = OFPort.read4Bytes(bb);
             // pad: 4 bytes
             bb.skipBytes(4);

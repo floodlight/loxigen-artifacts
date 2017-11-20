@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -69,16 +67,8 @@ public class OFInstructionIdsVer14 implements OFInstructionIds {
         return OFInstructionIdBsnDisableVlanCountersVer14.INSTANCE;
     }
 
-    public OFInstructionIdBsnHashSelect bsnHashSelect() {
-        return OFInstructionIdBsnHashSelectVer14.INSTANCE;
-    }
-
     public OFInstructionIdBsnInternalPriority bsnInternalPriority() {
         return OFInstructionIdBsnInternalPriorityVer14.INSTANCE;
-    }
-
-    public OFInstructionIdBsnNdpOffload bsnNdpOffload() {
-        return OFInstructionIdBsnNdpOffloadVer14.INSTANCE;
     }
 
     public OFInstructionIdBsnPacketOfDeath bsnPacketOfDeath() {
@@ -119,10 +109,6 @@ public class OFInstructionIdsVer14 implements OFInstructionIds {
 
     public OFInstructionIdWriteMetadata writeMetadata() {
         return OFInstructionIdWriteMetadataVer14.INSTANCE;
-    }
-
-    public OFInstructionIdStatTrigger statTrigger() {
-        throw new UnsupportedOperationException("OFInstructionIdStatTrigger not supported in version 1.4");
     }
 
     public OFMessageReader<OFInstructionId> getReader() {

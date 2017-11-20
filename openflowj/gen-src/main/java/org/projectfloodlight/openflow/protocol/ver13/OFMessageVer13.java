@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -36,9 +34,9 @@ abstract class OFMessageVer13 {
 
     public final static OFMessageVer13.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFMessage> {
+    static class Reader extends AbstractOFMessageReader<OFMessage> {
         @Override
-        public OFMessage readFrom(ByteBuf bb) throws OFParseError {
+        public OFMessage readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -47,101 +45,142 @@ abstract class OFMessageVer13 {
             if(version != (byte) 0x4)
                 throw new OFParseError("Wrong version: Expected=OFVersion.OF_13(4), got="+version);
             byte type = bb.readByte();
-            bb.readerIndex(start);
             switch(type) {
                case (byte) 0x13:
+                   bb.readerIndex(start);
                    // discriminator value OFType.STATS_REPLY=19 for class OFStatsReplyVer13
-                   return OFStatsReplyVer13.READER.readFrom(bb);
+                   return OFStatsReplyVer13.READER.readFrom(context, bb);
                case (byte) 0x12:
+                   bb.readerIndex(start);
                    // discriminator value OFType.STATS_REQUEST=18 for class OFStatsRequestVer13
-                   return OFStatsRequestVer13.READER.readFrom(bb);
+                   return OFStatsRequestVer13.READER.readFrom(context, bb);
                case (byte) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value OFType.ERROR=1 for class OFErrorMsgVer13
-                   return OFErrorMsgVer13.READER.readFrom(bb);
+                   return OFErrorMsgVer13.READER.readFrom(context, bb);
                case (byte) 0x15:
+                   bb.readerIndex(start);
                    // discriminator value OFType.BARRIER_REPLY=21 for class OFBarrierReplyVer13
-                   return OFBarrierReplyVer13.READER.readFrom(bb);
+                   return OFBarrierReplyVer13.READER.readFrom(context, bb);
                case (byte) 0x14:
+                   bb.readerIndex(start);
                    // discriminator value OFType.BARRIER_REQUEST=20 for class OFBarrierRequestVer13
-                   return OFBarrierRequestVer13.READER.readFrom(bb);
+                   return OFBarrierRequestVer13.READER.readFrom(context, bb);
                case (byte) 0x4:
+                   bb.readerIndex(start);
                    // discriminator value OFType.EXPERIMENTER=4 for class OFExperimenterVer13
-                   return OFExperimenterVer13.READER.readFrom(bb);
+                   return OFExperimenterVer13.READER.readFrom(context, bb);
                case (byte) 0x3:
+                   bb.readerIndex(start);
                    // discriminator value OFType.ECHO_REPLY=3 for class OFEchoReplyVer13
-                   return OFEchoReplyVer13.READER.readFrom(bb);
+                   return OFEchoReplyVer13.READER.readFrom(context, bb);
                case (byte) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value OFType.ECHO_REQUEST=2 for class OFEchoRequestVer13
-                   return OFEchoRequestVer13.READER.readFrom(bb);
+                   return OFEchoRequestVer13.READER.readFrom(context, bb);
                case (byte) 0x6:
+                   bb.readerIndex(start);
                    // discriminator value OFType.FEATURES_REPLY=6 for class OFFeaturesReplyVer13
-                   return OFFeaturesReplyVer13.READER.readFrom(bb);
+                   return OFFeaturesReplyVer13.READER.readFrom(context, bb);
                case (byte) 0x5:
+                   bb.readerIndex(start);
                    // discriminator value OFType.FEATURES_REQUEST=5 for class OFFeaturesRequestVer13
-                   return OFFeaturesRequestVer13.READER.readFrom(bb);
+                   return OFFeaturesRequestVer13.READER.readFrom(context, bb);
                case (byte) 0xe:
+                   bb.readerIndex(start);
                    // discriminator value OFType.FLOW_MOD=14 for class OFFlowModVer13
-                   return OFFlowModVer13.READER.readFrom(bb);
+                   return OFFlowModVer13.READER.readFrom(context, bb);
                case (byte) 0xb:
+                   bb.readerIndex(start);
                    // discriminator value OFType.FLOW_REMOVED=11 for class OFFlowRemovedVer13
-                   return OFFlowRemovedVer13.READER.readFrom(bb);
+                   return OFFlowRemovedVer13.READER.readFrom(context, bb);
                case (byte) 0x8:
+                   bb.readerIndex(start);
                    // discriminator value OFType.GET_CONFIG_REPLY=8 for class OFGetConfigReplyVer13
-                   return OFGetConfigReplyVer13.READER.readFrom(bb);
+                   return OFGetConfigReplyVer13.READER.readFrom(context, bb);
                case (byte) 0x7:
+                   bb.readerIndex(start);
                    // discriminator value OFType.GET_CONFIG_REQUEST=7 for class OFGetConfigRequestVer13
-                   return OFGetConfigRequestVer13.READER.readFrom(bb);
+                   return OFGetConfigRequestVer13.READER.readFrom(context, bb);
                case (byte) 0x0:
+                   bb.readerIndex(start);
                    // discriminator value OFType.HELLO=0 for class OFHelloVer13
-                   return OFHelloVer13.READER.readFrom(bb);
+                   return OFHelloVer13.READER.readFrom(context, bb);
                case (byte) 0xa:
+                   bb.readerIndex(start);
                    // discriminator value OFType.PACKET_IN=10 for class OFPacketInVer13
-                   return OFPacketInVer13.READER.readFrom(bb);
+                   return OFPacketInVer13.READER.readFrom(context, bb);
                case (byte) 0xd:
+                   bb.readerIndex(start);
                    // discriminator value OFType.PACKET_OUT=13 for class OFPacketOutVer13
-                   return OFPacketOutVer13.READER.readFrom(bb);
+                   return OFPacketOutVer13.READER.readFrom(context, bb);
                case (byte) 0x10:
+                   bb.readerIndex(start);
                    // discriminator value OFType.PORT_MOD=16 for class OFPortModVer13
-                   return OFPortModVer13.READER.readFrom(bb);
+                   return OFPortModVer13.READER.readFrom(context, bb);
                case (byte) 0xc:
+                   bb.readerIndex(start);
                    // discriminator value OFType.PORT_STATUS=12 for class OFPortStatusVer13
-                   return OFPortStatusVer13.READER.readFrom(bb);
+                   return OFPortStatusVer13.READER.readFrom(context, bb);
                case (byte) 0x17:
+                   bb.readerIndex(start);
                    // discriminator value OFType.QUEUE_GET_CONFIG_REPLY=23 for class OFQueueGetConfigReplyVer13
-                   return OFQueueGetConfigReplyVer13.READER.readFrom(bb);
+                   return OFQueueGetConfigReplyVer13.READER.readFrom(context, bb);
                case (byte) 0x16:
+                   bb.readerIndex(start);
                    // discriminator value OFType.QUEUE_GET_CONFIG_REQUEST=22 for class OFQueueGetConfigRequestVer13
-                   return OFQueueGetConfigRequestVer13.READER.readFrom(bb);
+                   return OFQueueGetConfigRequestVer13.READER.readFrom(context, bb);
                case (byte) 0x9:
+                   bb.readerIndex(start);
                    // discriminator value OFType.SET_CONFIG=9 for class OFSetConfigVer13
-                   return OFSetConfigVer13.READER.readFrom(bb);
+                   return OFSetConfigVer13.READER.readFrom(context, bb);
                case (byte) 0x11:
+                   bb.readerIndex(start);
                    // discriminator value OFType.TABLE_MOD=17 for class OFTableModVer13
-                   return OFTableModVer13.READER.readFrom(bb);
+                   return OFTableModVer13.READER.readFrom(context, bb);
                case (byte) 0xf:
+                   bb.readerIndex(start);
                    // discriminator value OFType.GROUP_MOD=15 for class OFGroupModVer13
-                   return OFGroupModVer13.READER.readFrom(bb);
+                   return OFGroupModVer13.READER.readFrom(context, bb);
                case (byte) 0x19:
+                   bb.readerIndex(start);
                    // discriminator value OFType.ROLE_REPLY=25 for class OFRoleReplyVer13
-                   return OFRoleReplyVer13.READER.readFrom(bb);
+                   return OFRoleReplyVer13.READER.readFrom(context, bb);
                case (byte) 0x18:
+                   bb.readerIndex(start);
                    // discriminator value OFType.ROLE_REQUEST=24 for class OFRoleRequestVer13
-                   return OFRoleRequestVer13.READER.readFrom(bb);
+                   return OFRoleRequestVer13.READER.readFrom(context, bb);
                case (byte) 0x1b:
+                   bb.readerIndex(start);
                    // discriminator value OFType.GET_ASYNC_REPLY=27 for class OFAsyncGetReplyVer13
-                   return OFAsyncGetReplyVer13.READER.readFrom(bb);
+                   return OFAsyncGetReplyVer13.READER.readFrom(context, bb);
                case (byte) 0x1a:
+                   bb.readerIndex(start);
                    // discriminator value OFType.GET_ASYNC_REQUEST=26 for class OFAsyncGetRequestVer13
-                   return OFAsyncGetRequestVer13.READER.readFrom(bb);
+                   return OFAsyncGetRequestVer13.READER.readFrom(context, bb);
                case (byte) 0x1c:
+                   bb.readerIndex(start);
                    // discriminator value OFType.SET_ASYNC=28 for class OFAsyncSetVer13
-                   return OFAsyncSetVer13.READER.readFrom(bb);
+                   return OFAsyncSetVer13.READER.readFrom(context, bb);
                case (byte) 0x1d:
+                   bb.readerIndex(start);
                    // discriminator value OFType.METER_MOD=29 for class OFMeterModVer13
-                   return OFMeterModVer13.READER.readFrom(bb);
+                   return OFMeterModVer13.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFMessageVer13: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFMessageVer13.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            U32.f(bb.readInt());
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

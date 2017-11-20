@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -472,9 +470,11 @@ class OFBsnSetLacpRequestVer14 implements OFBsnSetLacpRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnSetLacpRequest> {
+    static class Reader extends AbstractOFMessageReader<OFBsnSetLacpRequest> {
         @Override
-        public OFBsnSetLacpRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnSetLacpRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -487,6 +487,7 @@ class OFBsnSetLacpRequestVer14 implements OFBsnSetLacpRequest {
             int length = U16.f(bb.readShort());
             if(length != 38)
                 throw new OFParseError("Wrong length: Expected=38(38), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -652,61 +653,11 @@ class OFBsnSetLacpRequestVer14 implements OFBsnSetLacpRequest {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnSetLacpRequestVer14 other = (OFBsnSetLacpRequestVer14) obj;
-
-        // ignore XID
-        if( enabled != other.enabled)
-            return false;
-        if (portNo == null) {
-            if (other.portNo != null)
-                return false;
-        } else if (!portNo.equals(other.portNo))
-            return false;
-        if( actorSysPriority != other.actorSysPriority)
-            return false;
-        if (actorSysMac == null) {
-            if (other.actorSysMac != null)
-                return false;
-        } else if (!actorSysMac.equals(other.actorSysMac))
-            return false;
-        if( actorPortPriority != other.actorPortPriority)
-            return false;
-        if( actorPortNum != other.actorPortNum)
-            return false;
-        if( actorKey != other.actorKey)
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + enabled;
-        result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
-        result = prime * result + actorSysPriority;
-        result = prime * result + ((actorSysMac == null) ? 0 : actorSysMac.hashCode());
-        result = prime * result + actorPortPriority;
-        result = prime * result + actorPortNum;
-        result = prime * result + actorKey;
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + enabled;
         result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
         result = prime * result + actorSysPriority;

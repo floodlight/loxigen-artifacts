@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -218,25 +216,6 @@ public class OFOxmsVer12 implements OFOxms {
     }
     public OFOxmBsnIngressPortGroupIdMasked bsnIngressPortGroupIdMasked(ClassId value, ClassId mask) {
         return new OFOxmBsnIngressPortGroupIdMaskedVer12(
-                value,
-                      mask
-                    );
-    }
-
-    public OFOxmBsnIpFragmentation.Builder buildBsnIpFragmentation() {
-        return new OFOxmBsnIpFragmentationVer12.Builder();
-    }
-    public OFOxmBsnIpFragmentation bsnIpFragmentation(OFBooleanValue value) {
-        return new OFOxmBsnIpFragmentationVer12(
-                value
-                    );
-    }
-
-    public OFOxmBsnIpFragmentationMasked.Builder buildBsnIpFragmentationMasked() {
-        return new OFOxmBsnIpFragmentationMaskedVer12.Builder();
-    }
-    public OFOxmBsnIpFragmentationMasked bsnIpFragmentationMasked(OFBooleanValue value, OFBooleanValue mask) {
-        return new OFOxmBsnIpFragmentationMaskedVer12(
                 value,
                       mask
                     );
@@ -541,215 +520,6 @@ public class OFOxmsVer12 implements OFOxms {
     }
     public OFOxmBsnVrfMasked bsnVrfMasked(VRF value, VRF mask) {
         return new OFOxmBsnVrfMaskedVer12(
-                value,
-                      mask
-                    );
-    }
-
-    public OFOxmConnTrackingIpv6Dst.Builder buildConnTrackingIpv6Dst() {
-        return new OFOxmConnTrackingIpv6DstVer12.Builder();
-    }
-    public OFOxmConnTrackingIpv6Dst connTrackingIpv6Dst(IPv6Address value) {
-        return new OFOxmConnTrackingIpv6DstVer12(
-                value
-                    );
-    }
-
-    public OFOxmConnTrackingIpv6DstMasked.Builder buildConnTrackingIpv6DstMasked() {
-        return new OFOxmConnTrackingIpv6DstMaskedVer12.Builder();
-    }
-    public OFOxmConnTrackingIpv6DstMasked connTrackingIpv6DstMasked(IPv6Address value, IPv6Address mask) {
-        return new OFOxmConnTrackingIpv6DstMaskedVer12(
-                value,
-                      mask
-                    );
-    }
-
-    public OFOxmConnTrackingIpv6Src.Builder buildConnTrackingIpv6Src() {
-        return new OFOxmConnTrackingIpv6SrcVer12.Builder();
-    }
-    public OFOxmConnTrackingIpv6Src connTrackingIpv6Src(IPv6Address value) {
-        return new OFOxmConnTrackingIpv6SrcVer12(
-                value
-                    );
-    }
-
-    public OFOxmConnTrackingIpv6SrcMasked.Builder buildConnTrackingIpv6SrcMasked() {
-        return new OFOxmConnTrackingIpv6SrcMaskedVer12.Builder();
-    }
-    public OFOxmConnTrackingIpv6SrcMasked connTrackingIpv6SrcMasked(IPv6Address value, IPv6Address mask) {
-        return new OFOxmConnTrackingIpv6SrcMaskedVer12(
-                value,
-                      mask
-                    );
-    }
-
-    public OFOxmConnTrackingLabel.Builder buildConnTrackingLabel() {
-        return new OFOxmConnTrackingLabelVer12.Builder();
-    }
-    public OFOxmConnTrackingLabel connTrackingLabel(U128 value) {
-        return new OFOxmConnTrackingLabelVer12(
-                value
-                    );
-    }
-
-    public OFOxmConnTrackingLabelMasked.Builder buildConnTrackingLabelMasked() {
-        return new OFOxmConnTrackingLabelMaskedVer12.Builder();
-    }
-    public OFOxmConnTrackingLabelMasked connTrackingLabelMasked(U128 value, U128 mask) {
-        return new OFOxmConnTrackingLabelMaskedVer12(
-                value,
-                      mask
-                    );
-    }
-
-    public OFOxmConnTrackingMark.Builder buildConnTrackingMark() {
-        return new OFOxmConnTrackingMarkVer12.Builder();
-    }
-    public OFOxmConnTrackingMark connTrackingMark(U32 value) {
-        return new OFOxmConnTrackingMarkVer12(
-                value
-                    );
-    }
-
-    public OFOxmConnTrackingMarkMasked.Builder buildConnTrackingMarkMasked() {
-        return new OFOxmConnTrackingMarkMaskedVer12.Builder();
-    }
-    public OFOxmConnTrackingMarkMasked connTrackingMarkMasked(U32 value, U32 mask) {
-        return new OFOxmConnTrackingMarkMaskedVer12(
-                value,
-                      mask
-                    );
-    }
-
-    public OFOxmConnTrackingNwDst.Builder buildConnTrackingNwDst() {
-        return new OFOxmConnTrackingNwDstVer12.Builder();
-    }
-    public OFOxmConnTrackingNwDst connTrackingNwDst(U32 value) {
-        return new OFOxmConnTrackingNwDstVer12(
-                value
-                    );
-    }
-
-    public OFOxmConnTrackingNwDstMasked.Builder buildConnTrackingNwDstMasked() {
-        return new OFOxmConnTrackingNwDstMaskedVer12.Builder();
-    }
-    public OFOxmConnTrackingNwDstMasked connTrackingNwDstMasked(U32 value, U32 mask) {
-        return new OFOxmConnTrackingNwDstMaskedVer12(
-                value,
-                      mask
-                    );
-    }
-
-    public OFOxmConnTrackingNwProto.Builder buildConnTrackingNwProto() {
-        return new OFOxmConnTrackingNwProtoVer12.Builder();
-    }
-    public OFOxmConnTrackingNwProto connTrackingNwProto(U8 value) {
-        return new OFOxmConnTrackingNwProtoVer12(
-                value
-                    );
-    }
-
-    public OFOxmConnTrackingNwProtoMasked.Builder buildConnTrackingNwProtoMasked() {
-        return new OFOxmConnTrackingNwProtoMaskedVer12.Builder();
-    }
-    public OFOxmConnTrackingNwProtoMasked connTrackingNwProtoMasked(U8 value, U8 mask) {
-        return new OFOxmConnTrackingNwProtoMaskedVer12(
-                value,
-                      mask
-                    );
-    }
-
-    public OFOxmConnTrackingNwSrc.Builder buildConnTrackingNwSrc() {
-        return new OFOxmConnTrackingNwSrcVer12.Builder();
-    }
-    public OFOxmConnTrackingNwSrc connTrackingNwSrc(U32 value) {
-        return new OFOxmConnTrackingNwSrcVer12(
-                value
-                    );
-    }
-
-    public OFOxmConnTrackingNwSrcMasked.Builder buildConnTrackingNwSrcMasked() {
-        return new OFOxmConnTrackingNwSrcMaskedVer12.Builder();
-    }
-    public OFOxmConnTrackingNwSrcMasked connTrackingNwSrcMasked(U32 value, U32 mask) {
-        return new OFOxmConnTrackingNwSrcMaskedVer12(
-                value,
-                      mask
-                    );
-    }
-
-    public OFOxmConnTrackingState.Builder buildConnTrackingState() {
-        return new OFOxmConnTrackingStateVer12.Builder();
-    }
-    public OFOxmConnTrackingState connTrackingState(U32 value) {
-        return new OFOxmConnTrackingStateVer12(
-                value
-                    );
-    }
-
-    public OFOxmConnTrackingStateMasked.Builder buildConnTrackingStateMasked() {
-        return new OFOxmConnTrackingStateMaskedVer12.Builder();
-    }
-    public OFOxmConnTrackingStateMasked connTrackingStateMasked(U32 value, U32 mask) {
-        return new OFOxmConnTrackingStateMaskedVer12(
-                value,
-                      mask
-                    );
-    }
-
-    public OFOxmConnTrackingTpDst.Builder buildConnTrackingTpDst() {
-        return new OFOxmConnTrackingTpDstVer12.Builder();
-    }
-    public OFOxmConnTrackingTpDst connTrackingTpDst(TransportPort value) {
-        return new OFOxmConnTrackingTpDstVer12(
-                value
-                    );
-    }
-
-    public OFOxmConnTrackingTpDstMasked.Builder buildConnTrackingTpDstMasked() {
-        return new OFOxmConnTrackingTpDstMaskedVer12.Builder();
-    }
-    public OFOxmConnTrackingTpDstMasked connTrackingTpDstMasked(TransportPort value, TransportPort mask) {
-        return new OFOxmConnTrackingTpDstMaskedVer12(
-                value,
-                      mask
-                    );
-    }
-
-    public OFOxmConnTrackingTpSrc.Builder buildConnTrackingTpSrc() {
-        return new OFOxmConnTrackingTpSrcVer12.Builder();
-    }
-    public OFOxmConnTrackingTpSrc connTrackingTpSrc(TransportPort value) {
-        return new OFOxmConnTrackingTpSrcVer12(
-                value
-                    );
-    }
-
-    public OFOxmConnTrackingTpSrcMasked.Builder buildConnTrackingTpSrcMasked() {
-        return new OFOxmConnTrackingTpSrcMaskedVer12.Builder();
-    }
-    public OFOxmConnTrackingTpSrcMasked connTrackingTpSrcMasked(TransportPort value, TransportPort mask) {
-        return new OFOxmConnTrackingTpSrcMaskedVer12(
-                value,
-                      mask
-                    );
-    }
-
-    public OFOxmConnTrackingZone.Builder buildConnTrackingZone() {
-        return new OFOxmConnTrackingZoneVer12.Builder();
-    }
-    public OFOxmConnTrackingZone connTrackingZone(U16 value) {
-        return new OFOxmConnTrackingZoneVer12(
-                value
-                    );
-    }
-
-    public OFOxmConnTrackingZoneMasked.Builder buildConnTrackingZoneMasked() {
-        return new OFOxmConnTrackingZoneMaskedVer12.Builder();
-    }
-    public OFOxmConnTrackingZoneMasked connTrackingZoneMasked(U16 value, U16 mask) {
-        return new OFOxmConnTrackingZoneMaskedVer12(
                 value,
                       mask
                     );
@@ -1192,25 +962,6 @@ public class OFOxmsVer12 implements OFOxms {
                     );
     }
 
-    public OFOxmOvsTcpFlags.Builder buildOvsTcpFlags() {
-        return new OFOxmOvsTcpFlagsVer12.Builder();
-    }
-    public OFOxmOvsTcpFlags ovsTcpFlags(U16 value) {
-        return new OFOxmOvsTcpFlagsVer12(
-                value
-                    );
-    }
-
-    public OFOxmOvsTcpFlagsMasked.Builder buildOvsTcpFlagsMasked() {
-        return new OFOxmOvsTcpFlagsMaskedVer12.Builder();
-    }
-    public OFOxmOvsTcpFlagsMasked ovsTcpFlagsMasked(U16 value, U16 mask) {
-        return new OFOxmOvsTcpFlagsMaskedVer12(
-                value,
-                      mask
-                    );
-    }
-
     public OFOxmSctpDst.Builder buildSctpDst() {
         return new OFOxmSctpDstVer12.Builder();
     }
@@ -1443,20 +1194,6 @@ public class OFOxmsVer12 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmBsnInnerVlanVidMasked not supported in version 1.2");
     }
 
-    public OFOxmBsnVfi.Builder buildBsnVfi() {
-        throw new UnsupportedOperationException("OFOxmBsnVfi not supported in version 1.2");
-    }
-    public OFOxmBsnVfi bsnVfi(VFI value) {
-        throw new UnsupportedOperationException("OFOxmBsnVfi not supported in version 1.2");
-    }
-
-    public OFOxmBsnVfiMasked.Builder buildBsnVfiMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnVfiMasked not supported in version 1.2");
-    }
-    public OFOxmBsnVfiMasked bsnVfiMasked(VFI value, VFI mask) {
-        throw new UnsupportedOperationException("OFOxmBsnVfiMasked not supported in version 1.2");
-    }
-
     public OFOxmBsnVxlanNetworkId.Builder buildBsnVxlanNetworkId() {
         throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkId not supported in version 1.2");
     }
@@ -1513,20 +1250,6 @@ public class OFOxmsVer12 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmTunnelIdMasked not supported in version 1.2");
     }
 
-    public OFOxmBsnIfpClassId.Builder buildBsnIfpClassId() {
-        throw new UnsupportedOperationException("OFOxmBsnIfpClassId not supported in version 1.2");
-    }
-    public OFOxmBsnIfpClassId bsnIfpClassId(ClassId value) {
-        throw new UnsupportedOperationException("OFOxmBsnIfpClassId not supported in version 1.2");
-    }
-
-    public OFOxmBsnIfpClassIdMasked.Builder buildBsnIfpClassIdMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnIfpClassIdMasked not supported in version 1.2");
-    }
-    public OFOxmBsnIfpClassIdMasked bsnIfpClassIdMasked(ClassId value, ClassId mask) {
-        throw new UnsupportedOperationException("OFOxmBsnIfpClassIdMasked not supported in version 1.2");
-    }
-
     public OFOxmPbbUca.Builder buildPbbUca() {
         throw new UnsupportedOperationException("OFOxmPbbUca not supported in version 1.2");
     }
@@ -1539,48 +1262,6 @@ public class OFOxmsVer12 implements OFOxms {
     }
     public OFOxmPbbUcaMasked pbbUcaMasked(OFBooleanValue value, OFBooleanValue mask) {
         throw new UnsupportedOperationException("OFOxmPbbUcaMasked not supported in version 1.2");
-    }
-
-    public OFOxmActsetOutput.Builder buildActsetOutput() {
-        throw new UnsupportedOperationException("OFOxmActsetOutput not supported in version 1.2");
-    }
-    public OFOxmActsetOutput actsetOutput(OFPort value) {
-        throw new UnsupportedOperationException("OFOxmActsetOutput not supported in version 1.2");
-    }
-
-    public OFOxmActsetOutputMasked.Builder buildActsetOutputMasked() {
-        throw new UnsupportedOperationException("OFOxmActsetOutputMasked not supported in version 1.2");
-    }
-    public OFOxmActsetOutputMasked actsetOutputMasked(OFPort value, OFPort mask) {
-        throw new UnsupportedOperationException("OFOxmActsetOutputMasked not supported in version 1.2");
-    }
-
-    public OFOxmPacketType.Builder buildPacketType() {
-        throw new UnsupportedOperationException("OFOxmPacketType not supported in version 1.2");
-    }
-    public OFOxmPacketType packetType(PacketType value) {
-        throw new UnsupportedOperationException("OFOxmPacketType not supported in version 1.2");
-    }
-
-    public OFOxmPacketTypeMasked.Builder buildPacketTypeMasked() {
-        throw new UnsupportedOperationException("OFOxmPacketTypeMasked not supported in version 1.2");
-    }
-    public OFOxmPacketTypeMasked packetTypeMasked(PacketType value, PacketType mask) {
-        throw new UnsupportedOperationException("OFOxmPacketTypeMasked not supported in version 1.2");
-    }
-
-    public OFOxmTcpFlags.Builder buildTcpFlags() {
-        throw new UnsupportedOperationException("OFOxmTcpFlags not supported in version 1.2");
-    }
-    public OFOxmTcpFlags tcpFlags(U16 value) {
-        throw new UnsupportedOperationException("OFOxmTcpFlags not supported in version 1.2");
-    }
-
-    public OFOxmTcpFlagsMasked.Builder buildTcpFlagsMasked() {
-        throw new UnsupportedOperationException("OFOxmTcpFlagsMasked not supported in version 1.2");
-    }
-    public OFOxmTcpFlagsMasked tcpFlagsMasked(U16 value, U16 mask) {
-        throw new UnsupportedOperationException("OFOxmTcpFlagsMasked not supported in version 1.2");
     }
 
     public OFMessageReader<OFOxm<?>> getReader() {
@@ -1610,8 +1291,6 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInPorts512((OFBitMask512)((Object)value)));
             case BSN_INGRESS_PORT_GROUP_ID:
                 return (OFOxm<F>)((Object)bsnIngressPortGroupId((ClassId)((Object)value)));
-            case BSN_IP_FRAGMENTATION:
-                return (OFOxm<F>)((Object)bsnIpFragmentation((OFBooleanValue)((Object)value)));
             case BSN_L2_CACHE_HIT:
                 return (OFOxm<F>)((Object)bsnL2CacheHit((OFBooleanValue)((Object)value)));
             case BSN_L3_DST_CLASS_ID:
@@ -1644,28 +1323,6 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnVlanXlatePortGroupId((ClassId)((Object)value)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrf((VRF)((Object)value)));
-            case CONN_TRACKING_IPV6_DST:
-                return (OFOxm<F>)((Object)connTrackingIpv6Dst((IPv6Address)((Object)value)));
-            case CONN_TRACKING_IPV6_SRC:
-                return (OFOxm<F>)((Object)connTrackingIpv6Src((IPv6Address)((Object)value)));
-            case CONN_TRACKING_LABEL:
-                return (OFOxm<F>)((Object)connTrackingLabel((U128)((Object)value)));
-            case CONN_TRACKING_MARK:
-                return (OFOxm<F>)((Object)connTrackingMark((U32)((Object)value)));
-            case CONN_TRACKING_NW_DST:
-                return (OFOxm<F>)((Object)connTrackingNwDst((U32)((Object)value)));
-            case CONN_TRACKING_NW_PROTO:
-                return (OFOxm<F>)((Object)connTrackingNwProto((U8)((Object)value)));
-            case CONN_TRACKING_NW_SRC:
-                return (OFOxm<F>)((Object)connTrackingNwSrc((U32)((Object)value)));
-            case CONN_TRACKING_STATE:
-                return (OFOxm<F>)((Object)connTrackingState((U32)((Object)value)));
-            case CONN_TRACKING_TP_DST:
-                return (OFOxm<F>)((Object)connTrackingTpDst((TransportPort)((Object)value)));
-            case CONN_TRACKING_TP_SRC:
-                return (OFOxm<F>)((Object)connTrackingTpSrc((TransportPort)((Object)value)));
-            case CONN_TRACKING_ZONE:
-                return (OFOxm<F>)((Object)connTrackingZone((U16)((Object)value)));
             case ETH_DST:
                 return (OFOxm<F>)((Object)ethDst((MacAddress)((Object)value)));
             case ETH_SRC:
@@ -1712,8 +1369,6 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsLabel((U32)((Object)value)));
             case MPLS_TC:
                 return (OFOxm<F>)((Object)mplsTc((U8)((Object)value)));
-            case OVS_TCP_FLAGS:
-                return (OFOxm<F>)((Object)ovsTcpFlags((U16)((Object)value)));
             case SCTP_DST:
                 return (OFOxm<F>)((Object)sctpDst((TransportPort)((Object)value)));
             case SCTP_SRC:
@@ -1740,8 +1395,6 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInnerEthSrc((MacAddress)((Object)value)));
             case BSN_INNER_VLAN_VID:
                 return (OFOxm<F>)((Object)bsnInnerVlanVid((OFVlanVidMatch)((Object)value)));
-            case BSN_VFI:
-                return (OFOxm<F>)((Object)bsnVfi((VFI)((Object)value)));
             case BSN_VXLAN_NETWORK_ID:
                 return (OFOxm<F>)((Object)bsnVxlanNetworkId((VxlanNI)((Object)value)));
             case IPV6_EXTHDR:
@@ -1750,16 +1403,8 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsBos((OFBooleanValue)((Object)value)));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelId((U64)((Object)value)));
-            case BSN_IFP_CLASS_ID:
-                return (OFOxm<F>)((Object)bsnIfpClassId((ClassId)((Object)value)));
             case PBB_UCA:
                 return (OFOxm<F>)((Object)pbbUca((OFBooleanValue)((Object)value)));
-            case ACTSET_OUTPUT:
-                return (OFOxm<F>)((Object)actsetOutput((OFPort)((Object)value)));
-            case PACKET_TYPE:
-                return (OFOxm<F>)((Object)packetType((PacketType)((Object)value)));
-            case TCP_FLAGS:
-                return (OFOxm<F>)((Object)tcpFlags((U16)((Object)value)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1788,8 +1433,6 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInPorts512Masked((OFBitMask512)((Object)value), (OFBitMask512)((Object)mask)));
             case BSN_INGRESS_PORT_GROUP_ID:
                 return (OFOxm<F>)((Object)bsnIngressPortGroupIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
-            case BSN_IP_FRAGMENTATION:
-                return (OFOxm<F>)((Object)bsnIpFragmentationMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case BSN_L2_CACHE_HIT:
                 return (OFOxm<F>)((Object)bsnL2CacheHitMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case BSN_L3_DST_CLASS_ID:
@@ -1822,28 +1465,6 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnVlanXlatePortGroupIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)value), (VRF)((Object)mask)));
-            case CONN_TRACKING_IPV6_DST:
-                return (OFOxm<F>)((Object)connTrackingIpv6DstMasked((IPv6Address)((Object)value), (IPv6Address)((Object)mask)));
-            case CONN_TRACKING_IPV6_SRC:
-                return (OFOxm<F>)((Object)connTrackingIpv6SrcMasked((IPv6Address)((Object)value), (IPv6Address)((Object)mask)));
-            case CONN_TRACKING_LABEL:
-                return (OFOxm<F>)((Object)connTrackingLabelMasked((U128)((Object)value), (U128)((Object)mask)));
-            case CONN_TRACKING_MARK:
-                return (OFOxm<F>)((Object)connTrackingMarkMasked((U32)((Object)value), (U32)((Object)mask)));
-            case CONN_TRACKING_NW_DST:
-                return (OFOxm<F>)((Object)connTrackingNwDstMasked((U32)((Object)value), (U32)((Object)mask)));
-            case CONN_TRACKING_NW_PROTO:
-                return (OFOxm<F>)((Object)connTrackingNwProtoMasked((U8)((Object)value), (U8)((Object)mask)));
-            case CONN_TRACKING_NW_SRC:
-                return (OFOxm<F>)((Object)connTrackingNwSrcMasked((U32)((Object)value), (U32)((Object)mask)));
-            case CONN_TRACKING_STATE:
-                return (OFOxm<F>)((Object)connTrackingStateMasked((U32)((Object)value), (U32)((Object)mask)));
-            case CONN_TRACKING_TP_DST:
-                return (OFOxm<F>)((Object)connTrackingTpDstMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
-            case CONN_TRACKING_TP_SRC:
-                return (OFOxm<F>)((Object)connTrackingTpSrcMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
-            case CONN_TRACKING_ZONE:
-                return (OFOxm<F>)((Object)connTrackingZoneMasked((U16)((Object)value), (U16)((Object)mask)));
             case ETH_DST:
                 return (OFOxm<F>)((Object)ethDstMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
             case ETH_SRC:
@@ -1890,8 +1511,6 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsLabelMasked((U32)((Object)value), (U32)((Object)mask)));
             case MPLS_TC:
                 return (OFOxm<F>)((Object)mplsTcMasked((U8)((Object)value), (U8)((Object)mask)));
-            case OVS_TCP_FLAGS:
-                return (OFOxm<F>)((Object)ovsTcpFlagsMasked((U16)((Object)value), (U16)((Object)mask)));
             case SCTP_DST:
                 return (OFOxm<F>)((Object)sctpDstMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
             case SCTP_SRC:
@@ -1918,8 +1537,6 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
             case BSN_INNER_VLAN_VID:
                 return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
-            case BSN_VFI:
-                return (OFOxm<F>)((Object)bsnVfiMasked((VFI)((Object)value), (VFI)((Object)mask)));
             case BSN_VXLAN_NETWORK_ID:
                 return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((VxlanNI)((Object)value), (VxlanNI)((Object)mask)));
             case IPV6_EXTHDR:
@@ -1928,16 +1545,8 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)value), (U64)((Object)mask)));
-            case BSN_IFP_CLASS_ID:
-                return (OFOxm<F>)((Object)bsnIfpClassIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case PBB_UCA:
                 return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
-            case ACTSET_OUTPUT:
-                return (OFOxm<F>)((Object)actsetOutputMasked((OFPort)((Object)value), (OFPort)((Object)mask)));
-            case PACKET_TYPE:
-                return (OFOxm<F>)((Object)packetTypeMasked((PacketType)((Object)value), (PacketType)((Object)mask)));
-            case TCP_FLAGS:
-                return (OFOxm<F>)((Object)tcpFlagsMasked((U16)((Object)value), (U16)((Object)mask)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1966,8 +1575,6 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInPorts512Masked((OFBitMask512)((Object)(masked.getValue())), (OFBitMask512)((Object)(masked.getMask()))));
             case BSN_INGRESS_PORT_GROUP_ID:
                 return (OFOxm<F>)((Object)bsnIngressPortGroupIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
-            case BSN_IP_FRAGMENTATION:
-                return (OFOxm<F>)((Object)bsnIpFragmentationMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case BSN_L2_CACHE_HIT:
                 return (OFOxm<F>)((Object)bsnL2CacheHitMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case BSN_L3_DST_CLASS_ID:
@@ -2000,28 +1607,6 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnVlanXlatePortGroupIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)(masked.getValue())), (VRF)((Object)(masked.getMask()))));
-            case CONN_TRACKING_IPV6_DST:
-                return (OFOxm<F>)((Object)connTrackingIpv6DstMasked((IPv6Address)((Object)(masked.getValue())), (IPv6Address)((Object)(masked.getMask()))));
-            case CONN_TRACKING_IPV6_SRC:
-                return (OFOxm<F>)((Object)connTrackingIpv6SrcMasked((IPv6Address)((Object)(masked.getValue())), (IPv6Address)((Object)(masked.getMask()))));
-            case CONN_TRACKING_LABEL:
-                return (OFOxm<F>)((Object)connTrackingLabelMasked((U128)((Object)(masked.getValue())), (U128)((Object)(masked.getMask()))));
-            case CONN_TRACKING_MARK:
-                return (OFOxm<F>)((Object)connTrackingMarkMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
-            case CONN_TRACKING_NW_DST:
-                return (OFOxm<F>)((Object)connTrackingNwDstMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
-            case CONN_TRACKING_NW_PROTO:
-                return (OFOxm<F>)((Object)connTrackingNwProtoMasked((U8)((Object)(masked.getValue())), (U8)((Object)(masked.getMask()))));
-            case CONN_TRACKING_NW_SRC:
-                return (OFOxm<F>)((Object)connTrackingNwSrcMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
-            case CONN_TRACKING_STATE:
-                return (OFOxm<F>)((Object)connTrackingStateMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
-            case CONN_TRACKING_TP_DST:
-                return (OFOxm<F>)((Object)connTrackingTpDstMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
-            case CONN_TRACKING_TP_SRC:
-                return (OFOxm<F>)((Object)connTrackingTpSrcMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
-            case CONN_TRACKING_ZONE:
-                return (OFOxm<F>)((Object)connTrackingZoneMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             case ETH_DST:
                 return (OFOxm<F>)((Object)ethDstMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
             case ETH_SRC:
@@ -2068,8 +1653,6 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsLabelMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
             case MPLS_TC:
                 return (OFOxm<F>)((Object)mplsTcMasked((U8)((Object)(masked.getValue())), (U8)((Object)(masked.getMask()))));
-            case OVS_TCP_FLAGS:
-                return (OFOxm<F>)((Object)ovsTcpFlagsMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             case SCTP_DST:
                 return (OFOxm<F>)((Object)sctpDstMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
             case SCTP_SRC:
@@ -2096,8 +1679,6 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
             case BSN_INNER_VLAN_VID:
                 return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
-            case BSN_VFI:
-                return (OFOxm<F>)((Object)bsnVfiMasked((VFI)((Object)(masked.getValue())), (VFI)((Object)(masked.getMask()))));
             case BSN_VXLAN_NETWORK_ID:
                 return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((VxlanNI)((Object)(masked.getValue())), (VxlanNI)((Object)(masked.getMask()))));
             case IPV6_EXTHDR:
@@ -2106,16 +1687,8 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)(masked.getValue())), (U64)((Object)(masked.getMask()))));
-            case BSN_IFP_CLASS_ID:
-                return (OFOxm<F>)((Object)bsnIfpClassIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case PBB_UCA:
                 return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
-            case ACTSET_OUTPUT:
-                return (OFOxm<F>)((Object)actsetOutputMasked((OFPort)((Object)(masked.getValue())), (OFPort)((Object)(masked.getMask()))));
-            case PACKET_TYPE:
-                return (OFOxm<F>)((Object)packetTypeMasked((PacketType)((Object)(masked.getValue())), (PacketType)((Object)(masked.getMask()))));
-            case TCP_FLAGS:
-                return (OFOxm<F>)((Object)tcpFlagsMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             default:
                 return null;
         }

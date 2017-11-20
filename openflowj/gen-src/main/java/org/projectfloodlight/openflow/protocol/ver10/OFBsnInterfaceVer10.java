@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -289,9 +287,11 @@ class OFBsnInterfaceVer10 implements OFBsnInterface {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnInterface> {
+    static class Reader extends AbstractOFMessageReader<OFBsnInterface> {
         @Override
-        public OFBsnInterface readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnInterface readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             MacAddress hwAddr = MacAddress.read6Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);

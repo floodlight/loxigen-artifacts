@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -323,9 +321,11 @@ class OFBsnRoleStatusVer13 implements OFBsnRoleStatus {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnRoleStatus> {
+    static class Reader extends AbstractOFMessageReader<OFBsnRoleStatus> {
         @Override
-        public OFBsnRoleStatus readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnRoleStatus readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -338,6 +338,7 @@ class OFBsnRoleStatusVer13 implements OFBsnRoleStatus {
             int length = U16.f(bb.readShort());
             if(length != 32)
                 throw new OFParseError("Wrong length: Expected=32(32), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -474,52 +475,11 @@ class OFBsnRoleStatusVer13 implements OFBsnRoleStatus {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnRoleStatusVer13 other = (OFBsnRoleStatusVer13) obj;
-
-        // ignore XID
-        if (role == null) {
-            if (other.role != null)
-                return false;
-        } else if (!role.equals(other.role))
-            return false;
-        if (reason == null) {
-            if (other.reason != null)
-                return false;
-        } else if (!reason.equals(other.reason))
-            return false;
-        if (generationId == null) {
-            if (other.generationId != null)
-                return false;
-        } else if (!generationId.equals(other.generationId))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((role == null) ? 0 : role.hashCode());
-        result = prime * result + ((reason == null) ? 0 : reason.hashCode());
-        result = prime * result + ((generationId == null) ? 0 : generationId.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((role == null) ? 0 : role.hashCode());
         result = prime * result + ((reason == null) ? 0 : reason.hashCode());
         result = prime * result + ((generationId == null) ? 0 : generationId.hashCode());

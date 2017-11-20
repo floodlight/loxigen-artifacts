@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -114,11 +112,6 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
     @Override
     public long getFlowCount() {
         return flowCount;
-    }
-
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.2");
     }
 
 
@@ -215,15 +208,6 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
         this.flowCount = flowCount;
         this.flowCountSet = true;
         return this;
-    }
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.2");
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setStats(Stat stats) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property stats not supported in version 1.2");
     }
 
 
@@ -336,15 +320,6 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
         this.flowCountSet = true;
         return this;
     }
-    @Override
-    public Stat getStats()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property stats not supported in version 1.2");
-    }
-
-    @Override
-    public OFAggregateStatsReply.Builder setStats(Stat stats) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property stats not supported in version 1.2");
-    }
 //
         @Override
         public OFAggregateStatsReply build() {
@@ -374,9 +349,11 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFAggregateStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFAggregateStatsReply> {
         @Override
-        public OFAggregateStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFAggregateStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -389,6 +366,7 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
             int length = U16.f(bb.readShort());
             if(length != 40)
                 throw new OFParseError("Wrong length: Expected=40(40), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -530,55 +508,11 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFAggregateStatsReplyVer12 other = (OFAggregateStatsReplyVer12) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (packetCount == null) {
-            if (other.packetCount != null)
-                return false;
-        } else if (!packetCount.equals(other.packetCount))
-            return false;
-        if (byteCount == null) {
-            if (other.byteCount != null)
-                return false;
-        } else if (!byteCount.equals(other.byteCount))
-            return false;
-        if( flowCount != other.flowCount)
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((packetCount == null) ? 0 : packetCount.hashCode());
-        result = prime * result + ((byteCount == null) ? 0 : byteCount.hashCode());
-        result = prime *  (int) (flowCount ^ (flowCount >>> 32));
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((packetCount == null) ? 0 : packetCount.hashCode());
         result = prime * result + ((byteCount == null) ? 0 : byteCount.hashCode());

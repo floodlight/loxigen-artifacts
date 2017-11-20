@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -34,7 +32,7 @@ public interface OFPortDescStatsRequest extends OFObject, OFStatsRequest<OFPortD
     long getXid();
     OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
-    OFPort getPortNo() throws UnsupportedOperationException;
+
 
     void writeTo(ByteBuf channelBuffer);
 
@@ -48,7 +46,5 @@ public interface OFPortDescStatsRequest extends OFObject, OFStatsRequest<OFPortD
         OFStatsType getStatsType();
         Set<OFStatsRequestFlags> getFlags();
         Builder setFlags(Set<OFStatsRequestFlags> flags);
-        OFPort getPortNo() throws UnsupportedOperationException;
-        Builder setPortNo(OFPort portNo) throws UnsupportedOperationException;
     }
 }

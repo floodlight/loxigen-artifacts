@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -35,9 +33,9 @@ abstract class OFActionNiciraVer13 {
 
     public final static OFActionNiciraVer13.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFActionNicira> {
+    static class Reader extends AbstractOFMessageReader<OFActionNicira> {
         @Override
-        public OFActionNicira readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionNicira readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -48,19 +46,31 @@ abstract class OFActionNiciraVer13 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             // fixed value property experimenter == 0x2320L
             int experimenter = bb.readInt();
             if(experimenter != 0x2320)
                 throw new OFParseError("Wrong experimenter: Expected=0x2320L(0x2320L), got="+experimenter);
             short subtype = bb.readShort();
-            bb.readerIndex(start);
             switch(subtype) {
                case (short) 0x12:
+                   bb.readerIndex(start);
                    // discriminator value 0x12=0x12 for class OFActionNiciraDecTtlVer13
-                   return OFActionNiciraDecTtlVer13.READER.readFrom(bb);
+                   return OFActionNiciraDecTtlVer13.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator subtype of class OFActionNiciraVer13: " + subtype);
+                   context.getUnparsedHandler().unparsedMessage(OFActionNiciraVer13.class, "subtype", subtype);
             }
+            // pad: 2 bytes
+            bb.skipBytes(2);
+            // pad: 4 bytes
+            bb.skipBytes(4);
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -40,12 +38,5 @@ public enum OFBsnPktinFlag {
      BSN_PKTIN_FLAG_INGRESS_ACL,
      BSN_PKTIN_FLAG_SFLOW,
      BSN_PKTIN_FLAG_ARP_CACHE,
-     BSN_PKTIN_FLAG_ARP_TARGET,
-     BSN_PKTIN_FLAG_IGMP,
-     BSN_PKTIN_FLAG_PIM,
-     BSN_PKTIN_FLAG_VXLAN_SIP_MISS,
-     BSN_PKTIN_FLAG_MC_RESERVED,
-     BSN_PKTIN_FLAG_ANALYTICS,
-     BSN_PKTIN_FLAG_ICMPV6,
-     BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL;
+     BSN_PKTIN_FLAG_ARP_TARGET;
 }

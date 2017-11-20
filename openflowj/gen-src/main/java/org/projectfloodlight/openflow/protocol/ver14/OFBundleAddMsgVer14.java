@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -29,7 +27,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import java.util.List;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -91,16 +88,6 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
     @Override
     public Set<OFBundleFlags> getFlags() {
         return flags;
-    }
-
-    @Override
-    public OFMessage getMessage()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property message not supported in version 1.4");
-    }
-
-    @Override
-    public List<OFBundleProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
     }
 
     @Override
@@ -175,44 +162,16 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         return this;
     }
     @Override
-    public OFMessage getMessage()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property message not supported in version 1.4");
-    }
-
-    @Override
-    public OFBundleAddMsg.Builder setMessage(OFMessage message) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property message not supported in version 1.4");
-    }
-    @Override
-    public List<OFBundleProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
-    }
-
-    @Override
-    public OFBundleAddMsg.Builder setProperties(List<OFBundleProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.4");
-    }
-    @Override
     public OFMessage getData() {
         return data;
     }
 
-    /** Custom setter that ensures the BundleAdd message inherits the XID from their
-     *  contained message, as per OF Spec 1.4.0:
-     *  <p>
-     *  7.3.9.6 Adding messages to a bundle
-     *  </p><p>
-     *     Message added in a bundle should have a unique xid to help matching errors to messages,
-     *     and the xid of the bundle add message must be the same.
-     *  </p>
-     */
     @Override
     public OFBundleAddMsg.Builder setData(OFMessage data) {
         this.data = data;
         this.dataSet = true;
-        return setXid(data.getXid());
+        return this;
     }
-
 
 
         @Override
@@ -294,44 +253,16 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         return this;
     }
     @Override
-    public OFMessage getMessage()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property message not supported in version 1.4");
-    }
-
-    @Override
-    public OFBundleAddMsg.Builder setMessage(OFMessage message) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property message not supported in version 1.4");
-    }
-    @Override
-    public List<OFBundleProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.4");
-    }
-
-    @Override
-    public OFBundleAddMsg.Builder setProperties(List<OFBundleProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.4");
-    }
-    @Override
     public OFMessage getData() {
         return data;
     }
 
-    /** Custom setter that ensures the BundleAdd message inherits the XID from their
-     *  contained message, as per OF Spec 1.4.0:
-     *  <p>
-     *  7.3.9.6 Adding messages to a bundle
-     *  </p><p>
-     *     Message added in a bundle should have a unique xid to help matching errors to messages,
-     *     and the xid of the bundle add message must be the same.
-     *  </p>
-     */
     @Override
     public OFBundleAddMsg.Builder setData(OFMessage data) {
         this.data = data;
         this.dataSet = true;
-        return setXid(data.getXid());
+        return this;
     }
-
 //
         @Override
         public OFBundleAddMsg build() {
@@ -361,9 +292,11 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBundleAddMsg> {
+    static class Reader extends AbstractOFMessageReader<OFBundleAddMsg> {
         @Override
-        public OFBundleAddMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFBundleAddMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -376,6 +309,7 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -501,52 +435,11 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBundleAddMsgVer14 other = (OFBundleAddMsgVer14) obj;
-
-        // ignore XID
-        if (bundleId == null) {
-            if (other.bundleId != null)
-                return false;
-        } else if (!bundleId.equals(other.bundleId))
-            return false;
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (data == null) {
-            if (other.data != null)
-                return false;
-        } else if (!data.equals(other.data))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((bundleId == null) ? 0 : bundleId.hashCode());
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((data == null) ? 0 : data.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((bundleId == null) ? 0 : bundleId.hashCode());
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((data == null) ? 0 : data.hashCode());

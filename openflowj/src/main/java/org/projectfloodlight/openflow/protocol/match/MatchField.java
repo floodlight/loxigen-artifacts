@@ -21,31 +21,24 @@ import org.projectfloodlight.openflow.types.OFPort;
 import org.projectfloodlight.openflow.types.OFValueType;
 import org.projectfloodlight.openflow.types.OFVlanVidMatch;
 import org.projectfloodlight.openflow.types.TransportPort;
-import org.projectfloodlight.openflow.types.PacketType;
 import org.projectfloodlight.openflow.types.U16;
 import org.projectfloodlight.openflow.types.U32;
 import org.projectfloodlight.openflow.types.U64;
-import org.projectfloodlight.openflow.types.U128;
 import org.projectfloodlight.openflow.types.U8;
 import org.projectfloodlight.openflow.types.UDF;
 import org.projectfloodlight.openflow.types.VRF;
 import org.projectfloodlight.openflow.types.VlanPcp;
 import org.projectfloodlight.openflow.types.VxlanNI;
-import org.projectfloodlight.openflow.types.VFI;
-
-import java.util.Set;
-import com.google.common.collect.ImmutableSet;
 
 public class MatchField<F extends OFValueType<F>> {
     private final String name;
     public final MatchFields id;
-    private final Set<Prerequisite<?>> prerequisites;
+    private final Prerequisite<?>[] prerequisites;
 
     private MatchField(final String name, final MatchFields id, Prerequisite<?>... prerequisites) {
         this.name = name;
         this.id = id;
-        /* guaranteed non-null (private constructor); 'null' isn't passed as prerequisites */
-        this.prerequisites = ImmutableSet.copyOf(prerequisites);
+        this.prerequisites = prerequisites;
     }
 
     public final static MatchField<OFPort> IN_PORT =
@@ -194,26 +187,10 @@ public class MatchField<F extends OFValueType<F>> {
             new MatchField<U64>("tunnel_id", MatchFields.TUNNEL_ID);
 
     public final static MatchField<U16> IPV6_EXTHDR =
-            new MatchField<U16>("ipv6_exthdr", MatchFields.IPV6_EXTHDR,
-                    new Prerequisite<EthType>(MatchField.ETH_TYPE, EthType.IPv6));
+            new MatchField<U16>("ipv6_exthdr", MatchFields.IPV6_EXTHDR);
 
     public final static MatchField<OFBooleanValue> PBB_UCA =
-            new MatchField<OFBooleanValue>("pbb_uca", MatchFields.PBB_UCA,
-                    new Prerequisite<EthType>(MatchField.ETH_TYPE, EthType.PBB));
-
-    public final static MatchField<U16> TCP_FLAGS =
-            new MatchField<U16>("tcp_flags", MatchFields.TCP_FLAGS,
-                    new Prerequisite<IpProtocol>(MatchField.IP_PROTO, IpProtocol.TCP));
-
-    public final static MatchField<U16> OVS_TCP_FLAGS =
-            new MatchField<U16>("ovs_tcp_flags", MatchFields.OVS_TCP_FLAGS,
-                    new Prerequisite<IpProtocol>(MatchField.IP_PROTO, IpProtocol.TCP));
-
-    public final static MatchField<PacketType> PACKET_TYPE =
-            new MatchField<PacketType>("packet_type", MatchFields.PACKET_TYPE);
-
-    public final static MatchField<OFPort> ACTSET_OUTPUT =
-            new MatchField<OFPort>("actset_output", MatchFields.ACTSET_OUTPUT);
+            new MatchField<OFBooleanValue>("pbb_uca", MatchFields.PBB_UCA);
 
     public final static MatchField<IPv4Address> TUNNEL_IPV4_SRC =
             new MatchField<IPv4Address>("tunnel_ipv4_src", MatchFields.TUNNEL_IPV4_SRC,
@@ -298,54 +275,6 @@ public class MatchField<F extends OFValueType<F>> {
     public final static MatchField<OFVlanVidMatch> BSN_INNER_VLAN_VID =
             new MatchField<OFVlanVidMatch>("bsn_inner_vlan_vid", MatchFields.BSN_INNER_VLAN_VID);
 
-    public final static MatchField<VFI> BSN_VFI =
-            new MatchField<VFI>("bsn_vfi", MatchFields.BSN_VFI);
-
-    public final static MatchField<OFBooleanValue> BSN_IP_FRAGMENTATION =
-            new MatchField<OFBooleanValue>("bsn_ip_fragmentation", MatchFields.BSN_IP_FRAGMENTATION,
-                    new Prerequisite<EthType>(MatchField.ETH_TYPE, EthType.IPv4, EthType.IPv6));
-
-    public final static MatchField<ClassId> BSN_IFP_CLASS_ID =
-            new MatchField<ClassId>("bsn_ifp_class_id", MatchFields.BSN_IFP_CLASS_ID);
-   
-    public final static MatchField<U32> CONN_TRACKING_STATE = 
-            new MatchField<U32>("conn_tracking_state", MatchFields.CONN_TRACKING_STATE);
-
-    public final static MatchField<U16> CONN_TRACKING_ZONE = 
-            new MatchField<U16>("conn_tracking_zone", MatchFields.CONN_TRACKING_ZONE);
-   
-    public final static MatchField<U32> CONN_TRACKING_MARK = 
-            new MatchField<U32>("conn_tracking_mark", MatchFields.CONN_TRACKING_MARK);
-
-    public final static MatchField<U128> CONN_TRACKING_LABEL = 
-            new MatchField<U128>("conn_tracking_label", MatchFields.CONN_TRACKING_LABEL);
-    
-    public final static MatchField<U8> CONN_TRACKING_NW_PROTO = 
-            new MatchField<U8>("conn_tracking_nw_proto", MatchFields.CONN_TRACKING_NW_PROTO);
-
-    public final static MatchField<U32> CONN_TRACKING_NW_SRC = 
-            new MatchField<U32>("conn_tracking_nw_src", MatchFields.CONN_TRACKING_NW_SRC);
-
-    public final static MatchField<U32> CONN_TRACKING_NW_DST =
-            new MatchField<U32>("conn_tracking_nw_dst", MatchFields.CONN_TRACKING_NW_DST);
-    
-    public final static MatchField<IPv6Address> CONN_TRACKING_IPV6_SRC =
-            new MatchField<IPv6Address>("conn_tracking_ipv6_src", MatchFields.CONN_TRACKING_IPV6_SRC,
-                    new Prerequisite<EthType>(MatchField.ETH_TYPE, EthType.IPv6));
-    
-    public final static MatchField<IPv6Address> CONN_TRACKING_IPV6_DST =
-            new MatchField<IPv6Address>("conn_tracking_ipv6_dst", MatchFields.CONN_TRACKING_IPV6_DST,
-                    new Prerequisite<EthType>(MatchField.ETH_TYPE, EthType.IPv6));
-    
-    public final static MatchField<TransportPort> CONN_TRACKING_TP_SRC = 
-            new MatchField<TransportPort>("conn_tracking_tp_src", MatchFields.CONN_TRACKING_TP_SRC,
-                    new Prerequisite<IpProtocol>(MatchField.IP_PROTO, IpProtocol.TCP));
-    
-    public final static MatchField<TransportPort> CONN_TRACKING_TP_DST =
-            new MatchField<TransportPort>("conn_tracking_tp_dst", MatchFields.CONN_TRACKING_TP_DST,
-                    new Prerequisite<IpProtocol>(MatchField.IP_PROTO, IpProtocol.TCP));
-
-
     public String getName() {
         return name;
     }
@@ -357,17 +286,6 @@ public class MatchField<F extends OFValueType<F>> {
             }
         }
         return true;
-    }
-
-    /**
-     * Retrieve what also must be matched in order to
-     * use this particular MatchField.
-     *
-     * @return unmodifiable view of the prerequisites
-     */
-    public Set<Prerequisite<?>> getPrerequisites() {
-        /* assumes non-null; guaranteed by constructor */
-        return this.prerequisites;
     }
 
 }

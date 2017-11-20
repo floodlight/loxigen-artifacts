@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -35,9 +33,9 @@ abstract class OFNiciraHeaderVer14 {
 
     public final static OFNiciraHeaderVer14.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFNiciraHeader> {
+    static class Reader extends AbstractOFMessageReader<OFNiciraHeader> {
         @Override
-        public OFNiciraHeader readFrom(ByteBuf bb) throws OFParseError {
+        public OFNiciraHeader readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -52,17 +50,24 @@ abstract class OFNiciraHeaderVer14 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             U32.f(bb.readInt());
             // fixed value property experimenter == 0x2320L
             int experimenter = bb.readInt();
             if(experimenter != 0x2320)
                 throw new OFParseError("Wrong experimenter: Expected=0x2320L(0x2320L), got="+experimenter);
             int subtype = bb.readInt();
-            bb.readerIndex(start);
             switch(subtype) {
                default:
-                   throw new OFParseError("Unknown value for discriminator subtype of class OFNiciraHeaderVer14: " + subtype);
+                   context.getUnparsedHandler().unparsedMessage(OFNiciraHeaderVer14.class, "subtype", subtype);
             }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

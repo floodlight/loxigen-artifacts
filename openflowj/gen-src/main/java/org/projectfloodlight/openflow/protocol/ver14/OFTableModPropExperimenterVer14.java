@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -35,9 +33,9 @@ abstract class OFTableModPropExperimenterVer14 {
 
     public final static OFTableModPropExperimenterVer14.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFTableModPropExperimenter> {
+    static class Reader extends AbstractOFMessageReader<OFTableModPropExperimenter> {
         @Override
-        public OFTableModPropExperimenter readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableModPropExperimenter readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -48,12 +46,20 @@ abstract class OFTableModPropExperimenterVer14 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             int experimenter = bb.readInt();
-            bb.readerIndex(start);
             switch(experimenter) {
                default:
-                   throw new OFParseError("Unknown value for discriminator experimenter of class OFTableModPropExperimenterVer14: " + experimenter);
+                   context.getUnparsedHandler().unparsedMessage(OFTableModPropExperimenterVer14.class, "experimenter", experimenter);
             }
+            U32.f(bb.readInt());
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

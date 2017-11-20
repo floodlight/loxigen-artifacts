@@ -1,12 +1,12 @@
 package org.projectfloodlight.openflow.protocol.ver12;
 
-import io.netty.buffer.ByteBuf;
 import org.projectfloodlight.openflow.exceptions.OFParseError;
-import org.projectfloodlight.openflow.protocol.OFMatchBmap;
-import org.projectfloodlight.openflow.protocol.match.Match;
-import org.projectfloodlight.openflow.protocol.ver12.OFMatchV3Ver12;
 import org.projectfloodlight.openflow.protocol.OFBsnVportQInQ;
-import org.projectfloodlight.openflow.protocol.stat.Stat;
+import org.projectfloodlight.openflow.protocol.OFMatchBmap;
+import org.projectfloodlight.openflow.protocol.OFMessageReaderContext;
+import org.projectfloodlight.openflow.protocol.match.Match;
+
+import io.netty.buffer.ByteBuf;
 
 /**
  * Collection of helper functions for reading and writing into Unpooled
@@ -15,8 +15,8 @@ import org.projectfloodlight.openflow.protocol.stat.Stat;
  */
 
 public class ChannelUtilsVer12 {
-    public static Match readOFMatch(final ByteBuf bb) throws OFParseError {
-        return OFMatchV3Ver12.READER.readFrom(bb);
+    public static Match readOFMatch(final OFMessageReaderContext context, final ByteBuf bb) throws OFParseError {
+        return OFMatchV3Ver12.READER.readFrom(context, bb);
     }
 
     // TODO these need to be figured out / removed
@@ -37,9 +37,5 @@ public class ChannelUtilsVer12 {
 
     public static void writeOFMatchBmap(ByteBuf bb, OFMatchBmap match) {
         throw new UnsupportedOperationException("not implemented");
-    }
-
-    public static Stat readOFStat(final ByteBuf bb) throws OFParseError {
-        throw new UnsupportedOperationException("not supported");
     }
 }

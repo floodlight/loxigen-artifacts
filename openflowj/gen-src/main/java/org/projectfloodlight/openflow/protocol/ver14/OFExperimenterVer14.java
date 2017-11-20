@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -35,9 +33,9 @@ abstract class OFExperimenterVer14 {
 
     public final static OFExperimenterVer14.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFExperimenter> {
+    static class Reader extends AbstractOFMessageReader<OFExperimenter> {
         @Override
-        public OFExperimenter readFrom(ByteBuf bb) throws OFParseError {
+        public OFExperimenter readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -52,19 +50,30 @@ abstract class OFExperimenterVer14 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             U32.f(bb.readInt());
             int experimenter = bb.readInt();
-            bb.readerIndex(start);
             switch(experimenter) {
                case 0x5c16c7:
+                   bb.readerIndex(start);
                    // discriminator value 0x5c16c7L=0x5c16c7L for class OFBsnHeaderVer14
-                   return OFBsnHeaderVer14.READER.readFrom(bb);
+                   return OFBsnHeaderVer14.READER.readFrom(context, bb);
                case 0x2320:
+                   bb.readerIndex(start);
                    // discriminator value 0x2320L=0x2320L for class OFNiciraHeaderVer14
-                   return OFNiciraHeaderVer14.READER.readFrom(bb);
+                   return OFNiciraHeaderVer14.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator experimenter of class OFExperimenterVer14: " + experimenter);
+                   context.getUnparsedHandler().unparsedMessage(OFExperimenterVer14.class, "experimenter", experimenter);
             }
+            U32.f(bb.readInt());
+            ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

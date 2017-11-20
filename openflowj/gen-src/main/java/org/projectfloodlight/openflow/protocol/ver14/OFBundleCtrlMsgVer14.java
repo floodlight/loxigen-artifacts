@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -341,9 +339,11 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBundleCtrlMsg> {
+    static class Reader extends AbstractOFMessageReader<OFBundleCtrlMsg> {
         @Override
-        public OFBundleCtrlMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFBundleCtrlMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -356,6 +356,7 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -367,7 +368,7 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
             BundleId bundleId = BundleId.read4Bytes(bb);
             OFBundleCtrlType bundleCtrlType = OFBundleCtrlTypeSerializerVer14.readFrom(bb);
             Set<OFBundleFlags> flags = OFBundleFlagsSerializerVer14.readFrom(bb);
-            List<OFBundleProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBundlePropVer14.READER);
+            List<OFBundleProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBundlePropVer14.READER);
 
             OFBundleCtrlMsgVer14 bundleCtrlMsgVer14 = new OFBundleCtrlMsgVer14(
                     xid,
@@ -487,58 +488,11 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBundleCtrlMsgVer14 other = (OFBundleCtrlMsgVer14) obj;
-
-        // ignore XID
-        if (bundleId == null) {
-            if (other.bundleId != null)
-                return false;
-        } else if (!bundleId.equals(other.bundleId))
-            return false;
-        if (bundleCtrlType == null) {
-            if (other.bundleCtrlType != null)
-                return false;
-        } else if (!bundleCtrlType.equals(other.bundleCtrlType))
-            return false;
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (properties == null) {
-            if (other.properties != null)
-                return false;
-        } else if (!properties.equals(other.properties))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((bundleId == null) ? 0 : bundleId.hashCode());
-        result = prime * result + ((bundleCtrlType == null) ? 0 : bundleCtrlType.hashCode());
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((properties == null) ? 0 : properties.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((bundleId == null) ? 0 : bundleId.hashCode());
         result = prime * result + ((bundleCtrlType == null) ? 0 : bundleCtrlType.hashCode());
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());

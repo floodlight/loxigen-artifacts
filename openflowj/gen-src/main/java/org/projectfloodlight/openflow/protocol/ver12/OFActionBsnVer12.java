@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -36,9 +34,9 @@ abstract class OFActionBsnVer12 {
 
     public final static OFActionBsnVer12.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFActionBsn> {
+    static class Reader extends AbstractOFMessageReader<OFActionBsn> {
         @Override
-        public OFActionBsn readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionBsn readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -49,25 +47,37 @@ abstract class OFActionBsnVer12 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             // fixed value property experimenter == 0x5c16c7L
             int experimenter = bb.readInt();
             if(experimenter != 0x5c16c7)
                 throw new OFParseError("Wrong experimenter: Expected=0x5c16c7L(0x5c16c7L), got="+experimenter);
             int subtype = bb.readInt();
-            bb.readerIndex(start);
             switch(subtype) {
                case 0x4:
+                   bb.readerIndex(start);
                    // discriminator value 0x4L=0x4L for class OFActionBsnChecksumVer12
-                   return OFActionBsnChecksumVer12.READER.readFrom(bb);
+                   return OFActionBsnChecksumVer12.READER.readFrom(context, bb);
                case 0x1:
+                   bb.readerIndex(start);
                    // discriminator value 0x1L=0x1L for class OFActionBsnMirrorVer12
-                   return OFActionBsnMirrorVer12.READER.readFrom(bb);
+                   return OFActionBsnMirrorVer12.READER.readFrom(context, bb);
                case 0x2:
+                   bb.readerIndex(start);
                    // discriminator value 0x2L=0x2L for class OFActionBsnSetTunnelDstVer12
-                   return OFActionBsnSetTunnelDstVer12.READER.readFrom(bb);
+                   return OFActionBsnSetTunnelDstVer12.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator subtype of class OFActionBsnVer12: " + subtype);
+                   context.getUnparsedHandler().unparsedMessage(OFActionBsnVer12.class, "subtype", subtype);
             }
+            // pad: 4 bytes
+            bb.skipBytes(4);
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

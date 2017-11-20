@@ -18,17 +18,13 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.Set;
-import com.google.common.collect.ImmutableSet;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -37,24 +33,19 @@ class OFBsnTlvStripVlanOnEgressVer14 implements OFBsnTlvStripVlanOnEgress {
     private static final Logger logger = LoggerFactory.getLogger(OFBsnTlvStripVlanOnEgressVer14.class);
     // version: 1.4
     final static byte WIRE_VERSION = 5;
-    final static int LENGTH = 5;
+    final static int LENGTH = 4;
 
-        private final static Set<OFBsnStripVlan> DEFAULT_FLAGS = ImmutableSet.<OFBsnStripVlan>of();
 
     // OF message fields
-    private final Set<OFBsnStripVlan> flags;
 //
     // Immutable default instance
     final static OFBsnTlvStripVlanOnEgressVer14 DEFAULT = new OFBsnTlvStripVlanOnEgressVer14(
-        DEFAULT_FLAGS
+
     );
 
-    // package private constructor - used by readers, builders, and factory
-    OFBsnTlvStripVlanOnEgressVer14(Set<OFBsnStripVlan> flags) {
-        if(flags == null) {
-            throw new NullPointerException("OFBsnTlvStripVlanOnEgressVer14: property flags cannot be null");
-        }
-        this.flags = flags;
+    final static OFBsnTlvStripVlanOnEgressVer14 INSTANCE = new OFBsnTlvStripVlanOnEgressVer14();
+    // private empty constructor - use shared instance!
+    private OFBsnTlvStripVlanOnEgressVer14() {
     }
 
     // Accessors for OF message fields
@@ -64,123 +55,33 @@ class OFBsnTlvStripVlanOnEgressVer14 implements OFBsnTlvStripVlanOnEgress {
     }
 
     @Override
-    public Set<OFBsnStripVlan> getFlags() {
-        return flags;
-    }
-
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_14;
     }
 
 
 
+    // no data members - do not support builder
     public OFBsnTlvStripVlanOnEgress.Builder createBuilder() {
-        return new BuilderWithParent(this);
-    }
-
-    static class BuilderWithParent implements OFBsnTlvStripVlanOnEgress.Builder {
-        final OFBsnTlvStripVlanOnEgressVer14 parentMessage;
-
-        // OF message fields
-        private boolean flagsSet;
-        private Set<OFBsnStripVlan> flags;
-
-        BuilderWithParent(OFBsnTlvStripVlanOnEgressVer14 parentMessage) {
-            this.parentMessage = parentMessage;
-        }
-
-    @Override
-    public int getType() {
-        return 0x49;
-    }
-
-    @Override
-    public Set<OFBsnStripVlan> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFBsnTlvStripVlanOnEgress.Builder setFlags(Set<OFBsnStripVlan> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-
-
-        @Override
-        public OFBsnTlvStripVlanOnEgress build() {
-                Set<OFBsnStripVlan> flags = this.flagsSet ? this.flags : parentMessage.flags;
-                if(flags == null)
-                    throw new NullPointerException("Property flags must not be null");
-
-                //
-                return new OFBsnTlvStripVlanOnEgressVer14(
-                    flags
-                );
-        }
-
-    }
-
-    static class Builder implements OFBsnTlvStripVlanOnEgress.Builder {
-        // OF message fields
-        private boolean flagsSet;
-        private Set<OFBsnStripVlan> flags;
-
-    @Override
-    public int getType() {
-        return 0x49;
-    }
-
-    @Override
-    public Set<OFBsnStripVlan> getFlags() {
-        return flags;
-    }
-
-    @Override
-    public OFBsnTlvStripVlanOnEgress.Builder setFlags(Set<OFBsnStripVlan> flags) {
-        this.flags = flags;
-        this.flagsSet = true;
-        return this;
-    }
-    @Override
-    public OFVersion getVersion() {
-        return OFVersion.OF_14;
-    }
-
-//
-        @Override
-        public OFBsnTlvStripVlanOnEgress build() {
-            Set<OFBsnStripVlan> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
-            if(flags == null)
-                throw new NullPointerException("Property flags must not be null");
-
-
-            return new OFBsnTlvStripVlanOnEgressVer14(
-                    flags
-                );
-        }
-
+        throw new UnsupportedOperationException("OFBsnTlvStripVlanOnEgressVer14 has no mutable properties -- builder unneeded");
     }
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvStripVlanOnEgress> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvStripVlanOnEgress> {
         @Override
-        public OFBsnTlvStripVlanOnEgress readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvStripVlanOnEgress readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x49
             short type = bb.readShort();
             if(type != (short) 0x49)
                 throw new OFParseError("Wrong type: Expected=0x49(0x49), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 5)
-                throw new OFParseError("Wrong length: Expected=5(5), got="+length);
+            if(length != 4)
+                throw new OFParseError("Wrong length: Expected=4(4), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -188,14 +89,10 @@ class OFBsnTlvStripVlanOnEgressVer14 implements OFBsnTlvStripVlanOnEgress {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            Set<OFBsnStripVlan> flags = OFBsnStripVlanSerializerVer14.readFrom(bb);
 
-            OFBsnTlvStripVlanOnEgressVer14 bsnTlvStripVlanOnEgressVer14 = new OFBsnTlvStripVlanOnEgressVer14(
-                    flags
-                    );
             if(logger.isTraceEnabled())
-                logger.trace("readFrom - read={}", bsnTlvStripVlanOnEgressVer14);
-            return bsnTlvStripVlanOnEgressVer14;
+                logger.trace("readFrom - returning shared instance={}", INSTANCE);
+            return INSTANCE;
         }
     }
 
@@ -210,9 +107,8 @@ class OFBsnTlvStripVlanOnEgressVer14 implements OFBsnTlvStripVlanOnEgress {
         public void funnel(OFBsnTlvStripVlanOnEgressVer14 message, PrimitiveSink sink) {
             // fixed value property type = 0x49
             sink.putShort((short) 0x49);
-            // fixed value property length = 5
-            sink.putShort((short) 0x5);
-            OFBsnStripVlanSerializerVer14.putTo(message.flags, sink);
+            // fixed value property length = 4
+            sink.putShort((short) 0x4);
         }
     }
 
@@ -227,9 +123,8 @@ class OFBsnTlvStripVlanOnEgressVer14 implements OFBsnTlvStripVlanOnEgress {
         public void write(ByteBuf bb, OFBsnTlvStripVlanOnEgressVer14 message) {
             // fixed value property type = 0x49
             bb.writeShort((short) 0x49);
-            // fixed value property length = 5
-            bb.writeShort((short) 0x5);
-            OFBsnStripVlanSerializerVer14.writeTo(bb, message.flags);
+            // fixed value property length = 4
+            bb.writeShort((short) 0x4);
 
 
         }
@@ -238,7 +133,6 @@ class OFBsnTlvStripVlanOnEgressVer14 implements OFBsnTlvStripVlanOnEgress {
     @Override
     public String toString() {
         StringBuilder b = new StringBuilder("OFBsnTlvStripVlanOnEgressVer14(");
-        b.append("flags=").append(flags);
         b.append(")");
         return b.toString();
     }
@@ -251,22 +145,14 @@ class OFBsnTlvStripVlanOnEgressVer14 implements OFBsnTlvStripVlanOnEgress {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        OFBsnTlvStripVlanOnEgressVer14 other = (OFBsnTlvStripVlanOnEgressVer14) obj;
 
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
         return true;
     }
 
     @Override
     public int hashCode() {
-        final int prime = 31;
         int result = 1;
 
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         return result;
     }
 

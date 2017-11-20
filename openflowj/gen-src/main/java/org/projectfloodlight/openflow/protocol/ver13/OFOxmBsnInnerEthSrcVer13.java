@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -229,9 +227,11 @@ class OFOxmBsnInnerEthSrcVer13 implements OFOxmBsnInnerEthSrc {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnInnerEthSrc> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnInnerEthSrc> {
         @Override
-        public OFOxmBsnInnerEthSrc readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnInnerEthSrc readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x32e06L
             int typeLen = bb.readInt();
             if(typeLen != 0x32e06)

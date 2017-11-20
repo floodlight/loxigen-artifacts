@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -760,9 +758,11 @@ class OFFlowDeleteStrictVer14 implements OFFlowDeleteStrict {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowDeleteStrict> {
+    static class Reader extends AbstractOFMessageReader<OFFlowDeleteStrict> {
         @Override
-        public OFFlowDeleteStrict readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowDeleteStrict readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -775,6 +775,7 @@ class OFFlowDeleteStrictVer14 implements OFFlowDeleteStrict {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -798,8 +799,8 @@ class OFFlowDeleteStrictVer14 implements OFFlowDeleteStrict {
             OFGroup outGroup = OFGroup.read4Bytes(bb);
             Set<OFFlowModFlags> flags = OFFlowModFlagsSerializerVer14.readFrom(bb);
             int importance = U16.f(bb.readShort());
-            Match match = ChannelUtilsVer14.readOFMatch(bb);
-            List<OFInstruction> instructions = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFInstructionVer14.READER);
+            Match match = ChannelUtilsVer14.readOFMatch(context, bb);
+            List<OFInstruction> instructions = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFInstructionVer14.READER);
 
             OFFlowDeleteStrictVer14 flowDeleteStrictVer14 = new OFFlowDeleteStrictVer14(
                     xid,
@@ -1001,100 +1002,11 @@ class OFFlowDeleteStrictVer14 implements OFFlowDeleteStrict {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFFlowDeleteStrictVer14 other = (OFFlowDeleteStrictVer14) obj;
-
-        // ignore XID
-        if (cookie == null) {
-            if (other.cookie != null)
-                return false;
-        } else if (!cookie.equals(other.cookie))
-            return false;
-        if (cookieMask == null) {
-            if (other.cookieMask != null)
-                return false;
-        } else if (!cookieMask.equals(other.cookieMask))
-            return false;
-        if (tableId == null) {
-            if (other.tableId != null)
-                return false;
-        } else if (!tableId.equals(other.tableId))
-            return false;
-        if( idleTimeout != other.idleTimeout)
-            return false;
-        if( hardTimeout != other.hardTimeout)
-            return false;
-        if( priority != other.priority)
-            return false;
-        if (bufferId == null) {
-            if (other.bufferId != null)
-                return false;
-        } else if (!bufferId.equals(other.bufferId))
-            return false;
-        if (outPort == null) {
-            if (other.outPort != null)
-                return false;
-        } else if (!outPort.equals(other.outPort))
-            return false;
-        if (outGroup == null) {
-            if (other.outGroup != null)
-                return false;
-        } else if (!outGroup.equals(other.outGroup))
-            return false;
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if( importance != other.importance)
-            return false;
-        if (match == null) {
-            if (other.match != null)
-                return false;
-        } else if (!match.equals(other.match))
-            return false;
-        if (instructions == null) {
-            if (other.instructions != null)
-                return false;
-        } else if (!instructions.equals(other.instructions))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
-        result = prime * result + ((cookieMask == null) ? 0 : cookieMask.hashCode());
-        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
-        result = prime * result + idleTimeout;
-        result = prime * result + hardTimeout;
-        result = prime * result + priority;
-        result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
-        result = prime * result + ((outPort == null) ? 0 : outPort.hashCode());
-        result = prime * result + ((outGroup == null) ? 0 : outGroup.hashCode());
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + importance;
-        result = prime * result + ((match == null) ? 0 : match.hashCode());
-        result = prime * result + ((instructions == null) ? 0 : instructions.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + ((cookieMask == null) ? 0 : cookieMask.hashCode());
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());

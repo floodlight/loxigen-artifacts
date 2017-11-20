@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -199,9 +197,11 @@ class OFBsnTableChecksumStatsEntryVer13 implements OFBsnTableChecksumStatsEntry 
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTableChecksumStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTableChecksumStatsEntry> {
         @Override
-        public OFBsnTableChecksumStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTableChecksumStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             TableId tableId = TableId.readByte(bb);
             U64 checksum = U64.ofRaw(bb.readLong());
 

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -199,9 +197,11 @@ class OFBucketCounterVer13 implements OFBucketCounter {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBucketCounter> {
+    static class Reader extends AbstractOFMessageReader<OFBucketCounter> {
         @Override
-        public OFBucketCounter readFrom(ByteBuf bb) throws OFParseError {
+        public OFBucketCounter readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             U64 packetCount = U64.ofRaw(bb.readLong());
             U64 byteCount = U64.ofRaw(bb.readLong());
 

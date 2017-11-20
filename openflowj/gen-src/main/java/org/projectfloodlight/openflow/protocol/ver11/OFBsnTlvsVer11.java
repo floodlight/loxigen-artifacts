@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -84,39 +82,11 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvAnchor not supported in version 1.1");
     }
 
-    public OFBsnTlvApplyBytes.Builder buildApplyBytes() {
-        throw new UnsupportedOperationException("OFBsnTlvApplyBytes not supported in version 1.1");
-    }
-    public OFBsnTlvApplyBytes applyBytes(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvApplyBytes not supported in version 1.1");
-    }
-
-    public OFBsnTlvApplyPackets.Builder buildApplyPackets() {
-        throw new UnsupportedOperationException("OFBsnTlvApplyPackets not supported in version 1.1");
-    }
-    public OFBsnTlvApplyPackets applyPackets(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvApplyPackets not supported in version 1.1");
-    }
-
-    public OFBsnTlvAutoNegotiation.Builder buildAutoNegotiation() {
-        throw new UnsupportedOperationException("OFBsnTlvAutoNegotiation not supported in version 1.1");
-    }
-    public OFBsnTlvAutoNegotiation autoNegotiation(OFBsnAutoNegotiationType value) {
-        throw new UnsupportedOperationException("OFBsnTlvAutoNegotiation not supported in version 1.1");
-    }
-
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.1");
     }
     public OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value) {
         throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.1");
-    }
-
-    public OFBsnTlvBroadcastRate.Builder buildBroadcastRate() {
-        throw new UnsupportedOperationException("OFBsnTlvBroadcastRate not supported in version 1.1");
-    }
-    public OFBsnTlvBroadcastRate broadcastRate(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvBroadcastRate not supported in version 1.1");
     }
 
     public OFBsnTlvBucket.Builder buildBucket() {
@@ -140,10 +110,6 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvConvergenceStatus not supported in version 1.1");
     }
 
-    public OFBsnTlvCpuLag cpuLag() {
-        throw new UnsupportedOperationException("OFBsnTlvCpuLag not supported in version 1.1");
-    }
-
     public OFBsnTlvCrcEnabled.Builder buildCrcEnabled() {
         throw new UnsupportedOperationException("OFBsnTlvCrcEnabled not supported in version 1.1");
     }
@@ -158,60 +124,6 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvData not supported in version 1.1");
     }
 
-    public OFBsnTlvDataMask.Builder buildDataMask() {
-        throw new UnsupportedOperationException("OFBsnTlvDataMask not supported in version 1.1");
-    }
-    public OFBsnTlvDataMask dataMask(byte[] value) {
-        throw new UnsupportedOperationException("OFBsnTlvDataMask not supported in version 1.1");
-    }
-
-    public OFBsnTlvDecap.Builder buildDecap() {
-        throw new UnsupportedOperationException("OFBsnTlvDecap not supported in version 1.1");
-    }
-    public OFBsnTlvDecap decap(OFBsnDecap value) {
-        throw new UnsupportedOperationException("OFBsnTlvDecap not supported in version 1.1");
-    }
-
-    public OFBsnTlvDisableSrcMacCheck disableSrcMacCheck() {
-        throw new UnsupportedOperationException("OFBsnTlvDisableSrcMacCheck not supported in version 1.1");
-    }
-
-    public OFBsnTlvDrop drop() {
-        throw new UnsupportedOperationException("OFBsnTlvDrop not supported in version 1.1");
-    }
-
-    public OFBsnTlvDscp.Builder buildDscp() {
-        throw new UnsupportedOperationException("OFBsnTlvDscp not supported in version 1.1");
-    }
-    public OFBsnTlvDscp dscp(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvDscp not supported in version 1.1");
-    }
-
-    public OFBsnTlvEcn.Builder buildEcn() {
-        throw new UnsupportedOperationException("OFBsnTlvEcn not supported in version 1.1");
-    }
-    public OFBsnTlvEcn ecn(short value) {
-        throw new UnsupportedOperationException("OFBsnTlvEcn not supported in version 1.1");
-    }
-
-    public OFBsnTlvEgressOnly egressOnly() {
-        throw new UnsupportedOperationException("OFBsnTlvEgressOnly not supported in version 1.1");
-    }
-
-    public OFBsnTlvEgressPortGroupId.Builder buildEgressPortGroupId() {
-        throw new UnsupportedOperationException("OFBsnTlvEgressPortGroupId not supported in version 1.1");
-    }
-    public OFBsnTlvEgressPortGroupId egressPortGroupId(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvEgressPortGroupId not supported in version 1.1");
-    }
-
-    public OFBsnTlvEnhancedHashCapability.Builder buildEnhancedHashCapability() {
-        throw new UnsupportedOperationException("OFBsnTlvEnhancedHashCapability not supported in version 1.1");
-    }
-    public OFBsnTlvEnhancedHashCapability enhancedHashCapability(Set<OFBsnEnhancedHashType> value) {
-        throw new UnsupportedOperationException("OFBsnTlvEnhancedHashCapability not supported in version 1.1");
-    }
-
     public OFBsnTlvEthDst.Builder buildEthDst() {
         throw new UnsupportedOperationException("OFBsnTlvEthDst not supported in version 1.1");
     }
@@ -224,13 +136,6 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvEthSrc ethSrc(MacAddress value) {
         throw new UnsupportedOperationException("OFBsnTlvEthSrc not supported in version 1.1");
-    }
-
-    public OFBsnTlvEthType.Builder buildEthType() {
-        throw new UnsupportedOperationException("OFBsnTlvEthType not supported in version 1.1");
-    }
-    public OFBsnTlvEthType ethType(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvEthType not supported in version 1.1");
     }
 
     public OFBsnTlvExternalGatewayIp.Builder buildExternalGatewayIp() {
@@ -268,68 +173,11 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvExternalNetmask not supported in version 1.1");
     }
 
-    public OFBsnTlvForceLinkUp forceLinkUp() {
-        throw new UnsupportedOperationException("OFBsnTlvForceLinkUp not supported in version 1.1");
-    }
-
-    public OFBsnTlvForwardErrorCorrection.Builder buildForwardErrorCorrection() {
-        throw new UnsupportedOperationException("OFBsnTlvForwardErrorCorrection not supported in version 1.1");
-    }
-    public OFBsnTlvForwardErrorCorrection forwardErrorCorrection(OFBsnForwardErrorCorrectionType value) {
-        throw new UnsupportedOperationException("OFBsnTlvForwardErrorCorrection not supported in version 1.1");
-    }
-
     public OFBsnTlvGenerationId.Builder buildGenerationId() {
         throw new UnsupportedOperationException("OFBsnTlvGenerationId not supported in version 1.1");
     }
     public OFBsnTlvGenerationId generationId(U64 value) {
         throw new UnsupportedOperationException("OFBsnTlvGenerationId not supported in version 1.1");
-    }
-
-    public OFBsnTlvHashAlgorithm.Builder buildHashAlgorithm() {
-        throw new UnsupportedOperationException("OFBsnTlvHashAlgorithm not supported in version 1.1");
-    }
-    public OFBsnTlvHashAlgorithm hashAlgorithm(OFBsnHashAlgorithmType value) {
-        throw new UnsupportedOperationException("OFBsnTlvHashAlgorithm not supported in version 1.1");
-    }
-
-    public OFBsnTlvHashGtpHeaderMatch.Builder buildHashGtpHeaderMatch() {
-        throw new UnsupportedOperationException("OFBsnTlvHashGtpHeaderMatch not supported in version 1.1");
-    }
-    public OFBsnTlvHashGtpHeaderMatch hashGtpHeaderMatch(short firstHeaderByte, short firstHeaderMask) {
-        throw new UnsupportedOperationException("OFBsnTlvHashGtpHeaderMatch not supported in version 1.1");
-    }
-
-    public OFBsnTlvHashGtpPortMatch.Builder buildHashGtpPortMatch() {
-        throw new UnsupportedOperationException("OFBsnTlvHashGtpPortMatch not supported in version 1.1");
-    }
-
-    public OFBsnTlvHashPacketField.Builder buildHashPacketField() {
-        throw new UnsupportedOperationException("OFBsnTlvHashPacketField not supported in version 1.1");
-    }
-    public OFBsnTlvHashPacketField hashPacketField(Set<OFBsnHashPacketField> value) {
-        throw new UnsupportedOperationException("OFBsnTlvHashPacketField not supported in version 1.1");
-    }
-
-    public OFBsnTlvHashPacketType.Builder buildHashPacketType() {
-        throw new UnsupportedOperationException("OFBsnTlvHashPacketType not supported in version 1.1");
-    }
-    public OFBsnTlvHashPacketType hashPacketType(OFBsnHashPacketType value) {
-        throw new UnsupportedOperationException("OFBsnTlvHashPacketType not supported in version 1.1");
-    }
-
-    public OFBsnTlvHashSeed.Builder buildHashSeed() {
-        throw new UnsupportedOperationException("OFBsnTlvHashSeed not supported in version 1.1");
-    }
-    public OFBsnTlvHashSeed hashSeed(long seed1, long seed2) {
-        throw new UnsupportedOperationException("OFBsnTlvHashSeed not supported in version 1.1");
-    }
-
-    public OFBsnTlvHashType.Builder buildHashType() {
-        throw new UnsupportedOperationException("OFBsnTlvHashType not supported in version 1.1");
-    }
-    public OFBsnTlvHashType hashType(OFBsnHashType value) {
-        throw new UnsupportedOperationException("OFBsnTlvHashType not supported in version 1.1");
     }
 
     public OFBsnTlvHeaderSize.Builder buildHeaderSize() {
@@ -360,13 +208,6 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvIcmpType not supported in version 1.1");
     }
 
-    public OFBsnTlvIcmpv6Chksum.Builder buildIcmpv6Chksum() {
-        throw new UnsupportedOperationException("OFBsnTlvIcmpv6Chksum not supported in version 1.1");
-    }
-    public OFBsnTlvIcmpv6Chksum icmpv6Chksum(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvIcmpv6Chksum not supported in version 1.1");
-    }
-
     public OFBsnTlvIdleNotification idleNotification() {
         throw new UnsupportedOperationException("OFBsnTlvIdleNotification not supported in version 1.1");
     }
@@ -387,13 +228,6 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
 
     public OFBsnTlvIgmpSnooping igmpSnooping() {
         throw new UnsupportedOperationException("OFBsnTlvIgmpSnooping not supported in version 1.1");
-    }
-
-    public OFBsnTlvIngressPortGroupId.Builder buildIngressPortGroupId() {
-        throw new UnsupportedOperationException("OFBsnTlvIngressPortGroupId not supported in version 1.1");
-    }
-    public OFBsnTlvIngressPortGroupId ingressPortGroupId(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvIngressPortGroupId not supported in version 1.1");
     }
 
     public OFBsnTlvInternalGatewayMac.Builder buildInternalGatewayMac() {
@@ -459,78 +293,8 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvIpv6 not supported in version 1.1");
     }
 
-    public OFBsnTlvIpv6Dst.Builder buildIpv6Dst() {
-        throw new UnsupportedOperationException("OFBsnTlvIpv6Dst not supported in version 1.1");
-    }
-    public OFBsnTlvIpv6Dst ipv6Dst(IPv6Address value) {
-        throw new UnsupportedOperationException("OFBsnTlvIpv6Dst not supported in version 1.1");
-    }
-
-    public OFBsnTlvIpv6Prefix.Builder buildIpv6Prefix() {
-        throw new UnsupportedOperationException("OFBsnTlvIpv6Prefix not supported in version 1.1");
-    }
-    public OFBsnTlvIpv6Prefix ipv6Prefix(IPv6Address value, short prefixLength) {
-        throw new UnsupportedOperationException("OFBsnTlvIpv6Prefix not supported in version 1.1");
-    }
-
-    public OFBsnTlvIpv6Src.Builder buildIpv6Src() {
-        throw new UnsupportedOperationException("OFBsnTlvIpv6Src not supported in version 1.1");
-    }
-    public OFBsnTlvIpv6Src ipv6Src(IPv6Address value) {
-        throw new UnsupportedOperationException("OFBsnTlvIpv6Src not supported in version 1.1");
-    }
-
-    public OFBsnTlvKnownMulticastRate.Builder buildKnownMulticastRate() {
-        throw new UnsupportedOperationException("OFBsnTlvKnownMulticastRate not supported in version 1.1");
-    }
-    public OFBsnTlvKnownMulticastRate knownMulticastRate(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvKnownMulticastRate not supported in version 1.1");
-    }
-
     public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
         throw new UnsupportedOperationException("OFBsnTlvL2MulticastLookup not supported in version 1.1");
-    }
-
-    public OFBsnTlvL3DstClassId.Builder buildL3DstClassId() {
-        throw new UnsupportedOperationException("OFBsnTlvL3DstClassId not supported in version 1.1");
-    }
-    public OFBsnTlvL3DstClassId l3DstClassId(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvL3DstClassId not supported in version 1.1");
-    }
-
-    public OFBsnTlvL3InterfaceClassId.Builder buildL3InterfaceClassId() {
-        throw new UnsupportedOperationException("OFBsnTlvL3InterfaceClassId not supported in version 1.1");
-    }
-    public OFBsnTlvL3InterfaceClassId l3InterfaceClassId(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvL3InterfaceClassId not supported in version 1.1");
-    }
-
-    public OFBsnTlvL3SrcClassId.Builder buildL3SrcClassId() {
-        throw new UnsupportedOperationException("OFBsnTlvL3SrcClassId not supported in version 1.1");
-    }
-    public OFBsnTlvL3SrcClassId l3SrcClassId(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvL3SrcClassId not supported in version 1.1");
-    }
-
-    public OFBsnTlvLagOptions.Builder buildLagOptions() {
-        throw new UnsupportedOperationException("OFBsnTlvLagOptions not supported in version 1.1");
-    }
-    public OFBsnTlvLagOptions lagOptions(Set<OFBsnLagFlag> flags) {
-        throw new UnsupportedOperationException("OFBsnTlvLagOptions not supported in version 1.1");
-    }
-
-    public OFBsnTlvLoopbackMode.Builder buildLoopbackMode() {
-        throw new UnsupportedOperationException("OFBsnTlvLoopbackMode not supported in version 1.1");
-    }
-    public OFBsnTlvLoopbackMode loopbackMode(OFBsnLoopbackMode value) {
-        throw new UnsupportedOperationException("OFBsnTlvLoopbackMode not supported in version 1.1");
-    }
-
-    public OFBsnTlvLoopbackPort.Builder buildLoopbackPort() {
-        throw new UnsupportedOperationException("OFBsnTlvLoopbackPort not supported in version 1.1");
-    }
-    public OFBsnTlvLoopbackPort loopbackPort(OFPort value) {
-        throw new UnsupportedOperationException("OFBsnTlvLoopbackPort not supported in version 1.1");
     }
 
     public OFBsnTlvMac.Builder buildMac() {
@@ -545,10 +309,6 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvMacMask macMask(MacAddress value) {
         throw new UnsupportedOperationException("OFBsnTlvMacMask not supported in version 1.1");
-    }
-
-    public OFBsnTlvMcgTypeVxlan mcgTypeVxlan() {
-        throw new UnsupportedOperationException("OFBsnTlvMcgTypeVxlan not supported in version 1.1");
     }
 
     public OFBsnTlvMissPackets.Builder buildMissPackets() {
@@ -579,13 +339,6 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvMplsSequenced not supported in version 1.1");
     }
 
-    public OFBsnTlvMulticastInterfaceId.Builder buildMulticastInterfaceId() {
-        throw new UnsupportedOperationException("OFBsnTlvMulticastInterfaceId not supported in version 1.1");
-    }
-    public OFBsnTlvMulticastInterfaceId multicastInterfaceId(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvMulticastInterfaceId not supported in version 1.1");
-    }
-
     public OFBsnTlvName.Builder buildName() {
         throw new UnsupportedOperationException("OFBsnTlvName not supported in version 1.1");
     }
@@ -593,42 +346,8 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvName not supported in version 1.1");
     }
 
-    public OFBsnTlvNdpOffload ndpOffload() {
-        throw new UnsupportedOperationException("OFBsnTlvNdpOffload not supported in version 1.1");
-    }
-
-    public OFBsnTlvNdpStatic ndpStatic() {
-        throw new UnsupportedOperationException("OFBsnTlvNdpStatic not supported in version 1.1");
-    }
-
     public OFBsnTlvNegate negate() {
         throw new UnsupportedOperationException("OFBsnTlvNegate not supported in version 1.1");
-    }
-
-    public OFBsnTlvNextHopIpv4.Builder buildNextHopIpv4() {
-        throw new UnsupportedOperationException("OFBsnTlvNextHopIpv4 not supported in version 1.1");
-    }
-    public OFBsnTlvNextHopIpv4 nextHopIpv4(IPv4Address value) {
-        throw new UnsupportedOperationException("OFBsnTlvNextHopIpv4 not supported in version 1.1");
-    }
-
-    public OFBsnTlvNextHopMac.Builder buildNextHopMac() {
-        throw new UnsupportedOperationException("OFBsnTlvNextHopMac not supported in version 1.1");
-    }
-    public OFBsnTlvNextHopMac nextHopMac(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvNextHopMac not supported in version 1.1");
-    }
-
-    public OFBsnTlvNexthopTypeVxlan nexthopTypeVxlan() {
-        throw new UnsupportedOperationException("OFBsnTlvNexthopTypeVxlan not supported in version 1.1");
-    }
-
-    public OFBsnTlvNoArpResponse noArpResponse() {
-        throw new UnsupportedOperationException("OFBsnTlvNoArpResponse not supported in version 1.1");
-    }
-
-    public OFBsnTlvNoNsResponse noNsResponse() {
-        throw new UnsupportedOperationException("OFBsnTlvNoNsResponse not supported in version 1.1");
     }
 
     public OFBsnTlvOffset.Builder buildOffset() {
@@ -636,24 +355,6 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvOffset offset(int value) {
         throw new UnsupportedOperationException("OFBsnTlvOffset not supported in version 1.1");
-    }
-
-    public OFBsnTlvOpticsAlwaysEnabled opticsAlwaysEnabled() {
-        throw new UnsupportedOperationException("OFBsnTlvOpticsAlwaysEnabled not supported in version 1.1");
-    }
-
-    public OFBsnTlvOuterSrcMac.Builder buildOuterSrcMac() {
-        throw new UnsupportedOperationException("OFBsnTlvOuterSrcMac not supported in version 1.1");
-    }
-    public OFBsnTlvOuterSrcMac outerSrcMac(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvOuterSrcMac not supported in version 1.1");
-    }
-
-    public OFBsnTlvParentPort.Builder buildParentPort() {
-        throw new UnsupportedOperationException("OFBsnTlvParentPort not supported in version 1.1");
-    }
-    public OFBsnTlvParentPort parentPort(OFPort value) {
-        throw new UnsupportedOperationException("OFBsnTlvParentPort not supported in version 1.1");
     }
 
     public OFBsnTlvPartnerKey.Builder buildPartnerKey() {
@@ -698,13 +399,6 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPartnerSystemPriority not supported in version 1.1");
     }
 
-    public OFBsnTlvPduaRxInstance.Builder buildPduaRxInstance() {
-        throw new UnsupportedOperationException("OFBsnTlvPduaRxInstance not supported in version 1.1");
-    }
-    public OFBsnTlvPduaRxInstance pduaRxInstance(byte[] value) {
-        throw new UnsupportedOperationException("OFBsnTlvPduaRxInstance not supported in version 1.1");
-    }
-
     public OFBsnTlvPort.Builder buildPort() {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.1");
     }
@@ -712,47 +406,11 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.1");
     }
 
-    public OFBsnTlvPortSpeedGbps.Builder buildPortSpeedGbps() {
-        throw new UnsupportedOperationException("OFBsnTlvPortSpeedGbps not supported in version 1.1");
-    }
-    public OFBsnTlvPortSpeedGbps portSpeedGbps(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvPortSpeedGbps not supported in version 1.1");
-    }
-
-    public OFBsnTlvPortUsage.Builder buildPortUsage() {
-        throw new UnsupportedOperationException("OFBsnTlvPortUsage not supported in version 1.1");
-    }
-    public OFBsnTlvPortUsage portUsage(OFBsnPortUsage value) {
-        throw new UnsupportedOperationException("OFBsnTlvPortUsage not supported in version 1.1");
-    }
-
-    public OFBsnTlvPortVxlanMode.Builder buildPortVxlanMode() {
-        throw new UnsupportedOperationException("OFBsnTlvPortVxlanMode not supported in version 1.1");
-    }
-    public OFBsnTlvPortVxlanMode portVxlanMode(OFBsnPortVxlanMode value) {
-        throw new UnsupportedOperationException("OFBsnTlvPortVxlanMode not supported in version 1.1");
-    }
-
     public OFBsnTlvPriority.Builder buildPriority() {
         throw new UnsupportedOperationException("OFBsnTlvPriority not supported in version 1.1");
     }
     public OFBsnTlvPriority priority(long value) {
         throw new UnsupportedOperationException("OFBsnTlvPriority not supported in version 1.1");
-    }
-
-    public OFBsnTlvPushVlanOnEgress pushVlanOnEgress() {
-        throw new UnsupportedOperationException("OFBsnTlvPushVlanOnEgress not supported in version 1.1");
-    }
-
-    public OFBsnTlvPushVlanOnIngress pushVlanOnIngress() {
-        throw new UnsupportedOperationException("OFBsnTlvPushVlanOnIngress not supported in version 1.1");
-    }
-
-    public OFBsnTlvQosPriority.Builder buildQosPriority() {
-        throw new UnsupportedOperationException("OFBsnTlvQosPriority not supported in version 1.1");
-    }
-    public OFBsnTlvQosPriority qosPriority(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvQosPriority not supported in version 1.1");
     }
 
     public OFBsnTlvQueueId.Builder buildQueueId() {
@@ -767,27 +425,6 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvQueueWeight queueWeight(long value) {
         throw new UnsupportedOperationException("OFBsnTlvQueueWeight not supported in version 1.1");
-    }
-
-    public OFBsnTlvRateLimit.Builder buildRateLimit() {
-        throw new UnsupportedOperationException("OFBsnTlvRateLimit not supported in version 1.1");
-    }
-    public OFBsnTlvRateLimit rateLimit(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvRateLimit not supported in version 1.1");
-    }
-
-    public OFBsnTlvRateUnit.Builder buildRateUnit() {
-        throw new UnsupportedOperationException("OFBsnTlvRateUnit not supported in version 1.1");
-    }
-    public OFBsnTlvRateUnit rateUnit(OFBsnRateUnit value) {
-        throw new UnsupportedOperationException("OFBsnTlvRateUnit not supported in version 1.1");
-    }
-
-    public OFBsnTlvRecordPackets.Builder buildRecordPackets() {
-        throw new UnsupportedOperationException("OFBsnTlvRecordPackets not supported in version 1.1");
-    }
-    public OFBsnTlvRecordPackets recordPackets(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvRecordPackets not supported in version 1.1");
     }
 
     public OFBsnTlvReference.Builder buildReference() {
@@ -809,17 +446,6 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvRequestPackets requestPackets(U64 value) {
         throw new UnsupportedOperationException("OFBsnTlvRequestPackets not supported in version 1.1");
-    }
-
-    public OFBsnTlvRestServer restServer() {
-        throw new UnsupportedOperationException("OFBsnTlvRestServer not supported in version 1.1");
-    }
-
-    public OFBsnTlvRoutingParam.Builder buildRoutingParam() {
-        throw new UnsupportedOperationException("OFBsnTlvRoutingParam not supported in version 1.1");
-    }
-    public OFBsnTlvRoutingParam routingParam(OFBsnRoutingParam value) {
-        throw new UnsupportedOperationException("OFBsnTlvRoutingParam not supported in version 1.1");
     }
 
     public OFBsnTlvRxBytes.Builder buildRxBytes() {
@@ -847,13 +473,6 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvSetLoopbackMode not supported in version 1.1");
     }
 
-    public OFBsnTlvStatus.Builder buildStatus() {
-        throw new UnsupportedOperationException("OFBsnTlvStatus not supported in version 1.1");
-    }
-    public OFBsnTlvStatus status(OFBsnStatus value) {
-        throw new UnsupportedOperationException("OFBsnTlvStatus not supported in version 1.1");
-    }
-
     public OFBsnTlvStripMplsL2OnIngress stripMplsL2OnIngress() {
         throw new UnsupportedOperationException("OFBsnTlvStripMplsL2OnIngress not supported in version 1.1");
     }
@@ -862,10 +481,7 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvStripMplsL3OnIngress not supported in version 1.1");
     }
 
-    public OFBsnTlvStripVlanOnEgress.Builder buildStripVlanOnEgress() {
-        throw new UnsupportedOperationException("OFBsnTlvStripVlanOnEgress not supported in version 1.1");
-    }
-    public OFBsnTlvStripVlanOnEgress stripVlanOnEgress(Set<OFBsnStripVlan> flags) {
+    public OFBsnTlvStripVlanOnEgress stripVlanOnEgress() {
         throw new UnsupportedOperationException("OFBsnTlvStripVlanOnEgress not supported in version 1.1");
     }
 
@@ -883,39 +499,11 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvTcpDst not supported in version 1.1");
     }
 
-    public OFBsnTlvTcpFlags.Builder buildTcpFlags() {
-        throw new UnsupportedOperationException("OFBsnTlvTcpFlags not supported in version 1.1");
-    }
-    public OFBsnTlvTcpFlags tcpFlags(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvTcpFlags not supported in version 1.1");
-    }
-
     public OFBsnTlvTcpSrc.Builder buildTcpSrc() {
         throw new UnsupportedOperationException("OFBsnTlvTcpSrc not supported in version 1.1");
     }
     public OFBsnTlvTcpSrc tcpSrc(int value) {
         throw new UnsupportedOperationException("OFBsnTlvTcpSrc not supported in version 1.1");
-    }
-
-    public OFBsnTlvTimestamp.Builder buildTimestamp() {
-        throw new UnsupportedOperationException("OFBsnTlvTimestamp not supported in version 1.1");
-    }
-    public OFBsnTlvTimestamp timestamp(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvTimestamp not supported in version 1.1");
-    }
-
-    public OFBsnTlvTtl.Builder buildTtl() {
-        throw new UnsupportedOperationException("OFBsnTlvTtl not supported in version 1.1");
-    }
-    public OFBsnTlvTtl ttl(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvTtl not supported in version 1.1");
-    }
-
-    public OFBsnTlvTunnelCapability.Builder buildTunnelCapability() {
-        throw new UnsupportedOperationException("OFBsnTlvTunnelCapability not supported in version 1.1");
-    }
-    public OFBsnTlvTunnelCapability tunnelCapability(Set<OFBsnTunnelType> value) {
-        throw new UnsupportedOperationException("OFBsnTlvTunnelCapability not supported in version 1.1");
     }
 
     public OFBsnTlvTxBytes.Builder buildTxBytes() {
@@ -974,75 +562,11 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvUdpSrc not supported in version 1.1");
     }
 
-    public OFBsnTlvUint64List.Builder buildUint64List() {
-        throw new UnsupportedOperationException("OFBsnTlvUint64List not supported in version 1.1");
-    }
-    public OFBsnTlvUint64List uint64List(List<U64> value) {
-        throw new UnsupportedOperationException("OFBsnTlvUint64List not supported in version 1.1");
-    }
-
     public OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() {
         throw new UnsupportedOperationException("OFBsnTlvUnicastQueryTimeout not supported in version 1.1");
     }
     public OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value) {
         throw new UnsupportedOperationException("OFBsnTlvUnicastQueryTimeout not supported in version 1.1");
-    }
-
-    public OFBsnTlvUnicastRate.Builder buildUnicastRate() {
-        throw new UnsupportedOperationException("OFBsnTlvUnicastRate not supported in version 1.1");
-    }
-    public OFBsnTlvUnicastRate unicastRate(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvUnicastRate not supported in version 1.1");
-    }
-
-    public OFBsnTlvUnknownMulticastRate.Builder buildUnknownMulticastRate() {
-        throw new UnsupportedOperationException("OFBsnTlvUnknownMulticastRate not supported in version 1.1");
-    }
-    public OFBsnTlvUnknownMulticastRate unknownMulticastRate(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvUnknownMulticastRate not supported in version 1.1");
-    }
-
-    public OFBsnTlvUntagged untagged() {
-        throw new UnsupportedOperationException("OFBsnTlvUntagged not supported in version 1.1");
-    }
-
-    public OFBsnTlvUriScheme.Builder buildUriScheme() {
-        throw new UnsupportedOperationException("OFBsnTlvUriScheme not supported in version 1.1");
-    }
-    public OFBsnTlvUriScheme uriScheme(byte[] value) {
-        throw new UnsupportedOperationException("OFBsnTlvUriScheme not supported in version 1.1");
-    }
-
-    public OFBsnTlvUsePacketState.Builder buildUsePacketState() {
-        throw new UnsupportedOperationException("OFBsnTlvUsePacketState not supported in version 1.1");
-    }
-    public OFBsnTlvUsePacketState usePacketState(short value) {
-        throw new UnsupportedOperationException("OFBsnTlvUsePacketState not supported in version 1.1");
-    }
-
-    public OFBsnTlvVfi.Builder buildVfi() {
-        throw new UnsupportedOperationException("OFBsnTlvVfi not supported in version 1.1");
-    }
-    public OFBsnTlvVfi vfi(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvVfi not supported in version 1.1");
-    }
-
-    public OFBsnTlvVfpClassId.Builder buildVfpClassId() {
-        throw new UnsupportedOperationException("OFBsnTlvVfpClassId not supported in version 1.1");
-    }
-    public OFBsnTlvVfpClassId vfpClassId(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvVfpClassId not supported in version 1.1");
-    }
-
-    public OFBsnTlvVirtual virtual() {
-        throw new UnsupportedOperationException("OFBsnTlvVirtual not supported in version 1.1");
-    }
-
-    public OFBsnTlvVlanMacList.Builder buildVlanMacList() {
-        throw new UnsupportedOperationException("OFBsnTlvVlanMacList not supported in version 1.1");
-    }
-    public OFBsnTlvVlanMacList vlanMacList(List<OFBsnVlanMac> key) {
-        throw new UnsupportedOperationException("OFBsnTlvVlanMacList not supported in version 1.1");
     }
 
     public OFBsnTlvVlanPcp.Builder buildVlanPcp() {
@@ -1066,29 +590,11 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvVlanVidMask not supported in version 1.1");
     }
 
-    public OFBsnTlvVni.Builder buildVni() {
-        throw new UnsupportedOperationException("OFBsnTlvVni not supported in version 1.1");
-    }
-    public OFBsnTlvVni vni(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvVni not supported in version 1.1");
-    }
-
-    public OFBsnTlvVpnKey.Builder buildVpnKey() {
-        throw new UnsupportedOperationException("OFBsnTlvVpnKey not supported in version 1.1");
-    }
-    public OFBsnTlvVpnKey vpnKey(long value) {
-        throw new UnsupportedOperationException("OFBsnTlvVpnKey not supported in version 1.1");
-    }
-
     public OFBsnTlvVrf.Builder buildVrf() {
         throw new UnsupportedOperationException("OFBsnTlvVrf not supported in version 1.1");
     }
     public OFBsnTlvVrf vrf(long value) {
         throw new UnsupportedOperationException("OFBsnTlvVrf not supported in version 1.1");
-    }
-
-    public OFBsnTlvVxlanEgressLag vxlanEgressLag() {
-        throw new UnsupportedOperationException("OFBsnTlvVxlanEgressLag not supported in version 1.1");
     }
 
     public OFMessageReader<OFBsnTlv> getReader() {

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -199,9 +197,11 @@ class OFMeterBandStatsVer14 implements OFMeterBandStats {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFMeterBandStats> {
+    static class Reader extends AbstractOFMessageReader<OFMeterBandStats> {
         @Override
-        public OFMeterBandStats readFrom(ByteBuf bb) throws OFParseError {
+        public OFMeterBandStats readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             U64 packetBandCount = U64.ofRaw(bb.readLong());
             U64 byteBandCount = U64.ofRaw(bb.readLong());
 

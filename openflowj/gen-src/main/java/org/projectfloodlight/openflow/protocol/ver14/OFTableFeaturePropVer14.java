@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -36,69 +34,96 @@ abstract class OFTableFeaturePropVer14 {
 
     public final static OFTableFeaturePropVer14.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFTableFeatureProp> {
+    static class Reader extends AbstractOFMessageReader<OFTableFeatureProp> {
         @Override
-        public OFTableFeatureProp readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeatureProp readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
-            bb.readerIndex(start);
             switch(type) {
                case (short) 0x6:
+                   bb.readerIndex(start);
                    // discriminator value 0x6=0x6 for class OFTableFeaturePropApplyActionsVer14
-                   return OFTableFeaturePropApplyActionsVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropApplyActionsVer14.READER.readFrom(context, bb);
                case (short) 0x7:
+                   bb.readerIndex(start);
                    // discriminator value 0x7=0x7 for class OFTableFeaturePropApplyActionsMissVer14
-                   return OFTableFeaturePropApplyActionsMissVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropApplyActionsMissVer14.READER.readFrom(context, bb);
                case (short) 0xe:
+                   bb.readerIndex(start);
                    // discriminator value 0xe=0xe for class OFTableFeaturePropApplySetfieldVer14
-                   return OFTableFeaturePropApplySetfieldVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropApplySetfieldVer14.READER.readFrom(context, bb);
                case (short) 0xf:
+                   bb.readerIndex(start);
                    // discriminator value 0xf=0xf for class OFTableFeaturePropApplySetfieldMissVer14
-                   return OFTableFeaturePropApplySetfieldMissVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropApplySetfieldMissVer14.READER.readFrom(context, bb);
                case (short) 0xfffe:
+                   bb.readerIndex(start);
                    // discriminator value 0xfffe=0xfffe for class OFTableFeaturePropExperimenterVer14
-                   return OFTableFeaturePropExperimenterVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropExperimenterVer14.READER.readFrom(context, bb);
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value 0xffff=0xffff for class OFTableFeaturePropExperimenterMissVer14
-                   return OFTableFeaturePropExperimenterMissVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropExperimenterMissVer14.READER.readFrom(context, bb);
                case (short) 0x0:
+                   bb.readerIndex(start);
                    // discriminator value 0x0=0x0 for class OFTableFeaturePropInstructionsVer14
-                   return OFTableFeaturePropInstructionsVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropInstructionsVer14.READER.readFrom(context, bb);
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value 0x1=0x1 for class OFTableFeaturePropInstructionsMissVer14
-                   return OFTableFeaturePropInstructionsMissVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropInstructionsMissVer14.READER.readFrom(context, bb);
                case (short) 0x8:
+                   bb.readerIndex(start);
                    // discriminator value 0x8=0x8 for class OFTableFeaturePropMatchVer14
-                   return OFTableFeaturePropMatchVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropMatchVer14.READER.readFrom(context, bb);
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value 0x2=0x2 for class OFTableFeaturePropNextTablesVer14
-                   return OFTableFeaturePropNextTablesVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropNextTablesVer14.READER.readFrom(context, bb);
                case (short) 0x3:
+                   bb.readerIndex(start);
                    // discriminator value 0x3=0x3 for class OFTableFeaturePropNextTablesMissVer14
-                   return OFTableFeaturePropNextTablesMissVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropNextTablesMissVer14.READER.readFrom(context, bb);
                case (short) 0xa:
+                   bb.readerIndex(start);
                    // discriminator value 0xa=0xa for class OFTableFeaturePropWildcardsVer14
-                   return OFTableFeaturePropWildcardsVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropWildcardsVer14.READER.readFrom(context, bb);
                case (short) 0x4:
+                   bb.readerIndex(start);
                    // discriminator value 0x4=0x4 for class OFTableFeaturePropWriteActionsVer14
-                   return OFTableFeaturePropWriteActionsVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropWriteActionsVer14.READER.readFrom(context, bb);
                case (short) 0x5:
+                   bb.readerIndex(start);
                    // discriminator value 0x5=0x5 for class OFTableFeaturePropWriteActionsMissVer14
-                   return OFTableFeaturePropWriteActionsMissVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropWriteActionsMissVer14.READER.readFrom(context, bb);
                case (short) 0xc:
+                   bb.readerIndex(start);
                    // discriminator value 0xc=0xc for class OFTableFeaturePropWriteSetfieldVer14
-                   return OFTableFeaturePropWriteSetfieldVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropWriteSetfieldVer14.READER.readFrom(context, bb);
                case (short) 0xd:
+                   bb.readerIndex(start);
                    // discriminator value 0xd=0xd for class OFTableFeaturePropWriteSetfieldMissVer14
-                   return OFTableFeaturePropWriteSetfieldMissVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropWriteSetfieldMissVer14.READER.readFrom(context, bb);
                case (short) 0x10:
+                   bb.readerIndex(start);
                    // discriminator value 0x10=0x10 for class OFTableFeaturePropTableSyncFromVer14
-                   return OFTableFeaturePropTableSyncFromVer14.READER.readFrom(bb);
+                   return OFTableFeaturePropTableSyncFromVer14.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFTableFeaturePropVer14: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFTableFeaturePropVer14.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

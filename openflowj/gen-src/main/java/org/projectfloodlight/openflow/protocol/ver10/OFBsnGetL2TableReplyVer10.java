@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -268,9 +266,11 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGetL2TableReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGetL2TableReply> {
         @Override
-        public OFBsnGetL2TableReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGetL2TableReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -283,6 +283,7 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
             int length = U16.f(bb.readShort());
             if(length != 24)
                 throw new OFParseError("Wrong length: Expected=24(24), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -407,40 +408,11 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnGetL2TableReplyVer10 other = (OFBsnGetL2TableReplyVer10) obj;
-
-        // ignore XID
-        if( l2TableEnable != other.l2TableEnable)
-            return false;
-        if( l2TablePriority != other.l2TablePriority)
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + l2TableEnable;
-        result = prime * result + l2TablePriority;
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + l2TableEnable;
         result = prime * result + l2TablePriority;
         return result;

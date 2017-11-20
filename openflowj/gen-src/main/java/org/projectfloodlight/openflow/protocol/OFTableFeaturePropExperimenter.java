@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -31,8 +29,9 @@ public interface OFTableFeaturePropExperimenter extends OFObject, OFTableFeature
     int getType();
     long getExperimenter();
     long getSubtype();
-    byte[] getExperimenterData() throws UnsupportedOperationException;
+    byte[] getExperimenterData();
     OFVersion getVersion();
+
 
     void writeTo(ByteBuf channelBuffer);
 
@@ -43,8 +42,8 @@ public interface OFTableFeaturePropExperimenter extends OFObject, OFTableFeature
         long getExperimenter();
         long getSubtype();
         Builder setSubtype(long subtype);
-        byte[] getExperimenterData() throws UnsupportedOperationException;
-        Builder setExperimenterData(byte[] experimenterData) throws UnsupportedOperationException;
+        byte[] getExperimenterData();
+        Builder setExperimenterData(byte[] experimenterData);
         OFVersion getVersion();
     }
 }

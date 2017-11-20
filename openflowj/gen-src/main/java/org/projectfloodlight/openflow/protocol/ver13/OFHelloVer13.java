@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -209,9 +207,11 @@ class OFHelloVer13 implements OFHello {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFHello> {
+    static class Reader extends AbstractOFMessageReader<OFHello> {
         @Override
-        public OFHello readFrom(ByteBuf bb) throws OFParseError {
+        public OFHello readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -224,6 +224,7 @@ class OFHelloVer13 implements OFHello {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -232,7 +233,7 @@ class OFHelloVer13 implements OFHello {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            List<OFHelloElem> elements = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFHelloElemVer13.READER);
+            List<OFHelloElem> elements = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFHelloElemVer13.READER);
 
             OFHelloVer13 helloVer13 = new OFHelloVer13(
                     xid,
@@ -322,40 +323,11 @@ class OFHelloVer13 implements OFHello {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFHelloVer13 other = (OFHelloVer13) obj;
-
-        // ignore XID
-        if (elements == null) {
-            if (other.elements != null)
-                return false;
-        } else if (!elements.equals(other.elements))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((elements == null) ? 0 : elements.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((elements == null) ? 0 : elements.hashCode());
         return result;
     }

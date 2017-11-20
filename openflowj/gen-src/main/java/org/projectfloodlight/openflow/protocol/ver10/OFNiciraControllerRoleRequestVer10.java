@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -233,9 +231,11 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFNiciraControllerRoleRequest> {
+    static class Reader extends AbstractOFMessageReader<OFNiciraControllerRoleRequest> {
         @Override
-        public OFNiciraControllerRoleRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFNiciraControllerRoleRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -248,6 +248,7 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
             int length = U16.f(bb.readShort());
             if(length != 20)
                 throw new OFParseError("Wrong length: Expected=20(20), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -357,40 +358,11 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFNiciraControllerRoleRequestVer10 other = (OFNiciraControllerRoleRequestVer10) obj;
-
-        // ignore XID
-        if (role == null) {
-            if (other.role != null)
-                return false;
-        } else if (!role.equals(other.role))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((role == null) ? 0 : role.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((role == null) ? 0 : role.hashCode());
         return result;
     }

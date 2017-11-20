@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -78,16 +76,12 @@ public class OFErrorMsgsVer14 implements OFErrorMsgs {
         return new OFTableModFailedErrorMsgVer14.Builder().setXid(nextXid());
     }
 
+    public OFExperimenterErrorMsg.Builder buildExperimenterErrorMsg() {
+        return new OFExperimenterErrorMsgVer14.Builder().setXid(nextXid());
+    }
+
     public OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() {
         return new OFRoleRequestFailedErrorMsgVer14.Builder().setXid(nextXid());
-    }
-
-    public OFBsnError.Builder buildBsnError() {
-        return new OFBsnErrorVer14.Builder().setXid(nextXid());
-    }
-
-    public OFBsnGentableError.Builder buildBsnGentableError() {
-        return new OFBsnGentableErrorVer14.Builder().setXid(nextXid());
     }
 
     public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {

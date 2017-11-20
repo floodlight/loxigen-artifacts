@@ -8953,7 +8953,7 @@ of_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             *id = OF_ROLE_REQUEST_FAILED_ERROR_MSG;
             break;
         case 0xffff:
-            of_experimenter_error_msg_wire_object_id_get(obj, id);
+            *id = OF_EXPERIMENTER_ERROR_MSG;
             break;
         default:
             *id = OF_ERROR_MSG;
@@ -9007,7 +9007,7 @@ of_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             *id = OF_TABLE_FEATURES_FAILED_ERROR_MSG;
             break;
         case 0xffff:
-            of_experimenter_error_msg_wire_object_id_get(obj, id);
+            *id = OF_EXPERIMENTER_ERROR_MSG;
             break;
         default:
             *id = OF_ERROR_MSG;
@@ -9073,7 +9073,7 @@ of_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             *id = OF_BUNDLE_FAILED_ERROR_MSG;
             break;
         case 0xffff:
-            of_experimenter_error_msg_wire_object_id_get(obj, id);
+            *id = OF_EXPERIMENTER_ERROR_MSG;
             break;
         default:
             *id = OF_ERROR_MSG;
@@ -11673,9 +11673,6 @@ of_bsn_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x46:
             *id = OF_BSN_VLAN_COUNTER_CLEAR;
-            break;
-        case 0x47:
-            *id = OF_BSN_GENERIC_COMMAND;
             break;
         default:
             *id = OF_BSN_HEADER;

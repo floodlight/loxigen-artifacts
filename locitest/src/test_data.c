@@ -748,7 +748,7 @@ test_of10_port_mod(void) {
     uint8_t binary[] = {
         0x01, 0x0f, 0x00, 0x20, 0x00, 0x00, 0x00, 0x02, 
         0xff, 0xfd, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 
-        0x80, 0x00, 0x00, 0x6f, 0x80, 0x00, 0x00, 0x11, 
+        0x90, 0xab, 0xcd, 0xef, 0xff, 0x11, 0xff, 0x11, 
         0xca, 0xfe, 0x67, 0x89, 0x00, 0x00, 0x00, 0x00, 
         
     };
@@ -757,12 +757,12 @@ test_of10_port_mod(void) {
 
     obj = of_port_mod_new(OF_VERSION_1_0);
     of_port_mod_advertise_set(obj, 0xCAFE6789);
-    of_port_mod_config_set(obj, 0x8000006f);
+    of_port_mod_config_set(obj, 0x90ABCDEF);
     {
         of_mac_addr_t hw_addr = { { 1, 2, 3, 4, 5, 6 } };
         of_port_mod_hw_addr_set(obj, hw_addr);
     }
-    of_port_mod_mask_set(obj, 0x80000011);
+    of_port_mod_mask_set(obj, 0xFF11FF11);
     of_port_mod_port_no_set(obj, 65533);
     of_port_mod_xid_set(obj, 2);
 

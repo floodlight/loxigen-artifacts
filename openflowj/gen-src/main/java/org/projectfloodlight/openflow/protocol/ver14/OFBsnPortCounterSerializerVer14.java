@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -59,34 +57,6 @@ public class OFBsnPortCounterSerializerVer14 {
     public final static byte BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS_VAL = (byte) 0x19;
     public final static byte BSN_PORT_COUNTER_TX_CARRIER_ERRORS_VAL = (byte) 0x1a;
     public final static byte BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN_VAL = (byte) 0x1b;
-    public final static byte BSN_PORT_COUNTER_LINK_UP_VAL = (byte) 0x1c;
-    public final static byte BSN_PORT_COUNTER_LINK_DOWN_VAL = (byte) 0x1d;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_CONTROL_FRAME_VAL = (byte) 0x1e;
-    public final static byte BSN_PORT_COUNTER_TX_PFC_CONTROL_FRAME_VAL = (byte) 0x1f;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_0_VAL = (byte) 0x20;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_1_VAL = (byte) 0x21;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_2_VAL = (byte) 0x22;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_3_VAL = (byte) 0x23;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_4_VAL = (byte) 0x24;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_5_VAL = (byte) 0x25;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_6_VAL = (byte) 0x26;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_7_VAL = (byte) 0x27;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_0_VAL = (byte) 0x28;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_1_VAL = (byte) 0x29;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_2_VAL = (byte) 0x2a;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_3_VAL = (byte) 0x2b;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_4_VAL = (byte) 0x2c;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_5_VAL = (byte) 0x2d;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_6_VAL = (byte) 0x2e;
-    public final static byte BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_7_VAL = (byte) 0x2f;
-    public final static byte BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_0_VAL = (byte) 0x30;
-    public final static byte BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_1_VAL = (byte) 0x31;
-    public final static byte BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_2_VAL = (byte) 0x32;
-    public final static byte BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_3_VAL = (byte) 0x33;
-    public final static byte BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_4_VAL = (byte) 0x34;
-    public final static byte BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_5_VAL = (byte) 0x35;
-    public final static byte BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_6_VAL = (byte) 0x36;
-    public final static byte BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_7_VAL = (byte) 0x37;
 
     public static OFBsnPortCounter readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -162,62 +132,6 @@ public class OFBsnPortCounterSerializerVer14 {
                 return OFBsnPortCounter.BSN_PORT_COUNTER_TX_CARRIER_ERRORS;
             case BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN_VAL:
                 return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN;
-            case BSN_PORT_COUNTER_LINK_UP_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_LINK_UP;
-            case BSN_PORT_COUNTER_LINK_DOWN_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_LINK_DOWN;
-            case BSN_PORT_COUNTER_RX_PFC_CONTROL_FRAME_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_CONTROL_FRAME;
-            case BSN_PORT_COUNTER_TX_PFC_CONTROL_FRAME_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_TX_PFC_CONTROL_FRAME;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_0_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_0;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_1_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_1;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_2_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_2;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_3_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_3;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_4_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_4;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_5_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_5;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_6_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_6;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_7_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_7;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_0_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_0;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_1_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_1;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_2_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_2;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_3_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_3;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_4_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_4;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_5_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_5;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_6_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_6;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_7_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_7;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_0_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_0;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_1_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_1;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_2_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_2;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_3_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_3;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_4_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_4;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_5_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_5;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_6_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_6;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_7_VAL:
-                return OFBsnPortCounter.BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_7;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFBsnPortCounter in version 1.4: " + val);
         }
@@ -282,62 +196,6 @@ public class OFBsnPortCounterSerializerVer14 {
                 return BSN_PORT_COUNTER_TX_CARRIER_ERRORS_VAL;
             case BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN:
                 return BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN_VAL;
-            case BSN_PORT_COUNTER_LINK_UP:
-                return BSN_PORT_COUNTER_LINK_UP_VAL;
-            case BSN_PORT_COUNTER_LINK_DOWN:
-                return BSN_PORT_COUNTER_LINK_DOWN_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_CONTROL_FRAME:
-                return BSN_PORT_COUNTER_RX_PFC_CONTROL_FRAME_VAL;
-            case BSN_PORT_COUNTER_TX_PFC_CONTROL_FRAME:
-                return BSN_PORT_COUNTER_TX_PFC_CONTROL_FRAME_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_0:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_0_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_1:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_1_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_2:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_2_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_3:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_3_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_4:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_4_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_5:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_5_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_6:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_6_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_7:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_7_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_0:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_0_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_1:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_1_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_2:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_2_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_3:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_3_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_4:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_4_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_5:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_5_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_6:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_6_VAL;
-            case BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_7:
-                return BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_7_VAL;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_0:
-                return BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_0_VAL;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_1:
-                return BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_1_VAL;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_2:
-                return BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_2_VAL;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_3:
-                return BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_3_VAL;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_4:
-                return BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_4_VAL;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_5:
-                return BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_5_VAL;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_6:
-                return BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_6_VAL;
-            case BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_7:
-                return BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_7_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFBsnPortCounter in version 1.4: " + e);
         }

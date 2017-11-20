@@ -18,15 +18,12 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
-import java.util.List;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBundleAddMsg extends OFObject, OFMessage {
@@ -35,9 +32,8 @@ public interface OFBundleAddMsg extends OFObject, OFMessage {
     long getXid();
     BundleId getBundleId();
     Set<OFBundleFlags> getFlags();
-    OFMessage getMessage() throws UnsupportedOperationException;
-    List<OFBundleProp> getProperties() throws UnsupportedOperationException;
-    OFMessage getData() throws UnsupportedOperationException;
+    OFMessage getData();
+
 
     void writeTo(ByteBuf channelBuffer);
 
@@ -52,11 +48,7 @@ public interface OFBundleAddMsg extends OFObject, OFMessage {
         Builder setBundleId(BundleId bundleId);
         Set<OFBundleFlags> getFlags();
         Builder setFlags(Set<OFBundleFlags> flags);
-        OFMessage getMessage() throws UnsupportedOperationException;
-        Builder setMessage(OFMessage message) throws UnsupportedOperationException;
-        List<OFBundleProp> getProperties() throws UnsupportedOperationException;
-        Builder setProperties(List<OFBundleProp> properties) throws UnsupportedOperationException;
-        OFMessage getData() throws UnsupportedOperationException;
-        Builder setData(OFMessage data) throws UnsupportedOperationException;
+        OFMessage getData();
+        Builder setData(OFMessage data);
     }
 }

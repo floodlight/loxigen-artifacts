@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -32,8 +30,8 @@ public interface OFGroupDescStatsEntry extends OFObject {
     OFGroupType getGroupType();
     OFGroup getGroup();
     List<OFBucket> getBuckets();
-    List<OFGroupProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
+
 
     void writeTo(ByteBuf channelBuffer);
 
@@ -46,8 +44,6 @@ public interface OFGroupDescStatsEntry extends OFObject {
         Builder setGroup(OFGroup group);
         List<OFBucket> getBuckets();
         Builder setBuckets(List<OFBucket> buckets);
-        List<OFGroupProp> getProperties() throws UnsupportedOperationException;
-        Builder setProperties(List<OFGroupProp> properties) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

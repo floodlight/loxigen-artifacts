@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -31,7 +29,6 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import java.util.Collections;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -201,16 +198,9 @@ class OFFlowAddVer12 implements OFFlowAdd {
         return instructions;
     }
 
-
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
-        for (OFInstruction inst : this.instructions) {
-            if (inst instanceof OFInstructionApplyActions) {
-                OFInstructionApplyActions iap = (OFInstructionApplyActions)inst;
-                return iap.getActions();
-            }
-        }
-        return Collections.emptyList();
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
     @Override
@@ -417,30 +407,15 @@ class OFFlowAddVer12 implements OFFlowAdd {
         this.instructionsSet = true;
         return this;
     }
-
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
-        if (!this.instructionsSet)
-            return Collections.emptyList();
-        for (OFInstruction inst : this.instructions) {
-            if (inst instanceof OFInstructionApplyActions) {
-                OFInstructionApplyActions iap = (OFInstructionApplyActions)inst;
-                return iap.getActions();
-            }
-        }
-        return Collections.emptyList();
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
-
 
     @Override
     public OFFlowAdd.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-        OFInstructionApplyActionsVer12.Builder builder = new OFInstructionApplyActionsVer12.Builder();
-        builder.setActions(actions);
-        this.instructions = Collections.singletonList((OFInstruction)builder.build());
-        this.instructionsSet = true;
-        return this;
+            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
-
     @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.2");
@@ -693,30 +668,15 @@ class OFFlowAddVer12 implements OFFlowAdd {
         this.instructionsSet = true;
         return this;
     }
-
     @Override
     public List<OFAction> getActions()throws UnsupportedOperationException {
-        if (!this.instructionsSet)
-            return Collections.emptyList();
-        for (OFInstruction inst : this.instructions) {
-            if (inst instanceof OFInstructionApplyActions) {
-                OFInstructionApplyActions iap = (OFInstructionApplyActions)inst;
-                return iap.getActions();
-            }
-        }
-        return Collections.emptyList();
+        throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
-
 
     @Override
     public OFFlowAdd.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
-        OFInstructionApplyActionsVer12.Builder builder = new OFInstructionApplyActionsVer12.Builder();
-        builder.setActions(actions);
-        this.instructions = Collections.singletonList((OFInstruction)builder.build());
-        this.instructionsSet = true;
-        return this;
+            throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
-
     @Override
     public int getImportance()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property importance not supported in version 1.2");
@@ -783,9 +743,11 @@ class OFFlowAddVer12 implements OFFlowAdd {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowAdd> {
+    static class Reader extends AbstractOFMessageReader<OFFlowAdd> {
         @Override
-        public OFFlowAdd readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowAdd readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -798,6 +760,7 @@ class OFFlowAddVer12 implements OFFlowAdd {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -822,8 +785,8 @@ class OFFlowAddVer12 implements OFFlowAdd {
             Set<OFFlowModFlags> flags = OFFlowModFlagsSerializerVer12.readFrom(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
-            Match match = ChannelUtilsVer12.readOFMatch(bb);
-            List<OFInstruction> instructions = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFInstructionVer12.READER);
+            Match match = ChannelUtilsVer12.readOFMatch(context, bb);
+            List<OFInstruction> instructions = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFInstructionVer12.READER);
 
             OFFlowAddVer12 flowAddVer12 = new OFFlowAddVer12(
                     xid,
@@ -1021,97 +984,11 @@ class OFFlowAddVer12 implements OFFlowAdd {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFFlowAddVer12 other = (OFFlowAddVer12) obj;
-
-        // ignore XID
-        if (cookie == null) {
-            if (other.cookie != null)
-                return false;
-        } else if (!cookie.equals(other.cookie))
-            return false;
-        if (cookieMask == null) {
-            if (other.cookieMask != null)
-                return false;
-        } else if (!cookieMask.equals(other.cookieMask))
-            return false;
-        if (tableId == null) {
-            if (other.tableId != null)
-                return false;
-        } else if (!tableId.equals(other.tableId))
-            return false;
-        if( idleTimeout != other.idleTimeout)
-            return false;
-        if( hardTimeout != other.hardTimeout)
-            return false;
-        if( priority != other.priority)
-            return false;
-        if (bufferId == null) {
-            if (other.bufferId != null)
-                return false;
-        } else if (!bufferId.equals(other.bufferId))
-            return false;
-        if (outPort == null) {
-            if (other.outPort != null)
-                return false;
-        } else if (!outPort.equals(other.outPort))
-            return false;
-        if (outGroup == null) {
-            if (other.outGroup != null)
-                return false;
-        } else if (!outGroup.equals(other.outGroup))
-            return false;
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (match == null) {
-            if (other.match != null)
-                return false;
-        } else if (!match.equals(other.match))
-            return false;
-        if (instructions == null) {
-            if (other.instructions != null)
-                return false;
-        } else if (!instructions.equals(other.instructions))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
-        result = prime * result + ((cookieMask == null) ? 0 : cookieMask.hashCode());
-        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
-        result = prime * result + idleTimeout;
-        result = prime * result + hardTimeout;
-        result = prime * result + priority;
-        result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
-        result = prime * result + ((outPort == null) ? 0 : outPort.hashCode());
-        result = prime * result + ((outGroup == null) ? 0 : outGroup.hashCode());
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((match == null) ? 0 : match.hashCode());
-        result = prime * result + ((instructions == null) ? 0 : instructions.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + ((cookieMask == null) ? 0 : cookieMask.hashCode());
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());

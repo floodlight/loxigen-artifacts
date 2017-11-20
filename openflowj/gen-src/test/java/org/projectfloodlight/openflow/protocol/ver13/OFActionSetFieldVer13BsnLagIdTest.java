@@ -18,28 +18,48 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import java.util.Set;
 import org.junit.Test;
-import org.junit.Before;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import org.junit.runners.Parameterized.Parameters;
+import java.util.List;
+import com.google.common.collect.ImmutableList;
+import org.junit.Before;
 import org.hamcrest.CoreMatchers;
 
 
-
+@RunWith(Parameterized.class)
 public class OFActionSetFieldVer13BsnLagIdTest {
     OFActions factory;
 
     final static byte[] ACTION_SET_FIELD_SERIALIZED =
         new byte[] { 0x0, 0x19, 0x0, 0x10, 0x0, 0x3, 0x2, 0x4, 0x12, 0x34, 0x56, 0x78, 0x0, 0x0, 0x0, 0x0 };
+
+
+    private final static int[] PREFIX_BYTES = { 0, 1, 4, 255, 65335 };
+    private final static ByteBuf EMPTY_BUFFER = Unpooled.wrappedBuffer(new byte[65535]);
+
+    private final OFMessageReader<?> messageReader;
+
+    @Parameters(name="{index}.MessageReader={0}")
+    public static Iterable<Object> data() {
+        return ImmutableList.<Object>of(
+                OFActionSetFieldVer13.READER, OFActionVer13.READER
+        );
+    }
+
+    public OFActionSetFieldVer13BsnLagIdTest(OFMessageReader<?> messageReader) {
+        this.messageReader = messageReader;
+    }
 
     @Before
     public void setup() {
@@ -60,20 +80,49 @@ builder.setField(oxms.bsnLagId(LagId.of(0x12345678)));
         assertThat(written, CoreMatchers.equalTo(ACTION_SET_FIELD_SERIALIZED));
     }
 
+
     @Test
     public void testRead() throws Exception {
+        ByteBuf input = Unpooled.copiedBuffer(ACTION_SET_FIELD_SERIALIZED);
+
+        Object actionSetFieldRead = messageReader.readFrom(input);
+        assertThat(actionSetFieldRead, CoreMatchers.instanceOf(OFActionSetFieldVer13.class));
         OFActionSetField.Builder builder = factory.buildSetField();
         OFOxms oxms = OFFactories.getFactory(OFVersion.OF_13).oxms();
 builder.setField(oxms.bsnLagId(LagId.of(0x12345678)));
         OFActionSetField actionSetFieldBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(ACTION_SET_FIELD_SERIALIZED);
-
-        // FIXME should invoke the overall reader once implemented
-        OFActionSetField actionSetFieldRead = OFActionSetFieldVer13.READER.readFrom(input);
         assertEquals(ACTION_SET_FIELD_SERIALIZED.length, input.readerIndex());
 
         assertEquals(actionSetFieldBuilt, actionSetFieldRead);
+        // FIXME: No java stanza in test_data for this class. Add to enable validation of read message
+   }
+
+    /**
+     * Validates Reader handling of partial messages in the buffer.
+     *
+     * Ensures that readers deal with partially available messages, and that buffers
+     * are returned unmodified. Also checks compatibility when the data is not at the start of
+     * the buffer (readerIndex=0), but somewhere else (with the readerIndex appropriately set).
+     */
+   @Test
+   public void testPartialRead() throws Exception {
+       ByteBuf msgBuffer = Unpooled.copiedBuffer(ACTION_SET_FIELD_SERIALIZED);
+        for(int prefixLength: PREFIX_BYTES) {
+            ByteBuf prefixBuffer = EMPTY_BUFFER.slice(0, prefixLength);
+            ByteBuf wholeBuffer = Unpooled.wrappedBuffer(prefixBuffer, msgBuffer);
+            for(int partialLength = 0; partialLength < ACTION_SET_FIELD_SERIALIZED.length - 1; partialLength++) {
+                int length = prefixLength + partialLength;
+                ByteBuf slice = wholeBuffer.slice(0, length);
+                slice.readerIndex(prefixLength);
+
+                Object read = messageReader.readFrom(slice);
+
+                assertNull("partial message should not be read", read);
+                assertEquals("Reader index should be back at the start", prefixLength, slice.readerIndex());
+            }
+
+        }
    }
 
    @Test
@@ -81,7 +130,7 @@ builder.setField(oxms.bsnLagId(LagId.of(0x12345678)));
        ByteBuf input = Unpooled.copiedBuffer(ACTION_SET_FIELD_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
-       OFActionSetField actionSetField = OFActionSetFieldVer13.READER.readFrom(input);
+       OFActionSetField actionSetField = (OFActionSetField) messageReader.readFrom(input);
        assertEquals(ACTION_SET_FIELD_SERIALIZED.length, input.readerIndex());
 
        // write message again

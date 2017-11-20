@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -171,9 +169,11 @@ class OFInstructionWriteActionsVer14 implements OFInstructionWriteActions {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFInstructionWriteActions> {
+    static class Reader extends AbstractOFMessageReader<OFInstructionWriteActions> {
         @Override
-        public OFInstructionWriteActions readFrom(ByteBuf bb) throws OFParseError {
+        public OFInstructionWriteActions readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 3
             short type = bb.readShort();
@@ -182,6 +182,7 @@ class OFInstructionWriteActionsVer14 implements OFInstructionWriteActions {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -191,7 +192,7 @@ class OFInstructionWriteActionsVer14 implements OFInstructionWriteActions {
                 logger.trace("readFrom - length={}", length);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFAction> actions = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFActionVer14.READER);
+            List<OFAction> actions = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFActionVer14.READER);
 
             OFInstructionWriteActionsVer14 instructionWriteActionsVer14 = new OFInstructionWriteActionsVer14(
                     actions

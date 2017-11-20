@@ -18,29 +18,47 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.junit.Test;
-import org.junit.Before;
-import java.util.List;
-import com.google.common.collect.ImmutableList;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import org.junit.runners.Parameterized.Parameters;
+import java.util.List;
+import com.google.common.collect.ImmutableList;
+import org.junit.Before;
 import org.hamcrest.CoreMatchers;
 
 
-
+@RunWith(Parameterized.class)
 public class OFBsnGentableEntryDeleteVer13Test {
     OFFactory factory;
 
     final static byte[] BSN_GENTABLE_ENTRY_DELETE_SERIALIZED =
         new byte[] { 0x4, 0x4, 0x0, 0x24, 0x12, 0x34, 0x56, 0x78, 0x0, 0x5c, 0x16, (byte) 0xc7, 0x0, 0x0, 0x0, 0x2f, 0x0, 0x14, 0x0, 0x0, 0x0, 0x8, 0x0, 0x0, 0x0, 0x5, 0x0, 0x1, 0x0, 0xa, 0x1, 0x23, 0x45, 0x67, (byte) 0x89, (byte) 0xab };
+
+
+    private final static int[] PREFIX_BYTES = { 0, 1, 4, 255, 65335 };
+    private final static ByteBuf EMPTY_BUFFER = Unpooled.wrappedBuffer(new byte[65535]);
+
+    private final OFMessageReader<?> messageReader;
+
+    @Parameters(name="{index}.MessageReader={0}")
+    public static Iterable<Object> data() {
+        return ImmutableList.<Object>of(
+                OFBsnGentableEntryDeleteVer13.READER, OFBsnHeaderVer13.READER, OFExperimenterVer13.READER, OFMessageVer13.READER
+        );
+    }
+
+    public OFBsnGentableEntryDeleteVer13Test(OFMessageReader<?> messageReader) {
+        this.messageReader = messageReader;
+    }
 
     @Before
     public void setup() {
@@ -67,8 +85,13 @@ public class OFBsnGentableEntryDeleteVer13Test {
         assertThat(written, CoreMatchers.equalTo(BSN_GENTABLE_ENTRY_DELETE_SERIALIZED));
     }
 
+
     @Test
     public void testRead() throws Exception {
+        ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_ENTRY_DELETE_SERIALIZED);
+
+        Object bsnGentableEntryDeleteRead = messageReader.readFrom(input);
+        assertThat(bsnGentableEntryDeleteRead, CoreMatchers.instanceOf(OFBsnGentableEntryDeleteVer13.class));
         OFBsnGentableEntryDelete.Builder builder = factory.buildBsnGentableEntryDelete();
         builder.setXid(0x12345678)
     .setTableId(GenTableId.of(20))
@@ -80,13 +103,37 @@ public class OFBsnGentableEntryDeleteVer13Test {
     );
         OFBsnGentableEntryDelete bsnGentableEntryDeleteBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_ENTRY_DELETE_SERIALIZED);
-
-        // FIXME should invoke the overall reader once implemented
-        OFBsnGentableEntryDelete bsnGentableEntryDeleteRead = OFBsnGentableEntryDeleteVer13.READER.readFrom(input);
         assertEquals(BSN_GENTABLE_ENTRY_DELETE_SERIALIZED.length, input.readerIndex());
 
         assertEquals(bsnGentableEntryDeleteBuilt, bsnGentableEntryDeleteRead);
+        // FIXME: No java stanza in test_data for this class. Add to enable validation of read message
+   }
+
+    /**
+     * Validates Reader handling of partial messages in the buffer.
+     *
+     * Ensures that readers deal with partially available messages, and that buffers
+     * are returned unmodified. Also checks compatibility when the data is not at the start of
+     * the buffer (readerIndex=0), but somewhere else (with the readerIndex appropriately set).
+     */
+   @Test
+   public void testPartialRead() throws Exception {
+       ByteBuf msgBuffer = Unpooled.copiedBuffer(BSN_GENTABLE_ENTRY_DELETE_SERIALIZED);
+        for(int prefixLength: PREFIX_BYTES) {
+            ByteBuf prefixBuffer = EMPTY_BUFFER.slice(0, prefixLength);
+            ByteBuf wholeBuffer = Unpooled.wrappedBuffer(prefixBuffer, msgBuffer);
+            for(int partialLength = 0; partialLength < BSN_GENTABLE_ENTRY_DELETE_SERIALIZED.length - 1; partialLength++) {
+                int length = prefixLength + partialLength;
+                ByteBuf slice = wholeBuffer.slice(0, length);
+                slice.readerIndex(prefixLength);
+
+                Object read = messageReader.readFrom(slice);
+
+                assertNull("partial message should not be read", read);
+                assertEquals("Reader index should be back at the start", prefixLength, slice.readerIndex());
+            }
+
+        }
    }
 
    @Test
@@ -94,7 +141,7 @@ public class OFBsnGentableEntryDeleteVer13Test {
        ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_ENTRY_DELETE_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
-       OFBsnGentableEntryDelete bsnGentableEntryDelete = OFBsnGentableEntryDeleteVer13.READER.readFrom(input);
+       OFBsnGentableEntryDelete bsnGentableEntryDelete = (OFBsnGentableEntryDelete) messageReader.readFrom(input);
        assertEquals(BSN_GENTABLE_ENTRY_DELETE_SERIALIZED.length, input.readerIndex());
 
        // write message again

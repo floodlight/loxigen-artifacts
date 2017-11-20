@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -365,9 +363,11 @@ class OFBsnFlowIdleVer13 implements OFBsnFlowIdle {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnFlowIdle> {
+    static class Reader extends AbstractOFMessageReader<OFBsnFlowIdle> {
         @Override
-        public OFBsnFlowIdle readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnFlowIdle readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -380,6 +380,7 @@ class OFBsnFlowIdleVer13 implements OFBsnFlowIdle {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -401,7 +402,7 @@ class OFBsnFlowIdleVer13 implements OFBsnFlowIdle {
             TableId tableId = TableId.readByte(bb);
             // pad: 5 bytes
             bb.skipBytes(5);
-            Match match = ChannelUtilsVer13.readOFMatch(bb);
+            Match match = ChannelUtilsVer13.readOFMatch(context, bb);
 
             OFBsnFlowIdleVer13 bsnFlowIdleVer13 = new OFBsnFlowIdleVer13(
                     xid,
@@ -529,55 +530,11 @@ class OFBsnFlowIdleVer13 implements OFBsnFlowIdle {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnFlowIdleVer13 other = (OFBsnFlowIdleVer13) obj;
-
-        // ignore XID
-        if (cookie == null) {
-            if (other.cookie != null)
-                return false;
-        } else if (!cookie.equals(other.cookie))
-            return false;
-        if( priority != other.priority)
-            return false;
-        if (tableId == null) {
-            if (other.tableId != null)
-                return false;
-        } else if (!tableId.equals(other.tableId))
-            return false;
-        if (match == null) {
-            if (other.match != null)
-                return false;
-        } else if (!match.equals(other.match))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
-        result = prime * result + priority;
-        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
-        result = prime * result + ((match == null) ? 0 : match.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + priority;
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());

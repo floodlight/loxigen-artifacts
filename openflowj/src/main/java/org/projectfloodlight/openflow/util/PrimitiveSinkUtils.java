@@ -48,8 +48,8 @@ public class PrimitiveSinkUtils {
     /** puts the elements of a sorted set into the {@link PrimitiveSink}. Does not support null
      *  elements. The elements are assumed to be self-delimitating.
      *
-     * @param sink the sink to put the sorted set
-     * @param set the sorted set
+     * @param sink
+     * @param set
      */
     public static void putSortedSetTo(PrimitiveSink sink,
             SortedSet<? extends PrimitiveSinkable> set) {
@@ -62,13 +62,13 @@ public class PrimitiveSinkUtils {
     /** puts the elements of a list into the {@link PrimitiveSink}. Does not support null
      *  elements. The elements are assumed to be self-delimitating.
      *
-     * @param sink the sink to put the list elements
-     * @param list the list
+     * @param sink
+     * @param set
      */
     public static void putListTo(PrimitiveSink sink,
-            List<? extends PrimitiveSinkable> list) {
-        sink.putInt(list.size());
-        for(PrimitiveSinkable e: list) {
+            List<? extends PrimitiveSinkable> set) {
+        sink.putInt(set.size());
+        for(PrimitiveSinkable e: set) {
             e.putTo(sink);
         }
     }

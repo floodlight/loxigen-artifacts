@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -217,14 +215,17 @@ class OFPacketQueueVer11 implements OFPacketQueue {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPacketQueue> {
+    static class Reader extends AbstractOFMessageReader<OFPacketQueue> {
         @Override
-        public OFPacketQueue readFrom(ByteBuf bb) throws OFParseError {
+        public OFPacketQueue readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             long queueId = U32.f(bb.readInt());
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -234,7 +235,7 @@ class OFPacketQueueVer11 implements OFPacketQueue {
                 logger.trace("readFrom - length={}", length);
             // pad: 2 bytes
             bb.skipBytes(2);
-            List<OFQueueProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFQueuePropVer11.READER);
+            List<OFQueueProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFQueuePropVer11.READER);
 
             OFPacketQueueVer11 packetQueueVer11 = new OFPacketQueueVer11(
                     queueId,

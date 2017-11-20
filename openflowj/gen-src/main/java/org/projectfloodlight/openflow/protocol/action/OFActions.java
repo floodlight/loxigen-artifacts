@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -92,8 +90,6 @@ public interface OFActions {
     OFActionPopPbb popPbb();
     OFActionPushPbb.Builder buildPushPbb() throws UnsupportedOperationException;
     OFActionPushPbb pushPbb(EthType ethertype);
-    OFActionMeter.Builder buildMeter() throws UnsupportedOperationException;
-    OFActionMeter meter(long meterId);
 
     OFMessageReader<OFAction> getReader();
     OFVersion getVersion();

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -300,9 +298,11 @@ class OFBsnGentableBucketStatsReplyVer14 implements OFBsnGentableBucketStatsRepl
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGentableBucketStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGentableBucketStatsReply> {
         @Override
-        public OFBsnGentableBucketStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGentableBucketStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -315,6 +315,7 @@ class OFBsnGentableBucketStatsReplyVer14 implements OFBsnGentableBucketStatsRepl
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -338,7 +339,7 @@ class OFBsnGentableBucketStatsReplyVer14 implements OFBsnGentableBucketStatsRepl
             int subtype = bb.readInt();
             if(subtype != 0x5)
                 throw new OFParseError("Wrong subtype: Expected=0x5L(0x5L), got="+subtype);
-            List<OFBsnGentableBucketStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnGentableBucketStatsEntryVer14.READER);
+            List<OFBsnGentableBucketStatsEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnGentableBucketStatsEntryVer14.READER);
 
             OFBsnGentableBucketStatsReplyVer14 bsnGentableBucketStatsReplyVer14 = new OFBsnGentableBucketStatsReplyVer14(
                     xid,
@@ -453,46 +454,11 @@ class OFBsnGentableBucketStatsReplyVer14 implements OFBsnGentableBucketStatsRepl
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnGentableBucketStatsReplyVer14 other = (OFBsnGentableBucketStatsReplyVer14) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (entries == null) {
-            if (other.entries != null)
-                return false;
-        } else if (!entries.equals(other.entries))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((entries == null) ? 0 : entries.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((entries == null) ? 0 : entries.hashCode());
         return result;

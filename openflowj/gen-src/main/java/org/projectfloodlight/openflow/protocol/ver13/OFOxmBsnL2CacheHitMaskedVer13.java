@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -264,9 +262,11 @@ class OFOxmBsnL2CacheHitMaskedVer13 implements OFOxmBsnL2CacheHitMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnL2CacheHitMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnL2CacheHitMasked> {
         @Override
-        public OFOxmBsnL2CacheHitMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnL2CacheHitMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x32502L
             int typeLen = bb.readInt();
             if(typeLen != 0x32502)

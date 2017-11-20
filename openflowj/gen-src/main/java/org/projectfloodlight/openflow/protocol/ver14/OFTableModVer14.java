@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -292,9 +290,11 @@ class OFTableModVer14 implements OFTableMod {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableMod> {
+    static class Reader extends AbstractOFMessageReader<OFTableMod> {
         @Override
-        public OFTableMod readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableMod readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -307,6 +307,7 @@ class OFTableModVer14 implements OFTableMod {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -319,7 +320,7 @@ class OFTableModVer14 implements OFTableMod {
             // pad: 3 bytes
             bb.skipBytes(3);
             long config = U32.f(bb.readInt());
-            List<OFTableModProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFTableModPropVer14.READER);
+            List<OFTableModProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFTableModPropVer14.READER);
 
             OFTableModVer14 tableModVer14 = new OFTableModVer14(
                     xid,
@@ -429,49 +430,11 @@ class OFTableModVer14 implements OFTableMod {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFTableModVer14 other = (OFTableModVer14) obj;
-
-        // ignore XID
-        if (tableId == null) {
-            if (other.tableId != null)
-                return false;
-        } else if (!tableId.equals(other.tableId))
-            return false;
-        if( config != other.config)
-            return false;
-        if (properties == null) {
-            if (other.properties != null)
-                return false;
-        } else if (!properties.equals(other.properties))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
-        result = prime *  (int) (config ^ (config >>> 32));
-        result = prime * result + ((properties == null) ? 0 : properties.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime *  (int) (config ^ (config >>> 32));
         result = prime * result + ((properties == null) ? 0 : properties.hashCode());

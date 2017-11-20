@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -86,11 +84,6 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
         return flags;
     }
 
-    @Override
-    public OFGroup getGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property group not supported in version 1.2");
-    }
-
 
 
     public OFGroupDescStatsRequest.Builder createBuilder() {
@@ -146,15 +139,6 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
         this.flags = flags;
         this.flagsSet = true;
         return this;
-    }
-    @Override
-    public OFGroup getGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property group not supported in version 1.2");
-    }
-
-    @Override
-    public OFGroupDescStatsRequest.Builder setGroup(OFGroup group) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property group not supported in version 1.2");
     }
 
 
@@ -218,15 +202,6 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
         this.flagsSet = true;
         return this;
     }
-    @Override
-    public OFGroup getGroup()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property group not supported in version 1.2");
-    }
-
-    @Override
-    public OFGroupDescStatsRequest.Builder setGroup(OFGroup group) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property group not supported in version 1.2");
-    }
 //
         @Override
         public OFGroupDescStatsRequest build() {
@@ -246,9 +221,11 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFGroupDescStatsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFGroupDescStatsRequest> {
         @Override
-        public OFGroupDescStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupDescStatsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -261,6 +238,7 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
             int length = U16.f(bb.readShort());
             if(length != 16)
                 throw new OFParseError("Wrong length: Expected=16(16), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -367,40 +345,11 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFGroupDescStatsRequestVer12 other = (OFGroupDescStatsRequestVer12) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         return result;
     }

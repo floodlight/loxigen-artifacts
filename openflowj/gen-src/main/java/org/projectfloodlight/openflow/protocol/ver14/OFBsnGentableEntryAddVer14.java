@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -370,9 +368,11 @@ class OFBsnGentableEntryAddVer14 implements OFBsnGentableEntryAdd {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGentableEntryAdd> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGentableEntryAdd> {
         @Override
-        public OFBsnGentableEntryAdd readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGentableEntryAdd readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -385,6 +385,7 @@ class OFBsnGentableEntryAddVer14 implements OFBsnGentableEntryAdd {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -404,8 +405,8 @@ class OFBsnGentableEntryAddVer14 implements OFBsnGentableEntryAdd {
             GenTableId tableId = GenTableId.read2Bytes(bb);
             int keyLength = U16.f(bb.readShort());
             U128 checksum = U128.read16Bytes(bb);
-            List<OFBsnTlv> key = ChannelUtils.readList(bb, keyLength, OFBsnTlvVer14.READER);
-            List<OFBsnTlv> value = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnTlvVer14.READER);
+            List<OFBsnTlv> key = ChannelUtils.readList(context, bb, keyLength, OFBsnTlvVer14.READER);
+            List<OFBsnTlv> value = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnTlvVer14.READER);
 
             OFBsnGentableEntryAddVer14 bsnGentableEntryAddVer14 = new OFBsnGentableEntryAddVer14(
                     xid,
@@ -542,58 +543,11 @@ class OFBsnGentableEntryAddVer14 implements OFBsnGentableEntryAdd {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnGentableEntryAddVer14 other = (OFBsnGentableEntryAddVer14) obj;
-
-        // ignore XID
-        if (tableId == null) {
-            if (other.tableId != null)
-                return false;
-        } else if (!tableId.equals(other.tableId))
-            return false;
-        if (checksum == null) {
-            if (other.checksum != null)
-                return false;
-        } else if (!checksum.equals(other.checksum))
-            return false;
-        if (key == null) {
-            if (other.key != null)
-                return false;
-        } else if (!key.equals(other.key))
-            return false;
-        if (value == null) {
-            if (other.value != null)
-                return false;
-        } else if (!value.equals(other.value))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
-        result = prime * result + ((checksum == null) ? 0 : checksum.hashCode());
-        result = prime * result + ((key == null) ? 0 : key.hashCode());
-        result = prime * result + ((value == null) ? 0 : value.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((checksum == null) ? 0 : checksum.hashCode());
         result = prime * result + ((key == null) ? 0 : key.hashCode());

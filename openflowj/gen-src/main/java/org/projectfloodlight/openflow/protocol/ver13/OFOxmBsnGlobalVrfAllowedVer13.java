@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -229,9 +227,11 @@ class OFOxmBsnGlobalVrfAllowedVer13 implements OFOxmBsnGlobalVrfAllowed {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnGlobalVrfAllowed> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnGlobalVrfAllowed> {
         @Override
-        public OFOxmBsnGlobalVrfAllowed readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnGlobalVrfAllowed readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x30601L
             int typeLen = bb.readInt();
             if(typeLen != 0x30601)

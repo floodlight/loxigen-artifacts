@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -264,9 +262,11 @@ class OFOxmIcmpv6TypeMaskedVer13 implements OFOxmIcmpv6TypeMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmIcmpv6TypeMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmIcmpv6TypeMasked> {
         @Override
-        public OFOxmIcmpv6TypeMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmIcmpv6TypeMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80003b02L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80003b02)

@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -86,11 +84,6 @@ class OFPortDescStatsRequestVer14 implements OFPortDescStatsRequest {
         return flags;
     }
 
-    @Override
-    public OFPort getPortNo()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property portNo not supported in version 1.4");
-    }
-
 
 
     public OFPortDescStatsRequest.Builder createBuilder() {
@@ -146,15 +139,6 @@ class OFPortDescStatsRequestVer14 implements OFPortDescStatsRequest {
         this.flags = flags;
         this.flagsSet = true;
         return this;
-    }
-    @Override
-    public OFPort getPortNo()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property portNo not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDescStatsRequest.Builder setPortNo(OFPort portNo) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property portNo not supported in version 1.4");
     }
 
 
@@ -218,15 +202,6 @@ class OFPortDescStatsRequestVer14 implements OFPortDescStatsRequest {
         this.flagsSet = true;
         return this;
     }
-    @Override
-    public OFPort getPortNo()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property portNo not supported in version 1.4");
-    }
-
-    @Override
-    public OFPortDescStatsRequest.Builder setPortNo(OFPort portNo) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property portNo not supported in version 1.4");
-    }
 //
         @Override
         public OFPortDescStatsRequest build() {
@@ -246,9 +221,11 @@ class OFPortDescStatsRequestVer14 implements OFPortDescStatsRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPortDescStatsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFPortDescStatsRequest> {
         @Override
-        public OFPortDescStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortDescStatsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -261,6 +238,7 @@ class OFPortDescStatsRequestVer14 implements OFPortDescStatsRequest {
             int length = U16.f(bb.readShort());
             if(length != 16)
                 throw new OFParseError("Wrong length: Expected=16(16), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -367,40 +345,11 @@ class OFPortDescStatsRequestVer14 implements OFPortDescStatsRequest {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFPortDescStatsRequestVer14 other = (OFPortDescStatsRequestVer14) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         return result;
     }

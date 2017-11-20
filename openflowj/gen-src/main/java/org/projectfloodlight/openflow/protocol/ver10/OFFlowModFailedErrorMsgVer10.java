@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -263,9 +261,11 @@ class OFFlowModFailedErrorMsgVer10 implements OFFlowModFailedErrorMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowModFailedErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFFlowModFailedErrorMsg> {
         @Override
-        public OFFlowModFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowModFailedErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -278,6 +278,7 @@ class OFFlowModFailedErrorMsgVer10 implements OFFlowModFailedErrorMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,7 +292,7 @@ class OFFlowModFailedErrorMsgVer10 implements OFFlowModFailedErrorMsg {
             if(errType != (short) 0x3)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.FLOW_MOD_FAILED(3), got="+errType);
             OFFlowModFailedCode code = OFFlowModFailedCodeSerializerVer10.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_10);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_10);
 
             OFFlowModFailedErrorMsgVer10 flowModFailedErrorMsgVer10 = new OFFlowModFailedErrorMsgVer10(
                     xid,
@@ -395,46 +396,11 @@ class OFFlowModFailedErrorMsgVer10 implements OFFlowModFailedErrorMsg {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFFlowModFailedErrorMsgVer10 other = (OFFlowModFailedErrorMsgVer10) obj;
-
-        // ignore XID
-        if (code == null) {
-            if (other.code != null)
-                return false;
-        } else if (!code.equals(other.code))
-            return false;
-        if (data == null) {
-            if (other.data != null)
-                return false;
-        } else if (!data.equals(other.data))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((code == null) ? 0 : code.hashCode());
-        result = prime * result + ((data == null) ? 0 : data.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((code == null) ? 0 : code.hashCode());
         result = prime * result + ((data == null) ? 0 : data.hashCode());
         return result;

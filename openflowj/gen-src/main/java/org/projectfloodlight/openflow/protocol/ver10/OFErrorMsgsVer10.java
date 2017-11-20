@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -78,16 +76,12 @@ public class OFErrorMsgsVer10 implements OFErrorMsgs {
         throw new UnsupportedOperationException("OFTableModFailedErrorMsg not supported in version 1.0");
     }
 
+    public OFExperimenterErrorMsg.Builder buildExperimenterErrorMsg() {
+        throw new UnsupportedOperationException("OFExperimenterErrorMsg not supported in version 1.0");
+    }
+
     public OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() {
         throw new UnsupportedOperationException("OFRoleRequestFailedErrorMsg not supported in version 1.0");
-    }
-
-    public OFBsnError.Builder buildBsnError() {
-        throw new UnsupportedOperationException("OFBsnError not supported in version 1.0");
-    }
-
-    public OFBsnGentableError.Builder buildBsnGentableError() {
-        throw new UnsupportedOperationException("OFBsnGentableError not supported in version 1.0");
     }
 
     public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {

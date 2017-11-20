@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -54,35 +52,7 @@ public enum OFBsnPortCounter {
      BSN_PORT_COUNTER_RX_LENGTH_ERRORS((byte) 0x18),
      BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS((byte) 0x19),
      BSN_PORT_COUNTER_TX_CARRIER_ERRORS((byte) 0x1a),
-     BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN((byte) 0x1b),
-     BSN_PORT_COUNTER_LINK_UP((byte) 0x1c),
-     BSN_PORT_COUNTER_LINK_DOWN((byte) 0x1d),
-     BSN_PORT_COUNTER_RX_PFC_CONTROL_FRAME((byte) 0x1e),
-     BSN_PORT_COUNTER_TX_PFC_CONTROL_FRAME((byte) 0x1f),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_0((byte) 0x20),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_1((byte) 0x21),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_2((byte) 0x22),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_3((byte) 0x23),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_4((byte) 0x24),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_5((byte) 0x25),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_6((byte) 0x26),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_XON_PRIORITY_7((byte) 0x27),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_0((byte) 0x28),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_1((byte) 0x29),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_2((byte) 0x2a),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_3((byte) 0x2b),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_4((byte) 0x2c),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_5((byte) 0x2d),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_6((byte) 0x2e),
-     BSN_PORT_COUNTER_RX_PFC_FRAME_PRIORITY_7((byte) 0x2f),
-     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_0((byte) 0x30),
-     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_1((byte) 0x31),
-     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_2((byte) 0x32),
-     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_3((byte) 0x33),
-     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_4((byte) 0x34),
-     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_5((byte) 0x35),
-     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_6((byte) 0x36),
-     BSN_PORT_COUNTER_TX_PFC_FRAME_PRIORITY_7((byte) 0x37);
+     BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN((byte) 0x1b);
 
      private final byte stableValue;
 

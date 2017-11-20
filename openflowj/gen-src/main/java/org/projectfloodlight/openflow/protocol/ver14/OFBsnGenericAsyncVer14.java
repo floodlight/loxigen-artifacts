@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -284,9 +282,11 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGenericAsync> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGenericAsync> {
         @Override
-        public OFBsnGenericAsync readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGenericAsync readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -299,6 +299,7 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -316,7 +317,7 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
             if(subtype != 0x44)
                 throw new OFParseError("Wrong subtype: Expected=0x44L(0x44L), got="+subtype);
             String name = ChannelUtils.readFixedLengthString(bb, 64);
-            List<OFBsnTlv> tlvs = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnTlvVer14.READER);
+            List<OFBsnTlv> tlvs = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnTlvVer14.READER);
 
             OFBsnGenericAsyncVer14 bsnGenericAsyncVer14 = new OFBsnGenericAsyncVer14(
                     xid,
@@ -424,46 +425,11 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFBsnGenericAsyncVer14 other = (OFBsnGenericAsyncVer14) obj;
-
-        // ignore XID
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        if (tlvs == null) {
-            if (other.tlvs != null)
-                return false;
-        } else if (!tlvs.equals(other.tlvs))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
-        result = prime * result + ((tlvs == null) ? 0 : tlvs.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + ((tlvs == null) ? 0 : tlvs.hashCode());
         return result;

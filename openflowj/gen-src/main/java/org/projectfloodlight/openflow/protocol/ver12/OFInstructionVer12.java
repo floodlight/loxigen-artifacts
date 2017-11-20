@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -35,36 +33,54 @@ abstract class OFInstructionVer12 {
 
     public final static OFInstructionVer12.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFInstruction> {
+    static class Reader extends AbstractOFMessageReader<OFInstruction> {
         @Override
-        public OFInstruction readFrom(ByteBuf bb) throws OFParseError {
+        public OFInstruction readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
-            bb.readerIndex(start);
             switch(type) {
                case (short) 0x4:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.APPLY_ACTIONS=4 for class OFInstructionApplyActionsVer12
-                   return OFInstructionApplyActionsVer12.READER.readFrom(bb);
+                   return OFInstructionApplyActionsVer12.READER.readFrom(context, bb);
                case (short) 0x5:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.CLEAR_ACTIONS=5 for class OFInstructionClearActionsVer12
-                   return OFInstructionClearActionsVer12.READER.readFrom(bb);
+                   return OFInstructionClearActionsVer12.READER.readFrom(context, bb);
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.EXPERIMENTER=65535 for class OFInstructionExperimenterVer12
-                   return OFInstructionExperimenterVer12.READER.readFrom(bb);
+                   return OFInstructionExperimenterVer12.READER.readFrom(context, bb);
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.GOTO_TABLE=1 for class OFInstructionGotoTableVer12
-                   return OFInstructionGotoTableVer12.READER.readFrom(bb);
+                   return OFInstructionGotoTableVer12.READER.readFrom(context, bb);
                case (short) 0x3:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.WRITE_ACTIONS=3 for class OFInstructionWriteActionsVer12
-                   return OFInstructionWriteActionsVer12.READER.readFrom(bb);
+                   return OFInstructionWriteActionsVer12.READER.readFrom(context, bb);
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.WRITE_METADATA=2 for class OFInstructionWriteMetadataVer12
-                   return OFInstructionWriteMetadataVer12.READER.readFrom(bb);
+                   return OFInstructionWriteMetadataVer12.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFInstructionVer12: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFInstructionVer12.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            // pad: 4 bytes
+            bb.skipBytes(4);
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

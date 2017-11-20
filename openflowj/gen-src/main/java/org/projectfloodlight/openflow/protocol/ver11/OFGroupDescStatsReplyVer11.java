@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -270,9 +268,11 @@ class OFGroupDescStatsReplyVer11 implements OFGroupDescStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFGroupDescStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFGroupDescStatsReply> {
         @Override
-        public OFGroupDescStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupDescStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -285,6 +285,7 @@ class OFGroupDescStatsReplyVer11 implements OFGroupDescStatsReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -300,7 +301,7 @@ class OFGroupDescStatsReplyVer11 implements OFGroupDescStatsReply {
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer11.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFGroupDescStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFGroupDescStatsEntryVer11.READER);
+            List<OFGroupDescStatsEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFGroupDescStatsEntryVer11.READER);
 
             OFGroupDescStatsReplyVer11 groupDescStatsReplyVer11 = new OFGroupDescStatsReplyVer11(
                     xid,
@@ -407,46 +408,11 @@ class OFGroupDescStatsReplyVer11 implements OFGroupDescStatsReply {
     }
 
     @Override
-    public boolean equalsIgnoreXid(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        OFGroupDescStatsReplyVer11 other = (OFGroupDescStatsReplyVer11) obj;
-
-        // ignore XID
-        if (flags == null) {
-            if (other.flags != null)
-                return false;
-        } else if (!flags.equals(other.flags))
-            return false;
-        if (entries == null) {
-            if (other.entries != null)
-                return false;
-        } else if (!entries.equals(other.entries))
-            return false;
-        return true;
-    }
-
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + ((entries == null) ? 0 : entries.hashCode());
-        return result;
-    }
-
-    @Override
-    public int hashCodeIgnoreXid() {
-        final int prime = 31;
-        int result = 1;
-
-        // ignore XID
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((entries == null) ? 0 : entries.hashCode());
         return result;

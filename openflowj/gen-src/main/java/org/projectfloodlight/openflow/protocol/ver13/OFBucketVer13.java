@@ -18,9 +18,7 @@ import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
-import org.projectfloodlight.openflow.protocol.stat.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
-import org.projectfloodlight.openflow.protocol.oxs.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
@@ -95,16 +93,6 @@ class OFBucketVer13 implements OFBucket {
     }
 
     @Override
-    public OFGroupBucket getBucketId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property bucketId not supported in version 1.3");
-    }
-
-    @Override
-    public List<OFGroupBucketProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
     }
@@ -175,24 +163,6 @@ class OFBucketVer13 implements OFBucket {
         this.actions = actions;
         this.actionsSet = true;
         return this;
-    }
-    @Override
-    public OFGroupBucket getBucketId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property bucketId not supported in version 1.3");
-    }
-
-    @Override
-    public OFBucket.Builder setBucketId(OFGroupBucket bucketId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property bucketId not supported in version 1.3");
-    }
-    @Override
-    public List<OFGroupBucketProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-
-    @Override
-    public OFBucket.Builder setProperties(List<OFGroupBucketProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {
@@ -281,24 +251,6 @@ class OFBucketVer13 implements OFBucket {
         return this;
     }
     @Override
-    public OFGroupBucket getBucketId()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property bucketId not supported in version 1.3");
-    }
-
-    @Override
-    public OFBucket.Builder setBucketId(OFGroupBucket bucketId) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property bucketId not supported in version 1.3");
-    }
-    @Override
-    public List<OFGroupBucketProp> getProperties()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-
-    @Override
-    public OFBucket.Builder setProperties(List<OFGroupBucketProp> properties) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
-    }
-    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
     }
@@ -330,13 +282,16 @@ class OFBucketVer13 implements OFBucket {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBucket> {
+    static class Reader extends AbstractOFMessageReader<OFBucket> {
         @Override
-        public OFBucket readFrom(ByteBuf bb) throws OFParseError {
+        public OFBucket readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -349,7 +304,7 @@ class OFBucketVer13 implements OFBucket {
             OFGroup watchGroup = OFGroup.read4Bytes(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFAction> actions = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFActionVer13.READER);
+            List<OFAction> actions = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFActionVer13.READER);
 
             OFBucketVer13 bucketVer13 = new OFBucketVer13(
                     weight,
