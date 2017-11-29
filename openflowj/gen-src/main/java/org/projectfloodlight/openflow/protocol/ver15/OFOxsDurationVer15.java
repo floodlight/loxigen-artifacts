@@ -36,7 +36,7 @@ class OFOxsDurationVer15 implements OFOxsDuration {
     private static final Logger logger = LoggerFactory.getLogger(OFOxsDurationVer15.class);
     // version: 1.5
     final static byte WIRE_VERSION = 6;
-    final static int LENGTH = 6;
+    final static int LENGTH = 12;
 
         private final static U64 DEFAULT_VALUE = U64.ZERO;
 

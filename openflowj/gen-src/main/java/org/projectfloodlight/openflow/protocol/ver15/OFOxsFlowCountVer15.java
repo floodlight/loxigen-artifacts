@@ -36,7 +36,7 @@ class OFOxsFlowCountVer15 implements OFOxsFlowCount {
     private static final Logger logger = LoggerFactory.getLogger(OFOxsFlowCountVer15.class);
     // version: 1.5
     final static byte WIRE_VERSION = 6;
-    final static int LENGTH = 6;
+    final static int LENGTH = 8;
 
         private final static U32 DEFAULT_VALUE = U32.ZERO;
 

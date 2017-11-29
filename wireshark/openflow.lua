@@ -16504,15 +16504,15 @@ fields['of15.oxm_vlan_vid_masked.value'] = ProtoField.uint16("of15.oxm_vlan_vid_
 fields['of15.oxm_vlan_vid_masked.value_mask'] = ProtoField.uint16("of15.oxm_vlan_vid_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of15.oxs.type_len'] = ProtoField.uint32("of15.oxs.type_len", "type_len", base.DEC, nil)
 fields['of15.oxs_byte_count.type_len'] = ProtoField.uint32("of15.oxs_byte_count.type_len", "type_len", base.DEC, nil)
-fields['of15.oxs_byte_count.value'] = ProtoField.uint16("of15.oxs_byte_count.value", "value", base.DEC, nil)
+fields['of15.oxs_byte_count.value'] = ProtoField.uint64("of15.oxs_byte_count.value", "value", base.DEC, nil)
 fields['of15.oxs_duration.type_len'] = ProtoField.uint32("of15.oxs_duration.type_len", "type_len", base.DEC, nil)
-fields['of15.oxs_duration.value'] = ProtoField.uint16("of15.oxs_duration.value", "value", base.DEC, nil)
+fields['of15.oxs_duration.value'] = ProtoField.uint64("of15.oxs_duration.value", "value", base.DEC, nil)
 fields['of15.oxs_flow_count.type_len'] = ProtoField.uint32("of15.oxs_flow_count.type_len", "type_len", base.DEC, nil)
-fields['of15.oxs_flow_count.value'] = ProtoField.uint16("of15.oxs_flow_count.value", "value", base.DEC, nil)
+fields['of15.oxs_flow_count.value'] = ProtoField.uint32("of15.oxs_flow_count.value", "value", base.DEC, nil)
 fields['of15.oxs_idle_time.type_len'] = ProtoField.uint32("of15.oxs_idle_time.type_len", "type_len", base.DEC, nil)
-fields['of15.oxs_idle_time.value'] = ProtoField.uint16("of15.oxs_idle_time.value", "value", base.DEC, nil)
+fields['of15.oxs_idle_time.value'] = ProtoField.uint64("of15.oxs_idle_time.value", "value", base.DEC, nil)
 fields['of15.oxs_packet_count.type_len'] = ProtoField.uint32("of15.oxs_packet_count.type_len", "type_len", base.DEC, nil)
-fields['of15.oxs_packet_count.value'] = ProtoField.uint16("of15.oxs_packet_count.value", "value", base.DEC, nil)
+fields['of15.oxs_packet_count.value'] = ProtoField.uint64("of15.oxs_packet_count.value", "value", base.DEC, nil)
 fields['of15.packet_in.version'] = ProtoField.uint8("of15.packet_in.version", "version", base.DEC, nil)
 fields['of15.packet_in.type'] = ProtoField.uint32("of15.packet_in.type", "type", base.DEC, enum_v6_ofp_type)
 fields['of15.packet_in.length'] = ProtoField.uint16("of15.packet_in.length", "length", base.DEC, nil)
@@ -61498,7 +61498,7 @@ end
 -- Child of of_oxs
 function dissect_of_oxs_byte_count_v6(reader, subtree)
     read_uint32_t(reader, 6, subtree, 'of15.oxs_byte_count.type_len')
-    read_uint16_t(reader, 6, subtree, 'of15.oxs_byte_count.value')
+    read_uint64_t(reader, 6, subtree, 'of15.oxs_byte_count.value')
     return 'of_oxs_byte_count'
 end
 of_oxs_v6_dissectors[2147616776] = dissect_of_oxs_byte_count_v6
@@ -61507,7 +61507,7 @@ of_oxs_v6_dissectors[2147616776] = dissect_of_oxs_byte_count_v6
 -- Child of of_oxs
 function dissect_of_oxs_duration_v6(reader, subtree)
     read_uint32_t(reader, 6, subtree, 'of15.oxs_duration.type_len')
-    read_uint16_t(reader, 6, subtree, 'of15.oxs_duration.value')
+    read_uint64_t(reader, 6, subtree, 'of15.oxs_duration.value')
     return 'of_oxs_duration'
 end
 of_oxs_v6_dissectors[2147614728] = dissect_of_oxs_duration_v6
@@ -61516,7 +61516,7 @@ of_oxs_v6_dissectors[2147614728] = dissect_of_oxs_duration_v6
 -- Child of of_oxs
 function dissect_of_oxs_flow_count_v6(reader, subtree)
     read_uint32_t(reader, 6, subtree, 'of15.oxs_flow_count.type_len')
-    read_uint16_t(reader, 6, subtree, 'of15.oxs_flow_count.value')
+    read_uint32_t(reader, 6, subtree, 'of15.oxs_flow_count.value')
     return 'of_oxs_flow_count'
 end
 of_oxs_v6_dissectors[2147615748] = dissect_of_oxs_flow_count_v6
@@ -61525,7 +61525,7 @@ of_oxs_v6_dissectors[2147615748] = dissect_of_oxs_flow_count_v6
 -- Child of of_oxs
 function dissect_of_oxs_idle_time_v6(reader, subtree)
     read_uint32_t(reader, 6, subtree, 'of15.oxs_idle_time.type_len')
-    read_uint16_t(reader, 6, subtree, 'of15.oxs_idle_time.value')
+    read_uint64_t(reader, 6, subtree, 'of15.oxs_idle_time.value')
     return 'of_oxs_idle_time'
 end
 of_oxs_v6_dissectors[2147615240] = dissect_of_oxs_idle_time_v6
@@ -61534,7 +61534,7 @@ of_oxs_v6_dissectors[2147615240] = dissect_of_oxs_idle_time_v6
 -- Child of of_oxs
 function dissect_of_oxs_packet_count_v6(reader, subtree)
     read_uint32_t(reader, 6, subtree, 'of15.oxs_packet_count.type_len')
-    read_uint16_t(reader, 6, subtree, 'of15.oxs_packet_count.value')
+    read_uint64_t(reader, 6, subtree, 'of15.oxs_packet_count.value')
     return 'of_oxs_packet_count'
 end
 of_oxs_v6_dissectors[2147616264] = dissect_of_oxs_packet_count_v6
