@@ -24300,6 +24300,13 @@ extern void of_bsn_tlv_priority_value_get(
 
 /* Unified accessor functions for of_bsn_tlv_push_vlan_on_ingress */
 
+extern void of_bsn_tlv_push_vlan_on_ingress_flags_set(
+    of_bsn_tlv_push_vlan_on_ingress_t *obj,
+    uint8_t flags);
+extern void of_bsn_tlv_push_vlan_on_ingress_flags_get(
+    of_bsn_tlv_push_vlan_on_ingress_t *obj,
+    uint8_t *flags);
+
 /* Unified accessor functions for of_bsn_tlv_qos_priority */
 
 extern void of_bsn_tlv_qos_priority_value_set(

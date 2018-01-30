@@ -25,10 +25,12 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
+import java.util.Set;
 import io.netty.buffer.ByteBuf;
 
 public interface OFBsnTlvPushVlanOnIngress extends OFObject, OFBsnTlv {
     int getType();
+    Set<OFBsnPushVlan> getFlags();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -37,6 +39,8 @@ public interface OFBsnTlvPushVlanOnIngress extends OFObject, OFBsnTlv {
     public interface Builder extends OFBsnTlv.Builder {
         OFBsnTlvPushVlanOnIngress build();
         int getType();
+        Set<OFBsnPushVlan> getFlags();
+        Builder setFlags(Set<OFBsnPushVlan> flags);
         OFVersion getVersion();
     }
 }

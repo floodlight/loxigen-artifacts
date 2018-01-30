@@ -2932,7 +2932,7 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     5,    /* 409: of_bsn_tlv_port_vxlan_mode */
     8,    /* 410: of_bsn_tlv_priority */
     4,    /* 411: of_bsn_tlv_push_vlan_on_egress */
-    4,    /* 412: of_bsn_tlv_push_vlan_on_ingress */
+    5,    /* 412: of_bsn_tlv_push_vlan_on_ingress */
     8,    /* 413: of_bsn_tlv_qos_priority */
     8,    /* 414: of_bsn_tlv_queue_id */
     8,    /* 415: of_bsn_tlv_queue_weight */
@@ -3765,7 +3765,7 @@ of_object_fixed_len_v5[OF_OBJECT_COUNT] = {
     5,    /* 409: of_bsn_tlv_port_vxlan_mode */
     8,    /* 410: of_bsn_tlv_priority */
     4,    /* 411: of_bsn_tlv_push_vlan_on_egress */
-    4,    /* 412: of_bsn_tlv_push_vlan_on_ingress */
+    5,    /* 412: of_bsn_tlv_push_vlan_on_ingress */
     8,    /* 413: of_bsn_tlv_qos_priority */
     8,    /* 414: of_bsn_tlv_queue_id */
     8,    /* 415: of_bsn_tlv_queue_weight */

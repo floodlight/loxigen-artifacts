@@ -231,7 +231,8 @@ public interface OFBsnTlvs {
     OFBsnTlvPriority.Builder buildPriority() throws UnsupportedOperationException;
     OFBsnTlvPriority priority(long value);
     OFBsnTlvPushVlanOnEgress pushVlanOnEgress();
-    OFBsnTlvPushVlanOnIngress pushVlanOnIngress();
+    OFBsnTlvPushVlanOnIngress.Builder buildPushVlanOnIngress() throws UnsupportedOperationException;
+    OFBsnTlvPushVlanOnIngress pushVlanOnIngress(Set<OFBsnPushVlan> flags);
     OFBsnTlvQosPriority.Builder buildQosPriority() throws UnsupportedOperationException;
     OFBsnTlvQosPriority qosPriority(long value);
     OFBsnTlvQueueId.Builder buildQueueId() throws UnsupportedOperationException;

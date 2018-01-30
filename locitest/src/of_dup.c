@@ -30995,10 +30995,14 @@ of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_dup(
     of_bsn_tlv_push_vlan_on_ingress_t *src)
 {
     of_bsn_tlv_push_vlan_on_ingress_t *dst;
+    uint8_t val8;
 
     if ((dst = of_bsn_tlv_push_vlan_on_ingress_new(src->version)) == NULL) {
         return NULL;
     }
+
+    of_bsn_tlv_push_vlan_on_ingress_flags_get(src, &val8);
+    of_bsn_tlv_push_vlan_on_ingress_flags_set(dst, val8);
 
     return dst;
 }
@@ -54582,10 +54586,14 @@ of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_dup(
     of_bsn_tlv_push_vlan_on_ingress_t *src)
 {
     of_bsn_tlv_push_vlan_on_ingress_t *dst;
+    uint8_t val8;
 
     if ((dst = of_bsn_tlv_push_vlan_on_ingress_new(src->version)) == NULL) {
         return NULL;
     }
+
+    of_bsn_tlv_push_vlan_on_ingress_flags_get(src, &val8);
+    of_bsn_tlv_push_vlan_on_ingress_flags_set(dst, val8);
 
     return dst;
 }

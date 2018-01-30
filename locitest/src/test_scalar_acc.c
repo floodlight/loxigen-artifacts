@@ -30057,7 +30057,7 @@ test_of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_scalar(void)
     obj = of_bsn_tlv_push_vlan_on_ingress_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->length == 5);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_TLV_PUSH_VLAN_ON_INGRESS);
 
@@ -30071,7 +30071,7 @@ test_of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_scalar(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 4);
+        TEST_ASSERT(length == 5);
     }
 
     /* Set up incrementing values for scalar members */
@@ -54111,7 +54111,7 @@ test_of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_scalar(void)
     obj = of_bsn_tlv_push_vlan_on_ingress_new(OF_VERSION_1_4);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->length == 5);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_TLV_PUSH_VLAN_ON_INGRESS);
 
@@ -54125,7 +54125,7 @@ test_of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_scalar(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 4);
+        TEST_ASSERT(length == 5);
     }
 
     /* Set up incrementing values for scalar members */
