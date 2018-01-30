@@ -21594,6 +21594,12 @@ int
 of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
+    uint8_t val8;
+
+    of_bsn_tlv_push_vlan_on_ingress_flags_get(obj, &val8);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
 
     return out;
 }
@@ -35705,6 +35711,12 @@ int
 of_bsn_tlv_push_vlan_on_ingress_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
+    uint8_t val8;
+
+    of_bsn_tlv_push_vlan_on_ingress_flags_get(obj, &val8);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
 
     return out;
 }

@@ -27,6 +27,8 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.Set;
+import com.google.common.collect.ImmutableSet;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -35,19 +37,24 @@ class OFBsnTlvPushVlanOnIngressVer13 implements OFBsnTlvPushVlanOnIngress {
     private static final Logger logger = LoggerFactory.getLogger(OFBsnTlvPushVlanOnIngressVer13.class);
     // version: 1.3
     final static byte WIRE_VERSION = 4;
-    final static int LENGTH = 4;
+    final static int LENGTH = 5;
 
+        private final static Set<OFBsnPushVlan> DEFAULT_FLAGS = ImmutableSet.<OFBsnPushVlan>of();
 
     // OF message fields
+    private final Set<OFBsnPushVlan> flags;
 //
     // Immutable default instance
     final static OFBsnTlvPushVlanOnIngressVer13 DEFAULT = new OFBsnTlvPushVlanOnIngressVer13(
-
+        DEFAULT_FLAGS
     );
 
-    final static OFBsnTlvPushVlanOnIngressVer13 INSTANCE = new OFBsnTlvPushVlanOnIngressVer13();
-    // private empty constructor - use shared instance!
-    private OFBsnTlvPushVlanOnIngressVer13() {
+    // package private constructor - used by readers, builders, and factory
+    OFBsnTlvPushVlanOnIngressVer13(Set<OFBsnPushVlan> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnTlvPushVlanOnIngressVer13: property flags cannot be null");
+        }
+        this.flags = flags;
     }
 
     // Accessors for OF message fields
@@ -57,15 +64,108 @@ class OFBsnTlvPushVlanOnIngressVer13 implements OFBsnTlvPushVlanOnIngress {
     }
 
     @Override
+    public Set<OFBsnPushVlan> getFlags() {
+        return flags;
+    }
+
+    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_13;
     }
 
 
 
-    // no data members - do not support builder
     public OFBsnTlvPushVlanOnIngress.Builder createBuilder() {
-        throw new UnsupportedOperationException("OFBsnTlvPushVlanOnIngressVer13 has no mutable properties -- builder unneeded");
+        return new BuilderWithParent(this);
+    }
+
+    static class BuilderWithParent implements OFBsnTlvPushVlanOnIngress.Builder {
+        final OFBsnTlvPushVlanOnIngressVer13 parentMessage;
+
+        // OF message fields
+        private boolean flagsSet;
+        private Set<OFBsnPushVlan> flags;
+
+        BuilderWithParent(OFBsnTlvPushVlanOnIngressVer13 parentMessage) {
+            this.parentMessage = parentMessage;
+        }
+
+    @Override
+    public int getType() {
+        return 0x80;
+    }
+
+    @Override
+    public Set<OFBsnPushVlan> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFBsnTlvPushVlanOnIngress.Builder setFlags(Set<OFBsnPushVlan> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+
+
+        @Override
+        public OFBsnTlvPushVlanOnIngress build() {
+                Set<OFBsnPushVlan> flags = this.flagsSet ? this.flags : parentMessage.flags;
+                if(flags == null)
+                    throw new NullPointerException("Property flags must not be null");
+
+                //
+                return new OFBsnTlvPushVlanOnIngressVer13(
+                    flags
+                );
+        }
+
+    }
+
+    static class Builder implements OFBsnTlvPushVlanOnIngress.Builder {
+        // OF message fields
+        private boolean flagsSet;
+        private Set<OFBsnPushVlan> flags;
+
+    @Override
+    public int getType() {
+        return 0x80;
+    }
+
+    @Override
+    public Set<OFBsnPushVlan> getFlags() {
+        return flags;
+    }
+
+    @Override
+    public OFBsnTlvPushVlanOnIngress.Builder setFlags(Set<OFBsnPushVlan> flags) {
+        this.flags = flags;
+        this.flagsSet = true;
+        return this;
+    }
+    @Override
+    public OFVersion getVersion() {
+        return OFVersion.OF_13;
+    }
+
+//
+        @Override
+        public OFBsnTlvPushVlanOnIngress build() {
+            Set<OFBsnPushVlan> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
+            if(flags == null)
+                throw new NullPointerException("Property flags must not be null");
+
+
+            return new OFBsnTlvPushVlanOnIngressVer13(
+                    flags
+                );
+        }
+
     }
 
 
@@ -79,8 +179,8 @@ class OFBsnTlvPushVlanOnIngressVer13 implements OFBsnTlvPushVlanOnIngress {
             if(type != (short) 0x80)
                 throw new OFParseError("Wrong type: Expected=0x80(0x80), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 4)
-                throw new OFParseError("Wrong length: Expected=4(4), got="+length);
+            if(length != 5)
+                throw new OFParseError("Wrong length: Expected=5(5), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -88,10 +188,14 @@ class OFBsnTlvPushVlanOnIngressVer13 implements OFBsnTlvPushVlanOnIngress {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
+            Set<OFBsnPushVlan> flags = OFBsnPushVlanSerializerVer13.readFrom(bb);
 
+            OFBsnTlvPushVlanOnIngressVer13 bsnTlvPushVlanOnIngressVer13 = new OFBsnTlvPushVlanOnIngressVer13(
+                    flags
+                    );
             if(logger.isTraceEnabled())
-                logger.trace("readFrom - returning shared instance={}", INSTANCE);
-            return INSTANCE;
+                logger.trace("readFrom - read={}", bsnTlvPushVlanOnIngressVer13);
+            return bsnTlvPushVlanOnIngressVer13;
         }
     }
 
@@ -106,8 +210,9 @@ class OFBsnTlvPushVlanOnIngressVer13 implements OFBsnTlvPushVlanOnIngress {
         public void funnel(OFBsnTlvPushVlanOnIngressVer13 message, PrimitiveSink sink) {
             // fixed value property type = 0x80
             sink.putShort((short) 0x80);
-            // fixed value property length = 4
-            sink.putShort((short) 0x4);
+            // fixed value property length = 5
+            sink.putShort((short) 0x5);
+            OFBsnPushVlanSerializerVer13.putTo(message.flags, sink);
         }
     }
 
@@ -122,8 +227,9 @@ class OFBsnTlvPushVlanOnIngressVer13 implements OFBsnTlvPushVlanOnIngress {
         public void write(ByteBuf bb, OFBsnTlvPushVlanOnIngressVer13 message) {
             // fixed value property type = 0x80
             bb.writeShort((short) 0x80);
-            // fixed value property length = 4
-            bb.writeShort((short) 0x4);
+            // fixed value property length = 5
+            bb.writeShort((short) 0x5);
+            OFBsnPushVlanSerializerVer13.writeTo(bb, message.flags);
 
 
         }
@@ -132,6 +238,7 @@ class OFBsnTlvPushVlanOnIngressVer13 implements OFBsnTlvPushVlanOnIngress {
     @Override
     public String toString() {
         StringBuilder b = new StringBuilder("OFBsnTlvPushVlanOnIngressVer13(");
+        b.append("flags=").append(flags);
         b.append(")");
         return b.toString();
     }
@@ -144,14 +251,22 @@ class OFBsnTlvPushVlanOnIngressVer13 implements OFBsnTlvPushVlanOnIngress {
             return false;
         if (getClass() != obj.getClass())
             return false;
+        OFBsnTlvPushVlanOnIngressVer13 other = (OFBsnTlvPushVlanOnIngressVer13) obj;
 
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
+            return false;
         return true;
     }
 
     @Override
     public int hashCode() {
+        final int prime = 31;
         int result = 1;
 
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         return result;
     }
 

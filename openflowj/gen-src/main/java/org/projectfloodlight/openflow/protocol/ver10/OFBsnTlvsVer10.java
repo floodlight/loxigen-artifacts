@@ -744,7 +744,10 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPushVlanOnEgress not supported in version 1.0");
     }
 
-    public OFBsnTlvPushVlanOnIngress pushVlanOnIngress() {
+    public OFBsnTlvPushVlanOnIngress.Builder buildPushVlanOnIngress() {
+        throw new UnsupportedOperationException("OFBsnTlvPushVlanOnIngress not supported in version 1.0");
+    }
+    public OFBsnTlvPushVlanOnIngress pushVlanOnIngress(Set<OFBsnPushVlan> flags) {
         throw new UnsupportedOperationException("OFBsnTlvPushVlanOnIngress not supported in version 1.0");
     }
 
