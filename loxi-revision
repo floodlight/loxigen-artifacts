@@ -1,1 +1,1 @@
-778279c22fff39cb669865f00764cf341b6cb3e9 Merge into master from pull request #577: java/pom.xml: only gen src+jdoc for "Release" profile (https://github.com/floodlight/loxigen/pull/577)
+f5e2ba95e460d7d7d563750cf8faa4baf45a27e0 Merge into master from pull request #578: SWL-4353 Directed Broadcast instruction. (https://github.com/floodlight/loxigen/pull/578)

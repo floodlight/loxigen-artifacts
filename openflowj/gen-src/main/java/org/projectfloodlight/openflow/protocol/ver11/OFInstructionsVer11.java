@@ -92,6 +92,10 @@ public class OFInstructionsVer11 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnDhcpOffload not supported in version 1.1");
     }
 
+    public OFInstructionBsnDirectedBroadcast bsnDirectedBroadcast() {
+        throw new UnsupportedOperationException("OFInstructionBsnDirectedBroadcast not supported in version 1.1");
+    }
+
     public OFInstructionBsnDisableL3 bsnDisableL3() {
         throw new UnsupportedOperationException("OFInstructionBsnDisableL3 not supported in version 1.1");
     }

@@ -34,6 +34,7 @@ public interface OFInstructionIds {
     OFInstructionIdBsnAutoNegotiation bsnAutoNegotiation();
     OFInstructionIdBsnDeny bsnDeny();
     OFInstructionIdBsnDhcpOffload bsnDhcpOffload();
+    OFInstructionIdBsnDirectedBroadcast bsnDirectedBroadcast();
     OFInstructionIdBsnDisableL3 bsnDisableL3();
     OFInstructionIdBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck();
     OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck();

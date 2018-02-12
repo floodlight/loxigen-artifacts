@@ -32870,6 +32870,10 @@ of_instruction_OF_VERSION_1_3_dup(
         return of_instruction_bsn_disable_l3_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_BSN_DIRECTED_BROADCAST) {
+        return of_instruction_bsn_directed_broadcast_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_BSN_DENY) {
         return of_instruction_bsn_deny_OF_VERSION_1_3_dup(src);
     }
@@ -33083,6 +33087,34 @@ of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_dup(
 
     of_instruction_bsn_dhcp_offload_subtype_get(src, &val32);
     of_instruction_bsn_dhcp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_bsn_directed_broadcast
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_bsn_directed_broadcast.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_bsn_directed_broadcast_t *
+of_instruction_bsn_directed_broadcast_OF_VERSION_1_3_dup(
+    of_instruction_bsn_directed_broadcast_t *src)
+{
+    of_instruction_bsn_directed_broadcast_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_bsn_directed_broadcast_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_bsn_directed_broadcast_experimenter_get(src, &val32);
+    of_instruction_bsn_directed_broadcast_experimenter_set(dst, val32);
+
+    of_instruction_bsn_directed_broadcast_subtype_get(src, &val32);
+    of_instruction_bsn_directed_broadcast_subtype_set(dst, val32);
 
     return dst;
 }
@@ -33547,6 +33579,10 @@ of_instruction_id_OF_VERSION_1_3_dup(
         return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DIRECTED_BROADCAST) {
+        return of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_ID_BSN_PERMIT) {
         return of_instruction_id_bsn_permit_OF_VERSION_1_3_dup(src);
     }
@@ -33707,6 +33743,34 @@ of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_dup(
 
     of_instruction_id_bsn_dhcp_offload_subtype_get(src, &val32);
     of_instruction_id_bsn_dhcp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_directed_broadcast
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_directed_broadcast.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_directed_broadcast_t *
+of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_3_dup(
+    of_instruction_id_bsn_directed_broadcast_t *src)
+{
+    of_instruction_id_bsn_directed_broadcast_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_directed_broadcast_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_directed_broadcast_experimenter_get(src, &val32);
+    of_instruction_id_bsn_directed_broadcast_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_directed_broadcast_subtype_get(src, &val32);
+    of_instruction_id_bsn_directed_broadcast_subtype_set(dst, val32);
 
     return dst;
 }
@@ -56479,6 +56543,10 @@ of_instruction_OF_VERSION_1_4_dup(
         return of_instruction_bsn_disable_l3_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_BSN_DIRECTED_BROADCAST) {
+        return of_instruction_bsn_directed_broadcast_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_BSN_DENY) {
         return of_instruction_bsn_deny_OF_VERSION_1_4_dup(src);
     }
@@ -56688,6 +56756,34 @@ of_instruction_bsn_dhcp_offload_OF_VERSION_1_4_dup(
 
     of_instruction_bsn_dhcp_offload_subtype_get(src, &val32);
     of_instruction_bsn_dhcp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_bsn_directed_broadcast
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_bsn_directed_broadcast.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_bsn_directed_broadcast_t *
+of_instruction_bsn_directed_broadcast_OF_VERSION_1_4_dup(
+    of_instruction_bsn_directed_broadcast_t *src)
+{
+    of_instruction_bsn_directed_broadcast_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_bsn_directed_broadcast_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_bsn_directed_broadcast_experimenter_get(src, &val32);
+    of_instruction_bsn_directed_broadcast_experimenter_set(dst, val32);
+
+    of_instruction_bsn_directed_broadcast_subtype_get(src, &val32);
+    of_instruction_bsn_directed_broadcast_subtype_set(dst, val32);
 
     return dst;
 }
@@ -57120,6 +57216,10 @@ of_instruction_id_OF_VERSION_1_4_dup(
         return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DIRECTED_BROADCAST) {
+        return of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_ID_BSN_PERMIT) {
         return of_instruction_id_bsn_permit_OF_VERSION_1_4_dup(src);
     }
@@ -57280,6 +57380,34 @@ of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_4_dup(
 
     of_instruction_id_bsn_dhcp_offload_subtype_get(src, &val32);
     of_instruction_id_bsn_dhcp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_directed_broadcast
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_directed_broadcast.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_directed_broadcast_t *
+of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_4_dup(
+    of_instruction_id_bsn_directed_broadcast_t *src)
+{
+    of_instruction_id_bsn_directed_broadcast_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_directed_broadcast_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_directed_broadcast_experimenter_get(src, &val32);
+    of_instruction_id_bsn_directed_broadcast_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_directed_broadcast_subtype_get(src, &val32);
+    of_instruction_id_bsn_directed_broadcast_subtype_set(dst, val32);
 
     return dst;
 }
@@ -75884,6 +76012,23 @@ of_instruction_bsn_dhcp_offload_dup(
 }
 
 of_object_t *
+of_instruction_bsn_directed_broadcast_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_bsn_directed_broadcast_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_instruction_bsn_directed_broadcast_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_instruction_bsn_disable_l3_dup(
     of_object_t *src)
 {
@@ -76247,6 +76392,23 @@ of_instruction_id_bsn_dhcp_offload_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_instruction_id_bsn_directed_broadcast_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
