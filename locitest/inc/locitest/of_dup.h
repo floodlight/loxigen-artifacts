@@ -1959,6 +1959,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_instruction_bsn_directed_broadcast_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_instruction_bsn_disable_l3_dup(
         of_object_t *src);
 
@@ -2044,6 +2048,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_instruction_id_bsn_dhcp_offload_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_instruction_id_bsn_directed_broadcast_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7119,6 +7127,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_instruction_bsn_directed_broadcast_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_instruction_bsn_disable_l3_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -7196,6 +7208,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9979,6 +9995,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_instruction_bsn_directed_broadcast_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_instruction_bsn_disable_l3_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -10052,6 +10072,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

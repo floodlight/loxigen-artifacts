@@ -53,6 +53,10 @@ public class OFInstructionIdsVer15 implements OFInstructionIds {
         return OFInstructionIdBsnDhcpOffloadVer15.INSTANCE;
     }
 
+    public OFInstructionIdBsnDirectedBroadcast bsnDirectedBroadcast() {
+        return OFInstructionIdBsnDirectedBroadcastVer15.INSTANCE;
+    }
+
     public OFInstructionIdBsnDisableL3 bsnDisableL3() {
         return OFInstructionIdBsnDisableL3Ver15.INSTANCE;
     }

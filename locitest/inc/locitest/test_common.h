@@ -8402,6 +8402,15 @@ extern int of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_populate_scalars(
 extern int of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_check_scalars(
     of_instruction_bsn_dhcp_offload_t *obj, int value);
 
+extern int of_instruction_bsn_directed_broadcast_OF_VERSION_1_3_populate(
+    of_instruction_bsn_directed_broadcast_t *obj, int value);
+extern int of_instruction_bsn_directed_broadcast_OF_VERSION_1_3_check(
+    of_instruction_bsn_directed_broadcast_t *obj, int value);
+extern int of_instruction_bsn_directed_broadcast_OF_VERSION_1_3_populate_scalars(
+    of_instruction_bsn_directed_broadcast_t *obj, int value);
+extern int of_instruction_bsn_directed_broadcast_OF_VERSION_1_3_check_scalars(
+    of_instruction_bsn_directed_broadcast_t *obj, int value);
+
 extern int of_instruction_bsn_disable_l3_OF_VERSION_1_3_populate(
     of_instruction_bsn_disable_l3_t *obj, int value);
 extern int of_instruction_bsn_disable_l3_OF_VERSION_1_3_check(
@@ -8572,6 +8581,15 @@ extern int of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_populate_scalars(
     of_instruction_id_bsn_dhcp_offload_t *obj, int value);
 extern int of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_check_scalars(
     of_instruction_id_bsn_dhcp_offload_t *obj, int value);
+
+extern int of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_3_populate(
+    of_instruction_id_bsn_directed_broadcast_t *obj, int value);
+extern int of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_3_check(
+    of_instruction_id_bsn_directed_broadcast_t *obj, int value);
+extern int of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_bsn_directed_broadcast_t *obj, int value);
+extern int of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_bsn_directed_broadcast_t *obj, int value);
 
 extern int of_instruction_id_bsn_disable_l3_OF_VERSION_1_3_populate(
     of_instruction_id_bsn_disable_l3_t *obj, int value);
@@ -14711,6 +14729,15 @@ extern int of_instruction_bsn_dhcp_offload_OF_VERSION_1_4_populate_scalars(
 extern int of_instruction_bsn_dhcp_offload_OF_VERSION_1_4_check_scalars(
     of_instruction_bsn_dhcp_offload_t *obj, int value);
 
+extern int of_instruction_bsn_directed_broadcast_OF_VERSION_1_4_populate(
+    of_instruction_bsn_directed_broadcast_t *obj, int value);
+extern int of_instruction_bsn_directed_broadcast_OF_VERSION_1_4_check(
+    of_instruction_bsn_directed_broadcast_t *obj, int value);
+extern int of_instruction_bsn_directed_broadcast_OF_VERSION_1_4_populate_scalars(
+    of_instruction_bsn_directed_broadcast_t *obj, int value);
+extern int of_instruction_bsn_directed_broadcast_OF_VERSION_1_4_check_scalars(
+    of_instruction_bsn_directed_broadcast_t *obj, int value);
+
 extern int of_instruction_bsn_disable_l3_OF_VERSION_1_4_populate(
     of_instruction_bsn_disable_l3_t *obj, int value);
 extern int of_instruction_bsn_disable_l3_OF_VERSION_1_4_check(
@@ -14872,6 +14899,15 @@ extern int of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_4_populate_scalars(
     of_instruction_id_bsn_dhcp_offload_t *obj, int value);
 extern int of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_4_check_scalars(
     of_instruction_id_bsn_dhcp_offload_t *obj, int value);
+
+extern int of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_4_populate(
+    of_instruction_id_bsn_directed_broadcast_t *obj, int value);
+extern int of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_4_check(
+    of_instruction_id_bsn_directed_broadcast_t *obj, int value);
+extern int of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_4_populate_scalars(
+    of_instruction_id_bsn_directed_broadcast_t *obj, int value);
+extern int of_instruction_id_bsn_directed_broadcast_OF_VERSION_1_4_check_scalars(
+    of_instruction_id_bsn_directed_broadcast_t *obj, int value);
 
 extern int of_instruction_id_bsn_disable_l3_OF_VERSION_1_4_populate(
     of_instruction_id_bsn_disable_l3_t *obj, int value);

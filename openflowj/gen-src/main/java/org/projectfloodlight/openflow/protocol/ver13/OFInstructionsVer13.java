@@ -92,6 +92,10 @@ public class OFInstructionsVer13 implements OFInstructions {
         return OFInstructionBsnDhcpOffloadVer13.INSTANCE;
     }
 
+    public OFInstructionBsnDirectedBroadcast bsnDirectedBroadcast() {
+        return OFInstructionBsnDirectedBroadcastVer13.INSTANCE;
+    }
+
     public OFInstructionBsnDisableL3 bsnDisableL3() {
         return OFInstructionBsnDisableL3Ver13.INSTANCE;
     }

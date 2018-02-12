@@ -53,6 +53,10 @@ public class OFInstructionIdsVer11 implements OFInstructionIds {
         throw new UnsupportedOperationException("OFInstructionIdBsnDhcpOffload not supported in version 1.1");
     }
 
+    public OFInstructionIdBsnDirectedBroadcast bsnDirectedBroadcast() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnDirectedBroadcast not supported in version 1.1");
+    }
+
     public OFInstructionIdBsnDisableL3 bsnDisableL3() {
         throw new UnsupportedOperationException("OFInstructionIdBsnDisableL3 not supported in version 1.1");
     }
