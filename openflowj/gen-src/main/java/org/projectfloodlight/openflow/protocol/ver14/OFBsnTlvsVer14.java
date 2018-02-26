@@ -330,6 +330,10 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvFlood flood() {
+        return OFBsnTlvFloodVer14.INSTANCE;
+    }
+
     public OFBsnTlvForceLinkUp forceLinkUp() {
         return OFBsnTlvForceLinkUpVer14.INSTANCE;
     }

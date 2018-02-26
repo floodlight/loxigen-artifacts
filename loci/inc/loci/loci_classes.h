@@ -925,6 +925,8 @@ void of_bsn_tlv_external_mac_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_bsn_tlv_external_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_external_netmask_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_external_netmask_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_flood_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_flood_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_force_link_up_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_force_link_up_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_forward_error_correction_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1893,6 +1895,7 @@ typedef of_object_t of_bsn_tlv_external_gateway_mac_t;
 typedef of_object_t of_bsn_tlv_external_ip_t;
 typedef of_object_t of_bsn_tlv_external_mac_t;
 typedef of_object_t of_bsn_tlv_external_netmask_t;
+typedef of_object_t of_bsn_tlv_flood_t;
 typedef of_object_t of_bsn_tlv_force_link_up_t;
 typedef of_object_t of_bsn_tlv_forward_error_correction_t;
 typedef of_object_t of_bsn_tlv_generation_id_t;
@@ -4093,6 +4096,11 @@ extern void of_bsn_tlv_external_mac_init(
 extern of_object_t *
     of_bsn_tlv_external_netmask_new(of_version_t version);
 extern void of_bsn_tlv_external_netmask_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_flood_new(of_version_t version);
+extern void of_bsn_tlv_flood_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10271,6 +10279,17 @@ of_bsn_tlv_external_mac_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_external_netmask_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_flood_t
+ * @param obj An instance of type of_bsn_tlv_flood_t
+ *
+ * \ingroup of_bsn_tlv_flood
+ */
+static inline void
+of_bsn_tlv_flood_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23725,6 +23744,8 @@ extern void of_bsn_tlv_external_netmask_value_set(
 extern void of_bsn_tlv_external_netmask_value_get(
     of_bsn_tlv_external_netmask_t *obj,
     of_ipv4_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_flood */
 
 /* Unified accessor functions for of_bsn_tlv_force_link_up */
 

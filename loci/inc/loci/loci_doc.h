@@ -6802,6 +6802,13 @@ typedef struct of_bsn_tlv_external_mac_s of_bsn_tlv_external_mac_t;
 typedef struct of_bsn_tlv_external_netmask_s of_bsn_tlv_external_netmask_t;
 
 /**
+ * Structure for of_bsn_tlv_flood object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_flood_s of_bsn_tlv_flood_t;
+
+/**
  * Structure for of_bsn_tlv_force_link_up object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
