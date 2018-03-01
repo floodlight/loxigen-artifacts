@@ -5956,13 +5956,13 @@ of_bsn_tlv_untagged_init(of_object_t *obj,
 #include "loci_int.h"
 
 void
-of_bsn_tlv_uri_scheme_push_wire_types(of_object_t *obj)
+of_bsn_tlv_upgrade_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x99); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0xa4); /* type */
         break;
     default:
         UNREACHABLE();
@@ -5972,11 +5972,11 @@ of_bsn_tlv_uri_scheme_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_bsn_tlv_uri_scheme of_bsn_tlv_uri_scheme
+ * \defgroup of_bsn_tlv_upgrade of_bsn_tlv_upgrade
  */
 
 /**
- * Create a new of_bsn_tlv_uri_scheme object
+ * Create a new of_bsn_tlv_upgrade object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -5984,30 +5984,30 @@ of_bsn_tlv_uri_scheme_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_bsn_tlv_uri_scheme
+ * \ingroup of_bsn_tlv_upgrade
  */
 
 of_object_t *
-of_bsn_tlv_uri_scheme_new(of_version_t version)
+of_bsn_tlv_upgrade_new(of_version_t version)
 {
     of_object_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_URI_SCHEME];
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_UPGRADE];
 
-    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_bsn_tlv_uri_scheme_init(obj, version, bytes, 0);
-    of_bsn_tlv_uri_scheme_push_wire_types(obj);
+    of_bsn_tlv_upgrade_init(obj, version, bytes, 0);
+    of_bsn_tlv_upgrade_push_wire_types(obj);
     of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
 
 /**
- * Initialize an object of type of_bsn_tlv_uri_scheme.
+ * Initialize an object of type of_bsn_tlv_upgrade.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -6024,19 +6024,19 @@ of_bsn_tlv_uri_scheme_new(of_version_t version)
  */
 
 void
-of_bsn_tlv_uri_scheme_init(of_object_t *obj,
+of_bsn_tlv_upgrade_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_URI_SCHEME] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_UPGRADE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_URI_SCHEME];
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_UPGRADE];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_URI_SCHEME;
+    obj->object_id = OF_BSN_TLV_UPGRADE;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -6048,24 +6048,23 @@ of_bsn_tlv_uri_scheme_init(of_object_t *obj,
 }
 
 /**
- * Get value from an object of type of_bsn_tlv_uri_scheme.
- * @param obj Pointer to an object of type of_bsn_tlv_uri_scheme.
+ * Get value from an object of type of_bsn_tlv_upgrade.
+ * @param obj Pointer to an object of type of_bsn_tlv_upgrade.
  * @param value Pointer to the child object of type
- * of_octets_t to be filled out.
+ * uint16_t to be filled out.
  *
  */
 void
-of_bsn_tlv_uri_scheme_value_get(
-    of_bsn_tlv_uri_scheme_t *obj,
-    of_octets_t *value)
+of_bsn_tlv_upgrade_value_get(
+    of_bsn_tlv_upgrade_t *obj,
+    uint16_t *value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
-    int cur_len = 0; /* Current length of object data */
 
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_URI_SCHEME);
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_UPGRADE);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -6075,7 +6074,6 @@ of_bsn_tlv_uri_scheme_value_get(
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
         offset = 4;
-        cur_len = _END_LEN(obj, offset);
         break;
     default:
         LOCI_ASSERT(0);
@@ -6083,10 +6081,7 @@ of_bsn_tlv_uri_scheme_value_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
-    LOCI_ASSERT(cur_len + abs_offset <= WBUF_CURRENT_BYTES(wbuf));
-    value->bytes = cur_len;
-    value->data = OF_WIRE_BUFFER_INDEX(wbuf, abs_offset);
+    of_wire_buffer_u16_get(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -6094,23 +6089,21 @@ of_bsn_tlv_uri_scheme_value_get(
 }
 
 /**
- * Set value in an object of type of_bsn_tlv_uri_scheme.
- * @param obj Pointer to an object of type of_bsn_tlv_uri_scheme.
+ * Set value in an object of type of_bsn_tlv_upgrade.
+ * @param obj Pointer to an object of type of_bsn_tlv_upgrade.
  * @param value The value to write into the object
  */
-int WARN_UNUSED_RESULT
-of_bsn_tlv_uri_scheme_value_set(
-    of_bsn_tlv_uri_scheme_t *obj,
-    of_octets_t *value)
+void
+of_bsn_tlv_upgrade_value_set(
+    of_bsn_tlv_upgrade_t *obj,
+    uint16_t value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
-    int cur_len = 0; /* Current length of object data */
-    int new_len, delta; /* For set, need new length and delta */
 
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_URI_SCHEME);
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_UPGRADE);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -6120,7 +6113,6 @@ of_bsn_tlv_uri_scheme_value_set(
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
         offset = 4;
-        cur_len = _END_LEN(obj, offset);
         break;
     default:
         LOCI_ASSERT(0);
@@ -6128,19 +6120,9 @@ of_bsn_tlv_uri_scheme_value_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
-    new_len = value->bytes;
-    of_wire_buffer_grow(wbuf, abs_offset + (new_len - cur_len));
-    of_wire_buffer_octets_data_set(wbuf, abs_offset, value, cur_len);
-
-    /* Not scalar, update lengths if needed */
-    delta = new_len - cur_len;
-    if (delta != 0) {
-        /* Update parent(s) */
-        of_object_parent_length_update((of_object_t *)obj, delta);
-    }
+    of_wire_buffer_u16_set(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
-    return OF_ERROR_NONE;
+    return ;
 }

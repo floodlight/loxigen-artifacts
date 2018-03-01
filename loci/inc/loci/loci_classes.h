@@ -1155,6 +1155,8 @@ void of_bsn_tlv_unknown_multicast_rate_wire_object_id_get(of_object_t *obj, of_o
 void of_bsn_tlv_unknown_multicast_rate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_untagged_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_untagged_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_upgrade_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_upgrade_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_uri_scheme_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_uri_scheme_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_use_packet_state_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2010,6 +2012,7 @@ typedef of_object_t of_bsn_tlv_unicast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_unicast_rate_t;
 typedef of_object_t of_bsn_tlv_unknown_multicast_rate_t;
 typedef of_object_t of_bsn_tlv_untagged_t;
+typedef of_object_t of_bsn_tlv_upgrade_t;
 typedef of_object_t of_bsn_tlv_uri_scheme_t;
 typedef of_object_t of_bsn_tlv_use_packet_state_t;
 typedef of_object_t of_bsn_tlv_vfi_t;
@@ -4671,6 +4674,11 @@ extern void of_bsn_tlv_unknown_multicast_rate_init(
 extern of_object_t *
     of_bsn_tlv_untagged_new(of_version_t version);
 extern void of_bsn_tlv_untagged_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_upgrade_new(of_version_t version);
+extern void of_bsn_tlv_upgrade_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11544,6 +11552,17 @@ of_bsn_tlv_unknown_multicast_rate_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_untagged_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_upgrade_t
+ * @param obj An instance of type of_bsn_tlv_upgrade_t
+ *
+ * \ingroup of_bsn_tlv_upgrade
+ */
+static inline void
+of_bsn_tlv_upgrade_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24692,6 +24711,15 @@ extern void of_bsn_tlv_unknown_multicast_rate_value_get(
     uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_untagged */
+
+/* Unified accessor functions for of_bsn_tlv_upgrade */
+
+extern void of_bsn_tlv_upgrade_value_set(
+    of_bsn_tlv_upgrade_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_upgrade_value_get(
+    of_bsn_tlv_upgrade_t *obj,
+    uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_uri_scheme */
 

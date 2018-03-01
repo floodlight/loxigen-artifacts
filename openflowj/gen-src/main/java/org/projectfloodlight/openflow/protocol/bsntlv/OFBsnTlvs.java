@@ -307,6 +307,8 @@ public interface OFBsnTlvs {
     OFBsnTlvUnknownMulticastRate.Builder buildUnknownMulticastRate() throws UnsupportedOperationException;
     OFBsnTlvUnknownMulticastRate unknownMulticastRate(long value);
     OFBsnTlvUntagged untagged();
+    OFBsnTlvUpgrade.Builder buildUpgrade() throws UnsupportedOperationException;
+    OFBsnTlvUpgrade upgrade(OFBsnUpgrade value);
     OFBsnTlvUriScheme.Builder buildUriScheme() throws UnsupportedOperationException;
     OFBsnTlvUriScheme uriScheme(byte[] value);
     OFBsnTlvUsePacketState.Builder buildUsePacketState() throws UnsupportedOperationException;

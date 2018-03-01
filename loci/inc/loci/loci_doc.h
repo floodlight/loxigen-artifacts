@@ -8015,6 +8015,17 @@ typedef struct of_bsn_tlv_unknown_multicast_rate_s of_bsn_tlv_unknown_multicast_
 typedef struct of_bsn_tlv_untagged_s of_bsn_tlv_untagged_t;
 
 /**
+ * Structure for of_bsn_tlv_upgrade object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_upgrade_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_upgrade_s of_bsn_tlv_upgrade_t;
+
+/**
  * Structure for of_bsn_tlv_uri_scheme object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
