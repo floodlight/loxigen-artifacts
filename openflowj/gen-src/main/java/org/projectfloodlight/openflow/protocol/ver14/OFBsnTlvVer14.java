@@ -496,6 +496,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x6a:
                    // discriminator value 0x6a=0x6a for class OFBsnTlvUntaggedVer14
                    return OFBsnTlvUntaggedVer14.READER.readFrom(bb);
+               case (short) 0xa4:
+                   // discriminator value 0xa4=0xa4 for class OFBsnTlvUpgradeVer14
+                   return OFBsnTlvUpgradeVer14.READER.readFrom(bb);
                case (short) 0x99:
                    // discriminator value 0x99=0x99 for class OFBsnTlvUriSchemeVer14
                    return OFBsnTlvUriSchemeVer14.READER.readFrom(bb);

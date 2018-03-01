@@ -1340,24 +1340,6 @@ enum_v4_ofp_meter_flags = {
     [8] = "OFPMF_STATS",
 }
 
-enum_v4_ofp_error_type = {
-    [0] = "OFPET_HELLO_FAILED",
-    [1] = "OFPET_BAD_REQUEST",
-    [2] = "OFPET_BAD_ACTION",
-    [3] = "OFPET_BAD_INSTRUCTION",
-    [4] = "OFPET_BAD_MATCH",
-    [5] = "OFPET_FLOW_MOD_FAILED",
-    [6] = "OFPET_GROUP_MOD_FAILED",
-    [7] = "OFPET_PORT_MOD_FAILED",
-    [8] = "OFPET_TABLE_MOD_FAILED",
-    [9] = "OFPET_QUEUE_OP_FAILED",
-    [10] = "OFPET_SWITCH_CONFIG_FAILED",
-    [11] = "OFPET_ROLE_REQUEST_FAILED",
-    [12] = "OFPET_METER_MOD_FAILED",
-    [13] = "OFPET_TABLE_FEATURES_FAILED",
-    [65535] = "OFPET_EXPERIMENTER",
-}
-
 enum_v4_ofp_bsn_vlan_counter_constants = {
     [65535] = "OFP_BSN_VLAN_ALL",
 }
@@ -1693,6 +1675,13 @@ enum_v4_ofp_bsn_lag_flag = {
     [1] = "OFP_BSN_LAG_FLAG_AUTO_RECOVERY",
 }
 
+enum_v4_ofp_flow_removed_reason = {
+    [0] = "OFPRR_IDLE_TIMEOUT",
+    [1] = "OFPRR_HARD_TIMEOUT",
+    [2] = "OFPRR_DELETE",
+    [3] = "OFPRR_GROUP_DELETE",
+}
+
 enum_v4_ofp_port_mod_failed_code = {
     [0] = "OFPPMFC_BAD_PORT",
     [1] = "OFPPMFC_BAD_HW_ADDR",
@@ -1753,11 +1742,22 @@ enum_v4_ofp_table = {
     [255] = "OFPTT_ALL",
 }
 
-enum_v4_ofp_flow_removed_reason = {
-    [0] = "OFPRR_IDLE_TIMEOUT",
-    [1] = "OFPRR_HARD_TIMEOUT",
-    [2] = "OFPRR_DELETE",
-    [3] = "OFPRR_GROUP_DELETE",
+enum_v4_ofp_error_type = {
+    [0] = "OFPET_HELLO_FAILED",
+    [1] = "OFPET_BAD_REQUEST",
+    [2] = "OFPET_BAD_ACTION",
+    [3] = "OFPET_BAD_INSTRUCTION",
+    [4] = "OFPET_BAD_MATCH",
+    [5] = "OFPET_FLOW_MOD_FAILED",
+    [6] = "OFPET_GROUP_MOD_FAILED",
+    [7] = "OFPET_PORT_MOD_FAILED",
+    [8] = "OFPET_TABLE_MOD_FAILED",
+    [9] = "OFPET_QUEUE_OP_FAILED",
+    [10] = "OFPET_SWITCH_CONFIG_FAILED",
+    [11] = "OFPET_ROLE_REQUEST_FAILED",
+    [12] = "OFPET_METER_MOD_FAILED",
+    [13] = "OFPET_TABLE_FEATURES_FAILED",
+    [65535] = "OFPET_EXPERIMENTER",
 }
 
 enum_v4_ofp_queue_properties = {
@@ -1876,6 +1876,11 @@ enum_v4_ofp_bsn_udf_anchor = {
 enum_v4_ofp_bsn_hash_select_flags = {
     [1] = "OFP_BSN_HASH_SELECT_SRC_IP",
     [2] = "OFP_BSN_HASH_SELECT_DST_IP",
+}
+
+enum_v4_ofp_bsn_upgrade = {
+    [0] = "OFP_BSN_UPGRADE_INVALID",
+    [1] = "OFP_BSN_UPGRADE_IN_PROGRESS",
 }
 
 enum_v4_of_bsn_hash_type = {
@@ -2882,6 +2887,11 @@ enum_v5_ofp_bsn_hash_select_flags = {
     [2] = "OFP_BSN_HASH_SELECT_DST_IP",
 }
 
+enum_v5_ofp_bsn_upgrade = {
+    [0] = "OFP_BSN_UPGRADE_INVALID",
+    [1] = "OFP_BSN_UPGRADE_IN_PROGRESS",
+}
+
 enum_v5_of_bsn_hash_type = {
     [0] = "OFP_BSN_HASH_TYPE_L2",
     [1] = "OFP_BSN_HASH_TYPE_L3",
@@ -2956,9 +2966,10 @@ enum_v5_ofp_bsn_hash_algorithm_type = {
     [8] = "OFP_BSN_HASH_ALGORITHM_CRC32HI",
 }
 
-enum_v5_ofp_controller_max_len = {
-    [65509] = "OFPCML_MAX",
-    [65535] = "OFPCML_NO_BUFFER",
+enum_v5_ofp_meter_band_type = {
+    [1] = "OFPMBT_DROP",
+    [2] = "OFPMBT_DSCP_REMARK",
+    [65535] = "OFPMBT_EXPERIMENTER",
 }
 
 enum_v5_of_bsn_vrf_counter = {
@@ -2974,10 +2985,9 @@ enum_v5_ofp_bsn_tunnel_type = {
     [1] = "OFP_BSN_TUNNEL_L2GRE",
 }
 
-enum_v5_ofp_meter_band_type = {
-    [1] = "OFPMBT_DROP",
-    [2] = "OFPMBT_DSCP_REMARK",
-    [65535] = "OFPMBT_EXPERIMENTER",
+enum_v5_ofp_controller_max_len = {
+    [65509] = "OFPCML_MAX",
+    [65535] = "OFPCML_NO_BUFFER",
 }
 
 enum_v5_ofp_requestforward_reason = {
@@ -3119,22 +3129,28 @@ enum_v5_ofp_port_features = {
 }
 
 
-enum_v6_macro_definitions = {
-    [32] = "OFP_MAX_TABLE_NAME_LEN",
-    [16] = "OFP_MAX_PORT_NAME_LEN",
-    [6653] = "OFP_TCP_PORT",
-    [6653] = "OFP_SSL_PORT",
-    [6] = "OFP_ETH_ALEN",
-    [128] = "OFP_DEFAULT_MISS_SEND_LEN",
-    [0] = "OFP_VLAN_NONE",
-    [0] = "OFP_FLOW_PERMANENT",
-    [32768] = "OFP_DEFAULT_PRIORITY",
-    [4294967295] = "OFP_NO_BUFFER",
-    [256] = "DESC_STR_LEN",
-    [32] = "SERIAL_NUM_LEN",
-    [4294967295] = "OFPQ_ALL",
-    [65535] = "OFPQ_MAX_RATE_UNCFG",
-    [65535] = "OFPQ_MIN_RATE_UNCFG",
+enum_v6_ofp_stats_type = {
+    [0] = "OFPST_DESC",
+    [1] = "OFPST_FLOW",
+    [2] = "OFPST_AGGREGATE",
+    [3] = "OFPST_TABLE",
+    [4] = "OFPST_PORT",
+    [5] = "OFPST_QUEUE",
+    [6] = "OFPST_GROUP",
+    [7] = "OFPST_GROUP_DESC",
+    [8] = "OFPST_GROUP_FEATURES",
+    [9] = "OFPST_METER",
+    [10] = "OFPST_METER_CONFIG",
+    [11] = "OFPST_METER_FEATURES",
+    [12] = "OFPST_TABLE_FEATURES",
+    [13] = "OFPST_PORT_DESC",
+    [14] = "OFPMP_TABLE_DESC",
+    [15] = "OFPMP_QUEUE_DESC",
+    [16] = "OFPMP_FLOW_MONITOR",
+    [17] = "OFPMP_FLOW_LIGHTWEIGHT",
+    [18] = "OFPMP_CONTROLLER_STATUS",
+    [19] = "OFPMP_BUNDLE_FEATURES",
+    [65535] = "OFPST_EXPERIMENTER",
 }
 
 enum_v6_ofp_hello_failed_code = {
@@ -3963,28 +3979,22 @@ enum_v6_ofp_queue_op_failed_code = {
     [2] = "OFPQOFC_EPERM",
 }
 
-enum_v6_ofp_stats_type = {
-    [0] = "OFPST_DESC",
-    [1] = "OFPST_FLOW",
-    [2] = "OFPST_AGGREGATE",
-    [3] = "OFPST_TABLE",
-    [4] = "OFPST_PORT",
-    [5] = "OFPST_QUEUE",
-    [6] = "OFPST_GROUP",
-    [7] = "OFPST_GROUP_DESC",
-    [8] = "OFPST_GROUP_FEATURES",
-    [9] = "OFPST_METER",
-    [10] = "OFPST_METER_CONFIG",
-    [11] = "OFPST_METER_FEATURES",
-    [12] = "OFPST_TABLE_FEATURES",
-    [13] = "OFPST_PORT_DESC",
-    [14] = "OFPMP_TABLE_DESC",
-    [15] = "OFPMP_QUEUE_DESC",
-    [16] = "OFPMP_FLOW_MONITOR",
-    [17] = "OFPMP_FLOW_LIGHTWEIGHT",
-    [18] = "OFPMP_CONTROLLER_STATUS",
-    [19] = "OFPMP_BUNDLE_FEATURES",
-    [65535] = "OFPST_EXPERIMENTER",
+enum_v6_macro_definitions = {
+    [32] = "OFP_MAX_TABLE_NAME_LEN",
+    [16] = "OFP_MAX_PORT_NAME_LEN",
+    [6653] = "OFP_TCP_PORT",
+    [6653] = "OFP_SSL_PORT",
+    [6] = "OFP_ETH_ALEN",
+    [128] = "OFP_DEFAULT_MISS_SEND_LEN",
+    [0] = "OFP_VLAN_NONE",
+    [0] = "OFP_FLOW_PERMANENT",
+    [32768] = "OFP_DEFAULT_PRIORITY",
+    [4294967295] = "OFP_NO_BUFFER",
+    [256] = "DESC_STR_LEN",
+    [32] = "SERIAL_NUM_LEN",
+    [4294967295] = "OFPQ_ALL",
+    [65535] = "OFPQ_MAX_RATE_UNCFG",
+    [65535] = "OFPQ_MIN_RATE_UNCFG",
 }
 
 enum_v6_ofp_bundle_prop_type = {
@@ -4060,6 +4070,11 @@ enum_v6_ofp_bsn_udf_anchor = {
 enum_v6_ofp_bsn_hash_select_flags = {
     [1] = "OFP_BSN_HASH_SELECT_SRC_IP",
     [2] = "OFP_BSN_HASH_SELECT_DST_IP",
+}
+
+enum_v6_ofp_bsn_upgrade = {
+    [0] = "OFP_BSN_UPGRADE_INVALID",
+    [1] = "OFP_BSN_UPGRADE_IN_PROGRESS",
 }
 
 enum_v6_of_bsn_hash_type = {
@@ -8949,6 +8964,9 @@ fields['of13.bsn_tlv_unknown_multicast_rate.length'] = ProtoField.uint16("of13.b
 fields['of13.bsn_tlv_unknown_multicast_rate.value'] = ProtoField.uint32("of13.bsn_tlv_unknown_multicast_rate.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_untagged.type'] = ProtoField.uint16("of13.bsn_tlv_untagged.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_untagged.length'] = ProtoField.uint16("of13.bsn_tlv_untagged.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_upgrade.type'] = ProtoField.uint16("of13.bsn_tlv_upgrade.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_upgrade.length'] = ProtoField.uint16("of13.bsn_tlv_upgrade.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_upgrade.value'] = ProtoField.uint32("of13.bsn_tlv_upgrade.value", "value", base.DEC, enum_v4_ofp_bsn_upgrade)
 fields['of13.bsn_tlv_uri_scheme.type'] = ProtoField.uint16("of13.bsn_tlv_uri_scheme.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_uri_scheme.length'] = ProtoField.uint16("of13.bsn_tlv_uri_scheme.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_uri_scheme.value'] = ProtoField.bytes("of13.bsn_tlv_uri_scheme.value", "value")
@@ -11932,6 +11950,9 @@ fields['of14.bsn_tlv_unknown_multicast_rate.length'] = ProtoField.uint16("of14.b
 fields['of14.bsn_tlv_unknown_multicast_rate.value'] = ProtoField.uint32("of14.bsn_tlv_unknown_multicast_rate.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_untagged.type'] = ProtoField.uint16("of14.bsn_tlv_untagged.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_untagged.length'] = ProtoField.uint16("of14.bsn_tlv_untagged.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_upgrade.type'] = ProtoField.uint16("of14.bsn_tlv_upgrade.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_upgrade.length'] = ProtoField.uint16("of14.bsn_tlv_upgrade.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_upgrade.value'] = ProtoField.uint32("of14.bsn_tlv_upgrade.value", "value", base.DEC, enum_v5_ofp_bsn_upgrade)
 fields['of14.bsn_tlv_uri_scheme.type'] = ProtoField.uint16("of14.bsn_tlv_uri_scheme.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_uri_scheme.length'] = ProtoField.uint16("of14.bsn_tlv_uri_scheme.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_uri_scheme.value'] = ProtoField.bytes("of14.bsn_tlv_uri_scheme.value", "value")
@@ -15183,6 +15204,9 @@ fields['of15.bsn_tlv_unknown_multicast_rate.length'] = ProtoField.uint16("of15.b
 fields['of15.bsn_tlv_unknown_multicast_rate.value'] = ProtoField.uint32("of15.bsn_tlv_unknown_multicast_rate.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_untagged.type'] = ProtoField.uint16("of15.bsn_tlv_untagged.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_untagged.length'] = ProtoField.uint16("of15.bsn_tlv_untagged.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_upgrade.type'] = ProtoField.uint16("of15.bsn_tlv_upgrade.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_upgrade.length'] = ProtoField.uint16("of15.bsn_tlv_upgrade.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_upgrade.value'] = ProtoField.uint32("of15.bsn_tlv_upgrade.value", "value", base.DEC, enum_v6_ofp_bsn_upgrade)
 fields['of15.bsn_tlv_uri_scheme.type'] = ProtoField.uint16("of15.bsn_tlv_uri_scheme.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_uri_scheme.length'] = ProtoField.uint16("of15.bsn_tlv_uri_scheme.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_uri_scheme.value'] = ProtoField.bytes("of15.bsn_tlv_uri_scheme.value", "value")
@@ -21727,6 +21751,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_unknown_multicast_rate.value'],
     fields['of13.bsn_tlv_untagged.type'],
     fields['of13.bsn_tlv_untagged.length'],
+    fields['of13.bsn_tlv_upgrade.type'],
+    fields['of13.bsn_tlv_upgrade.length'],
+    fields['of13.bsn_tlv_upgrade.value'],
     fields['of13.bsn_tlv_uri_scheme.type'],
     fields['of13.bsn_tlv_uri_scheme.length'],
     fields['of13.bsn_tlv_uri_scheme.value'],
@@ -24710,6 +24737,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_unknown_multicast_rate.value'],
     fields['of14.bsn_tlv_untagged.type'],
     fields['of14.bsn_tlv_untagged.length'],
+    fields['of14.bsn_tlv_upgrade.type'],
+    fields['of14.bsn_tlv_upgrade.length'],
+    fields['of14.bsn_tlv_upgrade.value'],
     fields['of14.bsn_tlv_uri_scheme.type'],
     fields['of14.bsn_tlv_uri_scheme.length'],
     fields['of14.bsn_tlv_uri_scheme.value'],
@@ -27961,6 +27991,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_unknown_multicast_rate.value'],
     fields['of15.bsn_tlv_untagged.type'],
     fields['of15.bsn_tlv_untagged.length'],
+    fields['of15.bsn_tlv_upgrade.type'],
+    fields['of15.bsn_tlv_upgrade.length'],
+    fields['of15.bsn_tlv_upgrade.value'],
     fields['of15.bsn_tlv_uri_scheme.type'],
     fields['of15.bsn_tlv_uri_scheme.length'],
     fields['of15.bsn_tlv_uri_scheme.value'],
@@ -41069,6 +41102,16 @@ function dissect_of_bsn_tlv_untagged_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[106] = dissect_of_bsn_tlv_untagged_v4
 
+-- child class of_bsn_tlv_upgrade
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_upgrade_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_upgrade.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_upgrade.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_upgrade.value')
+    return 'of_bsn_tlv_upgrade'
+end
+of_bsn_tlv_v4_dissectors[164] = dissect_of_bsn_tlv_upgrade_v4
+
 -- child class of_bsn_tlv_uri_scheme
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_uri_scheme_v4(reader, subtree)
@@ -49148,6 +49191,16 @@ function dissect_of_bsn_tlv_untagged_v5(reader, subtree)
     return 'of_bsn_tlv_untagged'
 end
 of_bsn_tlv_v5_dissectors[106] = dissect_of_bsn_tlv_untagged_v5
+
+-- child class of_bsn_tlv_upgrade
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_upgrade_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_upgrade.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_upgrade.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_upgrade.value')
+    return 'of_bsn_tlv_upgrade'
+end
+of_bsn_tlv_v5_dissectors[164] = dissect_of_bsn_tlv_upgrade_v5
 
 -- child class of_bsn_tlv_uri_scheme
 -- Child of of_bsn_tlv
@@ -57845,6 +57898,16 @@ function dissect_of_bsn_tlv_untagged_v6(reader, subtree)
     return 'of_bsn_tlv_untagged'
 end
 of_bsn_tlv_v6_dissectors[106] = dissect_of_bsn_tlv_untagged_v6
+
+-- child class of_bsn_tlv_upgrade
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_upgrade_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_upgrade.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_upgrade.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_upgrade.value')
+    return 'of_bsn_tlv_upgrade'
+end
+of_bsn_tlv_v6_dissectors[164] = dissect_of_bsn_tlv_upgrade_v6
 
 -- child class of_bsn_tlv_uri_scheme
 -- Child of of_bsn_tlv
