@@ -1823,6 +1823,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_upgrade_stage_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_uri_scheme_dup(
         of_object_t *src);
 
@@ -7007,6 +7011,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_upgrade_stage_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_uri_scheme_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9872,6 +9880,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_untagged_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_upgrade_stage_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

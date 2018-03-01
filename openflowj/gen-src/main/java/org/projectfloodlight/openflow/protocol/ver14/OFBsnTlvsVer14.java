@@ -1269,6 +1269,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
         return OFBsnTlvUntaggedVer14.INSTANCE;
     }
 
+    public OFBsnTlvUpgradeStage.Builder buildUpgradeStage() {
+        return new OFBsnTlvUpgradeStageVer14.Builder();
+    }
+    public OFBsnTlvUpgradeStage upgradeStage(OFBsnUpgradeStage value) {
+        return new OFBsnTlvUpgradeStageVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvUriScheme.Builder buildUriScheme() {
         return new OFBsnTlvUriSchemeVer14.Builder();
     }

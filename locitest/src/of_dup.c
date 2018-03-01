@@ -27840,6 +27840,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_tcp_src_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_UPGRADE_STAGE) {
+        return of_bsn_tlv_upgrade_stage_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MPLS_LABEL) {
         return of_bsn_tlv_mpls_label_OF_VERSION_1_3_dup(src);
     }
@@ -32005,6 +32009,31 @@ of_bsn_tlv_untagged_OF_VERSION_1_3_dup(
     if ((dst = of_bsn_tlv_untagged_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_upgrade_stage
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_upgrade_stage.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_upgrade_stage_t *
+of_bsn_tlv_upgrade_stage_OF_VERSION_1_3_dup(
+    of_bsn_tlv_upgrade_stage_t *src)
+{
+    of_bsn_tlv_upgrade_stage_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_upgrade_stage_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_upgrade_stage_value_get(src, &val16);
+    of_bsn_tlv_upgrade_stage_value_set(dst, val16);
 
     return dst;
 }
@@ -51520,6 +51549,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_tcp_src_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_UPGRADE_STAGE) {
+        return of_bsn_tlv_upgrade_stage_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_MPLS_LABEL) {
         return of_bsn_tlv_mpls_label_OF_VERSION_1_4_dup(src);
     }
@@ -55685,6 +55718,31 @@ of_bsn_tlv_untagged_OF_VERSION_1_4_dup(
     if ((dst = of_bsn_tlv_untagged_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_upgrade_stage
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_upgrade_stage.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_upgrade_stage_t *
+of_bsn_tlv_upgrade_stage_OF_VERSION_1_4_dup(
+    of_bsn_tlv_upgrade_stage_t *src)
+{
+    of_bsn_tlv_upgrade_stage_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_upgrade_stage_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_upgrade_stage_value_get(src, &val16);
+    of_bsn_tlv_upgrade_stage_value_set(dst, val16);
 
     return dst;
 }
@@ -75401,6 +75459,23 @@ of_bsn_tlv_untagged_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_untagged_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_upgrade_stage_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_upgrade_stage_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_upgrade_stage_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

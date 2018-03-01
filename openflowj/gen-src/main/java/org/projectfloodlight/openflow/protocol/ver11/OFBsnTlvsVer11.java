@@ -1013,6 +1013,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvUntagged not supported in version 1.1");
     }
 
+    public OFBsnTlvUpgradeStage.Builder buildUpgradeStage() {
+        throw new UnsupportedOperationException("OFBsnTlvUpgradeStage not supported in version 1.1");
+    }
+    public OFBsnTlvUpgradeStage upgradeStage(OFBsnUpgradeStage value) {
+        throw new UnsupportedOperationException("OFBsnTlvUpgradeStage not supported in version 1.1");
+    }
+
     public OFBsnTlvUriScheme.Builder buildUriScheme() {
         throw new UnsupportedOperationException("OFBsnTlvUriScheme not supported in version 1.1");
     }

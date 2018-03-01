@@ -4200,6 +4200,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xa3:
             *id = OF_BSN_TLV_FLOOD;
             break;
+        case 0xa4:
+            *id = OF_BSN_TLV_UPGRADE_STAGE;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -4697,6 +4700,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xa3:
             *id = OF_BSN_TLV_FLOOD;
+            break;
+        case 0xa4:
+            *id = OF_BSN_TLV_UPGRADE_STAGE;
             break;
         default:
             *id = OF_BSN_TLV;

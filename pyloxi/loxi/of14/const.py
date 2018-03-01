@@ -865,6 +865,15 @@ ofp_bsn_udf_anchor_map = {
     2: 'OFP_BSN_UDF_ANCHOR_L4_HEADER_START',
 }
 
+# Identifiers from group ofp_bsn_upgrade_stage
+OFP_BSN_UPGRADE_STAGE_INVALID = 0
+OFP_BSN_UPGRADE_STAGE_INPROGRESS = 1
+
+ofp_bsn_upgrade_stage_map = {
+    0: 'OFP_BSN_UPGRADE_STAGE_INVALID',
+    1: 'OFP_BSN_UPGRADE_STAGE_INPROGRESS',
+}
+
 # Identifiers from group ofp_bsn_vlan_counter_constants
 OFP_BSN_VLAN_ALL = 65535
 

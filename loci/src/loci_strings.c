@@ -461,6 +461,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_unicast_rate",
     "of_bsn_tlv_unknown_multicast_rate",
     "of_bsn_tlv_untagged",
+    "of_bsn_tlv_upgrade_stage",
     "of_bsn_tlv_uri_scheme",
     "of_bsn_tlv_use_packet_state",
     "of_bsn_tlv_vfi",
