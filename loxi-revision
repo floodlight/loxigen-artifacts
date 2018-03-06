@@ -1,1 +1,1 @@
-d34979f0b0fe74617b6509844b29de5fe69d9907 Merge into master from pull request #582: SWL-4381 upgrade_stage TLV. (https://github.com/floodlight/loxigen/pull/582)
+817ac9af2ecf110298061899977aab08f38c21f1 Merge into master from pull request #583: Add an 'isReserved()' API to check for reserved IPv6 addresses (https://github.com/floodlight/loxigen/pull/583)
