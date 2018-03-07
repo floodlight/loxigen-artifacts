@@ -268,6 +268,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvExternalNetmask not supported in version 1.1");
     }
 
+    public OFBsnTlvFabricPortRole.Builder buildFabricPortRole() {
+        throw new UnsupportedOperationException("OFBsnTlvFabricPortRole not supported in version 1.1");
+    }
+    public OFBsnTlvFabricPortRole fabricPortRole(OFBsnFabricPortRole value) {
+        throw new UnsupportedOperationException("OFBsnTlvFabricPortRole not supported in version 1.1");
+    }
+
     public OFBsnTlvFlood flood() {
         throw new UnsupportedOperationException("OFBsnTlvFlood not supported in version 1.1");
     }

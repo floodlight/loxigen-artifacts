@@ -1,1 +1,1 @@
-817ac9af2ecf110298061899977aab08f38c21f1 Merge into master from pull request #583: Add an 'isReserved()' API to check for reserved IPv6 addresses (https://github.com/floodlight/loxigen/pull/583)
+beb951108cd512c7225b65905f6096553974808e Merge into master from pull request #585: SWL-4381 fabric_port_role TLV. (https://github.com/floodlight/loxigen/pull/585)

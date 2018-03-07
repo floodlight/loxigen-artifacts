@@ -27816,6 +27816,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_FABRIC_PORT_ROLE) {
+        return of_bsn_tlv_fabric_port_role_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_CPU_LAG) {
         return of_bsn_tlv_cpu_lag_OF_VERSION_1_3_dup(src);
     }
@@ -29171,6 +29175,31 @@ of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_external_netmask_value_get(src, &ipv4);
     of_bsn_tlv_external_netmask_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_fabric_port_role
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_fabric_port_role.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_fabric_port_role_t *
+of_bsn_tlv_fabric_port_role_OF_VERSION_1_3_dup(
+    of_bsn_tlv_fabric_port_role_t *src)
+{
+    of_bsn_tlv_fabric_port_role_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_fabric_port_role_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_fabric_port_role_value_get(src, &val16);
+    of_bsn_tlv_fabric_port_role_value_set(dst, val16);
 
     return dst;
 }
@@ -51525,6 +51554,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_hash_gtp_port_match_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_FABRIC_PORT_ROLE) {
+        return of_bsn_tlv_fabric_port_role_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_CPU_LAG) {
         return of_bsn_tlv_cpu_lag_OF_VERSION_1_4_dup(src);
     }
@@ -52880,6 +52913,31 @@ of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_external_netmask_value_get(src, &ipv4);
     of_bsn_tlv_external_netmask_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_fabric_port_role
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_fabric_port_role.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_fabric_port_role_t *
+of_bsn_tlv_fabric_port_role_OF_VERSION_1_4_dup(
+    of_bsn_tlv_fabric_port_role_t *src)
+{
+    of_bsn_tlv_fabric_port_role_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_fabric_port_role_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_fabric_port_role_value_get(src, &val16);
+    of_bsn_tlv_fabric_port_role_value_set(dst, val16);
 
     return dst;
 }
@@ -73504,6 +73562,23 @@ of_bsn_tlv_external_netmask_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_fabric_port_role_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_fabric_port_role_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_fabric_port_role_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

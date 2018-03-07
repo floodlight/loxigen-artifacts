@@ -1969,6 +1969,10 @@ enum_v4_ofp_bsn_vrf_counter_constants = {
     [4294967295] = "OFP_BSN_VRF_ALL",
 }
 
+enum_v4_ofp_bsn_fabric_port_role = {
+    [1] = "OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE",
+}
+
 enum_v4_ofp_bsn_tunnel_type = {
     [1] = "OFP_BSN_TUNNEL_L2GRE",
 }
@@ -2979,6 +2983,10 @@ enum_v5_of_bsn_vrf_counter = {
 
 enum_v5_ofp_bsn_misc_capabilities = {
     [1] = "OFP_BSN_MISC_CAP_FEC",
+}
+
+enum_v5_ofp_bsn_fabric_port_role = {
+    [1] = "OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE",
 }
 
 enum_v5_ofp_bsn_tunnel_type = {
@@ -4188,6 +4196,10 @@ enum_v6_of_bsn_vrf_counter = {
 
 enum_v6_ofp_bsn_misc_capabilities = {
     [1] = "OFP_BSN_MISC_CAP_FEC",
+}
+
+enum_v6_ofp_bsn_fabric_port_role = {
+    [1] = "OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE",
 }
 
 enum_v6_ofp_bundle_features_prop_type = {
@@ -8632,6 +8644,9 @@ fields['of13.bsn_tlv_external_mac.value'] = ProtoField.ether("of13.bsn_tlv_exter
 fields['of13.bsn_tlv_external_netmask.type'] = ProtoField.uint16("of13.bsn_tlv_external_netmask.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_external_netmask.length'] = ProtoField.uint16("of13.bsn_tlv_external_netmask.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of13.bsn_tlv_external_netmask.value", "value")
+fields['of13.bsn_tlv_fabric_port_role.type'] = ProtoField.uint16("of13.bsn_tlv_fabric_port_role.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_fabric_port_role.length'] = ProtoField.uint16("of13.bsn_tlv_fabric_port_role.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_fabric_port_role.value'] = ProtoField.uint32("of13.bsn_tlv_fabric_port_role.value", "value", base.DEC, enum_v4_ofp_bsn_fabric_port_role)
 fields['of13.bsn_tlv_flood.type'] = ProtoField.uint16("of13.bsn_tlv_flood.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_flood.length'] = ProtoField.uint16("of13.bsn_tlv_flood.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_force_link_up.type'] = ProtoField.uint16("of13.bsn_tlv_force_link_up.type", "type", base.DEC, nil)
@@ -11618,6 +11633,9 @@ fields['of14.bsn_tlv_external_mac.value'] = ProtoField.ether("of14.bsn_tlv_exter
 fields['of14.bsn_tlv_external_netmask.type'] = ProtoField.uint16("of14.bsn_tlv_external_netmask.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_external_netmask.length'] = ProtoField.uint16("of14.bsn_tlv_external_netmask.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of14.bsn_tlv_external_netmask.value", "value")
+fields['of14.bsn_tlv_fabric_port_role.type'] = ProtoField.uint16("of14.bsn_tlv_fabric_port_role.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_fabric_port_role.length'] = ProtoField.uint16("of14.bsn_tlv_fabric_port_role.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_fabric_port_role.value'] = ProtoField.uint32("of14.bsn_tlv_fabric_port_role.value", "value", base.DEC, enum_v5_ofp_bsn_fabric_port_role)
 fields['of14.bsn_tlv_flood.type'] = ProtoField.uint16("of14.bsn_tlv_flood.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_flood.length'] = ProtoField.uint16("of14.bsn_tlv_flood.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_force_link_up.type'] = ProtoField.uint16("of14.bsn_tlv_force_link_up.type", "type", base.DEC, nil)
@@ -14872,6 +14890,9 @@ fields['of15.bsn_tlv_external_mac.value'] = ProtoField.ether("of15.bsn_tlv_exter
 fields['of15.bsn_tlv_external_netmask.type'] = ProtoField.uint16("of15.bsn_tlv_external_netmask.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_external_netmask.length'] = ProtoField.uint16("of15.bsn_tlv_external_netmask.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of15.bsn_tlv_external_netmask.value", "value")
+fields['of15.bsn_tlv_fabric_port_role.type'] = ProtoField.uint16("of15.bsn_tlv_fabric_port_role.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_fabric_port_role.length'] = ProtoField.uint16("of15.bsn_tlv_fabric_port_role.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_fabric_port_role.value'] = ProtoField.uint32("of15.bsn_tlv_fabric_port_role.value", "value", base.DEC, enum_v6_ofp_bsn_fabric_port_role)
 fields['of15.bsn_tlv_flood.type'] = ProtoField.uint16("of15.bsn_tlv_flood.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_flood.length'] = ProtoField.uint16("of15.bsn_tlv_flood.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_force_link_up.type'] = ProtoField.uint16("of15.bsn_tlv_force_link_up.type", "type", base.DEC, nil)
@@ -21419,6 +21440,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_external_netmask.type'],
     fields['of13.bsn_tlv_external_netmask.length'],
     fields['of13.bsn_tlv_external_netmask.value'],
+    fields['of13.bsn_tlv_fabric_port_role.type'],
+    fields['of13.bsn_tlv_fabric_port_role.length'],
+    fields['of13.bsn_tlv_fabric_port_role.value'],
     fields['of13.bsn_tlv_flood.type'],
     fields['of13.bsn_tlv_flood.length'],
     fields['of13.bsn_tlv_force_link_up.type'],
@@ -24405,6 +24429,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_external_netmask.type'],
     fields['of14.bsn_tlv_external_netmask.length'],
     fields['of14.bsn_tlv_external_netmask.value'],
+    fields['of14.bsn_tlv_fabric_port_role.type'],
+    fields['of14.bsn_tlv_fabric_port_role.length'],
+    fields['of14.bsn_tlv_fabric_port_role.value'],
     fields['of14.bsn_tlv_flood.type'],
     fields['of14.bsn_tlv_flood.length'],
     fields['of14.bsn_tlv_force_link_up.type'],
@@ -27659,6 +27686,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_external_netmask.type'],
     fields['of15.bsn_tlv_external_netmask.length'],
     fields['of15.bsn_tlv_external_netmask.value'],
+    fields['of15.bsn_tlv_fabric_port_role.type'],
+    fields['of15.bsn_tlv_fabric_port_role.length'],
+    fields['of15.bsn_tlv_fabric_port_role.value'],
     fields['of15.bsn_tlv_flood.type'],
     fields['of15.bsn_tlv_flood.length'],
     fields['of15.bsn_tlv_force_link_up.type'],
@@ -39953,6 +39983,16 @@ function dissect_of_bsn_tlv_external_netmask_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[25] = dissect_of_bsn_tlv_external_netmask_v4
 
+-- child class of_bsn_tlv_fabric_port_role
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_fabric_port_role_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_fabric_port_role.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_fabric_port_role.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_fabric_port_role.value')
+    return 'of_bsn_tlv_fabric_port_role'
+end
+of_bsn_tlv_v4_dissectors[165] = dissect_of_bsn_tlv_fabric_port_role_v4
+
 -- child class of_bsn_tlv_flood
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_flood_v4(reader, subtree)
@@ -48042,6 +48082,16 @@ function dissect_of_bsn_tlv_external_netmask_v5(reader, subtree)
     return 'of_bsn_tlv_external_netmask'
 end
 of_bsn_tlv_v5_dissectors[25] = dissect_of_bsn_tlv_external_netmask_v5
+
+-- child class of_bsn_tlv_fabric_port_role
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_fabric_port_role_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_fabric_port_role.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_fabric_port_role.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_fabric_port_role.value')
+    return 'of_bsn_tlv_fabric_port_role'
+end
+of_bsn_tlv_v5_dissectors[165] = dissect_of_bsn_tlv_fabric_port_role_v5
 
 -- child class of_bsn_tlv_flood
 -- Child of of_bsn_tlv
@@ -56749,6 +56799,16 @@ function dissect_of_bsn_tlv_external_netmask_v6(reader, subtree)
     return 'of_bsn_tlv_external_netmask'
 end
 of_bsn_tlv_v6_dissectors[25] = dissect_of_bsn_tlv_external_netmask_v6
+
+-- child class of_bsn_tlv_fabric_port_role
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_fabric_port_role_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_fabric_port_role.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_fabric_port_role.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_fabric_port_role.value')
+    return 'of_bsn_tlv_fabric_port_role'
+end
+of_bsn_tlv_v6_dissectors[165] = dissect_of_bsn_tlv_fabric_port_role_v6
 
 -- child class of_bsn_tlv_flood
 -- Child of of_bsn_tlv

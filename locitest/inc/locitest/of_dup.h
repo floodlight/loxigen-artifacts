@@ -1363,6 +1363,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_fabric_port_role_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_flood_dup(
         of_object_t *src);
 
@@ -6551,6 +6555,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_fabric_port_role_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_flood_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9420,6 +9428,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_fabric_port_role_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

@@ -151,6 +151,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x19:
                    // discriminator value 0x19=0x19 for class OFBsnTlvExternalNetmaskVer13
                    return OFBsnTlvExternalNetmaskVer13.READER.readFrom(bb);
+               case (short) 0xa5:
+                   // discriminator value 0xa5=0xa5 for class OFBsnTlvFabricPortRoleVer13
+                   return OFBsnTlvFabricPortRoleVer13.READER.readFrom(bb);
                case (short) 0xa3:
                    // discriminator value 0xa3=0xa3 for class OFBsnTlvFloodVer13
                    return OFBsnTlvFloodVer13.READER.readFrom(bb);
