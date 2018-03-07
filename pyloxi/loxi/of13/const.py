@@ -403,6 +403,13 @@ ofp_bsn_enhanced_hash_type_map = {
     32: 'OFP_BSN_ENHANCED_HASH_SYMMETRIC',
 }
 
+# Identifiers from group ofp_bsn_fabric_port_role
+OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE = 1
+
+ofp_bsn_fabric_port_role_map = {
+    1: 'OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE',
+}
+
 # Identifiers from group ofp_bsn_forward_error_correction_type
 OFP_BSN_FORWARD_ERROR_CORRECTION_DEFAULT = 0
 OFP_BSN_FORWARD_ERROR_CORRECTION_ENABLE = 1

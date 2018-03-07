@@ -6802,6 +6802,17 @@ typedef struct of_bsn_tlv_external_mac_s of_bsn_tlv_external_mac_t;
 typedef struct of_bsn_tlv_external_netmask_s of_bsn_tlv_external_netmask_t;
 
 /**
+ * Structure for of_bsn_tlv_fabric_port_role object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_fabric_port_role_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_fabric_port_role_s of_bsn_tlv_fabric_port_role_t;
+
+/**
  * Structure for of_bsn_tlv_flood object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

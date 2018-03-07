@@ -330,6 +330,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvFabricPortRole.Builder buildFabricPortRole() {
+        return new OFBsnTlvFabricPortRoleVer15.Builder();
+    }
+    public OFBsnTlvFabricPortRole fabricPortRole(OFBsnFabricPortRole value) {
+        return new OFBsnTlvFabricPortRoleVer15(
+                value
+                    );
+    }
+
     public OFBsnTlvFlood flood() {
         return OFBsnTlvFloodVer15.INSTANCE;
     }

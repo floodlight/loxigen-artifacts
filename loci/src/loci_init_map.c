@@ -349,6 +349,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_external_ip_init,
     (of_object_init_f)of_bsn_tlv_external_mac_init,
     (of_object_init_f)of_bsn_tlv_external_netmask_init,
+    (of_object_init_f)of_bsn_tlv_fabric_port_role_init,
     (of_object_init_f)of_bsn_tlv_flood_init,
     (of_object_init_f)of_bsn_tlv_force_link_up_init,
     (of_object_init_f)of_bsn_tlv_forward_error_correction_init,

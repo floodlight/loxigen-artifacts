@@ -777,6 +777,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_gateway_mac
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_ip_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_netmask_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_fabric_port_role_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_flood_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_force_link_up_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_forward_error_correction_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1468,6 +1469,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_gateway_mac
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_ip_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_mac_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_netmask_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_fabric_port_role_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_flood_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_force_link_up_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_forward_error_correction_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -21024,6 +21026,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_external_mac_OF_VERSION_1_3(data, len, out_len);
     case 0x19:
         return loci_validate_of_bsn_tlv_external_netmask_OF_VERSION_1_3(data, len, out_len);
+    case 0xa5:
+        return loci_validate_of_bsn_tlv_fabric_port_role_OF_VERSION_1_3(data, len, out_len);
     case 0xa3:
         return loci_validate_of_bsn_tlv_flood_OF_VERSION_1_3(data, len, out_len);
     case 0x97:
@@ -22058,6 +22062,28 @@ loci_validate_of_bsn_tlv_external_netmask_OF_VERSION_1_3(uint8_t *data, int len,
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_fabric_port_role_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 6) {
         return -1;
     }
 
@@ -38032,6 +38058,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_external_mac_OF_VERSION_1_4(data, len, out_len);
     case 0x19:
         return loci_validate_of_bsn_tlv_external_netmask_OF_VERSION_1_4(data, len, out_len);
+    case 0xa5:
+        return loci_validate_of_bsn_tlv_fabric_port_role_OF_VERSION_1_4(data, len, out_len);
     case 0xa3:
         return loci_validate_of_bsn_tlv_flood_OF_VERSION_1_4(data, len, out_len);
     case 0x97:
@@ -39066,6 +39094,28 @@ loci_validate_of_bsn_tlv_external_netmask_OF_VERSION_1_4(uint8_t *data, int len,
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_fabric_port_role_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 6) {
         return -1;
     }
 
