@@ -1385,7 +1385,7 @@ public class OFFactoryVer11 implements OFFactory {
     public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
         throw new UnsupportedOperationException("OFPortDescPropBsnForwardErrorCorrection not supported in version 1.1");
     }
-    public OFPortDescPropBsnForwardErrorCorrection portDescPropBsnForwardErrorCorrection(long configured, long enabled) {
+    public OFPortDescPropBsnForwardErrorCorrection portDescPropBsnForwardErrorCorrection(OFBsnFecConfigState configured, long enabled) {
         throw new UnsupportedOperationException("OFPortDescPropBsnForwardErrorCorrection not supported in version 1.1");
     }
 

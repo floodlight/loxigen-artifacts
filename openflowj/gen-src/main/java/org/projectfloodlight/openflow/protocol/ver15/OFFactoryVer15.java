@@ -1552,7 +1552,7 @@ public class OFFactoryVer15 implements OFFactory {
     public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
         return new OFPortDescPropBsnForwardErrorCorrectionVer15.Builder();
     }
-    public OFPortDescPropBsnForwardErrorCorrection portDescPropBsnForwardErrorCorrection(long configured, long enabled) {
+    public OFPortDescPropBsnForwardErrorCorrection portDescPropBsnForwardErrorCorrection(OFBsnFecConfigState configured, long enabled) {
         return new OFPortDescPropBsnForwardErrorCorrectionVer15(
                 configured,
                       enabled

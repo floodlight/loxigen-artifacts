@@ -36,22 +36,20 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
     private static final Logger logger = LoggerFactory.getLogger(OFPortDescPropBsnForwardErrorCorrectionVer15.class);
     // version: 1.5
     final static byte WIRE_VERSION = 6;
-    final static int LENGTH = 20;
+    final static int LENGTH = 18;
 
-        private final static long DEFAULT_CONFIGURED = 0x0L;
         private final static long DEFAULT_ENABLED = 0x0L;
 
     // OF message fields
-    private final long configured;
+    private final OFBsnFecConfigState configured;
     private final long enabled;
 //
-    // Immutable default instance
-    final static OFPortDescPropBsnForwardErrorCorrectionVer15 DEFAULT = new OFPortDescPropBsnForwardErrorCorrectionVer15(
-        DEFAULT_CONFIGURED, DEFAULT_ENABLED
-    );
 
     // package private constructor - used by readers, builders, and factory
-    OFPortDescPropBsnForwardErrorCorrectionVer15(long configured, long enabled) {
+    OFPortDescPropBsnForwardErrorCorrectionVer15(OFBsnFecConfigState configured, long enabled) {
+        if(configured == null) {
+            throw new NullPointerException("OFPortDescPropBsnForwardErrorCorrectionVer15: property configured cannot be null");
+        }
         this.configured = configured;
         this.enabled = enabled;
     }
@@ -73,7 +71,7 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
     }
 
     @Override
-    public long getConfigured() {
+    public OFBsnFecConfigState getConfigured() {
         return configured;
     }
 
@@ -98,7 +96,7 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
 
         // OF message fields
         private boolean configuredSet;
-        private long configured;
+        private OFBsnFecConfigState configured;
         private boolean enabledSet;
         private long enabled;
 
@@ -126,12 +124,12 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
     @Override
-    public long getConfigured() {
+    public OFBsnFecConfigState getConfigured() {
         return configured;
     }
 
     @Override
-    public OFPortDescPropBsnForwardErrorCorrection.Builder setConfigured(long configured) {
+    public OFPortDescPropBsnForwardErrorCorrection.Builder setConfigured(OFBsnFecConfigState configured) {
         this.configured = configured;
         this.configuredSet = true;
         return this;
@@ -156,7 +154,9 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
 
         @Override
         public OFPortDescPropBsnForwardErrorCorrection build() {
-                long configured = this.configuredSet ? this.configured : parentMessage.configured;
+                OFBsnFecConfigState configured = this.configuredSet ? this.configured : parentMessage.configured;
+                if(configured == null)
+                    throw new NullPointerException("Property configured must not be null");
                 long enabled = this.enabledSet ? this.enabled : parentMessage.enabled;
 
                 //
@@ -171,7 +171,7 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
     static class Builder implements OFPortDescPropBsnForwardErrorCorrection.Builder {
         // OF message fields
         private boolean configuredSet;
-        private long configured;
+        private OFBsnFecConfigState configured;
         private boolean enabledSet;
         private long enabled;
 
@@ -195,12 +195,12 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
     @Override
-    public long getConfigured() {
+    public OFBsnFecConfigState getConfigured() {
         return configured;
     }
 
     @Override
-    public OFPortDescPropBsnForwardErrorCorrection.Builder setConfigured(long configured) {
+    public OFPortDescPropBsnForwardErrorCorrection.Builder setConfigured(OFBsnFecConfigState configured) {
         this.configured = configured;
         this.configuredSet = true;
         return this;
@@ -224,7 +224,10 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
 //
         @Override
         public OFPortDescPropBsnForwardErrorCorrection build() {
-            long configured = this.configuredSet ? this.configured : DEFAULT_CONFIGURED;
+            if(!this.configuredSet)
+                throw new IllegalStateException("Property configured doesn't have default value -- must be set");
+            if(configured == null)
+                throw new NullPointerException("Property configured must not be null");
             long enabled = this.enabledSet ? this.enabled : DEFAULT_ENABLED;
 
 
@@ -247,8 +250,8 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
             if(type != (short) 0xffff)
                 throw new OFParseError("Wrong type: Expected=0xffff(0xffff), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 20)
-                throw new OFParseError("Wrong length: Expected=20(20), got="+length);
+            if(length != 18)
+                throw new OFParseError("Wrong length: Expected=18(18), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -264,7 +267,7 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
             int expType = bb.readInt();
             if(expType != 0x2)
                 throw new OFParseError("Wrong expType: Expected=0x2L(0x2L), got="+expType);
-            long configured = U32.f(bb.readInt());
+            OFBsnFecConfigState configured = OFBsnFecConfigStateSerializerVer15.readFrom(bb);
             long enabled = U32.f(bb.readInt());
 
             OFPortDescPropBsnForwardErrorCorrectionVer15 portDescPropBsnForwardErrorCorrectionVer15 = new OFPortDescPropBsnForwardErrorCorrectionVer15(
@@ -288,13 +291,13 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
         public void funnel(OFPortDescPropBsnForwardErrorCorrectionVer15 message, PrimitiveSink sink) {
             // fixed value property type = 0xffff
             sink.putShort((short) 0xffff);
-            // fixed value property length = 20
-            sink.putShort((short) 0x14);
+            // fixed value property length = 18
+            sink.putShort((short) 0x12);
             // fixed value property experimenter = 0x5c16c7L
             sink.putInt(0x5c16c7);
             // fixed value property expType = 0x2L
             sink.putInt(0x2);
-            sink.putLong(message.configured);
+            OFBsnFecConfigStateSerializerVer15.putTo(message.configured, sink);
             sink.putLong(message.enabled);
         }
     }
@@ -310,13 +313,13 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
         public void write(ByteBuf bb, OFPortDescPropBsnForwardErrorCorrectionVer15 message) {
             // fixed value property type = 0xffff
             bb.writeShort((short) 0xffff);
-            // fixed value property length = 20
-            bb.writeShort((short) 0x14);
+            // fixed value property length = 18
+            bb.writeShort((short) 0x12);
             // fixed value property experimenter = 0x5c16c7L
             bb.writeInt(0x5c16c7);
             // fixed value property expType = 0x2L
             bb.writeInt(0x2);
-            bb.writeInt(U32.t(message.configured));
+            OFBsnFecConfigStateSerializerVer15.writeTo(bb, message.configured);
             bb.writeInt(U32.t(message.enabled));
 
 
@@ -343,7 +346,10 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
             return false;
         OFPortDescPropBsnForwardErrorCorrectionVer15 other = (OFPortDescPropBsnForwardErrorCorrectionVer15) obj;
 
-        if( configured != other.configured)
+        if (configured == null) {
+            if (other.configured != null)
+                return false;
+        } else if (!configured.equals(other.configured))
             return false;
         if( enabled != other.enabled)
             return false;
@@ -355,7 +361,7 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
         final int prime = 31;
         int result = 1;
 
-        result = prime *  (int) (configured ^ (configured >>> 32));
+        result = prime * result + ((configured == null) ? 0 : configured.hashCode());
         result = prime *  (int) (enabled ^ (enabled >>> 32));
         return result;
     }

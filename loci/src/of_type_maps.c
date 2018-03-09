@@ -4089,7 +4089,7 @@ of_object_fixed_len_v5[OF_OBJECT_COUNT] = {
     4,    /* 713: of_port_desc_prop */
     12,   /* 714: of_port_desc_prop_bsn */
     16,   /* 715: of_port_desc_prop_bsn_breakout */
-    20,   /* 716: of_port_desc_prop_bsn_forward_error_correction */
+    18,   /* 716: of_port_desc_prop_bsn_forward_error_correction */
     20,   /* 717: of_port_desc_prop_bsn_generation_id */
     36,   /* 718: of_port_desc_prop_bsn_misc_capabilities */
     36,   /* 719: of_port_desc_prop_bsn_speed_capabilities */

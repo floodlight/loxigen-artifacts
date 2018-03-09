@@ -31,7 +31,7 @@ public interface OFPortDescPropBsnForwardErrorCorrection extends OFObject, OFPor
     int getType();
     long getExperimenter();
     long getExpType();
-    long getConfigured();
+    OFBsnFecConfigState getConfigured();
     long getEnabled();
     OFVersion getVersion();
 
@@ -44,8 +44,8 @@ public interface OFPortDescPropBsnForwardErrorCorrection extends OFObject, OFPor
         long getExperimenter();
         long getExpType();
         Builder setExpType(long expType);
-        long getConfigured();
-        Builder setConfigured(long configured);
+        OFBsnFecConfigState getConfigured();
+        Builder setConfigured(OFBsnFecConfigState configured);
         long getEnabled();
         Builder setEnabled(long enabled);
         OFVersion getVersion();

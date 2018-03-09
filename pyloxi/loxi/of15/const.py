@@ -494,6 +494,17 @@ ofp_bsn_fabric_port_role_map = {
     1: 'OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE',
 }
 
+# Identifiers from group ofp_bsn_fec_config_state
+OFP_BSN_FEC_CONFIG_STATE_DEFAULT = 0
+OFP_BSN_FEC_CONFIG_STATE_ENABLED = 1
+OFP_BSN_FEC_CONFIG_STATE_DISABLED = 2
+
+ofp_bsn_fec_config_state_map = {
+    0: 'OFP_BSN_FEC_CONFIG_STATE_DEFAULT',
+    1: 'OFP_BSN_FEC_CONFIG_STATE_ENABLED',
+    2: 'OFP_BSN_FEC_CONFIG_STATE_DISABLED',
+}
+
 # Identifiers from group ofp_bsn_forward_error_correction_type
 OFP_BSN_FORWARD_ERROR_CORRECTION_DEFAULT = 0
 OFP_BSN_FORWARD_ERROR_CORRECTION_ENABLE = 1
