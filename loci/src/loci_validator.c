@@ -47936,15 +47936,15 @@ loci_validate_of_port_desc_prop_bsn_breakout_OF_VERSION_1_4(uint8_t *data, int l
 static int
 loci_validate_of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
-    if (len < 20) {
+    if (len < 18) {
         return -1;
     }
 
-    len = 20;
+    len = 18;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 20) {
+    if (wire_len > len || wire_len < 18) {
         return -1;
     }
 
