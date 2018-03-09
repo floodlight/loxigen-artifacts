@@ -52760,7 +52760,7 @@ function dissect_of_port_desc_prop_bsn_forward_error_correction_v5(reader, subtr
     read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_forward_error_correction.length')
     read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_forward_error_correction.experimenter')
     read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_forward_error_correction.exp_type')
-    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_forward_error_correction.configured')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_forward_error_correction.configured')
     read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_forward_error_correction.enabled')
     return 'of_port_desc_prop_bsn_forward_error_correction'
 end
@@ -61969,7 +61969,7 @@ function dissect_of_port_desc_prop_bsn_forward_error_correction_v6(reader, subtr
     read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_forward_error_correction.length')
     read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_forward_error_correction.experimenter')
     read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_forward_error_correction.exp_type')
-    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_forward_error_correction.configured')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_forward_error_correction.configured')
     read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_forward_error_correction.enabled')
     return 'of_port_desc_prop_bsn_forward_error_correction'
 end
