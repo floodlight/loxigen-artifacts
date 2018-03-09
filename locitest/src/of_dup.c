@@ -63486,6 +63486,7 @@ of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_dup(
 {
     of_port_desc_prop_bsn_forward_error_correction_t *dst;
     uint32_t val32;
+    uint16_t val16;
 
     if ((dst = of_port_desc_prop_bsn_forward_error_correction_new(src->version)) == NULL) {
         return NULL;
@@ -63497,8 +63498,8 @@ of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_dup(
     of_port_desc_prop_bsn_forward_error_correction_exp_type_get(src, &val32);
     of_port_desc_prop_bsn_forward_error_correction_exp_type_set(dst, val32);
 
-    of_port_desc_prop_bsn_forward_error_correction_configured_get(src, &val32);
-    of_port_desc_prop_bsn_forward_error_correction_configured_set(dst, val32);
+    of_port_desc_prop_bsn_forward_error_correction_configured_get(src, &val16);
+    of_port_desc_prop_bsn_forward_error_correction_configured_set(dst, val16);
 
     of_port_desc_prop_bsn_forward_error_correction_enabled_get(src, &val32);
     of_port_desc_prop_bsn_forward_error_correction_enabled_set(dst, val32);

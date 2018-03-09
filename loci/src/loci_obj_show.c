@@ -40712,6 +40712,7 @@ of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_show(loci_writer_f
 {
     int out = 0;
     uint32_t val32;
+    uint16_t val16;
 
     of_port_desc_prop_bsn_forward_error_correction_experimenter_get(obj, &val32);
     out += writer(cookie, "experimenter=");
@@ -40723,9 +40724,9 @@ of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_show(loci_writer_f
     out += LOCI_SHOW_u32(writer, cookie, val32);
     out += writer(cookie, " ");
 
-    of_port_desc_prop_bsn_forward_error_correction_configured_get(obj, &val32);
+    of_port_desc_prop_bsn_forward_error_correction_configured_get(obj, &val16);
     out += writer(cookie, "configured=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += LOCI_SHOW_u16(writer, cookie, val16);
     out += writer(cookie, " ");
 
     of_port_desc_prop_bsn_forward_error_correction_enabled_get(obj, &val32);

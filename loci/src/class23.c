@@ -717,13 +717,13 @@ of_port_desc_prop_bsn_forward_error_correction_exp_type_set(
  * Get configured from an object of type of_port_desc_prop_bsn_forward_error_correction.
  * @param obj Pointer to an object of type of_port_desc_prop_bsn_forward_error_correction.
  * @param configured Pointer to the child object of type
- * uint32_t to be filled out.
+ * uint16_t to be filled out.
  *
  */
 void
 of_port_desc_prop_bsn_forward_error_correction_configured_get(
     of_port_desc_prop_bsn_forward_error_correction_t *obj,
-    uint32_t *configured)
+    uint16_t *configured)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -746,7 +746,7 @@ of_port_desc_prop_bsn_forward_error_correction_configured_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_get(wbuf, abs_offset, configured);
+    of_wire_buffer_u16_get(wbuf, abs_offset, configured);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -761,7 +761,7 @@ of_port_desc_prop_bsn_forward_error_correction_configured_get(
 void
 of_port_desc_prop_bsn_forward_error_correction_configured_set(
     of_port_desc_prop_bsn_forward_error_correction_t *obj,
-    uint32_t configured)
+    uint16_t configured)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -784,7 +784,7 @@ of_port_desc_prop_bsn_forward_error_correction_configured_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_set(wbuf, abs_offset, configured);
+    of_wire_buffer_u16_set(wbuf, abs_offset, configured);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -816,7 +816,7 @@ of_port_desc_prop_bsn_forward_error_correction_enabled_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_4:
-        offset = 16;
+        offset = 14;
         break;
     default:
         LOCI_ASSERT(0);
@@ -854,7 +854,7 @@ of_port_desc_prop_bsn_forward_error_correction_enabled_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_4:
-        offset = 16;
+        offset = 14;
         break;
     default:
         LOCI_ASSERT(0);

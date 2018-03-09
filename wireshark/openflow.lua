@@ -2494,6 +2494,12 @@ enum_v5_ofp_bsn_port_speed_gbps_type = {
     [100] = "OFP_BSN_PORT_SPEED_GBPS_100",
 }
 
+enum_v5_ofp_bsn_fec_config_state = {
+    [0] = "OFP_BSN_FEC_CONFIG_STATE_UNSET",
+    [1] = "OFP_BSN_FEC_CONFIG_STATE_ENABLED",
+    [2] = "OFP_BSN_FEC_CONFIG_STATE_DISABLED",
+}
+
 enum_v5_ofp_group_mod_failed_code = {
     [0] = "OFPGMFC_GROUP_EXISTS",
     [1] = "OFPGMFC_INVALID_GROUP",
@@ -3658,6 +3664,12 @@ enum_v6_ofp_bsn_port_speed_gbps_type = {
     [40] = "OFP_BSN_PORT_SPEED_GBPS_40",
     [50] = "OFP_BSN_PORT_SPEED_GBPS_50",
     [100] = "OFP_BSN_PORT_SPEED_GBPS_100",
+}
+
+enum_v6_ofp_bsn_fec_config_state = {
+    [0] = "OFP_BSN_FEC_CONFIG_STATE_UNSET",
+    [1] = "OFP_BSN_FEC_CONFIG_STATE_ENABLED",
+    [2] = "OFP_BSN_FEC_CONFIG_STATE_DISABLED",
 }
 
 enum_v6_ofp_group_mod_failed_code = {
@@ -13215,7 +13227,7 @@ fields['of14.port_desc_prop_bsn_forward_error_correction.type'] = ProtoField.uin
 fields['of14.port_desc_prop_bsn_forward_error_correction.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_forward_error_correction.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_forward_error_correction.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_forward_error_correction.experimenter", "experimenter", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_forward_error_correction.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_forward_error_correction.exp_type", "exp_type", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_forward_error_correction.configured'] = ProtoField.uint32("of14.port_desc_prop_bsn_forward_error_correction.configured", "configured", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_forward_error_correction.configured'] = ProtoField.uint32("of14.port_desc_prop_bsn_forward_error_correction.configured", "configured", base.DEC, enum_v5_ofp_bsn_fec_config_state)
 fields['of14.port_desc_prop_bsn_forward_error_correction.enabled'] = ProtoField.uint32("of14.port_desc_prop_bsn_forward_error_correction.enabled", "enabled", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_generation_id.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_generation_id.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_generation_id.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_generation_id.length", "length", base.DEC, nil)
@@ -16660,7 +16672,7 @@ fields['of15.port_desc_prop_bsn_forward_error_correction.type'] = ProtoField.uin
 fields['of15.port_desc_prop_bsn_forward_error_correction.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_forward_error_correction.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_forward_error_correction.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_forward_error_correction.experimenter", "experimenter", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_forward_error_correction.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_forward_error_correction.exp_type", "exp_type", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_forward_error_correction.configured'] = ProtoField.uint32("of15.port_desc_prop_bsn_forward_error_correction.configured", "configured", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_forward_error_correction.configured'] = ProtoField.uint32("of15.port_desc_prop_bsn_forward_error_correction.configured", "configured", base.DEC, enum_v6_ofp_bsn_fec_config_state)
 fields['of15.port_desc_prop_bsn_forward_error_correction.enabled'] = ProtoField.uint32("of15.port_desc_prop_bsn_forward_error_correction.enabled", "enabled", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_generation_id.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_generation_id.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_generation_id.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_generation_id.length", "length", base.DEC, nil)
@@ -52748,7 +52760,7 @@ function dissect_of_port_desc_prop_bsn_forward_error_correction_v5(reader, subtr
     read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_forward_error_correction.length')
     read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_forward_error_correction.experimenter')
     read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_forward_error_correction.exp_type')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_forward_error_correction.configured')
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_forward_error_correction.configured')
     read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_forward_error_correction.enabled')
     return 'of_port_desc_prop_bsn_forward_error_correction'
 end
@@ -61957,7 +61969,7 @@ function dissect_of_port_desc_prop_bsn_forward_error_correction_v6(reader, subtr
     read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_forward_error_correction.length')
     read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_forward_error_correction.experimenter')
     read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_forward_error_correction.exp_type')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_forward_error_correction.configured')
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_forward_error_correction.configured')
     read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_forward_error_correction.enabled')
     return 'of_port_desc_prop_bsn_forward_error_correction'
 end

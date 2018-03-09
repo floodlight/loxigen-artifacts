@@ -256,7 +256,7 @@ class bsn_forward_error_correction(bsn):
         packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
         packed.append(struct.pack("!L", self.experimenter))
         packed.append(struct.pack("!L", self.exp_type))
-        packed.append(struct.pack("!L", self.configured))
+        packed.append(struct.pack("!H", self.configured))
         packed.append(struct.pack("!L", self.enabled))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
@@ -274,7 +274,7 @@ class bsn_forward_error_correction(bsn):
         assert(_experimenter == 6035143)
         _exp_type = reader.read("!L")[0]
         assert(_exp_type == 2)
-        obj.configured = reader.read("!L")[0]
+        obj.configured = reader.read("!H")[0]
         obj.enabled = reader.read("!L")[0]
         return obj
 
