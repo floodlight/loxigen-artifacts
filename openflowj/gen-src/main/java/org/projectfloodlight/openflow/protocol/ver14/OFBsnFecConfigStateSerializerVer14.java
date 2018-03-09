@@ -31,27 +31,27 @@ import com.google.common.hash.PrimitiveSink;
 
 public class OFBsnFecConfigStateSerializerVer14 {
 
-    public final static short BSN_FEC_CONFIG_STATE_UNSET_VAL = (short) 0x0;
-    public final static short BSN_FEC_CONFIG_STATE_ENABLED_VAL = (short) 0x1;
-    public final static short BSN_FEC_CONFIG_STATE_DISABLED_VAL = (short) 0x2;
+    public final static int BSN_FEC_CONFIG_STATE_UNSET_VAL = 0x0;
+    public final static int BSN_FEC_CONFIG_STATE_ENABLED_VAL = 0x1;
+    public final static int BSN_FEC_CONFIG_STATE_DISABLED_VAL = 0x2;
 
     public static OFBsnFecConfigState readFrom(ByteBuf bb) throws OFParseError {
         try {
-            return ofWireValue(bb.readShort());
+            return ofWireValue(bb.readInt());
         } catch (IllegalArgumentException e) {
             throw new OFParseError(e);
         }
     }
 
     public static void writeTo(ByteBuf bb, OFBsnFecConfigState e) {
-        bb.writeShort(toWireValue(e));
+        bb.writeInt(toWireValue(e));
     }
 
     public static void putTo(OFBsnFecConfigState e, PrimitiveSink sink) {
-        sink.putShort(toWireValue(e));
+        sink.putInt(toWireValue(e));
     }
 
-    public static OFBsnFecConfigState ofWireValue(short val) {
+    public static OFBsnFecConfigState ofWireValue(int val) {
         switch(val) {
             case BSN_FEC_CONFIG_STATE_UNSET_VAL:
                 return OFBsnFecConfigState.BSN_FEC_CONFIG_STATE_UNSET;
@@ -65,7 +65,7 @@ public class OFBsnFecConfigStateSerializerVer14 {
     }
 
 
-    public static short toWireValue(OFBsnFecConfigState e) {
+    public static int toWireValue(OFBsnFecConfigState e) {
         switch(e) {
             case BSN_FEC_CONFIG_STATE_UNSET:
                 return BSN_FEC_CONFIG_STATE_UNSET_VAL;

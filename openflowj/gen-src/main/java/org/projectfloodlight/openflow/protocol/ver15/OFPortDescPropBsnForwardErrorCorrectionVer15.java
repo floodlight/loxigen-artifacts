@@ -36,7 +36,7 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
     private static final Logger logger = LoggerFactory.getLogger(OFPortDescPropBsnForwardErrorCorrectionVer15.class);
     // version: 1.5
     final static byte WIRE_VERSION = 6;
-    final static int LENGTH = 18;
+    final static int LENGTH = 20;
 
         private final static long DEFAULT_ENABLED = 0x0L;
 
@@ -250,8 +250,8 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
             if(type != (short) 0xffff)
                 throw new OFParseError("Wrong type: Expected=0xffff(0xffff), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 18)
-                throw new OFParseError("Wrong length: Expected=18(18), got="+length);
+            if(length != 20)
+                throw new OFParseError("Wrong length: Expected=20(20), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,8 +291,8 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
         public void funnel(OFPortDescPropBsnForwardErrorCorrectionVer15 message, PrimitiveSink sink) {
             // fixed value property type = 0xffff
             sink.putShort((short) 0xffff);
-            // fixed value property length = 18
-            sink.putShort((short) 0x12);
+            // fixed value property length = 20
+            sink.putShort((short) 0x14);
             // fixed value property experimenter = 0x5c16c7L
             sink.putInt(0x5c16c7);
             // fixed value property expType = 0x2L
@@ -313,8 +313,8 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
         public void write(ByteBuf bb, OFPortDescPropBsnForwardErrorCorrectionVer15 message) {
             // fixed value property type = 0xffff
             bb.writeShort((short) 0xffff);
-            // fixed value property length = 18
-            bb.writeShort((short) 0x12);
+            // fixed value property length = 20
+            bb.writeShort((short) 0x14);
             // fixed value property experimenter = 0x5c16c7L
             bb.writeInt(0x5c16c7);
             // fixed value property expType = 0x2L

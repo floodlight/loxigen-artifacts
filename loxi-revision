@@ -1,1 +1,1 @@
-c1ef87eeb8f6ccf3e7f1dce50eb12e888babb716 Merge into master from pull request #586: [SWL-4374] Add an enum for FEC configuration state (https://github.com/floodlight/loxigen/pull/586)
+b675351e7c349198eef0c5298906b3d3919adf0e Merge into master from pull request #587: [SWL-4374] Changed the FEC config enum type to uint32_t (https://github.com/floodlight/loxigen/pull/587)

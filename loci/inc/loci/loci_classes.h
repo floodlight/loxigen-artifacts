@@ -28576,10 +28576,10 @@ extern void of_port_desc_prop_bsn_forward_error_correction_exp_type_get(
 
 extern void of_port_desc_prop_bsn_forward_error_correction_configured_set(
     of_port_desc_prop_bsn_forward_error_correction_t *obj,
-    uint16_t configured);
+    uint32_t configured);
 extern void of_port_desc_prop_bsn_forward_error_correction_configured_get(
     of_port_desc_prop_bsn_forward_error_correction_t *obj,
-    uint16_t *configured);
+    uint32_t *configured);
 
 extern void of_port_desc_prop_bsn_forward_error_correction_enabled_set(
     of_port_desc_prop_bsn_forward_error_correction_t *obj,
