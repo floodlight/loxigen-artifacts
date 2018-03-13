@@ -1,1 +1,1 @@
-b675351e7c349198eef0c5298906b3d3919adf0e Merge into master from pull request #587: [SWL-4374] Changed the FEC config enum type to uint32_t (https://github.com/floodlight/loxigen/pull/587)
+2e33c1d115b2afa60bdaae041a2ba0c93630d812 Merge 740502a94ca83be448b23a128084c6d5a43f3d97 into b675351e7c349198eef0c5298906b3d3919adf0e
