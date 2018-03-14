@@ -1,1 +1,1 @@
-b675351e7c349198eef0c5298906b3d3919adf0e Merge into master from pull request #587: [SWL-4374] Changed the FEC config enum type to uint32_t (https://github.com/floodlight/loxigen/pull/587)
+b8f39b04120bf26e91230941999d8e0d6772644b another fix for getRevision()
