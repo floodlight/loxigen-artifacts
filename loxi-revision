@@ -1,1 +1,1 @@
-72822bf2a09777ec53652ac9f5c319b0a05768e8 Merge into master from pull request #589: BSC-11527 rework build: add Jenkinsfile, use MVN CI friendly versioning (https://github.com/floodlight/loxigen/pull/589)
+9c46066b50c602b38b4d9137b5475eca1cc1a45a Merge into master from pull request #590: Jenkinsfile: default base_branch to env.JOB_BASE_NAME (https://github.com/floodlight/loxigen/pull/590)
