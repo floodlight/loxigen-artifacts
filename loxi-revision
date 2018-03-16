@@ -1,1 +1,1 @@
-b675351e7c349198eef0c5298906b3d3919adf0e Merge into master from pull request #587: [SWL-4374] Changed the FEC config enum type to uint32_t (https://github.com/floodlight/loxigen/pull/587)
+72822bf2a09777ec53652ac9f5c319b0a05768e8 Merge into master from pull request #589: BSC-11527 rework build: add Jenkinsfile, use MVN CI friendly versioning (https://github.com/floodlight/loxigen/pull/589)
