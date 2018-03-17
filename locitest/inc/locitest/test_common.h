@@ -806,6 +806,33 @@ extern int of_action_nicira_dec_ttl_OF_VERSION_1_0_populate_scalars(
 extern int of_action_nicira_dec_ttl_OF_VERSION_1_0_check_scalars(
     of_action_nicira_dec_ttl_t *obj, int value);
 
+extern int of_action_nicira_exit_OF_VERSION_1_0_populate(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_0_check(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_0_populate_scalars(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_0_check_scalars(
+    of_action_nicira_exit_t *obj, int value);
+
+extern int of_action_nicira_resubmit_OF_VERSION_1_0_populate(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_0_check(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_0_populate_scalars(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_0_check_scalars(
+    of_action_nicira_resubmit_t *obj, int value);
+
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_0_populate(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_0_check(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_0_populate_scalars(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_0_check_scalars(
+    of_action_nicira_resubmit_table_t *obj, int value);
+
 extern int of_action_output_OF_VERSION_1_0_populate(
     of_action_output_t *obj, int value);
 extern int of_action_output_OF_VERSION_1_0_check(
@@ -1840,6 +1867,33 @@ extern int of_action_nicira_dec_ttl_OF_VERSION_1_1_populate_scalars(
     of_action_nicira_dec_ttl_t *obj, int value);
 extern int of_action_nicira_dec_ttl_OF_VERSION_1_1_check_scalars(
     of_action_nicira_dec_ttl_t *obj, int value);
+
+extern int of_action_nicira_exit_OF_VERSION_1_1_populate(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_1_check(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_1_populate_scalars(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_1_check_scalars(
+    of_action_nicira_exit_t *obj, int value);
+
+extern int of_action_nicira_resubmit_OF_VERSION_1_1_populate(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_1_check(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_1_populate_scalars(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_1_check_scalars(
+    of_action_nicira_resubmit_t *obj, int value);
+
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_1_populate(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_1_check(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_1_populate_scalars(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_1_check_scalars(
+    of_action_nicira_resubmit_table_t *obj, int value);
 
 extern int of_action_output_OF_VERSION_1_1_populate(
     of_action_output_t *obj, int value);
@@ -3127,6 +3181,33 @@ extern int of_action_nicira_dec_ttl_OF_VERSION_1_2_populate_scalars(
     of_action_nicira_dec_ttl_t *obj, int value);
 extern int of_action_nicira_dec_ttl_OF_VERSION_1_2_check_scalars(
     of_action_nicira_dec_ttl_t *obj, int value);
+
+extern int of_action_nicira_exit_OF_VERSION_1_2_populate(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_2_check(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_2_populate_scalars(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_2_check_scalars(
+    of_action_nicira_exit_t *obj, int value);
+
+extern int of_action_nicira_resubmit_OF_VERSION_1_2_populate(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_2_check(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_2_populate_scalars(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_2_check_scalars(
+    of_action_nicira_resubmit_t *obj, int value);
+
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_2_populate(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_2_check(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_2_populate_scalars(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_2_check_scalars(
+    of_action_nicira_resubmit_table_t *obj, int value);
 
 extern int of_action_output_OF_VERSION_1_2_populate(
     of_action_output_t *obj, int value);
@@ -6458,6 +6539,33 @@ extern int of_action_id_nicira_dec_ttl_OF_VERSION_1_3_populate_scalars(
 extern int of_action_id_nicira_dec_ttl_OF_VERSION_1_3_check_scalars(
     of_action_id_nicira_dec_ttl_t *obj, int value);
 
+extern int of_action_id_nicira_exit_OF_VERSION_1_3_populate(
+    of_action_id_nicira_exit_t *obj, int value);
+extern int of_action_id_nicira_exit_OF_VERSION_1_3_check(
+    of_action_id_nicira_exit_t *obj, int value);
+extern int of_action_id_nicira_exit_OF_VERSION_1_3_populate_scalars(
+    of_action_id_nicira_exit_t *obj, int value);
+extern int of_action_id_nicira_exit_OF_VERSION_1_3_check_scalars(
+    of_action_id_nicira_exit_t *obj, int value);
+
+extern int of_action_id_nicira_resubmit_OF_VERSION_1_3_populate(
+    of_action_id_nicira_resubmit_t *obj, int value);
+extern int of_action_id_nicira_resubmit_OF_VERSION_1_3_check(
+    of_action_id_nicira_resubmit_t *obj, int value);
+extern int of_action_id_nicira_resubmit_OF_VERSION_1_3_populate_scalars(
+    of_action_id_nicira_resubmit_t *obj, int value);
+extern int of_action_id_nicira_resubmit_OF_VERSION_1_3_check_scalars(
+    of_action_id_nicira_resubmit_t *obj, int value);
+
+extern int of_action_id_nicira_resubmit_table_OF_VERSION_1_3_populate(
+    of_action_id_nicira_resubmit_table_t *obj, int value);
+extern int of_action_id_nicira_resubmit_table_OF_VERSION_1_3_check(
+    of_action_id_nicira_resubmit_table_t *obj, int value);
+extern int of_action_id_nicira_resubmit_table_OF_VERSION_1_3_populate_scalars(
+    of_action_id_nicira_resubmit_table_t *obj, int value);
+extern int of_action_id_nicira_resubmit_table_OF_VERSION_1_3_check_scalars(
+    of_action_id_nicira_resubmit_table_t *obj, int value);
+
 extern int of_action_id_output_OF_VERSION_1_3_populate(
     of_action_id_output_t *obj, int value);
 extern int of_action_id_output_OF_VERSION_1_3_check(
@@ -6565,6 +6673,33 @@ extern int of_action_nicira_dec_ttl_OF_VERSION_1_3_populate_scalars(
     of_action_nicira_dec_ttl_t *obj, int value);
 extern int of_action_nicira_dec_ttl_OF_VERSION_1_3_check_scalars(
     of_action_nicira_dec_ttl_t *obj, int value);
+
+extern int of_action_nicira_exit_OF_VERSION_1_3_populate(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_3_check(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_3_populate_scalars(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_3_check_scalars(
+    of_action_nicira_exit_t *obj, int value);
+
+extern int of_action_nicira_resubmit_OF_VERSION_1_3_populate(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_3_check(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_3_populate_scalars(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_3_check_scalars(
+    of_action_nicira_resubmit_t *obj, int value);
+
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_3_populate(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_3_check(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_3_populate_scalars(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_3_check_scalars(
+    of_action_nicira_resubmit_table_t *obj, int value);
 
 extern int of_action_output_OF_VERSION_1_3_populate(
     of_action_output_t *obj, int value);
@@ -12686,6 +12821,33 @@ extern int of_action_id_nicira_dec_ttl_OF_VERSION_1_4_populate_scalars(
 extern int of_action_id_nicira_dec_ttl_OF_VERSION_1_4_check_scalars(
     of_action_id_nicira_dec_ttl_t *obj, int value);
 
+extern int of_action_id_nicira_exit_OF_VERSION_1_4_populate(
+    of_action_id_nicira_exit_t *obj, int value);
+extern int of_action_id_nicira_exit_OF_VERSION_1_4_check(
+    of_action_id_nicira_exit_t *obj, int value);
+extern int of_action_id_nicira_exit_OF_VERSION_1_4_populate_scalars(
+    of_action_id_nicira_exit_t *obj, int value);
+extern int of_action_id_nicira_exit_OF_VERSION_1_4_check_scalars(
+    of_action_id_nicira_exit_t *obj, int value);
+
+extern int of_action_id_nicira_resubmit_OF_VERSION_1_4_populate(
+    of_action_id_nicira_resubmit_t *obj, int value);
+extern int of_action_id_nicira_resubmit_OF_VERSION_1_4_check(
+    of_action_id_nicira_resubmit_t *obj, int value);
+extern int of_action_id_nicira_resubmit_OF_VERSION_1_4_populate_scalars(
+    of_action_id_nicira_resubmit_t *obj, int value);
+extern int of_action_id_nicira_resubmit_OF_VERSION_1_4_check_scalars(
+    of_action_id_nicira_resubmit_t *obj, int value);
+
+extern int of_action_id_nicira_resubmit_table_OF_VERSION_1_4_populate(
+    of_action_id_nicira_resubmit_table_t *obj, int value);
+extern int of_action_id_nicira_resubmit_table_OF_VERSION_1_4_check(
+    of_action_id_nicira_resubmit_table_t *obj, int value);
+extern int of_action_id_nicira_resubmit_table_OF_VERSION_1_4_populate_scalars(
+    of_action_id_nicira_resubmit_table_t *obj, int value);
+extern int of_action_id_nicira_resubmit_table_OF_VERSION_1_4_check_scalars(
+    of_action_id_nicira_resubmit_table_t *obj, int value);
+
 extern int of_action_id_output_OF_VERSION_1_4_populate(
     of_action_id_output_t *obj, int value);
 extern int of_action_id_output_OF_VERSION_1_4_check(
@@ -12793,6 +12955,33 @@ extern int of_action_nicira_dec_ttl_OF_VERSION_1_4_populate_scalars(
     of_action_nicira_dec_ttl_t *obj, int value);
 extern int of_action_nicira_dec_ttl_OF_VERSION_1_4_check_scalars(
     of_action_nicira_dec_ttl_t *obj, int value);
+
+extern int of_action_nicira_exit_OF_VERSION_1_4_populate(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_4_check(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_4_populate_scalars(
+    of_action_nicira_exit_t *obj, int value);
+extern int of_action_nicira_exit_OF_VERSION_1_4_check_scalars(
+    of_action_nicira_exit_t *obj, int value);
+
+extern int of_action_nicira_resubmit_OF_VERSION_1_4_populate(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_4_check(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_4_populate_scalars(
+    of_action_nicira_resubmit_t *obj, int value);
+extern int of_action_nicira_resubmit_OF_VERSION_1_4_check_scalars(
+    of_action_nicira_resubmit_t *obj, int value);
+
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_4_populate(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_4_check(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_4_populate_scalars(
+    of_action_nicira_resubmit_table_t *obj, int value);
+extern int of_action_nicira_resubmit_table_OF_VERSION_1_4_check_scalars(
+    of_action_nicira_resubmit_table_t *obj, int value);
 
 extern int of_action_output_OF_VERSION_1_4_populate(
     of_action_output_t *obj, int value);

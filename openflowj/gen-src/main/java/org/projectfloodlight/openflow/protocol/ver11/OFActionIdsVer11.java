@@ -74,6 +74,18 @@ public class OFActionIdsVer11 implements OFActionIds {
         throw new UnsupportedOperationException("OFActionIdNiciraDecTtl not supported in version 1.1");
     }
 
+    public OFActionIdNiciraExit niciraExit() {
+        throw new UnsupportedOperationException("OFActionIdNiciraExit not supported in version 1.1");
+    }
+
+    public OFActionIdNiciraResubmit niciraResubmit() {
+        throw new UnsupportedOperationException("OFActionIdNiciraResubmit not supported in version 1.1");
+    }
+
+    public OFActionIdNiciraResubmitTable niciraResubmitTable() {
+        throw new UnsupportedOperationException("OFActionIdNiciraResubmitTable not supported in version 1.1");
+    }
+
     public OFActionIdOutput output() {
         throw new UnsupportedOperationException("OFActionIdOutput not supported in version 1.1");
     }

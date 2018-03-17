@@ -2712,6 +2712,82 @@ of_action_nicira_dec_ttl_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie,
 }
 
 int
+of_action_nicira_exit_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_port_get(obj, &val16);
+    out += writer(cookie, "port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_table_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    of_action_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_port_get(obj, &val16);
+    out += writer(cookie, "port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_table_id_get(obj, &val8);
+    out += writer(cookie, "table_id=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_action_output_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -6151,6 +6227,82 @@ of_action_nicira_dec_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie,
     of_action_nicira_dec_ttl_subtype_get(obj, &val16);
     out += writer(cookie, "subtype=");
     out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_exit_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_port_get(obj, &val16);
+    out += writer(cookie, "port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_table_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    of_action_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_port_get(obj, &val16);
+    out += writer(cookie, "port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_table_id_get(obj, &val8);
+    out += writer(cookie, "table_id=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
     out += writer(cookie, " ");
 
     return out;
@@ -10173,6 +10325,82 @@ of_action_nicira_dec_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie,
     of_action_nicira_dec_ttl_subtype_get(obj, &val16);
     out += writer(cookie, "subtype=");
     out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_exit_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_port_get(obj, &val16);
+    out += writer(cookie, "port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_table_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    of_action_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_port_get(obj, &val16);
+    out += writer(cookie, "port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_table_id_get(obj, &val8);
+    out += writer(cookie, "table_id=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
     out += writer(cookie, " ");
 
     return out;
@@ -19480,6 +19708,66 @@ of_action_id_nicira_dec_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
+of_action_id_nicira_exit_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_id_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_id_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_id_nicira_resubmit_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_id_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_id_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_id_nicira_resubmit_table_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_id_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_id_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_action_id_output_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -19582,6 +19870,82 @@ of_action_nicira_dec_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
     of_action_nicira_dec_ttl_subtype_get(obj, &val16);
     out += writer(cookie, "subtype=");
     out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_exit_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_port_get(obj, &val16);
+    out += writer(cookie, "port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_table_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    of_action_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_port_get(obj, &val16);
+    out += writer(cookie, "port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_table_id_get(obj, &val8);
+    out += writer(cookie, "table_id=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
     out += writer(cookie, " ");
 
     return out;
@@ -33487,6 +33851,66 @@ of_action_id_nicira_dec_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
+of_action_id_nicira_exit_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_id_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_id_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_id_nicira_resubmit_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_id_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_id_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_id_nicira_resubmit_table_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_id_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_id_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_action_id_output_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -33589,6 +34013,82 @@ of_action_nicira_dec_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
     of_action_nicira_dec_ttl_subtype_get(obj, &val16);
     out += writer(cookie, "subtype=");
     out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_exit_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_action_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_port_get(obj, &val16);
+    out += writer(cookie, "port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_table_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    of_action_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_port_get(obj, &val16);
+    out += writer(cookie, "port=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_action_nicira_resubmit_table_table_id_get(obj, &val8);
+    out += writer(cookie, "table_id=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
     out += writer(cookie, " ");
 
     return out;
@@ -42839,7 +43339,13 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     of_action_nicira_dec_ttl_OF_VERSION_1_0_show,
+    of_action_nicira_exit_OF_VERSION_1_0_show,
+    of_action_nicira_resubmit_OF_VERSION_1_0_show,
+    of_action_nicira_resubmit_table_OF_VERSION_1_0_show,
     of_action_output_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
@@ -43677,7 +44183,13 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     of_action_nicira_dec_ttl_OF_VERSION_1_1_show,
+    of_action_nicira_exit_OF_VERSION_1_1_show,
+    of_action_nicira_resubmit_OF_VERSION_1_1_show,
+    of_action_nicira_resubmit_table_OF_VERSION_1_1_show,
     of_action_output_OF_VERSION_1_1_show,
     of_action_pop_mpls_OF_VERSION_1_1_show,
     unknown_show,
@@ -44515,7 +45027,13 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     of_action_nicira_dec_ttl_OF_VERSION_1_2_show,
+    of_action_nicira_exit_OF_VERSION_1_2_show,
+    of_action_nicira_resubmit_OF_VERSION_1_2_show,
+    of_action_nicira_resubmit_table_OF_VERSION_1_2_show,
     of_action_output_OF_VERSION_1_2_show,
     of_action_pop_mpls_OF_VERSION_1_2_show,
     unknown_show,
@@ -45341,6 +45859,9 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_action_id_group_OF_VERSION_1_3_show,
     unknown_show,
     of_action_id_nicira_dec_ttl_OF_VERSION_1_3_show,
+    of_action_id_nicira_exit_OF_VERSION_1_3_show,
+    of_action_id_nicira_resubmit_OF_VERSION_1_3_show,
+    of_action_id_nicira_resubmit_table_OF_VERSION_1_3_show,
     of_action_id_output_OF_VERSION_1_3_show,
     of_action_id_pop_mpls_OF_VERSION_1_3_show,
     of_action_id_pop_pbb_OF_VERSION_1_3_show,
@@ -45354,6 +45875,9 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_action_id_set_queue_OF_VERSION_1_3_show,
     unknown_show,
     of_action_nicira_dec_ttl_OF_VERSION_1_3_show,
+    of_action_nicira_exit_OF_VERSION_1_3_show,
+    of_action_nicira_resubmit_OF_VERSION_1_3_show,
+    of_action_nicira_resubmit_table_OF_VERSION_1_3_show,
     of_action_output_OF_VERSION_1_3_show,
     of_action_pop_mpls_OF_VERSION_1_3_show,
     of_action_pop_pbb_OF_VERSION_1_3_show,
@@ -46179,6 +46703,9 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_action_id_group_OF_VERSION_1_4_show,
     unknown_show,
     of_action_id_nicira_dec_ttl_OF_VERSION_1_4_show,
+    of_action_id_nicira_exit_OF_VERSION_1_4_show,
+    of_action_id_nicira_resubmit_OF_VERSION_1_4_show,
+    of_action_id_nicira_resubmit_table_OF_VERSION_1_4_show,
     of_action_id_output_OF_VERSION_1_4_show,
     of_action_id_pop_mpls_OF_VERSION_1_4_show,
     of_action_id_pop_pbb_OF_VERSION_1_4_show,
@@ -46192,6 +46719,9 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_action_id_set_queue_OF_VERSION_1_4_show,
     unknown_show,
     of_action_nicira_dec_ttl_OF_VERSION_1_4_show,
+    of_action_nicira_exit_OF_VERSION_1_4_show,
+    of_action_nicira_resubmit_OF_VERSION_1_4_show,
+    of_action_nicira_resubmit_table_OF_VERSION_1_4_show,
     of_action_output_OF_VERSION_1_4_show,
     of_action_pop_mpls_OF_VERSION_1_4_show,
     of_action_pop_pbb_OF_VERSION_1_4_show,

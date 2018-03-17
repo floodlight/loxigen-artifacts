@@ -69,6 +69,24 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_action_wire_object_id_get,
         .wire_type_set=of_action_nicira_dec_ttl_push_wire_types,
     },
+    [OF_ACTION_NICIRA_EXIT] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_action_wire_object_id_get,
+        .wire_type_set=of_action_nicira_exit_push_wire_types,
+    },
+    [OF_ACTION_NICIRA_RESUBMIT] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_action_wire_object_id_get,
+        .wire_type_set=of_action_nicira_resubmit_push_wire_types,
+    },
+    [OF_ACTION_NICIRA_RESUBMIT_TABLE] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_action_wire_object_id_get,
+        .wire_type_set=of_action_nicira_resubmit_table_push_wire_types,
+    },
     [OF_ACTION_OUTPUT] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -2006,6 +2024,24 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_action_id_wire_object_id_get,
         .wire_type_set=of_action_id_nicira_dec_ttl_push_wire_types,
+    },
+    [OF_ACTION_ID_NICIRA_EXIT] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_action_id_wire_object_id_get,
+        .wire_type_set=of_action_id_nicira_exit_push_wire_types,
+    },
+    [OF_ACTION_ID_NICIRA_RESUBMIT] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_action_id_wire_object_id_get,
+        .wire_type_set=of_action_id_nicira_resubmit_push_wire_types,
+    },
+    [OF_ACTION_ID_NICIRA_RESUBMIT_TABLE] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_action_id_wire_object_id_get,
+        .wire_type_set=of_action_id_nicira_resubmit_table_push_wire_types,
     },
     [OF_ACTION_ID_OUTPUT] = {
         .wire_length_get=of_tlv16_wire_length_get,

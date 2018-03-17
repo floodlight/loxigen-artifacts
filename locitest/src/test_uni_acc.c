@@ -3129,6 +3129,120 @@ test_of_action_nicira_dec_ttl_OF_VERSION_1_0(void)
 }
 
 static int
+test_of_action_nicira_exit_OF_VERSION_1_0(void)
+{
+    of_action_nicira_exit_t *obj;
+    obj = of_action_nicira_exit_new(OF_VERSION_1_0);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_0);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_EXIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_EXIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_exit_OF_VERSION_1_0_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_exit_OF_VERSION_1_0_check(
+        obj, 1) != 0);
+
+    of_action_nicira_exit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_resubmit_OF_VERSION_1_0(void)
+{
+    of_action_nicira_resubmit_t *obj;
+    obj = of_action_nicira_resubmit_new(OF_VERSION_1_0);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_0);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_RESUBMIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_RESUBMIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_resubmit_OF_VERSION_1_0_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_resubmit_OF_VERSION_1_0_check(
+        obj, 1) != 0);
+
+    of_action_nicira_resubmit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_resubmit_table_OF_VERSION_1_0(void)
+{
+    of_action_nicira_resubmit_table_t *obj;
+    obj = of_action_nicira_resubmit_table_new(OF_VERSION_1_0);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_0);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_RESUBMIT_TABLE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_RESUBMIT_TABLE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_resubmit_table_OF_VERSION_1_0_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_resubmit_table_OF_VERSION_1_0_check(
+        obj, 1) != 0);
+
+    of_action_nicira_resubmit_table_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_action_output_OF_VERSION_1_0(void)
 {
     of_action_output_t *obj;
@@ -7151,6 +7265,120 @@ test_of_action_nicira_dec_ttl_OF_VERSION_1_1(void)
         obj, 1) != 0);
 
     of_action_nicira_dec_ttl_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_exit_OF_VERSION_1_1(void)
+{
+    of_action_nicira_exit_t *obj;
+    obj = of_action_nicira_exit_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_EXIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_EXIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_exit_OF_VERSION_1_1_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_exit_OF_VERSION_1_1_check(
+        obj, 1) != 0);
+
+    of_action_nicira_exit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_resubmit_OF_VERSION_1_1(void)
+{
+    of_action_nicira_resubmit_t *obj;
+    obj = of_action_nicira_resubmit_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_RESUBMIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_RESUBMIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_resubmit_OF_VERSION_1_1_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_resubmit_OF_VERSION_1_1_check(
+        obj, 1) != 0);
+
+    of_action_nicira_resubmit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_resubmit_table_OF_VERSION_1_1(void)
+{
+    of_action_nicira_resubmit_table_t *obj;
+    obj = of_action_nicira_resubmit_table_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_RESUBMIT_TABLE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_RESUBMIT_TABLE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_resubmit_table_OF_VERSION_1_1_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_resubmit_table_OF_VERSION_1_1_check(
+        obj, 1) != 0);
+
+    of_action_nicira_resubmit_table_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -12053,6 +12281,120 @@ test_of_action_nicira_dec_ttl_OF_VERSION_1_2(void)
         obj, 1) != 0);
 
     of_action_nicira_dec_ttl_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_exit_OF_VERSION_1_2(void)
+{
+    of_action_nicira_exit_t *obj;
+    obj = of_action_nicira_exit_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_EXIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_EXIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_exit_OF_VERSION_1_2_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_exit_OF_VERSION_1_2_check(
+        obj, 1) != 0);
+
+    of_action_nicira_exit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_resubmit_OF_VERSION_1_2(void)
+{
+    of_action_nicira_resubmit_t *obj;
+    obj = of_action_nicira_resubmit_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_RESUBMIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_RESUBMIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_resubmit_OF_VERSION_1_2_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_resubmit_OF_VERSION_1_2_check(
+        obj, 1) != 0);
+
+    of_action_nicira_resubmit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_resubmit_table_OF_VERSION_1_2(void)
+{
+    of_action_nicira_resubmit_table_t *obj;
+    obj = of_action_nicira_resubmit_table_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_RESUBMIT_TABLE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_RESUBMIT_TABLE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_resubmit_table_OF_VERSION_1_2_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_resubmit_table_OF_VERSION_1_2_check(
+        obj, 1) != 0);
+
+    of_action_nicira_resubmit_table_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -25549,6 +25891,120 @@ test_of_action_id_nicira_dec_ttl_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_action_id_nicira_exit_OF_VERSION_1_3(void)
+{
+    of_action_id_nicira_exit_t *obj;
+    obj = of_action_id_nicira_exit_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_ID_NICIRA_EXIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 10);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_ID_NICIRA_EXIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_id_nicira_exit_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_id_nicira_exit_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_action_id_nicira_exit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_id_nicira_resubmit_OF_VERSION_1_3(void)
+{
+    of_action_id_nicira_resubmit_t *obj;
+    obj = of_action_id_nicira_resubmit_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_ID_NICIRA_RESUBMIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 10);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_ID_NICIRA_RESUBMIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_id_nicira_resubmit_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_id_nicira_resubmit_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_action_id_nicira_resubmit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_id_nicira_resubmit_table_OF_VERSION_1_3(void)
+{
+    of_action_id_nicira_resubmit_table_t *obj;
+    obj = of_action_id_nicira_resubmit_table_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_ID_NICIRA_RESUBMIT_TABLE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 10);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_ID_NICIRA_RESUBMIT_TABLE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_id_nicira_resubmit_table_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_id_nicira_resubmit_table_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_action_id_nicira_resubmit_table_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_action_id_output_OF_VERSION_1_3(void)
 {
     of_action_id_output_t *obj;
@@ -25999,6 +26455,120 @@ test_of_action_nicira_dec_ttl_OF_VERSION_1_3(void)
         obj, 1) != 0);
 
     of_action_nicira_dec_ttl_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_exit_OF_VERSION_1_3(void)
+{
+    of_action_nicira_exit_t *obj;
+    obj = of_action_nicira_exit_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_EXIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_EXIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_exit_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_exit_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_action_nicira_exit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_resubmit_OF_VERSION_1_3(void)
+{
+    of_action_nicira_resubmit_t *obj;
+    obj = of_action_nicira_resubmit_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_RESUBMIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_RESUBMIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_resubmit_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_resubmit_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_action_nicira_resubmit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_resubmit_table_OF_VERSION_1_3(void)
+{
+    of_action_nicira_resubmit_table_t *obj;
+    obj = of_action_nicira_resubmit_table_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_RESUBMIT_TABLE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_RESUBMIT_TABLE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_resubmit_table_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_resubmit_table_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_action_nicira_resubmit_table_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -50135,6 +50705,120 @@ test_of_action_id_nicira_dec_ttl_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_action_id_nicira_exit_OF_VERSION_1_4(void)
+{
+    of_action_id_nicira_exit_t *obj;
+    obj = of_action_id_nicira_exit_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_ID_NICIRA_EXIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 10);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_ID_NICIRA_EXIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_id_nicira_exit_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_id_nicira_exit_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_action_id_nicira_exit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_id_nicira_resubmit_OF_VERSION_1_4(void)
+{
+    of_action_id_nicira_resubmit_t *obj;
+    obj = of_action_id_nicira_resubmit_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_ID_NICIRA_RESUBMIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 10);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_ID_NICIRA_RESUBMIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_id_nicira_resubmit_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_id_nicira_resubmit_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_action_id_nicira_resubmit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_id_nicira_resubmit_table_OF_VERSION_1_4(void)
+{
+    of_action_id_nicira_resubmit_table_t *obj;
+    obj = of_action_id_nicira_resubmit_table_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_ID_NICIRA_RESUBMIT_TABLE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 10);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_ID_NICIRA_RESUBMIT_TABLE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_id_nicira_resubmit_table_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_id_nicira_resubmit_table_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_action_id_nicira_resubmit_table_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_action_id_output_OF_VERSION_1_4(void)
 {
     of_action_id_output_t *obj;
@@ -50585,6 +51269,120 @@ test_of_action_nicira_dec_ttl_OF_VERSION_1_4(void)
         obj, 1) != 0);
 
     of_action_nicira_dec_ttl_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_exit_OF_VERSION_1_4(void)
+{
+    of_action_nicira_exit_t *obj;
+    obj = of_action_nicira_exit_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_EXIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_EXIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_exit_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_exit_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_action_nicira_exit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_resubmit_OF_VERSION_1_4(void)
+{
+    of_action_nicira_resubmit_t *obj;
+    obj = of_action_nicira_resubmit_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_RESUBMIT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_RESUBMIT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_resubmit_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_resubmit_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_action_nicira_resubmit_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_nicira_resubmit_table_OF_VERSION_1_4(void)
+{
+    of_action_nicira_resubmit_table_t *obj;
+    obj = of_action_nicira_resubmit_table_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_NICIRA_RESUBMIT_TABLE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_ACTION_NICIRA_RESUBMIT_TABLE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_action_nicira_resubmit_table_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_nicira_resubmit_table_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_action_nicira_resubmit_table_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -68687,6 +69485,9 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_action_bsn_set_tunnel_dst_OF_VERSION_1_0);
     RUN_TEST(of_action_enqueue_OF_VERSION_1_0);
     RUN_TEST(of_action_nicira_dec_ttl_OF_VERSION_1_0);
+    RUN_TEST(of_action_nicira_exit_OF_VERSION_1_0);
+    RUN_TEST(of_action_nicira_resubmit_OF_VERSION_1_0);
+    RUN_TEST(of_action_nicira_resubmit_table_OF_VERSION_1_0);
     RUN_TEST(of_action_output_OF_VERSION_1_0);
     RUN_TEST(of_action_set_dl_dst_OF_VERSION_1_0);
     RUN_TEST(of_action_set_dl_src_OF_VERSION_1_0);
@@ -68793,6 +69594,9 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_action_dec_nw_ttl_OF_VERSION_1_1);
     RUN_TEST(of_action_group_OF_VERSION_1_1);
     RUN_TEST(of_action_nicira_dec_ttl_OF_VERSION_1_1);
+    RUN_TEST(of_action_nicira_exit_OF_VERSION_1_1);
+    RUN_TEST(of_action_nicira_resubmit_OF_VERSION_1_1);
+    RUN_TEST(of_action_nicira_resubmit_table_OF_VERSION_1_1);
     RUN_TEST(of_action_output_OF_VERSION_1_1);
     RUN_TEST(of_action_pop_mpls_OF_VERSION_1_1);
     RUN_TEST(of_action_pop_vlan_OF_VERSION_1_1);
@@ -68922,6 +69726,9 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_action_dec_nw_ttl_OF_VERSION_1_2);
     RUN_TEST(of_action_group_OF_VERSION_1_2);
     RUN_TEST(of_action_nicira_dec_ttl_OF_VERSION_1_2);
+    RUN_TEST(of_action_nicira_exit_OF_VERSION_1_2);
+    RUN_TEST(of_action_nicira_resubmit_OF_VERSION_1_2);
+    RUN_TEST(of_action_nicira_resubmit_table_OF_VERSION_1_2);
     RUN_TEST(of_action_output_OF_VERSION_1_2);
     RUN_TEST(of_action_pop_mpls_OF_VERSION_1_2);
     RUN_TEST(of_action_pop_vlan_OF_VERSION_1_2);
@@ -69277,6 +70084,9 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_action_id_dec_nw_ttl_OF_VERSION_1_3);
     RUN_TEST(of_action_id_group_OF_VERSION_1_3);
     RUN_TEST(of_action_id_nicira_dec_ttl_OF_VERSION_1_3);
+    RUN_TEST(of_action_id_nicira_exit_OF_VERSION_1_3);
+    RUN_TEST(of_action_id_nicira_resubmit_OF_VERSION_1_3);
+    RUN_TEST(of_action_id_nicira_resubmit_table_OF_VERSION_1_3);
     RUN_TEST(of_action_id_output_OF_VERSION_1_3);
     RUN_TEST(of_action_id_pop_mpls_OF_VERSION_1_3);
     RUN_TEST(of_action_id_pop_pbb_OF_VERSION_1_3);
@@ -69289,6 +70099,9 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_action_id_set_nw_ttl_OF_VERSION_1_3);
     RUN_TEST(of_action_id_set_queue_OF_VERSION_1_3);
     RUN_TEST(of_action_nicira_dec_ttl_OF_VERSION_1_3);
+    RUN_TEST(of_action_nicira_exit_OF_VERSION_1_3);
+    RUN_TEST(of_action_nicira_resubmit_OF_VERSION_1_3);
+    RUN_TEST(of_action_nicira_resubmit_table_OF_VERSION_1_3);
     RUN_TEST(of_action_output_OF_VERSION_1_3);
     RUN_TEST(of_action_pop_mpls_OF_VERSION_1_3);
     RUN_TEST(of_action_pop_pbb_OF_VERSION_1_3);
@@ -69924,6 +70737,9 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_action_id_dec_nw_ttl_OF_VERSION_1_4);
     RUN_TEST(of_action_id_group_OF_VERSION_1_4);
     RUN_TEST(of_action_id_nicira_dec_ttl_OF_VERSION_1_4);
+    RUN_TEST(of_action_id_nicira_exit_OF_VERSION_1_4);
+    RUN_TEST(of_action_id_nicira_resubmit_OF_VERSION_1_4);
+    RUN_TEST(of_action_id_nicira_resubmit_table_OF_VERSION_1_4);
     RUN_TEST(of_action_id_output_OF_VERSION_1_4);
     RUN_TEST(of_action_id_pop_mpls_OF_VERSION_1_4);
     RUN_TEST(of_action_id_pop_pbb_OF_VERSION_1_4);
@@ -69936,6 +70752,9 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_action_id_set_nw_ttl_OF_VERSION_1_4);
     RUN_TEST(of_action_id_set_queue_OF_VERSION_1_4);
     RUN_TEST(of_action_nicira_dec_ttl_OF_VERSION_1_4);
+    RUN_TEST(of_action_nicira_exit_OF_VERSION_1_4);
+    RUN_TEST(of_action_nicira_resubmit_OF_VERSION_1_4);
+    RUN_TEST(of_action_nicira_resubmit_table_OF_VERSION_1_4);
     RUN_TEST(of_action_output_OF_VERSION_1_4);
     RUN_TEST(of_action_pop_mpls_OF_VERSION_1_4);
     RUN_TEST(of_action_pop_pbb_OF_VERSION_1_4);

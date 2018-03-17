@@ -58,6 +58,15 @@ abstract class OFActionNiciraVer13 {
                case (short) 0x12:
                    // discriminator value 0x12=0x12 for class OFActionNiciraDecTtlVer13
                    return OFActionNiciraDecTtlVer13.READER.readFrom(bb);
+               case (short) 0x11:
+                   // discriminator value 0x11=0x11 for class OFActionNiciraExitVer13
+                   return OFActionNiciraExitVer13.READER.readFrom(bb);
+               case (short) 0x1:
+                   // discriminator value 0x1=0x1 for class OFActionNiciraResubmitVer13
+                   return OFActionNiciraResubmitVer13.READER.readFrom(bb);
+               case (short) 0xe:
+                   // discriminator value 0xe=0xe for class OFActionNiciraResubmitTableVer13
+                   return OFActionNiciraResubmitTableVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFActionNiciraVer13: " + subtype);
             }

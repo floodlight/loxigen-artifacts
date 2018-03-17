@@ -4440,6 +4440,21 @@ fields['of10.action_nicira_dec_ttl.type'] = ProtoField.uint16("of10.action_nicir
 fields['of10.action_nicira_dec_ttl.len'] = ProtoField.uint16("of10.action_nicira_dec_ttl.len", "len", base.DEC, nil)
 fields['of10.action_nicira_dec_ttl.experimenter'] = ProtoField.uint32("of10.action_nicira_dec_ttl.experimenter", "experimenter", base.DEC, nil)
 fields['of10.action_nicira_dec_ttl.subtype'] = ProtoField.uint16("of10.action_nicira_dec_ttl.subtype", "subtype", base.DEC, nil)
+fields['of10.action_nicira_exit.type'] = ProtoField.uint16("of10.action_nicira_exit.type", "type", base.DEC, nil)
+fields['of10.action_nicira_exit.len'] = ProtoField.uint16("of10.action_nicira_exit.len", "len", base.DEC, nil)
+fields['of10.action_nicira_exit.experimenter'] = ProtoField.uint32("of10.action_nicira_exit.experimenter", "experimenter", base.DEC, nil)
+fields['of10.action_nicira_exit.subtype'] = ProtoField.uint16("of10.action_nicira_exit.subtype", "subtype", base.DEC, nil)
+fields['of10.action_nicira_resubmit.type'] = ProtoField.uint16("of10.action_nicira_resubmit.type", "type", base.DEC, nil)
+fields['of10.action_nicira_resubmit.len'] = ProtoField.uint16("of10.action_nicira_resubmit.len", "len", base.DEC, nil)
+fields['of10.action_nicira_resubmit.experimenter'] = ProtoField.uint32("of10.action_nicira_resubmit.experimenter", "experimenter", base.DEC, nil)
+fields['of10.action_nicira_resubmit.subtype'] = ProtoField.uint16("of10.action_nicira_resubmit.subtype", "subtype", base.DEC, nil)
+fields['of10.action_nicira_resubmit.port'] = ProtoField.uint16("of10.action_nicira_resubmit.port", "port", base.DEC, nil)
+fields['of10.action_nicira_resubmit_table.type'] = ProtoField.uint16("of10.action_nicira_resubmit_table.type", "type", base.DEC, nil)
+fields['of10.action_nicira_resubmit_table.len'] = ProtoField.uint16("of10.action_nicira_resubmit_table.len", "len", base.DEC, nil)
+fields['of10.action_nicira_resubmit_table.experimenter'] = ProtoField.uint32("of10.action_nicira_resubmit_table.experimenter", "experimenter", base.DEC, nil)
+fields['of10.action_nicira_resubmit_table.subtype'] = ProtoField.uint16("of10.action_nicira_resubmit_table.subtype", "subtype", base.DEC, nil)
+fields['of10.action_nicira_resubmit_table.port'] = ProtoField.uint16("of10.action_nicira_resubmit_table.port", "port", base.DEC, nil)
+fields['of10.action_nicira_resubmit_table.table_id'] = ProtoField.uint8("of10.action_nicira_resubmit_table.table_id", "table_id", base.DEC, nil)
 fields['of10.action_output.type'] = ProtoField.uint32("of10.action_output.type", "type", base.DEC, enum_v1_ofp_action_type)
 fields['of10.action_output.len'] = ProtoField.uint16("of10.action_output.len", "len", base.DEC, nil)
 fields['of10.action_output.port'] = ProtoField.uint32("of10.action_output.port", "port", base.DEC, nil)
@@ -5291,6 +5306,21 @@ fields['of11.action_nicira_dec_ttl.type'] = ProtoField.uint16("of11.action_nicir
 fields['of11.action_nicira_dec_ttl.len'] = ProtoField.uint16("of11.action_nicira_dec_ttl.len", "len", base.DEC, nil)
 fields['of11.action_nicira_dec_ttl.experimenter'] = ProtoField.uint32("of11.action_nicira_dec_ttl.experimenter", "experimenter", base.DEC, nil)
 fields['of11.action_nicira_dec_ttl.subtype'] = ProtoField.uint16("of11.action_nicira_dec_ttl.subtype", "subtype", base.DEC, nil)
+fields['of11.action_nicira_exit.type'] = ProtoField.uint16("of11.action_nicira_exit.type", "type", base.DEC, nil)
+fields['of11.action_nicira_exit.len'] = ProtoField.uint16("of11.action_nicira_exit.len", "len", base.DEC, nil)
+fields['of11.action_nicira_exit.experimenter'] = ProtoField.uint32("of11.action_nicira_exit.experimenter", "experimenter", base.DEC, nil)
+fields['of11.action_nicira_exit.subtype'] = ProtoField.uint16("of11.action_nicira_exit.subtype", "subtype", base.DEC, nil)
+fields['of11.action_nicira_resubmit.type'] = ProtoField.uint16("of11.action_nicira_resubmit.type", "type", base.DEC, nil)
+fields['of11.action_nicira_resubmit.len'] = ProtoField.uint16("of11.action_nicira_resubmit.len", "len", base.DEC, nil)
+fields['of11.action_nicira_resubmit.experimenter'] = ProtoField.uint32("of11.action_nicira_resubmit.experimenter", "experimenter", base.DEC, nil)
+fields['of11.action_nicira_resubmit.subtype'] = ProtoField.uint16("of11.action_nicira_resubmit.subtype", "subtype", base.DEC, nil)
+fields['of11.action_nicira_resubmit.port'] = ProtoField.uint16("of11.action_nicira_resubmit.port", "port", base.DEC, nil)
+fields['of11.action_nicira_resubmit_table.type'] = ProtoField.uint16("of11.action_nicira_resubmit_table.type", "type", base.DEC, nil)
+fields['of11.action_nicira_resubmit_table.len'] = ProtoField.uint16("of11.action_nicira_resubmit_table.len", "len", base.DEC, nil)
+fields['of11.action_nicira_resubmit_table.experimenter'] = ProtoField.uint32("of11.action_nicira_resubmit_table.experimenter", "experimenter", base.DEC, nil)
+fields['of11.action_nicira_resubmit_table.subtype'] = ProtoField.uint16("of11.action_nicira_resubmit_table.subtype", "subtype", base.DEC, nil)
+fields['of11.action_nicira_resubmit_table.port'] = ProtoField.uint16("of11.action_nicira_resubmit_table.port", "port", base.DEC, nil)
+fields['of11.action_nicira_resubmit_table.table_id'] = ProtoField.uint8("of11.action_nicira_resubmit_table.table_id", "table_id", base.DEC, nil)
 fields['of11.action_output.type'] = ProtoField.uint32("of11.action_output.type", "type", base.DEC, enum_v2_ofp_action_type)
 fields['of11.action_output.len'] = ProtoField.uint16("of11.action_output.len", "len", base.DEC, nil)
 fields['of11.action_output.port'] = ProtoField.uint32("of11.action_output.port", "port", base.DEC, nil)
@@ -6241,6 +6271,21 @@ fields['of12.action_nicira_dec_ttl.type'] = ProtoField.uint16("of12.action_nicir
 fields['of12.action_nicira_dec_ttl.len'] = ProtoField.uint16("of12.action_nicira_dec_ttl.len", "len", base.DEC, nil)
 fields['of12.action_nicira_dec_ttl.experimenter'] = ProtoField.uint32("of12.action_nicira_dec_ttl.experimenter", "experimenter", base.DEC, nil)
 fields['of12.action_nicira_dec_ttl.subtype'] = ProtoField.uint16("of12.action_nicira_dec_ttl.subtype", "subtype", base.DEC, nil)
+fields['of12.action_nicira_exit.type'] = ProtoField.uint16("of12.action_nicira_exit.type", "type", base.DEC, nil)
+fields['of12.action_nicira_exit.len'] = ProtoField.uint16("of12.action_nicira_exit.len", "len", base.DEC, nil)
+fields['of12.action_nicira_exit.experimenter'] = ProtoField.uint32("of12.action_nicira_exit.experimenter", "experimenter", base.DEC, nil)
+fields['of12.action_nicira_exit.subtype'] = ProtoField.uint16("of12.action_nicira_exit.subtype", "subtype", base.DEC, nil)
+fields['of12.action_nicira_resubmit.type'] = ProtoField.uint16("of12.action_nicira_resubmit.type", "type", base.DEC, nil)
+fields['of12.action_nicira_resubmit.len'] = ProtoField.uint16("of12.action_nicira_resubmit.len", "len", base.DEC, nil)
+fields['of12.action_nicira_resubmit.experimenter'] = ProtoField.uint32("of12.action_nicira_resubmit.experimenter", "experimenter", base.DEC, nil)
+fields['of12.action_nicira_resubmit.subtype'] = ProtoField.uint16("of12.action_nicira_resubmit.subtype", "subtype", base.DEC, nil)
+fields['of12.action_nicira_resubmit.port'] = ProtoField.uint16("of12.action_nicira_resubmit.port", "port", base.DEC, nil)
+fields['of12.action_nicira_resubmit_table.type'] = ProtoField.uint16("of12.action_nicira_resubmit_table.type", "type", base.DEC, nil)
+fields['of12.action_nicira_resubmit_table.len'] = ProtoField.uint16("of12.action_nicira_resubmit_table.len", "len", base.DEC, nil)
+fields['of12.action_nicira_resubmit_table.experimenter'] = ProtoField.uint32("of12.action_nicira_resubmit_table.experimenter", "experimenter", base.DEC, nil)
+fields['of12.action_nicira_resubmit_table.subtype'] = ProtoField.uint16("of12.action_nicira_resubmit_table.subtype", "subtype", base.DEC, nil)
+fields['of12.action_nicira_resubmit_table.port'] = ProtoField.uint16("of12.action_nicira_resubmit_table.port", "port", base.DEC, nil)
+fields['of12.action_nicira_resubmit_table.table_id'] = ProtoField.uint8("of12.action_nicira_resubmit_table.table_id", "table_id", base.DEC, nil)
 fields['of12.action_output.type'] = ProtoField.uint32("of12.action_output.type", "type", base.DEC, enum_v3_ofp_action_type)
 fields['of12.action_output.len'] = ProtoField.uint16("of12.action_output.len", "len", base.DEC, nil)
 fields['of12.action_output.port'] = ProtoField.uint32("of12.action_output.port", "port", base.DEC, nil)
@@ -7614,6 +7659,33 @@ fields['of13.action_id_nicira_dec_ttl.type'] = ProtoField.uint16("of13.action_id
 fields['of13.action_id_nicira_dec_ttl.len'] = ProtoField.uint16("of13.action_id_nicira_dec_ttl.len", "len", base.DEC, nil)
 fields['of13.action_id_nicira_dec_ttl.experimenter'] = ProtoField.uint32("of13.action_id_nicira_dec_ttl.experimenter", "experimenter", base.DEC, nil)
 fields['of13.action_id_nicira_dec_ttl.subtype'] = ProtoField.uint16("of13.action_id_nicira_dec_ttl.subtype", "subtype", base.DEC, nil)
+fields['of13.action_nicira_exit.type'] = ProtoField.uint16("of13.action_nicira_exit.type", "type", base.DEC, nil)
+fields['of13.action_nicira_exit.len'] = ProtoField.uint16("of13.action_nicira_exit.len", "len", base.DEC, nil)
+fields['of13.action_nicira_exit.experimenter'] = ProtoField.uint32("of13.action_nicira_exit.experimenter", "experimenter", base.DEC, nil)
+fields['of13.action_nicira_exit.subtype'] = ProtoField.uint16("of13.action_nicira_exit.subtype", "subtype", base.DEC, nil)
+fields['of13.action_id_nicira_exit.type'] = ProtoField.uint16("of13.action_id_nicira_exit.type", "type", base.DEC, nil)
+fields['of13.action_id_nicira_exit.len'] = ProtoField.uint16("of13.action_id_nicira_exit.len", "len", base.DEC, nil)
+fields['of13.action_id_nicira_exit.experimenter'] = ProtoField.uint32("of13.action_id_nicira_exit.experimenter", "experimenter", base.DEC, nil)
+fields['of13.action_id_nicira_exit.subtype'] = ProtoField.uint16("of13.action_id_nicira_exit.subtype", "subtype", base.DEC, nil)
+fields['of13.action_nicira_resubmit.type'] = ProtoField.uint16("of13.action_nicira_resubmit.type", "type", base.DEC, nil)
+fields['of13.action_nicira_resubmit.len'] = ProtoField.uint16("of13.action_nicira_resubmit.len", "len", base.DEC, nil)
+fields['of13.action_nicira_resubmit.experimenter'] = ProtoField.uint32("of13.action_nicira_resubmit.experimenter", "experimenter", base.DEC, nil)
+fields['of13.action_nicira_resubmit.subtype'] = ProtoField.uint16("of13.action_nicira_resubmit.subtype", "subtype", base.DEC, nil)
+fields['of13.action_nicira_resubmit.port'] = ProtoField.uint16("of13.action_nicira_resubmit.port", "port", base.DEC, nil)
+fields['of13.action_id_nicira_resubmit.type'] = ProtoField.uint16("of13.action_id_nicira_resubmit.type", "type", base.DEC, nil)
+fields['of13.action_id_nicira_resubmit.len'] = ProtoField.uint16("of13.action_id_nicira_resubmit.len", "len", base.DEC, nil)
+fields['of13.action_id_nicira_resubmit.experimenter'] = ProtoField.uint32("of13.action_id_nicira_resubmit.experimenter", "experimenter", base.DEC, nil)
+fields['of13.action_id_nicira_resubmit.subtype'] = ProtoField.uint16("of13.action_id_nicira_resubmit.subtype", "subtype", base.DEC, nil)
+fields['of13.action_nicira_resubmit_table.type'] = ProtoField.uint16("of13.action_nicira_resubmit_table.type", "type", base.DEC, nil)
+fields['of13.action_nicira_resubmit_table.len'] = ProtoField.uint16("of13.action_nicira_resubmit_table.len", "len", base.DEC, nil)
+fields['of13.action_nicira_resubmit_table.experimenter'] = ProtoField.uint32("of13.action_nicira_resubmit_table.experimenter", "experimenter", base.DEC, nil)
+fields['of13.action_nicira_resubmit_table.subtype'] = ProtoField.uint16("of13.action_nicira_resubmit_table.subtype", "subtype", base.DEC, nil)
+fields['of13.action_nicira_resubmit_table.port'] = ProtoField.uint16("of13.action_nicira_resubmit_table.port", "port", base.DEC, nil)
+fields['of13.action_nicira_resubmit_table.table_id'] = ProtoField.uint8("of13.action_nicira_resubmit_table.table_id", "table_id", base.DEC, nil)
+fields['of13.action_id_nicira_resubmit_table.type'] = ProtoField.uint16("of13.action_id_nicira_resubmit_table.type", "type", base.DEC, nil)
+fields['of13.action_id_nicira_resubmit_table.len'] = ProtoField.uint16("of13.action_id_nicira_resubmit_table.len", "len", base.DEC, nil)
+fields['of13.action_id_nicira_resubmit_table.experimenter'] = ProtoField.uint32("of13.action_id_nicira_resubmit_table.experimenter", "experimenter", base.DEC, nil)
+fields['of13.action_id_nicira_resubmit_table.subtype'] = ProtoField.uint16("of13.action_id_nicira_resubmit_table.subtype", "subtype", base.DEC, nil)
 fields['of13.action_output.type'] = ProtoField.uint32("of13.action_output.type", "type", base.DEC, enum_v4_ofp_action_type)
 fields['of13.action_output.len'] = ProtoField.uint16("of13.action_output.len", "len", base.DEC, nil)
 fields['of13.action_output.port'] = ProtoField.uint32("of13.action_output.port", "port", base.DEC, nil)
@@ -10549,6 +10621,33 @@ fields['of14.action_id_nicira_dec_ttl.type'] = ProtoField.uint16("of14.action_id
 fields['of14.action_id_nicira_dec_ttl.len'] = ProtoField.uint16("of14.action_id_nicira_dec_ttl.len", "len", base.DEC, nil)
 fields['of14.action_id_nicira_dec_ttl.experimenter'] = ProtoField.uint32("of14.action_id_nicira_dec_ttl.experimenter", "experimenter", base.DEC, nil)
 fields['of14.action_id_nicira_dec_ttl.subtype'] = ProtoField.uint16("of14.action_id_nicira_dec_ttl.subtype", "subtype", base.DEC, nil)
+fields['of14.action_nicira_exit.type'] = ProtoField.uint16("of14.action_nicira_exit.type", "type", base.DEC, nil)
+fields['of14.action_nicira_exit.len'] = ProtoField.uint16("of14.action_nicira_exit.len", "len", base.DEC, nil)
+fields['of14.action_nicira_exit.experimenter'] = ProtoField.uint32("of14.action_nicira_exit.experimenter", "experimenter", base.DEC, nil)
+fields['of14.action_nicira_exit.subtype'] = ProtoField.uint16("of14.action_nicira_exit.subtype", "subtype", base.DEC, nil)
+fields['of14.action_id_nicira_exit.type'] = ProtoField.uint16("of14.action_id_nicira_exit.type", "type", base.DEC, nil)
+fields['of14.action_id_nicira_exit.len'] = ProtoField.uint16("of14.action_id_nicira_exit.len", "len", base.DEC, nil)
+fields['of14.action_id_nicira_exit.experimenter'] = ProtoField.uint32("of14.action_id_nicira_exit.experimenter", "experimenter", base.DEC, nil)
+fields['of14.action_id_nicira_exit.subtype'] = ProtoField.uint16("of14.action_id_nicira_exit.subtype", "subtype", base.DEC, nil)
+fields['of14.action_nicira_resubmit.type'] = ProtoField.uint16("of14.action_nicira_resubmit.type", "type", base.DEC, nil)
+fields['of14.action_nicira_resubmit.len'] = ProtoField.uint16("of14.action_nicira_resubmit.len", "len", base.DEC, nil)
+fields['of14.action_nicira_resubmit.experimenter'] = ProtoField.uint32("of14.action_nicira_resubmit.experimenter", "experimenter", base.DEC, nil)
+fields['of14.action_nicira_resubmit.subtype'] = ProtoField.uint16("of14.action_nicira_resubmit.subtype", "subtype", base.DEC, nil)
+fields['of14.action_nicira_resubmit.port'] = ProtoField.uint16("of14.action_nicira_resubmit.port", "port", base.DEC, nil)
+fields['of14.action_id_nicira_resubmit.type'] = ProtoField.uint16("of14.action_id_nicira_resubmit.type", "type", base.DEC, nil)
+fields['of14.action_id_nicira_resubmit.len'] = ProtoField.uint16("of14.action_id_nicira_resubmit.len", "len", base.DEC, nil)
+fields['of14.action_id_nicira_resubmit.experimenter'] = ProtoField.uint32("of14.action_id_nicira_resubmit.experimenter", "experimenter", base.DEC, nil)
+fields['of14.action_id_nicira_resubmit.subtype'] = ProtoField.uint16("of14.action_id_nicira_resubmit.subtype", "subtype", base.DEC, nil)
+fields['of14.action_nicira_resubmit_table.type'] = ProtoField.uint16("of14.action_nicira_resubmit_table.type", "type", base.DEC, nil)
+fields['of14.action_nicira_resubmit_table.len'] = ProtoField.uint16("of14.action_nicira_resubmit_table.len", "len", base.DEC, nil)
+fields['of14.action_nicira_resubmit_table.experimenter'] = ProtoField.uint32("of14.action_nicira_resubmit_table.experimenter", "experimenter", base.DEC, nil)
+fields['of14.action_nicira_resubmit_table.subtype'] = ProtoField.uint16("of14.action_nicira_resubmit_table.subtype", "subtype", base.DEC, nil)
+fields['of14.action_nicira_resubmit_table.port'] = ProtoField.uint16("of14.action_nicira_resubmit_table.port", "port", base.DEC, nil)
+fields['of14.action_nicira_resubmit_table.table_id'] = ProtoField.uint8("of14.action_nicira_resubmit_table.table_id", "table_id", base.DEC, nil)
+fields['of14.action_id_nicira_resubmit_table.type'] = ProtoField.uint16("of14.action_id_nicira_resubmit_table.type", "type", base.DEC, nil)
+fields['of14.action_id_nicira_resubmit_table.len'] = ProtoField.uint16("of14.action_id_nicira_resubmit_table.len", "len", base.DEC, nil)
+fields['of14.action_id_nicira_resubmit_table.experimenter'] = ProtoField.uint32("of14.action_id_nicira_resubmit_table.experimenter", "experimenter", base.DEC, nil)
+fields['of14.action_id_nicira_resubmit_table.subtype'] = ProtoField.uint16("of14.action_id_nicira_resubmit_table.subtype", "subtype", base.DEC, nil)
 fields['of14.action_output.type'] = ProtoField.uint32("of14.action_output.type", "type", base.DEC, enum_v5_ofp_action_type)
 fields['of14.action_output.len'] = ProtoField.uint16("of14.action_output.len", "len", base.DEC, nil)
 fields['of14.action_output.port'] = ProtoField.uint32("of14.action_output.port", "port", base.DEC, nil)
@@ -13796,6 +13895,33 @@ fields['of15.action_id_nicira_dec_ttl.type'] = ProtoField.uint16("of15.action_id
 fields['of15.action_id_nicira_dec_ttl.len'] = ProtoField.uint16("of15.action_id_nicira_dec_ttl.len", "len", base.DEC, nil)
 fields['of15.action_id_nicira_dec_ttl.experimenter'] = ProtoField.uint32("of15.action_id_nicira_dec_ttl.experimenter", "experimenter", base.DEC, nil)
 fields['of15.action_id_nicira_dec_ttl.subtype'] = ProtoField.uint16("of15.action_id_nicira_dec_ttl.subtype", "subtype", base.DEC, nil)
+fields['of15.action_nicira_exit.type'] = ProtoField.uint16("of15.action_nicira_exit.type", "type", base.DEC, nil)
+fields['of15.action_nicira_exit.len'] = ProtoField.uint16("of15.action_nicira_exit.len", "len", base.DEC, nil)
+fields['of15.action_nicira_exit.experimenter'] = ProtoField.uint32("of15.action_nicira_exit.experimenter", "experimenter", base.DEC, nil)
+fields['of15.action_nicira_exit.subtype'] = ProtoField.uint16("of15.action_nicira_exit.subtype", "subtype", base.DEC, nil)
+fields['of15.action_id_nicira_exit.type'] = ProtoField.uint16("of15.action_id_nicira_exit.type", "type", base.DEC, nil)
+fields['of15.action_id_nicira_exit.len'] = ProtoField.uint16("of15.action_id_nicira_exit.len", "len", base.DEC, nil)
+fields['of15.action_id_nicira_exit.experimenter'] = ProtoField.uint32("of15.action_id_nicira_exit.experimenter", "experimenter", base.DEC, nil)
+fields['of15.action_id_nicira_exit.subtype'] = ProtoField.uint16("of15.action_id_nicira_exit.subtype", "subtype", base.DEC, nil)
+fields['of15.action_nicira_resubmit.type'] = ProtoField.uint16("of15.action_nicira_resubmit.type", "type", base.DEC, nil)
+fields['of15.action_nicira_resubmit.len'] = ProtoField.uint16("of15.action_nicira_resubmit.len", "len", base.DEC, nil)
+fields['of15.action_nicira_resubmit.experimenter'] = ProtoField.uint32("of15.action_nicira_resubmit.experimenter", "experimenter", base.DEC, nil)
+fields['of15.action_nicira_resubmit.subtype'] = ProtoField.uint16("of15.action_nicira_resubmit.subtype", "subtype", base.DEC, nil)
+fields['of15.action_nicira_resubmit.port'] = ProtoField.uint16("of15.action_nicira_resubmit.port", "port", base.DEC, nil)
+fields['of15.action_id_nicira_resubmit.type'] = ProtoField.uint16("of15.action_id_nicira_resubmit.type", "type", base.DEC, nil)
+fields['of15.action_id_nicira_resubmit.len'] = ProtoField.uint16("of15.action_id_nicira_resubmit.len", "len", base.DEC, nil)
+fields['of15.action_id_nicira_resubmit.experimenter'] = ProtoField.uint32("of15.action_id_nicira_resubmit.experimenter", "experimenter", base.DEC, nil)
+fields['of15.action_id_nicira_resubmit.subtype'] = ProtoField.uint16("of15.action_id_nicira_resubmit.subtype", "subtype", base.DEC, nil)
+fields['of15.action_nicira_resubmit_table.type'] = ProtoField.uint16("of15.action_nicira_resubmit_table.type", "type", base.DEC, nil)
+fields['of15.action_nicira_resubmit_table.len'] = ProtoField.uint16("of15.action_nicira_resubmit_table.len", "len", base.DEC, nil)
+fields['of15.action_nicira_resubmit_table.experimenter'] = ProtoField.uint32("of15.action_nicira_resubmit_table.experimenter", "experimenter", base.DEC, nil)
+fields['of15.action_nicira_resubmit_table.subtype'] = ProtoField.uint16("of15.action_nicira_resubmit_table.subtype", "subtype", base.DEC, nil)
+fields['of15.action_nicira_resubmit_table.port'] = ProtoField.uint16("of15.action_nicira_resubmit_table.port", "port", base.DEC, nil)
+fields['of15.action_nicira_resubmit_table.table_id'] = ProtoField.uint8("of15.action_nicira_resubmit_table.table_id", "table_id", base.DEC, nil)
+fields['of15.action_id_nicira_resubmit_table.type'] = ProtoField.uint16("of15.action_id_nicira_resubmit_table.type", "type", base.DEC, nil)
+fields['of15.action_id_nicira_resubmit_table.len'] = ProtoField.uint16("of15.action_id_nicira_resubmit_table.len", "len", base.DEC, nil)
+fields['of15.action_id_nicira_resubmit_table.experimenter'] = ProtoField.uint32("of15.action_id_nicira_resubmit_table.experimenter", "experimenter", base.DEC, nil)
+fields['of15.action_id_nicira_resubmit_table.subtype'] = ProtoField.uint16("of15.action_id_nicira_resubmit_table.subtype", "subtype", base.DEC, nil)
 fields['of15.action_output.type'] = ProtoField.uint32("of15.action_output.type", "type", base.DEC, enum_v6_ofp_action_type)
 fields['of15.action_output.len'] = ProtoField.uint16("of15.action_output.len", "len", base.DEC, nil)
 fields['of15.action_output.port'] = ProtoField.uint32("of15.action_output.port", "port", base.DEC, nil)
@@ -17236,6 +17362,21 @@ p_of.fields = {
     fields['of10.action_nicira_dec_ttl.len'],
     fields['of10.action_nicira_dec_ttl.experimenter'],
     fields['of10.action_nicira_dec_ttl.subtype'],
+    fields['of10.action_nicira_exit.type'],
+    fields['of10.action_nicira_exit.len'],
+    fields['of10.action_nicira_exit.experimenter'],
+    fields['of10.action_nicira_exit.subtype'],
+    fields['of10.action_nicira_resubmit.type'],
+    fields['of10.action_nicira_resubmit.len'],
+    fields['of10.action_nicira_resubmit.experimenter'],
+    fields['of10.action_nicira_resubmit.subtype'],
+    fields['of10.action_nicira_resubmit.port'],
+    fields['of10.action_nicira_resubmit_table.type'],
+    fields['of10.action_nicira_resubmit_table.len'],
+    fields['of10.action_nicira_resubmit_table.experimenter'],
+    fields['of10.action_nicira_resubmit_table.subtype'],
+    fields['of10.action_nicira_resubmit_table.port'],
+    fields['of10.action_nicira_resubmit_table.table_id'],
     fields['of10.action_output.type'],
     fields['of10.action_output.len'],
     fields['of10.action_output.port'],
@@ -18087,6 +18228,21 @@ p_of.fields = {
     fields['of11.action_nicira_dec_ttl.len'],
     fields['of11.action_nicira_dec_ttl.experimenter'],
     fields['of11.action_nicira_dec_ttl.subtype'],
+    fields['of11.action_nicira_exit.type'],
+    fields['of11.action_nicira_exit.len'],
+    fields['of11.action_nicira_exit.experimenter'],
+    fields['of11.action_nicira_exit.subtype'],
+    fields['of11.action_nicira_resubmit.type'],
+    fields['of11.action_nicira_resubmit.len'],
+    fields['of11.action_nicira_resubmit.experimenter'],
+    fields['of11.action_nicira_resubmit.subtype'],
+    fields['of11.action_nicira_resubmit.port'],
+    fields['of11.action_nicira_resubmit_table.type'],
+    fields['of11.action_nicira_resubmit_table.len'],
+    fields['of11.action_nicira_resubmit_table.experimenter'],
+    fields['of11.action_nicira_resubmit_table.subtype'],
+    fields['of11.action_nicira_resubmit_table.port'],
+    fields['of11.action_nicira_resubmit_table.table_id'],
     fields['of11.action_output.type'],
     fields['of11.action_output.len'],
     fields['of11.action_output.port'],
@@ -19037,6 +19193,21 @@ p_of.fields = {
     fields['of12.action_nicira_dec_ttl.len'],
     fields['of12.action_nicira_dec_ttl.experimenter'],
     fields['of12.action_nicira_dec_ttl.subtype'],
+    fields['of12.action_nicira_exit.type'],
+    fields['of12.action_nicira_exit.len'],
+    fields['of12.action_nicira_exit.experimenter'],
+    fields['of12.action_nicira_exit.subtype'],
+    fields['of12.action_nicira_resubmit.type'],
+    fields['of12.action_nicira_resubmit.len'],
+    fields['of12.action_nicira_resubmit.experimenter'],
+    fields['of12.action_nicira_resubmit.subtype'],
+    fields['of12.action_nicira_resubmit.port'],
+    fields['of12.action_nicira_resubmit_table.type'],
+    fields['of12.action_nicira_resubmit_table.len'],
+    fields['of12.action_nicira_resubmit_table.experimenter'],
+    fields['of12.action_nicira_resubmit_table.subtype'],
+    fields['of12.action_nicira_resubmit_table.port'],
+    fields['of12.action_nicira_resubmit_table.table_id'],
     fields['of12.action_output.type'],
     fields['of12.action_output.len'],
     fields['of12.action_output.port'],
@@ -20410,6 +20581,33 @@ p_of.fields = {
     fields['of13.action_id_nicira_dec_ttl.len'],
     fields['of13.action_id_nicira_dec_ttl.experimenter'],
     fields['of13.action_id_nicira_dec_ttl.subtype'],
+    fields['of13.action_nicira_exit.type'],
+    fields['of13.action_nicira_exit.len'],
+    fields['of13.action_nicira_exit.experimenter'],
+    fields['of13.action_nicira_exit.subtype'],
+    fields['of13.action_id_nicira_exit.type'],
+    fields['of13.action_id_nicira_exit.len'],
+    fields['of13.action_id_nicira_exit.experimenter'],
+    fields['of13.action_id_nicira_exit.subtype'],
+    fields['of13.action_nicira_resubmit.type'],
+    fields['of13.action_nicira_resubmit.len'],
+    fields['of13.action_nicira_resubmit.experimenter'],
+    fields['of13.action_nicira_resubmit.subtype'],
+    fields['of13.action_nicira_resubmit.port'],
+    fields['of13.action_id_nicira_resubmit.type'],
+    fields['of13.action_id_nicira_resubmit.len'],
+    fields['of13.action_id_nicira_resubmit.experimenter'],
+    fields['of13.action_id_nicira_resubmit.subtype'],
+    fields['of13.action_nicira_resubmit_table.type'],
+    fields['of13.action_nicira_resubmit_table.len'],
+    fields['of13.action_nicira_resubmit_table.experimenter'],
+    fields['of13.action_nicira_resubmit_table.subtype'],
+    fields['of13.action_nicira_resubmit_table.port'],
+    fields['of13.action_nicira_resubmit_table.table_id'],
+    fields['of13.action_id_nicira_resubmit_table.type'],
+    fields['of13.action_id_nicira_resubmit_table.len'],
+    fields['of13.action_id_nicira_resubmit_table.experimenter'],
+    fields['of13.action_id_nicira_resubmit_table.subtype'],
     fields['of13.action_output.type'],
     fields['of13.action_output.len'],
     fields['of13.action_output.port'],
@@ -23345,6 +23543,33 @@ p_of.fields = {
     fields['of14.action_id_nicira_dec_ttl.len'],
     fields['of14.action_id_nicira_dec_ttl.experimenter'],
     fields['of14.action_id_nicira_dec_ttl.subtype'],
+    fields['of14.action_nicira_exit.type'],
+    fields['of14.action_nicira_exit.len'],
+    fields['of14.action_nicira_exit.experimenter'],
+    fields['of14.action_nicira_exit.subtype'],
+    fields['of14.action_id_nicira_exit.type'],
+    fields['of14.action_id_nicira_exit.len'],
+    fields['of14.action_id_nicira_exit.experimenter'],
+    fields['of14.action_id_nicira_exit.subtype'],
+    fields['of14.action_nicira_resubmit.type'],
+    fields['of14.action_nicira_resubmit.len'],
+    fields['of14.action_nicira_resubmit.experimenter'],
+    fields['of14.action_nicira_resubmit.subtype'],
+    fields['of14.action_nicira_resubmit.port'],
+    fields['of14.action_id_nicira_resubmit.type'],
+    fields['of14.action_id_nicira_resubmit.len'],
+    fields['of14.action_id_nicira_resubmit.experimenter'],
+    fields['of14.action_id_nicira_resubmit.subtype'],
+    fields['of14.action_nicira_resubmit_table.type'],
+    fields['of14.action_nicira_resubmit_table.len'],
+    fields['of14.action_nicira_resubmit_table.experimenter'],
+    fields['of14.action_nicira_resubmit_table.subtype'],
+    fields['of14.action_nicira_resubmit_table.port'],
+    fields['of14.action_nicira_resubmit_table.table_id'],
+    fields['of14.action_id_nicira_resubmit_table.type'],
+    fields['of14.action_id_nicira_resubmit_table.len'],
+    fields['of14.action_id_nicira_resubmit_table.experimenter'],
+    fields['of14.action_id_nicira_resubmit_table.subtype'],
     fields['of14.action_output.type'],
     fields['of14.action_output.len'],
     fields['of14.action_output.port'],
@@ -26592,6 +26817,33 @@ p_of.fields = {
     fields['of15.action_id_nicira_dec_ttl.len'],
     fields['of15.action_id_nicira_dec_ttl.experimenter'],
     fields['of15.action_id_nicira_dec_ttl.subtype'],
+    fields['of15.action_nicira_exit.type'],
+    fields['of15.action_nicira_exit.len'],
+    fields['of15.action_nicira_exit.experimenter'],
+    fields['of15.action_nicira_exit.subtype'],
+    fields['of15.action_id_nicira_exit.type'],
+    fields['of15.action_id_nicira_exit.len'],
+    fields['of15.action_id_nicira_exit.experimenter'],
+    fields['of15.action_id_nicira_exit.subtype'],
+    fields['of15.action_nicira_resubmit.type'],
+    fields['of15.action_nicira_resubmit.len'],
+    fields['of15.action_nicira_resubmit.experimenter'],
+    fields['of15.action_nicira_resubmit.subtype'],
+    fields['of15.action_nicira_resubmit.port'],
+    fields['of15.action_id_nicira_resubmit.type'],
+    fields['of15.action_id_nicira_resubmit.len'],
+    fields['of15.action_id_nicira_resubmit.experimenter'],
+    fields['of15.action_id_nicira_resubmit.subtype'],
+    fields['of15.action_nicira_resubmit_table.type'],
+    fields['of15.action_nicira_resubmit_table.len'],
+    fields['of15.action_nicira_resubmit_table.experimenter'],
+    fields['of15.action_nicira_resubmit_table.subtype'],
+    fields['of15.action_nicira_resubmit_table.port'],
+    fields['of15.action_nicira_resubmit_table.table_id'],
+    fields['of15.action_id_nicira_resubmit_table.type'],
+    fields['of15.action_id_nicira_resubmit_table.len'],
+    fields['of15.action_id_nicira_resubmit_table.experimenter'],
+    fields['of15.action_id_nicira_resubmit_table.subtype'],
     fields['of15.action_output.type'],
     fields['of15.action_output.len'],
     fields['of15.action_output.port'],
@@ -30315,6 +30567,46 @@ function dissect_of_action_nicira_dec_ttl_v1(reader, subtree)
 end
 of_action_nicira_v1_dissectors[18] = dissect_of_action_nicira_dec_ttl_v1
 
+-- child class of_action_nicira_exit
+-- Child of of_action_nicira
+function dissect_of_action_nicira_exit_v1(reader, subtree)
+    read_uint16_t(reader, 1, subtree, 'of10.action_nicira_exit.type')
+    read_uint16_t(reader, 1, subtree, 'of10.action_nicira_exit.len')
+    read_uint32_t(reader, 1, subtree, 'of10.action_nicira_exit.experimenter')
+    read_uint16_t(reader, 1, subtree, 'of10.action_nicira_exit.subtype')
+    reader.skip(2)
+    reader.skip(4)
+    return 'of_action_nicira_exit'
+end
+of_action_nicira_v1_dissectors[17] = dissect_of_action_nicira_exit_v1
+
+-- child class of_action_nicira_resubmit
+-- Child of of_action_nicira
+function dissect_of_action_nicira_resubmit_v1(reader, subtree)
+    read_uint16_t(reader, 1, subtree, 'of10.action_nicira_resubmit.type')
+    read_uint16_t(reader, 1, subtree, 'of10.action_nicira_resubmit.len')
+    read_uint32_t(reader, 1, subtree, 'of10.action_nicira_resubmit.experimenter')
+    read_uint16_t(reader, 1, subtree, 'of10.action_nicira_resubmit.subtype')
+    read_uint16_t(reader, 1, subtree, 'of10.action_nicira_resubmit.port')
+    reader.skip(4)
+    return 'of_action_nicira_resubmit'
+end
+of_action_nicira_v1_dissectors[1] = dissect_of_action_nicira_resubmit_v1
+
+-- child class of_action_nicira_resubmit_table
+-- Child of of_action_nicira
+function dissect_of_action_nicira_resubmit_table_v1(reader, subtree)
+    read_uint16_t(reader, 1, subtree, 'of10.action_nicira_resubmit_table.type')
+    read_uint16_t(reader, 1, subtree, 'of10.action_nicira_resubmit_table.len')
+    read_uint32_t(reader, 1, subtree, 'of10.action_nicira_resubmit_table.experimenter')
+    read_uint16_t(reader, 1, subtree, 'of10.action_nicira_resubmit_table.subtype')
+    read_uint16_t(reader, 1, subtree, 'of10.action_nicira_resubmit_table.port')
+    read_uint8_t(reader, 1, subtree, 'of10.action_nicira_resubmit_table.table_id')
+    reader.skip(3)
+    return 'of_action_nicira_resubmit_table'
+end
+of_action_nicira_v1_dissectors[14] = dissect_of_action_nicira_resubmit_table_v1
+
 -- child class of_action_output
 -- Child of of_action
 function dissect_of_action_output_v1(reader, subtree)
@@ -32071,6 +32363,46 @@ function dissect_of_action_nicira_dec_ttl_v2(reader, subtree)
     return 'of_action_nicira_dec_ttl'
 end
 of_action_nicira_v2_dissectors[18] = dissect_of_action_nicira_dec_ttl_v2
+
+-- child class of_action_nicira_exit
+-- Child of of_action_nicira
+function dissect_of_action_nicira_exit_v2(reader, subtree)
+    read_uint16_t(reader, 2, subtree, 'of11.action_nicira_exit.type')
+    read_uint16_t(reader, 2, subtree, 'of11.action_nicira_exit.len')
+    read_uint32_t(reader, 2, subtree, 'of11.action_nicira_exit.experimenter')
+    read_uint16_t(reader, 2, subtree, 'of11.action_nicira_exit.subtype')
+    reader.skip(2)
+    reader.skip(4)
+    return 'of_action_nicira_exit'
+end
+of_action_nicira_v2_dissectors[17] = dissect_of_action_nicira_exit_v2
+
+-- child class of_action_nicira_resubmit
+-- Child of of_action_nicira
+function dissect_of_action_nicira_resubmit_v2(reader, subtree)
+    read_uint16_t(reader, 2, subtree, 'of11.action_nicira_resubmit.type')
+    read_uint16_t(reader, 2, subtree, 'of11.action_nicira_resubmit.len')
+    read_uint32_t(reader, 2, subtree, 'of11.action_nicira_resubmit.experimenter')
+    read_uint16_t(reader, 2, subtree, 'of11.action_nicira_resubmit.subtype')
+    read_uint16_t(reader, 2, subtree, 'of11.action_nicira_resubmit.port')
+    reader.skip(4)
+    return 'of_action_nicira_resubmit'
+end
+of_action_nicira_v2_dissectors[1] = dissect_of_action_nicira_resubmit_v2
+
+-- child class of_action_nicira_resubmit_table
+-- Child of of_action_nicira
+function dissect_of_action_nicira_resubmit_table_v2(reader, subtree)
+    read_uint16_t(reader, 2, subtree, 'of11.action_nicira_resubmit_table.type')
+    read_uint16_t(reader, 2, subtree, 'of11.action_nicira_resubmit_table.len')
+    read_uint32_t(reader, 2, subtree, 'of11.action_nicira_resubmit_table.experimenter')
+    read_uint16_t(reader, 2, subtree, 'of11.action_nicira_resubmit_table.subtype')
+    read_uint16_t(reader, 2, subtree, 'of11.action_nicira_resubmit_table.port')
+    read_uint8_t(reader, 2, subtree, 'of11.action_nicira_resubmit_table.table_id')
+    reader.skip(3)
+    return 'of_action_nicira_resubmit_table'
+end
+of_action_nicira_v2_dissectors[14] = dissect_of_action_nicira_resubmit_table_v2
 
 -- child class of_action_output
 -- Child of of_action
@@ -34105,6 +34437,46 @@ function dissect_of_action_nicira_dec_ttl_v3(reader, subtree)
     return 'of_action_nicira_dec_ttl'
 end
 of_action_nicira_v3_dissectors[18] = dissect_of_action_nicira_dec_ttl_v3
+
+-- child class of_action_nicira_exit
+-- Child of of_action_nicira
+function dissect_of_action_nicira_exit_v3(reader, subtree)
+    read_uint16_t(reader, 3, subtree, 'of12.action_nicira_exit.type')
+    read_uint16_t(reader, 3, subtree, 'of12.action_nicira_exit.len')
+    read_uint32_t(reader, 3, subtree, 'of12.action_nicira_exit.experimenter')
+    read_uint16_t(reader, 3, subtree, 'of12.action_nicira_exit.subtype')
+    reader.skip(2)
+    reader.skip(4)
+    return 'of_action_nicira_exit'
+end
+of_action_nicira_v3_dissectors[17] = dissect_of_action_nicira_exit_v3
+
+-- child class of_action_nicira_resubmit
+-- Child of of_action_nicira
+function dissect_of_action_nicira_resubmit_v3(reader, subtree)
+    read_uint16_t(reader, 3, subtree, 'of12.action_nicira_resubmit.type')
+    read_uint16_t(reader, 3, subtree, 'of12.action_nicira_resubmit.len')
+    read_uint32_t(reader, 3, subtree, 'of12.action_nicira_resubmit.experimenter')
+    read_uint16_t(reader, 3, subtree, 'of12.action_nicira_resubmit.subtype')
+    read_uint16_t(reader, 3, subtree, 'of12.action_nicira_resubmit.port')
+    reader.skip(4)
+    return 'of_action_nicira_resubmit'
+end
+of_action_nicira_v3_dissectors[1] = dissect_of_action_nicira_resubmit_v3
+
+-- child class of_action_nicira_resubmit_table
+-- Child of of_action_nicira
+function dissect_of_action_nicira_resubmit_table_v3(reader, subtree)
+    read_uint16_t(reader, 3, subtree, 'of12.action_nicira_resubmit_table.type')
+    read_uint16_t(reader, 3, subtree, 'of12.action_nicira_resubmit_table.len')
+    read_uint32_t(reader, 3, subtree, 'of12.action_nicira_resubmit_table.experimenter')
+    read_uint16_t(reader, 3, subtree, 'of12.action_nicira_resubmit_table.subtype')
+    read_uint16_t(reader, 3, subtree, 'of12.action_nicira_resubmit_table.port')
+    read_uint8_t(reader, 3, subtree, 'of12.action_nicira_resubmit_table.table_id')
+    reader.skip(3)
+    return 'of_action_nicira_resubmit_table'
+end
+of_action_nicira_v3_dissectors[14] = dissect_of_action_nicira_resubmit_table_v3
 
 -- child class of_action_output
 -- Child of of_action
@@ -37650,6 +38022,79 @@ function dissect_of_action_id_nicira_dec_ttl_v4(reader, subtree)
     return 'of_action_id_nicira_dec_ttl'
 end
 of_action_id_nicira_v4_dissectors[18] = dissect_of_action_id_nicira_dec_ttl_v4
+
+-- child class of_action_nicira_exit
+-- Child of of_action_nicira
+function dissect_of_action_nicira_exit_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.action_nicira_exit.type')
+    read_uint16_t(reader, 4, subtree, 'of13.action_nicira_exit.len')
+    read_uint32_t(reader, 4, subtree, 'of13.action_nicira_exit.experimenter')
+    read_uint16_t(reader, 4, subtree, 'of13.action_nicira_exit.subtype')
+    reader.skip(2)
+    reader.skip(4)
+    return 'of_action_nicira_exit'
+end
+of_action_nicira_v4_dissectors[17] = dissect_of_action_nicira_exit_v4
+
+-- child class of_action_id_nicira_exit
+-- Child of of_action_id_nicira
+function dissect_of_action_id_nicira_exit_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira_exit.type')
+    read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira_exit.len')
+    read_uint32_t(reader, 4, subtree, 'of13.action_id_nicira_exit.experimenter')
+    read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira_exit.subtype')
+    return 'of_action_id_nicira_exit'
+end
+of_action_id_nicira_v4_dissectors[17] = dissect_of_action_id_nicira_exit_v4
+
+-- child class of_action_nicira_resubmit
+-- Child of of_action_nicira
+function dissect_of_action_nicira_resubmit_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.action_nicira_resubmit.type')
+    read_uint16_t(reader, 4, subtree, 'of13.action_nicira_resubmit.len')
+    read_uint32_t(reader, 4, subtree, 'of13.action_nicira_resubmit.experimenter')
+    read_uint16_t(reader, 4, subtree, 'of13.action_nicira_resubmit.subtype')
+    read_uint16_t(reader, 4, subtree, 'of13.action_nicira_resubmit.port')
+    reader.skip(4)
+    return 'of_action_nicira_resubmit'
+end
+of_action_nicira_v4_dissectors[1] = dissect_of_action_nicira_resubmit_v4
+
+-- child class of_action_id_nicira_resubmit
+-- Child of of_action_id_nicira
+function dissect_of_action_id_nicira_resubmit_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira_resubmit.type')
+    read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira_resubmit.len')
+    read_uint32_t(reader, 4, subtree, 'of13.action_id_nicira_resubmit.experimenter')
+    read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira_resubmit.subtype')
+    return 'of_action_id_nicira_resubmit'
+end
+of_action_id_nicira_v4_dissectors[1] = dissect_of_action_id_nicira_resubmit_v4
+
+-- child class of_action_nicira_resubmit_table
+-- Child of of_action_nicira
+function dissect_of_action_nicira_resubmit_table_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.action_nicira_resubmit_table.type')
+    read_uint16_t(reader, 4, subtree, 'of13.action_nicira_resubmit_table.len')
+    read_uint32_t(reader, 4, subtree, 'of13.action_nicira_resubmit_table.experimenter')
+    read_uint16_t(reader, 4, subtree, 'of13.action_nicira_resubmit_table.subtype')
+    read_uint16_t(reader, 4, subtree, 'of13.action_nicira_resubmit_table.port')
+    read_uint8_t(reader, 4, subtree, 'of13.action_nicira_resubmit_table.table_id')
+    reader.skip(3)
+    return 'of_action_nicira_resubmit_table'
+end
+of_action_nicira_v4_dissectors[14] = dissect_of_action_nicira_resubmit_table_v4
+
+-- child class of_action_id_nicira_resubmit_table
+-- Child of of_action_id_nicira
+function dissect_of_action_id_nicira_resubmit_table_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira_resubmit_table.type')
+    read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira_resubmit_table.len')
+    read_uint32_t(reader, 4, subtree, 'of13.action_id_nicira_resubmit_table.experimenter')
+    read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira_resubmit_table.subtype')
+    return 'of_action_id_nicira_resubmit_table'
+end
+of_action_id_nicira_v4_dissectors[14] = dissect_of_action_id_nicira_resubmit_table_v4
 
 -- child class of_action_output
 -- Child of of_action
@@ -45547,6 +45992,79 @@ function dissect_of_action_id_nicira_dec_ttl_v5(reader, subtree)
     return 'of_action_id_nicira_dec_ttl'
 end
 of_action_id_nicira_v5_dissectors[18] = dissect_of_action_id_nicira_dec_ttl_v5
+
+-- child class of_action_nicira_exit
+-- Child of of_action_nicira
+function dissect_of_action_nicira_exit_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.action_nicira_exit.type')
+    read_uint16_t(reader, 5, subtree, 'of14.action_nicira_exit.len')
+    read_uint32_t(reader, 5, subtree, 'of14.action_nicira_exit.experimenter')
+    read_uint16_t(reader, 5, subtree, 'of14.action_nicira_exit.subtype')
+    reader.skip(2)
+    reader.skip(4)
+    return 'of_action_nicira_exit'
+end
+of_action_nicira_v5_dissectors[17] = dissect_of_action_nicira_exit_v5
+
+-- child class of_action_id_nicira_exit
+-- Child of of_action_id_nicira
+function dissect_of_action_id_nicira_exit_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.action_id_nicira_exit.type')
+    read_uint16_t(reader, 5, subtree, 'of14.action_id_nicira_exit.len')
+    read_uint32_t(reader, 5, subtree, 'of14.action_id_nicira_exit.experimenter')
+    read_uint16_t(reader, 5, subtree, 'of14.action_id_nicira_exit.subtype')
+    return 'of_action_id_nicira_exit'
+end
+of_action_id_nicira_v5_dissectors[17] = dissect_of_action_id_nicira_exit_v5
+
+-- child class of_action_nicira_resubmit
+-- Child of of_action_nicira
+function dissect_of_action_nicira_resubmit_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.action_nicira_resubmit.type')
+    read_uint16_t(reader, 5, subtree, 'of14.action_nicira_resubmit.len')
+    read_uint32_t(reader, 5, subtree, 'of14.action_nicira_resubmit.experimenter')
+    read_uint16_t(reader, 5, subtree, 'of14.action_nicira_resubmit.subtype')
+    read_uint16_t(reader, 5, subtree, 'of14.action_nicira_resubmit.port')
+    reader.skip(4)
+    return 'of_action_nicira_resubmit'
+end
+of_action_nicira_v5_dissectors[1] = dissect_of_action_nicira_resubmit_v5
+
+-- child class of_action_id_nicira_resubmit
+-- Child of of_action_id_nicira
+function dissect_of_action_id_nicira_resubmit_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.action_id_nicira_resubmit.type')
+    read_uint16_t(reader, 5, subtree, 'of14.action_id_nicira_resubmit.len')
+    read_uint32_t(reader, 5, subtree, 'of14.action_id_nicira_resubmit.experimenter')
+    read_uint16_t(reader, 5, subtree, 'of14.action_id_nicira_resubmit.subtype')
+    return 'of_action_id_nicira_resubmit'
+end
+of_action_id_nicira_v5_dissectors[1] = dissect_of_action_id_nicira_resubmit_v5
+
+-- child class of_action_nicira_resubmit_table
+-- Child of of_action_nicira
+function dissect_of_action_nicira_resubmit_table_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.action_nicira_resubmit_table.type')
+    read_uint16_t(reader, 5, subtree, 'of14.action_nicira_resubmit_table.len')
+    read_uint32_t(reader, 5, subtree, 'of14.action_nicira_resubmit_table.experimenter')
+    read_uint16_t(reader, 5, subtree, 'of14.action_nicira_resubmit_table.subtype')
+    read_uint16_t(reader, 5, subtree, 'of14.action_nicira_resubmit_table.port')
+    read_uint8_t(reader, 5, subtree, 'of14.action_nicira_resubmit_table.table_id')
+    reader.skip(3)
+    return 'of_action_nicira_resubmit_table'
+end
+of_action_nicira_v5_dissectors[14] = dissect_of_action_nicira_resubmit_table_v5
+
+-- child class of_action_id_nicira_resubmit_table
+-- Child of of_action_id_nicira
+function dissect_of_action_id_nicira_resubmit_table_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.action_id_nicira_resubmit_table.type')
+    read_uint16_t(reader, 5, subtree, 'of14.action_id_nicira_resubmit_table.len')
+    read_uint32_t(reader, 5, subtree, 'of14.action_id_nicira_resubmit_table.experimenter')
+    read_uint16_t(reader, 5, subtree, 'of14.action_id_nicira_resubmit_table.subtype')
+    return 'of_action_id_nicira_resubmit_table'
+end
+of_action_id_nicira_v5_dissectors[14] = dissect_of_action_id_nicira_resubmit_table_v5
 
 -- child class of_action_output
 -- Child of of_action
@@ -54224,6 +54742,79 @@ function dissect_of_action_id_nicira_dec_ttl_v6(reader, subtree)
     return 'of_action_id_nicira_dec_ttl'
 end
 of_action_id_nicira_v6_dissectors[18] = dissect_of_action_id_nicira_dec_ttl_v6
+
+-- child class of_action_nicira_exit
+-- Child of of_action_nicira
+function dissect_of_action_nicira_exit_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.action_nicira_exit.type')
+    read_uint16_t(reader, 6, subtree, 'of15.action_nicira_exit.len')
+    read_uint32_t(reader, 6, subtree, 'of15.action_nicira_exit.experimenter')
+    read_uint16_t(reader, 6, subtree, 'of15.action_nicira_exit.subtype')
+    reader.skip(2)
+    reader.skip(4)
+    return 'of_action_nicira_exit'
+end
+of_action_nicira_v6_dissectors[17] = dissect_of_action_nicira_exit_v6
+
+-- child class of_action_id_nicira_exit
+-- Child of of_action_id_nicira
+function dissect_of_action_id_nicira_exit_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.action_id_nicira_exit.type')
+    read_uint16_t(reader, 6, subtree, 'of15.action_id_nicira_exit.len')
+    read_uint32_t(reader, 6, subtree, 'of15.action_id_nicira_exit.experimenter')
+    read_uint16_t(reader, 6, subtree, 'of15.action_id_nicira_exit.subtype')
+    return 'of_action_id_nicira_exit'
+end
+of_action_id_nicira_v6_dissectors[17] = dissect_of_action_id_nicira_exit_v6
+
+-- child class of_action_nicira_resubmit
+-- Child of of_action_nicira
+function dissect_of_action_nicira_resubmit_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.action_nicira_resubmit.type')
+    read_uint16_t(reader, 6, subtree, 'of15.action_nicira_resubmit.len')
+    read_uint32_t(reader, 6, subtree, 'of15.action_nicira_resubmit.experimenter')
+    read_uint16_t(reader, 6, subtree, 'of15.action_nicira_resubmit.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.action_nicira_resubmit.port')
+    reader.skip(4)
+    return 'of_action_nicira_resubmit'
+end
+of_action_nicira_v6_dissectors[1] = dissect_of_action_nicira_resubmit_v6
+
+-- child class of_action_id_nicira_resubmit
+-- Child of of_action_id_nicira
+function dissect_of_action_id_nicira_resubmit_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.action_id_nicira_resubmit.type')
+    read_uint16_t(reader, 6, subtree, 'of15.action_id_nicira_resubmit.len')
+    read_uint32_t(reader, 6, subtree, 'of15.action_id_nicira_resubmit.experimenter')
+    read_uint16_t(reader, 6, subtree, 'of15.action_id_nicira_resubmit.subtype')
+    return 'of_action_id_nicira_resubmit'
+end
+of_action_id_nicira_v6_dissectors[1] = dissect_of_action_id_nicira_resubmit_v6
+
+-- child class of_action_nicira_resubmit_table
+-- Child of of_action_nicira
+function dissect_of_action_nicira_resubmit_table_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.action_nicira_resubmit_table.type')
+    read_uint16_t(reader, 6, subtree, 'of15.action_nicira_resubmit_table.len')
+    read_uint32_t(reader, 6, subtree, 'of15.action_nicira_resubmit_table.experimenter')
+    read_uint16_t(reader, 6, subtree, 'of15.action_nicira_resubmit_table.subtype')
+    read_uint16_t(reader, 6, subtree, 'of15.action_nicira_resubmit_table.port')
+    read_uint8_t(reader, 6, subtree, 'of15.action_nicira_resubmit_table.table_id')
+    reader.skip(3)
+    return 'of_action_nicira_resubmit_table'
+end
+of_action_nicira_v6_dissectors[14] = dissect_of_action_nicira_resubmit_table_v6
+
+-- child class of_action_id_nicira_resubmit_table
+-- Child of of_action_id_nicira
+function dissect_of_action_id_nicira_resubmit_table_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.action_id_nicira_resubmit_table.type')
+    read_uint16_t(reader, 6, subtree, 'of15.action_id_nicira_resubmit_table.len')
+    read_uint32_t(reader, 6, subtree, 'of15.action_id_nicira_resubmit_table.experimenter')
+    read_uint16_t(reader, 6, subtree, 'of15.action_id_nicira_resubmit_table.subtype')
+    return 'of_action_id_nicira_resubmit_table'
+end
+of_action_id_nicira_v6_dissectors[14] = dissect_of_action_id_nicira_resubmit_table_v6
 
 -- child class of_action_output
 -- Child of of_action

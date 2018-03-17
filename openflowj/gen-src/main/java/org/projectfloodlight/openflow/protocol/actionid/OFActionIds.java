@@ -40,6 +40,9 @@ public interface OFActionIds {
     OFActionIdDecNwTtl decNwTtl();
     OFActionIdGroup group();
     OFActionIdNiciraDecTtl niciraDecTtl();
+    OFActionIdNiciraExit niciraExit();
+    OFActionIdNiciraResubmit niciraResubmit();
+    OFActionIdNiciraResubmitTable niciraResubmitTable();
     OFActionIdOutput output();
     OFActionIdPopMpls popMpls();
     OFActionIdPopPbb popPbb();

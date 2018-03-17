@@ -3028,6 +3028,14 @@ of_action_OF_VERSION_1_0_dup(
         return of_action_set_vlan_vid_OF_VERSION_1_0_dup(src);
     }
 
+    if (src->object_id == OF_ACTION_NICIRA_EXIT) {
+        return of_action_nicira_exit_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_RESUBMIT) {
+        return of_action_nicira_resubmit_OF_VERSION_1_0_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_SET_VLAN_PCP) {
         return of_action_set_vlan_pcp_OF_VERSION_1_0_dup(src);
     }
@@ -3038,6 +3046,10 @@ of_action_OF_VERSION_1_0_dup(
 
     if (src->object_id == OF_ACTION_SET_DL_DST) {
         return of_action_set_dl_dst_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_RESUBMIT_TABLE) {
+        return of_action_nicira_resubmit_table_OF_VERSION_1_0_dup(src);
     }
 
     if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
@@ -3238,6 +3250,103 @@ of_action_nicira_dec_ttl_OF_VERSION_1_0_dup(
 
     of_action_nicira_dec_ttl_subtype_get(src, &val16);
     of_action_nicira_dec_ttl_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_exit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_exit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_exit_t *
+of_action_nicira_exit_OF_VERSION_1_0_dup(
+    of_action_nicira_exit_t *src)
+{
+    of_action_nicira_exit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_nicira_exit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_exit_experimenter_get(src, &val32);
+    of_action_nicira_exit_experimenter_set(dst, val32);
+
+    of_action_nicira_exit_subtype_get(src, &val16);
+    of_action_nicira_exit_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_resubmit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_resubmit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_resubmit_t *
+of_action_nicira_resubmit_OF_VERSION_1_0_dup(
+    of_action_nicira_resubmit_t *src)
+{
+    of_action_nicira_resubmit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_nicira_resubmit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_resubmit_experimenter_get(src, &val32);
+    of_action_nicira_resubmit_experimenter_set(dst, val32);
+
+    of_action_nicira_resubmit_subtype_get(src, &val16);
+    of_action_nicira_resubmit_subtype_set(dst, val16);
+
+    of_action_nicira_resubmit_port_get(src, &val16);
+    of_action_nicira_resubmit_port_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_resubmit_table
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_resubmit_table.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_resubmit_table_t *
+of_action_nicira_resubmit_table_OF_VERSION_1_0_dup(
+    of_action_nicira_resubmit_table_t *src)
+{
+    of_action_nicira_resubmit_table_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    if ((dst = of_action_nicira_resubmit_table_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_resubmit_table_experimenter_get(src, &val32);
+    of_action_nicira_resubmit_table_experimenter_set(dst, val32);
+
+    of_action_nicira_resubmit_table_subtype_get(src, &val16);
+    of_action_nicira_resubmit_table_subtype_set(dst, val16);
+
+    of_action_nicira_resubmit_table_port_get(src, &val16);
+    of_action_nicira_resubmit_table_port_set(dst, val16);
+
+    of_action_nicira_resubmit_table_table_id_get(src, &val8);
+    of_action_nicira_resubmit_table_table_id_set(dst, val8);
 
     return dst;
 }
@@ -7427,6 +7536,14 @@ of_action_OF_VERSION_1_1_dup(
         return of_action_set_vlan_vid_OF_VERSION_1_1_dup(src);
     }
 
+    if (src->object_id == OF_ACTION_NICIRA_EXIT) {
+        return of_action_nicira_exit_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_RESUBMIT) {
+        return of_action_nicira_resubmit_OF_VERSION_1_1_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_POP_MPLS) {
         return of_action_pop_mpls_OF_VERSION_1_1_dup(src);
     }
@@ -7445,6 +7562,10 @@ of_action_OF_VERSION_1_1_dup(
 
     if (src->object_id == OF_ACTION_SET_DL_DST) {
         return of_action_set_dl_dst_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_RESUBMIT_TABLE) {
+        return of_action_nicira_resubmit_table_OF_VERSION_1_1_dup(src);
     }
 
     if (src->object_id == OF_ACTION_SET_QUEUE) {
@@ -7765,6 +7886,103 @@ of_action_nicira_dec_ttl_OF_VERSION_1_1_dup(
 
     of_action_nicira_dec_ttl_subtype_get(src, &val16);
     of_action_nicira_dec_ttl_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_exit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_exit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_exit_t *
+of_action_nicira_exit_OF_VERSION_1_1_dup(
+    of_action_nicira_exit_t *src)
+{
+    of_action_nicira_exit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_nicira_exit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_exit_experimenter_get(src, &val32);
+    of_action_nicira_exit_experimenter_set(dst, val32);
+
+    of_action_nicira_exit_subtype_get(src, &val16);
+    of_action_nicira_exit_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_resubmit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_resubmit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_resubmit_t *
+of_action_nicira_resubmit_OF_VERSION_1_1_dup(
+    of_action_nicira_resubmit_t *src)
+{
+    of_action_nicira_resubmit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_nicira_resubmit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_resubmit_experimenter_get(src, &val32);
+    of_action_nicira_resubmit_experimenter_set(dst, val32);
+
+    of_action_nicira_resubmit_subtype_get(src, &val16);
+    of_action_nicira_resubmit_subtype_set(dst, val16);
+
+    of_action_nicira_resubmit_port_get(src, &val16);
+    of_action_nicira_resubmit_port_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_resubmit_table
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_resubmit_table.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_resubmit_table_t *
+of_action_nicira_resubmit_table_OF_VERSION_1_1_dup(
+    of_action_nicira_resubmit_table_t *src)
+{
+    of_action_nicira_resubmit_table_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    if ((dst = of_action_nicira_resubmit_table_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_resubmit_table_experimenter_get(src, &val32);
+    of_action_nicira_resubmit_table_experimenter_set(dst, val32);
+
+    of_action_nicira_resubmit_table_subtype_get(src, &val16);
+    of_action_nicira_resubmit_table_subtype_set(dst, val16);
+
+    of_action_nicira_resubmit_table_port_get(src, &val16);
+    of_action_nicira_resubmit_table_port_set(dst, val16);
+
+    of_action_nicira_resubmit_table_table_id_get(src, &val8);
+    of_action_nicira_resubmit_table_table_id_set(dst, val8);
 
     return dst;
 }
@@ -12911,6 +13129,14 @@ of_action_OF_VERSION_1_2_dup(
         return of_action_nicira_dec_ttl_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_ACTION_NICIRA_EXIT) {
+        return of_action_nicira_exit_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_RESUBMIT) {
+        return of_action_nicira_resubmit_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_POP_MPLS) {
         return of_action_pop_mpls_OF_VERSION_1_2_dup(src);
     }
@@ -12925,6 +13151,10 @@ of_action_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_ACTION_SET_FIELD) {
         return of_action_set_field_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_RESUBMIT_TABLE) {
+        return of_action_nicira_resubmit_table_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_ACTION_SET_QUEUE) {
@@ -13217,6 +13447,103 @@ of_action_nicira_dec_ttl_OF_VERSION_1_2_dup(
 
     of_action_nicira_dec_ttl_subtype_get(src, &val16);
     of_action_nicira_dec_ttl_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_exit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_exit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_exit_t *
+of_action_nicira_exit_OF_VERSION_1_2_dup(
+    of_action_nicira_exit_t *src)
+{
+    of_action_nicira_exit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_nicira_exit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_exit_experimenter_get(src, &val32);
+    of_action_nicira_exit_experimenter_set(dst, val32);
+
+    of_action_nicira_exit_subtype_get(src, &val16);
+    of_action_nicira_exit_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_resubmit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_resubmit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_resubmit_t *
+of_action_nicira_resubmit_OF_VERSION_1_2_dup(
+    of_action_nicira_resubmit_t *src)
+{
+    of_action_nicira_resubmit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_nicira_resubmit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_resubmit_experimenter_get(src, &val32);
+    of_action_nicira_resubmit_experimenter_set(dst, val32);
+
+    of_action_nicira_resubmit_subtype_get(src, &val16);
+    of_action_nicira_resubmit_subtype_set(dst, val16);
+
+    of_action_nicira_resubmit_port_get(src, &val16);
+    of_action_nicira_resubmit_port_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_resubmit_table
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_resubmit_table.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_resubmit_table_t *
+of_action_nicira_resubmit_table_OF_VERSION_1_2_dup(
+    of_action_nicira_resubmit_table_t *src)
+{
+    of_action_nicira_resubmit_table_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    if ((dst = of_action_nicira_resubmit_table_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_resubmit_table_experimenter_get(src, &val32);
+    of_action_nicira_resubmit_table_experimenter_set(dst, val32);
+
+    of_action_nicira_resubmit_table_subtype_get(src, &val16);
+    of_action_nicira_resubmit_table_subtype_set(dst, val16);
+
+    of_action_nicira_resubmit_table_port_get(src, &val16);
+    of_action_nicira_resubmit_table_port_set(dst, val16);
+
+    of_action_nicira_resubmit_table_table_id_get(src, &val8);
+    of_action_nicira_resubmit_table_table_id_set(dst, val8);
 
     return dst;
 }
@@ -25887,6 +26214,14 @@ of_action_OF_VERSION_1_3_dup(
         return of_action_pop_pbb_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_ACTION_NICIRA_EXIT) {
+        return of_action_nicira_exit_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_RESUBMIT) {
+        return of_action_nicira_resubmit_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_POP_MPLS) {
         return of_action_pop_mpls_OF_VERSION_1_3_dup(src);
     }
@@ -25901,6 +26236,10 @@ of_action_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_ACTION_SET_FIELD) {
         return of_action_set_field_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_RESUBMIT_TABLE) {
+        return of_action_nicira_resubmit_table_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_ACTION_SET_QUEUE) {
@@ -26232,6 +26571,10 @@ of_action_id_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
+    if (src->object_id == OF_ACTION_ID_NICIRA_RESUBMIT_TABLE) {
+        return of_action_id_nicira_resubmit_table_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_ID_BSN_SET_TUNNEL_DST) {
         return of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_dup(src);
     }
@@ -26276,6 +26619,10 @@ of_action_id_OF_VERSION_1_3_dup(
         return of_action_id_nicira_dec_ttl_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_ACTION_ID_NICIRA_RESUBMIT) {
+        return of_action_id_nicira_resubmit_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_ID_COPY_TTL_OUT) {
         return of_action_id_copy_ttl_out_OF_VERSION_1_3_dup(src);
     }
@@ -26284,12 +26631,20 @@ of_action_id_OF_VERSION_1_3_dup(
         return of_action_id_set_queue_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_ACTION_ID_NICIRA_EXIT) {
+        return of_action_id_nicira_exit_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_ID_COPY_TTL_IN) {
         return of_action_id_copy_ttl_in_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_ACTION_ID_BSN_GENTABLE) {
         return of_action_id_bsn_gentable_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_SET_MPLS_TTL) {
+        return of_action_id_set_mpls_ttl_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_ACTION_ID_POP_MPLS) {
@@ -26302,10 +26657,6 @@ of_action_id_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_ACTION_ID_POP_VLAN) {
         return of_action_id_pop_vlan_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_SET_MPLS_TTL) {
-        return of_action_id_set_mpls_ttl_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_ACTION_ID_DEC_NW_TTL) {
@@ -26566,6 +26917,93 @@ of_action_id_nicira_dec_ttl_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_action_id_nicira_exit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_id_nicira_exit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_id_nicira_exit_t *
+of_action_id_nicira_exit_OF_VERSION_1_3_dup(
+    of_action_id_nicira_exit_t *src)
+{
+    of_action_id_nicira_exit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_id_nicira_exit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_id_nicira_exit_experimenter_get(src, &val32);
+    of_action_id_nicira_exit_experimenter_set(dst, val32);
+
+    of_action_id_nicira_exit_subtype_get(src, &val16);
+    of_action_id_nicira_exit_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_id_nicira_resubmit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_id_nicira_resubmit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_id_nicira_resubmit_t *
+of_action_id_nicira_resubmit_OF_VERSION_1_3_dup(
+    of_action_id_nicira_resubmit_t *src)
+{
+    of_action_id_nicira_resubmit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_id_nicira_resubmit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_id_nicira_resubmit_experimenter_get(src, &val32);
+    of_action_id_nicira_resubmit_experimenter_set(dst, val32);
+
+    of_action_id_nicira_resubmit_subtype_get(src, &val16);
+    of_action_id_nicira_resubmit_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_id_nicira_resubmit_table
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_id_nicira_resubmit_table.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_id_nicira_resubmit_table_t *
+of_action_id_nicira_resubmit_table_OF_VERSION_1_3_dup(
+    of_action_id_nicira_resubmit_table_t *src)
+{
+    of_action_id_nicira_resubmit_table_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_id_nicira_resubmit_table_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_id_nicira_resubmit_table_experimenter_get(src, &val32);
+    of_action_id_nicira_resubmit_table_experimenter_set(dst, val32);
+
+    of_action_id_nicira_resubmit_table_subtype_get(src, &val16);
+    of_action_id_nicira_resubmit_table_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_action_id_output
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -26821,6 +27259,103 @@ of_action_nicira_dec_ttl_OF_VERSION_1_3_dup(
 
     of_action_nicira_dec_ttl_subtype_get(src, &val16);
     of_action_nicira_dec_ttl_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_exit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_exit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_exit_t *
+of_action_nicira_exit_OF_VERSION_1_3_dup(
+    of_action_nicira_exit_t *src)
+{
+    of_action_nicira_exit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_nicira_exit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_exit_experimenter_get(src, &val32);
+    of_action_nicira_exit_experimenter_set(dst, val32);
+
+    of_action_nicira_exit_subtype_get(src, &val16);
+    of_action_nicira_exit_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_resubmit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_resubmit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_resubmit_t *
+of_action_nicira_resubmit_OF_VERSION_1_3_dup(
+    of_action_nicira_resubmit_t *src)
+{
+    of_action_nicira_resubmit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_nicira_resubmit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_resubmit_experimenter_get(src, &val32);
+    of_action_nicira_resubmit_experimenter_set(dst, val32);
+
+    of_action_nicira_resubmit_subtype_get(src, &val16);
+    of_action_nicira_resubmit_subtype_set(dst, val16);
+
+    of_action_nicira_resubmit_port_get(src, &val16);
+    of_action_nicira_resubmit_port_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_resubmit_table
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_resubmit_table.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_resubmit_table_t *
+of_action_nicira_resubmit_table_OF_VERSION_1_3_dup(
+    of_action_nicira_resubmit_table_t *src)
+{
+    of_action_nicira_resubmit_table_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    if ((dst = of_action_nicira_resubmit_table_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_resubmit_table_experimenter_get(src, &val32);
+    of_action_nicira_resubmit_table_experimenter_set(dst, val32);
+
+    of_action_nicira_resubmit_table_subtype_get(src, &val16);
+    of_action_nicira_resubmit_table_subtype_set(dst, val16);
+
+    of_action_nicira_resubmit_table_port_get(src, &val16);
+    of_action_nicira_resubmit_table_port_set(dst, val16);
+
+    of_action_nicira_resubmit_table_table_id_get(src, &val8);
+    of_action_nicira_resubmit_table_table_id_set(dst, val8);
 
     return dst;
 }
@@ -49212,6 +49747,14 @@ of_action_OF_VERSION_1_4_dup(
         return of_action_pop_pbb_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_ACTION_NICIRA_EXIT) {
+        return of_action_nicira_exit_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_RESUBMIT) {
+        return of_action_nicira_resubmit_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_POP_MPLS) {
         return of_action_pop_mpls_OF_VERSION_1_4_dup(src);
     }
@@ -49226,6 +49769,10 @@ of_action_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_ACTION_SET_FIELD) {
         return of_action_set_field_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_NICIRA_RESUBMIT_TABLE) {
+        return of_action_nicira_resubmit_table_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ACTION_SET_QUEUE) {
@@ -49557,6 +50104,10 @@ of_action_id_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
+    if (src->object_id == OF_ACTION_ID_NICIRA_RESUBMIT_TABLE) {
+        return of_action_id_nicira_resubmit_table_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_ID_BSN_SET_TUNNEL_DST) {
         return of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_4_dup(src);
     }
@@ -49601,6 +50152,10 @@ of_action_id_OF_VERSION_1_4_dup(
         return of_action_id_nicira_dec_ttl_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_ACTION_ID_NICIRA_RESUBMIT) {
+        return of_action_id_nicira_resubmit_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_ID_COPY_TTL_OUT) {
         return of_action_id_copy_ttl_out_OF_VERSION_1_4_dup(src);
     }
@@ -49609,12 +50164,20 @@ of_action_id_OF_VERSION_1_4_dup(
         return of_action_id_set_queue_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_ACTION_ID_NICIRA_EXIT) {
+        return of_action_id_nicira_exit_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_ACTION_ID_COPY_TTL_IN) {
         return of_action_id_copy_ttl_in_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ACTION_ID_BSN_GENTABLE) {
         return of_action_id_bsn_gentable_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_ACTION_ID_SET_MPLS_TTL) {
+        return of_action_id_set_mpls_ttl_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ACTION_ID_POP_MPLS) {
@@ -49627,10 +50190,6 @@ of_action_id_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_ACTION_ID_POP_VLAN) {
         return of_action_id_pop_vlan_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_ACTION_ID_SET_MPLS_TTL) {
-        return of_action_id_set_mpls_ttl_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_ACTION_ID_DEC_NW_TTL) {
@@ -49891,6 +50450,93 @@ of_action_id_nicira_dec_ttl_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_action_id_nicira_exit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_id_nicira_exit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_id_nicira_exit_t *
+of_action_id_nicira_exit_OF_VERSION_1_4_dup(
+    of_action_id_nicira_exit_t *src)
+{
+    of_action_id_nicira_exit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_id_nicira_exit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_id_nicira_exit_experimenter_get(src, &val32);
+    of_action_id_nicira_exit_experimenter_set(dst, val32);
+
+    of_action_id_nicira_exit_subtype_get(src, &val16);
+    of_action_id_nicira_exit_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_id_nicira_resubmit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_id_nicira_resubmit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_id_nicira_resubmit_t *
+of_action_id_nicira_resubmit_OF_VERSION_1_4_dup(
+    of_action_id_nicira_resubmit_t *src)
+{
+    of_action_id_nicira_resubmit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_id_nicira_resubmit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_id_nicira_resubmit_experimenter_get(src, &val32);
+    of_action_id_nicira_resubmit_experimenter_set(dst, val32);
+
+    of_action_id_nicira_resubmit_subtype_get(src, &val16);
+    of_action_id_nicira_resubmit_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_id_nicira_resubmit_table
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_id_nicira_resubmit_table.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_id_nicira_resubmit_table_t *
+of_action_id_nicira_resubmit_table_OF_VERSION_1_4_dup(
+    of_action_id_nicira_resubmit_table_t *src)
+{
+    of_action_id_nicira_resubmit_table_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_id_nicira_resubmit_table_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_id_nicira_resubmit_table_experimenter_get(src, &val32);
+    of_action_id_nicira_resubmit_table_experimenter_set(dst, val32);
+
+    of_action_id_nicira_resubmit_table_subtype_get(src, &val16);
+    of_action_id_nicira_resubmit_table_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_action_id_output
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -50146,6 +50792,103 @@ of_action_nicira_dec_ttl_OF_VERSION_1_4_dup(
 
     of_action_nicira_dec_ttl_subtype_get(src, &val16);
     of_action_nicira_dec_ttl_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_exit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_exit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_exit_t *
+of_action_nicira_exit_OF_VERSION_1_4_dup(
+    of_action_nicira_exit_t *src)
+{
+    of_action_nicira_exit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_nicira_exit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_exit_experimenter_get(src, &val32);
+    of_action_nicira_exit_experimenter_set(dst, val32);
+
+    of_action_nicira_exit_subtype_get(src, &val16);
+    of_action_nicira_exit_subtype_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_resubmit
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_resubmit.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_resubmit_t *
+of_action_nicira_resubmit_OF_VERSION_1_4_dup(
+    of_action_nicira_resubmit_t *src)
+{
+    of_action_nicira_resubmit_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_action_nicira_resubmit_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_resubmit_experimenter_get(src, &val32);
+    of_action_nicira_resubmit_experimenter_set(dst, val32);
+
+    of_action_nicira_resubmit_subtype_get(src, &val16);
+    of_action_nicira_resubmit_subtype_set(dst, val16);
+
+    of_action_nicira_resubmit_port_get(src, &val16);
+    of_action_nicira_resubmit_port_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_nicira_resubmit_table
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_nicira_resubmit_table.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_nicira_resubmit_table_t *
+of_action_nicira_resubmit_table_OF_VERSION_1_4_dup(
+    of_action_nicira_resubmit_table_t *src)
+{
+    of_action_nicira_resubmit_table_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    if ((dst = of_action_nicira_resubmit_table_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_nicira_resubmit_table_experimenter_get(src, &val32);
+    of_action_nicira_resubmit_table_experimenter_set(dst, val32);
+
+    of_action_nicira_resubmit_table_subtype_get(src, &val16);
+    of_action_nicira_resubmit_table_subtype_set(dst, val16);
+
+    of_action_nicira_resubmit_table_port_get(src, &val16);
+    of_action_nicira_resubmit_table_port_set(dst, val16);
+
+    of_action_nicira_resubmit_table_table_id_get(src, &val8);
+    of_action_nicira_resubmit_table_table_id_set(dst, val8);
 
     return dst;
 }
@@ -71806,6 +72549,57 @@ of_action_id_nicira_dec_ttl_dup(
 }
 
 of_object_t *
+of_action_id_nicira_exit_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_action_id_nicira_exit_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_action_id_nicira_exit_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_action_id_nicira_resubmit_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_action_id_nicira_resubmit_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_action_id_nicira_resubmit_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_action_id_nicira_resubmit_table_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_action_id_nicira_resubmit_table_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_action_id_nicira_resubmit_table_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_action_id_output_dup(
     of_object_t *src)
 {
@@ -72024,6 +72818,93 @@ of_action_nicira_dec_ttl_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_action_nicira_dec_ttl_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_action_nicira_exit_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_0) {
+        return of_action_nicira_exit_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_1) {
+        return of_action_nicira_exit_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_action_nicira_exit_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_action_nicira_exit_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_action_nicira_exit_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_action_nicira_resubmit_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_0) {
+        return of_action_nicira_resubmit_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_1) {
+        return of_action_nicira_resubmit_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_action_nicira_resubmit_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_action_nicira_resubmit_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_action_nicira_resubmit_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_action_nicira_resubmit_table_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_0) {
+        return of_action_nicira_resubmit_table_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_1) {
+        return of_action_nicira_resubmit_table_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_action_nicira_resubmit_table_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_action_nicira_resubmit_table_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_action_nicira_resubmit_table_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

@@ -951,6 +951,18 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_action_id_nicira_exit_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_id_nicira_resubmit_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_id_nicira_resubmit_table_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_action_id_output_dup(
         of_object_t *src);
 
@@ -1000,6 +1012,18 @@ extern of_object_t *
 
 extern of_object_t *
     of_action_nicira_dec_ttl_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_exit_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_resubmit_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_resubmit_table_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -3683,6 +3707,18 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_action_nicira_exit_OF_VERSION_1_0_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_resubmit_OF_VERSION_1_0_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_resubmit_table_OF_VERSION_1_0_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_action_output_OF_VERSION_1_0_dup(
         of_object_t *src);
 
@@ -4156,6 +4192,18 @@ extern of_object_t *
 
 extern of_object_t *
     of_action_nicira_dec_ttl_OF_VERSION_1_1_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_exit_OF_VERSION_1_1_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_resubmit_OF_VERSION_1_1_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_resubmit_table_OF_VERSION_1_1_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -4748,6 +4796,18 @@ extern of_object_t *
 
 extern of_object_t *
     of_action_nicira_dec_ttl_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_exit_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_resubmit_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_resubmit_table_OF_VERSION_1_2_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6259,6 +6319,18 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_action_id_nicira_exit_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_id_nicira_resubmit_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_id_nicira_resubmit_table_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_action_id_output_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6304,6 +6376,18 @@ extern of_object_t *
 
 extern of_object_t *
     of_action_nicira_dec_ttl_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_exit_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_resubmit_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_resubmit_table_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9075,6 +9159,18 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_action_id_nicira_exit_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_id_nicira_resubmit_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_id_nicira_resubmit_table_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_action_id_output_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -9120,6 +9216,18 @@ extern of_object_t *
 
 extern of_object_t *
     of_action_nicira_dec_ttl_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_exit_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_resubmit_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_action_nicira_resubmit_table_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
