@@ -866,6 +866,18 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x1d920:
             *id = OF_OXM_CONN_TRACKING_LABEL_MASKED;
             break;
+        case 0x1da10:
+            *id = OF_OXM_TUNNEL_IPV6_SRC;
+            break;
+        case 0x1db20:
+            *id = OF_OXM_TUNNEL_IPV6_SRC_MASKED;
+            break;
+        case 0x1dc10:
+            *id = OF_OXM_TUNNEL_IPV6_DST;
+            break;
+        case 0x1dd20:
+            *id = OF_OXM_TUNNEL_IPV6_DST_MASKED;
+            break;
         case 0x1ee01:
             *id = OF_OXM_CONN_TRACKING_NW_PROTO;
             break;
@@ -1306,6 +1318,18 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x1d920:
             *id = OF_OXM_CONN_TRACKING_LABEL_MASKED;
+            break;
+        case 0x1da10:
+            *id = OF_OXM_TUNNEL_IPV6_SRC;
+            break;
+        case 0x1db20:
+            *id = OF_OXM_TUNNEL_IPV6_SRC_MASKED;
+            break;
+        case 0x1dc10:
+            *id = OF_OXM_TUNNEL_IPV6_DST;
+            break;
+        case 0x1dd20:
+            *id = OF_OXM_TUNNEL_IPV6_DST_MASKED;
             break;
         case 0x1ee01:
             *id = OF_OXM_CONN_TRACKING_NW_PROTO;
@@ -1795,6 +1819,18 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x1d920:
             *id = OF_OXM_CONN_TRACKING_LABEL_MASKED;
+            break;
+        case 0x1da10:
+            *id = OF_OXM_TUNNEL_IPV6_SRC;
+            break;
+        case 0x1db20:
+            *id = OF_OXM_TUNNEL_IPV6_SRC_MASKED;
+            break;
+        case 0x1dc10:
+            *id = OF_OXM_TUNNEL_IPV6_DST;
+            break;
+        case 0x1dd20:
+            *id = OF_OXM_TUNNEL_IPV6_DST_MASKED;
             break;
         case 0x1ee01:
             *id = OF_OXM_CONN_TRACKING_NW_PROTO;

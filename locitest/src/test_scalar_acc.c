@@ -17475,6 +17475,154 @@ test_of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_scalar(void)
 }
 
 static int
+test_of_oxm_tunnel_ipv6_dst_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_tunnel_ipv6_dst_t *obj;
+
+    obj = of_oxm_tunnel_ipv6_dst_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_TUNNEL_IPV6_DST);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_TUNNEL_IPV6_DST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_tunnel_ipv6_dst_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_tunnel_ipv6_dst_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_tunnel_ipv6_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_tunnel_ipv6_dst_masked_t *obj;
+
+    obj = of_oxm_tunnel_ipv6_dst_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_TUNNEL_IPV6_DST_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_TUNNEL_IPV6_DST_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_tunnel_ipv6_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_tunnel_ipv6_src_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_tunnel_ipv6_src_t *obj;
+
+    obj = of_oxm_tunnel_ipv6_src_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_TUNNEL_IPV6_SRC);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_TUNNEL_IPV6_SRC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_tunnel_ipv6_src_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_tunnel_ipv6_src_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_tunnel_ipv6_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_tunnel_ipv6_src_masked_t *obj;
+
+    obj = of_oxm_tunnel_ipv6_src_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_TUNNEL_IPV6_SRC_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_TUNNEL_IPV6_SRC_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_tunnel_ipv6_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_oxm_udp_dst_OF_VERSION_1_2_scalar(void)
 {
     of_oxm_udp_dst_t *obj;
@@ -40067,6 +40215,154 @@ test_of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_oxm_tunnel_ipv4_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_tunnel_ipv6_dst_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_tunnel_ipv6_dst_t *obj;
+
+    obj = of_oxm_tunnel_ipv6_dst_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_TUNNEL_IPV6_DST);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_TUNNEL_IPV6_DST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_tunnel_ipv6_dst_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_tunnel_ipv6_dst_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_tunnel_ipv6_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_tunnel_ipv6_dst_masked_t *obj;
+
+    obj = of_oxm_tunnel_ipv6_dst_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_TUNNEL_IPV6_DST_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_TUNNEL_IPV6_DST_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_tunnel_ipv6_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_tunnel_ipv6_src_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_tunnel_ipv6_src_t *obj;
+
+    obj = of_oxm_tunnel_ipv6_src_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_TUNNEL_IPV6_SRC);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_TUNNEL_IPV6_SRC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_tunnel_ipv6_src_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_tunnel_ipv6_src_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_tunnel_ipv6_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_tunnel_ipv6_src_masked_t *obj;
+
+    obj = of_oxm_tunnel_ipv6_src_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_TUNNEL_IPV6_SRC_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_TUNNEL_IPV6_SRC_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_tunnel_ipv6_src_masked_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -64238,6 +64534,154 @@ test_of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_scalar(void)
 }
 
 static int
+test_of_oxm_tunnel_ipv6_dst_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_tunnel_ipv6_dst_t *obj;
+
+    obj = of_oxm_tunnel_ipv6_dst_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_TUNNEL_IPV6_DST);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_TUNNEL_IPV6_DST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_tunnel_ipv6_dst_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_tunnel_ipv6_dst_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_tunnel_ipv6_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_tunnel_ipv6_dst_masked_t *obj;
+
+    obj = of_oxm_tunnel_ipv6_dst_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_TUNNEL_IPV6_DST_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_TUNNEL_IPV6_DST_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_tunnel_ipv6_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_tunnel_ipv6_src_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_tunnel_ipv6_src_t *obj;
+
+    obj = of_oxm_tunnel_ipv6_src_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_TUNNEL_IPV6_SRC);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_TUNNEL_IPV6_SRC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_tunnel_ipv6_src_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_tunnel_ipv6_src_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_tunnel_ipv6_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_tunnel_ipv6_src_masked_t *obj;
+
+    obj = of_oxm_tunnel_ipv6_src_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_TUNNEL_IPV6_SRC_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_TUNNEL_IPV6_SRC_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 36);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_tunnel_ipv6_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_oxm_udp_dst_OF_VERSION_1_4_scalar(void)
 {
     of_oxm_udp_dst_t *obj;
@@ -66636,6 +67080,10 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_tunnel_ipv4_src_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_tunnel_ipv6_dst_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_tunnel_ipv6_src_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_udp_dst_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_udp_dst_masked_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_udp_src_OF_VERSION_1_2_scalar);
@@ -67252,6 +67700,10 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_tunnel_ipv4_src_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_tunnel_ipv6_dst_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_tunnel_ipv6_src_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_udp_dst_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_udp_dst_masked_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_udp_src_OF_VERSION_1_3_scalar);
@@ -67911,6 +68363,10 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_tunnel_ipv4_src_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_tunnel_ipv6_dst_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_tunnel_ipv6_src_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_udp_dst_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_udp_dst_masked_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_udp_src_OF_VERSION_1_4_scalar);

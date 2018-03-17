@@ -301,6 +301,14 @@ public interface OFOxms {
     OFOxmTunnelIpv4Src tunnelIpv4Src(IPv4Address value);
     OFOxmTunnelIpv4SrcMasked.Builder buildTunnelIpv4SrcMasked() throws UnsupportedOperationException;
     OFOxmTunnelIpv4SrcMasked tunnelIpv4SrcMasked(IPv4Address value, IPv4Address mask);
+    OFOxmTunnelIpv6Dst.Builder buildTunnelIpv6Dst() throws UnsupportedOperationException;
+    OFOxmTunnelIpv6Dst tunnelIpv6Dst(IPv6Address value);
+    OFOxmTunnelIpv6DstMasked.Builder buildTunnelIpv6DstMasked() throws UnsupportedOperationException;
+    OFOxmTunnelIpv6DstMasked tunnelIpv6DstMasked(IPv6Address value, IPv6Address mask);
+    OFOxmTunnelIpv6Src.Builder buildTunnelIpv6Src() throws UnsupportedOperationException;
+    OFOxmTunnelIpv6Src tunnelIpv6Src(IPv6Address value);
+    OFOxmTunnelIpv6SrcMasked.Builder buildTunnelIpv6SrcMasked() throws UnsupportedOperationException;
+    OFOxmTunnelIpv6SrcMasked tunnelIpv6SrcMasked(IPv6Address value, IPv6Address mask);
     OFOxmUdpDst.Builder buildUdpDst() throws UnsupportedOperationException;
     OFOxmUdpDst udpDst(TransportPort value);
     OFOxmUdpDstMasked.Builder buildUdpDstMasked() throws UnsupportedOperationException;

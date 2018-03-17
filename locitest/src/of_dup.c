@@ -14091,6 +14091,10 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV6_SRC_MASKED) {
+        return of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
         return of_oxm_vlan_vid_masked_OF_VERSION_1_2_dup(src);
     }
@@ -14143,8 +14147,8 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_icmpv4_type_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_UDP_DST) {
-        return of_oxm_udp_dst_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_TUNNEL_IPV6_SRC) {
+        return of_oxm_tunnel_ipv6_src_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
@@ -14253,6 +14257,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
         return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV6_DST) {
+        return of_oxm_tunnel_ipv6_dst_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_SCTP_SRC) {
@@ -14443,6 +14451,10 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_tcp_src_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV6_DST_MASKED) {
+        return of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
         return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_2_dup(src);
     }
@@ -14477,6 +14489,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_BSN_VRF) {
         return of_oxm_bsn_vrf_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_UDP_DST) {
+        return of_oxm_udp_dst_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV4_DST) {
@@ -18262,6 +18278,112 @@ of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_dup(
 
     of_oxm_tunnel_ipv4_src_masked_value_mask_get(src, &ipv4);
     of_oxm_tunnel_ipv4_src_masked_value_mask_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv6_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv6_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv6_dst_t *
+of_oxm_tunnel_ipv6_dst_OF_VERSION_1_2_dup(
+    of_oxm_tunnel_ipv6_dst_t *src)
+{
+    of_oxm_tunnel_ipv6_dst_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_tunnel_ipv6_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv6_dst_value_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_dst_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv6_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv6_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv6_dst_masked_t *
+of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_2_dup(
+    of_oxm_tunnel_ipv6_dst_masked_t *src)
+{
+    of_oxm_tunnel_ipv6_dst_masked_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_tunnel_ipv6_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv6_dst_masked_value_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_dst_masked_value_set(dst, ipv6);
+
+    of_oxm_tunnel_ipv6_dst_masked_value_mask_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_dst_masked_value_mask_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv6_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv6_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv6_src_t *
+of_oxm_tunnel_ipv6_src_OF_VERSION_1_2_dup(
+    of_oxm_tunnel_ipv6_src_t *src)
+{
+    of_oxm_tunnel_ipv6_src_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_tunnel_ipv6_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv6_src_value_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_src_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv6_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv6_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv6_src_masked_t *
+of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_2_dup(
+    of_oxm_tunnel_ipv6_src_masked_t *src)
+{
+    of_oxm_tunnel_ipv6_src_masked_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_tunnel_ipv6_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv6_src_masked_value_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_src_masked_value_set(dst, ipv6);
+
+    of_oxm_tunnel_ipv6_src_masked_value_mask_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_src_masked_value_mask_set(dst, ipv6);
 
     return dst;
 }
@@ -34732,6 +34854,10 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV6_SRC_MASKED) {
+        return of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
         return of_oxm_vlan_vid_masked_OF_VERSION_1_3_dup(src);
     }
@@ -34796,8 +34922,8 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_icmpv4_type_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_UDP_DST) {
-        return of_oxm_udp_dst_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_TUNNEL_IPV6_SRC) {
+        return of_oxm_tunnel_ipv6_src_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
@@ -34906,6 +35032,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
         return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV6_DST) {
+        return of_oxm_tunnel_ipv6_dst_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_SCTP_SRC) {
@@ -35120,6 +35250,10 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_tcp_src_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV6_DST_MASKED) {
+        return of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
         return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_3_dup(src);
     }
@@ -35154,6 +35288,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_BSN_VRF) {
         return of_oxm_bsn_vrf_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_UDP_DST) {
+        return of_oxm_udp_dst_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV4_DST) {
@@ -39387,6 +39525,112 @@ of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_dup(
 
     of_oxm_tunnel_ipv4_src_masked_value_mask_get(src, &ipv4);
     of_oxm_tunnel_ipv4_src_masked_value_mask_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv6_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv6_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv6_dst_t *
+of_oxm_tunnel_ipv6_dst_OF_VERSION_1_3_dup(
+    of_oxm_tunnel_ipv6_dst_t *src)
+{
+    of_oxm_tunnel_ipv6_dst_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_tunnel_ipv6_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv6_dst_value_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_dst_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv6_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv6_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv6_dst_masked_t *
+of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_3_dup(
+    of_oxm_tunnel_ipv6_dst_masked_t *src)
+{
+    of_oxm_tunnel_ipv6_dst_masked_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_tunnel_ipv6_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv6_dst_masked_value_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_dst_masked_value_set(dst, ipv6);
+
+    of_oxm_tunnel_ipv6_dst_masked_value_mask_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_dst_masked_value_mask_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv6_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv6_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv6_src_t *
+of_oxm_tunnel_ipv6_src_OF_VERSION_1_3_dup(
+    of_oxm_tunnel_ipv6_src_t *src)
+{
+    of_oxm_tunnel_ipv6_src_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_tunnel_ipv6_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv6_src_value_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_src_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv6_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv6_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv6_src_masked_t *
+of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_3_dup(
+    of_oxm_tunnel_ipv6_src_masked_t *src)
+{
+    of_oxm_tunnel_ipv6_src_masked_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_tunnel_ipv6_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv6_src_masked_value_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_src_masked_value_set(dst, ipv6);
+
+    of_oxm_tunnel_ipv6_src_masked_value_mask_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_src_masked_value_mask_set(dst, ipv6);
 
     return dst;
 }
@@ -58420,6 +58664,10 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_ip_fragmentation_masked_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV6_SRC_MASKED) {
+        return of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
         return of_oxm_vlan_vid_masked_OF_VERSION_1_4_dup(src);
     }
@@ -58484,8 +58732,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_icmpv4_type_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_UDP_DST) {
-        return of_oxm_udp_dst_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_TUNNEL_IPV6_SRC) {
+        return of_oxm_tunnel_ipv6_src_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_CONN_TRACKING_STATE) {
@@ -58590,6 +58838,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
         return of_oxm_icmpv6_type_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV6_DST) {
+        return of_oxm_tunnel_ipv6_dst_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_SCTP_SRC) {
@@ -58804,6 +59056,10 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_tcp_src_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV6_DST_MASKED) {
+        return of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_CONN_TRACKING_TP_SRC_MASKED) {
         return of_oxm_conn_tracking_tp_src_masked_OF_VERSION_1_4_dup(src);
     }
@@ -58838,6 +59094,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_BSN_VRF) {
         return of_oxm_bsn_vrf_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_UDP_DST) {
+        return of_oxm_udp_dst_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV4_DST) {
@@ -63079,6 +63339,112 @@ of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_dup(
 
     of_oxm_tunnel_ipv4_src_masked_value_mask_get(src, &ipv4);
     of_oxm_tunnel_ipv4_src_masked_value_mask_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv6_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv6_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv6_dst_t *
+of_oxm_tunnel_ipv6_dst_OF_VERSION_1_4_dup(
+    of_oxm_tunnel_ipv6_dst_t *src)
+{
+    of_oxm_tunnel_ipv6_dst_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_tunnel_ipv6_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv6_dst_value_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_dst_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv6_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv6_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv6_dst_masked_t *
+of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_4_dup(
+    of_oxm_tunnel_ipv6_dst_masked_t *src)
+{
+    of_oxm_tunnel_ipv6_dst_masked_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_tunnel_ipv6_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv6_dst_masked_value_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_dst_masked_value_set(dst, ipv6);
+
+    of_oxm_tunnel_ipv6_dst_masked_value_mask_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_dst_masked_value_mask_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv6_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv6_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv6_src_t *
+of_oxm_tunnel_ipv6_src_OF_VERSION_1_4_dup(
+    of_oxm_tunnel_ipv6_src_t *src)
+{
+    of_oxm_tunnel_ipv6_src_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_tunnel_ipv6_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv6_src_value_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_src_value_set(dst, ipv6);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv6_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv6_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv6_src_masked_t *
+of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_4_dup(
+    of_oxm_tunnel_ipv6_src_masked_t *src)
+{
+    of_oxm_tunnel_ipv6_src_masked_t *dst;
+    of_ipv6_t ipv6;
+
+    if ((dst = of_oxm_tunnel_ipv6_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv6_src_masked_value_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_src_masked_value_set(dst, ipv6);
+
+    of_oxm_tunnel_ipv6_src_masked_value_mask_get(src, &ipv6);
+    of_oxm_tunnel_ipv6_src_masked_value_mask_set(dst, ipv6);
 
     return dst;
 }
@@ -80355,6 +80721,90 @@ of_oxm_tunnel_ipv4_src_masked_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_tunnel_ipv6_dst_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_tunnel_ipv6_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_tunnel_ipv6_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_tunnel_ipv6_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_tunnel_ipv6_dst_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_tunnel_ipv6_src_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_tunnel_ipv6_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_tunnel_ipv6_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_tunnel_ipv6_src_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_tunnel_ipv6_src_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

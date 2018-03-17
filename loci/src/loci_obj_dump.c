@@ -13893,6 +13893,80 @@ of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* co
 }
 
 int
+of_oxm_tunnel_ipv6_dst_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv6_t ipv6;
+
+    out += writer(cookie, "Object of type of_oxm_tunnel_ipv6_dst\n");
+
+    of_oxm_tunnel_ipv6_dst_value_get(obj, &ipv6);
+    out += writer(cookie, "  value (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv6_t ipv6;
+
+    out += writer(cookie, "Object of type of_oxm_tunnel_ipv6_dst_masked\n");
+
+    of_oxm_tunnel_ipv6_dst_masked_value_get(obj, &ipv6);
+    out += writer(cookie, "  value (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    of_oxm_tunnel_ipv6_dst_masked_value_mask_get(obj, &ipv6);
+    out += writer(cookie, "  value_mask (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_tunnel_ipv6_src_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv6_t ipv6;
+
+    out += writer(cookie, "Object of type of_oxm_tunnel_ipv6_src\n");
+
+    of_oxm_tunnel_ipv6_src_value_get(obj, &ipv6);
+    out += writer(cookie, "  value (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv6_t ipv6;
+
+    out += writer(cookie, "Object of type of_oxm_tunnel_ipv6_src_masked\n");
+
+    of_oxm_tunnel_ipv6_src_masked_value_get(obj, &ipv6);
+    out += writer(cookie, "  value (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    of_oxm_tunnel_ipv6_src_masked_value_mask_get(obj, &ipv6);
+    out += writer(cookie, "  value_mask (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_oxm_udp_dst_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -28354,6 +28428,80 @@ of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* co
     of_oxm_tunnel_ipv4_src_masked_value_mask_get(obj, &ipv4);
     out += writer(cookie, "  value_mask (of_ipv4_t):  ");
     out += LOCI_DUMP_ipv4(writer, cookie, ipv4);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_tunnel_ipv6_dst_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv6_t ipv6;
+
+    out += writer(cookie, "Object of type of_oxm_tunnel_ipv6_dst\n");
+
+    of_oxm_tunnel_ipv6_dst_value_get(obj, &ipv6);
+    out += writer(cookie, "  value (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv6_t ipv6;
+
+    out += writer(cookie, "Object of type of_oxm_tunnel_ipv6_dst_masked\n");
+
+    of_oxm_tunnel_ipv6_dst_masked_value_get(obj, &ipv6);
+    out += writer(cookie, "  value (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    of_oxm_tunnel_ipv6_dst_masked_value_mask_get(obj, &ipv6);
+    out += writer(cookie, "  value_mask (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_tunnel_ipv6_src_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv6_t ipv6;
+
+    out += writer(cookie, "Object of type of_oxm_tunnel_ipv6_src\n");
+
+    of_oxm_tunnel_ipv6_src_value_get(obj, &ipv6);
+    out += writer(cookie, "  value (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv6_t ipv6;
+
+    out += writer(cookie, "Object of type of_oxm_tunnel_ipv6_src_masked\n");
+
+    of_oxm_tunnel_ipv6_src_masked_value_get(obj, &ipv6);
+    out += writer(cookie, "  value (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    of_oxm_tunnel_ipv6_src_masked_value_mask_get(obj, &ipv6);
+    out += writer(cookie, "  value_mask (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
     out += writer(cookie, "\n");
 
     return out;
@@ -43743,6 +43891,80 @@ of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* co
 }
 
 int
+of_oxm_tunnel_ipv6_dst_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv6_t ipv6;
+
+    out += writer(cookie, "Object of type of_oxm_tunnel_ipv6_dst\n");
+
+    of_oxm_tunnel_ipv6_dst_value_get(obj, &ipv6);
+    out += writer(cookie, "  value (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv6_t ipv6;
+
+    out += writer(cookie, "Object of type of_oxm_tunnel_ipv6_dst_masked\n");
+
+    of_oxm_tunnel_ipv6_dst_masked_value_get(obj, &ipv6);
+    out += writer(cookie, "  value (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    of_oxm_tunnel_ipv6_dst_masked_value_mask_get(obj, &ipv6);
+    out += writer(cookie, "  value_mask (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_tunnel_ipv6_src_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv6_t ipv6;
+
+    out += writer(cookie, "Object of type of_oxm_tunnel_ipv6_src\n");
+
+    of_oxm_tunnel_ipv6_src_value_get(obj, &ipv6);
+    out += writer(cookie, "  value (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv6_t ipv6;
+
+    out += writer(cookie, "Object of type of_oxm_tunnel_ipv6_src_masked\n");
+
+    of_oxm_tunnel_ipv6_src_masked_value_get(obj, &ipv6);
+    out += writer(cookie, "  value (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    of_oxm_tunnel_ipv6_src_masked_value_mask_get(obj, &ipv6);
+    out += writer(cookie, "  value_mask (of_ipv6_t):  ");
+    out += LOCI_DUMP_ipv6(writer, cookie, ipv6);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_oxm_udp_dst_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -45385,6 +45607,14 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, "\n");
     }
 
+    if (OF_MATCH_MASK_TUNNEL_IPV6_SRC_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  tunnel_ipv6_src (of_ipv6_t) active: Value ");
+        out += LOCI_DUMP_ipv6(writer, cookie, match->fields.tunnel_ipv6_src);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_ipv6(writer, cookie, match->masks.tunnel_ipv6_src);
+        out += writer(cookie, "\n");
+    }
+
     if (OF_MATCH_MASK_BSN_IN_PORTS_128_ACTIVE_TEST(match)) {
         out += writer(cookie, "  bsn_in_ports_128 (of_bitmap_128_t) active: Value ");
         out += LOCI_DUMP_bitmap_128(writer, cookie, match->fields.bsn_in_ports_128);
@@ -45441,11 +45671,11 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, "\n");
     }
 
-    if (OF_MATCH_MASK_MPLS_BOS_ACTIVE_TEST(match)) {
-        out += writer(cookie, "  mpls_bos (uint8_t) active: Value ");
-        out += LOCI_DUMP_u8(writer, cookie, match->fields.mpls_bos);
+    if (OF_MATCH_MASK_TUNNEL_IPV6_DST_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  tunnel_ipv6_dst (of_ipv6_t) active: Value ");
+        out += LOCI_DUMP_ipv6(writer, cookie, match->fields.tunnel_ipv6_dst);
         out += writer(cookie, "\n    Mask ");
-        out += LOCI_DUMP_u8(writer, cookie, match->masks.mpls_bos);
+        out += LOCI_DUMP_ipv6(writer, cookie, match->masks.tunnel_ipv6_dst);
         out += writer(cookie, "\n");
     }
 
@@ -45814,6 +46044,14 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += LOCI_DUMP_u8(writer, cookie, match->fields.icmpv6_type);
         out += writer(cookie, "\n    Mask ");
         out += LOCI_DUMP_u8(writer, cookie, match->masks.icmpv6_type);
+        out += writer(cookie, "\n");
+    }
+
+    if (OF_MATCH_MASK_MPLS_BOS_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  mpls_bos (uint8_t) active: Value ");
+        out += LOCI_DUMP_u8(writer, cookie, match->fields.mpls_bos);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_u8(writer, cookie, match->masks.mpls_bos);
         out += writer(cookie, "\n");
     }
 
@@ -46493,6 +46731,10 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_match_v1_OF_VERSION_1_0_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -47506,6 +47748,10 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_packet_queue_OF_VERSION_1_1_dump,
     of_port_desc_OF_VERSION_1_1_dump,
     unknown_dump,
@@ -48336,6 +48582,10 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_2_dump,
     of_oxm_tunnel_ipv4_src_OF_VERSION_1_2_dump,
     of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_dump,
+    of_oxm_tunnel_ipv6_dst_OF_VERSION_1_2_dump,
+    of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_2_dump,
+    of_oxm_tunnel_ipv6_src_OF_VERSION_1_2_dump,
+    of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_2_dump,
     of_oxm_udp_dst_OF_VERSION_1_2_dump,
     of_oxm_udp_dst_masked_OF_VERSION_1_2_dump,
     of_oxm_udp_src_OF_VERSION_1_2_dump,
@@ -49174,6 +49424,10 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_3_dump,
     of_oxm_tunnel_ipv4_src_OF_VERSION_1_3_dump,
     of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_dump,
+    of_oxm_tunnel_ipv6_dst_OF_VERSION_1_3_dump,
+    of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_3_dump,
+    of_oxm_tunnel_ipv6_src_OF_VERSION_1_3_dump,
+    of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_3_dump,
     of_oxm_udp_dst_OF_VERSION_1_3_dump,
     of_oxm_udp_dst_masked_OF_VERSION_1_3_dump,
     of_oxm_udp_src_OF_VERSION_1_3_dump,
@@ -50012,6 +50266,10 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_4_dump,
     of_oxm_tunnel_ipv4_src_OF_VERSION_1_4_dump,
     of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_dump,
+    of_oxm_tunnel_ipv6_dst_OF_VERSION_1_4_dump,
+    of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_4_dump,
+    of_oxm_tunnel_ipv6_src_OF_VERSION_1_4_dump,
+    of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_4_dump,
     of_oxm_udp_dst_OF_VERSION_1_4_dump,
     of_oxm_udp_dst_masked_OF_VERSION_1_4_dump,
     of_oxm_udp_src_OF_VERSION_1_4_dump,

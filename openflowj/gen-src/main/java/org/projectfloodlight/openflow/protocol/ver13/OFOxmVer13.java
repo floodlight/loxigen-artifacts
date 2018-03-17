@@ -452,6 +452,18 @@ abstract class OFOxmVer13 {
                case 0x13f08:
                    // discriminator value 0x13f08L=0x13f08L for class OFOxmTunnelIpv4SrcMaskedVer13
                    return OFOxmTunnelIpv4SrcMaskedVer13.READER.readFrom(bb);
+               case 0x1dc10:
+                   // discriminator value 0x1dc10L=0x1dc10L for class OFOxmTunnelIpv6DstVer13
+                   return OFOxmTunnelIpv6DstVer13.READER.readFrom(bb);
+               case 0x1dd20:
+                   // discriminator value 0x1dd20L=0x1dd20L for class OFOxmTunnelIpv6DstMaskedVer13
+                   return OFOxmTunnelIpv6DstMaskedVer13.READER.readFrom(bb);
+               case 0x1da10:
+                   // discriminator value 0x1da10L=0x1da10L for class OFOxmTunnelIpv6SrcVer13
+                   return OFOxmTunnelIpv6SrcVer13.READER.readFrom(bb);
+               case 0x1db20:
+                   // discriminator value 0x1db20L=0x1db20L for class OFOxmTunnelIpv6SrcMaskedVer13
+                   return OFOxmTunnelIpv6SrcMaskedVer13.READER.readFrom(bb);
                case (int) 0x80002002:
                    // discriminator value 0x80002002L=0x80002002L for class OFOxmUdpDstVer13
                    return OFOxmUdpDstVer13.READER.readFrom(bb);

@@ -535,6 +535,10 @@ static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv4_dst_OF_VERSI
 static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv4_src_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv6_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv6_src_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_udp_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_udp_dst_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_udp_src_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
@@ -1182,6 +1186,10 @@ static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv4_dst_OF_VERSI
 static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv4_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv6_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv6_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_udp_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_udp_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_udp_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1878,6 +1886,10 @@ static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv4_dst_OF_VERSI
 static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv4_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv6_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv6_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_udp_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_udp_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_udp_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -10097,6 +10109,14 @@ loci_validate_of_oxm_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_tunnel_ipv4_src_OF_VERSION_1_2(data, len, out_len);
     case 0x13f08:
         return loci_validate_of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x1dc10:
+        return loci_validate_of_oxm_tunnel_ipv6_dst_OF_VERSION_1_2(data, len, out_len);
+    case 0x1dd20:
+        return loci_validate_of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x1da10:
+        return loci_validate_of_oxm_tunnel_ipv6_src_OF_VERSION_1_2(data, len, out_len);
+    case 0x1db20:
+        return loci_validate_of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_2(data, len, out_len);
     case 0x80002002:
         return loci_validate_of_oxm_udp_dst_OF_VERSION_1_2(data, len, out_len);
     case 0x80002104:
@@ -14769,6 +14789,70 @@ loci_validate_of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2(uint8_t *data, int le
 }
 
 static int
+loci_validate_of_oxm_tunnel_ipv6_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_tunnel_ipv6_src_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_oxm_udp_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
 {
     if (len < 6) {
@@ -17656,6 +17740,14 @@ loci_validate_of_oxm_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_tunnel_ipv4_src_OF_VERSION_1_3(data, len, out_len);
     case 0x13f08:
         return loci_validate_of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x1dc10:
+        return loci_validate_of_oxm_tunnel_ipv6_dst_OF_VERSION_1_3(data, len, out_len);
+    case 0x1dd20:
+        return loci_validate_of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x1da10:
+        return loci_validate_of_oxm_tunnel_ipv6_src_OF_VERSION_1_3(data, len, out_len);
+    case 0x1db20:
+        return loci_validate_of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_3(data, len, out_len);
     case 0x80002002:
         return loci_validate_of_oxm_udp_dst_OF_VERSION_1_3(data, len, out_len);
     case 0x80002104:
@@ -30432,6 +30524,70 @@ loci_validate_of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3(uint8_t *data, int le
 }
 
 static int
+loci_validate_of_oxm_tunnel_ipv6_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_tunnel_ipv6_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_oxm_udp_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 6) {
@@ -34179,6 +34335,14 @@ loci_validate_of_oxm_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_tunnel_ipv4_src_OF_VERSION_1_4(data, len, out_len);
     case 0x13f08:
         return loci_validate_of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x1dc10:
+        return loci_validate_of_oxm_tunnel_ipv6_dst_OF_VERSION_1_4(data, len, out_len);
+    case 0x1dd20:
+        return loci_validate_of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x1da10:
+        return loci_validate_of_oxm_tunnel_ipv6_src_OF_VERSION_1_4(data, len, out_len);
+    case 0x1db20:
+        return loci_validate_of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_4(data, len, out_len);
     case 0x80002002:
         return loci_validate_of_oxm_udp_dst_OF_VERSION_1_4(data, len, out_len);
     case 0x80002104:
@@ -47560,6 +47724,70 @@ loci_validate_of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4(uint8_t *data, int le
     }
 
     len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_tunnel_ipv6_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_tunnel_ipv6_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 36) {
+        return -1;
+    }
+
+    len = 36;
 
 
 
