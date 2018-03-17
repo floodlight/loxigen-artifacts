@@ -4096,7 +4096,7 @@ of_object_fixed_len_v5[OF_OBJECT_COUNT] = {
     12,   /* 720: of_port_desc_prop_bsn_uplink */
     32,   /* 721: of_port_desc_prop_ethernet */
     8,    /* 722: of_port_desc_prop_experimenter */
-    44,   /* 723: of_port_desc_prop_optical */
+    40,   /* 723: of_port_desc_prop_optical */
     4,    /* 724: of_port_mod_prop */
     8,    /* 725: of_port_mod_prop_ethernet */
     12,   /* 726: of_port_mod_prop_experimenter */

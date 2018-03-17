@@ -13269,8 +13269,8 @@ fields['of14.port_desc_prop_optical.tx_grid_freq_lmda'] = ProtoField.uint32("of1
 fields['of14.port_desc_prop_optical.rx_min_freq_lmda'] = ProtoField.uint32("of14.port_desc_prop_optical.rx_min_freq_lmda", "rx_min_freq_lmda", base.DEC, nil)
 fields['of14.port_desc_prop_optical.rx_max_freq_lmda'] = ProtoField.uint32("of14.port_desc_prop_optical.rx_max_freq_lmda", "rx_max_freq_lmda", base.DEC, nil)
 fields['of14.port_desc_prop_optical.rx_grid_freq_lmda'] = ProtoField.uint32("of14.port_desc_prop_optical.rx_grid_freq_lmda", "rx_grid_freq_lmda", base.DEC, nil)
-fields['of14.port_desc_prop_optical.tx_pwr_min'] = ProtoField.uint32("of14.port_desc_prop_optical.tx_pwr_min", "tx_pwr_min", base.DEC, nil)
-fields['of14.port_desc_prop_optical.tx_pwr_max'] = ProtoField.uint32("of14.port_desc_prop_optical.tx_pwr_max", "tx_pwr_max", base.DEC, nil)
+fields['of14.port_desc_prop_optical.tx_pwr_min'] = ProtoField.uint16("of14.port_desc_prop_optical.tx_pwr_min", "tx_pwr_min", base.DEC, nil)
+fields['of14.port_desc_prop_optical.tx_pwr_max'] = ProtoField.uint16("of14.port_desc_prop_optical.tx_pwr_max", "tx_pwr_max", base.DEC, nil)
 fields['of14.port_desc_stats_reply.version'] = ProtoField.uint8("of14.port_desc_stats_reply.version", "version", base.DEC, nil)
 fields['of14.port_desc_stats_reply.type'] = ProtoField.uint32("of14.port_desc_stats_reply.type", "type", base.DEC, enum_v5_ofp_type)
 fields['of14.port_desc_stats_reply.length'] = ProtoField.uint16("of14.port_desc_stats_reply.length", "length", base.DEC, nil)
@@ -16720,8 +16720,8 @@ fields['of15.port_desc_prop_optical.tx_grid_freq_lmda'] = ProtoField.uint32("of1
 fields['of15.port_desc_prop_optical.rx_min_freq_lmda'] = ProtoField.uint32("of15.port_desc_prop_optical.rx_min_freq_lmda", "rx_min_freq_lmda", base.DEC, nil)
 fields['of15.port_desc_prop_optical.rx_max_freq_lmda'] = ProtoField.uint32("of15.port_desc_prop_optical.rx_max_freq_lmda", "rx_max_freq_lmda", base.DEC, nil)
 fields['of15.port_desc_prop_optical.rx_grid_freq_lmda'] = ProtoField.uint32("of15.port_desc_prop_optical.rx_grid_freq_lmda", "rx_grid_freq_lmda", base.DEC, nil)
-fields['of15.port_desc_prop_optical.tx_pwr_min'] = ProtoField.uint32("of15.port_desc_prop_optical.tx_pwr_min", "tx_pwr_min", base.DEC, nil)
-fields['of15.port_desc_prop_optical.tx_pwr_max'] = ProtoField.uint32("of15.port_desc_prop_optical.tx_pwr_max", "tx_pwr_max", base.DEC, nil)
+fields['of15.port_desc_prop_optical.tx_pwr_min'] = ProtoField.uint16("of15.port_desc_prop_optical.tx_pwr_min", "tx_pwr_min", base.DEC, nil)
+fields['of15.port_desc_prop_optical.tx_pwr_max'] = ProtoField.uint16("of15.port_desc_prop_optical.tx_pwr_max", "tx_pwr_max", base.DEC, nil)
 fields['of15.port_desc_stats_reply.version'] = ProtoField.uint8("of15.port_desc_stats_reply.version", "version", base.DEC, nil)
 fields['of15.port_desc_stats_reply.type'] = ProtoField.uint32("of15.port_desc_stats_reply.type", "type", base.DEC, enum_v6_ofp_type)
 fields['of15.port_desc_stats_reply.length'] = ProtoField.uint16("of15.port_desc_stats_reply.length", "length", base.DEC, nil)
@@ -52846,8 +52846,8 @@ function dissect_of_port_desc_prop_optical_v5(reader, subtree)
     read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_optical.rx_min_freq_lmda')
     read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_optical.rx_max_freq_lmda')
     read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_optical.rx_grid_freq_lmda')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_optical.tx_pwr_min')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_optical.tx_pwr_max')
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_optical.tx_pwr_min')
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_optical.tx_pwr_max')
     return 'of_port_desc_prop_optical'
 end
 of_port_desc_prop_v5_dissectors[1] = dissect_of_port_desc_prop_optical_v5
@@ -62075,8 +62075,8 @@ function dissect_of_port_desc_prop_optical_v6(reader, subtree)
     read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_optical.rx_min_freq_lmda')
     read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_optical.rx_max_freq_lmda')
     read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_optical.rx_grid_freq_lmda')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_optical.tx_pwr_min')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_optical.tx_pwr_max')
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_optical.tx_pwr_min')
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_optical.tx_pwr_max')
     return 'of_port_desc_prop_optical'
 end
 of_port_desc_prop_v6_dissectors[1] = dissect_of_port_desc_prop_optical_v6

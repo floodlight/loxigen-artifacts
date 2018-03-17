@@ -64862,7 +64862,7 @@ test_of_port_desc_prop_optical_OF_VERSION_1_4_scalar(void)
     obj = of_port_desc_prop_optical_new(OF_VERSION_1_4);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 44);
+    TEST_ASSERT(obj->length == 40);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_DESC_PROP_OPTICAL);
 
@@ -64876,7 +64876,7 @@ test_of_port_desc_prop_optical_OF_VERSION_1_4_scalar(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 44);
+        TEST_ASSERT(length == 40);
     }
 
     /* Set up incrementing values for scalar members */

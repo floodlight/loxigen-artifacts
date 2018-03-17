@@ -703,8 +703,8 @@ class optical(port_desc_prop):
         packed.append(struct.pack("!L", self.rx_min_freq_lmda))
         packed.append(struct.pack("!L", self.rx_max_freq_lmda))
         packed.append(struct.pack("!L", self.rx_grid_freq_lmda))
-        packed.append(struct.pack("!L", self.tx_pwr_min))
-        packed.append(struct.pack("!L", self.tx_pwr_max))
+        packed.append(struct.pack("!H", self.tx_pwr_min))
+        packed.append(struct.pack("!H", self.tx_pwr_max))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -725,8 +725,8 @@ class optical(port_desc_prop):
         obj.rx_min_freq_lmda = reader.read("!L")[0]
         obj.rx_max_freq_lmda = reader.read("!L")[0]
         obj.rx_grid_freq_lmda = reader.read("!L")[0]
-        obj.tx_pwr_min = reader.read("!L")[0]
-        obj.tx_pwr_max = reader.read("!L")[0]
+        obj.tx_pwr_min = reader.read("!H")[0]
+        obj.tx_pwr_max = reader.read("!H")[0]
         return obj
 
     def __eq__(self, other):

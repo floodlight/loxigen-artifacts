@@ -48068,15 +48068,15 @@ loci_validate_of_port_desc_prop_ethernet_OF_VERSION_1_4(uint8_t *data, int len, 
 static int
 loci_validate_of_port_desc_prop_optical_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
-    if (len < 44) {
+    if (len < 40) {
         return -1;
     }
 
-    len = 44;
+    len = 40;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 44) {
+    if (wire_len > len || wire_len < 40) {
         return -1;
     }
 

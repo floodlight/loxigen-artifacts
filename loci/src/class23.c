@@ -3791,13 +3791,13 @@ of_port_desc_prop_optical_rx_grid_freq_lmda_set(
  * Get tx_pwr_min from an object of type of_port_desc_prop_optical.
  * @param obj Pointer to an object of type of_port_desc_prop_optical.
  * @param tx_pwr_min Pointer to the child object of type
- * uint32_t to be filled out.
+ * uint16_t to be filled out.
  *
  */
 void
 of_port_desc_prop_optical_tx_pwr_min_get(
     of_port_desc_prop_optical_t *obj,
-    uint32_t *tx_pwr_min)
+    uint16_t *tx_pwr_min)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -3820,7 +3820,7 @@ of_port_desc_prop_optical_tx_pwr_min_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_get(wbuf, abs_offset, tx_pwr_min);
+    of_wire_buffer_u16_get(wbuf, abs_offset, tx_pwr_min);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -3835,7 +3835,7 @@ of_port_desc_prop_optical_tx_pwr_min_get(
 void
 of_port_desc_prop_optical_tx_pwr_min_set(
     of_port_desc_prop_optical_t *obj,
-    uint32_t tx_pwr_min)
+    uint16_t tx_pwr_min)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -3858,7 +3858,7 @@ of_port_desc_prop_optical_tx_pwr_min_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_set(wbuf, abs_offset, tx_pwr_min);
+    of_wire_buffer_u16_set(wbuf, abs_offset, tx_pwr_min);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -3869,13 +3869,13 @@ of_port_desc_prop_optical_tx_pwr_min_set(
  * Get tx_pwr_max from an object of type of_port_desc_prop_optical.
  * @param obj Pointer to an object of type of_port_desc_prop_optical.
  * @param tx_pwr_max Pointer to the child object of type
- * uint32_t to be filled out.
+ * uint16_t to be filled out.
  *
  */
 void
 of_port_desc_prop_optical_tx_pwr_max_get(
     of_port_desc_prop_optical_t *obj,
-    uint32_t *tx_pwr_max)
+    uint16_t *tx_pwr_max)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -3890,7 +3890,7 @@ of_port_desc_prop_optical_tx_pwr_max_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_4:
-        offset = 40;
+        offset = 38;
         break;
     default:
         LOCI_ASSERT(0);
@@ -3898,7 +3898,7 @@ of_port_desc_prop_optical_tx_pwr_max_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_get(wbuf, abs_offset, tx_pwr_max);
+    of_wire_buffer_u16_get(wbuf, abs_offset, tx_pwr_max);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -3913,7 +3913,7 @@ of_port_desc_prop_optical_tx_pwr_max_get(
 void
 of_port_desc_prop_optical_tx_pwr_max_set(
     of_port_desc_prop_optical_t *obj,
-    uint32_t tx_pwr_max)
+    uint16_t tx_pwr_max)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -3928,7 +3928,7 @@ of_port_desc_prop_optical_tx_pwr_max_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_4:
-        offset = 40;
+        offset = 38;
         break;
     default:
         LOCI_ASSERT(0);
@@ -3936,7 +3936,7 @@ of_port_desc_prop_optical_tx_pwr_max_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_set(wbuf, abs_offset, tx_pwr_max);
+    of_wire_buffer_u16_set(wbuf, abs_offset, tx_pwr_max);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 

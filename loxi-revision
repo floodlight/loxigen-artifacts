@@ -1,1 +1,1 @@
-9c46066b50c602b38b4d9137b5475eca1cc1a45a Merge into master from pull request #590: Jenkinsfile: default base_branch to env.JOB_BASE_NAME (https://github.com/floodlight/loxigen/pull/590)
+41a447f4b03d9ddab943e6355e463cd9d822ed45 Merge commit '9c46066b50c602b38b4d9137b5475eca1cc1a45a' into HEAD
