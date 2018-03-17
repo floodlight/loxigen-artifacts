@@ -43,7 +43,7 @@ class OFFlowStatsRequestVer12 implements OFFlowStatsRequest {
         private final static Set<OFStatsRequestFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsRequestFlags>of();
         private final static TableId DEFAULT_TABLE_ID = TableId.ALL;
         private final static OFPort DEFAULT_OUT_PORT = OFPort.ANY;
-        private final static OFGroup DEFAULT_OUT_GROUP = OFGroup.ALL;
+        private final static OFGroup DEFAULT_OUT_GROUP = OFGroup.ANY;
         private final static U64 DEFAULT_COOKIE = U64.ZERO;
         private final static U64 DEFAULT_COOKIE_MASK = U64.ZERO;
         private final static Match DEFAULT_MATCH = OFFactoryVer12.MATCH_WILDCARD_ALL;
