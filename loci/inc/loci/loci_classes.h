@@ -23,6 +23,12 @@ void of_action_nicira_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_action_nicira_push_wire_types(of_object_t *obj);
 void of_action_nicira_dec_ttl_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_action_nicira_dec_ttl_push_wire_types(of_object_t *obj);
+void of_action_nicira_exit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_action_nicira_exit_push_wire_types(of_object_t *obj);
+void of_action_nicira_resubmit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_action_nicira_resubmit_push_wire_types(of_object_t *obj);
+void of_action_nicira_resubmit_table_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_action_nicira_resubmit_table_push_wire_types(of_object_t *obj);
 void of_action_output_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_action_output_push_wire_types(of_object_t *obj);
 void of_action_set_dl_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -669,6 +675,12 @@ void of_action_id_nicira_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_action_id_nicira_push_wire_types(of_object_t *obj);
 void of_action_id_nicira_dec_ttl_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_action_id_nicira_dec_ttl_push_wire_types(of_object_t *obj);
+void of_action_id_nicira_exit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_action_id_nicira_exit_push_wire_types(of_object_t *obj);
+void of_action_id_nicira_resubmit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_action_id_nicira_resubmit_push_wire_types(of_object_t *obj);
+void of_action_id_nicira_resubmit_table_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_action_id_nicira_resubmit_table_push_wire_types(of_object_t *obj);
 void of_action_id_output_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_action_id_output_push_wire_types(of_object_t *obj);
 void of_action_id_pop_mpls_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1796,6 +1808,9 @@ typedef of_object_t of_action_id_experimenter_t;
 typedef of_object_t of_action_id_group_t;
 typedef of_object_t of_action_id_nicira_t;
 typedef of_object_t of_action_id_nicira_dec_ttl_t;
+typedef of_object_t of_action_id_nicira_exit_t;
+typedef of_object_t of_action_id_nicira_resubmit_t;
+typedef of_object_t of_action_id_nicira_resubmit_table_t;
 typedef of_object_t of_action_id_output_t;
 typedef of_object_t of_action_id_pop_mpls_t;
 typedef of_object_t of_action_id_pop_pbb_t;
@@ -1809,6 +1824,9 @@ typedef of_object_t of_action_id_set_nw_ttl_t;
 typedef of_object_t of_action_id_set_queue_t;
 typedef of_object_t of_action_nicira_t;
 typedef of_object_t of_action_nicira_dec_ttl_t;
+typedef of_object_t of_action_nicira_exit_t;
+typedef of_object_t of_action_nicira_resubmit_t;
+typedef of_object_t of_action_nicira_resubmit_table_t;
 typedef of_object_t of_action_output_t;
 typedef of_object_t of_action_pop_mpls_t;
 typedef of_object_t of_action_pop_pbb_t;
@@ -3590,6 +3608,21 @@ extern void of_action_id_nicira_dec_ttl_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_action_id_nicira_exit_new(of_version_t version);
+extern void of_action_id_nicira_exit_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_action_id_nicira_resubmit_new(of_version_t version);
+extern void of_action_id_nicira_resubmit_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_action_id_nicira_resubmit_table_new(of_version_t version);
+extern void of_action_id_nicira_resubmit_table_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_action_id_output_new(of_version_t version);
 extern void of_action_id_output_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3652,6 +3685,21 @@ extern void of_action_nicira_init(
 extern of_object_t *
     of_action_nicira_dec_ttl_new(of_version_t version);
 extern void of_action_nicira_dec_ttl_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_action_nicira_exit_new(of_version_t version);
+extern void of_action_nicira_exit_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_action_nicira_resubmit_new(of_version_t version);
+extern void of_action_nicira_resubmit_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_action_nicira_resubmit_table_new(of_version_t version);
+extern void of_action_nicira_resubmit_table_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9166,6 +9214,39 @@ of_action_id_nicira_dec_ttl_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_action_id_nicira_exit_t
+ * @param obj An instance of type of_action_id_nicira_exit_t
+ *
+ * \ingroup of_action_id_nicira_exit
+ */
+static inline void
+of_action_id_nicira_exit_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_action_id_nicira_resubmit_t
+ * @param obj An instance of type of_action_id_nicira_resubmit_t
+ *
+ * \ingroup of_action_id_nicira_resubmit
+ */
+static inline void
+of_action_id_nicira_resubmit_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_action_id_nicira_resubmit_table_t
+ * @param obj An instance of type of_action_id_nicira_resubmit_table_t
+ *
+ * \ingroup of_action_id_nicira_resubmit_table
+ */
+static inline void
+of_action_id_nicira_resubmit_table_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_action_id_output_t
  * @param obj An instance of type of_action_id_output_t
  *
@@ -9305,6 +9386,39 @@ of_action_nicira_delete(of_object_t *obj) {
  */
 static inline void
 of_action_nicira_dec_ttl_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_action_nicira_exit_t
+ * @param obj An instance of type of_action_nicira_exit_t
+ *
+ * \ingroup of_action_nicira_exit
+ */
+static inline void
+of_action_nicira_exit_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_action_nicira_resubmit_t
+ * @param obj An instance of type of_action_nicira_resubmit_t
+ *
+ * \ingroup of_action_nicira_resubmit
+ */
+static inline void
+of_action_nicira_resubmit_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_action_nicira_resubmit_table_t
+ * @param obj An instance of type of_action_nicira_resubmit_table_t
+ *
+ * \ingroup of_action_nicira_resubmit_table
+ */
+static inline void
+of_action_nicira_resubmit_table_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22783,6 +22897,54 @@ extern void of_action_id_nicira_dec_ttl_subtype_get(
     of_action_id_nicira_dec_ttl_t *obj,
     uint16_t *subtype);
 
+/* Unified accessor functions for of_action_id_nicira_exit */
+
+extern void of_action_id_nicira_exit_experimenter_set(
+    of_action_id_nicira_exit_t *obj,
+    uint32_t experimenter);
+extern void of_action_id_nicira_exit_experimenter_get(
+    of_action_id_nicira_exit_t *obj,
+    uint32_t *experimenter);
+
+extern void of_action_id_nicira_exit_subtype_set(
+    of_action_id_nicira_exit_t *obj,
+    uint16_t subtype);
+extern void of_action_id_nicira_exit_subtype_get(
+    of_action_id_nicira_exit_t *obj,
+    uint16_t *subtype);
+
+/* Unified accessor functions for of_action_id_nicira_resubmit */
+
+extern void of_action_id_nicira_resubmit_experimenter_set(
+    of_action_id_nicira_resubmit_t *obj,
+    uint32_t experimenter);
+extern void of_action_id_nicira_resubmit_experimenter_get(
+    of_action_id_nicira_resubmit_t *obj,
+    uint32_t *experimenter);
+
+extern void of_action_id_nicira_resubmit_subtype_set(
+    of_action_id_nicira_resubmit_t *obj,
+    uint16_t subtype);
+extern void of_action_id_nicira_resubmit_subtype_get(
+    of_action_id_nicira_resubmit_t *obj,
+    uint16_t *subtype);
+
+/* Unified accessor functions for of_action_id_nicira_resubmit_table */
+
+extern void of_action_id_nicira_resubmit_table_experimenter_set(
+    of_action_id_nicira_resubmit_table_t *obj,
+    uint32_t experimenter);
+extern void of_action_id_nicira_resubmit_table_experimenter_get(
+    of_action_id_nicira_resubmit_table_t *obj,
+    uint32_t *experimenter);
+
+extern void of_action_id_nicira_resubmit_table_subtype_set(
+    of_action_id_nicira_resubmit_table_t *obj,
+    uint16_t subtype);
+extern void of_action_id_nicira_resubmit_table_subtype_get(
+    of_action_id_nicira_resubmit_table_t *obj,
+    uint16_t *subtype);
+
 /* Unified accessor functions for of_action_id_output */
 
 /* Unified accessor functions for of_action_id_pop_mpls */
@@ -22820,6 +22982,75 @@ extern void of_action_nicira_dec_ttl_subtype_set(
 extern void of_action_nicira_dec_ttl_subtype_get(
     of_action_nicira_dec_ttl_t *obj,
     uint16_t *subtype);
+
+/* Unified accessor functions for of_action_nicira_exit */
+
+extern void of_action_nicira_exit_experimenter_set(
+    of_action_nicira_exit_t *obj,
+    uint32_t experimenter);
+extern void of_action_nicira_exit_experimenter_get(
+    of_action_nicira_exit_t *obj,
+    uint32_t *experimenter);
+
+extern void of_action_nicira_exit_subtype_set(
+    of_action_nicira_exit_t *obj,
+    uint16_t subtype);
+extern void of_action_nicira_exit_subtype_get(
+    of_action_nicira_exit_t *obj,
+    uint16_t *subtype);
+
+/* Unified accessor functions for of_action_nicira_resubmit */
+
+extern void of_action_nicira_resubmit_experimenter_set(
+    of_action_nicira_resubmit_t *obj,
+    uint32_t experimenter);
+extern void of_action_nicira_resubmit_experimenter_get(
+    of_action_nicira_resubmit_t *obj,
+    uint32_t *experimenter);
+
+extern void of_action_nicira_resubmit_subtype_set(
+    of_action_nicira_resubmit_t *obj,
+    uint16_t subtype);
+extern void of_action_nicira_resubmit_subtype_get(
+    of_action_nicira_resubmit_t *obj,
+    uint16_t *subtype);
+
+extern void of_action_nicira_resubmit_port_set(
+    of_action_nicira_resubmit_t *obj,
+    uint16_t port);
+extern void of_action_nicira_resubmit_port_get(
+    of_action_nicira_resubmit_t *obj,
+    uint16_t *port);
+
+/* Unified accessor functions for of_action_nicira_resubmit_table */
+
+extern void of_action_nicira_resubmit_table_experimenter_set(
+    of_action_nicira_resubmit_table_t *obj,
+    uint32_t experimenter);
+extern void of_action_nicira_resubmit_table_experimenter_get(
+    of_action_nicira_resubmit_table_t *obj,
+    uint32_t *experimenter);
+
+extern void of_action_nicira_resubmit_table_subtype_set(
+    of_action_nicira_resubmit_table_t *obj,
+    uint16_t subtype);
+extern void of_action_nicira_resubmit_table_subtype_get(
+    of_action_nicira_resubmit_table_t *obj,
+    uint16_t *subtype);
+
+extern void of_action_nicira_resubmit_table_port_set(
+    of_action_nicira_resubmit_table_t *obj,
+    uint16_t port);
+extern void of_action_nicira_resubmit_table_port_get(
+    of_action_nicira_resubmit_table_t *obj,
+    uint16_t *port);
+
+extern void of_action_nicira_resubmit_table_table_id_set(
+    of_action_nicira_resubmit_table_t *obj,
+    uint8_t table_id);
+extern void of_action_nicira_resubmit_table_table_id_get(
+    of_action_nicira_resubmit_table_t *obj,
+    uint8_t *table_id);
 
 /* Unified accessor functions for of_action_output */
 

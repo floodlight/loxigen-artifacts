@@ -74,6 +74,18 @@ public class OFActionIdsVer14 implements OFActionIds {
         return OFActionIdNiciraDecTtlVer14.INSTANCE;
     }
 
+    public OFActionIdNiciraExit niciraExit() {
+        return OFActionIdNiciraExitVer14.INSTANCE;
+    }
+
+    public OFActionIdNiciraResubmit niciraResubmit() {
+        return OFActionIdNiciraResubmitVer14.INSTANCE;
+    }
+
+    public OFActionIdNiciraResubmitTable niciraResubmitTable() {
+        return OFActionIdNiciraResubmitTableVer14.INSTANCE;
+    }
+
     public OFActionIdOutput output() {
         return OFActionIdOutputVer14.INSTANCE;
     }

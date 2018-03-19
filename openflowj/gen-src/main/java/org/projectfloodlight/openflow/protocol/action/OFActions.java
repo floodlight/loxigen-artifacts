@@ -39,6 +39,11 @@ public interface OFActions {
     OFActionEnqueue.Builder buildEnqueue() throws UnsupportedOperationException;
     OFActionEnqueue enqueue(OFPort port, long queueId);
     OFActionNiciraDecTtl niciraDecTtl();
+    OFActionNiciraExit niciraExit();
+    OFActionNiciraResubmit.Builder buildNiciraResubmit();
+    OFActionNiciraResubmit niciraResubmit(OFPort port);
+    OFActionNiciraResubmitTable.Builder buildNiciraResubmitTable();
+    OFActionNiciraResubmitTable niciraResubmitTable(OFPort port, TableId tableId);
     OFActionOutput.Builder buildOutput();
     OFActionOutput output(OFPort port, int maxLen);
     OFActionSetDlDst.Builder buildSetDlDst() throws UnsupportedOperationException;

@@ -2863,6 +2863,88 @@ of_action_nicira_dec_ttl_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie,
 }
 
 int
+of_action_nicira_exit_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_nicira_exit\n");
+
+    of_action_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_nicira_resubmit\n");
+
+    of_action_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_port_get(obj, &val16);
+    out += writer(cookie, "  port (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_table_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_action_nicira_resubmit_table\n");
+
+    of_action_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_port_get(obj, &val16);
+    out += writer(cookie, "  port (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_table_id_get(obj, &val8);
+    out += writer(cookie, "  table_id (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_action_output_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -6494,6 +6576,88 @@ of_action_nicira_dec_ttl_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie,
     of_action_nicira_dec_ttl_subtype_get(obj, &val16);
     out += writer(cookie, "  subtype (uint16_t):  ");
     out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_exit_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_nicira_exit\n");
+
+    of_action_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_nicira_resubmit\n");
+
+    of_action_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_port_get(obj, &val16);
+    out += writer(cookie, "  port (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_table_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_action_nicira_resubmit_table\n");
+
+    of_action_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_port_get(obj, &val16);
+    out += writer(cookie, "  port (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_table_id_get(obj, &val8);
+    out += writer(cookie, "  table_id (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
     out += writer(cookie, "\n");
 
     return out;
@@ -10749,6 +10913,88 @@ of_action_nicira_dec_ttl_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie,
     of_action_nicira_dec_ttl_subtype_get(obj, &val16);
     out += writer(cookie, "  subtype (uint16_t):  ");
     out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_exit_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_nicira_exit\n");
+
+    of_action_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_nicira_resubmit\n");
+
+    of_action_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_port_get(obj, &val16);
+    out += writer(cookie, "  port (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_table_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_action_nicira_resubmit_table\n");
+
+    of_action_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_port_get(obj, &val16);
+    out += writer(cookie, "  port (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_table_id_get(obj, &val8);
+    out += writer(cookie, "  table_id (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
     out += writer(cookie, "\n");
 
     return out;
@@ -20713,6 +20959,72 @@ of_action_id_nicira_dec_ttl_OF_VERSION_1_3_dump(loci_writer_f writer, void* cook
 }
 
 int
+of_action_id_nicira_exit_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_id_nicira_exit\n");
+
+    of_action_id_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_id_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_id_nicira_resubmit_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_id_nicira_resubmit\n");
+
+    of_action_id_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_id_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_id_nicira_resubmit_table_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_id_nicira_resubmit_table\n");
+
+    of_action_id_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_id_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_action_id_output_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -20839,6 +21151,88 @@ of_action_nicira_dec_ttl_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie,
     of_action_nicira_dec_ttl_subtype_get(obj, &val16);
     out += writer(cookie, "  subtype (uint16_t):  ");
     out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_exit_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_nicira_exit\n");
+
+    of_action_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_nicira_resubmit\n");
+
+    of_action_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_port_get(obj, &val16);
+    out += writer(cookie, "  port (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_table_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_action_nicira_resubmit_table\n");
+
+    of_action_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_port_get(obj, &val16);
+    out += writer(cookie, "  port (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_table_id_get(obj, &val8);
+    out += writer(cookie, "  table_id (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
     out += writer(cookie, "\n");
 
     return out;
@@ -35921,6 +36315,72 @@ of_action_id_nicira_dec_ttl_OF_VERSION_1_4_dump(loci_writer_f writer, void* cook
 }
 
 int
+of_action_id_nicira_exit_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_id_nicira_exit\n");
+
+    of_action_id_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_id_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_id_nicira_resubmit_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_id_nicira_resubmit\n");
+
+    of_action_id_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_id_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_id_nicira_resubmit_table_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_id_nicira_resubmit_table\n");
+
+    of_action_id_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_id_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_action_id_output_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -36047,6 +36507,88 @@ of_action_nicira_dec_ttl_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie,
     of_action_nicira_dec_ttl_subtype_get(obj, &val16);
     out += writer(cookie, "  subtype (uint16_t):  ");
     out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_exit_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_nicira_exit\n");
+
+    of_action_nicira_exit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_exit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_action_nicira_resubmit\n");
+
+    of_action_nicira_resubmit_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_port_get(obj, &val16);
+    out += writer(cookie, "  port (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_nicira_resubmit_table_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_action_nicira_resubmit_table\n");
+
+    of_action_nicira_resubmit_table_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_port_get(obj, &val16);
+    out += writer(cookie, "  port (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_action_nicira_resubmit_table_table_id_get(obj, &val8);
+    out += writer(cookie, "  table_id (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
     out += writer(cookie, "\n");
 
     return out;
@@ -46204,7 +46746,13 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_action_nicira_dec_ttl_OF_VERSION_1_0_dump,
+    of_action_nicira_exit_OF_VERSION_1_0_dump,
+    of_action_nicira_resubmit_OF_VERSION_1_0_dump,
+    of_action_nicira_resubmit_table_OF_VERSION_1_0_dump,
     of_action_output_OF_VERSION_1_0_dump,
     unknown_dump,
     unknown_dump,
@@ -47042,7 +47590,13 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_action_nicira_dec_ttl_OF_VERSION_1_1_dump,
+    of_action_nicira_exit_OF_VERSION_1_1_dump,
+    of_action_nicira_resubmit_OF_VERSION_1_1_dump,
+    of_action_nicira_resubmit_table_OF_VERSION_1_1_dump,
     of_action_output_OF_VERSION_1_1_dump,
     of_action_pop_mpls_OF_VERSION_1_1_dump,
     unknown_dump,
@@ -47880,7 +48434,13 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_action_nicira_dec_ttl_OF_VERSION_1_2_dump,
+    of_action_nicira_exit_OF_VERSION_1_2_dump,
+    of_action_nicira_resubmit_OF_VERSION_1_2_dump,
+    of_action_nicira_resubmit_table_OF_VERSION_1_2_dump,
     of_action_output_OF_VERSION_1_2_dump,
     of_action_pop_mpls_OF_VERSION_1_2_dump,
     unknown_dump,
@@ -48706,6 +49266,9 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_action_id_group_OF_VERSION_1_3_dump,
     unknown_dump,
     of_action_id_nicira_dec_ttl_OF_VERSION_1_3_dump,
+    of_action_id_nicira_exit_OF_VERSION_1_3_dump,
+    of_action_id_nicira_resubmit_OF_VERSION_1_3_dump,
+    of_action_id_nicira_resubmit_table_OF_VERSION_1_3_dump,
     of_action_id_output_OF_VERSION_1_3_dump,
     of_action_id_pop_mpls_OF_VERSION_1_3_dump,
     of_action_id_pop_pbb_OF_VERSION_1_3_dump,
@@ -48719,6 +49282,9 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_action_id_set_queue_OF_VERSION_1_3_dump,
     unknown_dump,
     of_action_nicira_dec_ttl_OF_VERSION_1_3_dump,
+    of_action_nicira_exit_OF_VERSION_1_3_dump,
+    of_action_nicira_resubmit_OF_VERSION_1_3_dump,
+    of_action_nicira_resubmit_table_OF_VERSION_1_3_dump,
     of_action_output_OF_VERSION_1_3_dump,
     of_action_pop_mpls_OF_VERSION_1_3_dump,
     of_action_pop_pbb_OF_VERSION_1_3_dump,
@@ -49544,6 +50110,9 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_action_id_group_OF_VERSION_1_4_dump,
     unknown_dump,
     of_action_id_nicira_dec_ttl_OF_VERSION_1_4_dump,
+    of_action_id_nicira_exit_OF_VERSION_1_4_dump,
+    of_action_id_nicira_resubmit_OF_VERSION_1_4_dump,
+    of_action_id_nicira_resubmit_table_OF_VERSION_1_4_dump,
     of_action_id_output_OF_VERSION_1_4_dump,
     of_action_id_pop_mpls_OF_VERSION_1_4_dump,
     of_action_id_pop_pbb_OF_VERSION_1_4_dump,
@@ -49557,6 +50126,9 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_action_id_set_queue_OF_VERSION_1_4_dump,
     unknown_dump,
     of_action_nicira_dec_ttl_OF_VERSION_1_4_dump,
+    of_action_nicira_exit_OF_VERSION_1_4_dump,
+    of_action_nicira_resubmit_OF_VERSION_1_4_dump,
+    of_action_nicira_resubmit_table_OF_VERSION_1_4_dump,
     of_action_output_OF_VERSION_1_4_dump,
     of_action_pop_mpls_OF_VERSION_1_4_dump,
     of_action_pop_pbb_OF_VERSION_1_4_dump,

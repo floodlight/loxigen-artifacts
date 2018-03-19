@@ -789,6 +789,180 @@ class nicira_dec_ttl(nicira):
 
 nicira.subtypes[18] = nicira_dec_ttl
 
+class nicira_exit(nicira):
+    type = 65535
+    experimenter = 8992
+    subtype = 17
+
+    def __init__(self):
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!H", self.subtype))
+        packed.append('\x00' * 2)
+        packed.append('\x00' * 4)
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = nicira_exit()
+        _type = reader.read("!H")[0]
+        assert(_type == 65535)
+        _len = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_len, 4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 8992)
+        _subtype = reader.read("!H")[0]
+        assert(_subtype == 17)
+        reader.skip(2)
+        reader.skip(4)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("nicira_exit {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+            q.breakable()
+        q.text('}')
+
+nicira.subtypes[17] = nicira_exit
+
+class nicira_resubmit(nicira):
+    type = 65535
+    experimenter = 8992
+    subtype = 1
+
+    def __init__(self, port=None):
+        if port != None:
+            self.port = port
+        else:
+            self.port = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!H", self.subtype))
+        packed.append(struct.pack("!H", self.port))
+        packed.append('\x00' * 4)
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = nicira_resubmit()
+        _type = reader.read("!H")[0]
+        assert(_type == 65535)
+        _len = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_len, 4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 8992)
+        _subtype = reader.read("!H")[0]
+        assert(_subtype == 1)
+        obj.port = reader.read("!H")[0]
+        reader.skip(4)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.port != other.port: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("nicira_resubmit {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("port = ");
+                q.text("%#x" % self.port)
+            q.breakable()
+        q.text('}')
+
+nicira.subtypes[1] = nicira_resubmit
+
+class nicira_resubmit_table(nicira):
+    type = 65535
+    experimenter = 8992
+    subtype = 14
+
+    def __init__(self, port=None, table_id=None):
+        if port != None:
+            self.port = port
+        else:
+            self.port = 0
+        if table_id != None:
+            self.table_id = table_id
+        else:
+            self.table_id = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!H", self.subtype))
+        packed.append(struct.pack("!H", self.port))
+        packed.append(struct.pack("!B", self.table_id))
+        packed.append('\x00' * 3)
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = nicira_resubmit_table()
+        _type = reader.read("!H")[0]
+        assert(_type == 65535)
+        _len = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_len, 4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 8992)
+        _subtype = reader.read("!H")[0]
+        assert(_subtype == 14)
+        obj.port = reader.read("!H")[0]
+        obj.table_id = reader.read("!B")[0]
+        reader.skip(3)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.port != other.port: return False
+        if self.table_id != other.table_id: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("nicira_resubmit_table {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("port = ");
+                q.text("%#x" % self.port)
+                q.text(","); q.breakable()
+                q.text("table_id = ");
+                q.text("%#x" % self.table_id)
+            q.breakable()
+        q.text('}')
+
+nicira.subtypes[14] = nicira_resubmit_table
+
 class output(action):
     type = 0
 

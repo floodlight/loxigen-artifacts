@@ -28,6 +28,9 @@ static int __attribute__((unused)) loci_validate_of_action_bsn_set_tunnel_dst_OF
 static int __attribute__((unused)) loci_validate_of_action_enqueue_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_nicira_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_exit_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_resubmit_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_output_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_set_dl_dst_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_set_dl_src_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
@@ -154,6 +157,9 @@ static int __attribute__((unused)) loci_validate_of_action_dec_nw_ttl_OF_VERSION
 static int __attribute__((unused)) loci_validate_of_action_group_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_nicira_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_exit_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_resubmit_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_output_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_pop_mpls_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_pop_vlan_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
@@ -299,6 +305,9 @@ static int __attribute__((unused)) loci_validate_of_action_dec_nw_ttl_OF_VERSION
 static int __attribute__((unused)) loci_validate_of_action_group_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_nicira_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_exit_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_resubmit_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_output_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_pop_mpls_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_pop_vlan_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
@@ -601,6 +610,12 @@ static int __attribute__((unused)) loci_validate_of_action_nicira_OF_VERSION_1_3
 static int __attribute__((unused)) loci_validate_of_action_id_nicira_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_id_nicira_dec_ttl_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_exit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_id_nicira_exit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_resubmit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_id_nicira_resubmit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_id_nicira_resubmit_table_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_output_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_id_output_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_pop_mpls_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1274,6 +1289,12 @@ static int __attribute__((unused)) loci_validate_of_action_nicira_OF_VERSION_1_4
 static int __attribute__((unused)) loci_validate_of_action_id_nicira_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_id_nicira_dec_ttl_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_exit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_id_nicira_exit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_resubmit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_id_nicira_resubmit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_id_nicira_resubmit_table_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_output_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_id_output_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_pop_mpls_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -2350,6 +2371,12 @@ loci_validate_of_action_nicira_OF_VERSION_1_0(uint8_t *data, int len, int *out_l
     switch (wire_type) {
     case 0x12:
         return loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_0(data, len, out_len);
+    case 0x11:
+        return loci_validate_of_action_nicira_exit_OF_VERSION_1_0(data, len, out_len);
+    case 0x1:
+        return loci_validate_of_action_nicira_resubmit_OF_VERSION_1_0(data, len, out_len);
+    case 0xe:
+        return loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_0(data, len, out_len);
     }
 
 
@@ -2359,6 +2386,72 @@ loci_validate_of_action_nicira_OF_VERSION_1_0(uint8_t *data, int len, int *out_l
 
 static int
 loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_exit_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_resubmit_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
 {
     if (len < 16) {
         return -1;
@@ -5760,6 +5853,12 @@ loci_validate_of_action_nicira_OF_VERSION_1_1(uint8_t *data, int len, int *out_l
     switch (wire_type) {
     case 0x12:
         return loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_1(data, len, out_len);
+    case 0x11:
+        return loci_validate_of_action_nicira_exit_OF_VERSION_1_1(data, len, out_len);
+    case 0x1:
+        return loci_validate_of_action_nicira_resubmit_OF_VERSION_1_1(data, len, out_len);
+    case 0xe:
+        return loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_1(data, len, out_len);
     }
 
 
@@ -5769,6 +5868,72 @@ loci_validate_of_action_nicira_OF_VERSION_1_1(uint8_t *data, int len, int *out_l
 
 static int
 loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_exit_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_resubmit_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
 {
     if (len < 16) {
         return -1;
@@ -9674,6 +9839,12 @@ loci_validate_of_action_nicira_OF_VERSION_1_2(uint8_t *data, int len, int *out_l
     switch (wire_type) {
     case 0x12:
         return loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_2(data, len, out_len);
+    case 0x11:
+        return loci_validate_of_action_nicira_exit_OF_VERSION_1_2(data, len, out_len);
+    case 0x1:
+        return loci_validate_of_action_nicira_resubmit_OF_VERSION_1_2(data, len, out_len);
+    case 0xe:
+        return loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_2(data, len, out_len);
     }
 
 
@@ -9683,6 +9854,72 @@ loci_validate_of_action_nicira_OF_VERSION_1_2(uint8_t *data, int len, int *out_l
 
 static int
 loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_exit_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_resubmit_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
 {
     if (len < 16) {
         return -1;
@@ -16952,6 +17189,12 @@ loci_validate_of_action_nicira_OF_VERSION_1_3(uint8_t *data, int len, int *out_l
     switch (wire_type) {
     case 0x12:
         return loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_3(data, len, out_len);
+    case 0x11:
+        return loci_validate_of_action_nicira_exit_OF_VERSION_1_3(data, len, out_len);
+    case 0x1:
+        return loci_validate_of_action_nicira_resubmit_OF_VERSION_1_3(data, len, out_len);
+    case 0xe:
+        return loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_3(data, len, out_len);
     }
 
 
@@ -16981,6 +17224,12 @@ loci_validate_of_action_id_nicira_OF_VERSION_1_3(uint8_t *data, int len, int *ou
     switch (wire_type) {
     case 0x12:
         return loci_validate_of_action_id_nicira_dec_ttl_OF_VERSION_1_3(data, len, out_len);
+    case 0x11:
+        return loci_validate_of_action_id_nicira_exit_OF_VERSION_1_3(data, len, out_len);
+    case 0x1:
+        return loci_validate_of_action_id_nicira_resubmit_OF_VERSION_1_3(data, len, out_len);
+    case 0xe:
+        return loci_validate_of_action_id_nicira_resubmit_table_OF_VERSION_1_3(data, len, out_len);
     }
 
 
@@ -17012,6 +17261,138 @@ loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_3(uint8_t *data, int len, in
 
 static int
 loci_validate_of_action_id_nicira_dec_ttl_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 10) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_exit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_id_nicira_exit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 10) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_resubmit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_id_nicira_resubmit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 10) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_id_nicira_resubmit_table_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 10) {
         return -1;
@@ -33475,6 +33856,12 @@ loci_validate_of_action_nicira_OF_VERSION_1_4(uint8_t *data, int len, int *out_l
     switch (wire_type) {
     case 0x12:
         return loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_4(data, len, out_len);
+    case 0x11:
+        return loci_validate_of_action_nicira_exit_OF_VERSION_1_4(data, len, out_len);
+    case 0x1:
+        return loci_validate_of_action_nicira_resubmit_OF_VERSION_1_4(data, len, out_len);
+    case 0xe:
+        return loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_4(data, len, out_len);
     }
 
 
@@ -33504,6 +33891,12 @@ loci_validate_of_action_id_nicira_OF_VERSION_1_4(uint8_t *data, int len, int *ou
     switch (wire_type) {
     case 0x12:
         return loci_validate_of_action_id_nicira_dec_ttl_OF_VERSION_1_4(data, len, out_len);
+    case 0x11:
+        return loci_validate_of_action_id_nicira_exit_OF_VERSION_1_4(data, len, out_len);
+    case 0x1:
+        return loci_validate_of_action_id_nicira_resubmit_OF_VERSION_1_4(data, len, out_len);
+    case 0xe:
+        return loci_validate_of_action_id_nicira_resubmit_table_OF_VERSION_1_4(data, len, out_len);
     }
 
 
@@ -33535,6 +33928,138 @@ loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_4(uint8_t *data, int len, in
 
 static int
 loci_validate_of_action_id_nicira_dec_ttl_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 10) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_exit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_id_nicira_exit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 10) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_resubmit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_id_nicira_resubmit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 10) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_nicira_resubmit_table_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_id_nicira_resubmit_table_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 10) {
         return -1;

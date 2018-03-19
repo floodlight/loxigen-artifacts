@@ -5625,6 +5625,51 @@ typedef struct of_action_id_nicira_s of_action_id_nicira_t;
 typedef struct of_action_id_nicira_dec_ttl_s of_action_id_nicira_dec_ttl_t;
 
 /**
+ * Structure for of_action_id_nicira_exit object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_action_id_nicira_exit_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint16.  Functions
+ *   are of type of_action_id_nicira_exit_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_action_id_nicira_exit_s of_action_id_nicira_exit_t;
+
+/**
+ * Structure for of_action_id_nicira_resubmit object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_action_id_nicira_resubmit_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint16.  Functions
+ *   are of type of_action_id_nicira_resubmit_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_action_id_nicira_resubmit_s of_action_id_nicira_resubmit_t;
+
+/**
+ * Structure for of_action_id_nicira_resubmit_table object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_action_id_nicira_resubmit_table_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint16.  Functions
+ *   are of type of_action_id_nicira_resubmit_table_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_action_id_nicira_resubmit_table_s of_action_id_nicira_resubmit_table_t;
+
+/**
  * Structure for of_action_id_output object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5730,6 +5775,63 @@ typedef struct of_action_nicira_s of_action_nicira_t;
  *
  */
 typedef struct of_action_nicira_dec_ttl_s of_action_nicira_dec_ttl_t;
+
+/**
+ * Structure for of_action_nicira_exit object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_action_nicira_exit_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint16.  Functions
+ *   are of type of_action_nicira_exit_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_action_nicira_exit_s of_action_nicira_exit_t;
+
+/**
+ * Structure for of_action_nicira_resubmit object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_action_nicira_resubmit_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint16.  Functions
+ *   are of type of_action_nicira_resubmit_uint16_get_f and _set_f.
+ *
+ * @param port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
+ *   Accessors for port, a variable of type uint16.  Functions
+ *   are of type of_action_nicira_resubmit_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_action_nicira_resubmit_s of_action_nicira_resubmit_t;
+
+/**
+ * Structure for of_action_nicira_resubmit_table object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_action_nicira_resubmit_table_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint16.  Functions
+ *   are of type of_action_nicira_resubmit_table_uint16_get_f and _set_f.
+ *
+ * @param port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
+ *   Accessors for port, a variable of type uint16.  Functions
+ *   are of type of_action_nicira_resubmit_table_uint16_get_f and _set_f.
+ *
+ * @param table_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
+ *   Accessors for table_id, a variable of type uint8.  Functions
+ *   are of type of_action_nicira_resubmit_table_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_action_nicira_resubmit_table_s of_action_nicira_resubmit_table_t;
 
 /**
  * Structure for of_action_output object.  Get/set

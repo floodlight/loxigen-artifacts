@@ -68,6 +68,29 @@ public class OFActionsVer15 implements OFActions {
         return OFActionNiciraDecTtlVer15.INSTANCE;
     }
 
+    public OFActionNiciraExit niciraExit() {
+        return OFActionNiciraExitVer15.INSTANCE;
+    }
+
+    public OFActionNiciraResubmit.Builder buildNiciraResubmit() {
+        return new OFActionNiciraResubmitVer15.Builder();
+    }
+    public OFActionNiciraResubmit niciraResubmit(OFPort port) {
+        return new OFActionNiciraResubmitVer15(
+                port
+                    );
+    }
+
+    public OFActionNiciraResubmitTable.Builder buildNiciraResubmitTable() {
+        return new OFActionNiciraResubmitTableVer15.Builder();
+    }
+    public OFActionNiciraResubmitTable niciraResubmitTable(OFPort port, TableId tableId) {
+        return new OFActionNiciraResubmitTableVer15(
+                port,
+                      tableId
+                    );
+    }
+
     public OFActionOutput.Builder buildOutput() {
         return new OFActionOutputVer15.Builder();
     }
