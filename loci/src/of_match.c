@@ -107,6 +107,10 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_TUNNEL_IPV6_SRC_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_BSN_IN_PORTS_128_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -131,7 +135,7 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
-    if (OF_MATCH_MASK_MPLS_BOS_ACTIVE_TEST(match)) {
+    if (OF_MATCH_MASK_TUNNEL_IPV6_DST_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -284,6 +288,10 @@ of_match_v1_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_ICMPV6_TYPE_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_MPLS_BOS_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -504,6 +512,10 @@ of_match_v2_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_TUNNEL_IPV6_SRC_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_BSN_IN_PORTS_128_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -528,7 +540,7 @@ of_match_v2_compat_check(of_match_t *match)
         return 0;
     }
 
-    if (OF_MATCH_MASK_MPLS_BOS_ACTIVE_TEST(match)) {
+    if (OF_MATCH_MASK_TUNNEL_IPV6_DST_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -677,6 +689,10 @@ of_match_v2_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_ICMPV6_TYPE_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_MPLS_BOS_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -1657,6 +1673,38 @@ populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
                 oxm_list->version, -1, 1);
             of_list_oxm_append_bind(oxm_list, &elt);
             of_oxm_conn_tracking_label_value_set(&elt, src->fields.conn_tracking_label);
+        }
+    }
+    if (OF_MATCH_MASK_TUNNEL_IPV6_SRC_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_TUNNEL_IPV6_SRC_EXACT_TEST(src)) {
+            of_oxm_tunnel_ipv6_src_masked_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tunnel_ipv6_src_masked_value_set(&elt,
+                   src->fields.tunnel_ipv6_src);
+            of_oxm_tunnel_ipv6_src_masked_value_mask_set(&elt,
+                   src->masks.tunnel_ipv6_src);
+        } else {  /* Active, but not masked */
+            of_oxm_tunnel_ipv6_src_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tunnel_ipv6_src_value_set(&elt, src->fields.tunnel_ipv6_src);
+        }
+    }
+    if (OF_MATCH_MASK_TUNNEL_IPV6_DST_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_TUNNEL_IPV6_DST_EXACT_TEST(src)) {
+            of_oxm_tunnel_ipv6_dst_masked_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tunnel_ipv6_dst_masked_value_set(&elt,
+                   src->fields.tunnel_ipv6_dst);
+            of_oxm_tunnel_ipv6_dst_masked_value_mask_set(&elt,
+                   src->masks.tunnel_ipv6_dst);
+        } else {  /* Active, but not masked */
+            of_oxm_tunnel_ipv6_dst_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tunnel_ipv6_dst_value_set(&elt, src->fields.tunnel_ipv6_dst);
         }
     }
     if (OF_MATCH_MASK_CONN_TRACKING_NW_PROTO_ACTIVE_TEST(src)) {
@@ -2646,6 +2694,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
                 &dst->fields.conn_tracking_zone);
             break;
 
+        case OF_OXM_TUNNEL_IPV6_SRC_MASKED:
+            of_oxm_tunnel_ipv6_src_masked_value_mask_get(
+                &oxm_entry,
+                &dst->masks.tunnel_ipv6_src);
+            of_oxm_tunnel_ipv6_src_masked_value_get(
+                &oxm_entry,
+                &dst->fields.tunnel_ipv6_src);
+            of_memmask(&dst->fields.tunnel_ipv6_src, &dst->masks.tunnel_ipv6_src, sizeof(dst->fields.tunnel_ipv6_src));
+            break;
+        case OF_OXM_TUNNEL_IPV6_SRC:
+            OF_MATCH_MASK_TUNNEL_IPV6_SRC_EXACT_SET(dst);
+            of_oxm_tunnel_ipv6_src_value_get(
+                &oxm_entry,
+                &dst->fields.tunnel_ipv6_src);
+            break;
+
         case OF_OXM_BSN_IN_PORTS_128_MASKED:
             of_oxm_bsn_in_ports_128_masked_value_mask_get(
                 &oxm_entry,
@@ -2758,20 +2822,20 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
                 &dst->fields.bsn_in_ports_512);
             break;
 
-        case OF_OXM_MPLS_BOS_MASKED:
-            of_oxm_mpls_bos_masked_value_mask_get(
+        case OF_OXM_TUNNEL_IPV6_DST_MASKED:
+            of_oxm_tunnel_ipv6_dst_masked_value_mask_get(
                 &oxm_entry,
-                &dst->masks.mpls_bos);
-            of_oxm_mpls_bos_masked_value_get(
+                &dst->masks.tunnel_ipv6_dst);
+            of_oxm_tunnel_ipv6_dst_masked_value_get(
                 &oxm_entry,
-                &dst->fields.mpls_bos);
-            of_memmask(&dst->fields.mpls_bos, &dst->masks.mpls_bos, sizeof(dst->fields.mpls_bos));
+                &dst->fields.tunnel_ipv6_dst);
+            of_memmask(&dst->fields.tunnel_ipv6_dst, &dst->masks.tunnel_ipv6_dst, sizeof(dst->fields.tunnel_ipv6_dst));
             break;
-        case OF_OXM_MPLS_BOS:
-            OF_MATCH_MASK_MPLS_BOS_EXACT_SET(dst);
-            of_oxm_mpls_bos_value_get(
+        case OF_OXM_TUNNEL_IPV6_DST:
+            OF_MATCH_MASK_TUNNEL_IPV6_DST_EXACT_SET(dst);
+            of_oxm_tunnel_ipv6_dst_value_get(
                 &oxm_entry,
-                &dst->fields.mpls_bos);
+                &dst->fields.tunnel_ipv6_dst);
             break;
 
         case OF_OXM_CONN_TRACKING_MARK_MASKED:
@@ -3508,6 +3572,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
             of_oxm_icmpv6_type_value_get(
                 &oxm_entry,
                 &dst->fields.icmpv6_type);
+            break;
+
+        case OF_OXM_MPLS_BOS_MASKED:
+            of_oxm_mpls_bos_masked_value_mask_get(
+                &oxm_entry,
+                &dst->masks.mpls_bos);
+            of_oxm_mpls_bos_masked_value_get(
+                &oxm_entry,
+                &dst->fields.mpls_bos);
+            of_memmask(&dst->fields.mpls_bos, &dst->masks.mpls_bos, sizeof(dst->fields.mpls_bos));
+            break;
+        case OF_OXM_MPLS_BOS:
+            OF_MATCH_MASK_MPLS_BOS_EXACT_SET(dst);
+            of_oxm_mpls_bos_value_get(
+                &oxm_entry,
+                &dst->fields.mpls_bos);
             break;
 
         case OF_OXM_MPLS_TC_MASKED:

@@ -1315,6 +1315,44 @@ public class OFOxmsVer14 implements OFOxms {
                     );
     }
 
+    public OFOxmTunnelIpv6Dst.Builder buildTunnelIpv6Dst() {
+        return new OFOxmTunnelIpv6DstVer14.Builder();
+    }
+    public OFOxmTunnelIpv6Dst tunnelIpv6Dst(IPv6Address value) {
+        return new OFOxmTunnelIpv6DstVer14(
+                value
+                    );
+    }
+
+    public OFOxmTunnelIpv6DstMasked.Builder buildTunnelIpv6DstMasked() {
+        return new OFOxmTunnelIpv6DstMaskedVer14.Builder();
+    }
+    public OFOxmTunnelIpv6DstMasked tunnelIpv6DstMasked(IPv6Address value, IPv6Address mask) {
+        return new OFOxmTunnelIpv6DstMaskedVer14(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmTunnelIpv6Src.Builder buildTunnelIpv6Src() {
+        return new OFOxmTunnelIpv6SrcVer14.Builder();
+    }
+    public OFOxmTunnelIpv6Src tunnelIpv6Src(IPv6Address value) {
+        return new OFOxmTunnelIpv6SrcVer14(
+                value
+                    );
+    }
+
+    public OFOxmTunnelIpv6SrcMasked.Builder buildTunnelIpv6SrcMasked() {
+        return new OFOxmTunnelIpv6SrcMaskedVer14.Builder();
+    }
+    public OFOxmTunnelIpv6SrcMasked tunnelIpv6SrcMasked(IPv6Address value, IPv6Address mask) {
+        return new OFOxmTunnelIpv6SrcMaskedVer14(
+                value,
+                      mask
+                    );
+    }
+
     public OFOxmUdpDst.Builder buildUdpDst() {
         return new OFOxmUdpDstVer14.Builder();
     }
@@ -1766,6 +1804,10 @@ public class OFOxmsVer14 implements OFOxms {
                 return (OFOxm<F>)((Object)tunnelIpv4Dst((IPv4Address)((Object)value)));
             case TUNNEL_IPV4_SRC:
                 return (OFOxm<F>)((Object)tunnelIpv4Src((IPv4Address)((Object)value)));
+            case TUNNEL_IPV6_DST:
+                return (OFOxm<F>)((Object)tunnelIpv6Dst((IPv6Address)((Object)value)));
+            case TUNNEL_IPV6_SRC:
+                return (OFOxm<F>)((Object)tunnelIpv6Src((IPv6Address)((Object)value)));
             case UDP_DST:
                 return (OFOxm<F>)((Object)udpDst((TransportPort)((Object)value)));
             case UDP_SRC:
@@ -1944,6 +1986,10 @@ public class OFOxmsVer14 implements OFOxms {
                 return (OFOxm<F>)((Object)tunnelIpv4DstMasked((IPv4Address)((Object)value), (IPv4Address)((Object)mask)));
             case TUNNEL_IPV4_SRC:
                 return (OFOxm<F>)((Object)tunnelIpv4SrcMasked((IPv4Address)((Object)value), (IPv4Address)((Object)mask)));
+            case TUNNEL_IPV6_DST:
+                return (OFOxm<F>)((Object)tunnelIpv6DstMasked((IPv6Address)((Object)value), (IPv6Address)((Object)mask)));
+            case TUNNEL_IPV6_SRC:
+                return (OFOxm<F>)((Object)tunnelIpv6SrcMasked((IPv6Address)((Object)value), (IPv6Address)((Object)mask)));
             case UDP_DST:
                 return (OFOxm<F>)((Object)udpDstMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
             case UDP_SRC:
@@ -2122,6 +2168,10 @@ public class OFOxmsVer14 implements OFOxms {
                 return (OFOxm<F>)((Object)tunnelIpv4DstMasked((IPv4Address)((Object)(masked.getValue())), (IPv4Address)((Object)(masked.getMask()))));
             case TUNNEL_IPV4_SRC:
                 return (OFOxm<F>)((Object)tunnelIpv4SrcMasked((IPv4Address)((Object)(masked.getValue())), (IPv4Address)((Object)(masked.getMask()))));
+            case TUNNEL_IPV6_DST:
+                return (OFOxm<F>)((Object)tunnelIpv6DstMasked((IPv6Address)((Object)(masked.getValue())), (IPv6Address)((Object)(masked.getMask()))));
+            case TUNNEL_IPV6_SRC:
+                return (OFOxm<F>)((Object)tunnelIpv6SrcMasked((IPv6Address)((Object)(masked.getValue())), (IPv6Address)((Object)(masked.getMask()))));
             case UDP_DST:
                 return (OFOxm<F>)((Object)udpDstMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
             case UDP_SRC:

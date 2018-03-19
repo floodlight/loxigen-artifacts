@@ -518,6 +518,10 @@ int of_oxm_tunnel_ipv4_dst_OF_VERSION_1_2_dump(loci_writer_f writer, void* cooki
 int of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_tunnel_ipv4_src_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_tunnel_ipv6_dst_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_tunnel_ipv6_src_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_udp_dst_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_udp_dst_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_udp_src_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1134,6 +1138,10 @@ int of_oxm_tunnel_ipv4_dst_OF_VERSION_1_3_dump(loci_writer_f writer, void* cooki
 int of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_tunnel_ipv4_src_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_tunnel_ipv6_dst_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_tunnel_ipv6_src_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_udp_dst_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_udp_dst_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_udp_src_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1793,6 +1801,10 @@ int of_oxm_tunnel_ipv4_dst_OF_VERSION_1_4_dump(loci_writer_f writer, void* cooki
 int of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_tunnel_ipv4_src_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_tunnel_ipv6_dst_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_tunnel_ipv6_dst_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_tunnel_ipv6_src_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_tunnel_ipv6_src_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_udp_dst_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_udp_dst_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_udp_src_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);

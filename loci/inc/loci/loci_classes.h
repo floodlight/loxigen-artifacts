@@ -613,6 +613,14 @@ void of_oxm_tunnel_ipv4_src_wire_object_id_get(of_object_t *obj, of_object_id_t 
 void of_oxm_tunnel_ipv4_src_push_wire_types(of_object_t *obj);
 void of_oxm_tunnel_ipv4_src_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_tunnel_ipv4_src_masked_push_wire_types(of_object_t *obj);
+void of_oxm_tunnel_ipv6_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_tunnel_ipv6_dst_push_wire_types(of_object_t *obj);
+void of_oxm_tunnel_ipv6_dst_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_tunnel_ipv6_dst_masked_push_wire_types(of_object_t *obj);
+void of_oxm_tunnel_ipv6_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_tunnel_ipv6_src_push_wire_types(of_object_t *obj);
+void of_oxm_tunnel_ipv6_src_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_tunnel_ipv6_src_masked_push_wire_types(of_object_t *obj);
 void of_oxm_udp_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_udp_dst_push_wire_types(of_object_t *obj);
 void of_oxm_udp_dst_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2264,6 +2272,10 @@ typedef of_object_t of_oxm_tunnel_ipv4_dst_t;
 typedef of_object_t of_oxm_tunnel_ipv4_dst_masked_t;
 typedef of_object_t of_oxm_tunnel_ipv4_src_t;
 typedef of_object_t of_oxm_tunnel_ipv4_src_masked_t;
+typedef of_object_t of_oxm_tunnel_ipv6_dst_t;
+typedef of_object_t of_oxm_tunnel_ipv6_dst_masked_t;
+typedef of_object_t of_oxm_tunnel_ipv6_src_t;
+typedef of_object_t of_oxm_tunnel_ipv6_src_masked_t;
 typedef of_object_t of_oxm_udp_dst_t;
 typedef of_object_t of_oxm_udp_dst_masked_t;
 typedef of_object_t of_oxm_udp_src_t;
@@ -5927,6 +5939,26 @@ extern void of_oxm_tunnel_ipv4_src_init(
 extern of_object_t *
     of_oxm_tunnel_ipv4_src_masked_new(of_version_t version);
 extern void of_oxm_tunnel_ipv4_src_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv6_dst_new(of_version_t version);
+extern void of_oxm_tunnel_ipv6_dst_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv6_dst_masked_new(of_version_t version);
+extern void of_oxm_tunnel_ipv6_dst_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv6_src_new(of_version_t version);
+extern void of_oxm_tunnel_ipv6_src_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv6_src_masked_new(of_version_t version);
+extern void of_oxm_tunnel_ipv6_src_masked_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -14310,6 +14342,50 @@ of_oxm_tunnel_ipv4_src_delete(of_object_t *obj) {
  */
 static inline void
 of_oxm_tunnel_ipv4_src_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_tunnel_ipv6_dst_t
+ * @param obj An instance of type of_oxm_tunnel_ipv6_dst_t
+ *
+ * \ingroup of_oxm_tunnel_ipv6_dst
+ */
+static inline void
+of_oxm_tunnel_ipv6_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_tunnel_ipv6_dst_masked_t
+ * @param obj An instance of type of_oxm_tunnel_ipv6_dst_masked_t
+ *
+ * \ingroup of_oxm_tunnel_ipv6_dst_masked
+ */
+static inline void
+of_oxm_tunnel_ipv6_dst_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_tunnel_ipv6_src_t
+ * @param obj An instance of type of_oxm_tunnel_ipv6_src_t
+ *
+ * \ingroup of_oxm_tunnel_ipv6_src
+ */
+static inline void
+of_oxm_tunnel_ipv6_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_tunnel_ipv6_src_masked_t
+ * @param obj An instance of type of_oxm_tunnel_ipv6_src_masked_t
+ *
+ * \ingroup of_oxm_tunnel_ipv6_src_masked
+ */
+static inline void
+of_oxm_tunnel_ipv6_src_masked_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -28314,6 +28390,56 @@ extern void of_oxm_tunnel_ipv4_src_masked_value_mask_set(
 extern void of_oxm_tunnel_ipv4_src_masked_value_mask_get(
     of_oxm_tunnel_ipv4_src_masked_t *obj,
     of_ipv4_t *value_mask);
+
+/* Unified accessor functions for of_oxm_tunnel_ipv6_dst */
+
+extern void of_oxm_tunnel_ipv6_dst_value_set(
+    of_oxm_tunnel_ipv6_dst_t *obj,
+    of_ipv6_t value);
+extern void of_oxm_tunnel_ipv6_dst_value_get(
+    of_oxm_tunnel_ipv6_dst_t *obj,
+    of_ipv6_t *value);
+
+/* Unified accessor functions for of_oxm_tunnel_ipv6_dst_masked */
+
+extern void of_oxm_tunnel_ipv6_dst_masked_value_set(
+    of_oxm_tunnel_ipv6_dst_masked_t *obj,
+    of_ipv6_t value);
+extern void of_oxm_tunnel_ipv6_dst_masked_value_get(
+    of_oxm_tunnel_ipv6_dst_masked_t *obj,
+    of_ipv6_t *value);
+
+extern void of_oxm_tunnel_ipv6_dst_masked_value_mask_set(
+    of_oxm_tunnel_ipv6_dst_masked_t *obj,
+    of_ipv6_t value_mask);
+extern void of_oxm_tunnel_ipv6_dst_masked_value_mask_get(
+    of_oxm_tunnel_ipv6_dst_masked_t *obj,
+    of_ipv6_t *value_mask);
+
+/* Unified accessor functions for of_oxm_tunnel_ipv6_src */
+
+extern void of_oxm_tunnel_ipv6_src_value_set(
+    of_oxm_tunnel_ipv6_src_t *obj,
+    of_ipv6_t value);
+extern void of_oxm_tunnel_ipv6_src_value_get(
+    of_oxm_tunnel_ipv6_src_t *obj,
+    of_ipv6_t *value);
+
+/* Unified accessor functions for of_oxm_tunnel_ipv6_src_masked */
+
+extern void of_oxm_tunnel_ipv6_src_masked_value_set(
+    of_oxm_tunnel_ipv6_src_masked_t *obj,
+    of_ipv6_t value);
+extern void of_oxm_tunnel_ipv6_src_masked_value_get(
+    of_oxm_tunnel_ipv6_src_masked_t *obj,
+    of_ipv6_t *value);
+
+extern void of_oxm_tunnel_ipv6_src_masked_value_mask_set(
+    of_oxm_tunnel_ipv6_src_masked_t *obj,
+    of_ipv6_t value_mask);
+extern void of_oxm_tunnel_ipv6_src_masked_value_mask_get(
+    of_oxm_tunnel_ipv6_src_masked_t *obj,
+    of_ipv6_t *value_mask);
 
 /* Unified accessor functions for of_oxm_udp_dst */
 

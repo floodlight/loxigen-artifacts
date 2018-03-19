@@ -7292,6 +7292,16 @@ fields['of12.oxm_tunnel_ipv4_src.value'] = ProtoField.ipv4("of12.oxm_tunnel_ipv4
 fields['of12.oxm_tunnel_ipv4_src_masked.type_len'] = ProtoField.uint32("of12.oxm_tunnel_ipv4_src_masked.type_len", "type_len", base.DEC, nil)
 fields['of12.oxm_tunnel_ipv4_src_masked.value'] = ProtoField.ipv4("of12.oxm_tunnel_ipv4_src_masked.value", "value")
 fields['of12.oxm_tunnel_ipv4_src_masked.value_mask'] = ProtoField.ipv4("of12.oxm_tunnel_ipv4_src_masked.value_mask", "value_mask")
+fields['of12.oxm_tunnel_ipv6_dst.type_len'] = ProtoField.uint32("of12.oxm_tunnel_ipv6_dst.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_tunnel_ipv6_dst.value'] = ProtoField.ipv6("of12.oxm_tunnel_ipv6_dst.value", "value")
+fields['of12.oxm_tunnel_ipv6_dst_masked.type_len'] = ProtoField.uint32("of12.oxm_tunnel_ipv6_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_tunnel_ipv6_dst_masked.value'] = ProtoField.ipv6("of12.oxm_tunnel_ipv6_dst_masked.value", "value")
+fields['of12.oxm_tunnel_ipv6_dst_masked.value_mask'] = ProtoField.ipv6("of12.oxm_tunnel_ipv6_dst_masked.value_mask", "value_mask")
+fields['of12.oxm_tunnel_ipv6_src.type_len'] = ProtoField.uint32("of12.oxm_tunnel_ipv6_src.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_tunnel_ipv6_src.value'] = ProtoField.ipv6("of12.oxm_tunnel_ipv6_src.value", "value")
+fields['of12.oxm_tunnel_ipv6_src_masked.type_len'] = ProtoField.uint32("of12.oxm_tunnel_ipv6_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_tunnel_ipv6_src_masked.value'] = ProtoField.ipv6("of12.oxm_tunnel_ipv6_src_masked.value", "value")
+fields['of12.oxm_tunnel_ipv6_src_masked.value_mask'] = ProtoField.ipv6("of12.oxm_tunnel_ipv6_src_masked.value_mask", "value_mask")
 fields['of12.oxm_udp_dst.type_len'] = ProtoField.uint32("of12.oxm_udp_dst.type_len", "type_len", base.DEC, nil)
 fields['of12.oxm_udp_dst.value'] = ProtoField.uint16("of12.oxm_udp_dst.value", "value", base.DEC, nil)
 fields['of12.oxm_udp_dst_masked.type_len'] = ProtoField.uint32("of12.oxm_udp_dst_masked.type_len", "type_len", base.DEC, nil)
@@ -10135,6 +10145,16 @@ fields['of13.oxm_tunnel_ipv4_src.value'] = ProtoField.ipv4("of13.oxm_tunnel_ipv4
 fields['of13.oxm_tunnel_ipv4_src_masked.type_len'] = ProtoField.uint32("of13.oxm_tunnel_ipv4_src_masked.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_tunnel_ipv4_src_masked.value'] = ProtoField.ipv4("of13.oxm_tunnel_ipv4_src_masked.value", "value")
 fields['of13.oxm_tunnel_ipv4_src_masked.value_mask'] = ProtoField.ipv4("of13.oxm_tunnel_ipv4_src_masked.value_mask", "value_mask")
+fields['of13.oxm_tunnel_ipv6_dst.type_len'] = ProtoField.uint32("of13.oxm_tunnel_ipv6_dst.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_tunnel_ipv6_dst.value'] = ProtoField.ipv6("of13.oxm_tunnel_ipv6_dst.value", "value")
+fields['of13.oxm_tunnel_ipv6_dst_masked.type_len'] = ProtoField.uint32("of13.oxm_tunnel_ipv6_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_tunnel_ipv6_dst_masked.value'] = ProtoField.ipv6("of13.oxm_tunnel_ipv6_dst_masked.value", "value")
+fields['of13.oxm_tunnel_ipv6_dst_masked.value_mask'] = ProtoField.ipv6("of13.oxm_tunnel_ipv6_dst_masked.value_mask", "value_mask")
+fields['of13.oxm_tunnel_ipv6_src.type_len'] = ProtoField.uint32("of13.oxm_tunnel_ipv6_src.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_tunnel_ipv6_src.value'] = ProtoField.ipv6("of13.oxm_tunnel_ipv6_src.value", "value")
+fields['of13.oxm_tunnel_ipv6_src_masked.type_len'] = ProtoField.uint32("of13.oxm_tunnel_ipv6_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_tunnel_ipv6_src_masked.value'] = ProtoField.ipv6("of13.oxm_tunnel_ipv6_src_masked.value", "value")
+fields['of13.oxm_tunnel_ipv6_src_masked.value_mask'] = ProtoField.ipv6("of13.oxm_tunnel_ipv6_src_masked.value_mask", "value_mask")
 fields['of13.oxm_udp_dst.type_len'] = ProtoField.uint32("of13.oxm_udp_dst.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_udp_dst.value'] = ProtoField.uint16("of13.oxm_udp_dst.value", "value", base.DEC, nil)
 fields['of13.oxm_udp_dst_masked.type_len'] = ProtoField.uint32("of13.oxm_udp_dst_masked.type_len", "type_len", base.DEC, nil)
@@ -13157,6 +13177,16 @@ fields['of14.oxm_tunnel_ipv4_src.value'] = ProtoField.ipv4("of14.oxm_tunnel_ipv4
 fields['of14.oxm_tunnel_ipv4_src_masked.type_len'] = ProtoField.uint32("of14.oxm_tunnel_ipv4_src_masked.type_len", "type_len", base.DEC, nil)
 fields['of14.oxm_tunnel_ipv4_src_masked.value'] = ProtoField.ipv4("of14.oxm_tunnel_ipv4_src_masked.value", "value")
 fields['of14.oxm_tunnel_ipv4_src_masked.value_mask'] = ProtoField.ipv4("of14.oxm_tunnel_ipv4_src_masked.value_mask", "value_mask")
+fields['of14.oxm_tunnel_ipv6_dst.type_len'] = ProtoField.uint32("of14.oxm_tunnel_ipv6_dst.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_tunnel_ipv6_dst.value'] = ProtoField.ipv6("of14.oxm_tunnel_ipv6_dst.value", "value")
+fields['of14.oxm_tunnel_ipv6_dst_masked.type_len'] = ProtoField.uint32("of14.oxm_tunnel_ipv6_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_tunnel_ipv6_dst_masked.value'] = ProtoField.ipv6("of14.oxm_tunnel_ipv6_dst_masked.value", "value")
+fields['of14.oxm_tunnel_ipv6_dst_masked.value_mask'] = ProtoField.ipv6("of14.oxm_tunnel_ipv6_dst_masked.value_mask", "value_mask")
+fields['of14.oxm_tunnel_ipv6_src.type_len'] = ProtoField.uint32("of14.oxm_tunnel_ipv6_src.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_tunnel_ipv6_src.value'] = ProtoField.ipv6("of14.oxm_tunnel_ipv6_src.value", "value")
+fields['of14.oxm_tunnel_ipv6_src_masked.type_len'] = ProtoField.uint32("of14.oxm_tunnel_ipv6_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of14.oxm_tunnel_ipv6_src_masked.value'] = ProtoField.ipv6("of14.oxm_tunnel_ipv6_src_masked.value", "value")
+fields['of14.oxm_tunnel_ipv6_src_masked.value_mask'] = ProtoField.ipv6("of14.oxm_tunnel_ipv6_src_masked.value_mask", "value_mask")
 fields['of14.oxm_udp_dst.type_len'] = ProtoField.uint32("of14.oxm_udp_dst.type_len", "type_len", base.DEC, nil)
 fields['of14.oxm_udp_dst.value'] = ProtoField.uint16("of14.oxm_udp_dst.value", "value", base.DEC, nil)
 fields['of14.oxm_udp_dst_masked.type_len'] = ProtoField.uint32("of14.oxm_udp_dst_masked.type_len", "type_len", base.DEC, nil)
@@ -16590,6 +16620,16 @@ fields['of15.oxm_tunnel_ipv4_src.value'] = ProtoField.ipv4("of15.oxm_tunnel_ipv4
 fields['of15.oxm_tunnel_ipv4_src_masked.type_len'] = ProtoField.uint32("of15.oxm_tunnel_ipv4_src_masked.type_len", "type_len", base.DEC, nil)
 fields['of15.oxm_tunnel_ipv4_src_masked.value'] = ProtoField.ipv4("of15.oxm_tunnel_ipv4_src_masked.value", "value")
 fields['of15.oxm_tunnel_ipv4_src_masked.value_mask'] = ProtoField.ipv4("of15.oxm_tunnel_ipv4_src_masked.value_mask", "value_mask")
+fields['of15.oxm_tunnel_ipv6_dst.type_len'] = ProtoField.uint32("of15.oxm_tunnel_ipv6_dst.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_tunnel_ipv6_dst.value'] = ProtoField.ipv6("of15.oxm_tunnel_ipv6_dst.value", "value")
+fields['of15.oxm_tunnel_ipv6_dst_masked.type_len'] = ProtoField.uint32("of15.oxm_tunnel_ipv6_dst_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_tunnel_ipv6_dst_masked.value'] = ProtoField.ipv6("of15.oxm_tunnel_ipv6_dst_masked.value", "value")
+fields['of15.oxm_tunnel_ipv6_dst_masked.value_mask'] = ProtoField.ipv6("of15.oxm_tunnel_ipv6_dst_masked.value_mask", "value_mask")
+fields['of15.oxm_tunnel_ipv6_src.type_len'] = ProtoField.uint32("of15.oxm_tunnel_ipv6_src.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_tunnel_ipv6_src.value'] = ProtoField.ipv6("of15.oxm_tunnel_ipv6_src.value", "value")
+fields['of15.oxm_tunnel_ipv6_src_masked.type_len'] = ProtoField.uint32("of15.oxm_tunnel_ipv6_src_masked.type_len", "type_len", base.DEC, nil)
+fields['of15.oxm_tunnel_ipv6_src_masked.value'] = ProtoField.ipv6("of15.oxm_tunnel_ipv6_src_masked.value", "value")
+fields['of15.oxm_tunnel_ipv6_src_masked.value_mask'] = ProtoField.ipv6("of15.oxm_tunnel_ipv6_src_masked.value_mask", "value_mask")
 fields['of15.oxm_udp_dst.type_len'] = ProtoField.uint32("of15.oxm_udp_dst.type_len", "type_len", base.DEC, nil)
 fields['of15.oxm_udp_dst.value'] = ProtoField.uint16("of15.oxm_udp_dst.value", "value", base.DEC, nil)
 fields['of15.oxm_udp_dst_masked.type_len'] = ProtoField.uint32("of15.oxm_udp_dst_masked.type_len", "type_len", base.DEC, nil)
@@ -20088,6 +20128,16 @@ p_of.fields = {
     fields['of12.oxm_tunnel_ipv4_src_masked.type_len'],
     fields['of12.oxm_tunnel_ipv4_src_masked.value'],
     fields['of12.oxm_tunnel_ipv4_src_masked.value_mask'],
+    fields['of12.oxm_tunnel_ipv6_dst.type_len'],
+    fields['of12.oxm_tunnel_ipv6_dst.value'],
+    fields['of12.oxm_tunnel_ipv6_dst_masked.type_len'],
+    fields['of12.oxm_tunnel_ipv6_dst_masked.value'],
+    fields['of12.oxm_tunnel_ipv6_dst_masked.value_mask'],
+    fields['of12.oxm_tunnel_ipv6_src.type_len'],
+    fields['of12.oxm_tunnel_ipv6_src.value'],
+    fields['of12.oxm_tunnel_ipv6_src_masked.type_len'],
+    fields['of12.oxm_tunnel_ipv6_src_masked.value'],
+    fields['of12.oxm_tunnel_ipv6_src_masked.value_mask'],
     fields['of12.oxm_udp_dst.type_len'],
     fields['of12.oxm_udp_dst.value'],
     fields['of12.oxm_udp_dst_masked.type_len'],
@@ -22931,6 +22981,16 @@ p_of.fields = {
     fields['of13.oxm_tunnel_ipv4_src_masked.type_len'],
     fields['of13.oxm_tunnel_ipv4_src_masked.value'],
     fields['of13.oxm_tunnel_ipv4_src_masked.value_mask'],
+    fields['of13.oxm_tunnel_ipv6_dst.type_len'],
+    fields['of13.oxm_tunnel_ipv6_dst.value'],
+    fields['of13.oxm_tunnel_ipv6_dst_masked.type_len'],
+    fields['of13.oxm_tunnel_ipv6_dst_masked.value'],
+    fields['of13.oxm_tunnel_ipv6_dst_masked.value_mask'],
+    fields['of13.oxm_tunnel_ipv6_src.type_len'],
+    fields['of13.oxm_tunnel_ipv6_src.value'],
+    fields['of13.oxm_tunnel_ipv6_src_masked.type_len'],
+    fields['of13.oxm_tunnel_ipv6_src_masked.value'],
+    fields['of13.oxm_tunnel_ipv6_src_masked.value_mask'],
     fields['of13.oxm_udp_dst.type_len'],
     fields['of13.oxm_udp_dst.value'],
     fields['of13.oxm_udp_dst_masked.type_len'],
@@ -25953,6 +26013,16 @@ p_of.fields = {
     fields['of14.oxm_tunnel_ipv4_src_masked.type_len'],
     fields['of14.oxm_tunnel_ipv4_src_masked.value'],
     fields['of14.oxm_tunnel_ipv4_src_masked.value_mask'],
+    fields['of14.oxm_tunnel_ipv6_dst.type_len'],
+    fields['of14.oxm_tunnel_ipv6_dst.value'],
+    fields['of14.oxm_tunnel_ipv6_dst_masked.type_len'],
+    fields['of14.oxm_tunnel_ipv6_dst_masked.value'],
+    fields['of14.oxm_tunnel_ipv6_dst_masked.value_mask'],
+    fields['of14.oxm_tunnel_ipv6_src.type_len'],
+    fields['of14.oxm_tunnel_ipv6_src.value'],
+    fields['of14.oxm_tunnel_ipv6_src_masked.type_len'],
+    fields['of14.oxm_tunnel_ipv6_src_masked.value'],
+    fields['of14.oxm_tunnel_ipv6_src_masked.value_mask'],
     fields['of14.oxm_udp_dst.type_len'],
     fields['of14.oxm_udp_dst.value'],
     fields['of14.oxm_udp_dst_masked.type_len'],
@@ -29386,6 +29456,16 @@ p_of.fields = {
     fields['of15.oxm_tunnel_ipv4_src_masked.type_len'],
     fields['of15.oxm_tunnel_ipv4_src_masked.value'],
     fields['of15.oxm_tunnel_ipv4_src_masked.value_mask'],
+    fields['of15.oxm_tunnel_ipv6_dst.type_len'],
+    fields['of15.oxm_tunnel_ipv6_dst.value'],
+    fields['of15.oxm_tunnel_ipv6_dst_masked.type_len'],
+    fields['of15.oxm_tunnel_ipv6_dst_masked.value'],
+    fields['of15.oxm_tunnel_ipv6_dst_masked.value_mask'],
+    fields['of15.oxm_tunnel_ipv6_src.type_len'],
+    fields['of15.oxm_tunnel_ipv6_src.value'],
+    fields['of15.oxm_tunnel_ipv6_src_masked.type_len'],
+    fields['of15.oxm_tunnel_ipv6_src_masked.value'],
+    fields['of15.oxm_tunnel_ipv6_src_masked.value_mask'],
     fields['of15.oxm_udp_dst.type_len'],
     fields['of15.oxm_udp_dst.value'],
     fields['of15.oxm_udp_dst_masked.type_len'],
@@ -36839,6 +36919,44 @@ function dissect_of_oxm_tunnel_ipv4_src_masked_v3(reader, subtree)
     return 'of_oxm_tunnel_ipv4_src_masked'
 end
 of_oxm_v3_dissectors[81672] = dissect_of_oxm_tunnel_ipv4_src_masked_v3
+
+-- child class of_oxm_tunnel_ipv6_dst
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_dst_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_tunnel_ipv6_dst.type_len')
+    read_of_ipv6_t(reader, 3, subtree, 'of12.oxm_tunnel_ipv6_dst.value')
+    return 'of_oxm_tunnel_ipv6_dst'
+end
+of_oxm_v3_dissectors[121872] = dissect_of_oxm_tunnel_ipv6_dst_v3
+
+-- child class of_oxm_tunnel_ipv6_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_dst_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_tunnel_ipv6_dst_masked.type_len')
+    read_of_ipv6_t(reader, 3, subtree, 'of12.oxm_tunnel_ipv6_dst_masked.value')
+    read_of_ipv6_t(reader, 3, subtree, 'of12.oxm_tunnel_ipv6_dst_masked.value_mask')
+    return 'of_oxm_tunnel_ipv6_dst_masked'
+end
+of_oxm_v3_dissectors[122144] = dissect_of_oxm_tunnel_ipv6_dst_masked_v3
+
+-- child class of_oxm_tunnel_ipv6_src
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_src_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_tunnel_ipv6_src.type_len')
+    read_of_ipv6_t(reader, 3, subtree, 'of12.oxm_tunnel_ipv6_src.value')
+    return 'of_oxm_tunnel_ipv6_src'
+end
+of_oxm_v3_dissectors[121360] = dissect_of_oxm_tunnel_ipv6_src_v3
+
+-- child class of_oxm_tunnel_ipv6_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_src_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_tunnel_ipv6_src_masked.type_len')
+    read_of_ipv6_t(reader, 3, subtree, 'of12.oxm_tunnel_ipv6_src_masked.value')
+    read_of_ipv6_t(reader, 3, subtree, 'of12.oxm_tunnel_ipv6_src_masked.value_mask')
+    return 'of_oxm_tunnel_ipv6_src_masked'
+end
+of_oxm_v3_dissectors[121632] = dissect_of_oxm_tunnel_ipv6_src_masked_v3
 
 -- child class of_oxm_udp_dst
 -- Child of of_oxm
@@ -44410,6 +44528,44 @@ function dissect_of_oxm_tunnel_ipv4_src_masked_v4(reader, subtree)
     return 'of_oxm_tunnel_ipv4_src_masked'
 end
 of_oxm_v4_dissectors[81672] = dissect_of_oxm_tunnel_ipv4_src_masked_v4
+
+-- child class of_oxm_tunnel_ipv6_dst
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_dst_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_tunnel_ipv6_dst.type_len')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.oxm_tunnel_ipv6_dst.value')
+    return 'of_oxm_tunnel_ipv6_dst'
+end
+of_oxm_v4_dissectors[121872] = dissect_of_oxm_tunnel_ipv6_dst_v4
+
+-- child class of_oxm_tunnel_ipv6_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_dst_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_tunnel_ipv6_dst_masked.type_len')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.oxm_tunnel_ipv6_dst_masked.value')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.oxm_tunnel_ipv6_dst_masked.value_mask')
+    return 'of_oxm_tunnel_ipv6_dst_masked'
+end
+of_oxm_v4_dissectors[122144] = dissect_of_oxm_tunnel_ipv6_dst_masked_v4
+
+-- child class of_oxm_tunnel_ipv6_src
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_src_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_tunnel_ipv6_src.type_len')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.oxm_tunnel_ipv6_src.value')
+    return 'of_oxm_tunnel_ipv6_src'
+end
+of_oxm_v4_dissectors[121360] = dissect_of_oxm_tunnel_ipv6_src_v4
+
+-- child class of_oxm_tunnel_ipv6_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_src_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_tunnel_ipv6_src_masked.type_len')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.oxm_tunnel_ipv6_src_masked.value')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.oxm_tunnel_ipv6_src_masked.value_mask')
+    return 'of_oxm_tunnel_ipv6_src_masked'
+end
+of_oxm_v4_dissectors[121632] = dissect_of_oxm_tunnel_ipv6_src_masked_v4
 
 -- child class of_oxm_udp_dst
 -- Child of of_oxm
@@ -52571,6 +52727,44 @@ function dissect_of_oxm_tunnel_ipv4_src_masked_v5(reader, subtree)
     return 'of_oxm_tunnel_ipv4_src_masked'
 end
 of_oxm_v5_dissectors[81672] = dissect_of_oxm_tunnel_ipv4_src_masked_v5
+
+-- child class of_oxm_tunnel_ipv6_dst
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_dst_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_tunnel_ipv6_dst.type_len')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.oxm_tunnel_ipv6_dst.value')
+    return 'of_oxm_tunnel_ipv6_dst'
+end
+of_oxm_v5_dissectors[121872] = dissect_of_oxm_tunnel_ipv6_dst_v5
+
+-- child class of_oxm_tunnel_ipv6_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_dst_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_tunnel_ipv6_dst_masked.type_len')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.oxm_tunnel_ipv6_dst_masked.value')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.oxm_tunnel_ipv6_dst_masked.value_mask')
+    return 'of_oxm_tunnel_ipv6_dst_masked'
+end
+of_oxm_v5_dissectors[122144] = dissect_of_oxm_tunnel_ipv6_dst_masked_v5
+
+-- child class of_oxm_tunnel_ipv6_src
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_src_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_tunnel_ipv6_src.type_len')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.oxm_tunnel_ipv6_src.value')
+    return 'of_oxm_tunnel_ipv6_src'
+end
+of_oxm_v5_dissectors[121360] = dissect_of_oxm_tunnel_ipv6_src_v5
+
+-- child class of_oxm_tunnel_ipv6_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_src_masked_v5(reader, subtree)
+    read_uint32_t(reader, 5, subtree, 'of14.oxm_tunnel_ipv6_src_masked.type_len')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.oxm_tunnel_ipv6_src_masked.value')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.oxm_tunnel_ipv6_src_masked.value_mask')
+    return 'of_oxm_tunnel_ipv6_src_masked'
+end
+of_oxm_v5_dissectors[121632] = dissect_of_oxm_tunnel_ipv6_src_masked_v5
 
 -- child class of_oxm_udp_dst
 -- Child of of_oxm
@@ -61730,6 +61924,44 @@ function dissect_of_oxm_tunnel_ipv4_src_masked_v6(reader, subtree)
     return 'of_oxm_tunnel_ipv4_src_masked'
 end
 of_oxm_v6_dissectors[81672] = dissect_of_oxm_tunnel_ipv4_src_masked_v6
+
+-- child class of_oxm_tunnel_ipv6_dst
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_dst_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_tunnel_ipv6_dst.type_len')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.oxm_tunnel_ipv6_dst.value')
+    return 'of_oxm_tunnel_ipv6_dst'
+end
+of_oxm_v6_dissectors[121872] = dissect_of_oxm_tunnel_ipv6_dst_v6
+
+-- child class of_oxm_tunnel_ipv6_dst_masked
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_dst_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_tunnel_ipv6_dst_masked.type_len')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.oxm_tunnel_ipv6_dst_masked.value')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.oxm_tunnel_ipv6_dst_masked.value_mask')
+    return 'of_oxm_tunnel_ipv6_dst_masked'
+end
+of_oxm_v6_dissectors[122144] = dissect_of_oxm_tunnel_ipv6_dst_masked_v6
+
+-- child class of_oxm_tunnel_ipv6_src
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_src_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_tunnel_ipv6_src.type_len')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.oxm_tunnel_ipv6_src.value')
+    return 'of_oxm_tunnel_ipv6_src'
+end
+of_oxm_v6_dissectors[121360] = dissect_of_oxm_tunnel_ipv6_src_v6
+
+-- child class of_oxm_tunnel_ipv6_src_masked
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_ipv6_src_masked_v6(reader, subtree)
+    read_uint32_t(reader, 6, subtree, 'of15.oxm_tunnel_ipv6_src_masked.type_len')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.oxm_tunnel_ipv6_src_masked.value')
+    read_of_ipv6_t(reader, 6, subtree, 'of15.oxm_tunnel_ipv6_src_masked.value_mask')
+    return 'of_oxm_tunnel_ipv6_src_masked'
+end
+of_oxm_v6_dissectors[121632] = dissect_of_oxm_tunnel_ipv6_src_masked_v6
 
 -- child class of_oxm_udp_dst
 -- Child of of_oxm
