@@ -11969,12 +11969,12 @@ typedef struct of_port_desc_prop_experimenter_s of_port_desc_prop_experimenter_t
  *   are of type of_port_desc_prop_optical_uint32_get_f and _set_f.
  *
  * @param tx_pwr_min_get/set ( OF_1_4).
- *   Accessors for tx_pwr_min, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_optical_uint32_get_f and _set_f.
+ *   Accessors for tx_pwr_min, a variable of type uint16.  Functions
+ *   are of type of_port_desc_prop_optical_uint16_get_f and _set_f.
  *
  * @param tx_pwr_max_get/set ( OF_1_4).
- *   Accessors for tx_pwr_max, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_optical_uint32_get_f and _set_f.
+ *   Accessors for tx_pwr_max, a variable of type uint16.  Functions
+ *   are of type of_port_desc_prop_optical_uint16_get_f and _set_f.
  *
  */
 typedef struct of_port_desc_prop_optical_s of_port_desc_prop_optical_t;

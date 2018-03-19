@@ -40894,6 +40894,7 @@ of_port_desc_prop_optical_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 {
     int out = 0;
     uint32_t val32;
+    uint16_t val16;
 
     of_port_desc_prop_optical_supported_get(obj, &val32);
     out += writer(cookie, "supported=");
@@ -40930,14 +40931,14 @@ of_port_desc_prop_optical_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
     out += LOCI_SHOW_u32(writer, cookie, val32);
     out += writer(cookie, " ");
 
-    of_port_desc_prop_optical_tx_pwr_min_get(obj, &val32);
+    of_port_desc_prop_optical_tx_pwr_min_get(obj, &val16);
     out += writer(cookie, "tx_pwr_min=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += LOCI_SHOW_u16(writer, cookie, val16);
     out += writer(cookie, " ");
 
-    of_port_desc_prop_optical_tx_pwr_max_get(obj, &val32);
+    of_port_desc_prop_optical_tx_pwr_max_get(obj, &val16);
     out += writer(cookie, "tx_pwr_max=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += LOCI_SHOW_u16(writer, cookie, val16);
     out += writer(cookie, " ");
 
     return out;

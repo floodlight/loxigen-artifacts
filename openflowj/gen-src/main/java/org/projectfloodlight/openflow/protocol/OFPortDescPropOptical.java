@@ -36,8 +36,8 @@ public interface OFPortDescPropOptical extends OFObject, OFPortDescProp {
     long getRxMinFreqLmda();
     long getRxMaxFreqLmda();
     long getRxGridFreqLmda();
-    long getTxPwrMin();
-    long getTxPwrMax();
+    int getTxPwrMin();
+    int getTxPwrMax();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -60,10 +60,10 @@ public interface OFPortDescPropOptical extends OFObject, OFPortDescProp {
         Builder setRxMaxFreqLmda(long rxMaxFreqLmda);
         long getRxGridFreqLmda();
         Builder setRxGridFreqLmda(long rxGridFreqLmda);
-        long getTxPwrMin();
-        Builder setTxPwrMin(long txPwrMin);
-        long getTxPwrMax();
-        Builder setTxPwrMax(long txPwrMax);
+        int getTxPwrMin();
+        Builder setTxPwrMin(int txPwrMin);
+        int getTxPwrMax();
+        Builder setTxPwrMax(int txPwrMax);
         OFVersion getVersion();
     }
 }

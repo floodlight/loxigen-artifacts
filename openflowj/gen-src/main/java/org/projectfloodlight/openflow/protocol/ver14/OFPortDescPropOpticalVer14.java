@@ -36,7 +36,7 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
     private static final Logger logger = LoggerFactory.getLogger(OFPortDescPropOpticalVer14.class);
     // version: 1.4
     final static byte WIRE_VERSION = 5;
-    final static int LENGTH = 44;
+    final static int LENGTH = 40;
 
         private final static long DEFAULT_SUPPORTED = 0x0L;
         private final static long DEFAULT_TX_MIN_FREQ_LMDA = 0x0L;
@@ -45,8 +45,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         private final static long DEFAULT_RX_MIN_FREQ_LMDA = 0x0L;
         private final static long DEFAULT_RX_MAX_FREQ_LMDA = 0x0L;
         private final static long DEFAULT_RX_GRID_FREQ_LMDA = 0x0L;
-        private final static long DEFAULT_TX_PWR_MIN = 0x0L;
-        private final static long DEFAULT_TX_PWR_MAX = 0x0L;
+        private final static int DEFAULT_TX_PWR_MIN = 0x0;
+        private final static int DEFAULT_TX_PWR_MAX = 0x0;
 
     // OF message fields
     private final long supported;
@@ -56,8 +56,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
     private final long rxMinFreqLmda;
     private final long rxMaxFreqLmda;
     private final long rxGridFreqLmda;
-    private final long txPwrMin;
-    private final long txPwrMax;
+    private final int txPwrMin;
+    private final int txPwrMax;
 //
     // Immutable default instance
     final static OFPortDescPropOpticalVer14 DEFAULT = new OFPortDescPropOpticalVer14(
@@ -65,7 +65,7 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFPortDescPropOpticalVer14(long supported, long txMinFreqLmda, long txMaxFreqLmda, long txGridFreqLmda, long rxMinFreqLmda, long rxMaxFreqLmda, long rxGridFreqLmda, long txPwrMin, long txPwrMax) {
+    OFPortDescPropOpticalVer14(long supported, long txMinFreqLmda, long txMaxFreqLmda, long txGridFreqLmda, long rxMinFreqLmda, long rxMaxFreqLmda, long rxGridFreqLmda, int txPwrMin, int txPwrMax) {
         this.supported = supported;
         this.txMinFreqLmda = txMinFreqLmda;
         this.txMaxFreqLmda = txMaxFreqLmda;
@@ -119,12 +119,12 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
     }
 
     @Override
-    public long getTxPwrMin() {
+    public int getTxPwrMin() {
         return txPwrMin;
     }
 
     @Override
-    public long getTxPwrMax() {
+    public int getTxPwrMax() {
         return txPwrMax;
     }
 
@@ -158,9 +158,9 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         private boolean rxGridFreqLmdaSet;
         private long rxGridFreqLmda;
         private boolean txPwrMinSet;
-        private long txPwrMin;
+        private int txPwrMin;
         private boolean txPwrMaxSet;
-        private long txPwrMax;
+        private int txPwrMax;
 
         BuilderWithParent(OFPortDescPropOpticalVer14 parentMessage) {
             this.parentMessage = parentMessage;
@@ -249,23 +249,23 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         return this;
     }
     @Override
-    public long getTxPwrMin() {
+    public int getTxPwrMin() {
         return txPwrMin;
     }
 
     @Override
-    public OFPortDescPropOptical.Builder setTxPwrMin(long txPwrMin) {
+    public OFPortDescPropOptical.Builder setTxPwrMin(int txPwrMin) {
         this.txPwrMin = txPwrMin;
         this.txPwrMinSet = true;
         return this;
     }
     @Override
-    public long getTxPwrMax() {
+    public int getTxPwrMax() {
         return txPwrMax;
     }
 
     @Override
-    public OFPortDescPropOptical.Builder setTxPwrMax(long txPwrMax) {
+    public OFPortDescPropOptical.Builder setTxPwrMax(int txPwrMax) {
         this.txPwrMax = txPwrMax;
         this.txPwrMaxSet = true;
         return this;
@@ -286,8 +286,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
                 long rxMinFreqLmda = this.rxMinFreqLmdaSet ? this.rxMinFreqLmda : parentMessage.rxMinFreqLmda;
                 long rxMaxFreqLmda = this.rxMaxFreqLmdaSet ? this.rxMaxFreqLmda : parentMessage.rxMaxFreqLmda;
                 long rxGridFreqLmda = this.rxGridFreqLmdaSet ? this.rxGridFreqLmda : parentMessage.rxGridFreqLmda;
-                long txPwrMin = this.txPwrMinSet ? this.txPwrMin : parentMessage.txPwrMin;
-                long txPwrMax = this.txPwrMaxSet ? this.txPwrMax : parentMessage.txPwrMax;
+                int txPwrMin = this.txPwrMinSet ? this.txPwrMin : parentMessage.txPwrMin;
+                int txPwrMax = this.txPwrMaxSet ? this.txPwrMax : parentMessage.txPwrMax;
 
                 //
                 return new OFPortDescPropOpticalVer14(
@@ -322,9 +322,9 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         private boolean rxGridFreqLmdaSet;
         private long rxGridFreqLmda;
         private boolean txPwrMinSet;
-        private long txPwrMin;
+        private int txPwrMin;
         private boolean txPwrMaxSet;
-        private long txPwrMax;
+        private int txPwrMax;
 
     @Override
     public int getType() {
@@ -409,23 +409,23 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         return this;
     }
     @Override
-    public long getTxPwrMin() {
+    public int getTxPwrMin() {
         return txPwrMin;
     }
 
     @Override
-    public OFPortDescPropOptical.Builder setTxPwrMin(long txPwrMin) {
+    public OFPortDescPropOptical.Builder setTxPwrMin(int txPwrMin) {
         this.txPwrMin = txPwrMin;
         this.txPwrMinSet = true;
         return this;
     }
     @Override
-    public long getTxPwrMax() {
+    public int getTxPwrMax() {
         return txPwrMax;
     }
 
     @Override
-    public OFPortDescPropOptical.Builder setTxPwrMax(long txPwrMax) {
+    public OFPortDescPropOptical.Builder setTxPwrMax(int txPwrMax) {
         this.txPwrMax = txPwrMax;
         this.txPwrMaxSet = true;
         return this;
@@ -445,8 +445,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
             long rxMinFreqLmda = this.rxMinFreqLmdaSet ? this.rxMinFreqLmda : DEFAULT_RX_MIN_FREQ_LMDA;
             long rxMaxFreqLmda = this.rxMaxFreqLmdaSet ? this.rxMaxFreqLmda : DEFAULT_RX_MAX_FREQ_LMDA;
             long rxGridFreqLmda = this.rxGridFreqLmdaSet ? this.rxGridFreqLmda : DEFAULT_RX_GRID_FREQ_LMDA;
-            long txPwrMin = this.txPwrMinSet ? this.txPwrMin : DEFAULT_TX_PWR_MIN;
-            long txPwrMax = this.txPwrMaxSet ? this.txPwrMax : DEFAULT_TX_PWR_MAX;
+            int txPwrMin = this.txPwrMinSet ? this.txPwrMin : DEFAULT_TX_PWR_MIN;
+            int txPwrMax = this.txPwrMaxSet ? this.txPwrMax : DEFAULT_TX_PWR_MAX;
 
 
             return new OFPortDescPropOpticalVer14(
@@ -475,8 +475,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
             if(type != (short) 0x1)
                 throw new OFParseError("Wrong type: Expected=0x1(0x1), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 44)
-                throw new OFParseError("Wrong length: Expected=44(44), got="+length);
+            if(length != 40)
+                throw new OFParseError("Wrong length: Expected=40(40), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -493,8 +493,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
             long rxMinFreqLmda = U32.f(bb.readInt());
             long rxMaxFreqLmda = U32.f(bb.readInt());
             long rxGridFreqLmda = U32.f(bb.readInt());
-            long txPwrMin = U32.f(bb.readInt());
-            long txPwrMax = U32.f(bb.readInt());
+            int txPwrMin = U16.f(bb.readShort());
+            int txPwrMax = U16.f(bb.readShort());
 
             OFPortDescPropOpticalVer14 portDescPropOpticalVer14 = new OFPortDescPropOpticalVer14(
                     supported,
@@ -524,8 +524,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         public void funnel(OFPortDescPropOpticalVer14 message, PrimitiveSink sink) {
             // fixed value property type = 0x1
             sink.putShort((short) 0x1);
-            // fixed value property length = 44
-            sink.putShort((short) 0x2c);
+            // fixed value property length = 40
+            sink.putShort((short) 0x28);
             // skip pad (4 bytes)
             sink.putLong(message.supported);
             sink.putLong(message.txMinFreqLmda);
@@ -534,8 +534,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
             sink.putLong(message.rxMinFreqLmda);
             sink.putLong(message.rxMaxFreqLmda);
             sink.putLong(message.rxGridFreqLmda);
-            sink.putLong(message.txPwrMin);
-            sink.putLong(message.txPwrMax);
+            sink.putInt(message.txPwrMin);
+            sink.putInt(message.txPwrMax);
         }
     }
 
@@ -550,8 +550,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         public void write(ByteBuf bb, OFPortDescPropOpticalVer14 message) {
             // fixed value property type = 0x1
             bb.writeShort((short) 0x1);
-            // fixed value property length = 44
-            bb.writeShort((short) 0x2c);
+            // fixed value property length = 40
+            bb.writeShort((short) 0x28);
             // pad: 4 bytes
             bb.writeZero(4);
             bb.writeInt(U32.t(message.supported));
@@ -561,8 +561,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
             bb.writeInt(U32.t(message.rxMinFreqLmda));
             bb.writeInt(U32.t(message.rxMaxFreqLmda));
             bb.writeInt(U32.t(message.rxGridFreqLmda));
-            bb.writeInt(U32.t(message.txPwrMin));
-            bb.writeInt(U32.t(message.txPwrMax));
+            bb.writeShort(U16.t(message.txPwrMin));
+            bb.writeShort(U16.t(message.txPwrMax));
 
 
         }
@@ -635,8 +635,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
         result = prime *  (int) (rxMinFreqLmda ^ (rxMinFreqLmda >>> 32));
         result = prime *  (int) (rxMaxFreqLmda ^ (rxMaxFreqLmda >>> 32));
         result = prime *  (int) (rxGridFreqLmda ^ (rxGridFreqLmda >>> 32));
-        result = prime *  (int) (txPwrMin ^ (txPwrMin >>> 32));
-        result = prime *  (int) (txPwrMax ^ (txPwrMax >>> 32));
+        result = prime * result + txPwrMin;
+        result = prime * result + txPwrMax;
         return result;
     }
 

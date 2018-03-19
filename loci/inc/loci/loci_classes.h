@@ -28798,17 +28798,17 @@ extern void of_port_desc_prop_optical_rx_grid_freq_lmda_get(
 
 extern void of_port_desc_prop_optical_tx_pwr_min_set(
     of_port_desc_prop_optical_t *obj,
-    uint32_t tx_pwr_min);
+    uint16_t tx_pwr_min);
 extern void of_port_desc_prop_optical_tx_pwr_min_get(
     of_port_desc_prop_optical_t *obj,
-    uint32_t *tx_pwr_min);
+    uint16_t *tx_pwr_min);
 
 extern void of_port_desc_prop_optical_tx_pwr_max_set(
     of_port_desc_prop_optical_t *obj,
-    uint32_t tx_pwr_max);
+    uint16_t tx_pwr_max);
 extern void of_port_desc_prop_optical_tx_pwr_max_get(
     of_port_desc_prop_optical_t *obj,
-    uint32_t *tx_pwr_max);
+    uint16_t *tx_pwr_max);
 
 /* Unified accessor functions for of_port_mod_prop_ethernet */
 

@@ -44202,6 +44202,7 @@ of_port_desc_prop_optical_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie
 {
     int out = 0;
     uint32_t val32;
+    uint16_t val16;
 
     out += writer(cookie, "Object of type of_port_desc_prop_optical\n");
 
@@ -44240,14 +44241,14 @@ of_port_desc_prop_optical_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
-    of_port_desc_prop_optical_tx_pwr_min_get(obj, &val32);
-    out += writer(cookie, "  tx_pwr_min (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
+    of_port_desc_prop_optical_tx_pwr_min_get(obj, &val16);
+    out += writer(cookie, "  tx_pwr_min (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
-    of_port_desc_prop_optical_tx_pwr_max_get(obj, &val32);
-    out += writer(cookie, "  tx_pwr_max (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
+    of_port_desc_prop_optical_tx_pwr_max_get(obj, &val16);
+    out += writer(cookie, "  tx_pwr_max (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
     return out;

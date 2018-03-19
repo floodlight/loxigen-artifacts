@@ -63696,6 +63696,7 @@ of_port_desc_prop_optical_OF_VERSION_1_4_dup(
 {
     of_port_desc_prop_optical_t *dst;
     uint32_t val32;
+    uint16_t val16;
 
     if ((dst = of_port_desc_prop_optical_new(src->version)) == NULL) {
         return NULL;
@@ -63722,11 +63723,11 @@ of_port_desc_prop_optical_OF_VERSION_1_4_dup(
     of_port_desc_prop_optical_rx_grid_freq_lmda_get(src, &val32);
     of_port_desc_prop_optical_rx_grid_freq_lmda_set(dst, val32);
 
-    of_port_desc_prop_optical_tx_pwr_min_get(src, &val32);
-    of_port_desc_prop_optical_tx_pwr_min_set(dst, val32);
+    of_port_desc_prop_optical_tx_pwr_min_get(src, &val16);
+    of_port_desc_prop_optical_tx_pwr_min_set(dst, val16);
 
-    of_port_desc_prop_optical_tx_pwr_max_get(src, &val32);
-    of_port_desc_prop_optical_tx_pwr_max_set(dst, val32);
+    of_port_desc_prop_optical_tx_pwr_max_get(src, &val16);
+    of_port_desc_prop_optical_tx_pwr_max_set(dst, val16);
 
     return dst;
 }
