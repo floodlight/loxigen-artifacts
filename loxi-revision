@@ -1,1 +1,1 @@
-f17cda0f187367a57f990d649dd81f31a8ac8ec3 Merge into master from pull request #592: don't fail pushartifacts if the artifact repo already has the commit (https://github.com/floodlight/loxigen/pull/592)
+732fb78a0e25ca0a34a5270040008d93e5caf91e Merge into master from pull request #593: use githubCheckOrgAuthz (https://github.com/floodlight/loxigen/pull/593)
