@@ -9000,6 +9000,8 @@ fields['of13.bsn_tlv_uri_scheme.value'] = ProtoField.bytes("of13.bsn_tlv_uri_sch
 fields['of13.bsn_tlv_use_packet_state.type'] = ProtoField.uint16("of13.bsn_tlv_use_packet_state.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_use_packet_state.length'] = ProtoField.uint16("of13.bsn_tlv_use_packet_state.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of13.bsn_tlv_use_packet_state.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_user_configured.type'] = ProtoField.uint16("of13.bsn_tlv_user_configured.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_user_configured.length'] = ProtoField.uint16("of13.bsn_tlv_user_configured.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vfi.type'] = ProtoField.uint16("of13.bsn_tlv_vfi.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vfi.length'] = ProtoField.uint16("of13.bsn_tlv_vfi.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vfi.value'] = ProtoField.uint16("of13.bsn_tlv_vfi.value", "value", base.DEC, nil)
@@ -11989,6 +11991,8 @@ fields['of14.bsn_tlv_uri_scheme.value'] = ProtoField.bytes("of14.bsn_tlv_uri_sch
 fields['of14.bsn_tlv_use_packet_state.type'] = ProtoField.uint16("of14.bsn_tlv_use_packet_state.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_use_packet_state.length'] = ProtoField.uint16("of14.bsn_tlv_use_packet_state.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of14.bsn_tlv_use_packet_state.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_user_configured.type'] = ProtoField.uint16("of14.bsn_tlv_user_configured.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_user_configured.length'] = ProtoField.uint16("of14.bsn_tlv_user_configured.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vfi.type'] = ProtoField.uint16("of14.bsn_tlv_vfi.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vfi.length'] = ProtoField.uint16("of14.bsn_tlv_vfi.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vfi.value'] = ProtoField.uint16("of14.bsn_tlv_vfi.value", "value", base.DEC, nil)
@@ -15246,6 +15250,8 @@ fields['of15.bsn_tlv_uri_scheme.value'] = ProtoField.bytes("of15.bsn_tlv_uri_sch
 fields['of15.bsn_tlv_use_packet_state.type'] = ProtoField.uint16("of15.bsn_tlv_use_packet_state.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_use_packet_state.length'] = ProtoField.uint16("of15.bsn_tlv_use_packet_state.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_use_packet_state.value'] = ProtoField.uint8("of15.bsn_tlv_use_packet_state.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_user_configured.type'] = ProtoField.uint16("of15.bsn_tlv_user_configured.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_user_configured.length'] = ProtoField.uint16("of15.bsn_tlv_user_configured.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_vfi.type'] = ProtoField.uint16("of15.bsn_tlv_vfi.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_vfi.length'] = ProtoField.uint16("of15.bsn_tlv_vfi.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_vfi.value'] = ProtoField.uint16("of15.bsn_tlv_vfi.value", "value", base.DEC, nil)
@@ -21796,6 +21802,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_use_packet_state.type'],
     fields['of13.bsn_tlv_use_packet_state.length'],
     fields['of13.bsn_tlv_use_packet_state.value'],
+    fields['of13.bsn_tlv_user_configured.type'],
+    fields['of13.bsn_tlv_user_configured.length'],
     fields['of13.bsn_tlv_vfi.type'],
     fields['of13.bsn_tlv_vfi.length'],
     fields['of13.bsn_tlv_vfi.value'],
@@ -24785,6 +24793,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_use_packet_state.type'],
     fields['of14.bsn_tlv_use_packet_state.length'],
     fields['of14.bsn_tlv_use_packet_state.value'],
+    fields['of14.bsn_tlv_user_configured.type'],
+    fields['of14.bsn_tlv_user_configured.length'],
     fields['of14.bsn_tlv_vfi.type'],
     fields['of14.bsn_tlv_vfi.length'],
     fields['of14.bsn_tlv_vfi.value'],
@@ -28042,6 +28052,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_use_packet_state.type'],
     fields['of15.bsn_tlv_use_packet_state.length'],
     fields['of15.bsn_tlv_use_packet_state.value'],
+    fields['of15.bsn_tlv_user_configured.type'],
+    fields['of15.bsn_tlv_user_configured.length'],
     fields['of15.bsn_tlv_vfi.type'],
     fields['of15.bsn_tlv_vfi.length'],
     fields['of15.bsn_tlv_vfi.value'],
@@ -41187,6 +41199,15 @@ function dissect_of_bsn_tlv_use_packet_state_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[96] = dissect_of_bsn_tlv_use_packet_state_v4
 
+-- child class of_bsn_tlv_user_configured
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_user_configured_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_user_configured.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_user_configured.length')
+    return 'of_bsn_tlv_user_configured'
+end
+of_bsn_tlv_v4_dissectors[166] = dissect_of_bsn_tlv_user_configured_v4
+
 -- child class of_bsn_tlv_vfi
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_vfi_v4(reader, subtree)
@@ -49286,6 +49307,15 @@ function dissect_of_bsn_tlv_use_packet_state_v5(reader, subtree)
     return 'of_bsn_tlv_use_packet_state'
 end
 of_bsn_tlv_v5_dissectors[96] = dissect_of_bsn_tlv_use_packet_state_v5
+
+-- child class of_bsn_tlv_user_configured
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_user_configured_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_user_configured.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_user_configured.length')
+    return 'of_bsn_tlv_user_configured'
+end
+of_bsn_tlv_v5_dissectors[166] = dissect_of_bsn_tlv_user_configured_v5
 
 -- child class of_bsn_tlv_vfi
 -- Child of of_bsn_tlv
@@ -58003,6 +58033,15 @@ function dissect_of_bsn_tlv_use_packet_state_v6(reader, subtree)
     return 'of_bsn_tlv_use_packet_state'
 end
 of_bsn_tlv_v6_dissectors[96] = dissect_of_bsn_tlv_use_packet_state_v6
+
+-- child class of_bsn_tlv_user_configured
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_user_configured_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_user_configured.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_user_configured.length')
+    return 'of_bsn_tlv_user_configured'
+end
+of_bsn_tlv_v6_dissectors[166] = dissect_of_bsn_tlv_user_configured_v6
 
 -- child class of_bsn_tlv_vfi
 -- Child of of_bsn_tlv

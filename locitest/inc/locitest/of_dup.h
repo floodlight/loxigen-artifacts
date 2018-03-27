@@ -1839,6 +1839,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_user_configured_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_vfi_dup(
         of_object_t *src);
 
@@ -7031,6 +7035,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_user_configured_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_vfi_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9904,6 +9912,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_use_packet_state_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_user_configured_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
