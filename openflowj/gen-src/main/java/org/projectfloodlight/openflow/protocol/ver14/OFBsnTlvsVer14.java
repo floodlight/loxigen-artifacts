@@ -1305,6 +1305,10 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvUserConfigured userConfigured() {
+        return OFBsnTlvUserConfiguredVer14.INSTANCE;
+    }
+
     public OFBsnTlvVfi.Builder buildVfi() {
         return new OFBsnTlvVfiVer14.Builder();
     }

@@ -468,6 +468,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_upgrade_init,
     (of_object_init_f)of_bsn_tlv_uri_scheme_init,
     (of_object_init_f)of_bsn_tlv_use_packet_state_init,
+    (of_object_init_f)of_bsn_tlv_user_configured_init,
     (of_object_init_f)of_bsn_tlv_vfi_init,
     (of_object_init_f)of_bsn_tlv_vfp_class_id_init,
     (of_object_init_f)of_bsn_tlv_virtual_init,

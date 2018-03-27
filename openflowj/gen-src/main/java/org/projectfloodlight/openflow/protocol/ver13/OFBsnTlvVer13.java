@@ -508,6 +508,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x60:
                    // discriminator value 0x60=0x60 for class OFBsnTlvUsePacketStateVer13
                    return OFBsnTlvUsePacketStateVer13.READER.readFrom(bb);
+               case (short) 0xa6:
+                   // discriminator value 0xa6=0xa6 for class OFBsnTlvUserConfiguredVer13
+                   return OFBsnTlvUserConfiguredVer13.READER.readFrom(bb);
                case (short) 0x63:
                    // discriminator value 0x63=0x63 for class OFBsnTlvVfiVer13
                    return OFBsnTlvVfiVer13.READER.readFrom(bb);

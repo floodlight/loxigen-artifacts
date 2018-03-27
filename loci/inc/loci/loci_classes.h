@@ -1163,6 +1163,8 @@ void of_bsn_tlv_uri_scheme_wire_object_id_get(of_object_t *obj, of_object_id_t *
 void of_bsn_tlv_uri_scheme_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_use_packet_state_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_use_packet_state_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_user_configured_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_user_configured_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vfi_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vfi_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vfp_class_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2018,6 +2020,7 @@ typedef of_object_t of_bsn_tlv_untagged_t;
 typedef of_object_t of_bsn_tlv_upgrade_t;
 typedef of_object_t of_bsn_tlv_uri_scheme_t;
 typedef of_object_t of_bsn_tlv_use_packet_state_t;
+typedef of_object_t of_bsn_tlv_user_configured_t;
 typedef of_object_t of_bsn_tlv_vfi_t;
 typedef of_object_t of_bsn_tlv_vfp_class_id_t;
 typedef of_object_t of_bsn_tlv_virtual_t;
@@ -4697,6 +4700,11 @@ extern void of_bsn_tlv_uri_scheme_init(
 extern of_object_t *
     of_bsn_tlv_use_packet_state_new(of_version_t version);
 extern void of_bsn_tlv_use_packet_state_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_user_configured_new(of_version_t version);
+extern void of_bsn_tlv_user_configured_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11604,6 +11612,17 @@ of_bsn_tlv_uri_scheme_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_use_packet_state_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_user_configured_t
+ * @param obj An instance of type of_bsn_tlv_user_configured_t
+ *
+ * \ingroup of_bsn_tlv_user_configured
+ */
+static inline void
+of_bsn_tlv_user_configured_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24766,6 +24785,8 @@ extern void of_bsn_tlv_use_packet_state_value_set(
 extern void of_bsn_tlv_use_packet_state_value_get(
     of_bsn_tlv_use_packet_state_t *obj,
     uint8_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_user_configured */
 
 /* Unified accessor functions for of_bsn_tlv_vfi */
 

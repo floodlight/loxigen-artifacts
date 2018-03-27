@@ -315,6 +315,7 @@ public interface OFBsnTlvs {
     OFBsnTlvUriScheme uriScheme(byte[] value);
     OFBsnTlvUsePacketState.Builder buildUsePacketState() throws UnsupportedOperationException;
     OFBsnTlvUsePacketState usePacketState(short value);
+    OFBsnTlvUserConfigured userConfigured();
     OFBsnTlvVfi.Builder buildVfi() throws UnsupportedOperationException;
     OFBsnTlvVfi vfi(int value);
     OFBsnTlvVfpClassId.Builder buildVfpClassId() throws UnsupportedOperationException;

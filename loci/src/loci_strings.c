@@ -465,6 +465,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_upgrade",
     "of_bsn_tlv_uri_scheme",
     "of_bsn_tlv_use_packet_state",
+    "of_bsn_tlv_user_configured",
     "of_bsn_tlv_vfi",
     "of_bsn_tlv_vfp_class_id",
     "of_bsn_tlv_virtual",

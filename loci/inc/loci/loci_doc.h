@@ -8059,6 +8059,13 @@ typedef struct of_bsn_tlv_uri_scheme_s of_bsn_tlv_uri_scheme_t;
 typedef struct of_bsn_tlv_use_packet_state_s of_bsn_tlv_use_packet_state_t;
 
 /**
+ * Structure for of_bsn_tlv_user_configured object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_user_configured_s of_bsn_tlv_user_configured_t;
+
+/**
  * Structure for of_bsn_tlv_vfi object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
