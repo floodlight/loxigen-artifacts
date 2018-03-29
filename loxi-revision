@@ -1,1 +1,1 @@
-e1fe5111f6ff02960d8e882ae4f47305c0ed2866 Merge into master from pull request #601: BSC-11527: sign build maven artifacts (https://github.com/floodlight/loxigen/pull/601)
+6627adfa427b51e746711e3f680165e2503f8305 Merge into master from pull request #602: pom.xml: Use "modern" configuration approach to deploy to OSSRH (https://github.com/floodlight/loxigen/pull/602)
