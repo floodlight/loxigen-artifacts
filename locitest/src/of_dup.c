@@ -63476,6 +63476,10 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
         return of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_ETHTOOL) {
+        return of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_PORT_DESC_PROP_BSN_UPLINK) {
         return of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_dup(src);
     }
@@ -63518,6 +63522,38 @@ of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(
 
     of_port_desc_prop_bsn_breakout_sub_interface_speed_gbps_get(src, &val16);
     of_port_desc_prop_bsn_breakout_sub_interface_speed_gbps_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_port_desc_prop_bsn_ethtool
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_port_desc_prop_bsn_ethtool.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_port_desc_prop_bsn_ethtool_t *
+of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dup(
+    of_port_desc_prop_bsn_ethtool_t *src)
+{
+    of_port_desc_prop_bsn_ethtool_t *dst;
+    uint32_t val32;
+    of_octets_t octets;
+
+    if ((dst = of_port_desc_prop_bsn_ethtool_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_port_desc_prop_bsn_ethtool_experimenter_get(src, &val32);
+    of_port_desc_prop_bsn_ethtool_experimenter_set(dst, val32);
+
+    of_port_desc_prop_bsn_ethtool_exp_type_get(src, &val32);
+    of_port_desc_prop_bsn_ethtool_exp_type_set(dst, val32);
+
+    of_port_desc_prop_bsn_ethtool_data_get(src, &octets);
+    of_port_desc_prop_bsn_ethtool_data_set(dst, &octets);
 
     return dst;
 }
@@ -80683,6 +80719,19 @@ of_port_desc_prop_bsn_breakout_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_port_desc_prop_bsn_ethtool_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

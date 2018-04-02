@@ -725,6 +725,7 @@ const char *const of_object_id_str[] = {
     "of_port_desc_prop",
     "of_port_desc_prop_bsn",
     "of_port_desc_prop_bsn_breakout",
+    "of_port_desc_prop_bsn_ethtool",
     "of_port_desc_prop_bsn_forward_error_correction",
     "of_port_desc_prop_bsn_generation_id",
     "of_port_desc_prop_bsn_misc_capabilities",

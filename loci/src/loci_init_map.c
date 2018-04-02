@@ -728,6 +728,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_port_desc_prop_init,
     (of_object_init_f)of_port_desc_prop_bsn_init,
     (of_object_init_f)of_port_desc_prop_bsn_breakout_init,
+    (of_object_init_f)of_port_desc_prop_bsn_ethtool_init,
     (of_object_init_f)of_port_desc_prop_bsn_forward_error_correction_init,
     (of_object_init_f)of_port_desc_prop_bsn_generation_id_init,
     (of_object_init_f)of_port_desc_prop_bsn_misc_capabilities_init,

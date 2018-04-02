@@ -16691,6 +16691,15 @@ extern int of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_populate_scalars(
 extern int of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_check_scalars(
     of_port_desc_prop_bsn_breakout_t *obj, int value);
 
+extern int of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_populate(
+    of_port_desc_prop_bsn_ethtool_t *obj, int value);
+extern int of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_check(
+    of_port_desc_prop_bsn_ethtool_t *obj, int value);
+extern int of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_populate_scalars(
+    of_port_desc_prop_bsn_ethtool_t *obj, int value);
+extern int of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_check_scalars(
+    of_port_desc_prop_bsn_ethtool_t *obj, int value);
+
 extern int of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_populate(
     of_port_desc_prop_bsn_forward_error_correction_t *obj, int value);
 extern int of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_check(
