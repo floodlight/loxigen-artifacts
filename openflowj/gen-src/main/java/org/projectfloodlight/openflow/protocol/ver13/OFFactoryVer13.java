@@ -1523,6 +1523,13 @@ public class OFFactoryVer13 implements OFFactory {
         throw new UnsupportedOperationException("OFPortDescPropBsnBreakout not supported in version 1.3");
     }
 
+    public OFPortDescPropBsnEthtool.Builder buildPortDescPropBsnEthtool() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnEthtool not supported in version 1.3");
+    }
+    public OFPortDescPropBsnEthtool portDescPropBsnEthtool(byte[] data) {
+        throw new UnsupportedOperationException("OFPortDescPropBsnEthtool not supported in version 1.3");
+    }
+
     public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
         throw new UnsupportedOperationException("OFPortDescPropBsnForwardErrorCorrection not supported in version 1.3");
     }

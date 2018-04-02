@@ -1,1 +1,1 @@
-6627adfa427b51e746711e3f680165e2503f8305 Merge into master from pull request #602: pom.xml: Use "modern" configuration approach to deploy to OSSRH (https://github.com/floodlight/loxigen/pull/602)
+f23a5fac9261813964d7057ac812a3c3bac5ea09 Merge into master from pull request #603: BSC-10447 of_port_desc_prop_bsn_ethtool; return get-module data (https://github.com/floodlight/loxigen/pull/603)
