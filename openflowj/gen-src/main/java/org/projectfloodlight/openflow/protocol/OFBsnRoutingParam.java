@@ -29,5 +29,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 public enum OFBsnRoutingParam {
      BSN_ROUTING_PARAM_OSPF_UCAST,
      BSN_ROUTING_PARAM_OSPF_MCAST,
-     BSN_ROUTING_PARAM_ARP_FRR;
+     BSN_ROUTING_PARAM_ARP_FRR,
+     BSN_ROUTING_PARAM_IPV6_OSPF_UCAST,
+     BSN_ROUTING_PARAM_IPV6_OSPF_MCAST,
+     BSN_ROUTING_PARAM_IPV6_NDP_FRR;
 }
