@@ -300,6 +300,8 @@ public interface OFBsnTlvs {
     OFBsnTlvUdpDst udpDst(int value);
     OFBsnTlvUdpSrc.Builder buildUdpSrc() throws UnsupportedOperationException;
     OFBsnTlvUdpSrc udpSrc(int value);
+    OFBsnTlvUint32.Builder buildUint32() throws UnsupportedOperationException;
+    OFBsnTlvUint32 uint32(long value);
     OFBsnTlvUint64List.Builder buildUint64List() throws UnsupportedOperationException;
     OFBsnTlvUint64List uint64List(List<U64> value);
     OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() throws UnsupportedOperationException;

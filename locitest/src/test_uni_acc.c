@@ -32541,6 +32541,44 @@ test_of_bsn_tlv_udp_src_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_tlv_uint32_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_uint32_t *obj;
+    obj = of_bsn_tlv_uint32_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_UINT32);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_UINT32);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_uint32_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_uint32_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_uint32_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_uint64_list_OF_VERSION_1_3(void)
 {
     of_bsn_tlv_uint64_list_t *obj;
@@ -57697,6 +57735,44 @@ test_of_bsn_tlv_udp_src_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bsn_tlv_uint32_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_uint32_t *obj;
+    obj = of_bsn_tlv_uint32_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_UINT32);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_UINT32);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_uint32_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_uint32_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_uint32_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_uint64_list_OF_VERSION_1_4(void)
 {
     of_bsn_tlv_uint64_list_t *obj;
@@ -69575,6 +69651,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_udf_offset_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_udp_dst_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_udp_src_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_uint32_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_uint64_list_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_unicast_rate_OF_VERSION_1_3);
@@ -70237,6 +70314,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_udf_offset_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_udp_dst_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_udp_src_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_uint32_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_uint64_list_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_unicast_rate_OF_VERSION_1_4);

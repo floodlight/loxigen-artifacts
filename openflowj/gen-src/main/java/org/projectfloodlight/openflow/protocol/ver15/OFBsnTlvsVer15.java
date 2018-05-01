@@ -1238,6 +1238,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvUint32.Builder buildUint32() {
+        return new OFBsnTlvUint32Ver15.Builder();
+    }
+    public OFBsnTlvUint32 uint32(long value) {
+        return new OFBsnTlvUint32Ver15(
+                value
+                    );
+    }
+
     public OFBsnTlvUint64List.Builder buildUint64List() {
         return new OFBsnTlvUint64ListVer15.Builder();
     }

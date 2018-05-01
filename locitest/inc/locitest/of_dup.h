@@ -1807,6 +1807,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_uint32_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_uint64_list_dup(
         of_object_t *src);
 
@@ -7007,6 +7011,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_uint32_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_uint64_list_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9884,6 +9892,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_udp_src_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_uint32_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

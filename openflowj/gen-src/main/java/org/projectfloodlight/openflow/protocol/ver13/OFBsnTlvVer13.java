@@ -484,6 +484,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x24:
                    // discriminator value 0x24=0x24 for class OFBsnTlvUdpSrcVer13
                    return OFBsnTlvUdpSrcVer13.READER.readFrom(bb);
+               case (short) 0xa7:
+                   // discriminator value 0xa7=0xa7 for class OFBsnTlvUint32Ver13
+                   return OFBsnTlvUint32Ver13.READER.readFrom(bb);
                case (short) 0x77:
                    // discriminator value 0x77=0x77 for class OFBsnTlvUint64ListVer13
                    return OFBsnTlvUint64ListVer13.READER.readFrom(bb);
