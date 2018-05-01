@@ -8986,6 +8986,9 @@ fields['of13.bsn_tlv_udp_dst.value'] = ProtoField.uint16("of13.bsn_tlv_udp_dst.v
 fields['of13.bsn_tlv_udp_src.type'] = ProtoField.uint16("of13.bsn_tlv_udp_src.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_udp_src.length'] = ProtoField.uint16("of13.bsn_tlv_udp_src.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_udp_src.value'] = ProtoField.uint16("of13.bsn_tlv_udp_src.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_uint32.type'] = ProtoField.uint16("of13.bsn_tlv_uint32.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_uint32.length'] = ProtoField.uint16("of13.bsn_tlv_uint32.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_uint32.value'] = ProtoField.uint32("of13.bsn_tlv_uint32.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_uint64_list.type'] = ProtoField.uint16("of13.bsn_tlv_uint64_list.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_uint64_list.length'] = ProtoField.uint16("of13.bsn_tlv_uint64_list.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_uint64_list.value'] = ProtoField.bytes("of13.bsn_tlv_uint64_list.value", "value")
@@ -11977,6 +11980,9 @@ fields['of14.bsn_tlv_udp_dst.value'] = ProtoField.uint16("of14.bsn_tlv_udp_dst.v
 fields['of14.bsn_tlv_udp_src.type'] = ProtoField.uint16("of14.bsn_tlv_udp_src.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_udp_src.length'] = ProtoField.uint16("of14.bsn_tlv_udp_src.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_udp_src.value'] = ProtoField.uint16("of14.bsn_tlv_udp_src.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_uint32.type'] = ProtoField.uint16("of14.bsn_tlv_uint32.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_uint32.length'] = ProtoField.uint16("of14.bsn_tlv_uint32.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_uint32.value'] = ProtoField.uint32("of14.bsn_tlv_uint32.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_uint64_list.type'] = ProtoField.uint16("of14.bsn_tlv_uint64_list.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_uint64_list.length'] = ProtoField.uint16("of14.bsn_tlv_uint64_list.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_uint64_list.value'] = ProtoField.bytes("of14.bsn_tlv_uint64_list.value", "value")
@@ -15241,6 +15247,9 @@ fields['of15.bsn_tlv_udp_dst.value'] = ProtoField.uint16("of15.bsn_tlv_udp_dst.v
 fields['of15.bsn_tlv_udp_src.type'] = ProtoField.uint16("of15.bsn_tlv_udp_src.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_udp_src.length'] = ProtoField.uint16("of15.bsn_tlv_udp_src.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_udp_src.value'] = ProtoField.uint16("of15.bsn_tlv_udp_src.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_uint32.type'] = ProtoField.uint16("of15.bsn_tlv_uint32.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_uint32.length'] = ProtoField.uint16("of15.bsn_tlv_uint32.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_uint32.value'] = ProtoField.uint32("of15.bsn_tlv_uint32.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_uint64_list.type'] = ProtoField.uint16("of15.bsn_tlv_uint64_list.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_uint64_list.length'] = ProtoField.uint16("of15.bsn_tlv_uint64_list.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_uint64_list.value'] = ProtoField.bytes("of15.bsn_tlv_uint64_list.value", "value")
@@ -21798,6 +21807,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_udp_src.type'],
     fields['of13.bsn_tlv_udp_src.length'],
     fields['of13.bsn_tlv_udp_src.value'],
+    fields['of13.bsn_tlv_uint32.type'],
+    fields['of13.bsn_tlv_uint32.length'],
+    fields['of13.bsn_tlv_uint32.value'],
     fields['of13.bsn_tlv_uint64_list.type'],
     fields['of13.bsn_tlv_uint64_list.length'],
     fields['of13.bsn_tlv_uint64_list.value'],
@@ -24789,6 +24801,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_udp_src.type'],
     fields['of14.bsn_tlv_udp_src.length'],
     fields['of14.bsn_tlv_udp_src.value'],
+    fields['of14.bsn_tlv_uint32.type'],
+    fields['of14.bsn_tlv_uint32.length'],
+    fields['of14.bsn_tlv_uint32.value'],
     fields['of14.bsn_tlv_uint64_list.type'],
     fields['of14.bsn_tlv_uint64_list.length'],
     fields['of14.bsn_tlv_uint64_list.value'],
@@ -28053,6 +28068,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_udp_src.type'],
     fields['of15.bsn_tlv_udp_src.length'],
     fields['of15.bsn_tlv_udp_src.value'],
+    fields['of15.bsn_tlv_uint32.type'],
+    fields['of15.bsn_tlv_uint32.length'],
+    fields['of15.bsn_tlv_uint32.value'],
     fields['of15.bsn_tlv_uint64_list.type'],
     fields['of15.bsn_tlv_uint64_list.length'],
     fields['of15.bsn_tlv_uint64_list.value'],
@@ -41143,6 +41161,16 @@ function dissect_of_bsn_tlv_udp_src_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[36] = dissect_of_bsn_tlv_udp_src_v4
 
+-- child class of_bsn_tlv_uint32
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_uint32_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_uint32.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_uint32.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_uint32.value')
+    return 'of_bsn_tlv_uint32'
+end
+of_bsn_tlv_v4_dissectors[167] = dissect_of_bsn_tlv_uint32_v4
+
 -- child class of_bsn_tlv_uint64_list
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_uint64_list_v4(reader, subtree)
@@ -49251,6 +49279,16 @@ function dissect_of_bsn_tlv_udp_src_v5(reader, subtree)
     return 'of_bsn_tlv_udp_src'
 end
 of_bsn_tlv_v5_dissectors[36] = dissect_of_bsn_tlv_udp_src_v5
+
+-- child class of_bsn_tlv_uint32
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_uint32_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_uint32.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_uint32.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_uint32.value')
+    return 'of_bsn_tlv_uint32'
+end
+of_bsn_tlv_v5_dissectors[167] = dissect_of_bsn_tlv_uint32_v5
 
 -- child class of_bsn_tlv_uint64_list
 -- Child of of_bsn_tlv
@@ -57992,6 +58030,16 @@ function dissect_of_bsn_tlv_udp_src_v6(reader, subtree)
     return 'of_bsn_tlv_udp_src'
 end
 of_bsn_tlv_v6_dissectors[36] = dissect_of_bsn_tlv_udp_src_v6
+
+-- child class of_bsn_tlv_uint32
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_uint32_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_uint32.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_uint32.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_uint32.value')
+    return 'of_bsn_tlv_uint32'
+end
+of_bsn_tlv_v6_dissectors[167] = dissect_of_bsn_tlv_uint32_v6
 
 -- child class of_bsn_tlv_uint64_list
 -- Child of of_bsn_tlv

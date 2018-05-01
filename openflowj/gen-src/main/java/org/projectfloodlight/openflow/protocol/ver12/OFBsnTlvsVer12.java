@@ -988,6 +988,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvUdpSrc not supported in version 1.2");
     }
 
+    public OFBsnTlvUint32.Builder buildUint32() {
+        throw new UnsupportedOperationException("OFBsnTlvUint32 not supported in version 1.2");
+    }
+    public OFBsnTlvUint32 uint32(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvUint32 not supported in version 1.2");
+    }
+
     public OFBsnTlvUint64List.Builder buildUint64List() {
         throw new UnsupportedOperationException("OFBsnTlvUint64List not supported in version 1.2");
     }

@@ -460,6 +460,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_udf_offset_init,
     (of_object_init_f)of_bsn_tlv_udp_dst_init,
     (of_object_init_f)of_bsn_tlv_udp_src_init,
+    (of_object_init_f)of_bsn_tlv_uint32_init,
     (of_object_init_f)of_bsn_tlv_uint64_list_init,
     (of_object_init_f)of_bsn_tlv_unicast_query_timeout_init,
     (of_object_init_f)of_bsn_tlv_unicast_rate_init,
