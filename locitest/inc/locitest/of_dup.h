@@ -1467,6 +1467,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_ip_tunnel_type_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_ipv4_dup(
         of_object_t *src);
 
@@ -1504,6 +1508,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_l2_multicast_lookup_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_l3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6671,6 +6679,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6708,6 +6720,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_l3_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9555,6 +9571,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_ipv4_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -9592,6 +9612,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_l3_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

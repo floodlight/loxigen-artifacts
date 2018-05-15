@@ -435,6 +435,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvIpProto not supported in version 1.1");
     }
 
+    public OFBsnTlvIpTunnelType.Builder buildIpTunnelType() {
+        throw new UnsupportedOperationException("OFBsnTlvIpTunnelType not supported in version 1.1");
+    }
+    public OFBsnTlvIpTunnelType ipTunnelType(OFBsnIpTunnelType value) {
+        throw new UnsupportedOperationException("OFBsnTlvIpTunnelType not supported in version 1.1");
+    }
+
     public OFBsnTlvIpv4.Builder buildIpv4() {
         throw new UnsupportedOperationException("OFBsnTlvIpv4 not supported in version 1.1");
     }
@@ -500,6 +507,10 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
 
     public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
         throw new UnsupportedOperationException("OFBsnTlvL2MulticastLookup not supported in version 1.1");
+    }
+
+    public OFBsnTlvL3 l3() {
+        throw new UnsupportedOperationException("OFBsnTlvL3 not supported in version 1.1");
     }
 
     public OFBsnTlvL3DstClassId.Builder buildL3DstClassId() {

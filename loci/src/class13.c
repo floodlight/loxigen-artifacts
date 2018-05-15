@@ -4212,6 +4212,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xa7:
             *id = OF_BSN_TLV_UINT32;
             break;
+        case 0xa8:
+            *id = OF_BSN_TLV_L3;
+            break;
+        case 0xa9:
+            *id = OF_BSN_TLV_IP_TUNNEL_TYPE;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -4721,6 +4727,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xa7:
             *id = OF_BSN_TLV_UINT32;
+            break;
+        case 0xa8:
+            *id = OF_BSN_TLV_L3;
+            break;
+        case 0xa9:
+            *id = OF_BSN_TLV_IP_TUNNEL_TYPE;
             break;
         default:
             *id = OF_BSN_TLV;
