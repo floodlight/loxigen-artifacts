@@ -548,6 +548,13 @@ ofp_bsn_hash_select_flags_map = {
     2: 'OFP_BSN_HASH_SELECT_DST_IP',
 }
 
+# Identifiers from group ofp_bsn_ip_tunnel_type
+OFP_BSN_IP_TUNNEL_TYPE_PIM = 1
+
+ofp_bsn_ip_tunnel_type_map = {
+    1: 'OFP_BSN_IP_TUNNEL_TYPE_PIM',
+}
+
 # Identifiers from group ofp_bsn_lacp_state
 OFP_BSN_LACP_STATE_ACTIVITY = 1
 OFP_BSN_LACP_STATE_TIMEOUT = 2
@@ -644,6 +651,8 @@ OFP_BSN_PKTIN_FLAG_MC_RESERVED = 131072
 OFP_BSN_PKTIN_FLAG_ANALYTICS = 262144
 OFP_BSN_PKTIN_FLAG_ICMPV6 = 524288
 OFP_BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL = 1048576
+OFP_BSN_PKTIN_FLAG_IPMC_MISS = 2097152
+OFP_BSN_PKTIN_FLAG_IPMC_RPF_FAILED = 4194304
 
 ofp_bsn_pktin_flag_map = {
     1: 'OFP_BSN_PKTIN_FLAG_PDU',
@@ -667,6 +676,8 @@ ofp_bsn_pktin_flag_map = {
     262144: 'OFP_BSN_PKTIN_FLAG_ANALYTICS',
     524288: 'OFP_BSN_PKTIN_FLAG_ICMPV6',
     1048576: 'OFP_BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL',
+    2097152: 'OFP_BSN_PKTIN_FLAG_IPMC_MISS',
+    4194304: 'OFP_BSN_PKTIN_FLAG_IPMC_RPF_FAILED',
 }
 
 # Identifiers from group ofp_bsn_port_counter

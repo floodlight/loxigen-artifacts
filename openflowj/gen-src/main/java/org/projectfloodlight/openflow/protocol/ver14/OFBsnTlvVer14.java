@@ -229,6 +229,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x43:
                    // discriminator value 0x43=0x43 for class OFBsnTlvIpProtoVer14
                    return OFBsnTlvIpProtoVer14.READER.readFrom(bb);
+               case (short) 0xa9:
+                   // discriminator value 0xa9=0xa9 for class OFBsnTlvIpTunnelTypeVer14
+                   return OFBsnTlvIpTunnelTypeVer14.READER.readFrom(bb);
                case (short) 0x4:
                    // discriminator value 0x4=0x4 for class OFBsnTlvIpv4Ver14
                    return OFBsnTlvIpv4Ver14.READER.readFrom(bb);
@@ -259,6 +262,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x4f:
                    // discriminator value 0x4f=0x4f for class OFBsnTlvL2MulticastLookupVer14
                    return OFBsnTlvL2MulticastLookupVer14.READER.readFrom(bb);
+               case (short) 0xa8:
+                   // discriminator value 0xa8=0xa8 for class OFBsnTlvL3Ver14
+                   return OFBsnTlvL3Ver14.READER.readFrom(bb);
                case (short) 0x88:
                    // discriminator value 0x88=0x88 for class OFBsnTlvL3DstClassIdVer14
                    return OFBsnTlvL3DstClassIdVer14.READER.readFrom(bb);

@@ -144,6 +144,8 @@ public interface OFBsnTlvs {
     OFBsnTlvInterval interval(long value);
     OFBsnTlvIpProto.Builder buildIpProto() throws UnsupportedOperationException;
     OFBsnTlvIpProto ipProto(short value);
+    OFBsnTlvIpTunnelType.Builder buildIpTunnelType() throws UnsupportedOperationException;
+    OFBsnTlvIpTunnelType ipTunnelType(OFBsnIpTunnelType value);
     OFBsnTlvIpv4.Builder buildIpv4() throws UnsupportedOperationException;
     OFBsnTlvIpv4 ipv4(IPv4Address value);
     OFBsnTlvIpv4Dst.Builder buildIpv4Dst() throws UnsupportedOperationException;
@@ -163,6 +165,7 @@ public interface OFBsnTlvs {
     OFBsnTlvKnownMulticastRate.Builder buildKnownMulticastRate() throws UnsupportedOperationException;
     OFBsnTlvKnownMulticastRate knownMulticastRate(long value);
     OFBsnTlvL2MulticastLookup l2MulticastLookup();
+    OFBsnTlvL3 l3();
     OFBsnTlvL3DstClassId.Builder buildL3DstClassId() throws UnsupportedOperationException;
     OFBsnTlvL3DstClassId l3DstClassId(long value);
     OFBsnTlvL3InterfaceClassId.Builder buildL3InterfaceClassId() throws UnsupportedOperationException;

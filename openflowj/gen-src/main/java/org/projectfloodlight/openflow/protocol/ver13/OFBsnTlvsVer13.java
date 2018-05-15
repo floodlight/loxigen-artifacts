@@ -541,6 +541,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvIpTunnelType.Builder buildIpTunnelType() {
+        return new OFBsnTlvIpTunnelTypeVer13.Builder();
+    }
+    public OFBsnTlvIpTunnelType ipTunnelType(OFBsnIpTunnelType value) {
+        return new OFBsnTlvIpTunnelTypeVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvIpv4.Builder buildIpv4() {
         return new OFBsnTlvIpv4Ver13.Builder();
     }
@@ -625,6 +634,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
 
     public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
         return OFBsnTlvL2MulticastLookupVer13.INSTANCE;
+    }
+
+    public OFBsnTlvL3 l3() {
+        return OFBsnTlvL3Ver13.INSTANCE;
     }
 
     public OFBsnTlvL3DstClassId.Builder buildL3DstClassId() {

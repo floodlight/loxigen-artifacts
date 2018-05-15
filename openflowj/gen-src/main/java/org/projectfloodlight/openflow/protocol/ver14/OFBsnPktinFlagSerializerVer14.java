@@ -56,6 +56,8 @@ public class OFBsnPktinFlagSerializerVer14 {
     public final static long BSN_PKTIN_FLAG_ANALYTICS_VAL = 0x40000L;
     public final static long BSN_PKTIN_FLAG_ICMPV6_VAL = 0x80000L;
     public final static long BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL_VAL = 0x100000L;
+    public final static long BSN_PKTIN_FLAG_IPMC_MISS_VAL = 0x200000L;
+    public final static long BSN_PKTIN_FLAG_IPMC_RPF_FAILED_VAL = 0x400000L;
 
     public static Set<OFBsnPktinFlag> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -119,6 +121,10 @@ public class OFBsnPktinFlagSerializerVer14 {
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_ICMPV6);
         if((val & BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL_VAL) != 0)
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL);
+        if((val & BSN_PKTIN_FLAG_IPMC_MISS_VAL) != 0)
+            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_IPMC_MISS);
+        if((val & BSN_PKTIN_FLAG_IPMC_RPF_FAILED_VAL) != 0)
+            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_IPMC_RPF_FAILED);
         return Collections.unmodifiableSet(set);
     }
 
@@ -189,6 +195,12 @@ public class OFBsnPktinFlagSerializerVer14 {
                     break;
                 case BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL:
                     wireValue |= BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL_VAL;
+                    break;
+                case BSN_PKTIN_FLAG_IPMC_MISS:
+                    wireValue |= BSN_PKTIN_FLAG_IPMC_MISS_VAL;
+                    break;
+                case BSN_PKTIN_FLAG_IPMC_RPF_FAILED:
+                    wireValue |= BSN_PKTIN_FLAG_IPMC_RPF_FAILED_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnPktinFlag in version 1.4: " + e);
