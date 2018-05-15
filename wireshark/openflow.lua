@@ -1817,6 +1817,11 @@ enum_v4_ofp_queue_op_failed_code = {
     [2] = "OFPQOFC_EPERM",
 }
 
+enum_v4_ofp_bsn_ip_tunnel_type = {
+    [0] = "OFP_BSN_IP_TUNNEL_TYPE_NONE",
+    [1] = "OFP_BSN_IP_TUNNEL_TYPE_PIM",
+}
+
 enum_v4_macro_definitions = {
     [32] = "OFP_MAX_TABLE_NAME_LEN",
     [16] = "OFP_MAX_PORT_NAME_LEN",
@@ -1928,6 +1933,8 @@ enum_v4_ofp_bsn_pktin_flag = {
     [262144] = "OFP_BSN_PKTIN_FLAG_ANALYTICS",
     [524288] = "OFP_BSN_PKTIN_FLAG_ICMPV6",
     [1048576] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL",
+    [2097152] = "OFP_BSN_PKTIN_FLAG_IPMC_MISS",
+    [4194304] = "OFP_BSN_PKTIN_FLAG_IPMC_RPF_FAILED",
 }
 
 enum_v4_ofp_bad_instruction_code = {
@@ -2821,6 +2828,11 @@ enum_v5_ofp_queue_op_failed_code = {
     [2] = "OFPQOFC_EPERM",
 }
 
+enum_v5_ofp_bsn_ip_tunnel_type = {
+    [0] = "OFP_BSN_IP_TUNNEL_TYPE_NONE",
+    [1] = "OFP_BSN_IP_TUNNEL_TYPE_PIM",
+}
+
 enum_v5_macro_definitions = {
     [32] = "OFP_MAX_TABLE_NAME_LEN",
     [16] = "OFP_MAX_PORT_NAME_LEN",
@@ -2952,6 +2964,8 @@ enum_v5_ofp_bsn_pktin_flag = {
     [262144] = "OFP_BSN_PKTIN_FLAG_ANALYTICS",
     [524288] = "OFP_BSN_PKTIN_FLAG_ICMPV6",
     [1048576] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL",
+    [2097152] = "OFP_BSN_PKTIN_FLAG_IPMC_MISS",
+    [4194304] = "OFP_BSN_PKTIN_FLAG_IPMC_RPF_FAILED",
 }
 
 enum_v5_ofp_bad_instruction_code = {
@@ -4005,6 +4019,11 @@ enum_v6_ofp_queue_op_failed_code = {
     [2] = "OFPQOFC_EPERM",
 }
 
+enum_v6_ofp_bsn_ip_tunnel_type = {
+    [0] = "OFP_BSN_IP_TUNNEL_TYPE_NONE",
+    [1] = "OFP_BSN_IP_TUNNEL_TYPE_PIM",
+}
+
 enum_v6_macro_definitions = {
     [32] = "OFP_MAX_TABLE_NAME_LEN",
     [16] = "OFP_MAX_PORT_NAME_LEN",
@@ -4028,10 +4047,26 @@ enum_v6_ofp_bundle_prop_type = {
     [65535] = "OFPBPT_EXPERIMENTER",
 }
 
-enum_v6_ofp_meter_mod_command = {
-    [0] = "OFPMC_ADD",
-    [1] = "OFPMC_MODIFY",
-    [2] = "OFPMC_DELETE",
+enum_v6_ofp_bad_request_code = {
+    [0] = "OFPBRC_BAD_VERSION",
+    [1] = "OFPBRC_BAD_TYPE",
+    [2] = "OFPBRC_BAD_STAT",
+    [3] = "OFPBRC_BAD_EXPERIMENTER",
+    [4] = "OFPBRC_BAD_EXPERIMENTER_TYPE",
+    [5] = "OFPBRC_EPERM",
+    [6] = "OFPBRC_BAD_LEN",
+    [7] = "OFPBRC_BUFFER_EMPTY",
+    [8] = "OFPBRC_BUFFER_UNKNOWN",
+    [9] = "OFPBRC_BAD_TABLE_ID",
+    [10] = "OFPBRC_IS_SLAVE",
+    [11] = "OFPBRC_BAD_PORT",
+    [12] = "OFPBRC_BAD_PACKET",
+    [13] = "OFPBRC_MULTIPART_BUFFER_OVERFLOW",
+    [14] = "OFPBRC_MULTIPART_REQUEST_TIMEOUT",
+    [15] = "OFPBRC_MULTIPART_REPLY_TIMEOUT",
+    [16] = "OFPBRC_MULTIPART_BAD_SCHED",
+    [17] = "OFPBRC_PIPELINE_FIELDS_ONLY",
+    [18] = "OFPBRC_UNKNOWN",
 }
 
 enum_v6_ofp_optical_port_features = {
@@ -4109,26 +4144,10 @@ enum_v6_of_bsn_hash_type = {
     [2] = "OFP_BSN_HASH_TYPE_ENHANCED",
 }
 
-enum_v6_ofp_bad_request_code = {
-    [0] = "OFPBRC_BAD_VERSION",
-    [1] = "OFPBRC_BAD_TYPE",
-    [2] = "OFPBRC_BAD_STAT",
-    [3] = "OFPBRC_BAD_EXPERIMENTER",
-    [4] = "OFPBRC_BAD_EXPERIMENTER_TYPE",
-    [5] = "OFPBRC_EPERM",
-    [6] = "OFPBRC_BAD_LEN",
-    [7] = "OFPBRC_BUFFER_EMPTY",
-    [8] = "OFPBRC_BUFFER_UNKNOWN",
-    [9] = "OFPBRC_BAD_TABLE_ID",
-    [10] = "OFPBRC_IS_SLAVE",
-    [11] = "OFPBRC_BAD_PORT",
-    [12] = "OFPBRC_BAD_PACKET",
-    [13] = "OFPBRC_MULTIPART_BUFFER_OVERFLOW",
-    [14] = "OFPBRC_MULTIPART_REQUEST_TIMEOUT",
-    [15] = "OFPBRC_MULTIPART_REPLY_TIMEOUT",
-    [16] = "OFPBRC_MULTIPART_BAD_SCHED",
-    [17] = "OFPBRC_PIPELINE_FIELDS_ONLY",
-    [18] = "OFPBRC_UNKNOWN",
+enum_v6_ofp_meter_band_type = {
+    [1] = "OFPMBT_DROP",
+    [2] = "OFPMBT_DSCP_REMARK",
+    [65535] = "OFPMBT_EXPERIMENTER",
 }
 
 enum_v6_ofp_bsn_pktin_flag = {
@@ -4153,6 +4172,8 @@ enum_v6_ofp_bsn_pktin_flag = {
     [262144] = "OFP_BSN_PKTIN_FLAG_ANALYTICS",
     [524288] = "OFP_BSN_PKTIN_FLAG_ICMPV6",
     [1048576] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL",
+    [2097152] = "OFP_BSN_PKTIN_FLAG_IPMC_MISS",
+    [4194304] = "OFP_BSN_PKTIN_FLAG_IPMC_RPF_FAILED",
 }
 
 enum_v6_ofp_bad_instruction_code = {
@@ -4201,10 +4222,9 @@ enum_v6_ofp_flow_update_event = {
     [6] = "OFPFME_RESUMED",
 }
 
-enum_v6_ofp_meter_band_type = {
-    [1] = "OFPMBT_DROP",
-    [2] = "OFPMBT_DSCP_REMARK",
-    [65535] = "OFPMBT_EXPERIMENTER",
+enum_v6_ofp_controller_max_len = {
+    [65509] = "OFPCML_MAX",
+    [65535] = "OFPCML_NO_BUFFER",
 }
 
 enum_v6_of_bsn_vrf_counter = {
@@ -4229,9 +4249,10 @@ enum_v6_ofp_bsn_tunnel_type = {
     [1] = "OFP_BSN_TUNNEL_L2GRE",
 }
 
-enum_v6_ofp_controller_max_len = {
-    [65509] = "OFPCML_MAX",
-    [65535] = "OFPCML_NO_BUFFER",
+enum_v6_ofp_meter_mod_command = {
+    [0] = "OFPMC_ADD",
+    [1] = "OFPMC_MODIFY",
+    [2] = "OFPMC_DELETE",
 }
 
 enum_v6_ofp_requestforward_reason = {
@@ -8743,6 +8764,9 @@ fields['of13.bsn_tlv_interval.value'] = ProtoField.uint32("of13.bsn_tlv_interval
 fields['of13.bsn_tlv_ip_proto.type'] = ProtoField.uint16("of13.bsn_tlv_ip_proto.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ip_proto.length'] = ProtoField.uint16("of13.bsn_tlv_ip_proto.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_ip_proto.value'] = ProtoField.uint8("of13.bsn_tlv_ip_proto.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_ip_tunnel_type.type'] = ProtoField.uint16("of13.bsn_tlv_ip_tunnel_type.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_ip_tunnel_type.length'] = ProtoField.uint16("of13.bsn_tlv_ip_tunnel_type.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_ip_tunnel_type.value'] = ProtoField.uint32("of13.bsn_tlv_ip_tunnel_type.value", "value", base.DEC, enum_v4_ofp_bsn_ip_tunnel_type)
 fields['of13.bsn_tlv_ipv4.type'] = ProtoField.uint16("of13.bsn_tlv_ipv4.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4.length'] = ProtoField.uint16("of13.bsn_tlv_ipv4.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4.value'] = ProtoField.ipv4("of13.bsn_tlv_ipv4.value", "value")
@@ -8773,6 +8797,8 @@ fields['of13.bsn_tlv_known_multicast_rate.length'] = ProtoField.uint16("of13.bsn
 fields['of13.bsn_tlv_known_multicast_rate.value'] = ProtoField.uint32("of13.bsn_tlv_known_multicast_rate.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_l2_multicast_lookup.type'] = ProtoField.uint16("of13.bsn_tlv_l2_multicast_lookup.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_l2_multicast_lookup.length'] = ProtoField.uint16("of13.bsn_tlv_l2_multicast_lookup.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_l3.type'] = ProtoField.uint16("of13.bsn_tlv_l3.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_l3.length'] = ProtoField.uint16("of13.bsn_tlv_l3.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_l3_dst_class_id.type'] = ProtoField.uint16("of13.bsn_tlv_l3_dst_class_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_l3_dst_class_id.length'] = ProtoField.uint16("of13.bsn_tlv_l3_dst_class_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_l3_dst_class_id.value'] = ProtoField.uint32("of13.bsn_tlv_l3_dst_class_id.value", "value", base.DEC, nil)
@@ -11737,6 +11763,9 @@ fields['of14.bsn_tlv_interval.value'] = ProtoField.uint32("of14.bsn_tlv_interval
 fields['of14.bsn_tlv_ip_proto.type'] = ProtoField.uint16("of14.bsn_tlv_ip_proto.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_ip_proto.length'] = ProtoField.uint16("of14.bsn_tlv_ip_proto.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_ip_proto.value'] = ProtoField.uint8("of14.bsn_tlv_ip_proto.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_ip_tunnel_type.type'] = ProtoField.uint16("of14.bsn_tlv_ip_tunnel_type.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_ip_tunnel_type.length'] = ProtoField.uint16("of14.bsn_tlv_ip_tunnel_type.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_ip_tunnel_type.value'] = ProtoField.uint32("of14.bsn_tlv_ip_tunnel_type.value", "value", base.DEC, enum_v5_ofp_bsn_ip_tunnel_type)
 fields['of14.bsn_tlv_ipv4.type'] = ProtoField.uint16("of14.bsn_tlv_ipv4.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_ipv4.length'] = ProtoField.uint16("of14.bsn_tlv_ipv4.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_ipv4.value'] = ProtoField.ipv4("of14.bsn_tlv_ipv4.value", "value")
@@ -11767,6 +11796,8 @@ fields['of14.bsn_tlv_known_multicast_rate.length'] = ProtoField.uint16("of14.bsn
 fields['of14.bsn_tlv_known_multicast_rate.value'] = ProtoField.uint32("of14.bsn_tlv_known_multicast_rate.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_l2_multicast_lookup.type'] = ProtoField.uint16("of14.bsn_tlv_l2_multicast_lookup.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_l2_multicast_lookup.length'] = ProtoField.uint16("of14.bsn_tlv_l2_multicast_lookup.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_l3.type'] = ProtoField.uint16("of14.bsn_tlv_l3.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_l3.length'] = ProtoField.uint16("of14.bsn_tlv_l3.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_l3_dst_class_id.type'] = ProtoField.uint16("of14.bsn_tlv_l3_dst_class_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_l3_dst_class_id.length'] = ProtoField.uint16("of14.bsn_tlv_l3_dst_class_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_l3_dst_class_id.value'] = ProtoField.uint32("of14.bsn_tlv_l3_dst_class_id.value", "value", base.DEC, nil)
@@ -15004,6 +15035,9 @@ fields['of15.bsn_tlv_interval.value'] = ProtoField.uint32("of15.bsn_tlv_interval
 fields['of15.bsn_tlv_ip_proto.type'] = ProtoField.uint16("of15.bsn_tlv_ip_proto.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_ip_proto.length'] = ProtoField.uint16("of15.bsn_tlv_ip_proto.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_ip_proto.value'] = ProtoField.uint8("of15.bsn_tlv_ip_proto.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_ip_tunnel_type.type'] = ProtoField.uint16("of15.bsn_tlv_ip_tunnel_type.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_ip_tunnel_type.length'] = ProtoField.uint16("of15.bsn_tlv_ip_tunnel_type.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_ip_tunnel_type.value'] = ProtoField.uint32("of15.bsn_tlv_ip_tunnel_type.value", "value", base.DEC, enum_v6_ofp_bsn_ip_tunnel_type)
 fields['of15.bsn_tlv_ipv4.type'] = ProtoField.uint16("of15.bsn_tlv_ipv4.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_ipv4.length'] = ProtoField.uint16("of15.bsn_tlv_ipv4.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_ipv4.value'] = ProtoField.ipv4("of15.bsn_tlv_ipv4.value", "value")
@@ -15034,6 +15068,8 @@ fields['of15.bsn_tlv_known_multicast_rate.length'] = ProtoField.uint16("of15.bsn
 fields['of15.bsn_tlv_known_multicast_rate.value'] = ProtoField.uint32("of15.bsn_tlv_known_multicast_rate.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_l2_multicast_lookup.type'] = ProtoField.uint16("of15.bsn_tlv_l2_multicast_lookup.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_l2_multicast_lookup.length'] = ProtoField.uint16("of15.bsn_tlv_l2_multicast_lookup.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_l3.type'] = ProtoField.uint16("of15.bsn_tlv_l3.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_l3.length'] = ProtoField.uint16("of15.bsn_tlv_l3.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_l3_dst_class_id.type'] = ProtoField.uint16("of15.bsn_tlv_l3_dst_class_id.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_l3_dst_class_id.length'] = ProtoField.uint16("of15.bsn_tlv_l3_dst_class_id.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_l3_dst_class_id.value'] = ProtoField.uint32("of15.bsn_tlv_l3_dst_class_id.value", "value", base.DEC, nil)
@@ -21564,6 +21600,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_ip_proto.type'],
     fields['of13.bsn_tlv_ip_proto.length'],
     fields['of13.bsn_tlv_ip_proto.value'],
+    fields['of13.bsn_tlv_ip_tunnel_type.type'],
+    fields['of13.bsn_tlv_ip_tunnel_type.length'],
+    fields['of13.bsn_tlv_ip_tunnel_type.value'],
     fields['of13.bsn_tlv_ipv4.type'],
     fields['of13.bsn_tlv_ipv4.length'],
     fields['of13.bsn_tlv_ipv4.value'],
@@ -21594,6 +21633,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_known_multicast_rate.value'],
     fields['of13.bsn_tlv_l2_multicast_lookup.type'],
     fields['of13.bsn_tlv_l2_multicast_lookup.length'],
+    fields['of13.bsn_tlv_l3.type'],
+    fields['of13.bsn_tlv_l3.length'],
     fields['of13.bsn_tlv_l3_dst_class_id.type'],
     fields['of13.bsn_tlv_l3_dst_class_id.length'],
     fields['of13.bsn_tlv_l3_dst_class_id.value'],
@@ -24558,6 +24599,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_ip_proto.type'],
     fields['of14.bsn_tlv_ip_proto.length'],
     fields['of14.bsn_tlv_ip_proto.value'],
+    fields['of14.bsn_tlv_ip_tunnel_type.type'],
+    fields['of14.bsn_tlv_ip_tunnel_type.length'],
+    fields['of14.bsn_tlv_ip_tunnel_type.value'],
     fields['of14.bsn_tlv_ipv4.type'],
     fields['of14.bsn_tlv_ipv4.length'],
     fields['of14.bsn_tlv_ipv4.value'],
@@ -24588,6 +24632,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_known_multicast_rate.value'],
     fields['of14.bsn_tlv_l2_multicast_lookup.type'],
     fields['of14.bsn_tlv_l2_multicast_lookup.length'],
+    fields['of14.bsn_tlv_l3.type'],
+    fields['of14.bsn_tlv_l3.length'],
     fields['of14.bsn_tlv_l3_dst_class_id.type'],
     fields['of14.bsn_tlv_l3_dst_class_id.length'],
     fields['of14.bsn_tlv_l3_dst_class_id.value'],
@@ -27825,6 +27871,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_ip_proto.type'],
     fields['of15.bsn_tlv_ip_proto.length'],
     fields['of15.bsn_tlv_ip_proto.value'],
+    fields['of15.bsn_tlv_ip_tunnel_type.type'],
+    fields['of15.bsn_tlv_ip_tunnel_type.length'],
+    fields['of15.bsn_tlv_ip_tunnel_type.value'],
     fields['of15.bsn_tlv_ipv4.type'],
     fields['of15.bsn_tlv_ipv4.length'],
     fields['of15.bsn_tlv_ipv4.value'],
@@ -27855,6 +27904,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_known_multicast_rate.value'],
     fields['of15.bsn_tlv_l2_multicast_lookup.type'],
     fields['of15.bsn_tlv_l2_multicast_lookup.length'],
+    fields['of15.bsn_tlv_l3.type'],
+    fields['of15.bsn_tlv_l3.length'],
     fields['of15.bsn_tlv_l3_dst_class_id.type'],
     fields['of15.bsn_tlv_l3_dst_class_id.length'],
     fields['of15.bsn_tlv_l3_dst_class_id.value'],
@@ -40314,6 +40365,16 @@ function dissect_of_bsn_tlv_ip_proto_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[67] = dissect_of_bsn_tlv_ip_proto_v4
 
+-- child class of_bsn_tlv_ip_tunnel_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ip_tunnel_type_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ip_tunnel_type.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ip_tunnel_type.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ip_tunnel_type.value')
+    return 'of_bsn_tlv_ip_tunnel_type'
+end
+of_bsn_tlv_v4_dissectors[169] = dissect_of_bsn_tlv_ip_tunnel_type_v4
+
 -- child class of_bsn_tlv_ipv4
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_ipv4_v4(reader, subtree)
@@ -40413,6 +40474,15 @@ function dissect_of_bsn_tlv_l2_multicast_lookup_v4(reader, subtree)
     return 'of_bsn_tlv_l2_multicast_lookup'
 end
 of_bsn_tlv_v4_dissectors[79] = dissect_of_bsn_tlv_l2_multicast_lookup_v4
+
+-- child class of_bsn_tlv_l3
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_l3_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_l3.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_l3.length')
+    return 'of_bsn_tlv_l3'
+end
+of_bsn_tlv_v4_dissectors[168] = dissect_of_bsn_tlv_l3_v4
 
 -- child class of_bsn_tlv_l3_dst_class_id
 -- Child of of_bsn_tlv
@@ -48433,6 +48503,16 @@ function dissect_of_bsn_tlv_ip_proto_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[67] = dissect_of_bsn_tlv_ip_proto_v5
 
+-- child class of_bsn_tlv_ip_tunnel_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ip_tunnel_type_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ip_tunnel_type.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ip_tunnel_type.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ip_tunnel_type.value')
+    return 'of_bsn_tlv_ip_tunnel_type'
+end
+of_bsn_tlv_v5_dissectors[169] = dissect_of_bsn_tlv_ip_tunnel_type_v5
+
 -- child class of_bsn_tlv_ipv4
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_ipv4_v5(reader, subtree)
@@ -48532,6 +48612,15 @@ function dissect_of_bsn_tlv_l2_multicast_lookup_v5(reader, subtree)
     return 'of_bsn_tlv_l2_multicast_lookup'
 end
 of_bsn_tlv_v5_dissectors[79] = dissect_of_bsn_tlv_l2_multicast_lookup_v5
+
+-- child class of_bsn_tlv_l3
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_l3_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_l3.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_l3.length')
+    return 'of_bsn_tlv_l3'
+end
+of_bsn_tlv_v5_dissectors[168] = dissect_of_bsn_tlv_l3_v5
 
 -- child class of_bsn_tlv_l3_dst_class_id
 -- Child of of_bsn_tlv
@@ -57184,6 +57273,16 @@ function dissect_of_bsn_tlv_ip_proto_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[67] = dissect_of_bsn_tlv_ip_proto_v6
 
+-- child class of_bsn_tlv_ip_tunnel_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ip_tunnel_type_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ip_tunnel_type.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ip_tunnel_type.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_ip_tunnel_type.value')
+    return 'of_bsn_tlv_ip_tunnel_type'
+end
+of_bsn_tlv_v6_dissectors[169] = dissect_of_bsn_tlv_ip_tunnel_type_v6
+
 -- child class of_bsn_tlv_ipv4
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_ipv4_v6(reader, subtree)
@@ -57283,6 +57382,15 @@ function dissect_of_bsn_tlv_l2_multicast_lookup_v6(reader, subtree)
     return 'of_bsn_tlv_l2_multicast_lookup'
 end
 of_bsn_tlv_v6_dissectors[79] = dissect_of_bsn_tlv_l2_multicast_lookup_v6
+
+-- child class of_bsn_tlv_l3
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_l3_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_l3.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_l3.length')
+    return 'of_bsn_tlv_l3'
+end
+of_bsn_tlv_v6_dissectors[168] = dissect_of_bsn_tlv_l3_v6
 
 -- child class of_bsn_tlv_l3_dst_class_id
 -- Child of of_bsn_tlv

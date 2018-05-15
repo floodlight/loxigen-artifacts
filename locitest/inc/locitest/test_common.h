@@ -7349,6 +7349,15 @@ extern int of_bsn_tlv_ip_proto_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_ip_proto_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_ip_proto_t *obj, int value);
 
+extern int of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_3_populate(
+    of_bsn_tlv_ip_tunnel_type_t *obj, int value);
+extern int of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_3_check(
+    of_bsn_tlv_ip_tunnel_type_t *obj, int value);
+extern int of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_ip_tunnel_type_t *obj, int value);
+extern int of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_ip_tunnel_type_t *obj, int value);
+
 extern int of_bsn_tlv_ipv4_OF_VERSION_1_3_populate(
     of_bsn_tlv_ipv4_t *obj, int value);
 extern int of_bsn_tlv_ipv4_OF_VERSION_1_3_check(
@@ -7438,6 +7447,15 @@ extern int of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_l2_multicast_lookup_t *obj, int value);
 extern int of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_l2_multicast_lookup_t *obj, int value);
+
+extern int of_bsn_tlv_l3_OF_VERSION_1_3_populate(
+    of_bsn_tlv_l3_t *obj, int value);
+extern int of_bsn_tlv_l3_OF_VERSION_1_3_check(
+    of_bsn_tlv_l3_t *obj, int value);
+extern int of_bsn_tlv_l3_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_l3_t *obj, int value);
+extern int of_bsn_tlv_l3_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_l3_t *obj, int value);
 
 extern int of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_3_populate(
     of_bsn_tlv_l3_dst_class_id_t *obj, int value);
@@ -13721,6 +13739,15 @@ extern int of_bsn_tlv_ip_proto_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_ip_proto_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_ip_proto_t *obj, int value);
 
+extern int of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_4_populate(
+    of_bsn_tlv_ip_tunnel_type_t *obj, int value);
+extern int of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_4_check(
+    of_bsn_tlv_ip_tunnel_type_t *obj, int value);
+extern int of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_ip_tunnel_type_t *obj, int value);
+extern int of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_ip_tunnel_type_t *obj, int value);
+
 extern int of_bsn_tlv_ipv4_OF_VERSION_1_4_populate(
     of_bsn_tlv_ipv4_t *obj, int value);
 extern int of_bsn_tlv_ipv4_OF_VERSION_1_4_check(
@@ -13810,6 +13837,15 @@ extern int of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_l2_multicast_lookup_t *obj, int value);
 extern int of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_l2_multicast_lookup_t *obj, int value);
+
+extern int of_bsn_tlv_l3_OF_VERSION_1_4_populate(
+    of_bsn_tlv_l3_t *obj, int value);
+extern int of_bsn_tlv_l3_OF_VERSION_1_4_check(
+    of_bsn_tlv_l3_t *obj, int value);
+extern int of_bsn_tlv_l3_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_l3_t *obj, int value);
+extern int of_bsn_tlv_l3_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_l3_t *obj, int value);
 
 extern int of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_4_populate(
     of_bsn_tlv_l3_dst_class_id_t *obj, int value);

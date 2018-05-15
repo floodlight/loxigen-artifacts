@@ -977,6 +977,8 @@ void of_bsn_tlv_interval_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_bsn_tlv_interval_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ip_proto_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ip_proto_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_ip_tunnel_type_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_ip_tunnel_type_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv4_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ipv4_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv4_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -997,6 +999,8 @@ void of_bsn_tlv_known_multicast_rate_wire_object_id_get(of_object_t *obj, of_obj
 void of_bsn_tlv_known_multicast_rate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_l2_multicast_lookup_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_l2_multicast_lookup_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_l3_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_l3_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_l3_dst_class_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_l3_dst_class_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_l3_interface_class_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1931,6 +1935,7 @@ typedef of_object_t of_bsn_tlv_internal_gateway_mac_t;
 typedef of_object_t of_bsn_tlv_internal_mac_t;
 typedef of_object_t of_bsn_tlv_interval_t;
 typedef of_object_t of_bsn_tlv_ip_proto_t;
+typedef of_object_t of_bsn_tlv_ip_tunnel_type_t;
 typedef of_object_t of_bsn_tlv_ipv4_t;
 typedef of_object_t of_bsn_tlv_ipv4_dst_t;
 typedef of_object_t of_bsn_tlv_ipv4_netmask_t;
@@ -1941,6 +1946,7 @@ typedef of_object_t of_bsn_tlv_ipv6_prefix_t;
 typedef of_object_t of_bsn_tlv_ipv6_src_t;
 typedef of_object_t of_bsn_tlv_known_multicast_rate_t;
 typedef of_object_t of_bsn_tlv_l2_multicast_lookup_t;
+typedef of_object_t of_bsn_tlv_l3_t;
 typedef of_object_t of_bsn_tlv_l3_dst_class_id_t;
 typedef of_object_t of_bsn_tlv_l3_interface_class_id_t;
 typedef of_object_t of_bsn_tlv_l3_src_class_id_t;
@@ -4244,6 +4250,11 @@ extern void of_bsn_tlv_ip_proto_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_ip_tunnel_type_new(of_version_t version);
+extern void of_bsn_tlv_ip_tunnel_type_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_ipv4_new(of_version_t version);
 extern void of_bsn_tlv_ipv4_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4291,6 +4302,11 @@ extern void of_bsn_tlv_known_multicast_rate_init(
 extern of_object_t *
     of_bsn_tlv_l2_multicast_lookup_new(of_version_t version);
 extern void of_bsn_tlv_l2_multicast_lookup_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_l3_new(of_version_t version);
+extern void of_bsn_tlv_l3_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10609,6 +10625,17 @@ of_bsn_tlv_ip_proto_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_ip_tunnel_type_t
+ * @param obj An instance of type of_bsn_tlv_ip_tunnel_type_t
+ *
+ * \ingroup of_bsn_tlv_ip_tunnel_type
+ */
+static inline void
+of_bsn_tlv_ip_tunnel_type_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_ipv4_t
  * @param obj An instance of type of_bsn_tlv_ipv4_t
  *
@@ -10715,6 +10742,17 @@ of_bsn_tlv_known_multicast_rate_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_l2_multicast_lookup_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_l3_t
+ * @param obj An instance of type of_bsn_tlv_l3_t
+ *
+ * \ingroup of_bsn_tlv_l3
+ */
+static inline void
+of_bsn_tlv_l3_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24074,6 +24112,15 @@ extern void of_bsn_tlv_ip_proto_value_get(
     of_bsn_tlv_ip_proto_t *obj,
     uint8_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_ip_tunnel_type */
+
+extern void of_bsn_tlv_ip_tunnel_type_value_set(
+    of_bsn_tlv_ip_tunnel_type_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_ip_tunnel_type_value_get(
+    of_bsn_tlv_ip_tunnel_type_t *obj,
+    uint16_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_ipv4 */
 
 extern void of_bsn_tlv_ipv4_value_set(
@@ -24163,6 +24210,8 @@ extern void of_bsn_tlv_known_multicast_rate_value_get(
     uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_l2_multicast_lookup */
+
+/* Unified accessor functions for of_bsn_tlv_l3 */
 
 /* Unified accessor functions for of_bsn_tlv_l3_dst_class_id */
 
