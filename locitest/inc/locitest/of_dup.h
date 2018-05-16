@@ -1899,6 +1899,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_unit_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_vlan_counter_stats_entry_dup(
         of_object_t *src);
 
@@ -2887,7 +2891,15 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_port_desc_prop_bsn_alarm_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_port_desc_prop_bsn_breakout_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_port_desc_prop_bsn_diag_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -3140,6 +3152,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_uint8_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    ofp_bsn_module_eeprom_transceiver_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10003,6 +10019,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_unit_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -10935,7 +10955,15 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_port_desc_prop_bsn_diag_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -11148,6 +11176,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_uint8_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

@@ -1508,12 +1508,23 @@ public class OFFactoryVer13 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnTakeover not supported in version 1.3");
     }
 
+    public OFBsnUnit.Builder buildBsnUnit() {
+        throw new UnsupportedOperationException("OFBsnUnit not supported in version 1.3");
+    }
+    public OFBsnUnit bsnUnit(long value, Set<OFBsnUnitType> unit) {
+        throw new UnsupportedOperationException("OFBsnUnit not supported in version 1.3");
+    }
+
     public OFBundleAddMsg.Builder buildBundleAddMsg() {
         throw new UnsupportedOperationException("OFBundleAddMsg not supported in version 1.3");
     }
 
     public OFBundleCtrlMsg.Builder buildBundleCtrlMsg() {
         throw new UnsupportedOperationException("OFBundleCtrlMsg not supported in version 1.3");
+    }
+
+    public OFPortDescPropBsnAlarm.Builder buildPortDescPropBsnAlarm() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnAlarm not supported in version 1.3");
     }
 
     public OFPortDescPropBsnBreakout.Builder buildPortDescPropBsnBreakout() {
@@ -1523,10 +1534,18 @@ public class OFFactoryVer13 implements OFFactory {
         throw new UnsupportedOperationException("OFPortDescPropBsnBreakout not supported in version 1.3");
     }
 
-    public OFPortDescPropBsnEthtool.Builder buildPortDescPropBsnEthtool() {
-        throw new UnsupportedOperationException("OFPortDescPropBsnEthtool not supported in version 1.3");
+    public OFPortDescPropBsnDiag.Builder buildPortDescPropBsnDiag() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnDiag not supported in version 1.3");
     }
-    public OFPortDescPropBsnEthtool portDescPropBsnEthtool(byte[] data) {
+
+    public OFBsnModuleEepromTransceiver.Builder buildBsnModuleEepromTransceiver() {
+        throw new UnsupportedOperationException("OFBsnModuleEepromTransceiver not supported in version 1.3");
+    }
+    public OFBsnModuleEepromTransceiver bsnModuleEepromTransceiver(U64 codes) {
+        throw new UnsupportedOperationException("OFBsnModuleEepromTransceiver not supported in version 1.3");
+    }
+
+    public OFPortDescPropBsnEthtool.Builder buildPortDescPropBsnEthtool() {
         throw new UnsupportedOperationException("OFPortDescPropBsnEthtool not supported in version 1.3");
     }
 
