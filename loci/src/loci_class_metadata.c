@@ -4377,6 +4377,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=NULL,
         .wire_type_set=of_bsn_takeover_push_wire_types,
     },
+    [OF_BSN_UNIT] = {
+        .wire_length_get=NULL,
+        .wire_length_set=NULL,
+        .wire_type_get=NULL,
+        .wire_type_set=NULL,
+    },
     [OF_BUNDLE_ADD_MSG] = {
         .wire_length_get=of_object_message_wire_length_get,
         .wire_length_set=of_object_message_wire_length_set,
@@ -4455,11 +4461,29 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_port_desc_prop_wire_object_id_get,
         .wire_type_set=NULL,
     },
+    [OF_PORT_DESC_PROP_BSN_ALARM] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_port_desc_prop_wire_object_id_get,
+        .wire_type_set=of_port_desc_prop_bsn_alarm_push_wire_types,
+    },
     [OF_PORT_DESC_PROP_BSN_BREAKOUT] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_port_desc_prop_wire_object_id_get,
         .wire_type_set=of_port_desc_prop_bsn_breakout_push_wire_types,
+    },
+    [OF_PORT_DESC_PROP_BSN_DIAG] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_port_desc_prop_wire_object_id_get,
+        .wire_type_set=of_port_desc_prop_bsn_diag_push_wire_types,
+    },
+    [OFP_BSN_MODULE_EEPROM_TRANSCEIVER] = {
+        .wire_length_get=NULL,
+        .wire_length_set=NULL,
+        .wire_type_get=NULL,
+        .wire_type_set=NULL,
     },
     [OF_PORT_DESC_PROP_BSN_ETHTOOL] = {
         .wire_length_get=of_tlv16_wire_length_get,

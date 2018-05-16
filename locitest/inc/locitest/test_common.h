@@ -14711,6 +14711,15 @@ extern int of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_vxlan_egress_lag_t *obj, int value);
 
+extern int of_bsn_unit_OF_VERSION_1_4_populate(
+    of_bsn_unit_t *obj, int value);
+extern int of_bsn_unit_OF_VERSION_1_4_check(
+    of_bsn_unit_t *obj, int value);
+extern int of_bsn_unit_OF_VERSION_1_4_populate_scalars(
+    of_bsn_unit_t *obj, int value);
+extern int of_bsn_unit_OF_VERSION_1_4_check_scalars(
+    of_bsn_unit_t *obj, int value);
+
 extern int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_populate(
     of_bsn_vlan_counter_stats_entry_t *obj, int value);
 extern int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_check(
@@ -16736,6 +16745,15 @@ extern int of_port_desc_OF_VERSION_1_4_populate_scalars(
 extern int of_port_desc_OF_VERSION_1_4_check_scalars(
     of_port_desc_t *obj, int value);
 
+extern int of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_populate(
+    of_port_desc_prop_bsn_alarm_t *obj, int value);
+extern int of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_check(
+    of_port_desc_prop_bsn_alarm_t *obj, int value);
+extern int of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_populate_scalars(
+    of_port_desc_prop_bsn_alarm_t *obj, int value);
+extern int of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_check_scalars(
+    of_port_desc_prop_bsn_alarm_t *obj, int value);
+
 extern int of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_populate(
     of_port_desc_prop_bsn_breakout_t *obj, int value);
 extern int of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_check(
@@ -16744,6 +16762,15 @@ extern int of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_populate_scalars(
     of_port_desc_prop_bsn_breakout_t *obj, int value);
 extern int of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_check_scalars(
     of_port_desc_prop_bsn_breakout_t *obj, int value);
+
+extern int of_port_desc_prop_bsn_diag_OF_VERSION_1_4_populate(
+    of_port_desc_prop_bsn_diag_t *obj, int value);
+extern int of_port_desc_prop_bsn_diag_OF_VERSION_1_4_check(
+    of_port_desc_prop_bsn_diag_t *obj, int value);
+extern int of_port_desc_prop_bsn_diag_OF_VERSION_1_4_populate_scalars(
+    of_port_desc_prop_bsn_diag_t *obj, int value);
+extern int of_port_desc_prop_bsn_diag_OF_VERSION_1_4_check_scalars(
+    of_port_desc_prop_bsn_diag_t *obj, int value);
 
 extern int of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_populate(
     of_port_desc_prop_bsn_ethtool_t *obj, int value);
@@ -17140,6 +17167,15 @@ extern int of_uint8_OF_VERSION_1_4_populate_scalars(
     of_uint8_t *obj, int value);
 extern int of_uint8_OF_VERSION_1_4_check_scalars(
     of_uint8_t *obj, int value);
+
+extern int ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_populate(
+    ofp_bsn_module_eeprom_transceiver_t *obj, int value);
+extern int ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_check(
+    ofp_bsn_module_eeprom_transceiver_t *obj, int value);
+extern int ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_populate_scalars(
+    ofp_bsn_module_eeprom_transceiver_t *obj, int value);
+extern int ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_check_scalars(
+    ofp_bsn_module_eeprom_transceiver_t *obj, int value);
 
 extern int of_list_action_OF_VERSION_1_4_populate(
     of_list_action_t *obj, int value);

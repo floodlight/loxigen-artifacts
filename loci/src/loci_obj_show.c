@@ -36627,6 +36627,26 @@ of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
+of_bsn_unit_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_bsn_unit_value_get(obj, &val32);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_unit_unit_get(obj, &val8);
+    out += writer(cookie, "unit=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -40766,6 +40786,61 @@ of_port_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t
 }
 
 int
+of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_port_desc_prop_bsn_alarm_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_alarm_exp_type_get(obj, &val32);
+    out += writer(cookie, "exp_type=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_alarm_alarm_set_get(obj, &val8);
+    out += writer(cookie, "alarm_set=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_alarm_high_get(obj, &val32);
+    out += writer(cookie, "high=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_alarm_high_warn_get(obj, &val32);
+    out += writer(cookie, "high_warn=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_alarm_low_get(obj, &val32);
+    out += writer(cookie, "low=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_alarm_low_warn_get(obj, &val32);
+    out += writer(cookie, "low_warn=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_alarm_alarm_type_get(obj, &val8);
+    out += writer(cookie, "alarm_type=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_alarm_unit_get(obj, &val8);
+    out += writer(cookie, "unit=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -40796,11 +40871,68 @@ of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_show(loci_writer_f writer, void* c
 }
 
 int
+of_port_desc_prop_bsn_diag_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_port_desc_prop_bsn_diag_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_diag_exp_type_get(obj, &val32);
+    out += writer(cookie, "exp_type=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_diag_laser_bias_curr_get(obj, &val32);
+    out += writer(cookie, "laser_bias_curr=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_diag_laser_output_power_get(obj, &val32);
+    out += writer(cookie, "laser_output_power=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_diag_laser_receiver_power_type_get(obj, &val8);
+    out += writer(cookie, "laser_receiver_power_type=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_diag_laser_receiver_power_get(obj, &val32);
+    out += writer(cookie, "laser_receiver_power=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_diag_module_temp_get(obj, &val32);
+    out += writer(cookie, "module_temp=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_diag_module_voltage_get(obj, &val32);
+    out += writer(cookie, "module_voltage=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
-    of_octets_t octets;
+    uint8_t val8;
+
+    ofp_bsn_module_eeprom_transceiver_t bsn_module_eeprom_transceiver;
+    uint64_t val64;
+
+    of_list_port_desc_prop_t list;
+    of_object_t elt;
+    int rv;
 
     of_port_desc_prop_bsn_ethtool_experimenter_get(obj, &val32);
     out += writer(cookie, "experimenter=");
@@ -40812,10 +40944,105 @@ of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_show(loci_writer_f writer, void* co
     out += LOCI_SHOW_u32(writer, cookie, val32);
     out += writer(cookie, " ");
 
-    of_port_desc_prop_bsn_ethtool_data_get(obj, &octets);
-    out += writer(cookie, "data=");
-    out += LOCI_SHOW_octets(writer, cookie, octets);
+    of_port_desc_prop_bsn_ethtool_identifier_get(obj, &val8);
+    out += writer(cookie, "identifier=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
     out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_extidentifier_get(obj, &val8);
+    out += writer(cookie, "extidentifier=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_connector_get(obj, &val8);
+    out += writer(cookie, "connector=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_transdata_bind(obj, &bsn_module_eeprom_transceiver);
+    out += of_object_show(writer, cookie, &bsn_module_eeprom_transceiver);
+
+    of_port_desc_prop_bsn_ethtool_encoding_get(obj, &val8);
+    out += writer(cookie, "encoding=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_br_nominal_get(obj, &val32);
+    out += writer(cookie, "br_nominal=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_rateidentifier_get(obj, &val8);
+    out += writer(cookie, "rateidentifier=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_length_SMF_KM_get(obj, &val32);
+    out += writer(cookie, "length_SMF_KM=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_length_SMF_get(obj, &val32);
+    out += writer(cookie, "length_SMF=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_length_50_um_get(obj, &val32);
+    out += writer(cookie, "length_50_um=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_length_625_um_get(obj, &val32);
+    out += writer(cookie, "length_625_um=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_length_copper_get(obj, &val32);
+    out += writer(cookie, "length_copper=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_length_OM3_get(obj, &val32);
+    out += writer(cookie, "length_OM3=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_vendor_name_lo_get(obj, &val64);
+    out += writer(cookie, "vendor_name_lo=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_vendor_name_hi_get(obj, &val64);
+    out += writer(cookie, "vendor_name_hi=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_vendor_oui_get(obj, &val32);
+    out += writer(cookie, "vendor_oui=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_vendor_pn_lo_get(obj, &val64);
+    out += writer(cookie, "vendor_pn_lo=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_vendor_pn_hi_get(obj, &val64);
+    out += writer(cookie, "vendor_pn_hi=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_vendor_rev_get(obj, &val32);
+    out += writer(cookie, "vendor_rev=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    out += writer(cookie, "of_port_desc_prop_t={ ");
+    of_port_desc_prop_bsn_ethtool_more_properties_bind(obj, &list);
+    OF_LIST_PORT_DESC_PROP_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
 
     return out;
 }
@@ -42037,6 +42264,20 @@ of_uint8_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *ob
     return out;
 }
 
+int
+ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint64_t val64;
+
+    ofp_bsn_module_eeprom_transceiver_codes_get(obj, &val64);
+    out += writer(cookie, "codes=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
 /**
  * Log a match entry
  */
@@ -43180,6 +43421,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_0_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_show,
     unknown_show,
@@ -43438,6 +43680,8 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
@@ -43485,6 +43729,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_table_stats_entry_OF_VERSION_1_0_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -44023,6 +44268,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_1_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_1_show,
     unknown_show,
@@ -44281,6 +44527,8 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_1_show,
     unknown_show,
     unknown_show,
@@ -44328,6 +44576,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_table_stats_entry_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -44866,6 +45115,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_2_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_show,
     unknown_show,
@@ -45124,6 +45374,8 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_2_show,
     unknown_show,
     unknown_show,
@@ -45171,6 +45423,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_table_stats_entry_OF_VERSION_1_2_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -45706,6 +45959,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_vpn_key_OF_VERSION_1_3_show,
     of_bsn_tlv_vrf_OF_VERSION_1_3_show,
     of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_3_show,
+    unknown_show,
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_show,
     of_bsn_vlan_mac_OF_VERSION_1_3_show,
     unknown_show,
@@ -45967,6 +46221,8 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_3_show,
     unknown_show,
     unknown_show,
@@ -46017,6 +46273,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_uint32_OF_VERSION_1_3_show,
     of_uint64_OF_VERSION_1_3_show,
     of_uint8_OF_VERSION_1_3_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -46549,6 +46806,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_vpn_key_OF_VERSION_1_4_show,
     of_bsn_tlv_vrf_OF_VERSION_1_4_show,
     of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_show,
+    of_bsn_unit_OF_VERSION_1_4_show,
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_show,
     of_bsn_vlan_mac_OF_VERSION_1_4_show,
     unknown_show,
@@ -46796,7 +47054,9 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_port_desc_OF_VERSION_1_4_show,
     unknown_show,
     unknown_show,
+    of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_show,
+    of_port_desc_prop_bsn_diag_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_show,
@@ -46860,6 +47120,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_uint32_OF_VERSION_1_4_show,
     of_uint64_OF_VERSION_1_4_show,
     of_uint8_OF_VERSION_1_4_show,
+    ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_show,
     unknown_show,
     unknown_show,
     unknown_show,
