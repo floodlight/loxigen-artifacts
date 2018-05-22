@@ -41,7 +41,7 @@ public class OFBsnModuleEepromConnectorSerializerVer14 {
     public final static byte BSN_MODULE_EEPROM_CONNECTOR_FC_2_COPPER_VAL = (byte) 0x3;
     public final static byte BSN_MODULE_EEPROM_CONNECTOR_BNC_TNC_VAL = (byte) 0x4;
     public final static byte BSN_MODULE_EEPROM_CONNECTOR_FC_COAX_VAL = (byte) 0x5;
-    public final static byte BSN_MODULE_EEPROM_CONNECTOR_FIBERE_JACK_VAL = (byte) 0x6;
+    public final static byte BSN_MODULE_EEPROM_CONNECTOR_FIBRE_JACK_VAL = (byte) 0x6;
     public final static byte BSN_MODULE_EEPROM_CONNECTOR_LC_VAL = (byte) 0x7;
     public final static byte BSN_MODULE_EEPROM_CONNECTOR_MT_RJ_VAL = (byte) 0x8;
     public final static byte BSN_MODULE_EEPROM_CONNECTOR_MU_VAL = (byte) 0x9;
@@ -84,8 +84,8 @@ public class OFBsnModuleEepromConnectorSerializerVer14 {
             set.add(OFBsnModuleEepromConnector.BSN_MODULE_EEPROM_CONNECTOR_BNC_TNC);
         if((val & BSN_MODULE_EEPROM_CONNECTOR_FC_COAX_VAL) != 0)
             set.add(OFBsnModuleEepromConnector.BSN_MODULE_EEPROM_CONNECTOR_FC_COAX);
-        if((val & BSN_MODULE_EEPROM_CONNECTOR_FIBERE_JACK_VAL) != 0)
-            set.add(OFBsnModuleEepromConnector.BSN_MODULE_EEPROM_CONNECTOR_FIBERE_JACK);
+        if((val & BSN_MODULE_EEPROM_CONNECTOR_FIBRE_JACK_VAL) != 0)
+            set.add(OFBsnModuleEepromConnector.BSN_MODULE_EEPROM_CONNECTOR_FIBRE_JACK);
         if((val & BSN_MODULE_EEPROM_CONNECTOR_LC_VAL) != 0)
             set.add(OFBsnModuleEepromConnector.BSN_MODULE_EEPROM_CONNECTOR_LC);
         if((val & BSN_MODULE_EEPROM_CONNECTOR_MT_RJ_VAL) != 0)
@@ -130,8 +130,8 @@ public class OFBsnModuleEepromConnectorSerializerVer14 {
                 case BSN_MODULE_EEPROM_CONNECTOR_FC_COAX:
                     wireValue |= BSN_MODULE_EEPROM_CONNECTOR_FC_COAX_VAL;
                     break;
-                case BSN_MODULE_EEPROM_CONNECTOR_FIBERE_JACK:
-                    wireValue |= BSN_MODULE_EEPROM_CONNECTOR_FIBERE_JACK_VAL;
+                case BSN_MODULE_EEPROM_CONNECTOR_FIBRE_JACK:
+                    wireValue |= BSN_MODULE_EEPROM_CONNECTOR_FIBRE_JACK_VAL;
                     break;
                 case BSN_MODULE_EEPROM_CONNECTOR_LC:
                     wireValue |= BSN_MODULE_EEPROM_CONNECTOR_LC_VAL;

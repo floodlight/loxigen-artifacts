@@ -67355,7 +67355,7 @@ test_of_port_desc_prop_bsn_diag_OF_VERSION_1_4(void)
     obj = of_port_desc_prop_bsn_diag_new(OF_VERSION_1_4);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 33);
+    TEST_ASSERT(obj->length == 38);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_DESC_PROP_BSN_DIAG);
 
@@ -67363,7 +67363,7 @@ test_of_port_desc_prop_bsn_diag_OF_VERSION_1_4(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 33);
+        TEST_ASSERT(length == 38);
     }
     if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -67393,7 +67393,7 @@ test_of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4(void)
     obj = of_port_desc_prop_bsn_ethtool_new(OF_VERSION_1_4);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 95);
+    TEST_ASSERT(obj->length == 100);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_DESC_PROP_BSN_ETHTOOL);
 
@@ -67401,7 +67401,7 @@ test_of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 95);
+        TEST_ASSERT(length == 100);
     }
     if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
         of_object_id_t obj_id;

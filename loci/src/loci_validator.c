@@ -48185,15 +48185,15 @@ loci_validate_of_port_desc_prop_bsn_breakout_OF_VERSION_1_4(uint8_t *data, int l
 static int
 loci_validate_of_port_desc_prop_bsn_diag_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
-    if (len < 33) {
+    if (len < 38) {
         return -1;
     }
 
-    len = 33;
+    len = 38;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 33) {
+    if (wire_len > len || wire_len < 38) {
         return -1;
     }
 
@@ -48223,26 +48223,23 @@ loci_validate_ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4(uint8_t *data, in
 static int
 loci_validate_of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
-    if (len < 95) {
+    if (len < 100) {
         return -1;
     }
 
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 95) {
+    if (wire_len > len || wire_len < 100) {
         return -1;
     }
 
     len = wire_len;
 
-    uint16_t wire_len_compliance;
-    buf_u16_get(data + 12, &wire_len_compliance);
 
 
-
-    int wire_len_more_properties = len - 95;
-    if (loci_validate_of_list_port_desc_prop_OF_VERSION_1_4(data + 95, wire_len_more_properties, out_len) < 0) {
+    int wire_len_more_properties = len - 100;
+    if (loci_validate_of_list_port_desc_prop_OF_VERSION_1_4(data + 100, wire_len_more_properties, out_len) < 0) {
         return -1;
     }
 
