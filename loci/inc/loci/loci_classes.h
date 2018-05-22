@@ -28848,19 +28848,23 @@ extern void of_port_desc_prop_bsn_diag_exp_type_get(
     of_port_desc_prop_bsn_diag_t *obj,
     uint32_t *exp_type);
 
-extern void of_port_desc_prop_bsn_diag_laser_bias_curr_set(
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_diag_laser_bias_curr_set(
     of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t laser_bias_curr);
-extern void of_port_desc_prop_bsn_diag_laser_bias_curr_get(
+    of_bsn_unit_t *laser_bias_curr);
+extern void of_port_desc_prop_bsn_diag_laser_bias_curr_bind(
     of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t *laser_bias_curr);
+    of_bsn_unit_t *laser_bias_curr);
+extern of_bsn_unit_t *of_port_desc_prop_bsn_diag_laser_bias_curr_get(
+    of_port_desc_prop_bsn_diag_t *obj);
 
-extern void of_port_desc_prop_bsn_diag_laser_output_power_set(
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_diag_laser_output_power_set(
     of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t laser_output_power);
-extern void of_port_desc_prop_bsn_diag_laser_output_power_get(
+    of_bsn_unit_t *laser_output_power);
+extern void of_port_desc_prop_bsn_diag_laser_output_power_bind(
     of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t *laser_output_power);
+    of_bsn_unit_t *laser_output_power);
+extern of_bsn_unit_t *of_port_desc_prop_bsn_diag_laser_output_power_get(
+    of_port_desc_prop_bsn_diag_t *obj);
 
 extern void of_port_desc_prop_bsn_diag_laser_receiver_power_type_set(
     of_port_desc_prop_bsn_diag_t *obj,
@@ -28869,26 +28873,32 @@ extern void of_port_desc_prop_bsn_diag_laser_receiver_power_type_get(
     of_port_desc_prop_bsn_diag_t *obj,
     uint8_t *laser_receiver_power_type);
 
-extern void of_port_desc_prop_bsn_diag_laser_receiver_power_set(
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_diag_laser_receiver_power_set(
     of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t laser_receiver_power);
-extern void of_port_desc_prop_bsn_diag_laser_receiver_power_get(
+    of_bsn_unit_t *laser_receiver_power);
+extern void of_port_desc_prop_bsn_diag_laser_receiver_power_bind(
     of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t *laser_receiver_power);
+    of_bsn_unit_t *laser_receiver_power);
+extern of_bsn_unit_t *of_port_desc_prop_bsn_diag_laser_receiver_power_get(
+    of_port_desc_prop_bsn_diag_t *obj);
 
-extern void of_port_desc_prop_bsn_diag_module_temp_set(
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_diag_module_temp_set(
     of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t module_temp);
-extern void of_port_desc_prop_bsn_diag_module_temp_get(
+    of_bsn_unit_t *module_temp);
+extern void of_port_desc_prop_bsn_diag_module_temp_bind(
     of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t *module_temp);
+    of_bsn_unit_t *module_temp);
+extern of_bsn_unit_t *of_port_desc_prop_bsn_diag_module_temp_get(
+    of_port_desc_prop_bsn_diag_t *obj);
 
-extern void of_port_desc_prop_bsn_diag_module_voltage_set(
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_diag_module_voltage_set(
     of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t module_voltage);
-extern void of_port_desc_prop_bsn_diag_module_voltage_get(
+    of_bsn_unit_t *module_voltage);
+extern void of_port_desc_prop_bsn_diag_module_voltage_bind(
     of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t *module_voltage);
+    of_bsn_unit_t *module_voltage);
+extern of_bsn_unit_t *of_port_desc_prop_bsn_diag_module_voltage_get(
+    of_port_desc_prop_bsn_diag_t *obj);
 
 /* Unified accessor functions for of_port_desc_prop_bsn_ethtool */
 
@@ -28943,12 +28953,14 @@ extern void of_port_desc_prop_bsn_ethtool_encoding_get(
     of_port_desc_prop_bsn_ethtool_t *obj,
     uint8_t *encoding);
 
-extern void of_port_desc_prop_bsn_ethtool_br_nominal_set(
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_br_nominal_set(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t br_nominal);
-extern void of_port_desc_prop_bsn_ethtool_br_nominal_get(
+    of_bsn_unit_t *br_nominal);
+extern void of_port_desc_prop_bsn_ethtool_br_nominal_bind(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t *br_nominal);
+    of_bsn_unit_t *br_nominal);
+extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_br_nominal_get(
+    of_port_desc_prop_bsn_ethtool_t *obj);
 
 extern void of_port_desc_prop_bsn_ethtool_rateidentifier_set(
     of_port_desc_prop_bsn_ethtool_t *obj,
@@ -28957,47 +28969,59 @@ extern void of_port_desc_prop_bsn_ethtool_rateidentifier_get(
     of_port_desc_prop_bsn_ethtool_t *obj,
     uint8_t *rateidentifier);
 
-extern void of_port_desc_prop_bsn_ethtool_length_SMF_KM_set(
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_length_SMF_KM_set(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t length_SMF_KM);
-extern void of_port_desc_prop_bsn_ethtool_length_SMF_KM_get(
+    of_bsn_unit_t *length_SMF_KM);
+extern void of_port_desc_prop_bsn_ethtool_length_SMF_KM_bind(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t *length_SMF_KM);
+    of_bsn_unit_t *length_SMF_KM);
+extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_length_SMF_KM_get(
+    of_port_desc_prop_bsn_ethtool_t *obj);
 
-extern void of_port_desc_prop_bsn_ethtool_length_SMF_set(
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_length_SMF_set(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t length_SMF);
-extern void of_port_desc_prop_bsn_ethtool_length_SMF_get(
+    of_bsn_unit_t *length_SMF);
+extern void of_port_desc_prop_bsn_ethtool_length_SMF_bind(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t *length_SMF);
+    of_bsn_unit_t *length_SMF);
+extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_length_SMF_get(
+    of_port_desc_prop_bsn_ethtool_t *obj);
 
-extern void of_port_desc_prop_bsn_ethtool_length_50_um_set(
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_length_50_um_set(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t length_50_um);
-extern void of_port_desc_prop_bsn_ethtool_length_50_um_get(
+    of_bsn_unit_t *length_50_um);
+extern void of_port_desc_prop_bsn_ethtool_length_50_um_bind(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t *length_50_um);
+    of_bsn_unit_t *length_50_um);
+extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_length_50_um_get(
+    of_port_desc_prop_bsn_ethtool_t *obj);
 
-extern void of_port_desc_prop_bsn_ethtool_length_625_um_set(
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_length_625_um_set(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t length_625_um);
-extern void of_port_desc_prop_bsn_ethtool_length_625_um_get(
+    of_bsn_unit_t *length_625_um);
+extern void of_port_desc_prop_bsn_ethtool_length_625_um_bind(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t *length_625_um);
+    of_bsn_unit_t *length_625_um);
+extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_length_625_um_get(
+    of_port_desc_prop_bsn_ethtool_t *obj);
 
-extern void of_port_desc_prop_bsn_ethtool_length_copper_set(
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_length_copper_set(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t length_copper);
-extern void of_port_desc_prop_bsn_ethtool_length_copper_get(
+    of_bsn_unit_t *length_copper);
+extern void of_port_desc_prop_bsn_ethtool_length_copper_bind(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t *length_copper);
+    of_bsn_unit_t *length_copper);
+extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_length_copper_get(
+    of_port_desc_prop_bsn_ethtool_t *obj);
 
-extern void of_port_desc_prop_bsn_ethtool_length_OM3_set(
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_length_OM3_set(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t length_OM3);
-extern void of_port_desc_prop_bsn_ethtool_length_OM3_get(
+    of_bsn_unit_t *length_OM3);
+extern void of_port_desc_prop_bsn_ethtool_length_OM3_bind(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t *length_OM3);
+    of_bsn_unit_t *length_OM3);
+extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_length_OM3_get(
+    of_port_desc_prop_bsn_ethtool_t *obj);
 
 extern void of_port_desc_prop_bsn_ethtool_vendor_name_lo_set(
     of_port_desc_prop_bsn_ethtool_t *obj,

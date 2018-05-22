@@ -37,32 +37,38 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
     private static final Logger logger = LoggerFactory.getLogger(OFPortDescPropBsnDiagVer15.class);
     // version: 1.5
     final static byte WIRE_VERSION = 6;
-    final static int LENGTH = 33;
+    final static int LENGTH = 38;
 
-        private final static long DEFAULT_LASER_BIAS_CURR = 0x0L;
-        private final static long DEFAULT_LASER_OUTPUT_POWER = 0x0L;
         private final static Set<OFBsnModuleEepromRecvSignalType> DEFAULT_LASER_RECEIVER_POWER_TYPE = ImmutableSet.<OFBsnModuleEepromRecvSignalType>of();
-        private final static long DEFAULT_LASER_RECEIVER_POWER = 0x0L;
-        private final static long DEFAULT_MODULE_TEMP = 0x0L;
-        private final static long DEFAULT_MODULE_VOLTAGE = 0x0L;
 
     // OF message fields
-    private final long laserBiasCurr;
-    private final long laserOutputPower;
+    private final OFBsnUnit laserBiasCurr;
+    private final OFBsnUnit laserOutputPower;
     private final Set<OFBsnModuleEepromRecvSignalType> laserReceiverPowerType;
-    private final long laserReceiverPower;
-    private final long moduleTemp;
-    private final long moduleVoltage;
+    private final OFBsnUnit laserReceiverPower;
+    private final OFBsnUnit moduleTemp;
+    private final OFBsnUnit moduleVoltage;
 //
-    // Immutable default instance
-    final static OFPortDescPropBsnDiagVer15 DEFAULT = new OFPortDescPropBsnDiagVer15(
-        DEFAULT_LASER_BIAS_CURR, DEFAULT_LASER_OUTPUT_POWER, DEFAULT_LASER_RECEIVER_POWER_TYPE, DEFAULT_LASER_RECEIVER_POWER, DEFAULT_MODULE_TEMP, DEFAULT_MODULE_VOLTAGE
-    );
 
     // package private constructor - used by readers, builders, and factory
-    OFPortDescPropBsnDiagVer15(long laserBiasCurr, long laserOutputPower, Set<OFBsnModuleEepromRecvSignalType> laserReceiverPowerType, long laserReceiverPower, long moduleTemp, long moduleVoltage) {
+    OFPortDescPropBsnDiagVer15(OFBsnUnit laserBiasCurr, OFBsnUnit laserOutputPower, Set<OFBsnModuleEepromRecvSignalType> laserReceiverPowerType, OFBsnUnit laserReceiverPower, OFBsnUnit moduleTemp, OFBsnUnit moduleVoltage) {
+        if(laserBiasCurr == null) {
+            throw new NullPointerException("OFPortDescPropBsnDiagVer15: property laserBiasCurr cannot be null");
+        }
+        if(laserOutputPower == null) {
+            throw new NullPointerException("OFPortDescPropBsnDiagVer15: property laserOutputPower cannot be null");
+        }
         if(laserReceiverPowerType == null) {
             throw new NullPointerException("OFPortDescPropBsnDiagVer15: property laserReceiverPowerType cannot be null");
+        }
+        if(laserReceiverPower == null) {
+            throw new NullPointerException("OFPortDescPropBsnDiagVer15: property laserReceiverPower cannot be null");
+        }
+        if(moduleTemp == null) {
+            throw new NullPointerException("OFPortDescPropBsnDiagVer15: property moduleTemp cannot be null");
+        }
+        if(moduleVoltage == null) {
+            throw new NullPointerException("OFPortDescPropBsnDiagVer15: property moduleVoltage cannot be null");
         }
         this.laserBiasCurr = laserBiasCurr;
         this.laserOutputPower = laserOutputPower;
@@ -89,12 +95,12 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
     }
 
     @Override
-    public long getLaserBiasCurr() {
+    public OFBsnUnit getLaserBiasCurr() {
         return laserBiasCurr;
     }
 
     @Override
-    public long getLaserOutputPower() {
+    public OFBsnUnit getLaserOutputPower() {
         return laserOutputPower;
     }
 
@@ -104,17 +110,17 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
     }
 
     @Override
-    public long getLaserReceiverPower() {
+    public OFBsnUnit getLaserReceiverPower() {
         return laserReceiverPower;
     }
 
     @Override
-    public long getModuleTemp() {
+    public OFBsnUnit getModuleTemp() {
         return moduleTemp;
     }
 
     @Override
-    public long getModuleVoltage() {
+    public OFBsnUnit getModuleVoltage() {
         return moduleVoltage;
     }
 
@@ -134,17 +140,17 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
 
         // OF message fields
         private boolean laserBiasCurrSet;
-        private long laserBiasCurr;
+        private OFBsnUnit laserBiasCurr;
         private boolean laserOutputPowerSet;
-        private long laserOutputPower;
+        private OFBsnUnit laserOutputPower;
         private boolean laserReceiverPowerTypeSet;
         private Set<OFBsnModuleEepromRecvSignalType> laserReceiverPowerType;
         private boolean laserReceiverPowerSet;
-        private long laserReceiverPower;
+        private OFBsnUnit laserReceiverPower;
         private boolean moduleTempSet;
-        private long moduleTemp;
+        private OFBsnUnit moduleTemp;
         private boolean moduleVoltageSet;
-        private long moduleVoltage;
+        private OFBsnUnit moduleVoltage;
 
         BuilderWithParent(OFPortDescPropBsnDiagVer15 parentMessage) {
             this.parentMessage = parentMessage;
@@ -170,23 +176,23 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
     @Override
-    public long getLaserBiasCurr() {
+    public OFBsnUnit getLaserBiasCurr() {
         return laserBiasCurr;
     }
 
     @Override
-    public OFPortDescPropBsnDiag.Builder setLaserBiasCurr(long laserBiasCurr) {
+    public OFPortDescPropBsnDiag.Builder setLaserBiasCurr(OFBsnUnit laserBiasCurr) {
         this.laserBiasCurr = laserBiasCurr;
         this.laserBiasCurrSet = true;
         return this;
     }
     @Override
-    public long getLaserOutputPower() {
+    public OFBsnUnit getLaserOutputPower() {
         return laserOutputPower;
     }
 
     @Override
-    public OFPortDescPropBsnDiag.Builder setLaserOutputPower(long laserOutputPower) {
+    public OFPortDescPropBsnDiag.Builder setLaserOutputPower(OFBsnUnit laserOutputPower) {
         this.laserOutputPower = laserOutputPower;
         this.laserOutputPowerSet = true;
         return this;
@@ -203,34 +209,34 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
         return this;
     }
     @Override
-    public long getLaserReceiverPower() {
+    public OFBsnUnit getLaserReceiverPower() {
         return laserReceiverPower;
     }
 
     @Override
-    public OFPortDescPropBsnDiag.Builder setLaserReceiverPower(long laserReceiverPower) {
+    public OFPortDescPropBsnDiag.Builder setLaserReceiverPower(OFBsnUnit laserReceiverPower) {
         this.laserReceiverPower = laserReceiverPower;
         this.laserReceiverPowerSet = true;
         return this;
     }
     @Override
-    public long getModuleTemp() {
+    public OFBsnUnit getModuleTemp() {
         return moduleTemp;
     }
 
     @Override
-    public OFPortDescPropBsnDiag.Builder setModuleTemp(long moduleTemp) {
+    public OFPortDescPropBsnDiag.Builder setModuleTemp(OFBsnUnit moduleTemp) {
         this.moduleTemp = moduleTemp;
         this.moduleTempSet = true;
         return this;
     }
     @Override
-    public long getModuleVoltage() {
+    public OFBsnUnit getModuleVoltage() {
         return moduleVoltage;
     }
 
     @Override
-    public OFPortDescPropBsnDiag.Builder setModuleVoltage(long moduleVoltage) {
+    public OFPortDescPropBsnDiag.Builder setModuleVoltage(OFBsnUnit moduleVoltage) {
         this.moduleVoltage = moduleVoltage;
         this.moduleVoltageSet = true;
         return this;
@@ -244,14 +250,24 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
 
         @Override
         public OFPortDescPropBsnDiag build() {
-                long laserBiasCurr = this.laserBiasCurrSet ? this.laserBiasCurr : parentMessage.laserBiasCurr;
-                long laserOutputPower = this.laserOutputPowerSet ? this.laserOutputPower : parentMessage.laserOutputPower;
+                OFBsnUnit laserBiasCurr = this.laserBiasCurrSet ? this.laserBiasCurr : parentMessage.laserBiasCurr;
+                if(laserBiasCurr == null)
+                    throw new NullPointerException("Property laserBiasCurr must not be null");
+                OFBsnUnit laserOutputPower = this.laserOutputPowerSet ? this.laserOutputPower : parentMessage.laserOutputPower;
+                if(laserOutputPower == null)
+                    throw new NullPointerException("Property laserOutputPower must not be null");
                 Set<OFBsnModuleEepromRecvSignalType> laserReceiverPowerType = this.laserReceiverPowerTypeSet ? this.laserReceiverPowerType : parentMessage.laserReceiverPowerType;
                 if(laserReceiverPowerType == null)
                     throw new NullPointerException("Property laserReceiverPowerType must not be null");
-                long laserReceiverPower = this.laserReceiverPowerSet ? this.laserReceiverPower : parentMessage.laserReceiverPower;
-                long moduleTemp = this.moduleTempSet ? this.moduleTemp : parentMessage.moduleTemp;
-                long moduleVoltage = this.moduleVoltageSet ? this.moduleVoltage : parentMessage.moduleVoltage;
+                OFBsnUnit laserReceiverPower = this.laserReceiverPowerSet ? this.laserReceiverPower : parentMessage.laserReceiverPower;
+                if(laserReceiverPower == null)
+                    throw new NullPointerException("Property laserReceiverPower must not be null");
+                OFBsnUnit moduleTemp = this.moduleTempSet ? this.moduleTemp : parentMessage.moduleTemp;
+                if(moduleTemp == null)
+                    throw new NullPointerException("Property moduleTemp must not be null");
+                OFBsnUnit moduleVoltage = this.moduleVoltageSet ? this.moduleVoltage : parentMessage.moduleVoltage;
+                if(moduleVoltage == null)
+                    throw new NullPointerException("Property moduleVoltage must not be null");
 
                 //
                 return new OFPortDescPropBsnDiagVer15(
@@ -269,17 +285,17 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
     static class Builder implements OFPortDescPropBsnDiag.Builder {
         // OF message fields
         private boolean laserBiasCurrSet;
-        private long laserBiasCurr;
+        private OFBsnUnit laserBiasCurr;
         private boolean laserOutputPowerSet;
-        private long laserOutputPower;
+        private OFBsnUnit laserOutputPower;
         private boolean laserReceiverPowerTypeSet;
         private Set<OFBsnModuleEepromRecvSignalType> laserReceiverPowerType;
         private boolean laserReceiverPowerSet;
-        private long laserReceiverPower;
+        private OFBsnUnit laserReceiverPower;
         private boolean moduleTempSet;
-        private long moduleTemp;
+        private OFBsnUnit moduleTemp;
         private boolean moduleVoltageSet;
-        private long moduleVoltage;
+        private OFBsnUnit moduleVoltage;
 
     @Override
     public int getType() {
@@ -301,23 +317,23 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
     @Override
-    public long getLaserBiasCurr() {
+    public OFBsnUnit getLaserBiasCurr() {
         return laserBiasCurr;
     }
 
     @Override
-    public OFPortDescPropBsnDiag.Builder setLaserBiasCurr(long laserBiasCurr) {
+    public OFPortDescPropBsnDiag.Builder setLaserBiasCurr(OFBsnUnit laserBiasCurr) {
         this.laserBiasCurr = laserBiasCurr;
         this.laserBiasCurrSet = true;
         return this;
     }
     @Override
-    public long getLaserOutputPower() {
+    public OFBsnUnit getLaserOutputPower() {
         return laserOutputPower;
     }
 
     @Override
-    public OFPortDescPropBsnDiag.Builder setLaserOutputPower(long laserOutputPower) {
+    public OFPortDescPropBsnDiag.Builder setLaserOutputPower(OFBsnUnit laserOutputPower) {
         this.laserOutputPower = laserOutputPower;
         this.laserOutputPowerSet = true;
         return this;
@@ -334,34 +350,34 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
         return this;
     }
     @Override
-    public long getLaserReceiverPower() {
+    public OFBsnUnit getLaserReceiverPower() {
         return laserReceiverPower;
     }
 
     @Override
-    public OFPortDescPropBsnDiag.Builder setLaserReceiverPower(long laserReceiverPower) {
+    public OFPortDescPropBsnDiag.Builder setLaserReceiverPower(OFBsnUnit laserReceiverPower) {
         this.laserReceiverPower = laserReceiverPower;
         this.laserReceiverPowerSet = true;
         return this;
     }
     @Override
-    public long getModuleTemp() {
+    public OFBsnUnit getModuleTemp() {
         return moduleTemp;
     }
 
     @Override
-    public OFPortDescPropBsnDiag.Builder setModuleTemp(long moduleTemp) {
+    public OFPortDescPropBsnDiag.Builder setModuleTemp(OFBsnUnit moduleTemp) {
         this.moduleTemp = moduleTemp;
         this.moduleTempSet = true;
         return this;
     }
     @Override
-    public long getModuleVoltage() {
+    public OFBsnUnit getModuleVoltage() {
         return moduleVoltage;
     }
 
     @Override
-    public OFPortDescPropBsnDiag.Builder setModuleVoltage(long moduleVoltage) {
+    public OFPortDescPropBsnDiag.Builder setModuleVoltage(OFBsnUnit moduleVoltage) {
         this.moduleVoltage = moduleVoltage;
         this.moduleVoltageSet = true;
         return this;
@@ -374,14 +390,29 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
 //
         @Override
         public OFPortDescPropBsnDiag build() {
-            long laserBiasCurr = this.laserBiasCurrSet ? this.laserBiasCurr : DEFAULT_LASER_BIAS_CURR;
-            long laserOutputPower = this.laserOutputPowerSet ? this.laserOutputPower : DEFAULT_LASER_OUTPUT_POWER;
+            if(!this.laserBiasCurrSet)
+                throw new IllegalStateException("Property laserBiasCurr doesn't have default value -- must be set");
+            if(laserBiasCurr == null)
+                throw new NullPointerException("Property laserBiasCurr must not be null");
+            if(!this.laserOutputPowerSet)
+                throw new IllegalStateException("Property laserOutputPower doesn't have default value -- must be set");
+            if(laserOutputPower == null)
+                throw new NullPointerException("Property laserOutputPower must not be null");
             Set<OFBsnModuleEepromRecvSignalType> laserReceiverPowerType = this.laserReceiverPowerTypeSet ? this.laserReceiverPowerType : DEFAULT_LASER_RECEIVER_POWER_TYPE;
             if(laserReceiverPowerType == null)
                 throw new NullPointerException("Property laserReceiverPowerType must not be null");
-            long laserReceiverPower = this.laserReceiverPowerSet ? this.laserReceiverPower : DEFAULT_LASER_RECEIVER_POWER;
-            long moduleTemp = this.moduleTempSet ? this.moduleTemp : DEFAULT_MODULE_TEMP;
-            long moduleVoltage = this.moduleVoltageSet ? this.moduleVoltage : DEFAULT_MODULE_VOLTAGE;
+            if(!this.laserReceiverPowerSet)
+                throw new IllegalStateException("Property laserReceiverPower doesn't have default value -- must be set");
+            if(laserReceiverPower == null)
+                throw new NullPointerException("Property laserReceiverPower must not be null");
+            if(!this.moduleTempSet)
+                throw new IllegalStateException("Property moduleTemp doesn't have default value -- must be set");
+            if(moduleTemp == null)
+                throw new NullPointerException("Property moduleTemp must not be null");
+            if(!this.moduleVoltageSet)
+                throw new IllegalStateException("Property moduleVoltage doesn't have default value -- must be set");
+            if(moduleVoltage == null)
+                throw new NullPointerException("Property moduleVoltage must not be null");
 
 
             return new OFPortDescPropBsnDiagVer15(
@@ -407,8 +438,8 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
             if(type != (short) 0xffff)
                 throw new OFParseError("Wrong type: Expected=0xffff(0xffff), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 33)
-                throw new OFParseError("Wrong length: Expected=33(33), got="+length);
+            if(length != 38)
+                throw new OFParseError("Wrong length: Expected=38(38), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -424,12 +455,12 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
             int expType = bb.readInt();
             if(expType != 0x7)
                 throw new OFParseError("Wrong expType: Expected=0x7L(0x7L), got="+expType);
-            long laserBiasCurr = U32.f(bb.readInt());
-            long laserOutputPower = U32.f(bb.readInt());
+            OFBsnUnit laserBiasCurr = OFBsnUnitVer15.READER.readFrom(bb);
+            OFBsnUnit laserOutputPower = OFBsnUnitVer15.READER.readFrom(bb);
             Set<OFBsnModuleEepromRecvSignalType> laserReceiverPowerType = OFBsnModuleEepromRecvSignalTypeSerializerVer15.readFrom(bb);
-            long laserReceiverPower = U32.f(bb.readInt());
-            long moduleTemp = U32.f(bb.readInt());
-            long moduleVoltage = U32.f(bb.readInt());
+            OFBsnUnit laserReceiverPower = OFBsnUnitVer15.READER.readFrom(bb);
+            OFBsnUnit moduleTemp = OFBsnUnitVer15.READER.readFrom(bb);
+            OFBsnUnit moduleVoltage = OFBsnUnitVer15.READER.readFrom(bb);
 
             OFPortDescPropBsnDiagVer15 portDescPropBsnDiagVer15 = new OFPortDescPropBsnDiagVer15(
                     laserBiasCurr,
@@ -456,18 +487,18 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
         public void funnel(OFPortDescPropBsnDiagVer15 message, PrimitiveSink sink) {
             // fixed value property type = 0xffff
             sink.putShort((short) 0xffff);
-            // fixed value property length = 33
-            sink.putShort((short) 0x21);
+            // fixed value property length = 38
+            sink.putShort((short) 0x26);
             // fixed value property experimenter = 0x5c16c7L
             sink.putInt(0x5c16c7);
             // fixed value property expType = 0x7L
             sink.putInt(0x7);
-            sink.putLong(message.laserBiasCurr);
-            sink.putLong(message.laserOutputPower);
+            message.laserBiasCurr.putTo(sink);
+            message.laserOutputPower.putTo(sink);
             OFBsnModuleEepromRecvSignalTypeSerializerVer15.putTo(message.laserReceiverPowerType, sink);
-            sink.putLong(message.laserReceiverPower);
-            sink.putLong(message.moduleTemp);
-            sink.putLong(message.moduleVoltage);
+            message.laserReceiverPower.putTo(sink);
+            message.moduleTemp.putTo(sink);
+            message.moduleVoltage.putTo(sink);
         }
     }
 
@@ -482,18 +513,18 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
         public void write(ByteBuf bb, OFPortDescPropBsnDiagVer15 message) {
             // fixed value property type = 0xffff
             bb.writeShort((short) 0xffff);
-            // fixed value property length = 33
-            bb.writeShort((short) 0x21);
+            // fixed value property length = 38
+            bb.writeShort((short) 0x26);
             // fixed value property experimenter = 0x5c16c7L
             bb.writeInt(0x5c16c7);
             // fixed value property expType = 0x7L
             bb.writeInt(0x7);
-            bb.writeInt(U32.t(message.laserBiasCurr));
-            bb.writeInt(U32.t(message.laserOutputPower));
+            message.laserBiasCurr.writeTo(bb);
+            message.laserOutputPower.writeTo(bb);
             OFBsnModuleEepromRecvSignalTypeSerializerVer15.writeTo(bb, message.laserReceiverPowerType);
-            bb.writeInt(U32.t(message.laserReceiverPower));
-            bb.writeInt(U32.t(message.moduleTemp));
-            bb.writeInt(U32.t(message.moduleVoltage));
+            message.laserReceiverPower.writeTo(bb);
+            message.moduleTemp.writeTo(bb);
+            message.moduleVoltage.writeTo(bb);
 
 
         }
@@ -527,20 +558,35 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
             return false;
         OFPortDescPropBsnDiagVer15 other = (OFPortDescPropBsnDiagVer15) obj;
 
-        if( laserBiasCurr != other.laserBiasCurr)
+        if (laserBiasCurr == null) {
+            if (other.laserBiasCurr != null)
+                return false;
+        } else if (!laserBiasCurr.equals(other.laserBiasCurr))
             return false;
-        if( laserOutputPower != other.laserOutputPower)
+        if (laserOutputPower == null) {
+            if (other.laserOutputPower != null)
+                return false;
+        } else if (!laserOutputPower.equals(other.laserOutputPower))
             return false;
         if (laserReceiverPowerType == null) {
             if (other.laserReceiverPowerType != null)
                 return false;
         } else if (!laserReceiverPowerType.equals(other.laserReceiverPowerType))
             return false;
-        if( laserReceiverPower != other.laserReceiverPower)
+        if (laserReceiverPower == null) {
+            if (other.laserReceiverPower != null)
+                return false;
+        } else if (!laserReceiverPower.equals(other.laserReceiverPower))
             return false;
-        if( moduleTemp != other.moduleTemp)
+        if (moduleTemp == null) {
+            if (other.moduleTemp != null)
+                return false;
+        } else if (!moduleTemp.equals(other.moduleTemp))
             return false;
-        if( moduleVoltage != other.moduleVoltage)
+        if (moduleVoltage == null) {
+            if (other.moduleVoltage != null)
+                return false;
+        } else if (!moduleVoltage.equals(other.moduleVoltage))
             return false;
         return true;
     }
@@ -550,12 +596,12 @@ class OFPortDescPropBsnDiagVer15 implements OFPortDescPropBsnDiag {
         final int prime = 31;
         int result = 1;
 
-        result = prime *  (int) (laserBiasCurr ^ (laserBiasCurr >>> 32));
-        result = prime *  (int) (laserOutputPower ^ (laserOutputPower >>> 32));
+        result = prime * result + ((laserBiasCurr == null) ? 0 : laserBiasCurr.hashCode());
+        result = prime * result + ((laserOutputPower == null) ? 0 : laserOutputPower.hashCode());
         result = prime * result + ((laserReceiverPowerType == null) ? 0 : laserReceiverPowerType.hashCode());
-        result = prime *  (int) (laserReceiverPower ^ (laserReceiverPower >>> 32));
-        result = prime *  (int) (moduleTemp ^ (moduleTemp >>> 32));
-        result = prime *  (int) (moduleVoltage ^ (moduleVoltage >>> 32));
+        result = prime * result + ((laserReceiverPower == null) ? 0 : laserReceiverPower.hashCode());
+        result = prime * result + ((moduleTemp == null) ? 0 : moduleTemp.hashCode());
+        result = prime * result + ((moduleVoltage == null) ? 0 : moduleVoltage.hashCode());
         return result;
     }
 

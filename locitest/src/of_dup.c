@@ -63793,6 +63793,9 @@ of_port_desc_prop_bsn_diag_OF_VERSION_1_4_dup(
 {
     of_port_desc_prop_bsn_diag_t *dst;
     uint32_t val32;
+
+    of_bsn_unit_t src_bsn_unit;
+    of_bsn_unit_t *dst_bsn_unit;
     uint8_t val8;
 
     if ((dst = of_port_desc_prop_bsn_diag_new(src->version)) == NULL) {
@@ -63805,23 +63808,58 @@ of_port_desc_prop_bsn_diag_OF_VERSION_1_4_dup(
     of_port_desc_prop_bsn_diag_exp_type_get(src, &val32);
     of_port_desc_prop_bsn_diag_exp_type_set(dst, val32);
 
-    of_port_desc_prop_bsn_diag_laser_bias_curr_get(src, &val32);
-    of_port_desc_prop_bsn_diag_laser_bias_curr_set(dst, val32);
+    of_port_desc_prop_bsn_diag_laser_bias_curr_bind(
+        src, &src_bsn_unit);
+    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
+    if (dst_bsn_unit == NULL) {
+        of_port_desc_prop_bsn_diag_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_bsn_diag_laser_bias_curr_set(dst, dst_bsn_unit);
+    of_bsn_unit_delete(dst_bsn_unit);
 
-    of_port_desc_prop_bsn_diag_laser_output_power_get(src, &val32);
-    of_port_desc_prop_bsn_diag_laser_output_power_set(dst, val32);
+    of_port_desc_prop_bsn_diag_laser_output_power_bind(
+        src, &src_bsn_unit);
+    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
+    if (dst_bsn_unit == NULL) {
+        of_port_desc_prop_bsn_diag_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_bsn_diag_laser_output_power_set(dst, dst_bsn_unit);
+    of_bsn_unit_delete(dst_bsn_unit);
 
     of_port_desc_prop_bsn_diag_laser_receiver_power_type_get(src, &val8);
     of_port_desc_prop_bsn_diag_laser_receiver_power_type_set(dst, val8);
 
-    of_port_desc_prop_bsn_diag_laser_receiver_power_get(src, &val32);
-    of_port_desc_prop_bsn_diag_laser_receiver_power_set(dst, val32);
+    of_port_desc_prop_bsn_diag_laser_receiver_power_bind(
+        src, &src_bsn_unit);
+    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
+    if (dst_bsn_unit == NULL) {
+        of_port_desc_prop_bsn_diag_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_bsn_diag_laser_receiver_power_set(dst, dst_bsn_unit);
+    of_bsn_unit_delete(dst_bsn_unit);
 
-    of_port_desc_prop_bsn_diag_module_temp_get(src, &val32);
-    of_port_desc_prop_bsn_diag_module_temp_set(dst, val32);
+    of_port_desc_prop_bsn_diag_module_temp_bind(
+        src, &src_bsn_unit);
+    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
+    if (dst_bsn_unit == NULL) {
+        of_port_desc_prop_bsn_diag_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_bsn_diag_module_temp_set(dst, dst_bsn_unit);
+    of_bsn_unit_delete(dst_bsn_unit);
 
-    of_port_desc_prop_bsn_diag_module_voltage_get(src, &val32);
-    of_port_desc_prop_bsn_diag_module_voltage_set(dst, val32);
+    of_port_desc_prop_bsn_diag_module_voltage_bind(
+        src, &src_bsn_unit);
+    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
+    if (dst_bsn_unit == NULL) {
+        of_port_desc_prop_bsn_diag_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_bsn_diag_module_voltage_set(dst, dst_bsn_unit);
+    of_bsn_unit_delete(dst_bsn_unit);
 
     return dst;
 }
@@ -63844,6 +63882,9 @@ of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dup(
 
     ofp_bsn_module_eeprom_transceiver_t src_bsn_module_eeprom_transceiver;
     ofp_bsn_module_eeprom_transceiver_t *dst_bsn_module_eeprom_transceiver;
+
+    of_bsn_unit_t src_bsn_unit;
+    of_bsn_unit_t *dst_bsn_unit;
     uint64_t val64;
 
     of_list_port_desc_prop_t src_list;
@@ -63881,29 +63922,78 @@ of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dup(
     of_port_desc_prop_bsn_ethtool_encoding_get(src, &val8);
     of_port_desc_prop_bsn_ethtool_encoding_set(dst, val8);
 
-    of_port_desc_prop_bsn_ethtool_br_nominal_get(src, &val32);
-    of_port_desc_prop_bsn_ethtool_br_nominal_set(dst, val32);
+    of_port_desc_prop_bsn_ethtool_br_nominal_bind(
+        src, &src_bsn_unit);
+    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
+    if (dst_bsn_unit == NULL) {
+        of_port_desc_prop_bsn_ethtool_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_bsn_ethtool_br_nominal_set(dst, dst_bsn_unit);
+    of_bsn_unit_delete(dst_bsn_unit);
 
     of_port_desc_prop_bsn_ethtool_rateidentifier_get(src, &val8);
     of_port_desc_prop_bsn_ethtool_rateidentifier_set(dst, val8);
 
-    of_port_desc_prop_bsn_ethtool_length_SMF_KM_get(src, &val32);
-    of_port_desc_prop_bsn_ethtool_length_SMF_KM_set(dst, val32);
+    of_port_desc_prop_bsn_ethtool_length_SMF_KM_bind(
+        src, &src_bsn_unit);
+    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
+    if (dst_bsn_unit == NULL) {
+        of_port_desc_prop_bsn_ethtool_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_bsn_ethtool_length_SMF_KM_set(dst, dst_bsn_unit);
+    of_bsn_unit_delete(dst_bsn_unit);
 
-    of_port_desc_prop_bsn_ethtool_length_SMF_get(src, &val32);
-    of_port_desc_prop_bsn_ethtool_length_SMF_set(dst, val32);
+    of_port_desc_prop_bsn_ethtool_length_SMF_bind(
+        src, &src_bsn_unit);
+    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
+    if (dst_bsn_unit == NULL) {
+        of_port_desc_prop_bsn_ethtool_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_bsn_ethtool_length_SMF_set(dst, dst_bsn_unit);
+    of_bsn_unit_delete(dst_bsn_unit);
 
-    of_port_desc_prop_bsn_ethtool_length_50_um_get(src, &val32);
-    of_port_desc_prop_bsn_ethtool_length_50_um_set(dst, val32);
+    of_port_desc_prop_bsn_ethtool_length_50_um_bind(
+        src, &src_bsn_unit);
+    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
+    if (dst_bsn_unit == NULL) {
+        of_port_desc_prop_bsn_ethtool_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_bsn_ethtool_length_50_um_set(dst, dst_bsn_unit);
+    of_bsn_unit_delete(dst_bsn_unit);
 
-    of_port_desc_prop_bsn_ethtool_length_625_um_get(src, &val32);
-    of_port_desc_prop_bsn_ethtool_length_625_um_set(dst, val32);
+    of_port_desc_prop_bsn_ethtool_length_625_um_bind(
+        src, &src_bsn_unit);
+    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
+    if (dst_bsn_unit == NULL) {
+        of_port_desc_prop_bsn_ethtool_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_bsn_ethtool_length_625_um_set(dst, dst_bsn_unit);
+    of_bsn_unit_delete(dst_bsn_unit);
 
-    of_port_desc_prop_bsn_ethtool_length_copper_get(src, &val32);
-    of_port_desc_prop_bsn_ethtool_length_copper_set(dst, val32);
+    of_port_desc_prop_bsn_ethtool_length_copper_bind(
+        src, &src_bsn_unit);
+    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
+    if (dst_bsn_unit == NULL) {
+        of_port_desc_prop_bsn_ethtool_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_bsn_ethtool_length_copper_set(dst, dst_bsn_unit);
+    of_bsn_unit_delete(dst_bsn_unit);
 
-    of_port_desc_prop_bsn_ethtool_length_OM3_get(src, &val32);
-    of_port_desc_prop_bsn_ethtool_length_OM3_set(dst, val32);
+    of_port_desc_prop_bsn_ethtool_length_OM3_bind(
+        src, &src_bsn_unit);
+    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
+    if (dst_bsn_unit == NULL) {
+        of_port_desc_prop_bsn_ethtool_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_bsn_ethtool_length_OM3_set(dst, dst_bsn_unit);
+    of_bsn_unit_delete(dst_bsn_unit);
 
     of_port_desc_prop_bsn_ethtool_vendor_name_lo_get(src, &val64);
     of_port_desc_prop_bsn_ethtool_vendor_name_lo_set(dst, val64);

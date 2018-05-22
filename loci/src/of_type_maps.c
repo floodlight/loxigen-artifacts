@@ -4131,8 +4131,8 @@ of_object_fixed_len_v5[OF_OBJECT_COUNT] = {
     12,   /* 719: of_port_desc_prop_bsn */
     31,   /* 720: of_port_desc_prop_bsn_alarm */
     16,   /* 721: of_port_desc_prop_bsn_breakout */
-    33,   /* 722: of_port_desc_prop_bsn_diag */
-    95,   /* 723: of_port_desc_prop_bsn_ethtool */
+    38,   /* 722: of_port_desc_prop_bsn_diag */
+    100,  /* 723: of_port_desc_prop_bsn_ethtool */
     20,   /* 724: of_port_desc_prop_bsn_forward_error_correction */
     20,   /* 725: of_port_desc_prop_bsn_generation_id */
     36,   /* 726: of_port_desc_prop_bsn_misc_capabilities */

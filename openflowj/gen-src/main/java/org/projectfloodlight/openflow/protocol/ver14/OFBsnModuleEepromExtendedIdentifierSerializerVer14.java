@@ -38,6 +38,7 @@ public class OFBsnModuleEepromExtendedIdentifierSerializerVer14 {
     public final static byte BSN_MODULE_EEPROM_EXT_IDENTIFIER_NON_GBIC_VAL = (byte) 0x0;
     public final static byte BSN_MODULE_EEPROM_EXT_IDENTIFIER_GBIC_SFP_VAL = (byte) 0x4;
     public final static byte BSN_MODULE_EEPROM_EXT_IDENTIFIER_GBIC_MOD_DEF_VAL = (byte) 0x7;
+    public final static byte BSN_MODULE_EEPROM_EXT_IDENTIFIER_UNKNOWN_VAL = (byte) 0x8;
 
     public static Set<OFBsnModuleEepromExtendedIdentifier> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -65,6 +66,8 @@ public class OFBsnModuleEepromExtendedIdentifierSerializerVer14 {
             set.add(OFBsnModuleEepromExtendedIdentifier.BSN_MODULE_EEPROM_EXT_IDENTIFIER_GBIC_SFP);
         if((val & BSN_MODULE_EEPROM_EXT_IDENTIFIER_GBIC_MOD_DEF_VAL) != 0)
             set.add(OFBsnModuleEepromExtendedIdentifier.BSN_MODULE_EEPROM_EXT_IDENTIFIER_GBIC_MOD_DEF);
+        if((val & BSN_MODULE_EEPROM_EXT_IDENTIFIER_UNKNOWN_VAL) != 0)
+            set.add(OFBsnModuleEepromExtendedIdentifier.BSN_MODULE_EEPROM_EXT_IDENTIFIER_UNKNOWN);
         return Collections.unmodifiableSet(set);
     }
 
@@ -81,6 +84,9 @@ public class OFBsnModuleEepromExtendedIdentifierSerializerVer14 {
                     break;
                 case BSN_MODULE_EEPROM_EXT_IDENTIFIER_GBIC_MOD_DEF:
                     wireValue |= BSN_MODULE_EEPROM_EXT_IDENTIFIER_GBIC_MOD_DEF_VAL;
+                    break;
+                case BSN_MODULE_EEPROM_EXT_IDENTIFIER_UNKNOWN:
+                    wireValue |= BSN_MODULE_EEPROM_EXT_IDENTIFIER_UNKNOWN_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnModuleEepromExtendedIdentifier in version 1.4: " + e);

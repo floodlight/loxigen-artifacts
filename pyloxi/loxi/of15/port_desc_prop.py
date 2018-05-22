@@ -367,11 +367,11 @@ class bsn_diag(bsn):
         if laser_bias_curr != None:
             self.laser_bias_curr = laser_bias_curr
         else:
-            self.laser_bias_curr = 0
+            self.laser_bias_curr = ofp.bsn_unit()
         if laser_output_power != None:
             self.laser_output_power = laser_output_power
         else:
-            self.laser_output_power = 0
+            self.laser_output_power = ofp.bsn_unit()
         if laser_receiver_power_type != None:
             self.laser_receiver_power_type = laser_receiver_power_type
         else:
@@ -379,15 +379,15 @@ class bsn_diag(bsn):
         if laser_receiver_power != None:
             self.laser_receiver_power = laser_receiver_power
         else:
-            self.laser_receiver_power = 0
+            self.laser_receiver_power = ofp.bsn_unit()
         if module_temp != None:
             self.module_temp = module_temp
         else:
-            self.module_temp = 0
+            self.module_temp = ofp.bsn_unit()
         if module_voltage != None:
             self.module_voltage = module_voltage
         else:
-            self.module_voltage = 0
+            self.module_voltage = ofp.bsn_unit()
         return
 
     def pack(self):
@@ -396,12 +396,12 @@ class bsn_diag(bsn):
         packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
         packed.append(struct.pack("!L", self.experimenter))
         packed.append(struct.pack("!L", self.exp_type))
-        packed.append(struct.pack("!L", self.laser_bias_curr))
-        packed.append(struct.pack("!L", self.laser_output_power))
+        packed.append(self.laser_bias_curr.pack())
+        packed.append(self.laser_output_power.pack())
         packed.append(struct.pack("!B", self.laser_receiver_power_type))
-        packed.append(struct.pack("!L", self.laser_receiver_power))
-        packed.append(struct.pack("!L", self.module_temp))
-        packed.append(struct.pack("!L", self.module_voltage))
+        packed.append(self.laser_receiver_power.pack())
+        packed.append(self.module_temp.pack())
+        packed.append(self.module_voltage.pack())
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -418,12 +418,12 @@ class bsn_diag(bsn):
         assert(_experimenter == 6035143)
         _exp_type = reader.read("!L")[0]
         assert(_exp_type == 7)
-        obj.laser_bias_curr = reader.read("!L")[0]
-        obj.laser_output_power = reader.read("!L")[0]
+        obj.laser_bias_curr = ofp.bsn_unit.unpack(reader)
+        obj.laser_output_power = ofp.bsn_unit.unpack(reader)
         obj.laser_receiver_power_type = reader.read("!B")[0]
-        obj.laser_receiver_power = reader.read("!L")[0]
-        obj.module_temp = reader.read("!L")[0]
-        obj.module_voltage = reader.read("!L")[0]
+        obj.laser_receiver_power = ofp.bsn_unit.unpack(reader)
+        obj.module_temp = ofp.bsn_unit.unpack(reader)
+        obj.module_voltage = ofp.bsn_unit.unpack(reader)
         return obj
 
     def __eq__(self, other):
@@ -442,22 +442,22 @@ class bsn_diag(bsn):
             with q.indent(2):
                 q.breakable()
                 q.text("laser_bias_curr = ");
-                q.text("%#x" % self.laser_bias_curr)
+                q.pp(self.laser_bias_curr)
                 q.text(","); q.breakable()
                 q.text("laser_output_power = ");
-                q.text("%#x" % self.laser_output_power)
+                q.pp(self.laser_output_power)
                 q.text(","); q.breakable()
                 q.text("laser_receiver_power_type = ");
                 q.text("%#x" % self.laser_receiver_power_type)
                 q.text(","); q.breakable()
                 q.text("laser_receiver_power = ");
-                q.text("%#x" % self.laser_receiver_power)
+                q.pp(self.laser_receiver_power)
                 q.text(","); q.breakable()
                 q.text("module_temp = ");
-                q.text("%#x" % self.module_temp)
+                q.pp(self.module_temp)
                 q.text(","); q.breakable()
                 q.text("module_voltage = ");
-                q.text("%#x" % self.module_voltage)
+                q.pp(self.module_voltage)
             q.breakable()
         q.text('}')
 
@@ -492,7 +492,7 @@ class bsn_ethtool(bsn):
         if br_nominal != None:
             self.br_nominal = br_nominal
         else:
-            self.br_nominal = 0
+            self.br_nominal = ofp.bsn_unit()
         if rateidentifier != None:
             self.rateidentifier = rateidentifier
         else:
@@ -500,27 +500,27 @@ class bsn_ethtool(bsn):
         if length_SMF_KM != None:
             self.length_SMF_KM = length_SMF_KM
         else:
-            self.length_SMF_KM = 0
+            self.length_SMF_KM = ofp.bsn_unit()
         if length_SMF != None:
             self.length_SMF = length_SMF
         else:
-            self.length_SMF = 0
+            self.length_SMF = ofp.bsn_unit()
         if length_50_um != None:
             self.length_50_um = length_50_um
         else:
-            self.length_50_um = 0
+            self.length_50_um = ofp.bsn_unit()
         if length_625_um != None:
             self.length_625_um = length_625_um
         else:
-            self.length_625_um = 0
+            self.length_625_um = ofp.bsn_unit()
         if length_copper != None:
             self.length_copper = length_copper
         else:
-            self.length_copper = 0
+            self.length_copper = ofp.bsn_unit()
         if length_OM3 != None:
             self.length_OM3 = length_OM3
         else:
-            self.length_OM3 = 0
+            self.length_OM3 = ofp.bsn_unit()
         if vendor_name_lo != None:
             self.vendor_name_lo = vendor_name_lo
         else:
@@ -557,20 +557,19 @@ class bsn_ethtool(bsn):
         packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
         packed.append(struct.pack("!L", self.experimenter))
         packed.append(struct.pack("!L", self.exp_type))
-        packed.append(struct.pack("!H", 0)) # placeholder for key_length at index 4
         packed.append(struct.pack("!B", self.identifier))
         packed.append(struct.pack("!B", self.extidentifier))
         packed.append(struct.pack("!B", self.connector))
         packed.append(self.transdata.pack())
         packed.append(struct.pack("!B", self.encoding))
-        packed.append(struct.pack("!L", self.br_nominal))
+        packed.append(self.br_nominal.pack())
         packed.append(struct.pack("!B", self.rateidentifier))
-        packed.append(struct.pack("!L", self.length_SMF_KM))
-        packed.append(struct.pack("!L", self.length_SMF))
-        packed.append(struct.pack("!L", self.length_50_um))
-        packed.append(struct.pack("!L", self.length_625_um))
-        packed.append(struct.pack("!L", self.length_copper))
-        packed.append(struct.pack("!L", self.length_OM3))
+        packed.append(self.length_SMF_KM.pack())
+        packed.append(self.length_SMF.pack())
+        packed.append(self.length_50_um.pack())
+        packed.append(self.length_625_um.pack())
+        packed.append(self.length_copper.pack())
+        packed.append(self.length_OM3.pack())
         packed.append(struct.pack("!Q", self.vendor_name_lo))
         packed.append(struct.pack("!Q", self.vendor_name_hi))
         packed.append(struct.pack("!L", self.vendor_oui))
@@ -594,20 +593,19 @@ class bsn_ethtool(bsn):
         assert(_experimenter == 6035143)
         _exp_type = reader.read("!L")[0]
         assert(_exp_type == 6)
-        _key_length = reader.read("!H")[0]
         obj.identifier = reader.read("!B")[0]
         obj.extidentifier = reader.read("!B")[0]
         obj.connector = reader.read("!B")[0]
         obj.transdata = ofp.bsn_module_eeprom_transceiver.unpack(reader)
         obj.encoding = reader.read("!B")[0]
-        obj.br_nominal = reader.read("!L")[0]
+        obj.br_nominal = ofp.bsn_unit.unpack(reader)
         obj.rateidentifier = reader.read("!B")[0]
-        obj.length_SMF_KM = reader.read("!L")[0]
-        obj.length_SMF = reader.read("!L")[0]
-        obj.length_50_um = reader.read("!L")[0]
-        obj.length_625_um = reader.read("!L")[0]
-        obj.length_copper = reader.read("!L")[0]
-        obj.length_OM3 = reader.read("!L")[0]
+        obj.length_SMF_KM = ofp.bsn_unit.unpack(reader)
+        obj.length_SMF = ofp.bsn_unit.unpack(reader)
+        obj.length_50_um = ofp.bsn_unit.unpack(reader)
+        obj.length_625_um = ofp.bsn_unit.unpack(reader)
+        obj.length_copper = ofp.bsn_unit.unpack(reader)
+        obj.length_OM3 = ofp.bsn_unit.unpack(reader)
         obj.vendor_name_lo = reader.read("!Q")[0]
         obj.vendor_name_hi = reader.read("!Q")[0]
         obj.vendor_oui = reader.read("!L")[0]
@@ -662,28 +660,28 @@ class bsn_ethtool(bsn):
                 q.text("%#x" % self.encoding)
                 q.text(","); q.breakable()
                 q.text("br_nominal = ");
-                q.text("%#x" % self.br_nominal)
+                q.pp(self.br_nominal)
                 q.text(","); q.breakable()
                 q.text("rateidentifier = ");
                 q.text("%#x" % self.rateidentifier)
                 q.text(","); q.breakable()
                 q.text("length_SMF_KM = ");
-                q.text("%#x" % self.length_SMF_KM)
+                q.pp(self.length_SMF_KM)
                 q.text(","); q.breakable()
                 q.text("length_SMF = ");
-                q.text("%#x" % self.length_SMF)
+                q.pp(self.length_SMF)
                 q.text(","); q.breakable()
                 q.text("length_50_um = ");
-                q.text("%#x" % self.length_50_um)
+                q.pp(self.length_50_um)
                 q.text(","); q.breakable()
                 q.text("length_625_um = ");
-                q.text("%#x" % self.length_625_um)
+                q.pp(self.length_625_um)
                 q.text(","); q.breakable()
                 q.text("length_copper = ");
-                q.text("%#x" % self.length_copper)
+                q.pp(self.length_copper)
                 q.text(","); q.breakable()
                 q.text("length_OM3 = ");
-                q.text("%#x" % self.length_OM3)
+                q.pp(self.length_OM3)
                 q.text(","); q.breakable()
                 q.text("vendor_name_lo = ");
                 q.text("%#x" % self.vendor_name_lo)

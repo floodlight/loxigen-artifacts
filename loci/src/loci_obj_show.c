@@ -40875,6 +40875,8 @@ of_port_desc_prop_bsn_diag_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 {
     int out = 0;
     uint32_t val32;
+
+    of_bsn_unit_t bsn_unit;
     uint8_t val8;
 
     of_port_desc_prop_bsn_diag_experimenter_get(obj, &val32);
@@ -40887,35 +40889,25 @@ of_port_desc_prop_bsn_diag_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
     out += LOCI_SHOW_u32(writer, cookie, val32);
     out += writer(cookie, " ");
 
-    of_port_desc_prop_bsn_diag_laser_bias_curr_get(obj, &val32);
-    out += writer(cookie, "laser_bias_curr=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
-    out += writer(cookie, " ");
+    of_port_desc_prop_bsn_diag_laser_bias_curr_bind(obj, &bsn_unit);
+    out += of_object_show(writer, cookie, &bsn_unit);
 
-    of_port_desc_prop_bsn_diag_laser_output_power_get(obj, &val32);
-    out += writer(cookie, "laser_output_power=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
-    out += writer(cookie, " ");
+    of_port_desc_prop_bsn_diag_laser_output_power_bind(obj, &bsn_unit);
+    out += of_object_show(writer, cookie, &bsn_unit);
 
     of_port_desc_prop_bsn_diag_laser_receiver_power_type_get(obj, &val8);
     out += writer(cookie, "laser_receiver_power_type=");
     out += LOCI_SHOW_u8(writer, cookie, val8);
     out += writer(cookie, " ");
 
-    of_port_desc_prop_bsn_diag_laser_receiver_power_get(obj, &val32);
-    out += writer(cookie, "laser_receiver_power=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
-    out += writer(cookie, " ");
+    of_port_desc_prop_bsn_diag_laser_receiver_power_bind(obj, &bsn_unit);
+    out += of_object_show(writer, cookie, &bsn_unit);
 
-    of_port_desc_prop_bsn_diag_module_temp_get(obj, &val32);
-    out += writer(cookie, "module_temp=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
-    out += writer(cookie, " ");
+    of_port_desc_prop_bsn_diag_module_temp_bind(obj, &bsn_unit);
+    out += of_object_show(writer, cookie, &bsn_unit);
 
-    of_port_desc_prop_bsn_diag_module_voltage_get(obj, &val32);
-    out += writer(cookie, "module_voltage=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
-    out += writer(cookie, " ");
+    of_port_desc_prop_bsn_diag_module_voltage_bind(obj, &bsn_unit);
+    out += of_object_show(writer, cookie, &bsn_unit);
 
     return out;
 }
@@ -40928,6 +40920,8 @@ of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_show(loci_writer_f writer, void* co
     uint8_t val8;
 
     ofp_bsn_module_eeprom_transceiver_t bsn_module_eeprom_transceiver;
+
+    of_bsn_unit_t bsn_unit;
     uint64_t val64;
 
     of_list_port_desc_prop_t list;
@@ -40967,45 +40961,31 @@ of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_show(loci_writer_f writer, void* co
     out += LOCI_SHOW_u8(writer, cookie, val8);
     out += writer(cookie, " ");
 
-    of_port_desc_prop_bsn_ethtool_br_nominal_get(obj, &val32);
-    out += writer(cookie, "br_nominal=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
-    out += writer(cookie, " ");
+    of_port_desc_prop_bsn_ethtool_br_nominal_bind(obj, &bsn_unit);
+    out += of_object_show(writer, cookie, &bsn_unit);
 
     of_port_desc_prop_bsn_ethtool_rateidentifier_get(obj, &val8);
     out += writer(cookie, "rateidentifier=");
     out += LOCI_SHOW_u8(writer, cookie, val8);
     out += writer(cookie, " ");
 
-    of_port_desc_prop_bsn_ethtool_length_SMF_KM_get(obj, &val32);
-    out += writer(cookie, "length_SMF_KM=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
-    out += writer(cookie, " ");
+    of_port_desc_prop_bsn_ethtool_length_SMF_KM_bind(obj, &bsn_unit);
+    out += of_object_show(writer, cookie, &bsn_unit);
 
-    of_port_desc_prop_bsn_ethtool_length_SMF_get(obj, &val32);
-    out += writer(cookie, "length_SMF=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
-    out += writer(cookie, " ");
+    of_port_desc_prop_bsn_ethtool_length_SMF_bind(obj, &bsn_unit);
+    out += of_object_show(writer, cookie, &bsn_unit);
 
-    of_port_desc_prop_bsn_ethtool_length_50_um_get(obj, &val32);
-    out += writer(cookie, "length_50_um=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
-    out += writer(cookie, " ");
+    of_port_desc_prop_bsn_ethtool_length_50_um_bind(obj, &bsn_unit);
+    out += of_object_show(writer, cookie, &bsn_unit);
 
-    of_port_desc_prop_bsn_ethtool_length_625_um_get(obj, &val32);
-    out += writer(cookie, "length_625_um=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
-    out += writer(cookie, " ");
+    of_port_desc_prop_bsn_ethtool_length_625_um_bind(obj, &bsn_unit);
+    out += of_object_show(writer, cookie, &bsn_unit);
 
-    of_port_desc_prop_bsn_ethtool_length_copper_get(obj, &val32);
-    out += writer(cookie, "length_copper=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
-    out += writer(cookie, " ");
+    of_port_desc_prop_bsn_ethtool_length_copper_bind(obj, &bsn_unit);
+    out += of_object_show(writer, cookie, &bsn_unit);
 
-    of_port_desc_prop_bsn_ethtool_length_OM3_get(obj, &val32);
-    out += writer(cookie, "length_OM3=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
-    out += writer(cookie, " ");
+    of_port_desc_prop_bsn_ethtool_length_OM3_bind(obj, &bsn_unit);
+    out += of_object_show(writer, cookie, &bsn_unit);
 
     of_port_desc_prop_bsn_ethtool_vendor_name_lo_get(obj, &val64);
     out += writer(cookie, "vendor_name_lo=");

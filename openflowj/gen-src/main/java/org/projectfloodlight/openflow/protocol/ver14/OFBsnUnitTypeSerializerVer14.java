@@ -43,6 +43,12 @@ public class OFBsnUnitTypeSerializerVer14 {
     public final static byte BSN_UNIT_S_VAL = (byte) 0x6;
     public final static byte BSN_UNIT_C_VAL = (byte) 0x7;
     public final static byte BSN_UNIT_F_VAL = (byte) 0x8;
+    public final static byte BSN_UNIT_BD_VAL = (byte) 0x9;
+    public final static byte BSN_UNIT_MBD_VAL = (byte) 0xa;
+    public final static byte BSN_UNIT_UA_VAL = (byte) 0xb;
+    public final static byte BSN_UNIT_UW_VAL = (byte) 0xc;
+    public final static byte BSN_UNIT_MC_VAL = (byte) 0xd;
+    public final static byte BSN_UNIT_MV_VAL = (byte) 0xe;
 
     public static Set<OFBsnUnitType> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -80,6 +86,18 @@ public class OFBsnUnitTypeSerializerVer14 {
             set.add(OFBsnUnitType.BSN_UNIT_C);
         if((val & BSN_UNIT_F_VAL) != 0)
             set.add(OFBsnUnitType.BSN_UNIT_F);
+        if((val & BSN_UNIT_BD_VAL) != 0)
+            set.add(OFBsnUnitType.BSN_UNIT_BD);
+        if((val & BSN_UNIT_MBD_VAL) != 0)
+            set.add(OFBsnUnitType.BSN_UNIT_MBD);
+        if((val & BSN_UNIT_UA_VAL) != 0)
+            set.add(OFBsnUnitType.BSN_UNIT_UA);
+        if((val & BSN_UNIT_UW_VAL) != 0)
+            set.add(OFBsnUnitType.BSN_UNIT_UW);
+        if((val & BSN_UNIT_MC_VAL) != 0)
+            set.add(OFBsnUnitType.BSN_UNIT_MC);
+        if((val & BSN_UNIT_MV_VAL) != 0)
+            set.add(OFBsnUnitType.BSN_UNIT_MV);
         return Collections.unmodifiableSet(set);
     }
 
@@ -111,6 +129,24 @@ public class OFBsnUnitTypeSerializerVer14 {
                     break;
                 case BSN_UNIT_F:
                     wireValue |= BSN_UNIT_F_VAL;
+                    break;
+                case BSN_UNIT_BD:
+                    wireValue |= BSN_UNIT_BD_VAL;
+                    break;
+                case BSN_UNIT_MBD:
+                    wireValue |= BSN_UNIT_MBD_VAL;
+                    break;
+                case BSN_UNIT_UA:
+                    wireValue |= BSN_UNIT_UA_VAL;
+                    break;
+                case BSN_UNIT_UW:
+                    wireValue |= BSN_UNIT_UW_VAL;
+                    break;
+                case BSN_UNIT_MC:
+                    wireValue |= BSN_UNIT_MC_VAL;
+                    break;
+                case BSN_UNIT_MV:
+                    wireValue |= BSN_UNIT_MV_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnUnitType in version 1.4: " + e);

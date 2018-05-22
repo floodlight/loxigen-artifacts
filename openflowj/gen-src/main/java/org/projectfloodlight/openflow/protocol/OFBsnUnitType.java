@@ -34,5 +34,11 @@ public enum OFBsnUnitType {
      BSN_UNIT_M,
      BSN_UNIT_S,
      BSN_UNIT_C,
-     BSN_UNIT_F;
+     BSN_UNIT_F,
+     BSN_UNIT_BD,
+     BSN_UNIT_MBD,
+     BSN_UNIT_UA,
+     BSN_UNIT_UW,
+     BSN_UNIT_MC,
+     BSN_UNIT_MV;
 }

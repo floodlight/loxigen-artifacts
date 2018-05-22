@@ -32,12 +32,12 @@ public interface OFPortDescPropBsnDiag extends OFObject, OFPortDescPropBsn {
     int getType();
     long getExperimenter();
     long getExpType();
-    long getLaserBiasCurr();
-    long getLaserOutputPower();
+    OFBsnUnit getLaserBiasCurr();
+    OFBsnUnit getLaserOutputPower();
     Set<OFBsnModuleEepromRecvSignalType> getLaserReceiverPowerType();
-    long getLaserReceiverPower();
-    long getModuleTemp();
-    long getModuleVoltage();
+    OFBsnUnit getLaserReceiverPower();
+    OFBsnUnit getModuleTemp();
+    OFBsnUnit getModuleVoltage();
     OFVersion getVersion();
 
     void writeTo(ByteBuf channelBuffer);
@@ -49,18 +49,18 @@ public interface OFPortDescPropBsnDiag extends OFObject, OFPortDescPropBsn {
         long getExperimenter();
         long getExpType();
         Builder setExpType(long expType);
-        long getLaserBiasCurr();
-        Builder setLaserBiasCurr(long laserBiasCurr);
-        long getLaserOutputPower();
-        Builder setLaserOutputPower(long laserOutputPower);
+        OFBsnUnit getLaserBiasCurr();
+        Builder setLaserBiasCurr(OFBsnUnit laserBiasCurr);
+        OFBsnUnit getLaserOutputPower();
+        Builder setLaserOutputPower(OFBsnUnit laserOutputPower);
         Set<OFBsnModuleEepromRecvSignalType> getLaserReceiverPowerType();
         Builder setLaserReceiverPowerType(Set<OFBsnModuleEepromRecvSignalType> laserReceiverPowerType);
-        long getLaserReceiverPower();
-        Builder setLaserReceiverPower(long laserReceiverPower);
-        long getModuleTemp();
-        Builder setModuleTemp(long moduleTemp);
-        long getModuleVoltage();
-        Builder setModuleVoltage(long moduleVoltage);
+        OFBsnUnit getLaserReceiverPower();
+        Builder setLaserReceiverPower(OFBsnUnit laserReceiverPower);
+        OFBsnUnit getModuleTemp();
+        Builder setModuleTemp(OFBsnUnit moduleTemp);
+        OFBsnUnit getModuleVoltage();
+        Builder setModuleVoltage(OFBsnUnit moduleVoltage);
         OFVersion getVersion();
     }
 }

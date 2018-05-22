@@ -11890,28 +11890,28 @@ typedef struct of_port_desc_prop_bsn_breakout_s of_port_desc_prop_bsn_breakout_t
  *   are of type of_port_desc_prop_bsn_diag_uint32_get_f and _set_f.
  *
  * @param laser_bias_curr_get/set ( OF_1_4).
- *   Accessors for laser_bias_curr, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_diag_uint32_get_f and _set_f.
+ *   Accessors for laser_bias_curr, a variable of type of_bsn_unit.  Functions
+ *   are of type of_port_desc_prop_bsn_diag_of_bsn_unit_get_f and _set_f.
  *
  * @param laser_output_power_get/set ( OF_1_4).
- *   Accessors for laser_output_power, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_diag_uint32_get_f and _set_f.
+ *   Accessors for laser_output_power, a variable of type of_bsn_unit.  Functions
+ *   are of type of_port_desc_prop_bsn_diag_of_bsn_unit_get_f and _set_f.
  *
  * @param laser_receiver_power_type_get/set ( OF_1_4).
  *   Accessors for laser_receiver_power_type, a variable of type uint8.  Functions
  *   are of type of_port_desc_prop_bsn_diag_uint8_get_f and _set_f.
  *
  * @param laser_receiver_power_get/set ( OF_1_4).
- *   Accessors for laser_receiver_power, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_diag_uint32_get_f and _set_f.
+ *   Accessors for laser_receiver_power, a variable of type of_bsn_unit.  Functions
+ *   are of type of_port_desc_prop_bsn_diag_of_bsn_unit_get_f and _set_f.
  *
  * @param module_temp_get/set ( OF_1_4).
- *   Accessors for module_temp, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_diag_uint32_get_f and _set_f.
+ *   Accessors for module_temp, a variable of type of_bsn_unit.  Functions
+ *   are of type of_port_desc_prop_bsn_diag_of_bsn_unit_get_f and _set_f.
  *
  * @param module_voltage_get/set ( OF_1_4).
- *   Accessors for module_voltage, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_diag_uint32_get_f and _set_f.
+ *   Accessors for module_voltage, a variable of type of_bsn_unit.  Functions
+ *   are of type of_port_desc_prop_bsn_diag_of_bsn_unit_get_f and _set_f.
  *
  */
 typedef struct of_port_desc_prop_bsn_diag_s of_port_desc_prop_bsn_diag_t;
@@ -11949,36 +11949,36 @@ typedef struct of_port_desc_prop_bsn_diag_s of_port_desc_prop_bsn_diag_t;
  *   are of type of_port_desc_prop_bsn_ethtool_uint8_get_f and _set_f.
  *
  * @param br_nominal_get/set ( OF_1_4).
- *   Accessors for br_nominal, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint32_get_f and _set_f.
+ *   Accessors for br_nominal, a variable of type of_bsn_unit.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
  *
  * @param rateidentifier_get/set ( OF_1_4).
  *   Accessors for rateidentifier, a variable of type uint8.  Functions
  *   are of type of_port_desc_prop_bsn_ethtool_uint8_get_f and _set_f.
  *
  * @param length_SMF_KM_get/set ( OF_1_4).
- *   Accessors for length_SMF_KM, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint32_get_f and _set_f.
+ *   Accessors for length_SMF_KM, a variable of type of_bsn_unit.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
  *
  * @param length_SMF_get/set ( OF_1_4).
- *   Accessors for length_SMF, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint32_get_f and _set_f.
+ *   Accessors for length_SMF, a variable of type of_bsn_unit.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
  *
  * @param length_50_um_get/set ( OF_1_4).
- *   Accessors for length_50_um, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint32_get_f and _set_f.
+ *   Accessors for length_50_um, a variable of type of_bsn_unit.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
  *
  * @param length_625_um_get/set ( OF_1_4).
- *   Accessors for length_625_um, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint32_get_f and _set_f.
+ *   Accessors for length_625_um, a variable of type of_bsn_unit.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
  *
  * @param length_copper_get/set ( OF_1_4).
- *   Accessors for length_copper, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint32_get_f and _set_f.
+ *   Accessors for length_copper, a variable of type of_bsn_unit.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
  *
  * @param length_OM3_get/set ( OF_1_4).
- *   Accessors for length_OM3, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint32_get_f and _set_f.
+ *   Accessors for length_OM3, a variable of type of_bsn_unit.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
  *
  * @param vendor_name_lo_get/set ( OF_1_4).
  *   Accessors for vendor_name_lo, a variable of type uint64.  Functions
