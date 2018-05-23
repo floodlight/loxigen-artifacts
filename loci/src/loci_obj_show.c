@@ -40918,11 +40918,13 @@ of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_show(loci_writer_f writer, void* co
     int out = 0;
     uint32_t val32;
     uint8_t val8;
-
-    ofp_bsn_module_eeprom_transceiver_t bsn_module_eeprom_transceiver;
+    of_str8_t str8;
 
     of_bsn_unit_t bsn_unit;
-    uint64_t val64;
+    of_str16_t str16;
+    of_str4_t str4;
+
+    of_port_desc_prop_compliance_t port_desc_prop_compliance;
 
     of_list_port_desc_prop_t list;
     of_object_t elt;
@@ -40953,8 +40955,10 @@ of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_show(loci_writer_f writer, void* co
     out += LOCI_SHOW_u8(writer, cookie, val8);
     out += writer(cookie, " ");
 
-    of_port_desc_prop_bsn_ethtool_transdata_bind(obj, &bsn_module_eeprom_transceiver);
-    out += of_object_show(writer, cookie, &bsn_module_eeprom_transceiver);
+    of_port_desc_prop_bsn_ethtool_transdata_get(obj, &str8);
+    out += writer(cookie, "transdata=");
+    out += LOCI_SHOW_str8(writer, cookie, str8);
+    out += writer(cookie, " ");
 
     of_port_desc_prop_bsn_ethtool_encoding_get(obj, &val8);
     out += writer(cookie, "encoding=");
@@ -40987,35 +40991,28 @@ of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_show(loci_writer_f writer, void* co
     of_port_desc_prop_bsn_ethtool_length_OM3_bind(obj, &bsn_unit);
     out += of_object_show(writer, cookie, &bsn_unit);
 
-    of_port_desc_prop_bsn_ethtool_vendor_name_lo_get(obj, &val64);
-    out += writer(cookie, "vendor_name_lo=");
-    out += LOCI_SHOW_u64(writer, cookie, val64);
+    of_port_desc_prop_bsn_ethtool_vendor_name_get(obj, &str16);
+    out += writer(cookie, "vendor_name=");
+    out += LOCI_SHOW_str16(writer, cookie, str16);
     out += writer(cookie, " ");
 
-    of_port_desc_prop_bsn_ethtool_vendor_name_hi_get(obj, &val64);
-    out += writer(cookie, "vendor_name_hi=");
-    out += LOCI_SHOW_u64(writer, cookie, val64);
-    out += writer(cookie, " ");
-
-    of_port_desc_prop_bsn_ethtool_vendor_oui_get(obj, &val32);
+    of_port_desc_prop_bsn_ethtool_vendor_oui_get(obj, &str4);
     out += writer(cookie, "vendor_oui=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += LOCI_SHOW_str4(writer, cookie, str4);
     out += writer(cookie, " ");
 
-    of_port_desc_prop_bsn_ethtool_vendor_pn_lo_get(obj, &val64);
-    out += writer(cookie, "vendor_pn_lo=");
-    out += LOCI_SHOW_u64(writer, cookie, val64);
+    of_port_desc_prop_bsn_ethtool_vendor_pn_get(obj, &str16);
+    out += writer(cookie, "vendor_pn=");
+    out += LOCI_SHOW_str16(writer, cookie, str16);
     out += writer(cookie, " ");
 
-    of_port_desc_prop_bsn_ethtool_vendor_pn_hi_get(obj, &val64);
-    out += writer(cookie, "vendor_pn_hi=");
-    out += LOCI_SHOW_u64(writer, cookie, val64);
-    out += writer(cookie, " ");
-
-    of_port_desc_prop_bsn_ethtool_vendor_rev_get(obj, &val32);
+    of_port_desc_prop_bsn_ethtool_vendor_rev_get(obj, &str4);
     out += writer(cookie, "vendor_rev=");
-    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += LOCI_SHOW_str4(writer, cookie, str4);
     out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_ethtool_cmplnce_bind(obj, &port_desc_prop_compliance);
+    out += of_object_show(writer, cookie, &port_desc_prop_compliance);
 
     out += writer(cookie, "of_port_desc_prop_t={ ");
     of_port_desc_prop_bsn_ethtool_more_properties_bind(obj, &list);
@@ -41166,6 +41163,30 @@ of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
     out += writer(cookie, "exp_type=");
     out += LOCI_SHOW_u32(writer, cookie, val32);
     out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_port_desc_prop_compliance_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_bsn_unit_t bsn_unit;
+
+    of_port_desc_prop_compliance_cmplnce_type_get(obj, &val8);
+    out += writer(cookie, "cmplnce_type=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_compliance_cu_cmplnce_get(obj, &val8);
+    out += writer(cookie, "cu_cmplnce=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_compliance_wavelength_bind(obj, &bsn_unit);
+    out += of_object_show(writer, cookie, &bsn_unit);
 
     return out;
 }
@@ -42239,20 +42260,6 @@ of_uint8_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *ob
     of_uint8_value_get(obj, &val8);
     out += writer(cookie, "value=");
     out += LOCI_SHOW_u8(writer, cookie, val8);
-    out += writer(cookie, " ");
-
-    return out;
-}
-
-int
-ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint64_t val64;
-
-    ofp_bsn_module_eeprom_transceiver_codes_get(obj, &val64);
-    out += writer(cookie, "codes=");
-    out += LOCI_SHOW_u64(writer, cookie, val64);
     out += writer(cookie, " ");
 
     return out;
@@ -43662,6 +43669,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
@@ -43709,7 +43717,6 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_table_stats_entry_OF_VERSION_1_0_show,
-    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -44509,6 +44516,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_1_show,
     unknown_show,
     unknown_show,
@@ -44556,7 +44564,6 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_table_stats_entry_OF_VERSION_1_1_show,
-    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -45356,6 +45363,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_2_show,
     unknown_show,
     unknown_show,
@@ -45403,7 +45411,6 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_table_stats_entry_OF_VERSION_1_2_show,
-    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -46203,6 +46210,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_3_show,
     unknown_show,
     unknown_show,
@@ -46253,7 +46261,6 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_uint32_OF_VERSION_1_3_show,
     of_uint64_OF_VERSION_1_3_show,
     of_uint8_OF_VERSION_1_3_show,
-    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -47043,6 +47050,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_show,
+    of_port_desc_prop_compliance_OF_VERSION_1_4_show,
     of_port_desc_prop_ethernet_OF_VERSION_1_4_show,
     unknown_show,
     of_port_desc_prop_optical_OF_VERSION_1_4_show,
@@ -47100,7 +47108,6 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_uint32_OF_VERSION_1_4_show,
     of_uint64_OF_VERSION_1_4_show,
     of_uint8_OF_VERSION_1_4_show,
-    ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_show,
     unknown_show,
     unknown_show,
     unknown_show,

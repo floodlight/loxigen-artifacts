@@ -1821,6 +1821,7 @@ int of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dump(loci_writer_f writer
 int of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_port_desc_prop_compliance_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_ethernet_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_optical_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_mod_prop_ethernet_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1859,6 +1860,5 @@ int of_table_stats_entry_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie,
 int of_uint32_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_uint64_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_uint8_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
-int ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 
 #endif /* _LOCI_OBJ_DUMP_H_ */

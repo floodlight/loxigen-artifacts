@@ -2487,6 +2487,7 @@ enum_v5_ofp_bsn_unit_type = {
     [12] = "OFP_BSN_UNIT_UW",
     [13] = "OFP_BSN_UNIT_MC",
     [14] = "OFP_BSN_UNIT_MV",
+    [15] = "OFP_BSN_UNIT_NM",
 }
 
 enum_v5_ofp_bundle_ctrl_type = {
@@ -2769,9 +2770,9 @@ enum_v5_of_bsn_pdu_slot_num = {
 }
 
 enum_v5_ofp_bsn_module_eeprom_cu_cmplnce = {
-    [0] = "OFP_BSN_MODULE_EEPROM_CU_CMPLLNCE_UNSPECIFIED",
-    [1] = "OFP_BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_APP_E",
-    [4] = "OFP_BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_LIMITING",
+    [0] = "OFP_BSN_MODULE_EEPROM_CU_COMPLIANCE_UNSPECIFIED",
+    [1] = "OFP_BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_APP_E",
+    [4] = "OFP_BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_LIMITING",
 }
 
 enum_v5_ofp_bsn_tcp_flag = {
@@ -2877,6 +2878,12 @@ enum_v5_ofp_queue_op_failed_code = {
     [0] = "OFPQOFC_BAD_PORT",
     [1] = "OFPQOFC_BAD_QUEUE",
     [2] = "OFPQOFC_EPERM",
+}
+
+enum_v5_ofp_bsn_module_eeprom_cmplnce_type = {
+    [0] = "OFP_BSN_MODULE_EEPROM_COMPLIANCE_TYPE_UNSPECIFIED",
+    [4] = "OFP_BSN_MODULE_EEPROM_COMPLIANCE_TYPE_CU_PASSIVE",
+    [8] = "OFP_BSN_MODULE_EEPROM_COMPLIANCE_TYPE_CU_ACTIVE",
 }
 
 enum_v5_ofp_bsn_module_eeprom_identifier = {
@@ -3738,6 +3745,7 @@ enum_v6_ofp_bsn_unit_type = {
     [12] = "OFP_BSN_UNIT_UW",
     [13] = "OFP_BSN_UNIT_MC",
     [14] = "OFP_BSN_UNIT_MV",
+    [15] = "OFP_BSN_UNIT_NM",
 }
 
 enum_v6_ofp_bundle_ctrl_type = {
@@ -4037,9 +4045,9 @@ enum_v6_of_bsn_pdu_slot_num = {
 }
 
 enum_v6_ofp_bsn_module_eeprom_cu_cmplnce = {
-    [0] = "OFP_BSN_MODULE_EEPROM_CU_CMPLLNCE_UNSPECIFIED",
-    [1] = "OFP_BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_APP_E",
-    [4] = "OFP_BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_LIMITING",
+    [0] = "OFP_BSN_MODULE_EEPROM_CU_COMPLIANCE_UNSPECIFIED",
+    [1] = "OFP_BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_APP_E",
+    [4] = "OFP_BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_LIMITING",
 }
 
 enum_v6_ofp_bsn_tcp_flag = {
@@ -4163,6 +4171,12 @@ enum_v6_ofp_queue_op_failed_code = {
     [0] = "OFPQOFC_BAD_PORT",
     [1] = "OFPQOFC_BAD_QUEUE",
     [2] = "OFPQOFC_EPERM",
+}
+
+enum_v6_ofp_bsn_module_eeprom_cmplnce_type = {
+    [0] = "OFP_BSN_MODULE_EEPROM_COMPLIANCE_TYPE_UNSPECIFIED",
+    [4] = "OFP_BSN_MODULE_EEPROM_COMPLIANCE_TYPE_CU_PASSIVE",
+    [8] = "OFP_BSN_MODULE_EEPROM_COMPLIANCE_TYPE_CU_ACTIVE",
 }
 
 enum_v6_ofp_bsn_module_eeprom_identifier = {
@@ -13486,7 +13500,9 @@ fields['of14.port_desc_prop_bsn_diag.laser_receiver_power_type'] = ProtoField.ui
 fields['of14.port_desc_prop_bsn_diag.laser_receiver_power'] = ProtoField.bytes("of14.port_desc_prop_bsn_diag.laser_receiver_power", "laser_receiver_power")
 fields['of14.port_desc_prop_bsn_diag.module_temp'] = ProtoField.bytes("of14.port_desc_prop_bsn_diag.module_temp", "module_temp")
 fields['of14.port_desc_prop_bsn_diag.module_voltage'] = ProtoField.bytes("of14.port_desc_prop_bsn_diag.module_voltage", "module_voltage")
-fields['of14._bsn_module_eeprom_transceiver.codes'] = ProtoField.uint64("of14._bsn_module_eeprom_transceiver.codes", "codes", base.DEC, nil)
+fields['of14.port_desc_prop_compliance.cmplnce_type'] = ProtoField.uint32("of14.port_desc_prop_compliance.cmplnce_type", "cmplnce_type", base.HEX, enum_v5_ofp_bsn_module_eeprom_cmplnce_type)
+fields['of14.port_desc_prop_compliance.cu_cmplnce'] = ProtoField.uint32("of14.port_desc_prop_compliance.cu_cmplnce", "cu_cmplnce", base.HEX, enum_v5_ofp_bsn_module_eeprom_cu_cmplnce)
+fields['of14.port_desc_prop_compliance.wavelength'] = ProtoField.bytes("of14.port_desc_prop_compliance.wavelength", "wavelength")
 fields['of14.port_desc_prop_bsn_ethtool.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_ethtool.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_ethtool.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_ethtool.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_ethtool.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_ethtool.experimenter", "experimenter", base.DEC, nil)
@@ -13504,12 +13520,11 @@ fields['of14.port_desc_prop_bsn_ethtool.length_50_um'] = ProtoField.bytes("of14.
 fields['of14.port_desc_prop_bsn_ethtool.length_625_um'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.length_625_um", "length_625_um")
 fields['of14.port_desc_prop_bsn_ethtool.length_copper'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.length_copper", "length_copper")
 fields['of14.port_desc_prop_bsn_ethtool.length_OM3'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.length_OM3", "length_OM3")
-fields['of14.port_desc_prop_bsn_ethtool.vendor_name_lo'] = ProtoField.uint64("of14.port_desc_prop_bsn_ethtool.vendor_name_lo", "vendor_name_lo", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_ethtool.vendor_name_hi'] = ProtoField.uint64("of14.port_desc_prop_bsn_ethtool.vendor_name_hi", "vendor_name_hi", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_ethtool.vendor_oui'] = ProtoField.uint32("of14.port_desc_prop_bsn_ethtool.vendor_oui", "vendor_oui", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_ethtool.vendor_pn_lo'] = ProtoField.uint64("of14.port_desc_prop_bsn_ethtool.vendor_pn_lo", "vendor_pn_lo", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_ethtool.vendor_pn_hi'] = ProtoField.uint64("of14.port_desc_prop_bsn_ethtool.vendor_pn_hi", "vendor_pn_hi", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_ethtool.vendor_rev'] = ProtoField.uint32("of14.port_desc_prop_bsn_ethtool.vendor_rev", "vendor_rev", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_ethtool.vendor_name'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.vendor_name", "vendor_name")
+fields['of14.port_desc_prop_bsn_ethtool.vendor_oui'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.vendor_oui", "vendor_oui")
+fields['of14.port_desc_prop_bsn_ethtool.vendor_pn'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.vendor_pn", "vendor_pn")
+fields['of14.port_desc_prop_bsn_ethtool.vendor_rev'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.vendor_rev", "vendor_rev")
+fields['of14.port_desc_prop_bsn_ethtool.cmplnce'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.cmplnce", "cmplnce")
 fields['of14.port_desc_prop_bsn_ethtool.more_properties'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.more_properties", "more_properties")
 fields['of14.port_desc_prop_bsn_forward_error_correction.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_forward_error_correction.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_forward_error_correction.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_forward_error_correction.length", "length", base.DEC, nil)
@@ -16989,7 +17004,9 @@ fields['of15.port_desc_prop_bsn_diag.laser_receiver_power_type'] = ProtoField.ui
 fields['of15.port_desc_prop_bsn_diag.laser_receiver_power'] = ProtoField.bytes("of15.port_desc_prop_bsn_diag.laser_receiver_power", "laser_receiver_power")
 fields['of15.port_desc_prop_bsn_diag.module_temp'] = ProtoField.bytes("of15.port_desc_prop_bsn_diag.module_temp", "module_temp")
 fields['of15.port_desc_prop_bsn_diag.module_voltage'] = ProtoField.bytes("of15.port_desc_prop_bsn_diag.module_voltage", "module_voltage")
-fields['of15._bsn_module_eeprom_transceiver.codes'] = ProtoField.uint64("of15._bsn_module_eeprom_transceiver.codes", "codes", base.DEC, nil)
+fields['of15.port_desc_prop_compliance.cmplnce_type'] = ProtoField.uint32("of15.port_desc_prop_compliance.cmplnce_type", "cmplnce_type", base.HEX, enum_v6_ofp_bsn_module_eeprom_cmplnce_type)
+fields['of15.port_desc_prop_compliance.cu_cmplnce'] = ProtoField.uint32("of15.port_desc_prop_compliance.cu_cmplnce", "cu_cmplnce", base.HEX, enum_v6_ofp_bsn_module_eeprom_cu_cmplnce)
+fields['of15.port_desc_prop_compliance.wavelength'] = ProtoField.bytes("of15.port_desc_prop_compliance.wavelength", "wavelength")
 fields['of15.port_desc_prop_bsn_ethtool.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_ethtool.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_ethtool.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_ethtool.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_ethtool.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_ethtool.experimenter", "experimenter", base.DEC, nil)
@@ -17007,12 +17024,11 @@ fields['of15.port_desc_prop_bsn_ethtool.length_50_um'] = ProtoField.bytes("of15.
 fields['of15.port_desc_prop_bsn_ethtool.length_625_um'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.length_625_um", "length_625_um")
 fields['of15.port_desc_prop_bsn_ethtool.length_copper'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.length_copper", "length_copper")
 fields['of15.port_desc_prop_bsn_ethtool.length_OM3'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.length_OM3", "length_OM3")
-fields['of15.port_desc_prop_bsn_ethtool.vendor_name_lo'] = ProtoField.uint64("of15.port_desc_prop_bsn_ethtool.vendor_name_lo", "vendor_name_lo", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_ethtool.vendor_name_hi'] = ProtoField.uint64("of15.port_desc_prop_bsn_ethtool.vendor_name_hi", "vendor_name_hi", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_ethtool.vendor_oui'] = ProtoField.uint32("of15.port_desc_prop_bsn_ethtool.vendor_oui", "vendor_oui", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_ethtool.vendor_pn_lo'] = ProtoField.uint64("of15.port_desc_prop_bsn_ethtool.vendor_pn_lo", "vendor_pn_lo", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_ethtool.vendor_pn_hi'] = ProtoField.uint64("of15.port_desc_prop_bsn_ethtool.vendor_pn_hi", "vendor_pn_hi", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_ethtool.vendor_rev'] = ProtoField.uint32("of15.port_desc_prop_bsn_ethtool.vendor_rev", "vendor_rev", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_ethtool.vendor_name'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.vendor_name", "vendor_name")
+fields['of15.port_desc_prop_bsn_ethtool.vendor_oui'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.vendor_oui", "vendor_oui")
+fields['of15.port_desc_prop_bsn_ethtool.vendor_pn'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.vendor_pn", "vendor_pn")
+fields['of15.port_desc_prop_bsn_ethtool.vendor_rev'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.vendor_rev", "vendor_rev")
+fields['of15.port_desc_prop_bsn_ethtool.cmplnce'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.cmplnce", "cmplnce")
 fields['of15.port_desc_prop_bsn_ethtool.more_properties'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.more_properties", "more_properties")
 fields['of15.port_desc_prop_bsn_forward_error_correction.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_forward_error_correction.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_forward_error_correction.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_forward_error_correction.length", "length", base.DEC, nil)
@@ -26408,7 +26424,9 @@ p_of.fields = {
     fields['of14.port_desc_prop_bsn_diag.laser_receiver_power'],
     fields['of14.port_desc_prop_bsn_diag.module_temp'],
     fields['of14.port_desc_prop_bsn_diag.module_voltage'],
-    fields['of14._bsn_module_eeprom_transceiver.codes'],
+    fields['of14.port_desc_prop_compliance.cmplnce_type'],
+    fields['of14.port_desc_prop_compliance.cu_cmplnce'],
+    fields['of14.port_desc_prop_compliance.wavelength'],
     fields['of14.port_desc_prop_bsn_ethtool.type'],
     fields['of14.port_desc_prop_bsn_ethtool.length'],
     fields['of14.port_desc_prop_bsn_ethtool.experimenter'],
@@ -26426,12 +26444,11 @@ p_of.fields = {
     fields['of14.port_desc_prop_bsn_ethtool.length_625_um'],
     fields['of14.port_desc_prop_bsn_ethtool.length_copper'],
     fields['of14.port_desc_prop_bsn_ethtool.length_OM3'],
-    fields['of14.port_desc_prop_bsn_ethtool.vendor_name_lo'],
-    fields['of14.port_desc_prop_bsn_ethtool.vendor_name_hi'],
+    fields['of14.port_desc_prop_bsn_ethtool.vendor_name'],
     fields['of14.port_desc_prop_bsn_ethtool.vendor_oui'],
-    fields['of14.port_desc_prop_bsn_ethtool.vendor_pn_lo'],
-    fields['of14.port_desc_prop_bsn_ethtool.vendor_pn_hi'],
+    fields['of14.port_desc_prop_bsn_ethtool.vendor_pn'],
     fields['of14.port_desc_prop_bsn_ethtool.vendor_rev'],
+    fields['of14.port_desc_prop_bsn_ethtool.cmplnce'],
     fields['of14.port_desc_prop_bsn_ethtool.more_properties'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.type'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.length'],
@@ -29911,7 +29928,9 @@ p_of.fields = {
     fields['of15.port_desc_prop_bsn_diag.laser_receiver_power'],
     fields['of15.port_desc_prop_bsn_diag.module_temp'],
     fields['of15.port_desc_prop_bsn_diag.module_voltage'],
-    fields['of15._bsn_module_eeprom_transceiver.codes'],
+    fields['of15.port_desc_prop_compliance.cmplnce_type'],
+    fields['of15.port_desc_prop_compliance.cu_cmplnce'],
+    fields['of15.port_desc_prop_compliance.wavelength'],
     fields['of15.port_desc_prop_bsn_ethtool.type'],
     fields['of15.port_desc_prop_bsn_ethtool.length'],
     fields['of15.port_desc_prop_bsn_ethtool.experimenter'],
@@ -29929,12 +29948,11 @@ p_of.fields = {
     fields['of15.port_desc_prop_bsn_ethtool.length_625_um'],
     fields['of15.port_desc_prop_bsn_ethtool.length_copper'],
     fields['of15.port_desc_prop_bsn_ethtool.length_OM3'],
-    fields['of15.port_desc_prop_bsn_ethtool.vendor_name_lo'],
-    fields['of15.port_desc_prop_bsn_ethtool.vendor_name_hi'],
+    fields['of15.port_desc_prop_bsn_ethtool.vendor_name'],
     fields['of15.port_desc_prop_bsn_ethtool.vendor_oui'],
-    fields['of15.port_desc_prop_bsn_ethtool.vendor_pn_lo'],
-    fields['of15.port_desc_prop_bsn_ethtool.vendor_pn_hi'],
+    fields['of15.port_desc_prop_bsn_ethtool.vendor_pn'],
     fields['of15.port_desc_prop_bsn_ethtool.vendor_rev'],
+    fields['of15.port_desc_prop_bsn_ethtool.cmplnce'],
     fields['of15.port_desc_prop_bsn_ethtool.more_properties'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.type'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.length'],
@@ -53342,10 +53360,12 @@ function dissect_of_port_desc_prop_bsn_diag_v5(reader, subtree)
 end
 of_port_desc_prop_bsn_v5_dissectors[7] = dissect_of_port_desc_prop_bsn_diag_v5
 
--- top-level class ofp_bsn_module_eeprom_transceiver
-function dissect_ofp_bsn_module_eeprom_transceiver_v5(reader, subtree)
-    read_uint64_t(reader, 5, subtree, 'of14._bsn_module_eeprom_transceiver.codes')
-    return 'ofp_bsn_module_eeprom_transceiver'
+-- top-level class of_port_desc_prop_compliance
+function dissect_of_port_desc_prop_compliance_v5(reader, subtree)
+    read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_compliance.cmplnce_type')
+    read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_compliance.cu_cmplnce')
+    read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_compliance.wavelength')
+    return 'of_port_desc_prop_compliance'
 end
 -- child class of_port_desc_prop_bsn_ethtool
 -- Child of of_port_desc_prop_bsn
@@ -53360,7 +53380,7 @@ function dissect_of_port_desc_prop_bsn_ethtool_v5(reader, subtree)
     read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.identifier')
     read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.extidentifier')
     read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.connector')
-    read_ofp_bsn_module_eeprom_transceiver_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.transdata')
+    read_of_str8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.transdata')
     read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.encoding')
     read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.br_nominal')
     read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.rateidentifier')
@@ -53370,12 +53390,11 @@ function dissect_of_port_desc_prop_bsn_ethtool_v5(reader, subtree)
     read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.length_625_um')
     read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.length_copper')
     read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.length_OM3')
-    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_name_lo')
-    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_name_hi')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_oui')
-    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_pn_lo')
-    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_pn_hi')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_rev')
+    read_of_str16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_name')
+    read_of_str4_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_oui')
+    read_of_str16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_pn')
+    read_of_str4_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_rev')
+    read_of_port_desc_prop_compliance_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.cmplnce')
     read_list(reader, dissect_of_port_desc_prop_v5, subtree, 'of_port_desc_prop')
     return 'of_port_desc_prop_bsn_ethtool'
 end
@@ -62669,10 +62688,12 @@ function dissect_of_port_desc_prop_bsn_diag_v6(reader, subtree)
 end
 of_port_desc_prop_bsn_v6_dissectors[7] = dissect_of_port_desc_prop_bsn_diag_v6
 
--- top-level class ofp_bsn_module_eeprom_transceiver
-function dissect_ofp_bsn_module_eeprom_transceiver_v6(reader, subtree)
-    read_uint64_t(reader, 6, subtree, 'of15._bsn_module_eeprom_transceiver.codes')
-    return 'ofp_bsn_module_eeprom_transceiver'
+-- top-level class of_port_desc_prop_compliance
+function dissect_of_port_desc_prop_compliance_v6(reader, subtree)
+    read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_compliance.cmplnce_type')
+    read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_compliance.cu_cmplnce')
+    read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_compliance.wavelength')
+    return 'of_port_desc_prop_compliance'
 end
 -- child class of_port_desc_prop_bsn_ethtool
 -- Child of of_port_desc_prop_bsn
@@ -62687,7 +62708,7 @@ function dissect_of_port_desc_prop_bsn_ethtool_v6(reader, subtree)
     read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.identifier')
     read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.extidentifier')
     read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.connector')
-    read_ofp_bsn_module_eeprom_transceiver_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.transdata')
+    read_of_str8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.transdata')
     read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.encoding')
     read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.br_nominal')
     read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.rateidentifier')
@@ -62697,12 +62718,11 @@ function dissect_of_port_desc_prop_bsn_ethtool_v6(reader, subtree)
     read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.length_625_um')
     read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.length_copper')
     read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.length_OM3')
-    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_name_lo')
-    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_name_hi')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_oui')
-    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_pn_lo')
-    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_pn_hi')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_rev')
+    read_of_str16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_name')
+    read_of_str4_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_oui')
+    read_of_str16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_pn')
+    read_of_str4_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_rev')
+    read_of_port_desc_prop_compliance_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.cmplnce')
     read_list(reader, dissect_of_port_desc_prop_v6, subtree, 'of_port_desc_prop')
     return 'of_port_desc_prop_bsn_ethtool'
 end

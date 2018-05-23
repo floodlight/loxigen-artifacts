@@ -459,7 +459,7 @@ class bsn_ethtool(bsn):
     experimenter = 6035143
     exp_type = 6
 
-    def __init__(self, identifier=None, extidentifier=None, connector=None, transdata=None, encoding=None, br_nominal=None, rateidentifier=None, length_SMF_KM=None, length_SMF=None, length_50_um=None, length_625_um=None, length_copper=None, length_OM3=None, vendor_name_lo=None, vendor_name_hi=None, vendor_oui=None, vendor_pn_lo=None, vendor_pn_hi=None, vendor_rev=None, more_properties=None):
+    def __init__(self, identifier=None, extidentifier=None, connector=None, transdata=None, encoding=None, br_nominal=None, rateidentifier=None, length_SMF_KM=None, length_SMF=None, length_50_um=None, length_625_um=None, length_copper=None, length_OM3=None, vendor_name=None, vendor_oui=None, vendor_pn=None, vendor_rev=None, cmplnce=None, more_properties=None):
         if identifier != None:
             self.identifier = identifier
         else:
@@ -475,7 +475,7 @@ class bsn_ethtool(bsn):
         if transdata != None:
             self.transdata = transdata
         else:
-            self.transdata = ofp.bsn_module_eeprom_transceiver()
+            self.transdata = ""
         if encoding != None:
             self.encoding = encoding
         else:
@@ -512,30 +512,26 @@ class bsn_ethtool(bsn):
             self.length_OM3 = length_OM3
         else:
             self.length_OM3 = ofp.bsn_unit()
-        if vendor_name_lo != None:
-            self.vendor_name_lo = vendor_name_lo
+        if vendor_name != None:
+            self.vendor_name = vendor_name
         else:
-            self.vendor_name_lo = 0
-        if vendor_name_hi != None:
-            self.vendor_name_hi = vendor_name_hi
-        else:
-            self.vendor_name_hi = 0
+            self.vendor_name = ""
         if vendor_oui != None:
             self.vendor_oui = vendor_oui
         else:
-            self.vendor_oui = 0
-        if vendor_pn_lo != None:
-            self.vendor_pn_lo = vendor_pn_lo
+            self.vendor_oui = ""
+        if vendor_pn != None:
+            self.vendor_pn = vendor_pn
         else:
-            self.vendor_pn_lo = 0
-        if vendor_pn_hi != None:
-            self.vendor_pn_hi = vendor_pn_hi
-        else:
-            self.vendor_pn_hi = 0
+            self.vendor_pn = ""
         if vendor_rev != None:
             self.vendor_rev = vendor_rev
         else:
-            self.vendor_rev = 0
+            self.vendor_rev = ""
+        if cmplnce != None:
+            self.cmplnce = cmplnce
+        else:
+            self.cmplnce = ofp.port_desc_prop_compliance()
         if more_properties != None:
             self.more_properties = more_properties
         else:
@@ -551,7 +547,7 @@ class bsn_ethtool(bsn):
         packed.append(struct.pack("!B", self.identifier))
         packed.append(struct.pack("!B", self.extidentifier))
         packed.append(struct.pack("!B", self.connector))
-        packed.append(self.transdata.pack())
+        packed.append(struct.pack("!8s", self.transdata))
         packed.append(struct.pack("!B", self.encoding))
         packed.append(self.br_nominal.pack())
         packed.append(struct.pack("!B", self.rateidentifier))
@@ -561,12 +557,11 @@ class bsn_ethtool(bsn):
         packed.append(self.length_625_um.pack())
         packed.append(self.length_copper.pack())
         packed.append(self.length_OM3.pack())
-        packed.append(struct.pack("!Q", self.vendor_name_lo))
-        packed.append(struct.pack("!Q", self.vendor_name_hi))
-        packed.append(struct.pack("!L", self.vendor_oui))
-        packed.append(struct.pack("!Q", self.vendor_pn_lo))
-        packed.append(struct.pack("!Q", self.vendor_pn_hi))
-        packed.append(struct.pack("!L", self.vendor_rev))
+        packed.append(struct.pack("!16s", self.vendor_name))
+        packed.append(struct.pack("!4s", self.vendor_oui))
+        packed.append(struct.pack("!16s", self.vendor_pn))
+        packed.append(struct.pack("!4s", self.vendor_rev))
+        packed.append(self.cmplnce.pack())
         packed.append(loxi.generic_util.pack_list(self.more_properties))
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
@@ -587,7 +582,7 @@ class bsn_ethtool(bsn):
         obj.identifier = reader.read("!B")[0]
         obj.extidentifier = reader.read("!B")[0]
         obj.connector = reader.read("!B")[0]
-        obj.transdata = ofp.bsn_module_eeprom_transceiver.unpack(reader)
+        obj.transdata = reader.read("!8s")[0].rstrip("\x00")
         obj.encoding = reader.read("!B")[0]
         obj.br_nominal = ofp.bsn_unit.unpack(reader)
         obj.rateidentifier = reader.read("!B")[0]
@@ -597,12 +592,11 @@ class bsn_ethtool(bsn):
         obj.length_625_um = ofp.bsn_unit.unpack(reader)
         obj.length_copper = ofp.bsn_unit.unpack(reader)
         obj.length_OM3 = ofp.bsn_unit.unpack(reader)
-        obj.vendor_name_lo = reader.read("!Q")[0]
-        obj.vendor_name_hi = reader.read("!Q")[0]
-        obj.vendor_oui = reader.read("!L")[0]
-        obj.vendor_pn_lo = reader.read("!Q")[0]
-        obj.vendor_pn_hi = reader.read("!Q")[0]
-        obj.vendor_rev = reader.read("!L")[0]
+        obj.vendor_name = reader.read("!16s")[0].rstrip("\x00")
+        obj.vendor_oui = reader.read("!4s")[0].rstrip("\x00")
+        obj.vendor_pn = reader.read("!16s")[0].rstrip("\x00")
+        obj.vendor_rev = reader.read("!4s")[0].rstrip("\x00")
+        obj.cmplnce = ofp.port_desc_prop_compliance.unpack(reader)
         obj.more_properties = loxi.generic_util.unpack_list(reader, ofp.port_desc_prop.port_desc_prop.unpack)
         return obj
 
@@ -621,12 +615,11 @@ class bsn_ethtool(bsn):
         if self.length_625_um != other.length_625_um: return False
         if self.length_copper != other.length_copper: return False
         if self.length_OM3 != other.length_OM3: return False
-        if self.vendor_name_lo != other.vendor_name_lo: return False
-        if self.vendor_name_hi != other.vendor_name_hi: return False
+        if self.vendor_name != other.vendor_name: return False
         if self.vendor_oui != other.vendor_oui: return False
-        if self.vendor_pn_lo != other.vendor_pn_lo: return False
-        if self.vendor_pn_hi != other.vendor_pn_hi: return False
+        if self.vendor_pn != other.vendor_pn: return False
         if self.vendor_rev != other.vendor_rev: return False
+        if self.cmplnce != other.cmplnce: return False
         if self.more_properties != other.more_properties: return False
         return True
 
@@ -674,23 +667,20 @@ class bsn_ethtool(bsn):
                 q.text("length_OM3 = ");
                 q.pp(self.length_OM3)
                 q.text(","); q.breakable()
-                q.text("vendor_name_lo = ");
-                q.text("%#x" % self.vendor_name_lo)
-                q.text(","); q.breakable()
-                q.text("vendor_name_hi = ");
-                q.text("%#x" % self.vendor_name_hi)
+                q.text("vendor_name = ");
+                q.pp(self.vendor_name)
                 q.text(","); q.breakable()
                 q.text("vendor_oui = ");
-                q.text("%#x" % self.vendor_oui)
+                q.pp(self.vendor_oui)
                 q.text(","); q.breakable()
-                q.text("vendor_pn_lo = ");
-                q.text("%#x" % self.vendor_pn_lo)
-                q.text(","); q.breakable()
-                q.text("vendor_pn_hi = ");
-                q.text("%#x" % self.vendor_pn_hi)
+                q.text("vendor_pn = ");
+                q.pp(self.vendor_pn)
                 q.text(","); q.breakable()
                 q.text("vendor_rev = ");
-                q.text("%#x" % self.vendor_rev)
+                q.pp(self.vendor_rev)
+                q.text(","); q.breakable()
+                q.text("cmplnce = ");
+                q.pp(self.cmplnce)
                 q.text(","); q.breakable()
                 q.text("more_properties = ");
                 q.pp(self.more_properties)

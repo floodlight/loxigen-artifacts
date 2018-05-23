@@ -3624,38 +3624,58 @@ class port_desc(loxi.OFObject):
         q.text('}')
 
 
-class _bsn_module_eeprom_transceiver(loxi.OFObject):
+class port_desc_prop_compliance(loxi.OFObject):
 
-    def __init__(self, codes=None):
-        if codes != None:
-            self.codes = codes
+    def __init__(self, cmplnce_type=None, cu_cmplnce=None, wavelength=None):
+        if cmplnce_type != None:
+            self.cmplnce_type = cmplnce_type
         else:
-            self.codes = 0
+            self.cmplnce_type = 0
+        if cu_cmplnce != None:
+            self.cu_cmplnce = cu_cmplnce
+        else:
+            self.cu_cmplnce = 0
+        if wavelength != None:
+            self.wavelength = wavelength
+        else:
+            self.wavelength = ofp.bsn_unit()
         return
 
     def pack(self):
         packed = []
-        packed.append(struct.pack("!Q", self.codes))
+        packed.append(struct.pack("!B", self.cmplnce_type))
+        packed.append(struct.pack("!B", self.cu_cmplnce))
+        packed.append(self.wavelength.pack())
         return ''.join(packed)
 
     @staticmethod
     def unpack(reader):
-        obj = _bsn_module_eeprom_transceiver()
-        obj.codes = reader.read("!Q")[0]
+        obj = port_desc_prop_compliance()
+        obj.cmplnce_type = reader.read("!B")[0]
+        obj.cu_cmplnce = reader.read("!B")[0]
+        obj.wavelength = ofp.bsn_unit.unpack(reader)
         return obj
 
     def __eq__(self, other):
         if type(self) != type(other): return False
-        if self.codes != other.codes: return False
+        if self.cmplnce_type != other.cmplnce_type: return False
+        if self.cu_cmplnce != other.cu_cmplnce: return False
+        if self.wavelength != other.wavelength: return False
         return True
 
     def pretty_print(self, q):
-        q.text("_bsn_module_eeprom_transceiver {")
+        q.text("port_desc_prop_compliance {")
         with q.group():
             with q.indent(2):
                 q.breakable()
-                q.text("codes = ");
-                q.text("%#x" % self.codes)
+                q.text("cmplnce_type = ");
+                q.text("%#x" % self.cmplnce_type)
+                q.text(","); q.breakable()
+                q.text("cu_cmplnce = ");
+                q.text("%#x" % self.cu_cmplnce)
+                q.text(","); q.breakable()
+                q.text("wavelength = ");
+                q.pp(self.wavelength)
             q.breakable()
         q.text('}')
 

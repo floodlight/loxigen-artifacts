@@ -1905,7 +1905,7 @@ static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_OF_VERSIO
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_alarm_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_breakout_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_diag_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
-static int __attribute__((unused)) loci_validate_ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_port_desc_prop_compliance_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -48205,13 +48205,13 @@ loci_validate_of_port_desc_prop_bsn_diag_OF_VERSION_1_4(uint8_t *data, int len, 
 }
 
 static int
-loci_validate_ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+loci_validate_of_port_desc_prop_compliance_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
-    if (len < 8) {
+    if (len < 7) {
         return -1;
     }
 
-    len = 8;
+    len = 7;
 
 
 
@@ -48223,14 +48223,14 @@ loci_validate_ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4(uint8_t *data, in
 static int
 loci_validate_of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
-    if (len < 100) {
+    if (len < 107) {
         return -1;
     }
 
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 100) {
+    if (wire_len > len || wire_len < 107) {
         return -1;
     }
 
@@ -48238,8 +48238,8 @@ loci_validate_of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4(uint8_t *data, int le
 
 
 
-    int wire_len_more_properties = len - 100;
-    if (loci_validate_of_list_port_desc_prop_OF_VERSION_1_4(data + 100, wire_len_more_properties, out_len) < 0) {
+    int wire_len_more_properties = len - 107;
+    if (loci_validate_of_list_port_desc_prop_OF_VERSION_1_4(data + 107, wire_len_more_properties, out_len) < 0) {
         return -1;
     }
 

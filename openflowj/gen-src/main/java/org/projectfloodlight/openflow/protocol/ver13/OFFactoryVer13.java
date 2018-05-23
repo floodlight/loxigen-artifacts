@@ -1538,11 +1538,8 @@ public class OFFactoryVer13 implements OFFactory {
         throw new UnsupportedOperationException("OFPortDescPropBsnDiag not supported in version 1.3");
     }
 
-    public OFBsnModuleEepromTransceiver.Builder buildBsnModuleEepromTransceiver() {
-        throw new UnsupportedOperationException("OFBsnModuleEepromTransceiver not supported in version 1.3");
-    }
-    public OFBsnModuleEepromTransceiver bsnModuleEepromTransceiver(U64 codes) {
-        throw new UnsupportedOperationException("OFBsnModuleEepromTransceiver not supported in version 1.3");
+    public OFPortDescPropCompliance.Builder buildPortDescPropCompliance() {
+        throw new UnsupportedOperationException("OFPortDescPropCompliance not supported in version 1.3");
     }
 
     public OFPortDescPropBsnEthtool.Builder buildPortDescPropBsnEthtool() {

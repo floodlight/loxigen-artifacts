@@ -35,9 +35,9 @@ import java.util.Collections;
 
 public class OFBsnModuleEepromCuCmplnceSerializerVer15 {
 
-    public final static byte BSN_MODULE_EEPROM_CU_CMPLLNCE_UNSPECIFIED_VAL = (byte) 0x0;
-    public final static byte BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_APP_E_VAL = (byte) 0x1;
-    public final static byte BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_LIMITING_VAL = (byte) 0x4;
+    public final static byte BSN_MODULE_EEPROM_CU_COMPLIANCE_UNSPECIFIED_VAL = (byte) 0x0;
+    public final static byte BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_APP_E_VAL = (byte) 0x1;
+    public final static byte BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_LIMITING_VAL = (byte) 0x4;
 
     public static Set<OFBsnModuleEepromCuCmplnce> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -59,12 +59,12 @@ public class OFBsnModuleEepromCuCmplnceSerializerVer15 {
     public static Set<OFBsnModuleEepromCuCmplnce> ofWireValue(byte val) {
         EnumSet<OFBsnModuleEepromCuCmplnce> set = EnumSet.noneOf(OFBsnModuleEepromCuCmplnce.class);
 
-        if((val & BSN_MODULE_EEPROM_CU_CMPLLNCE_UNSPECIFIED_VAL) != 0)
-            set.add(OFBsnModuleEepromCuCmplnce.BSN_MODULE_EEPROM_CU_CMPLLNCE_UNSPECIFIED);
-        if((val & BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_APP_E_VAL) != 0)
-            set.add(OFBsnModuleEepromCuCmplnce.BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_APP_E);
-        if((val & BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_LIMITING_VAL) != 0)
-            set.add(OFBsnModuleEepromCuCmplnce.BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_LIMITING);
+        if((val & BSN_MODULE_EEPROM_CU_COMPLIANCE_UNSPECIFIED_VAL) != 0)
+            set.add(OFBsnModuleEepromCuCmplnce.BSN_MODULE_EEPROM_CU_COMPLIANCE_UNSPECIFIED);
+        if((val & BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_APP_E_VAL) != 0)
+            set.add(OFBsnModuleEepromCuCmplnce.BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_APP_E);
+        if((val & BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_LIMITING_VAL) != 0)
+            set.add(OFBsnModuleEepromCuCmplnce.BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_LIMITING);
         return Collections.unmodifiableSet(set);
     }
 
@@ -73,14 +73,14 @@ public class OFBsnModuleEepromCuCmplnceSerializerVer15 {
 
         for(OFBsnModuleEepromCuCmplnce e: set) {
             switch(e) {
-                case BSN_MODULE_EEPROM_CU_CMPLLNCE_UNSPECIFIED:
-                    wireValue |= BSN_MODULE_EEPROM_CU_CMPLLNCE_UNSPECIFIED_VAL;
+                case BSN_MODULE_EEPROM_CU_COMPLIANCE_UNSPECIFIED:
+                    wireValue |= BSN_MODULE_EEPROM_CU_COMPLIANCE_UNSPECIFIED_VAL;
                     break;
-                case BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_APP_E:
-                    wireValue |= BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_APP_E_VAL;
+                case BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_APP_E:
+                    wireValue |= BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_APP_E_VAL;
                     break;
-                case BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_LIMITING:
-                    wireValue |= BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_LIMITING_VAL;
+                case BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_LIMITING:
+                    wireValue |= BSN_MODULE_EEPROM_CU_COMPLIANCE_SFF_8431_LIMITING_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnModuleEepromCuCmplnce in version 1.5: " + e);

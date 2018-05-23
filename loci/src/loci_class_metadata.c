@@ -4479,7 +4479,7 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_port_desc_prop_wire_object_id_get,
         .wire_type_set=of_port_desc_prop_bsn_diag_push_wire_types,
     },
-    [OFP_BSN_MODULE_EEPROM_TRANSCEIVER] = {
+    [OF_PORT_DESC_PROP_COMPLIANCE] = {
         .wire_length_get=NULL,
         .wire_length_set=NULL,
         .wire_type_get=NULL,

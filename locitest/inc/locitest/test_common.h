@@ -16826,6 +16826,15 @@ extern int of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_populate_scalars(
 extern int of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_check_scalars(
     of_port_desc_prop_bsn_uplink_t *obj, int value);
 
+extern int of_port_desc_prop_compliance_OF_VERSION_1_4_populate(
+    of_port_desc_prop_compliance_t *obj, int value);
+extern int of_port_desc_prop_compliance_OF_VERSION_1_4_check(
+    of_port_desc_prop_compliance_t *obj, int value);
+extern int of_port_desc_prop_compliance_OF_VERSION_1_4_populate_scalars(
+    of_port_desc_prop_compliance_t *obj, int value);
+extern int of_port_desc_prop_compliance_OF_VERSION_1_4_check_scalars(
+    of_port_desc_prop_compliance_t *obj, int value);
+
 extern int of_port_desc_prop_ethernet_OF_VERSION_1_4_populate(
     of_port_desc_prop_ethernet_t *obj, int value);
 extern int of_port_desc_prop_ethernet_OF_VERSION_1_4_check(
@@ -17167,15 +17176,6 @@ extern int of_uint8_OF_VERSION_1_4_populate_scalars(
     of_uint8_t *obj, int value);
 extern int of_uint8_OF_VERSION_1_4_check_scalars(
     of_uint8_t *obj, int value);
-
-extern int ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_populate(
-    ofp_bsn_module_eeprom_transceiver_t *obj, int value);
-extern int ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_check(
-    ofp_bsn_module_eeprom_transceiver_t *obj, int value);
-extern int ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_populate_scalars(
-    ofp_bsn_module_eeprom_transceiver_t *obj, int value);
-extern int ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_check_scalars(
-    ofp_bsn_module_eeprom_transceiver_t *obj, int value);
 
 extern int of_list_action_OF_VERSION_1_4_populate(
     of_list_action_t *obj, int value);

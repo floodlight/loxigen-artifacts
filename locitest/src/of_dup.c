@@ -63879,13 +63879,15 @@ of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dup(
     of_port_desc_prop_bsn_ethtool_t *dst;
     uint32_t val32;
     uint8_t val8;
-
-    ofp_bsn_module_eeprom_transceiver_t src_bsn_module_eeprom_transceiver;
-    ofp_bsn_module_eeprom_transceiver_t *dst_bsn_module_eeprom_transceiver;
+    of_str8_t str8;
 
     of_bsn_unit_t src_bsn_unit;
     of_bsn_unit_t *dst_bsn_unit;
-    uint64_t val64;
+    of_str16_t str16;
+    of_str4_t str4;
+
+    of_port_desc_prop_compliance_t src_port_desc_prop_compliance;
+    of_port_desc_prop_compliance_t *dst_port_desc_prop_compliance;
 
     of_list_port_desc_prop_t src_list;
     of_list_port_desc_prop_t *dst_list;
@@ -63909,15 +63911,8 @@ of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dup(
     of_port_desc_prop_bsn_ethtool_connector_get(src, &val8);
     of_port_desc_prop_bsn_ethtool_connector_set(dst, val8);
 
-    of_port_desc_prop_bsn_ethtool_transdata_bind(
-        src, &src_bsn_module_eeprom_transceiver);
-    dst_bsn_module_eeprom_transceiver = ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_dup(&src_bsn_module_eeprom_transceiver);
-    if (dst_bsn_module_eeprom_transceiver == NULL) {
-        of_port_desc_prop_bsn_ethtool_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_ethtool_transdata_set(dst, dst_bsn_module_eeprom_transceiver);
-    ofp_bsn_module_eeprom_transceiver_delete(dst_bsn_module_eeprom_transceiver);
+    of_port_desc_prop_bsn_ethtool_transdata_get(src, &str8);
+    of_port_desc_prop_bsn_ethtool_transdata_set(dst, str8);
 
     of_port_desc_prop_bsn_ethtool_encoding_get(src, &val8);
     of_port_desc_prop_bsn_ethtool_encoding_set(dst, val8);
@@ -63995,23 +63990,27 @@ of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dup(
     of_port_desc_prop_bsn_ethtool_length_OM3_set(dst, dst_bsn_unit);
     of_bsn_unit_delete(dst_bsn_unit);
 
-    of_port_desc_prop_bsn_ethtool_vendor_name_lo_get(src, &val64);
-    of_port_desc_prop_bsn_ethtool_vendor_name_lo_set(dst, val64);
+    of_port_desc_prop_bsn_ethtool_vendor_name_get(src, &str16);
+    of_port_desc_prop_bsn_ethtool_vendor_name_set(dst, str16);
 
-    of_port_desc_prop_bsn_ethtool_vendor_name_hi_get(src, &val64);
-    of_port_desc_prop_bsn_ethtool_vendor_name_hi_set(dst, val64);
+    of_port_desc_prop_bsn_ethtool_vendor_oui_get(src, &str4);
+    of_port_desc_prop_bsn_ethtool_vendor_oui_set(dst, str4);
 
-    of_port_desc_prop_bsn_ethtool_vendor_oui_get(src, &val32);
-    of_port_desc_prop_bsn_ethtool_vendor_oui_set(dst, val32);
+    of_port_desc_prop_bsn_ethtool_vendor_pn_get(src, &str16);
+    of_port_desc_prop_bsn_ethtool_vendor_pn_set(dst, str16);
 
-    of_port_desc_prop_bsn_ethtool_vendor_pn_lo_get(src, &val64);
-    of_port_desc_prop_bsn_ethtool_vendor_pn_lo_set(dst, val64);
+    of_port_desc_prop_bsn_ethtool_vendor_rev_get(src, &str4);
+    of_port_desc_prop_bsn_ethtool_vendor_rev_set(dst, str4);
 
-    of_port_desc_prop_bsn_ethtool_vendor_pn_hi_get(src, &val64);
-    of_port_desc_prop_bsn_ethtool_vendor_pn_hi_set(dst, val64);
-
-    of_port_desc_prop_bsn_ethtool_vendor_rev_get(src, &val32);
-    of_port_desc_prop_bsn_ethtool_vendor_rev_set(dst, val32);
+    of_port_desc_prop_bsn_ethtool_cmplnce_bind(
+        src, &src_port_desc_prop_compliance);
+    dst_port_desc_prop_compliance = of_port_desc_prop_compliance_OF_VERSION_1_4_dup(&src_port_desc_prop_compliance);
+    if (dst_port_desc_prop_compliance == NULL) {
+        of_port_desc_prop_bsn_ethtool_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_bsn_ethtool_cmplnce_set(dst, dst_port_desc_prop_compliance);
+    of_port_desc_prop_compliance_delete(dst_port_desc_prop_compliance);
 
     of_port_desc_prop_bsn_ethtool_more_properties_bind(
         src, &src_list);
@@ -64192,6 +64191,47 @@ of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_dup(
 
     of_port_desc_prop_bsn_uplink_exp_type_get(src, &val32);
     of_port_desc_prop_bsn_uplink_exp_type_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_port_desc_prop_compliance
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_port_desc_prop_compliance.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_port_desc_prop_compliance_t *
+of_port_desc_prop_compliance_OF_VERSION_1_4_dup(
+    of_port_desc_prop_compliance_t *src)
+{
+    of_port_desc_prop_compliance_t *dst;
+    uint8_t val8;
+
+    of_bsn_unit_t src_bsn_unit;
+    of_bsn_unit_t *dst_bsn_unit;
+
+    if ((dst = of_port_desc_prop_compliance_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_port_desc_prop_compliance_cmplnce_type_get(src, &val8);
+    of_port_desc_prop_compliance_cmplnce_type_set(dst, val8);
+
+    of_port_desc_prop_compliance_cu_cmplnce_get(src, &val8);
+    of_port_desc_prop_compliance_cu_cmplnce_set(dst, val8);
+
+    of_port_desc_prop_compliance_wavelength_bind(
+        src, &src_bsn_unit);
+    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
+    if (dst_bsn_unit == NULL) {
+        of_port_desc_prop_compliance_delete(dst);
+        return NULL;
+    }
+    of_port_desc_prop_compliance_wavelength_set(dst, dst_bsn_unit);
+    of_bsn_unit_delete(dst_bsn_unit);
 
     return dst;
 }
@@ -65823,31 +65863,6 @@ of_uint8_OF_VERSION_1_4_dup(
 
     of_uint8_value_get(src, &val8);
     of_uint8_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type ofp_bsn_module_eeprom_transceiver
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type ofp_bsn_module_eeprom_transceiver.
- *
- * The caller is responsible for deleting the returned value
- */
-ofp_bsn_module_eeprom_transceiver_t *
-ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_dup(
-    ofp_bsn_module_eeprom_transceiver_t *src)
-{
-    ofp_bsn_module_eeprom_transceiver_t *dst;
-    uint64_t val64;
-
-    if ((dst = ofp_bsn_module_eeprom_transceiver_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    ofp_bsn_module_eeprom_transceiver_codes_get(src, &val64);
-    ofp_bsn_module_eeprom_transceiver_codes_set(dst, val64);
 
     return dst;
 }
@@ -81387,6 +81402,19 @@ of_port_desc_prop_bsn_uplink_dup(
 }
 
 of_object_t *
+of_port_desc_prop_compliance_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_port_desc_prop_compliance_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_port_desc_prop_ethernet_dup(
     of_object_t *src)
 {
@@ -82245,19 +82273,6 @@ of_uint8_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_uint8_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-ofp_bsn_module_eeprom_transceiver_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

@@ -11941,8 +11941,8 @@ typedef struct of_port_desc_prop_bsn_diag_s of_port_desc_prop_bsn_diag_t;
  *   are of type of_port_desc_prop_bsn_ethtool_uint8_get_f and _set_f.
  *
  * @param transdata_get/set ( OF_1_4).
- *   Accessors for transdata, a variable of type ofp_bsn_module_eeprom_transceiver.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_ofp_bsn_module_eeprom_transceiver_get_f and _set_f.
+ *   Accessors for transdata, a variable of type of_str8.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_str8_get_f and _set_f.
  *
  * @param encoding_get/set ( OF_1_4).
  *   Accessors for encoding, a variable of type uint8.  Functions
@@ -11980,29 +11980,25 @@ typedef struct of_port_desc_prop_bsn_diag_s of_port_desc_prop_bsn_diag_t;
  *   Accessors for length_OM3, a variable of type of_bsn_unit.  Functions
  *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
  *
- * @param vendor_name_lo_get/set ( OF_1_4).
- *   Accessors for vendor_name_lo, a variable of type uint64.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint64_get_f and _set_f.
- *
- * @param vendor_name_hi_get/set ( OF_1_4).
- *   Accessors for vendor_name_hi, a variable of type uint64.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint64_get_f and _set_f.
+ * @param vendor_name_get/set ( OF_1_4).
+ *   Accessors for vendor_name, a variable of type of_str16.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_str16_get_f and _set_f.
  *
  * @param vendor_oui_get/set ( OF_1_4).
- *   Accessors for vendor_oui, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint32_get_f and _set_f.
+ *   Accessors for vendor_oui, a variable of type of_str4.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_str4_get_f and _set_f.
  *
- * @param vendor_pn_lo_get/set ( OF_1_4).
- *   Accessors for vendor_pn_lo, a variable of type uint64.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint64_get_f and _set_f.
- *
- * @param vendor_pn_hi_get/set ( OF_1_4).
- *   Accessors for vendor_pn_hi, a variable of type uint64.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint64_get_f and _set_f.
+ * @param vendor_pn_get/set ( OF_1_4).
+ *   Accessors for vendor_pn, a variable of type of_str16.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_str16_get_f and _set_f.
  *
  * @param vendor_rev_get/set ( OF_1_4).
- *   Accessors for vendor_rev, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint32_get_f and _set_f.
+ *   Accessors for vendor_rev, a variable of type of_str4.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_str4_get_f and _set_f.
+ *
+ * @param cmplnce_get/set ( OF_1_4).
+ *   Accessors for cmplnce, a variable of type of_port_desc_prop_compliance.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_port_desc_prop_compliance_get_f and _set_f.
  *
  * @param more_properties_get/set ( OF_1_4).
  *   Accessors for more_properties, a variable of type of_list_port_desc_prop.  Functions
@@ -12121,6 +12117,25 @@ typedef struct of_port_desc_prop_bsn_speed_capabilities_s of_port_desc_prop_bsn_
  *
  */
 typedef struct of_port_desc_prop_bsn_uplink_s of_port_desc_prop_bsn_uplink_t;
+
+/**
+ * Structure for of_port_desc_prop_compliance object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param cmplnce_type_get/set ( OF_1_4).
+ *   Accessors for cmplnce_type, a variable of type uint8.  Functions
+ *   are of type of_port_desc_prop_compliance_uint8_get_f and _set_f.
+ *
+ * @param cu_cmplnce_get/set ( OF_1_4).
+ *   Accessors for cu_cmplnce, a variable of type uint8.  Functions
+ *   are of type of_port_desc_prop_compliance_uint8_get_f and _set_f.
+ *
+ * @param wavelength_get/set ( OF_1_4).
+ *   Accessors for wavelength, a variable of type of_bsn_unit.  Functions
+ *   are of type of_port_desc_prop_compliance_of_bsn_unit_get_f and _set_f.
+ *
+ */
+typedef struct of_port_desc_prop_compliance_s of_port_desc_prop_compliance_t;
 
 /**
  * Structure for of_port_desc_prop_ethernet object.  Get/set
@@ -13172,17 +13187,6 @@ typedef struct of_uint64_s of_uint64_t;
  *
  */
 typedef struct of_uint8_s of_uint8_t;
-
-/**
- * Structure for ofp_bsn_module_eeprom_transceiver object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- * @param codes_get/set ( OF_1_4).
- *   Accessors for codes, a variable of type uint64.  Functions
- *   are of type ofp_bsn_module_eeprom_transceiver_uint64_get_f and _set_f.
- *
- */
-typedef struct ofp_bsn_module_eeprom_transceiver_s ofp_bsn_module_eeprom_transceiver_t;
 
 /**
  * Structure for of_list_action object.  Get/set

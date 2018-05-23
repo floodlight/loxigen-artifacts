@@ -65041,7 +65041,7 @@ test_of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_scalar(void)
     obj = of_port_desc_prop_bsn_ethtool_new(OF_VERSION_1_4);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 100);
+    TEST_ASSERT(obj->length == 107);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_DESC_PROP_BSN_ETHTOOL);
 
@@ -65055,7 +65055,7 @@ test_of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_scalar(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 100);
+        TEST_ASSERT(length == 107);
     }
 
     /* Set up incrementing values for scalar members */
@@ -65250,6 +65250,37 @@ test_of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_scalar(void)
     TEST_ASSERT(of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
 
     of_port_desc_prop_bsn_uplink_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_port_desc_prop_compliance_OF_VERSION_1_4_scalar(void)
+{
+    of_port_desc_prop_compliance_t *obj;
+
+    obj = of_port_desc_prop_compliance_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 7);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_PORT_DESC_PROP_COMPLIANCE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 7);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_port_desc_prop_compliance_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_port_desc_prop_compliance_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_port_desc_prop_compliance_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -66590,37 +66621,6 @@ test_of_uint8_OF_VERSION_1_4_scalar(void)
     TEST_ASSERT(of_uint8_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
 
     of_uint8_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
-test_ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_scalar(void)
-{
-    ofp_bsn_module_eeprom_transceiver_t *obj;
-
-    obj = ofp_bsn_module_eeprom_transceiver_new(OF_VERSION_1_4);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 8);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OFP_BSN_MODULE_EEPROM_TRANSCEIVER);
-
-    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
-        int length;
-
-        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
-    }
-
-    /* Set up incrementing values for scalar members */
-    ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
-
-    ofp_bsn_module_eeprom_transceiver_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -68408,6 +68408,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_scalar);
     RUN_TEST(of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_scalar);
     RUN_TEST(of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_port_desc_prop_compliance_OF_VERSION_1_4_scalar);
     RUN_TEST(of_port_desc_prop_ethernet_OF_VERSION_1_4_scalar);
     RUN_TEST(of_port_desc_prop_optical_OF_VERSION_1_4_scalar);
     RUN_TEST(of_port_mod_prop_ethernet_OF_VERSION_1_4_scalar);
@@ -68446,6 +68447,5 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_uint32_OF_VERSION_1_4_scalar);
     RUN_TEST(of_uint64_OF_VERSION_1_4_scalar);
     RUN_TEST(of_uint8_OF_VERSION_1_4_scalar);
-    RUN_TEST(ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_scalar);
     return TEST_PASS;
 }

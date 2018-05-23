@@ -2927,6 +2927,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_port_desc_prop_compliance_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_port_desc_prop_ethernet_dup(
         of_object_t *src);
 
@@ -3152,10 +3156,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_uint8_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    ofp_bsn_module_eeprom_transceiver_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10991,6 +10991,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_port_desc_prop_compliance_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_port_desc_prop_ethernet_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -11176,10 +11180,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_uint8_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

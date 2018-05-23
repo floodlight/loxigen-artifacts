@@ -49,6 +49,7 @@ public class OFBsnUnitTypeSerializerVer15 {
     public final static byte BSN_UNIT_UW_VAL = (byte) 0xc;
     public final static byte BSN_UNIT_MC_VAL = (byte) 0xd;
     public final static byte BSN_UNIT_MV_VAL = (byte) 0xe;
+    public final static byte BSN_UNIT_NM_VAL = (byte) 0xf;
 
     public static Set<OFBsnUnitType> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -98,6 +99,8 @@ public class OFBsnUnitTypeSerializerVer15 {
             set.add(OFBsnUnitType.BSN_UNIT_MC);
         if((val & BSN_UNIT_MV_VAL) != 0)
             set.add(OFBsnUnitType.BSN_UNIT_MV);
+        if((val & BSN_UNIT_NM_VAL) != 0)
+            set.add(OFBsnUnitType.BSN_UNIT_NM);
         return Collections.unmodifiableSet(set);
     }
 
@@ -147,6 +150,9 @@ public class OFBsnUnitTypeSerializerVer15 {
                     break;
                 case BSN_UNIT_MV:
                     wireValue |= BSN_UNIT_MV_VAL;
+                    break;
+                case BSN_UNIT_NM:
+                    wireValue |= BSN_UNIT_NM_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnUnitType in version 1.5: " + e);

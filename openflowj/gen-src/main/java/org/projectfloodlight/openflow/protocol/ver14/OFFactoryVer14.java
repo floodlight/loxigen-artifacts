@@ -1567,13 +1567,8 @@ public class OFFactoryVer14 implements OFFactory {
         return new OFPortDescPropBsnDiagVer14.Builder();
     }
 
-    public OFBsnModuleEepromTransceiver.Builder buildBsnModuleEepromTransceiver() {
-        return new OFBsnModuleEepromTransceiverVer14.Builder();
-    }
-    public OFBsnModuleEepromTransceiver bsnModuleEepromTransceiver(U64 codes) {
-        return new OFBsnModuleEepromTransceiverVer14(
-                codes
-                    );
+    public OFPortDescPropCompliance.Builder buildPortDescPropCompliance() {
+        return new OFPortDescPropComplianceVer14.Builder();
     }
 
     public OFPortDescPropBsnEthtool.Builder buildPortDescPropBsnEthtool() {
