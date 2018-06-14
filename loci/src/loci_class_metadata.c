@@ -3201,11 +3201,29 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_partner_system_priority_push_wire_types,
     },
+    [OF_BSN_TLV_PASSIVE] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_passive_push_wire_types,
+    },
     [OF_BSN_TLV_PDUA_RX_INSTANCE] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_pdua_rx_instance_push_wire_types,
+    },
+    [OF_BSN_TLV_PIM_DR] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_pim_dr_push_wire_types,
+    },
+    [OF_BSN_TLV_PIM_PACKET_TYPE] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_pim_packet_type_push_wire_types,
     },
     [OF_BSN_TLV_PORT] = {
         .wire_length_get=of_tlv16_wire_length_get,

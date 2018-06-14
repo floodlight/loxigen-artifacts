@@ -224,8 +224,12 @@ public interface OFBsnTlvs {
     OFBsnTlvPartnerSystemMac partnerSystemMac(MacAddress value);
     OFBsnTlvPartnerSystemPriority.Builder buildPartnerSystemPriority() throws UnsupportedOperationException;
     OFBsnTlvPartnerSystemPriority partnerSystemPriority(int value);
+    OFBsnTlvPassive passive();
     OFBsnTlvPduaRxInstance.Builder buildPduaRxInstance() throws UnsupportedOperationException;
     OFBsnTlvPduaRxInstance pduaRxInstance(byte[] value);
+    OFBsnTlvPimDr pimDr();
+    OFBsnTlvPimPacketType.Builder buildPimPacketType() throws UnsupportedOperationException;
+    OFBsnTlvPimPacketType pimPacketType(OFBsnPimPacketType value);
     OFBsnTlvPort.Builder buildPort() throws UnsupportedOperationException;
     OFBsnTlvPort port(OFPort value);
     OFBsnTlvPortSpeedGbps.Builder buildPortSpeedGbps() throws UnsupportedOperationException;
