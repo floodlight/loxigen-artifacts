@@ -1029,6 +1029,8 @@ void of_bsn_tlv_mpls_sequenced_wire_object_id_get(of_object_t *obj, of_object_id
 void of_bsn_tlv_mpls_sequenced_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_multicast_interface_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_multicast_interface_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_multicast_packet_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_multicast_packet_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_name_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_name_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ndp_offload_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1073,8 +1075,6 @@ void of_bsn_tlv_pdua_rx_instance_wire_object_id_get(of_object_t *obj, of_object_
 void of_bsn_tlv_pdua_rx_instance_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_pim_dr_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_pim_dr_push_wire_types(of_object_t *obj);
-void of_bsn_tlv_pim_packet_type_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
-void of_bsn_tlv_pim_packet_type_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_port_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_port_speed_gbps_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1975,6 +1975,7 @@ typedef of_object_t of_bsn_tlv_mpls_control_word_t;
 typedef of_object_t of_bsn_tlv_mpls_label_t;
 typedef of_object_t of_bsn_tlv_mpls_sequenced_t;
 typedef of_object_t of_bsn_tlv_multicast_interface_id_t;
+typedef of_object_t of_bsn_tlv_multicast_packet_t;
 typedef of_object_t of_bsn_tlv_name_t;
 typedef of_object_t of_bsn_tlv_ndp_offload_t;
 typedef of_object_t of_bsn_tlv_ndp_static_t;
@@ -1997,7 +1998,6 @@ typedef of_object_t of_bsn_tlv_partner_system_priority_t;
 typedef of_object_t of_bsn_tlv_passive_t;
 typedef of_object_t of_bsn_tlv_pdua_rx_instance_t;
 typedef of_object_t of_bsn_tlv_pim_dr_t;
-typedef of_object_t of_bsn_tlv_pim_packet_type_t;
 typedef of_object_t of_bsn_tlv_port_t;
 typedef of_object_t of_bsn_tlv_port_speed_gbps_t;
 typedef of_object_t of_bsn_tlv_port_usage_t;
@@ -4401,6 +4401,11 @@ extern void of_bsn_tlv_multicast_interface_id_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_multicast_packet_new(of_version_t version);
+extern void of_bsn_tlv_multicast_packet_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_name_new(of_version_t version);
 extern void of_bsn_tlv_name_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4508,11 +4513,6 @@ extern void of_bsn_tlv_pdua_rx_instance_init(
 extern of_object_t *
     of_bsn_tlv_pim_dr_new(of_version_t version);
 extern void of_bsn_tlv_pim_dr_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
-    of_bsn_tlv_pim_packet_type_new(of_version_t version);
-extern void of_bsn_tlv_pim_packet_type_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10967,6 +10967,17 @@ of_bsn_tlv_multicast_interface_id_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_multicast_packet_t
+ * @param obj An instance of type of_bsn_tlv_multicast_packet_t
+ *
+ * \ingroup of_bsn_tlv_multicast_packet
+ */
+static inline void
+of_bsn_tlv_multicast_packet_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_name_t
  * @param obj An instance of type of_bsn_tlv_name_t
  *
@@ -11205,17 +11216,6 @@ of_bsn_tlv_pdua_rx_instance_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_pim_dr_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
- * Delete an object of type of_bsn_tlv_pim_packet_type_t
- * @param obj An instance of type of_bsn_tlv_pim_packet_type_t
- *
- * \ingroup of_bsn_tlv_pim_packet_type
- */
-static inline void
-of_bsn_tlv_pim_packet_type_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24465,6 +24465,15 @@ extern void of_bsn_tlv_multicast_interface_id_value_get(
     of_bsn_tlv_multicast_interface_id_t *obj,
     uint32_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_multicast_packet */
+
+extern void of_bsn_tlv_multicast_packet_value_set(
+    of_bsn_tlv_multicast_packet_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_multicast_packet_value_get(
+    of_bsn_tlv_multicast_packet_t *obj,
+    uint16_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_name */
 
 extern int WARN_UNUSED_RESULT of_bsn_tlv_name_value_set(
@@ -24599,15 +24608,6 @@ extern void of_bsn_tlv_pdua_rx_instance_value_get(
     of_octets_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_pim_dr */
-
-/* Unified accessor functions for of_bsn_tlv_pim_packet_type */
-
-extern void of_bsn_tlv_pim_packet_type_value_set(
-    of_bsn_tlv_pim_packet_type_t *obj,
-    uint16_t value);
-extern void of_bsn_tlv_pim_packet_type_value_get(
-    of_bsn_tlv_pim_packet_type_t *obj,
-    uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_port */
 

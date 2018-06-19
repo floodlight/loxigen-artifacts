@@ -25,17 +25,17 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.projectfloodlight.openflow.protocol.OFBsnPimPacketType;
+import org.projectfloodlight.openflow.protocol.OFBsnMulticastPacket;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
-public class OFBsnPimPacketTypeSerializerVer13 {
+public class OFBsnMulticastPacketSerializerVer13 {
 
-    public final static short BSN_PIM_PACKET_TYPE_NONE_VAL = (short) 0x0;
-    public final static short BSN_PIM_PACKET_TYPE_HELLO_VAL = (short) 0x1;
-    public final static short BSN_PIM_PACKET_TYPE_JOIN_PRUNE_VAL = (short) 0x2;
+    public final static short BSN_MULTICAST_PACKET_NONE_VAL = (short) 0x0;
+    public final static short BSN_MULTICAST_PACKET_PIM_HELLO_VAL = (short) 0x1;
+    public final static short BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE_VAL = (short) 0x2;
 
-    public static OFBsnPimPacketType readFrom(ByteBuf bb) throws OFParseError {
+    public static OFBsnMulticastPacket readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -43,38 +43,38 @@ public class OFBsnPimPacketTypeSerializerVer13 {
         }
     }
 
-    public static void writeTo(ByteBuf bb, OFBsnPimPacketType e) {
+    public static void writeTo(ByteBuf bb, OFBsnMulticastPacket e) {
         bb.writeShort(toWireValue(e));
     }
 
-    public static void putTo(OFBsnPimPacketType e, PrimitiveSink sink) {
+    public static void putTo(OFBsnMulticastPacket e, PrimitiveSink sink) {
         sink.putShort(toWireValue(e));
     }
 
-    public static OFBsnPimPacketType ofWireValue(short val) {
+    public static OFBsnMulticastPacket ofWireValue(short val) {
         switch(val) {
-            case BSN_PIM_PACKET_TYPE_NONE_VAL:
-                return OFBsnPimPacketType.BSN_PIM_PACKET_TYPE_NONE;
-            case BSN_PIM_PACKET_TYPE_HELLO_VAL:
-                return OFBsnPimPacketType.BSN_PIM_PACKET_TYPE_HELLO;
-            case BSN_PIM_PACKET_TYPE_JOIN_PRUNE_VAL:
-                return OFBsnPimPacketType.BSN_PIM_PACKET_TYPE_JOIN_PRUNE;
+            case BSN_MULTICAST_PACKET_NONE_VAL:
+                return OFBsnMulticastPacket.BSN_MULTICAST_PACKET_NONE;
+            case BSN_MULTICAST_PACKET_PIM_HELLO_VAL:
+                return OFBsnMulticastPacket.BSN_MULTICAST_PACKET_PIM_HELLO;
+            case BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE_VAL:
+                return OFBsnMulticastPacket.BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE;
             default:
-                throw new IllegalArgumentException("Illegal wire value for type OFBsnPimPacketType in version 1.3: " + val);
+                throw new IllegalArgumentException("Illegal wire value for type OFBsnMulticastPacket in version 1.3: " + val);
         }
     }
 
 
-    public static short toWireValue(OFBsnPimPacketType e) {
+    public static short toWireValue(OFBsnMulticastPacket e) {
         switch(e) {
-            case BSN_PIM_PACKET_TYPE_NONE:
-                return BSN_PIM_PACKET_TYPE_NONE_VAL;
-            case BSN_PIM_PACKET_TYPE_HELLO:
-                return BSN_PIM_PACKET_TYPE_HELLO_VAL;
-            case BSN_PIM_PACKET_TYPE_JOIN_PRUNE:
-                return BSN_PIM_PACKET_TYPE_JOIN_PRUNE_VAL;
+            case BSN_MULTICAST_PACKET_NONE:
+                return BSN_MULTICAST_PACKET_NONE_VAL;
+            case BSN_MULTICAST_PACKET_PIM_HELLO:
+                return BSN_MULTICAST_PACKET_PIM_HELLO_VAL;
+            case BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE:
+                return BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE_VAL;
             default:
-                throw new IllegalArgumentException("Illegal enum value for type OFBsnPimPacketType in version 1.3: " + e);
+                throw new IllegalArgumentException("Illegal enum value for type OFBsnMulticastPacket in version 1.3: " + e);
         }
     }
 

@@ -32,21 +32,21 @@ import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
-class OFBsnTlvPimPacketTypeVer14 implements OFBsnTlvPimPacketType {
-    private static final Logger logger = LoggerFactory.getLogger(OFBsnTlvPimPacketTypeVer14.class);
+class OFBsnTlvMulticastPacketVer14 implements OFBsnTlvMulticastPacket {
+    private static final Logger logger = LoggerFactory.getLogger(OFBsnTlvMulticastPacketVer14.class);
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int LENGTH = 6;
 
 
     // OF message fields
-    private final OFBsnPimPacketType value;
+    private final OFBsnMulticastPacket value;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnTlvPimPacketTypeVer14(OFBsnPimPacketType value) {
+    OFBsnTlvMulticastPacketVer14(OFBsnMulticastPacket value) {
         if(value == null) {
-            throw new NullPointerException("OFBsnTlvPimPacketTypeVer14: property value cannot be null");
+            throw new NullPointerException("OFBsnTlvMulticastPacketVer14: property value cannot be null");
         }
         this.value = value;
     }
@@ -58,7 +58,7 @@ class OFBsnTlvPimPacketTypeVer14 implements OFBsnTlvPimPacketType {
     }
 
     @Override
-    public OFBsnPimPacketType getValue() {
+    public OFBsnMulticastPacket getValue() {
         return value;
     }
 
@@ -69,18 +69,18 @@ class OFBsnTlvPimPacketTypeVer14 implements OFBsnTlvPimPacketType {
 
 
 
-    public OFBsnTlvPimPacketType.Builder createBuilder() {
+    public OFBsnTlvMulticastPacket.Builder createBuilder() {
         return new BuilderWithParent(this);
     }
 
-    static class BuilderWithParent implements OFBsnTlvPimPacketType.Builder {
-        final OFBsnTlvPimPacketTypeVer14 parentMessage;
+    static class BuilderWithParent implements OFBsnTlvMulticastPacket.Builder {
+        final OFBsnTlvMulticastPacketVer14 parentMessage;
 
         // OF message fields
         private boolean valueSet;
-        private OFBsnPimPacketType value;
+        private OFBsnMulticastPacket value;
 
-        BuilderWithParent(OFBsnTlvPimPacketTypeVer14 parentMessage) {
+        BuilderWithParent(OFBsnTlvMulticastPacketVer14 parentMessage) {
             this.parentMessage = parentMessage;
         }
 
@@ -90,12 +90,12 @@ class OFBsnTlvPimPacketTypeVer14 implements OFBsnTlvPimPacketType {
     }
 
     @Override
-    public OFBsnPimPacketType getValue() {
+    public OFBsnMulticastPacket getValue() {
         return value;
     }
 
     @Override
-    public OFBsnTlvPimPacketType.Builder setValue(OFBsnPimPacketType value) {
+    public OFBsnTlvMulticastPacket.Builder setValue(OFBsnMulticastPacket value) {
         this.value = value;
         this.valueSet = true;
         return this;
@@ -108,23 +108,23 @@ class OFBsnTlvPimPacketTypeVer14 implements OFBsnTlvPimPacketType {
 
 
         @Override
-        public OFBsnTlvPimPacketType build() {
-                OFBsnPimPacketType value = this.valueSet ? this.value : parentMessage.value;
+        public OFBsnTlvMulticastPacket build() {
+                OFBsnMulticastPacket value = this.valueSet ? this.value : parentMessage.value;
                 if(value == null)
                     throw new NullPointerException("Property value must not be null");
 
                 //
-                return new OFBsnTlvPimPacketTypeVer14(
+                return new OFBsnTlvMulticastPacketVer14(
                     value
                 );
         }
 
     }
 
-    static class Builder implements OFBsnTlvPimPacketType.Builder {
+    static class Builder implements OFBsnTlvMulticastPacket.Builder {
         // OF message fields
         private boolean valueSet;
-        private OFBsnPimPacketType value;
+        private OFBsnMulticastPacket value;
 
     @Override
     public int getType() {
@@ -132,12 +132,12 @@ class OFBsnTlvPimPacketTypeVer14 implements OFBsnTlvPimPacketType {
     }
 
     @Override
-    public OFBsnPimPacketType getValue() {
+    public OFBsnMulticastPacket getValue() {
         return value;
     }
 
     @Override
-    public OFBsnTlvPimPacketType.Builder setValue(OFBsnPimPacketType value) {
+    public OFBsnTlvMulticastPacket.Builder setValue(OFBsnMulticastPacket value) {
         this.value = value;
         this.valueSet = true;
         return this;
@@ -149,14 +149,14 @@ class OFBsnTlvPimPacketTypeVer14 implements OFBsnTlvPimPacketType {
 
 //
         @Override
-        public OFBsnTlvPimPacketType build() {
+        public OFBsnTlvMulticastPacket build() {
             if(!this.valueSet)
                 throw new IllegalStateException("Property value doesn't have default value -- must be set");
             if(value == null)
                 throw new NullPointerException("Property value must not be null");
 
 
-            return new OFBsnTlvPimPacketTypeVer14(
+            return new OFBsnTlvMulticastPacketVer14(
                     value
                 );
         }
@@ -165,9 +165,9 @@ class OFBsnTlvPimPacketTypeVer14 implements OFBsnTlvPimPacketType {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvPimPacketType> {
+    static class Reader implements OFMessageReader<OFBsnTlvMulticastPacket> {
         @Override
-        public OFBsnTlvPimPacketType readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvMulticastPacket readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0xaa
             short type = bb.readShort();
@@ -183,14 +183,14 @@ class OFBsnTlvPimPacketTypeVer14 implements OFBsnTlvPimPacketType {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            OFBsnPimPacketType value = OFBsnPimPacketTypeSerializerVer14.readFrom(bb);
+            OFBsnMulticastPacket value = OFBsnMulticastPacketSerializerVer14.readFrom(bb);
 
-            OFBsnTlvPimPacketTypeVer14 bsnTlvPimPacketTypeVer14 = new OFBsnTlvPimPacketTypeVer14(
+            OFBsnTlvMulticastPacketVer14 bsnTlvMulticastPacketVer14 = new OFBsnTlvMulticastPacketVer14(
                     value
                     );
             if(logger.isTraceEnabled())
-                logger.trace("readFrom - read={}", bsnTlvPimPacketTypeVer14);
-            return bsnTlvPimPacketTypeVer14;
+                logger.trace("readFrom - read={}", bsnTlvMulticastPacketVer14);
+            return bsnTlvMulticastPacketVer14;
         }
     }
 
@@ -198,16 +198,16 @@ class OFBsnTlvPimPacketTypeVer14 implements OFBsnTlvPimPacketType {
         FUNNEL.funnel(this, sink);
     }
 
-    final static OFBsnTlvPimPacketTypeVer14Funnel FUNNEL = new OFBsnTlvPimPacketTypeVer14Funnel();
-    static class OFBsnTlvPimPacketTypeVer14Funnel implements Funnel<OFBsnTlvPimPacketTypeVer14> {
+    final static OFBsnTlvMulticastPacketVer14Funnel FUNNEL = new OFBsnTlvMulticastPacketVer14Funnel();
+    static class OFBsnTlvMulticastPacketVer14Funnel implements Funnel<OFBsnTlvMulticastPacketVer14> {
         private static final long serialVersionUID = 1L;
         @Override
-        public void funnel(OFBsnTlvPimPacketTypeVer14 message, PrimitiveSink sink) {
+        public void funnel(OFBsnTlvMulticastPacketVer14 message, PrimitiveSink sink) {
             // fixed value property type = 0xaa
             sink.putShort((short) 0xaa);
             // fixed value property length = 6
             sink.putShort((short) 0x6);
-            OFBsnPimPacketTypeSerializerVer14.putTo(message.value, sink);
+            OFBsnMulticastPacketSerializerVer14.putTo(message.value, sink);
         }
     }
 
@@ -217,14 +217,14 @@ class OFBsnTlvPimPacketTypeVer14 implements OFBsnTlvPimPacketType {
     }
 
     final static Writer WRITER = new Writer();
-    static class Writer implements OFMessageWriter<OFBsnTlvPimPacketTypeVer14> {
+    static class Writer implements OFMessageWriter<OFBsnTlvMulticastPacketVer14> {
         @Override
-        public void write(ByteBuf bb, OFBsnTlvPimPacketTypeVer14 message) {
+        public void write(ByteBuf bb, OFBsnTlvMulticastPacketVer14 message) {
             // fixed value property type = 0xaa
             bb.writeShort((short) 0xaa);
             // fixed value property length = 6
             bb.writeShort((short) 0x6);
-            OFBsnPimPacketTypeSerializerVer14.writeTo(bb, message.value);
+            OFBsnMulticastPacketSerializerVer14.writeTo(bb, message.value);
 
 
         }
@@ -232,7 +232,7 @@ class OFBsnTlvPimPacketTypeVer14 implements OFBsnTlvPimPacketType {
 
     @Override
     public String toString() {
-        StringBuilder b = new StringBuilder("OFBsnTlvPimPacketTypeVer14(");
+        StringBuilder b = new StringBuilder("OFBsnTlvMulticastPacketVer14(");
         b.append("value=").append(value);
         b.append(")");
         return b.toString();
@@ -246,7 +246,7 @@ class OFBsnTlvPimPacketTypeVer14 implements OFBsnTlvPimPacketType {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        OFBsnTlvPimPacketTypeVer14 other = (OFBsnTlvPimPacketTypeVer14) obj;
+        OFBsnTlvMulticastPacketVer14 other = (OFBsnTlvMulticastPacketVer14) obj;
 
         if (value == null) {
             if (other.value != null)

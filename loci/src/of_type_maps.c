@@ -411,29 +411,29 @@ of_object_fixed_len_v1[OF_OBJECT_COUNT] = {
     -1,   /* 387: of_bsn_tlv_mpls_label */
     -1,   /* 388: of_bsn_tlv_mpls_sequenced */
     -1,   /* 389: of_bsn_tlv_multicast_interface_id */
-    -1,   /* 390: of_bsn_tlv_name */
-    -1,   /* 391: of_bsn_tlv_ndp_offload */
-    -1,   /* 392: of_bsn_tlv_ndp_static */
-    -1,   /* 393: of_bsn_tlv_negate */
-    -1,   /* 394: of_bsn_tlv_next_hop_ipv4 */
-    -1,   /* 395: of_bsn_tlv_next_hop_mac */
-    -1,   /* 396: of_bsn_tlv_nexthop_type_vxlan */
-    -1,   /* 397: of_bsn_tlv_no_arp_response */
-    -1,   /* 398: of_bsn_tlv_no_ns_response */
-    -1,   /* 399: of_bsn_tlv_offset */
-    -1,   /* 400: of_bsn_tlv_optics_always_enabled */
-    -1,   /* 401: of_bsn_tlv_outer_src_mac */
-    -1,   /* 402: of_bsn_tlv_parent_port */
-    -1,   /* 403: of_bsn_tlv_partner_key */
-    -1,   /* 404: of_bsn_tlv_partner_port_num */
-    -1,   /* 405: of_bsn_tlv_partner_port_priority */
-    -1,   /* 406: of_bsn_tlv_partner_state */
-    -1,   /* 407: of_bsn_tlv_partner_system_mac */
-    -1,   /* 408: of_bsn_tlv_partner_system_priority */
-    -1,   /* 409: of_bsn_tlv_passive */
-    -1,   /* 410: of_bsn_tlv_pdua_rx_instance */
-    -1,   /* 411: of_bsn_tlv_pim_dr */
-    -1,   /* 412: of_bsn_tlv_pim_packet_type */
+    -1,   /* 390: of_bsn_tlv_multicast_packet */
+    -1,   /* 391: of_bsn_tlv_name */
+    -1,   /* 392: of_bsn_tlv_ndp_offload */
+    -1,   /* 393: of_bsn_tlv_ndp_static */
+    -1,   /* 394: of_bsn_tlv_negate */
+    -1,   /* 395: of_bsn_tlv_next_hop_ipv4 */
+    -1,   /* 396: of_bsn_tlv_next_hop_mac */
+    -1,   /* 397: of_bsn_tlv_nexthop_type_vxlan */
+    -1,   /* 398: of_bsn_tlv_no_arp_response */
+    -1,   /* 399: of_bsn_tlv_no_ns_response */
+    -1,   /* 400: of_bsn_tlv_offset */
+    -1,   /* 401: of_bsn_tlv_optics_always_enabled */
+    -1,   /* 402: of_bsn_tlv_outer_src_mac */
+    -1,   /* 403: of_bsn_tlv_parent_port */
+    -1,   /* 404: of_bsn_tlv_partner_key */
+    -1,   /* 405: of_bsn_tlv_partner_port_num */
+    -1,   /* 406: of_bsn_tlv_partner_port_priority */
+    -1,   /* 407: of_bsn_tlv_partner_state */
+    -1,   /* 408: of_bsn_tlv_partner_system_mac */
+    -1,   /* 409: of_bsn_tlv_partner_system_priority */
+    -1,   /* 410: of_bsn_tlv_passive */
+    -1,   /* 411: of_bsn_tlv_pdua_rx_instance */
+    -1,   /* 412: of_bsn_tlv_pim_dr */
     -1,   /* 413: of_bsn_tlv_port */
     -1,   /* 414: of_bsn_tlv_port_speed_gbps */
     -1,   /* 415: of_bsn_tlv_port_usage */
@@ -1261,29 +1261,29 @@ of_object_fixed_len_v2[OF_OBJECT_COUNT] = {
     -1,   /* 387: of_bsn_tlv_mpls_label */
     -1,   /* 388: of_bsn_tlv_mpls_sequenced */
     -1,   /* 389: of_bsn_tlv_multicast_interface_id */
-    -1,   /* 390: of_bsn_tlv_name */
-    -1,   /* 391: of_bsn_tlv_ndp_offload */
-    -1,   /* 392: of_bsn_tlv_ndp_static */
-    -1,   /* 393: of_bsn_tlv_negate */
-    -1,   /* 394: of_bsn_tlv_next_hop_ipv4 */
-    -1,   /* 395: of_bsn_tlv_next_hop_mac */
-    -1,   /* 396: of_bsn_tlv_nexthop_type_vxlan */
-    -1,   /* 397: of_bsn_tlv_no_arp_response */
-    -1,   /* 398: of_bsn_tlv_no_ns_response */
-    -1,   /* 399: of_bsn_tlv_offset */
-    -1,   /* 400: of_bsn_tlv_optics_always_enabled */
-    -1,   /* 401: of_bsn_tlv_outer_src_mac */
-    -1,   /* 402: of_bsn_tlv_parent_port */
-    -1,   /* 403: of_bsn_tlv_partner_key */
-    -1,   /* 404: of_bsn_tlv_partner_port_num */
-    -1,   /* 405: of_bsn_tlv_partner_port_priority */
-    -1,   /* 406: of_bsn_tlv_partner_state */
-    -1,   /* 407: of_bsn_tlv_partner_system_mac */
-    -1,   /* 408: of_bsn_tlv_partner_system_priority */
-    -1,   /* 409: of_bsn_tlv_passive */
-    -1,   /* 410: of_bsn_tlv_pdua_rx_instance */
-    -1,   /* 411: of_bsn_tlv_pim_dr */
-    -1,   /* 412: of_bsn_tlv_pim_packet_type */
+    -1,   /* 390: of_bsn_tlv_multicast_packet */
+    -1,   /* 391: of_bsn_tlv_name */
+    -1,   /* 392: of_bsn_tlv_ndp_offload */
+    -1,   /* 393: of_bsn_tlv_ndp_static */
+    -1,   /* 394: of_bsn_tlv_negate */
+    -1,   /* 395: of_bsn_tlv_next_hop_ipv4 */
+    -1,   /* 396: of_bsn_tlv_next_hop_mac */
+    -1,   /* 397: of_bsn_tlv_nexthop_type_vxlan */
+    -1,   /* 398: of_bsn_tlv_no_arp_response */
+    -1,   /* 399: of_bsn_tlv_no_ns_response */
+    -1,   /* 400: of_bsn_tlv_offset */
+    -1,   /* 401: of_bsn_tlv_optics_always_enabled */
+    -1,   /* 402: of_bsn_tlv_outer_src_mac */
+    -1,   /* 403: of_bsn_tlv_parent_port */
+    -1,   /* 404: of_bsn_tlv_partner_key */
+    -1,   /* 405: of_bsn_tlv_partner_port_num */
+    -1,   /* 406: of_bsn_tlv_partner_port_priority */
+    -1,   /* 407: of_bsn_tlv_partner_state */
+    -1,   /* 408: of_bsn_tlv_partner_system_mac */
+    -1,   /* 409: of_bsn_tlv_partner_system_priority */
+    -1,   /* 410: of_bsn_tlv_passive */
+    -1,   /* 411: of_bsn_tlv_pdua_rx_instance */
+    -1,   /* 412: of_bsn_tlv_pim_dr */
     -1,   /* 413: of_bsn_tlv_port */
     -1,   /* 414: of_bsn_tlv_port_speed_gbps */
     -1,   /* 415: of_bsn_tlv_port_usage */
@@ -2111,29 +2111,29 @@ of_object_fixed_len_v3[OF_OBJECT_COUNT] = {
     -1,   /* 387: of_bsn_tlv_mpls_label */
     -1,   /* 388: of_bsn_tlv_mpls_sequenced */
     -1,   /* 389: of_bsn_tlv_multicast_interface_id */
-    -1,   /* 390: of_bsn_tlv_name */
-    -1,   /* 391: of_bsn_tlv_ndp_offload */
-    -1,   /* 392: of_bsn_tlv_ndp_static */
-    -1,   /* 393: of_bsn_tlv_negate */
-    -1,   /* 394: of_bsn_tlv_next_hop_ipv4 */
-    -1,   /* 395: of_bsn_tlv_next_hop_mac */
-    -1,   /* 396: of_bsn_tlv_nexthop_type_vxlan */
-    -1,   /* 397: of_bsn_tlv_no_arp_response */
-    -1,   /* 398: of_bsn_tlv_no_ns_response */
-    -1,   /* 399: of_bsn_tlv_offset */
-    -1,   /* 400: of_bsn_tlv_optics_always_enabled */
-    -1,   /* 401: of_bsn_tlv_outer_src_mac */
-    -1,   /* 402: of_bsn_tlv_parent_port */
-    -1,   /* 403: of_bsn_tlv_partner_key */
-    -1,   /* 404: of_bsn_tlv_partner_port_num */
-    -1,   /* 405: of_bsn_tlv_partner_port_priority */
-    -1,   /* 406: of_bsn_tlv_partner_state */
-    -1,   /* 407: of_bsn_tlv_partner_system_mac */
-    -1,   /* 408: of_bsn_tlv_partner_system_priority */
-    -1,   /* 409: of_bsn_tlv_passive */
-    -1,   /* 410: of_bsn_tlv_pdua_rx_instance */
-    -1,   /* 411: of_bsn_tlv_pim_dr */
-    -1,   /* 412: of_bsn_tlv_pim_packet_type */
+    -1,   /* 390: of_bsn_tlv_multicast_packet */
+    -1,   /* 391: of_bsn_tlv_name */
+    -1,   /* 392: of_bsn_tlv_ndp_offload */
+    -1,   /* 393: of_bsn_tlv_ndp_static */
+    -1,   /* 394: of_bsn_tlv_negate */
+    -1,   /* 395: of_bsn_tlv_next_hop_ipv4 */
+    -1,   /* 396: of_bsn_tlv_next_hop_mac */
+    -1,   /* 397: of_bsn_tlv_nexthop_type_vxlan */
+    -1,   /* 398: of_bsn_tlv_no_arp_response */
+    -1,   /* 399: of_bsn_tlv_no_ns_response */
+    -1,   /* 400: of_bsn_tlv_offset */
+    -1,   /* 401: of_bsn_tlv_optics_always_enabled */
+    -1,   /* 402: of_bsn_tlv_outer_src_mac */
+    -1,   /* 403: of_bsn_tlv_parent_port */
+    -1,   /* 404: of_bsn_tlv_partner_key */
+    -1,   /* 405: of_bsn_tlv_partner_port_num */
+    -1,   /* 406: of_bsn_tlv_partner_port_priority */
+    -1,   /* 407: of_bsn_tlv_partner_state */
+    -1,   /* 408: of_bsn_tlv_partner_system_mac */
+    -1,   /* 409: of_bsn_tlv_partner_system_priority */
+    -1,   /* 410: of_bsn_tlv_passive */
+    -1,   /* 411: of_bsn_tlv_pdua_rx_instance */
+    -1,   /* 412: of_bsn_tlv_pim_dr */
     -1,   /* 413: of_bsn_tlv_port */
     -1,   /* 414: of_bsn_tlv_port_speed_gbps */
     -1,   /* 415: of_bsn_tlv_port_usage */
@@ -2961,29 +2961,29 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     8,    /* 387: of_bsn_tlv_mpls_label */
     5,    /* 388: of_bsn_tlv_mpls_sequenced */
     8,    /* 389: of_bsn_tlv_multicast_interface_id */
-    4,    /* 390: of_bsn_tlv_name */
-    4,    /* 391: of_bsn_tlv_ndp_offload */
-    4,    /* 392: of_bsn_tlv_ndp_static */
-    4,    /* 393: of_bsn_tlv_negate */
-    8,    /* 394: of_bsn_tlv_next_hop_ipv4 */
-    10,   /* 395: of_bsn_tlv_next_hop_mac */
-    4,    /* 396: of_bsn_tlv_nexthop_type_vxlan */
-    4,    /* 397: of_bsn_tlv_no_arp_response */
-    4,    /* 398: of_bsn_tlv_no_ns_response */
-    6,    /* 399: of_bsn_tlv_offset */
-    4,    /* 400: of_bsn_tlv_optics_always_enabled */
-    10,   /* 401: of_bsn_tlv_outer_src_mac */
-    8,    /* 402: of_bsn_tlv_parent_port */
-    6,    /* 403: of_bsn_tlv_partner_key */
-    6,    /* 404: of_bsn_tlv_partner_port_num */
-    6,    /* 405: of_bsn_tlv_partner_port_priority */
-    5,    /* 406: of_bsn_tlv_partner_state */
-    10,   /* 407: of_bsn_tlv_partner_system_mac */
-    6,    /* 408: of_bsn_tlv_partner_system_priority */
-    4,    /* 409: of_bsn_tlv_passive */
-    4,    /* 410: of_bsn_tlv_pdua_rx_instance */
-    4,    /* 411: of_bsn_tlv_pim_dr */
-    6,    /* 412: of_bsn_tlv_pim_packet_type */
+    6,    /* 390: of_bsn_tlv_multicast_packet */
+    4,    /* 391: of_bsn_tlv_name */
+    4,    /* 392: of_bsn_tlv_ndp_offload */
+    4,    /* 393: of_bsn_tlv_ndp_static */
+    4,    /* 394: of_bsn_tlv_negate */
+    8,    /* 395: of_bsn_tlv_next_hop_ipv4 */
+    10,   /* 396: of_bsn_tlv_next_hop_mac */
+    4,    /* 397: of_bsn_tlv_nexthop_type_vxlan */
+    4,    /* 398: of_bsn_tlv_no_arp_response */
+    4,    /* 399: of_bsn_tlv_no_ns_response */
+    6,    /* 400: of_bsn_tlv_offset */
+    4,    /* 401: of_bsn_tlv_optics_always_enabled */
+    10,   /* 402: of_bsn_tlv_outer_src_mac */
+    8,    /* 403: of_bsn_tlv_parent_port */
+    6,    /* 404: of_bsn_tlv_partner_key */
+    6,    /* 405: of_bsn_tlv_partner_port_num */
+    6,    /* 406: of_bsn_tlv_partner_port_priority */
+    5,    /* 407: of_bsn_tlv_partner_state */
+    10,   /* 408: of_bsn_tlv_partner_system_mac */
+    6,    /* 409: of_bsn_tlv_partner_system_priority */
+    4,    /* 410: of_bsn_tlv_passive */
+    4,    /* 411: of_bsn_tlv_pdua_rx_instance */
+    4,    /* 412: of_bsn_tlv_pim_dr */
     8,    /* 413: of_bsn_tlv_port */
     8,    /* 414: of_bsn_tlv_port_speed_gbps */
     6,    /* 415: of_bsn_tlv_port_usage */
@@ -3811,29 +3811,29 @@ of_object_fixed_len_v5[OF_OBJECT_COUNT] = {
     8,    /* 387: of_bsn_tlv_mpls_label */
     5,    /* 388: of_bsn_tlv_mpls_sequenced */
     8,    /* 389: of_bsn_tlv_multicast_interface_id */
-    4,    /* 390: of_bsn_tlv_name */
-    4,    /* 391: of_bsn_tlv_ndp_offload */
-    4,    /* 392: of_bsn_tlv_ndp_static */
-    4,    /* 393: of_bsn_tlv_negate */
-    8,    /* 394: of_bsn_tlv_next_hop_ipv4 */
-    10,   /* 395: of_bsn_tlv_next_hop_mac */
-    4,    /* 396: of_bsn_tlv_nexthop_type_vxlan */
-    4,    /* 397: of_bsn_tlv_no_arp_response */
-    4,    /* 398: of_bsn_tlv_no_ns_response */
-    6,    /* 399: of_bsn_tlv_offset */
-    4,    /* 400: of_bsn_tlv_optics_always_enabled */
-    10,   /* 401: of_bsn_tlv_outer_src_mac */
-    8,    /* 402: of_bsn_tlv_parent_port */
-    6,    /* 403: of_bsn_tlv_partner_key */
-    6,    /* 404: of_bsn_tlv_partner_port_num */
-    6,    /* 405: of_bsn_tlv_partner_port_priority */
-    5,    /* 406: of_bsn_tlv_partner_state */
-    10,   /* 407: of_bsn_tlv_partner_system_mac */
-    6,    /* 408: of_bsn_tlv_partner_system_priority */
-    4,    /* 409: of_bsn_tlv_passive */
-    4,    /* 410: of_bsn_tlv_pdua_rx_instance */
-    4,    /* 411: of_bsn_tlv_pim_dr */
-    6,    /* 412: of_bsn_tlv_pim_packet_type */
+    6,    /* 390: of_bsn_tlv_multicast_packet */
+    4,    /* 391: of_bsn_tlv_name */
+    4,    /* 392: of_bsn_tlv_ndp_offload */
+    4,    /* 393: of_bsn_tlv_ndp_static */
+    4,    /* 394: of_bsn_tlv_negate */
+    8,    /* 395: of_bsn_tlv_next_hop_ipv4 */
+    10,   /* 396: of_bsn_tlv_next_hop_mac */
+    4,    /* 397: of_bsn_tlv_nexthop_type_vxlan */
+    4,    /* 398: of_bsn_tlv_no_arp_response */
+    4,    /* 399: of_bsn_tlv_no_ns_response */
+    6,    /* 400: of_bsn_tlv_offset */
+    4,    /* 401: of_bsn_tlv_optics_always_enabled */
+    10,   /* 402: of_bsn_tlv_outer_src_mac */
+    8,    /* 403: of_bsn_tlv_parent_port */
+    6,    /* 404: of_bsn_tlv_partner_key */
+    6,    /* 405: of_bsn_tlv_partner_port_num */
+    6,    /* 406: of_bsn_tlv_partner_port_priority */
+    5,    /* 407: of_bsn_tlv_partner_state */
+    10,   /* 408: of_bsn_tlv_partner_system_mac */
+    6,    /* 409: of_bsn_tlv_partner_system_priority */
+    4,    /* 410: of_bsn_tlv_passive */
+    4,    /* 411: of_bsn_tlv_pdua_rx_instance */
+    4,    /* 412: of_bsn_tlv_pim_dr */
     8,    /* 413: of_bsn_tlv_port */
     8,    /* 414: of_bsn_tlv_port_speed_gbps */
     6,    /* 415: of_bsn_tlv_port_usage */

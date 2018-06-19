@@ -307,6 +307,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x5f:
                    // discriminator value 0x5f=0x5f for class OFBsnTlvMulticastInterfaceIdVer15
                    return OFBsnTlvMulticastInterfaceIdVer15.READER.readFrom(bb);
+               case (short) 0xaa:
+                   // discriminator value 0xaa=0xaa for class OFBsnTlvMulticastPacketVer15
+                   return OFBsnTlvMulticastPacketVer15.READER.readFrom(bb);
                case (short) 0x34:
                    // discriminator value 0x34=0x34 for class OFBsnTlvNameVer15
                    return OFBsnTlvNameVer15.READER.readFrom(bb);
@@ -373,9 +376,6 @@ abstract class OFBsnTlvVer15 {
                case (short) 0xab:
                    // discriminator value 0xab=0xab for class OFBsnTlvPimDrVer15
                    return OFBsnTlvPimDrVer15.READER.readFrom(bb);
-               case (short) 0xaa:
-                   // discriminator value 0xaa=0xaa for class OFBsnTlvPimPacketTypeVer15
-                   return OFBsnTlvPimPacketTypeVer15.READER.readFrom(bb);
                case (short) 0x0:
                    // discriminator value 0x0=0x0 for class OFBsnTlvPortVer15
                    return OFBsnTlvPortVer15.READER.readFrom(bb);

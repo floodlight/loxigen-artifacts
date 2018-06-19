@@ -608,6 +608,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvMulticastInterfaceId not supported in version 1.2");
     }
 
+    public OFBsnTlvMulticastPacket.Builder buildMulticastPacket() {
+        throw new UnsupportedOperationException("OFBsnTlvMulticastPacket not supported in version 1.2");
+    }
+    public OFBsnTlvMulticastPacket multicastPacket(OFBsnMulticastPacket value) {
+        throw new UnsupportedOperationException("OFBsnTlvMulticastPacket not supported in version 1.2");
+    }
+
     public OFBsnTlvName.Builder buildName() {
         throw new UnsupportedOperationException("OFBsnTlvName not supported in version 1.2");
     }
@@ -733,13 +740,6 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
 
     public OFBsnTlvPimDr pimDr() {
         throw new UnsupportedOperationException("OFBsnTlvPimDr not supported in version 1.2");
-    }
-
-    public OFBsnTlvPimPacketType.Builder buildPimPacketType() {
-        throw new UnsupportedOperationException("OFBsnTlvPimPacketType not supported in version 1.2");
-    }
-    public OFBsnTlvPimPacketType pimPacketType(OFBsnPimPacketType value) {
-        throw new UnsupportedOperationException("OFBsnTlvPimPacketType not supported in version 1.2");
     }
 
     public OFBsnTlvPort.Builder buildPort() {
