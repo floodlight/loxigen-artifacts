@@ -1682,12 +1682,6 @@ enum_v4_ofp_flow_removed_reason = {
     [3] = "OFPRR_GROUP_DELETE",
 }
 
-enum_v4_ofp_bsn_pim_packet_type = {
-    [0] = "OFP_BSN_PIM_PACKET_TYPE_NONE",
-    [1] = "OFP_BSN_PIM_PACKET_TYPE_HELLO",
-    [2] = "OFP_BSN_PIM_PACKET_TYPE_JOIN_PRUNE",
-}
-
 enum_v4_ofp_port_mod_failed_code = {
     [0] = "OFPPMFC_BAD_PORT",
     [1] = "OFPPMFC_BAD_HW_ADDR",
@@ -1729,6 +1723,12 @@ enum_v4_ofp_meter = {
 
 enum_v4_of_bsn_pdu_slot_num = {
     [255] = "BSN_PDU_SLOT_NUM_ANY",
+}
+
+enum_v4_ofp_bsn_multicast_packet = {
+    [0] = "OFP_BSN_MULTICAST_PACKET_NONE",
+    [1] = "OFP_BSN_MULTICAST_PACKET_PIM_HELLO",
+    [2] = "OFP_BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE",
 }
 
 enum_v4_ofp_bsn_tcp_flag = {
@@ -2719,12 +2719,6 @@ enum_v5_ofp_bad_property_code = {
     [8] = "OFPBPC_EPERM",
 }
 
-enum_v5_ofp_bsn_pim_packet_type = {
-    [0] = "OFP_BSN_PIM_PACKET_TYPE_NONE",
-    [1] = "OFP_BSN_PIM_PACKET_TYPE_HELLO",
-    [2] = "OFP_BSN_PIM_PACKET_TYPE_JOIN_PRUNE",
-}
-
 enum_v5_ofp_port_mod_failed_code = {
     [0] = "OFPPMFC_BAD_PORT",
     [1] = "OFPPMFC_BAD_HW_ADDR",
@@ -2919,6 +2913,12 @@ enum_v5_macro_definitions = {
     [4294967295] = "OFPQ_ALL",
     [65535] = "OFPQ_MAX_RATE_UNCFG",
     [65535] = "OFPQ_MIN_RATE_UNCFG",
+}
+
+enum_v5_ofp_bsn_multicast_packet = {
+    [0] = "OFP_BSN_MULTICAST_PACKET_NONE",
+    [1] = "OFP_BSN_MULTICAST_PACKET_PIM_HELLO",
+    [2] = "OFP_BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE",
 }
 
 enum_v5_ofp_optical_port_features = {
@@ -3989,10 +3989,8 @@ enum_v6_ofp_bad_property_code = {
     [8] = "OFPBPC_EPERM",
 }
 
-enum_v6_ofp_bsn_pim_packet_type = {
-    [0] = "OFP_BSN_PIM_PACKET_TYPE_NONE",
-    [1] = "OFP_BSN_PIM_PACKET_TYPE_HELLO",
-    [2] = "OFP_BSN_PIM_PACKET_TYPE_JOIN_PRUNE",
+enum_v6_ofp_queue_stats_prop_type = {
+    [65535] = "OFPQSPT_EXPERIMENTER",
 }
 
 enum_v6_ofp_port_mod_failed_code = {
@@ -4048,10 +4046,6 @@ enum_v6_ofp_bsn_module_eeprom_extended_identifier = {
 
 enum_v6_of_bsn_pdu_slot_num = {
     [255] = "BSN_PDU_SLOT_NUM_ANY",
-}
-
-enum_v6_ofp_queue_stats_prop_type = {
-    [65535] = "OFPQSPT_EXPERIMENTER",
 }
 
 enum_v6_ofp_bsn_module_eeprom_cu_cmplnce = {
@@ -4216,6 +4210,12 @@ enum_v6_macro_definitions = {
 enum_v6_ofp_bundle_prop_type = {
     [1] = "OFPBPT_TIME",
     [65535] = "OFPBPT_EXPERIMENTER",
+}
+
+enum_v6_ofp_bsn_multicast_packet = {
+    [0] = "OFP_BSN_MULTICAST_PACKET_NONE",
+    [1] = "OFP_BSN_MULTICAST_PACKET_PIM_HELLO",
+    [2] = "OFP_BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE",
 }
 
 enum_v6_ofp_bad_request_code = {
@@ -9048,6 +9048,9 @@ fields['of13.bsn_tlv_mpls_sequenced.value'] = ProtoField.uint8("of13.bsn_tlv_mpl
 fields['of13.bsn_tlv_multicast_interface_id.type'] = ProtoField.uint16("of13.bsn_tlv_multicast_interface_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_multicast_interface_id.length'] = ProtoField.uint16("of13.bsn_tlv_multicast_interface_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_multicast_interface_id.value'] = ProtoField.uint32("of13.bsn_tlv_multicast_interface_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_multicast_packet.type'] = ProtoField.uint16("of13.bsn_tlv_multicast_packet.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_multicast_packet.length'] = ProtoField.uint16("of13.bsn_tlv_multicast_packet.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_multicast_packet.value'] = ProtoField.uint32("of13.bsn_tlv_multicast_packet.value", "value", base.DEC, enum_v4_ofp_bsn_multicast_packet)
 fields['of13.bsn_tlv_name.type'] = ProtoField.uint16("of13.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_name.length'] = ProtoField.uint16("of13.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_name.value'] = ProtoField.bytes("of13.bsn_tlv_name.value", "value")
@@ -9105,9 +9108,6 @@ fields['of13.bsn_tlv_pdua_rx_instance.length'] = ProtoField.uint16("of13.bsn_tlv
 fields['of13.bsn_tlv_pdua_rx_instance.value'] = ProtoField.bytes("of13.bsn_tlv_pdua_rx_instance.value", "value")
 fields['of13.bsn_tlv_pim_dr.type'] = ProtoField.uint16("of13.bsn_tlv_pim_dr.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_pim_dr.length'] = ProtoField.uint16("of13.bsn_tlv_pim_dr.length", "length", base.DEC, nil)
-fields['of13.bsn_tlv_pim_packet_type.type'] = ProtoField.uint16("of13.bsn_tlv_pim_packet_type.type", "type", base.DEC, nil)
-fields['of13.bsn_tlv_pim_packet_type.length'] = ProtoField.uint16("of13.bsn_tlv_pim_packet_type.length", "length", base.DEC, nil)
-fields['of13.bsn_tlv_pim_packet_type.value'] = ProtoField.uint32("of13.bsn_tlv_pim_packet_type.value", "value", base.DEC, enum_v4_ofp_bsn_pim_packet_type)
 fields['of13.bsn_tlv_port.type'] = ProtoField.uint16("of13.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port.length'] = ProtoField.uint16("of13.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port.value'] = ProtoField.uint32("of13.bsn_tlv_port.value", "value", base.DEC, nil)
@@ -12054,6 +12054,9 @@ fields['of14.bsn_tlv_mpls_sequenced.value'] = ProtoField.uint8("of14.bsn_tlv_mpl
 fields['of14.bsn_tlv_multicast_interface_id.type'] = ProtoField.uint16("of14.bsn_tlv_multicast_interface_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_multicast_interface_id.length'] = ProtoField.uint16("of14.bsn_tlv_multicast_interface_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_multicast_interface_id.value'] = ProtoField.uint32("of14.bsn_tlv_multicast_interface_id.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_multicast_packet.type'] = ProtoField.uint16("of14.bsn_tlv_multicast_packet.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_multicast_packet.length'] = ProtoField.uint16("of14.bsn_tlv_multicast_packet.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_multicast_packet.value'] = ProtoField.uint32("of14.bsn_tlv_multicast_packet.value", "value", base.DEC, enum_v5_ofp_bsn_multicast_packet)
 fields['of14.bsn_tlv_name.type'] = ProtoField.uint16("of14.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_name.length'] = ProtoField.uint16("of14.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_name.value'] = ProtoField.bytes("of14.bsn_tlv_name.value", "value")
@@ -12111,9 +12114,6 @@ fields['of14.bsn_tlv_pdua_rx_instance.length'] = ProtoField.uint16("of14.bsn_tlv
 fields['of14.bsn_tlv_pdua_rx_instance.value'] = ProtoField.bytes("of14.bsn_tlv_pdua_rx_instance.value", "value")
 fields['of14.bsn_tlv_pim_dr.type'] = ProtoField.uint16("of14.bsn_tlv_pim_dr.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_pim_dr.length'] = ProtoField.uint16("of14.bsn_tlv_pim_dr.length", "length", base.DEC, nil)
-fields['of14.bsn_tlv_pim_packet_type.type'] = ProtoField.uint16("of14.bsn_tlv_pim_packet_type.type", "type", base.DEC, nil)
-fields['of14.bsn_tlv_pim_packet_type.length'] = ProtoField.uint16("of14.bsn_tlv_pim_packet_type.length", "length", base.DEC, nil)
-fields['of14.bsn_tlv_pim_packet_type.value'] = ProtoField.uint32("of14.bsn_tlv_pim_packet_type.value", "value", base.DEC, enum_v5_ofp_bsn_pim_packet_type)
 fields['of14.bsn_tlv_port.type'] = ProtoField.uint16("of14.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_port.length'] = ProtoField.uint16("of14.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_port.value'] = ProtoField.uint32("of14.bsn_tlv_port.value", "value", base.DEC, nil)
@@ -15376,6 +15376,9 @@ fields['of15.bsn_tlv_mpls_sequenced.value'] = ProtoField.uint8("of15.bsn_tlv_mpl
 fields['of15.bsn_tlv_multicast_interface_id.type'] = ProtoField.uint16("of15.bsn_tlv_multicast_interface_id.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_multicast_interface_id.length'] = ProtoField.uint16("of15.bsn_tlv_multicast_interface_id.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_multicast_interface_id.value'] = ProtoField.uint32("of15.bsn_tlv_multicast_interface_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_multicast_packet.type'] = ProtoField.uint16("of15.bsn_tlv_multicast_packet.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_multicast_packet.length'] = ProtoField.uint16("of15.bsn_tlv_multicast_packet.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_multicast_packet.value'] = ProtoField.uint32("of15.bsn_tlv_multicast_packet.value", "value", base.DEC, enum_v6_ofp_bsn_multicast_packet)
 fields['of15.bsn_tlv_name.type'] = ProtoField.uint16("of15.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_name.length'] = ProtoField.uint16("of15.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_name.value'] = ProtoField.bytes("of15.bsn_tlv_name.value", "value")
@@ -15433,9 +15436,6 @@ fields['of15.bsn_tlv_pdua_rx_instance.length'] = ProtoField.uint16("of15.bsn_tlv
 fields['of15.bsn_tlv_pdua_rx_instance.value'] = ProtoField.bytes("of15.bsn_tlv_pdua_rx_instance.value", "value")
 fields['of15.bsn_tlv_pim_dr.type'] = ProtoField.uint16("of15.bsn_tlv_pim_dr.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_pim_dr.length'] = ProtoField.uint16("of15.bsn_tlv_pim_dr.length", "length", base.DEC, nil)
-fields['of15.bsn_tlv_pim_packet_type.type'] = ProtoField.uint16("of15.bsn_tlv_pim_packet_type.type", "type", base.DEC, nil)
-fields['of15.bsn_tlv_pim_packet_type.length'] = ProtoField.uint16("of15.bsn_tlv_pim_packet_type.length", "length", base.DEC, nil)
-fields['of15.bsn_tlv_pim_packet_type.value'] = ProtoField.uint32("of15.bsn_tlv_pim_packet_type.value", "value", base.DEC, enum_v6_ofp_bsn_pim_packet_type)
 fields['of15.bsn_tlv_port.type'] = ProtoField.uint16("of15.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_port.length'] = ProtoField.uint16("of15.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_port.value'] = ProtoField.uint32("of15.bsn_tlv_port.value", "value", base.DEC, nil)
@@ -21991,6 +21991,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_multicast_interface_id.type'],
     fields['of13.bsn_tlv_multicast_interface_id.length'],
     fields['of13.bsn_tlv_multicast_interface_id.value'],
+    fields['of13.bsn_tlv_multicast_packet.type'],
+    fields['of13.bsn_tlv_multicast_packet.length'],
+    fields['of13.bsn_tlv_multicast_packet.value'],
     fields['of13.bsn_tlv_name.type'],
     fields['of13.bsn_tlv_name.length'],
     fields['of13.bsn_tlv_name.value'],
@@ -22048,9 +22051,6 @@ p_of.fields = {
     fields['of13.bsn_tlv_pdua_rx_instance.value'],
     fields['of13.bsn_tlv_pim_dr.type'],
     fields['of13.bsn_tlv_pim_dr.length'],
-    fields['of13.bsn_tlv_pim_packet_type.type'],
-    fields['of13.bsn_tlv_pim_packet_type.length'],
-    fields['of13.bsn_tlv_pim_packet_type.value'],
     fields['of13.bsn_tlv_port.type'],
     fields['of13.bsn_tlv_port.length'],
     fields['of13.bsn_tlv_port.value'],
@@ -24997,6 +24997,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_multicast_interface_id.type'],
     fields['of14.bsn_tlv_multicast_interface_id.length'],
     fields['of14.bsn_tlv_multicast_interface_id.value'],
+    fields['of14.bsn_tlv_multicast_packet.type'],
+    fields['of14.bsn_tlv_multicast_packet.length'],
+    fields['of14.bsn_tlv_multicast_packet.value'],
     fields['of14.bsn_tlv_name.type'],
     fields['of14.bsn_tlv_name.length'],
     fields['of14.bsn_tlv_name.value'],
@@ -25054,9 +25057,6 @@ p_of.fields = {
     fields['of14.bsn_tlv_pdua_rx_instance.value'],
     fields['of14.bsn_tlv_pim_dr.type'],
     fields['of14.bsn_tlv_pim_dr.length'],
-    fields['of14.bsn_tlv_pim_packet_type.type'],
-    fields['of14.bsn_tlv_pim_packet_type.length'],
-    fields['of14.bsn_tlv_pim_packet_type.value'],
     fields['of14.bsn_tlv_port.type'],
     fields['of14.bsn_tlv_port.length'],
     fields['of14.bsn_tlv_port.value'],
@@ -28319,6 +28319,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_multicast_interface_id.type'],
     fields['of15.bsn_tlv_multicast_interface_id.length'],
     fields['of15.bsn_tlv_multicast_interface_id.value'],
+    fields['of15.bsn_tlv_multicast_packet.type'],
+    fields['of15.bsn_tlv_multicast_packet.length'],
+    fields['of15.bsn_tlv_multicast_packet.value'],
     fields['of15.bsn_tlv_name.type'],
     fields['of15.bsn_tlv_name.length'],
     fields['of15.bsn_tlv_name.value'],
@@ -28376,9 +28379,6 @@ p_of.fields = {
     fields['of15.bsn_tlv_pdua_rx_instance.value'],
     fields['of15.bsn_tlv_pim_dr.type'],
     fields['of15.bsn_tlv_pim_dr.length'],
-    fields['of15.bsn_tlv_pim_packet_type.type'],
-    fields['of15.bsn_tlv_pim_packet_type.length'],
-    fields['of15.bsn_tlv_pim_packet_type.value'],
     fields['of15.bsn_tlv_port.type'],
     fields['of15.bsn_tlv_port.length'],
     fields['of15.bsn_tlv_port.value'],
@@ -41045,6 +41045,16 @@ function dissect_of_bsn_tlv_multicast_interface_id_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[95] = dissect_of_bsn_tlv_multicast_interface_id_v4
 
+-- child class of_bsn_tlv_multicast_packet
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_multicast_packet_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_multicast_packet.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_multicast_packet.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_multicast_packet.value')
+    return 'of_bsn_tlv_multicast_packet'
+end
+of_bsn_tlv_v4_dissectors[170] = dissect_of_bsn_tlv_multicast_packet_v4
+
 -- child class of_bsn_tlv_name
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_name_v4(reader, subtree)
@@ -41261,16 +41271,6 @@ function dissect_of_bsn_tlv_pim_dr_v4(reader, subtree)
     return 'of_bsn_tlv_pim_dr'
 end
 of_bsn_tlv_v4_dissectors[171] = dissect_of_bsn_tlv_pim_dr_v4
-
--- child class of_bsn_tlv_pim_packet_type
--- Child of of_bsn_tlv
-function dissect_of_bsn_tlv_pim_packet_type_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_pim_packet_type.type')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_pim_packet_type.length')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_pim_packet_type.value')
-    return 'of_bsn_tlv_pim_packet_type'
-end
-of_bsn_tlv_v4_dissectors[170] = dissect_of_bsn_tlv_pim_packet_type_v4
 
 -- child class of_bsn_tlv_port
 -- Child of of_bsn_tlv
@@ -49211,6 +49211,16 @@ function dissect_of_bsn_tlv_multicast_interface_id_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[95] = dissect_of_bsn_tlv_multicast_interface_id_v5
 
+-- child class of_bsn_tlv_multicast_packet
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_multicast_packet_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_multicast_packet.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_multicast_packet.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_multicast_packet.value')
+    return 'of_bsn_tlv_multicast_packet'
+end
+of_bsn_tlv_v5_dissectors[170] = dissect_of_bsn_tlv_multicast_packet_v5
+
 -- child class of_bsn_tlv_name
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_name_v5(reader, subtree)
@@ -49427,16 +49437,6 @@ function dissect_of_bsn_tlv_pim_dr_v5(reader, subtree)
     return 'of_bsn_tlv_pim_dr'
 end
 of_bsn_tlv_v5_dissectors[171] = dissect_of_bsn_tlv_pim_dr_v5
-
--- child class of_bsn_tlv_pim_packet_type
--- Child of of_bsn_tlv
-function dissect_of_bsn_tlv_pim_packet_type_v5(reader, subtree)
-    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_pim_packet_type.type')
-    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_pim_packet_type.length')
-    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_pim_packet_type.value')
-    return 'of_bsn_tlv_pim_packet_type'
-end
-of_bsn_tlv_v5_dissectors[170] = dissect_of_bsn_tlv_pim_packet_type_v5
 
 -- child class of_bsn_tlv_port
 -- Child of of_bsn_tlv
@@ -58074,6 +58074,16 @@ function dissect_of_bsn_tlv_multicast_interface_id_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[95] = dissect_of_bsn_tlv_multicast_interface_id_v6
 
+-- child class of_bsn_tlv_multicast_packet
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_multicast_packet_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_multicast_packet.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_multicast_packet.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_multicast_packet.value')
+    return 'of_bsn_tlv_multicast_packet'
+end
+of_bsn_tlv_v6_dissectors[170] = dissect_of_bsn_tlv_multicast_packet_v6
+
 -- child class of_bsn_tlv_name
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_name_v6(reader, subtree)
@@ -58290,16 +58300,6 @@ function dissect_of_bsn_tlv_pim_dr_v6(reader, subtree)
     return 'of_bsn_tlv_pim_dr'
 end
 of_bsn_tlv_v6_dissectors[171] = dissect_of_bsn_tlv_pim_dr_v6
-
--- child class of_bsn_tlv_pim_packet_type
--- Child of of_bsn_tlv
-function dissect_of_bsn_tlv_pim_packet_type_v6(reader, subtree)
-    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_pim_packet_type.type')
-    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_pim_packet_type.length')
-    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_pim_packet_type.value')
-    return 'of_bsn_tlv_pim_packet_type'
-end
-of_bsn_tlv_v6_dissectors[170] = dissect_of_bsn_tlv_pim_packet_type_v6
 
 -- child class of_bsn_tlv_port
 -- Child of of_bsn_tlv

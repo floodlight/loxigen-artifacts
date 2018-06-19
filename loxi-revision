@@ -1,1 +1,1 @@
-e8d45c974de99c6266371f26480c32e3d1b229a5 Merge into master from pull request #618: SWL-4556 TLVs pim_packet_type, pim_dr and passive. (https://github.com/floodlight/loxigen/pull/618)
+3a3b1916d2f5097b091ffd80a51930b2272d4650 Merge into master from pull request #619: Rename pim_packet_type TLV as multicast_packet_type. (https://github.com/floodlight/loxigen/pull/619)

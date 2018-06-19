@@ -193,6 +193,8 @@ public interface OFBsnTlvs {
     OFBsnTlvMplsSequenced mplsSequenced(short value);
     OFBsnTlvMulticastInterfaceId.Builder buildMulticastInterfaceId() throws UnsupportedOperationException;
     OFBsnTlvMulticastInterfaceId multicastInterfaceId(long value);
+    OFBsnTlvMulticastPacket.Builder buildMulticastPacket() throws UnsupportedOperationException;
+    OFBsnTlvMulticastPacket multicastPacket(OFBsnMulticastPacket value);
     OFBsnTlvName.Builder buildName() throws UnsupportedOperationException;
     OFBsnTlvName name(byte[] value);
     OFBsnTlvNdpOffload ndpOffload();
@@ -228,8 +230,6 @@ public interface OFBsnTlvs {
     OFBsnTlvPduaRxInstance.Builder buildPduaRxInstance() throws UnsupportedOperationException;
     OFBsnTlvPduaRxInstance pduaRxInstance(byte[] value);
     OFBsnTlvPimDr pimDr();
-    OFBsnTlvPimPacketType.Builder buildPimPacketType() throws UnsupportedOperationException;
-    OFBsnTlvPimPacketType pimPacketType(OFBsnPimPacketType value);
     OFBsnTlvPort.Builder buildPort() throws UnsupportedOperationException;
     OFBsnTlvPort port(OFPort value);
     OFBsnTlvPortSpeedGbps.Builder buildPortSpeedGbps() throws UnsupportedOperationException;

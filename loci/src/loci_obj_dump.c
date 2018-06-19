@@ -22795,6 +22795,22 @@ of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_dump(loci_writer_f writer, void
 }
 
 int
+of_bsn_tlv_multicast_packet_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_multicast_packet\n");
+
+    of_bsn_tlv_multicast_packet_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_name_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -23088,22 +23104,6 @@ of_bsn_tlv_pim_dr_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_obj
     int out = 0;
 
     out += writer(cookie, "Object of type of_bsn_tlv_pim_dr\n");
-
-    return out;
-}
-
-int
-of_bsn_tlv_pim_packet_type_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint16_t val16;
-
-    out += writer(cookie, "Object of type of_bsn_tlv_pim_packet_type\n");
-
-    of_bsn_tlv_pim_packet_type_value_get(obj, &val16);
-    out += writer(cookie, "  value (uint16_t):  ");
-    out += LOCI_DUMP_u16(writer, cookie, val16);
-    out += writer(cookie, "\n");
 
     return out;
 }
@@ -38303,6 +38303,22 @@ of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_dump(loci_writer_f writer, void
 }
 
 int
+of_bsn_tlv_multicast_packet_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_multicast_packet\n");
+
+    of_bsn_tlv_multicast_packet_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_name_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -38596,22 +38612,6 @@ of_bsn_tlv_pim_dr_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_obj
     int out = 0;
 
     out += writer(cookie, "Object of type of_bsn_tlv_pim_dr\n");
-
-    return out;
-}
-
-int
-of_bsn_tlv_pim_packet_type_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint16_t val16;
-
-    out += writer(cookie, "Object of type of_bsn_tlv_pim_packet_type\n");
-
-    of_bsn_tlv_pim_packet_type_value_get(obj, &val16);
-    out += writer(cookie, "  value (uint16_t):  ");
-    out += LOCI_DUMP_u16(writer, cookie, val16);
-    out += writer(cookie, "\n");
 
     return out;
 }
@@ -49328,6 +49328,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_mpls_label_OF_VERSION_1_3_dump,
     of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3_dump,
     of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_dump,
+    of_bsn_tlv_multicast_packet_OF_VERSION_1_3_dump,
     of_bsn_tlv_name_OF_VERSION_1_3_dump,
     of_bsn_tlv_ndp_offload_OF_VERSION_1_3_dump,
     of_bsn_tlv_ndp_static_OF_VERSION_1_3_dump,
@@ -49350,7 +49351,6 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_passive_OF_VERSION_1_3_dump,
     of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_3_dump,
     of_bsn_tlv_pim_dr_OF_VERSION_1_3_dump,
-    of_bsn_tlv_pim_packet_type_OF_VERSION_1_3_dump,
     of_bsn_tlv_port_OF_VERSION_1_3_dump,
     of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_dump,
     of_bsn_tlv_port_usage_OF_VERSION_1_3_dump,
@@ -50178,6 +50178,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_mpls_label_OF_VERSION_1_4_dump,
     of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_dump,
     of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_dump,
+    of_bsn_tlv_multicast_packet_OF_VERSION_1_4_dump,
     of_bsn_tlv_name_OF_VERSION_1_4_dump,
     of_bsn_tlv_ndp_offload_OF_VERSION_1_4_dump,
     of_bsn_tlv_ndp_static_OF_VERSION_1_4_dump,
@@ -50200,7 +50201,6 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_passive_OF_VERSION_1_4_dump,
     of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_4_dump,
     of_bsn_tlv_pim_dr_OF_VERSION_1_4_dump,
-    of_bsn_tlv_pim_packet_type_OF_VERSION_1_4_dump,
     of_bsn_tlv_port_OF_VERSION_1_4_dump,
     of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_dump,
     of_bsn_tlv_port_usage_OF_VERSION_1_4_dump,
