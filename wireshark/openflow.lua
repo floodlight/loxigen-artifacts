@@ -1406,11 +1406,25 @@ enum_v4_ofp_bsn_enhanced_hash_type = {
     [32] = "OFP_BSN_ENHANCED_HASH_SYMMETRIC",
 }
 
+enum_v4_ofp_bsn_bfd_encap_type = {
+    [0] = "OFP_BSN_BFD_ENCAP_TYPE_UNUSED",
+    [1] = "OFP_BSN_BFD_ENCAP_TYPE_V4_UDP",
+    [2] = "OFP_BSN_BFD_ENCAP_TYPE_V6_UDP",
+}
+
 enum_v4_ofp_controller_role = {
     [0] = "OFPCR_ROLE_NOCHANGE",
     [1] = "OFPCR_ROLE_EQUAL",
     [2] = "OFPCR_ROLE_MASTER",
     [3] = "OFPCR_ROLE_SLAVE",
+}
+
+enum_v4_ofp_bsn_bfd_endpoint_event = {
+    [0] = "OF_BSN_BFD_ENDPOINT_EVENT_UNUSED",
+    [1] = "OF_BSN_BFD_ENDPOINT_EVENT_STATE_DOWN",
+    [2] = "OF_BSN_BFD_ENDPOINT_EVENT_STATE_INIT",
+    [3] = "OF_BSN_BFD_ENDPOINT_EVENT_STATE_UP",
+    [4] = "OF_BSN_BFD_ENDPOINT_EVENT_SESSION_ERROR",
 }
 
 enum_v4_ofp_flow_mod_failed_code = {
@@ -2015,6 +2029,13 @@ enum_v4_ofp_bsn_strip_vlan = {
     [4] = "OFP_BSN_STRIP_VLAN_THIRD",
 }
 
+enum_v4_ofp_bsn_bfd_endpoint_state = {
+    [0] = "OFP_BSN_BFD_ENDPOINT_STATE_ADMINDOWN",
+    [1] = "OFP_BSN_BFD_ENDPOINT_STATE_DOWN",
+    [2] = "OFP_BSN_BFD_ENDPOINT_STATE_INIT",
+    [3] = "OFP_BSN_BFD_ENDPOINT_STATE_UP",
+}
+
 enum_v4_ofp_port = {
     [4294967040] = "OFPP_MAX",
     [4294967288] = "OFPP_IN_PORT",
@@ -2044,6 +2065,13 @@ enum_v4_ofp_table_feature_prop_type = {
     [15] = "OFPTFPT_APPLY_SETFIELD_MISS",
     [65534] = "OFPTFPT_EXPERIMENTER",
     [65535] = "OFPTFPT_EXPERIMENTER_MISS",
+}
+
+enum_v4_ofp_bsn_bfd_endpoint_type = {
+    [0] = "OFP_BSN_BFD_TYPE_UNUSED",
+    [1] = "OFP_BSN_BFD_TYPE_MICRO",
+    [2] = "OFP_BSN_BFD_TYPE_1_HOP",
+    [3] = "OFP_BSN_BFD_TYPE_MULTI_HOP",
 }
 
 enum_v4_ofp_type = {
@@ -2362,9 +2390,9 @@ enum_v5_ofp_bsn_loglevel = {
     [5] = "OFP_BSN_LOGLEVEL_TRACE",
 }
 
-enum_v5_ofp_controller_max_len = {
-    [65509] = "OFPCML_MAX",
-    [65535] = "OFPCML_NO_BUFFER",
+enum_v5_ofp_bundle_flags = {
+    [1] = "OFPBF_ATOMIC",
+    [2] = "OFPBF_ORDERED",
 }
 
 enum_v5_ofp_bsn_enhanced_hash_type = {
@@ -2376,11 +2404,25 @@ enum_v5_ofp_bsn_enhanced_hash_type = {
     [32] = "OFP_BSN_ENHANCED_HASH_SYMMETRIC",
 }
 
+enum_v5_ofp_bsn_bfd_encap_type = {
+    [0] = "OFP_BSN_BFD_ENCAP_TYPE_UNUSED",
+    [1] = "OFP_BSN_BFD_ENCAP_TYPE_V4_UDP",
+    [2] = "OFP_BSN_BFD_ENCAP_TYPE_V6_UDP",
+}
+
 enum_v5_ofp_controller_role = {
     [0] = "OFPCR_ROLE_NOCHANGE",
     [1] = "OFPCR_ROLE_EQUAL",
     [2] = "OFPCR_ROLE_MASTER",
     [3] = "OFPCR_ROLE_SLAVE",
+}
+
+enum_v5_ofp_bsn_bfd_endpoint_event = {
+    [0] = "OF_BSN_BFD_ENDPOINT_EVENT_UNUSED",
+    [1] = "OF_BSN_BFD_ENDPOINT_EVENT_STATE_DOWN",
+    [2] = "OF_BSN_BFD_ENDPOINT_EVENT_STATE_INIT",
+    [3] = "OF_BSN_BFD_ENDPOINT_EVENT_STATE_UP",
+    [4] = "OF_BSN_BFD_ENDPOINT_EVENT_SESSION_ERROR",
 }
 
 enum_v5_ofp_flow_mod_failed_code = {
@@ -2921,6 +2963,12 @@ enum_v5_ofp_bsn_multicast_packet = {
     [2] = "OFP_BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE",
 }
 
+enum_v5_ofp_meter_mod_command = {
+    [0] = "OFPMC_ADD",
+    [1] = "OFPMC_MODIFY",
+    [2] = "OFPMC_DELETE",
+}
+
 enum_v5_ofp_optical_port_features = {
     [1] = "OFPOPF_RX_TUNE",
     [2] = "OFPOPF_TX_TUNE",
@@ -3057,10 +3105,9 @@ enum_v5_ofp_bsn_hash_algorithm_type = {
     [8] = "OFP_BSN_HASH_ALGORITHM_CRC32HI",
 }
 
-enum_v5_ofp_meter_band_type = {
-    [1] = "OFPMBT_DROP",
-    [2] = "OFPMBT_DSCP_REMARK",
-    [65535] = "OFPMBT_EXPERIMENTER",
+enum_v5_ofp_controller_max_len = {
+    [65509] = "OFPCML_MAX",
+    [65535] = "OFPCML_NO_BUFFER",
 }
 
 enum_v5_of_bsn_vrf_counter = {
@@ -3109,10 +3156,10 @@ enum_v5_ofp_bsn_tunnel_type = {
     [1] = "OFP_BSN_TUNNEL_L2GRE",
 }
 
-enum_v5_ofp_meter_mod_command = {
-    [0] = "OFPMC_ADD",
-    [1] = "OFPMC_MODIFY",
-    [2] = "OFPMC_DELETE",
+enum_v5_ofp_meter_band_type = {
+    [1] = "OFPMBT_DROP",
+    [2] = "OFPMBT_DSCP_REMARK",
+    [65535] = "OFPMBT_EXPERIMENTER",
 }
 
 enum_v5_ofp_requestforward_reason = {
@@ -3146,6 +3193,13 @@ enum_v5_ofp_bsn_strip_vlan = {
     [1] = "OFP_BSN_STRIP_VLAN_FIRST",
     [2] = "OFP_BSN_STRIP_VLAN_SECOND",
     [4] = "OFP_BSN_STRIP_VLAN_THIRD",
+}
+
+enum_v5_ofp_bsn_bfd_endpoint_state = {
+    [0] = "OFP_BSN_BFD_ENDPOINT_STATE_ADMINDOWN",
+    [1] = "OFP_BSN_BFD_ENDPOINT_STATE_DOWN",
+    [2] = "OFP_BSN_BFD_ENDPOINT_STATE_INIT",
+    [3] = "OFP_BSN_BFD_ENDPOINT_STATE_UP",
 }
 
 enum_v5_ofp_bsn_vrf_counter_constants = {
@@ -3184,9 +3238,11 @@ enum_v5_ofp_table_feature_prop_type = {
     [65535] = "OFPTFPT_EXPERIMENTER_MISS",
 }
 
-enum_v5_ofp_bundle_flags = {
-    [1] = "OFPBF_ATOMIC",
-    [2] = "OFPBF_ORDERED",
+enum_v5_ofp_bsn_bfd_endpoint_type = {
+    [0] = "OFP_BSN_BFD_TYPE_UNUSED",
+    [1] = "OFP_BSN_BFD_TYPE_MICRO",
+    [2] = "OFP_BSN_BFD_TYPE_1_HOP",
+    [3] = "OFP_BSN_BFD_TYPE_MULTI_HOP",
 }
 
 enum_v5_ofp_type = {
@@ -3594,6 +3650,14 @@ enum_v6_ofp_bsn_enhanced_hash_type = {
     [32] = "OFP_BSN_ENHANCED_HASH_SYMMETRIC",
 }
 
+enum_v6_ofp_flow_mod_command = {
+    [0] = "OFPFC_ADD",
+    [1] = "OFPFC_MODIFY",
+    [2] = "OFPFC_MODIFY_STRICT",
+    [3] = "OFPFC_DELETE",
+    [4] = "OFPFC_DELETE_STRICT",
+}
+
 enum_v6_ofp_group_prop_type = {
     [65535] = "OFPGPT_EXPERIMENTER",
 }
@@ -3605,14 +3669,12 @@ enum_v6_ofp_controller_role = {
     [3] = "OFPCR_ROLE_SLAVE",
 }
 
-enum_v6_ofp_flow_monitor_flags = {
-    [1] = "OFPFMF_INITIAL",
-    [2] = "OFPFMF_ADD",
-    [4] = "OFPFMF_REMOVED",
-    [8] = "OFPFMF_MODIFY",
-    [16] = "OFPFMF_INSTRUCTIONS",
-    [32] = "OFPFMF_NO_ABBREV",
-    [64] = "OFPFMF_ONLY_OWN",
+enum_v6_ofp_bsn_bfd_endpoint_event = {
+    [0] = "OF_BSN_BFD_ENDPOINT_EVENT_UNUSED",
+    [1] = "OF_BSN_BFD_ENDPOINT_EVENT_STATE_DOWN",
+    [2] = "OF_BSN_BFD_ENDPOINT_EVENT_STATE_INIT",
+    [3] = "OF_BSN_BFD_ENDPOINT_EVENT_STATE_UP",
+    [4] = "OF_BSN_BFD_ENDPOINT_EVENT_SESSION_ERROR",
 }
 
 enum_v6_ofp_flow_mod_failed_code = {
@@ -3686,6 +3748,16 @@ enum_v6_ofp_capabilities = {
     [256] = "OFPC_PORT_BLOCKED",
     [512] = "OFPC_BUNDLES",
     [1024] = "OFPC_FLOW_MONITORING",
+}
+
+enum_v6_ofp_flow_monitor_flags = {
+    [1] = "OFPFMF_INITIAL",
+    [2] = "OFPFMF_ADD",
+    [4] = "OFPFMF_REMOVED",
+    [8] = "OFPFMF_MODIFY",
+    [16] = "OFPFMF_INSTRUCTIONS",
+    [32] = "OFPFMF_NO_ABBREV",
+    [64] = "OFPFMF_ONLY_OWN",
 }
 
 enum_v6_of_bsn_hash_packet_field = {
@@ -3785,12 +3857,10 @@ enum_v6_ofp_table_config = {
     [8] = "OFPTC_VACANCY_EVENTS",
 }
 
-enum_v6_ofp_flow_mod_command = {
-    [0] = "OFPFC_ADD",
-    [1] = "OFPFC_MODIFY",
-    [2] = "OFPFC_MODIFY_STRICT",
-    [3] = "OFPFC_DELETE",
-    [4] = "OFPFC_DELETE_STRICT",
+enum_v6_ofp_bsn_bfd_encap_type = {
+    [0] = "OFP_BSN_BFD_ENCAP_TYPE_UNUSED",
+    [1] = "OFP_BSN_BFD_ENCAP_TYPE_V4_UDP",
+    [2] = "OFP_BSN_BFD_ENCAP_TYPE_V6_UDP",
 }
 
 enum_v6_ofp_table_reason = {
@@ -4488,6 +4558,13 @@ enum_v6_ofp_bsn_strip_vlan = {
     [4] = "OFP_BSN_STRIP_VLAN_THIRD",
 }
 
+enum_v6_ofp_bsn_bfd_endpoint_state = {
+    [0] = "OFP_BSN_BFD_ENDPOINT_STATE_ADMINDOWN",
+    [1] = "OFP_BSN_BFD_ENDPOINT_STATE_DOWN",
+    [2] = "OFP_BSN_BFD_ENDPOINT_STATE_INIT",
+    [3] = "OFP_BSN_BFD_ENDPOINT_STATE_UP",
+}
+
 enum_v6_ofp_bsn_vrf_counter_constants = {
     [4294967295] = "OFP_BSN_VRF_ALL",
 }
@@ -4534,6 +4611,13 @@ enum_v6_ofp_table_feature_prop_type = {
     [22] = "OFPTFPT_PACKET_TYPES",
     [65534] = "OFPTFPT_EXPERIMENTER",
     [65535] = "OFPTFPT_EXPERIMENTER_MISS",
+}
+
+enum_v6_ofp_bsn_bfd_endpoint_type = {
+    [0] = "OFP_BSN_BFD_TYPE_UNUSED",
+    [1] = "OFP_BSN_BFD_TYPE_MICRO",
+    [2] = "OFP_BSN_BFD_TYPE_1_HOP",
+    [3] = "OFP_BSN_BFD_TYPE_MULTI_HOP",
 }
 
 enum_v6_ofp_group_bucket_prop_type = {
@@ -8823,6 +8907,54 @@ fields['of13.bsn_tlv_apply_packets.value'] = ProtoField.uint64("of13.bsn_tlv_app
 fields['of13.bsn_tlv_auto_negotiation.type'] = ProtoField.uint16("of13.bsn_tlv_auto_negotiation.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_auto_negotiation.length'] = ProtoField.uint16("of13.bsn_tlv_auto_negotiation.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_auto_negotiation.value'] = ProtoField.uint32("of13.bsn_tlv_auto_negotiation.value", "value", base.DEC, enum_v4_ofp_bsn_auto_negotiation_type)
+fields['of13.bsn_tlv_bfd_encap_type.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_encap_type.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_encap_type.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_encap_type.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_encap_type.value'] = ProtoField.uint32("of13.bsn_tlv_bfd_encap_type.value", "value", base.DEC, enum_v4_ofp_bsn_bfd_encap_type)
+fields['of13.bsn_tlv_bfd_endpoint_event.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_endpoint_event.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_endpoint_event.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_endpoint_event.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_endpoint_event.value'] = ProtoField.uint32("of13.bsn_tlv_bfd_endpoint_event.value", "value", base.DEC, enum_v4_ofp_bsn_bfd_endpoint_event)
+fields['of13.bsn_tlv_bfd_endpoint_id.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_endpoint_id.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_endpoint_id.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_endpoint_id.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_endpoint_id.value'] = ProtoField.uint16("of13.bsn_tlv_bfd_endpoint_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_endpoint_type.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_endpoint_type.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_endpoint_type.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_endpoint_type.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_endpoint_type.value'] = ProtoField.uint32("of13.bsn_tlv_bfd_endpoint_type.value", "value", base.DEC, enum_v4_ofp_bsn_bfd_endpoint_type)
+fields['of13.bsn_tlv_bfd_local_discriminator.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_local_discriminator.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_discriminator.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_local_discriminator.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_discriminator.value'] = ProtoField.uint32("of13.bsn_tlv_bfd_local_discriminator.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_min_echo_interval.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_local_min_echo_interval.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_min_echo_interval.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_local_min_echo_interval.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_min_echo_interval.value'] = ProtoField.uint32("of13.bsn_tlv_bfd_local_min_echo_interval.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_min_rx_interval.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_local_min_rx_interval.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_min_rx_interval.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_local_min_rx_interval.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_min_rx_interval.value'] = ProtoField.uint32("of13.bsn_tlv_bfd_local_min_rx_interval.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_min_tx_interval.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_local_min_tx_interval.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_min_tx_interval.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_local_min_tx_interval.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_min_tx_interval.value'] = ProtoField.uint32("of13.bsn_tlv_bfd_local_min_tx_interval.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_multiplier.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_local_multiplier.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_multiplier.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_local_multiplier.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_multiplier.value'] = ProtoField.uint8("of13.bsn_tlv_bfd_local_multiplier.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_state.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_local_state.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_state.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_local_state.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_local_state.value'] = ProtoField.uint32("of13.bsn_tlv_bfd_local_state.value", "value", base.DEC, enum_v4_ofp_bsn_bfd_endpoint_state)
+fields['of13.bsn_tlv_bfd_remote_discriminator.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_remote_discriminator.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_discriminator.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_remote_discriminator.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_discriminator.value'] = ProtoField.uint32("of13.bsn_tlv_bfd_remote_discriminator.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_min_echo_interval.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_remote_min_echo_interval.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_min_echo_interval.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_remote_min_echo_interval.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_min_echo_interval.value'] = ProtoField.uint32("of13.bsn_tlv_bfd_remote_min_echo_interval.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_min_rx_interval.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_remote_min_rx_interval.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_min_rx_interval.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_remote_min_rx_interval.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_min_rx_interval.value'] = ProtoField.uint32("of13.bsn_tlv_bfd_remote_min_rx_interval.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_min_tx_interval.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_remote_min_tx_interval.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_min_tx_interval.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_remote_min_tx_interval.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_min_tx_interval.value'] = ProtoField.uint32("of13.bsn_tlv_bfd_remote_min_tx_interval.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_multiplier.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_remote_multiplier.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_multiplier.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_remote_multiplier.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_multiplier.value'] = ProtoField.uint8("of13.bsn_tlv_bfd_remote_multiplier.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_state.type'] = ProtoField.uint16("of13.bsn_tlv_bfd_remote_state.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_state.length'] = ProtoField.uint16("of13.bsn_tlv_bfd_remote_state.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bfd_remote_state.value'] = ProtoField.uint32("of13.bsn_tlv_bfd_remote_state.value", "value", base.DEC, enum_v4_ofp_bsn_bfd_endpoint_state)
 fields['of13.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
@@ -11829,6 +11961,54 @@ fields['of14.bsn_tlv_apply_packets.value'] = ProtoField.uint64("of14.bsn_tlv_app
 fields['of14.bsn_tlv_auto_negotiation.type'] = ProtoField.uint16("of14.bsn_tlv_auto_negotiation.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_auto_negotiation.length'] = ProtoField.uint16("of14.bsn_tlv_auto_negotiation.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_auto_negotiation.value'] = ProtoField.uint32("of14.bsn_tlv_auto_negotiation.value", "value", base.DEC, enum_v5_ofp_bsn_auto_negotiation_type)
+fields['of14.bsn_tlv_bfd_encap_type.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_encap_type.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_encap_type.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_encap_type.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_encap_type.value'] = ProtoField.uint32("of14.bsn_tlv_bfd_encap_type.value", "value", base.DEC, enum_v5_ofp_bsn_bfd_encap_type)
+fields['of14.bsn_tlv_bfd_endpoint_event.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_endpoint_event.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_endpoint_event.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_endpoint_event.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_endpoint_event.value'] = ProtoField.uint32("of14.bsn_tlv_bfd_endpoint_event.value", "value", base.DEC, enum_v5_ofp_bsn_bfd_endpoint_event)
+fields['of14.bsn_tlv_bfd_endpoint_id.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_endpoint_id.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_endpoint_id.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_endpoint_id.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_endpoint_id.value'] = ProtoField.uint16("of14.bsn_tlv_bfd_endpoint_id.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_endpoint_type.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_endpoint_type.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_endpoint_type.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_endpoint_type.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_endpoint_type.value'] = ProtoField.uint32("of14.bsn_tlv_bfd_endpoint_type.value", "value", base.DEC, enum_v5_ofp_bsn_bfd_endpoint_type)
+fields['of14.bsn_tlv_bfd_local_discriminator.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_local_discriminator.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_discriminator.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_local_discriminator.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_discriminator.value'] = ProtoField.uint32("of14.bsn_tlv_bfd_local_discriminator.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_min_echo_interval.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_local_min_echo_interval.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_min_echo_interval.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_local_min_echo_interval.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_min_echo_interval.value'] = ProtoField.uint32("of14.bsn_tlv_bfd_local_min_echo_interval.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_min_rx_interval.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_local_min_rx_interval.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_min_rx_interval.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_local_min_rx_interval.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_min_rx_interval.value'] = ProtoField.uint32("of14.bsn_tlv_bfd_local_min_rx_interval.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_min_tx_interval.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_local_min_tx_interval.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_min_tx_interval.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_local_min_tx_interval.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_min_tx_interval.value'] = ProtoField.uint32("of14.bsn_tlv_bfd_local_min_tx_interval.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_multiplier.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_local_multiplier.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_multiplier.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_local_multiplier.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_multiplier.value'] = ProtoField.uint8("of14.bsn_tlv_bfd_local_multiplier.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_state.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_local_state.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_state.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_local_state.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_local_state.value'] = ProtoField.uint32("of14.bsn_tlv_bfd_local_state.value", "value", base.DEC, enum_v5_ofp_bsn_bfd_endpoint_state)
+fields['of14.bsn_tlv_bfd_remote_discriminator.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_remote_discriminator.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_discriminator.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_remote_discriminator.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_discriminator.value'] = ProtoField.uint32("of14.bsn_tlv_bfd_remote_discriminator.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_min_echo_interval.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_remote_min_echo_interval.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_min_echo_interval.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_remote_min_echo_interval.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_min_echo_interval.value'] = ProtoField.uint32("of14.bsn_tlv_bfd_remote_min_echo_interval.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_min_rx_interval.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_remote_min_rx_interval.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_min_rx_interval.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_remote_min_rx_interval.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_min_rx_interval.value'] = ProtoField.uint32("of14.bsn_tlv_bfd_remote_min_rx_interval.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_min_tx_interval.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_remote_min_tx_interval.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_min_tx_interval.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_remote_min_tx_interval.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_min_tx_interval.value'] = ProtoField.uint32("of14.bsn_tlv_bfd_remote_min_tx_interval.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_multiplier.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_remote_multiplier.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_multiplier.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_remote_multiplier.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_multiplier.value'] = ProtoField.uint8("of14.bsn_tlv_bfd_remote_multiplier.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_state.type'] = ProtoField.uint16("of14.bsn_tlv_bfd_remote_state.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_state.length'] = ProtoField.uint16("of14.bsn_tlv_bfd_remote_state.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bfd_remote_state.value'] = ProtoField.uint32("of14.bsn_tlv_bfd_remote_state.value", "value", base.DEC, enum_v5_ofp_bsn_bfd_endpoint_state)
 fields['of14.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of14.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of14.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of14.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
@@ -15151,6 +15331,54 @@ fields['of15.bsn_tlv_apply_packets.value'] = ProtoField.uint64("of15.bsn_tlv_app
 fields['of15.bsn_tlv_auto_negotiation.type'] = ProtoField.uint16("of15.bsn_tlv_auto_negotiation.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_auto_negotiation.length'] = ProtoField.uint16("of15.bsn_tlv_auto_negotiation.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_auto_negotiation.value'] = ProtoField.uint32("of15.bsn_tlv_auto_negotiation.value", "value", base.DEC, enum_v6_ofp_bsn_auto_negotiation_type)
+fields['of15.bsn_tlv_bfd_encap_type.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_encap_type.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_encap_type.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_encap_type.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_encap_type.value'] = ProtoField.uint32("of15.bsn_tlv_bfd_encap_type.value", "value", base.DEC, enum_v6_ofp_bsn_bfd_encap_type)
+fields['of15.bsn_tlv_bfd_endpoint_event.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_endpoint_event.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_endpoint_event.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_endpoint_event.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_endpoint_event.value'] = ProtoField.uint32("of15.bsn_tlv_bfd_endpoint_event.value", "value", base.DEC, enum_v6_ofp_bsn_bfd_endpoint_event)
+fields['of15.bsn_tlv_bfd_endpoint_id.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_endpoint_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_endpoint_id.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_endpoint_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_endpoint_id.value'] = ProtoField.uint16("of15.bsn_tlv_bfd_endpoint_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_endpoint_type.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_endpoint_type.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_endpoint_type.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_endpoint_type.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_endpoint_type.value'] = ProtoField.uint32("of15.bsn_tlv_bfd_endpoint_type.value", "value", base.DEC, enum_v6_ofp_bsn_bfd_endpoint_type)
+fields['of15.bsn_tlv_bfd_local_discriminator.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_local_discriminator.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_discriminator.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_local_discriminator.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_discriminator.value'] = ProtoField.uint32("of15.bsn_tlv_bfd_local_discriminator.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_min_echo_interval.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_local_min_echo_interval.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_min_echo_interval.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_local_min_echo_interval.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_min_echo_interval.value'] = ProtoField.uint32("of15.bsn_tlv_bfd_local_min_echo_interval.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_min_rx_interval.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_local_min_rx_interval.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_min_rx_interval.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_local_min_rx_interval.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_min_rx_interval.value'] = ProtoField.uint32("of15.bsn_tlv_bfd_local_min_rx_interval.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_min_tx_interval.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_local_min_tx_interval.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_min_tx_interval.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_local_min_tx_interval.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_min_tx_interval.value'] = ProtoField.uint32("of15.bsn_tlv_bfd_local_min_tx_interval.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_multiplier.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_local_multiplier.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_multiplier.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_local_multiplier.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_multiplier.value'] = ProtoField.uint8("of15.bsn_tlv_bfd_local_multiplier.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_state.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_local_state.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_state.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_local_state.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_local_state.value'] = ProtoField.uint32("of15.bsn_tlv_bfd_local_state.value", "value", base.DEC, enum_v6_ofp_bsn_bfd_endpoint_state)
+fields['of15.bsn_tlv_bfd_remote_discriminator.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_remote_discriminator.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_discriminator.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_remote_discriminator.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_discriminator.value'] = ProtoField.uint32("of15.bsn_tlv_bfd_remote_discriminator.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_min_echo_interval.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_remote_min_echo_interval.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_min_echo_interval.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_remote_min_echo_interval.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_min_echo_interval.value'] = ProtoField.uint32("of15.bsn_tlv_bfd_remote_min_echo_interval.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_min_rx_interval.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_remote_min_rx_interval.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_min_rx_interval.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_remote_min_rx_interval.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_min_rx_interval.value'] = ProtoField.uint32("of15.bsn_tlv_bfd_remote_min_rx_interval.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_min_tx_interval.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_remote_min_tx_interval.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_min_tx_interval.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_remote_min_tx_interval.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_min_tx_interval.value'] = ProtoField.uint32("of15.bsn_tlv_bfd_remote_min_tx_interval.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_multiplier.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_remote_multiplier.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_multiplier.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_remote_multiplier.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_multiplier.value'] = ProtoField.uint8("of15.bsn_tlv_bfd_remote_multiplier.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_state.type'] = ProtoField.uint16("of15.bsn_tlv_bfd_remote_state.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_state.length'] = ProtoField.uint16("of15.bsn_tlv_bfd_remote_state.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_bfd_remote_state.value'] = ProtoField.uint32("of15.bsn_tlv_bfd_remote_state.value", "value", base.DEC, enum_v6_ofp_bsn_bfd_endpoint_state)
 fields['of15.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of15.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of15.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of15.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
@@ -21766,6 +21994,54 @@ p_of.fields = {
     fields['of13.bsn_tlv_auto_negotiation.type'],
     fields['of13.bsn_tlv_auto_negotiation.length'],
     fields['of13.bsn_tlv_auto_negotiation.value'],
+    fields['of13.bsn_tlv_bfd_encap_type.type'],
+    fields['of13.bsn_tlv_bfd_encap_type.length'],
+    fields['of13.bsn_tlv_bfd_encap_type.value'],
+    fields['of13.bsn_tlv_bfd_endpoint_event.type'],
+    fields['of13.bsn_tlv_bfd_endpoint_event.length'],
+    fields['of13.bsn_tlv_bfd_endpoint_event.value'],
+    fields['of13.bsn_tlv_bfd_endpoint_id.type'],
+    fields['of13.bsn_tlv_bfd_endpoint_id.length'],
+    fields['of13.bsn_tlv_bfd_endpoint_id.value'],
+    fields['of13.bsn_tlv_bfd_endpoint_type.type'],
+    fields['of13.bsn_tlv_bfd_endpoint_type.length'],
+    fields['of13.bsn_tlv_bfd_endpoint_type.value'],
+    fields['of13.bsn_tlv_bfd_local_discriminator.type'],
+    fields['of13.bsn_tlv_bfd_local_discriminator.length'],
+    fields['of13.bsn_tlv_bfd_local_discriminator.value'],
+    fields['of13.bsn_tlv_bfd_local_min_echo_interval.type'],
+    fields['of13.bsn_tlv_bfd_local_min_echo_interval.length'],
+    fields['of13.bsn_tlv_bfd_local_min_echo_interval.value'],
+    fields['of13.bsn_tlv_bfd_local_min_rx_interval.type'],
+    fields['of13.bsn_tlv_bfd_local_min_rx_interval.length'],
+    fields['of13.bsn_tlv_bfd_local_min_rx_interval.value'],
+    fields['of13.bsn_tlv_bfd_local_min_tx_interval.type'],
+    fields['of13.bsn_tlv_bfd_local_min_tx_interval.length'],
+    fields['of13.bsn_tlv_bfd_local_min_tx_interval.value'],
+    fields['of13.bsn_tlv_bfd_local_multiplier.type'],
+    fields['of13.bsn_tlv_bfd_local_multiplier.length'],
+    fields['of13.bsn_tlv_bfd_local_multiplier.value'],
+    fields['of13.bsn_tlv_bfd_local_state.type'],
+    fields['of13.bsn_tlv_bfd_local_state.length'],
+    fields['of13.bsn_tlv_bfd_local_state.value'],
+    fields['of13.bsn_tlv_bfd_remote_discriminator.type'],
+    fields['of13.bsn_tlv_bfd_remote_discriminator.length'],
+    fields['of13.bsn_tlv_bfd_remote_discriminator.value'],
+    fields['of13.bsn_tlv_bfd_remote_min_echo_interval.type'],
+    fields['of13.bsn_tlv_bfd_remote_min_echo_interval.length'],
+    fields['of13.bsn_tlv_bfd_remote_min_echo_interval.value'],
+    fields['of13.bsn_tlv_bfd_remote_min_rx_interval.type'],
+    fields['of13.bsn_tlv_bfd_remote_min_rx_interval.length'],
+    fields['of13.bsn_tlv_bfd_remote_min_rx_interval.value'],
+    fields['of13.bsn_tlv_bfd_remote_min_tx_interval.type'],
+    fields['of13.bsn_tlv_bfd_remote_min_tx_interval.length'],
+    fields['of13.bsn_tlv_bfd_remote_min_tx_interval.value'],
+    fields['of13.bsn_tlv_bfd_remote_multiplier.type'],
+    fields['of13.bsn_tlv_bfd_remote_multiplier.length'],
+    fields['of13.bsn_tlv_bfd_remote_multiplier.value'],
+    fields['of13.bsn_tlv_bfd_remote_state.type'],
+    fields['of13.bsn_tlv_bfd_remote_state.length'],
+    fields['of13.bsn_tlv_bfd_remote_state.value'],
     fields['of13.bsn_tlv_broadcast_query_timeout.type'],
     fields['of13.bsn_tlv_broadcast_query_timeout.length'],
     fields['of13.bsn_tlv_broadcast_query_timeout.value'],
@@ -24772,6 +25048,54 @@ p_of.fields = {
     fields['of14.bsn_tlv_auto_negotiation.type'],
     fields['of14.bsn_tlv_auto_negotiation.length'],
     fields['of14.bsn_tlv_auto_negotiation.value'],
+    fields['of14.bsn_tlv_bfd_encap_type.type'],
+    fields['of14.bsn_tlv_bfd_encap_type.length'],
+    fields['of14.bsn_tlv_bfd_encap_type.value'],
+    fields['of14.bsn_tlv_bfd_endpoint_event.type'],
+    fields['of14.bsn_tlv_bfd_endpoint_event.length'],
+    fields['of14.bsn_tlv_bfd_endpoint_event.value'],
+    fields['of14.bsn_tlv_bfd_endpoint_id.type'],
+    fields['of14.bsn_tlv_bfd_endpoint_id.length'],
+    fields['of14.bsn_tlv_bfd_endpoint_id.value'],
+    fields['of14.bsn_tlv_bfd_endpoint_type.type'],
+    fields['of14.bsn_tlv_bfd_endpoint_type.length'],
+    fields['of14.bsn_tlv_bfd_endpoint_type.value'],
+    fields['of14.bsn_tlv_bfd_local_discriminator.type'],
+    fields['of14.bsn_tlv_bfd_local_discriminator.length'],
+    fields['of14.bsn_tlv_bfd_local_discriminator.value'],
+    fields['of14.bsn_tlv_bfd_local_min_echo_interval.type'],
+    fields['of14.bsn_tlv_bfd_local_min_echo_interval.length'],
+    fields['of14.bsn_tlv_bfd_local_min_echo_interval.value'],
+    fields['of14.bsn_tlv_bfd_local_min_rx_interval.type'],
+    fields['of14.bsn_tlv_bfd_local_min_rx_interval.length'],
+    fields['of14.bsn_tlv_bfd_local_min_rx_interval.value'],
+    fields['of14.bsn_tlv_bfd_local_min_tx_interval.type'],
+    fields['of14.bsn_tlv_bfd_local_min_tx_interval.length'],
+    fields['of14.bsn_tlv_bfd_local_min_tx_interval.value'],
+    fields['of14.bsn_tlv_bfd_local_multiplier.type'],
+    fields['of14.bsn_tlv_bfd_local_multiplier.length'],
+    fields['of14.bsn_tlv_bfd_local_multiplier.value'],
+    fields['of14.bsn_tlv_bfd_local_state.type'],
+    fields['of14.bsn_tlv_bfd_local_state.length'],
+    fields['of14.bsn_tlv_bfd_local_state.value'],
+    fields['of14.bsn_tlv_bfd_remote_discriminator.type'],
+    fields['of14.bsn_tlv_bfd_remote_discriminator.length'],
+    fields['of14.bsn_tlv_bfd_remote_discriminator.value'],
+    fields['of14.bsn_tlv_bfd_remote_min_echo_interval.type'],
+    fields['of14.bsn_tlv_bfd_remote_min_echo_interval.length'],
+    fields['of14.bsn_tlv_bfd_remote_min_echo_interval.value'],
+    fields['of14.bsn_tlv_bfd_remote_min_rx_interval.type'],
+    fields['of14.bsn_tlv_bfd_remote_min_rx_interval.length'],
+    fields['of14.bsn_tlv_bfd_remote_min_rx_interval.value'],
+    fields['of14.bsn_tlv_bfd_remote_min_tx_interval.type'],
+    fields['of14.bsn_tlv_bfd_remote_min_tx_interval.length'],
+    fields['of14.bsn_tlv_bfd_remote_min_tx_interval.value'],
+    fields['of14.bsn_tlv_bfd_remote_multiplier.type'],
+    fields['of14.bsn_tlv_bfd_remote_multiplier.length'],
+    fields['of14.bsn_tlv_bfd_remote_multiplier.value'],
+    fields['of14.bsn_tlv_bfd_remote_state.type'],
+    fields['of14.bsn_tlv_bfd_remote_state.length'],
+    fields['of14.bsn_tlv_bfd_remote_state.value'],
     fields['of14.bsn_tlv_broadcast_query_timeout.type'],
     fields['of14.bsn_tlv_broadcast_query_timeout.length'],
     fields['of14.bsn_tlv_broadcast_query_timeout.value'],
@@ -28094,6 +28418,54 @@ p_of.fields = {
     fields['of15.bsn_tlv_auto_negotiation.type'],
     fields['of15.bsn_tlv_auto_negotiation.length'],
     fields['of15.bsn_tlv_auto_negotiation.value'],
+    fields['of15.bsn_tlv_bfd_encap_type.type'],
+    fields['of15.bsn_tlv_bfd_encap_type.length'],
+    fields['of15.bsn_tlv_bfd_encap_type.value'],
+    fields['of15.bsn_tlv_bfd_endpoint_event.type'],
+    fields['of15.bsn_tlv_bfd_endpoint_event.length'],
+    fields['of15.bsn_tlv_bfd_endpoint_event.value'],
+    fields['of15.bsn_tlv_bfd_endpoint_id.type'],
+    fields['of15.bsn_tlv_bfd_endpoint_id.length'],
+    fields['of15.bsn_tlv_bfd_endpoint_id.value'],
+    fields['of15.bsn_tlv_bfd_endpoint_type.type'],
+    fields['of15.bsn_tlv_bfd_endpoint_type.length'],
+    fields['of15.bsn_tlv_bfd_endpoint_type.value'],
+    fields['of15.bsn_tlv_bfd_local_discriminator.type'],
+    fields['of15.bsn_tlv_bfd_local_discriminator.length'],
+    fields['of15.bsn_tlv_bfd_local_discriminator.value'],
+    fields['of15.bsn_tlv_bfd_local_min_echo_interval.type'],
+    fields['of15.bsn_tlv_bfd_local_min_echo_interval.length'],
+    fields['of15.bsn_tlv_bfd_local_min_echo_interval.value'],
+    fields['of15.bsn_tlv_bfd_local_min_rx_interval.type'],
+    fields['of15.bsn_tlv_bfd_local_min_rx_interval.length'],
+    fields['of15.bsn_tlv_bfd_local_min_rx_interval.value'],
+    fields['of15.bsn_tlv_bfd_local_min_tx_interval.type'],
+    fields['of15.bsn_tlv_bfd_local_min_tx_interval.length'],
+    fields['of15.bsn_tlv_bfd_local_min_tx_interval.value'],
+    fields['of15.bsn_tlv_bfd_local_multiplier.type'],
+    fields['of15.bsn_tlv_bfd_local_multiplier.length'],
+    fields['of15.bsn_tlv_bfd_local_multiplier.value'],
+    fields['of15.bsn_tlv_bfd_local_state.type'],
+    fields['of15.bsn_tlv_bfd_local_state.length'],
+    fields['of15.bsn_tlv_bfd_local_state.value'],
+    fields['of15.bsn_tlv_bfd_remote_discriminator.type'],
+    fields['of15.bsn_tlv_bfd_remote_discriminator.length'],
+    fields['of15.bsn_tlv_bfd_remote_discriminator.value'],
+    fields['of15.bsn_tlv_bfd_remote_min_echo_interval.type'],
+    fields['of15.bsn_tlv_bfd_remote_min_echo_interval.length'],
+    fields['of15.bsn_tlv_bfd_remote_min_echo_interval.value'],
+    fields['of15.bsn_tlv_bfd_remote_min_rx_interval.type'],
+    fields['of15.bsn_tlv_bfd_remote_min_rx_interval.length'],
+    fields['of15.bsn_tlv_bfd_remote_min_rx_interval.value'],
+    fields['of15.bsn_tlv_bfd_remote_min_tx_interval.type'],
+    fields['of15.bsn_tlv_bfd_remote_min_tx_interval.length'],
+    fields['of15.bsn_tlv_bfd_remote_min_tx_interval.value'],
+    fields['of15.bsn_tlv_bfd_remote_multiplier.type'],
+    fields['of15.bsn_tlv_bfd_remote_multiplier.length'],
+    fields['of15.bsn_tlv_bfd_remote_multiplier.value'],
+    fields['of15.bsn_tlv_bfd_remote_state.type'],
+    fields['of15.bsn_tlv_bfd_remote_state.length'],
+    fields['of15.bsn_tlv_bfd_remote_state.value'],
     fields['of15.bsn_tlv_broadcast_query_timeout.type'],
     fields['of15.bsn_tlv_broadcast_query_timeout.length'],
     fields['of15.bsn_tlv_broadcast_query_timeout.value'],
@@ -40269,6 +40641,166 @@ function dissect_of_bsn_tlv_auto_negotiation_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[144] = dissect_of_bsn_tlv_auto_negotiation_v4
 
+-- child class of_bsn_tlv_bfd_encap_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_encap_type_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_encap_type.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_encap_type.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_encap_type.value')
+    return 'of_bsn_tlv_bfd_encap_type'
+end
+of_bsn_tlv_v4_dissectors[175] = dissect_of_bsn_tlv_bfd_encap_type_v4
+
+-- child class of_bsn_tlv_bfd_endpoint_event
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_endpoint_event_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_endpoint_event.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_endpoint_event.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_endpoint_event.value')
+    return 'of_bsn_tlv_bfd_endpoint_event'
+end
+of_bsn_tlv_v4_dissectors[188] = dissect_of_bsn_tlv_bfd_endpoint_event_v4
+
+-- child class of_bsn_tlv_bfd_endpoint_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_endpoint_id_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_endpoint_id.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_endpoint_id.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_endpoint_id.value')
+    return 'of_bsn_tlv_bfd_endpoint_id'
+end
+of_bsn_tlv_v4_dissectors[173] = dissect_of_bsn_tlv_bfd_endpoint_id_v4
+
+-- child class of_bsn_tlv_bfd_endpoint_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_endpoint_type_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_endpoint_type.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_endpoint_type.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_endpoint_type.value')
+    return 'of_bsn_tlv_bfd_endpoint_type'
+end
+of_bsn_tlv_v4_dissectors[174] = dissect_of_bsn_tlv_bfd_endpoint_type_v4
+
+-- child class of_bsn_tlv_bfd_local_discriminator
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_discriminator_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_discriminator.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_discriminator.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_discriminator.value')
+    return 'of_bsn_tlv_bfd_local_discriminator'
+end
+of_bsn_tlv_v4_dissectors[178] = dissect_of_bsn_tlv_bfd_local_discriminator_v4
+
+-- child class of_bsn_tlv_bfd_local_min_echo_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_min_echo_interval_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_min_echo_interval.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_min_echo_interval.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_min_echo_interval.value')
+    return 'of_bsn_tlv_bfd_local_min_echo_interval'
+end
+of_bsn_tlv_v4_dissectors[182] = dissect_of_bsn_tlv_bfd_local_min_echo_interval_v4
+
+-- child class of_bsn_tlv_bfd_local_min_rx_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_min_rx_interval_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_min_rx_interval.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_min_rx_interval.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_min_rx_interval.value')
+    return 'of_bsn_tlv_bfd_local_min_rx_interval'
+end
+of_bsn_tlv_v4_dissectors[181] = dissect_of_bsn_tlv_bfd_local_min_rx_interval_v4
+
+-- child class of_bsn_tlv_bfd_local_min_tx_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_min_tx_interval_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_min_tx_interval.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_min_tx_interval.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_min_tx_interval.value')
+    return 'of_bsn_tlv_bfd_local_min_tx_interval'
+end
+of_bsn_tlv_v4_dissectors[180] = dissect_of_bsn_tlv_bfd_local_min_tx_interval_v4
+
+-- child class of_bsn_tlv_bfd_local_multiplier
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_multiplier_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_multiplier.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_multiplier.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_multiplier.value')
+    return 'of_bsn_tlv_bfd_local_multiplier'
+end
+of_bsn_tlv_v4_dissectors[183] = dissect_of_bsn_tlv_bfd_local_multiplier_v4
+
+-- child class of_bsn_tlv_bfd_local_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_state_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_state.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_state.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_local_state.value')
+    return 'of_bsn_tlv_bfd_local_state'
+end
+of_bsn_tlv_v4_dissectors[176] = dissect_of_bsn_tlv_bfd_local_state_v4
+
+-- child class of_bsn_tlv_bfd_remote_discriminator
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_discriminator_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_discriminator.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_discriminator.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_discriminator.value')
+    return 'of_bsn_tlv_bfd_remote_discriminator'
+end
+of_bsn_tlv_v4_dissectors[179] = dissect_of_bsn_tlv_bfd_remote_discriminator_v4
+
+-- child class of_bsn_tlv_bfd_remote_min_echo_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_min_echo_interval_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_min_echo_interval.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_min_echo_interval.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_min_echo_interval.value')
+    return 'of_bsn_tlv_bfd_remote_min_echo_interval'
+end
+of_bsn_tlv_v4_dissectors[186] = dissect_of_bsn_tlv_bfd_remote_min_echo_interval_v4
+
+-- child class of_bsn_tlv_bfd_remote_min_rx_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_min_rx_interval_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_min_rx_interval.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_min_rx_interval.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_min_rx_interval.value')
+    return 'of_bsn_tlv_bfd_remote_min_rx_interval'
+end
+of_bsn_tlv_v4_dissectors[185] = dissect_of_bsn_tlv_bfd_remote_min_rx_interval_v4
+
+-- child class of_bsn_tlv_bfd_remote_min_tx_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_min_tx_interval_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_min_tx_interval.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_min_tx_interval.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_min_tx_interval.value')
+    return 'of_bsn_tlv_bfd_remote_min_tx_interval'
+end
+of_bsn_tlv_v4_dissectors[184] = dissect_of_bsn_tlv_bfd_remote_min_tx_interval_v4
+
+-- child class of_bsn_tlv_bfd_remote_multiplier
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_multiplier_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_multiplier.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_multiplier.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_multiplier.value')
+    return 'of_bsn_tlv_bfd_remote_multiplier'
+end
+of_bsn_tlv_v4_dissectors[187] = dissect_of_bsn_tlv_bfd_remote_multiplier_v4
+
+-- child class of_bsn_tlv_bfd_remote_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_state_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_state.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_state.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_bfd_remote_state.value')
+    return 'of_bsn_tlv_bfd_remote_state'
+end
+of_bsn_tlv_v4_dissectors[177] = dissect_of_bsn_tlv_bfd_remote_state_v4
+
 -- child class of_bsn_tlv_broadcast_query_timeout
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_broadcast_query_timeout_v4(reader, subtree)
@@ -48434,6 +48966,166 @@ function dissect_of_bsn_tlv_auto_negotiation_v5(reader, subtree)
     return 'of_bsn_tlv_auto_negotiation'
 end
 of_bsn_tlv_v5_dissectors[144] = dissect_of_bsn_tlv_auto_negotiation_v5
+
+-- child class of_bsn_tlv_bfd_encap_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_encap_type_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_encap_type.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_encap_type.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_encap_type.value')
+    return 'of_bsn_tlv_bfd_encap_type'
+end
+of_bsn_tlv_v5_dissectors[175] = dissect_of_bsn_tlv_bfd_encap_type_v5
+
+-- child class of_bsn_tlv_bfd_endpoint_event
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_endpoint_event_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_endpoint_event.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_endpoint_event.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_endpoint_event.value')
+    return 'of_bsn_tlv_bfd_endpoint_event'
+end
+of_bsn_tlv_v5_dissectors[188] = dissect_of_bsn_tlv_bfd_endpoint_event_v5
+
+-- child class of_bsn_tlv_bfd_endpoint_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_endpoint_id_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_endpoint_id.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_endpoint_id.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_endpoint_id.value')
+    return 'of_bsn_tlv_bfd_endpoint_id'
+end
+of_bsn_tlv_v5_dissectors[173] = dissect_of_bsn_tlv_bfd_endpoint_id_v5
+
+-- child class of_bsn_tlv_bfd_endpoint_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_endpoint_type_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_endpoint_type.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_endpoint_type.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_endpoint_type.value')
+    return 'of_bsn_tlv_bfd_endpoint_type'
+end
+of_bsn_tlv_v5_dissectors[174] = dissect_of_bsn_tlv_bfd_endpoint_type_v5
+
+-- child class of_bsn_tlv_bfd_local_discriminator
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_discriminator_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_discriminator.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_discriminator.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_discriminator.value')
+    return 'of_bsn_tlv_bfd_local_discriminator'
+end
+of_bsn_tlv_v5_dissectors[178] = dissect_of_bsn_tlv_bfd_local_discriminator_v5
+
+-- child class of_bsn_tlv_bfd_local_min_echo_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_min_echo_interval_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_min_echo_interval.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_min_echo_interval.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_min_echo_interval.value')
+    return 'of_bsn_tlv_bfd_local_min_echo_interval'
+end
+of_bsn_tlv_v5_dissectors[182] = dissect_of_bsn_tlv_bfd_local_min_echo_interval_v5
+
+-- child class of_bsn_tlv_bfd_local_min_rx_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_min_rx_interval_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_min_rx_interval.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_min_rx_interval.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_min_rx_interval.value')
+    return 'of_bsn_tlv_bfd_local_min_rx_interval'
+end
+of_bsn_tlv_v5_dissectors[181] = dissect_of_bsn_tlv_bfd_local_min_rx_interval_v5
+
+-- child class of_bsn_tlv_bfd_local_min_tx_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_min_tx_interval_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_min_tx_interval.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_min_tx_interval.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_min_tx_interval.value')
+    return 'of_bsn_tlv_bfd_local_min_tx_interval'
+end
+of_bsn_tlv_v5_dissectors[180] = dissect_of_bsn_tlv_bfd_local_min_tx_interval_v5
+
+-- child class of_bsn_tlv_bfd_local_multiplier
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_multiplier_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_multiplier.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_multiplier.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_multiplier.value')
+    return 'of_bsn_tlv_bfd_local_multiplier'
+end
+of_bsn_tlv_v5_dissectors[183] = dissect_of_bsn_tlv_bfd_local_multiplier_v5
+
+-- child class of_bsn_tlv_bfd_local_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_state_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_state.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_state.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_local_state.value')
+    return 'of_bsn_tlv_bfd_local_state'
+end
+of_bsn_tlv_v5_dissectors[176] = dissect_of_bsn_tlv_bfd_local_state_v5
+
+-- child class of_bsn_tlv_bfd_remote_discriminator
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_discriminator_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_discriminator.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_discriminator.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_discriminator.value')
+    return 'of_bsn_tlv_bfd_remote_discriminator'
+end
+of_bsn_tlv_v5_dissectors[179] = dissect_of_bsn_tlv_bfd_remote_discriminator_v5
+
+-- child class of_bsn_tlv_bfd_remote_min_echo_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_min_echo_interval_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_min_echo_interval.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_min_echo_interval.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_min_echo_interval.value')
+    return 'of_bsn_tlv_bfd_remote_min_echo_interval'
+end
+of_bsn_tlv_v5_dissectors[186] = dissect_of_bsn_tlv_bfd_remote_min_echo_interval_v5
+
+-- child class of_bsn_tlv_bfd_remote_min_rx_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_min_rx_interval_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_min_rx_interval.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_min_rx_interval.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_min_rx_interval.value')
+    return 'of_bsn_tlv_bfd_remote_min_rx_interval'
+end
+of_bsn_tlv_v5_dissectors[185] = dissect_of_bsn_tlv_bfd_remote_min_rx_interval_v5
+
+-- child class of_bsn_tlv_bfd_remote_min_tx_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_min_tx_interval_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_min_tx_interval.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_min_tx_interval.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_min_tx_interval.value')
+    return 'of_bsn_tlv_bfd_remote_min_tx_interval'
+end
+of_bsn_tlv_v5_dissectors[184] = dissect_of_bsn_tlv_bfd_remote_min_tx_interval_v5
+
+-- child class of_bsn_tlv_bfd_remote_multiplier
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_multiplier_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_multiplier.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_multiplier.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_multiplier.value')
+    return 'of_bsn_tlv_bfd_remote_multiplier'
+end
+of_bsn_tlv_v5_dissectors[187] = dissect_of_bsn_tlv_bfd_remote_multiplier_v5
+
+-- child class of_bsn_tlv_bfd_remote_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_state_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_state.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_state.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_bfd_remote_state.value')
+    return 'of_bsn_tlv_bfd_remote_state'
+end
+of_bsn_tlv_v5_dissectors[177] = dissect_of_bsn_tlv_bfd_remote_state_v5
 
 -- child class of_bsn_tlv_broadcast_query_timeout
 -- Child of of_bsn_tlv
@@ -57297,6 +57989,166 @@ function dissect_of_bsn_tlv_auto_negotiation_v6(reader, subtree)
     return 'of_bsn_tlv_auto_negotiation'
 end
 of_bsn_tlv_v6_dissectors[144] = dissect_of_bsn_tlv_auto_negotiation_v6
+
+-- child class of_bsn_tlv_bfd_encap_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_encap_type_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_encap_type.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_encap_type.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_encap_type.value')
+    return 'of_bsn_tlv_bfd_encap_type'
+end
+of_bsn_tlv_v6_dissectors[175] = dissect_of_bsn_tlv_bfd_encap_type_v6
+
+-- child class of_bsn_tlv_bfd_endpoint_event
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_endpoint_event_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_endpoint_event.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_endpoint_event.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_endpoint_event.value')
+    return 'of_bsn_tlv_bfd_endpoint_event'
+end
+of_bsn_tlv_v6_dissectors[188] = dissect_of_bsn_tlv_bfd_endpoint_event_v6
+
+-- child class of_bsn_tlv_bfd_endpoint_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_endpoint_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_endpoint_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_endpoint_id.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_endpoint_id.value')
+    return 'of_bsn_tlv_bfd_endpoint_id'
+end
+of_bsn_tlv_v6_dissectors[173] = dissect_of_bsn_tlv_bfd_endpoint_id_v6
+
+-- child class of_bsn_tlv_bfd_endpoint_type
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_endpoint_type_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_endpoint_type.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_endpoint_type.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_endpoint_type.value')
+    return 'of_bsn_tlv_bfd_endpoint_type'
+end
+of_bsn_tlv_v6_dissectors[174] = dissect_of_bsn_tlv_bfd_endpoint_type_v6
+
+-- child class of_bsn_tlv_bfd_local_discriminator
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_discriminator_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_discriminator.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_discriminator.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_discriminator.value')
+    return 'of_bsn_tlv_bfd_local_discriminator'
+end
+of_bsn_tlv_v6_dissectors[178] = dissect_of_bsn_tlv_bfd_local_discriminator_v6
+
+-- child class of_bsn_tlv_bfd_local_min_echo_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_min_echo_interval_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_min_echo_interval.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_min_echo_interval.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_min_echo_interval.value')
+    return 'of_bsn_tlv_bfd_local_min_echo_interval'
+end
+of_bsn_tlv_v6_dissectors[182] = dissect_of_bsn_tlv_bfd_local_min_echo_interval_v6
+
+-- child class of_bsn_tlv_bfd_local_min_rx_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_min_rx_interval_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_min_rx_interval.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_min_rx_interval.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_min_rx_interval.value')
+    return 'of_bsn_tlv_bfd_local_min_rx_interval'
+end
+of_bsn_tlv_v6_dissectors[181] = dissect_of_bsn_tlv_bfd_local_min_rx_interval_v6
+
+-- child class of_bsn_tlv_bfd_local_min_tx_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_min_tx_interval_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_min_tx_interval.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_min_tx_interval.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_min_tx_interval.value')
+    return 'of_bsn_tlv_bfd_local_min_tx_interval'
+end
+of_bsn_tlv_v6_dissectors[180] = dissect_of_bsn_tlv_bfd_local_min_tx_interval_v6
+
+-- child class of_bsn_tlv_bfd_local_multiplier
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_multiplier_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_multiplier.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_multiplier.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_multiplier.value')
+    return 'of_bsn_tlv_bfd_local_multiplier'
+end
+of_bsn_tlv_v6_dissectors[183] = dissect_of_bsn_tlv_bfd_local_multiplier_v6
+
+-- child class of_bsn_tlv_bfd_local_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_local_state_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_state.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_state.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_local_state.value')
+    return 'of_bsn_tlv_bfd_local_state'
+end
+of_bsn_tlv_v6_dissectors[176] = dissect_of_bsn_tlv_bfd_local_state_v6
+
+-- child class of_bsn_tlv_bfd_remote_discriminator
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_discriminator_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_discriminator.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_discriminator.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_discriminator.value')
+    return 'of_bsn_tlv_bfd_remote_discriminator'
+end
+of_bsn_tlv_v6_dissectors[179] = dissect_of_bsn_tlv_bfd_remote_discriminator_v6
+
+-- child class of_bsn_tlv_bfd_remote_min_echo_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_min_echo_interval_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_min_echo_interval.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_min_echo_interval.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_min_echo_interval.value')
+    return 'of_bsn_tlv_bfd_remote_min_echo_interval'
+end
+of_bsn_tlv_v6_dissectors[186] = dissect_of_bsn_tlv_bfd_remote_min_echo_interval_v6
+
+-- child class of_bsn_tlv_bfd_remote_min_rx_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_min_rx_interval_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_min_rx_interval.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_min_rx_interval.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_min_rx_interval.value')
+    return 'of_bsn_tlv_bfd_remote_min_rx_interval'
+end
+of_bsn_tlv_v6_dissectors[185] = dissect_of_bsn_tlv_bfd_remote_min_rx_interval_v6
+
+-- child class of_bsn_tlv_bfd_remote_min_tx_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_min_tx_interval_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_min_tx_interval.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_min_tx_interval.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_min_tx_interval.value')
+    return 'of_bsn_tlv_bfd_remote_min_tx_interval'
+end
+of_bsn_tlv_v6_dissectors[184] = dissect_of_bsn_tlv_bfd_remote_min_tx_interval_v6
+
+-- child class of_bsn_tlv_bfd_remote_multiplier
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_multiplier_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_multiplier.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_multiplier.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_multiplier.value')
+    return 'of_bsn_tlv_bfd_remote_multiplier'
+end
+of_bsn_tlv_v6_dissectors[187] = dissect_of_bsn_tlv_bfd_remote_multiplier_v6
+
+-- child class of_bsn_tlv_bfd_remote_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bfd_remote_state_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_state.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_state.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_bfd_remote_state.value')
+    return 'of_bsn_tlv_bfd_remote_state'
+end
+of_bsn_tlv_v6_dissectors[177] = dissect_of_bsn_tlv_bfd_remote_state_v6
 
 -- child class of_bsn_tlv_broadcast_query_timeout
 -- Child of of_bsn_tlv

@@ -76,6 +76,54 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x90:
                    // discriminator value 0x90=0x90 for class OFBsnTlvAutoNegotiationVer14
                    return OFBsnTlvAutoNegotiationVer14.READER.readFrom(bb);
+               case (short) 0xaf:
+                   // discriminator value 0xaf=0xaf for class OFBsnTlvBfdEncapTypeVer14
+                   return OFBsnTlvBfdEncapTypeVer14.READER.readFrom(bb);
+               case (short) 0xbc:
+                   // discriminator value 0xbc=0xbc for class OFBsnTlvBfdEndpointEventVer14
+                   return OFBsnTlvBfdEndpointEventVer14.READER.readFrom(bb);
+               case (short) 0xad:
+                   // discriminator value 0xad=0xad for class OFBsnTlvBfdEndpointIdVer14
+                   return OFBsnTlvBfdEndpointIdVer14.READER.readFrom(bb);
+               case (short) 0xae:
+                   // discriminator value 0xae=0xae for class OFBsnTlvBfdEndpointTypeVer14
+                   return OFBsnTlvBfdEndpointTypeVer14.READER.readFrom(bb);
+               case (short) 0xb2:
+                   // discriminator value 0xb2=0xb2 for class OFBsnTlvBfdLocalDiscriminatorVer14
+                   return OFBsnTlvBfdLocalDiscriminatorVer14.READER.readFrom(bb);
+               case (short) 0xb6:
+                   // discriminator value 0xb6=0xb6 for class OFBsnTlvBfdLocalMinEchoIntervalVer14
+                   return OFBsnTlvBfdLocalMinEchoIntervalVer14.READER.readFrom(bb);
+               case (short) 0xb5:
+                   // discriminator value 0xb5=0xb5 for class OFBsnTlvBfdLocalMinRxIntervalVer14
+                   return OFBsnTlvBfdLocalMinRxIntervalVer14.READER.readFrom(bb);
+               case (short) 0xb4:
+                   // discriminator value 0xb4=0xb4 for class OFBsnTlvBfdLocalMinTxIntervalVer14
+                   return OFBsnTlvBfdLocalMinTxIntervalVer14.READER.readFrom(bb);
+               case (short) 0xb7:
+                   // discriminator value 0xb7=0xb7 for class OFBsnTlvBfdLocalMultiplierVer14
+                   return OFBsnTlvBfdLocalMultiplierVer14.READER.readFrom(bb);
+               case (short) 0xb0:
+                   // discriminator value 0xb0=0xb0 for class OFBsnTlvBfdLocalStateVer14
+                   return OFBsnTlvBfdLocalStateVer14.READER.readFrom(bb);
+               case (short) 0xb3:
+                   // discriminator value 0xb3=0xb3 for class OFBsnTlvBfdRemoteDiscriminatorVer14
+                   return OFBsnTlvBfdRemoteDiscriminatorVer14.READER.readFrom(bb);
+               case (short) 0xba:
+                   // discriminator value 0xba=0xba for class OFBsnTlvBfdRemoteMinEchoIntervalVer14
+                   return OFBsnTlvBfdRemoteMinEchoIntervalVer14.READER.readFrom(bb);
+               case (short) 0xb9:
+                   // discriminator value 0xb9=0xb9 for class OFBsnTlvBfdRemoteMinRxIntervalVer14
+                   return OFBsnTlvBfdRemoteMinRxIntervalVer14.READER.readFrom(bb);
+               case (short) 0xb8:
+                   // discriminator value 0xb8=0xb8 for class OFBsnTlvBfdRemoteMinTxIntervalVer14
+                   return OFBsnTlvBfdRemoteMinTxIntervalVer14.READER.readFrom(bb);
+               case (short) 0xbb:
+                   // discriminator value 0xbb=0xbb for class OFBsnTlvBfdRemoteMultiplierVer14
+                   return OFBsnTlvBfdRemoteMultiplierVer14.READER.readFrom(bb);
+               case (short) 0xb1:
+                   // discriminator value 0xb1=0xb1 for class OFBsnTlvBfdRemoteStateVer14
+                   return OFBsnTlvBfdRemoteStateVer14.READER.readFrom(bb);
                case (short) 0xa:
                    // discriminator value 0xa=0xa for class OFBsnTlvBroadcastQueryTimeoutVer14
                    return OFBsnTlvBroadcastQueryTimeoutVer14.READER.readFrom(bb);

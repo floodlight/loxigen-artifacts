@@ -1263,6 +1263,70 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_bfd_encap_type_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_endpoint_event_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_endpoint_id_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_endpoint_type_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_discriminator_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_min_echo_interval_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_min_rx_interval_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_min_tx_interval_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_multiplier_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_state_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_discriminator_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_min_echo_interval_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_min_rx_interval_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_min_tx_interval_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_multiplier_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_state_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_broadcast_query_timeout_dup(
         of_object_t *src);
 
@@ -6503,6 +6567,70 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_state_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9404,6 +9532,70 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_state_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

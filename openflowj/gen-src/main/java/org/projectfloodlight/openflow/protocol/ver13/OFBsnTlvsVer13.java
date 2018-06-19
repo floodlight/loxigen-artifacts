@@ -125,6 +125,150 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvBfdEncapType.Builder buildBfdEncapType() {
+        return new OFBsnTlvBfdEncapTypeVer13.Builder();
+    }
+    public OFBsnTlvBfdEncapType bfdEncapType(OFBsnBfdEncapType value) {
+        return new OFBsnTlvBfdEncapTypeVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdEndpointEvent.Builder buildBfdEndpointEvent() {
+        return new OFBsnTlvBfdEndpointEventVer13.Builder();
+    }
+    public OFBsnTlvBfdEndpointEvent bfdEndpointEvent(OFBsnBfdEndpointEvent value) {
+        return new OFBsnTlvBfdEndpointEventVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdEndpointId.Builder buildBfdEndpointId() {
+        return new OFBsnTlvBfdEndpointIdVer13.Builder();
+    }
+    public OFBsnTlvBfdEndpointId bfdEndpointId(int value) {
+        return new OFBsnTlvBfdEndpointIdVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdEndpointType.Builder buildBfdEndpointType() {
+        return new OFBsnTlvBfdEndpointTypeVer13.Builder();
+    }
+    public OFBsnTlvBfdEndpointType bfdEndpointType(OFBsnBfdEndpointType value) {
+        return new OFBsnTlvBfdEndpointTypeVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdLocalDiscriminator.Builder buildBfdLocalDiscriminator() {
+        return new OFBsnTlvBfdLocalDiscriminatorVer13.Builder();
+    }
+    public OFBsnTlvBfdLocalDiscriminator bfdLocalDiscriminator(long value) {
+        return new OFBsnTlvBfdLocalDiscriminatorVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdLocalMinEchoInterval.Builder buildBfdLocalMinEchoInterval() {
+        return new OFBsnTlvBfdLocalMinEchoIntervalVer13.Builder();
+    }
+    public OFBsnTlvBfdLocalMinEchoInterval bfdLocalMinEchoInterval(long value) {
+        return new OFBsnTlvBfdLocalMinEchoIntervalVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdLocalMinRxInterval.Builder buildBfdLocalMinRxInterval() {
+        return new OFBsnTlvBfdLocalMinRxIntervalVer13.Builder();
+    }
+    public OFBsnTlvBfdLocalMinRxInterval bfdLocalMinRxInterval(long value) {
+        return new OFBsnTlvBfdLocalMinRxIntervalVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdLocalMinTxInterval.Builder buildBfdLocalMinTxInterval() {
+        return new OFBsnTlvBfdLocalMinTxIntervalVer13.Builder();
+    }
+    public OFBsnTlvBfdLocalMinTxInterval bfdLocalMinTxInterval(long value) {
+        return new OFBsnTlvBfdLocalMinTxIntervalVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdLocalMultiplier.Builder buildBfdLocalMultiplier() {
+        return new OFBsnTlvBfdLocalMultiplierVer13.Builder();
+    }
+    public OFBsnTlvBfdLocalMultiplier bfdLocalMultiplier(short value) {
+        return new OFBsnTlvBfdLocalMultiplierVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdLocalState.Builder buildBfdLocalState() {
+        return new OFBsnTlvBfdLocalStateVer13.Builder();
+    }
+    public OFBsnTlvBfdLocalState bfdLocalState(OFBsnBfdEndpointState value) {
+        return new OFBsnTlvBfdLocalStateVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdRemoteDiscriminator.Builder buildBfdRemoteDiscriminator() {
+        return new OFBsnTlvBfdRemoteDiscriminatorVer13.Builder();
+    }
+    public OFBsnTlvBfdRemoteDiscriminator bfdRemoteDiscriminator(long value) {
+        return new OFBsnTlvBfdRemoteDiscriminatorVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdRemoteMinEchoInterval.Builder buildBfdRemoteMinEchoInterval() {
+        return new OFBsnTlvBfdRemoteMinEchoIntervalVer13.Builder();
+    }
+    public OFBsnTlvBfdRemoteMinEchoInterval bfdRemoteMinEchoInterval(long value) {
+        return new OFBsnTlvBfdRemoteMinEchoIntervalVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdRemoteMinRxInterval.Builder buildBfdRemoteMinRxInterval() {
+        return new OFBsnTlvBfdRemoteMinRxIntervalVer13.Builder();
+    }
+    public OFBsnTlvBfdRemoteMinRxInterval bfdRemoteMinRxInterval(long value) {
+        return new OFBsnTlvBfdRemoteMinRxIntervalVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdRemoteMinTxInterval.Builder buildBfdRemoteMinTxInterval() {
+        return new OFBsnTlvBfdRemoteMinTxIntervalVer13.Builder();
+    }
+    public OFBsnTlvBfdRemoteMinTxInterval bfdRemoteMinTxInterval(long value) {
+        return new OFBsnTlvBfdRemoteMinTxIntervalVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdRemoteMultiplier.Builder buildBfdRemoteMultiplier() {
+        return new OFBsnTlvBfdRemoteMultiplierVer13.Builder();
+    }
+    public OFBsnTlvBfdRemoteMultiplier bfdRemoteMultiplier(short value) {
+        return new OFBsnTlvBfdRemoteMultiplierVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdRemoteState.Builder buildBfdRemoteState() {
+        return new OFBsnTlvBfdRemoteStateVer13.Builder();
+    }
+    public OFBsnTlvBfdRemoteState bfdRemoteState(OFBsnBfdEndpointState value) {
+        return new OFBsnTlvBfdRemoteStateVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         return new OFBsnTlvBroadcastQueryTimeoutVer13.Builder();
     }

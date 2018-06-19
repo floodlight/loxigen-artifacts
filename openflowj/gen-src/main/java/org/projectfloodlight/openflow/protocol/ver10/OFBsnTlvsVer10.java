@@ -105,6 +105,118 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvAutoNegotiation not supported in version 1.0");
     }
 
+    public OFBsnTlvBfdEncapType.Builder buildBfdEncapType() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdEncapType not supported in version 1.0");
+    }
+    public OFBsnTlvBfdEncapType bfdEncapType(OFBsnBfdEncapType value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdEncapType not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdEndpointEvent.Builder buildBfdEndpointEvent() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdEndpointEvent not supported in version 1.0");
+    }
+    public OFBsnTlvBfdEndpointEvent bfdEndpointEvent(OFBsnBfdEndpointEvent value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdEndpointEvent not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdEndpointId.Builder buildBfdEndpointId() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdEndpointId not supported in version 1.0");
+    }
+    public OFBsnTlvBfdEndpointId bfdEndpointId(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdEndpointId not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdEndpointType.Builder buildBfdEndpointType() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdEndpointType not supported in version 1.0");
+    }
+    public OFBsnTlvBfdEndpointType bfdEndpointType(OFBsnBfdEndpointType value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdEndpointType not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdLocalDiscriminator.Builder buildBfdLocalDiscriminator() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdLocalDiscriminator not supported in version 1.0");
+    }
+    public OFBsnTlvBfdLocalDiscriminator bfdLocalDiscriminator(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdLocalDiscriminator not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdLocalMinEchoInterval.Builder buildBfdLocalMinEchoInterval() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdLocalMinEchoInterval not supported in version 1.0");
+    }
+    public OFBsnTlvBfdLocalMinEchoInterval bfdLocalMinEchoInterval(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdLocalMinEchoInterval not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdLocalMinRxInterval.Builder buildBfdLocalMinRxInterval() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdLocalMinRxInterval not supported in version 1.0");
+    }
+    public OFBsnTlvBfdLocalMinRxInterval bfdLocalMinRxInterval(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdLocalMinRxInterval not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdLocalMinTxInterval.Builder buildBfdLocalMinTxInterval() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdLocalMinTxInterval not supported in version 1.0");
+    }
+    public OFBsnTlvBfdLocalMinTxInterval bfdLocalMinTxInterval(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdLocalMinTxInterval not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdLocalMultiplier.Builder buildBfdLocalMultiplier() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdLocalMultiplier not supported in version 1.0");
+    }
+    public OFBsnTlvBfdLocalMultiplier bfdLocalMultiplier(short value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdLocalMultiplier not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdLocalState.Builder buildBfdLocalState() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdLocalState not supported in version 1.0");
+    }
+    public OFBsnTlvBfdLocalState bfdLocalState(OFBsnBfdEndpointState value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdLocalState not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdRemoteDiscriminator.Builder buildBfdRemoteDiscriminator() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdRemoteDiscriminator not supported in version 1.0");
+    }
+    public OFBsnTlvBfdRemoteDiscriminator bfdRemoteDiscriminator(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdRemoteDiscriminator not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdRemoteMinEchoInterval.Builder buildBfdRemoteMinEchoInterval() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdRemoteMinEchoInterval not supported in version 1.0");
+    }
+    public OFBsnTlvBfdRemoteMinEchoInterval bfdRemoteMinEchoInterval(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdRemoteMinEchoInterval not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdRemoteMinRxInterval.Builder buildBfdRemoteMinRxInterval() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdRemoteMinRxInterval not supported in version 1.0");
+    }
+    public OFBsnTlvBfdRemoteMinRxInterval bfdRemoteMinRxInterval(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdRemoteMinRxInterval not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdRemoteMinTxInterval.Builder buildBfdRemoteMinTxInterval() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdRemoteMinTxInterval not supported in version 1.0");
+    }
+    public OFBsnTlvBfdRemoteMinTxInterval bfdRemoteMinTxInterval(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdRemoteMinTxInterval not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdRemoteMultiplier.Builder buildBfdRemoteMultiplier() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdRemoteMultiplier not supported in version 1.0");
+    }
+    public OFBsnTlvBfdRemoteMultiplier bfdRemoteMultiplier(short value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdRemoteMultiplier not supported in version 1.0");
+    }
+
+    public OFBsnTlvBfdRemoteState.Builder buildBfdRemoteState() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdRemoteState not supported in version 1.0");
+    }
+    public OFBsnTlvBfdRemoteState bfdRemoteState(OFBsnBfdEndpointState value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdRemoteState not supported in version 1.0");
+    }
+
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.0");
     }

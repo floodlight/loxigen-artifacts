@@ -6543,6 +6543,182 @@ typedef struct of_bsn_tlv_apply_packets_s of_bsn_tlv_apply_packets_t;
 typedef struct of_bsn_tlv_auto_negotiation_s of_bsn_tlv_auto_negotiation_t;
 
 /**
+ * Structure for of_bsn_tlv_bfd_encap_type object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_bfd_encap_type_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_encap_type_s of_bsn_tlv_bfd_encap_type_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_endpoint_event object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_bfd_endpoint_event_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_endpoint_event_s of_bsn_tlv_bfd_endpoint_event_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_endpoint_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_bfd_endpoint_id_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_endpoint_id_s of_bsn_tlv_bfd_endpoint_id_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_endpoint_type object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_bfd_endpoint_type_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_endpoint_type_s of_bsn_tlv_bfd_endpoint_type_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_local_discriminator object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_bfd_local_discriminator_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_local_discriminator_s of_bsn_tlv_bfd_local_discriminator_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_local_min_echo_interval object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_bfd_local_min_echo_interval_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_local_min_echo_interval_s of_bsn_tlv_bfd_local_min_echo_interval_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_local_min_rx_interval object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_bfd_local_min_rx_interval_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_local_min_rx_interval_s of_bsn_tlv_bfd_local_min_rx_interval_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_local_min_tx_interval object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_bfd_local_min_tx_interval_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_local_min_tx_interval_s of_bsn_tlv_bfd_local_min_tx_interval_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_local_multiplier object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_bfd_local_multiplier_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_local_multiplier_s of_bsn_tlv_bfd_local_multiplier_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_local_state object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_bfd_local_state_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_local_state_s of_bsn_tlv_bfd_local_state_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_remote_discriminator object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_bfd_remote_discriminator_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_remote_discriminator_s of_bsn_tlv_bfd_remote_discriminator_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_remote_min_echo_interval object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_bfd_remote_min_echo_interval_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_remote_min_echo_interval_s of_bsn_tlv_bfd_remote_min_echo_interval_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_remote_min_rx_interval object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_bfd_remote_min_rx_interval_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_remote_min_rx_interval_s of_bsn_tlv_bfd_remote_min_rx_interval_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_remote_min_tx_interval object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_bfd_remote_min_tx_interval_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_remote_min_tx_interval_s of_bsn_tlv_bfd_remote_min_tx_interval_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_remote_multiplier object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_bfd_remote_multiplier_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_remote_multiplier_s of_bsn_tlv_bfd_remote_multiplier_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_remote_state object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_bfd_remote_state_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_remote_state_s of_bsn_tlv_bfd_remote_state_t;
+
+/**
  * Structure for of_bsn_tlv_broadcast_query_timeout object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

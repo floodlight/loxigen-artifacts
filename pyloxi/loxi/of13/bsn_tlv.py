@@ -531,6 +531,758 @@ class auto_negotiation(bsn_tlv):
 
 bsn_tlv.subtypes[144] = auto_negotiation
 
+class bfd_encap_type(bsn_tlv):
+    type = 175
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_encap_type()
+        _type = reader.read("!H")[0]
+        assert(_type == 175)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_encap_type {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[175] = bfd_encap_type
+
+class bfd_endpoint_event(bsn_tlv):
+    type = 188
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!H", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_endpoint_event()
+        _type = reader.read("!H")[0]
+        assert(_type == 188)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!H")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_endpoint_event {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[188] = bfd_endpoint_event
+
+class bfd_endpoint_id(bsn_tlv):
+    type = 173
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!H", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_endpoint_id()
+        _type = reader.read("!H")[0]
+        assert(_type == 173)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!H")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_endpoint_id {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[173] = bfd_endpoint_id
+
+class bfd_endpoint_type(bsn_tlv):
+    type = 174
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_endpoint_type()
+        _type = reader.read("!H")[0]
+        assert(_type == 174)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_endpoint_type {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[174] = bfd_endpoint_type
+
+class bfd_local_discriminator(bsn_tlv):
+    type = 178
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_local_discriminator()
+        _type = reader.read("!H")[0]
+        assert(_type == 178)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_local_discriminator {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[178] = bfd_local_discriminator
+
+class bfd_local_min_echo_interval(bsn_tlv):
+    type = 182
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_local_min_echo_interval()
+        _type = reader.read("!H")[0]
+        assert(_type == 182)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_local_min_echo_interval {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[182] = bfd_local_min_echo_interval
+
+class bfd_local_min_rx_interval(bsn_tlv):
+    type = 181
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_local_min_rx_interval()
+        _type = reader.read("!H")[0]
+        assert(_type == 181)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_local_min_rx_interval {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[181] = bfd_local_min_rx_interval
+
+class bfd_local_min_tx_interval(bsn_tlv):
+    type = 180
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_local_min_tx_interval()
+        _type = reader.read("!H")[0]
+        assert(_type == 180)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_local_min_tx_interval {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[180] = bfd_local_min_tx_interval
+
+class bfd_local_multiplier(bsn_tlv):
+    type = 183
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_local_multiplier()
+        _type = reader.read("!H")[0]
+        assert(_type == 183)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_local_multiplier {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[183] = bfd_local_multiplier
+
+class bfd_local_state(bsn_tlv):
+    type = 176
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_local_state()
+        _type = reader.read("!H")[0]
+        assert(_type == 176)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_local_state {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[176] = bfd_local_state
+
+class bfd_remote_discriminator(bsn_tlv):
+    type = 179
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_remote_discriminator()
+        _type = reader.read("!H")[0]
+        assert(_type == 179)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_remote_discriminator {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[179] = bfd_remote_discriminator
+
+class bfd_remote_min_echo_interval(bsn_tlv):
+    type = 186
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_remote_min_echo_interval()
+        _type = reader.read("!H")[0]
+        assert(_type == 186)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_remote_min_echo_interval {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[186] = bfd_remote_min_echo_interval
+
+class bfd_remote_min_rx_interval(bsn_tlv):
+    type = 185
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_remote_min_rx_interval()
+        _type = reader.read("!H")[0]
+        assert(_type == 185)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_remote_min_rx_interval {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[185] = bfd_remote_min_rx_interval
+
+class bfd_remote_min_tx_interval(bsn_tlv):
+    type = 184
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_remote_min_tx_interval()
+        _type = reader.read("!H")[0]
+        assert(_type == 184)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_remote_min_tx_interval {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[184] = bfd_remote_min_tx_interval
+
+class bfd_remote_multiplier(bsn_tlv):
+    type = 187
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_remote_multiplier()
+        _type = reader.read("!H")[0]
+        assert(_type == 187)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_remote_multiplier {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[187] = bfd_remote_multiplier
+
+class bfd_remote_state(bsn_tlv):
+    type = 177
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_remote_state()
+        _type = reader.read("!H")[0]
+        assert(_type == 177)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_remote_state {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[177] = bfd_remote_state
+
 class broadcast_query_timeout(bsn_tlv):
     type = 10
 

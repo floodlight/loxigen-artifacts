@@ -27373,6 +27373,614 @@ test_of_bsn_tlv_auto_negotiation_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_encap_type_t *obj;
+    obj = of_bsn_tlv_bfd_encap_type_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENCAP_TYPE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_ENCAP_TYPE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_encap_type_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_endpoint_event_t *obj;
+    obj = of_bsn_tlv_bfd_endpoint_event_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENDPOINT_EVENT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_ENDPOINT_EVENT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_endpoint_event_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_endpoint_id_t *obj;
+    obj = of_bsn_tlv_bfd_endpoint_id_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENDPOINT_ID);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_ENDPOINT_ID);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_endpoint_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_endpoint_type_t *obj;
+    obj = of_bsn_tlv_bfd_endpoint_type_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENDPOINT_TYPE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_ENDPOINT_TYPE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_endpoint_type_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_local_discriminator_t *obj;
+    obj = of_bsn_tlv_bfd_local_discriminator_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_DISCRIMINATOR);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_LOCAL_DISCRIMINATOR);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_discriminator_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj;
+    obj = of_bsn_tlv_bfd_local_min_echo_interval_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MIN_ECHO_INTERVAL);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_LOCAL_MIN_ECHO_INTERVAL);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_min_echo_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj;
+    obj = of_bsn_tlv_bfd_local_min_rx_interval_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MIN_RX_INTERVAL);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_LOCAL_MIN_RX_INTERVAL);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_min_rx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj;
+    obj = of_bsn_tlv_bfd_local_min_tx_interval_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MIN_TX_INTERVAL);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_LOCAL_MIN_TX_INTERVAL);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_min_tx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_local_multiplier_t *obj;
+    obj = of_bsn_tlv_bfd_local_multiplier_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MULTIPLIER);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_LOCAL_MULTIPLIER);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_multiplier_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_state_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_local_state_t *obj;
+    obj = of_bsn_tlv_bfd_local_state_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_STATE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_LOCAL_STATE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_state_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_state_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_state_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_remote_discriminator_t *obj;
+    obj = of_bsn_tlv_bfd_remote_discriminator_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_DISCRIMINATOR);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_REMOTE_DISCRIMINATOR);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_discriminator_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj;
+    obj = of_bsn_tlv_bfd_remote_min_echo_interval_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MIN_ECHO_INTERVAL);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_REMOTE_MIN_ECHO_INTERVAL);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_min_echo_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj;
+    obj = of_bsn_tlv_bfd_remote_min_rx_interval_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MIN_RX_INTERVAL);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_REMOTE_MIN_RX_INTERVAL);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_min_rx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj;
+    obj = of_bsn_tlv_bfd_remote_min_tx_interval_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MIN_TX_INTERVAL);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_REMOTE_MIN_TX_INTERVAL);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_min_tx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_remote_multiplier_t *obj;
+    obj = of_bsn_tlv_bfd_remote_multiplier_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MULTIPLIER);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_REMOTE_MULTIPLIER);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_multiplier_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_bfd_remote_state_t *obj;
+    obj = of_bsn_tlv_bfd_remote_state_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_STATE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_REMOTE_STATE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_state_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3(void)
 {
     of_bsn_tlv_broadcast_query_timeout_t *obj;
@@ -52757,6 +53365,614 @@ test_of_bsn_tlv_auto_negotiation_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_encap_type_t *obj;
+    obj = of_bsn_tlv_bfd_encap_type_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENCAP_TYPE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_ENCAP_TYPE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_encap_type_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_endpoint_event_t *obj;
+    obj = of_bsn_tlv_bfd_endpoint_event_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENDPOINT_EVENT);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_ENDPOINT_EVENT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_endpoint_event_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_endpoint_id_t *obj;
+    obj = of_bsn_tlv_bfd_endpoint_id_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENDPOINT_ID);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_ENDPOINT_ID);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_endpoint_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_endpoint_type_t *obj;
+    obj = of_bsn_tlv_bfd_endpoint_type_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENDPOINT_TYPE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_ENDPOINT_TYPE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_endpoint_type_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_local_discriminator_t *obj;
+    obj = of_bsn_tlv_bfd_local_discriminator_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_DISCRIMINATOR);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_LOCAL_DISCRIMINATOR);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_discriminator_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj;
+    obj = of_bsn_tlv_bfd_local_min_echo_interval_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MIN_ECHO_INTERVAL);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_LOCAL_MIN_ECHO_INTERVAL);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_min_echo_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj;
+    obj = of_bsn_tlv_bfd_local_min_rx_interval_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MIN_RX_INTERVAL);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_LOCAL_MIN_RX_INTERVAL);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_min_rx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj;
+    obj = of_bsn_tlv_bfd_local_min_tx_interval_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MIN_TX_INTERVAL);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_LOCAL_MIN_TX_INTERVAL);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_min_tx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_local_multiplier_t *obj;
+    obj = of_bsn_tlv_bfd_local_multiplier_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MULTIPLIER);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_LOCAL_MULTIPLIER);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_multiplier_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_state_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_local_state_t *obj;
+    obj = of_bsn_tlv_bfd_local_state_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_STATE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_LOCAL_STATE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_state_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_state_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_state_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_remote_discriminator_t *obj;
+    obj = of_bsn_tlv_bfd_remote_discriminator_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_DISCRIMINATOR);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_REMOTE_DISCRIMINATOR);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_discriminator_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj;
+    obj = of_bsn_tlv_bfd_remote_min_echo_interval_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MIN_ECHO_INTERVAL);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_REMOTE_MIN_ECHO_INTERVAL);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_min_echo_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj;
+    obj = of_bsn_tlv_bfd_remote_min_rx_interval_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MIN_RX_INTERVAL);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_REMOTE_MIN_RX_INTERVAL);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_min_rx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj;
+    obj = of_bsn_tlv_bfd_remote_min_tx_interval_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MIN_TX_INTERVAL);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_REMOTE_MIN_TX_INTERVAL);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_min_tx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_remote_multiplier_t *obj;
+    obj = of_bsn_tlv_bfd_remote_multiplier_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MULTIPLIER);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_REMOTE_MULTIPLIER);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_multiplier_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_bfd_remote_state_t *obj;
+    obj = of_bsn_tlv_bfd_remote_state_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_STATE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BFD_REMOTE_STATE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_state_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4(void)
 {
     of_bsn_tlv_broadcast_query_timeout_t *obj;
@@ -70047,6 +71263,22 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_apply_bytes_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_apply_packets_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_auto_negotiation_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_local_state_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_broadcast_rate_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_bucket_OF_VERSION_1_3);
@@ -70715,6 +71947,22 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_apply_bytes_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_apply_packets_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_auto_negotiation_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_local_state_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_broadcast_rate_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_bucket_OF_VERSION_1_4);

@@ -875,6 +875,38 @@ void of_bsn_tlv_apply_packets_wire_object_id_get(of_object_t *obj, of_object_id_
 void of_bsn_tlv_apply_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_auto_negotiation_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_auto_negotiation_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_encap_type_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_encap_type_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_endpoint_event_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_endpoint_event_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_endpoint_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_endpoint_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_endpoint_type_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_endpoint_type_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_local_discriminator_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_local_discriminator_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_local_min_echo_interval_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_local_min_echo_interval_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_local_min_rx_interval_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_local_min_rx_interval_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_local_min_tx_interval_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_local_min_tx_interval_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_local_multiplier_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_local_multiplier_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_local_state_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_local_state_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_remote_discriminator_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_remote_discriminator_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_remote_min_echo_interval_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_remote_min_echo_interval_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_remote_min_rx_interval_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_remote_min_rx_interval_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_remote_min_tx_interval_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_remote_min_tx_interval_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_remote_multiplier_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_remote_multiplier_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bfd_remote_state_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bfd_remote_state_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_broadcast_query_timeout_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_broadcast_query_timeout_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_broadcast_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1898,6 +1930,22 @@ typedef of_object_t of_bsn_tlv_anchor_t;
 typedef of_object_t of_bsn_tlv_apply_bytes_t;
 typedef of_object_t of_bsn_tlv_apply_packets_t;
 typedef of_object_t of_bsn_tlv_auto_negotiation_t;
+typedef of_object_t of_bsn_tlv_bfd_encap_type_t;
+typedef of_object_t of_bsn_tlv_bfd_endpoint_event_t;
+typedef of_object_t of_bsn_tlv_bfd_endpoint_id_t;
+typedef of_object_t of_bsn_tlv_bfd_endpoint_type_t;
+typedef of_object_t of_bsn_tlv_bfd_local_discriminator_t;
+typedef of_object_t of_bsn_tlv_bfd_local_min_echo_interval_t;
+typedef of_object_t of_bsn_tlv_bfd_local_min_rx_interval_t;
+typedef of_object_t of_bsn_tlv_bfd_local_min_tx_interval_t;
+typedef of_object_t of_bsn_tlv_bfd_local_multiplier_t;
+typedef of_object_t of_bsn_tlv_bfd_local_state_t;
+typedef of_object_t of_bsn_tlv_bfd_remote_discriminator_t;
+typedef of_object_t of_bsn_tlv_bfd_remote_min_echo_interval_t;
+typedef of_object_t of_bsn_tlv_bfd_remote_min_rx_interval_t;
+typedef of_object_t of_bsn_tlv_bfd_remote_min_tx_interval_t;
+typedef of_object_t of_bsn_tlv_bfd_remote_multiplier_t;
+typedef of_object_t of_bsn_tlv_bfd_remote_state_t;
 typedef of_object_t of_bsn_tlv_broadcast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_broadcast_rate_t;
 typedef of_object_t of_bsn_tlv_bucket_t;
@@ -4013,6 +4061,86 @@ extern void of_bsn_tlv_apply_packets_init(
 extern of_object_t *
     of_bsn_tlv_auto_negotiation_new(of_version_t version);
 extern void of_bsn_tlv_auto_negotiation_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_encap_type_new(of_version_t version);
+extern void of_bsn_tlv_bfd_encap_type_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_endpoint_event_new(of_version_t version);
+extern void of_bsn_tlv_bfd_endpoint_event_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_endpoint_id_new(of_version_t version);
+extern void of_bsn_tlv_bfd_endpoint_id_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_endpoint_type_new(of_version_t version);
+extern void of_bsn_tlv_bfd_endpoint_type_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_discriminator_new(of_version_t version);
+extern void of_bsn_tlv_bfd_local_discriminator_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_min_echo_interval_new(of_version_t version);
+extern void of_bsn_tlv_bfd_local_min_echo_interval_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_min_rx_interval_new(of_version_t version);
+extern void of_bsn_tlv_bfd_local_min_rx_interval_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_min_tx_interval_new(of_version_t version);
+extern void of_bsn_tlv_bfd_local_min_tx_interval_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_multiplier_new(of_version_t version);
+extern void of_bsn_tlv_bfd_local_multiplier_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_local_state_new(of_version_t version);
+extern void of_bsn_tlv_bfd_local_state_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_discriminator_new(of_version_t version);
+extern void of_bsn_tlv_bfd_remote_discriminator_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_min_echo_interval_new(of_version_t version);
+extern void of_bsn_tlv_bfd_remote_min_echo_interval_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_min_rx_interval_new(of_version_t version);
+extern void of_bsn_tlv_bfd_remote_min_rx_interval_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_min_tx_interval_new(of_version_t version);
+extern void of_bsn_tlv_bfd_remote_min_tx_interval_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_multiplier_new(of_version_t version);
+extern void of_bsn_tlv_bfd_remote_multiplier_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_bfd_remote_state_new(of_version_t version);
+extern void of_bsn_tlv_bfd_remote_state_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10116,6 +10244,182 @@ of_bsn_tlv_apply_packets_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_auto_negotiation_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_encap_type_t
+ * @param obj An instance of type of_bsn_tlv_bfd_encap_type_t
+ *
+ * \ingroup of_bsn_tlv_bfd_encap_type
+ */
+static inline void
+of_bsn_tlv_bfd_encap_type_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_endpoint_event_t
+ * @param obj An instance of type of_bsn_tlv_bfd_endpoint_event_t
+ *
+ * \ingroup of_bsn_tlv_bfd_endpoint_event
+ */
+static inline void
+of_bsn_tlv_bfd_endpoint_event_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_endpoint_id_t
+ * @param obj An instance of type of_bsn_tlv_bfd_endpoint_id_t
+ *
+ * \ingroup of_bsn_tlv_bfd_endpoint_id
+ */
+static inline void
+of_bsn_tlv_bfd_endpoint_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_endpoint_type_t
+ * @param obj An instance of type of_bsn_tlv_bfd_endpoint_type_t
+ *
+ * \ingroup of_bsn_tlv_bfd_endpoint_type
+ */
+static inline void
+of_bsn_tlv_bfd_endpoint_type_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_local_discriminator_t
+ * @param obj An instance of type of_bsn_tlv_bfd_local_discriminator_t
+ *
+ * \ingroup of_bsn_tlv_bfd_local_discriminator
+ */
+static inline void
+of_bsn_tlv_bfd_local_discriminator_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_local_min_echo_interval_t
+ * @param obj An instance of type of_bsn_tlv_bfd_local_min_echo_interval_t
+ *
+ * \ingroup of_bsn_tlv_bfd_local_min_echo_interval
+ */
+static inline void
+of_bsn_tlv_bfd_local_min_echo_interval_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_local_min_rx_interval_t
+ * @param obj An instance of type of_bsn_tlv_bfd_local_min_rx_interval_t
+ *
+ * \ingroup of_bsn_tlv_bfd_local_min_rx_interval
+ */
+static inline void
+of_bsn_tlv_bfd_local_min_rx_interval_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_local_min_tx_interval_t
+ * @param obj An instance of type of_bsn_tlv_bfd_local_min_tx_interval_t
+ *
+ * \ingroup of_bsn_tlv_bfd_local_min_tx_interval
+ */
+static inline void
+of_bsn_tlv_bfd_local_min_tx_interval_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_local_multiplier_t
+ * @param obj An instance of type of_bsn_tlv_bfd_local_multiplier_t
+ *
+ * \ingroup of_bsn_tlv_bfd_local_multiplier
+ */
+static inline void
+of_bsn_tlv_bfd_local_multiplier_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_local_state_t
+ * @param obj An instance of type of_bsn_tlv_bfd_local_state_t
+ *
+ * \ingroup of_bsn_tlv_bfd_local_state
+ */
+static inline void
+of_bsn_tlv_bfd_local_state_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_remote_discriminator_t
+ * @param obj An instance of type of_bsn_tlv_bfd_remote_discriminator_t
+ *
+ * \ingroup of_bsn_tlv_bfd_remote_discriminator
+ */
+static inline void
+of_bsn_tlv_bfd_remote_discriminator_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_remote_min_echo_interval_t
+ * @param obj An instance of type of_bsn_tlv_bfd_remote_min_echo_interval_t
+ *
+ * \ingroup of_bsn_tlv_bfd_remote_min_echo_interval
+ */
+static inline void
+of_bsn_tlv_bfd_remote_min_echo_interval_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_remote_min_rx_interval_t
+ * @param obj An instance of type of_bsn_tlv_bfd_remote_min_rx_interval_t
+ *
+ * \ingroup of_bsn_tlv_bfd_remote_min_rx_interval
+ */
+static inline void
+of_bsn_tlv_bfd_remote_min_rx_interval_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_remote_min_tx_interval_t
+ * @param obj An instance of type of_bsn_tlv_bfd_remote_min_tx_interval_t
+ *
+ * \ingroup of_bsn_tlv_bfd_remote_min_tx_interval
+ */
+static inline void
+of_bsn_tlv_bfd_remote_min_tx_interval_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_remote_multiplier_t
+ * @param obj An instance of type of_bsn_tlv_bfd_remote_multiplier_t
+ *
+ * \ingroup of_bsn_tlv_bfd_remote_multiplier
+ */
+static inline void
+of_bsn_tlv_bfd_remote_multiplier_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_bfd_remote_state_t
+ * @param obj An instance of type of_bsn_tlv_bfd_remote_state_t
+ *
+ * \ingroup of_bsn_tlv_bfd_remote_state
+ */
+static inline void
+of_bsn_tlv_bfd_remote_state_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23810,6 +24114,150 @@ extern void of_bsn_tlv_auto_negotiation_value_set(
     uint8_t value);
 extern void of_bsn_tlv_auto_negotiation_value_get(
     of_bsn_tlv_auto_negotiation_t *obj,
+    uint8_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_encap_type */
+
+extern void of_bsn_tlv_bfd_encap_type_value_set(
+    of_bsn_tlv_bfd_encap_type_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_bfd_encap_type_value_get(
+    of_bsn_tlv_bfd_encap_type_t *obj,
+    uint8_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_endpoint_event */
+
+extern void of_bsn_tlv_bfd_endpoint_event_value_set(
+    of_bsn_tlv_bfd_endpoint_event_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_bfd_endpoint_event_value_get(
+    of_bsn_tlv_bfd_endpoint_event_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_endpoint_id */
+
+extern void of_bsn_tlv_bfd_endpoint_id_value_set(
+    of_bsn_tlv_bfd_endpoint_id_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_bfd_endpoint_id_value_get(
+    of_bsn_tlv_bfd_endpoint_id_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_endpoint_type */
+
+extern void of_bsn_tlv_bfd_endpoint_type_value_set(
+    of_bsn_tlv_bfd_endpoint_type_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_bfd_endpoint_type_value_get(
+    of_bsn_tlv_bfd_endpoint_type_t *obj,
+    uint8_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_local_discriminator */
+
+extern void of_bsn_tlv_bfd_local_discriminator_value_set(
+    of_bsn_tlv_bfd_local_discriminator_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_bfd_local_discriminator_value_get(
+    of_bsn_tlv_bfd_local_discriminator_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_local_min_echo_interval */
+
+extern void of_bsn_tlv_bfd_local_min_echo_interval_value_set(
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_bfd_local_min_echo_interval_value_get(
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_local_min_rx_interval */
+
+extern void of_bsn_tlv_bfd_local_min_rx_interval_value_set(
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_bfd_local_min_rx_interval_value_get(
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_local_min_tx_interval */
+
+extern void of_bsn_tlv_bfd_local_min_tx_interval_value_set(
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_bfd_local_min_tx_interval_value_get(
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_local_multiplier */
+
+extern void of_bsn_tlv_bfd_local_multiplier_value_set(
+    of_bsn_tlv_bfd_local_multiplier_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_bfd_local_multiplier_value_get(
+    of_bsn_tlv_bfd_local_multiplier_t *obj,
+    uint8_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_local_state */
+
+extern void of_bsn_tlv_bfd_local_state_value_set(
+    of_bsn_tlv_bfd_local_state_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_bfd_local_state_value_get(
+    of_bsn_tlv_bfd_local_state_t *obj,
+    uint8_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_remote_discriminator */
+
+extern void of_bsn_tlv_bfd_remote_discriminator_value_set(
+    of_bsn_tlv_bfd_remote_discriminator_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_bfd_remote_discriminator_value_get(
+    of_bsn_tlv_bfd_remote_discriminator_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_remote_min_echo_interval */
+
+extern void of_bsn_tlv_bfd_remote_min_echo_interval_value_set(
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_bfd_remote_min_echo_interval_value_get(
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_remote_min_rx_interval */
+
+extern void of_bsn_tlv_bfd_remote_min_rx_interval_value_set(
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_bfd_remote_min_rx_interval_value_get(
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_remote_min_tx_interval */
+
+extern void of_bsn_tlv_bfd_remote_min_tx_interval_value_set(
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_bfd_remote_min_tx_interval_value_get(
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_remote_multiplier */
+
+extern void of_bsn_tlv_bfd_remote_multiplier_value_set(
+    of_bsn_tlv_bfd_remote_multiplier_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_bfd_remote_multiplier_value_get(
+    of_bsn_tlv_bfd_remote_multiplier_t *obj,
+    uint8_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_bfd_remote_state */
+
+extern void of_bsn_tlv_bfd_remote_state_value_set(
+    of_bsn_tlv_bfd_remote_state_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_bfd_remote_state_value_get(
+    of_bsn_tlv_bfd_remote_state_t *obj,
     uint8_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_broadcast_query_timeout */

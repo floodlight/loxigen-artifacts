@@ -6890,6 +6890,150 @@ extern int of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_auto_negotiation_t *obj, int value);
 
+extern int of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_encap_type_t *obj, int value);
+extern int of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_encap_type_t *obj, int value);
+extern int of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_encap_type_t *obj, int value);
+extern int of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_encap_type_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_endpoint_event_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_endpoint_event_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_endpoint_event_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_endpoint_event_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_endpoint_id_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_endpoint_id_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_endpoint_id_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_endpoint_id_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_endpoint_type_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_endpoint_type_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_endpoint_type_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_endpoint_type_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_local_discriminator_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_local_discriminator_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_local_discriminator_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_local_discriminator_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_local_multiplier_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_local_multiplier_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_local_multiplier_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_local_multiplier_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_local_state_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_local_state_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_state_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_local_state_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_state_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_local_state_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_state_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_local_state_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_remote_discriminator_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_remote_discriminator_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_remote_discriminator_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_remote_discriminator_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_remote_multiplier_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_remote_multiplier_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_remote_multiplier_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_remote_multiplier_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bfd_remote_state_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3_check(
+    of_bsn_tlv_bfd_remote_state_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bfd_remote_state_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bfd_remote_state_t *obj, int value);
+
 extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_populate(
     of_bsn_tlv_broadcast_query_timeout_t *obj, int value);
 extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_check(
@@ -13306,6 +13450,150 @@ extern int of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_auto_negotiation_t *obj, int value);
 extern int of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_auto_negotiation_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_encap_type_t *obj, int value);
+extern int of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_encap_type_t *obj, int value);
+extern int of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_encap_type_t *obj, int value);
+extern int of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_encap_type_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_endpoint_event_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_endpoint_event_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_endpoint_event_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_endpoint_event_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_endpoint_id_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_endpoint_id_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_endpoint_id_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_endpoint_id_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_endpoint_type_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_endpoint_type_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_endpoint_type_t *obj, int value);
+extern int of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_endpoint_type_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_local_discriminator_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_local_discriminator_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_local_discriminator_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_local_discriminator_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_local_multiplier_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_local_multiplier_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_local_multiplier_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_local_multiplier_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_local_state_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_local_state_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_state_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_local_state_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_state_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_local_state_t *obj, int value);
+extern int of_bsn_tlv_bfd_local_state_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_local_state_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_remote_discriminator_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_remote_discriminator_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_remote_discriminator_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_remote_discriminator_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_remote_multiplier_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_remote_multiplier_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_remote_multiplier_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_remote_multiplier_t *obj, int value);
+
+extern int of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bfd_remote_state_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4_check(
+    of_bsn_tlv_bfd_remote_state_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bfd_remote_state_t *obj, int value);
+extern int of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bfd_remote_state_t *obj, int value);
 
 extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_populate(
     of_bsn_tlv_broadcast_query_timeout_t *obj, int value);

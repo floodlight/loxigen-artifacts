@@ -26387,6 +26387,598 @@ test_of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_encap_type_t *obj;
+
+    obj = of_bsn_tlv_bfd_encap_type_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENCAP_TYPE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_ENCAP_TYPE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_encap_type_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_endpoint_event_t *obj;
+
+    obj = of_bsn_tlv_bfd_endpoint_event_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENDPOINT_EVENT);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_ENDPOINT_EVENT);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_endpoint_event_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_endpoint_id_t *obj;
+
+    obj = of_bsn_tlv_bfd_endpoint_id_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENDPOINT_ID);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_ENDPOINT_ID);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_endpoint_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_endpoint_type_t *obj;
+
+    obj = of_bsn_tlv_bfd_endpoint_type_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENDPOINT_TYPE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_ENDPOINT_TYPE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_endpoint_type_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_local_discriminator_t *obj;
+
+    obj = of_bsn_tlv_bfd_local_discriminator_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_DISCRIMINATOR);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_LOCAL_DISCRIMINATOR);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_discriminator_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj;
+
+    obj = of_bsn_tlv_bfd_local_min_echo_interval_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MIN_ECHO_INTERVAL);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_LOCAL_MIN_ECHO_INTERVAL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_min_echo_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj;
+
+    obj = of_bsn_tlv_bfd_local_min_rx_interval_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MIN_RX_INTERVAL);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_LOCAL_MIN_RX_INTERVAL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_min_rx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj;
+
+    obj = of_bsn_tlv_bfd_local_min_tx_interval_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MIN_TX_INTERVAL);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_LOCAL_MIN_TX_INTERVAL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_min_tx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_local_multiplier_t *obj;
+
+    obj = of_bsn_tlv_bfd_local_multiplier_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MULTIPLIER);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_LOCAL_MULTIPLIER);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_multiplier_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_state_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_local_state_t *obj;
+
+    obj = of_bsn_tlv_bfd_local_state_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_STATE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_LOCAL_STATE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_local_state_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_state_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_state_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_remote_discriminator_t *obj;
+
+    obj = of_bsn_tlv_bfd_remote_discriminator_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_DISCRIMINATOR);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_REMOTE_DISCRIMINATOR);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_discriminator_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj;
+
+    obj = of_bsn_tlv_bfd_remote_min_echo_interval_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MIN_ECHO_INTERVAL);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_REMOTE_MIN_ECHO_INTERVAL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_min_echo_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj;
+
+    obj = of_bsn_tlv_bfd_remote_min_rx_interval_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MIN_RX_INTERVAL);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_REMOTE_MIN_RX_INTERVAL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_min_rx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj;
+
+    obj = of_bsn_tlv_bfd_remote_min_tx_interval_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MIN_TX_INTERVAL);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_REMOTE_MIN_TX_INTERVAL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_min_tx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_remote_multiplier_t *obj;
+
+    obj = of_bsn_tlv_bfd_remote_multiplier_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MULTIPLIER);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_REMOTE_MULTIPLIER);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_multiplier_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_bfd_remote_state_t *obj;
+
+    obj = of_bsn_tlv_bfd_remote_state_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_STATE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_REMOTE_STATE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_state_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_scalar(void)
 {
     of_bsn_tlv_broadcast_query_timeout_t *obj;
@@ -50885,6 +51477,598 @@ test_of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_scalar(void)
 }
 
 static int
+test_of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_encap_type_t *obj;
+
+    obj = of_bsn_tlv_bfd_encap_type_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENCAP_TYPE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_ENCAP_TYPE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_encap_type_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_endpoint_event_t *obj;
+
+    obj = of_bsn_tlv_bfd_endpoint_event_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENDPOINT_EVENT);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_ENDPOINT_EVENT);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_endpoint_event_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_endpoint_id_t *obj;
+
+    obj = of_bsn_tlv_bfd_endpoint_id_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENDPOINT_ID);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_ENDPOINT_ID);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 6);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_endpoint_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_endpoint_type_t *obj;
+
+    obj = of_bsn_tlv_bfd_endpoint_type_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_ENDPOINT_TYPE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_ENDPOINT_TYPE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_endpoint_type_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_local_discriminator_t *obj;
+
+    obj = of_bsn_tlv_bfd_local_discriminator_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_DISCRIMINATOR);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_LOCAL_DISCRIMINATOR);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_discriminator_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_local_min_echo_interval_t *obj;
+
+    obj = of_bsn_tlv_bfd_local_min_echo_interval_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MIN_ECHO_INTERVAL);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_LOCAL_MIN_ECHO_INTERVAL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_min_echo_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_local_min_rx_interval_t *obj;
+
+    obj = of_bsn_tlv_bfd_local_min_rx_interval_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MIN_RX_INTERVAL);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_LOCAL_MIN_RX_INTERVAL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_min_rx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_local_min_tx_interval_t *obj;
+
+    obj = of_bsn_tlv_bfd_local_min_tx_interval_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MIN_TX_INTERVAL);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_LOCAL_MIN_TX_INTERVAL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_min_tx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_local_multiplier_t *obj;
+
+    obj = of_bsn_tlv_bfd_local_multiplier_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_MULTIPLIER);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_LOCAL_MULTIPLIER);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_multiplier_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_local_state_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_local_state_t *obj;
+
+    obj = of_bsn_tlv_bfd_local_state_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_LOCAL_STATE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_LOCAL_STATE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_local_state_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_local_state_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_local_state_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_remote_discriminator_t *obj;
+
+    obj = of_bsn_tlv_bfd_remote_discriminator_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_DISCRIMINATOR);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_REMOTE_DISCRIMINATOR);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_discriminator_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_remote_min_echo_interval_t *obj;
+
+    obj = of_bsn_tlv_bfd_remote_min_echo_interval_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MIN_ECHO_INTERVAL);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_REMOTE_MIN_ECHO_INTERVAL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_min_echo_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_remote_min_rx_interval_t *obj;
+
+    obj = of_bsn_tlv_bfd_remote_min_rx_interval_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MIN_RX_INTERVAL);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_REMOTE_MIN_RX_INTERVAL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_min_rx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_remote_min_tx_interval_t *obj;
+
+    obj = of_bsn_tlv_bfd_remote_min_tx_interval_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MIN_TX_INTERVAL);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_REMOTE_MIN_TX_INTERVAL);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_min_tx_interval_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_remote_multiplier_t *obj;
+
+    obj = of_bsn_tlv_bfd_remote_multiplier_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_MULTIPLIER);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_REMOTE_MULTIPLIER);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_multiplier_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_bfd_remote_state_t *obj;
+
+    obj = of_bsn_tlv_bfd_remote_state_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 5);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BFD_REMOTE_STATE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_BFD_REMOTE_STATE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 5);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_bfd_remote_state_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_scalar(void)
 {
     of_bsn_tlv_broadcast_query_timeout_t *obj;
@@ -67571,6 +68755,22 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_apply_bytes_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_apply_packets_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_local_state_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_bucket_OF_VERSION_1_3_scalar);
@@ -68239,6 +69439,22 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_apply_bytes_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_apply_packets_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_local_state_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_bucket_OF_VERSION_1_4_scalar);

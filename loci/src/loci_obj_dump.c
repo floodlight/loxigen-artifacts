@@ -21598,6 +21598,262 @@ of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dump(loci_writer_f writer, void* cook
 }
 
 int
+of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_encap_type\n");
+
+    of_bsn_tlv_bfd_encap_type_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_endpoint_event\n");
+
+    of_bsn_tlv_bfd_endpoint_event_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_endpoint_id\n");
+
+    of_bsn_tlv_bfd_endpoint_id_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_endpoint_type\n");
+
+    of_bsn_tlv_bfd_endpoint_type_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_local_discriminator\n");
+
+    of_bsn_tlv_bfd_local_discriminator_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_local_min_echo_interval\n");
+
+    of_bsn_tlv_bfd_local_min_echo_interval_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_local_min_rx_interval\n");
+
+    of_bsn_tlv_bfd_local_min_rx_interval_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_local_min_tx_interval\n");
+
+    of_bsn_tlv_bfd_local_min_tx_interval_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_local_multiplier\n");
+
+    of_bsn_tlv_bfd_local_multiplier_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_local_state_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_local_state\n");
+
+    of_bsn_tlv_bfd_local_state_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_remote_discriminator\n");
+
+    of_bsn_tlv_bfd_remote_discriminator_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_remote_min_echo_interval\n");
+
+    of_bsn_tlv_bfd_remote_min_echo_interval_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_remote_min_rx_interval\n");
+
+    of_bsn_tlv_bfd_remote_min_rx_interval_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_remote_min_tx_interval\n");
+
+    of_bsn_tlv_bfd_remote_min_tx_interval_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_remote_multiplier\n");
+
+    of_bsn_tlv_bfd_remote_multiplier_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_remote_state\n");
+
+    of_bsn_tlv_bfd_remote_state_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -37106,6 +37362,262 @@ of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dump(loci_writer_f writer, void* cook
 }
 
 int
+of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_encap_type\n");
+
+    of_bsn_tlv_bfd_encap_type_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_endpoint_event\n");
+
+    of_bsn_tlv_bfd_endpoint_event_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_endpoint_id\n");
+
+    of_bsn_tlv_bfd_endpoint_id_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_endpoint_type\n");
+
+    of_bsn_tlv_bfd_endpoint_type_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_local_discriminator\n");
+
+    of_bsn_tlv_bfd_local_discriminator_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_local_min_echo_interval\n");
+
+    of_bsn_tlv_bfd_local_min_echo_interval_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_local_min_rx_interval\n");
+
+    of_bsn_tlv_bfd_local_min_rx_interval_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_local_min_tx_interval\n");
+
+    of_bsn_tlv_bfd_local_min_tx_interval_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_local_multiplier\n");
+
+    of_bsn_tlv_bfd_local_multiplier_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_local_state_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_local_state\n");
+
+    of_bsn_tlv_bfd_local_state_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_remote_discriminator\n");
+
+    of_bsn_tlv_bfd_remote_discriminator_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_remote_min_echo_interval\n");
+
+    of_bsn_tlv_bfd_remote_min_echo_interval_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_remote_min_rx_interval\n");
+
+    of_bsn_tlv_bfd_remote_min_rx_interval_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_remote_min_tx_interval\n");
+
+    of_bsn_tlv_bfd_remote_min_tx_interval_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_remote_multiplier\n");
+
+    of_bsn_tlv_bfd_remote_multiplier_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_bfd_remote_state\n");
+
+    of_bsn_tlv_bfd_remote_state_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -46867,6 +47379,22 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_0_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -47536,6 +48064,22 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_interface_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -48567,6 +49111,22 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_2_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dump,
     unknown_dump,
@@ -49251,6 +49811,22 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_apply_bytes_OF_VERSION_1_3_dump,
     of_bsn_tlv_apply_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_encap_type_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_local_state_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_3_dump,
+    of_bsn_tlv_bfd_remote_state_OF_VERSION_1_3_dump,
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dump,
     of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dump,
     of_bsn_tlv_bucket_OF_VERSION_1_3_dump,
@@ -50101,6 +50677,22 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_apply_bytes_OF_VERSION_1_4_dump,
     of_bsn_tlv_apply_packets_OF_VERSION_1_4_dump,
     of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_encap_type_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_endpoint_event_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_endpoint_id_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_endpoint_type_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_local_discriminator_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_local_min_echo_interval_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_local_min_rx_interval_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_local_min_tx_interval_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_local_multiplier_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_local_state_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_remote_discriminator_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_remote_min_echo_interval_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_remote_min_rx_interval_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_remote_min_tx_interval_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_remote_multiplier_OF_VERSION_1_4_dump,
+    of_bsn_tlv_bfd_remote_state_OF_VERSION_1_4_dump,
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dump,
     of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dump,
     of_bsn_tlv_bucket_OF_VERSION_1_4_dump,
