@@ -21319,6 +21319,20 @@ of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
+of_bsn_tlv_multicast_packet_type_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_bsn_tlv_multicast_packet_type_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_name_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -21568,20 +21582,6 @@ int
 of_bsn_tlv_pim_dr_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
-
-    return out;
-}
-
-int
-of_bsn_tlv_pim_packet_type_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint16_t val16;
-
-    of_bsn_tlv_pim_packet_type_value_get(obj, &val16);
-    out += writer(cookie, "value=");
-    out += LOCI_SHOW_u16(writer, cookie, val16);
-    out += writer(cookie, " ");
 
     return out;
 }
@@ -35584,6 +35584,20 @@ of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_show(loci_writer_f writer, void
 }
 
 int
+of_bsn_tlv_multicast_packet_type_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_bsn_tlv_multicast_packet_type_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_name_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -35833,20 +35847,6 @@ int
 of_bsn_tlv_pim_dr_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
-
-    return out;
-}
-
-int
-of_bsn_tlv_pim_packet_type_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint16_t val16;
-
-    of_bsn_tlv_pim_packet_type_value_get(obj, &val16);
-    out += writer(cookie, "value=");
-    out += LOCI_SHOW_u16(writer, cookie, val16);
-    out += writer(cookie, " ");
 
     return out;
 }
@@ -45926,6 +45926,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_mpls_label_OF_VERSION_1_3_show,
     of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3_show,
     of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_show,
+    of_bsn_tlv_multicast_packet_type_OF_VERSION_1_3_show,
     of_bsn_tlv_name_OF_VERSION_1_3_show,
     of_bsn_tlv_ndp_offload_OF_VERSION_1_3_show,
     of_bsn_tlv_ndp_static_OF_VERSION_1_3_show,
@@ -45948,7 +45949,6 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_passive_OF_VERSION_1_3_show,
     of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_3_show,
     of_bsn_tlv_pim_dr_OF_VERSION_1_3_show,
-    of_bsn_tlv_pim_packet_type_OF_VERSION_1_3_show,
     of_bsn_tlv_port_OF_VERSION_1_3_show,
     of_bsn_tlv_port_speed_gbps_OF_VERSION_1_3_show,
     of_bsn_tlv_port_usage_OF_VERSION_1_3_show,
@@ -46776,6 +46776,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_mpls_label_OF_VERSION_1_4_show,
     of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_show,
     of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_show,
+    of_bsn_tlv_multicast_packet_type_OF_VERSION_1_4_show,
     of_bsn_tlv_name_OF_VERSION_1_4_show,
     of_bsn_tlv_ndp_offload_OF_VERSION_1_4_show,
     of_bsn_tlv_ndp_static_OF_VERSION_1_4_show,
@@ -46798,7 +46799,6 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_passive_OF_VERSION_1_4_show,
     of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_4_show,
     of_bsn_tlv_pim_dr_OF_VERSION_1_4_show,
-    of_bsn_tlv_pim_packet_type_OF_VERSION_1_4_show,
     of_bsn_tlv_port_OF_VERSION_1_4_show,
     of_bsn_tlv_port_speed_gbps_OF_VERSION_1_4_show,
     of_bsn_tlv_port_usage_OF_VERSION_1_4_show,

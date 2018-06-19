@@ -778,15 +778,15 @@ ofp_bsn_module_eeprom_recv_signal_type_map = {
     1: 'OFP_BSN_MODULE_EEPROM_RECV_SIGNAL_AVG',
 }
 
-# Identifiers from group ofp_bsn_pim_packet_type
-OFP_BSN_PIM_PACKET_TYPE_NONE = 0
-OFP_BSN_PIM_PACKET_TYPE_HELLO = 1
-OFP_BSN_PIM_PACKET_TYPE_JOIN_PRUNE = 2
+# Identifiers from group ofp_bsn_multicast_packet_type
+OFP_BSN_MULTICAST_PACKET_TYPE_NONE = 0
+OFP_BSN_MULTICAST_PACKET_TYPE_PIM_HELLO = 1
+OFP_BSN_MULTICAST_PACKET_TYPE_PIM_JOIN_PRUNE = 2
 
-ofp_bsn_pim_packet_type_map = {
-    0: 'OFP_BSN_PIM_PACKET_TYPE_NONE',
-    1: 'OFP_BSN_PIM_PACKET_TYPE_HELLO',
-    2: 'OFP_BSN_PIM_PACKET_TYPE_JOIN_PRUNE',
+ofp_bsn_multicast_packet_type_map = {
+    0: 'OFP_BSN_MULTICAST_PACKET_TYPE_NONE',
+    1: 'OFP_BSN_MULTICAST_PACKET_TYPE_PIM_HELLO',
+    2: 'OFP_BSN_MULTICAST_PACKET_TYPE_PIM_JOIN_PRUNE',
 }
 
 # Identifiers from group ofp_bsn_pktin_flag

@@ -27744,10 +27744,6 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PIM_PACKET_TYPE) {
-        return of_bsn_tlv_pim_packet_type_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_BSN_TLV_HASH_ALGORITHM) {
         return of_bsn_tlv_hash_algorithm_OF_VERSION_1_3_dup(src);
     }
@@ -27834,6 +27830,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_CPU_LAG) {
         return of_bsn_tlv_cpu_lag_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MULTICAST_PACKET_TYPE) {
+        return of_bsn_tlv_multicast_packet_type_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
@@ -30497,6 +30497,31 @@ of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_multicast_packet_type
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_multicast_packet_type.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_multicast_packet_type_t *
+of_bsn_tlv_multicast_packet_type_OF_VERSION_1_3_dup(
+    of_bsn_tlv_multicast_packet_type_t *src)
+{
+    of_bsn_tlv_multicast_packet_type_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_multicast_packet_type_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_multicast_packet_type_value_get(src, &val16);
+    of_bsn_tlv_multicast_packet_type_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_name
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -31006,31 +31031,6 @@ of_bsn_tlv_pim_dr_OF_VERSION_1_3_dup(
     if ((dst = of_bsn_tlv_pim_dr_new(src->version)) == NULL) {
         return NULL;
     }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_pim_packet_type
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_pim_packet_type.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_pim_packet_type_t *
-of_bsn_tlv_pim_packet_type_OF_VERSION_1_3_dup(
-    of_bsn_tlv_pim_packet_type_t *src)
-{
-    of_bsn_tlv_pim_packet_type_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_pim_packet_type_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_pim_packet_type_value_get(src, &val16);
-    of_bsn_tlv_pim_packet_type_value_set(dst, val16);
 
     return dst;
 }
@@ -51669,10 +51669,6 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_vlan_vid_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_PIM_PACKET_TYPE) {
-        return of_bsn_tlv_pim_packet_type_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_BSN_TLV_HASH_ALGORITHM) {
         return of_bsn_tlv_hash_algorithm_OF_VERSION_1_4_dup(src);
     }
@@ -51759,6 +51755,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_CPU_LAG) {
         return of_bsn_tlv_cpu_lag_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MULTICAST_PACKET_TYPE) {
+        return of_bsn_tlv_multicast_packet_type_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_GENERATION_ID) {
@@ -54422,6 +54422,31 @@ of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_tlv_multicast_packet_type
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_multicast_packet_type.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_multicast_packet_type_t *
+of_bsn_tlv_multicast_packet_type_OF_VERSION_1_4_dup(
+    of_bsn_tlv_multicast_packet_type_t *src)
+{
+    of_bsn_tlv_multicast_packet_type_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_multicast_packet_type_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_multicast_packet_type_value_get(src, &val16);
+    of_bsn_tlv_multicast_packet_type_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_tlv_name
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -54931,31 +54956,6 @@ of_bsn_tlv_pim_dr_OF_VERSION_1_4_dup(
     if ((dst = of_bsn_tlv_pim_dr_new(src->version)) == NULL) {
         return NULL;
     }
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_bsn_tlv_pim_packet_type
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_tlv_pim_packet_type.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_tlv_pim_packet_type_t *
-of_bsn_tlv_pim_packet_type_OF_VERSION_1_4_dup(
-    of_bsn_tlv_pim_packet_type_t *src)
-{
-    of_bsn_tlv_pim_packet_type_t *dst;
-    uint16_t val16;
-
-    if ((dst = of_bsn_tlv_pim_packet_type_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_pim_packet_type_value_get(src, &val16);
-    of_bsn_tlv_pim_packet_type_value_set(dst, val16);
 
     return dst;
 }
@@ -75190,6 +75190,23 @@ of_bsn_tlv_multicast_interface_id_dup(
 }
 
 of_object_t *
+of_bsn_tlv_multicast_packet_type_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_multicast_packet_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_multicast_packet_type_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_bsn_tlv_name_dup(
     of_object_t *src)
 {
@@ -75557,23 +75574,6 @@ of_bsn_tlv_pim_dr_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_pim_dr_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_bsn_tlv_pim_packet_type_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_bsn_tlv_pim_packet_type_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_tlv_pim_packet_type_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

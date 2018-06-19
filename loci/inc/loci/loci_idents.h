@@ -3333,41 +3333,41 @@
 #define OFP_BSN_MODULE_EEPROM_RECV_SIGNAL_OMA_GENERIC 283
 
 /****************************************************************
- * Identifiers from ofp_bsn_pim_packet_type
+ * Identifiers from ofp_bsn_multicast_packet_type
  *****************************************************************/
 
 /*
- * Defines for OFP_BSN_PIM_PACKET_TYPE_HELLO
- * Original name OFP_BSN_PIM_PACKET_TYPE_HELLO
+ * Defines for OFP_BSN_MULTICAST_PACKET_TYPE_NONE
+ * Original name OFP_BSN_MULTICAST_PACKET_TYPE_NONE
  */
-#define OFP_BSN_PIM_PACKET_TYPE_HELLO_SUPPORTED(version)      \
+#define OFP_BSN_MULTICAST_PACKET_TYPE_NONE_SUPPORTED(version)      \
     (((version) == OF_VERSION_1_3) || \
      ((version) == OF_VERSION_1_4))
-#define OFP_BSN_PIM_PACKET_TYPE_HELLO (0x1)
-#define OFP_BSN_PIM_PACKET_TYPE_HELLO_BY_VERSION(version) (0x1)
-#define OFP_BSN_PIM_PACKET_TYPE_HELLO_GENERIC 284
+#define OFP_BSN_MULTICAST_PACKET_TYPE_NONE (0x0)
+#define OFP_BSN_MULTICAST_PACKET_TYPE_NONE_BY_VERSION(version) (0x0)
+#define OFP_BSN_MULTICAST_PACKET_TYPE_NONE_GENERIC 284
 
 /*
- * Defines for OFP_BSN_PIM_PACKET_TYPE_JOIN_PRUNE
- * Original name OFP_BSN_PIM_PACKET_TYPE_JOIN_PRUNE
+ * Defines for OFP_BSN_MULTICAST_PACKET_TYPE_PIM_HELLO
+ * Original name OFP_BSN_MULTICAST_PACKET_TYPE_PIM_HELLO
  */
-#define OFP_BSN_PIM_PACKET_TYPE_JOIN_PRUNE_SUPPORTED(version)      \
+#define OFP_BSN_MULTICAST_PACKET_TYPE_PIM_HELLO_SUPPORTED(version)      \
     (((version) == OF_VERSION_1_3) || \
      ((version) == OF_VERSION_1_4))
-#define OFP_BSN_PIM_PACKET_TYPE_JOIN_PRUNE (0x2)
-#define OFP_BSN_PIM_PACKET_TYPE_JOIN_PRUNE_BY_VERSION(version) (0x2)
-#define OFP_BSN_PIM_PACKET_TYPE_JOIN_PRUNE_GENERIC 285
+#define OFP_BSN_MULTICAST_PACKET_TYPE_PIM_HELLO (0x1)
+#define OFP_BSN_MULTICAST_PACKET_TYPE_PIM_HELLO_BY_VERSION(version) (0x1)
+#define OFP_BSN_MULTICAST_PACKET_TYPE_PIM_HELLO_GENERIC 285
 
 /*
- * Defines for OFP_BSN_PIM_PACKET_TYPE_NONE
- * Original name OFP_BSN_PIM_PACKET_TYPE_NONE
+ * Defines for OFP_BSN_MULTICAST_PACKET_TYPE_PIM_JOIN_PRUNE
+ * Original name OFP_BSN_MULTICAST_PACKET_TYPE_PIM_JOIN_PRUNE
  */
-#define OFP_BSN_PIM_PACKET_TYPE_NONE_SUPPORTED(version)      \
+#define OFP_BSN_MULTICAST_PACKET_TYPE_PIM_JOIN_PRUNE_SUPPORTED(version)      \
     (((version) == OF_VERSION_1_3) || \
      ((version) == OF_VERSION_1_4))
-#define OFP_BSN_PIM_PACKET_TYPE_NONE (0x0)
-#define OFP_BSN_PIM_PACKET_TYPE_NONE_BY_VERSION(version) (0x0)
-#define OFP_BSN_PIM_PACKET_TYPE_NONE_GENERIC 286
+#define OFP_BSN_MULTICAST_PACKET_TYPE_PIM_JOIN_PRUNE (0x2)
+#define OFP_BSN_MULTICAST_PACKET_TYPE_PIM_JOIN_PRUNE_BY_VERSION(version) (0x2)
+#define OFP_BSN_MULTICAST_PACKET_TYPE_PIM_JOIN_PRUNE_GENERIC 286
 
 /****************************************************************
  * Identifiers from ofp_bsn_pktin_flag

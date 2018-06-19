@@ -4219,7 +4219,7 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             *id = OF_BSN_TLV_IP_TUNNEL_TYPE;
             break;
         case 0xaa:
-            *id = OF_BSN_TLV_PIM_PACKET_TYPE;
+            *id = OF_BSN_TLV_MULTICAST_PACKET_TYPE;
             break;
         case 0xab:
             *id = OF_BSN_TLV_PIM_DR;
@@ -4744,7 +4744,7 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             *id = OF_BSN_TLV_IP_TUNNEL_TYPE;
             break;
         case 0xaa:
-            *id = OF_BSN_TLV_PIM_PACKET_TYPE;
+            *id = OF_BSN_TLV_MULTICAST_PACKET_TYPE;
             break;
         case 0xab:
             *id = OF_BSN_TLV_PIM_DR;

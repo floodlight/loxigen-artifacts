@@ -761,6 +761,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvMulticastPacketType.Builder buildMulticastPacketType() {
+        return new OFBsnTlvMulticastPacketTypeVer14.Builder();
+    }
+    public OFBsnTlvMulticastPacketType multicastPacketType(OFBsnMulticastPacketType value) {
+        return new OFBsnTlvMulticastPacketTypeVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvName.Builder buildName() {
         return new OFBsnTlvNameVer14.Builder();
     }
@@ -912,15 +921,6 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
 
     public OFBsnTlvPimDr pimDr() {
         return OFBsnTlvPimDrVer14.INSTANCE;
-    }
-
-    public OFBsnTlvPimPacketType.Builder buildPimPacketType() {
-        return new OFBsnTlvPimPacketTypeVer14.Builder();
-    }
-    public OFBsnTlvPimPacketType pimPacketType(OFBsnPimPacketType value) {
-        return new OFBsnTlvPimPacketTypeVer14(
-                value
-                    );
     }
 
     public OFBsnTlvPort.Builder buildPort() {

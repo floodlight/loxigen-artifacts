@@ -4101,6 +4101,53 @@ class multicast_interface_id(bsn_tlv):
 
 bsn_tlv.subtypes[95] = multicast_interface_id
 
+class multicast_packet_type(bsn_tlv):
+    type = 170
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!H", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = multicast_packet_type()
+        _type = reader.read("!H")[0]
+        assert(_type == 170)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!H")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("multicast_packet_type {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[170] = multicast_packet_type
+
 class name(bsn_tlv):
     type = 52
 
@@ -5053,53 +5100,6 @@ class pim_dr(bsn_tlv):
         q.text('}')
 
 bsn_tlv.subtypes[171] = pim_dr
-
-class pim_packet_type(bsn_tlv):
-    type = 170
-
-    def __init__(self, value=None):
-        if value != None:
-            self.value = value
-        else:
-            self.value = 0
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!H", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
-        packed.append(struct.pack("!H", self.value))
-        length = sum([len(x) for x in packed])
-        packed[1] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = pim_packet_type()
-        _type = reader.read("!H")[0]
-        assert(_type == 170)
-        _length = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_length, 4)
-        obj.value = reader.read("!H")[0]
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        if self.value != other.value: return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("pim_packet_type {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-                q.text("value = ");
-                q.text("%#x" % self.value)
-            q.breakable()
-        q.text('}')
-
-bsn_tlv.subtypes[170] = pim_packet_type
 
 class port(bsn_tlv):
     type = 0
