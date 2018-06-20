@@ -76,6 +76,12 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x90:
                    // discriminator value 0x90=0x90 for class OFBsnTlvAutoNegotiationVer13
                    return OFBsnTlvAutoNegotiationVer13.READER.readFrom(bb);
+               case (short) 0xb0:
+                   // discriminator value 0xb0=0xb0 for class OFBsnTlvBfdEndpointVer13
+                   return OFBsnTlvBfdEndpointVer13.READER.readFrom(bb);
+               case (short) 0xb1:
+                   // discriminator value 0xb1=0xb1 for class OFBsnTlvBfdStateVer13
+                   return OFBsnTlvBfdStateVer13.READER.readFrom(bb);
                case (short) 0xa:
                    // discriminator value 0xa=0xa for class OFBsnTlvBroadcastQueryTimeoutVer13
                    return OFBsnTlvBroadcastQueryTimeoutVer13.READER.readFrom(bb);
@@ -124,6 +130,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x8b:
                    // discriminator value 0x8b=0x8b for class OFBsnTlvEgressPortGroupIdVer13
                    return OFBsnTlvEgressPortGroupIdVer13.READER.readFrom(bb);
+               case (short) 0xaf:
+                   // discriminator value 0xaf=0xaf for class OFBsnTlvEncapVer13
+                   return OFBsnTlvEncapVer13.READER.readFrom(bb);
                case (short) 0x8f:
                    // discriminator value 0x8f=0x8f for class OFBsnTlvEnhancedHashCapabilityVer13
                    return OFBsnTlvEnhancedHashCapabilityVer13.READER.readFrom(bb);
@@ -202,6 +211,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x7d:
                    // discriminator value 0x7d=0x7d for class OFBsnTlvIcmpv6ChksumVer13
                    return OFBsnTlvIcmpv6ChksumVer13.READER.readFrom(bb);
+               case (short) 0xad:
+                   // discriminator value 0xad=0xad for class OFBsnTlvIdentifierVer13
+                   return OFBsnTlvIdentifierVer13.READER.readFrom(bb);
                case (short) 0x7:
                    // discriminator value 0x7=0x7 for class OFBsnTlvIdleNotificationVer13
                    return OFBsnTlvIdleNotificationVer13.READER.readFrom(bb);
@@ -310,6 +322,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0xaa:
                    // discriminator value 0xaa=0xaa for class OFBsnTlvMulticastPacketVer13
                    return OFBsnTlvMulticastPacketVer13.READER.readFrom(bb);
+               case (short) 0xae:
+                   // discriminator value 0xae=0xae for class OFBsnTlvMultiplierVer13
+                   return OFBsnTlvMultiplierVer13.READER.readFrom(bb);
                case (short) 0x34:
                    // discriminator value 0x34=0x34 for class OFBsnTlvNameVer13
                    return OFBsnTlvNameVer13.READER.readFrom(bb);
