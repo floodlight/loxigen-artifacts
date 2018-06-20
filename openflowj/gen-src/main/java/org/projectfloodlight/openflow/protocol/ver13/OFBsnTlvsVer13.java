@@ -125,6 +125,24 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvBfdEndpoint.Builder buildBfdEndpoint() {
+        return new OFBsnTlvBfdEndpointVer13.Builder();
+    }
+    public OFBsnTlvBfdEndpoint bfdEndpoint(OFBsnBfdEndpoint value) {
+        return new OFBsnTlvBfdEndpointVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvBfdState.Builder buildBfdState() {
+        return new OFBsnTlvBfdStateVer13.Builder();
+    }
+    public OFBsnTlvBfdState bfdState(OFBsnBfdEndpointState value) {
+        return new OFBsnTlvBfdStateVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         return new OFBsnTlvBroadcastQueryTimeoutVer13.Builder();
     }
@@ -245,6 +263,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvEgressPortGroupId egressPortGroupId(long value) {
         return new OFBsnTlvEgressPortGroupIdVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvEncap.Builder buildEncap() {
+        return new OFBsnTlvEncapVer13.Builder();
+    }
+    public OFBsnTlvEncap encap(OFBsnEncap value) {
+        return new OFBsnTlvEncapVer13(
                 value
                     );
     }
@@ -466,6 +493,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvIcmpv6Chksum icmpv6Chksum(int value) {
         return new OFBsnTlvIcmpv6ChksumVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvIdentifier.Builder buildIdentifier() {
+        return new OFBsnTlvIdentifierVer13.Builder();
+    }
+    public OFBsnTlvIdentifier identifier(long value) {
+        return new OFBsnTlvIdentifierVer13(
                 value
                     );
     }
@@ -766,6 +802,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvMulticastPacket multicastPacket(OFBsnMulticastPacket value) {
         return new OFBsnTlvMulticastPacketVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvMultiplier.Builder buildMultiplier() {
+        return new OFBsnTlvMultiplierVer13.Builder();
+    }
+    public OFBsnTlvMultiplier multiplier(short value) {
+        return new OFBsnTlvMultiplierVer13(
                 value
                     );
     }

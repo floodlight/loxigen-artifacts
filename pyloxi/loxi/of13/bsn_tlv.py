@@ -531,6 +531,100 @@ class auto_negotiation(bsn_tlv):
 
 bsn_tlv.subtypes[144] = auto_negotiation
 
+class bfd_endpoint(bsn_tlv):
+    type = 176
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_endpoint()
+        _type = reader.read("!H")[0]
+        assert(_type == 176)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_endpoint {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[176] = bfd_endpoint
+
+class bfd_state(bsn_tlv):
+    type = 177
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bfd_state()
+        _type = reader.read("!H")[0]
+        assert(_type == 177)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bfd_state {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[177] = bfd_state
+
 class broadcast_query_timeout(bsn_tlv):
     type = 10
 
@@ -1246,6 +1340,53 @@ class egress_port_group_id(bsn_tlv):
         q.text('}')
 
 bsn_tlv.subtypes[139] = egress_port_group_id
+
+class encap(bsn_tlv):
+    type = 175
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = encap()
+        _type = reader.read("!H")[0]
+        assert(_type == 175)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("encap {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[175] = encap
 
 class enhanced_hash_capability(bsn_tlv):
     type = 143
@@ -2490,6 +2631,53 @@ class icmpv6_chksum(bsn_tlv):
         q.text('}')
 
 bsn_tlv.subtypes[125] = icmpv6_chksum
+
+class identifier(bsn_tlv):
+    type = 173
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = identifier()
+        _type = reader.read("!H")[0]
+        assert(_type == 173)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("identifier {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[173] = identifier
 
 class idle_notification(bsn_tlv):
     type = 7
@@ -4147,6 +4335,53 @@ class multicast_packet(bsn_tlv):
         q.text('}')
 
 bsn_tlv.subtypes[170] = multicast_packet
+
+class multiplier(bsn_tlv):
+    type = 174
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!B", self.value))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = multiplier()
+        _type = reader.read("!H")[0]
+        assert(_type == 174)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        obj.value = reader.read("!B")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("multiplier {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[174] = multiplier
 
 class name(bsn_tlv):
     type = 52

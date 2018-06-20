@@ -51,6 +51,10 @@ public interface OFBsnTlvs {
     OFBsnTlvApplyPackets applyPackets(U64 value);
     OFBsnTlvAutoNegotiation.Builder buildAutoNegotiation() throws UnsupportedOperationException;
     OFBsnTlvAutoNegotiation autoNegotiation(OFBsnAutoNegotiationType value);
+    OFBsnTlvBfdEndpoint.Builder buildBfdEndpoint() throws UnsupportedOperationException;
+    OFBsnTlvBfdEndpoint bfdEndpoint(OFBsnBfdEndpoint value);
+    OFBsnTlvBfdState.Builder buildBfdState() throws UnsupportedOperationException;
+    OFBsnTlvBfdState bfdState(OFBsnBfdEndpointState value);
     OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() throws UnsupportedOperationException;
     OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value);
     OFBsnTlvBroadcastRate.Builder buildBroadcastRate() throws UnsupportedOperationException;
@@ -79,6 +83,8 @@ public interface OFBsnTlvs {
     OFBsnTlvEgressOnly egressOnly();
     OFBsnTlvEgressPortGroupId.Builder buildEgressPortGroupId() throws UnsupportedOperationException;
     OFBsnTlvEgressPortGroupId egressPortGroupId(long value);
+    OFBsnTlvEncap.Builder buildEncap() throws UnsupportedOperationException;
+    OFBsnTlvEncap encap(OFBsnEncap value);
     OFBsnTlvEnhancedHashCapability.Builder buildEnhancedHashCapability() throws UnsupportedOperationException;
     OFBsnTlvEnhancedHashCapability enhancedHashCapability(Set<OFBsnEnhancedHashType> value);
     OFBsnTlvEthDst.Builder buildEthDst() throws UnsupportedOperationException;
@@ -128,6 +134,8 @@ public interface OFBsnTlvs {
     OFBsnTlvIcmpType icmpType(short value);
     OFBsnTlvIcmpv6Chksum.Builder buildIcmpv6Chksum() throws UnsupportedOperationException;
     OFBsnTlvIcmpv6Chksum icmpv6Chksum(int value);
+    OFBsnTlvIdentifier.Builder buildIdentifier() throws UnsupportedOperationException;
+    OFBsnTlvIdentifier identifier(long value);
     OFBsnTlvIdleNotification idleNotification();
     OFBsnTlvIdleTime.Builder buildIdleTime() throws UnsupportedOperationException;
     OFBsnTlvIdleTime idleTime(U64 value);
@@ -195,6 +203,8 @@ public interface OFBsnTlvs {
     OFBsnTlvMulticastInterfaceId multicastInterfaceId(long value);
     OFBsnTlvMulticastPacket.Builder buildMulticastPacket() throws UnsupportedOperationException;
     OFBsnTlvMulticastPacket multicastPacket(OFBsnMulticastPacket value);
+    OFBsnTlvMultiplier.Builder buildMultiplier() throws UnsupportedOperationException;
+    OFBsnTlvMultiplier multiplier(short value);
     OFBsnTlvName.Builder buildName() throws UnsupportedOperationException;
     OFBsnTlvName name(byte[] value);
     OFBsnTlvNdpOffload ndpOffload();

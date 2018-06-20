@@ -343,6 +343,34 @@ ofp_bsn_auto_negotiation_type_map = {
     2: 'OFP_BSN_AUTO_NEGOTIATION_DISABLE',
 }
 
+# Identifiers from group ofp_bsn_bfd_endpoint
+OFP_BSN_BFD_UNUSED = 0
+OFP_BSN_BFD_MICRO = 1
+OFP_BSN_BFD_1_HOP = 2
+OFP_BSN_BFD_MULTI_HOP = 3
+
+ofp_bsn_bfd_endpoint_map = {
+    0: 'OFP_BSN_BFD_UNUSED',
+    1: 'OFP_BSN_BFD_MICRO',
+    2: 'OFP_BSN_BFD_1_HOP',
+    3: 'OFP_BSN_BFD_MULTI_HOP',
+}
+
+# Identifiers from group ofp_bsn_bfd_endpoint_state
+OFP_BSN_BFD_ENDPOINT_STATE_ADMINDOWN = 0
+OFP_BSN_BFD_ENDPOINT_STATE_DOWN = 1
+OFP_BSN_BFD_ENDPOINT_STATE_INIT = 2
+OFP_BSN_BFD_ENDPOINT_STATE_UP = 3
+OFP_BSN_BFD_ENDPOINT_SESSION_ERROR = 4
+
+ofp_bsn_bfd_endpoint_state_map = {
+    0: 'OFP_BSN_BFD_ENDPOINT_STATE_ADMINDOWN',
+    1: 'OFP_BSN_BFD_ENDPOINT_STATE_DOWN',
+    2: 'OFP_BSN_BFD_ENDPOINT_STATE_INIT',
+    3: 'OFP_BSN_BFD_ENDPOINT_STATE_UP',
+    4: 'OFP_BSN_BFD_ENDPOINT_SESSION_ERROR',
+}
+
 # Identifiers from group ofp_bsn_controller_connection_state
 OFP_BSN_CONTROLLER_CONNECTION_STATE_DISCONNECTED = 0
 OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED = 1
@@ -384,6 +412,17 @@ ofp_bsn_decap_map = {
     6: 'OFP_BSN_DECAP_L3_GRE',
     7: 'OFP_BSN_DECAP_GTP',
     8: 'OFP_BSN_DECAP_L3_MPLS',
+}
+
+# Identifiers from group ofp_bsn_encap
+OFP_BSN_ENCAP_UNUSED = 0
+OFP_BSN_ENCAP_IPV4_UDP = 1
+OFP_BSN_ENCAP_IPV6_UDP = 2
+
+ofp_bsn_encap_map = {
+    0: 'OFP_BSN_ENCAP_UNUSED',
+    1: 'OFP_BSN_ENCAP_IPV4_UDP',
+    2: 'OFP_BSN_ENCAP_IPV6_UDP',
 }
 
 # Identifiers from group ofp_bsn_enhanced_hash_type

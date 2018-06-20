@@ -105,6 +105,20 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvAutoNegotiation not supported in version 1.2");
     }
 
+    public OFBsnTlvBfdEndpoint.Builder buildBfdEndpoint() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdEndpoint not supported in version 1.2");
+    }
+    public OFBsnTlvBfdEndpoint bfdEndpoint(OFBsnBfdEndpoint value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdEndpoint not supported in version 1.2");
+    }
+
+    public OFBsnTlvBfdState.Builder buildBfdState() {
+        throw new UnsupportedOperationException("OFBsnTlvBfdState not supported in version 1.2");
+    }
+    public OFBsnTlvBfdState bfdState(OFBsnBfdEndpointState value) {
+        throw new UnsupportedOperationException("OFBsnTlvBfdState not supported in version 1.2");
+    }
+
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.2");
     }
@@ -203,6 +217,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvEgressPortGroupId egressPortGroupId(long value) {
         throw new UnsupportedOperationException("OFBsnTlvEgressPortGroupId not supported in version 1.2");
+    }
+
+    public OFBsnTlvEncap.Builder buildEncap() {
+        throw new UnsupportedOperationException("OFBsnTlvEncap not supported in version 1.2");
+    }
+    public OFBsnTlvEncap encap(OFBsnEncap value) {
+        throw new UnsupportedOperationException("OFBsnTlvEncap not supported in version 1.2");
     }
 
     public OFBsnTlvEnhancedHashCapability.Builder buildEnhancedHashCapability() {
@@ -376,6 +397,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvIcmpv6Chksum icmpv6Chksum(int value) {
         throw new UnsupportedOperationException("OFBsnTlvIcmpv6Chksum not supported in version 1.2");
+    }
+
+    public OFBsnTlvIdentifier.Builder buildIdentifier() {
+        throw new UnsupportedOperationException("OFBsnTlvIdentifier not supported in version 1.2");
+    }
+    public OFBsnTlvIdentifier identifier(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvIdentifier not supported in version 1.2");
     }
 
     public OFBsnTlvIdleNotification idleNotification() {
@@ -613,6 +641,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvMulticastPacket multicastPacket(OFBsnMulticastPacket value) {
         throw new UnsupportedOperationException("OFBsnTlvMulticastPacket not supported in version 1.2");
+    }
+
+    public OFBsnTlvMultiplier.Builder buildMultiplier() {
+        throw new UnsupportedOperationException("OFBsnTlvMultiplier not supported in version 1.2");
+    }
+    public OFBsnTlvMultiplier multiplier(short value) {
+        throw new UnsupportedOperationException("OFBsnTlvMultiplier not supported in version 1.2");
     }
 
     public OFBsnTlvName.Builder buildName() {

@@ -762,6 +762,8 @@ int of_bsn_tlv_anchor_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of
 int of_bsn_tlv_apply_bytes_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_apply_packets_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_bfd_endpoint_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_bfd_state_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_broadcast_rate_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_bucket_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -778,6 +780,7 @@ int of_bsn_tlv_dscp_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_o
 int of_bsn_tlv_ecn_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_egress_only_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_encap_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_eth_dst_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_eth_src_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -804,6 +807,7 @@ int of_bsn_tlv_icmp_code_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie,
 int of_bsn_tlv_icmp_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_icmp_type_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_identifier_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_idle_notification_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_idle_time_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -840,6 +844,7 @@ int of_bsn_tlv_mpls_label_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie
 int of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_multicast_interface_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_multicast_packet_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_multiplier_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_name_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_ndp_offload_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_ndp_static_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1430,6 +1435,8 @@ int of_bsn_tlv_anchor_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of
 int of_bsn_tlv_apply_bytes_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_apply_packets_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_bfd_endpoint_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_bfd_state_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_broadcast_rate_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_bucket_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1446,6 +1453,7 @@ int of_bsn_tlv_dscp_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_o
 int of_bsn_tlv_ecn_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_egress_only_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_encap_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_eth_dst_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_eth_src_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1472,6 +1480,7 @@ int of_bsn_tlv_icmp_code_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie,
 int of_bsn_tlv_icmp_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_icmp_type_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_identifier_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_idle_notification_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_idle_time_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_idle_timeout_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1508,6 +1517,7 @@ int of_bsn_tlv_mpls_label_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie
 int of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_multicast_interface_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_multicast_packet_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_multiplier_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_name_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_ndp_offload_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_ndp_static_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);

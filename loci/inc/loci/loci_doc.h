@@ -6543,6 +6543,28 @@ typedef struct of_bsn_tlv_apply_packets_s of_bsn_tlv_apply_packets_t;
 typedef struct of_bsn_tlv_auto_negotiation_s of_bsn_tlv_auto_negotiation_t;
 
 /**
+ * Structure for of_bsn_tlv_bfd_endpoint object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_bfd_endpoint_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_endpoint_s of_bsn_tlv_bfd_endpoint_t;
+
+/**
+ * Structure for of_bsn_tlv_bfd_state object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_bfd_state_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bfd_state_s of_bsn_tlv_bfd_state_t;
+
+/**
  * Structure for of_bsn_tlv_broadcast_query_timeout object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6701,6 +6723,17 @@ typedef struct of_bsn_tlv_egress_only_s of_bsn_tlv_egress_only_t;
  *
  */
 typedef struct of_bsn_tlv_egress_port_group_id_s of_bsn_tlv_egress_port_group_id_t;
+
+/**
+ * Structure for of_bsn_tlv_encap object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_encap_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_encap_s of_bsn_tlv_encap_t;
 
 /**
  * Structure for of_bsn_tlv_enhanced_hash_capability object.  Get/set
@@ -6995,6 +7028,17 @@ typedef struct of_bsn_tlv_icmp_type_s of_bsn_tlv_icmp_type_t;
  *
  */
 typedef struct of_bsn_tlv_icmpv6_chksum_s of_bsn_tlv_icmpv6_chksum_t;
+
+/**
+ * Structure for of_bsn_tlv_identifier object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_identifier_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_identifier_s of_bsn_tlv_identifier_t;
 
 /**
  * Structure for of_bsn_tlv_idle_notification object.  Get/set
@@ -7375,6 +7419,17 @@ typedef struct of_bsn_tlv_multicast_interface_id_s of_bsn_tlv_multicast_interfac
  *
  */
 typedef struct of_bsn_tlv_multicast_packet_s of_bsn_tlv_multicast_packet_t;
+
+/**
+ * Structure for of_bsn_tlv_multiplier object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_multiplier_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_multiplier_s of_bsn_tlv_multiplier_t;
 
 /**
  * Structure for of_bsn_tlv_name object.  Get/set
