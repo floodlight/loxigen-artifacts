@@ -186,6 +186,7 @@ public interface OFBsnTlvs {
     OFBsnTlvLoopbackMode loopbackMode(OFBsnLoopbackMode value);
     OFBsnTlvLoopbackPort.Builder buildLoopbackPort() throws UnsupportedOperationException;
     OFBsnTlvLoopbackPort loopbackPort(OFPort value);
+    OFBsnTlvLrAllEnabled lrAllEnabled();
     OFBsnTlvMac.Builder buildMac() throws UnsupportedOperationException;
     OFBsnTlvMac mac(MacAddress value);
     OFBsnTlvMacMask.Builder buildMacMask() throws UnsupportedOperationException;
