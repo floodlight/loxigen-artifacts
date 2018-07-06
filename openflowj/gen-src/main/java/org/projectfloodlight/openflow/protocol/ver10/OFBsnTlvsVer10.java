@@ -583,6 +583,10 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvLoopbackPort not supported in version 1.0");
     }
 
+    public OFBsnTlvLrAllEnabled lrAllEnabled() {
+        throw new UnsupportedOperationException("OFBsnTlvLrAllEnabled not supported in version 1.0");
+    }
+
     public OFBsnTlvMac.Builder buildMac() {
         throw new UnsupportedOperationException("OFBsnTlvMac not supported in version 1.0");
     }

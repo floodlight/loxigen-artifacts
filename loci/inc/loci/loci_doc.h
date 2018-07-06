@@ -7326,6 +7326,13 @@ typedef struct of_bsn_tlv_loopback_mode_s of_bsn_tlv_loopback_mode_t;
 typedef struct of_bsn_tlv_loopback_port_s of_bsn_tlv_loopback_port_t;
 
 /**
+ * Structure for of_bsn_tlv_lr_all_enabled object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_lr_all_enabled_s of_bsn_tlv_lr_all_enabled_t;
+
+/**
  * Structure for of_bsn_tlv_mac object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

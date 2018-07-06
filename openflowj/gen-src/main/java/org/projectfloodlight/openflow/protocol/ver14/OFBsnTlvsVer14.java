@@ -730,6 +730,10 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvLrAllEnabled lrAllEnabled() {
+        return OFBsnTlvLrAllEnabledVer14.INSTANCE;
+    }
+
     public OFBsnTlvMac.Builder buildMac() {
         return new OFBsnTlvMacVer14.Builder();
     }

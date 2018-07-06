@@ -397,6 +397,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_lag_options_init,
     (of_object_init_f)of_bsn_tlv_loopback_mode_init,
     (of_object_init_f)of_bsn_tlv_loopback_port_init,
+    (of_object_init_f)of_bsn_tlv_lr_all_enabled_init,
     (of_object_init_f)of_bsn_tlv_mac_init,
     (of_object_init_f)of_bsn_tlv_mac_mask_init,
     (of_object_init_f)of_bsn_tlv_mcg_type_vxlan_init,

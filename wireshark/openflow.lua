@@ -9100,6 +9100,8 @@ fields['of13.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of13.bsn_tlv_loo
 fields['of13.bsn_tlv_loopback_port.type'] = ProtoField.uint16("of13.bsn_tlv_loopback_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_port.length'] = ProtoField.uint16("of13.bsn_tlv_loopback_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_port.value'] = ProtoField.uint32("of13.bsn_tlv_loopback_port.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_lr_all_enabled.type'] = ProtoField.uint16("of13.bsn_tlv_lr_all_enabled.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_lr_all_enabled.length'] = ProtoField.uint16("of13.bsn_tlv_lr_all_enabled.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_mac.type'] = ProtoField.uint16("of13.bsn_tlv_mac.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_mac.length'] = ProtoField.uint16("of13.bsn_tlv_mac.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_mac.value'] = ProtoField.ether("of13.bsn_tlv_mac.value", "value")
@@ -12121,6 +12123,8 @@ fields['of14.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of14.bsn_tlv_loo
 fields['of14.bsn_tlv_loopback_port.type'] = ProtoField.uint16("of14.bsn_tlv_loopback_port.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_port.length'] = ProtoField.uint16("of14.bsn_tlv_loopback_port.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_port.value'] = ProtoField.uint32("of14.bsn_tlv_loopback_port.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_lr_all_enabled.type'] = ProtoField.uint16("of14.bsn_tlv_lr_all_enabled.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_lr_all_enabled.length'] = ProtoField.uint16("of14.bsn_tlv_lr_all_enabled.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_mac.type'] = ProtoField.uint16("of14.bsn_tlv_mac.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_mac.length'] = ProtoField.uint16("of14.bsn_tlv_mac.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_mac.value'] = ProtoField.ether("of14.bsn_tlv_mac.value", "value")
@@ -15458,6 +15462,8 @@ fields['of15.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of15.bsn_tlv_loo
 fields['of15.bsn_tlv_loopback_port.type'] = ProtoField.uint16("of15.bsn_tlv_loopback_port.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_port.length'] = ProtoField.uint16("of15.bsn_tlv_loopback_port.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_port.value'] = ProtoField.uint32("of15.bsn_tlv_loopback_port.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_lr_all_enabled.type'] = ProtoField.uint16("of15.bsn_tlv_lr_all_enabled.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_lr_all_enabled.length'] = ProtoField.uint16("of15.bsn_tlv_lr_all_enabled.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_mac.type'] = ProtoField.uint16("of15.bsn_tlv_mac.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_mac.length'] = ProtoField.uint16("of15.bsn_tlv_mac.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_mac.value'] = ProtoField.ether("of15.bsn_tlv_mac.value", "value")
@@ -22088,6 +22094,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_loopback_port.type'],
     fields['of13.bsn_tlv_loopback_port.length'],
     fields['of13.bsn_tlv_loopback_port.value'],
+    fields['of13.bsn_tlv_lr_all_enabled.type'],
+    fields['of13.bsn_tlv_lr_all_enabled.length'],
     fields['of13.bsn_tlv_mac.type'],
     fields['of13.bsn_tlv_mac.length'],
     fields['of13.bsn_tlv_mac.value'],
@@ -25109,6 +25117,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_loopback_port.type'],
     fields['of14.bsn_tlv_loopback_port.length'],
     fields['of14.bsn_tlv_loopback_port.value'],
+    fields['of14.bsn_tlv_lr_all_enabled.type'],
+    fields['of14.bsn_tlv_lr_all_enabled.length'],
     fields['of14.bsn_tlv_mac.type'],
     fields['of14.bsn_tlv_mac.length'],
     fields['of14.bsn_tlv_mac.value'],
@@ -28446,6 +28456,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_loopback_port.type'],
     fields['of15.bsn_tlv_loopback_port.length'],
     fields['of15.bsn_tlv_loopback_port.value'],
+    fields['of15.bsn_tlv_lr_all_enabled.type'],
+    fields['of15.bsn_tlv_lr_all_enabled.length'],
     fields['of15.bsn_tlv_mac.type'],
     fields['of15.bsn_tlv_mac.length'],
     fields['of15.bsn_tlv_mac.value'],
@@ -41159,6 +41171,15 @@ function dissect_of_bsn_tlv_loopback_port_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[110] = dissect_of_bsn_tlv_loopback_port_v4
 
+-- child class of_bsn_tlv_lr_all_enabled
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_lr_all_enabled_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_lr_all_enabled.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_lr_all_enabled.length')
+    return 'of_bsn_tlv_lr_all_enabled'
+end
+of_bsn_tlv_v4_dissectors[178] = dissect_of_bsn_tlv_lr_all_enabled_v4
+
 -- child class of_bsn_tlv_mac
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_mac_v4(reader, subtree)
@@ -49374,6 +49395,15 @@ function dissect_of_bsn_tlv_loopback_port_v5(reader, subtree)
     return 'of_bsn_tlv_loopback_port'
 end
 of_bsn_tlv_v5_dissectors[110] = dissect_of_bsn_tlv_loopback_port_v5
+
+-- child class of_bsn_tlv_lr_all_enabled
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_lr_all_enabled_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_lr_all_enabled.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_lr_all_enabled.length')
+    return 'of_bsn_tlv_lr_all_enabled'
+end
+of_bsn_tlv_v5_dissectors[178] = dissect_of_bsn_tlv_lr_all_enabled_v5
 
 -- child class of_bsn_tlv_mac
 -- Child of of_bsn_tlv
@@ -58287,6 +58317,15 @@ function dissect_of_bsn_tlv_loopback_port_v6(reader, subtree)
     return 'of_bsn_tlv_loopback_port'
 end
 of_bsn_tlv_v6_dissectors[110] = dissect_of_bsn_tlv_loopback_port_v6
+
+-- child class of_bsn_tlv_lr_all_enabled
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_lr_all_enabled_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_lr_all_enabled.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_lr_all_enabled.length')
+    return 'of_bsn_tlv_lr_all_enabled'
+end
+of_bsn_tlv_v6_dissectors[178] = dissect_of_bsn_tlv_lr_all_enabled_v6
 
 -- child class of_bsn_tlv_mac
 -- Child of of_bsn_tlv
