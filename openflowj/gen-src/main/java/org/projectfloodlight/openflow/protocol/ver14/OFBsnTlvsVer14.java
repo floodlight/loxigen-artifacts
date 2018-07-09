@@ -981,6 +981,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvPortMode.Builder buildPortMode() {
+        return new OFBsnTlvPortModeVer14.Builder();
+    }
+    public OFBsnTlvPortMode portMode(OFBsnPortMode value) {
+        return new OFBsnTlvPortModeVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvPortSpeedGbps.Builder buildPortSpeedGbps() {
         return new OFBsnTlvPortSpeedGbpsVer14.Builder();
     }

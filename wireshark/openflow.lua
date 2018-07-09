@@ -1298,10 +1298,17 @@ enum_v4_ofp_ovs_tcp_flag = {
     [256] = "OFP_OVS_TCP_FLAG_NS",
 }
 
-enum_v4_ofp_table_mod_failed_code = {
-    [0] = "OFPTMFC_BAD_TABLE",
-    [1] = "OFPTMFC_BAD_CONFIG",
-    [2] = "OFPTMFC_EPERM",
+enum_v4_ofp_bsn_port_mode = {
+    [0] = "OFP_BSN_PORT_MODE_4XX",
+    [1] = "OFP_BSN_PORT_MODE_4X1",
+    [2] = "OFP_BSN_PORT_MODE_4X10",
+    [3] = "OFP_BSN_PORT_MODE_4X25",
+    [4] = "OFP_BSN_PORT_MODE_2X50",
+    [5] = "OFP_BSN_PORT_MODE_1X1",
+    [6] = "OFP_BSN_PORT_MODE_1X10",
+    [7] = "OFP_BSN_PORT_MODE_1X25",
+    [8] = "OFP_BSN_PORT_MODE_1X40",
+    [9] = "OFP_BSN_PORT_MODE_1X100",
 }
 
 enum_v4_ofp_bsn_status = {
@@ -1690,6 +1697,12 @@ enum_v4_ofp_bsn_port_usage = {
     [1] = "OFP_BSN_PORT_TRANSMIT_ONLY",
     [2] = "OFP_BSN_PORT_RECEIVE_ONLY",
     [3] = "OFP_BSN_PORT_BIDIRECTION",
+}
+
+enum_v4_ofp_table_mod_failed_code = {
+    [0] = "OFPTMFC_BAD_TABLE",
+    [1] = "OFPTMFC_BAD_CONFIG",
+    [2] = "OFPTMFC_EPERM",
 }
 
 enum_v4_of_bsn_hash_packet_type = {
@@ -2254,10 +2267,17 @@ enum_v5_ofp_bsn_port_usage = {
     [3] = "OFP_BSN_PORT_BIDIRECTION",
 }
 
-enum_v5_ofp_table_mod_failed_code = {
-    [0] = "OFPTMFC_BAD_TABLE",
-    [1] = "OFPTMFC_BAD_CONFIG",
-    [2] = "OFPTMFC_EPERM",
+enum_v5_ofp_bsn_port_mode = {
+    [0] = "OFP_BSN_PORT_MODE_4XX",
+    [1] = "OFP_BSN_PORT_MODE_4X1",
+    [2] = "OFP_BSN_PORT_MODE_4X10",
+    [3] = "OFP_BSN_PORT_MODE_4X25",
+    [4] = "OFP_BSN_PORT_MODE_2X50",
+    [5] = "OFP_BSN_PORT_MODE_1X1",
+    [6] = "OFP_BSN_PORT_MODE_1X10",
+    [7] = "OFP_BSN_PORT_MODE_1X25",
+    [8] = "OFP_BSN_PORT_MODE_1X40",
+    [9] = "OFP_BSN_PORT_MODE_1X100",
 }
 
 enum_v5_ofp_bsn_status = {
@@ -2753,6 +2773,12 @@ enum_v5_ofp_ovs_tcp_flag = {
     [64] = "OFP_OVS_TCP_FLAG_ECE",
     [128] = "OFP_OVS_TCP_FLAG_CWR",
     [256] = "OFP_OVS_TCP_FLAG_NS",
+}
+
+enum_v5_ofp_table_mod_failed_code = {
+    [0] = "OFPTMFC_BAD_TABLE",
+    [1] = "OFPTMFC_BAD_CONFIG",
+    [2] = "OFPTMFC_EPERM",
 }
 
 enum_v5_of_bsn_hash_packet_type = {
@@ -3449,10 +3475,17 @@ enum_v6_ofp_bsn_port_usage = {
     [3] = "OFP_BSN_PORT_BIDIRECTION",
 }
 
-enum_v6_ofp_table_mod_failed_code = {
-    [0] = "OFPTMFC_BAD_TABLE",
-    [1] = "OFPTMFC_BAD_CONFIG",
-    [2] = "OFPTMFC_EPERM",
+enum_v6_ofp_bsn_port_mode = {
+    [0] = "OFP_BSN_PORT_MODE_4XX",
+    [1] = "OFP_BSN_PORT_MODE_4X1",
+    [2] = "OFP_BSN_PORT_MODE_4X10",
+    [3] = "OFP_BSN_PORT_MODE_4X25",
+    [4] = "OFP_BSN_PORT_MODE_2X50",
+    [5] = "OFP_BSN_PORT_MODE_1X1",
+    [6] = "OFP_BSN_PORT_MODE_1X10",
+    [7] = "OFP_BSN_PORT_MODE_1X25",
+    [8] = "OFP_BSN_PORT_MODE_1X40",
+    [9] = "OFP_BSN_PORT_MODE_1X100",
 }
 
 enum_v6_ofp_bsn_status = {
@@ -4046,6 +4079,12 @@ enum_v6_ofp_ovs_tcp_flag = {
     [64] = "OFP_OVS_TCP_FLAG_ECE",
     [128] = "OFP_OVS_TCP_FLAG_CWR",
     [256] = "OFP_OVS_TCP_FLAG_NS",
+}
+
+enum_v6_ofp_table_mod_failed_code = {
+    [0] = "OFPTMFC_BAD_TABLE",
+    [1] = "OFPTMFC_BAD_CONFIG",
+    [2] = "OFPTMFC_EPERM",
 }
 
 enum_v6_of_bsn_hash_packet_type = {
@@ -9191,6 +9230,9 @@ fields['of13.bsn_tlv_pim_dr.length'] = ProtoField.uint16("of13.bsn_tlv_pim_dr.le
 fields['of13.bsn_tlv_port.type'] = ProtoField.uint16("of13.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port.length'] = ProtoField.uint16("of13.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port.value'] = ProtoField.uint32("of13.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_port_mode.type'] = ProtoField.uint16("of13.bsn_tlv_port_mode.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_port_mode.length'] = ProtoField.uint16("of13.bsn_tlv_port_mode.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_port_mode.value'] = ProtoField.uint32("of13.bsn_tlv_port_mode.value", "value", base.DEC, enum_v4_ofp_bsn_port_mode)
 fields['of13.bsn_tlv_port_speed_gbps.type'] = ProtoField.uint16("of13.bsn_tlv_port_speed_gbps.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port_speed_gbps.length'] = ProtoField.uint16("of13.bsn_tlv_port_speed_gbps.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port_speed_gbps.value'] = ProtoField.uint32("of13.bsn_tlv_port_speed_gbps.value", "value", base.DEC, nil)
@@ -12214,6 +12256,9 @@ fields['of14.bsn_tlv_pim_dr.length'] = ProtoField.uint16("of14.bsn_tlv_pim_dr.le
 fields['of14.bsn_tlv_port.type'] = ProtoField.uint16("of14.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_port.length'] = ProtoField.uint16("of14.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_port.value'] = ProtoField.uint32("of14.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_port_mode.type'] = ProtoField.uint16("of14.bsn_tlv_port_mode.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_port_mode.length'] = ProtoField.uint16("of14.bsn_tlv_port_mode.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_port_mode.value'] = ProtoField.uint32("of14.bsn_tlv_port_mode.value", "value", base.DEC, enum_v5_ofp_bsn_port_mode)
 fields['of14.bsn_tlv_port_speed_gbps.type'] = ProtoField.uint16("of14.bsn_tlv_port_speed_gbps.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_port_speed_gbps.length'] = ProtoField.uint16("of14.bsn_tlv_port_speed_gbps.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_port_speed_gbps.value'] = ProtoField.uint32("of14.bsn_tlv_port_speed_gbps.value", "value", base.DEC, nil)
@@ -15553,6 +15598,9 @@ fields['of15.bsn_tlv_pim_dr.length'] = ProtoField.uint16("of15.bsn_tlv_pim_dr.le
 fields['of15.bsn_tlv_port.type'] = ProtoField.uint16("of15.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_port.length'] = ProtoField.uint16("of15.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_port.value'] = ProtoField.uint32("of15.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_port_mode.type'] = ProtoField.uint16("of15.bsn_tlv_port_mode.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_port_mode.length'] = ProtoField.uint16("of15.bsn_tlv_port_mode.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_port_mode.value'] = ProtoField.uint32("of15.bsn_tlv_port_mode.value", "value", base.DEC, enum_v6_ofp_bsn_port_mode)
 fields['of15.bsn_tlv_port_speed_gbps.type'] = ProtoField.uint16("of15.bsn_tlv_port_speed_gbps.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_port_speed_gbps.length'] = ProtoField.uint16("of15.bsn_tlv_port_speed_gbps.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_port_speed_gbps.value'] = ProtoField.uint32("of15.bsn_tlv_port_speed_gbps.value", "value", base.DEC, nil)
@@ -22185,6 +22233,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_port.type'],
     fields['of13.bsn_tlv_port.length'],
     fields['of13.bsn_tlv_port.value'],
+    fields['of13.bsn_tlv_port_mode.type'],
+    fields['of13.bsn_tlv_port_mode.length'],
+    fields['of13.bsn_tlv_port_mode.value'],
     fields['of13.bsn_tlv_port_speed_gbps.type'],
     fields['of13.bsn_tlv_port_speed_gbps.length'],
     fields['of13.bsn_tlv_port_speed_gbps.value'],
@@ -25208,6 +25259,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_port.type'],
     fields['of14.bsn_tlv_port.length'],
     fields['of14.bsn_tlv_port.value'],
+    fields['of14.bsn_tlv_port_mode.type'],
+    fields['of14.bsn_tlv_port_mode.length'],
+    fields['of14.bsn_tlv_port_mode.value'],
     fields['of14.bsn_tlv_port_speed_gbps.type'],
     fields['of14.bsn_tlv_port_speed_gbps.length'],
     fields['of14.bsn_tlv_port_speed_gbps.value'],
@@ -28547,6 +28601,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_port.type'],
     fields['of15.bsn_tlv_port.length'],
     fields['of15.bsn_tlv_port.value'],
+    fields['of15.bsn_tlv_port_mode.type'],
+    fields['of15.bsn_tlv_port_mode.length'],
+    fields['of15.bsn_tlv_port_mode.value'],
     fields['of15.bsn_tlv_port_speed_gbps.type'],
     fields['of15.bsn_tlv_port_speed_gbps.length'],
     fields['of15.bsn_tlv_port_speed_gbps.value'],
@@ -41506,6 +41563,16 @@ function dissect_of_bsn_tlv_port_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[0] = dissect_of_bsn_tlv_port_v4
 
+-- child class of_bsn_tlv_port_mode
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_mode_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_mode.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_mode.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_mode.value')
+    return 'of_bsn_tlv_port_mode'
+end
+of_bsn_tlv_v4_dissectors[179] = dissect_of_bsn_tlv_port_mode_v4
+
 -- child class of_bsn_tlv_port_speed_gbps
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_port_speed_gbps_v4(reader, subtree)
@@ -49730,6 +49797,16 @@ function dissect_of_bsn_tlv_port_v5(reader, subtree)
     return 'of_bsn_tlv_port'
 end
 of_bsn_tlv_v5_dissectors[0] = dissect_of_bsn_tlv_port_v5
+
+-- child class of_bsn_tlv_port_mode
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_mode_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_port_mode.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_port_mode.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_port_mode.value')
+    return 'of_bsn_tlv_port_mode'
+end
+of_bsn_tlv_v5_dissectors[179] = dissect_of_bsn_tlv_port_mode_v5
 
 -- child class of_bsn_tlv_port_speed_gbps
 -- Child of of_bsn_tlv
@@ -58652,6 +58729,16 @@ function dissect_of_bsn_tlv_port_v6(reader, subtree)
     return 'of_bsn_tlv_port'
 end
 of_bsn_tlv_v6_dissectors[0] = dissect_of_bsn_tlv_port_v6
+
+-- child class of_bsn_tlv_port_mode
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_mode_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_port_mode.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_port_mode.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_port_mode.value')
+    return 'of_bsn_tlv_port_mode'
+end
+of_bsn_tlv_v6_dissectors[179] = dissect_of_bsn_tlv_port_mode_v6
 
 -- child class of_bsn_tlv_port_speed_gbps
 -- Child of of_bsn_tlv

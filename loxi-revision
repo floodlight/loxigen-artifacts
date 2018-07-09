@@ -1,1 +1,1 @@
-612eca65fa05333d1889b1d94cdd466eba3a453f Merge into master from pull request #621: Add TLV lr-all-enabled. (https://github.com/floodlight/loxigen/pull/621)
+2a5f44762cea17c29be1f756194630d9954d3e4a Add tlv and enums for port_mode.
