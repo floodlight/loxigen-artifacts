@@ -27856,6 +27856,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_TUNNEL_CAPABILITY) {
+        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_EGRESS_PORT_GROUP_ID) {
         return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dup(src);
     }
@@ -28284,8 +28288,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_vni_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_TUNNEL_CAPABILITY) {
-        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_PORT_MODE) {
+        return of_bsn_tlv_port_mode_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
@@ -31226,6 +31230,31 @@ of_bsn_tlv_port_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_port_value_get(src, &port_no);
     of_bsn_tlv_port_value_set(dst, port_no);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_port_mode
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_port_mode.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_port_mode_t *
+of_bsn_tlv_port_mode_OF_VERSION_1_3_dup(
+    of_bsn_tlv_port_mode_t *src)
+{
+    of_bsn_tlv_port_mode_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_port_mode_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_port_mode_value_get(src, &val16);
+    of_bsn_tlv_port_mode_value_set(dst, val16);
 
     return dst;
 }
@@ -51951,6 +51980,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_TUNNEL_CAPABILITY) {
+        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_EGRESS_PORT_GROUP_ID) {
         return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(src);
     }
@@ -52379,8 +52412,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_vni_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_TUNNEL_CAPABILITY) {
-        return of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_PORT_MODE) {
+        return of_bsn_tlv_port_mode_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
@@ -55321,6 +55354,31 @@ of_bsn_tlv_port_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_port_value_get(src, &port_no);
     of_bsn_tlv_port_value_set(dst, port_no);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_port_mode
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_port_mode.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_port_mode_t *
+of_bsn_tlv_port_mode_OF_VERSION_1_4_dup(
+    of_bsn_tlv_port_mode_t *src)
+{
+    of_bsn_tlv_port_mode_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_port_mode_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_port_mode_value_get(src, &val16);
+    of_bsn_tlv_port_mode_value_set(dst, val16);
 
     return dst;
 }
@@ -76033,6 +76091,23 @@ of_bsn_tlv_port_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_port_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_port_mode_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_port_mode_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_port_mode_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
