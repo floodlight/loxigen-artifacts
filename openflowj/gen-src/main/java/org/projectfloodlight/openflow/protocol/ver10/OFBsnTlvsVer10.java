@@ -788,6 +788,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.0");
     }
 
+    public OFBsnTlvPortMode.Builder buildPortMode() {
+        throw new UnsupportedOperationException("OFBsnTlvPortMode not supported in version 1.0");
+    }
+    public OFBsnTlvPortMode portMode(OFBsnPortMode value) {
+        throw new UnsupportedOperationException("OFBsnTlvPortMode not supported in version 1.0");
+    }
+
     public OFBsnTlvPortSpeedGbps.Builder buildPortSpeedGbps() {
         throw new UnsupportedOperationException("OFBsnTlvPortSpeedGbps not supported in version 1.0");
     }

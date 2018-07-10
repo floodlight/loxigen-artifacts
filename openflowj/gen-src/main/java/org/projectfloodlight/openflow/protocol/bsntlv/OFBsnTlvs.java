@@ -243,6 +243,8 @@ public interface OFBsnTlvs {
     OFBsnTlvPimDr pimDr();
     OFBsnTlvPort.Builder buildPort() throws UnsupportedOperationException;
     OFBsnTlvPort port(OFPort value);
+    OFBsnTlvPortMode.Builder buildPortMode() throws UnsupportedOperationException;
+    OFBsnTlvPortMode portMode(OFBsnPortMode value);
     OFBsnTlvPortSpeedGbps.Builder buildPortSpeedGbps() throws UnsupportedOperationException;
     OFBsnTlvPortSpeedGbps portSpeedGbps(long value);
     OFBsnTlvPortUsage.Builder buildPortUsage() throws UnsupportedOperationException;

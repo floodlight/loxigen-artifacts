@@ -4245,6 +4245,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xb2:
             *id = OF_BSN_TLV_LR_ALL_ENABLED;
             break;
+        case 0xb3:
+            *id = OF_BSN_TLV_PORT_MODE;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -4787,6 +4790,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xb2:
             *id = OF_BSN_TLV_LR_ALL_ENABLED;
+            break;
+        case 0xb3:
+            *id = OF_BSN_TLV_PORT_MODE;
             break;
         default:
             *id = OF_BSN_TLV;
