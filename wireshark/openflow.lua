@@ -1330,9 +1330,10 @@ enum_v4_ofp_bsn_lua_upload_flags = {
     [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
 }
 
-enum_v4_ofp_bsn_vport_status = {
-    [0] = "OF_BSN_VPORT_STATUS_OK",
-    [1] = "OF_BSN_VPORT_STATUS_FAILED",
+enum_v4_ofp_group = {
+    [4294967040] = "OFPG_MAX",
+    [4294967292] = "OFPG_ALL",
+    [4294967295] = "OFPG_ANY",
 }
 
 enum_v4_ofp_bsn_auto_negotiation_type = {
@@ -1496,10 +1497,9 @@ enum_v4_ofp_bsn_rate_unit = {
     [1] = "OFP_BSN_RATE_UNIT_KBITPS",
 }
 
-enum_v4_ofp_group = {
-    [4294967040] = "OFPG_MAX",
-    [4294967292] = "OFPG_ALL",
-    [4294967295] = "OFPG_ANY",
+enum_v4_ofp_bsn_vport_status = {
+    [0] = "OF_BSN_VPORT_STATUS_OK",
+    [1] = "OF_BSN_VPORT_STATUS_FAILED",
 }
 
 enum_v4_ofp_port_reason = {
@@ -1732,6 +1732,11 @@ enum_v4_ofp_meter = {
 
 enum_v4_of_bsn_pdu_slot_num = {
     [255] = "BSN_PDU_SLOT_NUM_ANY",
+}
+
+enum_v4_ofp_bsn_udf_mode = {
+    [1] = "OFP_BSN_UDF_4X4_BYTES",
+    [2] = "OFP_BSN_UDF_8X2_BYTES",
 }
 
 enum_v4_ofp_bsn_multicast_packet = {
@@ -2300,9 +2305,10 @@ enum_v5_ofp_bsn_lua_upload_flags = {
     [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
 }
 
-enum_v5_ofp_bsn_vport_status = {
-    [0] = "OF_BSN_VPORT_STATUS_OK",
-    [1] = "OF_BSN_VPORT_STATUS_FAILED",
+enum_v5_ofp_group = {
+    [4294967040] = "OFPG_MAX",
+    [4294967292] = "OFPG_ALL",
+    [4294967295] = "OFPG_ANY",
 }
 
 enum_v5_ofp_bsn_auto_negotiation_type = {
@@ -2545,10 +2551,9 @@ enum_v5_ofp_bundle_ctrl_type = {
     [7] = "OFPBCT_DISCARD_REPLY",
 }
 
-enum_v5_ofp_group = {
-    [4294967040] = "OFPG_MAX",
-    [4294967292] = "OFPG_ALL",
-    [4294967295] = "OFPG_ANY",
+enum_v5_ofp_bsn_vport_status = {
+    [0] = "OF_BSN_VPORT_STATUS_OK",
+    [1] = "OF_BSN_VPORT_STATUS_FAILED",
 }
 
 enum_v5_ofp_port_reason = {
@@ -2816,6 +2821,11 @@ enum_v5_ofp_bsn_module_eeprom_extended_identifier = {
 
 enum_v5_of_bsn_pdu_slot_num = {
     [255] = "BSN_PDU_SLOT_NUM_ANY",
+}
+
+enum_v5_ofp_bsn_udf_mode = {
+    [1] = "OFP_BSN_UDF_4X4_BYTES",
+    [2] = "OFP_BSN_UDF_8X2_BYTES",
 }
 
 enum_v5_ofp_bsn_module_eeprom_cu_cmplnce = {
@@ -4123,6 +4133,11 @@ enum_v6_ofp_bsn_module_eeprom_extended_identifier = {
 
 enum_v6_of_bsn_pdu_slot_num = {
     [255] = "BSN_PDU_SLOT_NUM_ANY",
+}
+
+enum_v6_ofp_bsn_udf_mode = {
+    [1] = "OFP_BSN_UDF_4X4_BYTES",
+    [2] = "OFP_BSN_UDF_8X2_BYTES",
 }
 
 enum_v6_ofp_bsn_module_eeprom_cu_cmplnce = {
@@ -9337,6 +9352,9 @@ fields['of13.bsn_tlv_tx_packets.value'] = ProtoField.uint64("of13.bsn_tlv_tx_pac
 fields['of13.bsn_tlv_udf_anchor.type'] = ProtoField.uint16("of13.bsn_tlv_udf_anchor.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_udf_anchor.length'] = ProtoField.uint16("of13.bsn_tlv_udf_anchor.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_udf_anchor.value'] = ProtoField.uint32("of13.bsn_tlv_udf_anchor.value", "value", base.DEC, enum_v4_ofp_bsn_udf_anchor)
+fields['of13.bsn_tlv_udf_capability.type'] = ProtoField.uint16("of13.bsn_tlv_udf_capability.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_udf_capability.length'] = ProtoField.uint16("of13.bsn_tlv_udf_capability.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_udf_capability.value'] = ProtoField.uint32("of13.bsn_tlv_udf_capability.value", "value", base.HEX, enum_v4_ofp_bsn_udf_mode)
 fields['of13.bsn_tlv_udf_id.type'] = ProtoField.uint16("of13.bsn_tlv_udf_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_udf_id.length'] = ProtoField.uint16("of13.bsn_tlv_udf_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_udf_id.value'] = ProtoField.uint16("of13.bsn_tlv_udf_id.value", "value", base.DEC, nil)
@@ -12363,6 +12381,9 @@ fields['of14.bsn_tlv_tx_packets.value'] = ProtoField.uint64("of14.bsn_tlv_tx_pac
 fields['of14.bsn_tlv_udf_anchor.type'] = ProtoField.uint16("of14.bsn_tlv_udf_anchor.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_udf_anchor.length'] = ProtoField.uint16("of14.bsn_tlv_udf_anchor.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_udf_anchor.value'] = ProtoField.uint32("of14.bsn_tlv_udf_anchor.value", "value", base.DEC, enum_v5_ofp_bsn_udf_anchor)
+fields['of14.bsn_tlv_udf_capability.type'] = ProtoField.uint16("of14.bsn_tlv_udf_capability.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_udf_capability.length'] = ProtoField.uint16("of14.bsn_tlv_udf_capability.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_udf_capability.value'] = ProtoField.uint32("of14.bsn_tlv_udf_capability.value", "value", base.HEX, enum_v5_ofp_bsn_udf_mode)
 fields['of14.bsn_tlv_udf_id.type'] = ProtoField.uint16("of14.bsn_tlv_udf_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_udf_id.length'] = ProtoField.uint16("of14.bsn_tlv_udf_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_udf_id.value'] = ProtoField.uint16("of14.bsn_tlv_udf_id.value", "value", base.DEC, nil)
@@ -15705,6 +15726,9 @@ fields['of15.bsn_tlv_tx_packets.value'] = ProtoField.uint64("of15.bsn_tlv_tx_pac
 fields['of15.bsn_tlv_udf_anchor.type'] = ProtoField.uint16("of15.bsn_tlv_udf_anchor.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_udf_anchor.length'] = ProtoField.uint16("of15.bsn_tlv_udf_anchor.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_udf_anchor.value'] = ProtoField.uint32("of15.bsn_tlv_udf_anchor.value", "value", base.DEC, enum_v6_ofp_bsn_udf_anchor)
+fields['of15.bsn_tlv_udf_capability.type'] = ProtoField.uint16("of15.bsn_tlv_udf_capability.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_udf_capability.length'] = ProtoField.uint16("of15.bsn_tlv_udf_capability.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_udf_capability.value'] = ProtoField.uint32("of15.bsn_tlv_udf_capability.value", "value", base.HEX, enum_v6_ofp_bsn_udf_mode)
 fields['of15.bsn_tlv_udf_id.type'] = ProtoField.uint16("of15.bsn_tlv_udf_id.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_udf_id.length'] = ProtoField.uint16("of15.bsn_tlv_udf_id.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_udf_id.value'] = ProtoField.uint16("of15.bsn_tlv_udf_id.value", "value", base.DEC, nil)
@@ -22340,6 +22364,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_udf_anchor.type'],
     fields['of13.bsn_tlv_udf_anchor.length'],
     fields['of13.bsn_tlv_udf_anchor.value'],
+    fields['of13.bsn_tlv_udf_capability.type'],
+    fields['of13.bsn_tlv_udf_capability.length'],
+    fields['of13.bsn_tlv_udf_capability.value'],
     fields['of13.bsn_tlv_udf_id.type'],
     fields['of13.bsn_tlv_udf_id.length'],
     fields['of13.bsn_tlv_udf_id.value'],
@@ -25366,6 +25393,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_udf_anchor.type'],
     fields['of14.bsn_tlv_udf_anchor.length'],
     fields['of14.bsn_tlv_udf_anchor.value'],
+    fields['of14.bsn_tlv_udf_capability.type'],
+    fields['of14.bsn_tlv_udf_capability.length'],
+    fields['of14.bsn_tlv_udf_capability.value'],
     fields['of14.bsn_tlv_udf_id.type'],
     fields['of14.bsn_tlv_udf_id.length'],
     fields['of14.bsn_tlv_udf_id.value'],
@@ -28708,6 +28738,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_udf_anchor.type'],
     fields['of15.bsn_tlv_udf_anchor.length'],
     fields['of15.bsn_tlv_udf_anchor.value'],
+    fields['of15.bsn_tlv_udf_capability.type'],
+    fields['of15.bsn_tlv_udf_capability.length'],
+    fields['of15.bsn_tlv_udf_capability.value'],
     fields['of15.bsn_tlv_udf_id.type'],
     fields['of15.bsn_tlv_udf_id.length'],
     fields['of15.bsn_tlv_udf_id.value'],
@@ -41925,6 +41958,16 @@ function dissect_of_bsn_tlv_udf_anchor_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[16] = dissect_of_bsn_tlv_udf_anchor_v4
 
+-- child class of_bsn_tlv_udf_capability
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_capability_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_capability.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_capability.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_udf_capability.value')
+    return 'of_bsn_tlv_udf_capability'
+end
+of_bsn_tlv_v4_dissectors[180] = dissect_of_bsn_tlv_udf_capability_v4
+
 -- child class of_bsn_tlv_udf_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_udf_id_v4(reader, subtree)
@@ -50159,6 +50202,16 @@ function dissect_of_bsn_tlv_udf_anchor_v5(reader, subtree)
     return 'of_bsn_tlv_udf_anchor'
 end
 of_bsn_tlv_v5_dissectors[16] = dissect_of_bsn_tlv_udf_anchor_v5
+
+-- child class of_bsn_tlv_udf_capability
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_capability_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_udf_capability.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_udf_capability.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_udf_capability.value')
+    return 'of_bsn_tlv_udf_capability'
+end
+of_bsn_tlv_v5_dissectors[180] = dissect_of_bsn_tlv_udf_capability_v5
 
 -- child class of_bsn_tlv_udf_id
 -- Child of of_bsn_tlv
@@ -59091,6 +59144,16 @@ function dissect_of_bsn_tlv_udf_anchor_v6(reader, subtree)
     return 'of_bsn_tlv_udf_anchor'
 end
 of_bsn_tlv_v6_dissectors[16] = dissect_of_bsn_tlv_udf_anchor_v6
+
+-- child class of_bsn_tlv_udf_capability
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_capability_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_capability.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_udf_capability.length')
+    read_uint8_t(reader, 6, subtree, 'of15.bsn_tlv_udf_capability.value')
+    return 'of_bsn_tlv_udf_capability'
+end
+of_bsn_tlv_v6_dissectors[180] = dissect_of_bsn_tlv_udf_capability_v6
 
 -- child class of_bsn_tlv_udf_id
 -- Child of of_bsn_tlv

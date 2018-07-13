@@ -310,6 +310,8 @@ public interface OFBsnTlvs {
     OFBsnTlvTxPackets txPackets(U64 value);
     OFBsnTlvUdfAnchor.Builder buildUdfAnchor() throws UnsupportedOperationException;
     OFBsnTlvUdfAnchor udfAnchor(OFBsnUdfAnchor value);
+    OFBsnTlvUdfCapability.Builder buildUdfCapability() throws UnsupportedOperationException;
+    OFBsnTlvUdfCapability udfCapability(Set<OFBsnUdfMode> value);
     OFBsnTlvUdfId.Builder buildUdfId() throws UnsupportedOperationException;
     OFBsnTlvUdfId udfId(int value);
     OFBsnTlvUdfLength.Builder buildUdfLength() throws UnsupportedOperationException;

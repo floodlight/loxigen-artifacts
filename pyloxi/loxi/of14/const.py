@@ -1126,6 +1126,15 @@ ofp_bsn_udf_anchor_map = {
     2: 'OFP_BSN_UDF_ANCHOR_L4_HEADER_START',
 }
 
+# Identifiers from group ofp_bsn_udf_mode
+OFP_BSN_UDF_4X4_BYTES = 1
+OFP_BSN_UDF_8X2_BYTES = 2
+
+ofp_bsn_udf_mode_map = {
+    1: 'OFP_BSN_UDF_4X4_BYTES',
+    2: 'OFP_BSN_UDF_8X2_BYTES',
+}
+
 # Identifiers from group ofp_bsn_unit_type
 OFP_BSN_UNIT_NONE = 0
 OFP_BSN_UNIT_AMP = 2

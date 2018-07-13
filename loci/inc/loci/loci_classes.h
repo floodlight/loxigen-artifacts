@@ -1161,6 +1161,8 @@ void of_bsn_tlv_tx_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *
 void of_bsn_tlv_tx_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_udf_anchor_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_udf_anchor_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_udf_capability_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_udf_capability_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_udf_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_udf_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_udf_length_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2055,6 +2057,7 @@ typedef of_object_t of_bsn_tlv_tunnel_capability_t;
 typedef of_object_t of_bsn_tlv_tx_bytes_t;
 typedef of_object_t of_bsn_tlv_tx_packets_t;
 typedef of_object_t of_bsn_tlv_udf_anchor_t;
+typedef of_object_t of_bsn_tlv_udf_capability_t;
 typedef of_object_t of_bsn_tlv_udf_id_t;
 typedef of_object_t of_bsn_tlv_udf_length_t;
 typedef of_object_t of_bsn_tlv_udf_offset_t;
@@ -4749,6 +4752,11 @@ extern void of_bsn_tlv_tx_packets_init(
 extern of_object_t *
     of_bsn_tlv_udf_anchor_new(of_version_t version);
 extern void of_bsn_tlv_udf_anchor_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_udf_capability_new(of_version_t version);
+extern void of_bsn_tlv_udf_capability_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11745,6 +11753,17 @@ of_bsn_tlv_tx_packets_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_udf_anchor_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_udf_capability_t
+ * @param obj An instance of type of_bsn_tlv_udf_capability_t
+ *
+ * \ingroup of_bsn_tlv_udf_capability
+ */
+static inline void
+of_bsn_tlv_udf_capability_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -25095,6 +25114,15 @@ extern void of_bsn_tlv_udf_anchor_value_set(
 extern void of_bsn_tlv_udf_anchor_value_get(
     of_bsn_tlv_udf_anchor_t *obj,
     uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_udf_capability */
+
+extern void of_bsn_tlv_udf_capability_value_set(
+    of_bsn_tlv_udf_capability_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_udf_capability_value_get(
+    of_bsn_tlv_udf_capability_t *obj,
+    uint8_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_udf_id */
 
