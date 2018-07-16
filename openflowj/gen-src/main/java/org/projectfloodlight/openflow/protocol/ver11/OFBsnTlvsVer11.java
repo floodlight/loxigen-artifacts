@@ -1025,6 +1025,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvUdfAnchor not supported in version 1.1");
     }
 
+    public OFBsnTlvUdfCapability.Builder buildUdfCapability() {
+        throw new UnsupportedOperationException("OFBsnTlvUdfCapability not supported in version 1.1");
+    }
+    public OFBsnTlvUdfCapability udfCapability(Set<OFBsnUdfMode> value) {
+        throw new UnsupportedOperationException("OFBsnTlvUdfCapability not supported in version 1.1");
+    }
+
     public OFBsnTlvUdfId.Builder buildUdfId() {
         throw new UnsupportedOperationException("OFBsnTlvUdfId not supported in version 1.1");
     }

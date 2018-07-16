@@ -1281,6 +1281,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvUdfCapability.Builder buildUdfCapability() {
+        return new OFBsnTlvUdfCapabilityVer13.Builder();
+    }
+    public OFBsnTlvUdfCapability udfCapability(Set<OFBsnUdfMode> value) {
+        return new OFBsnTlvUdfCapabilityVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvUdfId.Builder buildUdfId() {
         return new OFBsnTlvUdfIdVer13.Builder();
     }

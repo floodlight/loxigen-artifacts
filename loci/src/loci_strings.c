@@ -464,6 +464,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_tx_bytes",
     "of_bsn_tlv_tx_packets",
     "of_bsn_tlv_udf_anchor",
+    "of_bsn_tlv_udf_capability",
     "of_bsn_tlv_udf_id",
     "of_bsn_tlv_udf_length",
     "of_bsn_tlv_udf_offset",

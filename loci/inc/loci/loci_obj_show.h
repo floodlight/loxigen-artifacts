@@ -905,6 +905,7 @@ int of_bsn_tlv_tunnel_capability_OF_VERSION_1_3_show(loci_writer_f writer, void*
 int of_bsn_tlv_tx_bytes_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_tx_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_udf_anchor_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_udf_capability_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_udf_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_udf_length_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_udf_offset_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1580,6 +1581,7 @@ int of_bsn_tlv_tunnel_capability_OF_VERSION_1_4_show(loci_writer_f writer, void*
 int of_bsn_tlv_tx_bytes_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_tx_packets_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_udf_anchor_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_udf_capability_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_udf_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_udf_length_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_udf_offset_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
