@@ -55,18 +55,9 @@ abstract class OFPortDescPropBsnVer14 {
             int expType = bb.readInt();
             bb.readerIndex(start);
             switch(expType) {
-               case 0x8:
-                   // discriminator value 0x8L=0x8L for class OFPortDescPropBsnAlarmVer14
-                   return OFPortDescPropBsnAlarmVer14.READER.readFrom(bb);
                case 0x3:
                    // discriminator value 0x3L=0x3L for class OFPortDescPropBsnBreakoutVer14
                    return OFPortDescPropBsnBreakoutVer14.READER.readFrom(bb);
-               case 0x7:
-                   // discriminator value 0x7L=0x7L for class OFPortDescPropBsnDiagVer14
-                   return OFPortDescPropBsnDiagVer14.READER.readFrom(bb);
-               case 0x6:
-                   // discriminator value 0x6L=0x6L for class OFPortDescPropBsnEthtoolVer14
-                   return OFPortDescPropBsnEthtoolVer14.READER.readFrom(bb);
                case 0x2:
                    // discriminator value 0x2L=0x2L for class OFPortDescPropBsnForwardErrorCorrectionVer14
                    return OFPortDescPropBsnForwardErrorCorrectionVer14.READER.readFrom(bb);
@@ -76,6 +67,9 @@ abstract class OFPortDescPropBsnVer14 {
                case 0x5:
                    // discriminator value 0x5L=0x5L for class OFPortDescPropBsnMiscCapabilitiesVer14
                    return OFPortDescPropBsnMiscCapabilitiesVer14.READER.readFrom(bb);
+               case 0x6:
+                   // discriminator value 0x6L=0x6L for class OFPortDescPropBsnSffJsonVer14
+                   return OFPortDescPropBsnSffJsonVer14.READER.readFrom(bb);
                case 0x4:
                    // discriminator value 0x4L=0x4L for class OFPortDescPropBsnSpeedCapabilitiesVer14
                    return OFPortDescPropBsnSpeedCapabilitiesVer14.READER.readFrom(bb);

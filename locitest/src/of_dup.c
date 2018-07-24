@@ -56962,35 +56962,6 @@ of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_dup(
 }
 
 /**
- * Duplicate an object of type of_bsn_unit
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_bsn_unit.
- *
- * The caller is responsible for deleting the returned value
- */
-of_bsn_unit_t *
-of_bsn_unit_OF_VERSION_1_4_dup(
-    of_bsn_unit_t *src)
-{
-    of_bsn_unit_t *dst;
-    uint32_t val32;
-    uint8_t val8;
-
-    if ((dst = of_bsn_unit_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_unit_value_get(src, &val32);
-    of_bsn_unit_value_set(dst, val32);
-
-    of_bsn_unit_unit_get(src, &val8);
-    of_bsn_unit_unit_set(dst, val8);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_bsn_vlan_counter_stats_entry
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -64261,14 +64232,6 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_ALARM) {
-        return of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_DIAG) {
-        return of_port_desc_prop_bsn_diag_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_PORT_DESC_PROP_BSN_SPEED_CAPABILITIES) {
         return of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dup(src);
     }
@@ -64277,20 +64240,24 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
         return of_port_desc_prop_ethernet_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_PORT_DESC_PROP_OPTICAL) {
-        return of_port_desc_prop_optical_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_PORT_DESC_PROP_BSN_BREAKOUT) {
         return of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_MISC_CAPABILITIES) {
-        return of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_PORT_DESC_PROP_OPTICAL) {
+        return of_port_desc_prop_optical_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_ETHTOOL) {
-        return of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_SFF_JSON) {
+        return of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_GENERATION_ID) {
+        return of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_MISC_CAPABILITIES) {
+        return of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_PORT_DESC_PROP_BSN_UPLINK) {
@@ -64301,61 +64268,7 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
         return of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_GENERATION_ID) {
-        return of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(src);
-    }
-
     return NULL;
-}
-
-/**
- * Duplicate an object of type of_port_desc_prop_bsn_alarm
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_port_desc_prop_bsn_alarm.
- *
- * The caller is responsible for deleting the returned value
- */
-of_port_desc_prop_bsn_alarm_t *
-of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_dup(
-    of_port_desc_prop_bsn_alarm_t *src)
-{
-    of_port_desc_prop_bsn_alarm_t *dst;
-    uint32_t val32;
-    uint8_t val8;
-
-    if ((dst = of_port_desc_prop_bsn_alarm_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_port_desc_prop_bsn_alarm_experimenter_get(src, &val32);
-    of_port_desc_prop_bsn_alarm_experimenter_set(dst, val32);
-
-    of_port_desc_prop_bsn_alarm_exp_type_get(src, &val32);
-    of_port_desc_prop_bsn_alarm_exp_type_set(dst, val32);
-
-    of_port_desc_prop_bsn_alarm_alarm_set_get(src, &val8);
-    of_port_desc_prop_bsn_alarm_alarm_set_set(dst, val8);
-
-    of_port_desc_prop_bsn_alarm_high_get(src, &val32);
-    of_port_desc_prop_bsn_alarm_high_set(dst, val32);
-
-    of_port_desc_prop_bsn_alarm_high_warn_get(src, &val32);
-    of_port_desc_prop_bsn_alarm_high_warn_set(dst, val32);
-
-    of_port_desc_prop_bsn_alarm_low_get(src, &val32);
-    of_port_desc_prop_bsn_alarm_low_set(dst, val32);
-
-    of_port_desc_prop_bsn_alarm_low_warn_get(src, &val32);
-    of_port_desc_prop_bsn_alarm_low_warn_set(dst, val32);
-
-    of_port_desc_prop_bsn_alarm_alarm_type_get(src, &val8);
-    of_port_desc_prop_bsn_alarm_alarm_type_set(dst, val8);
-
-    of_port_desc_prop_bsn_alarm_unit_get(src, &val8);
-    of_port_desc_prop_bsn_alarm_unit_set(dst, val8);
-
-    return dst;
 }
 
 /**
@@ -64389,253 +64302,6 @@ of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(
 
     of_port_desc_prop_bsn_breakout_sub_interface_speed_gbps_get(src, &val16);
     of_port_desc_prop_bsn_breakout_sub_interface_speed_gbps_set(dst, val16);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_port_desc_prop_bsn_diag
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_port_desc_prop_bsn_diag.
- *
- * The caller is responsible for deleting the returned value
- */
-of_port_desc_prop_bsn_diag_t *
-of_port_desc_prop_bsn_diag_OF_VERSION_1_4_dup(
-    of_port_desc_prop_bsn_diag_t *src)
-{
-    of_port_desc_prop_bsn_diag_t *dst;
-    uint32_t val32;
-
-    of_bsn_unit_t src_bsn_unit;
-    of_bsn_unit_t *dst_bsn_unit;
-    uint8_t val8;
-
-    if ((dst = of_port_desc_prop_bsn_diag_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_port_desc_prop_bsn_diag_experimenter_get(src, &val32);
-    of_port_desc_prop_bsn_diag_experimenter_set(dst, val32);
-
-    of_port_desc_prop_bsn_diag_exp_type_get(src, &val32);
-    of_port_desc_prop_bsn_diag_exp_type_set(dst, val32);
-
-    of_port_desc_prop_bsn_diag_laser_bias_curr_bind(
-        src, &src_bsn_unit);
-    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
-    if (dst_bsn_unit == NULL) {
-        of_port_desc_prop_bsn_diag_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_diag_laser_bias_curr_set(dst, dst_bsn_unit);
-    of_bsn_unit_delete(dst_bsn_unit);
-
-    of_port_desc_prop_bsn_diag_laser_output_power_bind(
-        src, &src_bsn_unit);
-    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
-    if (dst_bsn_unit == NULL) {
-        of_port_desc_prop_bsn_diag_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_diag_laser_output_power_set(dst, dst_bsn_unit);
-    of_bsn_unit_delete(dst_bsn_unit);
-
-    of_port_desc_prop_bsn_diag_laser_receiver_power_type_get(src, &val8);
-    of_port_desc_prop_bsn_diag_laser_receiver_power_type_set(dst, val8);
-
-    of_port_desc_prop_bsn_diag_laser_receiver_power_bind(
-        src, &src_bsn_unit);
-    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
-    if (dst_bsn_unit == NULL) {
-        of_port_desc_prop_bsn_diag_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_diag_laser_receiver_power_set(dst, dst_bsn_unit);
-    of_bsn_unit_delete(dst_bsn_unit);
-
-    of_port_desc_prop_bsn_diag_module_temp_bind(
-        src, &src_bsn_unit);
-    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
-    if (dst_bsn_unit == NULL) {
-        of_port_desc_prop_bsn_diag_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_diag_module_temp_set(dst, dst_bsn_unit);
-    of_bsn_unit_delete(dst_bsn_unit);
-
-    of_port_desc_prop_bsn_diag_module_voltage_bind(
-        src, &src_bsn_unit);
-    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
-    if (dst_bsn_unit == NULL) {
-        of_port_desc_prop_bsn_diag_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_diag_module_voltage_set(dst, dst_bsn_unit);
-    of_bsn_unit_delete(dst_bsn_unit);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_port_desc_prop_bsn_ethtool
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_port_desc_prop_bsn_ethtool.
- *
- * The caller is responsible for deleting the returned value
- */
-of_port_desc_prop_bsn_ethtool_t *
-of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dup(
-    of_port_desc_prop_bsn_ethtool_t *src)
-{
-    of_port_desc_prop_bsn_ethtool_t *dst;
-    uint32_t val32;
-    uint8_t val8;
-
-    ofp_bsn_module_eeprom_transceiver_t src_bsn_module_eeprom_transceiver;
-    ofp_bsn_module_eeprom_transceiver_t *dst_bsn_module_eeprom_transceiver;
-
-    of_bsn_unit_t src_bsn_unit;
-    of_bsn_unit_t *dst_bsn_unit;
-    uint64_t val64;
-
-    of_list_port_desc_prop_t src_list;
-    of_list_port_desc_prop_t *dst_list;
-
-    if ((dst = of_port_desc_prop_bsn_ethtool_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_port_desc_prop_bsn_ethtool_experimenter_get(src, &val32);
-    of_port_desc_prop_bsn_ethtool_experimenter_set(dst, val32);
-
-    of_port_desc_prop_bsn_ethtool_exp_type_get(src, &val32);
-    of_port_desc_prop_bsn_ethtool_exp_type_set(dst, val32);
-
-    of_port_desc_prop_bsn_ethtool_identifier_get(src, &val8);
-    of_port_desc_prop_bsn_ethtool_identifier_set(dst, val8);
-
-    of_port_desc_prop_bsn_ethtool_extidentifier_get(src, &val8);
-    of_port_desc_prop_bsn_ethtool_extidentifier_set(dst, val8);
-
-    of_port_desc_prop_bsn_ethtool_connector_get(src, &val8);
-    of_port_desc_prop_bsn_ethtool_connector_set(dst, val8);
-
-    of_port_desc_prop_bsn_ethtool_transdata_bind(
-        src, &src_bsn_module_eeprom_transceiver);
-    dst_bsn_module_eeprom_transceiver = ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_dup(&src_bsn_module_eeprom_transceiver);
-    if (dst_bsn_module_eeprom_transceiver == NULL) {
-        of_port_desc_prop_bsn_ethtool_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_ethtool_transdata_set(dst, dst_bsn_module_eeprom_transceiver);
-    ofp_bsn_module_eeprom_transceiver_delete(dst_bsn_module_eeprom_transceiver);
-
-    of_port_desc_prop_bsn_ethtool_encoding_get(src, &val8);
-    of_port_desc_prop_bsn_ethtool_encoding_set(dst, val8);
-
-    of_port_desc_prop_bsn_ethtool_br_nominal_bind(
-        src, &src_bsn_unit);
-    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
-    if (dst_bsn_unit == NULL) {
-        of_port_desc_prop_bsn_ethtool_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_ethtool_br_nominal_set(dst, dst_bsn_unit);
-    of_bsn_unit_delete(dst_bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_rateidentifier_get(src, &val8);
-    of_port_desc_prop_bsn_ethtool_rateidentifier_set(dst, val8);
-
-    of_port_desc_prop_bsn_ethtool_length_SMF_KM_bind(
-        src, &src_bsn_unit);
-    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
-    if (dst_bsn_unit == NULL) {
-        of_port_desc_prop_bsn_ethtool_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_ethtool_length_SMF_KM_set(dst, dst_bsn_unit);
-    of_bsn_unit_delete(dst_bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_length_SMF_bind(
-        src, &src_bsn_unit);
-    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
-    if (dst_bsn_unit == NULL) {
-        of_port_desc_prop_bsn_ethtool_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_ethtool_length_SMF_set(dst, dst_bsn_unit);
-    of_bsn_unit_delete(dst_bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_length_50_um_bind(
-        src, &src_bsn_unit);
-    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
-    if (dst_bsn_unit == NULL) {
-        of_port_desc_prop_bsn_ethtool_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_ethtool_length_50_um_set(dst, dst_bsn_unit);
-    of_bsn_unit_delete(dst_bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_length_625_um_bind(
-        src, &src_bsn_unit);
-    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
-    if (dst_bsn_unit == NULL) {
-        of_port_desc_prop_bsn_ethtool_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_ethtool_length_625_um_set(dst, dst_bsn_unit);
-    of_bsn_unit_delete(dst_bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_length_copper_bind(
-        src, &src_bsn_unit);
-    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
-    if (dst_bsn_unit == NULL) {
-        of_port_desc_prop_bsn_ethtool_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_ethtool_length_copper_set(dst, dst_bsn_unit);
-    of_bsn_unit_delete(dst_bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_length_OM3_bind(
-        src, &src_bsn_unit);
-    dst_bsn_unit = of_bsn_unit_OF_VERSION_1_4_dup(&src_bsn_unit);
-    if (dst_bsn_unit == NULL) {
-        of_port_desc_prop_bsn_ethtool_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_ethtool_length_OM3_set(dst, dst_bsn_unit);
-    of_bsn_unit_delete(dst_bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_vendor_name_lo_get(src, &val64);
-    of_port_desc_prop_bsn_ethtool_vendor_name_lo_set(dst, val64);
-
-    of_port_desc_prop_bsn_ethtool_vendor_name_hi_get(src, &val64);
-    of_port_desc_prop_bsn_ethtool_vendor_name_hi_set(dst, val64);
-
-    of_port_desc_prop_bsn_ethtool_vendor_oui_get(src, &val32);
-    of_port_desc_prop_bsn_ethtool_vendor_oui_set(dst, val32);
-
-    of_port_desc_prop_bsn_ethtool_vendor_pn_lo_get(src, &val64);
-    of_port_desc_prop_bsn_ethtool_vendor_pn_lo_set(dst, val64);
-
-    of_port_desc_prop_bsn_ethtool_vendor_pn_hi_get(src, &val64);
-    of_port_desc_prop_bsn_ethtool_vendor_pn_hi_set(dst, val64);
-
-    of_port_desc_prop_bsn_ethtool_vendor_rev_get(src, &val32);
-    of_port_desc_prop_bsn_ethtool_vendor_rev_set(dst, val32);
-
-    of_port_desc_prop_bsn_ethtool_more_properties_bind(
-        src, &src_list);
-    dst_list = of_list_port_desc_prop_OF_VERSION_1_4_dup(&src_list);
-    if (dst_list == NULL) {
-        of_port_desc_prop_bsn_ethtool_delete(dst);
-        return NULL;
-    }
-    of_port_desc_prop_bsn_ethtool_more_properties_set(dst, dst_list);
-    of_list_port_desc_prop_delete(dst_list);
 
     return dst;
 }
@@ -64740,6 +64406,38 @@ of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(
 
     of_port_desc_prop_bsn_misc_capabilities_supported_get(src, &val64);
     of_port_desc_prop_bsn_misc_capabilities_supported_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_port_desc_prop_bsn_sff_json
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_port_desc_prop_bsn_sff_json.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_port_desc_prop_bsn_sff_json_t *
+of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4_dup(
+    of_port_desc_prop_bsn_sff_json_t *src)
+{
+    of_port_desc_prop_bsn_sff_json_t *dst;
+    uint32_t val32;
+    of_octets_t octets;
+
+    if ((dst = of_port_desc_prop_bsn_sff_json_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_port_desc_prop_bsn_sff_json_experimenter_get(src, &val32);
+    of_port_desc_prop_bsn_sff_json_experimenter_set(dst, val32);
+
+    of_port_desc_prop_bsn_sff_json_exp_type_get(src, &val32);
+    of_port_desc_prop_bsn_sff_json_exp_type_set(dst, val32);
+
+    of_port_desc_prop_bsn_sff_json_data_json_get(src, &octets);
+    of_port_desc_prop_bsn_sff_json_data_json_set(dst, &octets);
 
     return dst;
 }
@@ -66437,31 +66135,6 @@ of_uint8_OF_VERSION_1_4_dup(
 
     of_uint8_value_get(src, &val8);
     of_uint8_value_set(dst, val8);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type ofp_bsn_module_eeprom_transceiver
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type ofp_bsn_module_eeprom_transceiver.
- *
- * The caller is responsible for deleting the returned value
- */
-ofp_bsn_module_eeprom_transceiver_t *
-ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_dup(
-    ofp_bsn_module_eeprom_transceiver_t *src)
-{
-    ofp_bsn_module_eeprom_transceiver_t *dst;
-    uint64_t val64;
-
-    if ((dst = ofp_bsn_module_eeprom_transceiver_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    ofp_bsn_module_eeprom_transceiver_codes_get(src, &val64);
-    ofp_bsn_module_eeprom_transceiver_codes_set(dst, val64);
 
     return dst;
 }
@@ -77227,19 +76900,6 @@ of_bsn_tlv_vxlan_egress_lag_dup(
 }
 
 of_object_t *
-of_bsn_unit_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_bsn_unit_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_bsn_vlan_counter_stats_entry_dup(
     of_object_t *src)
 {
@@ -82071,51 +81731,12 @@ of_port_desc_prop_bsn_dup(
 }
 
 of_object_t *
-of_port_desc_prop_bsn_alarm_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
 of_port_desc_prop_bsn_breakout_dup(
     of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
         return of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_port_desc_prop_bsn_diag_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_port_desc_prop_bsn_diag_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-of_port_desc_prop_bsn_ethtool_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -82155,6 +81776,19 @@ of_port_desc_prop_bsn_misc_capabilities_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_port_desc_prop_bsn_sff_json_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
@@ -83046,19 +82680,6 @@ of_uint8_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_uint8_OF_VERSION_1_4_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_object_t *
-ofp_bsn_module_eeprom_transceiver_dup(
-    of_object_t *src)
-{
-
-    if (src->version == OF_VERSION_1_4) {
-        return ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

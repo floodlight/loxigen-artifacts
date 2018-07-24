@@ -59521,44 +59521,6 @@ test_of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4(void)
 }
 
 static int
-test_of_bsn_unit_OF_VERSION_1_4(void)
-{
-    of_bsn_unit_t *obj;
-    obj = of_bsn_unit_new(OF_VERSION_1_4);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 5);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_BSN_UNIT);
-
-    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
-        int length;
-
-        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 5);
-    }
-    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
-        of_object_id_t obj_id;
-
-        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
-        TEST_ASSERT(obj_id == OF_BSN_UNIT);
-    }
-
-    /* Set up incrementing values for members */
-    TEST_ASSERT(of_bsn_unit_OF_VERSION_1_4_populate(
-        obj, 1) != 0);
-
-    /* Check values just set */
-    TEST_ASSERT(of_bsn_unit_OF_VERSION_1_4_check(
-        obj, 1) != 0);
-
-    of_bsn_unit_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
 test_of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4(void)
 {
     of_bsn_vlan_counter_stats_entry_t *obj;
@@ -68109,44 +68071,6 @@ test_of_port_desc_OF_VERSION_1_4(void)
 }
 
 static int
-test_of_port_desc_prop_bsn_alarm_OF_VERSION_1_4(void)
-{
-    of_port_desc_prop_bsn_alarm_t *obj;
-    obj = of_port_desc_prop_bsn_alarm_new(OF_VERSION_1_4);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 31);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_PORT_DESC_PROP_BSN_ALARM);
-
-    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
-        int length;
-
-        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 31);
-    }
-    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
-        of_object_id_t obj_id;
-
-        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
-        TEST_ASSERT(obj_id == OF_PORT_DESC_PROP_BSN_ALARM);
-    }
-
-    /* Set up incrementing values for members */
-    TEST_ASSERT(of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_populate(
-        obj, 1) != 0);
-
-    /* Check values just set */
-    TEST_ASSERT(of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_check(
-        obj, 1) != 0);
-
-    of_port_desc_prop_bsn_alarm_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
 test_of_port_desc_prop_bsn_breakout_OF_VERSION_1_4(void)
 {
     of_port_desc_prop_bsn_breakout_t *obj;
@@ -68179,82 +68103,6 @@ test_of_port_desc_prop_bsn_breakout_OF_VERSION_1_4(void)
         obj, 1) != 0);
 
     of_port_desc_prop_bsn_breakout_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
-test_of_port_desc_prop_bsn_diag_OF_VERSION_1_4(void)
-{
-    of_port_desc_prop_bsn_diag_t *obj;
-    obj = of_port_desc_prop_bsn_diag_new(OF_VERSION_1_4);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 38);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_PORT_DESC_PROP_BSN_DIAG);
-
-    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
-        int length;
-
-        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 38);
-    }
-    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
-        of_object_id_t obj_id;
-
-        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
-        TEST_ASSERT(obj_id == OF_PORT_DESC_PROP_BSN_DIAG);
-    }
-
-    /* Set up incrementing values for members */
-    TEST_ASSERT(of_port_desc_prop_bsn_diag_OF_VERSION_1_4_populate(
-        obj, 1) != 0);
-
-    /* Check values just set */
-    TEST_ASSERT(of_port_desc_prop_bsn_diag_OF_VERSION_1_4_check(
-        obj, 1) != 0);
-
-    of_port_desc_prop_bsn_diag_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
-test_of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4(void)
-{
-    of_port_desc_prop_bsn_ethtool_t *obj;
-    obj = of_port_desc_prop_bsn_ethtool_new(OF_VERSION_1_4);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 100);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_PORT_DESC_PROP_BSN_ETHTOOL);
-
-    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
-        int length;
-
-        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 100);
-    }
-    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
-        of_object_id_t obj_id;
-
-        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
-        TEST_ASSERT(obj_id == OF_PORT_DESC_PROP_BSN_ETHTOOL);
-    }
-
-    /* Set up incrementing values for members */
-    TEST_ASSERT(of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_populate(
-        obj, 1) != 0);
-
-    /* Check values just set */
-    TEST_ASSERT(of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_check(
-        obj, 1) != 0);
-
-    of_port_desc_prop_bsn_ethtool_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -68369,6 +68217,44 @@ test_of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4(void)
         obj, 1) != 0);
 
     of_port_desc_prop_bsn_misc_capabilities_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4(void)
+{
+    of_port_desc_prop_bsn_sff_json_t *obj;
+    obj = of_port_desc_prop_bsn_sff_json_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_PORT_DESC_PROP_BSN_SFF_JSON);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_PORT_DESC_PROP_BSN_SFF_JSON);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_port_desc_prop_bsn_sff_json_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -69889,44 +69775,6 @@ test_of_uint8_OF_VERSION_1_4(void)
         obj, 1) != 0);
 
     of_uint8_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
-test_ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4(void)
-{
-    ofp_bsn_module_eeprom_transceiver_t *obj;
-    obj = ofp_bsn_module_eeprom_transceiver_new(OF_VERSION_1_4);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_4);
-    TEST_ASSERT(obj->length == 8);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OFP_BSN_MODULE_EEPROM_TRANSCEIVER);
-
-    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
-        int length;
-
-        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
-    }
-    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
-        of_object_id_t obj_id;
-
-        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
-        TEST_ASSERT(obj_id == OFP_BSN_MODULE_EEPROM_TRANSCEIVER);
-    }
-
-    /* Set up incrementing values for members */
-    TEST_ASSERT(ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_populate(
-        obj, 1) != 0);
-
-    /* Check values just set */
-    TEST_ASSERT(ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_check(
-        obj, 1) != 0);
-
-    ofp_bsn_module_eeprom_transceiver_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -71501,7 +71349,6 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_vpn_key_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_vrf_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4);
-    RUN_TEST(of_bsn_unit_OF_VERSION_1_4);
     RUN_TEST(of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4);
     RUN_TEST(of_bsn_vlan_mac_OF_VERSION_1_4);
     RUN_TEST(of_bsn_vport_l2gre_OF_VERSION_1_4);
@@ -71727,13 +71574,11 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_oxm_vlan_vid_masked_OF_VERSION_1_4);
     RUN_TEST(of_packet_queue_OF_VERSION_1_4);
     RUN_TEST(of_port_desc_OF_VERSION_1_4);
-    RUN_TEST(of_port_desc_prop_bsn_alarm_OF_VERSION_1_4);
     RUN_TEST(of_port_desc_prop_bsn_breakout_OF_VERSION_1_4);
-    RUN_TEST(of_port_desc_prop_bsn_diag_OF_VERSION_1_4);
-    RUN_TEST(of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4);
     RUN_TEST(of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4);
     RUN_TEST(of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4);
     RUN_TEST(of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4);
+    RUN_TEST(of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4);
     RUN_TEST(of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4);
     RUN_TEST(of_port_desc_prop_bsn_uplink_OF_VERSION_1_4);
     RUN_TEST(of_port_desc_prop_ethernet_OF_VERSION_1_4);
@@ -71774,6 +71619,5 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_uint32_OF_VERSION_1_4);
     RUN_TEST(of_uint64_OF_VERSION_1_4);
     RUN_TEST(of_uint8_OF_VERSION_1_4);
-    RUN_TEST(ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4);
     return TEST_PASS;
 }
