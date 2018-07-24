@@ -1481,8 +1481,6 @@ void of_bsn_generic_command_wire_object_id_get(of_object_t *obj, of_object_id_t 
 void of_bsn_generic_command_push_wire_types(of_object_t *obj);
 void of_bsn_takeover_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_takeover_push_wire_types(of_object_t *obj);
-void of_bsn_unit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
-void of_bsn_unit_push_wire_types(of_object_t *obj);
 void of_bundle_add_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bundle_add_msg_push_wire_types(of_object_t *obj);
 void of_bundle_ctrl_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1509,14 +1507,8 @@ void of_port_desc_prop_experimenter_wire_object_id_get(of_object_t *obj, of_obje
 void of_port_desc_prop_experimenter_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_bsn_push_wire_types(of_object_t *obj);
-void of_port_desc_prop_bsn_alarm_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
-void of_port_desc_prop_bsn_alarm_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_breakout_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_bsn_breakout_push_wire_types(of_object_t *obj);
-void of_port_desc_prop_bsn_diag_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
-void of_port_desc_prop_bsn_diag_push_wire_types(of_object_t *obj);
-void ofp_bsn_module_eeprom_transceiver_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
-void ofp_bsn_module_eeprom_transceiver_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_ethtool_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_bsn_ethtool_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_forward_error_correction_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2084,7 +2076,6 @@ typedef of_object_t of_bsn_tlv_vni_t;
 typedef of_object_t of_bsn_tlv_vpn_key_t;
 typedef of_object_t of_bsn_tlv_vrf_t;
 typedef of_object_t of_bsn_tlv_vxlan_egress_lag_t;
-typedef of_object_t of_bsn_unit_t;
 typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_bsn_vlan_mac_t;
 typedef of_object_t of_bsn_vport_t;
@@ -2332,9 +2323,7 @@ typedef of_object_t of_packet_queue_t;
 typedef of_object_t of_port_desc_t;
 typedef of_object_t of_port_desc_prop_t;
 typedef of_object_t of_port_desc_prop_bsn_t;
-typedef of_object_t of_port_desc_prop_bsn_alarm_t;
 typedef of_object_t of_port_desc_prop_bsn_breakout_t;
-typedef of_object_t of_port_desc_prop_bsn_diag_t;
 typedef of_object_t of_port_desc_prop_bsn_ethtool_t;
 typedef of_object_t of_port_desc_prop_bsn_forward_error_correction_t;
 typedef of_object_t of_port_desc_prop_bsn_generation_id_t;
@@ -2398,7 +2387,6 @@ typedef of_object_t of_table_stats_entry_t;
 typedef of_object_t of_uint32_t;
 typedef of_object_t of_uint64_t;
 typedef of_object_t of_uint8_t;
-typedef of_object_t ofp_bsn_module_eeprom_transceiver_t;
 typedef of_object_t of_list_action_t;
 typedef of_object_t of_list_action_id_t;
 typedef of_object_t of_list_async_config_prop_t;
@@ -4890,11 +4878,6 @@ extern void of_bsn_tlv_vxlan_egress_lag_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
-    of_bsn_unit_new(of_version_t version);
-extern void of_bsn_unit_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
     of_bsn_vlan_counter_stats_entry_new(of_version_t version);
 extern void of_bsn_vlan_counter_stats_entry_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -6130,18 +6113,8 @@ extern void of_port_desc_prop_bsn_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
-    of_port_desc_prop_bsn_alarm_new(of_version_t version);
-extern void of_port_desc_prop_bsn_alarm_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
     of_port_desc_prop_bsn_breakout_new(of_version_t version);
 extern void of_port_desc_prop_bsn_breakout_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
-    of_port_desc_prop_bsn_diag_new(of_version_t version);
-extern void of_port_desc_prop_bsn_diag_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -6457,11 +6430,6 @@ extern void of_uint64_init(
 extern of_object_t *
     of_uint8_new(of_version_t version);
 extern void of_uint8_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
-    ofp_bsn_module_eeprom_transceiver_new(of_version_t version);
-extern void ofp_bsn_module_eeprom_transceiver_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -12054,17 +12022,6 @@ of_bsn_tlv_vxlan_egress_lag_delete(of_object_t *obj) {
 }
 
 /**
- * Delete an object of type of_bsn_unit_t
- * @param obj An instance of type of_bsn_unit_t
- *
- * \ingroup of_bsn_unit
- */
-static inline void
-of_bsn_unit_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
  * Delete an object of type of_bsn_vlan_counter_stats_entry_t
  * @param obj An instance of type of_bsn_vlan_counter_stats_entry_t
  *
@@ -14782,17 +14739,6 @@ of_port_desc_prop_bsn_delete(of_object_t *obj) {
 }
 
 /**
- * Delete an object of type of_port_desc_prop_bsn_alarm_t
- * @param obj An instance of type of_port_desc_prop_bsn_alarm_t
- *
- * \ingroup of_port_desc_prop_bsn_alarm
- */
-static inline void
-of_port_desc_prop_bsn_alarm_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
  * Delete an object of type of_port_desc_prop_bsn_breakout_t
  * @param obj An instance of type of_port_desc_prop_bsn_breakout_t
  *
@@ -14800,17 +14746,6 @@ of_port_desc_prop_bsn_alarm_delete(of_object_t *obj) {
  */
 static inline void
 of_port_desc_prop_bsn_breakout_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
- * Delete an object of type of_port_desc_prop_bsn_diag_t
- * @param obj An instance of type of_port_desc_prop_bsn_diag_t
- *
- * \ingroup of_port_desc_prop_bsn_diag
- */
-static inline void
-of_port_desc_prop_bsn_diag_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -15504,17 +15439,6 @@ of_uint64_delete(of_object_t *obj) {
  */
 static inline void
 of_uint8_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
- * Delete an object of type ofp_bsn_module_eeprom_transceiver_t
- * @param obj An instance of type ofp_bsn_module_eeprom_transceiver_t
- *
- * \ingroup ofp_bsn_module_eeprom_transceiver
- */
-static inline void
-ofp_bsn_module_eeprom_transceiver_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -25334,22 +25258,6 @@ extern void of_bsn_tlv_vrf_value_get(
 
 /* Unified accessor functions for of_bsn_tlv_vxlan_egress_lag */
 
-/* Unified accessor functions for of_bsn_unit */
-
-extern void of_bsn_unit_value_set(
-    of_bsn_unit_t *obj,
-    uint32_t value);
-extern void of_bsn_unit_value_get(
-    of_bsn_unit_t *obj,
-    uint32_t *value);
-
-extern void of_bsn_unit_unit_set(
-    of_bsn_unit_t *obj,
-    uint8_t unit);
-extern void of_bsn_unit_unit_get(
-    of_bsn_unit_t *obj,
-    uint8_t *unit);
-
 /* Unified accessor functions for of_bsn_vlan_counter_stats_entry */
 
 extern void of_bsn_vlan_counter_stats_entry_vlan_vid_set(
@@ -29024,71 +28932,6 @@ extern void of_port_desc_max_speed_get(
     of_port_desc_t *obj,
     uint32_t *max_speed);
 
-/* Unified accessor functions for of_port_desc_prop_bsn_alarm */
-
-extern void of_port_desc_prop_bsn_alarm_experimenter_set(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint32_t experimenter);
-extern void of_port_desc_prop_bsn_alarm_experimenter_get(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint32_t *experimenter);
-
-extern void of_port_desc_prop_bsn_alarm_exp_type_set(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint32_t exp_type);
-extern void of_port_desc_prop_bsn_alarm_exp_type_get(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint32_t *exp_type);
-
-extern void of_port_desc_prop_bsn_alarm_alarm_set_set(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint8_t alarm_set);
-extern void of_port_desc_prop_bsn_alarm_alarm_set_get(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint8_t *alarm_set);
-
-extern void of_port_desc_prop_bsn_alarm_high_set(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint32_t high);
-extern void of_port_desc_prop_bsn_alarm_high_get(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint32_t *high);
-
-extern void of_port_desc_prop_bsn_alarm_high_warn_set(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint32_t high_warn);
-extern void of_port_desc_prop_bsn_alarm_high_warn_get(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint32_t *high_warn);
-
-extern void of_port_desc_prop_bsn_alarm_low_set(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint32_t low);
-extern void of_port_desc_prop_bsn_alarm_low_get(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint32_t *low);
-
-extern void of_port_desc_prop_bsn_alarm_low_warn_set(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint32_t low_warn);
-extern void of_port_desc_prop_bsn_alarm_low_warn_get(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint32_t *low_warn);
-
-extern void of_port_desc_prop_bsn_alarm_alarm_type_set(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint8_t alarm_type);
-extern void of_port_desc_prop_bsn_alarm_alarm_type_get(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint8_t *alarm_type);
-
-extern void of_port_desc_prop_bsn_alarm_unit_set(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint8_t unit);
-extern void of_port_desc_prop_bsn_alarm_unit_get(
-    of_port_desc_prop_bsn_alarm_t *obj,
-    uint8_t *unit);
-
 /* Unified accessor functions for of_port_desc_prop_bsn_breakout */
 
 extern void of_port_desc_prop_bsn_breakout_experimenter_set(
@@ -29119,74 +28962,6 @@ extern void of_port_desc_prop_bsn_breakout_sub_interface_speed_gbps_get(
     of_port_desc_prop_bsn_breakout_t *obj,
     uint16_t *sub_interface_speed_gbps);
 
-/* Unified accessor functions for of_port_desc_prop_bsn_diag */
-
-extern void of_port_desc_prop_bsn_diag_experimenter_set(
-    of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t experimenter);
-extern void of_port_desc_prop_bsn_diag_experimenter_get(
-    of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t *experimenter);
-
-extern void of_port_desc_prop_bsn_diag_exp_type_set(
-    of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t exp_type);
-extern void of_port_desc_prop_bsn_diag_exp_type_get(
-    of_port_desc_prop_bsn_diag_t *obj,
-    uint32_t *exp_type);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_diag_laser_bias_curr_set(
-    of_port_desc_prop_bsn_diag_t *obj,
-    of_bsn_unit_t *laser_bias_curr);
-extern void of_port_desc_prop_bsn_diag_laser_bias_curr_bind(
-    of_port_desc_prop_bsn_diag_t *obj,
-    of_bsn_unit_t *laser_bias_curr);
-extern of_bsn_unit_t *of_port_desc_prop_bsn_diag_laser_bias_curr_get(
-    of_port_desc_prop_bsn_diag_t *obj);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_diag_laser_output_power_set(
-    of_port_desc_prop_bsn_diag_t *obj,
-    of_bsn_unit_t *laser_output_power);
-extern void of_port_desc_prop_bsn_diag_laser_output_power_bind(
-    of_port_desc_prop_bsn_diag_t *obj,
-    of_bsn_unit_t *laser_output_power);
-extern of_bsn_unit_t *of_port_desc_prop_bsn_diag_laser_output_power_get(
-    of_port_desc_prop_bsn_diag_t *obj);
-
-extern void of_port_desc_prop_bsn_diag_laser_receiver_power_type_set(
-    of_port_desc_prop_bsn_diag_t *obj,
-    uint8_t laser_receiver_power_type);
-extern void of_port_desc_prop_bsn_diag_laser_receiver_power_type_get(
-    of_port_desc_prop_bsn_diag_t *obj,
-    uint8_t *laser_receiver_power_type);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_diag_laser_receiver_power_set(
-    of_port_desc_prop_bsn_diag_t *obj,
-    of_bsn_unit_t *laser_receiver_power);
-extern void of_port_desc_prop_bsn_diag_laser_receiver_power_bind(
-    of_port_desc_prop_bsn_diag_t *obj,
-    of_bsn_unit_t *laser_receiver_power);
-extern of_bsn_unit_t *of_port_desc_prop_bsn_diag_laser_receiver_power_get(
-    of_port_desc_prop_bsn_diag_t *obj);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_diag_module_temp_set(
-    of_port_desc_prop_bsn_diag_t *obj,
-    of_bsn_unit_t *module_temp);
-extern void of_port_desc_prop_bsn_diag_module_temp_bind(
-    of_port_desc_prop_bsn_diag_t *obj,
-    of_bsn_unit_t *module_temp);
-extern of_bsn_unit_t *of_port_desc_prop_bsn_diag_module_temp_get(
-    of_port_desc_prop_bsn_diag_t *obj);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_diag_module_voltage_set(
-    of_port_desc_prop_bsn_diag_t *obj,
-    of_bsn_unit_t *module_voltage);
-extern void of_port_desc_prop_bsn_diag_module_voltage_bind(
-    of_port_desc_prop_bsn_diag_t *obj,
-    of_bsn_unit_t *module_voltage);
-extern of_bsn_unit_t *of_port_desc_prop_bsn_diag_module_voltage_get(
-    of_port_desc_prop_bsn_diag_t *obj);
-
 /* Unified accessor functions for of_port_desc_prop_bsn_ethtool */
 
 extern void of_port_desc_prop_bsn_ethtool_experimenter_set(
@@ -29203,163 +28978,12 @@ extern void of_port_desc_prop_bsn_ethtool_exp_type_get(
     of_port_desc_prop_bsn_ethtool_t *obj,
     uint32_t *exp_type);
 
-extern void of_port_desc_prop_bsn_ethtool_identifier_set(
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_data_json_set(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint8_t identifier);
-extern void of_port_desc_prop_bsn_ethtool_identifier_get(
+    of_octets_t *data_json);
+extern void of_port_desc_prop_bsn_ethtool_data_json_get(
     of_port_desc_prop_bsn_ethtool_t *obj,
-    uint8_t *identifier);
-
-extern void of_port_desc_prop_bsn_ethtool_extidentifier_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint8_t extidentifier);
-extern void of_port_desc_prop_bsn_ethtool_extidentifier_get(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint8_t *extidentifier);
-
-extern void of_port_desc_prop_bsn_ethtool_connector_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint8_t connector);
-extern void of_port_desc_prop_bsn_ethtool_connector_get(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint8_t *connector);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_transdata_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    ofp_bsn_module_eeprom_transceiver_t *transdata);
-extern void of_port_desc_prop_bsn_ethtool_transdata_bind(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    ofp_bsn_module_eeprom_transceiver_t *transdata);
-extern ofp_bsn_module_eeprom_transceiver_t *of_port_desc_prop_bsn_ethtool_transdata_get(
-    of_port_desc_prop_bsn_ethtool_t *obj);
-
-extern void of_port_desc_prop_bsn_ethtool_encoding_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint8_t encoding);
-extern void of_port_desc_prop_bsn_ethtool_encoding_get(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint8_t *encoding);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_br_nominal_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *br_nominal);
-extern void of_port_desc_prop_bsn_ethtool_br_nominal_bind(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *br_nominal);
-extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_br_nominal_get(
-    of_port_desc_prop_bsn_ethtool_t *obj);
-
-extern void of_port_desc_prop_bsn_ethtool_rateidentifier_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint8_t rateidentifier);
-extern void of_port_desc_prop_bsn_ethtool_rateidentifier_get(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint8_t *rateidentifier);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_length_SMF_KM_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *length_SMF_KM);
-extern void of_port_desc_prop_bsn_ethtool_length_SMF_KM_bind(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *length_SMF_KM);
-extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_length_SMF_KM_get(
-    of_port_desc_prop_bsn_ethtool_t *obj);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_length_SMF_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *length_SMF);
-extern void of_port_desc_prop_bsn_ethtool_length_SMF_bind(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *length_SMF);
-extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_length_SMF_get(
-    of_port_desc_prop_bsn_ethtool_t *obj);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_length_50_um_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *length_50_um);
-extern void of_port_desc_prop_bsn_ethtool_length_50_um_bind(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *length_50_um);
-extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_length_50_um_get(
-    of_port_desc_prop_bsn_ethtool_t *obj);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_length_625_um_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *length_625_um);
-extern void of_port_desc_prop_bsn_ethtool_length_625_um_bind(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *length_625_um);
-extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_length_625_um_get(
-    of_port_desc_prop_bsn_ethtool_t *obj);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_length_copper_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *length_copper);
-extern void of_port_desc_prop_bsn_ethtool_length_copper_bind(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *length_copper);
-extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_length_copper_get(
-    of_port_desc_prop_bsn_ethtool_t *obj);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_length_OM3_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *length_OM3);
-extern void of_port_desc_prop_bsn_ethtool_length_OM3_bind(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_bsn_unit_t *length_OM3);
-extern of_bsn_unit_t *of_port_desc_prop_bsn_ethtool_length_OM3_get(
-    of_port_desc_prop_bsn_ethtool_t *obj);
-
-extern void of_port_desc_prop_bsn_ethtool_vendor_name_lo_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint64_t vendor_name_lo);
-extern void of_port_desc_prop_bsn_ethtool_vendor_name_lo_get(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint64_t *vendor_name_lo);
-
-extern void of_port_desc_prop_bsn_ethtool_vendor_name_hi_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint64_t vendor_name_hi);
-extern void of_port_desc_prop_bsn_ethtool_vendor_name_hi_get(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint64_t *vendor_name_hi);
-
-extern void of_port_desc_prop_bsn_ethtool_vendor_oui_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t vendor_oui);
-extern void of_port_desc_prop_bsn_ethtool_vendor_oui_get(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t *vendor_oui);
-
-extern void of_port_desc_prop_bsn_ethtool_vendor_pn_lo_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint64_t vendor_pn_lo);
-extern void of_port_desc_prop_bsn_ethtool_vendor_pn_lo_get(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint64_t *vendor_pn_lo);
-
-extern void of_port_desc_prop_bsn_ethtool_vendor_pn_hi_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint64_t vendor_pn_hi);
-extern void of_port_desc_prop_bsn_ethtool_vendor_pn_hi_get(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint64_t *vendor_pn_hi);
-
-extern void of_port_desc_prop_bsn_ethtool_vendor_rev_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t vendor_rev);
-extern void of_port_desc_prop_bsn_ethtool_vendor_rev_get(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    uint32_t *vendor_rev);
-
-extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_ethtool_more_properties_set(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_list_port_desc_prop_t *more_properties);
-extern void of_port_desc_prop_bsn_ethtool_more_properties_bind(
-    of_port_desc_prop_bsn_ethtool_t *obj,
-    of_list_port_desc_prop_t *more_properties);
-extern of_list_port_desc_prop_t *of_port_desc_prop_bsn_ethtool_more_properties_get(
-    of_port_desc_prop_bsn_ethtool_t *obj);
+    of_octets_t *data_json);
 
 /* Unified accessor functions for of_port_desc_prop_bsn_forward_error_correction */
 
@@ -30597,15 +30221,6 @@ extern void of_uint8_value_set(
 extern void of_uint8_value_get(
     of_uint8_t *obj,
     uint8_t *value);
-
-/* Unified accessor functions for ofp_bsn_module_eeprom_transceiver */
-
-extern void ofp_bsn_module_eeprom_transceiver_codes_set(
-    ofp_bsn_module_eeprom_transceiver_t *obj,
-    uint64_t codes);
-extern void ofp_bsn_module_eeprom_transceiver_codes_get(
-    ofp_bsn_module_eeprom_transceiver_t *obj,
-    uint64_t *codes);
 
 /* Unified accessor functions for of_list_action */
 

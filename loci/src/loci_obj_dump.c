@@ -39817,28 +39817,6 @@ of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_dump(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_unit_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint32_t val32;
-    uint8_t val8;
-
-    out += writer(cookie, "Object of type of_bsn_unit\n");
-
-    of_bsn_unit_value_get(obj, &val32);
-    out += writer(cookie, "  value (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_bsn_unit_unit_get(obj, &val8);
-    out += writer(cookie, "  unit (uint8_t):  ");
-    out += LOCI_DUMP_u8(writer, cookie, val8);
-    out += writer(cookie, "\n");
-
-    return out;
-}
-
-int
 of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -44414,63 +44392,6 @@ of_port_desc_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t
 }
 
 int
-of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint32_t val32;
-    uint8_t val8;
-
-    out += writer(cookie, "Object of type of_port_desc_prop_bsn_alarm\n");
-
-    of_port_desc_prop_bsn_alarm_experimenter_get(obj, &val32);
-    out += writer(cookie, "  experimenter (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_alarm_exp_type_get(obj, &val32);
-    out += writer(cookie, "  exp_type (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_alarm_alarm_set_get(obj, &val8);
-    out += writer(cookie, "  alarm_set (uint8_t):  ");
-    out += LOCI_DUMP_u8(writer, cookie, val8);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_alarm_high_get(obj, &val32);
-    out += writer(cookie, "  high (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_alarm_high_warn_get(obj, &val32);
-    out += writer(cookie, "  high_warn (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_alarm_low_get(obj, &val32);
-    out += writer(cookie, "  low (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_alarm_low_warn_get(obj, &val32);
-    out += writer(cookie, "  low_warn (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_alarm_alarm_type_get(obj, &val8);
-    out += writer(cookie, "  alarm_type (uint8_t):  ");
-    out += LOCI_DUMP_u8(writer, cookie, val8);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_alarm_unit_get(obj, &val8);
-    out += writer(cookie, "  unit (uint8_t):  ");
-    out += LOCI_DUMP_u8(writer, cookie, val8);
-    out += writer(cookie, "\n");
-
-    return out;
-}
-
-int
 of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -44503,64 +44424,11 @@ of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dump(loci_writer_f writer, void* c
 }
 
 int
-of_port_desc_prop_bsn_diag_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint32_t val32;
-
-    of_bsn_unit_t bsn_unit;
-    uint8_t val8;
-
-    out += writer(cookie, "Object of type of_port_desc_prop_bsn_diag\n");
-
-    of_port_desc_prop_bsn_diag_experimenter_get(obj, &val32);
-    out += writer(cookie, "  experimenter (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_diag_exp_type_get(obj, &val32);
-    out += writer(cookie, "  exp_type (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_diag_laser_bias_curr_bind(obj, &bsn_unit);
-    out += of_object_dump(writer, cookie, &bsn_unit);
-
-    of_port_desc_prop_bsn_diag_laser_output_power_bind(obj, &bsn_unit);
-    out += of_object_dump(writer, cookie, &bsn_unit);
-
-    of_port_desc_prop_bsn_diag_laser_receiver_power_type_get(obj, &val8);
-    out += writer(cookie, "  laser_receiver_power_type (uint8_t):  ");
-    out += LOCI_DUMP_u8(writer, cookie, val8);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_diag_laser_receiver_power_bind(obj, &bsn_unit);
-    out += of_object_dump(writer, cookie, &bsn_unit);
-
-    of_port_desc_prop_bsn_diag_module_temp_bind(obj, &bsn_unit);
-    out += of_object_dump(writer, cookie, &bsn_unit);
-
-    of_port_desc_prop_bsn_diag_module_voltage_bind(obj, &bsn_unit);
-    out += of_object_dump(writer, cookie, &bsn_unit);
-
-    return out;
-}
-
-int
 of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
-    uint8_t val8;
-
-    ofp_bsn_module_eeprom_transceiver_t bsn_module_eeprom_transceiver;
-
-    of_bsn_unit_t bsn_unit;
-    uint64_t val64;
-
-    of_list_port_desc_prop_t list;
-    of_object_t elt;
-    int rv;
+    of_octets_t octets;
 
     out += writer(cookie, "Object of type of_port_desc_prop_bsn_ethtool\n");
 
@@ -44574,90 +44442,10 @@ of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dump(loci_writer_f writer, void* co
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
-    of_port_desc_prop_bsn_ethtool_identifier_get(obj, &val8);
-    out += writer(cookie, "  identifier (uint8_t):  ");
-    out += LOCI_DUMP_u8(writer, cookie, val8);
+    of_port_desc_prop_bsn_ethtool_data_json_get(obj, &octets);
+    out += writer(cookie, "  data_json (of_octets_t):  ");
+    out += LOCI_DUMP_octets(writer, cookie, octets);
     out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_ethtool_extidentifier_get(obj, &val8);
-    out += writer(cookie, "  extidentifier (uint8_t):  ");
-    out += LOCI_DUMP_u8(writer, cookie, val8);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_ethtool_connector_get(obj, &val8);
-    out += writer(cookie, "  connector (uint8_t):  ");
-    out += LOCI_DUMP_u8(writer, cookie, val8);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_ethtool_transdata_bind(obj, &bsn_module_eeprom_transceiver);
-    out += of_object_dump(writer, cookie, &bsn_module_eeprom_transceiver);
-
-    of_port_desc_prop_bsn_ethtool_encoding_get(obj, &val8);
-    out += writer(cookie, "  encoding (uint8_t):  ");
-    out += LOCI_DUMP_u8(writer, cookie, val8);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_ethtool_br_nominal_bind(obj, &bsn_unit);
-    out += of_object_dump(writer, cookie, &bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_rateidentifier_get(obj, &val8);
-    out += writer(cookie, "  rateidentifier (uint8_t):  ");
-    out += LOCI_DUMP_u8(writer, cookie, val8);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_ethtool_length_SMF_KM_bind(obj, &bsn_unit);
-    out += of_object_dump(writer, cookie, &bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_length_SMF_bind(obj, &bsn_unit);
-    out += of_object_dump(writer, cookie, &bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_length_50_um_bind(obj, &bsn_unit);
-    out += of_object_dump(writer, cookie, &bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_length_625_um_bind(obj, &bsn_unit);
-    out += of_object_dump(writer, cookie, &bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_length_copper_bind(obj, &bsn_unit);
-    out += of_object_dump(writer, cookie, &bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_length_OM3_bind(obj, &bsn_unit);
-    out += of_object_dump(writer, cookie, &bsn_unit);
-
-    of_port_desc_prop_bsn_ethtool_vendor_name_lo_get(obj, &val64);
-    out += writer(cookie, "  vendor_name_lo (uint64_t):  ");
-    out += LOCI_DUMP_u64(writer, cookie, val64);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_ethtool_vendor_name_hi_get(obj, &val64);
-    out += writer(cookie, "  vendor_name_hi (uint64_t):  ");
-    out += LOCI_DUMP_u64(writer, cookie, val64);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_ethtool_vendor_oui_get(obj, &val32);
-    out += writer(cookie, "  vendor_oui (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_ethtool_vendor_pn_lo_get(obj, &val64);
-    out += writer(cookie, "  vendor_pn_lo (uint64_t):  ");
-    out += LOCI_DUMP_u64(writer, cookie, val64);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_ethtool_vendor_pn_hi_get(obj, &val64);
-    out += writer(cookie, "  vendor_pn_hi (uint64_t):  ");
-    out += LOCI_DUMP_u64(writer, cookie, val64);
-    out += writer(cookie, "\n");
-
-    of_port_desc_prop_bsn_ethtool_vendor_rev_get(obj, &val32);
-    out += writer(cookie, "  vendor_rev (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    out += writer(cookie, "List of of_port_desc_prop_t\n");
-    of_port_desc_prop_bsn_ethtool_more_properties_bind(obj, &list);
-    OF_LIST_PORT_DESC_PROP_ITER(&list, &elt, rv) {
-        of_object_dump(writer, cookie, (of_object_t *)&elt);
-    }
 
     return out;
 }
@@ -45946,22 +45734,6 @@ of_uint8_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *ob
     return out;
 }
 
-int
-ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
-{
-    int out = 0;
-    uint64_t val64;
-
-    out += writer(cookie, "Object of type ofp_bsn_module_eeprom_transceiver\n");
-
-    ofp_bsn_module_eeprom_transceiver_codes_get(obj, &val64);
-    out += writer(cookie, "  codes (uint64_t):  ");
-    out += LOCI_DUMP_u64(writer, cookie, val64);
-    out += writer(cookie, "\n");
-
-    return out;
-}
-
 /**
  * Log a match entry
  */
@@ -47118,7 +46890,6 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
-    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_0_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -47377,8 +47148,6 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
-    unknown_dump,
-    unknown_dump,
     of_port_stats_entry_OF_VERSION_1_0_dump,
     unknown_dump,
     unknown_dump,
@@ -47426,7 +47195,6 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_table_stats_entry_OF_VERSION_1_0_dump,
-    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -47976,7 +47744,6 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
-    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_1_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_1_dump,
     unknown_dump,
@@ -48235,8 +48002,6 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
-    unknown_dump,
-    unknown_dump,
     of_port_stats_entry_OF_VERSION_1_1_dump,
     unknown_dump,
     unknown_dump,
@@ -48284,7 +48049,6 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_table_stats_entry_OF_VERSION_1_1_dump,
-    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -48834,7 +48598,6 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
-    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_2_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dump,
     unknown_dump,
@@ -49093,8 +48856,6 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
-    unknown_dump,
-    unknown_dump,
     of_port_stats_entry_OF_VERSION_1_2_dump,
     unknown_dump,
     unknown_dump,
@@ -49142,7 +48903,6 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_table_stats_entry_OF_VERSION_1_2_dump,
-    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -49689,7 +49449,6 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_vpn_key_OF_VERSION_1_3_dump,
     of_bsn_tlv_vrf_OF_VERSION_1_3_dump,
     of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_3_dump,
-    unknown_dump,
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dump,
     of_bsn_vlan_mac_OF_VERSION_1_3_dump,
     unknown_dump,
@@ -49951,8 +49710,6 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
-    unknown_dump,
-    unknown_dump,
     of_port_stats_entry_OF_VERSION_1_3_dump,
     unknown_dump,
     unknown_dump,
@@ -50003,7 +49760,6 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_uint32_OF_VERSION_1_3_dump,
     of_uint64_OF_VERSION_1_3_dump,
     of_uint8_OF_VERSION_1_3_dump,
-    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -50547,7 +50303,6 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_vpn_key_OF_VERSION_1_4_dump,
     of_bsn_tlv_vrf_OF_VERSION_1_4_dump,
     of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_dump,
-    of_bsn_unit_OF_VERSION_1_4_dump,
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dump,
     of_bsn_vlan_mac_OF_VERSION_1_4_dump,
     unknown_dump,
@@ -50795,9 +50550,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_port_desc_OF_VERSION_1_4_dump,
     unknown_dump,
     unknown_dump,
-    of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_dump,
     of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dump,
-    of_port_desc_prop_bsn_diag_OF_VERSION_1_4_dump,
     of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_dump,
     of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_dump,
     of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dump,
@@ -50861,7 +50614,6 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_uint32_OF_VERSION_1_4_dump,
     of_uint64_OF_VERSION_1_4_dump,
     of_uint8_OF_VERSION_1_4_dump,
-    ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,

@@ -1531,26 +1531,12 @@ public class OFFactoryVer14 implements OFFactory {
                     );
     }
 
-    public OFBsnUnit.Builder buildBsnUnit() {
-        return new OFBsnUnitVer14.Builder();
-    }
-    public OFBsnUnit bsnUnit(long value, Set<OFBsnUnitType> unit) {
-        return new OFBsnUnitVer14(
-                value,
-                      unit
-                    );
-    }
-
     public OFBundleAddMsg.Builder buildBundleAddMsg() {
         return new OFBundleAddMsgVer14.Builder().setXid(nextXid());
     }
 
     public OFBundleCtrlMsg.Builder buildBundleCtrlMsg() {
         return new OFBundleCtrlMsgVer14.Builder().setXid(nextXid());
-    }
-
-    public OFPortDescPropBsnAlarm.Builder buildPortDescPropBsnAlarm() {
-        return new OFPortDescPropBsnAlarmVer14.Builder();
     }
 
     public OFPortDescPropBsnBreakout.Builder buildPortDescPropBsnBreakout() {
@@ -1563,21 +1549,13 @@ public class OFFactoryVer14 implements OFFactory {
                     );
     }
 
-    public OFPortDescPropBsnDiag.Builder buildPortDescPropBsnDiag() {
-        return new OFPortDescPropBsnDiagVer14.Builder();
-    }
-
-    public OFBsnModuleEepromTransceiver.Builder buildBsnModuleEepromTransceiver() {
-        return new OFBsnModuleEepromTransceiverVer14.Builder();
-    }
-    public OFBsnModuleEepromTransceiver bsnModuleEepromTransceiver(U64 codes) {
-        return new OFBsnModuleEepromTransceiverVer14(
-                codes
-                    );
-    }
-
     public OFPortDescPropBsnEthtool.Builder buildPortDescPropBsnEthtool() {
         return new OFPortDescPropBsnEthtoolVer14.Builder();
+    }
+    public OFPortDescPropBsnEthtool portDescPropBsnEthtool(byte[] dataJson) {
+        return new OFPortDescPropBsnEthtoolVer14(
+                dataJson
+                    );
     }
 
     public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {

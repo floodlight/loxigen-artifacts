@@ -372,17 +372,12 @@ public interface OFFactory extends XidGenerator {
     OFBsnGenericCommand.Builder buildBsnGenericCommand() throws UnsupportedOperationException;
     OFBsnTakeover.Builder buildBsnTakeover() throws UnsupportedOperationException;
     OFBsnTakeover bsnTakeover();
-    OFBsnUnit.Builder buildBsnUnit() throws UnsupportedOperationException;
-    OFBsnUnit bsnUnit(long value, Set<OFBsnUnitType> unit);
     OFBundleAddMsg.Builder buildBundleAddMsg() throws UnsupportedOperationException;
     OFBundleCtrlMsg.Builder buildBundleCtrlMsg() throws UnsupportedOperationException;
-    OFPortDescPropBsnAlarm.Builder buildPortDescPropBsnAlarm() throws UnsupportedOperationException;
     OFPortDescPropBsnBreakout.Builder buildPortDescPropBsnBreakout() throws UnsupportedOperationException;
     OFPortDescPropBsnBreakout portDescPropBsnBreakout(int subInterfaceCount, int subInterfaceSpeedGbps);
-    OFPortDescPropBsnDiag.Builder buildPortDescPropBsnDiag() throws UnsupportedOperationException;
-    OFBsnModuleEepromTransceiver.Builder buildBsnModuleEepromTransceiver() throws UnsupportedOperationException;
-    OFBsnModuleEepromTransceiver bsnModuleEepromTransceiver(U64 codes);
     OFPortDescPropBsnEthtool.Builder buildPortDescPropBsnEthtool() throws UnsupportedOperationException;
+    OFPortDescPropBsnEthtool portDescPropBsnEthtool(byte[] dataJson);
     OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() throws UnsupportedOperationException;
     OFPortDescPropBsnForwardErrorCorrection portDescPropBsnForwardErrorCorrection(OFBsnFecConfigState configured, long enabled);
     OFPortDescPropBsnGenerationId.Builder buildPortDescPropBsnGenerationId() throws UnsupportedOperationException;

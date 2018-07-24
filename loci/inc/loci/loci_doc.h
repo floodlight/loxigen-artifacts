@@ -8317,21 +8317,6 @@ typedef struct of_bsn_tlv_vrf_s of_bsn_tlv_vrf_t;
 typedef struct of_bsn_tlv_vxlan_egress_lag_s of_bsn_tlv_vxlan_egress_lag_t;
 
 /**
- * Structure for of_bsn_unit object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- * @param value_get/set ( OF_1_4).
- *   Accessors for value, a variable of type uint32.  Functions
- *   are of type of_bsn_unit_uint32_get_f and _set_f.
- *
- * @param unit_get/set ( OF_1_4).
- *   Accessors for unit, a variable of type uint8.  Functions
- *   are of type of_bsn_unit_uint8_get_f and _set_f.
- *
- */
-typedef struct of_bsn_unit_s of_bsn_unit_t;
-
-/**
  * Structure for of_bsn_vlan_counter_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -11921,49 +11906,6 @@ typedef struct of_port_desc_prop_s of_port_desc_prop_t;
 typedef struct of_port_desc_prop_bsn_s of_port_desc_prop_bsn_t;
 
 /**
- * Structure for of_port_desc_prop_bsn_alarm object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- * @param experimenter_get/set ( OF_1_4).
- *   Accessors for experimenter, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_alarm_uint32_get_f and _set_f.
- *
- * @param exp_type_get/set ( OF_1_4).
- *   Accessors for exp_type, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_alarm_uint32_get_f and _set_f.
- *
- * @param alarm_set_get/set ( OF_1_4).
- *   Accessors for alarm_set, a variable of type uint8.  Functions
- *   are of type of_port_desc_prop_bsn_alarm_uint8_get_f and _set_f.
- *
- * @param high_get/set ( OF_1_4).
- *   Accessors for high, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_alarm_uint32_get_f and _set_f.
- *
- * @param high_warn_get/set ( OF_1_4).
- *   Accessors for high_warn, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_alarm_uint32_get_f and _set_f.
- *
- * @param low_get/set ( OF_1_4).
- *   Accessors for low, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_alarm_uint32_get_f and _set_f.
- *
- * @param low_warn_get/set ( OF_1_4).
- *   Accessors for low_warn, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_alarm_uint32_get_f and _set_f.
- *
- * @param alarm_type_get/set ( OF_1_4).
- *   Accessors for alarm_type, a variable of type uint8.  Functions
- *   are of type of_port_desc_prop_bsn_alarm_uint8_get_f and _set_f.
- *
- * @param unit_get/set ( OF_1_4).
- *   Accessors for unit, a variable of type uint8.  Functions
- *   are of type of_port_desc_prop_bsn_alarm_uint8_get_f and _set_f.
- *
- */
-typedef struct of_port_desc_prop_bsn_alarm_s of_port_desc_prop_bsn_alarm_t;
-
-/**
  * Structure for of_port_desc_prop_bsn_breakout object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -11987,45 +11929,6 @@ typedef struct of_port_desc_prop_bsn_alarm_s of_port_desc_prop_bsn_alarm_t;
 typedef struct of_port_desc_prop_bsn_breakout_s of_port_desc_prop_bsn_breakout_t;
 
 /**
- * Structure for of_port_desc_prop_bsn_diag object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- * @param experimenter_get/set ( OF_1_4).
- *   Accessors for experimenter, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_diag_uint32_get_f and _set_f.
- *
- * @param exp_type_get/set ( OF_1_4).
- *   Accessors for exp_type, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_diag_uint32_get_f and _set_f.
- *
- * @param laser_bias_curr_get/set ( OF_1_4).
- *   Accessors for laser_bias_curr, a variable of type of_bsn_unit.  Functions
- *   are of type of_port_desc_prop_bsn_diag_of_bsn_unit_get_f and _set_f.
- *
- * @param laser_output_power_get/set ( OF_1_4).
- *   Accessors for laser_output_power, a variable of type of_bsn_unit.  Functions
- *   are of type of_port_desc_prop_bsn_diag_of_bsn_unit_get_f and _set_f.
- *
- * @param laser_receiver_power_type_get/set ( OF_1_4).
- *   Accessors for laser_receiver_power_type, a variable of type uint8.  Functions
- *   are of type of_port_desc_prop_bsn_diag_uint8_get_f and _set_f.
- *
- * @param laser_receiver_power_get/set ( OF_1_4).
- *   Accessors for laser_receiver_power, a variable of type of_bsn_unit.  Functions
- *   are of type of_port_desc_prop_bsn_diag_of_bsn_unit_get_f and _set_f.
- *
- * @param module_temp_get/set ( OF_1_4).
- *   Accessors for module_temp, a variable of type of_bsn_unit.  Functions
- *   are of type of_port_desc_prop_bsn_diag_of_bsn_unit_get_f and _set_f.
- *
- * @param module_voltage_get/set ( OF_1_4).
- *   Accessors for module_voltage, a variable of type of_bsn_unit.  Functions
- *   are of type of_port_desc_prop_bsn_diag_of_bsn_unit_get_f and _set_f.
- *
- */
-typedef struct of_port_desc_prop_bsn_diag_s of_port_desc_prop_bsn_diag_t;
-
-/**
  * Structure for of_port_desc_prop_bsn_ethtool object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -12037,85 +11940,9 @@ typedef struct of_port_desc_prop_bsn_diag_s of_port_desc_prop_bsn_diag_t;
  *   Accessors for exp_type, a variable of type uint32.  Functions
  *   are of type of_port_desc_prop_bsn_ethtool_uint32_get_f and _set_f.
  *
- * @param identifier_get/set ( OF_1_4).
- *   Accessors for identifier, a variable of type uint8.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint8_get_f and _set_f.
- *
- * @param extidentifier_get/set ( OF_1_4).
- *   Accessors for extidentifier, a variable of type uint8.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint8_get_f and _set_f.
- *
- * @param connector_get/set ( OF_1_4).
- *   Accessors for connector, a variable of type uint8.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint8_get_f and _set_f.
- *
- * @param transdata_get/set ( OF_1_4).
- *   Accessors for transdata, a variable of type ofp_bsn_module_eeprom_transceiver.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_ofp_bsn_module_eeprom_transceiver_get_f and _set_f.
- *
- * @param encoding_get/set ( OF_1_4).
- *   Accessors for encoding, a variable of type uint8.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint8_get_f and _set_f.
- *
- * @param br_nominal_get/set ( OF_1_4).
- *   Accessors for br_nominal, a variable of type of_bsn_unit.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
- *
- * @param rateidentifier_get/set ( OF_1_4).
- *   Accessors for rateidentifier, a variable of type uint8.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint8_get_f and _set_f.
- *
- * @param length_SMF_KM_get/set ( OF_1_4).
- *   Accessors for length_SMF_KM, a variable of type of_bsn_unit.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
- *
- * @param length_SMF_get/set ( OF_1_4).
- *   Accessors for length_SMF, a variable of type of_bsn_unit.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
- *
- * @param length_50_um_get/set ( OF_1_4).
- *   Accessors for length_50_um, a variable of type of_bsn_unit.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
- *
- * @param length_625_um_get/set ( OF_1_4).
- *   Accessors for length_625_um, a variable of type of_bsn_unit.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
- *
- * @param length_copper_get/set ( OF_1_4).
- *   Accessors for length_copper, a variable of type of_bsn_unit.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
- *
- * @param length_OM3_get/set ( OF_1_4).
- *   Accessors for length_OM3, a variable of type of_bsn_unit.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_of_bsn_unit_get_f and _set_f.
- *
- * @param vendor_name_lo_get/set ( OF_1_4).
- *   Accessors for vendor_name_lo, a variable of type uint64.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint64_get_f and _set_f.
- *
- * @param vendor_name_hi_get/set ( OF_1_4).
- *   Accessors for vendor_name_hi, a variable of type uint64.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint64_get_f and _set_f.
- *
- * @param vendor_oui_get/set ( OF_1_4).
- *   Accessors for vendor_oui, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint32_get_f and _set_f.
- *
- * @param vendor_pn_lo_get/set ( OF_1_4).
- *   Accessors for vendor_pn_lo, a variable of type uint64.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint64_get_f and _set_f.
- *
- * @param vendor_pn_hi_get/set ( OF_1_4).
- *   Accessors for vendor_pn_hi, a variable of type uint64.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint64_get_f and _set_f.
- *
- * @param vendor_rev_get/set ( OF_1_4).
- *   Accessors for vendor_rev, a variable of type uint32.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_uint32_get_f and _set_f.
- *
- * @param more_properties_get/set ( OF_1_4).
- *   Accessors for more_properties, a variable of type of_list_port_desc_prop.  Functions
- *   are of type of_port_desc_prop_bsn_ethtool_of_list_port_desc_prop_get_f and _set_f.
+ * @param data_json_get/set ( OF_1_4).
+ *   Accessors for data_json, a variable of type of_octets.  Functions
+ *   are of type of_port_desc_prop_bsn_ethtool_of_octets_get_f and _set_f.
  *
  */
 typedef struct of_port_desc_prop_bsn_ethtool_s of_port_desc_prop_bsn_ethtool_t;
@@ -13281,17 +13108,6 @@ typedef struct of_uint64_s of_uint64_t;
  *
  */
 typedef struct of_uint8_s of_uint8_t;
-
-/**
- * Structure for ofp_bsn_module_eeprom_transceiver object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- * @param codes_get/set ( OF_1_4).
- *   Accessors for codes, a variable of type uint64.  Functions
- *   are of type ofp_bsn_module_eeprom_transceiver_uint64_get_f and _set_f.
- *
- */
-typedef struct ofp_bsn_module_eeprom_transceiver_s ofp_bsn_module_eeprom_transceiver_t;
 
 /**
  * Structure for of_list_action object.  Get/set

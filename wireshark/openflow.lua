@@ -2265,11 +2265,16 @@ enum_v5_ofp_ipv6exthdr_flags = {
     [256] = "OFPIEH_UNSEQ",
 }
 
-enum_v5_ofp_bsn_port_usage = {
-    [0] = "OFP_BSN_PORT_UNUSED",
-    [1] = "OFP_BSN_PORT_TRANSMIT_ONLY",
-    [2] = "OFP_BSN_PORT_RECEIVE_ONLY",
-    [3] = "OFP_BSN_PORT_BIDIRECTION",
+enum_v5_ofp_ovs_tcp_flag = {
+    [1] = "OFP_OVS_TCP_FLAG_FIN",
+    [2] = "OFP_OVS_TCP_FLAG_SYN",
+    [4] = "OFP_OVS_TCP_FLAG_RST",
+    [8] = "OFP_OVS_TCP_FLAG_PSH",
+    [16] = "OFP_OVS_TCP_FLAG_ACK",
+    [32] = "OFP_OVS_TCP_FLAG_URG",
+    [64] = "OFP_OVS_TCP_FLAG_ECE",
+    [128] = "OFP_OVS_TCP_FLAG_CWR",
+    [256] = "OFP_OVS_TCP_FLAG_NS",
 }
 
 enum_v5_ofp_bsn_port_mode = {
@@ -2323,28 +2328,6 @@ enum_v5_ofp_meter_flags = {
     [8] = "OFPMF_STATS",
 }
 
-enum_v5_ofp_error_type = {
-    [0] = "OFPET_HELLO_FAILED",
-    [1] = "OFPET_BAD_REQUEST",
-    [2] = "OFPET_BAD_ACTION",
-    [3] = "OFPET_BAD_INSTRUCTION",
-    [4] = "OFPET_BAD_MATCH",
-    [5] = "OFPET_FLOW_MOD_FAILED",
-    [6] = "OFPET_GROUP_MOD_FAILED",
-    [7] = "OFPET_PORT_MOD_FAILED",
-    [8] = "OFPET_TABLE_MOD_FAILED",
-    [9] = "OFPET_QUEUE_OP_FAILED",
-    [10] = "OFPET_SWITCH_CONFIG_FAILED",
-    [11] = "OFPET_ROLE_REQUEST_FAILED",
-    [12] = "OFPET_METER_MOD_FAILED",
-    [13] = "OFPET_TABLE_FEATURES_FAILED",
-    [14] = "OFPET_BAD_PROPERTY",
-    [15] = "OFPET_ASYNC_CONFIG_FAILED",
-    [16] = "OFPET_FLOW_MONITOR_FAILED",
-    [17] = "OFPET_BUNDLE_FAILED",
-    [65535] = "OFPET_EXPERIMENTER",
-}
-
 enum_v5_ofp_bsn_vlan_counter_constants = {
     [65535] = "OFP_BSN_VLAN_ALL",
 }
@@ -2368,11 +2351,6 @@ enum_v5_ofp_table_mod_prop_eviction_flag = {
     [1] = "OFPTMPEF_OTHER",
     [2] = "OFPTMPEF_IMPORTANCE",
     [4] = "OFPTMPEF_LIFETIME",
-}
-
-enum_v5_ofp_bsn_module_eeprom_recv_signal_type = {
-    [0] = "OFP_BSN_MODULE_EEPROM_RECV_SIGNAL_OMA",
-    [1] = "OFP_BSN_MODULE_EEPROM_RECV_SIGNAL_AVG",
 }
 
 enum_v5_ofp_group_type = {
@@ -2482,14 +2460,6 @@ enum_v5_ofp_bsn_loopback_mode = {
     [3] = "OFP_BSN_LOOPBACK_MODE_PHY_REMOTE",
 }
 
-enum_v5_ofp_bsn_module_eeprom_diag_type = {
-    [0] = "OFP_BSN_MODULE_EEPROM_DIAG_CURR",
-    [1] = "OFP_BSN_MODULE_EEPROM_DIAG_VOLT",
-    [2] = "OFP_BSN_MODULE_EEPROM_DIAG_TEMP",
-    [3] = "OFP_BSN_MODULE_EEPROM_DIAG_RECP",
-    [4] = "OFP_BSN_MODULE_EEPROM_DIAG_OUTP",
-}
-
 enum_v5_ofp_bsn_encap = {
     [0] = "OFP_BSN_ENCAP_UNUSED",
     [1] = "OFP_BSN_ENCAP_IPV4_UDP",
@@ -2520,23 +2490,6 @@ enum_v5_of_bsn_hash_packet_field = {
 enum_v5_ofp_bsn_rate_unit = {
     [0] = "OFP_BSN_RATE_UNIT_PPS",
     [1] = "OFP_BSN_RATE_UNIT_KBITPS",
-}
-
-enum_v5_ofp_bsn_unit_type = {
-    [0] = "OFP_BSN_UNIT_NONE",
-    [2] = "OFP_BSN_UNIT_AMP",
-    [3] = "OFP_BSN_UNIT_VOL",
-    [4] = "OFP_BSN_UNIT_KM",
-    [5] = "OFP_BSN_UNIT_M",
-    [6] = "OFP_BSN_UNIT_S",
-    [7] = "OFP_BSN_UNIT_C",
-    [8] = "OFP_BSN_UNIT_F",
-    [9] = "OFP_BSN_UNIT_BD",
-    [10] = "OFP_BSN_UNIT_MBD",
-    [11] = "OFP_BSN_UNIT_UA",
-    [12] = "OFP_BSN_UNIT_UW",
-    [13] = "OFP_BSN_UNIT_MC",
-    [14] = "OFP_BSN_UNIT_MV",
 }
 
 enum_v5_ofp_bundle_ctrl_type = {
@@ -2578,14 +2531,6 @@ enum_v5_ofp_flow_mod_command = {
 enum_v5_ofp_table_reason = {
     [3] = "OFPTR_VACANCY_DOWN",
     [4] = "OFPTR_VACANCY_UP",
-}
-
-enum_v5_ofp_bsn_module_eeprom_rate_identifier = {
-    [0] = "OFP_BSN_MODULE_EEPROM_RATE_IDENTIFIER_UNSPECIFIED",
-    [1] = "OFP_BSN_MODULE_EEPROM_RATE_IDENTIFIER_4G_2G_1G_AS0_AS1",
-    [2] = "OFP_BSN_MODULE_EEPROM_RATE_IDENTIFIER_8G_4G_2G_RX_RATE_SELECT_ONLY",
-    [3] = "OFP_BSN_MODULE_EEPROM_RATE_IDENTIFIER_8G_4G_2G_INDEPENDENT_RX_TX",
-    [4] = "OFP_BSN_MODULE_EEPROM_RATE_IDENTIFIER_8G_4G_2G_TX_RATE_SELECT_ONLY",
 }
 
 enum_v5_of_bsn_lacp_convergence_status = {
@@ -2762,6 +2707,15 @@ enum_v5_ofp_bad_property_code = {
     [8] = "OFPBPC_EPERM",
 }
 
+enum_v5_ofp_flow_removed_reason = {
+    [0] = "OFPRR_IDLE_TIMEOUT",
+    [1] = "OFPRR_HARD_TIMEOUT",
+    [2] = "OFPRR_DELETE",
+    [3] = "OFPRR_GROUP_DELETE",
+    [4] = "OFPRR_METER_DELETE",
+    [5] = "OFPRR_EVICTION",
+}
+
 enum_v5_ofp_bsn_bfd_endpoint = {
     [0] = "OFP_BSN_BFD_UNUSED",
     [1] = "OFP_BSN_BFD_MICRO",
@@ -2769,16 +2723,11 @@ enum_v5_ofp_bsn_bfd_endpoint = {
     [3] = "OFP_BSN_BFD_MULTI_HOP",
 }
 
-enum_v5_ofp_ovs_tcp_flag = {
-    [1] = "OFP_OVS_TCP_FLAG_FIN",
-    [2] = "OFP_OVS_TCP_FLAG_SYN",
-    [4] = "OFP_OVS_TCP_FLAG_RST",
-    [8] = "OFP_OVS_TCP_FLAG_PSH",
-    [16] = "OFP_OVS_TCP_FLAG_ACK",
-    [32] = "OFP_OVS_TCP_FLAG_URG",
-    [64] = "OFP_OVS_TCP_FLAG_ECE",
-    [128] = "OFP_OVS_TCP_FLAG_CWR",
-    [256] = "OFP_OVS_TCP_FLAG_NS",
+enum_v5_ofp_bsn_port_usage = {
+    [0] = "OFP_BSN_PORT_UNUSED",
+    [1] = "OFP_BSN_PORT_TRANSMIT_ONLY",
+    [2] = "OFP_BSN_PORT_RECEIVE_ONLY",
+    [3] = "OFP_BSN_PORT_BIDIRECTION",
 }
 
 enum_v5_ofp_table_mod_failed_code = {
@@ -2811,13 +2760,6 @@ enum_v5_ofp_meter = {
     [4294967295] = "OFPM_ALL",
 }
 
-enum_v5_ofp_bsn_module_eeprom_extended_identifier = {
-    [0] = "OFP_BSN_MODULE_EEPROM_EXT_IDENTIFIER_NON_GBIC",
-    [4] = "OFP_BSN_MODULE_EEPROM_EXT_IDENTIFIER_GBIC_SFP",
-    [7] = "OFP_BSN_MODULE_EEPROM_EXT_IDENTIFIER_GBIC_MOD_DEF",
-    [8] = "OFP_BSN_MODULE_EEPROM_EXT_IDENTIFIER_UNKNOWN",
-}
-
 enum_v5_of_bsn_pdu_slot_num = {
     [255] = "BSN_PDU_SLOT_NUM_ANY",
 }
@@ -2826,10 +2768,10 @@ enum_v5_ofp_bsn_udf_mode = {
     [1] = "OFP_BSN_UDF_8X2_BYTES",
 }
 
-enum_v5_ofp_bsn_module_eeprom_cu_cmplnce = {
-    [0] = "OFP_BSN_MODULE_EEPROM_CU_CMPLLNCE_UNSPECIFIED",
-    [1] = "OFP_BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_APP_E",
-    [4] = "OFP_BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_LIMITING",
+enum_v5_ofp_bsn_multicast_packet = {
+    [0] = "OFP_BSN_MULTICAST_PACKET_NONE",
+    [1] = "OFP_BSN_MULTICAST_PACKET_PIM_HELLO",
+    [2] = "OFP_BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE",
 }
 
 enum_v5_ofp_bsn_tcp_flag = {
@@ -2849,13 +2791,26 @@ enum_v5_ofp_table = {
     [255] = "OFPTT_ALL",
 }
 
-enum_v5_ofp_flow_removed_reason = {
-    [0] = "OFPRR_IDLE_TIMEOUT",
-    [1] = "OFPRR_HARD_TIMEOUT",
-    [2] = "OFPRR_DELETE",
-    [3] = "OFPRR_GROUP_DELETE",
-    [4] = "OFPRR_METER_DELETE",
-    [5] = "OFPRR_EVICTION",
+enum_v5_ofp_error_type = {
+    [0] = "OFPET_HELLO_FAILED",
+    [1] = "OFPET_BAD_REQUEST",
+    [2] = "OFPET_BAD_ACTION",
+    [3] = "OFPET_BAD_INSTRUCTION",
+    [4] = "OFPET_BAD_MATCH",
+    [5] = "OFPET_FLOW_MOD_FAILED",
+    [6] = "OFPET_GROUP_MOD_FAILED",
+    [7] = "OFPET_PORT_MOD_FAILED",
+    [8] = "OFPET_TABLE_MOD_FAILED",
+    [9] = "OFPET_QUEUE_OP_FAILED",
+    [10] = "OFPET_SWITCH_CONFIG_FAILED",
+    [11] = "OFPET_ROLE_REQUEST_FAILED",
+    [12] = "OFPET_METER_MOD_FAILED",
+    [13] = "OFPET_TABLE_FEATURES_FAILED",
+    [14] = "OFPET_BAD_PROPERTY",
+    [15] = "OFPET_ASYNC_CONFIG_FAILED",
+    [16] = "OFPET_FLOW_MONITOR_FAILED",
+    [17] = "OFPET_BUNDLE_FAILED",
+    [65535] = "OFPET_EXPERIMENTER",
 }
 
 enum_v5_ofp_port_stats_optical_flags = {
@@ -2937,13 +2892,6 @@ enum_v5_ofp_queue_op_failed_code = {
     [2] = "OFPQOFC_EPERM",
 }
 
-enum_v5_ofp_bsn_module_eeprom_identifier = {
-    [0] = "OFP_BSN_MODULE_EEPROM_IDENTIFIER_NONE",
-    [1] = "OFP_BSN_MODULE_EEPROM_IDENTIFIER_GBIC",
-    [2] = "OFP_BSN_MODULE_EEPROM_IDENTIFIER_ONBOARD",
-    [3] = "OFP_BSN_MODULE_EEPROM_IDENTIFIER_SFP",
-}
-
 enum_v5_ofp_bsn_ip_tunnel_type = {
     [0] = "OFP_BSN_IP_TUNNEL_TYPE_NONE",
     [1] = "OFP_BSN_IP_TUNNEL_TYPE_PIM",
@@ -2965,12 +2913,6 @@ enum_v5_macro_definitions = {
     [4294967295] = "OFPQ_ALL",
     [65535] = "OFPQ_MAX_RATE_UNCFG",
     [65535] = "OFPQ_MIN_RATE_UNCFG",
-}
-
-enum_v5_ofp_bsn_multicast_packet = {
-    [0] = "OFP_BSN_MULTICAST_PACKET_NONE",
-    [1] = "OFP_BSN_MULTICAST_PACKET_PIM_HELLO",
-    [2] = "OFP_BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE",
 }
 
 enum_v5_ofp_meter_mod_command = {
@@ -3115,9 +3057,10 @@ enum_v5_ofp_bsn_hash_algorithm_type = {
     [8] = "OFP_BSN_HASH_ALGORITHM_CRC32HI",
 }
 
-enum_v5_ofp_controller_max_len = {
-    [65509] = "OFPCML_MAX",
-    [65535] = "OFPCML_NO_BUFFER",
+enum_v5_ofp_meter_band_type = {
+    [1] = "OFPMBT_DROP",
+    [2] = "OFPMBT_DSCP_REMARK",
+    [65535] = "OFPMBT_EXPERIMENTER",
 }
 
 enum_v5_of_bsn_vrf_counter = {
@@ -3133,43 +3076,13 @@ enum_v5_ofp_bsn_fabric_port_role = {
     [1] = "OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE",
 }
 
-enum_v5_ofp_bsn_module_eeprom_encoding = {
-    [0] = "OFP_BSN_MODULE_EEPROM_ENCODING_UNSPECIFIED",
-    [1] = "OFP_BSN_MODULE_EEPROM_ENCODING_8B_10B",
-    [2] = "OFP_BSN_MODULE_EEPROM_ENCODING_4B_5B",
-    [3] = "OFP_BSN_MODULE_EEPROM_ENCODING_NRZ",
-    [4] = "OFP_BSN_MODULE_EEPROM_ENCODING_MANCHESTER",
-    [5] = "OFP_BSN_MODULE_EEPROM_ENCODING_SONET_SCRAMBLED",
-    [6] = "OFP_BSN_MODULE_EEPROM_ENCODING_64B_66B",
-}
-
-enum_v5_ofp_bsn_module_eeprom_connector = {
-    [0] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_NONE",
-    [1] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_SC",
-    [2] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_FC_1_COPPER",
-    [3] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_FC_2_COPPER",
-    [4] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_BNC_TNC",
-    [5] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_FC_COAX",
-    [6] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_FIBRE_JACK",
-    [7] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_LC",
-    [8] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_MT_RJ",
-    [9] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_MU",
-    [10] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_SG",
-    [11] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_OPTICAL_PIGTAIL",
-    [12] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_MPO_PARALLEL_OPTIC",
-    [32] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_HSSDC",
-    [33] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_COPPER_PIGTAIL",
-    [34] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_RJ45",
-}
-
 enum_v5_ofp_bsn_tunnel_type = {
     [1] = "OFP_BSN_TUNNEL_L2GRE",
 }
 
-enum_v5_ofp_meter_band_type = {
-    [1] = "OFPMBT_DROP",
-    [2] = "OFPMBT_DSCP_REMARK",
-    [65535] = "OFPMBT_EXPERIMENTER",
+enum_v5_ofp_controller_max_len = {
+    [65509] = "OFPCML_MAX",
+    [65535] = "OFPCML_NO_BUFFER",
 }
 
 enum_v5_ofp_requestforward_reason = {
@@ -3181,14 +3094,6 @@ enum_v5_ofp_role_request_failed_code = {
     [0] = "OFPRRFC_STALE",
     [1] = "OFPRRFC_UNSUP",
     [2] = "OFPRRFC_BAD_ROLE",
-}
-
-enum_v5_ofp_bsn_module_eeprom_alarm_set = {
-    [0] = "OFP_BSN_MODULE_EEPROM_ALARM_NOT_SET",
-    [1] = "OFP_BSN_MODULE_EEPROM_ALARM_HI_SET",
-    [2] = "OFP_BSN_MODULE_EEPROM_ALARM_LOW_SET",
-    [4] = "OFP_BSN_MODULE_EEPROM_ALARM_HI_WARN_SET",
-    [8] = "OFP_BSN_MODULE_EEPROM_ALARM_LOW_WARN_SET",
 }
 
 enum_v5_ofp_stats_request_flags = {
@@ -3478,11 +3383,16 @@ enum_v6_ofp_ipv6exthdr_flags = {
     [256] = "OFPIEH_UNSEQ",
 }
 
-enum_v6_ofp_bsn_port_usage = {
-    [0] = "OFP_BSN_PORT_UNUSED",
-    [1] = "OFP_BSN_PORT_TRANSMIT_ONLY",
-    [2] = "OFP_BSN_PORT_RECEIVE_ONLY",
-    [3] = "OFP_BSN_PORT_BIDIRECTION",
+enum_v6_ofp_ovs_tcp_flag = {
+    [1] = "OFP_OVS_TCP_FLAG_FIN",
+    [2] = "OFP_OVS_TCP_FLAG_SYN",
+    [4] = "OFP_OVS_TCP_FLAG_RST",
+    [8] = "OFP_OVS_TCP_FLAG_PSH",
+    [16] = "OFP_OVS_TCP_FLAG_ACK",
+    [32] = "OFP_OVS_TCP_FLAG_URG",
+    [64] = "OFP_OVS_TCP_FLAG_ECE",
+    [128] = "OFP_OVS_TCP_FLAG_CWR",
+    [256] = "OFP_OVS_TCP_FLAG_NS",
 }
 
 enum_v6_ofp_bsn_port_mode = {
@@ -3512,17 +3422,14 @@ enum_v6_ofp_bsn_vport_l2gre_flags = {
     [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
 }
 
-enum_v6_ofp_group_type = {
-    [0] = "OFPGT_ALL",
-    [1] = "OFPGT_SELECT",
-    [2] = "OFPGT_INDIRECT",
-    [3] = "OFPGT_FF",
+enum_v6_ofp_bsn_lua_upload_flags = {
+    [1] = "OFP_BSN_LUA_UPLOAD_MORE",
+    [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
 }
 
-enum_v6_ofp_group = {
-    [4294967040] = "OFPG_MAX",
-    [4294967292] = "OFPG_ALL",
-    [4294967295] = "OFPG_ANY",
+enum_v6_ofp_bsn_vport_status = {
+    [0] = "OF_BSN_VPORT_STATUS_OK",
+    [1] = "OF_BSN_VPORT_STATUS_FAILED",
 }
 
 enum_v6_ofp_bsn_auto_negotiation_type = {
@@ -3602,19 +3509,16 @@ enum_v6_ofp_oxs_class = {
     [65535] = "OFPXSC_EXPERIMENTER",
 }
 
-enum_v6_ofp_bsn_module_eeprom_recv_signal_type = {
-    [0] = "OFP_BSN_MODULE_EEPROM_RECV_SIGNAL_OMA",
-    [1] = "OFP_BSN_MODULE_EEPROM_RECV_SIGNAL_AVG",
-}
-
 enum_v6_ofp_controller_status_prop_type = {
     [0] = "OFPCSPT_URI",
     [65535] = "OFPCSPT_EXPERIMENTER",
 }
 
-enum_v6_ofp_bsn_lua_upload_flags = {
-    [1] = "OFP_BSN_LUA_UPLOAD_MORE",
-    [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
+enum_v6_ofp_group_type = {
+    [0] = "OFPGT_ALL",
+    [1] = "OFPGT_SELECT",
+    [2] = "OFPGT_INDIRECT",
+    [3] = "OFPGT_FF",
 }
 
 enum_v6_ofp_bad_action_code = {
@@ -3754,14 +3658,6 @@ enum_v6_ofp_bsn_loopback_mode = {
     [3] = "OFP_BSN_LOOPBACK_MODE_PHY_REMOTE",
 }
 
-enum_v6_ofp_bsn_module_eeprom_diag_type = {
-    [0] = "OFP_BSN_MODULE_EEPROM_DIAG_CURR",
-    [1] = "OFP_BSN_MODULE_EEPROM_DIAG_VOLT",
-    [2] = "OFP_BSN_MODULE_EEPROM_DIAG_TEMP",
-    [3] = "OFP_BSN_MODULE_EEPROM_DIAG_RECP",
-    [4] = "OFP_BSN_MODULE_EEPROM_DIAG_OUTP",
-}
-
 enum_v6_ofp_bsn_encap = {
     [0] = "OFP_BSN_ENCAP_UNUSED",
     [1] = "OFP_BSN_ENCAP_IPV4_UDP",
@@ -3815,23 +3711,6 @@ enum_v6_ofp_bsn_rate_unit = {
     [1] = "OFP_BSN_RATE_UNIT_KBITPS",
 }
 
-enum_v6_ofp_bsn_unit_type = {
-    [0] = "OFP_BSN_UNIT_NONE",
-    [2] = "OFP_BSN_UNIT_AMP",
-    [3] = "OFP_BSN_UNIT_VOL",
-    [4] = "OFP_BSN_UNIT_KM",
-    [5] = "OFP_BSN_UNIT_M",
-    [6] = "OFP_BSN_UNIT_S",
-    [7] = "OFP_BSN_UNIT_C",
-    [8] = "OFP_BSN_UNIT_F",
-    [9] = "OFP_BSN_UNIT_BD",
-    [10] = "OFP_BSN_UNIT_MBD",
-    [11] = "OFP_BSN_UNIT_UA",
-    [12] = "OFP_BSN_UNIT_UW",
-    [13] = "OFP_BSN_UNIT_MC",
-    [14] = "OFP_BSN_UNIT_MV",
-}
-
 enum_v6_ofp_bundle_ctrl_type = {
     [0] = "OFPBCT_OPEN_REQUEST",
     [1] = "OFPBCT_OPEN_REPLY",
@@ -3843,9 +3722,10 @@ enum_v6_ofp_bundle_ctrl_type = {
     [7] = "OFPBCT_DISCARD_REPLY",
 }
 
-enum_v6_ofp_bsn_vport_status = {
-    [0] = "OF_BSN_VPORT_STATUS_OK",
-    [1] = "OF_BSN_VPORT_STATUS_FAILED",
+enum_v6_ofp_group = {
+    [4294967040] = "OFPG_MAX",
+    [4294967292] = "OFPG_ALL",
+    [4294967295] = "OFPG_ANY",
 }
 
 enum_v6_ofp_stat_trigger_flags = {
@@ -3876,14 +3756,6 @@ enum_v6_ofp_flow_mod_command = {
 enum_v6_ofp_table_reason = {
     [3] = "OFPTR_VACANCY_DOWN",
     [4] = "OFPTR_VACANCY_UP",
-}
-
-enum_v6_ofp_bsn_module_eeprom_rate_identifier = {
-    [0] = "OFP_BSN_MODULE_EEPROM_RATE_IDENTIFIER_UNSPECIFIED",
-    [1] = "OFP_BSN_MODULE_EEPROM_RATE_IDENTIFIER_4G_2G_1G_AS0_AS1",
-    [2] = "OFP_BSN_MODULE_EEPROM_RATE_IDENTIFIER_8G_4G_2G_RX_RATE_SELECT_ONLY",
-    [3] = "OFP_BSN_MODULE_EEPROM_RATE_IDENTIFIER_8G_4G_2G_INDEPENDENT_RX_TX",
-    [4] = "OFP_BSN_MODULE_EEPROM_RATE_IDENTIFIER_8G_4G_2G_TX_RATE_SELECT_ONLY",
 }
 
 enum_v6_of_bsn_lacp_convergence_status = {
@@ -4080,16 +3952,11 @@ enum_v6_ofp_bsn_bfd_endpoint = {
     [3] = "OFP_BSN_BFD_MULTI_HOP",
 }
 
-enum_v6_ofp_ovs_tcp_flag = {
-    [1] = "OFP_OVS_TCP_FLAG_FIN",
-    [2] = "OFP_OVS_TCP_FLAG_SYN",
-    [4] = "OFP_OVS_TCP_FLAG_RST",
-    [8] = "OFP_OVS_TCP_FLAG_PSH",
-    [16] = "OFP_OVS_TCP_FLAG_ACK",
-    [32] = "OFP_OVS_TCP_FLAG_URG",
-    [64] = "OFP_OVS_TCP_FLAG_ECE",
-    [128] = "OFP_OVS_TCP_FLAG_CWR",
-    [256] = "OFP_OVS_TCP_FLAG_NS",
+enum_v6_ofp_bsn_port_usage = {
+    [0] = "OFP_BSN_PORT_UNUSED",
+    [1] = "OFP_BSN_PORT_TRANSMIT_ONLY",
+    [2] = "OFP_BSN_PORT_RECEIVE_ONLY",
+    [3] = "OFP_BSN_PORT_BIDIRECTION",
 }
 
 enum_v6_ofp_table_mod_failed_code = {
@@ -4122,13 +3989,6 @@ enum_v6_ofp_meter = {
     [4294967295] = "OFPM_ALL",
 }
 
-enum_v6_ofp_bsn_module_eeprom_extended_identifier = {
-    [0] = "OFP_BSN_MODULE_EEPROM_EXT_IDENTIFIER_NON_GBIC",
-    [4] = "OFP_BSN_MODULE_EEPROM_EXT_IDENTIFIER_GBIC_SFP",
-    [7] = "OFP_BSN_MODULE_EEPROM_EXT_IDENTIFIER_GBIC_MOD_DEF",
-    [8] = "OFP_BSN_MODULE_EEPROM_EXT_IDENTIFIER_UNKNOWN",
-}
-
 enum_v6_of_bsn_pdu_slot_num = {
     [255] = "BSN_PDU_SLOT_NUM_ANY",
 }
@@ -4137,10 +3997,10 @@ enum_v6_ofp_bsn_udf_mode = {
     [1] = "OFP_BSN_UDF_8X2_BYTES",
 }
 
-enum_v6_ofp_bsn_module_eeprom_cu_cmplnce = {
-    [0] = "OFP_BSN_MODULE_EEPROM_CU_CMPLLNCE_UNSPECIFIED",
-    [1] = "OFP_BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_APP_E",
-    [4] = "OFP_BSN_MODULE_EEPROM_CU_CMPLLNCE_SFF_8431_LIMITING",
+enum_v6_ofp_bsn_multicast_packet = {
+    [0] = "OFP_BSN_MULTICAST_PACKET_NONE",
+    [1] = "OFP_BSN_MULTICAST_PACKET_PIM_HELLO",
+    [2] = "OFP_BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE",
 }
 
 enum_v6_ofp_bsn_tcp_flag = {
@@ -4266,13 +4126,6 @@ enum_v6_ofp_queue_op_failed_code = {
     [2] = "OFPQOFC_EPERM",
 }
 
-enum_v6_ofp_bsn_module_eeprom_identifier = {
-    [0] = "OFP_BSN_MODULE_EEPROM_IDENTIFIER_NONE",
-    [1] = "OFP_BSN_MODULE_EEPROM_IDENTIFIER_GBIC",
-    [2] = "OFP_BSN_MODULE_EEPROM_IDENTIFIER_ONBOARD",
-    [3] = "OFP_BSN_MODULE_EEPROM_IDENTIFIER_SFP",
-}
-
 enum_v6_ofp_bsn_ip_tunnel_type = {
     [0] = "OFP_BSN_IP_TUNNEL_TYPE_NONE",
     [1] = "OFP_BSN_IP_TUNNEL_TYPE_PIM",
@@ -4299,12 +4152,6 @@ enum_v6_macro_definitions = {
 enum_v6_ofp_bundle_prop_type = {
     [1] = "OFPBPT_TIME",
     [65535] = "OFPBPT_EXPERIMENTER",
-}
-
-enum_v6_ofp_bsn_multicast_packet = {
-    [0] = "OFP_BSN_MULTICAST_PACKET_NONE",
-    [1] = "OFP_BSN_MULTICAST_PACKET_PIM_HELLO",
-    [2] = "OFP_BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE",
 }
 
 enum_v6_ofp_bad_request_code = {
@@ -4500,35 +4347,6 @@ enum_v6_ofp_bsn_fabric_port_role = {
     [1] = "OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE",
 }
 
-enum_v6_ofp_bsn_module_eeprom_encoding = {
-    [0] = "OFP_BSN_MODULE_EEPROM_ENCODING_UNSPECIFIED",
-    [1] = "OFP_BSN_MODULE_EEPROM_ENCODING_8B_10B",
-    [2] = "OFP_BSN_MODULE_EEPROM_ENCODING_4B_5B",
-    [3] = "OFP_BSN_MODULE_EEPROM_ENCODING_NRZ",
-    [4] = "OFP_BSN_MODULE_EEPROM_ENCODING_MANCHESTER",
-    [5] = "OFP_BSN_MODULE_EEPROM_ENCODING_SONET_SCRAMBLED",
-    [6] = "OFP_BSN_MODULE_EEPROM_ENCODING_64B_66B",
-}
-
-enum_v6_ofp_bsn_module_eeprom_connector = {
-    [0] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_NONE",
-    [1] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_SC",
-    [2] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_FC_1_COPPER",
-    [3] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_FC_2_COPPER",
-    [4] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_BNC_TNC",
-    [5] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_FC_COAX",
-    [6] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_FIBRE_JACK",
-    [7] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_LC",
-    [8] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_MT_RJ",
-    [9] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_MU",
-    [10] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_SG",
-    [11] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_OPTICAL_PIGTAIL",
-    [12] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_MPO_PARALLEL_OPTIC",
-    [32] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_HSSDC",
-    [33] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_COPPER_PIGTAIL",
-    [34] = "OFP_BSN_MODULE_EEPROM_CONNECTOR_RJ45",
-}
-
 enum_v6_ofp_bundle_features_prop_type = {
     [1] = "OFPTMPBF_TIME_CAPABILITY",
     [65535] = "OFPTMPBF_EXPERIMENTER",
@@ -4553,14 +4371,6 @@ enum_v6_ofp_role_request_failed_code = {
     [0] = "OFPRRFC_STALE",
     [1] = "OFPRRFC_UNSUP",
     [2] = "OFPRRFC_BAD_ROLE",
-}
-
-enum_v6_ofp_bsn_module_eeprom_alarm_set = {
-    [0] = "OFP_BSN_MODULE_EEPROM_ALARM_NOT_SET",
-    [1] = "OFP_BSN_MODULE_EEPROM_ALARM_HI_SET",
-    [2] = "OFP_BSN_MODULE_EEPROM_ALARM_LOW_SET",
-    [4] = "OFP_BSN_MODULE_EEPROM_ALARM_HI_WARN_SET",
-    [8] = "OFP_BSN_MODULE_EEPROM_ALARM_LOW_WARN_SET",
 }
 
 enum_v6_ofp_stats_request_flags = {
@@ -12455,8 +12265,6 @@ fields['of14.bsn_tlv_vrf.length'] = ProtoField.uint16("of14.bsn_tlv_vrf.length",
 fields['of14.bsn_tlv_vrf.value'] = ProtoField.uint32("of14.bsn_tlv_vrf.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_vxlan_egress_lag.type'] = ProtoField.uint16("of14.bsn_tlv_vxlan_egress_lag.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vxlan_egress_lag.length'] = ProtoField.uint16("of14.bsn_tlv_vxlan_egress_lag.length", "length", base.DEC, nil)
-fields['of14.bsn_unit.value'] = ProtoField.uint32("of14.bsn_unit.value", "value", base.DEC, nil)
-fields['of14.bsn_unit.unit'] = ProtoField.uint32("of14.bsn_unit.unit", "unit", base.HEX, enum_v5_ofp_bsn_unit_type)
 fields['of14.bsn_virtual_port_create_reply.version'] = ProtoField.uint8("of14.bsn_virtual_port_create_reply.version", "version", base.DEC, nil)
 fields['of14.bsn_virtual_port_create_reply.type'] = ProtoField.uint8("of14.bsn_virtual_port_create_reply.type", "type", base.DEC, nil)
 fields['of14.bsn_virtual_port_create_reply.length'] = ProtoField.uint16("of14.bsn_virtual_port_create_reply.length", "length", base.DEC, nil)
@@ -13654,58 +13462,17 @@ fields['of14.port_desc_prop_bsn.type'] = ProtoField.uint16("of14.port_desc_prop_
 fields['of14.port_desc_prop_bsn.length'] = ProtoField.uint16("of14.port_desc_prop_bsn.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn.experimenter", "experimenter", base.DEC, nil)
 fields['of14.port_desc_prop_bsn.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn.exp_type", "exp_type", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_alarm.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_alarm.type", "type", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_alarm.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_alarm.length", "length", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_alarm.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_alarm.experimenter", "experimenter", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_alarm.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_alarm.exp_type", "exp_type", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_alarm.alarm_set'] = ProtoField.uint32("of14.port_desc_prop_bsn_alarm.alarm_set", "alarm_set", base.HEX, enum_v5_ofp_bsn_module_eeprom_alarm_set)
-fields['of14.port_desc_prop_bsn_alarm.high'] = ProtoField.uint32("of14.port_desc_prop_bsn_alarm.high", "high", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_alarm.high_warn'] = ProtoField.uint32("of14.port_desc_prop_bsn_alarm.high_warn", "high_warn", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_alarm.low'] = ProtoField.uint32("of14.port_desc_prop_bsn_alarm.low", "low", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_alarm.low_warn'] = ProtoField.uint32("of14.port_desc_prop_bsn_alarm.low_warn", "low_warn", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_alarm.alarm_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_alarm.alarm_type", "alarm_type", base.HEX, enum_v5_ofp_bsn_module_eeprom_diag_type)
-fields['of14.port_desc_prop_bsn_alarm.unit'] = ProtoField.uint32("of14.port_desc_prop_bsn_alarm.unit", "unit", base.HEX, enum_v5_ofp_bsn_unit_type)
 fields['of14.port_desc_prop_bsn_breakout.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_breakout.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_breakout.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_breakout.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_breakout.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_breakout.experimenter", "experimenter", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_breakout.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_breakout.exp_type", "exp_type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_breakout.sub_interface_count'] = ProtoField.uint16("of14.port_desc_prop_bsn_breakout.sub_interface_count", "sub_interface_count", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_breakout.sub_interface_speed_gbps'] = ProtoField.uint16("of14.port_desc_prop_bsn_breakout.sub_interface_speed_gbps", "sub_interface_speed_gbps", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_diag.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_diag.type", "type", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_diag.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_diag.length", "length", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_diag.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_diag.experimenter", "experimenter", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_diag.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_diag.exp_type", "exp_type", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_diag.laser_bias_curr'] = ProtoField.bytes("of14.port_desc_prop_bsn_diag.laser_bias_curr", "laser_bias_curr")
-fields['of14.port_desc_prop_bsn_diag.laser_output_power'] = ProtoField.bytes("of14.port_desc_prop_bsn_diag.laser_output_power", "laser_output_power")
-fields['of14.port_desc_prop_bsn_diag.laser_receiver_power_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_diag.laser_receiver_power_type", "laser_receiver_power_type", base.HEX, enum_v5_ofp_bsn_module_eeprom_recv_signal_type)
-fields['of14.port_desc_prop_bsn_diag.laser_receiver_power'] = ProtoField.bytes("of14.port_desc_prop_bsn_diag.laser_receiver_power", "laser_receiver_power")
-fields['of14.port_desc_prop_bsn_diag.module_temp'] = ProtoField.bytes("of14.port_desc_prop_bsn_diag.module_temp", "module_temp")
-fields['of14.port_desc_prop_bsn_diag.module_voltage'] = ProtoField.bytes("of14.port_desc_prop_bsn_diag.module_voltage", "module_voltage")
-fields['of14._bsn_module_eeprom_transceiver.codes'] = ProtoField.uint64("of14._bsn_module_eeprom_transceiver.codes", "codes", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_ethtool.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_ethtool.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_ethtool.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_ethtool.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_ethtool.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_ethtool.experimenter", "experimenter", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_ethtool.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_ethtool.exp_type", "exp_type", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_ethtool.identifier'] = ProtoField.uint32("of14.port_desc_prop_bsn_ethtool.identifier", "identifier", base.HEX, enum_v5_ofp_bsn_module_eeprom_identifier)
-fields['of14.port_desc_prop_bsn_ethtool.extidentifier'] = ProtoField.uint32("of14.port_desc_prop_bsn_ethtool.extidentifier", "extidentifier", base.HEX, enum_v5_ofp_bsn_module_eeprom_extended_identifier)
-fields['of14.port_desc_prop_bsn_ethtool.connector'] = ProtoField.uint32("of14.port_desc_prop_bsn_ethtool.connector", "connector", base.HEX, enum_v5_ofp_bsn_module_eeprom_connector)
-fields['of14.port_desc_prop_bsn_ethtool.transdata'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.transdata", "transdata")
-fields['of14.port_desc_prop_bsn_ethtool.encoding'] = ProtoField.uint32("of14.port_desc_prop_bsn_ethtool.encoding", "encoding", base.HEX, enum_v5_ofp_bsn_module_eeprom_encoding)
-fields['of14.port_desc_prop_bsn_ethtool.br_nominal'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.br_nominal", "br_nominal")
-fields['of14.port_desc_prop_bsn_ethtool.rateidentifier'] = ProtoField.uint32("of14.port_desc_prop_bsn_ethtool.rateidentifier", "rateidentifier", base.HEX, enum_v5_ofp_bsn_module_eeprom_rate_identifier)
-fields['of14.port_desc_prop_bsn_ethtool.length_SMF_KM'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.length_SMF_KM", "length_SMF_KM")
-fields['of14.port_desc_prop_bsn_ethtool.length_SMF'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.length_SMF", "length_SMF")
-fields['of14.port_desc_prop_bsn_ethtool.length_50_um'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.length_50_um", "length_50_um")
-fields['of14.port_desc_prop_bsn_ethtool.length_625_um'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.length_625_um", "length_625_um")
-fields['of14.port_desc_prop_bsn_ethtool.length_copper'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.length_copper", "length_copper")
-fields['of14.port_desc_prop_bsn_ethtool.length_OM3'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.length_OM3", "length_OM3")
-fields['of14.port_desc_prop_bsn_ethtool.vendor_name_lo'] = ProtoField.uint64("of14.port_desc_prop_bsn_ethtool.vendor_name_lo", "vendor_name_lo", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_ethtool.vendor_name_hi'] = ProtoField.uint64("of14.port_desc_prop_bsn_ethtool.vendor_name_hi", "vendor_name_hi", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_ethtool.vendor_oui'] = ProtoField.uint32("of14.port_desc_prop_bsn_ethtool.vendor_oui", "vendor_oui", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_ethtool.vendor_pn_lo'] = ProtoField.uint64("of14.port_desc_prop_bsn_ethtool.vendor_pn_lo", "vendor_pn_lo", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_ethtool.vendor_pn_hi'] = ProtoField.uint64("of14.port_desc_prop_bsn_ethtool.vendor_pn_hi", "vendor_pn_hi", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_ethtool.vendor_rev'] = ProtoField.uint32("of14.port_desc_prop_bsn_ethtool.vendor_rev", "vendor_rev", base.DEC, nil)
-fields['of14.port_desc_prop_bsn_ethtool.more_properties'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.more_properties", "more_properties")
+fields['of14.port_desc_prop_bsn_ethtool.data_json'] = ProtoField.bytes("of14.port_desc_prop_bsn_ethtool.data_json", "data_json")
 fields['of14.port_desc_prop_bsn_forward_error_correction.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_forward_error_correction.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_forward_error_correction.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_forward_error_correction.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_forward_error_correction.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_forward_error_correction.experimenter", "experimenter", base.DEC, nil)
@@ -15800,8 +15567,6 @@ fields['of15.bsn_tlv_vrf.length'] = ProtoField.uint16("of15.bsn_tlv_vrf.length",
 fields['of15.bsn_tlv_vrf.value'] = ProtoField.uint32("of15.bsn_tlv_vrf.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_vxlan_egress_lag.type'] = ProtoField.uint16("of15.bsn_tlv_vxlan_egress_lag.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_vxlan_egress_lag.length'] = ProtoField.uint16("of15.bsn_tlv_vxlan_egress_lag.length", "length", base.DEC, nil)
-fields['of15.bsn_unit.value'] = ProtoField.uint32("of15.bsn_unit.value", "value", base.DEC, nil)
-fields['of15.bsn_unit.unit'] = ProtoField.uint32("of15.bsn_unit.unit", "unit", base.HEX, enum_v6_ofp_bsn_unit_type)
 fields['of15.bsn_virtual_port_create_reply.version'] = ProtoField.uint8("of15.bsn_virtual_port_create_reply.version", "version", base.DEC, nil)
 fields['of15.bsn_virtual_port_create_reply.type'] = ProtoField.uint8("of15.bsn_virtual_port_create_reply.type", "type", base.DEC, nil)
 fields['of15.bsn_virtual_port_create_reply.length'] = ProtoField.uint16("of15.bsn_virtual_port_create_reply.length", "length", base.DEC, nil)
@@ -17187,58 +16952,17 @@ fields['of15.port_desc_prop_bsn.type'] = ProtoField.uint16("of15.port_desc_prop_
 fields['of15.port_desc_prop_bsn.length'] = ProtoField.uint16("of15.port_desc_prop_bsn.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_bsn.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn.experimenter", "experimenter", base.DEC, nil)
 fields['of15.port_desc_prop_bsn.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn.exp_type", "exp_type", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_alarm.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_alarm.type", "type", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_alarm.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_alarm.length", "length", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_alarm.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_alarm.experimenter", "experimenter", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_alarm.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_alarm.exp_type", "exp_type", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_alarm.alarm_set'] = ProtoField.uint32("of15.port_desc_prop_bsn_alarm.alarm_set", "alarm_set", base.HEX, enum_v6_ofp_bsn_module_eeprom_alarm_set)
-fields['of15.port_desc_prop_bsn_alarm.high'] = ProtoField.uint32("of15.port_desc_prop_bsn_alarm.high", "high", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_alarm.high_warn'] = ProtoField.uint32("of15.port_desc_prop_bsn_alarm.high_warn", "high_warn", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_alarm.low'] = ProtoField.uint32("of15.port_desc_prop_bsn_alarm.low", "low", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_alarm.low_warn'] = ProtoField.uint32("of15.port_desc_prop_bsn_alarm.low_warn", "low_warn", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_alarm.alarm_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_alarm.alarm_type", "alarm_type", base.HEX, enum_v6_ofp_bsn_module_eeprom_diag_type)
-fields['of15.port_desc_prop_bsn_alarm.unit'] = ProtoField.uint32("of15.port_desc_prop_bsn_alarm.unit", "unit", base.HEX, enum_v6_ofp_bsn_unit_type)
 fields['of15.port_desc_prop_bsn_breakout.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_breakout.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_breakout.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_breakout.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_breakout.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_breakout.experimenter", "experimenter", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_breakout.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_breakout.exp_type", "exp_type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_breakout.sub_interface_count'] = ProtoField.uint16("of15.port_desc_prop_bsn_breakout.sub_interface_count", "sub_interface_count", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_breakout.sub_interface_speed_gbps'] = ProtoField.uint16("of15.port_desc_prop_bsn_breakout.sub_interface_speed_gbps", "sub_interface_speed_gbps", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_diag.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_diag.type", "type", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_diag.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_diag.length", "length", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_diag.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_diag.experimenter", "experimenter", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_diag.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_diag.exp_type", "exp_type", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_diag.laser_bias_curr'] = ProtoField.bytes("of15.port_desc_prop_bsn_diag.laser_bias_curr", "laser_bias_curr")
-fields['of15.port_desc_prop_bsn_diag.laser_output_power'] = ProtoField.bytes("of15.port_desc_prop_bsn_diag.laser_output_power", "laser_output_power")
-fields['of15.port_desc_prop_bsn_diag.laser_receiver_power_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_diag.laser_receiver_power_type", "laser_receiver_power_type", base.HEX, enum_v6_ofp_bsn_module_eeprom_recv_signal_type)
-fields['of15.port_desc_prop_bsn_diag.laser_receiver_power'] = ProtoField.bytes("of15.port_desc_prop_bsn_diag.laser_receiver_power", "laser_receiver_power")
-fields['of15.port_desc_prop_bsn_diag.module_temp'] = ProtoField.bytes("of15.port_desc_prop_bsn_diag.module_temp", "module_temp")
-fields['of15.port_desc_prop_bsn_diag.module_voltage'] = ProtoField.bytes("of15.port_desc_prop_bsn_diag.module_voltage", "module_voltage")
-fields['of15._bsn_module_eeprom_transceiver.codes'] = ProtoField.uint64("of15._bsn_module_eeprom_transceiver.codes", "codes", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_ethtool.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_ethtool.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_ethtool.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_ethtool.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_ethtool.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_ethtool.experimenter", "experimenter", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_ethtool.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_ethtool.exp_type", "exp_type", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_ethtool.identifier'] = ProtoField.uint32("of15.port_desc_prop_bsn_ethtool.identifier", "identifier", base.HEX, enum_v6_ofp_bsn_module_eeprom_identifier)
-fields['of15.port_desc_prop_bsn_ethtool.extidentifier'] = ProtoField.uint32("of15.port_desc_prop_bsn_ethtool.extidentifier", "extidentifier", base.HEX, enum_v6_ofp_bsn_module_eeprom_extended_identifier)
-fields['of15.port_desc_prop_bsn_ethtool.connector'] = ProtoField.uint32("of15.port_desc_prop_bsn_ethtool.connector", "connector", base.HEX, enum_v6_ofp_bsn_module_eeprom_connector)
-fields['of15.port_desc_prop_bsn_ethtool.transdata'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.transdata", "transdata")
-fields['of15.port_desc_prop_bsn_ethtool.encoding'] = ProtoField.uint32("of15.port_desc_prop_bsn_ethtool.encoding", "encoding", base.HEX, enum_v6_ofp_bsn_module_eeprom_encoding)
-fields['of15.port_desc_prop_bsn_ethtool.br_nominal'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.br_nominal", "br_nominal")
-fields['of15.port_desc_prop_bsn_ethtool.rateidentifier'] = ProtoField.uint32("of15.port_desc_prop_bsn_ethtool.rateidentifier", "rateidentifier", base.HEX, enum_v6_ofp_bsn_module_eeprom_rate_identifier)
-fields['of15.port_desc_prop_bsn_ethtool.length_SMF_KM'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.length_SMF_KM", "length_SMF_KM")
-fields['of15.port_desc_prop_bsn_ethtool.length_SMF'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.length_SMF", "length_SMF")
-fields['of15.port_desc_prop_bsn_ethtool.length_50_um'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.length_50_um", "length_50_um")
-fields['of15.port_desc_prop_bsn_ethtool.length_625_um'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.length_625_um", "length_625_um")
-fields['of15.port_desc_prop_bsn_ethtool.length_copper'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.length_copper", "length_copper")
-fields['of15.port_desc_prop_bsn_ethtool.length_OM3'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.length_OM3", "length_OM3")
-fields['of15.port_desc_prop_bsn_ethtool.vendor_name_lo'] = ProtoField.uint64("of15.port_desc_prop_bsn_ethtool.vendor_name_lo", "vendor_name_lo", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_ethtool.vendor_name_hi'] = ProtoField.uint64("of15.port_desc_prop_bsn_ethtool.vendor_name_hi", "vendor_name_hi", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_ethtool.vendor_oui'] = ProtoField.uint32("of15.port_desc_prop_bsn_ethtool.vendor_oui", "vendor_oui", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_ethtool.vendor_pn_lo'] = ProtoField.uint64("of15.port_desc_prop_bsn_ethtool.vendor_pn_lo", "vendor_pn_lo", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_ethtool.vendor_pn_hi'] = ProtoField.uint64("of15.port_desc_prop_bsn_ethtool.vendor_pn_hi", "vendor_pn_hi", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_ethtool.vendor_rev'] = ProtoField.uint32("of15.port_desc_prop_bsn_ethtool.vendor_rev", "vendor_rev", base.DEC, nil)
-fields['of15.port_desc_prop_bsn_ethtool.more_properties'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.more_properties", "more_properties")
+fields['of15.port_desc_prop_bsn_ethtool.data_json'] = ProtoField.bytes("of15.port_desc_prop_bsn_ethtool.data_json", "data_json")
 fields['of15.port_desc_prop_bsn_forward_error_correction.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_forward_error_correction.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_forward_error_correction.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_forward_error_correction.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_forward_error_correction.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_forward_error_correction.experimenter", "experimenter", base.DEC, nil)
@@ -25467,8 +25191,6 @@ p_of.fields = {
     fields['of14.bsn_tlv_vrf.value'],
     fields['of14.bsn_tlv_vxlan_egress_lag.type'],
     fields['of14.bsn_tlv_vxlan_egress_lag.length'],
-    fields['of14.bsn_unit.value'],
-    fields['of14.bsn_unit.unit'],
     fields['of14.bsn_virtual_port_create_reply.version'],
     fields['of14.bsn_virtual_port_create_reply.type'],
     fields['of14.bsn_virtual_port_create_reply.length'],
@@ -26666,58 +26388,17 @@ p_of.fields = {
     fields['of14.port_desc_prop_bsn.length'],
     fields['of14.port_desc_prop_bsn.experimenter'],
     fields['of14.port_desc_prop_bsn.exp_type'],
-    fields['of14.port_desc_prop_bsn_alarm.type'],
-    fields['of14.port_desc_prop_bsn_alarm.length'],
-    fields['of14.port_desc_prop_bsn_alarm.experimenter'],
-    fields['of14.port_desc_prop_bsn_alarm.exp_type'],
-    fields['of14.port_desc_prop_bsn_alarm.alarm_set'],
-    fields['of14.port_desc_prop_bsn_alarm.high'],
-    fields['of14.port_desc_prop_bsn_alarm.high_warn'],
-    fields['of14.port_desc_prop_bsn_alarm.low'],
-    fields['of14.port_desc_prop_bsn_alarm.low_warn'],
-    fields['of14.port_desc_prop_bsn_alarm.alarm_type'],
-    fields['of14.port_desc_prop_bsn_alarm.unit'],
     fields['of14.port_desc_prop_bsn_breakout.type'],
     fields['of14.port_desc_prop_bsn_breakout.length'],
     fields['of14.port_desc_prop_bsn_breakout.experimenter'],
     fields['of14.port_desc_prop_bsn_breakout.exp_type'],
     fields['of14.port_desc_prop_bsn_breakout.sub_interface_count'],
     fields['of14.port_desc_prop_bsn_breakout.sub_interface_speed_gbps'],
-    fields['of14.port_desc_prop_bsn_diag.type'],
-    fields['of14.port_desc_prop_bsn_diag.length'],
-    fields['of14.port_desc_prop_bsn_diag.experimenter'],
-    fields['of14.port_desc_prop_bsn_diag.exp_type'],
-    fields['of14.port_desc_prop_bsn_diag.laser_bias_curr'],
-    fields['of14.port_desc_prop_bsn_diag.laser_output_power'],
-    fields['of14.port_desc_prop_bsn_diag.laser_receiver_power_type'],
-    fields['of14.port_desc_prop_bsn_diag.laser_receiver_power'],
-    fields['of14.port_desc_prop_bsn_diag.module_temp'],
-    fields['of14.port_desc_prop_bsn_diag.module_voltage'],
-    fields['of14._bsn_module_eeprom_transceiver.codes'],
     fields['of14.port_desc_prop_bsn_ethtool.type'],
     fields['of14.port_desc_prop_bsn_ethtool.length'],
     fields['of14.port_desc_prop_bsn_ethtool.experimenter'],
     fields['of14.port_desc_prop_bsn_ethtool.exp_type'],
-    fields['of14.port_desc_prop_bsn_ethtool.identifier'],
-    fields['of14.port_desc_prop_bsn_ethtool.extidentifier'],
-    fields['of14.port_desc_prop_bsn_ethtool.connector'],
-    fields['of14.port_desc_prop_bsn_ethtool.transdata'],
-    fields['of14.port_desc_prop_bsn_ethtool.encoding'],
-    fields['of14.port_desc_prop_bsn_ethtool.br_nominal'],
-    fields['of14.port_desc_prop_bsn_ethtool.rateidentifier'],
-    fields['of14.port_desc_prop_bsn_ethtool.length_SMF_KM'],
-    fields['of14.port_desc_prop_bsn_ethtool.length_SMF'],
-    fields['of14.port_desc_prop_bsn_ethtool.length_50_um'],
-    fields['of14.port_desc_prop_bsn_ethtool.length_625_um'],
-    fields['of14.port_desc_prop_bsn_ethtool.length_copper'],
-    fields['of14.port_desc_prop_bsn_ethtool.length_OM3'],
-    fields['of14.port_desc_prop_bsn_ethtool.vendor_name_lo'],
-    fields['of14.port_desc_prop_bsn_ethtool.vendor_name_hi'],
-    fields['of14.port_desc_prop_bsn_ethtool.vendor_oui'],
-    fields['of14.port_desc_prop_bsn_ethtool.vendor_pn_lo'],
-    fields['of14.port_desc_prop_bsn_ethtool.vendor_pn_hi'],
-    fields['of14.port_desc_prop_bsn_ethtool.vendor_rev'],
-    fields['of14.port_desc_prop_bsn_ethtool.more_properties'],
+    fields['of14.port_desc_prop_bsn_ethtool.data_json'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.type'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.length'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.experimenter'],
@@ -28812,8 +28493,6 @@ p_of.fields = {
     fields['of15.bsn_tlv_vrf.value'],
     fields['of15.bsn_tlv_vxlan_egress_lag.type'],
     fields['of15.bsn_tlv_vxlan_egress_lag.length'],
-    fields['of15.bsn_unit.value'],
-    fields['of15.bsn_unit.unit'],
     fields['of15.bsn_virtual_port_create_reply.version'],
     fields['of15.bsn_virtual_port_create_reply.type'],
     fields['of15.bsn_virtual_port_create_reply.length'],
@@ -30199,58 +29878,17 @@ p_of.fields = {
     fields['of15.port_desc_prop_bsn.length'],
     fields['of15.port_desc_prop_bsn.experimenter'],
     fields['of15.port_desc_prop_bsn.exp_type'],
-    fields['of15.port_desc_prop_bsn_alarm.type'],
-    fields['of15.port_desc_prop_bsn_alarm.length'],
-    fields['of15.port_desc_prop_bsn_alarm.experimenter'],
-    fields['of15.port_desc_prop_bsn_alarm.exp_type'],
-    fields['of15.port_desc_prop_bsn_alarm.alarm_set'],
-    fields['of15.port_desc_prop_bsn_alarm.high'],
-    fields['of15.port_desc_prop_bsn_alarm.high_warn'],
-    fields['of15.port_desc_prop_bsn_alarm.low'],
-    fields['of15.port_desc_prop_bsn_alarm.low_warn'],
-    fields['of15.port_desc_prop_bsn_alarm.alarm_type'],
-    fields['of15.port_desc_prop_bsn_alarm.unit'],
     fields['of15.port_desc_prop_bsn_breakout.type'],
     fields['of15.port_desc_prop_bsn_breakout.length'],
     fields['of15.port_desc_prop_bsn_breakout.experimenter'],
     fields['of15.port_desc_prop_bsn_breakout.exp_type'],
     fields['of15.port_desc_prop_bsn_breakout.sub_interface_count'],
     fields['of15.port_desc_prop_bsn_breakout.sub_interface_speed_gbps'],
-    fields['of15.port_desc_prop_bsn_diag.type'],
-    fields['of15.port_desc_prop_bsn_diag.length'],
-    fields['of15.port_desc_prop_bsn_diag.experimenter'],
-    fields['of15.port_desc_prop_bsn_diag.exp_type'],
-    fields['of15.port_desc_prop_bsn_diag.laser_bias_curr'],
-    fields['of15.port_desc_prop_bsn_diag.laser_output_power'],
-    fields['of15.port_desc_prop_bsn_diag.laser_receiver_power_type'],
-    fields['of15.port_desc_prop_bsn_diag.laser_receiver_power'],
-    fields['of15.port_desc_prop_bsn_diag.module_temp'],
-    fields['of15.port_desc_prop_bsn_diag.module_voltage'],
-    fields['of15._bsn_module_eeprom_transceiver.codes'],
     fields['of15.port_desc_prop_bsn_ethtool.type'],
     fields['of15.port_desc_prop_bsn_ethtool.length'],
     fields['of15.port_desc_prop_bsn_ethtool.experimenter'],
     fields['of15.port_desc_prop_bsn_ethtool.exp_type'],
-    fields['of15.port_desc_prop_bsn_ethtool.identifier'],
-    fields['of15.port_desc_prop_bsn_ethtool.extidentifier'],
-    fields['of15.port_desc_prop_bsn_ethtool.connector'],
-    fields['of15.port_desc_prop_bsn_ethtool.transdata'],
-    fields['of15.port_desc_prop_bsn_ethtool.encoding'],
-    fields['of15.port_desc_prop_bsn_ethtool.br_nominal'],
-    fields['of15.port_desc_prop_bsn_ethtool.rateidentifier'],
-    fields['of15.port_desc_prop_bsn_ethtool.length_SMF_KM'],
-    fields['of15.port_desc_prop_bsn_ethtool.length_SMF'],
-    fields['of15.port_desc_prop_bsn_ethtool.length_50_um'],
-    fields['of15.port_desc_prop_bsn_ethtool.length_625_um'],
-    fields['of15.port_desc_prop_bsn_ethtool.length_copper'],
-    fields['of15.port_desc_prop_bsn_ethtool.length_OM3'],
-    fields['of15.port_desc_prop_bsn_ethtool.vendor_name_lo'],
-    fields['of15.port_desc_prop_bsn_ethtool.vendor_name_hi'],
-    fields['of15.port_desc_prop_bsn_ethtool.vendor_oui'],
-    fields['of15.port_desc_prop_bsn_ethtool.vendor_pn_lo'],
-    fields['of15.port_desc_prop_bsn_ethtool.vendor_pn_hi'],
-    fields['of15.port_desc_prop_bsn_ethtool.vendor_rev'],
-    fields['of15.port_desc_prop_bsn_ethtool.more_properties'],
+    fields['of15.port_desc_prop_bsn_ethtool.data_json'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.type'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.length'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.experimenter'],
@@ -50475,12 +50113,6 @@ function dissect_of_bsn_tlv_vxlan_egress_lag_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[117] = dissect_of_bsn_tlv_vxlan_egress_lag_v5
 
--- top-level class of_bsn_unit
-function dissect_of_bsn_unit_v5(reader, subtree)
-    read_uint32_t(reader, 5, subtree, 'of14.bsn_unit.value')
-    read_uint8_t(reader, 5, subtree, 'of14.bsn_unit.unit')
-    return 'of_bsn_unit'
-end
 -- child class of_bsn_virtual_port_create_reply
 -- Child of of_bsn_header
 function dissect_of_bsn_virtual_port_create_reply_v5(reader, subtree)
@@ -53823,24 +53455,6 @@ function dissect_of_port_desc_prop_bsn_v5(reader, subtree)
 end
 of_port_desc_prop_experimenter_v5_dissectors[6035143] = dissect_of_port_desc_prop_bsn_v5
 
--- child class of_port_desc_prop_bsn_alarm
--- Child of of_port_desc_prop_bsn
-function dissect_of_port_desc_prop_bsn_alarm_v5(reader, subtree)
-    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_alarm.type')
-    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_alarm.length')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_alarm.experimenter')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_alarm.exp_type')
-    read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_alarm.alarm_set')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_alarm.high')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_alarm.high_warn')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_alarm.low')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_alarm.low_warn')
-    read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_alarm.alarm_type')
-    read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_alarm.unit')
-    return 'of_port_desc_prop_bsn_alarm'
-end
-of_port_desc_prop_bsn_v5_dissectors[8] = dissect_of_port_desc_prop_bsn_alarm_v5
-
 -- child class of_port_desc_prop_bsn_breakout
 -- Child of of_port_desc_prop_bsn
 function dissect_of_port_desc_prop_bsn_breakout_v5(reader, subtree)
@@ -53854,28 +53468,6 @@ function dissect_of_port_desc_prop_bsn_breakout_v5(reader, subtree)
 end
 of_port_desc_prop_bsn_v5_dissectors[3] = dissect_of_port_desc_prop_bsn_breakout_v5
 
--- child class of_port_desc_prop_bsn_diag
--- Child of of_port_desc_prop_bsn
-function dissect_of_port_desc_prop_bsn_diag_v5(reader, subtree)
-    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_diag.type')
-    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_diag.length')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_diag.experimenter')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_diag.exp_type')
-    read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_diag.laser_bias_curr')
-    read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_diag.laser_output_power')
-    read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_diag.laser_receiver_power_type')
-    read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_diag.laser_receiver_power')
-    read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_diag.module_temp')
-    read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_diag.module_voltage')
-    return 'of_port_desc_prop_bsn_diag'
-end
-of_port_desc_prop_bsn_v5_dissectors[7] = dissect_of_port_desc_prop_bsn_diag_v5
-
--- top-level class ofp_bsn_module_eeprom_transceiver
-function dissect_ofp_bsn_module_eeprom_transceiver_v5(reader, subtree)
-    read_uint64_t(reader, 5, subtree, 'of14._bsn_module_eeprom_transceiver.codes')
-    return 'ofp_bsn_module_eeprom_transceiver'
-end
 -- child class of_port_desc_prop_bsn_ethtool
 -- Child of of_port_desc_prop_bsn
 function dissect_of_port_desc_prop_bsn_ethtool_v5(reader, subtree)
@@ -53886,26 +53478,7 @@ function dissect_of_port_desc_prop_bsn_ethtool_v5(reader, subtree)
     read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.length')
     read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.experimenter')
     read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.exp_type')
-    read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.identifier')
-    read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.extidentifier')
-    read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.connector')
-    read_ofp_bsn_module_eeprom_transceiver_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.transdata')
-    read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.encoding')
-    read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.br_nominal')
-    read_uint8_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.rateidentifier')
-    read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.length_SMF_KM')
-    read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.length_SMF')
-    read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.length_50_um')
-    read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.length_625_um')
-    read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.length_copper')
-    read_of_bsn_unit_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.length_OM3')
-    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_name_lo')
-    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_name_hi')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_oui')
-    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_pn_lo')
-    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_pn_hi')
-    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.vendor_rev')
-    read_list(reader, dissect_of_port_desc_prop_v5, subtree, 'of_port_desc_prop')
+    read_of_octets_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_ethtool.data_json')
     return 'of_port_desc_prop_bsn_ethtool'
 end
 of_port_desc_prop_bsn_v5_dissectors[6] = dissect_of_port_desc_prop_bsn_ethtool_v5
@@ -59417,12 +58990,6 @@ function dissect_of_bsn_tlv_vxlan_egress_lag_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[117] = dissect_of_bsn_tlv_vxlan_egress_lag_v6
 
--- top-level class of_bsn_unit
-function dissect_of_bsn_unit_v6(reader, subtree)
-    read_uint32_t(reader, 6, subtree, 'of15.bsn_unit.value')
-    read_uint8_t(reader, 6, subtree, 'of15.bsn_unit.unit')
-    return 'of_bsn_unit'
-end
 -- child class of_bsn_virtual_port_create_reply
 -- Child of of_bsn_header
 function dissect_of_bsn_virtual_port_create_reply_v6(reader, subtree)
@@ -63257,24 +62824,6 @@ function dissect_of_port_desc_prop_bsn_v6(reader, subtree)
 end
 of_port_desc_prop_experimenter_v6_dissectors[6035143] = dissect_of_port_desc_prop_bsn_v6
 
--- child class of_port_desc_prop_bsn_alarm
--- Child of of_port_desc_prop_bsn
-function dissect_of_port_desc_prop_bsn_alarm_v6(reader, subtree)
-    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_alarm.type')
-    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_alarm.length')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_alarm.experimenter')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_alarm.exp_type')
-    read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_alarm.alarm_set')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_alarm.high')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_alarm.high_warn')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_alarm.low')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_alarm.low_warn')
-    read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_alarm.alarm_type')
-    read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_alarm.unit')
-    return 'of_port_desc_prop_bsn_alarm'
-end
-of_port_desc_prop_bsn_v6_dissectors[8] = dissect_of_port_desc_prop_bsn_alarm_v6
-
 -- child class of_port_desc_prop_bsn_breakout
 -- Child of of_port_desc_prop_bsn
 function dissect_of_port_desc_prop_bsn_breakout_v6(reader, subtree)
@@ -63288,28 +62837,6 @@ function dissect_of_port_desc_prop_bsn_breakout_v6(reader, subtree)
 end
 of_port_desc_prop_bsn_v6_dissectors[3] = dissect_of_port_desc_prop_bsn_breakout_v6
 
--- child class of_port_desc_prop_bsn_diag
--- Child of of_port_desc_prop_bsn
-function dissect_of_port_desc_prop_bsn_diag_v6(reader, subtree)
-    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_diag.type')
-    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_diag.length')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_diag.experimenter')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_diag.exp_type')
-    read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_diag.laser_bias_curr')
-    read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_diag.laser_output_power')
-    read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_diag.laser_receiver_power_type')
-    read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_diag.laser_receiver_power')
-    read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_diag.module_temp')
-    read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_diag.module_voltage')
-    return 'of_port_desc_prop_bsn_diag'
-end
-of_port_desc_prop_bsn_v6_dissectors[7] = dissect_of_port_desc_prop_bsn_diag_v6
-
--- top-level class ofp_bsn_module_eeprom_transceiver
-function dissect_ofp_bsn_module_eeprom_transceiver_v6(reader, subtree)
-    read_uint64_t(reader, 6, subtree, 'of15._bsn_module_eeprom_transceiver.codes')
-    return 'ofp_bsn_module_eeprom_transceiver'
-end
 -- child class of_port_desc_prop_bsn_ethtool
 -- Child of of_port_desc_prop_bsn
 function dissect_of_port_desc_prop_bsn_ethtool_v6(reader, subtree)
@@ -63320,26 +62847,7 @@ function dissect_of_port_desc_prop_bsn_ethtool_v6(reader, subtree)
     read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.length')
     read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.experimenter')
     read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.exp_type')
-    read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.identifier')
-    read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.extidentifier')
-    read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.connector')
-    read_ofp_bsn_module_eeprom_transceiver_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.transdata')
-    read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.encoding')
-    read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.br_nominal')
-    read_uint8_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.rateidentifier')
-    read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.length_SMF_KM')
-    read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.length_SMF')
-    read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.length_50_um')
-    read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.length_625_um')
-    read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.length_copper')
-    read_of_bsn_unit_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.length_OM3')
-    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_name_lo')
-    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_name_hi')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_oui')
-    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_pn_lo')
-    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_pn_hi')
-    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.vendor_rev')
-    read_list(reader, dissect_of_port_desc_prop_v6, subtree, 'of_port_desc_prop')
+    read_of_octets_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_ethtool.data_json')
     return 'of_port_desc_prop_bsn_ethtool'
 end
 of_port_desc_prop_bsn_v6_dissectors[6] = dissect_of_port_desc_prop_bsn_ethtool_v6

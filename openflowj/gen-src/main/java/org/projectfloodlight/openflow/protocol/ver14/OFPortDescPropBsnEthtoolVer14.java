@@ -28,131 +28,33 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import com.google.common.collect.ImmutableSet;
-import java.util.List;
-import com.google.common.collect.ImmutableList;
 import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
+import java.util.Arrays;
 
 class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
     private static final Logger logger = LoggerFactory.getLogger(OFPortDescPropBsnEthtoolVer14.class);
     // version: 1.4
     final static byte WIRE_VERSION = 5;
-    final static int MINIMUM_LENGTH = 100;
+    final static int MINIMUM_LENGTH = 12;
 
-        private final static Set<OFBsnModuleEepromIdentifier> DEFAULT_IDENTIFIER = ImmutableSet.<OFBsnModuleEepromIdentifier>of();
-        private final static Set<OFBsnModuleEepromExtendedIdentifier> DEFAULT_EXTIDENTIFIER = ImmutableSet.<OFBsnModuleEepromExtendedIdentifier>of();
-        private final static Set<OFBsnModuleEepromConnector> DEFAULT_CONNECTOR = ImmutableSet.<OFBsnModuleEepromConnector>of();
-        private final static Set<OFBsnModuleEepromEncoding> DEFAULT_ENCODING = ImmutableSet.<OFBsnModuleEepromEncoding>of();
-        private final static Set<OFBsnModuleEepromRateIdentifier> DEFAULT_RATEIDENTIFIER = ImmutableSet.<OFBsnModuleEepromRateIdentifier>of();
-        private final static U64 DEFAULT_VENDOR_NAME_LO = U64.ZERO;
-        private final static U64 DEFAULT_VENDOR_NAME_HI = U64.ZERO;
-        private final static long DEFAULT_VENDOR_OUI = 0x0L;
-        private final static U64 DEFAULT_VENDOR_PN_LO = U64.ZERO;
-        private final static U64 DEFAULT_VENDOR_PN_HI = U64.ZERO;
-        private final static long DEFAULT_VENDOR_REV = 0x0L;
-        private final static List<OFPortDescProp> DEFAULT_MORE_PROPERTIES = ImmutableList.<OFPortDescProp>of();
+        private final static byte[] DEFAULT_DATA_JSON = new byte[0];
 
     // OF message fields
-    private final Set<OFBsnModuleEepromIdentifier> identifier;
-    private final Set<OFBsnModuleEepromExtendedIdentifier> extidentifier;
-    private final Set<OFBsnModuleEepromConnector> connector;
-    private final OFBsnModuleEepromTransceiver transdata;
-    private final Set<OFBsnModuleEepromEncoding> encoding;
-    private final OFBsnUnit brNominal;
-    private final Set<OFBsnModuleEepromRateIdentifier> rateidentifier;
-    private final OFBsnUnit lengthSmfKm;
-    private final OFBsnUnit lengthSmf;
-    private final OFBsnUnit length50Um;
-    private final OFBsnUnit length625Um;
-    private final OFBsnUnit lengthCopper;
-    private final OFBsnUnit lengthOm3;
-    private final U64 vendorNameLo;
-    private final U64 vendorNameHi;
-    private final long vendorOui;
-    private final U64 vendorPnLo;
-    private final U64 vendorPnHi;
-    private final long vendorRev;
-    private final List<OFPortDescProp> moreProperties;
+    private final byte[] dataJson;
 //
+    // Immutable default instance
+    final static OFPortDescPropBsnEthtoolVer14 DEFAULT = new OFPortDescPropBsnEthtoolVer14(
+        DEFAULT_DATA_JSON
+    );
 
     // package private constructor - used by readers, builders, and factory
-    OFPortDescPropBsnEthtoolVer14(Set<OFBsnModuleEepromIdentifier> identifier, Set<OFBsnModuleEepromExtendedIdentifier> extidentifier, Set<OFBsnModuleEepromConnector> connector, OFBsnModuleEepromTransceiver transdata, Set<OFBsnModuleEepromEncoding> encoding, OFBsnUnit brNominal, Set<OFBsnModuleEepromRateIdentifier> rateidentifier, OFBsnUnit lengthSmfKm, OFBsnUnit lengthSmf, OFBsnUnit length50Um, OFBsnUnit length625Um, OFBsnUnit lengthCopper, OFBsnUnit lengthOm3, U64 vendorNameLo, U64 vendorNameHi, long vendorOui, U64 vendorPnLo, U64 vendorPnHi, long vendorRev, List<OFPortDescProp> moreProperties) {
-        if(identifier == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property identifier cannot be null");
+    OFPortDescPropBsnEthtoolVer14(byte[] dataJson) {
+        if(dataJson == null) {
+            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property dataJson cannot be null");
         }
-        if(extidentifier == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property extidentifier cannot be null");
-        }
-        if(connector == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property connector cannot be null");
-        }
-        if(transdata == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property transdata cannot be null");
-        }
-        if(encoding == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property encoding cannot be null");
-        }
-        if(brNominal == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property brNominal cannot be null");
-        }
-        if(rateidentifier == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property rateidentifier cannot be null");
-        }
-        if(lengthSmfKm == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property lengthSmfKm cannot be null");
-        }
-        if(lengthSmf == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property lengthSmf cannot be null");
-        }
-        if(length50Um == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property length50Um cannot be null");
-        }
-        if(length625Um == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property length625Um cannot be null");
-        }
-        if(lengthCopper == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property lengthCopper cannot be null");
-        }
-        if(lengthOm3 == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property lengthOm3 cannot be null");
-        }
-        if(vendorNameLo == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property vendorNameLo cannot be null");
-        }
-        if(vendorNameHi == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property vendorNameHi cannot be null");
-        }
-        if(vendorPnLo == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property vendorPnLo cannot be null");
-        }
-        if(vendorPnHi == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property vendorPnHi cannot be null");
-        }
-        if(moreProperties == null) {
-            throw new NullPointerException("OFPortDescPropBsnEthtoolVer14: property moreProperties cannot be null");
-        }
-        this.identifier = identifier;
-        this.extidentifier = extidentifier;
-        this.connector = connector;
-        this.transdata = transdata;
-        this.encoding = encoding;
-        this.brNominal = brNominal;
-        this.rateidentifier = rateidentifier;
-        this.lengthSmfKm = lengthSmfKm;
-        this.lengthSmf = lengthSmf;
-        this.length50Um = length50Um;
-        this.length625Um = length625Um;
-        this.lengthCopper = lengthCopper;
-        this.lengthOm3 = lengthOm3;
-        this.vendorNameLo = vendorNameLo;
-        this.vendorNameHi = vendorNameHi;
-        this.vendorOui = vendorOui;
-        this.vendorPnLo = vendorPnLo;
-        this.vendorPnHi = vendorPnHi;
-        this.vendorRev = vendorRev;
-        this.moreProperties = moreProperties;
+        this.dataJson = dataJson;
     }
 
     // Accessors for OF message fields
@@ -172,103 +74,8 @@ class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
     }
 
     @Override
-    public Set<OFBsnModuleEepromIdentifier> getIdentifier() {
-        return identifier;
-    }
-
-    @Override
-    public Set<OFBsnModuleEepromExtendedIdentifier> getExtidentifier() {
-        return extidentifier;
-    }
-
-    @Override
-    public Set<OFBsnModuleEepromConnector> getConnector() {
-        return connector;
-    }
-
-    @Override
-    public OFBsnModuleEepromTransceiver getTransdata() {
-        return transdata;
-    }
-
-    @Override
-    public Set<OFBsnModuleEepromEncoding> getEncoding() {
-        return encoding;
-    }
-
-    @Override
-    public OFBsnUnit getBrNominal() {
-        return brNominal;
-    }
-
-    @Override
-    public Set<OFBsnModuleEepromRateIdentifier> getRateidentifier() {
-        return rateidentifier;
-    }
-
-    @Override
-    public OFBsnUnit getLengthSmfKm() {
-        return lengthSmfKm;
-    }
-
-    @Override
-    public OFBsnUnit getLengthSmf() {
-        return lengthSmf;
-    }
-
-    @Override
-    public OFBsnUnit getLength50Um() {
-        return length50Um;
-    }
-
-    @Override
-    public OFBsnUnit getLength625Um() {
-        return length625Um;
-    }
-
-    @Override
-    public OFBsnUnit getLengthCopper() {
-        return lengthCopper;
-    }
-
-    @Override
-    public OFBsnUnit getLengthOm3() {
-        return lengthOm3;
-    }
-
-    @Override
-    public U64 getVendorNameLo() {
-        return vendorNameLo;
-    }
-
-    @Override
-    public U64 getVendorNameHi() {
-        return vendorNameHi;
-    }
-
-    @Override
-    public long getVendorOui() {
-        return vendorOui;
-    }
-
-    @Override
-    public U64 getVendorPnLo() {
-        return vendorPnLo;
-    }
-
-    @Override
-    public U64 getVendorPnHi() {
-        return vendorPnHi;
-    }
-
-    @Override
-    public long getVendorRev() {
-        return vendorRev;
-    }
-
-    @Override
-    public List<OFPortDescProp> getMoreProperties() {
-        return moreProperties;
+    public byte[] getDataJson() {
+        return dataJson;
     }
 
     @Override
@@ -286,46 +93,8 @@ class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
         final OFPortDescPropBsnEthtoolVer14 parentMessage;
 
         // OF message fields
-        private boolean identifierSet;
-        private Set<OFBsnModuleEepromIdentifier> identifier;
-        private boolean extidentifierSet;
-        private Set<OFBsnModuleEepromExtendedIdentifier> extidentifier;
-        private boolean connectorSet;
-        private Set<OFBsnModuleEepromConnector> connector;
-        private boolean transdataSet;
-        private OFBsnModuleEepromTransceiver transdata;
-        private boolean encodingSet;
-        private Set<OFBsnModuleEepromEncoding> encoding;
-        private boolean brNominalSet;
-        private OFBsnUnit brNominal;
-        private boolean rateidentifierSet;
-        private Set<OFBsnModuleEepromRateIdentifier> rateidentifier;
-        private boolean lengthSmfKmSet;
-        private OFBsnUnit lengthSmfKm;
-        private boolean lengthSmfSet;
-        private OFBsnUnit lengthSmf;
-        private boolean length50UmSet;
-        private OFBsnUnit length50Um;
-        private boolean length625UmSet;
-        private OFBsnUnit length625Um;
-        private boolean lengthCopperSet;
-        private OFBsnUnit lengthCopper;
-        private boolean lengthOm3Set;
-        private OFBsnUnit lengthOm3;
-        private boolean vendorNameLoSet;
-        private U64 vendorNameLo;
-        private boolean vendorNameHiSet;
-        private U64 vendorNameHi;
-        private boolean vendorOuiSet;
-        private long vendorOui;
-        private boolean vendorPnLoSet;
-        private U64 vendorPnLo;
-        private boolean vendorPnHiSet;
-        private U64 vendorPnHi;
-        private boolean vendorRevSet;
-        private long vendorRev;
-        private boolean morePropertiesSet;
-        private List<OFPortDescProp> moreProperties;
+        private boolean dataJsonSet;
+        private byte[] dataJson;
 
         BuilderWithParent(OFPortDescPropBsnEthtoolVer14 parentMessage) {
             this.parentMessage = parentMessage;
@@ -351,223 +120,14 @@ class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
     @Override
-    public Set<OFBsnModuleEepromIdentifier> getIdentifier() {
-        return identifier;
+    public byte[] getDataJson() {
+        return dataJson;
     }
 
     @Override
-    public OFPortDescPropBsnEthtool.Builder setIdentifier(Set<OFBsnModuleEepromIdentifier> identifier) {
-        this.identifier = identifier;
-        this.identifierSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFBsnModuleEepromExtendedIdentifier> getExtidentifier() {
-        return extidentifier;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setExtidentifier(Set<OFBsnModuleEepromExtendedIdentifier> extidentifier) {
-        this.extidentifier = extidentifier;
-        this.extidentifierSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFBsnModuleEepromConnector> getConnector() {
-        return connector;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setConnector(Set<OFBsnModuleEepromConnector> connector) {
-        this.connector = connector;
-        this.connectorSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnModuleEepromTransceiver getTransdata() {
-        return transdata;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setTransdata(OFBsnModuleEepromTransceiver transdata) {
-        this.transdata = transdata;
-        this.transdataSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFBsnModuleEepromEncoding> getEncoding() {
-        return encoding;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setEncoding(Set<OFBsnModuleEepromEncoding> encoding) {
-        this.encoding = encoding;
-        this.encodingSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getBrNominal() {
-        return brNominal;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setBrNominal(OFBsnUnit brNominal) {
-        this.brNominal = brNominal;
-        this.brNominalSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFBsnModuleEepromRateIdentifier> getRateidentifier() {
-        return rateidentifier;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setRateidentifier(Set<OFBsnModuleEepromRateIdentifier> rateidentifier) {
-        this.rateidentifier = rateidentifier;
-        this.rateidentifierSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getLengthSmfKm() {
-        return lengthSmfKm;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setLengthSmfKm(OFBsnUnit lengthSmfKm) {
-        this.lengthSmfKm = lengthSmfKm;
-        this.lengthSmfKmSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getLengthSmf() {
-        return lengthSmf;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setLengthSmf(OFBsnUnit lengthSmf) {
-        this.lengthSmf = lengthSmf;
-        this.lengthSmfSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getLength50Um() {
-        return length50Um;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setLength50Um(OFBsnUnit length50Um) {
-        this.length50Um = length50Um;
-        this.length50UmSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getLength625Um() {
-        return length625Um;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setLength625Um(OFBsnUnit length625Um) {
-        this.length625Um = length625Um;
-        this.length625UmSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getLengthCopper() {
-        return lengthCopper;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setLengthCopper(OFBsnUnit lengthCopper) {
-        this.lengthCopper = lengthCopper;
-        this.lengthCopperSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getLengthOm3() {
-        return lengthOm3;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setLengthOm3(OFBsnUnit lengthOm3) {
-        this.lengthOm3 = lengthOm3;
-        this.lengthOm3Set = true;
-        return this;
-    }
-    @Override
-    public U64 getVendorNameLo() {
-        return vendorNameLo;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setVendorNameLo(U64 vendorNameLo) {
-        this.vendorNameLo = vendorNameLo;
-        this.vendorNameLoSet = true;
-        return this;
-    }
-    @Override
-    public U64 getVendorNameHi() {
-        return vendorNameHi;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setVendorNameHi(U64 vendorNameHi) {
-        this.vendorNameHi = vendorNameHi;
-        this.vendorNameHiSet = true;
-        return this;
-    }
-    @Override
-    public long getVendorOui() {
-        return vendorOui;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setVendorOui(long vendorOui) {
-        this.vendorOui = vendorOui;
-        this.vendorOuiSet = true;
-        return this;
-    }
-    @Override
-    public U64 getVendorPnLo() {
-        return vendorPnLo;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setVendorPnLo(U64 vendorPnLo) {
-        this.vendorPnLo = vendorPnLo;
-        this.vendorPnLoSet = true;
-        return this;
-    }
-    @Override
-    public U64 getVendorPnHi() {
-        return vendorPnHi;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setVendorPnHi(U64 vendorPnHi) {
-        this.vendorPnHi = vendorPnHi;
-        this.vendorPnHiSet = true;
-        return this;
-    }
-    @Override
-    public long getVendorRev() {
-        return vendorRev;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setVendorRev(long vendorRev) {
-        this.vendorRev = vendorRev;
-        this.vendorRevSet = true;
-        return this;
-    }
-    @Override
-    public List<OFPortDescProp> getMoreProperties() {
-        return moreProperties;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setMoreProperties(List<OFPortDescProp> moreProperties) {
-        this.moreProperties = moreProperties;
-        this.morePropertiesSet = true;
+    public OFPortDescPropBsnEthtool.Builder setDataJson(byte[] dataJson) {
+        this.dataJson = dataJson;
+        this.dataJsonSet = true;
         return this;
     }
     @Override
@@ -579,85 +139,13 @@ class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
 
         @Override
         public OFPortDescPropBsnEthtool build() {
-                Set<OFBsnModuleEepromIdentifier> identifier = this.identifierSet ? this.identifier : parentMessage.identifier;
-                if(identifier == null)
-                    throw new NullPointerException("Property identifier must not be null");
-                Set<OFBsnModuleEepromExtendedIdentifier> extidentifier = this.extidentifierSet ? this.extidentifier : parentMessage.extidentifier;
-                if(extidentifier == null)
-                    throw new NullPointerException("Property extidentifier must not be null");
-                Set<OFBsnModuleEepromConnector> connector = this.connectorSet ? this.connector : parentMessage.connector;
-                if(connector == null)
-                    throw new NullPointerException("Property connector must not be null");
-                OFBsnModuleEepromTransceiver transdata = this.transdataSet ? this.transdata : parentMessage.transdata;
-                if(transdata == null)
-                    throw new NullPointerException("Property transdata must not be null");
-                Set<OFBsnModuleEepromEncoding> encoding = this.encodingSet ? this.encoding : parentMessage.encoding;
-                if(encoding == null)
-                    throw new NullPointerException("Property encoding must not be null");
-                OFBsnUnit brNominal = this.brNominalSet ? this.brNominal : parentMessage.brNominal;
-                if(brNominal == null)
-                    throw new NullPointerException("Property brNominal must not be null");
-                Set<OFBsnModuleEepromRateIdentifier> rateidentifier = this.rateidentifierSet ? this.rateidentifier : parentMessage.rateidentifier;
-                if(rateidentifier == null)
-                    throw new NullPointerException("Property rateidentifier must not be null");
-                OFBsnUnit lengthSmfKm = this.lengthSmfKmSet ? this.lengthSmfKm : parentMessage.lengthSmfKm;
-                if(lengthSmfKm == null)
-                    throw new NullPointerException("Property lengthSmfKm must not be null");
-                OFBsnUnit lengthSmf = this.lengthSmfSet ? this.lengthSmf : parentMessage.lengthSmf;
-                if(lengthSmf == null)
-                    throw new NullPointerException("Property lengthSmf must not be null");
-                OFBsnUnit length50Um = this.length50UmSet ? this.length50Um : parentMessage.length50Um;
-                if(length50Um == null)
-                    throw new NullPointerException("Property length50Um must not be null");
-                OFBsnUnit length625Um = this.length625UmSet ? this.length625Um : parentMessage.length625Um;
-                if(length625Um == null)
-                    throw new NullPointerException("Property length625Um must not be null");
-                OFBsnUnit lengthCopper = this.lengthCopperSet ? this.lengthCopper : parentMessage.lengthCopper;
-                if(lengthCopper == null)
-                    throw new NullPointerException("Property lengthCopper must not be null");
-                OFBsnUnit lengthOm3 = this.lengthOm3Set ? this.lengthOm3 : parentMessage.lengthOm3;
-                if(lengthOm3 == null)
-                    throw new NullPointerException("Property lengthOm3 must not be null");
-                U64 vendorNameLo = this.vendorNameLoSet ? this.vendorNameLo : parentMessage.vendorNameLo;
-                if(vendorNameLo == null)
-                    throw new NullPointerException("Property vendorNameLo must not be null");
-                U64 vendorNameHi = this.vendorNameHiSet ? this.vendorNameHi : parentMessage.vendorNameHi;
-                if(vendorNameHi == null)
-                    throw new NullPointerException("Property vendorNameHi must not be null");
-                long vendorOui = this.vendorOuiSet ? this.vendorOui : parentMessage.vendorOui;
-                U64 vendorPnLo = this.vendorPnLoSet ? this.vendorPnLo : parentMessage.vendorPnLo;
-                if(vendorPnLo == null)
-                    throw new NullPointerException("Property vendorPnLo must not be null");
-                U64 vendorPnHi = this.vendorPnHiSet ? this.vendorPnHi : parentMessage.vendorPnHi;
-                if(vendorPnHi == null)
-                    throw new NullPointerException("Property vendorPnHi must not be null");
-                long vendorRev = this.vendorRevSet ? this.vendorRev : parentMessage.vendorRev;
-                List<OFPortDescProp> moreProperties = this.morePropertiesSet ? this.moreProperties : parentMessage.moreProperties;
-                if(moreProperties == null)
-                    throw new NullPointerException("Property moreProperties must not be null");
+                byte[] dataJson = this.dataJsonSet ? this.dataJson : parentMessage.dataJson;
+                if(dataJson == null)
+                    throw new NullPointerException("Property dataJson must not be null");
 
                 //
                 return new OFPortDescPropBsnEthtoolVer14(
-                    identifier,
-                    extidentifier,
-                    connector,
-                    transdata,
-                    encoding,
-                    brNominal,
-                    rateidentifier,
-                    lengthSmfKm,
-                    lengthSmf,
-                    length50Um,
-                    length625Um,
-                    lengthCopper,
-                    lengthOm3,
-                    vendorNameLo,
-                    vendorNameHi,
-                    vendorOui,
-                    vendorPnLo,
-                    vendorPnHi,
-                    vendorRev,
-                    moreProperties
+                    dataJson
                 );
         }
 
@@ -665,46 +153,8 @@ class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
 
     static class Builder implements OFPortDescPropBsnEthtool.Builder {
         // OF message fields
-        private boolean identifierSet;
-        private Set<OFBsnModuleEepromIdentifier> identifier;
-        private boolean extidentifierSet;
-        private Set<OFBsnModuleEepromExtendedIdentifier> extidentifier;
-        private boolean connectorSet;
-        private Set<OFBsnModuleEepromConnector> connector;
-        private boolean transdataSet;
-        private OFBsnModuleEepromTransceiver transdata;
-        private boolean encodingSet;
-        private Set<OFBsnModuleEepromEncoding> encoding;
-        private boolean brNominalSet;
-        private OFBsnUnit brNominal;
-        private boolean rateidentifierSet;
-        private Set<OFBsnModuleEepromRateIdentifier> rateidentifier;
-        private boolean lengthSmfKmSet;
-        private OFBsnUnit lengthSmfKm;
-        private boolean lengthSmfSet;
-        private OFBsnUnit lengthSmf;
-        private boolean length50UmSet;
-        private OFBsnUnit length50Um;
-        private boolean length625UmSet;
-        private OFBsnUnit length625Um;
-        private boolean lengthCopperSet;
-        private OFBsnUnit lengthCopper;
-        private boolean lengthOm3Set;
-        private OFBsnUnit lengthOm3;
-        private boolean vendorNameLoSet;
-        private U64 vendorNameLo;
-        private boolean vendorNameHiSet;
-        private U64 vendorNameHi;
-        private boolean vendorOuiSet;
-        private long vendorOui;
-        private boolean vendorPnLoSet;
-        private U64 vendorPnLo;
-        private boolean vendorPnHiSet;
-        private U64 vendorPnHi;
-        private boolean vendorRevSet;
-        private long vendorRev;
-        private boolean morePropertiesSet;
-        private List<OFPortDescProp> moreProperties;
+        private boolean dataJsonSet;
+        private byte[] dataJson;
 
     @Override
     public int getType() {
@@ -726,223 +176,14 @@ class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
             throw new UnsupportedOperationException("Property expType is not writeable");
     }
     @Override
-    public Set<OFBsnModuleEepromIdentifier> getIdentifier() {
-        return identifier;
+    public byte[] getDataJson() {
+        return dataJson;
     }
 
     @Override
-    public OFPortDescPropBsnEthtool.Builder setIdentifier(Set<OFBsnModuleEepromIdentifier> identifier) {
-        this.identifier = identifier;
-        this.identifierSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFBsnModuleEepromExtendedIdentifier> getExtidentifier() {
-        return extidentifier;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setExtidentifier(Set<OFBsnModuleEepromExtendedIdentifier> extidentifier) {
-        this.extidentifier = extidentifier;
-        this.extidentifierSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFBsnModuleEepromConnector> getConnector() {
-        return connector;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setConnector(Set<OFBsnModuleEepromConnector> connector) {
-        this.connector = connector;
-        this.connectorSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnModuleEepromTransceiver getTransdata() {
-        return transdata;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setTransdata(OFBsnModuleEepromTransceiver transdata) {
-        this.transdata = transdata;
-        this.transdataSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFBsnModuleEepromEncoding> getEncoding() {
-        return encoding;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setEncoding(Set<OFBsnModuleEepromEncoding> encoding) {
-        this.encoding = encoding;
-        this.encodingSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getBrNominal() {
-        return brNominal;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setBrNominal(OFBsnUnit brNominal) {
-        this.brNominal = brNominal;
-        this.brNominalSet = true;
-        return this;
-    }
-    @Override
-    public Set<OFBsnModuleEepromRateIdentifier> getRateidentifier() {
-        return rateidentifier;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setRateidentifier(Set<OFBsnModuleEepromRateIdentifier> rateidentifier) {
-        this.rateidentifier = rateidentifier;
-        this.rateidentifierSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getLengthSmfKm() {
-        return lengthSmfKm;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setLengthSmfKm(OFBsnUnit lengthSmfKm) {
-        this.lengthSmfKm = lengthSmfKm;
-        this.lengthSmfKmSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getLengthSmf() {
-        return lengthSmf;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setLengthSmf(OFBsnUnit lengthSmf) {
-        this.lengthSmf = lengthSmf;
-        this.lengthSmfSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getLength50Um() {
-        return length50Um;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setLength50Um(OFBsnUnit length50Um) {
-        this.length50Um = length50Um;
-        this.length50UmSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getLength625Um() {
-        return length625Um;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setLength625Um(OFBsnUnit length625Um) {
-        this.length625Um = length625Um;
-        this.length625UmSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getLengthCopper() {
-        return lengthCopper;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setLengthCopper(OFBsnUnit lengthCopper) {
-        this.lengthCopper = lengthCopper;
-        this.lengthCopperSet = true;
-        return this;
-    }
-    @Override
-    public OFBsnUnit getLengthOm3() {
-        return lengthOm3;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setLengthOm3(OFBsnUnit lengthOm3) {
-        this.lengthOm3 = lengthOm3;
-        this.lengthOm3Set = true;
-        return this;
-    }
-    @Override
-    public U64 getVendorNameLo() {
-        return vendorNameLo;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setVendorNameLo(U64 vendorNameLo) {
-        this.vendorNameLo = vendorNameLo;
-        this.vendorNameLoSet = true;
-        return this;
-    }
-    @Override
-    public U64 getVendorNameHi() {
-        return vendorNameHi;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setVendorNameHi(U64 vendorNameHi) {
-        this.vendorNameHi = vendorNameHi;
-        this.vendorNameHiSet = true;
-        return this;
-    }
-    @Override
-    public long getVendorOui() {
-        return vendorOui;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setVendorOui(long vendorOui) {
-        this.vendorOui = vendorOui;
-        this.vendorOuiSet = true;
-        return this;
-    }
-    @Override
-    public U64 getVendorPnLo() {
-        return vendorPnLo;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setVendorPnLo(U64 vendorPnLo) {
-        this.vendorPnLo = vendorPnLo;
-        this.vendorPnLoSet = true;
-        return this;
-    }
-    @Override
-    public U64 getVendorPnHi() {
-        return vendorPnHi;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setVendorPnHi(U64 vendorPnHi) {
-        this.vendorPnHi = vendorPnHi;
-        this.vendorPnHiSet = true;
-        return this;
-    }
-    @Override
-    public long getVendorRev() {
-        return vendorRev;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setVendorRev(long vendorRev) {
-        this.vendorRev = vendorRev;
-        this.vendorRevSet = true;
-        return this;
-    }
-    @Override
-    public List<OFPortDescProp> getMoreProperties() {
-        return moreProperties;
-    }
-
-    @Override
-    public OFPortDescPropBsnEthtool.Builder setMoreProperties(List<OFPortDescProp> moreProperties) {
-        this.moreProperties = moreProperties;
-        this.morePropertiesSet = true;
+    public OFPortDescPropBsnEthtool.Builder setDataJson(byte[] dataJson) {
+        this.dataJson = dataJson;
+        this.dataJsonSet = true;
         return this;
     }
     @Override
@@ -953,93 +194,13 @@ class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
 //
         @Override
         public OFPortDescPropBsnEthtool build() {
-            Set<OFBsnModuleEepromIdentifier> identifier = this.identifierSet ? this.identifier : DEFAULT_IDENTIFIER;
-            if(identifier == null)
-                throw new NullPointerException("Property identifier must not be null");
-            Set<OFBsnModuleEepromExtendedIdentifier> extidentifier = this.extidentifierSet ? this.extidentifier : DEFAULT_EXTIDENTIFIER;
-            if(extidentifier == null)
-                throw new NullPointerException("Property extidentifier must not be null");
-            Set<OFBsnModuleEepromConnector> connector = this.connectorSet ? this.connector : DEFAULT_CONNECTOR;
-            if(connector == null)
-                throw new NullPointerException("Property connector must not be null");
-            if(!this.transdataSet)
-                throw new IllegalStateException("Property transdata doesn't have default value -- must be set");
-            if(transdata == null)
-                throw new NullPointerException("Property transdata must not be null");
-            Set<OFBsnModuleEepromEncoding> encoding = this.encodingSet ? this.encoding : DEFAULT_ENCODING;
-            if(encoding == null)
-                throw new NullPointerException("Property encoding must not be null");
-            if(!this.brNominalSet)
-                throw new IllegalStateException("Property brNominal doesn't have default value -- must be set");
-            if(brNominal == null)
-                throw new NullPointerException("Property brNominal must not be null");
-            Set<OFBsnModuleEepromRateIdentifier> rateidentifier = this.rateidentifierSet ? this.rateidentifier : DEFAULT_RATEIDENTIFIER;
-            if(rateidentifier == null)
-                throw new NullPointerException("Property rateidentifier must not be null");
-            if(!this.lengthSmfKmSet)
-                throw new IllegalStateException("Property lengthSmfKm doesn't have default value -- must be set");
-            if(lengthSmfKm == null)
-                throw new NullPointerException("Property lengthSmfKm must not be null");
-            if(!this.lengthSmfSet)
-                throw new IllegalStateException("Property lengthSmf doesn't have default value -- must be set");
-            if(lengthSmf == null)
-                throw new NullPointerException("Property lengthSmf must not be null");
-            if(!this.length50UmSet)
-                throw new IllegalStateException("Property length50Um doesn't have default value -- must be set");
-            if(length50Um == null)
-                throw new NullPointerException("Property length50Um must not be null");
-            if(!this.length625UmSet)
-                throw new IllegalStateException("Property length625Um doesn't have default value -- must be set");
-            if(length625Um == null)
-                throw new NullPointerException("Property length625Um must not be null");
-            if(!this.lengthCopperSet)
-                throw new IllegalStateException("Property lengthCopper doesn't have default value -- must be set");
-            if(lengthCopper == null)
-                throw new NullPointerException("Property lengthCopper must not be null");
-            if(!this.lengthOm3Set)
-                throw new IllegalStateException("Property lengthOm3 doesn't have default value -- must be set");
-            if(lengthOm3 == null)
-                throw new NullPointerException("Property lengthOm3 must not be null");
-            U64 vendorNameLo = this.vendorNameLoSet ? this.vendorNameLo : DEFAULT_VENDOR_NAME_LO;
-            if(vendorNameLo == null)
-                throw new NullPointerException("Property vendorNameLo must not be null");
-            U64 vendorNameHi = this.vendorNameHiSet ? this.vendorNameHi : DEFAULT_VENDOR_NAME_HI;
-            if(vendorNameHi == null)
-                throw new NullPointerException("Property vendorNameHi must not be null");
-            long vendorOui = this.vendorOuiSet ? this.vendorOui : DEFAULT_VENDOR_OUI;
-            U64 vendorPnLo = this.vendorPnLoSet ? this.vendorPnLo : DEFAULT_VENDOR_PN_LO;
-            if(vendorPnLo == null)
-                throw new NullPointerException("Property vendorPnLo must not be null");
-            U64 vendorPnHi = this.vendorPnHiSet ? this.vendorPnHi : DEFAULT_VENDOR_PN_HI;
-            if(vendorPnHi == null)
-                throw new NullPointerException("Property vendorPnHi must not be null");
-            long vendorRev = this.vendorRevSet ? this.vendorRev : DEFAULT_VENDOR_REV;
-            List<OFPortDescProp> moreProperties = this.morePropertiesSet ? this.moreProperties : DEFAULT_MORE_PROPERTIES;
-            if(moreProperties == null)
-                throw new NullPointerException("Property moreProperties must not be null");
+            byte[] dataJson = this.dataJsonSet ? this.dataJson : DEFAULT_DATA_JSON;
+            if(dataJson == null)
+                throw new NullPointerException("Property dataJson must not be null");
 
 
             return new OFPortDescPropBsnEthtoolVer14(
-                    identifier,
-                    extidentifier,
-                    connector,
-                    transdata,
-                    encoding,
-                    brNominal,
-                    rateidentifier,
-                    lengthSmfKm,
-                    lengthSmf,
-                    length50Um,
-                    length625Um,
-                    lengthCopper,
-                    lengthOm3,
-                    vendorNameLo,
-                    vendorNameHi,
-                    vendorOui,
-                    vendorPnLo,
-                    vendorPnHi,
-                    vendorRev,
-                    moreProperties
+                    dataJson
                 );
         }
 
@@ -1073,48 +234,10 @@ class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
             int expType = bb.readInt();
             if(expType != 0x6)
                 throw new OFParseError("Wrong expType: Expected=0x6L(0x6L), got="+expType);
-            Set<OFBsnModuleEepromIdentifier> identifier = OFBsnModuleEepromIdentifierSerializerVer14.readFrom(bb);
-            Set<OFBsnModuleEepromExtendedIdentifier> extidentifier = OFBsnModuleEepromExtendedIdentifierSerializerVer14.readFrom(bb);
-            Set<OFBsnModuleEepromConnector> connector = OFBsnModuleEepromConnectorSerializerVer14.readFrom(bb);
-            OFBsnModuleEepromTransceiver transdata = OFBsnModuleEepromTransceiverVer14.READER.readFrom(bb);
-            Set<OFBsnModuleEepromEncoding> encoding = OFBsnModuleEepromEncodingSerializerVer14.readFrom(bb);
-            OFBsnUnit brNominal = OFBsnUnitVer14.READER.readFrom(bb);
-            Set<OFBsnModuleEepromRateIdentifier> rateidentifier = OFBsnModuleEepromRateIdentifierSerializerVer14.readFrom(bb);
-            OFBsnUnit lengthSmfKm = OFBsnUnitVer14.READER.readFrom(bb);
-            OFBsnUnit lengthSmf = OFBsnUnitVer14.READER.readFrom(bb);
-            OFBsnUnit length50Um = OFBsnUnitVer14.READER.readFrom(bb);
-            OFBsnUnit length625Um = OFBsnUnitVer14.READER.readFrom(bb);
-            OFBsnUnit lengthCopper = OFBsnUnitVer14.READER.readFrom(bb);
-            OFBsnUnit lengthOm3 = OFBsnUnitVer14.READER.readFrom(bb);
-            U64 vendorNameLo = U64.ofRaw(bb.readLong());
-            U64 vendorNameHi = U64.ofRaw(bb.readLong());
-            long vendorOui = U32.f(bb.readInt());
-            U64 vendorPnLo = U64.ofRaw(bb.readLong());
-            U64 vendorPnHi = U64.ofRaw(bb.readLong());
-            long vendorRev = U32.f(bb.readInt());
-            List<OFPortDescProp> moreProperties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFPortDescPropVer14.READER);
+            byte[] dataJson = ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
 
             OFPortDescPropBsnEthtoolVer14 portDescPropBsnEthtoolVer14 = new OFPortDescPropBsnEthtoolVer14(
-                    identifier,
-                      extidentifier,
-                      connector,
-                      transdata,
-                      encoding,
-                      brNominal,
-                      rateidentifier,
-                      lengthSmfKm,
-                      lengthSmf,
-                      length50Um,
-                      length625Um,
-                      lengthCopper,
-                      lengthOm3,
-                      vendorNameLo,
-                      vendorNameHi,
-                      vendorOui,
-                      vendorPnLo,
-                      vendorPnHi,
-                      vendorRev,
-                      moreProperties
+                    dataJson
                     );
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - read={}", portDescPropBsnEthtoolVer14);
@@ -1138,26 +261,7 @@ class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
             sink.putInt(0x5c16c7);
             // fixed value property expType = 0x6L
             sink.putInt(0x6);
-            OFBsnModuleEepromIdentifierSerializerVer14.putTo(message.identifier, sink);
-            OFBsnModuleEepromExtendedIdentifierSerializerVer14.putTo(message.extidentifier, sink);
-            OFBsnModuleEepromConnectorSerializerVer14.putTo(message.connector, sink);
-            message.transdata.putTo(sink);
-            OFBsnModuleEepromEncodingSerializerVer14.putTo(message.encoding, sink);
-            message.brNominal.putTo(sink);
-            OFBsnModuleEepromRateIdentifierSerializerVer14.putTo(message.rateidentifier, sink);
-            message.lengthSmfKm.putTo(sink);
-            message.lengthSmf.putTo(sink);
-            message.length50Um.putTo(sink);
-            message.length625Um.putTo(sink);
-            message.lengthCopper.putTo(sink);
-            message.lengthOm3.putTo(sink);
-            message.vendorNameLo.putTo(sink);
-            message.vendorNameHi.putTo(sink);
-            sink.putLong(message.vendorOui);
-            message.vendorPnLo.putTo(sink);
-            message.vendorPnHi.putTo(sink);
-            sink.putLong(message.vendorRev);
-            FunnelUtils.putList(message.moreProperties, sink);
+            sink.putBytes(message.dataJson);
         }
     }
 
@@ -1181,26 +285,7 @@ class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
             bb.writeInt(0x5c16c7);
             // fixed value property expType = 0x6L
             bb.writeInt(0x6);
-            OFBsnModuleEepromIdentifierSerializerVer14.writeTo(bb, message.identifier);
-            OFBsnModuleEepromExtendedIdentifierSerializerVer14.writeTo(bb, message.extidentifier);
-            OFBsnModuleEepromConnectorSerializerVer14.writeTo(bb, message.connector);
-            message.transdata.writeTo(bb);
-            OFBsnModuleEepromEncodingSerializerVer14.writeTo(bb, message.encoding);
-            message.brNominal.writeTo(bb);
-            OFBsnModuleEepromRateIdentifierSerializerVer14.writeTo(bb, message.rateidentifier);
-            message.lengthSmfKm.writeTo(bb);
-            message.lengthSmf.writeTo(bb);
-            message.length50Um.writeTo(bb);
-            message.length625Um.writeTo(bb);
-            message.lengthCopper.writeTo(bb);
-            message.lengthOm3.writeTo(bb);
-            bb.writeLong(message.vendorNameLo.getValue());
-            bb.writeLong(message.vendorNameHi.getValue());
-            bb.writeInt(U32.t(message.vendorOui));
-            bb.writeLong(message.vendorPnLo.getValue());
-            bb.writeLong(message.vendorPnHi.getValue());
-            bb.writeInt(U32.t(message.vendorRev));
-            ChannelUtils.writeList(bb, message.moreProperties);
+            bb.writeBytes(message.dataJson);
 
             // update length field
             int length = bb.writerIndex() - startIndex;
@@ -1212,45 +297,7 @@ class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
     @Override
     public String toString() {
         StringBuilder b = new StringBuilder("OFPortDescPropBsnEthtoolVer14(");
-        b.append("identifier=").append(identifier);
-        b.append(", ");
-        b.append("extidentifier=").append(extidentifier);
-        b.append(", ");
-        b.append("connector=").append(connector);
-        b.append(", ");
-        b.append("transdata=").append(transdata);
-        b.append(", ");
-        b.append("encoding=").append(encoding);
-        b.append(", ");
-        b.append("brNominal=").append(brNominal);
-        b.append(", ");
-        b.append("rateidentifier=").append(rateidentifier);
-        b.append(", ");
-        b.append("lengthSmfKm=").append(lengthSmfKm);
-        b.append(", ");
-        b.append("lengthSmf=").append(lengthSmf);
-        b.append(", ");
-        b.append("length50Um=").append(length50Um);
-        b.append(", ");
-        b.append("length625Um=").append(length625Um);
-        b.append(", ");
-        b.append("lengthCopper=").append(lengthCopper);
-        b.append(", ");
-        b.append("lengthOm3=").append(lengthOm3);
-        b.append(", ");
-        b.append("vendorNameLo=").append(vendorNameLo);
-        b.append(", ");
-        b.append("vendorNameHi=").append(vendorNameHi);
-        b.append(", ");
-        b.append("vendorOui=").append(vendorOui);
-        b.append(", ");
-        b.append("vendorPnLo=").append(vendorPnLo);
-        b.append(", ");
-        b.append("vendorPnHi=").append(vendorPnHi);
-        b.append(", ");
-        b.append("vendorRev=").append(vendorRev);
-        b.append(", ");
-        b.append("moreProperties=").append(moreProperties);
+        b.append("dataJson=").append(Arrays.toString(dataJson));
         b.append(")");
         return b.toString();
     }
@@ -1265,100 +312,8 @@ class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
             return false;
         OFPortDescPropBsnEthtoolVer14 other = (OFPortDescPropBsnEthtoolVer14) obj;
 
-        if (identifier == null) {
-            if (other.identifier != null)
+        if (!Arrays.equals(dataJson, other.dataJson))
                 return false;
-        } else if (!identifier.equals(other.identifier))
-            return false;
-        if (extidentifier == null) {
-            if (other.extidentifier != null)
-                return false;
-        } else if (!extidentifier.equals(other.extidentifier))
-            return false;
-        if (connector == null) {
-            if (other.connector != null)
-                return false;
-        } else if (!connector.equals(other.connector))
-            return false;
-        if (transdata == null) {
-            if (other.transdata != null)
-                return false;
-        } else if (!transdata.equals(other.transdata))
-            return false;
-        if (encoding == null) {
-            if (other.encoding != null)
-                return false;
-        } else if (!encoding.equals(other.encoding))
-            return false;
-        if (brNominal == null) {
-            if (other.brNominal != null)
-                return false;
-        } else if (!brNominal.equals(other.brNominal))
-            return false;
-        if (rateidentifier == null) {
-            if (other.rateidentifier != null)
-                return false;
-        } else if (!rateidentifier.equals(other.rateidentifier))
-            return false;
-        if (lengthSmfKm == null) {
-            if (other.lengthSmfKm != null)
-                return false;
-        } else if (!lengthSmfKm.equals(other.lengthSmfKm))
-            return false;
-        if (lengthSmf == null) {
-            if (other.lengthSmf != null)
-                return false;
-        } else if (!lengthSmf.equals(other.lengthSmf))
-            return false;
-        if (length50Um == null) {
-            if (other.length50Um != null)
-                return false;
-        } else if (!length50Um.equals(other.length50Um))
-            return false;
-        if (length625Um == null) {
-            if (other.length625Um != null)
-                return false;
-        } else if (!length625Um.equals(other.length625Um))
-            return false;
-        if (lengthCopper == null) {
-            if (other.lengthCopper != null)
-                return false;
-        } else if (!lengthCopper.equals(other.lengthCopper))
-            return false;
-        if (lengthOm3 == null) {
-            if (other.lengthOm3 != null)
-                return false;
-        } else if (!lengthOm3.equals(other.lengthOm3))
-            return false;
-        if (vendorNameLo == null) {
-            if (other.vendorNameLo != null)
-                return false;
-        } else if (!vendorNameLo.equals(other.vendorNameLo))
-            return false;
-        if (vendorNameHi == null) {
-            if (other.vendorNameHi != null)
-                return false;
-        } else if (!vendorNameHi.equals(other.vendorNameHi))
-            return false;
-        if( vendorOui != other.vendorOui)
-            return false;
-        if (vendorPnLo == null) {
-            if (other.vendorPnLo != null)
-                return false;
-        } else if (!vendorPnLo.equals(other.vendorPnLo))
-            return false;
-        if (vendorPnHi == null) {
-            if (other.vendorPnHi != null)
-                return false;
-        } else if (!vendorPnHi.equals(other.vendorPnHi))
-            return false;
-        if( vendorRev != other.vendorRev)
-            return false;
-        if (moreProperties == null) {
-            if (other.moreProperties != null)
-                return false;
-        } else if (!moreProperties.equals(other.moreProperties))
-            return false;
         return true;
     }
 
@@ -1367,26 +322,7 @@ class OFPortDescPropBsnEthtoolVer14 implements OFPortDescPropBsnEthtool {
         final int prime = 31;
         int result = 1;
 
-        result = prime * result + ((identifier == null) ? 0 : identifier.hashCode());
-        result = prime * result + ((extidentifier == null) ? 0 : extidentifier.hashCode());
-        result = prime * result + ((connector == null) ? 0 : connector.hashCode());
-        result = prime * result + ((transdata == null) ? 0 : transdata.hashCode());
-        result = prime * result + ((encoding == null) ? 0 : encoding.hashCode());
-        result = prime * result + ((brNominal == null) ? 0 : brNominal.hashCode());
-        result = prime * result + ((rateidentifier == null) ? 0 : rateidentifier.hashCode());
-        result = prime * result + ((lengthSmfKm == null) ? 0 : lengthSmfKm.hashCode());
-        result = prime * result + ((lengthSmf == null) ? 0 : lengthSmf.hashCode());
-        result = prime * result + ((length50Um == null) ? 0 : length50Um.hashCode());
-        result = prime * result + ((length625Um == null) ? 0 : length625Um.hashCode());
-        result = prime * result + ((lengthCopper == null) ? 0 : lengthCopper.hashCode());
-        result = prime * result + ((lengthOm3 == null) ? 0 : lengthOm3.hashCode());
-        result = prime * result + ((vendorNameLo == null) ? 0 : vendorNameLo.hashCode());
-        result = prime * result + ((vendorNameHi == null) ? 0 : vendorNameHi.hashCode());
-        result = prime *  (int) (vendorOui ^ (vendorOui >>> 32));
-        result = prime * result + ((vendorPnLo == null) ? 0 : vendorPnLo.hashCode());
-        result = prime * result + ((vendorPnHi == null) ? 0 : vendorPnHi.hashCode());
-        result = prime *  (int) (vendorRev ^ (vendorRev >>> 32));
-        result = prime * result + ((moreProperties == null) ? 0 : moreProperties.hashCode());
+        result = prime * result + Arrays.hashCode(dataJson);
         return result;
     }
 
