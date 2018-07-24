@@ -1608,7 +1608,6 @@ int of_bsn_tlv_vni_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ob
 int of_bsn_tlv_vpn_key_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_vrf_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
-int of_bsn_unit_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_vlan_mac_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_vport_l2gre_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1834,13 +1833,11 @@ int of_oxm_vlan_vid_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_o
 int of_oxm_vlan_vid_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_packet_queue_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
-int of_port_desc_prop_bsn_alarm_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
-int of_port_desc_prop_bsn_diag_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
-int of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_port_desc_prop_ethernet_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1881,6 +1878,5 @@ int of_table_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 int of_uint32_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_uint64_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_uint8_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
-int ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 
 #endif /* _LOCI_OBJ_SHOW_H_ */

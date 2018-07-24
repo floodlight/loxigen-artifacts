@@ -1629,7 +1629,6 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_vni_OF_VERSION_1_4(u
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vpn_key_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vrf_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
-static int __attribute__((unused)) loci_validate_of_bsn_unit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_virtual_port_create_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vport_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_virtual_port_create_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -1924,14 +1923,11 @@ static int __attribute__((unused)) loci_validate_of_port_desc_OF_VERSION_1_4(uin
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_experimenter_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
-static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_alarm_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_breakout_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
-static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_diag_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
-static int __attribute__((unused)) loci_validate_ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
-static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_uplink_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_ethernet_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -42741,22 +42737,6 @@ loci_validate_of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4(uint8_t *data, int len,
 }
 
 static int
-loci_validate_of_bsn_unit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
-{
-    if (len < 5) {
-        return -1;
-    }
-
-    len = 5;
-
-
-
-
-    *out_len = len;
-    return 0;
-}
-
-static int
 loci_validate_of_bsn_virtual_port_create_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 24) {
@@ -48663,47 +48643,21 @@ loci_validate_of_port_desc_prop_bsn_OF_VERSION_1_4(uint8_t *data, int len, int *
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 0x8:
-        return loci_validate_of_port_desc_prop_bsn_alarm_OF_VERSION_1_4(data, len, out_len);
     case 0x3:
         return loci_validate_of_port_desc_prop_bsn_breakout_OF_VERSION_1_4(data, len, out_len);
-    case 0x7:
-        return loci_validate_of_port_desc_prop_bsn_diag_OF_VERSION_1_4(data, len, out_len);
-    case 0x6:
-        return loci_validate_of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4(data, len, out_len);
     case 0x2:
         return loci_validate_of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4(data, len, out_len);
     case 0x1:
         return loci_validate_of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4(data, len, out_len);
     case 0x5:
         return loci_validate_of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4(data, len, out_len);
+    case 0x6:
+        return loci_validate_of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4(data, len, out_len);
     case 0x4:
         return loci_validate_of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4(data, len, out_len);
     case 0x0:
         return loci_validate_of_port_desc_prop_bsn_uplink_OF_VERSION_1_4(data, len, out_len);
     }
-
-
-    *out_len = len;
-    return 0;
-}
-
-static int
-loci_validate_of_port_desc_prop_bsn_alarm_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
-{
-    if (len < 31) {
-        return -1;
-    }
-
-    len = 31;
-
-    uint16_t wire_len;
-    buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 31) {
-        return -1;
-    }
-
-
 
 
     *out_len = len;
@@ -48726,72 +48680,6 @@ loci_validate_of_port_desc_prop_bsn_breakout_OF_VERSION_1_4(uint8_t *data, int l
     }
 
 
-
-
-    *out_len = len;
-    return 0;
-}
-
-static int
-loci_validate_of_port_desc_prop_bsn_diag_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
-{
-    if (len < 38) {
-        return -1;
-    }
-
-    len = 38;
-
-    uint16_t wire_len;
-    buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 38) {
-        return -1;
-    }
-
-
-
-
-    *out_len = len;
-    return 0;
-}
-
-static int
-loci_validate_ofp_bsn_module_eeprom_transceiver_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
-{
-    if (len < 8) {
-        return -1;
-    }
-
-    len = 8;
-
-
-
-
-    *out_len = len;
-    return 0;
-}
-
-static int
-loci_validate_of_port_desc_prop_bsn_ethtool_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
-{
-    if (len < 100) {
-        return -1;
-    }
-
-
-    uint16_t wire_len;
-    buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 100) {
-        return -1;
-    }
-
-    len = wire_len;
-
-
-
-    int wire_len_more_properties = len - 100;
-    if (loci_validate_of_list_port_desc_prop_OF_VERSION_1_4(data + 100, wire_len_more_properties, out_len) < 0) {
-        return -1;
-    }
 
 
     *out_len = len;
@@ -48856,6 +48744,29 @@ loci_validate_of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4(uint8_t *da
     if (wire_len > len || wire_len < 36) {
         return -1;
     }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 12) {
+        return -1;
+    }
+
+    len = wire_len;
 
 
 

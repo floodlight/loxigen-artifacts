@@ -1531,26 +1531,12 @@ public class OFFactoryVer15 implements OFFactory {
                     );
     }
 
-    public OFBsnUnit.Builder buildBsnUnit() {
-        return new OFBsnUnitVer15.Builder();
-    }
-    public OFBsnUnit bsnUnit(long value, Set<OFBsnUnitType> unit) {
-        return new OFBsnUnitVer15(
-                value,
-                      unit
-                    );
-    }
-
     public OFBundleAddMsg.Builder buildBundleAddMsg() {
         return new OFBundleAddMsgVer15.Builder().setXid(nextXid());
     }
 
     public OFBundleCtrlMsg.Builder buildBundleCtrlMsg() {
         return new OFBundleCtrlMsgVer15.Builder().setXid(nextXid());
-    }
-
-    public OFPortDescPropBsnAlarm.Builder buildPortDescPropBsnAlarm() {
-        return new OFPortDescPropBsnAlarmVer15.Builder();
     }
 
     public OFPortDescPropBsnBreakout.Builder buildPortDescPropBsnBreakout() {
@@ -1561,23 +1547,6 @@ public class OFFactoryVer15 implements OFFactory {
                 subInterfaceCount,
                       subInterfaceSpeedGbps
                     );
-    }
-
-    public OFPortDescPropBsnDiag.Builder buildPortDescPropBsnDiag() {
-        return new OFPortDescPropBsnDiagVer15.Builder();
-    }
-
-    public OFBsnModuleEepromTransceiver.Builder buildBsnModuleEepromTransceiver() {
-        return new OFBsnModuleEepromTransceiverVer15.Builder();
-    }
-    public OFBsnModuleEepromTransceiver bsnModuleEepromTransceiver(U64 codes) {
-        return new OFBsnModuleEepromTransceiverVer15(
-                codes
-                    );
-    }
-
-    public OFPortDescPropBsnEthtool.Builder buildPortDescPropBsnEthtool() {
-        return new OFPortDescPropBsnEthtoolVer15.Builder();
     }
 
     public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
@@ -1601,6 +1570,15 @@ public class OFFactoryVer15 implements OFFactory {
 
     public OFPortDescPropBsnMiscCapabilities.Builder buildPortDescPropBsnMiscCapabilities() {
         return new OFPortDescPropBsnMiscCapabilitiesVer15.Builder();
+    }
+
+    public OFPortDescPropBsnSffJson.Builder buildPortDescPropBsnSffJson() {
+        return new OFPortDescPropBsnSffJsonVer15.Builder();
+    }
+    public OFPortDescPropBsnSffJson portDescPropBsnSffJson(byte[] dataJson) {
+        return new OFPortDescPropBsnSffJsonVer15(
+                dataJson
+                    );
     }
 
     public OFPortDescPropBsnSpeedCapabilities.Builder buildPortDescPropBsnSpeedCapabilities() {

@@ -1372,13 +1372,6 @@ public class OFFactoryVer12 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnTakeover not supported in version 1.2");
     }
 
-    public OFBsnUnit.Builder buildBsnUnit() {
-        throw new UnsupportedOperationException("OFBsnUnit not supported in version 1.2");
-    }
-    public OFBsnUnit bsnUnit(long value, Set<OFBsnUnitType> unit) {
-        throw new UnsupportedOperationException("OFBsnUnit not supported in version 1.2");
-    }
-
     public OFBundleAddMsg.Builder buildBundleAddMsg() {
         throw new UnsupportedOperationException("OFBundleAddMsg not supported in version 1.2");
     }
@@ -1387,30 +1380,11 @@ public class OFFactoryVer12 implements OFFactory {
         throw new UnsupportedOperationException("OFBundleCtrlMsg not supported in version 1.2");
     }
 
-    public OFPortDescPropBsnAlarm.Builder buildPortDescPropBsnAlarm() {
-        throw new UnsupportedOperationException("OFPortDescPropBsnAlarm not supported in version 1.2");
-    }
-
     public OFPortDescPropBsnBreakout.Builder buildPortDescPropBsnBreakout() {
         throw new UnsupportedOperationException("OFPortDescPropBsnBreakout not supported in version 1.2");
     }
     public OFPortDescPropBsnBreakout portDescPropBsnBreakout(int subInterfaceCount, int subInterfaceSpeedGbps) {
         throw new UnsupportedOperationException("OFPortDescPropBsnBreakout not supported in version 1.2");
-    }
-
-    public OFPortDescPropBsnDiag.Builder buildPortDescPropBsnDiag() {
-        throw new UnsupportedOperationException("OFPortDescPropBsnDiag not supported in version 1.2");
-    }
-
-    public OFBsnModuleEepromTransceiver.Builder buildBsnModuleEepromTransceiver() {
-        throw new UnsupportedOperationException("OFBsnModuleEepromTransceiver not supported in version 1.2");
-    }
-    public OFBsnModuleEepromTransceiver bsnModuleEepromTransceiver(U64 codes) {
-        throw new UnsupportedOperationException("OFBsnModuleEepromTransceiver not supported in version 1.2");
-    }
-
-    public OFPortDescPropBsnEthtool.Builder buildPortDescPropBsnEthtool() {
-        throw new UnsupportedOperationException("OFPortDescPropBsnEthtool not supported in version 1.2");
     }
 
     public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
@@ -1429,6 +1403,13 @@ public class OFFactoryVer12 implements OFFactory {
 
     public OFPortDescPropBsnMiscCapabilities.Builder buildPortDescPropBsnMiscCapabilities() {
         throw new UnsupportedOperationException("OFPortDescPropBsnMiscCapabilities not supported in version 1.2");
+    }
+
+    public OFPortDescPropBsnSffJson.Builder buildPortDescPropBsnSffJson() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnSffJson not supported in version 1.2");
+    }
+    public OFPortDescPropBsnSffJson portDescPropBsnSffJson(byte[] dataJson) {
+        throw new UnsupportedOperationException("OFPortDescPropBsnSffJson not supported in version 1.2");
     }
 
     public OFPortDescPropBsnSpeedCapabilities.Builder buildPortDescPropBsnSpeedCapabilities() {
