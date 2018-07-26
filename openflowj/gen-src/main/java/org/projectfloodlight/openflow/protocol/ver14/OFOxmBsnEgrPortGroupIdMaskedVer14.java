@@ -264,9 +264,11 @@ class OFOxmBsnEgrPortGroupIdMaskedVer14 implements OFOxmBsnEgrPortGroupIdMasked 
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnEgrPortGroupIdMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnEgrPortGroupIdMasked> {
         @Override
-        public OFOxmBsnEgrPortGroupIdMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnEgrPortGroupIdMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x30f08L
             int typeLen = bb.readInt();
             if(typeLen != 0x30f08)

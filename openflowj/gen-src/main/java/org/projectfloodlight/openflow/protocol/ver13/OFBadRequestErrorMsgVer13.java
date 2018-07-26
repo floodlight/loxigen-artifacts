@@ -263,9 +263,11 @@ class OFBadRequestErrorMsgVer13 implements OFBadRequestErrorMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBadRequestErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFBadRequestErrorMsg> {
         @Override
-        public OFBadRequestErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFBadRequestErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -278,6 +280,7 @@ class OFBadRequestErrorMsgVer13 implements OFBadRequestErrorMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,7 +294,7 @@ class OFBadRequestErrorMsgVer13 implements OFBadRequestErrorMsg {
             if(errType != (short) 0x1)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.BAD_REQUEST(1), got="+errType);
             OFBadRequestCode code = OFBadRequestCodeSerializerVer13.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_13);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_13);
 
             OFBadRequestErrorMsgVer13 badRequestErrorMsgVer13 = new OFBadRequestErrorMsgVer13(
                     xid,

@@ -237,9 +237,11 @@ class OFBsnSetSwitchPipelineRequestVer15 implements OFBsnSetSwitchPipelineReques
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnSetSwitchPipelineRequest> {
+    static class Reader extends AbstractOFMessageReader<OFBsnSetSwitchPipelineRequest> {
         @Override
-        public OFBsnSetSwitchPipelineRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnSetSwitchPipelineRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -252,6 +254,7 @@ class OFBsnSetSwitchPipelineRequestVer15 implements OFBsnSetSwitchPipelineReques
             int length = U16.f(bb.readShort());
             if(length != 272)
                 throw new OFParseError("Wrong length: Expected=272(272), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

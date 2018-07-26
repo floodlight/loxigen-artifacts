@@ -229,9 +229,11 @@ class OFOxmIpProtoVer12 implements OFOxmIpProto {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmIpProto> {
+    static class Reader extends AbstractOFMessageReader<OFOxmIpProto> {
         @Override
-        public OFOxmIpProto readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmIpProto readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80001401L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80001401)

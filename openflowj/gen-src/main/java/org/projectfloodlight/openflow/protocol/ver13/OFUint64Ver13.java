@@ -154,9 +154,11 @@ class OFUint64Ver13 implements OFUint64 {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFUint64> {
+    static class Reader extends AbstractOFMessageReader<OFUint64> {
         @Override
-        public OFUint64 readFrom(ByteBuf bb) throws OFParseError {
+        public OFUint64 readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             U64 value = U64.ofRaw(bb.readLong());
 
             OFUint64Ver13 uint64Ver13 = new OFUint64Ver13(

@@ -357,9 +357,11 @@ class OFMeterModVer15 implements OFMeterMod {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFMeterMod> {
+    static class Reader extends AbstractOFMessageReader<OFMeterMod> {
         @Override
-        public OFMeterMod readFrom(ByteBuf bb) throws OFParseError {
+        public OFMeterMod readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -372,6 +374,7 @@ class OFMeterModVer15 implements OFMeterMod {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -383,7 +386,7 @@ class OFMeterModVer15 implements OFMeterMod {
             OFMeterModCommand command = OFMeterModCommandSerializerVer15.readFrom(bb);
             Set<OFMeterFlags> flags = OFMeterFlagsSerializerVer15.readFrom(bb);
             long meterId = U32.f(bb.readInt());
-            List<OFMeterBand> bands = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFMeterBandVer15.READER);
+            List<OFMeterBand> bands = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFMeterBandVer15.READER);
 
             OFMeterModVer15 meterModVer15 = new OFMeterModVer15(
                     xid,

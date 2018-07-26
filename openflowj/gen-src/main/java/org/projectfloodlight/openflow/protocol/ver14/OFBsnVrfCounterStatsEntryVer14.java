@@ -194,13 +194,16 @@ class OFBsnVrfCounterStatsEntryVer14 implements OFBsnVrfCounterStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnVrfCounterStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFBsnVrfCounterStatsEntry> {
         @Override
-        public OFBsnVrfCounterStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnVrfCounterStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -211,7 +214,7 @@ class OFBsnVrfCounterStatsEntryVer14 implements OFBsnVrfCounterStatsEntry {
             // pad: 2 bytes
             bb.skipBytes(2);
             long vrf = U32.f(bb.readInt());
-            List<U64> values = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), U64.READER);
+            List<U64> values = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), U64.READER);
 
             OFBsnVrfCounterStatsEntryVer14 bsnVrfCounterStatsEntryVer14 = new OFBsnVrfCounterStatsEntryVer14(
                     vrf,

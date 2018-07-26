@@ -170,9 +170,11 @@ class OFBsnTlvCircuitIdVer15 implements OFBsnTlvCircuitId {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvCircuitId> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvCircuitId> {
         @Override
-        public OFBsnTlvCircuitId readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvCircuitId readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0xe
             short type = bb.readShort();
@@ -181,6 +183,7 @@ class OFBsnTlvCircuitIdVer15 implements OFBsnTlvCircuitId {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

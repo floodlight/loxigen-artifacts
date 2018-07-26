@@ -263,9 +263,11 @@ class OFFlowMonitorFailedErrorMsgVer15 implements OFFlowMonitorFailedErrorMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowMonitorFailedErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFFlowMonitorFailedErrorMsg> {
         @Override
-        public OFFlowMonitorFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowMonitorFailedErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -278,6 +280,7 @@ class OFFlowMonitorFailedErrorMsgVer15 implements OFFlowMonitorFailedErrorMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,7 +294,7 @@ class OFFlowMonitorFailedErrorMsgVer15 implements OFFlowMonitorFailedErrorMsg {
             if(errType != (short) 0x10)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.FLOW_MONITOR_FAILED(16), got="+errType);
             OFFlowMonitorFailedCode code = OFFlowMonitorFailedCodeSerializerVer15.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_15);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_15);
 
             OFFlowMonitorFailedErrorMsgVer15 flowMonitorFailedErrorMsgVer15 = new OFFlowMonitorFailedErrorMsgVer15(
                     xid,

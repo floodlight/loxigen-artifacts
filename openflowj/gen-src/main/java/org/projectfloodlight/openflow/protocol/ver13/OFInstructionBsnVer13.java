@@ -35,9 +35,9 @@ abstract class OFInstructionBsnVer13 {
 
     public final static OFInstructionBsnVer13.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFInstructionBsn> {
+    static class Reader extends AbstractOFMessageReader<OFInstructionBsn> {
         @Override
-        public OFInstructionBsn readFrom(ByteBuf bb) throws OFParseError {
+        public OFInstructionBsn readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -48,67 +48,93 @@ abstract class OFInstructionBsnVer13 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             // fixed value property experimenter == 0x5c16c7L
             int experimenter = bb.readInt();
             if(experimenter != 0x5c16c7)
                 throw new OFParseError("Wrong experimenter: Expected=0x5c16c7L(0x5c16c7L), got="+experimenter);
             int subtype = bb.readInt();
-            bb.readerIndex(start);
             switch(subtype) {
                case 0x1:
+                   bb.readerIndex(start);
                    // discriminator value 0x1L=0x1L for class OFInstructionBsnArpOffloadVer13
-                   return OFInstructionBsnArpOffloadVer13.READER.readFrom(bb);
+                   return OFInstructionBsnArpOffloadVer13.READER.readFrom(context, bb);
                case 0xb:
+                   bb.readerIndex(start);
                    // discriminator value 0xbL=0xbL for class OFInstructionBsnAutoNegotiationVer13
-                   return OFInstructionBsnAutoNegotiationVer13.READER.readFrom(bb);
+                   return OFInstructionBsnAutoNegotiationVer13.READER.readFrom(context, bb);
                case 0x5:
+                   bb.readerIndex(start);
                    // discriminator value 0x5L=0x5L for class OFInstructionBsnDenyVer13
-                   return OFInstructionBsnDenyVer13.READER.readFrom(bb);
+                   return OFInstructionBsnDenyVer13.READER.readFrom(context, bb);
                case 0x2:
+                   bb.readerIndex(start);
                    // discriminator value 0x2L=0x2L for class OFInstructionBsnDhcpOffloadVer13
-                   return OFInstructionBsnDhcpOffloadVer13.READER.readFrom(bb);
+                   return OFInstructionBsnDhcpOffloadVer13.READER.readFrom(context, bb);
                case 0x10:
+                   bb.readerIndex(start);
                    // discriminator value 0x10L=0x10L for class OFInstructionBsnDirectedBroadcastVer13
-                   return OFInstructionBsnDirectedBroadcastVer13.READER.readFrom(bb);
+                   return OFInstructionBsnDirectedBroadcastVer13.READER.readFrom(context, bb);
                case 0xd:
+                   bb.readerIndex(start);
                    // discriminator value 0xdL=0xdL for class OFInstructionBsnDisableL3Ver13
-                   return OFInstructionBsnDisableL3Ver13.READER.readFrom(bb);
+                   return OFInstructionBsnDisableL3Ver13.READER.readFrom(context, bb);
                case 0x3:
+                   bb.readerIndex(start);
                    // discriminator value 0x3L=0x3L for class OFInstructionBsnDisableSplitHorizonCheckVer13
-                   return OFInstructionBsnDisableSplitHorizonCheckVer13.READER.readFrom(bb);
+                   return OFInstructionBsnDisableSplitHorizonCheckVer13.READER.readFrom(context, bb);
                case 0x0:
+                   bb.readerIndex(start);
                    // discriminator value 0x0L=0x0L for class OFInstructionBsnDisableSrcMacCheckVer13
-                   return OFInstructionBsnDisableSrcMacCheckVer13.READER.readFrom(bb);
+                   return OFInstructionBsnDisableSrcMacCheckVer13.READER.readFrom(context, bb);
                case 0x9:
+                   bb.readerIndex(start);
                    // discriminator value 0x9L=0x9L for class OFInstructionBsnDisableVlanCountersVer13
-                   return OFInstructionBsnDisableVlanCountersVer13.READER.readFrom(bb);
+                   return OFInstructionBsnDisableVlanCountersVer13.READER.readFrom(context, bb);
                case 0xf:
+                   bb.readerIndex(start);
                    // discriminator value 0xfL=0xfL for class OFInstructionBsnHashSelectVer13
-                   return OFInstructionBsnHashSelectVer13.READER.readFrom(bb);
+                   return OFInstructionBsnHashSelectVer13.READER.readFrom(context, bb);
                case 0xc:
+                   bb.readerIndex(start);
                    // discriminator value 0xcL=0xcL for class OFInstructionBsnInternalPriorityVer13
-                   return OFInstructionBsnInternalPriorityVer13.READER.readFrom(bb);
+                   return OFInstructionBsnInternalPriorityVer13.READER.readFrom(context, bb);
                case 0xe:
+                   bb.readerIndex(start);
                    // discriminator value 0xeL=0xeL for class OFInstructionBsnNdpOffloadVer13
-                   return OFInstructionBsnNdpOffloadVer13.READER.readFrom(bb);
+                   return OFInstructionBsnNdpOffloadVer13.READER.readFrom(context, bb);
                case 0x6:
+                   bb.readerIndex(start);
                    // discriminator value 0x6L=0x6L for class OFInstructionBsnPacketOfDeathVer13
-                   return OFInstructionBsnPacketOfDeathVer13.READER.readFrom(bb);
+                   return OFInstructionBsnPacketOfDeathVer13.READER.readFrom(context, bb);
                case 0x4:
+                   bb.readerIndex(start);
                    // discriminator value 0x4L=0x4L for class OFInstructionBsnPermitVer13
-                   return OFInstructionBsnPermitVer13.READER.readFrom(bb);
+                   return OFInstructionBsnPermitVer13.READER.readFrom(context, bb);
                case 0x7:
+                   bb.readerIndex(start);
                    // discriminator value 0x7L=0x7L for class OFInstructionBsnPrioritizePdusVer13
-                   return OFInstructionBsnPrioritizePdusVer13.READER.readFrom(bb);
+                   return OFInstructionBsnPrioritizePdusVer13.READER.readFrom(context, bb);
                case 0x8:
+                   bb.readerIndex(start);
                    // discriminator value 0x8L=0x8L for class OFInstructionBsnRequireVlanXlateVer13
-                   return OFInstructionBsnRequireVlanXlateVer13.READER.readFrom(bb);
+                   return OFInstructionBsnRequireVlanXlateVer13.READER.readFrom(context, bb);
                case 0xa:
+                   bb.readerIndex(start);
                    // discriminator value 0xaL=0xaL for class OFInstructionBsnSpanDestinationVer13
-                   return OFInstructionBsnSpanDestinationVer13.READER.readFrom(bb);
+                   return OFInstructionBsnSpanDestinationVer13.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator subtype of class OFInstructionBsnVer13: " + subtype);
+                   context.getUnparsedHandler().unparsedMessage(OFInstructionBsnVer13.class, "subtype", subtype);
             }
+            // pad: 4 bytes
+            bb.skipBytes(4);
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

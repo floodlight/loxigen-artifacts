@@ -162,9 +162,11 @@ class OFAsyncConfigPropContStatusMasterVer15 implements OFAsyncConfigPropContSta
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFAsyncConfigPropContStatusMaster> {
+    static class Reader extends AbstractOFMessageReader<OFAsyncConfigPropContStatusMaster> {
         @Override
-        public OFAsyncConfigPropContStatusMaster readFrom(ByteBuf bb) throws OFParseError {
+        public OFAsyncConfigPropContStatusMaster readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0xf
             short type = bb.readShort();
@@ -173,6 +175,7 @@ class OFAsyncConfigPropContStatusMasterVer15 implements OFAsyncConfigPropContSta
             int length = U16.f(bb.readShort());
             if(length != 8)
                 throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

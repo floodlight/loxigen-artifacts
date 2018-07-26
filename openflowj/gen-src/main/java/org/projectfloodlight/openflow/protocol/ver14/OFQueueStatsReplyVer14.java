@@ -270,9 +270,11 @@ class OFQueueStatsReplyVer14 implements OFQueueStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFQueueStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFQueueStatsReply> {
         @Override
-        public OFQueueStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFQueueStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -285,6 +287,7 @@ class OFQueueStatsReplyVer14 implements OFQueueStatsReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -300,7 +303,7 @@ class OFQueueStatsReplyVer14 implements OFQueueStatsReply {
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer14.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFQueueStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFQueueStatsEntryVer14.READER);
+            List<OFQueueStatsEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFQueueStatsEntryVer14.READER);
 
             OFQueueStatsReplyVer14 queueStatsReplyVer14 = new OFQueueStatsReplyVer14(
                     xid,

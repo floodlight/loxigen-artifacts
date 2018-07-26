@@ -436,9 +436,11 @@ class OFGroupInsertBucketVer15 implements OFGroupInsertBucket {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFGroupInsertBucket> {
+    static class Reader extends AbstractOFMessageReader<OFGroupInsertBucket> {
         @Override
-        public OFGroupInsertBucket readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupInsertBucket readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -451,6 +453,7 @@ class OFGroupInsertBucketVer15 implements OFGroupInsertBucket {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -471,8 +474,8 @@ class OFGroupInsertBucketVer15 implements OFGroupInsertBucket {
             // pad: 2 bytes
             bb.skipBytes(2);
             OFGroupBucket commandBucketId = OFGroupBucketSerializerVer15.readFrom(bb);
-            List<OFBucket> buckets = ChannelUtils.readList(bb, bucketArrayLen, OFBucketVer15.READER);
-            List<OFGroupProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFGroupPropVer15.READER);
+            List<OFBucket> buckets = ChannelUtils.readList(context, bb, bucketArrayLen, OFBucketVer15.READER);
+            List<OFGroupProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFGroupPropVer15.READER);
 
             OFGroupInsertBucketVer15 groupInsertBucketVer15 = new OFGroupInsertBucketVer15(
                     xid,
