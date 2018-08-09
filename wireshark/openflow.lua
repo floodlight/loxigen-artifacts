@@ -2034,6 +2034,7 @@ enum_v4_ofp_bsn_bfd_endpoint_state = {
     [2] = "OFP_BSN_BFD_ENDPOINT_STATE_INIT",
     [3] = "OFP_BSN_BFD_ENDPOINT_STATE_UP",
     [4] = "OFP_BSN_BFD_ENDPOINT_SESSION_ERROR",
+    [5] = "OFP_BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN",
 }
 
 enum_v4_ofp_port = {
@@ -3116,6 +3117,7 @@ enum_v5_ofp_bsn_bfd_endpoint_state = {
     [2] = "OFP_BSN_BFD_ENDPOINT_STATE_INIT",
     [3] = "OFP_BSN_BFD_ENDPOINT_STATE_UP",
     [4] = "OFP_BSN_BFD_ENDPOINT_SESSION_ERROR",
+    [5] = "OFP_BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN",
 }
 
 enum_v5_ofp_bsn_vrf_counter_constants = {
@@ -4393,6 +4395,7 @@ enum_v6_ofp_bsn_bfd_endpoint_state = {
     [2] = "OFP_BSN_BFD_ENDPOINT_STATE_INIT",
     [3] = "OFP_BSN_BFD_ENDPOINT_STATE_UP",
     [4] = "OFP_BSN_BFD_ENDPOINT_SESSION_ERROR",
+    [5] = "OFP_BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN",
 }
 
 enum_v6_ofp_bsn_vrf_counter_constants = {
