@@ -35,7 +35,8 @@ public class OFBsnBfdEndpointStateSerializerVer14 {
     public final static byte BSN_BFD_ENDPOINT_STATE_DOWN_VAL = (byte) 0x1;
     public final static byte BSN_BFD_ENDPOINT_STATE_INIT_VAL = (byte) 0x2;
     public final static byte BSN_BFD_ENDPOINT_STATE_UP_VAL = (byte) 0x3;
-    public final static byte BSN_BFD_ENDPOINT_SESSION_ERROR_VAL = (byte) 0x4;
+    public final static byte BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN_VAL = (byte) 0x4;
+    public final static byte BSN_BFD_ENDPOINT_SESSION_ERROR_VAL = (byte) 0x5;
 
     public static OFBsnBfdEndpointState readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -63,6 +64,8 @@ public class OFBsnBfdEndpointStateSerializerVer14 {
                 return OFBsnBfdEndpointState.BSN_BFD_ENDPOINT_STATE_INIT;
             case BSN_BFD_ENDPOINT_STATE_UP_VAL:
                 return OFBsnBfdEndpointState.BSN_BFD_ENDPOINT_STATE_UP;
+            case BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN_VAL:
+                return OFBsnBfdEndpointState.BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN;
             case BSN_BFD_ENDPOINT_SESSION_ERROR_VAL:
                 return OFBsnBfdEndpointState.BSN_BFD_ENDPOINT_SESSION_ERROR;
             default:
@@ -81,6 +84,8 @@ public class OFBsnBfdEndpointStateSerializerVer14 {
                 return BSN_BFD_ENDPOINT_STATE_INIT_VAL;
             case BSN_BFD_ENDPOINT_STATE_UP:
                 return BSN_BFD_ENDPOINT_STATE_UP_VAL;
+            case BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN:
+                return BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN_VAL;
             case BSN_BFD_ENDPOINT_SESSION_ERROR:
                 return BSN_BFD_ENDPOINT_SESSION_ERROR_VAL;
             default:
