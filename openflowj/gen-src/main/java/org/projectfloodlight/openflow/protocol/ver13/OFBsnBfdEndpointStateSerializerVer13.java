@@ -36,6 +36,7 @@ public class OFBsnBfdEndpointStateSerializerVer13 {
     public final static byte BSN_BFD_ENDPOINT_STATE_INIT_VAL = (byte) 0x2;
     public final static byte BSN_BFD_ENDPOINT_STATE_UP_VAL = (byte) 0x3;
     public final static byte BSN_BFD_ENDPOINT_SESSION_ERROR_VAL = (byte) 0x4;
+    public final static byte BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN_VAL = (byte) 0x5;
 
     public static OFBsnBfdEndpointState readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -65,6 +66,8 @@ public class OFBsnBfdEndpointStateSerializerVer13 {
                 return OFBsnBfdEndpointState.BSN_BFD_ENDPOINT_STATE_UP;
             case BSN_BFD_ENDPOINT_SESSION_ERROR_VAL:
                 return OFBsnBfdEndpointState.BSN_BFD_ENDPOINT_SESSION_ERROR;
+            case BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN_VAL:
+                return OFBsnBfdEndpointState.BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFBsnBfdEndpointState in version 1.3: " + val);
         }
@@ -83,6 +86,8 @@ public class OFBsnBfdEndpointStateSerializerVer13 {
                 return BSN_BFD_ENDPOINT_STATE_UP_VAL;
             case BSN_BFD_ENDPOINT_SESSION_ERROR:
                 return BSN_BFD_ENDPOINT_SESSION_ERROR_VAL;
+            case BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN:
+                return BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFBsnBfdEndpointState in version 1.3: " + e);
         }
