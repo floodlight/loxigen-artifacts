@@ -229,9 +229,11 @@ class OFOxmTcpDstVer13 implements OFOxmTcpDst {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmTcpDst> {
+    static class Reader extends AbstractOFMessageReader<OFOxmTcpDst> {
         @Override
-        public OFOxmTcpDst readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmTcpDst readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80001c02L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80001c02)

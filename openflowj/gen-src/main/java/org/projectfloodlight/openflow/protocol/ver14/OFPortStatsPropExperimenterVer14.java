@@ -35,9 +35,9 @@ abstract class OFPortStatsPropExperimenterVer14 {
 
     public final static OFPortStatsPropExperimenterVer14.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFPortStatsPropExperimenter> {
+    static class Reader extends AbstractOFMessageReader<OFPortStatsPropExperimenter> {
         @Override
-        public OFPortStatsPropExperimenter readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortStatsPropExperimenter readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -48,15 +48,24 @@ abstract class OFPortStatsPropExperimenterVer14 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             int experimenter = bb.readInt();
-            bb.readerIndex(start);
             switch(experimenter) {
                case 0xaa01:
+                   bb.readerIndex(start);
                    // discriminator value 0xaa01L=0xaa01L for class OFPortStatsPropExperimenterIntelVer14
-                   return OFPortStatsPropExperimenterIntelVer14.READER.readFrom(bb);
+                   return OFPortStatsPropExperimenterIntelVer14.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator experimenter of class OFPortStatsPropExperimenterVer14: " + experimenter);
+                   context.getUnparsedHandler().unparsedMessage(OFPortStatsPropExperimenterVer14.class, "experimenter", experimenter);
             }
+            U32.f(bb.readInt());
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

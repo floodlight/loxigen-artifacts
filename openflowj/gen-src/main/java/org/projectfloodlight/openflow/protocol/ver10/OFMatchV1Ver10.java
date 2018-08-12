@@ -2205,9 +2205,11 @@ class OFMatchV1Ver10 implements OFMatchV1 {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFMatchV1> {
+    static class Reader extends AbstractOFMessageReader<OFMatchV1> {
         @Override
-        public OFMatchV1 readFrom(ByteBuf bb) throws OFParseError {
+        public OFMatchV1 readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int wildcards = bb.readInt();
             OFPort inPort = OFPort.read2Bytes(bb);
             MacAddress ethSrc = MacAddress.read6Bytes(bb);

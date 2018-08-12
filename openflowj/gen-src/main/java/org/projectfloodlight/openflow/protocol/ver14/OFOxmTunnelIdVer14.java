@@ -229,9 +229,11 @@ class OFOxmTunnelIdVer14 implements OFOxmTunnelId {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmTunnelId> {
+    static class Reader extends AbstractOFMessageReader<OFOxmTunnelId> {
         @Override
-        public OFOxmTunnelId readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmTunnelId readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80004c08L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80004c08)

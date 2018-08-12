@@ -365,9 +365,11 @@ class OFBsnFlowIdleVer15 implements OFBsnFlowIdle {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnFlowIdle> {
+    static class Reader extends AbstractOFMessageReader<OFBsnFlowIdle> {
         @Override
-        public OFBsnFlowIdle readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnFlowIdle readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -380,6 +382,7 @@ class OFBsnFlowIdleVer15 implements OFBsnFlowIdle {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -401,7 +404,7 @@ class OFBsnFlowIdleVer15 implements OFBsnFlowIdle {
             TableId tableId = TableId.readByte(bb);
             // pad: 5 bytes
             bb.skipBytes(5);
-            Match match = ChannelUtilsVer15.readOFMatch(bb);
+            Match match = ChannelUtilsVer15.readOFMatch(context, bb);
 
             OFBsnFlowIdleVer15 bsnFlowIdleVer15 = new OFBsnFlowIdleVer15(
                     xid,

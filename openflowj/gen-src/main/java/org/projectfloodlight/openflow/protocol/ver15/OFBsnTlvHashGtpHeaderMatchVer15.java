@@ -200,9 +200,11 @@ class OFBsnTlvHashGtpHeaderMatchVer15 implements OFBsnTlvHashGtpHeaderMatch {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvHashGtpHeaderMatch> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvHashGtpHeaderMatch> {
         @Override
-        public OFBsnTlvHashGtpHeaderMatch readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvHashGtpHeaderMatch readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x68
             short type = bb.readShort();
@@ -211,6 +213,7 @@ class OFBsnTlvHashGtpHeaderMatchVer15 implements OFBsnTlvHashGtpHeaderMatch {
             int length = U16.f(bb.readShort());
             if(length != 6)
                 throw new OFParseError("Wrong length: Expected=6(6), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

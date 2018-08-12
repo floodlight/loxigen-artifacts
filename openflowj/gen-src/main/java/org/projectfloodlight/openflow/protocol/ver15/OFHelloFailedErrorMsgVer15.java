@@ -263,9 +263,11 @@ class OFHelloFailedErrorMsgVer15 implements OFHelloFailedErrorMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFHelloFailedErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFHelloFailedErrorMsg> {
         @Override
-        public OFHelloFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFHelloFailedErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -278,6 +280,7 @@ class OFHelloFailedErrorMsgVer15 implements OFHelloFailedErrorMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,7 +294,7 @@ class OFHelloFailedErrorMsgVer15 implements OFHelloFailedErrorMsg {
             if(errType != (short) 0x0)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.HELLO_FAILED(0), got="+errType);
             OFHelloFailedCode code = OFHelloFailedCodeSerializerVer15.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_15);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_15);
 
             OFHelloFailedErrorMsgVer15 helloFailedErrorMsgVer15 = new OFHelloFailedErrorMsgVer15(
                     xid,

@@ -162,9 +162,11 @@ class OFBsnTlvEgressPortGroupIdVer14 implements OFBsnTlvEgressPortGroupId {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvEgressPortGroupId> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvEgressPortGroupId> {
         @Override
-        public OFBsnTlvEgressPortGroupId readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvEgressPortGroupId readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x8b
             short type = bb.readShort();
@@ -173,6 +175,7 @@ class OFBsnTlvEgressPortGroupIdVer14 implements OFBsnTlvEgressPortGroupId {
             int length = U16.f(bb.readShort());
             if(length != 8)
                 throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
