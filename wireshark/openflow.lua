@@ -69,7 +69,18 @@ OFReader.new = function(buf, offset)
 end
 
 p_of = Proto ("of", "OpenFlow (LOXI)")
-ethernet_dissector = Dissector.get("eth")
+ethernet_dissector = nil
+for index, name in ipairs(Dissector.list()) do
+    if name == 'eth' then
+        ethernet_dissector = Dissector.get("eth")
+    elseif name == 'eth_withoutfcs' then
+        ethernet_dissector = Dissector.get("eth_withoutfcs")
+    end
+end
+
+if ethernet_dissector == nil then
+    print("OpenFlow (LOXI): no ethernet dissector found")
+end
 
 current_pkt = nil
 
