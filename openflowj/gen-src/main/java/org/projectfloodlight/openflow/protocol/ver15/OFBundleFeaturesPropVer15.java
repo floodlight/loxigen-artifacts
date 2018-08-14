@@ -35,21 +35,32 @@ abstract class OFBundleFeaturesPropVer15 {
 
     public final static OFBundleFeaturesPropVer15.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFBundleFeaturesProp> {
+    static class Reader extends AbstractOFMessageReader<OFBundleFeaturesProp> {
         @Override
-        public OFBundleFeaturesProp readFrom(ByteBuf bb) throws OFParseError {
+        public OFBundleFeaturesProp readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
-            bb.readerIndex(start);
             switch(type) {
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value 0x1=0x1 for class OFBundleFeaturesPropTimeVer15
-                   return OFBundleFeaturesPropTimeVer15.READER.readFrom(bb);
+                   return OFBundleFeaturesPropTimeVer15.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFBundleFeaturesPropVer15: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFBundleFeaturesPropVer15.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

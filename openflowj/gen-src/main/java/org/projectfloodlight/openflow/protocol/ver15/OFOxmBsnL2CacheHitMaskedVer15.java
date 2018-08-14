@@ -264,9 +264,11 @@ class OFOxmBsnL2CacheHitMaskedVer15 implements OFOxmBsnL2CacheHitMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnL2CacheHitMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnL2CacheHitMasked> {
         @Override
-        public OFOxmBsnL2CacheHitMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnL2CacheHitMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x32502L
             int typeLen = bb.readInt();
             if(typeLen != 0x32502)

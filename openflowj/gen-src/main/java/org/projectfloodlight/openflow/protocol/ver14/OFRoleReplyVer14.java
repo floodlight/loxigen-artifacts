@@ -271,9 +271,11 @@ class OFRoleReplyVer14 implements OFRoleReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFRoleReply> {
+    static class Reader extends AbstractOFMessageReader<OFRoleReply> {
         @Override
-        public OFRoleReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFRoleReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -286,6 +288,7 @@ class OFRoleReplyVer14 implements OFRoleReply {
             int length = U16.f(bb.readShort());
             if(length != 24)
                 throw new OFParseError("Wrong length: Expected=24(24), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

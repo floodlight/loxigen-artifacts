@@ -171,9 +171,11 @@ class OFTableFeaturePropApplyCopyfieldMissVer15 implements OFTableFeaturePropApp
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableFeaturePropApplyCopyfieldMiss> {
+    static class Reader extends AbstractOFMessageReader<OFTableFeaturePropApplyCopyfieldMiss> {
         @Override
-        public OFTableFeaturePropApplyCopyfieldMiss readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeaturePropApplyCopyfieldMiss readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x15
             short type = bb.readShort();
@@ -182,6 +184,7 @@ class OFTableFeaturePropApplyCopyfieldMissVer15 implements OFTableFeaturePropApp
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -189,7 +192,7 @@ class OFTableFeaturePropApplyCopyfieldMissVer15 implements OFTableFeaturePropApp
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            List<U32> oxmIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), U32.READER);
+            List<U32> oxmIds = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), U32.READER);
 
             OFTableFeaturePropApplyCopyfieldMissVer15 tableFeaturePropApplyCopyfieldMissVer15 = new OFTableFeaturePropApplyCopyfieldMissVer15(
                     oxmIds

@@ -298,9 +298,11 @@ class OFBsnPortCounterStatsRequestVer13 implements OFBsnPortCounterStatsRequest 
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnPortCounterStatsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFBsnPortCounterStatsRequest> {
         @Override
-        public OFBsnPortCounterStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnPortCounterStatsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -313,6 +315,7 @@ class OFBsnPortCounterStatsRequestVer13 implements OFBsnPortCounterStatsRequest 
             int length = U16.f(bb.readShort());
             if(length != 28)
                 throw new OFParseError("Wrong length: Expected=28(28), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

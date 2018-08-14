@@ -300,9 +300,11 @@ class OFBsnLacpStatsReplyVer13 implements OFBsnLacpStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnLacpStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnLacpStatsReply> {
         @Override
-        public OFBsnLacpStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnLacpStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -315,6 +317,7 @@ class OFBsnLacpStatsReplyVer13 implements OFBsnLacpStatsReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -338,7 +341,7 @@ class OFBsnLacpStatsReplyVer13 implements OFBsnLacpStatsReply {
             int subtype = bb.readInt();
             if(subtype != 0x1)
                 throw new OFParseError("Wrong subtype: Expected=0x1L(0x1L), got="+subtype);
-            List<OFBsnLacpStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnLacpStatsEntryVer13.READER);
+            List<OFBsnLacpStatsEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnLacpStatsEntryVer13.READER);
 
             OFBsnLacpStatsReplyVer13 bsnLacpStatsReplyVer13 = new OFBsnLacpStatsReplyVer13(
                     xid,
