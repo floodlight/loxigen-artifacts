@@ -2008,6 +2008,10 @@ enum_v4_ofp_bsn_vrf_counter_constants = {
 
 enum_v4_ofp_bsn_fabric_port_role = {
     [1] = "OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE",
+    [2] = "OFP_BSN_FABRIC_PORT_ROLE_SPINE",
+    [3] = "OFP_BSN_FABRIC_PORT_ROLE_PEER",
+    [4] = "OFP_BSN_FABRIC_PORT_ROLE_EDGE",
+    [5] = "OFP_BSN_FABRIC_PORT_ROLE_CONTROLLER",
 }
 
 enum_v4_ofp_bsn_tunnel_type = {
@@ -3086,6 +3090,10 @@ enum_v5_ofp_bsn_misc_capabilities = {
 
 enum_v5_ofp_bsn_fabric_port_role = {
     [1] = "OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE",
+    [2] = "OFP_BSN_FABRIC_PORT_ROLE_SPINE",
+    [3] = "OFP_BSN_FABRIC_PORT_ROLE_PEER",
+    [4] = "OFP_BSN_FABRIC_PORT_ROLE_EDGE",
+    [5] = "OFP_BSN_FABRIC_PORT_ROLE_CONTROLLER",
 }
 
 enum_v5_ofp_bsn_tunnel_type = {
@@ -4358,6 +4366,10 @@ enum_v6_ofp_bsn_misc_capabilities = {
 
 enum_v6_ofp_bsn_fabric_port_role = {
     [1] = "OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE",
+    [2] = "OFP_BSN_FABRIC_PORT_ROLE_SPINE",
+    [3] = "OFP_BSN_FABRIC_PORT_ROLE_PEER",
+    [4] = "OFP_BSN_FABRIC_PORT_ROLE_EDGE",
+    [5] = "OFP_BSN_FABRIC_PORT_ROLE_CONTROLLER",
 }
 
 enum_v6_ofp_bundle_features_prop_type = {

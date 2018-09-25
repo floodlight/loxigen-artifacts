@@ -27,5 +27,9 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 
 public enum OFBsnFabricPortRole {
-     BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE;
+     BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE,
+     BSN_FABRIC_PORT_ROLE_SPINE,
+     BSN_FABRIC_PORT_ROLE_PEER,
+     BSN_FABRIC_PORT_ROLE_EDGE,
+     BSN_FABRIC_PORT_ROLE_CONTROLLER;
 }
