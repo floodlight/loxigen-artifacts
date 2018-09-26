@@ -192,9 +192,11 @@ class OFBsnVlanMacVer13 implements OFBsnVlanMac {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnVlanMac> {
+    static class Reader extends AbstractOFMessageReader<OFBsnVlanMac> {
         @Override
-        public OFBsnVlanMac readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnVlanMac readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int vlanVid = U16.f(bb.readShort());
             MacAddress mac = MacAddress.read6Bytes(bb);
 

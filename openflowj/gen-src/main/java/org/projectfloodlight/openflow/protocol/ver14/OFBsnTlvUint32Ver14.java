@@ -162,9 +162,11 @@ class OFBsnTlvUint32Ver14 implements OFBsnTlvUint32 {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvUint32> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvUint32> {
         @Override
-        public OFBsnTlvUint32 readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvUint32 readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0xa7
             short type = bb.readShort();
@@ -173,6 +175,7 @@ class OFBsnTlvUint32Ver14 implements OFBsnTlvUint32 {
             int length = U16.f(bb.readShort());
             if(length != 8)
                 throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

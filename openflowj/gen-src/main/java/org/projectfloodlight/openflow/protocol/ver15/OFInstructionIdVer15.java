@@ -35,39 +35,56 @@ abstract class OFInstructionIdVer15 {
 
     public final static OFInstructionIdVer15.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFInstructionId> {
+    static class Reader extends AbstractOFMessageReader<OFInstructionId> {
         @Override
-        public OFInstructionId readFrom(ByteBuf bb) throws OFParseError {
+        public OFInstructionId readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
-            bb.readerIndex(start);
             switch(type) {
                case (short) 0x4:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.APPLY_ACTIONS=4 for class OFInstructionIdApplyActionsVer15
-                   return OFInstructionIdApplyActionsVer15.READER.readFrom(bb);
+                   return OFInstructionIdApplyActionsVer15.READER.readFrom(context, bb);
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.EXPERIMENTER=65535 for class OFInstructionIdExperimenterVer15
-                   return OFInstructionIdExperimenterVer15.READER.readFrom(bb);
+                   return OFInstructionIdExperimenterVer15.READER.readFrom(context, bb);
                case (short) 0x5:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.CLEAR_ACTIONS=5 for class OFInstructionIdClearActionsVer15
-                   return OFInstructionIdClearActionsVer15.READER.readFrom(bb);
+                   return OFInstructionIdClearActionsVer15.READER.readFrom(context, bb);
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.GOTO_TABLE=1 for class OFInstructionIdGotoTableVer15
-                   return OFInstructionIdGotoTableVer15.READER.readFrom(bb);
+                   return OFInstructionIdGotoTableVer15.READER.readFrom(context, bb);
                case (short) 0x3:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.WRITE_ACTIONS=3 for class OFInstructionIdWriteActionsVer15
-                   return OFInstructionIdWriteActionsVer15.READER.readFrom(bb);
+                   return OFInstructionIdWriteActionsVer15.READER.readFrom(context, bb);
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.WRITE_METADATA=2 for class OFInstructionIdWriteMetadataVer15
-                   return OFInstructionIdWriteMetadataVer15.READER.readFrom(bb);
+                   return OFInstructionIdWriteMetadataVer15.READER.readFrom(context, bb);
                case (short) 0x7:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.STAT_TRIGGER=7 for class OFInstructionIdStatTriggerVer15
-                   return OFInstructionIdStatTriggerVer15.READER.readFrom(bb);
+                   return OFInstructionIdStatTriggerVer15.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFInstructionIdVer15: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFInstructionIdVer15.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

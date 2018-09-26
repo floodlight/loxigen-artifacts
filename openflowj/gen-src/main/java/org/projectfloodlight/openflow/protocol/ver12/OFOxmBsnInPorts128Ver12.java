@@ -229,9 +229,11 @@ class OFOxmBsnInPorts128Ver12 implements OFOxmBsnInPorts128 {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnInPorts128> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnInPorts128> {
         @Override
-        public OFOxmBsnInPorts128 readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnInPorts128 readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x30010L
             int typeLen = bb.readInt();
             if(typeLen != 0x30010)

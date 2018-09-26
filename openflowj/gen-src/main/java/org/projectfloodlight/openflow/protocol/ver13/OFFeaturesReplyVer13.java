@@ -459,9 +459,11 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFeaturesReply> {
+    static class Reader extends AbstractOFMessageReader<OFFeaturesReply> {
         @Override
-        public OFFeaturesReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFFeaturesReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -474,6 +476,7 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
             int length = U16.f(bb.readShort());
             if(length != 32)
                 throw new OFParseError("Wrong length: Expected=32(32), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

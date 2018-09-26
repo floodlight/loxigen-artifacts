@@ -229,9 +229,11 @@ class OFOxmBsnL3DstClassIdVer12 implements OFOxmBsnL3DstClassId {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnL3DstClassId> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnL3DstClassId> {
         @Override
-        public OFOxmBsnL3DstClassId readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnL3DstClassId readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x30c04L
             int typeLen = bb.readInt();
             if(typeLen != 0x30c04)

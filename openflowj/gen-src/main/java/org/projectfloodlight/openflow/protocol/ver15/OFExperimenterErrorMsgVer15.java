@@ -35,9 +35,9 @@ abstract class OFExperimenterErrorMsgVer15 {
 
     public final static OFExperimenterErrorMsgVer15.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFExperimenterErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFExperimenterErrorMsg> {
         @Override
-        public OFExperimenterErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFExperimenterErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -52,6 +52,11 @@ abstract class OFExperimenterErrorMsgVer15 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             U32.f(bb.readInt());
             // fixed value property errType == 65535
             short errType = bb.readShort();
@@ -59,14 +64,18 @@ abstract class OFExperimenterErrorMsgVer15 {
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.EXPERIMENTER(65535), got="+errType);
             U16.f(bb.readShort());
             int experimenter = bb.readInt();
-            bb.readerIndex(start);
             switch(experimenter) {
                case 0x5c16c7:
+                   bb.readerIndex(start);
                    // discriminator value 0x5c16c7L=0x5c16c7L for class OFBsnBaseErrorVer15
-                   return OFBsnBaseErrorVer15.READER.readFrom(bb);
+                   return OFBsnBaseErrorVer15.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator experimenter of class OFExperimenterErrorMsgVer15: " + experimenter);
+                   context.getUnparsedHandler().unparsedMessage(OFExperimenterErrorMsgVer15.class, "experimenter", experimenter);
             }
+            OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_15);
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

@@ -238,9 +238,11 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnShellOutput> {
+    static class Reader extends AbstractOFMessageReader<OFBsnShellOutput> {
         @Override
-        public OFBsnShellOutput readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnShellOutput readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -253,6 +255,7 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

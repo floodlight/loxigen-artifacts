@@ -246,9 +246,11 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFGroupDescStatsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFGroupDescStatsRequest> {
         @Override
-        public OFGroupDescStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupDescStatsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -261,6 +263,7 @@ class OFGroupDescStatsRequestVer12 implements OFGroupDescStatsRequest {
             int length = U16.f(bb.readShort());
             if(length != 16)
                 throw new OFParseError("Wrong length: Expected=16(16), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

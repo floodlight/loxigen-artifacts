@@ -553,14 +553,17 @@ class OFPortDescVer15 implements OFPortDesc {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPortDesc> {
+    static class Reader extends AbstractOFMessageReader<OFPortDesc> {
         @Override
-        public OFPortDesc readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortDesc readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             OFPort portNo = OFPort.read4Bytes(bb);
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -576,7 +579,7 @@ class OFPortDescVer15 implements OFPortDesc {
             String name = ChannelUtils.readFixedLengthString(bb, 16);
             Set<OFPortConfig> config = OFPortConfigSerializerVer15.readFrom(bb);
             Set<OFPortState> state = OFPortStateSerializerVer15.readFrom(bb);
-            List<OFPortDescProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFPortDescPropVer15.READER);
+            List<OFPortDescProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFPortDescPropVer15.READER);
 
             OFPortDescVer15 portDescVer15 = new OFPortDescVer15(
                     portNo,

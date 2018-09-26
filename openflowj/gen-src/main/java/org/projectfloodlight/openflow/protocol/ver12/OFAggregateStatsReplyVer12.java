@@ -374,9 +374,11 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFAggregateStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFAggregateStatsReply> {
         @Override
-        public OFAggregateStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFAggregateStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -389,6 +391,7 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
             int length = U16.f(bb.readShort());
             if(length != 40)
                 throw new OFParseError("Wrong length: Expected=40(40), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

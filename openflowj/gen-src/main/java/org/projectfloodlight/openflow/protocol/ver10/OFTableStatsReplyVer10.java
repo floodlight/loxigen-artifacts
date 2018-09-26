@@ -270,9 +270,11 @@ class OFTableStatsReplyVer10 implements OFTableStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFTableStatsReply> {
         @Override
-        public OFTableStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -285,6 +287,7 @@ class OFTableStatsReplyVer10 implements OFTableStatsReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -298,7 +301,7 @@ class OFTableStatsReplyVer10 implements OFTableStatsReply {
             if(statsType != (short) 0x3)
                 throw new OFParseError("Wrong statsType: Expected=OFStatsType.TABLE(3), got="+statsType);
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer10.readFrom(bb);
-            List<OFTableStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFTableStatsEntryVer10.READER);
+            List<OFTableStatsEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFTableStatsEntryVer10.READER);
 
             OFTableStatsReplyVer10 tableStatsReplyVer10 = new OFTableStatsReplyVer10(
                     xid,

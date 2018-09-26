@@ -270,9 +270,11 @@ class OFFlowMonitorRequestVer15 implements OFFlowMonitorRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowMonitorRequest> {
+    static class Reader extends AbstractOFMessageReader<OFFlowMonitorRequest> {
         @Override
-        public OFFlowMonitorRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowMonitorRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -285,6 +287,7 @@ class OFFlowMonitorRequestVer15 implements OFFlowMonitorRequest {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -300,7 +303,7 @@ class OFFlowMonitorRequestVer15 implements OFFlowMonitorRequest {
             Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFFlowMonitorEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFFlowMonitorEntryVer15.READER);
+            List<OFFlowMonitorEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFFlowMonitorEntryVer15.READER);
 
             OFFlowMonitorRequestVer15 flowMonitorRequestVer15 = new OFFlowMonitorRequestVer15(
                     xid,

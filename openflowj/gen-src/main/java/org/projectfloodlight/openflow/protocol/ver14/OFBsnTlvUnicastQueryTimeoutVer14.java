@@ -162,9 +162,11 @@ class OFBsnTlvUnicastQueryTimeoutVer14 implements OFBsnTlvUnicastQueryTimeout {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvUnicastQueryTimeout> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvUnicastQueryTimeout> {
         @Override
-        public OFBsnTlvUnicastQueryTimeout readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvUnicastQueryTimeout readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x9
             short type = bb.readShort();
@@ -173,6 +175,7 @@ class OFBsnTlvUnicastQueryTimeoutVer14 implements OFBsnTlvUnicastQueryTimeout {
             int length = U16.f(bb.readShort());
             if(length != 8)
                 throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

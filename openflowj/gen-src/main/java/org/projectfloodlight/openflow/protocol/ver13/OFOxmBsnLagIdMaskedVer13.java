@@ -264,9 +264,11 @@ class OFOxmBsnLagIdMaskedVer13 implements OFOxmBsnLagIdMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnLagIdMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnLagIdMasked> {
         @Override
-        public OFOxmBsnLagIdMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnLagIdMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x30308L
             int typeLen = bb.readInt();
             if(typeLen != 0x30308)

@@ -35,498 +35,662 @@ abstract class OFOxmVer13 {
 
     public final static OFOxmVer13.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFOxm<?>> {
+    static class Reader extends AbstractOFMessageReader<OFOxm<?>> {
         @Override
-        public OFOxm<?> readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxm<?> readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             int typeLen = bb.readInt();
-            bb.readerIndex(start);
             switch(typeLen) {
                case (int) 0x80002a02:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002a02L=0x80002a02L for class OFOxmArpOpVer13
-                   return OFOxmArpOpVer13.READER.readFrom(bb);
+                   return OFOxmArpOpVer13.READER.readFrom(context, bb);
                case (int) 0x80002b04:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002b04L=0x80002b04L for class OFOxmArpOpMaskedVer13
-                   return OFOxmArpOpMaskedVer13.READER.readFrom(bb);
+                   return OFOxmArpOpMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80003006:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003006L=0x80003006L for class OFOxmArpShaVer13
-                   return OFOxmArpShaVer13.READER.readFrom(bb);
+                   return OFOxmArpShaVer13.READER.readFrom(context, bb);
                case (int) 0x8000310c:
+                   bb.readerIndex(start);
                    // discriminator value 0x8000310cL=0x8000310cL for class OFOxmArpShaMaskedVer13
-                   return OFOxmArpShaMaskedVer13.READER.readFrom(bb);
+                   return OFOxmArpShaMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80002c04:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002c04L=0x80002c04L for class OFOxmArpSpaVer13
-                   return OFOxmArpSpaVer13.READER.readFrom(bb);
+                   return OFOxmArpSpaVer13.READER.readFrom(context, bb);
                case (int) 0x80002d08:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002d08L=0x80002d08L for class OFOxmArpSpaMaskedVer13
-                   return OFOxmArpSpaMaskedVer13.READER.readFrom(bb);
+                   return OFOxmArpSpaMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80003206:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003206L=0x80003206L for class OFOxmArpThaVer13
-                   return OFOxmArpThaVer13.READER.readFrom(bb);
+                   return OFOxmArpThaVer13.READER.readFrom(context, bb);
                case (int) 0x8000330c:
+                   bb.readerIndex(start);
                    // discriminator value 0x8000330cL=0x8000330cL for class OFOxmArpThaMaskedVer13
-                   return OFOxmArpThaMaskedVer13.READER.readFrom(bb);
+                   return OFOxmArpThaMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80002e04:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002e04L=0x80002e04L for class OFOxmArpTpaVer13
-                   return OFOxmArpTpaVer13.READER.readFrom(bb);
+                   return OFOxmArpTpaVer13.READER.readFrom(context, bb);
                case (int) 0x80002f08:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002f08L=0x80002f08L for class OFOxmArpTpaMaskedVer13
-                   return OFOxmArpTpaMaskedVer13.READER.readFrom(bb);
+                   return OFOxmArpTpaMaskedVer13.READER.readFrom(context, bb);
                case 0x30e04:
+                   bb.readerIndex(start);
                    // discriminator value 0x30e04L=0x30e04L for class OFOxmBsnEgrPortGroupIdVer13
-                   return OFOxmBsnEgrPortGroupIdVer13.READER.readFrom(bb);
+                   return OFOxmBsnEgrPortGroupIdVer13.READER.readFrom(context, bb);
                case 0x30f08:
+                   bb.readerIndex(start);
                    // discriminator value 0x30f08L=0x30f08L for class OFOxmBsnEgrPortGroupIdMaskedVer13
-                   return OFOxmBsnEgrPortGroupIdMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnEgrPortGroupIdMaskedVer13.READER.readFrom(context, bb);
                case 0x30601:
+                   bb.readerIndex(start);
                    // discriminator value 0x30601L=0x30601L for class OFOxmBsnGlobalVrfAllowedVer13
-                   return OFOxmBsnGlobalVrfAllowedVer13.READER.readFrom(bb);
+                   return OFOxmBsnGlobalVrfAllowedVer13.READER.readFrom(context, bb);
                case 0x30702:
+                   bb.readerIndex(start);
                    // discriminator value 0x30702L=0x30702L for class OFOxmBsnGlobalVrfAllowedMaskedVer13
-                   return OFOxmBsnGlobalVrfAllowedMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnGlobalVrfAllowedMaskedVer13.READER.readFrom(context, bb);
                case 0x30010:
+                   bb.readerIndex(start);
                    // discriminator value 0x30010L=0x30010L for class OFOxmBsnInPorts128Ver13
-                   return OFOxmBsnInPorts128Ver13.READER.readFrom(bb);
+                   return OFOxmBsnInPorts128Ver13.READER.readFrom(context, bb);
                case 0x30120:
+                   bb.readerIndex(start);
                    // discriminator value 0x30120L=0x30120L for class OFOxmBsnInPorts128MaskedVer13
-                   return OFOxmBsnInPorts128MaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnInPorts128MaskedVer13.READER.readFrom(context, bb);
                case 0x32640:
+                   bb.readerIndex(start);
                    // discriminator value 0x32640L=0x32640L for class OFOxmBsnInPorts512Ver13
-                   return OFOxmBsnInPorts512Ver13.READER.readFrom(bb);
+                   return OFOxmBsnInPorts512Ver13.READER.readFrom(context, bb);
                case 0x32780:
+                   bb.readerIndex(start);
                    // discriminator value 0x32780L=0x32780L for class OFOxmBsnInPorts512MaskedVer13
-                   return OFOxmBsnInPorts512MaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnInPorts512MaskedVer13.READER.readFrom(context, bb);
                case 0x32804:
+                   bb.readerIndex(start);
                    // discriminator value 0x32804L=0x32804L for class OFOxmBsnIngressPortGroupIdVer13
-                   return OFOxmBsnIngressPortGroupIdVer13.READER.readFrom(bb);
+                   return OFOxmBsnIngressPortGroupIdVer13.READER.readFrom(context, bb);
                case 0x32908:
+                   bb.readerIndex(start);
                    // discriminator value 0x32908L=0x32908L for class OFOxmBsnIngressPortGroupIdMaskedVer13
-                   return OFOxmBsnIngressPortGroupIdMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnIngressPortGroupIdMaskedVer13.READER.readFrom(context, bb);
                case 0x33401:
+                   bb.readerIndex(start);
                    // discriminator value 0x33401L=0x33401L for class OFOxmBsnIpFragmentationVer13
-                   return OFOxmBsnIpFragmentationVer13.READER.readFrom(bb);
+                   return OFOxmBsnIpFragmentationVer13.READER.readFrom(context, bb);
                case 0x33502:
+                   bb.readerIndex(start);
                    // discriminator value 0x33502L=0x33502L for class OFOxmBsnIpFragmentationMaskedVer13
-                   return OFOxmBsnIpFragmentationMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnIpFragmentationMaskedVer13.READER.readFrom(context, bb);
                case 0x32401:
+                   bb.readerIndex(start);
                    // discriminator value 0x32401L=0x32401L for class OFOxmBsnL2CacheHitVer13
-                   return OFOxmBsnL2CacheHitVer13.READER.readFrom(bb);
+                   return OFOxmBsnL2CacheHitVer13.READER.readFrom(context, bb);
                case 0x32502:
+                   bb.readerIndex(start);
                    // discriminator value 0x32502L=0x32502L for class OFOxmBsnL2CacheHitMaskedVer13
-                   return OFOxmBsnL2CacheHitMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnL2CacheHitMaskedVer13.READER.readFrom(context, bb);
                case 0x30c04:
+                   bb.readerIndex(start);
                    // discriminator value 0x30c04L=0x30c04L for class OFOxmBsnL3DstClassIdVer13
-                   return OFOxmBsnL3DstClassIdVer13.READER.readFrom(bb);
+                   return OFOxmBsnL3DstClassIdVer13.READER.readFrom(context, bb);
                case 0x30d08:
+                   bb.readerIndex(start);
                    // discriminator value 0x30d08L=0x30d08L for class OFOxmBsnL3DstClassIdMaskedVer13
-                   return OFOxmBsnL3DstClassIdMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnL3DstClassIdMaskedVer13.READER.readFrom(context, bb);
                case 0x30804:
+                   bb.readerIndex(start);
                    // discriminator value 0x30804L=0x30804L for class OFOxmBsnL3InterfaceClassIdVer13
-                   return OFOxmBsnL3InterfaceClassIdVer13.READER.readFrom(bb);
+                   return OFOxmBsnL3InterfaceClassIdVer13.READER.readFrom(context, bb);
                case 0x30908:
+                   bb.readerIndex(start);
                    // discriminator value 0x30908L=0x30908L for class OFOxmBsnL3InterfaceClassIdMaskedVer13
-                   return OFOxmBsnL3InterfaceClassIdMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnL3InterfaceClassIdMaskedVer13.READER.readFrom(context, bb);
                case 0x30a04:
+                   bb.readerIndex(start);
                    // discriminator value 0x30a04L=0x30a04L for class OFOxmBsnL3SrcClassIdVer13
-                   return OFOxmBsnL3SrcClassIdVer13.READER.readFrom(bb);
+                   return OFOxmBsnL3SrcClassIdVer13.READER.readFrom(context, bb);
                case 0x30b08:
+                   bb.readerIndex(start);
                    // discriminator value 0x30b08L=0x30b08L for class OFOxmBsnL3SrcClassIdMaskedVer13
-                   return OFOxmBsnL3SrcClassIdMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnL3SrcClassIdMaskedVer13.READER.readFrom(context, bb);
                case 0x30204:
+                   bb.readerIndex(start);
                    // discriminator value 0x30204L=0x30204L for class OFOxmBsnLagIdVer13
-                   return OFOxmBsnLagIdVer13.READER.readFrom(bb);
+                   return OFOxmBsnLagIdVer13.READER.readFrom(context, bb);
                case 0x30308:
+                   bb.readerIndex(start);
                    // discriminator value 0x30308L=0x30308L for class OFOxmBsnLagIdMaskedVer13
-                   return OFOxmBsnLagIdMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnLagIdMaskedVer13.READER.readFrom(context, bb);
                case 0x32002:
+                   bb.readerIndex(start);
                    // discriminator value 0x32002L=0x32002L for class OFOxmBsnTcpFlagsVer13
-                   return OFOxmBsnTcpFlagsVer13.READER.readFrom(bb);
+                   return OFOxmBsnTcpFlagsVer13.READER.readFrom(context, bb);
                case 0x32104:
+                   bb.readerIndex(start);
                    // discriminator value 0x32104L=0x32104L for class OFOxmBsnTcpFlagsMaskedVer13
-                   return OFOxmBsnTcpFlagsMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnTcpFlagsMaskedVer13.READER.readFrom(context, bb);
                case 0x31004:
+                   bb.readerIndex(start);
                    // discriminator value 0x31004L=0x31004L for class OFOxmBsnUdf0Ver13
-                   return OFOxmBsnUdf0Ver13.READER.readFrom(bb);
+                   return OFOxmBsnUdf0Ver13.READER.readFrom(context, bb);
                case 0x31108:
+                   bb.readerIndex(start);
                    // discriminator value 0x31108L=0x31108L for class OFOxmBsnUdf0MaskedVer13
-                   return OFOxmBsnUdf0MaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnUdf0MaskedVer13.READER.readFrom(context, bb);
                case 0x31204:
+                   bb.readerIndex(start);
                    // discriminator value 0x31204L=0x31204L for class OFOxmBsnUdf1Ver13
-                   return OFOxmBsnUdf1Ver13.READER.readFrom(bb);
+                   return OFOxmBsnUdf1Ver13.READER.readFrom(context, bb);
                case 0x31308:
+                   bb.readerIndex(start);
                    // discriminator value 0x31308L=0x31308L for class OFOxmBsnUdf1MaskedVer13
-                   return OFOxmBsnUdf1MaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnUdf1MaskedVer13.READER.readFrom(context, bb);
                case 0x31404:
+                   bb.readerIndex(start);
                    // discriminator value 0x31404L=0x31404L for class OFOxmBsnUdf2Ver13
-                   return OFOxmBsnUdf2Ver13.READER.readFrom(bb);
+                   return OFOxmBsnUdf2Ver13.READER.readFrom(context, bb);
                case 0x31508:
+                   bb.readerIndex(start);
                    // discriminator value 0x31508L=0x31508L for class OFOxmBsnUdf2MaskedVer13
-                   return OFOxmBsnUdf2MaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnUdf2MaskedVer13.READER.readFrom(context, bb);
                case 0x31604:
+                   bb.readerIndex(start);
                    // discriminator value 0x31604L=0x31604L for class OFOxmBsnUdf3Ver13
-                   return OFOxmBsnUdf3Ver13.READER.readFrom(bb);
+                   return OFOxmBsnUdf3Ver13.READER.readFrom(context, bb);
                case 0x31708:
+                   bb.readerIndex(start);
                    // discriminator value 0x31708L=0x31708L for class OFOxmBsnUdf3MaskedVer13
-                   return OFOxmBsnUdf3MaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnUdf3MaskedVer13.READER.readFrom(context, bb);
                case 0x31804:
+                   bb.readerIndex(start);
                    // discriminator value 0x31804L=0x31804L for class OFOxmBsnUdf4Ver13
-                   return OFOxmBsnUdf4Ver13.READER.readFrom(bb);
+                   return OFOxmBsnUdf4Ver13.READER.readFrom(context, bb);
                case 0x31908:
+                   bb.readerIndex(start);
                    // discriminator value 0x31908L=0x31908L for class OFOxmBsnUdf4MaskedVer13
-                   return OFOxmBsnUdf4MaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnUdf4MaskedVer13.READER.readFrom(context, bb);
                case 0x31a04:
+                   bb.readerIndex(start);
                    // discriminator value 0x31a04L=0x31a04L for class OFOxmBsnUdf5Ver13
-                   return OFOxmBsnUdf5Ver13.READER.readFrom(bb);
+                   return OFOxmBsnUdf5Ver13.READER.readFrom(context, bb);
                case 0x31b08:
+                   bb.readerIndex(start);
                    // discriminator value 0x31b08L=0x31b08L for class OFOxmBsnUdf5MaskedVer13
-                   return OFOxmBsnUdf5MaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnUdf5MaskedVer13.READER.readFrom(context, bb);
                case 0x31c04:
+                   bb.readerIndex(start);
                    // discriminator value 0x31c04L=0x31c04L for class OFOxmBsnUdf6Ver13
-                   return OFOxmBsnUdf6Ver13.READER.readFrom(bb);
+                   return OFOxmBsnUdf6Ver13.READER.readFrom(context, bb);
                case 0x31d08:
+                   bb.readerIndex(start);
                    // discriminator value 0x31d08L=0x31d08L for class OFOxmBsnUdf6MaskedVer13
-                   return OFOxmBsnUdf6MaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnUdf6MaskedVer13.READER.readFrom(context, bb);
                case 0x31e04:
+                   bb.readerIndex(start);
                    // discriminator value 0x31e04L=0x31e04L for class OFOxmBsnUdf7Ver13
-                   return OFOxmBsnUdf7Ver13.READER.readFrom(bb);
+                   return OFOxmBsnUdf7Ver13.READER.readFrom(context, bb);
                case 0x31f08:
+                   bb.readerIndex(start);
                    // discriminator value 0x31f08L=0x31f08L for class OFOxmBsnUdf7MaskedVer13
-                   return OFOxmBsnUdf7MaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnUdf7MaskedVer13.READER.readFrom(context, bb);
                case 0x32204:
+                   bb.readerIndex(start);
                    // discriminator value 0x32204L=0x32204L for class OFOxmBsnVlanXlatePortGroupIdVer13
-                   return OFOxmBsnVlanXlatePortGroupIdVer13.READER.readFrom(bb);
+                   return OFOxmBsnVlanXlatePortGroupIdVer13.READER.readFrom(context, bb);
                case 0x32308:
+                   bb.readerIndex(start);
                    // discriminator value 0x32308L=0x32308L for class OFOxmBsnVlanXlatePortGroupIdMaskedVer13
-                   return OFOxmBsnVlanXlatePortGroupIdMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnVlanXlatePortGroupIdMaskedVer13.READER.readFrom(context, bb);
                case 0x30404:
+                   bb.readerIndex(start);
                    // discriminator value 0x30404L=0x30404L for class OFOxmBsnVrfVer13
-                   return OFOxmBsnVrfVer13.READER.readFrom(bb);
+                   return OFOxmBsnVrfVer13.READER.readFrom(context, bb);
                case 0x30508:
+                   bb.readerIndex(start);
                    // discriminator value 0x30508L=0x30508L for class OFOxmBsnVrfMaskedVer13
-                   return OFOxmBsnVrfMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnVrfMaskedVer13.READER.readFrom(context, bb);
                case 0x1f610:
+                   bb.readerIndex(start);
                    // discriminator value 0x1f610L=0x1f610L for class OFOxmConnTrackingIpv6DstVer13
-                   return OFOxmConnTrackingIpv6DstVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingIpv6DstVer13.READER.readFrom(context, bb);
                case 0x1f720:
+                   bb.readerIndex(start);
                    // discriminator value 0x1f720L=0x1f720L for class OFOxmConnTrackingIpv6DstMaskedVer13
-                   return OFOxmConnTrackingIpv6DstMaskedVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingIpv6DstMaskedVer13.READER.readFrom(context, bb);
                case 0x1f410:
+                   bb.readerIndex(start);
                    // discriminator value 0x1f410L=0x1f410L for class OFOxmConnTrackingIpv6SrcVer13
-                   return OFOxmConnTrackingIpv6SrcVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingIpv6SrcVer13.READER.readFrom(context, bb);
                case 0x1f520:
+                   bb.readerIndex(start);
                    // discriminator value 0x1f520L=0x1f520L for class OFOxmConnTrackingIpv6SrcMaskedVer13
-                   return OFOxmConnTrackingIpv6SrcMaskedVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingIpv6SrcMaskedVer13.READER.readFrom(context, bb);
                case 0x1d810:
+                   bb.readerIndex(start);
                    // discriminator value 0x1d810L=0x1d810L for class OFOxmConnTrackingLabelVer13
-                   return OFOxmConnTrackingLabelVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingLabelVer13.READER.readFrom(context, bb);
                case 0x1d920:
+                   bb.readerIndex(start);
                    // discriminator value 0x1d920L=0x1d920L for class OFOxmConnTrackingLabelMaskedVer13
-                   return OFOxmConnTrackingLabelMaskedVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingLabelMaskedVer13.READER.readFrom(context, bb);
                case 0x1d604:
+                   bb.readerIndex(start);
                    // discriminator value 0x1d604L=0x1d604L for class OFOxmConnTrackingMarkVer13
-                   return OFOxmConnTrackingMarkVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingMarkVer13.READER.readFrom(context, bb);
                case 0x1d708:
+                   bb.readerIndex(start);
                    // discriminator value 0x1d708L=0x1d708L for class OFOxmConnTrackingMarkMaskedVer13
-                   return OFOxmConnTrackingMarkMaskedVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingMarkMaskedVer13.READER.readFrom(context, bb);
                case 0x1f204:
+                   bb.readerIndex(start);
                    // discriminator value 0x1f204L=0x1f204L for class OFOxmConnTrackingNwDstVer13
-                   return OFOxmConnTrackingNwDstVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingNwDstVer13.READER.readFrom(context, bb);
                case 0x1f308:
+                   bb.readerIndex(start);
                    // discriminator value 0x1f308L=0x1f308L for class OFOxmConnTrackingNwDstMaskedVer13
-                   return OFOxmConnTrackingNwDstMaskedVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingNwDstMaskedVer13.READER.readFrom(context, bb);
                case 0x1ee01:
+                   bb.readerIndex(start);
                    // discriminator value 0x1ee01L=0x1ee01L for class OFOxmConnTrackingNwProtoVer13
-                   return OFOxmConnTrackingNwProtoVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingNwProtoVer13.READER.readFrom(context, bb);
                case 0x1ef02:
+                   bb.readerIndex(start);
                    // discriminator value 0x1ef02L=0x1ef02L for class OFOxmConnTrackingNwProtoMaskedVer13
-                   return OFOxmConnTrackingNwProtoMaskedVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingNwProtoMaskedVer13.READER.readFrom(context, bb);
                case 0x1f004:
+                   bb.readerIndex(start);
                    // discriminator value 0x1f004L=0x1f004L for class OFOxmConnTrackingNwSrcVer13
-                   return OFOxmConnTrackingNwSrcVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingNwSrcVer13.READER.readFrom(context, bb);
                case 0x1f108:
+                   bb.readerIndex(start);
                    // discriminator value 0x1f108L=0x1f108L for class OFOxmConnTrackingNwSrcMaskedVer13
-                   return OFOxmConnTrackingNwSrcMaskedVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingNwSrcMaskedVer13.READER.readFrom(context, bb);
                case 0x1d204:
+                   bb.readerIndex(start);
                    // discriminator value 0x1d204L=0x1d204L for class OFOxmConnTrackingStateVer13
-                   return OFOxmConnTrackingStateVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingStateVer13.READER.readFrom(context, bb);
                case 0x1d308:
+                   bb.readerIndex(start);
                    // discriminator value 0x1d308L=0x1d308L for class OFOxmConnTrackingStateMaskedVer13
-                   return OFOxmConnTrackingStateMaskedVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingStateMaskedVer13.READER.readFrom(context, bb);
                case 0x1fa02:
+                   bb.readerIndex(start);
                    // discriminator value 0x1fa02L=0x1fa02L for class OFOxmConnTrackingTpDstVer13
-                   return OFOxmConnTrackingTpDstVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingTpDstVer13.READER.readFrom(context, bb);
                case 0x1fb04:
+                   bb.readerIndex(start);
                    // discriminator value 0x1fb04L=0x1fb04L for class OFOxmConnTrackingTpDstMaskedVer13
-                   return OFOxmConnTrackingTpDstMaskedVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingTpDstMaskedVer13.READER.readFrom(context, bb);
                case 0x1f802:
+                   bb.readerIndex(start);
                    // discriminator value 0x1f802L=0x1f802L for class OFOxmConnTrackingTpSrcVer13
-                   return OFOxmConnTrackingTpSrcVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingTpSrcVer13.READER.readFrom(context, bb);
                case 0x1f904:
+                   bb.readerIndex(start);
                    // discriminator value 0x1f904L=0x1f904L for class OFOxmConnTrackingTpSrcMaskedVer13
-                   return OFOxmConnTrackingTpSrcMaskedVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingTpSrcMaskedVer13.READER.readFrom(context, bb);
                case 0x1d402:
+                   bb.readerIndex(start);
                    // discriminator value 0x1d402L=0x1d402L for class OFOxmConnTrackingZoneVer13
-                   return OFOxmConnTrackingZoneVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingZoneVer13.READER.readFrom(context, bb);
                case 0x1d504:
+                   bb.readerIndex(start);
                    // discriminator value 0x1d504L=0x1d504L for class OFOxmConnTrackingZoneMaskedVer13
-                   return OFOxmConnTrackingZoneMaskedVer13.READER.readFrom(bb);
+                   return OFOxmConnTrackingZoneMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80000606:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000606L=0x80000606L for class OFOxmEthDstVer13
-                   return OFOxmEthDstVer13.READER.readFrom(bb);
+                   return OFOxmEthDstVer13.READER.readFrom(context, bb);
                case (int) 0x8000070c:
+                   bb.readerIndex(start);
                    // discriminator value 0x8000070cL=0x8000070cL for class OFOxmEthDstMaskedVer13
-                   return OFOxmEthDstMaskedVer13.READER.readFrom(bb);
+                   return OFOxmEthDstMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80000806:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000806L=0x80000806L for class OFOxmEthSrcVer13
-                   return OFOxmEthSrcVer13.READER.readFrom(bb);
+                   return OFOxmEthSrcVer13.READER.readFrom(context, bb);
                case (int) 0x8000090c:
+                   bb.readerIndex(start);
                    // discriminator value 0x8000090cL=0x8000090cL for class OFOxmEthSrcMaskedVer13
-                   return OFOxmEthSrcMaskedVer13.READER.readFrom(bb);
+                   return OFOxmEthSrcMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80000a02:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000a02L=0x80000a02L for class OFOxmEthTypeVer13
-                   return OFOxmEthTypeVer13.READER.readFrom(bb);
+                   return OFOxmEthTypeVer13.READER.readFrom(context, bb);
                case (int) 0x80000b04:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000b04L=0x80000b04L for class OFOxmEthTypeMaskedVer13
-                   return OFOxmEthTypeMaskedVer13.READER.readFrom(bb);
+                   return OFOxmEthTypeMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80002801:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002801L=0x80002801L for class OFOxmIcmpv4CodeVer13
-                   return OFOxmIcmpv4CodeVer13.READER.readFrom(bb);
+                   return OFOxmIcmpv4CodeVer13.READER.readFrom(context, bb);
                case (int) 0x80002902:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002902L=0x80002902L for class OFOxmIcmpv4CodeMaskedVer13
-                   return OFOxmIcmpv4CodeMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIcmpv4CodeMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80002601:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002601L=0x80002601L for class OFOxmIcmpv4TypeVer13
-                   return OFOxmIcmpv4TypeVer13.READER.readFrom(bb);
+                   return OFOxmIcmpv4TypeVer13.READER.readFrom(context, bb);
                case (int) 0x80002702:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002702L=0x80002702L for class OFOxmIcmpv4TypeMaskedVer13
-                   return OFOxmIcmpv4TypeMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIcmpv4TypeMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80003c01:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003c01L=0x80003c01L for class OFOxmIcmpv6CodeVer13
-                   return OFOxmIcmpv6CodeVer13.READER.readFrom(bb);
+                   return OFOxmIcmpv6CodeVer13.READER.readFrom(context, bb);
                case (int) 0x80003d02:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003d02L=0x80003d02L for class OFOxmIcmpv6CodeMaskedVer13
-                   return OFOxmIcmpv6CodeMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIcmpv6CodeMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80003a01:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003a01L=0x80003a01L for class OFOxmIcmpv6TypeVer13
-                   return OFOxmIcmpv6TypeVer13.READER.readFrom(bb);
+                   return OFOxmIcmpv6TypeVer13.READER.readFrom(context, bb);
                case (int) 0x80003b02:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003b02L=0x80003b02L for class OFOxmIcmpv6TypeMaskedVer13
-                   return OFOxmIcmpv6TypeMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIcmpv6TypeMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80000204:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000204L=0x80000204L for class OFOxmInPhyPortVer13
-                   return OFOxmInPhyPortVer13.READER.readFrom(bb);
+                   return OFOxmInPhyPortVer13.READER.readFrom(context, bb);
                case (int) 0x80000308:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000308L=0x80000308L for class OFOxmInPhyPortMaskedVer13
-                   return OFOxmInPhyPortMaskedVer13.READER.readFrom(bb);
+                   return OFOxmInPhyPortMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80000004:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000004L=0x80000004L for class OFOxmInPortVer13
-                   return OFOxmInPortVer13.READER.readFrom(bb);
+                   return OFOxmInPortVer13.READER.readFrom(context, bb);
                case (int) 0x80000108:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000108L=0x80000108L for class OFOxmInPortMaskedVer13
-                   return OFOxmInPortMaskedVer13.READER.readFrom(bb);
+                   return OFOxmInPortMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80001001:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001001L=0x80001001L for class OFOxmIpDscpVer13
-                   return OFOxmIpDscpVer13.READER.readFrom(bb);
+                   return OFOxmIpDscpVer13.READER.readFrom(context, bb);
                case (int) 0x80001102:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001102L=0x80001102L for class OFOxmIpDscpMaskedVer13
-                   return OFOxmIpDscpMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIpDscpMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80001201:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001201L=0x80001201L for class OFOxmIpEcnVer13
-                   return OFOxmIpEcnVer13.READER.readFrom(bb);
+                   return OFOxmIpEcnVer13.READER.readFrom(context, bb);
                case (int) 0x80001302:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001302L=0x80001302L for class OFOxmIpEcnMaskedVer13
-                   return OFOxmIpEcnMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIpEcnMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80001401:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001401L=0x80001401L for class OFOxmIpProtoVer13
-                   return OFOxmIpProtoVer13.READER.readFrom(bb);
+                   return OFOxmIpProtoVer13.READER.readFrom(context, bb);
                case (int) 0x80001502:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001502L=0x80001502L for class OFOxmIpProtoMaskedVer13
-                   return OFOxmIpProtoMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIpProtoMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80001804:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001804L=0x80001804L for class OFOxmIpv4DstVer13
-                   return OFOxmIpv4DstVer13.READER.readFrom(bb);
+                   return OFOxmIpv4DstVer13.READER.readFrom(context, bb);
                case (int) 0x80001908:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001908L=0x80001908L for class OFOxmIpv4DstMaskedVer13
-                   return OFOxmIpv4DstMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIpv4DstMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80001604:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001604L=0x80001604L for class OFOxmIpv4SrcVer13
-                   return OFOxmIpv4SrcVer13.READER.readFrom(bb);
+                   return OFOxmIpv4SrcVer13.READER.readFrom(context, bb);
                case (int) 0x80001708:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001708L=0x80001708L for class OFOxmIpv4SrcMaskedVer13
-                   return OFOxmIpv4SrcMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIpv4SrcMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80003610:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003610L=0x80003610L for class OFOxmIpv6DstVer13
-                   return OFOxmIpv6DstVer13.READER.readFrom(bb);
+                   return OFOxmIpv6DstVer13.READER.readFrom(context, bb);
                case (int) 0x80003720:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003720L=0x80003720L for class OFOxmIpv6DstMaskedVer13
-                   return OFOxmIpv6DstMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIpv6DstMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80003804:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003804L=0x80003804L for class OFOxmIpv6FlabelVer13
-                   return OFOxmIpv6FlabelVer13.READER.readFrom(bb);
+                   return OFOxmIpv6FlabelVer13.READER.readFrom(context, bb);
                case (int) 0x80003908:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003908L=0x80003908L for class OFOxmIpv6FlabelMaskedVer13
-                   return OFOxmIpv6FlabelMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIpv6FlabelMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80004006:
+                   bb.readerIndex(start);
                    // discriminator value 0x80004006L=0x80004006L for class OFOxmIpv6NdSllVer13
-                   return OFOxmIpv6NdSllVer13.READER.readFrom(bb);
+                   return OFOxmIpv6NdSllVer13.READER.readFrom(context, bb);
                case (int) 0x8000410c:
+                   bb.readerIndex(start);
                    // discriminator value 0x8000410cL=0x8000410cL for class OFOxmIpv6NdSllMaskedVer13
-                   return OFOxmIpv6NdSllMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIpv6NdSllMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80003e10:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003e10L=0x80003e10L for class OFOxmIpv6NdTargetVer13
-                   return OFOxmIpv6NdTargetVer13.READER.readFrom(bb);
+                   return OFOxmIpv6NdTargetVer13.READER.readFrom(context, bb);
                case (int) 0x80003f20:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003f20L=0x80003f20L for class OFOxmIpv6NdTargetMaskedVer13
-                   return OFOxmIpv6NdTargetMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIpv6NdTargetMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80004206:
+                   bb.readerIndex(start);
                    // discriminator value 0x80004206L=0x80004206L for class OFOxmIpv6NdTllVer13
-                   return OFOxmIpv6NdTllVer13.READER.readFrom(bb);
+                   return OFOxmIpv6NdTllVer13.READER.readFrom(context, bb);
                case (int) 0x8000430c:
+                   bb.readerIndex(start);
                    // discriminator value 0x8000430cL=0x8000430cL for class OFOxmIpv6NdTllMaskedVer13
-                   return OFOxmIpv6NdTllMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIpv6NdTllMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80003410:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003410L=0x80003410L for class OFOxmIpv6SrcVer13
-                   return OFOxmIpv6SrcVer13.READER.readFrom(bb);
+                   return OFOxmIpv6SrcVer13.READER.readFrom(context, bb);
                case (int) 0x80003520:
+                   bb.readerIndex(start);
                    // discriminator value 0x80003520L=0x80003520L for class OFOxmIpv6SrcMaskedVer13
-                   return OFOxmIpv6SrcMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIpv6SrcMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80000408:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000408L=0x80000408L for class OFOxmMetadataVer13
-                   return OFOxmMetadataVer13.READER.readFrom(bb);
+                   return OFOxmMetadataVer13.READER.readFrom(context, bb);
                case (int) 0x80000510:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000510L=0x80000510L for class OFOxmMetadataMaskedVer13
-                   return OFOxmMetadataMaskedVer13.READER.readFrom(bb);
+                   return OFOxmMetadataMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80004404:
+                   bb.readerIndex(start);
                    // discriminator value 0x80004404L=0x80004404L for class OFOxmMplsLabelVer13
-                   return OFOxmMplsLabelVer13.READER.readFrom(bb);
+                   return OFOxmMplsLabelVer13.READER.readFrom(context, bb);
                case (int) 0x80004508:
+                   bb.readerIndex(start);
                    // discriminator value 0x80004508L=0x80004508L for class OFOxmMplsLabelMaskedVer13
-                   return OFOxmMplsLabelMaskedVer13.READER.readFrom(bb);
+                   return OFOxmMplsLabelMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80004601:
+                   bb.readerIndex(start);
                    // discriminator value 0x80004601L=0x80004601L for class OFOxmMplsTcVer13
-                   return OFOxmMplsTcVer13.READER.readFrom(bb);
+                   return OFOxmMplsTcVer13.READER.readFrom(context, bb);
                case (int) 0x80004702:
+                   bb.readerIndex(start);
                    // discriminator value 0x80004702L=0x80004702L for class OFOxmMplsTcMaskedVer13
-                   return OFOxmMplsTcMaskedVer13.READER.readFrom(bb);
+                   return OFOxmMplsTcMaskedVer13.READER.readFrom(context, bb);
                case (int) 0xffff5406:
+                   bb.readerIndex(start);
                    // discriminator value 0xffff5406L=0xffff5406L for class OFOxmOvsTcpFlagsVer13
-                   return OFOxmOvsTcpFlagsVer13.READER.readFrom(bb);
+                   return OFOxmOvsTcpFlagsVer13.READER.readFrom(context, bb);
                case (int) 0xffff5508:
+                   bb.readerIndex(start);
                    // discriminator value 0xffff5508L=0xffff5508L for class OFOxmOvsTcpFlagsMaskedVer13
-                   return OFOxmOvsTcpFlagsMaskedVer13.READER.readFrom(bb);
+                   return OFOxmOvsTcpFlagsMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80002402:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002402L=0x80002402L for class OFOxmSctpDstVer13
-                   return OFOxmSctpDstVer13.READER.readFrom(bb);
+                   return OFOxmSctpDstVer13.READER.readFrom(context, bb);
                case (int) 0x80002504:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002504L=0x80002504L for class OFOxmSctpDstMaskedVer13
-                   return OFOxmSctpDstMaskedVer13.READER.readFrom(bb);
+                   return OFOxmSctpDstMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80002202:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002202L=0x80002202L for class OFOxmSctpSrcVer13
-                   return OFOxmSctpSrcVer13.READER.readFrom(bb);
+                   return OFOxmSctpSrcVer13.READER.readFrom(context, bb);
                case (int) 0x80002304:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002304L=0x80002304L for class OFOxmSctpSrcMaskedVer13
-                   return OFOxmSctpSrcMaskedVer13.READER.readFrom(bb);
+                   return OFOxmSctpSrcMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80001c02:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001c02L=0x80001c02L for class OFOxmTcpDstVer13
-                   return OFOxmTcpDstVer13.READER.readFrom(bb);
+                   return OFOxmTcpDstVer13.READER.readFrom(context, bb);
                case (int) 0x80001d04:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001d04L=0x80001d04L for class OFOxmTcpDstMaskedVer13
-                   return OFOxmTcpDstMaskedVer13.READER.readFrom(bb);
+                   return OFOxmTcpDstMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80001a02:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001a02L=0x80001a02L for class OFOxmTcpSrcVer13
-                   return OFOxmTcpSrcVer13.READER.readFrom(bb);
+                   return OFOxmTcpSrcVer13.READER.readFrom(context, bb);
                case (int) 0x80001b04:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001b04L=0x80001b04L for class OFOxmTcpSrcMaskedVer13
-                   return OFOxmTcpSrcMaskedVer13.READER.readFrom(bb);
+                   return OFOxmTcpSrcMaskedVer13.READER.readFrom(context, bb);
                case 0x14004:
+                   bb.readerIndex(start);
                    // discriminator value 0x14004L=0x14004L for class OFOxmTunnelIpv4DstVer13
-                   return OFOxmTunnelIpv4DstVer13.READER.readFrom(bb);
+                   return OFOxmTunnelIpv4DstVer13.READER.readFrom(context, bb);
                case 0x14108:
+                   bb.readerIndex(start);
                    // discriminator value 0x14108L=0x14108L for class OFOxmTunnelIpv4DstMaskedVer13
-                   return OFOxmTunnelIpv4DstMaskedVer13.READER.readFrom(bb);
+                   return OFOxmTunnelIpv4DstMaskedVer13.READER.readFrom(context, bb);
                case 0x13e04:
+                   bb.readerIndex(start);
                    // discriminator value 0x13e04L=0x13e04L for class OFOxmTunnelIpv4SrcVer13
-                   return OFOxmTunnelIpv4SrcVer13.READER.readFrom(bb);
+                   return OFOxmTunnelIpv4SrcVer13.READER.readFrom(context, bb);
                case 0x13f08:
+                   bb.readerIndex(start);
                    // discriminator value 0x13f08L=0x13f08L for class OFOxmTunnelIpv4SrcMaskedVer13
-                   return OFOxmTunnelIpv4SrcMaskedVer13.READER.readFrom(bb);
+                   return OFOxmTunnelIpv4SrcMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80002002:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002002L=0x80002002L for class OFOxmUdpDstVer13
-                   return OFOxmUdpDstVer13.READER.readFrom(bb);
+                   return OFOxmUdpDstVer13.READER.readFrom(context, bb);
                case (int) 0x80002104:
+                   bb.readerIndex(start);
                    // discriminator value 0x80002104L=0x80002104L for class OFOxmUdpDstMaskedVer13
-                   return OFOxmUdpDstMaskedVer13.READER.readFrom(bb);
+                   return OFOxmUdpDstMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80001e02:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001e02L=0x80001e02L for class OFOxmUdpSrcVer13
-                   return OFOxmUdpSrcVer13.READER.readFrom(bb);
+                   return OFOxmUdpSrcVer13.READER.readFrom(context, bb);
                case (int) 0x80001f04:
+                   bb.readerIndex(start);
                    // discriminator value 0x80001f04L=0x80001f04L for class OFOxmUdpSrcMaskedVer13
-                   return OFOxmUdpSrcMaskedVer13.READER.readFrom(bb);
+                   return OFOxmUdpSrcMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80000e01:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000e01L=0x80000e01L for class OFOxmVlanPcpVer13
-                   return OFOxmVlanPcpVer13.READER.readFrom(bb);
+                   return OFOxmVlanPcpVer13.READER.readFrom(context, bb);
                case (int) 0x80000f02:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000f02L=0x80000f02L for class OFOxmVlanPcpMaskedVer13
-                   return OFOxmVlanPcpMaskedVer13.READER.readFrom(bb);
+                   return OFOxmVlanPcpMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80000c02:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000c02L=0x80000c02L for class OFOxmVlanVidVer13
-                   return OFOxmVlanVidVer13.READER.readFrom(bb);
+                   return OFOxmVlanVidVer13.READER.readFrom(context, bb);
                case (int) 0x80000d04:
+                   bb.readerIndex(start);
                    // discriminator value 0x80000d04L=0x80000d04L for class OFOxmVlanVidMaskedVer13
-                   return OFOxmVlanVidMaskedVer13.READER.readFrom(bb);
+                   return OFOxmVlanVidMaskedVer13.READER.readFrom(context, bb);
                case 0x32c06:
+                   bb.readerIndex(start);
                    // discriminator value 0x32c06L=0x32c06L for class OFOxmBsnInnerEthDstVer13
-                   return OFOxmBsnInnerEthDstVer13.READER.readFrom(bb);
+                   return OFOxmBsnInnerEthDstVer13.READER.readFrom(context, bb);
                case 0x32d0c:
+                   bb.readerIndex(start);
                    // discriminator value 0x32d0cL=0x32d0cL for class OFOxmBsnInnerEthDstMaskedVer13
-                   return OFOxmBsnInnerEthDstMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnInnerEthDstMaskedVer13.READER.readFrom(context, bb);
                case 0x32e06:
+                   bb.readerIndex(start);
                    // discriminator value 0x32e06L=0x32e06L for class OFOxmBsnInnerEthSrcVer13
-                   return OFOxmBsnInnerEthSrcVer13.READER.readFrom(bb);
+                   return OFOxmBsnInnerEthSrcVer13.READER.readFrom(context, bb);
                case 0x32f0c:
+                   bb.readerIndex(start);
                    // discriminator value 0x32f0cL=0x32f0cL for class OFOxmBsnInnerEthSrcMaskedVer13
-                   return OFOxmBsnInnerEthSrcMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnInnerEthSrcMaskedVer13.READER.readFrom(context, bb);
                case 0x33002:
+                   bb.readerIndex(start);
                    // discriminator value 0x33002L=0x33002L for class OFOxmBsnInnerVlanVidVer13
-                   return OFOxmBsnInnerVlanVidVer13.READER.readFrom(bb);
+                   return OFOxmBsnInnerVlanVidVer13.READER.readFrom(context, bb);
                case 0x33104:
+                   bb.readerIndex(start);
                    // discriminator value 0x33104L=0x33104L for class OFOxmBsnInnerVlanVidMaskedVer13
-                   return OFOxmBsnInnerVlanVidMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnInnerVlanVidMaskedVer13.READER.readFrom(context, bb);
                case 0x33202:
+                   bb.readerIndex(start);
                    // discriminator value 0x33202L=0x33202L for class OFOxmBsnVfiVer13
-                   return OFOxmBsnVfiVer13.READER.readFrom(bb);
+                   return OFOxmBsnVfiVer13.READER.readFrom(context, bb);
                case 0x33304:
+                   bb.readerIndex(start);
                    // discriminator value 0x33304L=0x33304L for class OFOxmBsnVfiMaskedVer13
-                   return OFOxmBsnVfiMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnVfiMaskedVer13.READER.readFrom(context, bb);
                case 0x32a04:
+                   bb.readerIndex(start);
                    // discriminator value 0x32a04L=0x32a04L for class OFOxmBsnVxlanNetworkIdVer13
-                   return OFOxmBsnVxlanNetworkIdVer13.READER.readFrom(bb);
+                   return OFOxmBsnVxlanNetworkIdVer13.READER.readFrom(context, bb);
                case 0x32b08:
+                   bb.readerIndex(start);
                    // discriminator value 0x32b08L=0x32b08L for class OFOxmBsnVxlanNetworkIdMaskedVer13
-                   return OFOxmBsnVxlanNetworkIdMaskedVer13.READER.readFrom(bb);
+                   return OFOxmBsnVxlanNetworkIdMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80004e02:
+                   bb.readerIndex(start);
                    // discriminator value 0x80004e02L=0x80004e02L for class OFOxmIpv6ExthdrVer13
-                   return OFOxmIpv6ExthdrVer13.READER.readFrom(bb);
+                   return OFOxmIpv6ExthdrVer13.READER.readFrom(context, bb);
                case (int) 0x80004f04:
+                   bb.readerIndex(start);
                    // discriminator value 0x80004f04L=0x80004f04L for class OFOxmIpv6ExthdrMaskedVer13
-                   return OFOxmIpv6ExthdrMaskedVer13.READER.readFrom(bb);
+                   return OFOxmIpv6ExthdrMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80004801:
+                   bb.readerIndex(start);
                    // discriminator value 0x80004801L=0x80004801L for class OFOxmMplsBosVer13
-                   return OFOxmMplsBosVer13.READER.readFrom(bb);
+                   return OFOxmMplsBosVer13.READER.readFrom(context, bb);
                case (int) 0x80004902:
+                   bb.readerIndex(start);
                    // discriminator value 0x80004902L=0x80004902L for class OFOxmMplsBosMaskedVer13
-                   return OFOxmMplsBosMaskedVer13.READER.readFrom(bb);
+                   return OFOxmMplsBosMaskedVer13.READER.readFrom(context, bb);
                case (int) 0x80004c08:
+                   bb.readerIndex(start);
                    // discriminator value 0x80004c08L=0x80004c08L for class OFOxmTunnelIdVer13
-                   return OFOxmTunnelIdVer13.READER.readFrom(bb);
+                   return OFOxmTunnelIdVer13.READER.readFrom(context, bb);
                case (int) 0x80004d10:
+                   bb.readerIndex(start);
                    // discriminator value 0x80004d10L=0x80004d10L for class OFOxmTunnelIdMaskedVer13
-                   return OFOxmTunnelIdMaskedVer13.READER.readFrom(bb);
+                   return OFOxmTunnelIdMaskedVer13.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator typeLen of class OFOxmVer13: " + typeLen);
+                   context.getUnparsedHandler().unparsedMessage(OFOxmVer13.class, "typeLen", typeLen);
             }
+            // will only reach here if the discriminator turns up nothing.
+            // hack around for OXM's: they have their length stored as the 4th
+            int oxmDataLength = typeLen & 0x0000_00FF;
+            bb.skipBytes(oxmDataLength);
+            return null;
         }
     }
 }

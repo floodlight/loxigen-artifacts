@@ -239,9 +239,11 @@ class OFBsnGetInterfacesReplyVer14 implements OFBsnGetInterfacesReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGetInterfacesReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGetInterfacesReply> {
         @Override
-        public OFBsnGetInterfacesReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGetInterfacesReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -254,6 +256,7 @@ class OFBsnGetInterfacesReplyVer14 implements OFBsnGetInterfacesReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -270,7 +273,7 @@ class OFBsnGetInterfacesReplyVer14 implements OFBsnGetInterfacesReply {
             int subtype = bb.readInt();
             if(subtype != 0xa)
                 throw new OFParseError("Wrong subtype: Expected=0xaL(0xaL), got="+subtype);
-            List<OFBsnInterface> interfaces = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnInterfaceVer14.READER);
+            List<OFBsnInterface> interfaces = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnInterfaceVer14.READER);
 
             OFBsnGetInterfacesReplyVer14 bsnGetInterfacesReplyVer14 = new OFBsnGetInterfacesReplyVer14(
                     xid,
