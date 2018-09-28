@@ -241,6 +241,7 @@ public interface OFBsnTlvs {
     OFBsnTlvPduaRxInstance.Builder buildPduaRxInstance() throws UnsupportedOperationException;
     OFBsnTlvPduaRxInstance pduaRxInstance(byte[] value);
     OFBsnTlvPimDr pimDr();
+    OFBsnTlvPimHelloFlood pimHelloFlood();
     OFBsnTlvPort.Builder buildPort() throws UnsupportedOperationException;
     OFBsnTlvPort port(OFPort value);
     OFBsnTlvPortMode.Builder buildPortMode() throws UnsupportedOperationException;

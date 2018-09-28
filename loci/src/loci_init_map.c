@@ -430,6 +430,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_passive_init,
     (of_object_init_f)of_bsn_tlv_pdua_rx_instance_init,
     (of_object_init_f)of_bsn_tlv_pim_dr_init,
+    (of_object_init_f)of_bsn_tlv_pim_hello_flood_init,
     (of_object_init_f)of_bsn_tlv_port_init,
     (of_object_init_f)of_bsn_tlv_port_mode_init,
     (of_object_init_f)of_bsn_tlv_port_speed_gbps_init,

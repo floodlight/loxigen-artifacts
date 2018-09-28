@@ -1087,6 +1087,8 @@ void of_bsn_tlv_pdua_rx_instance_wire_object_id_get(of_object_t *obj, of_object_
 void of_bsn_tlv_pdua_rx_instance_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_pim_dr_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_pim_dr_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_pim_hello_flood_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_pim_hello_flood_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_port_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_port_mode_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2012,6 +2014,7 @@ typedef of_object_t of_bsn_tlv_partner_system_priority_t;
 typedef of_object_t of_bsn_tlv_passive_t;
 typedef of_object_t of_bsn_tlv_pdua_rx_instance_t;
 typedef of_object_t of_bsn_tlv_pim_dr_t;
+typedef of_object_t of_bsn_tlv_pim_hello_flood_t;
 typedef of_object_t of_bsn_tlv_port_t;
 typedef of_object_t of_bsn_tlv_port_mode_t;
 typedef of_object_t of_bsn_tlv_port_speed_gbps_t;
@@ -4555,6 +4558,11 @@ extern void of_bsn_tlv_pdua_rx_instance_init(
 extern of_object_t *
     of_bsn_tlv_pim_dr_new(of_version_t version);
 extern void of_bsn_tlv_pim_dr_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_pim_hello_flood_new(of_version_t version);
+extern void of_bsn_tlv_pim_hello_flood_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11314,6 +11322,17 @@ of_bsn_tlv_pdua_rx_instance_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_pim_dr_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_pim_hello_flood_t
+ * @param obj An instance of type of_bsn_tlv_pim_hello_flood_t
+ *
+ * \ingroup of_bsn_tlv_pim_hello_flood
+ */
+static inline void
+of_bsn_tlv_pim_hello_flood_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24731,6 +24750,8 @@ extern void of_bsn_tlv_pdua_rx_instance_value_get(
     of_octets_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_pim_dr */
+
+/* Unified accessor functions for of_bsn_tlv_pim_hello_flood */
 
 /* Unified accessor functions for of_bsn_tlv_port */
 

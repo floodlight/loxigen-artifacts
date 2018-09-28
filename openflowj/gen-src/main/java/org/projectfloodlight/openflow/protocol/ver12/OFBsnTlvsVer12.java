@@ -781,6 +781,10 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPimDr not supported in version 1.2");
     }
 
+    public OFBsnTlvPimHelloFlood pimHelloFlood() {
+        throw new UnsupportedOperationException("OFBsnTlvPimHelloFlood not supported in version 1.2");
+    }
+
     public OFBsnTlvPort.Builder buildPort() {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.2");
     }

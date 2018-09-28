@@ -7645,6 +7645,13 @@ typedef struct of_bsn_tlv_pdua_rx_instance_s of_bsn_tlv_pdua_rx_instance_t;
 typedef struct of_bsn_tlv_pim_dr_s of_bsn_tlv_pim_dr_t;
 
 /**
+ * Structure for of_bsn_tlv_pim_hello_flood object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_pim_hello_flood_s of_bsn_tlv_pim_hello_flood_t;
+
+/**
  * Structure for of_bsn_tlv_port object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
