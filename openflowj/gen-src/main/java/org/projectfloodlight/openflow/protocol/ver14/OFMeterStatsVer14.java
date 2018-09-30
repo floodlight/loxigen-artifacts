@@ -421,14 +421,17 @@ class OFMeterStatsVer14 implements OFMeterStats {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFMeterStats> {
+    static class Reader extends AbstractOFMessageReader<OFMeterStats> {
         @Override
-        public OFMeterStats readFrom(ByteBuf bb) throws OFParseError {
+        public OFMeterStats readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             long meterId = U32.f(bb.readInt());
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -443,7 +446,7 @@ class OFMeterStatsVer14 implements OFMeterStats {
             U64 byteInCount = U64.ofRaw(bb.readLong());
             long durationSec = U32.f(bb.readInt());
             long durationNsec = U32.f(bb.readInt());
-            List<OFMeterBandStats> bandStats = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFMeterBandStatsVer14.READER);
+            List<OFMeterBandStats> bandStats = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFMeterBandStatsVer14.READER);
 
             OFMeterStatsVer14 meterStatsVer14 = new OFMeterStatsVer14(
                     meterId,

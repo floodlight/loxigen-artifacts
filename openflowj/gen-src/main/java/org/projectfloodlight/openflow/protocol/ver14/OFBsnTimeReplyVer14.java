@@ -237,9 +237,11 @@ class OFBsnTimeReplyVer14 implements OFBsnTimeReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTimeReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTimeReply> {
         @Override
-        public OFBsnTimeReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTimeReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -252,6 +254,7 @@ class OFBsnTimeReplyVer14 implements OFBsnTimeReply {
             int length = U16.f(bb.readShort());
             if(length != 24)
                 throw new OFParseError("Wrong length: Expected=24(24), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

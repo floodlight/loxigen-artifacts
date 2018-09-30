@@ -229,9 +229,11 @@ class OFOxmBsnUdf5Ver13 implements OFOxmBsnUdf5 {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnUdf5> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnUdf5> {
         @Override
-        public OFOxmBsnUdf5 readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnUdf5 readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x31a04L
             int typeLen = bb.readInt();
             if(typeLen != 0x31a04)

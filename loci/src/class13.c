@@ -4251,6 +4251,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xb4:
             *id = OF_BSN_TLV_UDF_CAPABILITY;
             break;
+        case 0xb5:
+            *id = OF_BSN_TLV_PIM_HELLO_FLOOD;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -4799,6 +4802,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xb4:
             *id = OF_BSN_TLV_UDF_CAPABILITY;
+            break;
+        case 0xb5:
+            *id = OF_BSN_TLV_PIM_HELLO_FLOOD;
             break;
         default:
             *id = OF_BSN_TLV;

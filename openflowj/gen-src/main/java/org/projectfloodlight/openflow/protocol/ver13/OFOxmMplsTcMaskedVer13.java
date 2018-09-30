@@ -264,9 +264,11 @@ class OFOxmMplsTcMaskedVer13 implements OFOxmMplsTcMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmMplsTcMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmMplsTcMasked> {
         @Override
-        public OFOxmMplsTcMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmMplsTcMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80004702L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80004702)

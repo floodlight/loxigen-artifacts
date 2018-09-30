@@ -35,9 +35,9 @@ abstract class OFActionExperimenterVer13 {
 
     public final static OFActionExperimenterVer13.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFActionExperimenter> {
+    static class Reader extends AbstractOFMessageReader<OFActionExperimenter> {
         @Override
-        public OFActionExperimenter readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionExperimenter readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -48,18 +48,28 @@ abstract class OFActionExperimenterVer13 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             int experimenter = bb.readInt();
-            bb.readerIndex(start);
             switch(experimenter) {
                case 0x5c16c7:
+                   bb.readerIndex(start);
                    // discriminator value 0x5c16c7L=0x5c16c7L for class OFActionBsnVer13
-                   return OFActionBsnVer13.READER.readFrom(bb);
+                   return OFActionBsnVer13.READER.readFrom(context, bb);
                case 0x2320:
+                   bb.readerIndex(start);
                    // discriminator value 0x2320L=0x2320L for class OFActionNiciraVer13
-                   return OFActionNiciraVer13.READER.readFrom(bb);
+                   return OFActionNiciraVer13.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator experimenter of class OFActionExperimenterVer13: " + experimenter);
+                   context.getUnparsedHandler().unparsedMessage(OFActionExperimenterVer13.class, "experimenter", experimenter);
             }
+            ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

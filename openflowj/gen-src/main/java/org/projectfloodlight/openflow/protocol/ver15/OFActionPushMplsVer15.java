@@ -169,9 +169,11 @@ class OFActionPushMplsVer15 implements OFActionPushMpls {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFActionPushMpls> {
+    static class Reader extends AbstractOFMessageReader<OFActionPushMpls> {
         @Override
-        public OFActionPushMpls readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionPushMpls readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 19
             short type = bb.readShort();
@@ -180,6 +182,7 @@ class OFActionPushMplsVer15 implements OFActionPushMpls {
             int length = U16.f(bb.readShort());
             if(length != 8)
                 throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

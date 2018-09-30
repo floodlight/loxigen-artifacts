@@ -169,9 +169,11 @@ class OFBsnTlvReplyPacketsVer14 implements OFBsnTlvReplyPackets {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvReplyPackets> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvReplyPackets> {
         @Override
-        public OFBsnTlvReplyPackets readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvReplyPackets readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0xc
             short type = bb.readShort();
@@ -180,6 +182,7 @@ class OFBsnTlvReplyPacketsVer14 implements OFBsnTlvReplyPackets {
             int length = U16.f(bb.readShort());
             if(length != 12)
                 throw new OFParseError("Wrong length: Expected=12(12), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

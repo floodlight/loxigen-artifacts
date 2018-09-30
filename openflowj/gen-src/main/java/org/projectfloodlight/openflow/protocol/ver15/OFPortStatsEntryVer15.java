@@ -729,13 +729,16 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPortStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFPortStatsEntry> {
         @Override
-        public OFPortStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -756,7 +759,7 @@ class OFPortStatsEntryVer15 implements OFPortStatsEntry {
             U64 txDropped = U64.ofRaw(bb.readLong());
             U64 rxErrors = U64.ofRaw(bb.readLong());
             U64 txErrors = U64.ofRaw(bb.readLong());
-            List<OFPortStatsProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFPortStatsPropVer15.READER);
+            List<OFPortStatsProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFPortStatsPropVer15.READER);
 
             OFPortStatsEntryVer15 portStatsEntryVer15 = new OFPortStatsEntryVer15(
                     portNo,

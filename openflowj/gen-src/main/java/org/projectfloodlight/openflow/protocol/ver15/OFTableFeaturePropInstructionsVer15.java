@@ -171,9 +171,11 @@ class OFTableFeaturePropInstructionsVer15 implements OFTableFeaturePropInstructi
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableFeaturePropInstructions> {
+    static class Reader extends AbstractOFMessageReader<OFTableFeaturePropInstructions> {
         @Override
-        public OFTableFeaturePropInstructions readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeaturePropInstructions readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x0
             short type = bb.readShort();
@@ -182,6 +184,7 @@ class OFTableFeaturePropInstructionsVer15 implements OFTableFeaturePropInstructi
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -189,7 +192,7 @@ class OFTableFeaturePropInstructionsVer15 implements OFTableFeaturePropInstructi
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            List<OFInstructionId> instructionIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFInstructionIdVer15.READER);
+            List<OFInstructionId> instructionIds = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFInstructionIdVer15.READER);
 
             OFTableFeaturePropInstructionsVer15 tableFeaturePropInstructionsVer15 = new OFTableFeaturePropInstructionsVer15(
                     instructionIds

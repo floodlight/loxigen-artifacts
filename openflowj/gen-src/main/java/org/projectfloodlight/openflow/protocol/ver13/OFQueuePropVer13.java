@@ -35,27 +35,42 @@ abstract class OFQueuePropVer13 {
 
     public final static OFQueuePropVer13.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFQueueProp> {
+    static class Reader extends AbstractOFMessageReader<OFQueueProp> {
         @Override
-        public OFQueueProp readFrom(ByteBuf bb) throws OFParseError {
+        public OFQueueProp readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
-            bb.readerIndex(start);
             switch(type) {
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value 0x1=0x1 for class OFQueuePropMinRateVer13
-                   return OFQueuePropMinRateVer13.READER.readFrom(bb);
+                   return OFQueuePropMinRateVer13.READER.readFrom(context, bb);
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value 0xffff=0xffff for class OFQueuePropExperimenterVer13
-                   return OFQueuePropExperimenterVer13.READER.readFrom(bb);
+                   return OFQueuePropExperimenterVer13.READER.readFrom(context, bb);
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value 0x2=0x2 for class OFQueuePropMaxRateVer13
-                   return OFQueuePropMaxRateVer13.READER.readFrom(bb);
+                   return OFQueuePropMaxRateVer13.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFQueuePropVer13: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFQueuePropVer13.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            // pad: 4 bytes
+            bb.skipBytes(4);
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

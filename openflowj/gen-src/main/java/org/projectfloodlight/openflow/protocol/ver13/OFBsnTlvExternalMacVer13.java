@@ -169,9 +169,11 @@ class OFBsnTlvExternalMacVer13 implements OFBsnTlvExternalMac {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvExternalMac> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvExternalMac> {
         @Override
-        public OFBsnTlvExternalMac readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvExternalMac readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x18
             short type = bb.readShort();
@@ -180,6 +182,7 @@ class OFBsnTlvExternalMacVer13 implements OFBsnTlvExternalMac {
             int length = U16.f(bb.readShort());
             if(length != 10)
                 throw new OFParseError("Wrong length: Expected=10(10), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

@@ -306,9 +306,11 @@ class OFBsnSetL2TableReplyVer10 implements OFBsnSetL2TableReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnSetL2TableReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnSetL2TableReply> {
         @Override
-        public OFBsnSetL2TableReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnSetL2TableReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -321,6 +323,7 @@ class OFBsnSetL2TableReplyVer10 implements OFBsnSetL2TableReply {
             int length = U16.f(bb.readShort());
             if(length != 24)
                 throw new OFParseError("Wrong length: Expected=24(24), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

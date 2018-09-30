@@ -972,6 +972,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return OFBsnTlvPimDrVer13.INSTANCE;
     }
 
+    public OFBsnTlvPimHelloFlood pimHelloFlood() {
+        return OFBsnTlvPimHelloFloodVer13.INSTANCE;
+    }
+
     public OFBsnTlvPort.Builder buildPort() {
         return new OFBsnTlvPortVer13.Builder();
     }

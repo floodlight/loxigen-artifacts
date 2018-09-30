@@ -1687,6 +1687,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_pim_hello_flood_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_port_dup(
         of_object_t *src);
 
@@ -6943,6 +6947,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_pim_hello_flood_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_port_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9876,6 +9884,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_pim_dr_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_pim_hello_flood_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
