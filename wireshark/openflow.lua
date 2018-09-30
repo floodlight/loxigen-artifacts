@@ -2008,10 +2008,6 @@ enum_v4_ofp_bsn_vrf_counter_constants = {
 
 enum_v4_ofp_bsn_fabric_port_role = {
     [1] = "OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE",
-    [2] = "OFP_BSN_FABRIC_PORT_ROLE_SPINE",
-    [3] = "OFP_BSN_FABRIC_PORT_ROLE_PEER",
-    [4] = "OFP_BSN_FABRIC_PORT_ROLE_EDGE",
-    [5] = "OFP_BSN_FABRIC_PORT_ROLE_CONTROLLER",
 }
 
 enum_v4_ofp_bsn_tunnel_type = {
@@ -3090,10 +3086,6 @@ enum_v5_ofp_bsn_misc_capabilities = {
 
 enum_v5_ofp_bsn_fabric_port_role = {
     [1] = "OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE",
-    [2] = "OFP_BSN_FABRIC_PORT_ROLE_SPINE",
-    [3] = "OFP_BSN_FABRIC_PORT_ROLE_PEER",
-    [4] = "OFP_BSN_FABRIC_PORT_ROLE_EDGE",
-    [5] = "OFP_BSN_FABRIC_PORT_ROLE_CONTROLLER",
 }
 
 enum_v5_ofp_bsn_tunnel_type = {
@@ -4366,10 +4358,6 @@ enum_v6_ofp_bsn_misc_capabilities = {
 
 enum_v6_ofp_bsn_fabric_port_role = {
     [1] = "OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE",
-    [2] = "OFP_BSN_FABRIC_PORT_ROLE_SPINE",
-    [3] = "OFP_BSN_FABRIC_PORT_ROLE_PEER",
-    [4] = "OFP_BSN_FABRIC_PORT_ROLE_EDGE",
-    [5] = "OFP_BSN_FABRIC_PORT_ROLE_CONTROLLER",
 }
 
 enum_v6_ofp_bundle_features_prop_type = {
@@ -9078,6 +9066,8 @@ fields['of13.bsn_tlv_pdua_rx_instance.length'] = ProtoField.uint16("of13.bsn_tlv
 fields['of13.bsn_tlv_pdua_rx_instance.value'] = ProtoField.bytes("of13.bsn_tlv_pdua_rx_instance.value", "value")
 fields['of13.bsn_tlv_pim_dr.type'] = ProtoField.uint16("of13.bsn_tlv_pim_dr.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_pim_dr.length'] = ProtoField.uint16("of13.bsn_tlv_pim_dr.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_pim_hello_flood.type'] = ProtoField.uint16("of13.bsn_tlv_pim_hello_flood.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_pim_hello_flood.length'] = ProtoField.uint16("of13.bsn_tlv_pim_hello_flood.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port.type'] = ProtoField.uint16("of13.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port.length'] = ProtoField.uint16("of13.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port.value'] = ProtoField.uint32("of13.bsn_tlv_port.value", "value", base.DEC, nil)
@@ -12107,6 +12097,8 @@ fields['of14.bsn_tlv_pdua_rx_instance.length'] = ProtoField.uint16("of14.bsn_tlv
 fields['of14.bsn_tlv_pdua_rx_instance.value'] = ProtoField.bytes("of14.bsn_tlv_pdua_rx_instance.value", "value")
 fields['of14.bsn_tlv_pim_dr.type'] = ProtoField.uint16("of14.bsn_tlv_pim_dr.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_pim_dr.length'] = ProtoField.uint16("of14.bsn_tlv_pim_dr.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_pim_hello_flood.type'] = ProtoField.uint16("of14.bsn_tlv_pim_hello_flood.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_pim_hello_flood.length'] = ProtoField.uint16("of14.bsn_tlv_pim_hello_flood.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_port.type'] = ProtoField.uint16("of14.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_port.length'] = ProtoField.uint16("of14.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_port.value'] = ProtoField.uint32("of14.bsn_tlv_port.value", "value", base.DEC, nil)
@@ -15409,6 +15401,8 @@ fields['of15.bsn_tlv_pdua_rx_instance.length'] = ProtoField.uint16("of15.bsn_tlv
 fields['of15.bsn_tlv_pdua_rx_instance.value'] = ProtoField.bytes("of15.bsn_tlv_pdua_rx_instance.value", "value")
 fields['of15.bsn_tlv_pim_dr.type'] = ProtoField.uint16("of15.bsn_tlv_pim_dr.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_pim_dr.length'] = ProtoField.uint16("of15.bsn_tlv_pim_dr.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_pim_hello_flood.type'] = ProtoField.uint16("of15.bsn_tlv_pim_hello_flood.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_pim_hello_flood.length'] = ProtoField.uint16("of15.bsn_tlv_pim_hello_flood.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_port.type'] = ProtoField.uint16("of15.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_port.length'] = ProtoField.uint16("of15.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_port.value'] = ProtoField.uint32("of15.bsn_tlv_port.value", "value", base.DEC, nil)
@@ -22004,6 +21998,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_pdua_rx_instance.value'],
     fields['of13.bsn_tlv_pim_dr.type'],
     fields['of13.bsn_tlv_pim_dr.length'],
+    fields['of13.bsn_tlv_pim_hello_flood.type'],
+    fields['of13.bsn_tlv_pim_hello_flood.length'],
     fields['of13.bsn_tlv_port.type'],
     fields['of13.bsn_tlv_port.length'],
     fields['of13.bsn_tlv_port.value'],
@@ -25033,6 +25029,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_pdua_rx_instance.value'],
     fields['of14.bsn_tlv_pim_dr.type'],
     fields['of14.bsn_tlv_pim_dr.length'],
+    fields['of14.bsn_tlv_pim_hello_flood.type'],
+    fields['of14.bsn_tlv_pim_hello_flood.length'],
     fields['of14.bsn_tlv_port.type'],
     fields['of14.bsn_tlv_port.length'],
     fields['of14.bsn_tlv_port.value'],
@@ -28335,6 +28333,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_pdua_rx_instance.value'],
     fields['of15.bsn_tlv_pim_dr.type'],
     fields['of15.bsn_tlv_pim_dr.length'],
+    fields['of15.bsn_tlv_pim_hello_flood.type'],
+    fields['of15.bsn_tlv_pim_hello_flood.length'],
     fields['of15.bsn_tlv_port.type'],
     fields['of15.bsn_tlv_port.length'],
     fields['of15.bsn_tlv_port.value'],
@@ -41250,6 +41250,15 @@ function dissect_of_bsn_tlv_pim_dr_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[171] = dissect_of_bsn_tlv_pim_dr_v4
 
+-- child class of_bsn_tlv_pim_hello_flood
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_pim_hello_flood_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_pim_hello_flood.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_pim_hello_flood.length')
+    return 'of_bsn_tlv_pim_hello_flood'
+end
+of_bsn_tlv_v4_dissectors[181] = dissect_of_bsn_tlv_pim_hello_flood_v4
+
 -- child class of_bsn_tlv_port
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_port_v4(reader, subtree)
@@ -49494,6 +49503,15 @@ function dissect_of_bsn_tlv_pim_dr_v5(reader, subtree)
     return 'of_bsn_tlv_pim_dr'
 end
 of_bsn_tlv_v5_dissectors[171] = dissect_of_bsn_tlv_pim_dr_v5
+
+-- child class of_bsn_tlv_pim_hello_flood
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_pim_hello_flood_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_pim_hello_flood.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_pim_hello_flood.length')
+    return 'of_bsn_tlv_pim_hello_flood'
+end
+of_bsn_tlv_v5_dissectors[181] = dissect_of_bsn_tlv_pim_hello_flood_v5
 
 -- child class of_bsn_tlv_port
 -- Child of of_bsn_tlv
@@ -58371,6 +58389,15 @@ function dissect_of_bsn_tlv_pim_dr_v6(reader, subtree)
     return 'of_bsn_tlv_pim_dr'
 end
 of_bsn_tlv_v6_dissectors[171] = dissect_of_bsn_tlv_pim_dr_v6
+
+-- child class of_bsn_tlv_pim_hello_flood
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_pim_hello_flood_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_pim_hello_flood.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_pim_hello_flood.length')
+    return 'of_bsn_tlv_pim_hello_flood'
+end
+of_bsn_tlv_v6_dissectors[181] = dissect_of_bsn_tlv_pim_hello_flood_v6
 
 -- child class of_bsn_tlv_port
 -- Child of of_bsn_tlv

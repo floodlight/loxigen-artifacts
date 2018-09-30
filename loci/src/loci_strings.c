@@ -427,6 +427,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_passive",
     "of_bsn_tlv_pdua_rx_instance",
     "of_bsn_tlv_pim_dr",
+    "of_bsn_tlv_pim_hello_flood",
     "of_bsn_tlv_port",
     "of_bsn_tlv_port_mode",
     "of_bsn_tlv_port_speed_gbps",

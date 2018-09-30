@@ -530,17 +530,9 @@ ofp_bsn_enhanced_hash_type_map = {
 
 # Identifiers from group ofp_bsn_fabric_port_role
 OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE = 1
-OFP_BSN_FABRIC_PORT_ROLE_SPINE = 2
-OFP_BSN_FABRIC_PORT_ROLE_PEER = 3
-OFP_BSN_FABRIC_PORT_ROLE_EDGE = 4
-OFP_BSN_FABRIC_PORT_ROLE_CONTROLLER = 5
 
 ofp_bsn_fabric_port_role_map = {
     1: 'OFP_BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE',
-    2: 'OFP_BSN_FABRIC_PORT_ROLE_SPINE',
-    3: 'OFP_BSN_FABRIC_PORT_ROLE_PEER',
-    4: 'OFP_BSN_FABRIC_PORT_ROLE_EDGE',
-    5: 'OFP_BSN_FABRIC_PORT_ROLE_CONTROLLER',
 }
 
 # Identifiers from group ofp_bsn_fec_config_state

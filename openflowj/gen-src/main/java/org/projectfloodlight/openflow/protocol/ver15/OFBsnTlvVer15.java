@@ -394,6 +394,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0xab:
                    // discriminator value 0xab=0xab for class OFBsnTlvPimDrVer15
                    return OFBsnTlvPimDrVer15.READER.readFrom(bb);
+               case (short) 0xb5:
+                   // discriminator value 0xb5=0xb5 for class OFBsnTlvPimHelloFloodVer15
+                   return OFBsnTlvPimHelloFloodVer15.READER.readFrom(bb);
                case (short) 0x0:
                    // discriminator value 0x0=0x0 for class OFBsnTlvPortVer15
                    return OFBsnTlvPortVer15.READER.readFrom(bb);

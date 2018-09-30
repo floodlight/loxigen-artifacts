@@ -32,10 +32,6 @@ import com.google.common.hash.PrimitiveSink;
 public class OFBsnFabricPortRoleSerializerVer15 {
 
     public final static short BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE_VAL = (short) 0x1;
-    public final static short BSN_FABRIC_PORT_ROLE_SPINE_VAL = (short) 0x2;
-    public final static short BSN_FABRIC_PORT_ROLE_PEER_VAL = (short) 0x3;
-    public final static short BSN_FABRIC_PORT_ROLE_EDGE_VAL = (short) 0x4;
-    public final static short BSN_FABRIC_PORT_ROLE_CONTROLLER_VAL = (short) 0x5;
 
     public static OFBsnFabricPortRole readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -57,14 +53,6 @@ public class OFBsnFabricPortRoleSerializerVer15 {
         switch(val) {
             case BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE_VAL:
                 return OFBsnFabricPortRole.BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE;
-            case BSN_FABRIC_PORT_ROLE_SPINE_VAL:
-                return OFBsnFabricPortRole.BSN_FABRIC_PORT_ROLE_SPINE;
-            case BSN_FABRIC_PORT_ROLE_PEER_VAL:
-                return OFBsnFabricPortRole.BSN_FABRIC_PORT_ROLE_PEER;
-            case BSN_FABRIC_PORT_ROLE_EDGE_VAL:
-                return OFBsnFabricPortRole.BSN_FABRIC_PORT_ROLE_EDGE;
-            case BSN_FABRIC_PORT_ROLE_CONTROLLER_VAL:
-                return OFBsnFabricPortRole.BSN_FABRIC_PORT_ROLE_CONTROLLER;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFBsnFabricPortRole in version 1.5: " + val);
         }
@@ -75,14 +63,6 @@ public class OFBsnFabricPortRoleSerializerVer15 {
         switch(e) {
             case BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE:
                 return BSN_FABRIC_PORT_ROLE_PARTITIONED_SPINE_VAL;
-            case BSN_FABRIC_PORT_ROLE_SPINE:
-                return BSN_FABRIC_PORT_ROLE_SPINE_VAL;
-            case BSN_FABRIC_PORT_ROLE_PEER:
-                return BSN_FABRIC_PORT_ROLE_PEER_VAL;
-            case BSN_FABRIC_PORT_ROLE_EDGE:
-                return BSN_FABRIC_PORT_ROLE_EDGE_VAL;
-            case BSN_FABRIC_PORT_ROLE_CONTROLLER:
-                return BSN_FABRIC_PORT_ROLE_CONTROLLER_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFBsnFabricPortRole in version 1.5: " + e);
         }
