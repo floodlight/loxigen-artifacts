@@ -34,6 +34,7 @@ public class OFBsnMulticastPacketSerializerVer14 {
     public final static short BSN_MULTICAST_PACKET_NONE_VAL = (short) 0x0;
     public final static short BSN_MULTICAST_PACKET_PIM_HELLO_VAL = (short) 0x1;
     public final static short BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE_VAL = (short) 0x2;
+    public final static short BSN_MULTICAST_PACKET_PIM_ASSERT_VAL = (short) 0x3;
 
     public static OFBsnMulticastPacket readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -59,6 +60,8 @@ public class OFBsnMulticastPacketSerializerVer14 {
                 return OFBsnMulticastPacket.BSN_MULTICAST_PACKET_PIM_HELLO;
             case BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE_VAL:
                 return OFBsnMulticastPacket.BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE;
+            case BSN_MULTICAST_PACKET_PIM_ASSERT_VAL:
+                return OFBsnMulticastPacket.BSN_MULTICAST_PACKET_PIM_ASSERT;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFBsnMulticastPacket in version 1.4: " + val);
         }
@@ -73,6 +76,8 @@ public class OFBsnMulticastPacketSerializerVer14 {
                 return BSN_MULTICAST_PACKET_PIM_HELLO_VAL;
             case BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE:
                 return BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE_VAL;
+            case BSN_MULTICAST_PACKET_PIM_ASSERT:
+                return BSN_MULTICAST_PACKET_PIM_ASSERT_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFBsnMulticastPacket in version 1.4: " + e);
         }
