@@ -29,5 +29,6 @@ import org.projectfloodlight.openflow.exceptions.*;
 public enum OFBsnMulticastPacket {
      BSN_MULTICAST_PACKET_NONE,
      BSN_MULTICAST_PACKET_PIM_HELLO,
-     BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE;
+     BSN_MULTICAST_PACKET_PIM_JOIN_PRUNE,
+     BSN_MULTICAST_PACKET_PIM_ASSERT;
 }
