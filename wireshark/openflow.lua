@@ -1965,6 +1965,7 @@ enum_v4_ofp_bsn_pktin_flag = {
     [1048576] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL",
     [2097152] = "OFP_BSN_PKTIN_FLAG_IPMC_MISS",
     [4194304] = "OFP_BSN_PKTIN_FLAG_IPMC_RPF_FAILED",
+    [8388608] = "OFP_BSN_PKTIN_FLAG_BFD_SLOWPATH",
 }
 
 enum_v4_ofp_bad_instruction_code = {
@@ -2046,6 +2047,7 @@ enum_v4_ofp_bsn_bfd_endpoint_state = {
     [3] = "OFP_BSN_BFD_ENDPOINT_STATE_UP",
     [4] = "OFP_BSN_BFD_ENDPOINT_SESSION_ERROR",
     [5] = "OFP_BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN",
+    [6] = "OFP_BSN_BFD_ENDPOINT_REMOTE_PARAMS_CHANGE",
 }
 
 enum_v4_ofp_port = {
@@ -3042,6 +3044,7 @@ enum_v5_ofp_bsn_pktin_flag = {
     [1048576] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL",
     [2097152] = "OFP_BSN_PKTIN_FLAG_IPMC_MISS",
     [4194304] = "OFP_BSN_PKTIN_FLAG_IPMC_RPF_FAILED",
+    [8388608] = "OFP_BSN_PKTIN_FLAG_BFD_SLOWPATH",
 }
 
 enum_v5_ofp_bad_instruction_code = {
@@ -3129,6 +3132,7 @@ enum_v5_ofp_bsn_bfd_endpoint_state = {
     [3] = "OFP_BSN_BFD_ENDPOINT_STATE_UP",
     [4] = "OFP_BSN_BFD_ENDPOINT_SESSION_ERROR",
     [5] = "OFP_BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN",
+    [6] = "OFP_BSN_BFD_ENDPOINT_REMOTE_PARAMS_CHANGE",
 }
 
 enum_v5_ofp_bsn_vrf_counter_constants = {
@@ -4294,6 +4298,7 @@ enum_v6_ofp_bsn_pktin_flag = {
     [1048576] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL_LOCAL",
     [2097152] = "OFP_BSN_PKTIN_FLAG_IPMC_MISS",
     [4194304] = "OFP_BSN_PKTIN_FLAG_IPMC_RPF_FAILED",
+    [8388608] = "OFP_BSN_PKTIN_FLAG_BFD_SLOWPATH",
 }
 
 enum_v6_ofp_bad_instruction_code = {
@@ -4407,6 +4412,7 @@ enum_v6_ofp_bsn_bfd_endpoint_state = {
     [3] = "OFP_BSN_BFD_ENDPOINT_STATE_UP",
     [4] = "OFP_BSN_BFD_ENDPOINT_SESSION_ERROR",
     [5] = "OFP_BSN_BFD_ENDPOINT_REMOTE_ADMINDOWN",
+    [6] = "OFP_BSN_BFD_ENDPOINT_REMOTE_PARAMS_CHANGE",
 }
 
 enum_v6_ofp_bsn_vrf_counter_constants = {
