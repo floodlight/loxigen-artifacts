@@ -764,9 +764,11 @@ class OFPortStatsEntryVer11 implements OFPortStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPortStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFPortStatsEntry> {
         @Override
-        public OFPortStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             OFPort portNo = OFPort.read4Bytes(bb);
             // pad: 4 bytes
             bb.skipBytes(4);

@@ -575,9 +575,11 @@ class OFMatchV3Ver12 implements OFMatchV3 {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFMatchV3> {
+    static class Reader extends AbstractOFMessageReader<OFMatchV3> {
         @Override
-        public OFMatchV3 readFrom(ByteBuf bb) throws OFParseError {
+        public OFMatchV3 readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x1
             short type = bb.readShort();
@@ -586,16 +588,17 @@ class OFMatchV3Ver12 implements OFMatchV3 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
-            if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
+            //
+            if(bb.readableBytes() + (bb.readerIndex() - start) < ((length + 7) / 8) * 8) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
                 return null;
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            OFOxmList oxmList = OFOxmList.readFrom(bb, length - (bb.readerIndex() - start), OFOxmVer12.READER);
+            OFOxmList oxmList = OFOxmList.readFrom(context, bb, length - (bb.readerIndex() - start), OFOxmVer12.READER);
             // align message to 8 bytes (length does not contain alignment)
-            bb.skipBytes(((length + 7)/8 * 8 ) - length );
+            bb.skipBytes(((length + 7) / 8) * 8 - length );
 
             OFMatchV3Ver12 matchV3Ver12 = new OFMatchV3Ver12(
                     oxmList

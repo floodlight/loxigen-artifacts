@@ -264,9 +264,11 @@ class OFOxmBsnInnerVlanVidMaskedVer14 implements OFOxmBsnInnerVlanVidMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnInnerVlanVidMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnInnerVlanVidMasked> {
         @Override
-        public OFOxmBsnInnerVlanVidMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnInnerVlanVidMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x33104L
             int typeLen = bb.readInt();
             if(typeLen != 0x33104)

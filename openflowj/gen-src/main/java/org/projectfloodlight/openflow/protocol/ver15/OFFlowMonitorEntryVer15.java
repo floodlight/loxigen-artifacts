@@ -400,16 +400,18 @@ class OFFlowMonitorEntryVer15 implements OFFlowMonitorEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowMonitorEntry> {
+    static class Reader extends AbstractOFMessageReader<OFFlowMonitorEntry> {
         @Override
-        public OFFlowMonitorEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowMonitorEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             long monitorId = U32.f(bb.readInt());
             long outPort = U32.f(bb.readInt());
             long outGroup = U32.f(bb.readInt());
             Set<OFFlowMonitorFlags> flags = OFFlowMonitorFlagsSerializerVer15.readFrom(bb);
             TableId tableId = TableId.readByte(bb);
             OFFlowMonitorCommand command = OFFlowMonitorCommandSerializerVer15.readFrom(bb);
-            Match match = ChannelUtilsVer15.readOFMatch(bb);
+            Match match = ChannelUtilsVer15.readOFMatch(context, bb);
 
             OFFlowMonitorEntryVer15 flowMonitorEntryVer15 = new OFFlowMonitorEntryVer15(
                     monitorId,

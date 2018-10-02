@@ -263,9 +263,11 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableModFailedErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFTableModFailedErrorMsg> {
         @Override
-        public OFTableModFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableModFailedErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -278,6 +280,7 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,7 +294,7 @@ class OFTableModFailedErrorMsgVer11 implements OFTableModFailedErrorMsg {
             if(errType != (short) 0x8)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.TABLE_MOD_FAILED(8), got="+errType);
             OFTableModFailedCode code = OFTableModFailedCodeSerializerVer11.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_11);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_11);
 
             OFTableModFailedErrorMsgVer11 tableModFailedErrorMsgVer11 = new OFTableModFailedErrorMsgVer11(
                     xid,

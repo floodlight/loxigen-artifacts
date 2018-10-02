@@ -300,9 +300,11 @@ class OFBsnGentableStatsReplyVer14 implements OFBsnGentableStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGentableStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGentableStatsReply> {
         @Override
-        public OFBsnGentableStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGentableStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -315,6 +317,7 @@ class OFBsnGentableStatsReplyVer14 implements OFBsnGentableStatsReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -338,7 +341,7 @@ class OFBsnGentableStatsReplyVer14 implements OFBsnGentableStatsReply {
             int subtype = bb.readInt();
             if(subtype != 0x7)
                 throw new OFParseError("Wrong subtype: Expected=0x7L(0x7L), got="+subtype);
-            List<OFBsnGentableStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnGentableStatsEntryVer14.READER);
+            List<OFBsnGentableStatsEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnGentableStatsEntryVer14.READER);
 
             OFBsnGentableStatsReplyVer14 bsnGentableStatsReplyVer14 = new OFBsnGentableStatsReplyVer14(
                     xid,

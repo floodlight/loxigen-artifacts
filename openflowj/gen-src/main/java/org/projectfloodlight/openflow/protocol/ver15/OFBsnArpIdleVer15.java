@@ -275,9 +275,11 @@ class OFBsnArpIdleVer15 implements OFBsnArpIdle {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnArpIdle> {
+    static class Reader extends AbstractOFMessageReader<OFBsnArpIdle> {
         @Override
-        public OFBsnArpIdle readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnArpIdle readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -290,6 +292,7 @@ class OFBsnArpIdleVer15 implements OFBsnArpIdle {
             int length = U16.f(bb.readShort());
             if(length != 24)
                 throw new OFParseError("Wrong length: Expected=24(24), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

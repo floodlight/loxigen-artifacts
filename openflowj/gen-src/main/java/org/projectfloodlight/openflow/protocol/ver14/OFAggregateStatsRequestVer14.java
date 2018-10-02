@@ -493,9 +493,11 @@ class OFAggregateStatsRequestVer14 implements OFAggregateStatsRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFAggregateStatsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFAggregateStatsRequest> {
         @Override
-        public OFAggregateStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFAggregateStatsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -508,6 +510,7 @@ class OFAggregateStatsRequestVer14 implements OFAggregateStatsRequest {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -532,7 +535,7 @@ class OFAggregateStatsRequestVer14 implements OFAggregateStatsRequest {
             bb.skipBytes(4);
             U64 cookie = U64.ofRaw(bb.readLong());
             U64 cookieMask = U64.ofRaw(bb.readLong());
-            Match match = ChannelUtilsVer14.readOFMatch(bb);
+            Match match = ChannelUtilsVer14.readOFMatch(context, bb);
 
             OFAggregateStatsRequestVer14 aggregateStatsRequestVer14 = new OFAggregateStatsRequestVer14(
                     xid,

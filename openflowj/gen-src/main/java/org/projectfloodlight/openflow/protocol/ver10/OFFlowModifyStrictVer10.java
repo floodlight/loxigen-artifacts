@@ -679,9 +679,11 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowModifyStrict> {
+    static class Reader extends AbstractOFMessageReader<OFFlowModifyStrict> {
         @Override
-        public OFFlowModifyStrict readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowModifyStrict readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -694,6 +696,7 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -702,7 +705,7 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            Match match = ChannelUtilsVer10.readOFMatch(bb);
+            Match match = ChannelUtilsVer10.readOFMatch(context, bb);
             U64 cookie = U64.ofRaw(bb.readLong());
             // fixed value property command == 2
             short command = bb.readShort();
@@ -714,7 +717,7 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
             OFBufferId bufferId = OFBufferId.of(bb.readInt());
             OFPort outPort = OFPort.read2Bytes(bb);
             Set<OFFlowModFlags> flags = OFFlowModFlagsSerializerVer10.readFrom(bb);
-            List<OFAction> actions = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFActionVer10.READER);
+            List<OFAction> actions = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFActionVer10.READER);
 
             OFFlowModifyStrictVer10 flowModifyStrictVer10 = new OFFlowModifyStrictVer10(
                     xid,

@@ -229,9 +229,11 @@ class OFOxmArpTpaVer13 implements OFOxmArpTpa {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmArpTpa> {
+    static class Reader extends AbstractOFMessageReader<OFOxmArpTpa> {
         @Override
-        public OFOxmArpTpa readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmArpTpa readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80002e04L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80002e04)

@@ -200,9 +200,11 @@ class OFBsnTlvHashSeedVer14 implements OFBsnTlvHashSeed {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvHashSeed> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvHashSeed> {
         @Override
-        public OFBsnTlvHashSeed readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvHashSeed readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x64
             short type = bb.readShort();
@@ -211,6 +213,7 @@ class OFBsnTlvHashSeedVer14 implements OFBsnTlvHashSeed {
             int length = U16.f(bb.readShort());
             if(length != 12)
                 throw new OFParseError("Wrong length: Expected=12(12), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
