@@ -234,6 +234,116 @@ class bsn_breakout(bsn):
 
 bsn.subtypes[3] = bsn_breakout
 
+class bsn_driver_info(bsn):
+    type = 65535
+    experimenter = 6035143
+    exp_type = 7
+
+    def __init__(self, driver=None):
+        if driver != None:
+            self.driver = driver
+        else:
+            self.driver = ''
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.exp_type))
+        packed.append(self.driver)
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_driver_info()
+        _type = reader.read("!H")[0]
+        assert(_type == 65535)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _exp_type = reader.read("!L")[0]
+        assert(_exp_type == 7)
+        obj.driver = str(reader.read_all())
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.driver != other.driver: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_driver_info {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("driver = ");
+                q.pp(self.driver)
+            q.breakable()
+        q.text('}')
+
+bsn.subtypes[7] = bsn_driver_info
+
+class bsn_firmware_info(bsn):
+    type = 65535
+    experimenter = 6035143
+    exp_type = 8
+
+    def __init__(self, firmware=None):
+        if firmware != None:
+            self.firmware = firmware
+        else:
+            self.firmware = ''
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.exp_type))
+        packed.append(self.firmware)
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_firmware_info()
+        _type = reader.read("!H")[0]
+        assert(_type == 65535)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _exp_type = reader.read("!L")[0]
+        assert(_exp_type == 8)
+        obj.firmware = str(reader.read_all())
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.firmware != other.firmware: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_firmware_info {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("firmware = ");
+                q.pp(self.firmware)
+            q.breakable()
+        q.text('}')
+
+bsn.subtypes[8] = bsn_firmware_info
+
 class bsn_forward_error_correction(bsn):
     type = 65535
     experimenter = 6035143

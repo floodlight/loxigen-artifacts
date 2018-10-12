@@ -1387,6 +1387,20 @@ public class OFFactoryVer12 implements OFFactory {
         throw new UnsupportedOperationException("OFPortDescPropBsnBreakout not supported in version 1.2");
     }
 
+    public OFPortDescPropBsnDriverInfo.Builder buildPortDescPropBsnDriverInfo() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnDriverInfo not supported in version 1.2");
+    }
+    public OFPortDescPropBsnDriverInfo portDescPropBsnDriverInfo(byte[] driver) {
+        throw new UnsupportedOperationException("OFPortDescPropBsnDriverInfo not supported in version 1.2");
+    }
+
+    public OFPortDescPropBsnFirmwareInfo.Builder buildPortDescPropBsnFirmwareInfo() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnFirmwareInfo not supported in version 1.2");
+    }
+    public OFPortDescPropBsnFirmwareInfo portDescPropBsnFirmwareInfo(byte[] firmware) {
+        throw new UnsupportedOperationException("OFPortDescPropBsnFirmwareInfo not supported in version 1.2");
+    }
+
     public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
         throw new UnsupportedOperationException("OFPortDescPropBsnForwardErrorCorrection not supported in version 1.2");
     }

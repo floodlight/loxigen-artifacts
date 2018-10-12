@@ -1511,6 +1511,10 @@ void of_port_desc_prop_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *
 void of_port_desc_prop_bsn_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_breakout_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_bsn_breakout_push_wire_types(of_object_t *obj);
+void of_port_desc_prop_bsn_driver_info_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_desc_prop_bsn_driver_info_push_wire_types(of_object_t *obj);
+void of_port_desc_prop_bsn_firmware_info_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_desc_prop_bsn_firmware_info_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_forward_error_correction_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_bsn_forward_error_correction_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_generation_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2327,6 +2331,8 @@ typedef of_object_t of_port_desc_t;
 typedef of_object_t of_port_desc_prop_t;
 typedef of_object_t of_port_desc_prop_bsn_t;
 typedef of_object_t of_port_desc_prop_bsn_breakout_t;
+typedef of_object_t of_port_desc_prop_bsn_driver_info_t;
+typedef of_object_t of_port_desc_prop_bsn_firmware_info_t;
 typedef of_object_t of_port_desc_prop_bsn_forward_error_correction_t;
 typedef of_object_t of_port_desc_prop_bsn_generation_id_t;
 typedef of_object_t of_port_desc_prop_bsn_misc_capabilities_t;
@@ -6123,6 +6129,16 @@ extern void of_port_desc_prop_bsn_init(
 extern of_object_t *
     of_port_desc_prop_bsn_breakout_new(of_version_t version);
 extern void of_port_desc_prop_bsn_breakout_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_port_desc_prop_bsn_driver_info_new(of_version_t version);
+extern void of_port_desc_prop_bsn_driver_info_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_port_desc_prop_bsn_firmware_info_new(of_version_t version);
+extern void of_port_desc_prop_bsn_firmware_info_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -14765,6 +14781,28 @@ of_port_desc_prop_bsn_delete(of_object_t *obj) {
  */
 static inline void
 of_port_desc_prop_bsn_breakout_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_port_desc_prop_bsn_driver_info_t
+ * @param obj An instance of type of_port_desc_prop_bsn_driver_info_t
+ *
+ * \ingroup of_port_desc_prop_bsn_driver_info
+ */
+static inline void
+of_port_desc_prop_bsn_driver_info_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_port_desc_prop_bsn_firmware_info_t
+ * @param obj An instance of type of_port_desc_prop_bsn_firmware_info_t
+ *
+ * \ingroup of_port_desc_prop_bsn_firmware_info
+ */
+static inline void
+of_port_desc_prop_bsn_firmware_info_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -28982,6 +29020,52 @@ extern void of_port_desc_prop_bsn_breakout_sub_interface_speed_gbps_set(
 extern void of_port_desc_prop_bsn_breakout_sub_interface_speed_gbps_get(
     of_port_desc_prop_bsn_breakout_t *obj,
     uint16_t *sub_interface_speed_gbps);
+
+/* Unified accessor functions for of_port_desc_prop_bsn_driver_info */
+
+extern void of_port_desc_prop_bsn_driver_info_experimenter_set(
+    of_port_desc_prop_bsn_driver_info_t *obj,
+    uint32_t experimenter);
+extern void of_port_desc_prop_bsn_driver_info_experimenter_get(
+    of_port_desc_prop_bsn_driver_info_t *obj,
+    uint32_t *experimenter);
+
+extern void of_port_desc_prop_bsn_driver_info_exp_type_set(
+    of_port_desc_prop_bsn_driver_info_t *obj,
+    uint32_t exp_type);
+extern void of_port_desc_prop_bsn_driver_info_exp_type_get(
+    of_port_desc_prop_bsn_driver_info_t *obj,
+    uint32_t *exp_type);
+
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_driver_info_driver_set(
+    of_port_desc_prop_bsn_driver_info_t *obj,
+    of_octets_t *driver);
+extern void of_port_desc_prop_bsn_driver_info_driver_get(
+    of_port_desc_prop_bsn_driver_info_t *obj,
+    of_octets_t *driver);
+
+/* Unified accessor functions for of_port_desc_prop_bsn_firmware_info */
+
+extern void of_port_desc_prop_bsn_firmware_info_experimenter_set(
+    of_port_desc_prop_bsn_firmware_info_t *obj,
+    uint32_t experimenter);
+extern void of_port_desc_prop_bsn_firmware_info_experimenter_get(
+    of_port_desc_prop_bsn_firmware_info_t *obj,
+    uint32_t *experimenter);
+
+extern void of_port_desc_prop_bsn_firmware_info_exp_type_set(
+    of_port_desc_prop_bsn_firmware_info_t *obj,
+    uint32_t exp_type);
+extern void of_port_desc_prop_bsn_firmware_info_exp_type_get(
+    of_port_desc_prop_bsn_firmware_info_t *obj,
+    uint32_t *exp_type);
+
+extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_firmware_info_firmware_set(
+    of_port_desc_prop_bsn_firmware_info_t *obj,
+    of_octets_t *firmware);
+extern void of_port_desc_prop_bsn_firmware_info_firmware_get(
+    of_port_desc_prop_bsn_firmware_info_t *obj,
+    of_octets_t *firmware);
 
 /* Unified accessor functions for of_port_desc_prop_bsn_forward_error_correction */
 

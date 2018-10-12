@@ -1549,6 +1549,24 @@ public class OFFactoryVer15 implements OFFactory {
                     );
     }
 
+    public OFPortDescPropBsnDriverInfo.Builder buildPortDescPropBsnDriverInfo() {
+        return new OFPortDescPropBsnDriverInfoVer15.Builder();
+    }
+    public OFPortDescPropBsnDriverInfo portDescPropBsnDriverInfo(byte[] driver) {
+        return new OFPortDescPropBsnDriverInfoVer15(
+                driver
+                    );
+    }
+
+    public OFPortDescPropBsnFirmwareInfo.Builder buildPortDescPropBsnFirmwareInfo() {
+        return new OFPortDescPropBsnFirmwareInfoVer15.Builder();
+    }
+    public OFPortDescPropBsnFirmwareInfo portDescPropBsnFirmwareInfo(byte[] firmware) {
+        return new OFPortDescPropBsnFirmwareInfoVer15(
+                firmware
+                    );
+    }
+
     public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
         return new OFPortDescPropBsnForwardErrorCorrectionVer15.Builder();
     }

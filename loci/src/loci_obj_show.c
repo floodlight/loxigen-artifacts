@@ -41084,6 +41084,56 @@ of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_show(loci_writer_f writer, void* c
 }
 
 int
+of_port_desc_prop_bsn_driver_info_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_octets_t octets;
+
+    of_port_desc_prop_bsn_driver_info_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_driver_info_exp_type_get(obj, &val32);
+    out += writer(cookie, "exp_type=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_driver_info_driver_get(obj, &octets);
+    out += writer(cookie, "driver=");
+    out += LOCI_SHOW_octets(writer, cookie, octets);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_port_desc_prop_bsn_firmware_info_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_octets_t octets;
+
+    of_port_desc_prop_bsn_firmware_info_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_firmware_info_exp_type_get(obj, &val32);
+    out += writer(cookie, "exp_type=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_firmware_info_firmware_get(obj, &octets);
+    out += writer(cookie, "firmware=");
+    out += LOCI_SHOW_octets(writer, cookie, octets);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -43738,6 +43788,8 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
@@ -44577,6 +44629,8 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     of_packet_queue_OF_VERSION_1_1_show,
     of_port_desc_OF_VERSION_1_1_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -45448,6 +45502,8 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_2_show,
     unknown_show,
     unknown_show,
@@ -46287,6 +46343,8 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_oxm_vlan_vid_masked_OF_VERSION_1_3_show,
     of_packet_queue_OF_VERSION_1_3_show,
     of_port_desc_OF_VERSION_1_3_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -47145,6 +47203,8 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_show,
+    of_port_desc_prop_bsn_driver_info_OF_VERSION_1_4_show,
+    of_port_desc_prop_bsn_firmware_info_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_show,

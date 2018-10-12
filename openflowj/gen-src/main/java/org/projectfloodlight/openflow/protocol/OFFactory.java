@@ -376,6 +376,10 @@ public interface OFFactory extends XidGenerator {
     OFBundleCtrlMsg.Builder buildBundleCtrlMsg() throws UnsupportedOperationException;
     OFPortDescPropBsnBreakout.Builder buildPortDescPropBsnBreakout() throws UnsupportedOperationException;
     OFPortDescPropBsnBreakout portDescPropBsnBreakout(int subInterfaceCount, int subInterfaceSpeedGbps);
+    OFPortDescPropBsnDriverInfo.Builder buildPortDescPropBsnDriverInfo() throws UnsupportedOperationException;
+    OFPortDescPropBsnDriverInfo portDescPropBsnDriverInfo(byte[] driver);
+    OFPortDescPropBsnFirmwareInfo.Builder buildPortDescPropBsnFirmwareInfo() throws UnsupportedOperationException;
+    OFPortDescPropBsnFirmwareInfo portDescPropBsnFirmwareInfo(byte[] firmware);
     OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() throws UnsupportedOperationException;
     OFPortDescPropBsnForwardErrorCorrection portDescPropBsnForwardErrorCorrection(OFBsnFecConfigState configured, long enabled);
     OFPortDescPropBsnGenerationId.Builder buildPortDescPropBsnGenerationId() throws UnsupportedOperationException;
