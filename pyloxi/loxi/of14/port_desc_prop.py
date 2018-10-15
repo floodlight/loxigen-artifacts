@@ -234,6 +234,61 @@ class bsn_breakout(bsn):
 
 bsn.subtypes[3] = bsn_breakout
 
+class bsn_driver_info_json(bsn):
+    type = 65535
+    experimenter = 6035143
+    exp_type = 7
+
+    def __init__(self, driver_info_json=None):
+        if driver_info_json != None:
+            self.driver_info_json = driver_info_json
+        else:
+            self.driver_info_json = ''
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.exp_type))
+        packed.append(self.driver_info_json)
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_driver_info_json()
+        _type = reader.read("!H")[0]
+        assert(_type == 65535)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _exp_type = reader.read("!L")[0]
+        assert(_exp_type == 7)
+        obj.driver_info_json = str(reader.read_all())
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.driver_info_json != other.driver_info_json: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_driver_info_json {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("driver_info_json = ");
+                q.pp(self.driver_info_json)
+            q.breakable()
+        q.text('}')
+
+bsn.subtypes[7] = bsn_driver_info_json
+
 class bsn_forward_error_correction(bsn):
     type = 65535
     experimenter = 6035143

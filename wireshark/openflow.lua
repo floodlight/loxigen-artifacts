@@ -13495,6 +13495,11 @@ fields['of14.port_desc_prop_bsn_breakout.experimenter'] = ProtoField.uint32("of1
 fields['of14.port_desc_prop_bsn_breakout.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_breakout.exp_type", "exp_type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_breakout.sub_interface_count'] = ProtoField.uint16("of14.port_desc_prop_bsn_breakout.sub_interface_count", "sub_interface_count", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_breakout.sub_interface_speed_gbps'] = ProtoField.uint16("of14.port_desc_prop_bsn_breakout.sub_interface_speed_gbps", "sub_interface_speed_gbps", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_driver_info_json.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_driver_info_json.type", "type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_driver_info_json.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_driver_info_json.length", "length", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_driver_info_json.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_driver_info_json.experimenter", "experimenter", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_driver_info_json.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_driver_info_json.exp_type", "exp_type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_driver_info_json.driver_info_json'] = ProtoField.bytes("of14.port_desc_prop_bsn_driver_info_json.driver_info_json", "driver_info_json")
 fields['of14.port_desc_prop_bsn_forward_error_correction.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_forward_error_correction.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_forward_error_correction.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_forward_error_correction.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_forward_error_correction.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_forward_error_correction.experimenter", "experimenter", base.DEC, nil)
@@ -16987,6 +16992,11 @@ fields['of15.port_desc_prop_bsn_breakout.experimenter'] = ProtoField.uint32("of1
 fields['of15.port_desc_prop_bsn_breakout.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_breakout.exp_type", "exp_type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_breakout.sub_interface_count'] = ProtoField.uint16("of15.port_desc_prop_bsn_breakout.sub_interface_count", "sub_interface_count", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_breakout.sub_interface_speed_gbps'] = ProtoField.uint16("of15.port_desc_prop_bsn_breakout.sub_interface_speed_gbps", "sub_interface_speed_gbps", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_driver_info_json.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_driver_info_json.type", "type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_driver_info_json.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_driver_info_json.length", "length", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_driver_info_json.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_driver_info_json.experimenter", "experimenter", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_driver_info_json.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_driver_info_json.exp_type", "exp_type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_driver_info_json.driver_info_json'] = ProtoField.bytes("of15.port_desc_prop_bsn_driver_info_json.driver_info_json", "driver_info_json")
 fields['of15.port_desc_prop_bsn_forward_error_correction.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_forward_error_correction.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_forward_error_correction.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_forward_error_correction.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_forward_error_correction.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_forward_error_correction.experimenter", "experimenter", base.DEC, nil)
@@ -26427,6 +26437,11 @@ p_of.fields = {
     fields['of14.port_desc_prop_bsn_breakout.exp_type'],
     fields['of14.port_desc_prop_bsn_breakout.sub_interface_count'],
     fields['of14.port_desc_prop_bsn_breakout.sub_interface_speed_gbps'],
+    fields['of14.port_desc_prop_bsn_driver_info_json.type'],
+    fields['of14.port_desc_prop_bsn_driver_info_json.length'],
+    fields['of14.port_desc_prop_bsn_driver_info_json.experimenter'],
+    fields['of14.port_desc_prop_bsn_driver_info_json.exp_type'],
+    fields['of14.port_desc_prop_bsn_driver_info_json.driver_info_json'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.type'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.length'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.experimenter'],
@@ -29919,6 +29934,11 @@ p_of.fields = {
     fields['of15.port_desc_prop_bsn_breakout.exp_type'],
     fields['of15.port_desc_prop_bsn_breakout.sub_interface_count'],
     fields['of15.port_desc_prop_bsn_breakout.sub_interface_speed_gbps'],
+    fields['of15.port_desc_prop_bsn_driver_info_json.type'],
+    fields['of15.port_desc_prop_bsn_driver_info_json.length'],
+    fields['of15.port_desc_prop_bsn_driver_info_json.experimenter'],
+    fields['of15.port_desc_prop_bsn_driver_info_json.exp_type'],
+    fields['of15.port_desc_prop_bsn_driver_info_json.driver_info_json'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.type'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.length'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.experimenter'],
@@ -53521,6 +53541,21 @@ function dissect_of_port_desc_prop_bsn_breakout_v5(reader, subtree)
 end
 of_port_desc_prop_bsn_v5_dissectors[3] = dissect_of_port_desc_prop_bsn_breakout_v5
 
+-- child class of_port_desc_prop_bsn_driver_info_json
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_driver_info_json_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_driver_info_json.type')
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_driver_info_json.length')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_driver_info_json.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_driver_info_json.exp_type')
+    read_of_octets_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_driver_info_json.driver_info_json')
+    return 'of_port_desc_prop_bsn_driver_info_json'
+end
+of_port_desc_prop_bsn_v5_dissectors[7] = dissect_of_port_desc_prop_bsn_driver_info_json_v5
+
 -- child class of_port_desc_prop_bsn_forward_error_correction
 -- Child of of_port_desc_prop_bsn
 function dissect_of_port_desc_prop_bsn_forward_error_correction_v5(reader, subtree)
@@ -62898,6 +62933,21 @@ function dissect_of_port_desc_prop_bsn_breakout_v6(reader, subtree)
     return 'of_port_desc_prop_bsn_breakout'
 end
 of_port_desc_prop_bsn_v6_dissectors[3] = dissect_of_port_desc_prop_bsn_breakout_v6
+
+-- child class of_port_desc_prop_bsn_driver_info_json
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_driver_info_json_v6(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_driver_info_json.type')
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_driver_info_json.length')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_driver_info_json.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_driver_info_json.exp_type')
+    read_of_octets_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_driver_info_json.driver_info_json')
+    return 'of_port_desc_prop_bsn_driver_info_json'
+end
+of_port_desc_prop_bsn_v6_dissectors[7] = dissect_of_port_desc_prop_bsn_driver_info_json_v6
 
 -- child class of_port_desc_prop_bsn_forward_error_correction
 -- Child of of_port_desc_prop_bsn
