@@ -140,6 +140,10 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvBucket not supported in version 1.0");
     }
 
+    public OFBsnTlvBumPacket bumPacket() {
+        throw new UnsupportedOperationException("OFBsnTlvBumPacket not supported in version 1.0");
+    }
+
     public OFBsnTlvCircuitId.Builder buildCircuitId() {
         throw new UnsupportedOperationException("OFBsnTlvCircuitId not supported in version 1.0");
     }
@@ -298,6 +302,17 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
 
     public OFBsnTlvFlood flood() {
         throw new UnsupportedOperationException("OFBsnTlvFlood not supported in version 1.0");
+    }
+
+    public OFBsnTlvFlowClassId.Builder buildFlowClassId() {
+        throw new UnsupportedOperationException("OFBsnTlvFlowClassId not supported in version 1.0");
+    }
+    public OFBsnTlvFlowClassId flowClassId(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvFlowClassId not supported in version 1.0");
+    }
+
+    public OFBsnTlvFlowClassifyEnable flowClassifyEnable() {
+        throw new UnsupportedOperationException("OFBsnTlvFlowClassifyEnable not supported in version 1.0");
     }
 
     public OFBsnTlvForceLinkUp forceLinkUp() {

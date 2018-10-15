@@ -8788,6 +8788,8 @@ fields['of13.bsn_tlv_broadcast_rate.value'] = ProtoField.uint32("of13.bsn_tlv_br
 fields['of13.bsn_tlv_bucket.type'] = ProtoField.uint16("of13.bsn_tlv_bucket.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_bucket.length'] = ProtoField.uint16("of13.bsn_tlv_bucket.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_bucket.value'] = ProtoField.bytes("of13.bsn_tlv_bucket.value", "value")
+fields['of13.bsn_tlv_bum_packet.type'] = ProtoField.uint16("of13.bsn_tlv_bum_packet.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bum_packet.length'] = ProtoField.uint16("of13.bsn_tlv_bum_packet.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_circuit_id.type'] = ProtoField.uint16("of13.bsn_tlv_circuit_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_circuit_id.length'] = ProtoField.uint16("of13.bsn_tlv_circuit_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_circuit_id.value'] = ProtoField.bytes("of13.bsn_tlv_circuit_id.value", "value")
@@ -8858,6 +8860,11 @@ fields['of13.bsn_tlv_fabric_port_role.length'] = ProtoField.uint16("of13.bsn_tlv
 fields['of13.bsn_tlv_fabric_port_role.value'] = ProtoField.uint32("of13.bsn_tlv_fabric_port_role.value", "value", base.DEC, enum_v4_ofp_bsn_fabric_port_role)
 fields['of13.bsn_tlv_flood.type'] = ProtoField.uint16("of13.bsn_tlv_flood.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_flood.length'] = ProtoField.uint16("of13.bsn_tlv_flood.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_flow_class_id.type'] = ProtoField.uint16("of13.bsn_tlv_flow_class_id.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_flow_class_id.length'] = ProtoField.uint16("of13.bsn_tlv_flow_class_id.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_flow_class_id.value'] = ProtoField.uint16("of13.bsn_tlv_flow_class_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_flow_classify_enable.type'] = ProtoField.uint16("of13.bsn_tlv_flow_classify_enable.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_flow_classify_enable.length'] = ProtoField.uint16("of13.bsn_tlv_flow_classify_enable.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_force_link_up.type'] = ProtoField.uint16("of13.bsn_tlv_force_link_up.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_force_link_up.length'] = ProtoField.uint16("of13.bsn_tlv_force_link_up.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_forward_error_correction.type'] = ProtoField.uint16("of13.bsn_tlv_forward_error_correction.type", "type", base.DEC, nil)
@@ -11819,6 +11826,8 @@ fields['of14.bsn_tlv_broadcast_rate.value'] = ProtoField.uint32("of14.bsn_tlv_br
 fields['of14.bsn_tlv_bucket.type'] = ProtoField.uint16("of14.bsn_tlv_bucket.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_bucket.length'] = ProtoField.uint16("of14.bsn_tlv_bucket.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_bucket.value'] = ProtoField.bytes("of14.bsn_tlv_bucket.value", "value")
+fields['of14.bsn_tlv_bum_packet.type'] = ProtoField.uint16("of14.bsn_tlv_bum_packet.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bum_packet.length'] = ProtoField.uint16("of14.bsn_tlv_bum_packet.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_circuit_id.type'] = ProtoField.uint16("of14.bsn_tlv_circuit_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_circuit_id.length'] = ProtoField.uint16("of14.bsn_tlv_circuit_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_circuit_id.value'] = ProtoField.bytes("of14.bsn_tlv_circuit_id.value", "value")
@@ -11889,6 +11898,11 @@ fields['of14.bsn_tlv_fabric_port_role.length'] = ProtoField.uint16("of14.bsn_tlv
 fields['of14.bsn_tlv_fabric_port_role.value'] = ProtoField.uint32("of14.bsn_tlv_fabric_port_role.value", "value", base.DEC, enum_v5_ofp_bsn_fabric_port_role)
 fields['of14.bsn_tlv_flood.type'] = ProtoField.uint16("of14.bsn_tlv_flood.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_flood.length'] = ProtoField.uint16("of14.bsn_tlv_flood.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_flow_class_id.type'] = ProtoField.uint16("of14.bsn_tlv_flow_class_id.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_flow_class_id.length'] = ProtoField.uint16("of14.bsn_tlv_flow_class_id.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_flow_class_id.value'] = ProtoField.uint16("of14.bsn_tlv_flow_class_id.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_flow_classify_enable.type'] = ProtoField.uint16("of14.bsn_tlv_flow_classify_enable.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_flow_classify_enable.length'] = ProtoField.uint16("of14.bsn_tlv_flow_classify_enable.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_force_link_up.type'] = ProtoField.uint16("of14.bsn_tlv_force_link_up.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_force_link_up.length'] = ProtoField.uint16("of14.bsn_tlv_force_link_up.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_forward_error_correction.type'] = ProtoField.uint16("of14.bsn_tlv_forward_error_correction.type", "type", base.DEC, nil)
@@ -15123,6 +15137,8 @@ fields['of15.bsn_tlv_broadcast_rate.value'] = ProtoField.uint32("of15.bsn_tlv_br
 fields['of15.bsn_tlv_bucket.type'] = ProtoField.uint16("of15.bsn_tlv_bucket.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_bucket.length'] = ProtoField.uint16("of15.bsn_tlv_bucket.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_bucket.value'] = ProtoField.bytes("of15.bsn_tlv_bucket.value", "value")
+fields['of15.bsn_tlv_bum_packet.type'] = ProtoField.uint16("of15.bsn_tlv_bum_packet.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_bum_packet.length'] = ProtoField.uint16("of15.bsn_tlv_bum_packet.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_circuit_id.type'] = ProtoField.uint16("of15.bsn_tlv_circuit_id.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_circuit_id.length'] = ProtoField.uint16("of15.bsn_tlv_circuit_id.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_circuit_id.value'] = ProtoField.bytes("of15.bsn_tlv_circuit_id.value", "value")
@@ -15193,6 +15209,11 @@ fields['of15.bsn_tlv_fabric_port_role.length'] = ProtoField.uint16("of15.bsn_tlv
 fields['of15.bsn_tlv_fabric_port_role.value'] = ProtoField.uint32("of15.bsn_tlv_fabric_port_role.value", "value", base.DEC, enum_v6_ofp_bsn_fabric_port_role)
 fields['of15.bsn_tlv_flood.type'] = ProtoField.uint16("of15.bsn_tlv_flood.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_flood.length'] = ProtoField.uint16("of15.bsn_tlv_flood.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_flow_class_id.type'] = ProtoField.uint16("of15.bsn_tlv_flow_class_id.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_flow_class_id.length'] = ProtoField.uint16("of15.bsn_tlv_flow_class_id.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_flow_class_id.value'] = ProtoField.uint16("of15.bsn_tlv_flow_class_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_flow_classify_enable.type'] = ProtoField.uint16("of15.bsn_tlv_flow_classify_enable.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_flow_classify_enable.length'] = ProtoField.uint16("of15.bsn_tlv_flow_classify_enable.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_force_link_up.type'] = ProtoField.uint16("of15.bsn_tlv_force_link_up.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_force_link_up.length'] = ProtoField.uint16("of15.bsn_tlv_force_link_up.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_forward_error_correction.type'] = ProtoField.uint16("of15.bsn_tlv_forward_error_correction.type", "type", base.DEC, nil)
@@ -21720,6 +21741,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_bucket.type'],
     fields['of13.bsn_tlv_bucket.length'],
     fields['of13.bsn_tlv_bucket.value'],
+    fields['of13.bsn_tlv_bum_packet.type'],
+    fields['of13.bsn_tlv_bum_packet.length'],
     fields['of13.bsn_tlv_circuit_id.type'],
     fields['of13.bsn_tlv_circuit_id.length'],
     fields['of13.bsn_tlv_circuit_id.value'],
@@ -21790,6 +21813,11 @@ p_of.fields = {
     fields['of13.bsn_tlv_fabric_port_role.value'],
     fields['of13.bsn_tlv_flood.type'],
     fields['of13.bsn_tlv_flood.length'],
+    fields['of13.bsn_tlv_flow_class_id.type'],
+    fields['of13.bsn_tlv_flow_class_id.length'],
+    fields['of13.bsn_tlv_flow_class_id.value'],
+    fields['of13.bsn_tlv_flow_classify_enable.type'],
+    fields['of13.bsn_tlv_flow_classify_enable.length'],
     fields['of13.bsn_tlv_force_link_up.type'],
     fields['of13.bsn_tlv_force_link_up.length'],
     fields['of13.bsn_tlv_forward_error_correction.type'],
@@ -24751,6 +24779,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_bucket.type'],
     fields['of14.bsn_tlv_bucket.length'],
     fields['of14.bsn_tlv_bucket.value'],
+    fields['of14.bsn_tlv_bum_packet.type'],
+    fields['of14.bsn_tlv_bum_packet.length'],
     fields['of14.bsn_tlv_circuit_id.type'],
     fields['of14.bsn_tlv_circuit_id.length'],
     fields['of14.bsn_tlv_circuit_id.value'],
@@ -24821,6 +24851,11 @@ p_of.fields = {
     fields['of14.bsn_tlv_fabric_port_role.value'],
     fields['of14.bsn_tlv_flood.type'],
     fields['of14.bsn_tlv_flood.length'],
+    fields['of14.bsn_tlv_flow_class_id.type'],
+    fields['of14.bsn_tlv_flow_class_id.length'],
+    fields['of14.bsn_tlv_flow_class_id.value'],
+    fields['of14.bsn_tlv_flow_classify_enable.type'],
+    fields['of14.bsn_tlv_flow_classify_enable.length'],
     fields['of14.bsn_tlv_force_link_up.type'],
     fields['of14.bsn_tlv_force_link_up.length'],
     fields['of14.bsn_tlv_forward_error_correction.type'],
@@ -28055,6 +28090,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_bucket.type'],
     fields['of15.bsn_tlv_bucket.length'],
     fields['of15.bsn_tlv_bucket.value'],
+    fields['of15.bsn_tlv_bum_packet.type'],
+    fields['of15.bsn_tlv_bum_packet.length'],
     fields['of15.bsn_tlv_circuit_id.type'],
     fields['of15.bsn_tlv_circuit_id.length'],
     fields['of15.bsn_tlv_circuit_id.value'],
@@ -28125,6 +28162,11 @@ p_of.fields = {
     fields['of15.bsn_tlv_fabric_port_role.value'],
     fields['of15.bsn_tlv_flood.type'],
     fields['of15.bsn_tlv_flood.length'],
+    fields['of15.bsn_tlv_flow_class_id.type'],
+    fields['of15.bsn_tlv_flow_class_id.length'],
+    fields['of15.bsn_tlv_flow_class_id.value'],
+    fields['of15.bsn_tlv_flow_classify_enable.type'],
+    fields['of15.bsn_tlv_flow_classify_enable.length'],
     fields['of15.bsn_tlv_force_link_up.type'],
     fields['of15.bsn_tlv_force_link_up.length'],
     fields['of15.bsn_tlv_forward_error_correction.type'],
@@ -40250,6 +40292,15 @@ function dissect_of_bsn_tlv_bucket_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[64] = dissect_of_bsn_tlv_bucket_v4
 
+-- child class of_bsn_tlv_bum_packet
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bum_packet_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bum_packet.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bum_packet.length')
+    return 'of_bsn_tlv_bum_packet'
+end
+of_bsn_tlv_v4_dissectors[182] = dissect_of_bsn_tlv_bum_packet_v4
+
 -- child class of_bsn_tlv_circuit_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_circuit_id_v4(reader, subtree)
@@ -40503,6 +40554,25 @@ function dissect_of_bsn_tlv_flood_v4(reader, subtree)
     return 'of_bsn_tlv_flood'
 end
 of_bsn_tlv_v4_dissectors[163] = dissect_of_bsn_tlv_flood_v4
+
+-- child class of_bsn_tlv_flow_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_flow_class_id_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_flow_class_id.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_flow_class_id.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_flow_class_id.value')
+    return 'of_bsn_tlv_flow_class_id'
+end
+of_bsn_tlv_v4_dissectors[184] = dissect_of_bsn_tlv_flow_class_id_v4
+
+-- child class of_bsn_tlv_flow_classify_enable
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_flow_classify_enable_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_flow_classify_enable.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_flow_classify_enable.length')
+    return 'of_bsn_tlv_flow_classify_enable'
+end
+of_bsn_tlv_v4_dissectors[183] = dissect_of_bsn_tlv_flow_classify_enable_v4
 
 -- child class of_bsn_tlv_force_link_up
 -- Child of of_bsn_tlv
@@ -48504,6 +48574,15 @@ function dissect_of_bsn_tlv_bucket_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[64] = dissect_of_bsn_tlv_bucket_v5
 
+-- child class of_bsn_tlv_bum_packet
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bum_packet_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bum_packet.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bum_packet.length')
+    return 'of_bsn_tlv_bum_packet'
+end
+of_bsn_tlv_v5_dissectors[182] = dissect_of_bsn_tlv_bum_packet_v5
+
 -- child class of_bsn_tlv_circuit_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_circuit_id_v5(reader, subtree)
@@ -48757,6 +48836,25 @@ function dissect_of_bsn_tlv_flood_v5(reader, subtree)
     return 'of_bsn_tlv_flood'
 end
 of_bsn_tlv_v5_dissectors[163] = dissect_of_bsn_tlv_flood_v5
+
+-- child class of_bsn_tlv_flow_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_flow_class_id_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_flow_class_id.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_flow_class_id.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_flow_class_id.value')
+    return 'of_bsn_tlv_flow_class_id'
+end
+of_bsn_tlv_v5_dissectors[184] = dissect_of_bsn_tlv_flow_class_id_v5
+
+-- child class of_bsn_tlv_flow_classify_enable
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_flow_classify_enable_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_flow_classify_enable.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_flow_classify_enable.length')
+    return 'of_bsn_tlv_flow_classify_enable'
+end
+of_bsn_tlv_v5_dissectors[183] = dissect_of_bsn_tlv_flow_classify_enable_v5
 
 -- child class of_bsn_tlv_force_link_up
 -- Child of of_bsn_tlv
@@ -57390,6 +57488,15 @@ function dissect_of_bsn_tlv_bucket_v6(reader, subtree)
 end
 of_bsn_tlv_v6_dissectors[64] = dissect_of_bsn_tlv_bucket_v6
 
+-- child class of_bsn_tlv_bum_packet
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bum_packet_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bum_packet.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_bum_packet.length')
+    return 'of_bsn_tlv_bum_packet'
+end
+of_bsn_tlv_v6_dissectors[182] = dissect_of_bsn_tlv_bum_packet_v6
+
 -- child class of_bsn_tlv_circuit_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_circuit_id_v6(reader, subtree)
@@ -57643,6 +57750,25 @@ function dissect_of_bsn_tlv_flood_v6(reader, subtree)
     return 'of_bsn_tlv_flood'
 end
 of_bsn_tlv_v6_dissectors[163] = dissect_of_bsn_tlv_flood_v6
+
+-- child class of_bsn_tlv_flow_class_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_flow_class_id_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_flow_class_id.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_flow_class_id.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_flow_class_id.value')
+    return 'of_bsn_tlv_flow_class_id'
+end
+of_bsn_tlv_v6_dissectors[184] = dissect_of_bsn_tlv_flow_class_id_v6
+
+-- child class of_bsn_tlv_flow_classify_enable
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_flow_classify_enable_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_flow_classify_enable.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_flow_classify_enable.length')
+    return 'of_bsn_tlv_flow_classify_enable'
+end
+of_bsn_tlv_v6_dissectors[183] = dissect_of_bsn_tlv_flow_classify_enable_v6
 
 -- child class of_bsn_tlv_force_link_up
 -- Child of of_bsn_tlv

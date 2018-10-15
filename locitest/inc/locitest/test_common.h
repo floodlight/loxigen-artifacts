@@ -6935,6 +6935,15 @@ extern int of_bsn_tlv_bucket_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_bucket_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_bucket_t *obj, int value);
 
+extern int of_bsn_tlv_bum_packet_OF_VERSION_1_3_populate(
+    of_bsn_tlv_bum_packet_t *obj, int value);
+extern int of_bsn_tlv_bum_packet_OF_VERSION_1_3_check(
+    of_bsn_tlv_bum_packet_t *obj, int value);
+extern int of_bsn_tlv_bum_packet_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_bum_packet_t *obj, int value);
+extern int of_bsn_tlv_bum_packet_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_bum_packet_t *obj, int value);
+
 extern int of_bsn_tlv_circuit_id_OF_VERSION_1_3_populate(
     of_bsn_tlv_circuit_id_t *obj, int value);
 extern int of_bsn_tlv_circuit_id_OF_VERSION_1_3_check(
@@ -7159,6 +7168,24 @@ extern int of_bsn_tlv_flood_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_flood_t *obj, int value);
 extern int of_bsn_tlv_flood_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_flood_t *obj, int value);
+
+extern int of_bsn_tlv_flow_class_id_OF_VERSION_1_3_populate(
+    of_bsn_tlv_flow_class_id_t *obj, int value);
+extern int of_bsn_tlv_flow_class_id_OF_VERSION_1_3_check(
+    of_bsn_tlv_flow_class_id_t *obj, int value);
+extern int of_bsn_tlv_flow_class_id_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_flow_class_id_t *obj, int value);
+extern int of_bsn_tlv_flow_class_id_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_flow_class_id_t *obj, int value);
+
+extern int of_bsn_tlv_flow_classify_enable_OF_VERSION_1_3_populate(
+    of_bsn_tlv_flow_classify_enable_t *obj, int value);
+extern int of_bsn_tlv_flow_classify_enable_OF_VERSION_1_3_check(
+    of_bsn_tlv_flow_classify_enable_t *obj, int value);
+extern int of_bsn_tlv_flow_classify_enable_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_flow_classify_enable_t *obj, int value);
+extern int of_bsn_tlv_flow_classify_enable_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_flow_classify_enable_t *obj, int value);
 
 extern int of_bsn_tlv_force_link_up_OF_VERSION_1_3_populate(
     of_bsn_tlv_force_link_up_t *obj, int value);
@@ -13433,6 +13460,15 @@ extern int of_bsn_tlv_bucket_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_bucket_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_bucket_t *obj, int value);
 
+extern int of_bsn_tlv_bum_packet_OF_VERSION_1_4_populate(
+    of_bsn_tlv_bum_packet_t *obj, int value);
+extern int of_bsn_tlv_bum_packet_OF_VERSION_1_4_check(
+    of_bsn_tlv_bum_packet_t *obj, int value);
+extern int of_bsn_tlv_bum_packet_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_bum_packet_t *obj, int value);
+extern int of_bsn_tlv_bum_packet_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_bum_packet_t *obj, int value);
+
 extern int of_bsn_tlv_circuit_id_OF_VERSION_1_4_populate(
     of_bsn_tlv_circuit_id_t *obj, int value);
 extern int of_bsn_tlv_circuit_id_OF_VERSION_1_4_check(
@@ -13657,6 +13693,24 @@ extern int of_bsn_tlv_flood_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_flood_t *obj, int value);
 extern int of_bsn_tlv_flood_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_flood_t *obj, int value);
+
+extern int of_bsn_tlv_flow_class_id_OF_VERSION_1_4_populate(
+    of_bsn_tlv_flow_class_id_t *obj, int value);
+extern int of_bsn_tlv_flow_class_id_OF_VERSION_1_4_check(
+    of_bsn_tlv_flow_class_id_t *obj, int value);
+extern int of_bsn_tlv_flow_class_id_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_flow_class_id_t *obj, int value);
+extern int of_bsn_tlv_flow_class_id_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_flow_class_id_t *obj, int value);
+
+extern int of_bsn_tlv_flow_classify_enable_OF_VERSION_1_4_populate(
+    of_bsn_tlv_flow_classify_enable_t *obj, int value);
+extern int of_bsn_tlv_flow_classify_enable_OF_VERSION_1_4_check(
+    of_bsn_tlv_flow_classify_enable_t *obj, int value);
+extern int of_bsn_tlv_flow_classify_enable_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_flow_classify_enable_t *obj, int value);
+extern int of_bsn_tlv_flow_classify_enable_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_flow_classify_enable_t *obj, int value);
 
 extern int of_bsn_tlv_force_link_up_OF_VERSION_1_4_populate(
     of_bsn_tlv_force_link_up_t *obj, int value);

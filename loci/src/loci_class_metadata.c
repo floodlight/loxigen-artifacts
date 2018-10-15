@@ -2655,6 +2655,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_bucket_push_wire_types,
     },
+    [OF_BSN_TLV_BUM_PACKET] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_bum_packet_push_wire_types,
+    },
     [OF_BSN_TLV_CIRCUIT_ID] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -2804,6 +2810,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_flood_push_wire_types,
+    },
+    [OF_BSN_TLV_FLOW_CLASS_ID] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_flow_class_id_push_wire_types,
+    },
+    [OF_BSN_TLV_FLOW_CLASSIFY_ENABLE] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_flow_classify_enable_push_wire_types,
     },
     [OF_BSN_TLV_FORCE_LINK_UP] = {
         .wire_length_get=of_tlv16_wire_length_get,
