@@ -58,6 +58,9 @@ abstract class OFPortDescPropBsnVer14 {
                case 0x3:
                    // discriminator value 0x3L=0x3L for class OFPortDescPropBsnBreakoutVer14
                    return OFPortDescPropBsnBreakoutVer14.READER.readFrom(bb);
+               case 0x7:
+                   // discriminator value 0x7L=0x7L for class OFPortDescPropBsnDriverInfoJsonVer14
+                   return OFPortDescPropBsnDriverInfoJsonVer14.READER.readFrom(bb);
                case 0x2:
                    // discriminator value 0x2L=0x2L for class OFPortDescPropBsnForwardErrorCorrectionVer14
                    return OFPortDescPropBsnForwardErrorCorrectionVer14.READER.readFrom(bb);

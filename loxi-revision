@@ -1,1 +1,1 @@
-31814b8d121a57b0ff39493260edcd04a763aead Merge into master from pull request #630: Add bfd params change async (https://github.com/floodlight/loxigen/pull/630)
+91f6fdbf3ae5bc53e35b8b5cbdceece067a8434d Merge into master from pull request #631: Advertise driver name and firmware version for the dpdk interfaces (https://github.com/floodlight/loxigen/pull/631)
