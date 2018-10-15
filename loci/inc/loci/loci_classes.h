@@ -885,6 +885,8 @@ void of_bsn_tlv_broadcast_rate_wire_object_id_get(of_object_t *obj, of_object_id
 void of_bsn_tlv_broadcast_rate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_bucket_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_bucket_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_bum_packet_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_bum_packet_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_circuit_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_circuit_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_convergence_status_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -935,6 +937,10 @@ void of_bsn_tlv_fabric_port_role_wire_object_id_get(of_object_t *obj, of_object_
 void of_bsn_tlv_fabric_port_role_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_flood_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_flood_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_flow_class_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_flow_class_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_flow_classify_enable_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_flow_classify_enable_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_force_link_up_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_force_link_up_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_forward_error_correction_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1913,6 +1919,7 @@ typedef of_object_t of_bsn_tlv_bfd_state_t;
 typedef of_object_t of_bsn_tlv_broadcast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_broadcast_rate_t;
 typedef of_object_t of_bsn_tlv_bucket_t;
+typedef of_object_t of_bsn_tlv_bum_packet_t;
 typedef of_object_t of_bsn_tlv_circuit_id_t;
 typedef of_object_t of_bsn_tlv_convergence_status_t;
 typedef of_object_t of_bsn_tlv_cpu_lag_t;
@@ -1938,6 +1945,8 @@ typedef of_object_t of_bsn_tlv_external_mac_t;
 typedef of_object_t of_bsn_tlv_external_netmask_t;
 typedef of_object_t of_bsn_tlv_fabric_port_role_t;
 typedef of_object_t of_bsn_tlv_flood_t;
+typedef of_object_t of_bsn_tlv_flow_class_id_t;
+typedef of_object_t of_bsn_tlv_flow_classify_enable_t;
 typedef of_object_t of_bsn_tlv_force_link_up_t;
 typedef of_object_t of_bsn_tlv_forward_error_correction_t;
 typedef of_object_t of_bsn_tlv_generation_id_t;
@@ -4056,6 +4065,11 @@ extern void of_bsn_tlv_bucket_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_bum_packet_new(of_version_t version);
+extern void of_bsn_tlv_bum_packet_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_circuit_id_new(of_version_t version);
 extern void of_bsn_tlv_circuit_id_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4178,6 +4192,16 @@ extern void of_bsn_tlv_fabric_port_role_init(
 extern of_object_t *
     of_bsn_tlv_flood_new(of_version_t version);
 extern void of_bsn_tlv_flood_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_flow_class_id_new(of_version_t version);
+extern void of_bsn_tlv_flow_class_id_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_flow_classify_enable_new(of_version_t version);
+extern void of_bsn_tlv_flow_classify_enable_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10215,6 +10239,17 @@ of_bsn_tlv_bucket_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_bum_packet_t
+ * @param obj An instance of type of_bsn_tlv_bum_packet_t
+ *
+ * \ingroup of_bsn_tlv_bum_packet
+ */
+static inline void
+of_bsn_tlv_bum_packet_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_circuit_id_t
  * @param obj An instance of type of_bsn_tlv_circuit_id_t
  *
@@ -10486,6 +10521,28 @@ of_bsn_tlv_fabric_port_role_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_flood_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_flow_class_id_t
+ * @param obj An instance of type of_bsn_tlv_flow_class_id_t
+ *
+ * \ingroup of_bsn_tlv_flow_class_id
+ */
+static inline void
+of_bsn_tlv_flow_class_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_flow_classify_enable_t
+ * @param obj An instance of type of_bsn_tlv_flow_classify_enable_t
+ *
+ * \ingroup of_bsn_tlv_flow_classify_enable
+ */
+static inline void
+of_bsn_tlv_flow_classify_enable_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23954,6 +24011,8 @@ extern void of_bsn_tlv_bucket_value_bind(
 extern of_list_bsn_tlv_t *of_bsn_tlv_bucket_value_get(
     of_bsn_tlv_bucket_t *obj);
 
+/* Unified accessor functions for of_bsn_tlv_bum_packet */
+
 /* Unified accessor functions for of_bsn_tlv_circuit_id */
 
 extern int WARN_UNUSED_RESULT of_bsn_tlv_circuit_id_value_set(
@@ -24143,6 +24202,17 @@ extern void of_bsn_tlv_fabric_port_role_value_get(
     uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_flood */
+
+/* Unified accessor functions for of_bsn_tlv_flow_class_id */
+
+extern void of_bsn_tlv_flow_class_id_value_set(
+    of_bsn_tlv_flow_class_id_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_flow_class_id_value_get(
+    of_bsn_tlv_flow_class_id_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_flow_classify_enable */
 
 /* Unified accessor functions for of_bsn_tlv_force_link_up */
 

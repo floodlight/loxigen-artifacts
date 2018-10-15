@@ -61,6 +61,7 @@ public interface OFBsnTlvs {
     OFBsnTlvBroadcastRate broadcastRate(long value);
     OFBsnTlvBucket.Builder buildBucket() throws UnsupportedOperationException;
     OFBsnTlvBucket bucket(List<OFBsnTlv> value);
+    OFBsnTlvBumPacket bumPacket();
     OFBsnTlvCircuitId.Builder buildCircuitId() throws UnsupportedOperationException;
     OFBsnTlvCircuitId circuitId(byte[] value);
     OFBsnTlvConvergenceStatus.Builder buildConvergenceStatus() throws UnsupportedOperationException;
@@ -106,6 +107,9 @@ public interface OFBsnTlvs {
     OFBsnTlvFabricPortRole.Builder buildFabricPortRole() throws UnsupportedOperationException;
     OFBsnTlvFabricPortRole fabricPortRole(OFBsnFabricPortRole value);
     OFBsnTlvFlood flood();
+    OFBsnTlvFlowClassId.Builder buildFlowClassId() throws UnsupportedOperationException;
+    OFBsnTlvFlowClassId flowClassId(long value);
+    OFBsnTlvFlowClassifyEnable flowClassifyEnable();
     OFBsnTlvForceLinkUp forceLinkUp();
     OFBsnTlvForwardErrorCorrection.Builder buildForwardErrorCorrection() throws UnsupportedOperationException;
     OFBsnTlvForwardErrorCorrection forwardErrorCorrection(OFBsnForwardErrorCorrectionType value);

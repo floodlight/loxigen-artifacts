@@ -170,6 +170,10 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvBumPacket bumPacket() {
+        return OFBsnTlvBumPacketVer14.INSTANCE;
+    }
+
     public OFBsnTlvCircuitId.Builder buildCircuitId() {
         return new OFBsnTlvCircuitIdVer14.Builder();
     }
@@ -368,6 +372,19 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
 
     public OFBsnTlvFlood flood() {
         return OFBsnTlvFloodVer14.INSTANCE;
+    }
+
+    public OFBsnTlvFlowClassId.Builder buildFlowClassId() {
+        return new OFBsnTlvFlowClassIdVer14.Builder();
+    }
+    public OFBsnTlvFlowClassId flowClassId(long value) {
+        return new OFBsnTlvFlowClassIdVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvFlowClassifyEnable flowClassifyEnable() {
+        return OFBsnTlvFlowClassifyEnableVer14.INSTANCE;
     }
 
     public OFBsnTlvForceLinkUp forceLinkUp() {
