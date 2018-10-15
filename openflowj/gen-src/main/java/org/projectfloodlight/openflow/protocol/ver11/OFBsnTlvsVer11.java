@@ -300,6 +300,24 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvFlood not supported in version 1.1");
     }
 
+    public OFBsnTlvFlowClassifier.Builder buildFlowClassifier() {
+        throw new UnsupportedOperationException("OFBsnTlvFlowClassifier not supported in version 1.1");
+    }
+    public OFBsnTlvFlowClassifier flowClassifier(OFBsnFlowClassifier value) {
+        throw new UnsupportedOperationException("OFBsnTlvFlowClassifier not supported in version 1.1");
+    }
+
+    public OFBsnTlvFlowClassify flowClassify() {
+        throw new UnsupportedOperationException("OFBsnTlvFlowClassify not supported in version 1.1");
+    }
+
+    public OFBsnTlvFlowIdentifier.Builder buildFlowIdentifier() {
+        throw new UnsupportedOperationException("OFBsnTlvFlowIdentifier not supported in version 1.1");
+    }
+    public OFBsnTlvFlowIdentifier flowIdentifier(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvFlowIdentifier not supported in version 1.1");
+    }
+
     public OFBsnTlvForceLinkUp forceLinkUp() {
         throw new UnsupportedOperationException("OFBsnTlvForceLinkUp not supported in version 1.1");
     }

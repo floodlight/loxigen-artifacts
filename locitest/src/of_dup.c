@@ -27752,6 +27752,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_rate_unit_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_FLOW_CLASSIFY) {
+        return of_bsn_tlv_flow_classify_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ECN) {
         return of_bsn_tlv_ecn_OF_VERSION_1_3_dup(src);
     }
@@ -27780,8 +27784,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_ETH_SRC) {
-        return of_bsn_tlv_eth_src_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_IPV4) {
+        return of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_LAG_OPTIONS) {
@@ -27800,8 +27804,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_status_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_IPV4) {
-        return of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_ETH_SRC) {
+        return of_bsn_tlv_eth_src_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_IPV6) {
@@ -28112,6 +28116,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_udf_offset_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_FLOW_CLASSIFIER) {
+        return of_bsn_tlv_flow_classifier_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
         return of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_dup(src);
     }
@@ -28142,6 +28150,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_ICMP_TYPE) {
         return of_bsn_tlv_icmp_type_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FLOW_IDENTIFIER) {
+        return of_bsn_tlv_flow_identifier_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_QUEUE_ID) {
@@ -29360,6 +29372,77 @@ of_bsn_tlv_flood_OF_VERSION_1_3_dup(
     if ((dst = of_bsn_tlv_flood_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_flow_classifier
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_flow_classifier.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_flow_classifier_t *
+of_bsn_tlv_flow_classifier_OF_VERSION_1_3_dup(
+    of_bsn_tlv_flow_classifier_t *src)
+{
+    of_bsn_tlv_flow_classifier_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_flow_classifier_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_flow_classifier_value_get(src, &val16);
+    of_bsn_tlv_flow_classifier_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_flow_classify
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_flow_classify.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_flow_classify_t *
+of_bsn_tlv_flow_classify_OF_VERSION_1_3_dup(
+    of_bsn_tlv_flow_classify_t *src)
+{
+    of_bsn_tlv_flow_classify_t *dst;
+
+    if ((dst = of_bsn_tlv_flow_classify_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_flow_identifier
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_flow_identifier.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_flow_identifier_t *
+of_bsn_tlv_flow_identifier_OF_VERSION_1_3_dup(
+    of_bsn_tlv_flow_identifier_t *src)
+{
+    of_bsn_tlv_flow_identifier_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_flow_identifier_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_flow_identifier_value_get(src, &val32);
+    of_bsn_tlv_flow_identifier_value_set(dst, val32);
 
     return dst;
 }
@@ -51930,6 +52013,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_rate_unit_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_FLOW_CLASSIFY) {
+        return of_bsn_tlv_flow_classify_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ECN) {
         return of_bsn_tlv_ecn_OF_VERSION_1_4_dup(src);
     }
@@ -51958,8 +52045,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_partner_system_priority_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_ETH_SRC) {
-        return of_bsn_tlv_eth_src_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_IPV4) {
+        return of_bsn_tlv_ipv4_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_LAG_OPTIONS) {
@@ -51978,8 +52065,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_status_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_IPV4) {
-        return of_bsn_tlv_ipv4_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_ETH_SRC) {
+        return of_bsn_tlv_eth_src_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_IPV6) {
@@ -52290,6 +52377,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_udf_offset_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_FLOW_CLASSIFIER) {
+        return of_bsn_tlv_flow_classifier_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
         return of_bsn_tlv_actor_port_priority_OF_VERSION_1_4_dup(src);
     }
@@ -52320,6 +52411,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_ICMP_TYPE) {
         return of_bsn_tlv_icmp_type_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_FLOW_IDENTIFIER) {
+        return of_bsn_tlv_flow_identifier_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_QUEUE_ID) {
@@ -53538,6 +53633,77 @@ of_bsn_tlv_flood_OF_VERSION_1_4_dup(
     if ((dst = of_bsn_tlv_flood_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_flow_classifier
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_flow_classifier.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_flow_classifier_t *
+of_bsn_tlv_flow_classifier_OF_VERSION_1_4_dup(
+    of_bsn_tlv_flow_classifier_t *src)
+{
+    of_bsn_tlv_flow_classifier_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_flow_classifier_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_flow_classifier_value_get(src, &val16);
+    of_bsn_tlv_flow_classifier_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_flow_classify
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_flow_classify.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_flow_classify_t *
+of_bsn_tlv_flow_classify_OF_VERSION_1_4_dup(
+    of_bsn_tlv_flow_classify_t *src)
+{
+    of_bsn_tlv_flow_classify_t *dst;
+
+    if ((dst = of_bsn_tlv_flow_classify_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_flow_identifier
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_flow_identifier.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_flow_identifier_t *
+of_bsn_tlv_flow_identifier_OF_VERSION_1_4_dup(
+    of_bsn_tlv_flow_identifier_t *src)
+{
+    of_bsn_tlv_flow_identifier_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_flow_identifier_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_flow_identifier_value_get(src, &val32);
+    of_bsn_tlv_flow_identifier_value_set(dst, val32);
 
     return dst;
 }
@@ -74599,6 +74765,57 @@ of_bsn_tlv_flood_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_flood_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_flow_classifier_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_flow_classifier_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_flow_classifier_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_flow_classify_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_flow_classify_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_flow_classify_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_flow_identifier_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_flow_identifier_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_flow_identifier_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

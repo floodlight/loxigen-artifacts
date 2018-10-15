@@ -4254,6 +4254,15 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xb5:
             *id = OF_BSN_TLV_PIM_HELLO_FLOOD;
             break;
+        case 0xb6:
+            *id = OF_BSN_TLV_FLOW_CLASSIFY;
+            break;
+        case 0xb7:
+            *id = OF_BSN_TLV_FLOW_IDENTIFIER;
+            break;
+        case 0xb8:
+            *id = OF_BSN_TLV_FLOW_CLASSIFIER;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -4805,6 +4814,15 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xb5:
             *id = OF_BSN_TLV_PIM_HELLO_FLOOD;
+            break;
+        case 0xb6:
+            *id = OF_BSN_TLV_FLOW_CLASSIFY;
+            break;
+        case 0xb7:
+            *id = OF_BSN_TLV_FLOW_IDENTIFIER;
+            break;
+        case 0xb8:
+            *id = OF_BSN_TLV_FLOW_CLASSIFIER;
             break;
         default:
             *id = OF_BSN_TLV;

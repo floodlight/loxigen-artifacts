@@ -166,6 +166,15 @@ abstract class OFBsnTlvVer14 {
                case (short) 0xa3:
                    // discriminator value 0xa3=0xa3 for class OFBsnTlvFloodVer14
                    return OFBsnTlvFloodVer14.READER.readFrom(bb);
+               case (short) 0xb8:
+                   // discriminator value 0xb8=0xb8 for class OFBsnTlvFlowClassifierVer14
+                   return OFBsnTlvFlowClassifierVer14.READER.readFrom(bb);
+               case (short) 0xb6:
+                   // discriminator value 0xb6=0xb6 for class OFBsnTlvFlowClassifyVer14
+                   return OFBsnTlvFlowClassifyVer14.READER.readFrom(bb);
+               case (short) 0xb7:
+                   // discriminator value 0xb7=0xb7 for class OFBsnTlvFlowIdentifierVer14
+                   return OFBsnTlvFlowIdentifierVer14.READER.readFrom(bb);
                case (short) 0x97:
                    // discriminator value 0x97=0x97 for class OFBsnTlvForceLinkUpVer14
                    return OFBsnTlvForceLinkUpVer14.READER.readFrom(bb);

@@ -935,6 +935,12 @@ void of_bsn_tlv_fabric_port_role_wire_object_id_get(of_object_t *obj, of_object_
 void of_bsn_tlv_fabric_port_role_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_flood_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_flood_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_flow_classifier_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_flow_classifier_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_flow_classify_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_flow_classify_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_flow_identifier_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_flow_identifier_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_force_link_up_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_force_link_up_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_forward_error_correction_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1940,6 +1946,9 @@ typedef of_object_t of_bsn_tlv_external_mac_t;
 typedef of_object_t of_bsn_tlv_external_netmask_t;
 typedef of_object_t of_bsn_tlv_fabric_port_role_t;
 typedef of_object_t of_bsn_tlv_flood_t;
+typedef of_object_t of_bsn_tlv_flow_classifier_t;
+typedef of_object_t of_bsn_tlv_flow_classify_t;
+typedef of_object_t of_bsn_tlv_flow_identifier_t;
 typedef of_object_t of_bsn_tlv_force_link_up_t;
 typedef of_object_t of_bsn_tlv_forward_error_correction_t;
 typedef of_object_t of_bsn_tlv_generation_id_t;
@@ -4181,6 +4190,21 @@ extern void of_bsn_tlv_fabric_port_role_init(
 extern of_object_t *
     of_bsn_tlv_flood_new(of_version_t version);
 extern void of_bsn_tlv_flood_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_flow_classifier_new(of_version_t version);
+extern void of_bsn_tlv_flow_classifier_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_flow_classify_new(of_version_t version);
+extern void of_bsn_tlv_flow_classify_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_flow_identifier_new(of_version_t version);
+extern void of_bsn_tlv_flow_identifier_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10494,6 +10518,39 @@ of_bsn_tlv_fabric_port_role_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_flood_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_flow_classifier_t
+ * @param obj An instance of type of_bsn_tlv_flow_classifier_t
+ *
+ * \ingroup of_bsn_tlv_flow_classifier
+ */
+static inline void
+of_bsn_tlv_flow_classifier_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_flow_classify_t
+ * @param obj An instance of type of_bsn_tlv_flow_classify_t
+ *
+ * \ingroup of_bsn_tlv_flow_classify
+ */
+static inline void
+of_bsn_tlv_flow_classify_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_flow_identifier_t
+ * @param obj An instance of type of_bsn_tlv_flow_identifier_t
+ *
+ * \ingroup of_bsn_tlv_flow_identifier
+ */
+static inline void
+of_bsn_tlv_flow_identifier_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24162,6 +24219,26 @@ extern void of_bsn_tlv_fabric_port_role_value_get(
     uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_flood */
+
+/* Unified accessor functions for of_bsn_tlv_flow_classifier */
+
+extern void of_bsn_tlv_flow_classifier_value_set(
+    of_bsn_tlv_flow_classifier_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_flow_classifier_value_get(
+    of_bsn_tlv_flow_classifier_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_flow_classify */
+
+/* Unified accessor functions for of_bsn_tlv_flow_identifier */
+
+extern void of_bsn_tlv_flow_identifier_value_set(
+    of_bsn_tlv_flow_identifier_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_flow_identifier_value_get(
+    of_bsn_tlv_flow_identifier_t *obj,
+    uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_force_link_up */
 

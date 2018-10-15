@@ -1383,6 +1383,18 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_flow_classifier_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_flow_classify_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_flow_identifier_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_force_link_up_dup(
         of_object_t *src);
 
@@ -6647,6 +6659,18 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_flow_classifier_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_flow_classify_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_flow_identifier_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_force_link_up_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9584,6 +9608,18 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_flood_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_flow_classifier_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_flow_classify_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_flow_identifier_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

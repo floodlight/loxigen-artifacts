@@ -106,6 +106,11 @@ public interface OFBsnTlvs {
     OFBsnTlvFabricPortRole.Builder buildFabricPortRole() throws UnsupportedOperationException;
     OFBsnTlvFabricPortRole fabricPortRole(OFBsnFabricPortRole value);
     OFBsnTlvFlood flood();
+    OFBsnTlvFlowClassifier.Builder buildFlowClassifier() throws UnsupportedOperationException;
+    OFBsnTlvFlowClassifier flowClassifier(OFBsnFlowClassifier value);
+    OFBsnTlvFlowClassify flowClassify();
+    OFBsnTlvFlowIdentifier.Builder buildFlowIdentifier() throws UnsupportedOperationException;
+    OFBsnTlvFlowIdentifier flowIdentifier(long value);
     OFBsnTlvForceLinkUp forceLinkUp();
     OFBsnTlvForwardErrorCorrection.Builder buildForwardErrorCorrection() throws UnsupportedOperationException;
     OFBsnTlvForwardErrorCorrection forwardErrorCorrection(OFBsnForwardErrorCorrectionType value);

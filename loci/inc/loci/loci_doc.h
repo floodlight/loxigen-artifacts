@@ -6853,6 +6853,35 @@ typedef struct of_bsn_tlv_fabric_port_role_s of_bsn_tlv_fabric_port_role_t;
 typedef struct of_bsn_tlv_flood_s of_bsn_tlv_flood_t;
 
 /**
+ * Structure for of_bsn_tlv_flow_classifier object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_flow_classifier_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_flow_classifier_s of_bsn_tlv_flow_classifier_t;
+
+/**
+ * Structure for of_bsn_tlv_flow_classify object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_flow_classify_s of_bsn_tlv_flow_classify_t;
+
+/**
+ * Structure for of_bsn_tlv_flow_identifier object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_flow_identifier_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_flow_identifier_s of_bsn_tlv_flow_identifier_t;
+
+/**
  * Structure for of_bsn_tlv_force_link_up object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
