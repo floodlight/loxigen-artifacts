@@ -229,9 +229,11 @@ class OFOxmTunnelIpv4DstVer12 implements OFOxmTunnelIpv4Dst {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmTunnelIpv4Dst> {
+    static class Reader extends AbstractOFMessageReader<OFOxmTunnelIpv4Dst> {
         @Override
-        public OFOxmTunnelIpv4Dst readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmTunnelIpv4Dst readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x14004L
             int typeLen = bb.readInt();
             if(typeLen != 0x14004)

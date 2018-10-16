@@ -472,9 +472,11 @@ class OFBsnSetLacpRequestVer13 implements OFBsnSetLacpRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnSetLacpRequest> {
+    static class Reader extends AbstractOFMessageReader<OFBsnSetLacpRequest> {
         @Override
-        public OFBsnSetLacpRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnSetLacpRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -487,6 +489,7 @@ class OFBsnSetLacpRequestVer13 implements OFBsnSetLacpRequest {
             int length = U16.f(bb.readShort());
             if(length != 38)
                 throw new OFParseError("Wrong length: Expected=38(38), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

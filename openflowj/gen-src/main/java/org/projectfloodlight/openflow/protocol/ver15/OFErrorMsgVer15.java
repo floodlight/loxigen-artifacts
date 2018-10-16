@@ -35,9 +35,9 @@ abstract class OFErrorMsgVer15 {
 
     public final static OFErrorMsgVer15.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFErrorMsg> {
         @Override
-        public OFErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -52,70 +52,96 @@ abstract class OFErrorMsgVer15 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             U32.f(bb.readInt());
             short errType = bb.readShort();
-            bb.readerIndex(start);
             switch(errType) {
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.BAD_ACTION=2 for class OFBadActionErrorMsgVer15
-                   return OFBadActionErrorMsgVer15.READER.readFrom(bb);
+                   return OFBadActionErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.BAD_REQUEST=1 for class OFBadRequestErrorMsgVer15
-                   return OFBadRequestErrorMsgVer15.READER.readFrom(bb);
+                   return OFBadRequestErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0x5:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.FLOW_MOD_FAILED=5 for class OFFlowModFailedErrorMsgVer15
-                   return OFFlowModFailedErrorMsgVer15.READER.readFrom(bb);
+                   return OFFlowModFailedErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0x0:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.HELLO_FAILED=0 for class OFHelloFailedErrorMsgVer15
-                   return OFHelloFailedErrorMsgVer15.READER.readFrom(bb);
+                   return OFHelloFailedErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0x7:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.PORT_MOD_FAILED=7 for class OFPortModFailedErrorMsgVer15
-                   return OFPortModFailedErrorMsgVer15.READER.readFrom(bb);
+                   return OFPortModFailedErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0x9:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.QUEUE_OP_FAILED=9 for class OFQueueOpFailedErrorMsgVer15
-                   return OFQueueOpFailedErrorMsgVer15.READER.readFrom(bb);
+                   return OFQueueOpFailedErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0x3:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.BAD_INSTRUCTION=3 for class OFBadInstructionErrorMsgVer15
-                   return OFBadInstructionErrorMsgVer15.READER.readFrom(bb);
+                   return OFBadInstructionErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0x4:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.BAD_MATCH=4 for class OFBadMatchErrorMsgVer15
-                   return OFBadMatchErrorMsgVer15.READER.readFrom(bb);
+                   return OFBadMatchErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0x6:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.GROUP_MOD_FAILED=6 for class OFGroupModFailedErrorMsgVer15
-                   return OFGroupModFailedErrorMsgVer15.READER.readFrom(bb);
+                   return OFGroupModFailedErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0xa:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.SWITCH_CONFIG_FAILED=10 for class OFSwitchConfigFailedErrorMsgVer15
-                   return OFSwitchConfigFailedErrorMsgVer15.READER.readFrom(bb);
+                   return OFSwitchConfigFailedErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0x8:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.TABLE_MOD_FAILED=8 for class OFTableModFailedErrorMsgVer15
-                   return OFTableModFailedErrorMsgVer15.READER.readFrom(bb);
+                   return OFTableModFailedErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.EXPERIMENTER=65535 for class OFExperimenterErrorMsgVer15
-                   return OFExperimenterErrorMsgVer15.READER.readFrom(bb);
+                   return OFExperimenterErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0xb:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.ROLE_REQUEST_FAILED=11 for class OFRoleRequestFailedErrorMsgVer15
-                   return OFRoleRequestFailedErrorMsgVer15.READER.readFrom(bb);
+                   return OFRoleRequestFailedErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0xc:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.METER_MOD_FAILED=12 for class OFMeterModFailedErrorMsgVer15
-                   return OFMeterModFailedErrorMsgVer15.READER.readFrom(bb);
+                   return OFMeterModFailedErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0xd:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.TABLE_FEATURES_FAILED=13 for class OFTableFeaturesFailedErrorMsgVer15
-                   return OFTableFeaturesFailedErrorMsgVer15.READER.readFrom(bb);
+                   return OFTableFeaturesFailedErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0xf:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.ASYNC_CONFIG_FAILED=15 for class OFAsyncConfigFailedErrorMsgVer15
-                   return OFAsyncConfigFailedErrorMsgVer15.READER.readFrom(bb);
+                   return OFAsyncConfigFailedErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0xe:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.BAD_PROPERTY=14 for class OFBadPropertyErrorMsgVer15
-                   return OFBadPropertyErrorMsgVer15.READER.readFrom(bb);
+                   return OFBadPropertyErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0x11:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.BUNDLE_FAILED=17 for class OFBundleFailedErrorMsgVer15
-                   return OFBundleFailedErrorMsgVer15.READER.readFrom(bb);
+                   return OFBundleFailedErrorMsgVer15.READER.readFrom(context, bb);
                case (short) 0x10:
+                   bb.readerIndex(start);
                    // discriminator value OFErrorType.FLOW_MONITOR_FAILED=16 for class OFFlowMonitorFailedErrorMsgVer15
-                   return OFFlowMonitorFailedErrorMsgVer15.READER.readFrom(bb);
+                   return OFFlowMonitorFailedErrorMsgVer15.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator errType of class OFErrorMsgVer15: " + errType);
+                   context.getUnparsedHandler().unparsedMessage(OFErrorMsgVer15.class, "errType", errType);
             }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

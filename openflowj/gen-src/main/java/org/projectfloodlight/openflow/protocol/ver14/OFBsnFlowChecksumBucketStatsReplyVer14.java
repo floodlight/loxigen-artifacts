@@ -300,9 +300,11 @@ class OFBsnFlowChecksumBucketStatsReplyVer14 implements OFBsnFlowChecksumBucketS
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnFlowChecksumBucketStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnFlowChecksumBucketStatsReply> {
         @Override
-        public OFBsnFlowChecksumBucketStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnFlowChecksumBucketStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -315,6 +317,7 @@ class OFBsnFlowChecksumBucketStatsReplyVer14 implements OFBsnFlowChecksumBucketS
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -338,7 +341,7 @@ class OFBsnFlowChecksumBucketStatsReplyVer14 implements OFBsnFlowChecksumBucketS
             int subtype = bb.readInt();
             if(subtype != 0xa)
                 throw new OFParseError("Wrong subtype: Expected=0xaL(0xaL), got="+subtype);
-            List<OFBsnFlowChecksumBucketStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnFlowChecksumBucketStatsEntryVer14.READER);
+            List<OFBsnFlowChecksumBucketStatsEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnFlowChecksumBucketStatsEntryVer14.READER);
 
             OFBsnFlowChecksumBucketStatsReplyVer14 bsnFlowChecksumBucketStatsReplyVer14 = new OFBsnFlowChecksumBucketStatsReplyVer14(
                     xid,

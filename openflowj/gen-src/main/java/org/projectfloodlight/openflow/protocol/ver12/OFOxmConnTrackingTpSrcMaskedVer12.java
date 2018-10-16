@@ -264,9 +264,11 @@ class OFOxmConnTrackingTpSrcMaskedVer12 implements OFOxmConnTrackingTpSrcMasked 
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmConnTrackingTpSrcMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmConnTrackingTpSrcMasked> {
         @Override
-        public OFOxmConnTrackingTpSrcMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmConnTrackingTpSrcMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x1f904L
             int typeLen = bb.readInt();
             if(typeLen != 0x1f904)

@@ -154,9 +154,11 @@ class OFBsnSwitchPipelineStatsEntryVer14 implements OFBsnSwitchPipelineStatsEntr
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnSwitchPipelineStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFBsnSwitchPipelineStatsEntry> {
         @Override
-        public OFBsnSwitchPipelineStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnSwitchPipelineStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             String pipeline = ChannelUtils.readFixedLengthString(bb, 256);
 
             OFBsnSwitchPipelineStatsEntryVer14 bsnSwitchPipelineStatsEntryVer14 = new OFBsnSwitchPipelineStatsEntryVer14(

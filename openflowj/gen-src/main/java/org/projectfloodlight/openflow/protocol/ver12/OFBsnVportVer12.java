@@ -35,24 +35,36 @@ abstract class OFBsnVportVer12 {
 
     public final static OFBsnVportVer12.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFBsnVport> {
+    static class Reader extends AbstractOFMessageReader<OFBsnVport> {
         @Override
-        public OFBsnVport readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnVport readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
-            bb.readerIndex(start);
             switch(type) {
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value 0x1=0x1 for class OFBsnVportL2GreVer12
-                   return OFBsnVportL2GreVer12.READER.readFrom(bb);
+                   return OFBsnVportL2GreVer12.READER.readFrom(context, bb);
                case (short) 0x0:
+                   bb.readerIndex(start);
                    // discriminator value 0x0=0x0 for class OFBsnVportQInQVer12
-                   return OFBsnVportQInQVer12.READER.readFrom(bb);
+                   return OFBsnVportQInQVer12.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFBsnVportVer12: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFBsnVportVer12.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

@@ -80,9 +80,11 @@ class OFInstructionBsnArpOffloadVer14 implements OFInstructionBsnArpOffload {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFInstructionBsnArpOffload> {
+    static class Reader extends AbstractOFMessageReader<OFInstructionBsnArpOffload> {
         @Override
-        public OFInstructionBsnArpOffload readFrom(ByteBuf bb) throws OFParseError {
+        public OFInstructionBsnArpOffload readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 65535
             short type = bb.readShort();
@@ -91,6 +93,7 @@ class OFInstructionBsnArpOffloadVer14 implements OFInstructionBsnArpOffload {
             int length = U16.f(bb.readShort());
             if(length != 16)
                 throw new OFParseError("Wrong length: Expected=16(16), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

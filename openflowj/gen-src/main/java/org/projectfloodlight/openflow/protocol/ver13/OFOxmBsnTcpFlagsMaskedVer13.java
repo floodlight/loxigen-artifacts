@@ -264,9 +264,11 @@ class OFOxmBsnTcpFlagsMaskedVer13 implements OFOxmBsnTcpFlagsMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnTcpFlagsMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnTcpFlagsMasked> {
         @Override
-        public OFOxmBsnTcpFlagsMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnTcpFlagsMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x32104L
             int typeLen = bb.readInt();
             if(typeLen != 0x32104)

@@ -229,9 +229,11 @@ class OFOxmBsnTcpFlagsVer12 implements OFOxmBsnTcpFlags {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnTcpFlags> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnTcpFlags> {
         @Override
-        public OFOxmBsnTcpFlags readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnTcpFlags readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x32002L
             int typeLen = bb.readInt();
             if(typeLen != 0x32002)

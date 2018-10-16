@@ -493,9 +493,11 @@ class OFFlowStatsRequestVer11 implements OFFlowStatsRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowStatsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFFlowStatsRequest> {
         @Override
-        public OFFlowStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowStatsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -508,6 +510,7 @@ class OFFlowStatsRequestVer11 implements OFFlowStatsRequest {
             int length = U16.f(bb.readShort());
             if(length != 136)
                 throw new OFParseError("Wrong length: Expected=136(136), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -532,7 +535,7 @@ class OFFlowStatsRequestVer11 implements OFFlowStatsRequest {
             bb.skipBytes(4);
             U64 cookie = U64.ofRaw(bb.readLong());
             U64 cookieMask = U64.ofRaw(bb.readLong());
-            Match match = ChannelUtilsVer11.readOFMatch(bb);
+            Match match = ChannelUtilsVer11.readOFMatch(context, bb);
 
             OFFlowStatsRequestVer11 flowStatsRequestVer11 = new OFFlowStatsRequestVer11(
                     xid,

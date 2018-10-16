@@ -26,23 +26,43 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.junit.Test;
+import org.junit.runners.Parameterized.Parameters;
+import java.util.List;
+import com.google.common.collect.ImmutableList;
 import org.junit.Before;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import java.util.List;
-import com.google.common.collect.ImmutableList;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
-
+@RunWith(Parameterized.class)
 public class OFPortModVer15Test {
     OFFactory factory;
 
     final static byte[] PORT_MOD_SERIALIZED =
         new byte[] { 0x6, 0x10, 0x0, 0x28, 0x12, 0x34, 0x56, 0x78, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x8, 0x0, 0x0, 0x0, 0x1 };
+
+
+    private final static int[] PREFIX_BYTES = { 0, 1, 4, 255, 65335 };
+    private final static byte[] EMPTY_BYTES = new byte[65535];
+
+    private final OFMessageReader<?> messageReader;
+
+    @Parameters(name="{index}.MessageReader={0}")
+    public static Iterable<Object> data() {
+        return ImmutableList.<Object>of(
+                OFPortModVer15.READER, OFMessageVer15.READER
+        );
+    }
+
+    public OFPortModVer15Test(OFMessageReader<?> messageReader) {
+        this.messageReader = messageReader;
+    }
 
     @Before
     public void setup() {
@@ -69,8 +89,13 @@ public class OFPortModVer15Test {
         assertThat(written, CoreMatchers.equalTo(PORT_MOD_SERIALIZED));
     }
 
+
     @Test
     public void testRead() throws Exception {
+        ByteBuf input = Unpooled.copiedBuffer(PORT_MOD_SERIALIZED);
+
+        Object portModRead = messageReader.readFrom(input);
+        assertThat(portModRead, CoreMatchers.instanceOf(OFPortModVer15.class));
         OFPortMod.Builder builder = factory.buildPortMod();
         builder
         .setXid(0x12345678)
@@ -82,13 +107,37 @@ public class OFPortModVer15Test {
         .build();
         OFPortMod portModBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(PORT_MOD_SERIALIZED);
-
-        // FIXME should invoke the overall reader once implemented
-        OFPortMod portModRead = OFPortModVer15.READER.readFrom(input);
         assertEquals(PORT_MOD_SERIALIZED.length, input.readerIndex());
 
         assertEquals(portModBuilt, portModRead);
+        // FIXME: No java stanza in test_data for this class. Add to enable validation of read message
+   }
+
+    /**
+     * Validates Reader handling of partial messages in the buffer.
+     *
+     * Ensures that readers deal with partially available messages, and that buffers
+     * are returned unmodified. Also checks compatibility when the data is not at the start of
+     * the buffer (readerIndex=0), but somewhere else (with the readerIndex appropriately set).
+     */
+   @Test
+   public void testPartialRead() throws Exception {
+       ByteBuf msgBuffer = Unpooled.copiedBuffer(PORT_MOD_SERIALIZED);
+       for (int prefixLength: PREFIX_BYTES) {
+           ByteBuf prefixBuffer = Unpooled.wrappedBuffer(EMPTY_BYTES).slice(0, prefixLength);
+           ByteBuf wholeBuffer = Unpooled.wrappedBuffer(prefixBuffer, msgBuffer);
+           for (int partialLength = 0; partialLength < PORT_MOD_SERIALIZED.length - 1; partialLength++) {
+               int length = prefixLength + partialLength;
+               ByteBuf slice = wholeBuffer.slice(0, length);
+               slice.readerIndex(prefixLength);
+
+               Object read = messageReader.readFrom(slice);
+
+               assertNull("partial message should not be read", read);
+               assertEquals("Reader index should be back at the start", prefixLength, slice.readerIndex());
+           }
+
+       }
    }
 
    @Test
@@ -96,7 +145,7 @@ public class OFPortModVer15Test {
        ByteBuf input = Unpooled.copiedBuffer(PORT_MOD_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
-       OFPortMod portMod = OFPortModVer15.READER.readFrom(input);
+       OFPortMod portMod = (OFPortMod) messageReader.readFrom(input);
        assertEquals(PORT_MOD_SERIALIZED.length, input.readerIndex());
 
        // write message again

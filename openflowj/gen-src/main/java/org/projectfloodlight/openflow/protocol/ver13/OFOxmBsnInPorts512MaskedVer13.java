@@ -264,9 +264,11 @@ class OFOxmBsnInPorts512MaskedVer13 implements OFOxmBsnInPorts512Masked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnInPorts512Masked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnInPorts512Masked> {
         @Override
-        public OFOxmBsnInPorts512Masked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnInPorts512Masked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x32780L
             int typeLen = bb.readInt();
             if(typeLen != 0x32780)

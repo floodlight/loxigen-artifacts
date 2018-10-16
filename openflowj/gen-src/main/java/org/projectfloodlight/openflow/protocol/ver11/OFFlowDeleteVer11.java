@@ -745,9 +745,11 @@ class OFFlowDeleteVer11 implements OFFlowDelete {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowDelete> {
+    static class Reader extends AbstractOFMessageReader<OFFlowDelete> {
         @Override
-        public OFFlowDelete readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowDelete readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -760,6 +762,7 @@ class OFFlowDeleteVer11 implements OFFlowDelete {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -784,8 +787,8 @@ class OFFlowDeleteVer11 implements OFFlowDelete {
             Set<OFFlowModFlags> flags = OFFlowModFlagsSerializerVer11.readFrom(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
-            Match match = ChannelUtilsVer11.readOFMatch(bb);
-            List<OFInstruction> instructions = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFInstructionVer11.READER);
+            Match match = ChannelUtilsVer11.readOFMatch(context, bb);
+            List<OFInstruction> instructions = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFInstructionVer11.READER);
 
             OFFlowDeleteVer11 flowDeleteVer11 = new OFFlowDeleteVer11(
                     xid,

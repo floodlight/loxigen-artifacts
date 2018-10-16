@@ -208,9 +208,11 @@ class OFEchoReplyVer10 implements OFEchoReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFEchoReply> {
+    static class Reader extends AbstractOFMessageReader<OFEchoReply> {
         @Override
-        public OFEchoReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFEchoReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -223,6 +225,7 @@ class OFEchoReplyVer10 implements OFEchoReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

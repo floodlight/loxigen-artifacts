@@ -233,9 +233,11 @@ class OFBsnVirtualPortCreateRequestVer11 implements OFBsnVirtualPortCreateReques
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnVirtualPortCreateRequest> {
+    static class Reader extends AbstractOFMessageReader<OFBsnVirtualPortCreateRequest> {
         @Override
-        public OFBsnVirtualPortCreateRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnVirtualPortCreateRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -248,6 +250,7 @@ class OFBsnVirtualPortCreateRequestVer11 implements OFBsnVirtualPortCreateReques
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
