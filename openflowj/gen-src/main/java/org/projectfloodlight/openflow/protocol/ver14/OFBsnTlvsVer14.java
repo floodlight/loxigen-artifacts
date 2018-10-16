@@ -370,6 +370,28 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
         return OFBsnTlvFloodVer14.INSTANCE;
     }
 
+    public OFBsnTlvFlowClassifier.Builder buildFlowClassifier() {
+        return new OFBsnTlvFlowClassifierVer14.Builder();
+    }
+    public OFBsnTlvFlowClassifier flowClassifier(OFBsnFlowClassifier value) {
+        return new OFBsnTlvFlowClassifierVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvFlowClassify flowClassify() {
+        return OFBsnTlvFlowClassifyVer14.INSTANCE;
+    }
+
+    public OFBsnTlvFlowIdentifier.Builder buildFlowIdentifier() {
+        return new OFBsnTlvFlowIdentifierVer14.Builder();
+    }
+    public OFBsnTlvFlowIdentifier flowIdentifier(long value) {
+        return new OFBsnTlvFlowIdentifierVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvForceLinkUp forceLinkUp() {
         return OFBsnTlvForceLinkUpVer14.INSTANCE;
     }
