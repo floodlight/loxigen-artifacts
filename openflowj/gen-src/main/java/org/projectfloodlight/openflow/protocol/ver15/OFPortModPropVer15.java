@@ -35,27 +35,40 @@ abstract class OFPortModPropVer15 {
 
     public final static OFPortModPropVer15.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFPortModProp> {
+    static class Reader extends AbstractOFMessageReader<OFPortModProp> {
         @Override
-        public OFPortModProp readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortModProp readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
-            bb.readerIndex(start);
             switch(type) {
                case (short) 0x0:
+                   bb.readerIndex(start);
                    // discriminator value 0x0=0x0 for class OFPortModPropEthernetVer15
-                   return OFPortModPropEthernetVer15.READER.readFrom(bb);
+                   return OFPortModPropEthernetVer15.READER.readFrom(context, bb);
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value 0xffff=0xffff for class OFPortModPropExperimenterVer15
-                   return OFPortModPropExperimenterVer15.READER.readFrom(bb);
+                   return OFPortModPropExperimenterVer15.READER.readFrom(context, bb);
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value 0x1=0x1 for class OFPortModPropOpticalVer15
-                   return OFPortModPropOpticalVer15.READER.readFrom(bb);
+                   return OFPortModPropOpticalVer15.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFPortModPropVer15: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFPortModPropVer15.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

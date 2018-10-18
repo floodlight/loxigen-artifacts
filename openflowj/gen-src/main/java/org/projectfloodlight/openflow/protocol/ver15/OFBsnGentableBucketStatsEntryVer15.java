@@ -154,9 +154,11 @@ class OFBsnGentableBucketStatsEntryVer15 implements OFBsnGentableBucketStatsEntr
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGentableBucketStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGentableBucketStatsEntry> {
         @Override
-        public OFBsnGentableBucketStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGentableBucketStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             U128 checksum = U128.read16Bytes(bb);
 
             OFBsnGentableBucketStatsEntryVer15 bsnGentableBucketStatsEntryVer15 = new OFBsnGentableBucketStatsEntryVer15(

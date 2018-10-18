@@ -300,9 +300,11 @@ class OFBsnSwitchPipelineStatsReplyVer14 implements OFBsnSwitchPipelineStatsRepl
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnSwitchPipelineStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnSwitchPipelineStatsReply> {
         @Override
-        public OFBsnSwitchPipelineStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnSwitchPipelineStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -315,6 +317,7 @@ class OFBsnSwitchPipelineStatsReplyVer14 implements OFBsnSwitchPipelineStatsRepl
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -338,7 +341,7 @@ class OFBsnSwitchPipelineStatsReplyVer14 implements OFBsnSwitchPipelineStatsRepl
             int subtype = bb.readInt();
             if(subtype != 0x6)
                 throw new OFParseError("Wrong subtype: Expected=0x6L(0x6L), got="+subtype);
-            List<OFBsnSwitchPipelineStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnSwitchPipelineStatsEntryVer14.READER);
+            List<OFBsnSwitchPipelineStatsEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnSwitchPipelineStatsEntryVer14.READER);
 
             OFBsnSwitchPipelineStatsReplyVer14 bsnSwitchPipelineStatsReplyVer14 = new OFBsnSwitchPipelineStatsReplyVer14(
                     xid,

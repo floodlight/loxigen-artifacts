@@ -529,13 +529,16 @@ class OFTableFeaturesVer15 implements OFTableFeatures {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableFeatures> {
+    static class Reader extends AbstractOFMessageReader<OFTableFeatures> {
         @Override
-        public OFTableFeatures readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeatures readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -551,7 +554,7 @@ class OFTableFeaturesVer15 implements OFTableFeatures {
             U64 metadataWrite = U64.ofRaw(bb.readLong());
             Set<OFTableConfig> capabilities = OFTableConfigSerializerVer15.readFrom(bb);
             long maxEntries = U32.f(bb.readInt());
-            List<OFTableFeatureProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFTableFeaturePropVer15.READER);
+            List<OFTableFeatureProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFTableFeaturePropVer15.READER);
 
             OFTableFeaturesVer15 tableFeaturesVer15 = new OFTableFeaturesVer15(
                     tableId,

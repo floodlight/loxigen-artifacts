@@ -264,9 +264,11 @@ class OFOxmBsnVxlanNetworkIdMaskedVer15 implements OFOxmBsnVxlanNetworkIdMasked 
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnVxlanNetworkIdMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnVxlanNetworkIdMasked> {
         @Override
-        public OFOxmBsnVxlanNetworkIdMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnVxlanNetworkIdMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x32b08L
             int typeLen = bb.readInt();
             if(typeLen != 0x32b08)

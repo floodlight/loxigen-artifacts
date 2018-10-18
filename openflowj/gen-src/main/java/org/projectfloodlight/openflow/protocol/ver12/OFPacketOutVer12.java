@@ -368,9 +368,11 @@ class OFPacketOutVer12 implements OFPacketOut {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPacketOut> {
+    static class Reader extends AbstractOFMessageReader<OFPacketOut> {
         @Override
-        public OFPacketOut readFrom(ByteBuf bb) throws OFParseError {
+        public OFPacketOut readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -383,6 +385,7 @@ class OFPacketOutVer12 implements OFPacketOut {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -396,7 +399,7 @@ class OFPacketOutVer12 implements OFPacketOut {
             int actionsLen = U16.f(bb.readShort());
             // pad: 6 bytes
             bb.skipBytes(6);
-            List<OFAction> actions = ChannelUtils.readList(bb, actionsLen, OFActionVer12.READER);
+            List<OFAction> actions = ChannelUtils.readList(context, bb, actionsLen, OFActionVer12.READER);
             byte[] data = ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
 
             OFPacketOutVer12 packetOutVer12 = new OFPacketOutVer12(

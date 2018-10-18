@@ -223,9 +223,11 @@ class OFTableDescStatsRequestVer14 implements OFTableDescStatsRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableDescStatsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFTableDescStatsRequest> {
         @Override
-        public OFTableDescStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableDescStatsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -238,6 +240,7 @@ class OFTableDescStatsRequestVer14 implements OFTableDescStatsRequest {
             int length = U16.f(bb.readShort());
             if(length != 16)
                 throw new OFParseError("Wrong length: Expected=16(16), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

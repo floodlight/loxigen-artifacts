@@ -264,9 +264,11 @@ class OFOxmArpTpaMaskedVer13 implements OFOxmArpTpaMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmArpTpaMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmArpTpaMasked> {
         @Override
-        public OFOxmArpTpaMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmArpTpaMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80002f08L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80002f08)

@@ -229,9 +229,11 @@ class OFOxmVlanVidVer13 implements OFOxmVlanVid {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmVlanVid> {
+    static class Reader extends AbstractOFMessageReader<OFOxmVlanVid> {
         @Override
-        public OFOxmVlanVid readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmVlanVid readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80000c02L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80000c02)

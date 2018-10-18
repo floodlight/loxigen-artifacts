@@ -229,9 +229,11 @@ class OFOxmIpv6FlabelVer14 implements OFOxmIpv6Flabel {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmIpv6Flabel> {
+    static class Reader extends AbstractOFMessageReader<OFOxmIpv6Flabel> {
         @Override
-        public OFOxmIpv6Flabel readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmIpv6Flabel readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80003804L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80003804)

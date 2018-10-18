@@ -162,9 +162,11 @@ class OFBsnTlvSubAgentIdVer13 implements OFBsnTlvSubAgentId {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvSubAgentId> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvSubAgentId> {
         @Override
-        public OFBsnTlvSubAgentId readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvSubAgentId readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x26
             short type = bb.readShort();
@@ -173,6 +175,7 @@ class OFBsnTlvSubAgentIdVer13 implements OFBsnTlvSubAgentId {
             int length = U16.f(bb.readShort());
             if(length != 8)
                 throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

@@ -209,9 +209,11 @@ class OFHelloVer13 implements OFHello {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFHello> {
+    static class Reader extends AbstractOFMessageReader<OFHello> {
         @Override
-        public OFHello readFrom(ByteBuf bb) throws OFParseError {
+        public OFHello readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -224,6 +226,7 @@ class OFHelloVer13 implements OFHello {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -232,7 +235,7 @@ class OFHelloVer13 implements OFHello {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            List<OFHelloElem> elements = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFHelloElemVer13.READER);
+            List<OFHelloElem> elements = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFHelloElemVer13.READER);
 
             OFHelloVer13 helloVer13 = new OFHelloVer13(
                     xid,

@@ -169,9 +169,11 @@ class OFBsnTlvIpv4Ver15 implements OFBsnTlvIpv4 {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvIpv4> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvIpv4> {
         @Override
-        public OFBsnTlvIpv4 readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvIpv4 readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x4
             short type = bb.readShort();
@@ -180,6 +182,7 @@ class OFBsnTlvIpv4Ver15 implements OFBsnTlvIpv4 {
             int length = U16.f(bb.readShort());
             if(length != 8)
                 throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

@@ -284,9 +284,11 @@ class OFActionCopyFieldVer15 implements OFActionCopyField {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFActionCopyField> {
+    static class Reader extends AbstractOFMessageReader<OFActionCopyField> {
         @Override
-        public OFActionCopyField readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionCopyField readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x1c
             short type = bb.readShort();
@@ -295,6 +297,7 @@ class OFActionCopyFieldVer15 implements OFActionCopyField {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -307,7 +310,7 @@ class OFActionCopyFieldVer15 implements OFActionCopyField {
             int dstOffset = U16.f(bb.readShort());
             // pad: 2 bytes
             bb.skipBytes(2);
-            OFOxmList oxmIds = OFOxmList.readFrom(bb, length - (bb.readerIndex() - start), OFOxmVer15.READER);
+            OFOxmList oxmIds = OFOxmList.readFrom(context, bb, length - (bb.readerIndex() - start), OFOxmVer15.READER);
 
             OFActionCopyFieldVer15 actionCopyFieldVer15 = new OFActionCopyFieldVer15(
                     nBits,

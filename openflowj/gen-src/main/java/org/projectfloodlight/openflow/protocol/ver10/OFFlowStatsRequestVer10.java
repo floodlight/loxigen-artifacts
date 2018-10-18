@@ -427,9 +427,11 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowStatsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFFlowStatsRequest> {
         @Override
-        public OFFlowStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowStatsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -442,6 +444,7 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
             int length = U16.f(bb.readShort());
             if(length != 56)
                 throw new OFParseError("Wrong length: Expected=56(56), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -455,7 +458,7 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
             if(statsType != (short) 0x1)
                 throw new OFParseError("Wrong statsType: Expected=OFStatsType.FLOW(1), got="+statsType);
             Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer10.readFrom(bb);
-            Match match = ChannelUtilsVer10.readOFMatch(bb);
+            Match match = ChannelUtilsVer10.readOFMatch(context, bb);
             TableId tableId = TableId.readByte(bb);
             // pad: 1 bytes
             bb.skipBytes(1);

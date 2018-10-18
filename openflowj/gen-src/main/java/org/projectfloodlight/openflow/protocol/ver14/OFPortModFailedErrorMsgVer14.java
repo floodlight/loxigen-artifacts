@@ -263,9 +263,11 @@ class OFPortModFailedErrorMsgVer14 implements OFPortModFailedErrorMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPortModFailedErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFPortModFailedErrorMsg> {
         @Override
-        public OFPortModFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortModFailedErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -278,6 +280,7 @@ class OFPortModFailedErrorMsgVer14 implements OFPortModFailedErrorMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,7 +294,7 @@ class OFPortModFailedErrorMsgVer14 implements OFPortModFailedErrorMsg {
             if(errType != (short) 0x7)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.PORT_MOD_FAILED(7), got="+errType);
             OFPortModFailedCode code = OFPortModFailedCodeSerializerVer14.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_14);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_14);
 
             OFPortModFailedErrorMsgVer14 portModFailedErrorMsgVer14 = new OFPortModFailedErrorMsgVer14(
                     xid,

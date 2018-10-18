@@ -370,9 +370,11 @@ class OFBsnGentableEntryAddVer14 implements OFBsnGentableEntryAdd {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGentableEntryAdd> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGentableEntryAdd> {
         @Override
-        public OFBsnGentableEntryAdd readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGentableEntryAdd readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -385,6 +387,7 @@ class OFBsnGentableEntryAddVer14 implements OFBsnGentableEntryAdd {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -404,8 +407,8 @@ class OFBsnGentableEntryAddVer14 implements OFBsnGentableEntryAdd {
             GenTableId tableId = GenTableId.read2Bytes(bb);
             int keyLength = U16.f(bb.readShort());
             U128 checksum = U128.read16Bytes(bb);
-            List<OFBsnTlv> key = ChannelUtils.readList(bb, keyLength, OFBsnTlvVer14.READER);
-            List<OFBsnTlv> value = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnTlvVer14.READER);
+            List<OFBsnTlv> key = ChannelUtils.readList(context, bb, keyLength, OFBsnTlvVer14.READER);
+            List<OFBsnTlv> value = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnTlvVer14.READER);
 
             OFBsnGentableEntryAddVer14 bsnGentableEntryAddVer14 = new OFBsnGentableEntryAddVer14(
                     xid,
