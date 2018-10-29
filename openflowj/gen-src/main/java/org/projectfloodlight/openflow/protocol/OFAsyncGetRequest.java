@@ -32,12 +32,6 @@ public interface OFAsyncGetRequest extends OFObject, OFMessage, OFRequest<OFAsyn
     OFVersion getVersion();
     OFType getType();
     long getXid();
-    long getPacketInMaskEqualMaster() throws UnsupportedOperationException;
-    long getPacketInMaskSlave() throws UnsupportedOperationException;
-    long getPortStatusMaskEqualMaster() throws UnsupportedOperationException;
-    long getPortStatusMaskSlave() throws UnsupportedOperationException;
-    long getFlowRemovedMaskEqualMaster() throws UnsupportedOperationException;
-    long getFlowRemovedMaskSlave() throws UnsupportedOperationException;
     List<OFAsyncConfigProp> getProperties() throws UnsupportedOperationException;
 
     void writeTo(ByteBuf channelBuffer);
@@ -49,18 +43,6 @@ public interface OFAsyncGetRequest extends OFObject, OFMessage, OFRequest<OFAsyn
         OFType getType();
         long getXid();
         Builder setXid(long xid);
-        long getPacketInMaskEqualMaster() throws UnsupportedOperationException;
-        Builder setPacketInMaskEqualMaster(long packetInMaskEqualMaster) throws UnsupportedOperationException;
-        long getPacketInMaskSlave() throws UnsupportedOperationException;
-        Builder setPacketInMaskSlave(long packetInMaskSlave) throws UnsupportedOperationException;
-        long getPortStatusMaskEqualMaster() throws UnsupportedOperationException;
-        Builder setPortStatusMaskEqualMaster(long portStatusMaskEqualMaster) throws UnsupportedOperationException;
-        long getPortStatusMaskSlave() throws UnsupportedOperationException;
-        Builder setPortStatusMaskSlave(long portStatusMaskSlave) throws UnsupportedOperationException;
-        long getFlowRemovedMaskEqualMaster() throws UnsupportedOperationException;
-        Builder setFlowRemovedMaskEqualMaster(long flowRemovedMaskEqualMaster) throws UnsupportedOperationException;
-        long getFlowRemovedMaskSlave() throws UnsupportedOperationException;
-        Builder setFlowRemovedMaskSlave(long flowRemovedMaskSlave) throws UnsupportedOperationException;
         List<OFAsyncConfigProp> getProperties() throws UnsupportedOperationException;
         Builder setProperties(List<OFAsyncConfigProp> properties) throws UnsupportedOperationException;
     }

@@ -78,36 +78,6 @@ class OFAsyncGetRequestVer14 implements OFAsyncGetRequest {
     }
 
     @Override
-    public long getPacketInMaskEqualMaster()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetInMaskEqualMaster not supported in version 1.4");
-    }
-
-    @Override
-    public long getPacketInMaskSlave()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetInMaskSlave not supported in version 1.4");
-    }
-
-    @Override
-    public long getPortStatusMaskEqualMaster()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property portStatusMaskEqualMaster not supported in version 1.4");
-    }
-
-    @Override
-    public long getPortStatusMaskSlave()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property portStatusMaskSlave not supported in version 1.4");
-    }
-
-    @Override
-    public long getFlowRemovedMaskEqualMaster()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.4");
-    }
-
-    @Override
-    public long getFlowRemovedMaskSlave()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.4");
-    }
-
-    @Override
     public List<OFAsyncConfigProp> getProperties() {
         return properties;
     }
@@ -151,60 +121,6 @@ class OFAsyncGetRequestVer14 implements OFAsyncGetRequest {
         this.xid = xid;
         this.xidSet = true;
         return this;
-    }
-    @Override
-    public long getPacketInMaskEqualMaster()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetInMaskEqualMaster not supported in version 1.4");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setPacketInMaskEqualMaster(long packetInMaskEqualMaster) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property packetInMaskEqualMaster not supported in version 1.4");
-    }
-    @Override
-    public long getPacketInMaskSlave()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetInMaskSlave not supported in version 1.4");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setPacketInMaskSlave(long packetInMaskSlave) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property packetInMaskSlave not supported in version 1.4");
-    }
-    @Override
-    public long getPortStatusMaskEqualMaster()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property portStatusMaskEqualMaster not supported in version 1.4");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setPortStatusMaskEqualMaster(long portStatusMaskEqualMaster) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property portStatusMaskEqualMaster not supported in version 1.4");
-    }
-    @Override
-    public long getPortStatusMaskSlave()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property portStatusMaskSlave not supported in version 1.4");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setPortStatusMaskSlave(long portStatusMaskSlave) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property portStatusMaskSlave not supported in version 1.4");
-    }
-    @Override
-    public long getFlowRemovedMaskEqualMaster()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.4");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setFlowRemovedMaskEqualMaster(long flowRemovedMaskEqualMaster) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.4");
-    }
-    @Override
-    public long getFlowRemovedMaskSlave()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.4");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setFlowRemovedMaskSlave(long flowRemovedMaskSlave) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.4");
     }
     @Override
     public List<OFAsyncConfigProp> getProperties() {
@@ -262,60 +178,6 @@ class OFAsyncGetRequestVer14 implements OFAsyncGetRequest {
         this.xid = xid;
         this.xidSet = true;
         return this;
-    }
-    @Override
-    public long getPacketInMaskEqualMaster()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetInMaskEqualMaster not supported in version 1.4");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setPacketInMaskEqualMaster(long packetInMaskEqualMaster) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property packetInMaskEqualMaster not supported in version 1.4");
-    }
-    @Override
-    public long getPacketInMaskSlave()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property packetInMaskSlave not supported in version 1.4");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setPacketInMaskSlave(long packetInMaskSlave) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property packetInMaskSlave not supported in version 1.4");
-    }
-    @Override
-    public long getPortStatusMaskEqualMaster()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property portStatusMaskEqualMaster not supported in version 1.4");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setPortStatusMaskEqualMaster(long portStatusMaskEqualMaster) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property portStatusMaskEqualMaster not supported in version 1.4");
-    }
-    @Override
-    public long getPortStatusMaskSlave()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property portStatusMaskSlave not supported in version 1.4");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setPortStatusMaskSlave(long portStatusMaskSlave) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property portStatusMaskSlave not supported in version 1.4");
-    }
-    @Override
-    public long getFlowRemovedMaskEqualMaster()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.4");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setFlowRemovedMaskEqualMaster(long flowRemovedMaskEqualMaster) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flowRemovedMaskEqualMaster not supported in version 1.4");
-    }
-    @Override
-    public long getFlowRemovedMaskSlave()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.4");
-    }
-
-    @Override
-    public OFAsyncGetRequest.Builder setFlowRemovedMaskSlave(long flowRemovedMaskSlave) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property flowRemovedMaskSlave not supported in version 1.4");
     }
     @Override
     public List<OFAsyncConfigProp> getProperties() {

@@ -14537,36 +14537,6 @@ of_async_get_request_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
-    of_async_get_request_packet_in_mask_equal_master_get(obj, &val32);
-    out += writer(cookie, "  packet_in_mask_equal_master (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_async_get_request_packet_in_mask_slave_get(obj, &val32);
-    out += writer(cookie, "  packet_in_mask_slave (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_async_get_request_port_status_mask_equal_master_get(obj, &val32);
-    out += writer(cookie, "  port_status_mask_equal_master (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_async_get_request_port_status_mask_slave_get(obj, &val32);
-    out += writer(cookie, "  port_status_mask_slave (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_async_get_request_flow_removed_mask_equal_master_get(obj, &val32);
-    out += writer(cookie, "  flow_removed_mask_equal_master (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_async_get_request_flow_removed_mask_slave_get(obj, &val32);
-    out += writer(cookie, "  flow_removed_mask_slave (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
     return out;
 }
 
