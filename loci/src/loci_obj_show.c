@@ -13613,36 +13613,6 @@ of_async_get_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
     out += LOCI_SHOW_x32(writer, cookie, val32);
     out += writer(cookie, " ");
 
-    of_async_get_request_packet_in_mask_equal_master_get(obj, &val32);
-    out += writer(cookie, "packet_in_mask_equal_master=");
-    out += LOCI_SHOW_x32(writer, cookie, val32);
-    out += writer(cookie, " ");
-
-    of_async_get_request_packet_in_mask_slave_get(obj, &val32);
-    out += writer(cookie, "packet_in_mask_slave=");
-    out += LOCI_SHOW_x32(writer, cookie, val32);
-    out += writer(cookie, " ");
-
-    of_async_get_request_port_status_mask_equal_master_get(obj, &val32);
-    out += writer(cookie, "port_status_mask_equal_master=");
-    out += LOCI_SHOW_x32(writer, cookie, val32);
-    out += writer(cookie, " ");
-
-    of_async_get_request_port_status_mask_slave_get(obj, &val32);
-    out += writer(cookie, "port_status_mask_slave=");
-    out += LOCI_SHOW_x32(writer, cookie, val32);
-    out += writer(cookie, " ");
-
-    of_async_get_request_flow_removed_mask_equal_master_get(obj, &val32);
-    out += writer(cookie, "flow_removed_mask_equal_master=");
-    out += LOCI_SHOW_x32(writer, cookie, val32);
-    out += writer(cookie, " ");
-
-    of_async_get_request_flow_removed_mask_slave_get(obj, &val32);
-    out += writer(cookie, "flow_removed_mask_slave=");
-    out += LOCI_SHOW_x32(writer, cookie, val32);
-    out += writer(cookie, " ");
-
     return out;
 }
 

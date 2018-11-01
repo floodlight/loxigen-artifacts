@@ -19492,24 +19492,6 @@ of_async_get_request_OF_VERSION_1_3_dup(
     of_async_get_request_xid_get(src, &val32);
     of_async_get_request_xid_set(dst, val32);
 
-    of_async_get_request_packet_in_mask_equal_master_get(src, &val32);
-    of_async_get_request_packet_in_mask_equal_master_set(dst, val32);
-
-    of_async_get_request_packet_in_mask_slave_get(src, &val32);
-    of_async_get_request_packet_in_mask_slave_set(dst, val32);
-
-    of_async_get_request_port_status_mask_equal_master_get(src, &val32);
-    of_async_get_request_port_status_mask_equal_master_set(dst, val32);
-
-    of_async_get_request_port_status_mask_slave_get(src, &val32);
-    of_async_get_request_port_status_mask_slave_set(dst, val32);
-
-    of_async_get_request_flow_removed_mask_equal_master_get(src, &val32);
-    of_async_get_request_flow_removed_mask_equal_master_set(dst, val32);
-
-    of_async_get_request_flow_removed_mask_slave_get(src, &val32);
-    of_async_get_request_flow_removed_mask_slave_set(dst, val32);
-
     return dst;
 }
 

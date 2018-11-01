@@ -175,6 +175,7 @@ public interface OFFactory extends XidGenerator {
     OFRoleRequest.Builder buildRoleRequest() throws UnsupportedOperationException;
     OFAsyncGetReply.Builder buildAsyncGetReply() throws UnsupportedOperationException;
     OFAsyncGetRequest.Builder buildAsyncGetRequest() throws UnsupportedOperationException;
+    OFAsyncGetRequest asyncGetRequest(List<OFAsyncConfigProp> properties);
     OFAsyncSet.Builder buildAsyncSet() throws UnsupportedOperationException;
     OFBsnArpIdle.Builder buildBsnArpIdle() throws UnsupportedOperationException;
     OFBsnControllerConnection.Builder buildBsnControllerConnection() throws UnsupportedOperationException;
