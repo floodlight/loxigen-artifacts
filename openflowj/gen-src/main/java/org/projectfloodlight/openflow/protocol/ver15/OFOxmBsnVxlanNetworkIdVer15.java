@@ -229,9 +229,11 @@ class OFOxmBsnVxlanNetworkIdVer15 implements OFOxmBsnVxlanNetworkId {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnVxlanNetworkId> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnVxlanNetworkId> {
         @Override
-        public OFOxmBsnVxlanNetworkId readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnVxlanNetworkId readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x32a04L
             int typeLen = bb.readInt();
             if(typeLen != 0x32a04)

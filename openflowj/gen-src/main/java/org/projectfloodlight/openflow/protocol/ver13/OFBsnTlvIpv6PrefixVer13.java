@@ -207,9 +207,11 @@ class OFBsnTlvIpv6PrefixVer13 implements OFBsnTlvIpv6Prefix {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvIpv6Prefix> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvIpv6Prefix> {
         @Override
-        public OFBsnTlvIpv6Prefix readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvIpv6Prefix readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x7a
             short type = bb.readShort();
@@ -218,6 +220,7 @@ class OFBsnTlvIpv6PrefixVer13 implements OFBsnTlvIpv6Prefix {
             int length = U16.f(bb.readShort());
             if(length != 21)
                 throw new OFParseError("Wrong length: Expected=21(21), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

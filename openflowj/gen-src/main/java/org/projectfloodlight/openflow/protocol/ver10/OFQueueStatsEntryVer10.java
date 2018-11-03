@@ -397,9 +397,11 @@ class OFQueueStatsEntryVer10 implements OFQueueStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFQueueStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFQueueStatsEntry> {
         @Override
-        public OFQueueStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFQueueStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             OFPort portNo = OFPort.read2Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);

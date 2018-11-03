@@ -239,15 +239,18 @@ class OFPacketQueueVer12 implements OFPacketQueue {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPacketQueue> {
+    static class Reader extends AbstractOFMessageReader<OFPacketQueue> {
         @Override
-        public OFPacketQueue readFrom(ByteBuf bb) throws OFParseError {
+        public OFPacketQueue readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             long queueId = U32.f(bb.readInt());
             OFPort port = OFPort.read4Bytes(bb);
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -257,7 +260,7 @@ class OFPacketQueueVer12 implements OFPacketQueue {
                 logger.trace("readFrom - length={}", length);
             // pad: 6 bytes
             bb.skipBytes(6);
-            List<OFQueueProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFQueuePropVer12.READER);
+            List<OFQueueProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFQueuePropVer12.READER);
 
             OFPacketQueueVer12 packetQueueVer12 = new OFPacketQueueVer12(
                     queueId,

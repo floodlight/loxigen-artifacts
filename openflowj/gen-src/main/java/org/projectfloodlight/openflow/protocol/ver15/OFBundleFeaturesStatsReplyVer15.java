@@ -315,9 +315,11 @@ class OFBundleFeaturesStatsReplyVer15 implements OFBundleFeaturesStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBundleFeaturesStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFBundleFeaturesStatsReply> {
         @Override
-        public OFBundleFeaturesStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBundleFeaturesStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -330,6 +332,7 @@ class OFBundleFeaturesStatsReplyVer15 implements OFBundleFeaturesStatsReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -348,7 +351,7 @@ class OFBundleFeaturesStatsReplyVer15 implements OFBundleFeaturesStatsReply {
             Set<OFBundleFeatureFlags> capabilities = OFBundleFeatureFlagsSerializerVer15.readFrom(bb);
             // pad: 6 bytes
             bb.skipBytes(6);
-            List<OFBundleFeaturesProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBundleFeaturesPropVer15.READER);
+            List<OFBundleFeaturesProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBundleFeaturesPropVer15.READER);
 
             OFBundleFeaturesStatsReplyVer15 bundleFeaturesStatsReplyVer15 = new OFBundleFeaturesStatsReplyVer15(
                     xid,

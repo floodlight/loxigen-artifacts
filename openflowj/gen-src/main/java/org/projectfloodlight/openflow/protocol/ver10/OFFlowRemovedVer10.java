@@ -604,9 +604,11 @@ class OFFlowRemovedVer10 implements OFFlowRemoved {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowRemoved> {
+    static class Reader extends AbstractOFMessageReader<OFFlowRemoved> {
         @Override
-        public OFFlowRemoved readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowRemoved readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -619,6 +621,7 @@ class OFFlowRemovedVer10 implements OFFlowRemoved {
             int length = U16.f(bb.readShort());
             if(length != 88)
                 throw new OFParseError("Wrong length: Expected=88(88), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -627,7 +630,7 @@ class OFFlowRemovedVer10 implements OFFlowRemoved {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            Match match = ChannelUtilsVer10.readOFMatch(bb);
+            Match match = ChannelUtilsVer10.readOFMatch(context, bb);
             U64 cookie = U64.ofRaw(bb.readLong());
             int priority = U16.f(bb.readShort());
             OFFlowRemovedReason reason = OFFlowRemovedReasonSerializerVer10.readFrom(bb);

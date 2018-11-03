@@ -229,9 +229,11 @@ class OFOxsFlowCountVer15 implements OFOxsFlowCount {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxsFlowCount> {
+    static class Reader extends AbstractOFMessageReader<OFOxsFlowCount> {
         @Override
-        public OFOxsFlowCount readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxsFlowCount readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80020404L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80020404)

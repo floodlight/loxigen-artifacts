@@ -405,9 +405,11 @@ class OFPortModVer10 implements OFPortMod {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPortMod> {
+    static class Reader extends AbstractOFMessageReader<OFPortMod> {
         @Override
-        public OFPortMod readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortMod readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -420,6 +422,7 @@ class OFPortModVer10 implements OFPortMod {
             int length = U16.f(bb.readShort());
             if(length != 32)
                 throw new OFParseError("Wrong length: Expected=32(32), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

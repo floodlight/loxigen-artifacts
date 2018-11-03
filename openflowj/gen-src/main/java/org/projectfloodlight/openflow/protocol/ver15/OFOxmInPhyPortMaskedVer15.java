@@ -264,9 +264,11 @@ class OFOxmInPhyPortMaskedVer15 implements OFOxmInPhyPortMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmInPhyPortMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmInPhyPortMasked> {
         @Override
-        public OFOxmInPhyPortMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmInPhyPortMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80000308L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80000308)

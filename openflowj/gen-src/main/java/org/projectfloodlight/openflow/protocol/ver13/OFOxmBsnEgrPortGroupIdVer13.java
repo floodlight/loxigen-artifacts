@@ -229,9 +229,11 @@ class OFOxmBsnEgrPortGroupIdVer13 implements OFOxmBsnEgrPortGroupId {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnEgrPortGroupId> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnEgrPortGroupId> {
         @Override
-        public OFOxmBsnEgrPortGroupId readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnEgrPortGroupId readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x30e04L
             int typeLen = bb.readInt();
             if(typeLen != 0x30e04)

@@ -199,9 +199,11 @@ class OFBsnDebugCounterStatsEntryVer14 implements OFBsnDebugCounterStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnDebugCounterStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFBsnDebugCounterStatsEntry> {
         @Override
-        public OFBsnDebugCounterStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnDebugCounterStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             U64 counterId = U64.ofRaw(bb.readLong());
             U64 value = U64.ofRaw(bb.readLong());
 
