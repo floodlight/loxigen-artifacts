@@ -1,1 +1,1 @@
-afdc0f664527e9c0c45d918dc4e602684a087181 Merge into master from pull request #633: Correct format for OF1.3 of_async_get_request. (https://github.com/floodlight/loxigen/pull/633)
+c97b16a93ff312307d4a5a19a4ee6554b8f251c8 Merge into master from pull request #637: LOXI-81: TransportPort - treat 0xFFFF as "NO_MASK" (https://github.com/floodlight/loxigen/pull/637)
