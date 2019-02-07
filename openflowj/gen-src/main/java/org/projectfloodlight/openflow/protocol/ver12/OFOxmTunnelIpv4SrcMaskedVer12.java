@@ -264,9 +264,11 @@ class OFOxmTunnelIpv4SrcMaskedVer12 implements OFOxmTunnelIpv4SrcMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmTunnelIpv4SrcMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmTunnelIpv4SrcMasked> {
         @Override
-        public OFOxmTunnelIpv4SrcMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmTunnelIpv4SrcMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x13f08L
             int typeLen = bb.readInt();
             if(typeLen != 0x13f08)

@@ -663,13 +663,16 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFFlowStatsEntry> {
         @Override
-        public OFFlowStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -680,7 +683,7 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
             TableId tableId = TableId.readByte(bb);
             // pad: 1 bytes
             bb.skipBytes(1);
-            Match match = ChannelUtilsVer10.readOFMatch(bb);
+            Match match = ChannelUtilsVer10.readOFMatch(context, bb);
             long durationSec = U32.f(bb.readInt());
             long durationNsec = U32.f(bb.readInt());
             int priority = U16.f(bb.readShort());
@@ -691,7 +694,7 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
             U64 cookie = U64.ofRaw(bb.readLong());
             U64 packetCount = U64.ofRaw(bb.readLong());
             U64 byteCount = U64.ofRaw(bb.readLong());
-            List<OFAction> actions = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFActionVer10.READER);
+            List<OFAction> actions = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFActionVer10.READER);
 
             OFFlowStatsEntryVer10 flowStatsEntryVer10 = new OFFlowStatsEntryVer10(
                     tableId,

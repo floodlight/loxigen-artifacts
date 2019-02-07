@@ -233,9 +233,11 @@ class OFBsnGentableStatsEntryVer15 implements OFBsnGentableStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGentableStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGentableStatsEntry> {
         @Override
-        public OFBsnGentableStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGentableStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             GenTableId tableId = GenTableId.read2Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);

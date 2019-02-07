@@ -270,9 +270,11 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFMeterConfigStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFMeterConfigStatsReply> {
         @Override
-        public OFMeterConfigStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFMeterConfigStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -285,6 +287,7 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -300,7 +303,7 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer14.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFMeterConfig> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFMeterConfigVer14.READER);
+            List<OFMeterConfig> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFMeterConfigVer14.READER);
 
             OFMeterConfigStatsReplyVer14 meterConfigStatsReplyVer14 = new OFMeterConfigStatsReplyVer14(
                     xid,

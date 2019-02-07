@@ -165,9 +165,11 @@ class OFBsnTlvHashAlgorithmVer14 implements OFBsnTlvHashAlgorithm {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvHashAlgorithm> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvHashAlgorithm> {
         @Override
-        public OFBsnTlvHashAlgorithm readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvHashAlgorithm readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x91
             short type = bb.readShort();
@@ -176,6 +178,7 @@ class OFBsnTlvHashAlgorithmVer14 implements OFBsnTlvHashAlgorithm {
             int length = U16.f(bb.readShort());
             if(length != 6)
                 throw new OFParseError("Wrong length: Expected=6(6), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

@@ -586,9 +586,11 @@ class OFBsnLacpStatsEntryVer14 implements OFBsnLacpStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnLacpStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFBsnLacpStatsEntry> {
         @Override
-        public OFBsnLacpStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnLacpStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             OFPort portNo = OFPort.read4Bytes(bb);
             int actorSysPriority = U16.f(bb.readShort());
             MacAddress actorSysMac = MacAddress.read6Bytes(bb);

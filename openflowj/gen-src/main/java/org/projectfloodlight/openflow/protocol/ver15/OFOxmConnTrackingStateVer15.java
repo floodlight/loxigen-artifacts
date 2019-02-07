@@ -229,9 +229,11 @@ class OFOxmConnTrackingStateVer15 implements OFOxmConnTrackingState {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmConnTrackingState> {
+    static class Reader extends AbstractOFMessageReader<OFOxmConnTrackingState> {
         @Override
-        public OFOxmConnTrackingState readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmConnTrackingState readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x1d204L
             int typeLen = bb.readInt();
             if(typeLen != 0x1d204)

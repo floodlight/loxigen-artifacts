@@ -233,9 +233,11 @@ class OFNiciraControllerRoleReplyVer10 implements OFNiciraControllerRoleReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFNiciraControllerRoleReply> {
+    static class Reader extends AbstractOFMessageReader<OFNiciraControllerRoleReply> {
         @Override
-        public OFNiciraControllerRoleReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFNiciraControllerRoleReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -248,6 +250,7 @@ class OFNiciraControllerRoleReplyVer10 implements OFNiciraControllerRoleReply {
             int length = U16.f(bb.readShort());
             if(length != 20)
                 throw new OFParseError("Wrong length: Expected=20(20), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

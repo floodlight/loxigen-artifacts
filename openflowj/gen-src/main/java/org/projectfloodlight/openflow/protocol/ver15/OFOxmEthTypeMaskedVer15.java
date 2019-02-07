@@ -264,9 +264,11 @@ class OFOxmEthTypeMaskedVer15 implements OFOxmEthTypeMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmEthTypeMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmEthTypeMasked> {
         @Override
-        public OFOxmEthTypeMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmEthTypeMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80000b04L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80000b04)

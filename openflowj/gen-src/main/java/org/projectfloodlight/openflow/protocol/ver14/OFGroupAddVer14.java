@@ -356,9 +356,11 @@ class OFGroupAddVer14 implements OFGroupAdd {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFGroupAdd> {
+    static class Reader extends AbstractOFMessageReader<OFGroupAdd> {
         @Override
-        public OFGroupAdd readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupAdd readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -371,6 +373,7 @@ class OFGroupAddVer14 implements OFGroupAdd {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -387,7 +390,7 @@ class OFGroupAddVer14 implements OFGroupAdd {
             // pad: 1 bytes
             bb.skipBytes(1);
             OFGroup group = OFGroup.read4Bytes(bb);
-            List<OFBucket> buckets = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBucketVer14.READER);
+            List<OFBucket> buckets = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBucketVer14.READER);
 
             OFGroupAddVer14 groupAddVer14 = new OFGroupAddVer14(
                     xid,

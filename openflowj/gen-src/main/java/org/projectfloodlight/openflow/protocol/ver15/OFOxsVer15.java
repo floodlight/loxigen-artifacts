@@ -35,33 +35,41 @@ abstract class OFOxsVer15 {
 
     public final static OFOxsVer15.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFOxs<?>> {
+    static class Reader extends AbstractOFMessageReader<OFOxs<?>> {
         @Override
-        public OFOxs<?> readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxs<?> readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             int typeLen = bb.readInt();
-            bb.readerIndex(start);
             switch(typeLen) {
                case (int) 0x80020808:
+                   bb.readerIndex(start);
                    // discriminator value 0x80020808L=0x80020808L for class OFOxsByteCountVer15
-                   return OFOxsByteCountVer15.READER.readFrom(bb);
+                   return OFOxsByteCountVer15.READER.readFrom(context, bb);
                case (int) 0x80020008:
+                   bb.readerIndex(start);
                    // discriminator value 0x80020008L=0x80020008L for class OFOxsDurationVer15
-                   return OFOxsDurationVer15.READER.readFrom(bb);
+                   return OFOxsDurationVer15.READER.readFrom(context, bb);
                case (int) 0x80020404:
+                   bb.readerIndex(start);
                    // discriminator value 0x80020404L=0x80020404L for class OFOxsFlowCountVer15
-                   return OFOxsFlowCountVer15.READER.readFrom(bb);
+                   return OFOxsFlowCountVer15.READER.readFrom(context, bb);
                case (int) 0x80020208:
+                   bb.readerIndex(start);
                    // discriminator value 0x80020208L=0x80020208L for class OFOxsIdleTimeVer15
-                   return OFOxsIdleTimeVer15.READER.readFrom(bb);
+                   return OFOxsIdleTimeVer15.READER.readFrom(context, bb);
                case (int) 0x80020608:
+                   bb.readerIndex(start);
                    // discriminator value 0x80020608L=0x80020608L for class OFOxsPacketCountVer15
-                   return OFOxsPacketCountVer15.READER.readFrom(bb);
+                   return OFOxsPacketCountVer15.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator typeLen of class OFOxsVer15: " + typeLen);
+                   context.getUnparsedHandler().unparsedMessage(OFOxsVer15.class, "typeLen", typeLen);
             }
+            // will only reach here if the discriminator turns up nothing.
+                   // OFOxsVer15 is variable length, and length field not read before discriminator.
+                   // Cannot carry on after parse error
+            throw new OFParseError("Could not parse message version and length not known, so cannot be skipped");
         }
     }
 }

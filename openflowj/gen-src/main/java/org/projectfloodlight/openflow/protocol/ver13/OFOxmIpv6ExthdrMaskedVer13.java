@@ -264,9 +264,11 @@ class OFOxmIpv6ExthdrMaskedVer13 implements OFOxmIpv6ExthdrMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmIpv6ExthdrMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmIpv6ExthdrMasked> {
         @Override
-        public OFOxmIpv6ExthdrMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmIpv6ExthdrMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80004f04L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80004f04)
