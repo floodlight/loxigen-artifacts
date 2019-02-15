@@ -4218,6 +4218,15 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xa9:
             *id = OF_BSN_TLV_IP_TUNNEL_TYPE;
             break;
+        case 0xaa:
+            *id = OF_BSN_TLV_PIM_PACKET_TYPE;
+            break;
+        case 0xab:
+            *id = OF_BSN_TLV_PIM_DR;
+            break;
+        case 0xac:
+            *id = OF_BSN_TLV_PASSIVE;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -4733,6 +4742,15 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xa9:
             *id = OF_BSN_TLV_IP_TUNNEL_TYPE;
+            break;
+        case 0xaa:
+            *id = OF_BSN_TLV_PIM_PACKET_TYPE;
+            break;
+        case 0xab:
+            *id = OF_BSN_TLV_PIM_DR;
+            break;
+        case 0xac:
+            *id = OF_BSN_TLV_PASSIVE;
             break;
         default:
             *id = OF_BSN_TLV;

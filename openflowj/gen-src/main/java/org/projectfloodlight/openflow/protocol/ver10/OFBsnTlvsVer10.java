@@ -720,11 +720,26 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPartnerSystemPriority not supported in version 1.0");
     }
 
+    public OFBsnTlvPassive passive() {
+        throw new UnsupportedOperationException("OFBsnTlvPassive not supported in version 1.0");
+    }
+
     public OFBsnTlvPduaRxInstance.Builder buildPduaRxInstance() {
         throw new UnsupportedOperationException("OFBsnTlvPduaRxInstance not supported in version 1.0");
     }
     public OFBsnTlvPduaRxInstance pduaRxInstance(byte[] value) {
         throw new UnsupportedOperationException("OFBsnTlvPduaRxInstance not supported in version 1.0");
+    }
+
+    public OFBsnTlvPimDr pimDr() {
+        throw new UnsupportedOperationException("OFBsnTlvPimDr not supported in version 1.0");
+    }
+
+    public OFBsnTlvPimPacketType.Builder buildPimPacketType() {
+        throw new UnsupportedOperationException("OFBsnTlvPimPacketType not supported in version 1.0");
+    }
+    public OFBsnTlvPimPacketType pimPacketType(OFBsnPimPacketType value) {
+        throw new UnsupportedOperationException("OFBsnTlvPimPacketType not supported in version 1.0");
     }
 
     public OFBsnTlvPort.Builder buildPort() {
