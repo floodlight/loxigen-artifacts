@@ -364,9 +364,18 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x2f:
                    // discriminator value 0x2f=0x2f for class OFBsnTlvPartnerSystemPriorityVer14
                    return OFBsnTlvPartnerSystemPriorityVer14.READER.readFrom(bb);
+               case (short) 0xac:
+                   // discriminator value 0xac=0xac for class OFBsnTlvPassiveVer14
+                   return OFBsnTlvPassiveVer14.READER.readFrom(bb);
                case (short) 0x9f:
                    // discriminator value 0x9f=0x9f for class OFBsnTlvPduaRxInstanceVer14
                    return OFBsnTlvPduaRxInstanceVer14.READER.readFrom(bb);
+               case (short) 0xab:
+                   // discriminator value 0xab=0xab for class OFBsnTlvPimDrVer14
+                   return OFBsnTlvPimDrVer14.READER.readFrom(bb);
+               case (short) 0xaa:
+                   // discriminator value 0xaa=0xaa for class OFBsnTlvPimPacketTypeVer14
+                   return OFBsnTlvPimPacketTypeVer14.READER.readFrom(bb);
                case (short) 0x0:
                    // discriminator value 0x0=0x0 for class OFBsnTlvPortVer14
                    return OFBsnTlvPortVer14.READER.readFrom(bb);

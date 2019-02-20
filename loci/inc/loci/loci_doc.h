@@ -7547,6 +7547,13 @@ typedef struct of_bsn_tlv_partner_system_mac_s of_bsn_tlv_partner_system_mac_t;
 typedef struct of_bsn_tlv_partner_system_priority_s of_bsn_tlv_partner_system_priority_t;
 
 /**
+ * Structure for of_bsn_tlv_passive object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_passive_s of_bsn_tlv_passive_t;
+
+/**
  * Structure for of_bsn_tlv_pdua_rx_instance object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7556,6 +7563,24 @@ typedef struct of_bsn_tlv_partner_system_priority_s of_bsn_tlv_partner_system_pr
  *
  */
 typedef struct of_bsn_tlv_pdua_rx_instance_s of_bsn_tlv_pdua_rx_instance_t;
+
+/**
+ * Structure for of_bsn_tlv_pim_dr object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_pim_dr_s of_bsn_tlv_pim_dr_t;
+
+/**
+ * Structure for of_bsn_tlv_pim_packet_type object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_pim_packet_type_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_pim_packet_type_s of_bsn_tlv_pim_packet_type_t;
 
 /**
  * Structure for of_bsn_tlv_port object.  Get/set

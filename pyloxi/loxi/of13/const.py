@@ -529,6 +529,17 @@ ofp_bsn_lua_upload_flags_map = {
     2: 'OFP_BSN_LUA_UPLOAD_FORCE',
 }
 
+# Identifiers from group ofp_bsn_pim_packet_type
+OFP_BSN_PIM_PACKET_TYPE_NONE = 0
+OFP_BSN_PIM_PACKET_TYPE_HELLO = 1
+OFP_BSN_PIM_PACKET_TYPE_JOIN_PRUNE = 2
+
+ofp_bsn_pim_packet_type_map = {
+    0: 'OFP_BSN_PIM_PACKET_TYPE_NONE',
+    1: 'OFP_BSN_PIM_PACKET_TYPE_HELLO',
+    2: 'OFP_BSN_PIM_PACKET_TYPE_JOIN_PRUNE',
+}
+
 # Identifiers from group ofp_bsn_pktin_flag
 OFP_BSN_PKTIN_FLAG_PDU = 1
 OFP_BSN_PKTIN_FLAG_NEW_HOST = 2

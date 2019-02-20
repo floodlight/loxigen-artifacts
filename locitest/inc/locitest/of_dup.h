@@ -1647,7 +1647,19 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_passive_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_pdua_rx_instance_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_pim_dr_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_pim_packet_type_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6875,7 +6887,19 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_passive_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_pim_dr_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_pim_packet_type_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9767,7 +9791,19 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_passive_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_pdua_rx_instance_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_pim_dr_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_pim_packet_type_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
