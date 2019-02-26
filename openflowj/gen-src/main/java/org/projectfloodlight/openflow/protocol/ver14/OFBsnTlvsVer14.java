@@ -897,11 +897,28 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvPassive passive() {
+        return OFBsnTlvPassiveVer14.INSTANCE;
+    }
+
     public OFBsnTlvPduaRxInstance.Builder buildPduaRxInstance() {
         return new OFBsnTlvPduaRxInstanceVer14.Builder();
     }
     public OFBsnTlvPduaRxInstance pduaRxInstance(byte[] value) {
         return new OFBsnTlvPduaRxInstanceVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvPimDr pimDr() {
+        return OFBsnTlvPimDrVer14.INSTANCE;
+    }
+
+    public OFBsnTlvPimPacketType.Builder buildPimPacketType() {
+        return new OFBsnTlvPimPacketTypeVer14.Builder();
+    }
+    public OFBsnTlvPimPacketType pimPacketType(OFBsnPimPacketType value) {
+        return new OFBsnTlvPimPacketTypeVer14(
                 value
                     );
     }
