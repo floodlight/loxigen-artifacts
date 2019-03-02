@@ -1,1 +1,1 @@
-c97b16a93ff312307d4a5a19a4ee6554b8f251c8 Merge into master from pull request #637: LOXI-81: TransportPort - treat 0xFFFF as "NO_MASK" (https://github.com/floodlight/loxigen/pull/637)
+400e20a53459c8c3d74baf108181d8e82bbb7037 Merge into master from pull request #640: BT-7851 Add tlv to disable xmit on interface (https://github.com/floodlight/loxigen/pull/640)

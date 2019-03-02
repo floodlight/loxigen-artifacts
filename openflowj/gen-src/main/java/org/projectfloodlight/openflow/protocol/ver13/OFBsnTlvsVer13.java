@@ -232,6 +232,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return OFBsnTlvDisableSrcMacCheckVer13.INSTANCE;
     }
 
+    public OFBsnTlvDisableXmit disableXmit() {
+        return OFBsnTlvDisableXmitVer13.INSTANCE;
+    }
+
     public OFBsnTlvDrop drop() {
         return OFBsnTlvDropVer13.INSTANCE;
     }

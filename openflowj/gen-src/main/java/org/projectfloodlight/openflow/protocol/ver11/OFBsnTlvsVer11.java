@@ -190,6 +190,10 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvDisableSrcMacCheck not supported in version 1.1");
     }
 
+    public OFBsnTlvDisableXmit disableXmit() {
+        throw new UnsupportedOperationException("OFBsnTlvDisableXmit not supported in version 1.1");
+    }
+
     public OFBsnTlvDrop drop() {
         throw new UnsupportedOperationException("OFBsnTlvDrop not supported in version 1.1");
     }
