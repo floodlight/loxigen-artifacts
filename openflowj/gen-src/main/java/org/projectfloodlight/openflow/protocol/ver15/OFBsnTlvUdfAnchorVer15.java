@@ -165,9 +165,11 @@ class OFBsnTlvUdfAnchorVer15 implements OFBsnTlvUdfAnchor {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvUdfAnchor> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvUdfAnchor> {
         @Override
-        public OFBsnTlvUdfAnchor readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvUdfAnchor readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x10
             short type = bb.readShort();
@@ -176,6 +178,7 @@ class OFBsnTlvUdfAnchorVer15 implements OFBsnTlvUdfAnchor {
             int length = U16.f(bb.readShort());
             if(length != 6)
                 throw new OFParseError("Wrong length: Expected=6(6), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

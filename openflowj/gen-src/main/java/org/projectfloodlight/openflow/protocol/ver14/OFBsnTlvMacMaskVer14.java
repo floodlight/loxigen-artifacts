@@ -169,9 +169,11 @@ class OFBsnTlvMacMaskVer14 implements OFBsnTlvMacMask {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvMacMask> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvMacMask> {
         @Override
-        public OFBsnTlvMacMask readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvMacMask readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x38
             short type = bb.readShort();
@@ -180,6 +182,7 @@ class OFBsnTlvMacMaskVer14 implements OFBsnTlvMacMask {
             int length = U16.f(bb.readShort());
             if(length != 10)
                 throw new OFParseError("Wrong length: Expected=10(10), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

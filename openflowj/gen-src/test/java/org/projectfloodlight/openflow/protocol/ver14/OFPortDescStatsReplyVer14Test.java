@@ -26,12 +26,15 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.junit.Test;
+import org.junit.runners.Parameterized.Parameters;
+import java.util.List;
+import com.google.common.collect.ImmutableList;
 import org.junit.Before;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import java.util.List;
-import com.google.common.collect.ImmutableList;
 import java.util.EnumSet;
 import com.google.common.collect.Sets;
 import io.netty.buffer.ByteBuf;
@@ -39,12 +42,29 @@ import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
-
+@RunWith(Parameterized.class)
 public class OFPortDescStatsReplyVer14Test {
     OFFactory factory;
 
     final static byte[] PORT_DESC_STATS_REPLY_SERIALIZED =
         new byte[] { 0x5, 0x13, 0x0, 0x58, 0x0, 0x0, 0x0, 0x5, 0x0, 0xd, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x48, 0x0, 0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x0, 0x0, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x66, 0x61, 0x63, 0x65, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x0, 0x0, 0x0, 0x60, 0x0, 0x0, 0x0, 0x3, 0x0, 0x0, 0x0, 0x20, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x70, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, (byte) 0x80 };
+
+
+    private final static int[] PREFIX_BYTES = { 0, 1, 4, 255, 65335 };
+    private final static byte[] EMPTY_BYTES = new byte[65535];
+
+    private final OFMessageReader<?> messageReader;
+
+    @Parameters(name="{index}.MessageReader={0}")
+    public static Iterable<Object> data() {
+        return ImmutableList.<Object>of(
+                OFPortDescStatsReplyVer14.READER, OFStatsReplyVer14.READER, OFMessageVer14.READER
+        );
+    }
+
+    public OFPortDescStatsReplyVer14Test(OFMessageReader<?> messageReader) {
+        this.messageReader = messageReader;
+    }
 
     @Before
     public void setup() {
@@ -79,8 +99,13 @@ public class OFPortDescStatsReplyVer14Test {
         assertThat(written, CoreMatchers.equalTo(PORT_DESC_STATS_REPLY_SERIALIZED));
     }
 
+
     @Test
     public void testRead() throws Exception {
+        ByteBuf input = Unpooled.copiedBuffer(PORT_DESC_STATS_REPLY_SERIALIZED);
+
+        Object portDescStatsReplyRead = messageReader.readFrom(input);
+        assertThat(portDescStatsReplyRead, CoreMatchers.instanceOf(OFPortDescStatsReplyVer14.class));
         OFPortDescStatsReply.Builder builder = factory.buildPortDescStatsReply();
         builder
         .setXid(5)
@@ -100,13 +125,37 @@ public class OFPortDescStatsReplyVer14Test {
          );;
         OFPortDescStatsReply portDescStatsReplyBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(PORT_DESC_STATS_REPLY_SERIALIZED);
-
-        // FIXME should invoke the overall reader once implemented
-        OFPortDescStatsReply portDescStatsReplyRead = OFPortDescStatsReplyVer14.READER.readFrom(input);
         assertEquals(PORT_DESC_STATS_REPLY_SERIALIZED.length, input.readerIndex());
 
         assertEquals(portDescStatsReplyBuilt, portDescStatsReplyRead);
+        // FIXME: No java stanza in test_data for this class. Add to enable validation of read message
+   }
+
+    /**
+     * Validates Reader handling of partial messages in the buffer.
+     *
+     * Ensures that readers deal with partially available messages, and that buffers
+     * are returned unmodified. Also checks compatibility when the data is not at the start of
+     * the buffer (readerIndex=0), but somewhere else (with the readerIndex appropriately set).
+     */
+   @Test
+   public void testPartialRead() throws Exception {
+       ByteBuf msgBuffer = Unpooled.copiedBuffer(PORT_DESC_STATS_REPLY_SERIALIZED);
+       for (int prefixLength: PREFIX_BYTES) {
+           ByteBuf prefixBuffer = Unpooled.wrappedBuffer(EMPTY_BYTES).slice(0, prefixLength);
+           ByteBuf wholeBuffer = Unpooled.wrappedBuffer(prefixBuffer, msgBuffer);
+           for (int partialLength = 0; partialLength < PORT_DESC_STATS_REPLY_SERIALIZED.length - 1; partialLength++) {
+               int length = prefixLength + partialLength;
+               ByteBuf slice = wholeBuffer.slice(0, length);
+               slice.readerIndex(prefixLength);
+
+               Object read = messageReader.readFrom(slice);
+
+               assertNull("partial message should not be read", read);
+               assertEquals("Reader index should be back at the start", prefixLength, slice.readerIndex());
+           }
+
+       }
    }
 
    @Test
@@ -114,7 +163,7 @@ public class OFPortDescStatsReplyVer14Test {
        ByteBuf input = Unpooled.copiedBuffer(PORT_DESC_STATS_REPLY_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
-       OFPortDescStatsReply portDescStatsReply = OFPortDescStatsReplyVer14.READER.readFrom(input);
+       OFPortDescStatsReply portDescStatsReply = (OFPortDescStatsReply) messageReader.readFrom(input);
        assertEquals(PORT_DESC_STATS_REPLY_SERIALIZED.length, input.readerIndex());
 
        // write message again

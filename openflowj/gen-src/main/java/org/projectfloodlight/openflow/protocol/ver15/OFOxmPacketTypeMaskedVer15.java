@@ -260,9 +260,11 @@ class OFOxmPacketTypeMaskedVer15 implements OFOxmPacketTypeMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmPacketTypeMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmPacketTypeMasked> {
         @Override
-        public OFOxmPacketTypeMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmPacketTypeMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80005908L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80005908)

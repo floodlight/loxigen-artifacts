@@ -162,9 +162,11 @@ class OFBsnTlvPartnerPortPriorityVer14 implements OFBsnTlvPartnerPortPriority {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvPartnerPortPriority> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvPartnerPortPriority> {
         @Override
-        public OFBsnTlvPartnerPortPriority readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvPartnerPortPriority readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x31
             short type = bb.readShort();
@@ -173,6 +175,7 @@ class OFBsnTlvPartnerPortPriorityVer14 implements OFBsnTlvPartnerPortPriority {
             int length = U16.f(bb.readShort());
             if(length != 6)
                 throw new OFParseError("Wrong length: Expected=6(6), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

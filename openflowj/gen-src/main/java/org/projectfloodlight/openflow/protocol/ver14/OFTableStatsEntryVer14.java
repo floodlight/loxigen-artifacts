@@ -558,9 +558,11 @@ class OFTableStatsEntryVer14 implements OFTableStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFTableStatsEntry> {
         @Override
-        public OFTableStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             TableId tableId = TableId.readByte(bb);
             // pad: 3 bytes
             bb.skipBytes(3);

@@ -263,9 +263,11 @@ class OFBadMatchErrorMsgVer13 implements OFBadMatchErrorMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBadMatchErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFBadMatchErrorMsg> {
         @Override
-        public OFBadMatchErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFBadMatchErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -278,6 +280,7 @@ class OFBadMatchErrorMsgVer13 implements OFBadMatchErrorMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,7 +294,7 @@ class OFBadMatchErrorMsgVer13 implements OFBadMatchErrorMsg {
             if(errType != (short) 0x4)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.BAD_MATCH(4), got="+errType);
             OFBadMatchCode code = OFBadMatchCodeSerializerVer13.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_13);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_13);
 
             OFBadMatchErrorMsgVer13 badMatchErrorMsgVer13 = new OFBadMatchErrorMsgVer13(
                     xid,

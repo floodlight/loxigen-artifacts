@@ -264,9 +264,11 @@ class OFOxmBsnUdf4MaskedVer14 implements OFOxmBsnUdf4Masked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnUdf4Masked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnUdf4Masked> {
         @Override
-        public OFOxmBsnUdf4Masked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnUdf4Masked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x31908L
             int typeLen = bb.readInt();
             if(typeLen != 0x31908)

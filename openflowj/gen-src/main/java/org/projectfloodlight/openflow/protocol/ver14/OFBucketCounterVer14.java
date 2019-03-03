@@ -199,9 +199,11 @@ class OFBucketCounterVer14 implements OFBucketCounter {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBucketCounter> {
+    static class Reader extends AbstractOFMessageReader<OFBucketCounter> {
         @Override
-        public OFBucketCounter readFrom(ByteBuf bb) throws OFParseError {
+        public OFBucketCounter readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             U64 packetCount = U64.ofRaw(bb.readLong());
             U64 byteCount = U64.ofRaw(bb.readLong());
 

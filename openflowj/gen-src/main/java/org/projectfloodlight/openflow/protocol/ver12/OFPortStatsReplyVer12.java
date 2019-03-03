@@ -270,9 +270,11 @@ class OFPortStatsReplyVer12 implements OFPortStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPortStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFPortStatsReply> {
         @Override
-        public OFPortStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -285,6 +287,7 @@ class OFPortStatsReplyVer12 implements OFPortStatsReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -300,7 +303,7 @@ class OFPortStatsReplyVer12 implements OFPortStatsReply {
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer12.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFPortStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFPortStatsEntryVer12.READER);
+            List<OFPortStatsEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFPortStatsEntryVer12.READER);
 
             OFPortStatsReplyVer12 portStatsReplyVer12 = new OFPortStatsReplyVer12(
                     xid,
