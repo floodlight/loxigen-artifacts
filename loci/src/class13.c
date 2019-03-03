@@ -4266,6 +4266,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xb9:
             *id = OF_BSN_TLV_DISABLE_XMIT;
             break;
+        case 0xba:
+            *id = OF_BSN_TLV_PRESERVE_VLAN;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -4829,6 +4832,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xb9:
             *id = OF_BSN_TLV_DISABLE_XMIT;
+            break;
+        case 0xba:
+            *id = OF_BSN_TLV_PRESERVE_VLAN;
             break;
         default:
             *id = OF_BSN_TLV;

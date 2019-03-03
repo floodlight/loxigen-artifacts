@@ -258,6 +258,7 @@ public interface OFBsnTlvs {
     OFBsnTlvPortUsage portUsage(OFBsnPortUsage value);
     OFBsnTlvPortVxlanMode.Builder buildPortVxlanMode() throws UnsupportedOperationException;
     OFBsnTlvPortVxlanMode portVxlanMode(OFBsnPortVxlanMode value);
+    OFBsnTlvPreserveVlan preserveVlan();
     OFBsnTlvPriority.Builder buildPriority() throws UnsupportedOperationException;
     OFBsnTlvPriority priority(long value);
     OFBsnTlvPushVlanOnEgress pushVlanOnEgress();

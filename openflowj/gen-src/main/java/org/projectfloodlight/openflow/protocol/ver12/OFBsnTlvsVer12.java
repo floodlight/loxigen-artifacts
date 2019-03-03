@@ -842,6 +842,10 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPortVxlanMode not supported in version 1.2");
     }
 
+    public OFBsnTlvPreserveVlan preserveVlan() {
+        throw new UnsupportedOperationException("OFBsnTlvPreserveVlan not supported in version 1.2");
+    }
+
     public OFBsnTlvPriority.Builder buildPriority() {
         throw new UnsupportedOperationException("OFBsnTlvPriority not supported in version 1.2");
     }
