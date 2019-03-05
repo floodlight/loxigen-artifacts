@@ -9135,6 +9135,8 @@ fields['of13.bsn_tlv_port_usage.value'] = ProtoField.uint32("of13.bsn_tlv_port_u
 fields['of13.bsn_tlv_port_vxlan_mode.type'] = ProtoField.uint16("of13.bsn_tlv_port_vxlan_mode.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port_vxlan_mode.length'] = ProtoField.uint16("of13.bsn_tlv_port_vxlan_mode.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of13.bsn_tlv_port_vxlan_mode.value", "value", base.DEC, enum_v4_ofp_bsn_port_vxlan_mode)
+fields['of13.bsn_tlv_preserve_vlan.type'] = ProtoField.uint16("of13.bsn_tlv_preserve_vlan.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_preserve_vlan.length'] = ProtoField.uint16("of13.bsn_tlv_preserve_vlan.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_priority.type'] = ProtoField.uint16("of13.bsn_tlv_priority.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_priority.length'] = ProtoField.uint16("of13.bsn_tlv_priority.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_priority.value'] = ProtoField.uint32("of13.bsn_tlv_priority.value", "value", base.DEC, nil)
@@ -12176,6 +12178,8 @@ fields['of14.bsn_tlv_port_usage.value'] = ProtoField.uint32("of14.bsn_tlv_port_u
 fields['of14.bsn_tlv_port_vxlan_mode.type'] = ProtoField.uint16("of14.bsn_tlv_port_vxlan_mode.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_port_vxlan_mode.length'] = ProtoField.uint16("of14.bsn_tlv_port_vxlan_mode.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of14.bsn_tlv_port_vxlan_mode.value", "value", base.DEC, enum_v5_ofp_bsn_port_vxlan_mode)
+fields['of14.bsn_tlv_preserve_vlan.type'] = ProtoField.uint16("of14.bsn_tlv_preserve_vlan.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_preserve_vlan.length'] = ProtoField.uint16("of14.bsn_tlv_preserve_vlan.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_priority.type'] = ProtoField.uint16("of14.bsn_tlv_priority.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_priority.length'] = ProtoField.uint16("of14.bsn_tlv_priority.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_priority.value'] = ProtoField.uint32("of14.bsn_tlv_priority.value", "value", base.DEC, nil)
@@ -15495,6 +15499,8 @@ fields['of15.bsn_tlv_port_usage.value'] = ProtoField.uint32("of15.bsn_tlv_port_u
 fields['of15.bsn_tlv_port_vxlan_mode.type'] = ProtoField.uint16("of15.bsn_tlv_port_vxlan_mode.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_port_vxlan_mode.length'] = ProtoField.uint16("of15.bsn_tlv_port_vxlan_mode.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of15.bsn_tlv_port_vxlan_mode.value", "value", base.DEC, enum_v6_ofp_bsn_port_vxlan_mode)
+fields['of15.bsn_tlv_preserve_vlan.type'] = ProtoField.uint16("of15.bsn_tlv_preserve_vlan.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_preserve_vlan.length'] = ProtoField.uint16("of15.bsn_tlv_preserve_vlan.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_priority.type'] = ProtoField.uint16("of15.bsn_tlv_priority.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_priority.length'] = ProtoField.uint16("of15.bsn_tlv_priority.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_priority.value'] = ProtoField.uint32("of15.bsn_tlv_priority.value", "value", base.DEC, nil)
@@ -22101,6 +22107,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_port_vxlan_mode.type'],
     fields['of13.bsn_tlv_port_vxlan_mode.length'],
     fields['of13.bsn_tlv_port_vxlan_mode.value'],
+    fields['of13.bsn_tlv_preserve_vlan.type'],
+    fields['of13.bsn_tlv_preserve_vlan.length'],
     fields['of13.bsn_tlv_priority.type'],
     fields['of13.bsn_tlv_priority.length'],
     fields['of13.bsn_tlv_priority.value'],
@@ -25142,6 +25150,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_port_vxlan_mode.type'],
     fields['of14.bsn_tlv_port_vxlan_mode.length'],
     fields['of14.bsn_tlv_port_vxlan_mode.value'],
+    fields['of14.bsn_tlv_preserve_vlan.type'],
+    fields['of14.bsn_tlv_preserve_vlan.length'],
     fields['of14.bsn_tlv_priority.type'],
     fields['of14.bsn_tlv_priority.length'],
     fields['of14.bsn_tlv_priority.value'],
@@ -28461,6 +28471,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_port_vxlan_mode.type'],
     fields['of15.bsn_tlv_port_vxlan_mode.length'],
     fields['of15.bsn_tlv_port_vxlan_mode.value'],
+    fields['of15.bsn_tlv_preserve_vlan.type'],
+    fields['of15.bsn_tlv_preserve_vlan.length'],
     fields['of15.bsn_tlv_priority.type'],
     fields['of15.bsn_tlv_priority.length'],
     fields['of15.bsn_tlv_priority.value'],
@@ -41457,6 +41469,15 @@ function dissect_of_bsn_tlv_port_vxlan_mode_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[88] = dissect_of_bsn_tlv_port_vxlan_mode_v4
 
+-- child class of_bsn_tlv_preserve_vlan
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_preserve_vlan_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_preserve_vlan.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_preserve_vlan.length')
+    return 'of_bsn_tlv_preserve_vlan'
+end
+of_bsn_tlv_v4_dissectors[186] = dissect_of_bsn_tlv_preserve_vlan_v4
+
 -- child class of_bsn_tlv_priority
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_priority_v4(reader, subtree)
@@ -49748,6 +49769,15 @@ function dissect_of_bsn_tlv_port_vxlan_mode_v5(reader, subtree)
     return 'of_bsn_tlv_port_vxlan_mode'
 end
 of_bsn_tlv_v5_dissectors[88] = dissect_of_bsn_tlv_port_vxlan_mode_v5
+
+-- child class of_bsn_tlv_preserve_vlan
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_preserve_vlan_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_preserve_vlan.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_preserve_vlan.length')
+    return 'of_bsn_tlv_preserve_vlan'
+end
+of_bsn_tlv_v5_dissectors[186] = dissect_of_bsn_tlv_preserve_vlan_v5
 
 -- child class of_bsn_tlv_priority
 -- Child of of_bsn_tlv
@@ -58687,6 +58717,15 @@ function dissect_of_bsn_tlv_port_vxlan_mode_v6(reader, subtree)
     return 'of_bsn_tlv_port_vxlan_mode'
 end
 of_bsn_tlv_v6_dissectors[88] = dissect_of_bsn_tlv_port_vxlan_mode_v6
+
+-- child class of_bsn_tlv_preserve_vlan
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_preserve_vlan_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_preserve_vlan.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_preserve_vlan.length')
+    return 'of_bsn_tlv_preserve_vlan'
+end
+of_bsn_tlv_v6_dissectors[186] = dissect_of_bsn_tlv_preserve_vlan_v6
 
 -- child class of_bsn_tlv_priority
 -- Child of of_bsn_tlv

@@ -1107,6 +1107,8 @@ void of_bsn_tlv_port_usage_wire_object_id_get(of_object_t *obj, of_object_id_t *
 void of_bsn_tlv_port_usage_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_port_vxlan_mode_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_port_vxlan_mode_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_preserve_vlan_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_preserve_vlan_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_priority_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_push_vlan_on_egress_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2034,6 +2036,7 @@ typedef of_object_t of_bsn_tlv_port_mode_t;
 typedef of_object_t of_bsn_tlv_port_speed_gbps_t;
 typedef of_object_t of_bsn_tlv_port_usage_t;
 typedef of_object_t of_bsn_tlv_port_vxlan_mode_t;
+typedef of_object_t of_bsn_tlv_preserve_vlan_t;
 typedef of_object_t of_bsn_tlv_priority_t;
 typedef of_object_t of_bsn_tlv_push_vlan_on_egress_t;
 typedef of_object_t of_bsn_tlv_push_vlan_on_ingress_t;
@@ -4623,6 +4626,11 @@ extern void of_bsn_tlv_port_usage_init(
 extern of_object_t *
     of_bsn_tlv_port_vxlan_mode_new(of_version_t version);
 extern void of_bsn_tlv_port_vxlan_mode_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_preserve_vlan_new(of_version_t version);
+extern void of_bsn_tlv_preserve_vlan_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11472,6 +11480,17 @@ of_bsn_tlv_port_usage_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_port_vxlan_mode_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_preserve_vlan_t
+ * @param obj An instance of type of_bsn_tlv_preserve_vlan_t
+ *
+ * \ingroup of_bsn_tlv_preserve_vlan
+ */
+static inline void
+of_bsn_tlv_preserve_vlan_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24872,6 +24891,8 @@ extern void of_bsn_tlv_port_vxlan_mode_value_set(
 extern void of_bsn_tlv_port_vxlan_mode_value_get(
     of_bsn_tlv_port_vxlan_mode_t *obj,
     uint8_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_preserve_vlan */
 
 /* Unified accessor functions for of_bsn_tlv_priority */
 

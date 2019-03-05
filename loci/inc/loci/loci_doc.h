@@ -7719,6 +7719,13 @@ typedef struct of_bsn_tlv_port_usage_s of_bsn_tlv_port_usage_t;
 typedef struct of_bsn_tlv_port_vxlan_mode_s of_bsn_tlv_port_vxlan_mode_t;
 
 /**
+ * Structure for of_bsn_tlv_preserve_vlan object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_preserve_vlan_s of_bsn_tlv_preserve_vlan_t;
+
+/**
  * Structure for of_bsn_tlv_priority object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

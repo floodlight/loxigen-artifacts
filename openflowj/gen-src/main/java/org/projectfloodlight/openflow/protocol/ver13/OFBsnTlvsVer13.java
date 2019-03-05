@@ -1047,6 +1047,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvPreserveVlan preserveVlan() {
+        return OFBsnTlvPreserveVlanVer13.INSTANCE;
+    }
+
     public OFBsnTlvPriority.Builder buildPriority() {
         return new OFBsnTlvPriorityVer13.Builder();
     }
