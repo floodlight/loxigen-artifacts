@@ -162,9 +162,11 @@ class OFAsyncConfigPropRequestforwardSlaveVer14 implements OFAsyncConfigPropRequ
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFAsyncConfigPropRequestforwardSlave> {
+    static class Reader extends AbstractOFMessageReader<OFAsyncConfigPropRequestforwardSlave> {
         @Override
-        public OFAsyncConfigPropRequestforwardSlave readFrom(ByteBuf bb) throws OFParseError {
+        public OFAsyncConfigPropRequestforwardSlave readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0xa
             short type = bb.readShort();
@@ -173,6 +175,7 @@ class OFAsyncConfigPropRequestforwardSlaveVer14 implements OFAsyncConfigPropRequ
             int length = U16.f(bb.readShort());
             if(length != 8)
                 throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

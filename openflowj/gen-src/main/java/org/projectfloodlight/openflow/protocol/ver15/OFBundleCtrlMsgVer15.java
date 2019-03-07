@@ -341,9 +341,11 @@ class OFBundleCtrlMsgVer15 implements OFBundleCtrlMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBundleCtrlMsg> {
+    static class Reader extends AbstractOFMessageReader<OFBundleCtrlMsg> {
         @Override
-        public OFBundleCtrlMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFBundleCtrlMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -356,6 +358,7 @@ class OFBundleCtrlMsgVer15 implements OFBundleCtrlMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -367,7 +370,7 @@ class OFBundleCtrlMsgVer15 implements OFBundleCtrlMsg {
             BundleId bundleId = BundleId.read4Bytes(bb);
             OFBundleCtrlType bundleCtrlType = OFBundleCtrlTypeSerializerVer15.readFrom(bb);
             Set<OFBundleFlags> flags = OFBundleFlagsSerializerVer15.readFrom(bb);
-            List<OFBundleProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBundlePropVer15.READER);
+            List<OFBundleProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBundlePropVer15.READER);
 
             OFBundleCtrlMsgVer15 bundleCtrlMsgVer15 = new OFBundleCtrlMsgVer15(
                     xid,

@@ -171,9 +171,11 @@ class OFTableFeaturePropTableSyncFromVer15 implements OFTableFeaturePropTableSyn
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableFeaturePropTableSyncFrom> {
+    static class Reader extends AbstractOFMessageReader<OFTableFeaturePropTableSyncFrom> {
         @Override
-        public OFTableFeaturePropTableSyncFrom readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeaturePropTableSyncFrom readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x10
             short type = bb.readShort();
@@ -182,6 +184,7 @@ class OFTableFeaturePropTableSyncFromVer15 implements OFTableFeaturePropTableSyn
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -189,7 +192,7 @@ class OFTableFeaturePropTableSyncFromVer15 implements OFTableFeaturePropTableSyn
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            List<U8> tableIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), U8.READER);
+            List<U8> tableIds = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), U8.READER);
 
             OFTableFeaturePropTableSyncFromVer15 tableFeaturePropTableSyncFromVer15 = new OFTableFeaturePropTableSyncFromVer15(
                     tableIds

@@ -229,9 +229,11 @@ class OFOxmIpEcnVer12 implements OFOxmIpEcn {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmIpEcn> {
+    static class Reader extends AbstractOFMessageReader<OFOxmIpEcn> {
         @Override
-        public OFOxmIpEcn readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmIpEcn readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80001201L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80001201)

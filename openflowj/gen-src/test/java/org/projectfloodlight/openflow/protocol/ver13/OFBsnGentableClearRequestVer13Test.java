@@ -26,19 +26,41 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.junit.Test;
+import org.junit.runners.Parameterized.Parameters;
+import java.util.List;
+import com.google.common.collect.ImmutableList;
 import org.junit.Before;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
-
+@RunWith(Parameterized.class)
 public class OFBsnGentableClearRequestVer13Test {
     OFFactory factory;
 
     final static byte[] BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED =
         new byte[] { 0x4, 0x4, 0x0, 0x34, 0x12, 0x34, 0x56, 0x78, 0x0, 0x5c, 0x16, (byte) 0xc7, 0x0, 0x0, 0x0, 0x30, 0x0, 0x14, 0x0, 0x0, (byte) 0xfe, (byte) 0xdc, (byte) 0xba, (byte) 0x98, 0x76, 0x54, 0x32, 0x10, (byte) 0xff, (byte) 0xee, (byte) 0xcc, (byte) 0xbb, (byte) 0xaa, (byte) 0x99, 0x0, 0x0, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, 0x0, 0x0 };
+
+
+    private final static int[] PREFIX_BYTES = { 0, 1, 4, 255, 65335 };
+    private final static byte[] EMPTY_BYTES = new byte[65535];
+
+    private final OFMessageReader<?> messageReader;
+
+    @Parameters(name="{index}.MessageReader={0}")
+    public static Iterable<Object> data() {
+        return ImmutableList.<Object>of(
+                OFBsnGentableClearRequestVer13.READER, OFBsnHeaderVer13.READER, OFExperimenterVer13.READER, OFMessageVer13.READER
+        );
+    }
+
+    public OFBsnGentableClearRequestVer13Test(OFMessageReader<?> messageReader) {
+        this.messageReader = messageReader;
+    }
 
     @Before
     public void setup() {
@@ -61,8 +83,13 @@ public class OFBsnGentableClearRequestVer13Test {
         assertThat(written, CoreMatchers.equalTo(BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED));
     }
 
+
     @Test
     public void testRead() throws Exception {
+        ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED);
+
+        Object bsnGentableClearRequestRead = messageReader.readFrom(input);
+        assertThat(bsnGentableClearRequestRead, CoreMatchers.instanceOf(OFBsnGentableClearRequestVer13.class));
         OFBsnGentableClearRequest.Builder builder = factory.buildBsnGentableClearRequest();
         builder.setXid(0x12345678)
     .setChecksum(U128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA990000L))
@@ -70,13 +97,37 @@ public class OFBsnGentableClearRequestVer13Test {
     .setTableId(GenTableId.of(20));
         OFBsnGentableClearRequest bsnGentableClearRequestBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED);
-
-        // FIXME should invoke the overall reader once implemented
-        OFBsnGentableClearRequest bsnGentableClearRequestRead = OFBsnGentableClearRequestVer13.READER.readFrom(input);
         assertEquals(BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED.length, input.readerIndex());
 
         assertEquals(bsnGentableClearRequestBuilt, bsnGentableClearRequestRead);
+        // FIXME: No java stanza in test_data for this class. Add to enable validation of read message
+   }
+
+    /**
+     * Validates Reader handling of partial messages in the buffer.
+     *
+     * Ensures that readers deal with partially available messages, and that buffers
+     * are returned unmodified. Also checks compatibility when the data is not at the start of
+     * the buffer (readerIndex=0), but somewhere else (with the readerIndex appropriately set).
+     */
+   @Test
+   public void testPartialRead() throws Exception {
+       ByteBuf msgBuffer = Unpooled.copiedBuffer(BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED);
+       for (int prefixLength: PREFIX_BYTES) {
+           ByteBuf prefixBuffer = Unpooled.wrappedBuffer(EMPTY_BYTES).slice(0, prefixLength);
+           ByteBuf wholeBuffer = Unpooled.wrappedBuffer(prefixBuffer, msgBuffer);
+           for (int partialLength = 0; partialLength < BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED.length - 1; partialLength++) {
+               int length = prefixLength + partialLength;
+               ByteBuf slice = wholeBuffer.slice(0, length);
+               slice.readerIndex(prefixLength);
+
+               Object read = messageReader.readFrom(slice);
+
+               assertNull("partial message should not be read", read);
+               assertEquals("Reader index should be back at the start", prefixLength, slice.readerIndex());
+           }
+
+       }
    }
 
    @Test
@@ -84,7 +135,7 @@ public class OFBsnGentableClearRequestVer13Test {
        ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
-       OFBsnGentableClearRequest bsnGentableClearRequest = OFBsnGentableClearRequestVer13.READER.readFrom(input);
+       OFBsnGentableClearRequest bsnGentableClearRequest = (OFBsnGentableClearRequest) messageReader.readFrom(input);
        assertEquals(BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED.length, input.readerIndex());
 
        // write message again

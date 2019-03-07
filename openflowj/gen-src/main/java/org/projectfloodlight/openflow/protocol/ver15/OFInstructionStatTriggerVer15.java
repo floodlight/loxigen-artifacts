@@ -216,9 +216,11 @@ class OFInstructionStatTriggerVer15 implements OFInstructionStatTrigger {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFInstructionStatTrigger> {
+    static class Reader extends AbstractOFMessageReader<OFInstructionStatTrigger> {
         @Override
-        public OFInstructionStatTrigger readFrom(ByteBuf bb) throws OFParseError {
+        public OFInstructionStatTrigger readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 7
             short type = bb.readShort();
@@ -227,6 +229,7 @@ class OFInstructionStatTriggerVer15 implements OFInstructionStatTrigger {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -235,7 +238,7 @@ class OFInstructionStatTriggerVer15 implements OFInstructionStatTrigger {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             Set<OFStatTriggerFlags> flags = OFStatTriggerFlagsSerializerVer15.readFrom(bb);
-            OFOxsList thresholds = OFOxsList.readFrom(bb, length - (bb.readerIndex() - start), OFOxsVer15.READER);
+            OFOxsList thresholds = OFOxsList.readFrom(context, bb, length - (bb.readerIndex() - start), OFOxsVer15.READER);
 
             OFInstructionStatTriggerVer15 instructionStatTriggerVer15 = new OFInstructionStatTriggerVer15(
                     flags,

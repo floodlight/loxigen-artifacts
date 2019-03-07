@@ -35,9 +35,9 @@ abstract class OFTableFeaturePropExperimenterVer15 {
 
     public final static OFTableFeaturePropExperimenterVer15.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFTableFeaturePropExperimenter> {
+    static class Reader extends AbstractOFMessageReader<OFTableFeaturePropExperimenter> {
         @Override
-        public OFTableFeaturePropExperimenter readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeaturePropExperimenter readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -48,12 +48,20 @@ abstract class OFTableFeaturePropExperimenterVer15 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             int experimenter = bb.readInt();
-            bb.readerIndex(start);
             switch(experimenter) {
                default:
-                   throw new OFParseError("Unknown value for discriminator experimenter of class OFTableFeaturePropExperimenterVer15: " + experimenter);
+                   context.getUnparsedHandler().unparsedMessage(OFTableFeaturePropExperimenterVer15.class, "experimenter", experimenter);
             }
+            U32.f(bb.readInt());
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

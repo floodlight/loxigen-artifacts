@@ -264,9 +264,11 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer12 implements OFOxmBsnGlobalVrfAllowedMas
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnGlobalVrfAllowedMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnGlobalVrfAllowedMasked> {
         @Override
-        public OFOxmBsnGlobalVrfAllowedMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnGlobalVrfAllowedMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x30702L
             int typeLen = bb.readInt();
             if(typeLen != 0x30702)

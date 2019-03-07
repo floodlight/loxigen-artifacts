@@ -264,9 +264,11 @@ class OFOxmIpProtoMaskedVer15 implements OFOxmIpProtoMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmIpProtoMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmIpProtoMasked> {
         @Override
-        public OFOxmIpProtoMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmIpProtoMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80001502L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80001502)

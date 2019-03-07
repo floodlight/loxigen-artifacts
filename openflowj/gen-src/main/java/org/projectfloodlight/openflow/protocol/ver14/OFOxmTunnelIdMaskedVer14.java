@@ -264,9 +264,11 @@ class OFOxmTunnelIdMaskedVer14 implements OFOxmTunnelIdMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmTunnelIdMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmTunnelIdMasked> {
         @Override
-        public OFOxmTunnelIdMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmTunnelIdMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80004d10L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80004d10)

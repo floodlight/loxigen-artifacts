@@ -171,9 +171,11 @@ class OFBundlePropTimeVer15 implements OFBundlePropTime {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBundlePropTime> {
+    static class Reader extends AbstractOFMessageReader<OFBundlePropTime> {
         @Override
-        public OFBundlePropTime readFrom(ByteBuf bb) throws OFParseError {
+        public OFBundlePropTime readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x1
             short type = bb.readShort();
@@ -182,6 +184,7 @@ class OFBundlePropTimeVer15 implements OFBundlePropTime {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -191,7 +194,7 @@ class OFBundlePropTimeVer15 implements OFBundlePropTime {
                 logger.trace("readFrom - length={}", length);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFTime> scheduledTime = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFTimeVer15.READER);
+            List<OFTime> scheduledTime = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFTimeVer15.READER);
 
             OFBundlePropTimeVer15 bundlePropTimeVer15 = new OFBundlePropTimeVer15(
                     scheduledTime
