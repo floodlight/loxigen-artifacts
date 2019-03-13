@@ -229,9 +229,11 @@ class OFOxmConnTrackingNwSrcVer13 implements OFOxmConnTrackingNwSrc {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmConnTrackingNwSrc> {
+    static class Reader extends AbstractOFMessageReader<OFOxmConnTrackingNwSrc> {
         @Override
-        public OFOxmConnTrackingNwSrc readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmConnTrackingNwSrc readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x1f004L
             int typeLen = bb.readInt();
             if(typeLen != 0x1f004)

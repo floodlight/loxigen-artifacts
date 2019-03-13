@@ -347,9 +347,11 @@ class OFAsyncSetVer15 implements OFAsyncSet {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFAsyncSet> {
+    static class Reader extends AbstractOFMessageReader<OFAsyncSet> {
         @Override
-        public OFAsyncSet readFrom(ByteBuf bb) throws OFParseError {
+        public OFAsyncSet readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -362,6 +364,7 @@ class OFAsyncSetVer15 implements OFAsyncSet {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -370,7 +373,7 @@ class OFAsyncSetVer15 implements OFAsyncSet {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            List<OFAsyncConfigProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFAsyncConfigPropVer15.READER);
+            List<OFAsyncConfigProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFAsyncConfigPropVer15.READER);
 
             OFAsyncSetVer15 asyncSetVer15 = new OFAsyncSetVer15(
                     xid,

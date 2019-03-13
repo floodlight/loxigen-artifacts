@@ -333,9 +333,11 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFAggregateStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFAggregateStatsReply> {
         @Override
-        public OFAggregateStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFAggregateStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -348,6 +350,7 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -363,7 +366,7 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            Stat stats = ChannelUtilsVer15.readOFStat(bb);
+            Stat stats = ChannelUtilsVer15.readOFStat(context, bb);
 
             OFAggregateStatsReplyVer15 aggregateStatsReplyVer15 = new OFAggregateStatsReplyVer15(
                     xid,

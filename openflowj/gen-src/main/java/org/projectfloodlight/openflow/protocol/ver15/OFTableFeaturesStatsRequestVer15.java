@@ -270,9 +270,11 @@ class OFTableFeaturesStatsRequestVer15 implements OFTableFeaturesStatsRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableFeaturesStatsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFTableFeaturesStatsRequest> {
         @Override
-        public OFTableFeaturesStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeaturesStatsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -285,6 +287,7 @@ class OFTableFeaturesStatsRequestVer15 implements OFTableFeaturesStatsRequest {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -300,7 +303,7 @@ class OFTableFeaturesStatsRequestVer15 implements OFTableFeaturesStatsRequest {
             Set<OFStatsRequestFlags> flags = OFStatsRequestFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFTableFeatures> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFTableFeaturesVer15.READER);
+            List<OFTableFeatures> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFTableFeaturesVer15.READER);
 
             OFTableFeaturesStatsRequestVer15 tableFeaturesStatsRequestVer15 = new OFTableFeaturesStatsRequestVer15(
                     xid,

@@ -201,13 +201,16 @@ class OFBsnPortCounterStatsEntryVer14 implements OFBsnPortCounterStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnPortCounterStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFBsnPortCounterStatsEntry> {
         @Override
-        public OFBsnPortCounterStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnPortCounterStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -218,7 +221,7 @@ class OFBsnPortCounterStatsEntryVer14 implements OFBsnPortCounterStatsEntry {
             // pad: 2 bytes
             bb.skipBytes(2);
             OFPort portNo = OFPort.read4Bytes(bb);
-            List<U64> values = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), U64.READER);
+            List<U64> values = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), U64.READER);
 
             OFBsnPortCounterStatsEntryVer14 bsnPortCounterStatsEntryVer14 = new OFBsnPortCounterStatsEntryVer14(
                     portNo,

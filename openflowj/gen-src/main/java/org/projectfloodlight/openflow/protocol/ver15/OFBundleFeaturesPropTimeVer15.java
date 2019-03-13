@@ -300,9 +300,11 @@ class OFBundleFeaturesPropTimeVer15 implements OFBundleFeaturesPropTime {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBundleFeaturesPropTime> {
+    static class Reader extends AbstractOFMessageReader<OFBundleFeaturesPropTime> {
         @Override
-        public OFBundleFeaturesPropTime readFrom(ByteBuf bb) throws OFParseError {
+        public OFBundleFeaturesPropTime readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x1
             short type = bb.readShort();
@@ -311,6 +313,7 @@ class OFBundleFeaturesPropTimeVer15 implements OFBundleFeaturesPropTime {
             int length = U16.f(bb.readShort());
             if(length != 72)
                 throw new OFParseError("Wrong length: Expected=72(72), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

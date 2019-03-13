@@ -192,9 +192,11 @@ class OFBsnControllerConnectionsRequestVer15 implements OFBsnControllerConnectio
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnControllerConnectionsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFBsnControllerConnectionsRequest> {
         @Override
-        public OFBsnControllerConnectionsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnControllerConnectionsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -207,6 +209,7 @@ class OFBsnControllerConnectionsRequestVer15 implements OFBsnControllerConnectio
             int length = U16.f(bb.readShort());
             if(length != 16)
                 throw new OFParseError("Wrong length: Expected=16(16), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

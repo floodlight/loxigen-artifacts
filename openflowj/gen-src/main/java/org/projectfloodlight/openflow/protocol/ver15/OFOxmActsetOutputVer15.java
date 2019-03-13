@@ -229,9 +229,11 @@ class OFOxmActsetOutputVer15 implements OFOxmActsetOutput {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmActsetOutput> {
+    static class Reader extends AbstractOFMessageReader<OFOxmActsetOutput> {
         @Override
-        public OFOxmActsetOutput readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmActsetOutput readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80005604L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80005604)

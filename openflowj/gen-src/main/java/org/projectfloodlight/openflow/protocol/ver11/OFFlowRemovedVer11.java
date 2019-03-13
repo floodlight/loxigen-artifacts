@@ -626,9 +626,11 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowRemoved> {
+    static class Reader extends AbstractOFMessageReader<OFFlowRemoved> {
         @Override
-        public OFFlowRemoved readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowRemoved readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -641,6 +643,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
             int length = U16.f(bb.readShort());
             if(length != 136)
                 throw new OFParseError("Wrong length: Expected=136(136), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -660,7 +663,7 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
             bb.skipBytes(2);
             U64 packetCount = U64.ofRaw(bb.readLong());
             U64 byteCount = U64.ofRaw(bb.readLong());
-            Match match = ChannelUtilsVer11.readOFMatch(bb);
+            Match match = ChannelUtilsVer11.readOFMatch(context, bb);
 
             OFFlowRemovedVer11 flowRemovedVer11 = new OFFlowRemovedVer11(
                     xid,

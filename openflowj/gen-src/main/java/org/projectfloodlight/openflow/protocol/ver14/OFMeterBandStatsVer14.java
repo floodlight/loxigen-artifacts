@@ -199,9 +199,11 @@ class OFMeterBandStatsVer14 implements OFMeterBandStats {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFMeterBandStats> {
+    static class Reader extends AbstractOFMessageReader<OFMeterBandStats> {
         @Override
-        public OFMeterBandStats readFrom(ByteBuf bb) throws OFParseError {
+        public OFMeterBandStats readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             U64 packetBandCount = U64.ofRaw(bb.readLong());
             U64 byteBandCount = U64.ofRaw(bb.readLong());
 

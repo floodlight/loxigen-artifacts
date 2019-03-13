@@ -330,13 +330,16 @@ class OFBucketVer14 implements OFBucket {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBucket> {
+    static class Reader extends AbstractOFMessageReader<OFBucket> {
         @Override
-        public OFBucket readFrom(ByteBuf bb) throws OFParseError {
+        public OFBucket readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -349,7 +352,7 @@ class OFBucketVer14 implements OFBucket {
             OFGroup watchGroup = OFGroup.read4Bytes(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFAction> actions = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFActionVer14.READER);
+            List<OFAction> actions = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFActionVer14.READER);
 
             OFBucketVer14 bucketVer14 = new OFBucketVer14(
                     weight,

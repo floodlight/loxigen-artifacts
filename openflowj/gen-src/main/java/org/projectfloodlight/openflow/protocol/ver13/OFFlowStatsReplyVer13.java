@@ -270,9 +270,11 @@ class OFFlowStatsReplyVer13 implements OFFlowStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFFlowStatsReply> {
         @Override
-        public OFFlowStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -285,6 +287,7 @@ class OFFlowStatsReplyVer13 implements OFFlowStatsReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -300,7 +303,7 @@ class OFFlowStatsReplyVer13 implements OFFlowStatsReply {
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer13.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFFlowStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFFlowStatsEntryVer13.READER);
+            List<OFFlowStatsEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFFlowStatsEntryVer13.READER);
 
             OFFlowStatsReplyVer13 flowStatsReplyVer13 = new OFFlowStatsReplyVer13(
                     xid,

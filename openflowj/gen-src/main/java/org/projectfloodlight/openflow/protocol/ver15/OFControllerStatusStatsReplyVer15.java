@@ -270,9 +270,11 @@ class OFControllerStatusStatsReplyVer15 implements OFControllerStatusStatsReply 
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFControllerStatusStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFControllerStatusStatsReply> {
         @Override
-        public OFControllerStatusStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFControllerStatusStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -285,6 +287,7 @@ class OFControllerStatusStatsReplyVer15 implements OFControllerStatusStatsReply 
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -300,7 +303,7 @@ class OFControllerStatusStatsReplyVer15 implements OFControllerStatusStatsReply 
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer15.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFControllerStatusEntry> controllerStatus = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFControllerStatusEntryVer15.READER);
+            List<OFControllerStatusEntry> controllerStatus = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFControllerStatusEntryVer15.READER);
 
             OFControllerStatusStatsReplyVer15 controllerStatusStatsReplyVer15 = new OFControllerStatusStatsReplyVer15(
                     xid,

@@ -229,9 +229,11 @@ class OFOxmConnTrackingIpv6DstVer15 implements OFOxmConnTrackingIpv6Dst {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmConnTrackingIpv6Dst> {
+    static class Reader extends AbstractOFMessageReader<OFOxmConnTrackingIpv6Dst> {
         @Override
-        public OFOxmConnTrackingIpv6Dst readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmConnTrackingIpv6Dst readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x1f610L
             int typeLen = bb.readInt();
             if(typeLen != 0x1f610)

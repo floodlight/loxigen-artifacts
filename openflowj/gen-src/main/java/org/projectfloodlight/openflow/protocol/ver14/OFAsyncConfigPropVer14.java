@@ -35,60 +35,84 @@ abstract class OFAsyncConfigPropVer14 {
 
     public final static OFAsyncConfigPropVer14.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFAsyncConfigProp> {
+    static class Reader extends AbstractOFMessageReader<OFAsyncConfigProp> {
         @Override
-        public OFAsyncConfigProp readFrom(ByteBuf bb) throws OFParseError {
+        public OFAsyncConfigProp readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
-            bb.readerIndex(start);
             switch(type) {
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value 0xffff=0xffff for class OFAsyncConfigPropExperimenterMasterVer14
-                   return OFAsyncConfigPropExperimenterMasterVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropExperimenterMasterVer14.READER.readFrom(context, bb);
                case (short) 0xfffe:
+                   bb.readerIndex(start);
                    // discriminator value 0xfffe=0xfffe for class OFAsyncConfigPropExperimenterSlaveVer14
-                   return OFAsyncConfigPropExperimenterSlaveVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropExperimenterSlaveVer14.READER.readFrom(context, bb);
                case (short) 0x5:
+                   bb.readerIndex(start);
                    // discriminator value 0x5=0x5 for class OFAsyncConfigPropFlowRemovedMasterVer14
-                   return OFAsyncConfigPropFlowRemovedMasterVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropFlowRemovedMasterVer14.READER.readFrom(context, bb);
                case (short) 0x4:
+                   bb.readerIndex(start);
                    // discriminator value 0x4=0x4 for class OFAsyncConfigPropFlowRemovedSlaveVer14
-                   return OFAsyncConfigPropFlowRemovedSlaveVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropFlowRemovedSlaveVer14.READER.readFrom(context, bb);
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value 0x1=0x1 for class OFAsyncConfigPropPacketInMasterVer14
-                   return OFAsyncConfigPropPacketInMasterVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropPacketInMasterVer14.READER.readFrom(context, bb);
                case (short) 0x0:
+                   bb.readerIndex(start);
                    // discriminator value 0x0=0x0 for class OFAsyncConfigPropPacketInSlaveVer14
-                   return OFAsyncConfigPropPacketInSlaveVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropPacketInSlaveVer14.READER.readFrom(context, bb);
                case (short) 0x3:
+                   bb.readerIndex(start);
                    // discriminator value 0x3=0x3 for class OFAsyncConfigPropPortStatusMasterVer14
-                   return OFAsyncConfigPropPortStatusMasterVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropPortStatusMasterVer14.READER.readFrom(context, bb);
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value 0x2=0x2 for class OFAsyncConfigPropPortStatusSlaveVer14
-                   return OFAsyncConfigPropPortStatusSlaveVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropPortStatusSlaveVer14.READER.readFrom(context, bb);
                case (short) 0xb:
+                   bb.readerIndex(start);
                    // discriminator value 0xb=0xb for class OFAsyncConfigPropRequestforwardMasterVer14
-                   return OFAsyncConfigPropRequestforwardMasterVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropRequestforwardMasterVer14.READER.readFrom(context, bb);
                case (short) 0xa:
+                   bb.readerIndex(start);
                    // discriminator value 0xa=0xa for class OFAsyncConfigPropRequestforwardSlaveVer14
-                   return OFAsyncConfigPropRequestforwardSlaveVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropRequestforwardSlaveVer14.READER.readFrom(context, bb);
                case (short) 0x7:
+                   bb.readerIndex(start);
                    // discriminator value 0x7=0x7 for class OFAsyncConfigPropRoleStatusMasterVer14
-                   return OFAsyncConfigPropRoleStatusMasterVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropRoleStatusMasterVer14.READER.readFrom(context, bb);
                case (short) 0x6:
+                   bb.readerIndex(start);
                    // discriminator value 0x6=0x6 for class OFAsyncConfigPropRoleStatusSlaveVer14
-                   return OFAsyncConfigPropRoleStatusSlaveVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropRoleStatusSlaveVer14.READER.readFrom(context, bb);
                case (short) 0x9:
+                   bb.readerIndex(start);
                    // discriminator value 0x9=0x9 for class OFAsyncConfigPropTableStatusMasterVer14
-                   return OFAsyncConfigPropTableStatusMasterVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropTableStatusMasterVer14.READER.readFrom(context, bb);
                case (short) 0x8:
+                   bb.readerIndex(start);
                    // discriminator value 0x8=0x8 for class OFAsyncConfigPropTableStatusSlaveVer14
-                   return OFAsyncConfigPropTableStatusSlaveVer14.READER.readFrom(bb);
+                   return OFAsyncConfigPropTableStatusSlaveVer14.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFAsyncConfigPropVer14: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFAsyncConfigPropVer14.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }
