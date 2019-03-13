@@ -198,6 +198,10 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvDrop not supported in version 1.2");
     }
 
+    public OFBsnTlvDropControl dropControl() {
+        throw new UnsupportedOperationException("OFBsnTlvDropControl not supported in version 1.2");
+    }
+
     public OFBsnTlvDscp.Builder buildDscp() {
         throw new UnsupportedOperationException("OFBsnTlvDscp not supported in version 1.2");
     }

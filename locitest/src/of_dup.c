@@ -27926,6 +27926,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_DROP_CONTROL) {
+        return of_bsn_tlv_drop_control_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_IP_PROTO) {
         return of_bsn_tlv_ip_proto_OF_VERSION_1_3_dup(src);
     }
@@ -28989,6 +28993,27 @@ of_bsn_tlv_drop_OF_VERSION_1_3_dup(
     of_bsn_tlv_drop_t *dst;
 
     if ((dst = of_bsn_tlv_drop_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_drop_control
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_drop_control.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_drop_control_t *
+of_bsn_tlv_drop_control_OF_VERSION_1_3_dup(
+    of_bsn_tlv_drop_control_t *src)
+{
+    of_bsn_tlv_drop_control_t *dst;
+
+    if ((dst = of_bsn_tlv_drop_control_new(src->version)) == NULL) {
         return NULL;
     }
 
@@ -52237,6 +52262,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_DROP_CONTROL) {
+        return of_bsn_tlv_drop_control_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_IP_PROTO) {
         return of_bsn_tlv_ip_proto_OF_VERSION_1_4_dup(src);
     }
@@ -53300,6 +53329,27 @@ of_bsn_tlv_drop_OF_VERSION_1_4_dup(
     of_bsn_tlv_drop_t *dst;
 
     if ((dst = of_bsn_tlv_drop_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_drop_control
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_drop_control.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_drop_control_t *
+of_bsn_tlv_drop_control_OF_VERSION_1_4_dup(
+    of_bsn_tlv_drop_control_t *src)
+{
+    of_bsn_tlv_drop_control_t *dst;
+
+    if ((dst = of_bsn_tlv_drop_control_new(src->version)) == NULL) {
         return NULL;
     }
 
@@ -74592,6 +74642,23 @@ of_bsn_tlv_drop_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_drop_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_drop_control_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_drop_control_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_drop_control_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
