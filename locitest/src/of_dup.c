@@ -27942,6 +27942,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_DROP_GTPC) {
+        return of_bsn_tlv_drop_gtpc_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_USER_CONFIGURED) {
         return of_bsn_tlv_user_configured_OF_VERSION_1_3_dup(src);
     }
@@ -28989,6 +28993,27 @@ of_bsn_tlv_drop_OF_VERSION_1_3_dup(
     of_bsn_tlv_drop_t *dst;
 
     if ((dst = of_bsn_tlv_drop_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_drop_gtpc
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_drop_gtpc.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_drop_gtpc_t *
+of_bsn_tlv_drop_gtpc_OF_VERSION_1_3_dup(
+    of_bsn_tlv_drop_gtpc_t *src)
+{
+    of_bsn_tlv_drop_gtpc_t *dst;
+
+    if ((dst = of_bsn_tlv_drop_gtpc_new(src->version)) == NULL) {
         return NULL;
     }
 
@@ -52253,6 +52278,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_optics_always_enabled_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_DROP_GTPC) {
+        return of_bsn_tlv_drop_gtpc_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_USER_CONFIGURED) {
         return of_bsn_tlv_user_configured_OF_VERSION_1_4_dup(src);
     }
@@ -53300,6 +53329,27 @@ of_bsn_tlv_drop_OF_VERSION_1_4_dup(
     of_bsn_tlv_drop_t *dst;
 
     if ((dst = of_bsn_tlv_drop_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_drop_gtpc
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_drop_gtpc.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_drop_gtpc_t *
+of_bsn_tlv_drop_gtpc_OF_VERSION_1_4_dup(
+    of_bsn_tlv_drop_gtpc_t *src)
+{
+    of_bsn_tlv_drop_gtpc_t *dst;
+
+    if ((dst = of_bsn_tlv_drop_gtpc_new(src->version)) == NULL) {
         return NULL;
     }
 
@@ -74592,6 +74642,23 @@ of_bsn_tlv_drop_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_drop_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_drop_gtpc_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_drop_gtpc_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_drop_gtpc_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

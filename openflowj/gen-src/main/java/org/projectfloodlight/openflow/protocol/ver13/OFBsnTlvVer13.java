@@ -121,6 +121,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x79:
                    // discriminator value 0x79=0x79 for class OFBsnTlvDropVer13
                    return OFBsnTlvDropVer13.READER.readFrom(bb);
+               case (short) 0xbb:
+                   // discriminator value 0xbb=0xbb for class OFBsnTlvDropGtpcVer13
+                   return OFBsnTlvDropGtpcVer13.READER.readFrom(bb);
                case (short) 0x70:
                    // discriminator value 0x70=0x70 for class OFBsnTlvDscpVer13
                    return OFBsnTlvDscpVer13.READER.readFrom(bb);

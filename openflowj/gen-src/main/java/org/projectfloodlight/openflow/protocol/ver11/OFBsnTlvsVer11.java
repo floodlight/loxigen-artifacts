@@ -198,6 +198,10 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvDrop not supported in version 1.1");
     }
 
+    public OFBsnTlvDropGtpc dropGtpc() {
+        throw new UnsupportedOperationException("OFBsnTlvDropGtpc not supported in version 1.1");
+    }
+
     public OFBsnTlvDscp.Builder buildDscp() {
         throw new UnsupportedOperationException("OFBsnTlvDscp not supported in version 1.1");
     }

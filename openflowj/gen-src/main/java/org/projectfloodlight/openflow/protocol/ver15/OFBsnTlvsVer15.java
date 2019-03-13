@@ -240,6 +240,10 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
         return OFBsnTlvDropVer15.INSTANCE;
     }
 
+    public OFBsnTlvDropGtpc dropGtpc() {
+        return OFBsnTlvDropGtpcVer15.INSTANCE;
+    }
+
     public OFBsnTlvDscp.Builder buildDscp() {
         return new OFBsnTlvDscpVer15.Builder();
     }

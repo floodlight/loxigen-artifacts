@@ -8847,6 +8847,8 @@ fields['of13.bsn_tlv_disable_xmit.type'] = ProtoField.uint16("of13.bsn_tlv_disab
 fields['of13.bsn_tlv_disable_xmit.length'] = ProtoField.uint16("of13.bsn_tlv_disable_xmit.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_drop.type'] = ProtoField.uint16("of13.bsn_tlv_drop.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_drop.length'] = ProtoField.uint16("of13.bsn_tlv_drop.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_drop_gtpc.type'] = ProtoField.uint16("of13.bsn_tlv_drop_gtpc.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_drop_gtpc.length'] = ProtoField.uint16("of13.bsn_tlv_drop_gtpc.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_dscp.type'] = ProtoField.uint16("of13.bsn_tlv_dscp.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_dscp.length'] = ProtoField.uint16("of13.bsn_tlv_dscp.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_dscp.value'] = ProtoField.uint16("of13.bsn_tlv_dscp.value", "value", base.DEC, nil)
@@ -11890,6 +11892,8 @@ fields['of14.bsn_tlv_disable_xmit.type'] = ProtoField.uint16("of14.bsn_tlv_disab
 fields['of14.bsn_tlv_disable_xmit.length'] = ProtoField.uint16("of14.bsn_tlv_disable_xmit.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_drop.type'] = ProtoField.uint16("of14.bsn_tlv_drop.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_drop.length'] = ProtoField.uint16("of14.bsn_tlv_drop.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_drop_gtpc.type'] = ProtoField.uint16("of14.bsn_tlv_drop_gtpc.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_drop_gtpc.length'] = ProtoField.uint16("of14.bsn_tlv_drop_gtpc.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_dscp.type'] = ProtoField.uint16("of14.bsn_tlv_dscp.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_dscp.length'] = ProtoField.uint16("of14.bsn_tlv_dscp.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_dscp.value'] = ProtoField.uint16("of14.bsn_tlv_dscp.value", "value", base.DEC, nil)
@@ -15211,6 +15215,8 @@ fields['of15.bsn_tlv_disable_xmit.type'] = ProtoField.uint16("of15.bsn_tlv_disab
 fields['of15.bsn_tlv_disable_xmit.length'] = ProtoField.uint16("of15.bsn_tlv_disable_xmit.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_drop.type'] = ProtoField.uint16("of15.bsn_tlv_drop.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_drop.length'] = ProtoField.uint16("of15.bsn_tlv_drop.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_drop_gtpc.type'] = ProtoField.uint16("of15.bsn_tlv_drop_gtpc.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_drop_gtpc.length'] = ProtoField.uint16("of15.bsn_tlv_drop_gtpc.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_dscp.type'] = ProtoField.uint16("of15.bsn_tlv_dscp.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_dscp.length'] = ProtoField.uint16("of15.bsn_tlv_dscp.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_dscp.value'] = ProtoField.uint16("of15.bsn_tlv_dscp.value", "value", base.DEC, nil)
@@ -21819,6 +21825,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_disable_xmit.length'],
     fields['of13.bsn_tlv_drop.type'],
     fields['of13.bsn_tlv_drop.length'],
+    fields['of13.bsn_tlv_drop_gtpc.type'],
+    fields['of13.bsn_tlv_drop_gtpc.length'],
     fields['of13.bsn_tlv_dscp.type'],
     fields['of13.bsn_tlv_dscp.length'],
     fields['of13.bsn_tlv_dscp.value'],
@@ -24862,6 +24870,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_disable_xmit.length'],
     fields['of14.bsn_tlv_drop.type'],
     fields['of14.bsn_tlv_drop.length'],
+    fields['of14.bsn_tlv_drop_gtpc.type'],
+    fields['of14.bsn_tlv_drop_gtpc.length'],
     fields['of14.bsn_tlv_dscp.type'],
     fields['of14.bsn_tlv_dscp.length'],
     fields['of14.bsn_tlv_dscp.value'],
@@ -28183,6 +28193,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_disable_xmit.length'],
     fields['of15.bsn_tlv_drop.type'],
     fields['of15.bsn_tlv_drop.length'],
+    fields['of15.bsn_tlv_drop_gtpc.type'],
+    fields['of15.bsn_tlv_drop_gtpc.length'],
     fields['of15.bsn_tlv_dscp.type'],
     fields['of15.bsn_tlv_dscp.length'],
     fields['of15.bsn_tlv_dscp.value'],
@@ -40468,6 +40480,15 @@ function dissect_of_bsn_tlv_drop_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[121] = dissect_of_bsn_tlv_drop_v4
 
+-- child class of_bsn_tlv_drop_gtpc
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_drop_gtpc_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_drop_gtpc.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_drop_gtpc.length')
+    return 'of_bsn_tlv_drop_gtpc'
+end
+of_bsn_tlv_v4_dissectors[187] = dissect_of_bsn_tlv_drop_gtpc_v4
+
 -- child class of_bsn_tlv_dscp
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_dscp_v4(reader, subtree)
@@ -48768,6 +48789,15 @@ function dissect_of_bsn_tlv_drop_v5(reader, subtree)
     return 'of_bsn_tlv_drop'
 end
 of_bsn_tlv_v5_dissectors[121] = dissect_of_bsn_tlv_drop_v5
+
+-- child class of_bsn_tlv_drop_gtpc
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_drop_gtpc_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_drop_gtpc.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_drop_gtpc.length')
+    return 'of_bsn_tlv_drop_gtpc'
+end
+of_bsn_tlv_v5_dissectors[187] = dissect_of_bsn_tlv_drop_gtpc_v5
 
 -- child class of_bsn_tlv_dscp
 -- Child of of_bsn_tlv
@@ -57716,6 +57746,15 @@ function dissect_of_bsn_tlv_drop_v6(reader, subtree)
     return 'of_bsn_tlv_drop'
 end
 of_bsn_tlv_v6_dissectors[121] = dissect_of_bsn_tlv_drop_v6
+
+-- child class of_bsn_tlv_drop_gtpc
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_drop_gtpc_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_drop_gtpc.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_drop_gtpc.length')
+    return 'of_bsn_tlv_drop_gtpc'
+end
+of_bsn_tlv_v6_dissectors[187] = dissect_of_bsn_tlv_drop_gtpc_v6
 
 -- child class of_bsn_tlv_dscp
 -- Child of of_bsn_tlv

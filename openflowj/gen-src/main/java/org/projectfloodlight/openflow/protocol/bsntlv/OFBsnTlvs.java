@@ -77,6 +77,7 @@ public interface OFBsnTlvs {
     OFBsnTlvDisableSrcMacCheck disableSrcMacCheck();
     OFBsnTlvDisableXmit disableXmit();
     OFBsnTlvDrop drop();
+    OFBsnTlvDropGtpc dropGtpc();
     OFBsnTlvDscp.Builder buildDscp() throws UnsupportedOperationException;
     OFBsnTlvDscp dscp(int value);
     OFBsnTlvEcn.Builder buildEcn() throws UnsupportedOperationException;

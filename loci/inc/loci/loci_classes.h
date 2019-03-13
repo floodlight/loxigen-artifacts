@@ -905,6 +905,8 @@ void of_bsn_tlv_disable_xmit_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_bsn_tlv_disable_xmit_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_drop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_drop_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_drop_gtpc_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_drop_gtpc_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_dscp_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_dscp_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ecn_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1935,6 +1937,7 @@ typedef of_object_t of_bsn_tlv_decap_t;
 typedef of_object_t of_bsn_tlv_disable_src_mac_check_t;
 typedef of_object_t of_bsn_tlv_disable_xmit_t;
 typedef of_object_t of_bsn_tlv_drop_t;
+typedef of_object_t of_bsn_tlv_drop_gtpc_t;
 typedef of_object_t of_bsn_tlv_dscp_t;
 typedef of_object_t of_bsn_tlv_ecn_t;
 typedef of_object_t of_bsn_tlv_egress_only_t;
@@ -4121,6 +4124,11 @@ extern void of_bsn_tlv_disable_xmit_init(
 extern of_object_t *
     of_bsn_tlv_drop_new(of_version_t version);
 extern void of_bsn_tlv_drop_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_drop_gtpc_new(of_version_t version);
+extern void of_bsn_tlv_drop_gtpc_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10369,6 +10377,17 @@ of_bsn_tlv_disable_xmit_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_drop_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_drop_gtpc_t
+ * @param obj An instance of type of_bsn_tlv_drop_gtpc_t
+ *
+ * \ingroup of_bsn_tlv_drop_gtpc
+ */
+static inline void
+of_bsn_tlv_drop_gtpc_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24087,6 +24106,8 @@ extern void of_bsn_tlv_decap_value_get(
 /* Unified accessor functions for of_bsn_tlv_disable_xmit */
 
 /* Unified accessor functions for of_bsn_tlv_drop */
+
+/* Unified accessor functions for of_bsn_tlv_drop_gtpc */
 
 /* Unified accessor functions for of_bsn_tlv_dscp */
 

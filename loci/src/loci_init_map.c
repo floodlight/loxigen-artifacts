@@ -339,6 +339,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_disable_src_mac_check_init,
     (of_object_init_f)of_bsn_tlv_disable_xmit_init,
     (of_object_init_f)of_bsn_tlv_drop_init,
+    (of_object_init_f)of_bsn_tlv_drop_gtpc_init,
     (of_object_init_f)of_bsn_tlv_dscp_init,
     (of_object_init_f)of_bsn_tlv_ecn_init,
     (of_object_init_f)of_bsn_tlv_egress_only_init,
