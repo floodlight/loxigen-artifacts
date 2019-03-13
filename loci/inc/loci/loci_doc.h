@@ -6668,6 +6668,13 @@ typedef struct of_bsn_tlv_disable_xmit_s of_bsn_tlv_disable_xmit_t;
 typedef struct of_bsn_tlv_drop_s of_bsn_tlv_drop_t;
 
 /**
+ * Structure for of_bsn_tlv_drop_control object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_drop_control_s of_bsn_tlv_drop_control_t;
+
+/**
  * Structure for of_bsn_tlv_dscp object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
