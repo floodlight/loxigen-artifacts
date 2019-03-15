@@ -359,9 +359,11 @@ class OFBsnVportQInQVer15 implements OFBsnVportQInQ {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnVportQInQ> {
+    static class Reader extends AbstractOFMessageReader<OFBsnVportQInQ> {
         @Override
-        public OFBsnVportQInQ readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnVportQInQ readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x0
             short type = bb.readShort();
@@ -370,6 +372,7 @@ class OFBsnVportQInQVer15 implements OFBsnVportQInQ {
             int length = U16.f(bb.readShort());
             if(length != 32)
                 throw new OFParseError("Wrong length: Expected=32(32), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

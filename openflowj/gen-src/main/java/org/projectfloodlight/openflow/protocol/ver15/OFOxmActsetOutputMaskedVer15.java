@@ -264,9 +264,11 @@ class OFOxmActsetOutputMaskedVer15 implements OFOxmActsetOutputMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmActsetOutputMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmActsetOutputMasked> {
         @Override
-        public OFOxmActsetOutputMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmActsetOutputMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80005708L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80005708)

@@ -343,9 +343,11 @@ class OFBsnImageDescStatsReplyVer15 implements OFBsnImageDescStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnImageDescStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnImageDescStatsReply> {
         @Override
-        public OFBsnImageDescStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnImageDescStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -358,6 +360,7 @@ class OFBsnImageDescStatsReplyVer15 implements OFBsnImageDescStatsReply {
             int length = U16.f(bb.readShort());
             if(length != 536)
                 throw new OFParseError("Wrong length: Expected=536(536), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

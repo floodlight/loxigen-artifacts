@@ -263,9 +263,11 @@ class OFQueueOpFailedErrorMsgVer10 implements OFQueueOpFailedErrorMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFQueueOpFailedErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFQueueOpFailedErrorMsg> {
         @Override
-        public OFQueueOpFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFQueueOpFailedErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -278,6 +280,7 @@ class OFQueueOpFailedErrorMsgVer10 implements OFQueueOpFailedErrorMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,7 +294,7 @@ class OFQueueOpFailedErrorMsgVer10 implements OFQueueOpFailedErrorMsg {
             if(errType != (short) 0x5)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.QUEUE_OP_FAILED(5), got="+errType);
             OFQueueOpFailedCode code = OFQueueOpFailedCodeSerializerVer10.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_10);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_10);
 
             OFQueueOpFailedErrorMsgVer10 queueOpFailedErrorMsgVer10 = new OFQueueOpFailedErrorMsgVer10(
                     xid,

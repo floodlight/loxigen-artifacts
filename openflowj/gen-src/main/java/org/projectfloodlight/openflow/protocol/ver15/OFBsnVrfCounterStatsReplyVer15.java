@@ -300,9 +300,11 @@ class OFBsnVrfCounterStatsReplyVer15 implements OFBsnVrfCounterStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnVrfCounterStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnVrfCounterStatsReply> {
         @Override
-        public OFBsnVrfCounterStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnVrfCounterStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -315,6 +317,7 @@ class OFBsnVrfCounterStatsReplyVer15 implements OFBsnVrfCounterStatsReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -338,7 +341,7 @@ class OFBsnVrfCounterStatsReplyVer15 implements OFBsnVrfCounterStatsReply {
             int subtype = bb.readInt();
             if(subtype != 0xf)
                 throw new OFParseError("Wrong subtype: Expected=0xfL(0xfL), got="+subtype);
-            List<OFBsnVrfCounterStatsEntry> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnVrfCounterStatsEntryVer15.READER);
+            List<OFBsnVrfCounterStatsEntry> entries = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnVrfCounterStatsEntryVer15.READER);
 
             OFBsnVrfCounterStatsReplyVer15 bsnVrfCounterStatsReplyVer15 = new OFBsnVrfCounterStatsReplyVer15(
                     xid,

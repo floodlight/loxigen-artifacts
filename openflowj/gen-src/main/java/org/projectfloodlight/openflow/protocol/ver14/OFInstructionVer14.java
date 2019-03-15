@@ -35,39 +35,56 @@ abstract class OFInstructionVer14 {
 
     public final static OFInstructionVer14.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFInstruction> {
+    static class Reader extends AbstractOFMessageReader<OFInstruction> {
         @Override
-        public OFInstruction readFrom(ByteBuf bb) throws OFParseError {
+        public OFInstruction readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
-            bb.readerIndex(start);
             switch(type) {
                case (short) 0x4:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.APPLY_ACTIONS=4 for class OFInstructionApplyActionsVer14
-                   return OFInstructionApplyActionsVer14.READER.readFrom(bb);
+                   return OFInstructionApplyActionsVer14.READER.readFrom(context, bb);
                case (short) 0x5:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.CLEAR_ACTIONS=5 for class OFInstructionClearActionsVer14
-                   return OFInstructionClearActionsVer14.READER.readFrom(bb);
+                   return OFInstructionClearActionsVer14.READER.readFrom(context, bb);
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.EXPERIMENTER=65535 for class OFInstructionExperimenterVer14
-                   return OFInstructionExperimenterVer14.READER.readFrom(bb);
+                   return OFInstructionExperimenterVer14.READER.readFrom(context, bb);
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.GOTO_TABLE=1 for class OFInstructionGotoTableVer14
-                   return OFInstructionGotoTableVer14.READER.readFrom(bb);
+                   return OFInstructionGotoTableVer14.READER.readFrom(context, bb);
                case (short) 0x3:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.WRITE_ACTIONS=3 for class OFInstructionWriteActionsVer14
-                   return OFInstructionWriteActionsVer14.READER.readFrom(bb);
+                   return OFInstructionWriteActionsVer14.READER.readFrom(context, bb);
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.WRITE_METADATA=2 for class OFInstructionWriteMetadataVer14
-                   return OFInstructionWriteMetadataVer14.READER.readFrom(bb);
+                   return OFInstructionWriteMetadataVer14.READER.readFrom(context, bb);
                case (short) 0x6:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.METER=6 for class OFInstructionMeterVer14
-                   return OFInstructionMeterVer14.READER.readFrom(bb);
+                   return OFInstructionMeterVer14.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFInstructionVer14: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFInstructionVer14.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

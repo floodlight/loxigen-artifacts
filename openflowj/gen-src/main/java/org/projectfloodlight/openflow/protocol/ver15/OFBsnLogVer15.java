@@ -278,9 +278,11 @@ class OFBsnLogVer15 implements OFBsnLog {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnLog> {
+    static class Reader extends AbstractOFMessageReader<OFBsnLog> {
         @Override
-        public OFBsnLog readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnLog readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -293,6 +295,7 @@ class OFBsnLogVer15 implements OFBsnLog {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

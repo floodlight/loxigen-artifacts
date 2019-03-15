@@ -229,9 +229,11 @@ class OFOxmIcmpv6CodeVer13 implements OFOxmIcmpv6Code {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmIcmpv6Code> {
+    static class Reader extends AbstractOFMessageReader<OFOxmIcmpv6Code> {
         @Override
-        public OFOxmIcmpv6Code readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmIcmpv6Code readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80003c01L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80003c01)

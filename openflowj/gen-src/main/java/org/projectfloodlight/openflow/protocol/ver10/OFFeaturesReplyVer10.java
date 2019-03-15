@@ -467,9 +467,11 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFeaturesReply> {
+    static class Reader extends AbstractOFMessageReader<OFFeaturesReply> {
         @Override
-        public OFFeaturesReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFFeaturesReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -482,6 +484,7 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -497,7 +500,7 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
             bb.skipBytes(3);
             Set<OFCapabilities> capabilities = OFCapabilitiesSerializerVer10.readFrom(bb);
             Set<OFActionType> actions = ChannelUtilsVer10.readSupportedActions(bb);
-            List<OFPortDesc> ports = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFPortDescVer10.READER);
+            List<OFPortDesc> ports = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFPortDescVer10.READER);
 
             OFFeaturesReplyVer10 featuresReplyVer10 = new OFFeaturesReplyVer10(
                     xid,

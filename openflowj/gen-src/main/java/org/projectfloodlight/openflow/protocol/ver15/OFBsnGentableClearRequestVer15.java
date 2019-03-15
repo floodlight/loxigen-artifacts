@@ -323,9 +323,11 @@ class OFBsnGentableClearRequestVer15 implements OFBsnGentableClearRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGentableClearRequest> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGentableClearRequest> {
         @Override
-        public OFBsnGentableClearRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGentableClearRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -338,6 +340,7 @@ class OFBsnGentableClearRequestVer15 implements OFBsnGentableClearRequest {
             int length = U16.f(bb.readShort());
             if(length != 52)
                 throw new OFParseError("Wrong length: Expected=52(52), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

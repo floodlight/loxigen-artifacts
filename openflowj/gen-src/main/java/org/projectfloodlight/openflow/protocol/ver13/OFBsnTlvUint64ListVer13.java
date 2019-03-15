@@ -171,9 +171,11 @@ class OFBsnTlvUint64ListVer13 implements OFBsnTlvUint64List {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvUint64List> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvUint64List> {
         @Override
-        public OFBsnTlvUint64List readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvUint64List readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x77
             short type = bb.readShort();
@@ -182,6 +184,7 @@ class OFBsnTlvUint64ListVer13 implements OFBsnTlvUint64List {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -189,7 +192,7 @@ class OFBsnTlvUint64ListVer13 implements OFBsnTlvUint64List {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            List<U64> value = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), U64.READER);
+            List<U64> value = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), U64.READER);
 
             OFBsnTlvUint64ListVer13 bsnTlvUint64ListVer13 = new OFBsnTlvUint64ListVer13(
                     value

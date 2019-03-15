@@ -450,13 +450,16 @@ class OFQueueStatsEntryVer15 implements OFQueueStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFQueueStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFQueueStatsEntry> {
         @Override
-        public OFQueueStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFQueueStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -473,7 +476,7 @@ class OFQueueStatsEntryVer15 implements OFQueueStatsEntry {
             U64 txErrors = U64.ofRaw(bb.readLong());
             long durationSec = U32.f(bb.readInt());
             long durationNsec = U32.f(bb.readInt());
-            List<OFQueueStatsProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFQueueStatsPropVer15.READER);
+            List<OFQueueStatsProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFQueueStatsPropVer15.READER);
 
             OFQueueStatsEntryVer15 queueStatsEntryVer15 = new OFQueueStatsEntryVer15(
                     portNo,

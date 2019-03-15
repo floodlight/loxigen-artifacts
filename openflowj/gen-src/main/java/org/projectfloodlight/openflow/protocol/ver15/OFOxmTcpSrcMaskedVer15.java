@@ -264,9 +264,11 @@ class OFOxmTcpSrcMaskedVer15 implements OFOxmTcpSrcMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmTcpSrcMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmTcpSrcMasked> {
         @Override
-        public OFOxmTcpSrcMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmTcpSrcMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80001b04L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80001b04)

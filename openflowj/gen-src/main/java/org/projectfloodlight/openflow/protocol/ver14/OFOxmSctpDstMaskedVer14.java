@@ -264,9 +264,11 @@ class OFOxmSctpDstMaskedVer14 implements OFOxmSctpDstMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmSctpDstMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmSctpDstMasked> {
         @Override
-        public OFOxmSctpDstMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmSctpDstMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80002504L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80002504)

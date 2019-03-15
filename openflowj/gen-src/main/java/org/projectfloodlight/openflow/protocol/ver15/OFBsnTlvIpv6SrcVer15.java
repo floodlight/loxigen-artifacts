@@ -169,9 +169,11 @@ class OFBsnTlvIpv6SrcVer15 implements OFBsnTlvIpv6Src {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvIpv6Src> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvIpv6Src> {
         @Override
-        public OFBsnTlvIpv6Src readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvIpv6Src readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x7e
             short type = bb.readShort();
@@ -180,6 +182,7 @@ class OFBsnTlvIpv6SrcVer15 implements OFBsnTlvIpv6Src {
             int length = U16.f(bb.readShort());
             if(length != 20)
                 throw new OFParseError("Wrong length: Expected=20(20), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

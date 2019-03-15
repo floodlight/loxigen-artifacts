@@ -171,9 +171,11 @@ class OFTableFeaturePropApplyActionsVer13 implements OFTableFeaturePropApplyActi
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableFeaturePropApplyActions> {
+    static class Reader extends AbstractOFMessageReader<OFTableFeaturePropApplyActions> {
         @Override
-        public OFTableFeaturePropApplyActions readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeaturePropApplyActions readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x6
             short type = bb.readShort();
@@ -182,16 +184,17 @@ class OFTableFeaturePropApplyActionsVer13 implements OFTableFeaturePropApplyActi
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
-            if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
+            //
+            if(bb.readableBytes() + (bb.readerIndex() - start) < ((length + 7) / 8) * 8) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
                 return null;
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            List<OFActionId> actionIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFActionIdVer13.READER);
+            List<OFActionId> actionIds = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFActionIdVer13.READER);
             // align message to 8 bytes (length does not contain alignment)
-            bb.skipBytes(((length + 7)/8 * 8 ) - length );
+            bb.skipBytes(((length + 7) / 8) * 8 - length );
 
             OFTableFeaturePropApplyActionsVer13 tableFeaturePropApplyActionsVer13 = new OFTableFeaturePropApplyActionsVer13(
                     actionIds
