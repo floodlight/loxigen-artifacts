@@ -760,6 +760,10 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvLossless lossless() {
+        return OFBsnTlvLosslessVer14.INSTANCE;
+    }
+
     public OFBsnTlvLrAllEnabled lrAllEnabled() {
         return OFBsnTlvLrAllEnabledVer14.INSTANCE;
     }

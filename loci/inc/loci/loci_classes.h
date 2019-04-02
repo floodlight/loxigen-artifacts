@@ -1031,6 +1031,8 @@ void of_bsn_tlv_loopback_mode_wire_object_id_get(of_object_t *obj, of_object_id_
 void of_bsn_tlv_loopback_mode_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_loopback_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_loopback_port_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_lossless_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_lossless_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_lr_all_enabled_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_lr_all_enabled_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2000,6 +2002,7 @@ typedef of_object_t of_bsn_tlv_l3_src_class_id_t;
 typedef of_object_t of_bsn_tlv_lag_options_t;
 typedef of_object_t of_bsn_tlv_loopback_mode_t;
 typedef of_object_t of_bsn_tlv_loopback_port_t;
+typedef of_object_t of_bsn_tlv_lossless_t;
 typedef of_object_t of_bsn_tlv_lr_all_enabled_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_mac_mask_t;
@@ -4439,6 +4442,11 @@ extern void of_bsn_tlv_loopback_mode_init(
 extern of_object_t *
     of_bsn_tlv_loopback_port_new(of_version_t version);
 extern void of_bsn_tlv_loopback_port_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_lossless_new(of_version_t version);
+extern void of_bsn_tlv_lossless_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11070,6 +11078,17 @@ of_bsn_tlv_loopback_mode_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_loopback_port_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_lossless_t
+ * @param obj An instance of type of_bsn_tlv_lossless_t
+ *
+ * \ingroup of_bsn_tlv_lossless
+ */
+static inline void
+of_bsn_tlv_lossless_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24645,6 +24664,8 @@ extern void of_bsn_tlv_loopback_port_value_set(
 extern void of_bsn_tlv_loopback_port_value_get(
     of_bsn_tlv_loopback_port_t *obj,
     of_port_no_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_lossless */
 
 /* Unified accessor functions for of_bsn_tlv_lr_all_enabled */
 
