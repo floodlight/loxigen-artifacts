@@ -4275,6 +4275,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xbc:
             *id = OF_BSN_TLV_LOSSLESS;
             break;
+        case 0xbd:
+            *id = OF_BSN_TLV_REDUNDANT_MGMT;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -4847,6 +4850,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xbc:
             *id = OF_BSN_TLV_LOSSLESS;
+            break;
+        case 0xbd:
+            *id = OF_BSN_TLV_REDUNDANT_MGMT;
             break;
         default:
             *id = OF_BSN_TLV;

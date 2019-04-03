@@ -1,1 +1,1 @@
-d4bbf98ac439859b840a5bc2284c7364addb91ac Merge into master from pull request #645: [BCF-11980] Add a new TLV lossless to designate a PFC queue (https://github.com/floodlight/loxigen/pull/645)
+f865992c61082c5c752aeee65e2ab0c8cfe88a08 SWL-5166: add tlv for redundant management.

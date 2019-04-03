@@ -449,6 +449,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_rate_limit",
     "of_bsn_tlv_rate_unit",
     "of_bsn_tlv_record_packets",
+    "of_bsn_tlv_redundant_mgmt",
     "of_bsn_tlv_reference",
     "of_bsn_tlv_reply_packets",
     "of_bsn_tlv_request_packets",

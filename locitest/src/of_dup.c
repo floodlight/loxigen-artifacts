@@ -27966,6 +27966,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_REDUNDANT_MGMT) {
+        return of_bsn_tlv_redundant_mgmt_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
         return of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_dup(src);
     }
@@ -31745,6 +31749,27 @@ of_bsn_tlv_record_packets_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_record_packets_value_get(src, &val32);
     of_bsn_tlv_record_packets_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_redundant_mgmt
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_redundant_mgmt.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_redundant_mgmt_t *
+of_bsn_tlv_redundant_mgmt_OF_VERSION_1_3_dup(
+    of_bsn_tlv_redundant_mgmt_t *src)
+{
+    of_bsn_tlv_redundant_mgmt_t *dst;
+
+    if ((dst = of_bsn_tlv_redundant_mgmt_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -52327,6 +52352,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_REDUNDANT_MGMT) {
+        return of_bsn_tlv_redundant_mgmt_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
         return of_bsn_tlv_partner_system_mac_OF_VERSION_1_4_dup(src);
     }
@@ -56106,6 +56135,27 @@ of_bsn_tlv_record_packets_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_record_packets_value_get(src, &val32);
     of_bsn_tlv_record_packets_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_redundant_mgmt
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_redundant_mgmt.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_redundant_mgmt_t *
+of_bsn_tlv_redundant_mgmt_OF_VERSION_1_4_dup(
+    of_bsn_tlv_redundant_mgmt_t *src)
+{
+    of_bsn_tlv_redundant_mgmt_t *dst;
+
+    if ((dst = of_bsn_tlv_redundant_mgmt_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -76613,6 +76663,23 @@ of_bsn_tlv_record_packets_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_record_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_redundant_mgmt_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_redundant_mgmt_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_redundant_mgmt_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
