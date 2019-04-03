@@ -4130,6 +4130,44 @@ class loopback_port(bsn_tlv):
 
 bsn_tlv.subtypes[110] = loopback_port
 
+class lossless(bsn_tlv):
+    type = 188
+
+    def __init__(self):
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = lossless()
+        _type = reader.read("!H")[0]
+        assert(_type == 188)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("lossless {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[188] = lossless
+
 class lr_all_enabled(bsn_tlv):
     type = 178
 

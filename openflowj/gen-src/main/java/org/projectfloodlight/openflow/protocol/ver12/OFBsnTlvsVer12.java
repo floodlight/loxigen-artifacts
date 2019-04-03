@@ -609,6 +609,10 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvLoopbackPort not supported in version 1.2");
     }
 
+    public OFBsnTlvLossless lossless() {
+        throw new UnsupportedOperationException("OFBsnTlvLossless not supported in version 1.2");
+    }
+
     public OFBsnTlvLrAllEnabled lrAllEnabled() {
         throw new UnsupportedOperationException("OFBsnTlvLrAllEnabled not supported in version 1.2");
     }

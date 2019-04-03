@@ -399,6 +399,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_lag_options",
     "of_bsn_tlv_loopback_mode",
     "of_bsn_tlv_loopback_port",
+    "of_bsn_tlv_lossless",
     "of_bsn_tlv_lr_all_enabled",
     "of_bsn_tlv_mac",
     "of_bsn_tlv_mac_mask",
