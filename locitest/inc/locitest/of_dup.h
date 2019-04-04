@@ -1775,6 +1775,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_redundant_mgmt_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_reference_dup(
         of_object_t *src);
 
@@ -7067,6 +7071,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_redundant_mgmt_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_reference_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -10032,6 +10040,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_record_packets_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_redundant_mgmt_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

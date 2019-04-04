@@ -1135,6 +1135,10 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvRedundantMgmt redundantMgmt() {
+        return OFBsnTlvRedundantMgmtVer14.INSTANCE;
+    }
+
     public OFBsnTlvReference.Builder buildReference() {
         return new OFBsnTlvReferenceVer14.Builder();
     }

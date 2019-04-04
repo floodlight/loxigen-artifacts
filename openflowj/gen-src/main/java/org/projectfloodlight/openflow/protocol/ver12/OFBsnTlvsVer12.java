@@ -914,6 +914,10 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvRecordPackets not supported in version 1.2");
     }
 
+    public OFBsnTlvRedundantMgmt redundantMgmt() {
+        throw new UnsupportedOperationException("OFBsnTlvRedundantMgmt not supported in version 1.2");
+    }
+
     public OFBsnTlvReference.Builder buildReference() {
         throw new UnsupportedOperationException("OFBsnTlvReference not supported in version 1.2");
     }

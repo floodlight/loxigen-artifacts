@@ -460,6 +460,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x9b:
                    // discriminator value 0x9b=0x9b for class OFBsnTlvRecordPacketsVer13
                    return OFBsnTlvRecordPacketsVer13.READER.readFrom(bb);
+               case (short) 0xbd:
+                   // discriminator value 0xbd=0xbd for class OFBsnTlvRedundantMgmtVer13
+                   return OFBsnTlvRedundantMgmtVer13.READER.readFrom(bb);
                case (short) 0x3b:
                    // discriminator value 0x3b=0x3b for class OFBsnTlvReferenceVer13
                    return OFBsnTlvReferenceVer13.READER.readFrom(bb);

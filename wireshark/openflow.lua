@@ -9167,6 +9167,8 @@ fields['of13.bsn_tlv_rate_unit.value'] = ProtoField.uint32("of13.bsn_tlv_rate_un
 fields['of13.bsn_tlv_record_packets.type'] = ProtoField.uint16("of13.bsn_tlv_record_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_record_packets.length'] = ProtoField.uint16("of13.bsn_tlv_record_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_record_packets.value'] = ProtoField.uint32("of13.bsn_tlv_record_packets.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_redundant_mgmt.type'] = ProtoField.uint16("of13.bsn_tlv_redundant_mgmt.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_redundant_mgmt.length'] = ProtoField.uint16("of13.bsn_tlv_redundant_mgmt.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_reference.type'] = ProtoField.uint16("of13.bsn_tlv_reference.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_reference.length'] = ProtoField.uint16("of13.bsn_tlv_reference.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_reference.table_id'] = ProtoField.uint16("of13.bsn_tlv_reference.table_id", "table_id", base.DEC, nil)
@@ -12214,6 +12216,8 @@ fields['of14.bsn_tlv_rate_unit.value'] = ProtoField.uint32("of14.bsn_tlv_rate_un
 fields['of14.bsn_tlv_record_packets.type'] = ProtoField.uint16("of14.bsn_tlv_record_packets.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_record_packets.length'] = ProtoField.uint16("of14.bsn_tlv_record_packets.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_record_packets.value'] = ProtoField.uint32("of14.bsn_tlv_record_packets.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_redundant_mgmt.type'] = ProtoField.uint16("of14.bsn_tlv_redundant_mgmt.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_redundant_mgmt.length'] = ProtoField.uint16("of14.bsn_tlv_redundant_mgmt.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_reference.type'] = ProtoField.uint16("of14.bsn_tlv_reference.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_reference.length'] = ProtoField.uint16("of14.bsn_tlv_reference.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_reference.table_id'] = ProtoField.uint16("of14.bsn_tlv_reference.table_id", "table_id", base.DEC, nil)
@@ -15539,6 +15543,8 @@ fields['of15.bsn_tlv_rate_unit.value'] = ProtoField.uint32("of15.bsn_tlv_rate_un
 fields['of15.bsn_tlv_record_packets.type'] = ProtoField.uint16("of15.bsn_tlv_record_packets.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_record_packets.length'] = ProtoField.uint16("of15.bsn_tlv_record_packets.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_record_packets.value'] = ProtoField.uint32("of15.bsn_tlv_record_packets.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_redundant_mgmt.type'] = ProtoField.uint16("of15.bsn_tlv_redundant_mgmt.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_redundant_mgmt.length'] = ProtoField.uint16("of15.bsn_tlv_redundant_mgmt.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_reference.type'] = ProtoField.uint16("of15.bsn_tlv_reference.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_reference.length'] = ProtoField.uint16("of15.bsn_tlv_reference.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_reference.table_id'] = ProtoField.uint16("of15.bsn_tlv_reference.table_id", "table_id", base.DEC, nil)
@@ -22151,6 +22157,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_record_packets.type'],
     fields['of13.bsn_tlv_record_packets.length'],
     fields['of13.bsn_tlv_record_packets.value'],
+    fields['of13.bsn_tlv_redundant_mgmt.type'],
+    fields['of13.bsn_tlv_redundant_mgmt.length'],
     fields['of13.bsn_tlv_reference.type'],
     fields['of13.bsn_tlv_reference.length'],
     fields['of13.bsn_tlv_reference.table_id'],
@@ -25198,6 +25206,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_record_packets.type'],
     fields['of14.bsn_tlv_record_packets.length'],
     fields['of14.bsn_tlv_record_packets.value'],
+    fields['of14.bsn_tlv_redundant_mgmt.type'],
+    fields['of14.bsn_tlv_redundant_mgmt.length'],
     fields['of14.bsn_tlv_reference.type'],
     fields['of14.bsn_tlv_reference.length'],
     fields['of14.bsn_tlv_reference.table_id'],
@@ -28523,6 +28533,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_record_packets.type'],
     fields['of15.bsn_tlv_record_packets.length'],
     fields['of15.bsn_tlv_record_packets.value'],
+    fields['of15.bsn_tlv_redundant_mgmt.type'],
+    fields['of15.bsn_tlv_redundant_mgmt.length'],
     fields['of15.bsn_tlv_reference.type'],
     fields['of15.bsn_tlv_reference.length'],
     fields['of15.bsn_tlv_reference.table_id'],
@@ -41609,6 +41621,15 @@ function dissect_of_bsn_tlv_record_packets_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[155] = dissect_of_bsn_tlv_record_packets_v4
 
+-- child class of_bsn_tlv_redundant_mgmt
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_redundant_mgmt_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_redundant_mgmt.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_redundant_mgmt.length')
+    return 'of_bsn_tlv_redundant_mgmt'
+end
+of_bsn_tlv_v4_dissectors[189] = dissect_of_bsn_tlv_redundant_mgmt_v4
+
 -- child class of_bsn_tlv_reference
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_reference_v4(reader, subtree)
@@ -49927,6 +49948,15 @@ function dissect_of_bsn_tlv_record_packets_v5(reader, subtree)
     return 'of_bsn_tlv_record_packets'
 end
 of_bsn_tlv_v5_dissectors[155] = dissect_of_bsn_tlv_record_packets_v5
+
+-- child class of_bsn_tlv_redundant_mgmt
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_redundant_mgmt_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_redundant_mgmt.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_redundant_mgmt.length')
+    return 'of_bsn_tlv_redundant_mgmt'
+end
+of_bsn_tlv_v5_dissectors[189] = dissect_of_bsn_tlv_redundant_mgmt_v5
 
 -- child class of_bsn_tlv_reference
 -- Child of of_bsn_tlv
@@ -58893,6 +58923,15 @@ function dissect_of_bsn_tlv_record_packets_v6(reader, subtree)
     return 'of_bsn_tlv_record_packets'
 end
 of_bsn_tlv_v6_dissectors[155] = dissect_of_bsn_tlv_record_packets_v6
+
+-- child class of_bsn_tlv_redundant_mgmt
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_redundant_mgmt_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_redundant_mgmt.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_redundant_mgmt.length')
+    return 'of_bsn_tlv_redundant_mgmt'
+end
+of_bsn_tlv_v6_dissectors[189] = dissect_of_bsn_tlv_redundant_mgmt_v6
 
 -- child class of_bsn_tlv_reference
 -- Child of of_bsn_tlv

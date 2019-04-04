@@ -278,6 +278,7 @@ public interface OFBsnTlvs {
     OFBsnTlvRateUnit rateUnit(OFBsnRateUnit value);
     OFBsnTlvRecordPackets.Builder buildRecordPackets() throws UnsupportedOperationException;
     OFBsnTlvRecordPackets recordPackets(long value);
+    OFBsnTlvRedundantMgmt redundantMgmt();
     OFBsnTlvReference.Builder buildReference() throws UnsupportedOperationException;
     OFBsnTlvReference reference(int tableId, List<OFBsnTlv> key);
     OFBsnTlvReplyPackets.Builder buildReplyPackets() throws UnsupportedOperationException;
