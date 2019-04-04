@@ -230,9 +230,11 @@ class OFBsnBwClearDataReplyVer13 implements OFBsnBwClearDataReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnBwClearDataReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnBwClearDataReply> {
         @Override
-        public OFBsnBwClearDataReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnBwClearDataReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -245,6 +247,7 @@ class OFBsnBwClearDataReplyVer13 implements OFBsnBwClearDataReply {
             int length = U16.f(bb.readShort());
             if(length != 20)
                 throw new OFParseError("Wrong length: Expected=20(20), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

@@ -229,9 +229,11 @@ class OFOxmEthSrcVer13 implements OFOxmEthSrc {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmEthSrc> {
+    static class Reader extends AbstractOFMessageReader<OFOxmEthSrc> {
         @Override
-        public OFOxmEthSrc readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmEthSrc readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80000806L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80000806)

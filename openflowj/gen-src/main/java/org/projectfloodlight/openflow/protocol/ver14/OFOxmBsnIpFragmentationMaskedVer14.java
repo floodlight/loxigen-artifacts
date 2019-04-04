@@ -264,9 +264,11 @@ class OFOxmBsnIpFragmentationMaskedVer14 implements OFOxmBsnIpFragmentationMaske
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnIpFragmentationMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnIpFragmentationMasked> {
         @Override
-        public OFOxmBsnIpFragmentationMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnIpFragmentationMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x33502L
             int typeLen = bb.readInt();
             if(typeLen != 0x33502)

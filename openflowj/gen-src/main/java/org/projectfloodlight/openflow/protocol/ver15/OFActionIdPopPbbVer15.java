@@ -70,9 +70,11 @@ class OFActionIdPopPbbVer15 implements OFActionIdPopPbb {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFActionIdPopPbb> {
+    static class Reader extends AbstractOFMessageReader<OFActionIdPopPbb> {
         @Override
-        public OFActionIdPopPbb readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionIdPopPbb readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 27
             short type = bb.readShort();
@@ -81,6 +83,7 @@ class OFActionIdPopPbbVer15 implements OFActionIdPopPbb {
             int length = U16.f(bb.readShort());
             if(length != 4)
                 throw new OFParseError("Wrong length: Expected=4(4), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

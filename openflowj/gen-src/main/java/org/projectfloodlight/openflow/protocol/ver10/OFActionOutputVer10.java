@@ -207,9 +207,11 @@ class OFActionOutputVer10 implements OFActionOutput {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFActionOutput> {
+    static class Reader extends AbstractOFMessageReader<OFActionOutput> {
         @Override
-        public OFActionOutput readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionOutput readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0
             short type = bb.readShort();
@@ -218,6 +220,7 @@ class OFActionOutputVer10 implements OFActionOutput {
             int length = U16.f(bb.readShort());
             if(length != 8)
                 throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

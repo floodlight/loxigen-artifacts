@@ -36,66 +36,92 @@ abstract class OFTableFeaturePropVer13 {
 
     public final static OFTableFeaturePropVer13.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFTableFeatureProp> {
+    static class Reader extends AbstractOFMessageReader<OFTableFeatureProp> {
         @Override
-        public OFTableFeatureProp readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeatureProp readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
-            bb.readerIndex(start);
             switch(type) {
                case (short) 0x6:
+                   bb.readerIndex(start);
                    // discriminator value 0x6=0x6 for class OFTableFeaturePropApplyActionsVer13
-                   return OFTableFeaturePropApplyActionsVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropApplyActionsVer13.READER.readFrom(context, bb);
                case (short) 0x7:
+                   bb.readerIndex(start);
                    // discriminator value 0x7=0x7 for class OFTableFeaturePropApplyActionsMissVer13
-                   return OFTableFeaturePropApplyActionsMissVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropApplyActionsMissVer13.READER.readFrom(context, bb);
                case (short) 0xe:
+                   bb.readerIndex(start);
                    // discriminator value 0xe=0xe for class OFTableFeaturePropApplySetfieldVer13
-                   return OFTableFeaturePropApplySetfieldVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropApplySetfieldVer13.READER.readFrom(context, bb);
                case (short) 0xf:
+                   bb.readerIndex(start);
                    // discriminator value 0xf=0xf for class OFTableFeaturePropApplySetfieldMissVer13
-                   return OFTableFeaturePropApplySetfieldMissVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropApplySetfieldMissVer13.READER.readFrom(context, bb);
                case (short) 0xfffe:
+                   bb.readerIndex(start);
                    // discriminator value 0xfffe=0xfffe for class OFTableFeaturePropExperimenterVer13
-                   return OFTableFeaturePropExperimenterVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropExperimenterVer13.READER.readFrom(context, bb);
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value 0xffff=0xffff for class OFTableFeaturePropExperimenterMissVer13
-                   return OFTableFeaturePropExperimenterMissVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropExperimenterMissVer13.READER.readFrom(context, bb);
                case (short) 0x0:
+                   bb.readerIndex(start);
                    // discriminator value 0x0=0x0 for class OFTableFeaturePropInstructionsVer13
-                   return OFTableFeaturePropInstructionsVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropInstructionsVer13.READER.readFrom(context, bb);
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value 0x1=0x1 for class OFTableFeaturePropInstructionsMissVer13
-                   return OFTableFeaturePropInstructionsMissVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropInstructionsMissVer13.READER.readFrom(context, bb);
                case (short) 0x8:
+                   bb.readerIndex(start);
                    // discriminator value 0x8=0x8 for class OFTableFeaturePropMatchVer13
-                   return OFTableFeaturePropMatchVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropMatchVer13.READER.readFrom(context, bb);
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value 0x2=0x2 for class OFTableFeaturePropNextTablesVer13
-                   return OFTableFeaturePropNextTablesVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropNextTablesVer13.READER.readFrom(context, bb);
                case (short) 0x3:
+                   bb.readerIndex(start);
                    // discriminator value 0x3=0x3 for class OFTableFeaturePropNextTablesMissVer13
-                   return OFTableFeaturePropNextTablesMissVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropNextTablesMissVer13.READER.readFrom(context, bb);
                case (short) 0xa:
+                   bb.readerIndex(start);
                    // discriminator value 0xa=0xa for class OFTableFeaturePropWildcardsVer13
-                   return OFTableFeaturePropWildcardsVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropWildcardsVer13.READER.readFrom(context, bb);
                case (short) 0x4:
+                   bb.readerIndex(start);
                    // discriminator value 0x4=0x4 for class OFTableFeaturePropWriteActionsVer13
-                   return OFTableFeaturePropWriteActionsVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropWriteActionsVer13.READER.readFrom(context, bb);
                case (short) 0x5:
+                   bb.readerIndex(start);
                    // discriminator value 0x5=0x5 for class OFTableFeaturePropWriteActionsMissVer13
-                   return OFTableFeaturePropWriteActionsMissVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropWriteActionsMissVer13.READER.readFrom(context, bb);
                case (short) 0xc:
+                   bb.readerIndex(start);
                    // discriminator value 0xc=0xc for class OFTableFeaturePropWriteSetfieldVer13
-                   return OFTableFeaturePropWriteSetfieldVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropWriteSetfieldVer13.READER.readFrom(context, bb);
                case (short) 0xd:
+                   bb.readerIndex(start);
                    // discriminator value 0xd=0xd for class OFTableFeaturePropWriteSetfieldMissVer13
-                   return OFTableFeaturePropWriteSetfieldMissVer13.READER.readFrom(bb);
+                   return OFTableFeaturePropWriteSetfieldMissVer13.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFTableFeaturePropVer13: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFTableFeaturePropVer13.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

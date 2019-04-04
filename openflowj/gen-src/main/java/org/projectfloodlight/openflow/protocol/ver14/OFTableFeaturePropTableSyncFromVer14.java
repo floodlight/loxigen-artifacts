@@ -171,9 +171,11 @@ class OFTableFeaturePropTableSyncFromVer14 implements OFTableFeaturePropTableSyn
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableFeaturePropTableSyncFrom> {
+    static class Reader extends AbstractOFMessageReader<OFTableFeaturePropTableSyncFrom> {
         @Override
-        public OFTableFeaturePropTableSyncFrom readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeaturePropTableSyncFrom readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x10
             short type = bb.readShort();
@@ -182,16 +184,17 @@ class OFTableFeaturePropTableSyncFromVer14 implements OFTableFeaturePropTableSyn
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
-            if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
+            //
+            if(bb.readableBytes() + (bb.readerIndex() - start) < ((length + 7) / 8) * 8) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
                 return null;
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            List<U8> tableIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), U8.READER);
+            List<U8> tableIds = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), U8.READER);
             // align message to 8 bytes (length does not contain alignment)
-            bb.skipBytes(((length + 7)/8 * 8 ) - length );
+            bb.skipBytes(((length + 7) / 8) * 8 - length );
 
             OFTableFeaturePropTableSyncFromVer14 tableFeaturePropTableSyncFromVer14 = new OFTableFeaturePropTableSyncFromVer14(
                     tableIds

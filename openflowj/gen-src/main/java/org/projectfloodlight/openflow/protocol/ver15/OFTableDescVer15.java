@@ -247,13 +247,16 @@ class OFTableDescVer15 implements OFTableDesc {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableDesc> {
+    static class Reader extends AbstractOFMessageReader<OFTableDesc> {
         @Override
-        public OFTableDesc readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableDesc readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -265,7 +268,7 @@ class OFTableDescVer15 implements OFTableDesc {
             // pad: 1 bytes
             bb.skipBytes(1);
             Set<OFTableConfig> config = OFTableConfigSerializerVer15.readFrom(bb);
-            List<OFTableModProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFTableModPropVer15.READER);
+            List<OFTableModProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFTableModPropVer15.READER);
 
             OFTableDescVer15 tableDescVer15 = new OFTableDescVer15(
                     tableId,

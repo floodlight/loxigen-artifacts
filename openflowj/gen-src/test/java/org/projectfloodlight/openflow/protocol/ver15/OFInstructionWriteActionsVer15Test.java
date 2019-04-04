@@ -26,21 +26,41 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.junit.Test;
-import org.junit.Before;
+import org.junit.runners.Parameterized.Parameters;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
+import org.junit.Before;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
-
+@RunWith(Parameterized.class)
 public class OFInstructionWriteActionsVer15Test {
     OFInstructions factory;
 
     final static byte[] INSTRUCTION_WRITE_ACTIONS_SERIALIZED =
         new byte[] { 0x0, 0x3, 0x0, 0x10, 0x0, 0x0, 0x0, 0x0, 0x0, 0xb, 0x0, 0x8, 0x0, 0x0, 0x0, 0x0 };
+
+
+    private final static int[] PREFIX_BYTES = { 0, 1, 4, 255, 65335 };
+    private final static byte[] EMPTY_BYTES = new byte[65535];
+
+    private final OFMessageReader<?> messageReader;
+
+    @Parameters(name="{index}.MessageReader={0}")
+    public static Iterable<Object> data() {
+        return ImmutableList.<Object>of(
+                OFInstructionWriteActionsVer15.READER, OFInstructionVer15.READER
+        );
+    }
+
+    public OFInstructionWriteActionsVer15Test(OFMessageReader<?> messageReader) {
+        this.messageReader = messageReader;
+    }
 
     @Before
     public void setup() {
@@ -61,20 +81,49 @@ builder.setActions(ImmutableList.<OFAction>of(actions.copyTtlOut()));
         assertThat(written, CoreMatchers.equalTo(INSTRUCTION_WRITE_ACTIONS_SERIALIZED));
     }
 
+
     @Test
     public void testRead() throws Exception {
+        ByteBuf input = Unpooled.copiedBuffer(INSTRUCTION_WRITE_ACTIONS_SERIALIZED);
+
+        Object instructionWriteActionsRead = messageReader.readFrom(input);
+        assertThat(instructionWriteActionsRead, CoreMatchers.instanceOf(OFInstructionWriteActionsVer15.class));
         OFInstructionWriteActions.Builder builder = factory.buildWriteActions();
         OFActions actions = OFFactories.getFactory(OFVersion.OF_15).actions();
 builder.setActions(ImmutableList.<OFAction>of(actions.copyTtlOut()));
         OFInstructionWriteActions instructionWriteActionsBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(INSTRUCTION_WRITE_ACTIONS_SERIALIZED);
-
-        // FIXME should invoke the overall reader once implemented
-        OFInstructionWriteActions instructionWriteActionsRead = OFInstructionWriteActionsVer15.READER.readFrom(input);
         assertEquals(INSTRUCTION_WRITE_ACTIONS_SERIALIZED.length, input.readerIndex());
 
         assertEquals(instructionWriteActionsBuilt, instructionWriteActionsRead);
+        // FIXME: No java stanza in test_data for this class. Add to enable validation of read message
+   }
+
+    /**
+     * Validates Reader handling of partial messages in the buffer.
+     *
+     * Ensures that readers deal with partially available messages, and that buffers
+     * are returned unmodified. Also checks compatibility when the data is not at the start of
+     * the buffer (readerIndex=0), but somewhere else (with the readerIndex appropriately set).
+     */
+   @Test
+   public void testPartialRead() throws Exception {
+       ByteBuf msgBuffer = Unpooled.copiedBuffer(INSTRUCTION_WRITE_ACTIONS_SERIALIZED);
+       for (int prefixLength: PREFIX_BYTES) {
+           ByteBuf prefixBuffer = Unpooled.wrappedBuffer(EMPTY_BYTES).slice(0, prefixLength);
+           ByteBuf wholeBuffer = Unpooled.wrappedBuffer(prefixBuffer, msgBuffer);
+           for (int partialLength = 0; partialLength < INSTRUCTION_WRITE_ACTIONS_SERIALIZED.length - 1; partialLength++) {
+               int length = prefixLength + partialLength;
+               ByteBuf slice = wholeBuffer.slice(0, length);
+               slice.readerIndex(prefixLength);
+
+               Object read = messageReader.readFrom(slice);
+
+               assertNull("partial message should not be read", read);
+               assertEquals("Reader index should be back at the start", prefixLength, slice.readerIndex());
+           }
+
+       }
    }
 
    @Test
@@ -82,7 +131,7 @@ builder.setActions(ImmutableList.<OFAction>of(actions.copyTtlOut()));
        ByteBuf input = Unpooled.copiedBuffer(INSTRUCTION_WRITE_ACTIONS_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
-       OFInstructionWriteActions instructionWriteActions = OFInstructionWriteActionsVer15.READER.readFrom(input);
+       OFInstructionWriteActions instructionWriteActions = (OFInstructionWriteActions) messageReader.readFrom(input);
        assertEquals(INSTRUCTION_WRITE_ACTIONS_SERIALIZED.length, input.readerIndex());
 
        // write message again

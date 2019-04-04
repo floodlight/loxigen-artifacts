@@ -229,9 +229,11 @@ class OFOxsIdleTimeVer15 implements OFOxsIdleTime {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxsIdleTime> {
+    static class Reader extends AbstractOFMessageReader<OFOxsIdleTime> {
         @Override
-        public OFOxsIdleTime readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxsIdleTime readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80020208L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80020208)

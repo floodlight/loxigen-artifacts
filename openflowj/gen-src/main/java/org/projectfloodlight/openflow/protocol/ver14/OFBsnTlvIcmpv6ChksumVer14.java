@@ -162,9 +162,11 @@ class OFBsnTlvIcmpv6ChksumVer14 implements OFBsnTlvIcmpv6Chksum {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvIcmpv6Chksum> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvIcmpv6Chksum> {
         @Override
-        public OFBsnTlvIcmpv6Chksum readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvIcmpv6Chksum readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x7d
             short type = bb.readShort();
@@ -173,6 +175,7 @@ class OFBsnTlvIcmpv6ChksumVer14 implements OFBsnTlvIcmpv6Chksum {
             int length = U16.f(bb.readShort());
             if(length != 6)
                 throw new OFParseError("Wrong length: Expected=6(6), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

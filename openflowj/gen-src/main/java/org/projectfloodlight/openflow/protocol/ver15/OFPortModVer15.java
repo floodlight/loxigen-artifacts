@@ -413,9 +413,11 @@ class OFPortModVer15 implements OFPortMod {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPortMod> {
+    static class Reader extends AbstractOFMessageReader<OFPortMod> {
         @Override
-        public OFPortMod readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortMod readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -428,6 +430,7 @@ class OFPortModVer15 implements OFPortMod {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -444,7 +447,7 @@ class OFPortModVer15 implements OFPortMod {
             bb.skipBytes(2);
             Set<OFPortConfig> config = OFPortConfigSerializerVer15.readFrom(bb);
             Set<OFPortConfig> mask = OFPortConfigSerializerVer15.readFrom(bb);
-            List<OFPortModProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFPortModPropVer15.READER);
+            List<OFPortModProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFPortModPropVer15.READER);
 
             OFPortModVer15 portModVer15 = new OFPortModVer15(
                     xid,
