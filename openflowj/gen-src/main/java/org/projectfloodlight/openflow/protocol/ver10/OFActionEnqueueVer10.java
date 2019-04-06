@@ -207,9 +207,11 @@ class OFActionEnqueueVer10 implements OFActionEnqueue {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFActionEnqueue> {
+    static class Reader extends AbstractOFMessageReader<OFActionEnqueue> {
         @Override
-        public OFActionEnqueue readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionEnqueue readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 11
             short type = bb.readShort();
@@ -218,6 +220,7 @@ class OFActionEnqueueVer10 implements OFActionEnqueue {
             int length = U16.f(bb.readShort());
             if(length != 16)
                 throw new OFParseError("Wrong length: Expected=16(16), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

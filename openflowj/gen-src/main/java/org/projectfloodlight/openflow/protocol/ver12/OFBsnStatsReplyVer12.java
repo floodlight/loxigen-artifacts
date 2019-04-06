@@ -35,9 +35,9 @@ abstract class OFBsnStatsReplyVer12 {
 
     public final static OFBsnStatsReplyVer12.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFBsnStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnStatsReply> {
         @Override
-        public OFBsnStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -52,6 +52,11 @@ abstract class OFBsnStatsReplyVer12 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             U32.f(bb.readInt());
             // fixed value property statsType == 65535
             short statsType = bb.readShort();
@@ -65,11 +70,13 @@ abstract class OFBsnStatsReplyVer12 {
             if(experimenter != 0x5c16c7)
                 throw new OFParseError("Wrong experimenter: Expected=0x5c16c7L(0x5c16c7L), got="+experimenter);
             int subtype = bb.readInt();
-            bb.readerIndex(start);
             switch(subtype) {
                default:
-                   throw new OFParseError("Unknown value for discriminator subtype of class OFBsnStatsReplyVer12: " + subtype);
+                   context.getUnparsedHandler().unparsedMessage(OFBsnStatsReplyVer12.class, "subtype", subtype);
             }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

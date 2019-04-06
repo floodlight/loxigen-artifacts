@@ -264,9 +264,11 @@ class OFOxmIpv6FlabelMaskedVer14 implements OFOxmIpv6FlabelMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmIpv6FlabelMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmIpv6FlabelMasked> {
         @Override
-        public OFOxmIpv6FlabelMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmIpv6FlabelMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80003908L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80003908)

@@ -643,9 +643,11 @@ class OFPortDescVer11 implements OFPortDesc {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPortDesc> {
+    static class Reader extends AbstractOFMessageReader<OFPortDesc> {
         @Override
-        public OFPortDesc readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortDesc readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             OFPort portNo = OFPort.read4Bytes(bb);
             // pad: 4 bytes
             bb.skipBytes(4);

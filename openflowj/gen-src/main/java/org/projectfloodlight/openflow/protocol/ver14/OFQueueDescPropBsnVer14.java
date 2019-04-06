@@ -35,9 +35,9 @@ abstract class OFQueueDescPropBsnVer14 {
 
     public final static OFQueueDescPropBsnVer14.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFQueueDescPropBsn> {
+    static class Reader extends AbstractOFMessageReader<OFQueueDescPropBsn> {
         @Override
-        public OFQueueDescPropBsn readFrom(ByteBuf bb) throws OFParseError {
+        public OFQueueDescPropBsn readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -48,19 +48,27 @@ abstract class OFQueueDescPropBsnVer14 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             // fixed value property experimenter == 0x5c16c7L
             int experimenter = bb.readInt();
             if(experimenter != 0x5c16c7)
                 throw new OFParseError("Wrong experimenter: Expected=0x5c16c7L(0x5c16c7L), got="+experimenter);
             int expType = bb.readInt();
-            bb.readerIndex(start);
             switch(expType) {
                case 0x0:
+                   bb.readerIndex(start);
                    // discriminator value 0x0L=0x0L for class OFQueueDescPropBsnQueueNameVer14
-                   return OFQueueDescPropBsnQueueNameVer14.READER.readFrom(bb);
+                   return OFQueueDescPropBsnQueueNameVer14.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator expType of class OFQueueDescPropBsnVer14: " + expType);
+                   context.getUnparsedHandler().unparsedMessage(OFQueueDescPropBsnVer14.class, "expType", expType);
             }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

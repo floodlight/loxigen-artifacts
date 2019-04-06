@@ -162,9 +162,11 @@ class OFBsnTlvMplsLabelVer14 implements OFBsnTlvMplsLabel {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvMplsLabel> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvMplsLabel> {
         @Override
-        public OFBsnTlvMplsLabel readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvMplsLabel readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x3d
             short type = bb.readShort();
@@ -173,6 +175,7 @@ class OFBsnTlvMplsLabelVer14 implements OFBsnTlvMplsLabel {
             int length = U16.f(bb.readShort());
             if(length != 8)
                 throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

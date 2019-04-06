@@ -35,9 +35,9 @@ abstract class OFPortDescPropBsnVer14 {
 
     public final static OFPortDescPropBsnVer14.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFPortDescPropBsn> {
+    static class Reader extends AbstractOFMessageReader<OFPortDescPropBsn> {
         @Override
-        public OFPortDescPropBsn readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortDescPropBsn readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -48,40 +48,55 @@ abstract class OFPortDescPropBsnVer14 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             // fixed value property experimenter == 0x5c16c7L
             int experimenter = bb.readInt();
             if(experimenter != 0x5c16c7)
                 throw new OFParseError("Wrong experimenter: Expected=0x5c16c7L(0x5c16c7L), got="+experimenter);
             int expType = bb.readInt();
-            bb.readerIndex(start);
             switch(expType) {
                case 0x3:
+                   bb.readerIndex(start);
                    // discriminator value 0x3L=0x3L for class OFPortDescPropBsnBreakoutVer14
-                   return OFPortDescPropBsnBreakoutVer14.READER.readFrom(bb);
+                   return OFPortDescPropBsnBreakoutVer14.READER.readFrom(context, bb);
                case 0x7:
+                   bb.readerIndex(start);
                    // discriminator value 0x7L=0x7L for class OFPortDescPropBsnDriverInfoJsonVer14
-                   return OFPortDescPropBsnDriverInfoJsonVer14.READER.readFrom(bb);
+                   return OFPortDescPropBsnDriverInfoJsonVer14.READER.readFrom(context, bb);
                case 0x2:
+                   bb.readerIndex(start);
                    // discriminator value 0x2L=0x2L for class OFPortDescPropBsnForwardErrorCorrectionVer14
-                   return OFPortDescPropBsnForwardErrorCorrectionVer14.READER.readFrom(bb);
+                   return OFPortDescPropBsnForwardErrorCorrectionVer14.READER.readFrom(context, bb);
                case 0x1:
+                   bb.readerIndex(start);
                    // discriminator value 0x1L=0x1L for class OFPortDescPropBsnGenerationIdVer14
-                   return OFPortDescPropBsnGenerationIdVer14.READER.readFrom(bb);
+                   return OFPortDescPropBsnGenerationIdVer14.READER.readFrom(context, bb);
                case 0x5:
+                   bb.readerIndex(start);
                    // discriminator value 0x5L=0x5L for class OFPortDescPropBsnMiscCapabilitiesVer14
-                   return OFPortDescPropBsnMiscCapabilitiesVer14.READER.readFrom(bb);
+                   return OFPortDescPropBsnMiscCapabilitiesVer14.READER.readFrom(context, bb);
                case 0x6:
+                   bb.readerIndex(start);
                    // discriminator value 0x6L=0x6L for class OFPortDescPropBsnSffJsonVer14
-                   return OFPortDescPropBsnSffJsonVer14.READER.readFrom(bb);
+                   return OFPortDescPropBsnSffJsonVer14.READER.readFrom(context, bb);
                case 0x4:
+                   bb.readerIndex(start);
                    // discriminator value 0x4L=0x4L for class OFPortDescPropBsnSpeedCapabilitiesVer14
-                   return OFPortDescPropBsnSpeedCapabilitiesVer14.READER.readFrom(bb);
+                   return OFPortDescPropBsnSpeedCapabilitiesVer14.READER.readFrom(context, bb);
                case 0x0:
+                   bb.readerIndex(start);
                    // discriminator value 0x0L=0x0L for class OFPortDescPropBsnUplinkVer14
-                   return OFPortDescPropBsnUplinkVer14.READER.readFrom(bb);
+                   return OFPortDescPropBsnUplinkVer14.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator expType of class OFPortDescPropBsnVer14: " + expType);
+                   context.getUnparsedHandler().unparsedMessage(OFPortDescPropBsnVer14.class, "expType", expType);
             }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

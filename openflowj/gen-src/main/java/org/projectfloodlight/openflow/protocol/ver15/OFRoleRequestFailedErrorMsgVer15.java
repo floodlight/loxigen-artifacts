@@ -263,9 +263,11 @@ class OFRoleRequestFailedErrorMsgVer15 implements OFRoleRequestFailedErrorMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFRoleRequestFailedErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFRoleRequestFailedErrorMsg> {
         @Override
-        public OFRoleRequestFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFRoleRequestFailedErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -278,6 +280,7 @@ class OFRoleRequestFailedErrorMsgVer15 implements OFRoleRequestFailedErrorMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,7 +294,7 @@ class OFRoleRequestFailedErrorMsgVer15 implements OFRoleRequestFailedErrorMsg {
             if(errType != (short) 0xb)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.ROLE_REQUEST_FAILED(11), got="+errType);
             OFRoleRequestFailedCode code = OFRoleRequestFailedCodeSerializerVer15.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_15);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_15);
 
             OFRoleRequestFailedErrorMsgVer15 roleRequestFailedErrorMsgVer15 = new OFRoleRequestFailedErrorMsgVer15(
                     xid,

@@ -170,9 +170,11 @@ class OFBsnTlvDataMaskVer13 implements OFBsnTlvDataMask {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvDataMask> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvDataMask> {
         @Override
-        public OFBsnTlvDataMask readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvDataMask readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x8c
             short type = bb.readShort();
@@ -181,6 +183,7 @@ class OFBsnTlvDataMaskVer13 implements OFBsnTlvDataMask {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

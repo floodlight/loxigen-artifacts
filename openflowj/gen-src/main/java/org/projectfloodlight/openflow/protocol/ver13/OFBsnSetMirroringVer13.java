@@ -230,9 +230,11 @@ class OFBsnSetMirroringVer13 implements OFBsnSetMirroring {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnSetMirroring> {
+    static class Reader extends AbstractOFMessageReader<OFBsnSetMirroring> {
         @Override
-        public OFBsnSetMirroring readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnSetMirroring readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -245,6 +247,7 @@ class OFBsnSetMirroringVer13 implements OFBsnSetMirroring {
             int length = U16.f(bb.readShort());
             if(length != 20)
                 throw new OFParseError("Wrong length: Expected=20(20), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

@@ -325,13 +325,16 @@ class OFControllerStatusEntryVer15 implements OFControllerStatusEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFControllerStatusEntry> {
+    static class Reader extends AbstractOFMessageReader<OFControllerStatusEntry> {
         @Override
-        public OFControllerStatusEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFControllerStatusEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -345,7 +348,7 @@ class OFControllerStatusEntryVer15 implements OFControllerStatusEntry {
             OFControlChannelStatus channelStatus = OFControlChannelStatusSerializerVer15.readFrom(bb);
             // pad: 6 bytes
             bb.skipBytes(6);
-            List<OFControllerStatusProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFControllerStatusPropVer15.READER);
+            List<OFControllerStatusProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFControllerStatusPropVer15.READER);
 
             OFControllerStatusEntryVer15 controllerStatusEntryVer15 = new OFControllerStatusEntryVer15(
                     shortId,

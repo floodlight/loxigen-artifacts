@@ -35,9 +35,9 @@ abstract class OFBsnBaseErrorVer15 {
 
     public final static OFBsnBaseErrorVer15.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFBsnBaseError> {
+    static class Reader extends AbstractOFMessageReader<OFBsnBaseError> {
         @Override
-        public OFBsnBaseError readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnBaseError readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -52,23 +52,38 @@ abstract class OFBsnBaseErrorVer15 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             U32.f(bb.readInt());
             // fixed value property errType == 65535
             short errType = bb.readShort();
             if(errType != (short) 0xffff)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.EXPERIMENTER(65535), got="+errType);
             short subtype = bb.readShort();
-            bb.readerIndex(start);
             switch(subtype) {
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value 0x1=0x1 for class OFBsnErrorVer15
-                   return OFBsnErrorVer15.READER.readFrom(bb);
+                   return OFBsnErrorVer15.READER.readFrom(context, bb);
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value 0x2=0x2 for class OFBsnGentableErrorVer15
-                   return OFBsnGentableErrorVer15.READER.readFrom(bb);
+                   return OFBsnGentableErrorVer15.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator subtype of class OFBsnBaseErrorVer15: " + subtype);
+                   context.getUnparsedHandler().unparsedMessage(OFBsnBaseErrorVer15.class, "subtype", subtype);
             }
+            // fixed value property experimenter == 0x5c16c7L
+            int experimenter = bb.readInt();
+            if(experimenter != 0x5c16c7)
+                throw new OFParseError("Wrong experimenter: Expected=0x5c16c7L(0x5c16c7L), got="+experimenter);
+            ChannelUtils.readFixedLengthString(bb, 256);
+            OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_15);
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

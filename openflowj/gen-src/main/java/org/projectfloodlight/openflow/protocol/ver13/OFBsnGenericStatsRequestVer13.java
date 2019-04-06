@@ -345,9 +345,11 @@ class OFBsnGenericStatsRequestVer13 implements OFBsnGenericStatsRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGenericStatsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGenericStatsRequest> {
         @Override
-        public OFBsnGenericStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGenericStatsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -360,6 +362,7 @@ class OFBsnGenericStatsRequestVer13 implements OFBsnGenericStatsRequest {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -384,7 +387,7 @@ class OFBsnGenericStatsRequestVer13 implements OFBsnGenericStatsRequest {
             if(subtype != 0x10)
                 throw new OFParseError("Wrong subtype: Expected=0x10L(0x10L), got="+subtype);
             String name = ChannelUtils.readFixedLengthString(bb, 64);
-            List<OFBsnTlv> tlvs = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnTlvVer13.READER);
+            List<OFBsnTlv> tlvs = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnTlvVer13.READER);
 
             OFBsnGenericStatsRequestVer13 bsnGenericStatsRequestVer13 = new OFBsnGenericStatsRequestVer13(
                     xid,
