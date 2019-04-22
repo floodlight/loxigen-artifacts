@@ -118,6 +118,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0xb9:
                    // discriminator value 0xb9=0xb9 for class OFBsnTlvDisableXmitVer15
                    return OFBsnTlvDisableXmitVer15.READER.readFrom(bb);
+               case (short) 0xbe:
+                   // discriminator value 0xbe=0xbe for class OFBsnTlvDnsAnalyticsVer15
+                   return OFBsnTlvDnsAnalyticsVer15.READER.readFrom(bb);
                case (short) 0x79:
                    // discriminator value 0x79=0x79 for class OFBsnTlvDropVer15
                    return OFBsnTlvDropVer15.READER.readFrom(bb);

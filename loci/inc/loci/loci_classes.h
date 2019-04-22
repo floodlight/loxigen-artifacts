@@ -903,6 +903,8 @@ void of_bsn_tlv_disable_src_mac_check_wire_object_id_get(of_object_t *obj, of_ob
 void of_bsn_tlv_disable_src_mac_check_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_disable_xmit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_disable_xmit_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_dns_analytics_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_dns_analytics_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_drop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_drop_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_drop_control_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1940,6 +1942,7 @@ typedef of_object_t of_bsn_tlv_data_mask_t;
 typedef of_object_t of_bsn_tlv_decap_t;
 typedef of_object_t of_bsn_tlv_disable_src_mac_check_t;
 typedef of_object_t of_bsn_tlv_disable_xmit_t;
+typedef of_object_t of_bsn_tlv_dns_analytics_t;
 typedef of_object_t of_bsn_tlv_drop_t;
 typedef of_object_t of_bsn_tlv_drop_control_t;
 typedef of_object_t of_bsn_tlv_dscp_t;
@@ -4125,6 +4128,11 @@ extern void of_bsn_tlv_disable_src_mac_check_init(
 extern of_object_t *
     of_bsn_tlv_disable_xmit_new(of_version_t version);
 extern void of_bsn_tlv_disable_xmit_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_dns_analytics_new(of_version_t version);
+extern void of_bsn_tlv_dns_analytics_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10382,6 +10390,17 @@ of_bsn_tlv_disable_src_mac_check_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_disable_xmit_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_dns_analytics_t
+ * @param obj An instance of type of_bsn_tlv_dns_analytics_t
+ *
+ * \ingroup of_bsn_tlv_dns_analytics
+ */
+static inline void
+of_bsn_tlv_dns_analytics_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24142,6 +24161,8 @@ extern void of_bsn_tlv_decap_value_get(
 /* Unified accessor functions for of_bsn_tlv_disable_src_mac_check */
 
 /* Unified accessor functions for of_bsn_tlv_disable_xmit */
+
+/* Unified accessor functions for of_bsn_tlv_dns_analytics */
 
 /* Unified accessor functions for of_bsn_tlv_drop */
 

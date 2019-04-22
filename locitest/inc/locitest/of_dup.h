@@ -1319,6 +1319,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_dns_analytics_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_drop_dup(
         of_object_t *src);
 
@@ -6615,6 +6619,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_dns_analytics_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_drop_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9584,6 +9592,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_disable_xmit_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_dns_analytics_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

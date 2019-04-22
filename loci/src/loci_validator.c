@@ -766,6 +766,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_data_mask_OF_VERSION
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_decap_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_disable_xmit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_dns_analytics_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_drop_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_drop_control_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_dscp_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1482,6 +1483,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_data_mask_OF_VERSION
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_decap_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_disable_xmit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_dns_analytics_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_drop_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_drop_control_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_dscp_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -21054,6 +21056,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3(data, len, out_len);
     case 0xb9:
         return loci_validate_of_bsn_tlv_disable_xmit_OF_VERSION_1_3(data, len, out_len);
+    case 0xbe:
+        return loci_validate_of_bsn_tlv_dns_analytics_OF_VERSION_1_3(data, len, out_len);
     case 0x79:
         return loci_validate_of_bsn_tlv_drop_OF_VERSION_1_3(data, len, out_len);
     case 0xbb:
@@ -21908,6 +21912,28 @@ loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3(uint8_t *data, int
 
 static int
 loci_validate_of_bsn_tlv_disable_xmit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_dns_analytics_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 4) {
         return -1;
@@ -38662,6 +38688,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4(data, len, out_len);
     case 0xb9:
         return loci_validate_of_bsn_tlv_disable_xmit_OF_VERSION_1_4(data, len, out_len);
+    case 0xbe:
+        return loci_validate_of_bsn_tlv_dns_analytics_OF_VERSION_1_4(data, len, out_len);
     case 0x79:
         return loci_validate_of_bsn_tlv_drop_OF_VERSION_1_4(data, len, out_len);
     case 0xbb:
@@ -39516,6 +39544,28 @@ loci_validate_of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4(uint8_t *data, int
 
 static int
 loci_validate_of_bsn_tlv_disable_xmit_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_dns_analytics_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 4) {
         return -1;
