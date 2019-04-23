@@ -8845,6 +8845,8 @@ fields['of13.bsn_tlv_disable_src_mac_check.type'] = ProtoField.uint16("of13.bsn_
 fields['of13.bsn_tlv_disable_src_mac_check.length'] = ProtoField.uint16("of13.bsn_tlv_disable_src_mac_check.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_disable_xmit.type'] = ProtoField.uint16("of13.bsn_tlv_disable_xmit.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_disable_xmit.length'] = ProtoField.uint16("of13.bsn_tlv_disable_xmit.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_dns_analytics.type'] = ProtoField.uint16("of13.bsn_tlv_dns_analytics.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_dns_analytics.length'] = ProtoField.uint16("of13.bsn_tlv_dns_analytics.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_drop.type'] = ProtoField.uint16("of13.bsn_tlv_drop.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_drop.length'] = ProtoField.uint16("of13.bsn_tlv_drop.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_drop_control.type'] = ProtoField.uint16("of13.bsn_tlv_drop_control.type", "type", base.DEC, nil)
@@ -11894,6 +11896,8 @@ fields['of14.bsn_tlv_disable_src_mac_check.type'] = ProtoField.uint16("of14.bsn_
 fields['of14.bsn_tlv_disable_src_mac_check.length'] = ProtoField.uint16("of14.bsn_tlv_disable_src_mac_check.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_disable_xmit.type'] = ProtoField.uint16("of14.bsn_tlv_disable_xmit.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_disable_xmit.length'] = ProtoField.uint16("of14.bsn_tlv_disable_xmit.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_dns_analytics.type'] = ProtoField.uint16("of14.bsn_tlv_dns_analytics.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_dns_analytics.length'] = ProtoField.uint16("of14.bsn_tlv_dns_analytics.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_drop.type'] = ProtoField.uint16("of14.bsn_tlv_drop.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_drop.length'] = ProtoField.uint16("of14.bsn_tlv_drop.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_drop_control.type'] = ProtoField.uint16("of14.bsn_tlv_drop_control.type", "type", base.DEC, nil)
@@ -15221,6 +15225,8 @@ fields['of15.bsn_tlv_disable_src_mac_check.type'] = ProtoField.uint16("of15.bsn_
 fields['of15.bsn_tlv_disable_src_mac_check.length'] = ProtoField.uint16("of15.bsn_tlv_disable_src_mac_check.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_disable_xmit.type'] = ProtoField.uint16("of15.bsn_tlv_disable_xmit.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_disable_xmit.length'] = ProtoField.uint16("of15.bsn_tlv_disable_xmit.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_dns_analytics.type'] = ProtoField.uint16("of15.bsn_tlv_dns_analytics.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_dns_analytics.length'] = ProtoField.uint16("of15.bsn_tlv_dns_analytics.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_drop.type'] = ProtoField.uint16("of15.bsn_tlv_drop.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_drop.length'] = ProtoField.uint16("of15.bsn_tlv_drop.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_drop_control.type'] = ProtoField.uint16("of15.bsn_tlv_drop_control.type", "type", base.DEC, nil)
@@ -21835,6 +21841,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_disable_src_mac_check.length'],
     fields['of13.bsn_tlv_disable_xmit.type'],
     fields['of13.bsn_tlv_disable_xmit.length'],
+    fields['of13.bsn_tlv_dns_analytics.type'],
+    fields['of13.bsn_tlv_dns_analytics.length'],
     fields['of13.bsn_tlv_drop.type'],
     fields['of13.bsn_tlv_drop.length'],
     fields['of13.bsn_tlv_drop_control.type'],
@@ -24884,6 +24892,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_disable_src_mac_check.length'],
     fields['of14.bsn_tlv_disable_xmit.type'],
     fields['of14.bsn_tlv_disable_xmit.length'],
+    fields['of14.bsn_tlv_dns_analytics.type'],
+    fields['of14.bsn_tlv_dns_analytics.length'],
     fields['of14.bsn_tlv_drop.type'],
     fields['of14.bsn_tlv_drop.length'],
     fields['of14.bsn_tlv_drop_control.type'],
@@ -28211,6 +28221,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_disable_src_mac_check.length'],
     fields['of15.bsn_tlv_disable_xmit.type'],
     fields['of15.bsn_tlv_disable_xmit.length'],
+    fields['of15.bsn_tlv_dns_analytics.type'],
+    fields['of15.bsn_tlv_dns_analytics.length'],
     fields['of15.bsn_tlv_drop.type'],
     fields['of15.bsn_tlv_drop.length'],
     fields['of15.bsn_tlv_drop_control.type'],
@@ -40495,6 +40507,15 @@ function dissect_of_bsn_tlv_disable_xmit_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[185] = dissect_of_bsn_tlv_disable_xmit_v4
 
+-- child class of_bsn_tlv_dns_analytics
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_dns_analytics_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_dns_analytics.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_dns_analytics.length')
+    return 'of_bsn_tlv_dns_analytics'
+end
+of_bsn_tlv_v4_dissectors[190] = dissect_of_bsn_tlv_dns_analytics_v4
+
 -- child class of_bsn_tlv_drop
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_drop_v4(reader, subtree)
@@ -48822,6 +48843,15 @@ function dissect_of_bsn_tlv_disable_xmit_v5(reader, subtree)
     return 'of_bsn_tlv_disable_xmit'
 end
 of_bsn_tlv_v5_dissectors[185] = dissect_of_bsn_tlv_disable_xmit_v5
+
+-- child class of_bsn_tlv_dns_analytics
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_dns_analytics_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_dns_analytics.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_dns_analytics.length')
+    return 'of_bsn_tlv_dns_analytics'
+end
+of_bsn_tlv_v5_dissectors[190] = dissect_of_bsn_tlv_dns_analytics_v5
 
 -- child class of_bsn_tlv_drop
 -- Child of of_bsn_tlv
@@ -57797,6 +57827,15 @@ function dissect_of_bsn_tlv_disable_xmit_v6(reader, subtree)
     return 'of_bsn_tlv_disable_xmit'
 end
 of_bsn_tlv_v6_dissectors[185] = dissect_of_bsn_tlv_disable_xmit_v6
+
+-- child class of_bsn_tlv_dns_analytics
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_dns_analytics_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_dns_analytics.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_dns_analytics.length')
+    return 'of_bsn_tlv_dns_analytics'
+end
+of_bsn_tlv_v6_dissectors[190] = dissect_of_bsn_tlv_dns_analytics_v6
 
 -- child class of_bsn_tlv_drop
 -- Child of of_bsn_tlv

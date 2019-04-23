@@ -76,6 +76,7 @@ public interface OFBsnTlvs {
     OFBsnTlvDecap decap(OFBsnDecap value);
     OFBsnTlvDisableSrcMacCheck disableSrcMacCheck();
     OFBsnTlvDisableXmit disableXmit();
+    OFBsnTlvDnsAnalytics dnsAnalytics();
     OFBsnTlvDrop drop();
     OFBsnTlvDropControl dropControl();
     OFBsnTlvDscp.Builder buildDscp() throws UnsupportedOperationException;

@@ -236,6 +236,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return OFBsnTlvDisableXmitVer13.INSTANCE;
     }
 
+    public OFBsnTlvDnsAnalytics dnsAnalytics() {
+        return OFBsnTlvDnsAnalyticsVer13.INSTANCE;
+    }
+
     public OFBsnTlvDrop drop() {
         return OFBsnTlvDropVer13.INSTANCE;
     }

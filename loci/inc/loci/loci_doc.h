@@ -6661,6 +6661,13 @@ typedef struct of_bsn_tlv_disable_src_mac_check_s of_bsn_tlv_disable_src_mac_che
 typedef struct of_bsn_tlv_disable_xmit_s of_bsn_tlv_disable_xmit_t;
 
 /**
+ * Structure for of_bsn_tlv_dns_analytics object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_dns_analytics_s of_bsn_tlv_dns_analytics_t;
+
+/**
  * Structure for of_bsn_tlv_drop object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

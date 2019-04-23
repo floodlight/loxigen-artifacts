@@ -21778,6 +21778,16 @@ of_bsn_tlv_disable_xmit_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, 
 }
 
 int
+of_bsn_tlv_dns_analytics_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_dns_analytics\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_drop_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -37510,6 +37520,16 @@ of_bsn_tlv_disable_xmit_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, 
 }
 
 int
+of_bsn_tlv_dns_analytics_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_dns_analytics\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_drop_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -47100,6 +47120,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_0_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -47767,6 +47788,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_interface_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -48828,6 +48850,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_2_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dump,
     unknown_dump,
@@ -49524,6 +49547,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_decap_OF_VERSION_1_3_dump,
     of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_3_dump,
     of_bsn_tlv_disable_xmit_OF_VERSION_1_3_dump,
+    of_bsn_tlv_dns_analytics_OF_VERSION_1_3_dump,
     of_bsn_tlv_drop_OF_VERSION_1_3_dump,
     of_bsn_tlv_drop_control_OF_VERSION_1_3_dump,
     of_bsn_tlv_dscp_OF_VERSION_1_3_dump,
@@ -50388,6 +50412,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_decap_OF_VERSION_1_4_dump,
     of_bsn_tlv_disable_src_mac_check_OF_VERSION_1_4_dump,
     of_bsn_tlv_disable_xmit_OF_VERSION_1_4_dump,
+    of_bsn_tlv_dns_analytics_OF_VERSION_1_4_dump,
     of_bsn_tlv_drop_OF_VERSION_1_4_dump,
     of_bsn_tlv_drop_control_OF_VERSION_1_4_dump,
     of_bsn_tlv_dscp_OF_VERSION_1_4_dump,
