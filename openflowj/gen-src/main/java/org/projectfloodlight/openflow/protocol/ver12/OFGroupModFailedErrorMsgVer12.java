@@ -263,9 +263,11 @@ class OFGroupModFailedErrorMsgVer12 implements OFGroupModFailedErrorMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFGroupModFailedErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFGroupModFailedErrorMsg> {
         @Override
-        public OFGroupModFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupModFailedErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -278,6 +280,7 @@ class OFGroupModFailedErrorMsgVer12 implements OFGroupModFailedErrorMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,7 +294,7 @@ class OFGroupModFailedErrorMsgVer12 implements OFGroupModFailedErrorMsg {
             if(errType != (short) 0x6)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.GROUP_MOD_FAILED(6), got="+errType);
             OFGroupModFailedCode code = OFGroupModFailedCodeSerializerVer12.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_12);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_12);
 
             OFGroupModFailedErrorMsgVer12 groupModFailedErrorMsgVer12 = new OFGroupModFailedErrorMsgVer12(
                     xid,

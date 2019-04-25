@@ -162,9 +162,11 @@ class OFBsnTlvVlanVidMaskVer15 implements OFBsnTlvVlanVidMask {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvVlanVidMask> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvVlanVidMask> {
         @Override
-        public OFBsnTlvVlanVidMask readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvVlanVidMask readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x4d
             short type = bb.readShort();
@@ -173,6 +175,7 @@ class OFBsnTlvVlanVidMaskVer15 implements OFBsnTlvVlanVidMask {
             int length = U16.f(bb.readShort());
             if(length != 6)
                 throw new OFParseError("Wrong length: Expected=6(6), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

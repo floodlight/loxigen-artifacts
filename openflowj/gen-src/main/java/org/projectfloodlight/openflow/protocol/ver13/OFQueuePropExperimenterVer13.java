@@ -35,9 +35,9 @@ abstract class OFQueuePropExperimenterVer13 {
 
     public final static OFQueuePropExperimenterVer13.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFQueuePropExperimenter> {
+    static class Reader extends AbstractOFMessageReader<OFQueuePropExperimenter> {
         @Override
-        public OFQueuePropExperimenter readFrom(ByteBuf bb) throws OFParseError {
+        public OFQueuePropExperimenter readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -48,14 +48,24 @@ abstract class OFQueuePropExperimenterVer13 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             // pad: 4 bytes
             bb.skipBytes(4);
             int experimenter = bb.readInt();
-            bb.readerIndex(start);
             switch(experimenter) {
                default:
-                   throw new OFParseError("Unknown value for discriminator experimenter of class OFQueuePropExperimenterVer13: " + experimenter);
+                   context.getUnparsedHandler().unparsedMessage(OFQueuePropExperimenterVer13.class, "experimenter", experimenter);
             }
+            // pad: 4 bytes
+            bb.skipBytes(4);
+            ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

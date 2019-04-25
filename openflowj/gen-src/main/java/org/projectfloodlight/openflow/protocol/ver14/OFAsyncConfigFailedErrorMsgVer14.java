@@ -263,9 +263,11 @@ class OFAsyncConfigFailedErrorMsgVer14 implements OFAsyncConfigFailedErrorMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFAsyncConfigFailedErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFAsyncConfigFailedErrorMsg> {
         @Override
-        public OFAsyncConfigFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFAsyncConfigFailedErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -278,6 +280,7 @@ class OFAsyncConfigFailedErrorMsgVer14 implements OFAsyncConfigFailedErrorMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,7 +294,7 @@ class OFAsyncConfigFailedErrorMsgVer14 implements OFAsyncConfigFailedErrorMsg {
             if(errType != (short) 0xf)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.ASYNC_CONFIG_FAILED(15), got="+errType);
             OFAsyncConfigFailedCode code = OFAsyncConfigFailedCodeSerializerVer14.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_14);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_14);
 
             OFAsyncConfigFailedErrorMsgVer14 asyncConfigFailedErrorMsgVer14 = new OFAsyncConfigFailedErrorMsgVer14(
                     xid,

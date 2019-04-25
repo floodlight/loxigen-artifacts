@@ -229,9 +229,11 @@ class OFOxmBsnIpFragmentationVer14 implements OFOxmBsnIpFragmentation {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnIpFragmentation> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnIpFragmentation> {
         @Override
-        public OFOxmBsnIpFragmentation readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnIpFragmentation readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x33401L
             int typeLen = bb.readInt();
             if(typeLen != 0x33401)

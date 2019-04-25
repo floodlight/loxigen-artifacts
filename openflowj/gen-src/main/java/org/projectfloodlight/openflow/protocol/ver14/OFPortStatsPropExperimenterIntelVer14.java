@@ -1107,9 +1107,11 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPortStatsPropExperimenterIntel> {
+    static class Reader extends AbstractOFMessageReader<OFPortStatsPropExperimenterIntel> {
         @Override
-        public OFPortStatsPropExperimenterIntel readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortStatsPropExperimenterIntel readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0xffff
             short type = bb.readShort();
@@ -1118,6 +1120,7 @@ class OFPortStatsPropExperimenterIntelVer14 implements OFPortStatsPropExperiment
             int length = U16.f(bb.readShort());
             if(length != 184)
                 throw new OFParseError("Wrong length: Expected=184(184), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

@@ -229,9 +229,11 @@ class OFOxmBsnInnerEthDstVer13 implements OFOxmBsnInnerEthDst {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnInnerEthDst> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnInnerEthDst> {
         @Override
-        public OFOxmBsnInnerEthDst readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnInnerEthDst readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x32c06L
             int typeLen = bb.readInt();
             if(typeLen != 0x32c06)

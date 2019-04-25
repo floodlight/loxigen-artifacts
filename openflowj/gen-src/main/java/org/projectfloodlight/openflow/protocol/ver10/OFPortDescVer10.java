@@ -613,9 +613,11 @@ class OFPortDescVer10 implements OFPortDesc {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPortDesc> {
+    static class Reader extends AbstractOFMessageReader<OFPortDesc> {
         @Override
-        public OFPortDesc readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortDesc readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             OFPort portNo = OFPort.read2Bytes(bb);
             MacAddress hwAddr = MacAddress.read6Bytes(bb);
             String name = ChannelUtils.readFixedLengthString(bb, 16);

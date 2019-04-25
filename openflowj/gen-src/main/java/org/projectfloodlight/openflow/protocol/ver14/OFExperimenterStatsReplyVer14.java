@@ -35,9 +35,9 @@ abstract class OFExperimenterStatsReplyVer14 {
 
     public final static OFExperimenterStatsReplyVer14.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFExperimenterStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFExperimenterStatsReply> {
         @Override
-        public OFExperimenterStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFExperimenterStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -52,6 +52,11 @@ abstract class OFExperimenterStatsReplyVer14 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             U32.f(bb.readInt());
             // fixed value property statsType == 65535
             short statsType = bb.readShort();
@@ -61,14 +66,18 @@ abstract class OFExperimenterStatsReplyVer14 {
             // pad: 4 bytes
             bb.skipBytes(4);
             int experimenter = bb.readInt();
-            bb.readerIndex(start);
             switch(experimenter) {
                case 0x5c16c7:
+                   bb.readerIndex(start);
                    // discriminator value 0x5c16c7L=0x5c16c7L for class OFBsnStatsReplyVer14
-                   return OFBsnStatsReplyVer14.READER.readFrom(bb);
+                   return OFBsnStatsReplyVer14.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator experimenter of class OFExperimenterStatsReplyVer14: " + experimenter);
+                   context.getUnparsedHandler().unparsedMessage(OFExperimenterStatsReplyVer14.class, "experimenter", experimenter);
             }
+            U32.f(bb.readInt());
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

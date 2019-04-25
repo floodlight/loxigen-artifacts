@@ -165,9 +165,11 @@ class OFBsnTlvFlowClassifierVer15 implements OFBsnTlvFlowClassifier {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvFlowClassifier> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvFlowClassifier> {
         @Override
-        public OFBsnTlvFlowClassifier readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvFlowClassifier readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0xb8
             short type = bb.readShort();
@@ -176,6 +178,7 @@ class OFBsnTlvFlowClassifierVer15 implements OFBsnTlvFlowClassifier {
             int length = U16.f(bb.readShort());
             if(length != 6)
                 throw new OFParseError("Wrong length: Expected=6(6), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

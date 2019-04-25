@@ -264,9 +264,11 @@ class OFOxmBsnVlanXlatePortGroupIdMaskedVer14 implements OFOxmBsnVlanXlatePortGr
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnVlanXlatePortGroupIdMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnVlanXlatePortGroupIdMasked> {
         @Override
-        public OFOxmBsnVlanXlatePortGroupIdMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnVlanXlatePortGroupIdMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x32308L
             int typeLen = bb.readInt();
             if(typeLen != 0x32308)
