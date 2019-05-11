@@ -2027,6 +2027,7 @@ enum_v4_ofp_bsn_fabric_port_role = {
 
 enum_v4_ofp_bsn_tunnel_type = {
     [1] = "OFP_BSN_TUNNEL_L2GRE",
+    [2] = "OFP_BSN_TUNNEL_VXLAN",
 }
 
 enum_v4_ofp_controller_max_len = {
@@ -3121,6 +3122,7 @@ enum_v5_ofp_bsn_fabric_port_role = {
 
 enum_v5_ofp_bsn_tunnel_type = {
     [1] = "OFP_BSN_TUNNEL_L2GRE",
+    [2] = "OFP_BSN_TUNNEL_VXLAN",
 }
 
 enum_v5_ofp_controller_max_len = {
@@ -4414,6 +4416,7 @@ enum_v6_ofp_bundle_features_prop_type = {
 
 enum_v6_ofp_bsn_tunnel_type = {
     [1] = "OFP_BSN_TUNNEL_L2GRE",
+    [2] = "OFP_BSN_TUNNEL_VXLAN",
 }
 
 enum_v6_ofp_meter_mod_command = {
