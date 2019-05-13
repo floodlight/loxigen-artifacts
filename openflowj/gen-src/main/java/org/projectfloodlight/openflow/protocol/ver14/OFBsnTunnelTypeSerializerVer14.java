@@ -36,6 +36,7 @@ import java.util.Collections;
 public class OFBsnTunnelTypeSerializerVer14 {
 
     public final static long BSN_TUNNEL_L2GRE_VAL = 0x1L;
+    public final static long BSN_TUNNEL_VXLAN_VAL = 0x2L;
 
     public static Set<OFBsnTunnelType> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -59,6 +60,8 @@ public class OFBsnTunnelTypeSerializerVer14 {
 
         if((val & BSN_TUNNEL_L2GRE_VAL) != 0)
             set.add(OFBsnTunnelType.BSN_TUNNEL_L2GRE);
+        if((val & BSN_TUNNEL_VXLAN_VAL) != 0)
+            set.add(OFBsnTunnelType.BSN_TUNNEL_VXLAN);
         return Collections.unmodifiableSet(set);
     }
 
@@ -69,6 +72,9 @@ public class OFBsnTunnelTypeSerializerVer14 {
             switch(e) {
                 case BSN_TUNNEL_L2GRE:
                     wireValue |= BSN_TUNNEL_L2GRE_VAL;
+                    break;
+                case BSN_TUNNEL_VXLAN:
+                    wireValue |= BSN_TUNNEL_VXLAN_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnTunnelType in version 1.4: " + e);

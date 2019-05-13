@@ -27,5 +27,6 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 
 public enum OFBsnTunnelType {
-     BSN_TUNNEL_L2GRE;
+     BSN_TUNNEL_L2GRE,
+     BSN_TUNNEL_VXLAN;
 }
