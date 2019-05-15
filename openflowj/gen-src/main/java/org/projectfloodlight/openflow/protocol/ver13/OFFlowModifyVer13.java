@@ -783,9 +783,11 @@ class OFFlowModifyVer13 implements OFFlowModify {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowModify> {
+    static class Reader extends AbstractOFMessageReader<OFFlowModify> {
         @Override
-        public OFFlowModify readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowModify readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -798,6 +800,7 @@ class OFFlowModifyVer13 implements OFFlowModify {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -822,8 +825,8 @@ class OFFlowModifyVer13 implements OFFlowModify {
             Set<OFFlowModFlags> flags = OFFlowModFlagsSerializerVer13.readFrom(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
-            Match match = ChannelUtilsVer13.readOFMatch(bb);
-            List<OFInstruction> instructions = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFInstructionVer13.READER);
+            Match match = ChannelUtilsVer13.readOFMatch(context, bb);
+            List<OFInstruction> instructions = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFInstructionVer13.READER);
 
             OFFlowModifyVer13 flowModifyVer13 = new OFFlowModifyVer13(
                     xid,

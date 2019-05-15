@@ -26,21 +26,41 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.junit.Test;
-import org.junit.Before;
+import org.junit.runners.Parameterized.Parameters;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
+import org.junit.Before;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
-
+@RunWith(Parameterized.class)
 public class OFFlowStatsEntryVer10Test {
     OFFactory factory;
 
     final static byte[] FLOW_STATS_ENTRY_SERIALIZED =
         new byte[] { 0x0, 0x68, 0x3, 0x0, 0x0, 0x30, 0x0, (byte) 0xe2, 0x0, 0x3, 0x1, 0x23, 0x45, 0x67, (byte) 0x89, (byte) 0xab, (byte) 0xcd, (byte) 0xef, 0x1, 0x23, 0x45, 0x67, 0x0, 0x0, 0x0, 0x0, 0x8, 0x0, 0x0, 0x0, 0x0, 0x0, (byte) 0xc0, (byte) 0xa8, 0x3, 0x7f, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x2, 0x0, 0x64, 0x0, 0x5, 0x0, 0xa, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x23, 0x45, 0x67, (byte) 0x89, (byte) 0xab, (byte) 0xcd, (byte) 0xef, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xa, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x3, (byte) 0xe8, 0x0, 0x0, 0x0, 0x8, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x8, 0x0, 0x2, 0x0, 0x0 };
+
+
+    private final static int[] PREFIX_BYTES = { 0, 1, 4, 255, 65335 };
+    private final static byte[] EMPTY_BYTES = new byte[65535];
+
+    private final OFMessageReader<?> messageReader;
+
+    @Parameters(name="{index}.MessageReader={0}")
+    public static Iterable<Object> data() {
+        return ImmutableList.<Object>of(
+                OFFlowStatsEntryVer10.READER
+        );
+    }
+
+    public OFFlowStatsEntryVer10Test(OFMessageReader<?> messageReader) {
+        this.messageReader = messageReader;
+    }
 
     @Before
     public void setup() {
@@ -85,8 +105,13 @@ public class OFFlowStatsEntryVer10Test {
         assertThat(written, CoreMatchers.equalTo(FLOW_STATS_ENTRY_SERIALIZED));
     }
 
+
     @Test
     public void testRead() throws Exception {
+        ByteBuf input = Unpooled.copiedBuffer(FLOW_STATS_ENTRY_SERIALIZED);
+
+        Object flowStatsEntryRead = messageReader.readFrom(input);
+        assertThat(flowStatsEntryRead, CoreMatchers.instanceOf(OFFlowStatsEntryVer10.class));
         OFFlowStatsEntry.Builder builder = factory.buildFlowStatsEntry();
             builder
       .setTableId(TableId.of(3))
@@ -116,13 +141,37 @@ public class OFFlowStatsEntryVer10Test {
       );;
         OFFlowStatsEntry flowStatsEntryBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(FLOW_STATS_ENTRY_SERIALIZED);
-
-        // FIXME should invoke the overall reader once implemented
-        OFFlowStatsEntry flowStatsEntryRead = OFFlowStatsEntryVer10.READER.readFrom(input);
         assertEquals(FLOW_STATS_ENTRY_SERIALIZED.length, input.readerIndex());
 
         assertEquals(flowStatsEntryBuilt, flowStatsEntryRead);
+        // FIXME: No java stanza in test_data for this class. Add to enable validation of read message
+   }
+
+    /**
+     * Validates Reader handling of partial messages in the buffer.
+     *
+     * Ensures that readers deal with partially available messages, and that buffers
+     * are returned unmodified. Also checks compatibility when the data is not at the start of
+     * the buffer (readerIndex=0), but somewhere else (with the readerIndex appropriately set).
+     */
+   @Test
+   public void testPartialRead() throws Exception {
+       ByteBuf msgBuffer = Unpooled.copiedBuffer(FLOW_STATS_ENTRY_SERIALIZED);
+       for (int prefixLength: PREFIX_BYTES) {
+           ByteBuf prefixBuffer = Unpooled.wrappedBuffer(EMPTY_BYTES).slice(0, prefixLength);
+           ByteBuf wholeBuffer = Unpooled.wrappedBuffer(prefixBuffer, msgBuffer);
+           for (int partialLength = 0; partialLength < FLOW_STATS_ENTRY_SERIALIZED.length - 1; partialLength++) {
+               int length = prefixLength + partialLength;
+               ByteBuf slice = wholeBuffer.slice(0, length);
+               slice.readerIndex(prefixLength);
+
+               Object read = messageReader.readFrom(slice);
+
+               assertNull("partial message should not be read", read);
+               assertEquals("Reader index should be back at the start", prefixLength, slice.readerIndex());
+           }
+
+       }
    }
 
    @Test
@@ -130,7 +179,7 @@ public class OFFlowStatsEntryVer10Test {
        ByteBuf input = Unpooled.copiedBuffer(FLOW_STATS_ENTRY_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
-       OFFlowStatsEntry flowStatsEntry = OFFlowStatsEntryVer10.READER.readFrom(input);
+       OFFlowStatsEntry flowStatsEntry = (OFFlowStatsEntry) messageReader.readFrom(input);
        assertEquals(FLOW_STATS_ENTRY_SERIALIZED.length, input.readerIndex());
 
        // write message again

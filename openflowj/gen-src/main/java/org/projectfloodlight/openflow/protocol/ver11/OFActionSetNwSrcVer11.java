@@ -169,9 +169,11 @@ class OFActionSetNwSrcVer11 implements OFActionSetNwSrc {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFActionSetNwSrc> {
+    static class Reader extends AbstractOFMessageReader<OFActionSetNwSrc> {
         @Override
-        public OFActionSetNwSrc readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionSetNwSrc readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 5
             short type = bb.readShort();
@@ -180,6 +182,7 @@ class OFActionSetNwSrcVer11 implements OFActionSetNwSrc {
             int length = U16.f(bb.readShort());
             if(length != 8)
                 throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

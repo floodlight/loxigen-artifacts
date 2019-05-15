@@ -313,9 +313,11 @@ class OFBsnPduTxReplyVer11 implements OFBsnPduTxReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnPduTxReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnPduTxReply> {
         @Override
-        public OFBsnPduTxReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnPduTxReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -328,6 +330,7 @@ class OFBsnPduTxReplyVer11 implements OFBsnPduTxReply {
             int length = U16.f(bb.readShort());
             if(length != 25)
                 throw new OFParseError("Wrong length: Expected=25(25), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

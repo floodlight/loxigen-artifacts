@@ -232,15 +232,18 @@ class OFQueueDescVer15 implements OFQueueDesc {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFQueueDesc> {
+    static class Reader extends AbstractOFMessageReader<OFQueueDesc> {
         @Override
-        public OFQueueDesc readFrom(ByteBuf bb) throws OFParseError {
+        public OFQueueDesc readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             long portNo = U32.f(bb.readInt());
             long queueId = U32.f(bb.readInt());
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -250,7 +253,7 @@ class OFQueueDescVer15 implements OFQueueDesc {
                 logger.trace("readFrom - length={}", length);
             // pad: 6 bytes
             bb.skipBytes(6);
-            List<OFQueueDescProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFQueueDescPropVer15.READER);
+            List<OFQueueDescProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFQueueDescPropVer15.READER);
 
             OFQueueDescVer15 queueDescVer15 = new OFQueueDescVer15(
                     portNo,

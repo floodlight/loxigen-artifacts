@@ -305,9 +305,11 @@ class OFBsnErrorVer15 implements OFBsnError {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnError> {
+    static class Reader extends AbstractOFMessageReader<OFBsnError> {
         @Override
-        public OFBsnError readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnError readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -320,6 +322,7 @@ class OFBsnErrorVer15 implements OFBsnError {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -341,7 +344,7 @@ class OFBsnErrorVer15 implements OFBsnError {
             if(experimenter != 0x5c16c7)
                 throw new OFParseError("Wrong experimenter: Expected=0x5c16c7L(0x5c16c7L), got="+experimenter);
             String errMsg = ChannelUtils.readFixedLengthString(bb, 256);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_15);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_15);
 
             OFBsnErrorVer15 bsnErrorVer15 = new OFBsnErrorVer15(
                     xid,

@@ -229,9 +229,11 @@ class OFOxmBsnL2CacheHitVer14 implements OFOxmBsnL2CacheHit {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnL2CacheHit> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnL2CacheHit> {
         @Override
-        public OFOxmBsnL2CacheHit readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnL2CacheHit readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x32401L
             int typeLen = bb.readInt();
             if(typeLen != 0x32401)

@@ -241,9 +241,11 @@ class OFBsnTlvHashGtpPortMatchVer14 implements OFBsnTlvHashGtpPortMatch {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvHashGtpPortMatch> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvHashGtpPortMatch> {
         @Override
-        public OFBsnTlvHashGtpPortMatch readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvHashGtpPortMatch readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x69
             short type = bb.readShort();
@@ -252,6 +254,7 @@ class OFBsnTlvHashGtpPortMatchVer14 implements OFBsnTlvHashGtpPortMatch {
             int length = U16.f(bb.readShort());
             if(length != 9)
                 throw new OFParseError("Wrong length: Expected=9(9), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

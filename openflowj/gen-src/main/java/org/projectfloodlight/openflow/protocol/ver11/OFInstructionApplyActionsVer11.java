@@ -171,9 +171,11 @@ class OFInstructionApplyActionsVer11 implements OFInstructionApplyActions {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFInstructionApplyActions> {
+    static class Reader extends AbstractOFMessageReader<OFInstructionApplyActions> {
         @Override
-        public OFInstructionApplyActions readFrom(ByteBuf bb) throws OFParseError {
+        public OFInstructionApplyActions readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 4
             short type = bb.readShort();
@@ -182,6 +184,7 @@ class OFInstructionApplyActionsVer11 implements OFInstructionApplyActions {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -191,7 +194,7 @@ class OFInstructionApplyActionsVer11 implements OFInstructionApplyActions {
                 logger.trace("readFrom - length={}", length);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFAction> actions = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFActionVer11.READER);
+            List<OFAction> actions = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFActionVer11.READER);
 
             OFInstructionApplyActionsVer11 instructionApplyActionsVer11 = new OFInstructionApplyActionsVer11(
                     actions

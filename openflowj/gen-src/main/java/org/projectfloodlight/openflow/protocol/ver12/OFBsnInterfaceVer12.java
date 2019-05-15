@@ -289,9 +289,11 @@ class OFBsnInterfaceVer12 implements OFBsnInterface {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnInterface> {
+    static class Reader extends AbstractOFMessageReader<OFBsnInterface> {
         @Override
-        public OFBsnInterface readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnInterface readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             MacAddress hwAddr = MacAddress.read6Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);

@@ -26,6 +26,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import io.netty.buffer.ByteBuf;
+import java.util.List;
 
 abstract class OFGroupModVer15 {
     // version: 1.5
@@ -35,9 +36,9 @@ abstract class OFGroupModVer15 {
 
     public final static OFGroupModVer15.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFGroupMod> {
+    static class Reader extends AbstractOFMessageReader<OFGroupMod> {
         @Override
-        public OFGroupMod readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupMod readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -52,28 +53,50 @@ abstract class OFGroupModVer15 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             U32.f(bb.readInt());
             short command = bb.readShort();
-            bb.readerIndex(start);
             switch(command) {
                case (short) 0x0:
+                   bb.readerIndex(start);
                    // discriminator value OFGroupModCommand.ADD=0 for class OFGroupAddVer15
-                   return OFGroupAddVer15.READER.readFrom(bb);
+                   return OFGroupAddVer15.READER.readFrom(context, bb);
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value OFGroupModCommand.DELETE=2 for class OFGroupDeleteVer15
-                   return OFGroupDeleteVer15.READER.readFrom(bb);
+                   return OFGroupDeleteVer15.READER.readFrom(context, bb);
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value OFGroupModCommand.MODIFY=1 for class OFGroupModifyVer15
-                   return OFGroupModifyVer15.READER.readFrom(bb);
+                   return OFGroupModifyVer15.READER.readFrom(context, bb);
                case (short) 0x3:
+                   bb.readerIndex(start);
                    // discriminator value OFGroupModCommand.INSERT_BUCKET=3 for class OFGroupInsertBucketVer15
-                   return OFGroupInsertBucketVer15.READER.readFrom(bb);
+                   return OFGroupInsertBucketVer15.READER.readFrom(context, bb);
                case (short) 0x5:
+                   bb.readerIndex(start);
                    // discriminator value OFGroupModCommand.REMOVE_BUCKET=5 for class OFGroupRemoveBucketVer15
-                   return OFGroupRemoveBucketVer15.READER.readFrom(bb);
+                   return OFGroupRemoveBucketVer15.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator command of class OFGroupModVer15: " + command);
+                   context.getUnparsedHandler().unparsedMessage(OFGroupModVer15.class, "command", command);
             }
+            OFGroupTypeSerializerVer15.readFrom(bb);
+            // pad: 1 bytes
+            bb.skipBytes(1);
+            OFGroup.read4Bytes(bb);
+            int bucketArrayLen = U16.f(bb.readShort());
+            // pad: 2 bytes
+            bb.skipBytes(2);
+            OFGroupBucketSerializerVer15.readFrom(bb);
+            ChannelUtils.readList(context, bb, bucketArrayLen, OFBucketVer15.READER);
+            ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFGroupPropVer15.READER);
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

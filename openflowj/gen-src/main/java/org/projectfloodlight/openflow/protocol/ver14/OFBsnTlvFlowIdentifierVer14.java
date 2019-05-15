@@ -162,9 +162,11 @@ class OFBsnTlvFlowIdentifierVer14 implements OFBsnTlvFlowIdentifier {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvFlowIdentifier> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvFlowIdentifier> {
         @Override
-        public OFBsnTlvFlowIdentifier readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvFlowIdentifier readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0xb7
             short type = bb.readShort();
@@ -173,6 +175,7 @@ class OFBsnTlvFlowIdentifierVer14 implements OFBsnTlvFlowIdentifier {
             int length = U16.f(bb.readShort());
             if(length != 8)
                 throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

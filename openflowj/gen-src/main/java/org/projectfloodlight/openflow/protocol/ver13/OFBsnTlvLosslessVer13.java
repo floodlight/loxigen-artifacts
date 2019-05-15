@@ -70,9 +70,11 @@ class OFBsnTlvLosslessVer13 implements OFBsnTlvLossless {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvLossless> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvLossless> {
         @Override
-        public OFBsnTlvLossless readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvLossless readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0xbc
             short type = bb.readShort();
@@ -81,6 +83,7 @@ class OFBsnTlvLosslessVer13 implements OFBsnTlvLossless {
             int length = U16.f(bb.readShort());
             if(length != 4)
                 throw new OFParseError("Wrong length: Expected=4(4), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
