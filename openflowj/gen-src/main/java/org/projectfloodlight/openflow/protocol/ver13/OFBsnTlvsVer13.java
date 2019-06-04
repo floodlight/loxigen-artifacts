@@ -1215,6 +1215,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return OFBsnTlvSetLoopbackModeVer13.INSTANCE;
     }
 
+    public OFBsnTlvSrcMacCml.Builder buildSrcMacCml() {
+        return new OFBsnTlvSrcMacCmlVer13.Builder();
+    }
+    public OFBsnTlvSrcMacCml srcMacCml(OFBsnSrcMacCml value) {
+        return new OFBsnTlvSrcMacCmlVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvStatus.Builder buildStatus() {
         return new OFBsnTlvStatusVer13.Builder();
     }

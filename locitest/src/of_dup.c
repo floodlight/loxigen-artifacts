@@ -28346,6 +28346,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_SRC_MAC_CML) {
+        return of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_PRESERVE_VLAN) {
         return of_bsn_tlv_preserve_vlan_OF_VERSION_1_3_dup(src);
     }
@@ -32025,6 +32029,31 @@ of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(
     if ((dst = of_bsn_tlv_set_loopback_mode_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_src_mac_cml
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_src_mac_cml.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_src_mac_cml_t *
+of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_dup(
+    of_bsn_tlv_src_mac_cml_t *src)
+{
+    of_bsn_tlv_src_mac_cml_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_src_mac_cml_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_src_mac_cml_value_get(src, &val16);
+    of_bsn_tlv_src_mac_cml_value_set(dst, val16);
 
     return dst;
 }
@@ -52757,6 +52786,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_SRC_MAC_CML) {
+        return of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_PRESERVE_VLAN) {
         return of_bsn_tlv_preserve_vlan_OF_VERSION_1_4_dup(src);
     }
@@ -56436,6 +56469,31 @@ of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(
     if ((dst = of_bsn_tlv_set_loopback_mode_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_src_mac_cml
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_src_mac_cml.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_src_mac_cml_t *
+of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_dup(
+    of_bsn_tlv_src_mac_cml_t *src)
+{
+    of_bsn_tlv_src_mac_cml_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_src_mac_cml_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_src_mac_cml_value_get(src, &val16);
+    of_bsn_tlv_src_mac_cml_value_set(dst, val16);
 
     return dst;
 }
@@ -76900,6 +76958,23 @@ of_bsn_tlv_set_loopback_mode_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_src_mac_cml_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

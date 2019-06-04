@@ -1341,10 +1341,9 @@ enum_v4_ofp_bsn_lua_upload_flags = {
     [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
 }
 
-enum_v4_ofp_group = {
-    [4294967040] = "OFPG_MAX",
-    [4294967292] = "OFPG_ALL",
-    [4294967295] = "OFPG_ANY",
+enum_v4_ofp_bsn_vport_status = {
+    [0] = "OF_BSN_VPORT_STATUS_OK",
+    [1] = "OF_BSN_VPORT_STATUS_FAILED",
 }
 
 enum_v4_ofp_bsn_auto_negotiation_type = {
@@ -1521,9 +1520,10 @@ enum_v4_ofp_bsn_flow_classifier = {
     [9] = "OFP_BSN_FLOW_CLASSIFIER_L3UCUNKNOWN",
 }
 
-enum_v4_ofp_bsn_vport_status = {
-    [0] = "OF_BSN_VPORT_STATUS_OK",
-    [1] = "OF_BSN_VPORT_STATUS_FAILED",
+enum_v4_ofp_group = {
+    [4294967040] = "OFPG_MAX",
+    [4294967292] = "OFPG_ALL",
+    [4294967295] = "OFPG_ANY",
 }
 
 enum_v4_ofp_port_reason = {
@@ -1542,6 +1542,13 @@ enum_v4_ofp_flow_mod_command = {
     [2] = "OFPFC_MODIFY_STRICT",
     [3] = "OFPFC_DELETE",
     [4] = "OFPFC_DELETE_STRICT",
+}
+
+enum_v4_ofp_bsn_src_mac_cml = {
+    [0] = "OFP_BSN_SRC_MAC_CML_NONE",
+    [1] = "OFP_BSN_SRC_MAC_CML_CPU_DROP",
+    [2] = "OFP_BSN_SRC_MAC_CML_FORWARD",
+    [3] = "OFP_BSN_SRC_MAC_CML_CPU_FORWARD",
 }
 
 enum_v4_of_bsn_lacp_convergence_status = {
@@ -2349,10 +2356,9 @@ enum_v5_ofp_bsn_lua_upload_flags = {
     [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
 }
 
-enum_v5_ofp_group = {
-    [4294967040] = "OFPG_MAX",
-    [4294967292] = "OFPG_ALL",
-    [4294967295] = "OFPG_ANY",
+enum_v5_ofp_bsn_vport_status = {
+    [0] = "OF_BSN_VPORT_STATUS_OK",
+    [1] = "OF_BSN_VPORT_STATUS_FAILED",
 }
 
 enum_v5_ofp_bsn_auto_negotiation_type = {
@@ -2545,9 +2551,10 @@ enum_v5_ofp_bsn_flow_classifier = {
     [9] = "OFP_BSN_FLOW_CLASSIFIER_L3UCUNKNOWN",
 }
 
-enum_v5_ofp_bsn_vport_status = {
-    [0] = "OF_BSN_VPORT_STATUS_OK",
-    [1] = "OF_BSN_VPORT_STATUS_FAILED",
+enum_v5_ofp_group = {
+    [4294967040] = "OFPG_MAX",
+    [4294967292] = "OFPG_ALL",
+    [4294967295] = "OFPG_ANY",
 }
 
 enum_v5_ofp_port_reason = {
@@ -2568,6 +2575,13 @@ enum_v5_ofp_flow_mod_command = {
     [2] = "OFPFC_MODIFY_STRICT",
     [3] = "OFPFC_DELETE",
     [4] = "OFPFC_DELETE_STRICT",
+}
+
+enum_v5_ofp_bsn_src_mac_cml = {
+    [0] = "OFP_BSN_SRC_MAC_CML_NONE",
+    [1] = "OFP_BSN_SRC_MAC_CML_CPU_DROP",
+    [2] = "OFP_BSN_SRC_MAC_CML_FORWARD",
+    [3] = "OFP_BSN_SRC_MAC_CML_CPU_FORWARD",
 }
 
 enum_v5_ofp_table_reason = {
@@ -3485,9 +3499,10 @@ enum_v6_ofp_bsn_lua_upload_flags = {
     [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
 }
 
-enum_v6_ofp_bsn_vport_status = {
-    [0] = "OF_BSN_VPORT_STATUS_OK",
-    [1] = "OF_BSN_VPORT_STATUS_FAILED",
+enum_v6_ofp_group = {
+    [4294967040] = "OFPG_MAX",
+    [4294967292] = "OFPG_ALL",
+    [4294967295] = "OFPG_ANY",
 }
 
 enum_v6_ofp_bsn_auto_negotiation_type = {
@@ -3782,10 +3797,9 @@ enum_v6_ofp_bsn_flow_classifier = {
     [9] = "OFP_BSN_FLOW_CLASSIFIER_L3UCUNKNOWN",
 }
 
-enum_v6_ofp_group = {
-    [4294967040] = "OFPG_MAX",
-    [4294967292] = "OFPG_ALL",
-    [4294967295] = "OFPG_ANY",
+enum_v6_ofp_bsn_vport_status = {
+    [0] = "OF_BSN_VPORT_STATUS_OK",
+    [1] = "OF_BSN_VPORT_STATUS_FAILED",
 }
 
 enum_v6_ofp_stat_trigger_flags = {
@@ -3811,6 +3825,13 @@ enum_v6_ofp_flow_mod_command = {
     [2] = "OFPFC_MODIFY_STRICT",
     [3] = "OFPFC_DELETE",
     [4] = "OFPFC_DELETE_STRICT",
+}
+
+enum_v6_ofp_bsn_src_mac_cml = {
+    [0] = "OFP_BSN_SRC_MAC_CML_NONE",
+    [1] = "OFP_BSN_SRC_MAC_CML_CPU_DROP",
+    [2] = "OFP_BSN_SRC_MAC_CML_FORWARD",
+    [3] = "OFP_BSN_SRC_MAC_CML_CPU_FORWARD",
 }
 
 enum_v6_ofp_table_reason = {
@@ -9200,6 +9221,9 @@ fields['of13.bsn_tlv_sampling_rate.length'] = ProtoField.uint16("of13.bsn_tlv_sa
 fields['of13.bsn_tlv_sampling_rate.value'] = ProtoField.uint32("of13.bsn_tlv_sampling_rate.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_set_loopback_mode.type'] = ProtoField.uint16("of13.bsn_tlv_set_loopback_mode.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_set_loopback_mode.length'] = ProtoField.uint16("of13.bsn_tlv_set_loopback_mode.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_src_mac_cml.type'] = ProtoField.uint16("of13.bsn_tlv_src_mac_cml.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_src_mac_cml.length'] = ProtoField.uint16("of13.bsn_tlv_src_mac_cml.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_src_mac_cml.value'] = ProtoField.uint32("of13.bsn_tlv_src_mac_cml.value", "value", base.DEC, enum_v4_ofp_bsn_src_mac_cml)
 fields['of13.bsn_tlv_status.type'] = ProtoField.uint16("of13.bsn_tlv_status.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_status.length'] = ProtoField.uint16("of13.bsn_tlv_status.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_status.value'] = ProtoField.uint32("of13.bsn_tlv_status.value", "value", base.DEC, enum_v4_ofp_bsn_status)
@@ -12251,6 +12275,9 @@ fields['of14.bsn_tlv_sampling_rate.length'] = ProtoField.uint16("of14.bsn_tlv_sa
 fields['of14.bsn_tlv_sampling_rate.value'] = ProtoField.uint32("of14.bsn_tlv_sampling_rate.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_set_loopback_mode.type'] = ProtoField.uint16("of14.bsn_tlv_set_loopback_mode.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_set_loopback_mode.length'] = ProtoField.uint16("of14.bsn_tlv_set_loopback_mode.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_src_mac_cml.type'] = ProtoField.uint16("of14.bsn_tlv_src_mac_cml.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_src_mac_cml.length'] = ProtoField.uint16("of14.bsn_tlv_src_mac_cml.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_src_mac_cml.value'] = ProtoField.uint32("of14.bsn_tlv_src_mac_cml.value", "value", base.DEC, enum_v5_ofp_bsn_src_mac_cml)
 fields['of14.bsn_tlv_status.type'] = ProtoField.uint16("of14.bsn_tlv_status.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_status.length'] = ProtoField.uint16("of14.bsn_tlv_status.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_status.value'] = ProtoField.uint32("of14.bsn_tlv_status.value", "value", base.DEC, enum_v5_ofp_bsn_status)
@@ -15580,6 +15607,9 @@ fields['of15.bsn_tlv_sampling_rate.length'] = ProtoField.uint16("of15.bsn_tlv_sa
 fields['of15.bsn_tlv_sampling_rate.value'] = ProtoField.uint32("of15.bsn_tlv_sampling_rate.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_set_loopback_mode.type'] = ProtoField.uint16("of15.bsn_tlv_set_loopback_mode.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_set_loopback_mode.length'] = ProtoField.uint16("of15.bsn_tlv_set_loopback_mode.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_src_mac_cml.type'] = ProtoField.uint16("of15.bsn_tlv_src_mac_cml.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_src_mac_cml.length'] = ProtoField.uint16("of15.bsn_tlv_src_mac_cml.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_src_mac_cml.value'] = ProtoField.uint32("of15.bsn_tlv_src_mac_cml.value", "value", base.DEC, enum_v6_ofp_bsn_src_mac_cml)
 fields['of15.bsn_tlv_status.type'] = ProtoField.uint16("of15.bsn_tlv_status.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_status.length'] = ProtoField.uint16("of15.bsn_tlv_status.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_status.value'] = ProtoField.uint32("of15.bsn_tlv_status.value", "value", base.DEC, enum_v6_ofp_bsn_status)
@@ -22196,6 +22226,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_sampling_rate.value'],
     fields['of13.bsn_tlv_set_loopback_mode.type'],
     fields['of13.bsn_tlv_set_loopback_mode.length'],
+    fields['of13.bsn_tlv_src_mac_cml.type'],
+    fields['of13.bsn_tlv_src_mac_cml.length'],
+    fields['of13.bsn_tlv_src_mac_cml.value'],
     fields['of13.bsn_tlv_status.type'],
     fields['of13.bsn_tlv_status.length'],
     fields['of13.bsn_tlv_status.value'],
@@ -25247,6 +25280,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_sampling_rate.value'],
     fields['of14.bsn_tlv_set_loopback_mode.type'],
     fields['of14.bsn_tlv_set_loopback_mode.length'],
+    fields['of14.bsn_tlv_src_mac_cml.type'],
+    fields['of14.bsn_tlv_src_mac_cml.length'],
+    fields['of14.bsn_tlv_src_mac_cml.value'],
     fields['of14.bsn_tlv_status.type'],
     fields['of14.bsn_tlv_status.length'],
     fields['of14.bsn_tlv_status.value'],
@@ -28576,6 +28612,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_sampling_rate.value'],
     fields['of15.bsn_tlv_set_loopback_mode.type'],
     fields['of15.bsn_tlv_set_loopback_mode.length'],
+    fields['of15.bsn_tlv_src_mac_cml.type'],
+    fields['of15.bsn_tlv_src_mac_cml.length'],
+    fields['of15.bsn_tlv_src_mac_cml.value'],
     fields['of15.bsn_tlv_status.type'],
     fields['of15.bsn_tlv_status.length'],
     fields['of15.bsn_tlv_status.value'],
@@ -41746,6 +41785,16 @@ function dissect_of_bsn_tlv_set_loopback_mode_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[74] = dissect_of_bsn_tlv_set_loopback_mode_v4
 
+-- child class of_bsn_tlv_src_mac_cml
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_src_mac_cml_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_src_mac_cml.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_src_mac_cml.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_src_mac_cml.value')
+    return 'of_bsn_tlv_src_mac_cml'
+end
+of_bsn_tlv_v4_dissectors[191] = dissect_of_bsn_tlv_src_mac_cml_v4
+
 -- child class of_bsn_tlv_status
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_status_v4(reader, subtree)
@@ -50082,6 +50131,16 @@ function dissect_of_bsn_tlv_set_loopback_mode_v5(reader, subtree)
     return 'of_bsn_tlv_set_loopback_mode'
 end
 of_bsn_tlv_v5_dissectors[74] = dissect_of_bsn_tlv_set_loopback_mode_v5
+
+-- child class of_bsn_tlv_src_mac_cml
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_src_mac_cml_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_src_mac_cml.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_src_mac_cml.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_src_mac_cml.value')
+    return 'of_bsn_tlv_src_mac_cml'
+end
+of_bsn_tlv_v5_dissectors[191] = dissect_of_bsn_tlv_src_mac_cml_v5
 
 -- child class of_bsn_tlv_status
 -- Child of of_bsn_tlv
@@ -59066,6 +59125,16 @@ function dissect_of_bsn_tlv_set_loopback_mode_v6(reader, subtree)
     return 'of_bsn_tlv_set_loopback_mode'
 end
 of_bsn_tlv_v6_dissectors[74] = dissect_of_bsn_tlv_set_loopback_mode_v6
+
+-- child class of_bsn_tlv_src_mac_cml
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_src_mac_cml_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_src_mac_cml.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_src_mac_cml.length')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_src_mac_cml.value')
+    return 'of_bsn_tlv_src_mac_cml'
+end
+of_bsn_tlv_v6_dissectors[191] = dissect_of_bsn_tlv_src_mac_cml_v6
 
 -- child class of_bsn_tlv_status
 -- Child of of_bsn_tlv

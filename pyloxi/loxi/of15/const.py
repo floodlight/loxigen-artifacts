@@ -1006,6 +1006,19 @@ ofp_bsn_speed_capabilities_map = {
     128: 'OFP_BSN_SPEED_CAP_100GB',
 }
 
+# Identifiers from group ofp_bsn_src_mac_cml
+OFP_BSN_SRC_MAC_CML_NONE = 0
+OFP_BSN_SRC_MAC_CML_CPU_DROP = 1
+OFP_BSN_SRC_MAC_CML_FORWARD = 2
+OFP_BSN_SRC_MAC_CML_CPU_FORWARD = 3
+
+ofp_bsn_src_mac_cml_map = {
+    0: 'OFP_BSN_SRC_MAC_CML_NONE',
+    1: 'OFP_BSN_SRC_MAC_CML_CPU_DROP',
+    2: 'OFP_BSN_SRC_MAC_CML_FORWARD',
+    3: 'OFP_BSN_SRC_MAC_CML_CPU_FORWARD',
+}
+
 # Identifiers from group ofp_bsn_status
 OFP_BSN_STATUS_DISABLE = 0
 OFP_BSN_STATUS_ENABLE = 1

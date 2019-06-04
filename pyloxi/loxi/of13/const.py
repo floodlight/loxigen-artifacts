@@ -883,6 +883,19 @@ ofp_bsn_routing_param_map = {
     6: 'OFP_BSN_ROUTING_PARAM_IPV6_NDP_FRR',
 }
 
+# Identifiers from group ofp_bsn_src_mac_cml
+OFP_BSN_SRC_MAC_CML_NONE = 0
+OFP_BSN_SRC_MAC_CML_CPU_DROP = 1
+OFP_BSN_SRC_MAC_CML_FORWARD = 2
+OFP_BSN_SRC_MAC_CML_CPU_FORWARD = 3
+
+ofp_bsn_src_mac_cml_map = {
+    0: 'OFP_BSN_SRC_MAC_CML_NONE',
+    1: 'OFP_BSN_SRC_MAC_CML_CPU_DROP',
+    2: 'OFP_BSN_SRC_MAC_CML_FORWARD',
+    3: 'OFP_BSN_SRC_MAC_CML_CPU_FORWARD',
+}
+
 # Identifiers from group ofp_bsn_status
 OFP_BSN_STATUS_DISABLE = 0
 OFP_BSN_STATUS_ENABLE = 1
