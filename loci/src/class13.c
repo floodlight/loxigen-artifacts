@@ -4281,6 +4281,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xbe:
             *id = OF_BSN_TLV_DNS_ANALYTICS;
             break;
+        case 0xbf:
+            *id = OF_BSN_TLV_SRC_MAC_CML;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -4859,6 +4862,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xbe:
             *id = OF_BSN_TLV_DNS_ANALYTICS;
+            break;
+        case 0xbf:
+            *id = OF_BSN_TLV_SRC_MAC_CML;
             break;
         default:
             *id = OF_BSN_TLV;

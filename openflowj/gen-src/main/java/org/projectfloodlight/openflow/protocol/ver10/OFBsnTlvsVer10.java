@@ -979,6 +979,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvSetLoopbackMode not supported in version 1.0");
     }
 
+    public OFBsnTlvSrcMacCml.Builder buildSrcMacCml() {
+        throw new UnsupportedOperationException("OFBsnTlvSrcMacCml not supported in version 1.0");
+    }
+    public OFBsnTlvSrcMacCml srcMacCml(OFBsnCml value) {
+        throw new UnsupportedOperationException("OFBsnTlvSrcMacCml not supported in version 1.0");
+    }
+
     public OFBsnTlvStatus.Builder buildStatus() {
         throw new UnsupportedOperationException("OFBsnTlvStatus not supported in version 1.0");
     }

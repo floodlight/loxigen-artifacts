@@ -1,1 +1,1 @@
-a308966151cf0a7bad24bef01b6f7a95f6369714 Merge into master from pull request #648: Add OFP_BSN_TUNNEL_VXLAN. (https://github.com/floodlight/loxigen/pull/648)
+94508c0b35d84521c66ba3cbdc5802002cbebeb2 SWL-5261: Rename ofp_bsn_src_mac_cml enum as ofp_bsn_cml

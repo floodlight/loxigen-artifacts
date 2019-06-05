@@ -493,6 +493,9 @@ abstract class OFBsnTlvVer15 {
                case (short) 0x4a:
                    // discriminator value 0x4a=0x4a for class OFBsnTlvSetLoopbackModeVer15
                    return OFBsnTlvSetLoopbackModeVer15.READER.readFrom(bb);
+               case (short) 0xbf:
+                   // discriminator value 0xbf=0xbf for class OFBsnTlvSrcMacCmlVer15
+                   return OFBsnTlvSrcMacCmlVer15.READER.readFrom(bb);
                case (short) 0x61:
                    // discriminator value 0x61=0x61 for class OFBsnTlvStatusVer15
                    return OFBsnTlvStatusVer15.READER.readFrom(bb);
