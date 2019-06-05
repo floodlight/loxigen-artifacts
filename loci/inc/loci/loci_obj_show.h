@@ -901,6 +901,7 @@ int of_bsn_tlv_rx_bytes_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 int of_bsn_tlv_rx_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_sampling_rate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1587,6 +1588,7 @@ int of_bsn_tlv_rx_bytes_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, 
 int of_bsn_tlv_rx_packets_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_sampling_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_status_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);

@@ -8141,6 +8141,15 @@ extern int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_set_loopback_mode_t *obj, int value);
 
+extern int of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_populate(
+    of_bsn_tlv_src_mac_cml_t *obj, int value);
+extern int of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_check(
+    of_bsn_tlv_src_mac_cml_t *obj, int value);
+extern int of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_src_mac_cml_t *obj, int value);
+extern int of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_src_mac_cml_t *obj, int value);
+
 extern int of_bsn_tlv_status_OF_VERSION_1_3_populate(
     of_bsn_tlv_status_t *obj, int value);
 extern int of_bsn_tlv_status_OF_VERSION_1_3_check(
@@ -14719,6 +14728,15 @@ extern int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_set_loopback_mode_t *obj, int value);
 extern int of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_set_loopback_mode_t *obj, int value);
+
+extern int of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_populate(
+    of_bsn_tlv_src_mac_cml_t *obj, int value);
+extern int of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_check(
+    of_bsn_tlv_src_mac_cml_t *obj, int value);
+extern int of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_src_mac_cml_t *obj, int value);
+extern int of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_src_mac_cml_t *obj, int value);
 
 extern int of_bsn_tlv_status_OF_VERSION_1_4_populate(
     of_bsn_tlv_status_t *obj, int value);

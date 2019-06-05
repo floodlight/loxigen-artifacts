@@ -1819,6 +1819,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_src_mac_cml_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_status_dup(
         of_object_t *src);
 
@@ -7119,6 +7123,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_status_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -10092,6 +10100,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

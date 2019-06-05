@@ -463,6 +463,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_rx_packets_init,
     (of_object_init_f)of_bsn_tlv_sampling_rate_init,
     (of_object_init_f)of_bsn_tlv_set_loopback_mode_init,
+    (of_object_init_f)of_bsn_tlv_src_mac_cml_init,
     (of_object_init_f)of_bsn_tlv_status_init,
     (of_object_init_f)of_bsn_tlv_strip_mpls_l2_on_ingress_init,
     (of_object_init_f)of_bsn_tlv_strip_mpls_l3_on_ingress_init,
