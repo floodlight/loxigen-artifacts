@@ -298,6 +298,121 @@ class bsn_driver_info_json(bsn):
 
 bsn.subtypes[7] = bsn_driver_info_json
 
+class bsn_extended_capabilities(bsn):
+    type = 65535
+    experimenter = 6035143
+    exp_type = 8
+
+    def __init__(self, an_configurable=None, fec_configurable=None, an_conflict=None, fec_conflict=None, reserve1=None, reserve2=None, reserve3=None):
+        if an_configurable != None:
+            self.an_configurable = an_configurable
+        else:
+            self.an_configurable = 0
+        if fec_configurable != None:
+            self.fec_configurable = fec_configurable
+        else:
+            self.fec_configurable = 0
+        if an_conflict != None:
+            self.an_conflict = an_conflict
+        else:
+            self.an_conflict = 0
+        if fec_conflict != None:
+            self.fec_conflict = fec_conflict
+        else:
+            self.fec_conflict = 0
+        if reserve1 != None:
+            self.reserve1 = reserve1
+        else:
+            self.reserve1 = 0
+        if reserve2 != None:
+            self.reserve2 = reserve2
+        else:
+            self.reserve2 = 0
+        if reserve3 != None:
+            self.reserve3 = reserve3
+        else:
+            self.reserve3 = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.exp_type))
+        packed.append(struct.pack("!B", self.an_configurable))
+        packed.append(struct.pack("!B", self.fec_configurable))
+        packed.append(struct.pack("!B", self.an_conflict))
+        packed.append(struct.pack("!B", self.fec_conflict))
+        packed.append(struct.pack("!Q", self.reserve1))
+        packed.append(struct.pack("!Q", self.reserve2))
+        packed.append(struct.pack("!Q", self.reserve3))
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_extended_capabilities()
+        _type = reader.read("!H")[0]
+        assert(_type == 65535)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _exp_type = reader.read("!L")[0]
+        assert(_exp_type == 8)
+        obj.an_configurable = reader.read("!B")[0]
+        obj.fec_configurable = reader.read("!B")[0]
+        obj.an_conflict = reader.read("!B")[0]
+        obj.fec_conflict = reader.read("!B")[0]
+        obj.reserve1 = reader.read("!Q")[0]
+        obj.reserve2 = reader.read("!Q")[0]
+        obj.reserve3 = reader.read("!Q")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.an_configurable != other.an_configurable: return False
+        if self.fec_configurable != other.fec_configurable: return False
+        if self.an_conflict != other.an_conflict: return False
+        if self.fec_conflict != other.fec_conflict: return False
+        if self.reserve1 != other.reserve1: return False
+        if self.reserve2 != other.reserve2: return False
+        if self.reserve3 != other.reserve3: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_extended_capabilities {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("an_configurable = ");
+                q.text("%#x" % self.an_configurable)
+                q.text(","); q.breakable()
+                q.text("fec_configurable = ");
+                q.text("%#x" % self.fec_configurable)
+                q.text(","); q.breakable()
+                q.text("an_conflict = ");
+                q.text("%#x" % self.an_conflict)
+                q.text(","); q.breakable()
+                q.text("fec_conflict = ");
+                q.text("%#x" % self.fec_conflict)
+                q.text(","); q.breakable()
+                q.text("reserve1 = ");
+                q.text("%#x" % self.reserve1)
+                q.text(","); q.breakable()
+                q.text("reserve2 = ");
+                q.text("%#x" % self.reserve2)
+                q.text(","); q.breakable()
+                q.text("reserve3 = ");
+                q.text("%#x" % self.reserve3)
+            q.breakable()
+        q.text('}')
+
+bsn.subtypes[8] = bsn_extended_capabilities
+
 class bsn_forward_error_correction(bsn):
     type = 65535
     experimenter = 6035143

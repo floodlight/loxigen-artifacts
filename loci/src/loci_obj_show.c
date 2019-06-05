@@ -41275,6 +41275,62 @@ of_port_desc_prop_bsn_driver_info_json_OF_VERSION_1_4_show(loci_writer_f writer,
 }
 
 int
+of_port_desc_prop_bsn_extended_capabilities_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+    uint64_t val64;
+
+    of_port_desc_prop_bsn_extended_capabilities_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_extended_capabilities_exp_type_get(obj, &val32);
+    out += writer(cookie, "exp_type=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_extended_capabilities_an_configurable_get(obj, &val8);
+    out += writer(cookie, "an_configurable=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_extended_capabilities_fec_configurable_get(obj, &val8);
+    out += writer(cookie, "fec_configurable=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_extended_capabilities_an_conflict_get(obj, &val8);
+    out += writer(cookie, "an_conflict=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_extended_capabilities_fec_conflict_get(obj, &val8);
+    out += writer(cookie, "fec_conflict=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_extended_capabilities_reserve1_get(obj, &val64);
+    out += writer(cookie, "reserve1=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_extended_capabilities_reserve2_get(obj, &val64);
+    out += writer(cookie, "reserve2=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_extended_capabilities_reserve3_get(obj, &val64);
+    out += writer(cookie, "reserve3=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -43940,6 +43996,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
@@ -44789,6 +44846,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     of_packet_queue_OF_VERSION_1_1_show,
     of_port_desc_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -45672,6 +45730,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_2_show,
     unknown_show,
     unknown_show,
@@ -46521,6 +46580,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_oxm_vlan_vid_masked_OF_VERSION_1_3_show,
     of_packet_queue_OF_VERSION_1_3_show,
     of_port_desc_OF_VERSION_1_3_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -47391,6 +47451,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     unknown_show,
     of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_driver_info_json_OF_VERSION_1_4_show,
+    of_port_desc_prop_bsn_extended_capabilities_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_show,
