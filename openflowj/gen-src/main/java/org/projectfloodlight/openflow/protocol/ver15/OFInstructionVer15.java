@@ -35,39 +35,56 @@ abstract class OFInstructionVer15 {
 
     public final static OFInstructionVer15.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFInstruction> {
+    static class Reader extends AbstractOFMessageReader<OFInstruction> {
         @Override
-        public OFInstruction readFrom(ByteBuf bb) throws OFParseError {
+        public OFInstruction readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             short type = bb.readShort();
-            bb.readerIndex(start);
             switch(type) {
                case (short) 0x4:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.APPLY_ACTIONS=4 for class OFInstructionApplyActionsVer15
-                   return OFInstructionApplyActionsVer15.READER.readFrom(bb);
+                   return OFInstructionApplyActionsVer15.READER.readFrom(context, bb);
                case (short) 0x5:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.CLEAR_ACTIONS=5 for class OFInstructionClearActionsVer15
-                   return OFInstructionClearActionsVer15.READER.readFrom(bb);
+                   return OFInstructionClearActionsVer15.READER.readFrom(context, bb);
                case (short) 0xffff:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.EXPERIMENTER=65535 for class OFInstructionExperimenterVer15
-                   return OFInstructionExperimenterVer15.READER.readFrom(bb);
+                   return OFInstructionExperimenterVer15.READER.readFrom(context, bb);
                case (short) 0x1:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.GOTO_TABLE=1 for class OFInstructionGotoTableVer15
-                   return OFInstructionGotoTableVer15.READER.readFrom(bb);
+                   return OFInstructionGotoTableVer15.READER.readFrom(context, bb);
                case (short) 0x3:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.WRITE_ACTIONS=3 for class OFInstructionWriteActionsVer15
-                   return OFInstructionWriteActionsVer15.READER.readFrom(bb);
+                   return OFInstructionWriteActionsVer15.READER.readFrom(context, bb);
                case (short) 0x2:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.WRITE_METADATA=2 for class OFInstructionWriteMetadataVer15
-                   return OFInstructionWriteMetadataVer15.READER.readFrom(bb);
+                   return OFInstructionWriteMetadataVer15.READER.readFrom(context, bb);
                case (short) 0x7:
+                   bb.readerIndex(start);
                    // discriminator value OFInstructionType.STAT_TRIGGER=7 for class OFInstructionStatTriggerVer15
-                   return OFInstructionStatTriggerVer15.READER.readFrom(bb);
+                   return OFInstructionStatTriggerVer15.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator type of class OFInstructionVer15: " + type);
+                   context.getUnparsedHandler().unparsedMessage(OFInstructionVer15.class, "type", type);
             }
+            int length = U16.f(bb.readShort());
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

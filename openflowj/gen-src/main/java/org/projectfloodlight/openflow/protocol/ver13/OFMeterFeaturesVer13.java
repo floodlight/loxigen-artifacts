@@ -322,9 +322,11 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFMeterFeatures> {
+    static class Reader extends AbstractOFMessageReader<OFMeterFeatures> {
         @Override
-        public OFMeterFeatures readFrom(ByteBuf bb) throws OFParseError {
+        public OFMeterFeatures readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             long maxMeter = U32.f(bb.readInt());
             long bandTypes = U32.f(bb.readInt());
             long capabilities = U32.f(bb.readInt());

@@ -264,9 +264,11 @@ class OFOxmBsnInnerEthSrcMaskedVer13 implements OFOxmBsnInnerEthSrcMasked {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmBsnInnerEthSrcMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmBsnInnerEthSrcMasked> {
         @Override
-        public OFOxmBsnInnerEthSrcMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmBsnInnerEthSrcMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x32f0cL
             int typeLen = bb.readInt();
             if(typeLen != 0x32f0c)

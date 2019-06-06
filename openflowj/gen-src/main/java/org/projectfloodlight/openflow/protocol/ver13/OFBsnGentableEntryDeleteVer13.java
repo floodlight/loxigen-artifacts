@@ -280,9 +280,11 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGentableEntryDelete> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGentableEntryDelete> {
         @Override
-        public OFBsnGentableEntryDelete readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGentableEntryDelete readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -295,6 +297,7 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -312,7 +315,7 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
             if(subtype != 0x2f)
                 throw new OFParseError("Wrong subtype: Expected=0x2fL(0x2fL), got="+subtype);
             GenTableId tableId = GenTableId.read2Bytes(bb);
-            List<OFBsnTlv> key = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnTlvVer13.READER);
+            List<OFBsnTlv> key = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnTlvVer13.READER);
 
             OFBsnGentableEntryDeleteVer13 bsnGentableEntryDeleteVer13 = new OFBsnGentableEntryDeleteVer13(
                     xid,

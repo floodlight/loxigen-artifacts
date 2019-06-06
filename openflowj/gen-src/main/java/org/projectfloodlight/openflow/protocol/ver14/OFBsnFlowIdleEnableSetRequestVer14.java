@@ -230,9 +230,11 @@ class OFBsnFlowIdleEnableSetRequestVer14 implements OFBsnFlowIdleEnableSetReques
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnFlowIdleEnableSetRequest> {
+    static class Reader extends AbstractOFMessageReader<OFBsnFlowIdleEnableSetRequest> {
         @Override
-        public OFBsnFlowIdleEnableSetRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnFlowIdleEnableSetRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -245,6 +247,7 @@ class OFBsnFlowIdleEnableSetRequestVer14 implements OFBsnFlowIdleEnableSetReques
             int length = U16.f(bb.readShort());
             if(length != 20)
                 throw new OFParseError("Wrong length: Expected=20(20), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

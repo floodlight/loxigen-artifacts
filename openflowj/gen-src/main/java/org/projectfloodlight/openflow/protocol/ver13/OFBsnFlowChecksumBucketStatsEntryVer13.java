@@ -154,9 +154,11 @@ class OFBsnFlowChecksumBucketStatsEntryVer13 implements OFBsnFlowChecksumBucketS
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnFlowChecksumBucketStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFBsnFlowChecksumBucketStatsEntry> {
         @Override
-        public OFBsnFlowChecksumBucketStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnFlowChecksumBucketStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             U64 checksum = U64.ofRaw(bb.readLong());
 
             OFBsnFlowChecksumBucketStatsEntryVer13 bsnFlowChecksumBucketStatsEntryVer13 = new OFBsnFlowChecksumBucketStatsEntryVer13(

@@ -165,9 +165,11 @@ class OFBsnTlvEncapVer15 implements OFBsnTlvEncap {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvEncap> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvEncap> {
         @Override
-        public OFBsnTlvEncap readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvEncap readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0xaf
             short type = bb.readShort();
@@ -176,6 +178,7 @@ class OFBsnTlvEncapVer15 implements OFBsnTlvEncap {
             int length = U16.f(bb.readShort());
             if(length != 5)
                 throw new OFParseError("Wrong length: Expected=5(5), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

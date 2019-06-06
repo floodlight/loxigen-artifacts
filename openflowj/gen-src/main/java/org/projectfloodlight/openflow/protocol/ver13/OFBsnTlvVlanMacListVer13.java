@@ -171,9 +171,11 @@ class OFBsnTlvVlanMacListVer13 implements OFBsnTlvVlanMacList {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvVlanMacList> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvVlanMacList> {
         @Override
-        public OFBsnTlvVlanMacList readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvVlanMacList readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x62
             short type = bb.readShort();
@@ -182,6 +184,7 @@ class OFBsnTlvVlanMacListVer13 implements OFBsnTlvVlanMacList {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -189,7 +192,7 @@ class OFBsnTlvVlanMacListVer13 implements OFBsnTlvVlanMacList {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            List<OFBsnVlanMac> key = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnVlanMacVer13.READER);
+            List<OFBsnVlanMac> key = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnVlanMacVer13.READER);
 
             OFBsnTlvVlanMacListVer13 bsnTlvVlanMacListVer13 = new OFBsnTlvVlanMacListVer13(
                     key

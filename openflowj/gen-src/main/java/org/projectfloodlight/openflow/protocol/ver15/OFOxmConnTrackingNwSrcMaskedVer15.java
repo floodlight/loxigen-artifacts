@@ -264,9 +264,11 @@ class OFOxmConnTrackingNwSrcMaskedVer15 implements OFOxmConnTrackingNwSrcMasked 
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmConnTrackingNwSrcMasked> {
+    static class Reader extends AbstractOFMessageReader<OFOxmConnTrackingNwSrcMasked> {
         @Override
-        public OFOxmConnTrackingNwSrcMasked readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmConnTrackingNwSrcMasked readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x1f108L
             int typeLen = bb.readInt();
             if(typeLen != 0x1f108)

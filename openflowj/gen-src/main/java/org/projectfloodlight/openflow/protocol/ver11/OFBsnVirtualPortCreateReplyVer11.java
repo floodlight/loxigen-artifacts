@@ -268,9 +268,11 @@ class OFBsnVirtualPortCreateReplyVer11 implements OFBsnVirtualPortCreateReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnVirtualPortCreateReply> {
+    static class Reader extends AbstractOFMessageReader<OFBsnVirtualPortCreateReply> {
         @Override
-        public OFBsnVirtualPortCreateReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnVirtualPortCreateReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 2
             byte version = bb.readByte();
@@ -283,6 +285,7 @@ class OFBsnVirtualPortCreateReplyVer11 implements OFBsnVirtualPortCreateReply {
             int length = U16.f(bb.readShort());
             if(length != 24)
                 throw new OFParseError("Wrong length: Expected=24(24), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

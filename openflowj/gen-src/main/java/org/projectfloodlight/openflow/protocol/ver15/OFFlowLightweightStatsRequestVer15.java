@@ -493,9 +493,11 @@ class OFFlowLightweightStatsRequestVer15 implements OFFlowLightweightStatsReques
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFFlowLightweightStatsRequest> {
+    static class Reader extends AbstractOFMessageReader<OFFlowLightweightStatsRequest> {
         @Override
-        public OFFlowLightweightStatsRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFFlowLightweightStatsRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -508,6 +510,7 @@ class OFFlowLightweightStatsRequestVer15 implements OFFlowLightweightStatsReques
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -532,7 +535,7 @@ class OFFlowLightweightStatsRequestVer15 implements OFFlowLightweightStatsReques
             bb.skipBytes(4);
             U64 cookie = U64.ofRaw(bb.readLong());
             U64 cookieMask = U64.ofRaw(bb.readLong());
-            Match match = ChannelUtilsVer15.readOFMatch(bb);
+            Match match = ChannelUtilsVer15.readOFMatch(context, bb);
 
             OFFlowLightweightStatsRequestVer15 flowLightweightStatsRequestVer15 = new OFFlowLightweightStatsRequestVer15(
                     xid,

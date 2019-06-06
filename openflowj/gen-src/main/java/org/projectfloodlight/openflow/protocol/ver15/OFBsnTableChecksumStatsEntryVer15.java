@@ -199,9 +199,11 @@ class OFBsnTableChecksumStatsEntryVer15 implements OFBsnTableChecksumStatsEntry 
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTableChecksumStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTableChecksumStatsEntry> {
         @Override
-        public OFBsnTableChecksumStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTableChecksumStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             TableId tableId = TableId.readByte(bb);
             U64 checksum = U64.ofRaw(bb.readLong());
 

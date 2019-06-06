@@ -263,9 +263,11 @@ class OFBadPropertyErrorMsgVer15 implements OFBadPropertyErrorMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBadPropertyErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFBadPropertyErrorMsg> {
         @Override
-        public OFBadPropertyErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFBadPropertyErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -278,6 +280,7 @@ class OFBadPropertyErrorMsgVer15 implements OFBadPropertyErrorMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,7 +294,7 @@ class OFBadPropertyErrorMsgVer15 implements OFBadPropertyErrorMsg {
             if(errType != (short) 0xe)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.BAD_PROPERTY(14), got="+errType);
             OFBadPropertyCode code = OFBadPropertyCodeSerializerVer15.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_15);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_15);
 
             OFBadPropertyErrorMsgVer15 badPropertyErrorMsgVer15 = new OFBadPropertyErrorMsgVer15(
                     xid,

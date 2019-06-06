@@ -165,9 +165,11 @@ class OFBsnTlvUpgradeVer14 implements OFBsnTlvUpgrade {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvUpgrade> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvUpgrade> {
         @Override
-        public OFBsnTlvUpgrade readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvUpgrade readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0xa4
             short type = bb.readShort();
@@ -176,6 +178,7 @@ class OFBsnTlvUpgradeVer14 implements OFBsnTlvUpgrade {
             int length = U16.f(bb.readShort());
             if(length != 6)
                 throw new OFParseError("Wrong length: Expected=6(6), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
