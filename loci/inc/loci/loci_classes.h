@@ -1533,6 +1533,8 @@ void of_port_desc_prop_bsn_breakout_wire_object_id_get(of_object_t *obj, of_obje
 void of_port_desc_prop_bsn_breakout_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_driver_info_json_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_bsn_driver_info_json_push_wire_types(of_object_t *obj);
+void of_port_desc_prop_bsn_extended_capabilities_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_desc_prop_bsn_extended_capabilities_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_forward_error_correction_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_bsn_forward_error_correction_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_generation_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -2360,6 +2362,7 @@ typedef of_object_t of_port_desc_prop_t;
 typedef of_object_t of_port_desc_prop_bsn_t;
 typedef of_object_t of_port_desc_prop_bsn_breakout_t;
 typedef of_object_t of_port_desc_prop_bsn_driver_info_json_t;
+typedef of_object_t of_port_desc_prop_bsn_extended_capabilities_t;
 typedef of_object_t of_port_desc_prop_bsn_forward_error_correction_t;
 typedef of_object_t of_port_desc_prop_bsn_generation_id_t;
 typedef of_object_t of_port_desc_prop_bsn_misc_capabilities_t;
@@ -6211,6 +6214,11 @@ extern void of_port_desc_prop_bsn_breakout_init(
 extern of_object_t *
     of_port_desc_prop_bsn_driver_info_json_new(of_version_t version);
 extern void of_port_desc_prop_bsn_driver_info_json_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_port_desc_prop_bsn_extended_capabilities_new(of_version_t version);
+extern void of_port_desc_prop_bsn_extended_capabilities_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -14974,6 +14982,17 @@ of_port_desc_prop_bsn_breakout_delete(of_object_t *obj) {
  */
 static inline void
 of_port_desc_prop_bsn_driver_info_json_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_port_desc_prop_bsn_extended_capabilities_t
+ * @param obj An instance of type of_port_desc_prop_bsn_extended_capabilities_t
+ *
+ * \ingroup of_port_desc_prop_bsn_extended_capabilities
+ */
+static inline void
+of_port_desc_prop_bsn_extended_capabilities_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -29213,6 +29232,50 @@ extern int WARN_UNUSED_RESULT of_port_desc_prop_bsn_driver_info_json_driver_info
 extern void of_port_desc_prop_bsn_driver_info_json_driver_info_json_get(
     of_port_desc_prop_bsn_driver_info_json_t *obj,
     of_octets_t *driver_info_json);
+
+/* Unified accessor functions for of_port_desc_prop_bsn_extended_capabilities */
+
+extern void of_port_desc_prop_bsn_extended_capabilities_experimenter_set(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj,
+    uint32_t experimenter);
+extern void of_port_desc_prop_bsn_extended_capabilities_experimenter_get(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj,
+    uint32_t *experimenter);
+
+extern void of_port_desc_prop_bsn_extended_capabilities_exp_type_set(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj,
+    uint32_t exp_type);
+extern void of_port_desc_prop_bsn_extended_capabilities_exp_type_get(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj,
+    uint32_t *exp_type);
+
+extern void of_port_desc_prop_bsn_extended_capabilities_configurability_set(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj,
+    uint64_t configurability);
+extern void of_port_desc_prop_bsn_extended_capabilities_configurability_get(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj,
+    uint64_t *configurability);
+
+extern void of_port_desc_prop_bsn_extended_capabilities_conflict_set(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj,
+    uint64_t conflict);
+extern void of_port_desc_prop_bsn_extended_capabilities_conflict_get(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj,
+    uint64_t *conflict);
+
+extern void of_port_desc_prop_bsn_extended_capabilities_reserved1_set(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj,
+    uint64_t reserved1);
+extern void of_port_desc_prop_bsn_extended_capabilities_reserved1_get(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj,
+    uint64_t *reserved1);
+
+extern void of_port_desc_prop_bsn_extended_capabilities_reserved2_set(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj,
+    uint64_t reserved2);
+extern void of_port_desc_prop_bsn_extended_capabilities_reserved2_get(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj,
+    uint64_t *reserved2);
 
 /* Unified accessor functions for of_port_desc_prop_bsn_forward_error_correction */
 
