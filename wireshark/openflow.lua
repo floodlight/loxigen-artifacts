@@ -3114,6 +3114,11 @@ enum_v5_ofp_bsn_hash_algorithm_type = {
     [8] = "OFP_BSN_HASH_ALGORITHM_CRC32HI",
 }
 
+enum_v5_ofp_bsn_extended_capabilities = {
+    [1] = "OFP_BSN_EXT_CAP_AN",
+    [2] = "OFP_BSN_EXT_CAP_FEC",
+}
+
 enum_v5_ofp_meter_mod_command = {
     [0] = "OFPMC_ADD",
     [1] = "OFPMC_MODIFY",
@@ -3494,9 +3499,11 @@ enum_v6_ofp_bundle_ctrl_type = {
     [7] = "OFPBCT_DISCARD_REPLY",
 }
 
-enum_v6_ofp_bsn_lua_upload_flags = {
-    [1] = "OFP_BSN_LUA_UPLOAD_MORE",
-    [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
+enum_v6_ofp_group_type = {
+    [0] = "OFPGT_ALL",
+    [1] = "OFPGT_SELECT",
+    [2] = "OFPGT_INDIRECT",
+    [3] = "OFPGT_FF",
 }
 
 enum_v6_ofp_group = {
@@ -3587,11 +3594,9 @@ enum_v6_ofp_controller_status_prop_type = {
     [65535] = "OFPCSPT_EXPERIMENTER",
 }
 
-enum_v6_ofp_group_type = {
-    [0] = "OFPGT_ALL",
-    [1] = "OFPGT_SELECT",
-    [2] = "OFPGT_INDIRECT",
-    [3] = "OFPGT_FF",
+enum_v6_ofp_bsn_lua_upload_flags = {
+    [1] = "OFP_BSN_LUA_UPLOAD_MORE",
+    [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
 }
 
 enum_v6_ofp_bad_action_code = {
@@ -4400,6 +4405,11 @@ enum_v6_ofp_bsn_hash_algorithm_type = {
 enum_v6_ofp_bundle_feature_flags = {
     [1] = "OFPBF_TIMESTAMP",
     [2] = "OFPBF_TIME_SET_SCHED",
+}
+
+enum_v6_ofp_bsn_extended_capabilities = {
+    [1] = "OFP_BSN_EXT_CAP_AN",
+    [2] = "OFP_BSN_EXT_CAP_FEC",
 }
 
 enum_v6_ofp_flow_update_event = {
@@ -13603,6 +13613,14 @@ fields['of14.port_desc_prop_bsn_driver_info_json.length'] = ProtoField.uint16("o
 fields['of14.port_desc_prop_bsn_driver_info_json.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_driver_info_json.experimenter", "experimenter", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_driver_info_json.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_driver_info_json.exp_type", "exp_type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_driver_info_json.driver_info_json'] = ProtoField.bytes("of14.port_desc_prop_bsn_driver_info_json.driver_info_json", "driver_info_json")
+fields['of14.port_desc_prop_bsn_extended_capabilities.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_extended_capabilities.type", "type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_extended_capabilities.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_extended_capabilities.length", "length", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_extended_capabilities.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_extended_capabilities.experimenter", "experimenter", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_extended_capabilities.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_extended_capabilities.exp_type", "exp_type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_extended_capabilities.configurability'] = ProtoField.uint64("of14.port_desc_prop_bsn_extended_capabilities.configurability", "configurability", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_extended_capabilities.conflict'] = ProtoField.uint64("of14.port_desc_prop_bsn_extended_capabilities.conflict", "conflict", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_extended_capabilities.reserved1'] = ProtoField.uint64("of14.port_desc_prop_bsn_extended_capabilities.reserved1", "reserved1", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_extended_capabilities.reserved2'] = ProtoField.uint64("of14.port_desc_prop_bsn_extended_capabilities.reserved2", "reserved2", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_forward_error_correction.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_forward_error_correction.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_forward_error_correction.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_forward_error_correction.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_forward_error_correction.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_forward_error_correction.experimenter", "experimenter", base.DEC, nil)
@@ -17123,6 +17141,14 @@ fields['of15.port_desc_prop_bsn_driver_info_json.length'] = ProtoField.uint16("o
 fields['of15.port_desc_prop_bsn_driver_info_json.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_driver_info_json.experimenter", "experimenter", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_driver_info_json.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_driver_info_json.exp_type", "exp_type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_driver_info_json.driver_info_json'] = ProtoField.bytes("of15.port_desc_prop_bsn_driver_info_json.driver_info_json", "driver_info_json")
+fields['of15.port_desc_prop_bsn_extended_capabilities.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_extended_capabilities.type", "type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_extended_capabilities.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_extended_capabilities.length", "length", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_extended_capabilities.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_extended_capabilities.experimenter", "experimenter", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_extended_capabilities.exp_type'] = ProtoField.uint32("of15.port_desc_prop_bsn_extended_capabilities.exp_type", "exp_type", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_extended_capabilities.configurability'] = ProtoField.uint64("of15.port_desc_prop_bsn_extended_capabilities.configurability", "configurability", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_extended_capabilities.conflict'] = ProtoField.uint64("of15.port_desc_prop_bsn_extended_capabilities.conflict", "conflict", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_extended_capabilities.reserved1'] = ProtoField.uint64("of15.port_desc_prop_bsn_extended_capabilities.reserved1", "reserved1", base.DEC, nil)
+fields['of15.port_desc_prop_bsn_extended_capabilities.reserved2'] = ProtoField.uint64("of15.port_desc_prop_bsn_extended_capabilities.reserved2", "reserved2", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_forward_error_correction.type'] = ProtoField.uint16("of15.port_desc_prop_bsn_forward_error_correction.type", "type", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_forward_error_correction.length'] = ProtoField.uint16("of15.port_desc_prop_bsn_forward_error_correction.length", "length", base.DEC, nil)
 fields['of15.port_desc_prop_bsn_forward_error_correction.experimenter'] = ProtoField.uint32("of15.port_desc_prop_bsn_forward_error_correction.experimenter", "experimenter", base.DEC, nil)
@@ -26608,6 +26634,14 @@ p_of.fields = {
     fields['of14.port_desc_prop_bsn_driver_info_json.experimenter'],
     fields['of14.port_desc_prop_bsn_driver_info_json.exp_type'],
     fields['of14.port_desc_prop_bsn_driver_info_json.driver_info_json'],
+    fields['of14.port_desc_prop_bsn_extended_capabilities.type'],
+    fields['of14.port_desc_prop_bsn_extended_capabilities.length'],
+    fields['of14.port_desc_prop_bsn_extended_capabilities.experimenter'],
+    fields['of14.port_desc_prop_bsn_extended_capabilities.exp_type'],
+    fields['of14.port_desc_prop_bsn_extended_capabilities.configurability'],
+    fields['of14.port_desc_prop_bsn_extended_capabilities.conflict'],
+    fields['of14.port_desc_prop_bsn_extended_capabilities.reserved1'],
+    fields['of14.port_desc_prop_bsn_extended_capabilities.reserved2'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.type'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.length'],
     fields['of14.port_desc_prop_bsn_forward_error_correction.experimenter'],
@@ -30128,6 +30162,14 @@ p_of.fields = {
     fields['of15.port_desc_prop_bsn_driver_info_json.experimenter'],
     fields['of15.port_desc_prop_bsn_driver_info_json.exp_type'],
     fields['of15.port_desc_prop_bsn_driver_info_json.driver_info_json'],
+    fields['of15.port_desc_prop_bsn_extended_capabilities.type'],
+    fields['of15.port_desc_prop_bsn_extended_capabilities.length'],
+    fields['of15.port_desc_prop_bsn_extended_capabilities.experimenter'],
+    fields['of15.port_desc_prop_bsn_extended_capabilities.exp_type'],
+    fields['of15.port_desc_prop_bsn_extended_capabilities.configurability'],
+    fields['of15.port_desc_prop_bsn_extended_capabilities.conflict'],
+    fields['of15.port_desc_prop_bsn_extended_capabilities.reserved1'],
+    fields['of15.port_desc_prop_bsn_extended_capabilities.reserved2'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.type'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.length'],
     fields['of15.port_desc_prop_bsn_forward_error_correction.experimenter'],
@@ -53925,6 +53967,21 @@ function dissect_of_port_desc_prop_bsn_driver_info_json_v5(reader, subtree)
 end
 of_port_desc_prop_bsn_v5_dissectors[7] = dissect_of_port_desc_prop_bsn_driver_info_json_v5
 
+-- child class of_port_desc_prop_bsn_extended_capabilities
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_extended_capabilities_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_extended_capabilities.type')
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_extended_capabilities.length')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_extended_capabilities.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_extended_capabilities.exp_type')
+    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_extended_capabilities.configurability')
+    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_extended_capabilities.conflict')
+    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_extended_capabilities.reserved1')
+    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_extended_capabilities.reserved2')
+    return 'of_port_desc_prop_bsn_extended_capabilities'
+end
+of_port_desc_prop_bsn_v5_dissectors[8] = dissect_of_port_desc_prop_bsn_extended_capabilities_v5
+
 -- child class of_port_desc_prop_bsn_forward_error_correction
 -- Child of of_port_desc_prop_bsn
 function dissect_of_port_desc_prop_bsn_forward_error_correction_v5(reader, subtree)
@@ -63410,6 +63467,21 @@ function dissect_of_port_desc_prop_bsn_driver_info_json_v6(reader, subtree)
     return 'of_port_desc_prop_bsn_driver_info_json'
 end
 of_port_desc_prop_bsn_v6_dissectors[7] = dissect_of_port_desc_prop_bsn_driver_info_json_v6
+
+-- child class of_port_desc_prop_bsn_extended_capabilities
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_extended_capabilities_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_extended_capabilities.type')
+    read_uint16_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_extended_capabilities.length')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_extended_capabilities.experimenter')
+    read_uint32_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_extended_capabilities.exp_type')
+    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_extended_capabilities.configurability')
+    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_extended_capabilities.conflict')
+    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_extended_capabilities.reserved1')
+    read_uint64_t(reader, 6, subtree, 'of15.port_desc_prop_bsn_extended_capabilities.reserved2')
+    return 'of_port_desc_prop_bsn_extended_capabilities'
+end
+of_port_desc_prop_bsn_v6_dissectors[8] = dissect_of_port_desc_prop_bsn_extended_capabilities_v6
 
 -- child class of_port_desc_prop_bsn_forward_error_correction
 -- Child of of_port_desc_prop_bsn
