@@ -1535,6 +1535,10 @@ public class OFFactoryVer13 implements OFFactory {
         throw new UnsupportedOperationException("OFPortDescPropBsnDriverInfoJson not supported in version 1.3");
     }
 
+    public OFPortDescPropBsnExtendedCapabilities.Builder buildPortDescPropBsnExtendedCapabilities() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnExtendedCapabilities not supported in version 1.3");
+    }
+
     public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
         throw new UnsupportedOperationException("OFPortDescPropBsnForwardErrorCorrection not supported in version 1.3");
     }

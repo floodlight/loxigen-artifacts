@@ -64788,6 +64788,10 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_EXTENDED_CAPABILITIES) {
+        return of_port_desc_prop_bsn_extended_capabilities_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_PORT_DESC_PROP_BSN_SPEED_CAPABILITIES) {
         return of_port_desc_prop_bsn_speed_capabilities_OF_VERSION_1_4_dup(src);
     }
@@ -64796,8 +64800,8 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
         return of_port_desc_prop_ethernet_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_BREAKOUT) {
-        return of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_DRIVER_INFO_JSON) {
+        return of_port_desc_prop_bsn_driver_info_json_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_PORT_DESC_PROP_OPTICAL) {
@@ -64808,16 +64812,12 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
         return of_port_desc_prop_bsn_sff_json_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_GENERATION_ID) {
-        return of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_BREAKOUT) {
+        return of_port_desc_prop_bsn_breakout_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_PORT_DESC_PROP_BSN_MISC_CAPABILITIES) {
         return of_port_desc_prop_bsn_misc_capabilities_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_PORT_DESC_PROP_BSN_DRIVER_INFO_JSON) {
-        return of_port_desc_prop_bsn_driver_info_json_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_PORT_DESC_PROP_BSN_UPLINK) {
@@ -64826,6 +64826,10 @@ of_port_desc_prop_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_PORT_DESC_PROP_BSN_FORWARD_ERROR_CORRECTION) {
         return of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_PORT_DESC_PROP_BSN_GENERATION_ID) {
+        return of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -64894,6 +64898,47 @@ of_port_desc_prop_bsn_driver_info_json_OF_VERSION_1_4_dup(
 
     of_port_desc_prop_bsn_driver_info_json_driver_info_json_get(src, &octets);
     of_port_desc_prop_bsn_driver_info_json_driver_info_json_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_port_desc_prop_bsn_extended_capabilities
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_port_desc_prop_bsn_extended_capabilities.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_port_desc_prop_bsn_extended_capabilities_t *
+of_port_desc_prop_bsn_extended_capabilities_OF_VERSION_1_4_dup(
+    of_port_desc_prop_bsn_extended_capabilities_t *src)
+{
+    of_port_desc_prop_bsn_extended_capabilities_t *dst;
+    uint32_t val32;
+    uint64_t val64;
+
+    if ((dst = of_port_desc_prop_bsn_extended_capabilities_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_port_desc_prop_bsn_extended_capabilities_experimenter_get(src, &val32);
+    of_port_desc_prop_bsn_extended_capabilities_experimenter_set(dst, val32);
+
+    of_port_desc_prop_bsn_extended_capabilities_exp_type_get(src, &val32);
+    of_port_desc_prop_bsn_extended_capabilities_exp_type_set(dst, val32);
+
+    of_port_desc_prop_bsn_extended_capabilities_configurability_get(src, &val64);
+    of_port_desc_prop_bsn_extended_capabilities_configurability_set(dst, val64);
+
+    of_port_desc_prop_bsn_extended_capabilities_conflict_get(src, &val64);
+    of_port_desc_prop_bsn_extended_capabilities_conflict_set(dst, val64);
+
+    of_port_desc_prop_bsn_extended_capabilities_reserved1_get(src, &val64);
+    of_port_desc_prop_bsn_extended_capabilities_reserved1_set(dst, val64);
+
+    of_port_desc_prop_bsn_extended_capabilities_reserved2_get(src, &val64);
+    of_port_desc_prop_bsn_extended_capabilities_reserved2_set(dst, val64);
 
     return dst;
 }
@@ -82529,6 +82574,19 @@ of_port_desc_prop_bsn_driver_info_json_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_port_desc_prop_bsn_driver_info_json_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_port_desc_prop_bsn_extended_capabilities_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_port_desc_prop_bsn_extended_capabilities_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
