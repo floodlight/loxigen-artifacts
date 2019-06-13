@@ -17150,6 +17150,15 @@ extern int of_port_desc_prop_bsn_driver_info_json_OF_VERSION_1_4_populate_scalar
 extern int of_port_desc_prop_bsn_driver_info_json_OF_VERSION_1_4_check_scalars(
     of_port_desc_prop_bsn_driver_info_json_t *obj, int value);
 
+extern int of_port_desc_prop_bsn_extended_capabilities_OF_VERSION_1_4_populate(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj, int value);
+extern int of_port_desc_prop_bsn_extended_capabilities_OF_VERSION_1_4_check(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj, int value);
+extern int of_port_desc_prop_bsn_extended_capabilities_OF_VERSION_1_4_populate_scalars(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj, int value);
+extern int of_port_desc_prop_bsn_extended_capabilities_OF_VERSION_1_4_check_scalars(
+    of_port_desc_prop_bsn_extended_capabilities_t *obj, int value);
+
 extern int of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_populate(
     of_port_desc_prop_bsn_forward_error_correction_t *obj, int value);
 extern int of_port_desc_prop_bsn_forward_error_correction_OF_VERSION_1_4_check(

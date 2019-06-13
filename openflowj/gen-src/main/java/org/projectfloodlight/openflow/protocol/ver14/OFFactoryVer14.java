@@ -1564,6 +1564,10 @@ public class OFFactoryVer14 implements OFFactory {
                     );
     }
 
+    public OFPortDescPropBsnExtendedCapabilities.Builder buildPortDescPropBsnExtendedCapabilities() {
+        return new OFPortDescPropBsnExtendedCapabilitiesVer14.Builder();
+    }
+
     public OFPortDescPropBsnForwardErrorCorrection.Builder buildPortDescPropBsnForwardErrorCorrection() {
         return new OFPortDescPropBsnForwardErrorCorrectionVer14.Builder();
     }
