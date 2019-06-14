@@ -171,9 +171,11 @@ class OFTableFeaturePropMatchVer15 implements OFTableFeaturePropMatch {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableFeaturePropMatch> {
+    static class Reader extends AbstractOFMessageReader<OFTableFeaturePropMatch> {
         @Override
-        public OFTableFeaturePropMatch readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableFeaturePropMatch readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x8
             short type = bb.readShort();
@@ -182,6 +184,7 @@ class OFTableFeaturePropMatchVer15 implements OFTableFeaturePropMatch {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -189,7 +192,7 @@ class OFTableFeaturePropMatchVer15 implements OFTableFeaturePropMatch {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            List<U32> oxmIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), U32.READER);
+            List<U32> oxmIds = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), U32.READER);
 
             OFTableFeaturePropMatchVer15 tableFeaturePropMatchVer15 = new OFTableFeaturePropMatchVer15(
                     oxmIds

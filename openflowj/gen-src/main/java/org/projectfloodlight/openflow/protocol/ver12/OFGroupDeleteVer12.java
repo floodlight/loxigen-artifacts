@@ -356,9 +356,11 @@ class OFGroupDeleteVer12 implements OFGroupDelete {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFGroupDelete> {
+    static class Reader extends AbstractOFMessageReader<OFGroupDelete> {
         @Override
-        public OFGroupDelete readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupDelete readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -371,6 +373,7 @@ class OFGroupDeleteVer12 implements OFGroupDelete {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -387,7 +390,7 @@ class OFGroupDeleteVer12 implements OFGroupDelete {
             // pad: 1 bytes
             bb.skipBytes(1);
             OFGroup group = OFGroup.read4Bytes(bb);
-            List<OFBucket> buckets = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBucketVer12.READER);
+            List<OFBucket> buckets = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBucketVer12.READER);
 
             OFGroupDeleteVer12 groupDeleteVer12 = new OFGroupDeleteVer12(
                     xid,

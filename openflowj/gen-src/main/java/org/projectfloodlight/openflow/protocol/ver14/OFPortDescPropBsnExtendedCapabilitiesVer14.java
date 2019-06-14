@@ -342,9 +342,11 @@ class OFPortDescPropBsnExtendedCapabilitiesVer14 implements OFPortDescPropBsnExt
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPortDescPropBsnExtendedCapabilities> {
+    static class Reader extends AbstractOFMessageReader<OFPortDescPropBsnExtendedCapabilities> {
         @Override
-        public OFPortDescPropBsnExtendedCapabilities readFrom(ByteBuf bb) throws OFParseError {
+        public OFPortDescPropBsnExtendedCapabilities readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0xffff
             short type = bb.readShort();
@@ -353,6 +355,7 @@ class OFPortDescPropBsnExtendedCapabilitiesVer14 implements OFPortDescPropBsnExt
             int length = U16.f(bb.readShort());
             if(length != 44)
                 throw new OFParseError("Wrong length: Expected=44(44), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

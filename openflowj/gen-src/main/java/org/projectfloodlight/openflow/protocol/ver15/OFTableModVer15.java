@@ -292,9 +292,11 @@ class OFTableModVer15 implements OFTableMod {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTableMod> {
+    static class Reader extends AbstractOFMessageReader<OFTableMod> {
         @Override
-        public OFTableMod readFrom(ByteBuf bb) throws OFParseError {
+        public OFTableMod readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -307,6 +309,7 @@ class OFTableModVer15 implements OFTableMod {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -319,7 +322,7 @@ class OFTableModVer15 implements OFTableMod {
             // pad: 3 bytes
             bb.skipBytes(3);
             long config = U32.f(bb.readInt());
-            List<OFTableModProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFTableModPropVer15.READER);
+            List<OFTableModProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFTableModPropVer15.READER);
 
             OFTableModVer15 tableModVer15 = new OFTableModVer15(
                     xid,

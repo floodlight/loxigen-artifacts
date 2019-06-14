@@ -192,9 +192,11 @@ class OFTimeVer15 implements OFTime {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFTime> {
+    static class Reader extends AbstractOFMessageReader<OFTime> {
         @Override
-        public OFTime readFrom(ByteBuf bb) throws OFParseError {
+        public OFTime readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             U64 seconds = U64.ofRaw(bb.readLong());
             long nanoseconds = U32.f(bb.readInt());
             // pad: 4 bytes

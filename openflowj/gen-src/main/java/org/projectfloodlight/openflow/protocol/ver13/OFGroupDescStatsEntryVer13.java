@@ -265,13 +265,16 @@ class OFGroupDescStatsEntryVer13 implements OFGroupDescStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFGroupDescStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFGroupDescStatsEntry> {
         @Override
-        public OFGroupDescStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupDescStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -283,7 +286,7 @@ class OFGroupDescStatsEntryVer13 implements OFGroupDescStatsEntry {
             // pad: 1 bytes
             bb.skipBytes(1);
             OFGroup group = OFGroup.read4Bytes(bb);
-            List<OFBucket> buckets = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBucketVer13.READER);
+            List<OFBucket> buckets = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBucketVer13.READER);
 
             OFGroupDescStatsEntryVer13 groupDescStatsEntryVer13 = new OFGroupDescStatsEntryVer13(
                     groupType,

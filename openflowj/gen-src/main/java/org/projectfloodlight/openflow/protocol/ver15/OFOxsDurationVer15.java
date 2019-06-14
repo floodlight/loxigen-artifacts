@@ -229,9 +229,11 @@ class OFOxsDurationVer15 implements OFOxsDuration {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxsDuration> {
+    static class Reader extends AbstractOFMessageReader<OFOxsDuration> {
         @Override
-        public OFOxsDuration readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxsDuration readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80020008L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80020008)

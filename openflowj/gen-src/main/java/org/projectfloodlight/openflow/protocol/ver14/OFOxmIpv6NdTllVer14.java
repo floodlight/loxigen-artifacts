@@ -229,9 +229,11 @@ class OFOxmIpv6NdTllVer14 implements OFOxmIpv6NdTll {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmIpv6NdTll> {
+    static class Reader extends AbstractOFMessageReader<OFOxmIpv6NdTll> {
         @Override
-        public OFOxmIpv6NdTll readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmIpv6NdTll readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80004206L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80004206)

@@ -359,9 +359,11 @@ class OFBsnPduRxRequestVer14 implements OFBsnPduRxRequest {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnPduRxRequest> {
+    static class Reader extends AbstractOFMessageReader<OFBsnPduRxRequest> {
         @Override
-        public OFBsnPduRxRequest readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnPduRxRequest readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -374,6 +376,7 @@ class OFBsnPduRxRequestVer14 implements OFBsnPduRxRequest {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

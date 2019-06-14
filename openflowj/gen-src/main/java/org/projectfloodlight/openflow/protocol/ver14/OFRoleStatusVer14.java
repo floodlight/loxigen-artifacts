@@ -340,9 +340,11 @@ class OFRoleStatusVer14 implements OFRoleStatus {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFRoleStatus> {
+    static class Reader extends AbstractOFMessageReader<OFRoleStatus> {
         @Override
-        public OFRoleStatus readFrom(ByteBuf bb) throws OFParseError {
+        public OFRoleStatus readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -355,6 +357,7 @@ class OFRoleStatusVer14 implements OFRoleStatus {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -368,7 +371,7 @@ class OFRoleStatusVer14 implements OFRoleStatus {
             // pad: 3 bytes
             bb.skipBytes(3);
             U64 generationId = U64.ofRaw(bb.readLong());
-            List<OFRoleProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFRolePropVer14.READER);
+            List<OFRoleProp> properties = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFRolePropVer14.READER);
 
             OFRoleStatusVer14 roleStatusVer14 = new OFRoleStatusVer14(
                     xid,

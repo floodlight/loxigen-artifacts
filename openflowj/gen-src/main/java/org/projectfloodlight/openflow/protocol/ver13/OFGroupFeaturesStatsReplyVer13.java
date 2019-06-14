@@ -610,9 +610,11 @@ class OFGroupFeaturesStatsReplyVer13 implements OFGroupFeaturesStatsReply {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFGroupFeaturesStatsReply> {
+    static class Reader extends AbstractOFMessageReader<OFGroupFeaturesStatsReply> {
         @Override
-        public OFGroupFeaturesStatsReply readFrom(ByteBuf bb) throws OFParseError {
+        public OFGroupFeaturesStatsReply readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -625,6 +627,7 @@ class OFGroupFeaturesStatsReplyVer13 implements OFGroupFeaturesStatsReply {
             int length = U16.f(bb.readShort());
             if(length != 56)
                 throw new OFParseError("Wrong length: Expected=56(56), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

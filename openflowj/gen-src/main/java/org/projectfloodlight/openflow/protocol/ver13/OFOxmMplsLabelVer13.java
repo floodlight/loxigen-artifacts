@@ -229,9 +229,11 @@ class OFOxmMplsLabelVer13 implements OFOxmMplsLabel {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmMplsLabel> {
+    static class Reader extends AbstractOFMessageReader<OFOxmMplsLabel> {
         @Override
-        public OFOxmMplsLabel readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmMplsLabel readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80004404L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80004404)
