@@ -620,6 +620,15 @@ ofp_bsn_lag_flag_map = {
     1: 'OFP_BSN_LAG_FLAG_AUTO_RECOVERY',
 }
 
+# Identifiers from group ofp_bsn_link_state
+OFP_BSN_LINK_STATE_DOWN = 0
+OFP_BSN_LINK_STATE_UP = 1
+
+ofp_bsn_link_state_map = {
+    0: 'OFP_BSN_LINK_STATE_DOWN',
+    1: 'OFP_BSN_LINK_STATE_UP',
+}
+
 # Identifiers from group ofp_bsn_loglevel
 OFP_BSN_LOGLEVEL_MSG = 0
 OFP_BSN_LOGLEVEL_ERROR = 1

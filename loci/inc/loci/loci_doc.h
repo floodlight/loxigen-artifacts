@@ -6409,6 +6409,17 @@ typedef struct of_bsn_table_checksum_stats_entry_s of_bsn_table_checksum_stats_e
 typedef struct of_bsn_tlv_s of_bsn_tlv_t;
 
 /**
+ * Structure for of_bsn_tlv_active object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_octets.  Functions
+ *   are of type of_bsn_tlv_active_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_active_s of_bsn_tlv_active_t;
+
+/**
  * Structure for of_bsn_tlv_actor_key object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6841,6 +6852,17 @@ typedef struct of_bsn_tlv_external_netmask_s of_bsn_tlv_external_netmask_t;
  *
  */
 typedef struct of_bsn_tlv_fabric_port_role_s of_bsn_tlv_fabric_port_role_t;
+
+/**
+ * Structure for of_bsn_tlv_fail_count object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_fail_count_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_fail_count_s of_bsn_tlv_fail_count_t;
 
 /**
  * Structure for of_bsn_tlv_flood object.  Get/set
@@ -7328,6 +7350,17 @@ typedef struct of_bsn_tlv_l3_src_class_id_s of_bsn_tlv_l3_src_class_id_t;
  *
  */
 typedef struct of_bsn_tlv_lag_options_s of_bsn_tlv_lag_options_t;
+
+/**
+ * Structure for of_bsn_tlv_link_state object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_link_state_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_link_state_s of_bsn_tlv_link_state_t;
 
 /**
  * Structure for of_bsn_tlv_loopback_mode object.  Get/set

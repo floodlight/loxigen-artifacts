@@ -35,6 +35,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
 
 
 
+    public OFBsnTlvActive.Builder buildActive() {
+        throw new UnsupportedOperationException("OFBsnTlvActive not supported in version 1.0");
+    }
+    public OFBsnTlvActive active(byte[] value) {
+        throw new UnsupportedOperationException("OFBsnTlvActive not supported in version 1.0");
+    }
+
     public OFBsnTlvActorKey.Builder buildActorKey() {
         throw new UnsupportedOperationException("OFBsnTlvActorKey not supported in version 1.0");
     }
@@ -306,6 +313,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvFabricPortRole fabricPortRole(OFBsnFabricPortRole value) {
         throw new UnsupportedOperationException("OFBsnTlvFabricPortRole not supported in version 1.0");
+    }
+
+    public OFBsnTlvFailCount.Builder buildFailCount() {
+        throw new UnsupportedOperationException("OFBsnTlvFailCount not supported in version 1.0");
+    }
+    public OFBsnTlvFailCount failCount(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvFailCount not supported in version 1.0");
     }
 
     public OFBsnTlvFlood flood() {
@@ -597,6 +611,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvLagOptions lagOptions(Set<OFBsnLagFlag> flags) {
         throw new UnsupportedOperationException("OFBsnTlvLagOptions not supported in version 1.0");
+    }
+
+    public OFBsnTlvLinkState.Builder buildLinkState() {
+        throw new UnsupportedOperationException("OFBsnTlvLinkState not supported in version 1.0");
+    }
+    public OFBsnTlvLinkState linkState(OFBsnLinkState value) {
+        throw new UnsupportedOperationException("OFBsnTlvLinkState not supported in version 1.0");
     }
 
     public OFBsnTlvLoopbackMode.Builder buildLoopbackMode() {

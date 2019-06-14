@@ -46,6 +46,9 @@ abstract class OFBsnTlvVer13 {
             short type = bb.readShort();
             bb.readerIndex(start);
             switch(type) {
+               case (short) 0xc0:
+                   // discriminator value 0xc0=0xc0 for class OFBsnTlvActiveVer13
+                   return OFBsnTlvActiveVer13.READER.readFrom(bb);
                case (short) 0x2c:
                    // discriminator value 0x2c=0x2c for class OFBsnTlvActorKeyVer13
                    return OFBsnTlvActorKeyVer13.READER.readFrom(bb);
@@ -172,6 +175,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0xa5:
                    // discriminator value 0xa5=0xa5 for class OFBsnTlvFabricPortRoleVer13
                    return OFBsnTlvFabricPortRoleVer13.READER.readFrom(bb);
+               case (short) 0xc2:
+                   // discriminator value 0xc2=0xc2 for class OFBsnTlvFailCountVer13
+                   return OFBsnTlvFailCountVer13.READER.readFrom(bb);
                case (short) 0xa3:
                    // discriminator value 0xa3=0xa3 for class OFBsnTlvFloodVer13
                    return OFBsnTlvFloodVer13.READER.readFrom(bb);
@@ -307,6 +313,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0xa0:
                    // discriminator value 0xa0=0xa0 for class OFBsnTlvLagOptionsVer13
                    return OFBsnTlvLagOptionsVer13.READER.readFrom(bb);
+               case (short) 0xc1:
+                   // discriminator value 0xc1=0xc1 for class OFBsnTlvLinkStateVer13
+                   return OFBsnTlvLinkStateVer13.READER.readFrom(bb);
                case (short) 0x92:
                    // discriminator value 0x92=0x92 for class OFBsnTlvLoopbackModeVer13
                    return OFBsnTlvLoopbackModeVer13.READER.readFrom(bb);

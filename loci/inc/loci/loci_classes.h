@@ -855,6 +855,8 @@ void of_bsn_time_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_bsn_time_request_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_active_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_active_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_actor_key_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_actor_key_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_actor_port_num_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -939,6 +941,8 @@ void of_bsn_tlv_external_netmask_wire_object_id_get(of_object_t *obj, of_object_
 void of_bsn_tlv_external_netmask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_fabric_port_role_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_fabric_port_role_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_fail_count_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_fail_count_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_flood_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_flood_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_flow_classifier_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1029,6 +1033,8 @@ void of_bsn_tlv_l3_src_class_id_wire_object_id_get(of_object_t *obj, of_object_i
 void of_bsn_tlv_l3_src_class_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_lag_options_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_lag_options_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_link_state_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_link_state_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_loopback_mode_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_loopback_mode_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_loopback_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1922,6 +1928,7 @@ typedef of_object_t of_bsn_port_counter_stats_entry_t;
 typedef of_object_t of_bsn_switch_pipeline_stats_entry_t;
 typedef of_object_t of_bsn_table_checksum_stats_entry_t;
 typedef of_object_t of_bsn_tlv_t;
+typedef of_object_t of_bsn_tlv_active_t;
 typedef of_object_t of_bsn_tlv_actor_key_t;
 typedef of_object_t of_bsn_tlv_actor_port_num_t;
 typedef of_object_t of_bsn_tlv_actor_port_priority_t;
@@ -1964,6 +1971,7 @@ typedef of_object_t of_bsn_tlv_external_ip_t;
 typedef of_object_t of_bsn_tlv_external_mac_t;
 typedef of_object_t of_bsn_tlv_external_netmask_t;
 typedef of_object_t of_bsn_tlv_fabric_port_role_t;
+typedef of_object_t of_bsn_tlv_fail_count_t;
 typedef of_object_t of_bsn_tlv_flood_t;
 typedef of_object_t of_bsn_tlv_flow_classifier_t;
 typedef of_object_t of_bsn_tlv_flow_classify_t;
@@ -2009,6 +2017,7 @@ typedef of_object_t of_bsn_tlv_l3_dst_class_id_t;
 typedef of_object_t of_bsn_tlv_l3_interface_class_id_t;
 typedef of_object_t of_bsn_tlv_l3_src_class_id_t;
 typedef of_object_t of_bsn_tlv_lag_options_t;
+typedef of_object_t of_bsn_tlv_link_state_t;
 typedef of_object_t of_bsn_tlv_loopback_mode_t;
 typedef of_object_t of_bsn_tlv_loopback_port_t;
 typedef of_object_t of_bsn_tlv_lossless_t;
@@ -4017,6 +4026,11 @@ extern void of_bsn_tlv_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_active_new(of_version_t version);
+extern void of_bsn_tlv_active_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_actor_key_new(of_version_t version);
 extern void of_bsn_tlv_actor_key_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4224,6 +4238,11 @@ extern void of_bsn_tlv_external_netmask_init(
 extern of_object_t *
     of_bsn_tlv_fabric_port_role_new(of_version_t version);
 extern void of_bsn_tlv_fabric_port_role_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_fail_count_new(of_version_t version);
+extern void of_bsn_tlv_fail_count_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -4449,6 +4468,11 @@ extern void of_bsn_tlv_l3_src_class_id_init(
 extern of_object_t *
     of_bsn_tlv_lag_options_new(of_version_t version);
 extern void of_bsn_tlv_lag_options_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_link_state_new(of_version_t version);
+extern void of_bsn_tlv_link_state_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10146,6 +10170,17 @@ of_bsn_tlv_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_active_t
+ * @param obj An instance of type of_bsn_tlv_active_t
+ *
+ * \ingroup of_bsn_tlv_active
+ */
+static inline void
+of_bsn_tlv_active_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_actor_key_t
  * @param obj An instance of type of_bsn_tlv_actor_key_t
  *
@@ -10604,6 +10639,17 @@ of_bsn_tlv_external_netmask_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_fabric_port_role_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_fail_count_t
+ * @param obj An instance of type of_bsn_tlv_fail_count_t
+ *
+ * \ingroup of_bsn_tlv_fail_count
+ */
+static inline void
+of_bsn_tlv_fail_count_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -11099,6 +11145,17 @@ of_bsn_tlv_l3_src_class_id_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_lag_options_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_link_state_t
+ * @param obj An instance of type of_bsn_tlv_link_state_t
+ *
+ * \ingroup of_bsn_tlv_link_state
+ */
+static inline void
+of_bsn_tlv_link_state_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24003,6 +24060,15 @@ extern void of_bsn_table_checksum_stats_entry_checksum_get(
     of_bsn_table_checksum_stats_entry_t *obj,
     uint64_t *checksum);
 
+/* Unified accessor functions for of_bsn_tlv_active */
+
+extern int WARN_UNUSED_RESULT of_bsn_tlv_active_value_set(
+    of_bsn_tlv_active_t *obj,
+    of_octets_t *value);
+extern void of_bsn_tlv_active_value_get(
+    of_bsn_tlv_active_t *obj,
+    of_octets_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_actor_key */
 
 extern void of_bsn_tlv_actor_key_value_set(
@@ -24333,6 +24399,15 @@ extern void of_bsn_tlv_fabric_port_role_value_set(
 extern void of_bsn_tlv_fabric_port_role_value_get(
     of_bsn_tlv_fabric_port_role_t *obj,
     uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_fail_count */
+
+extern void of_bsn_tlv_fail_count_value_set(
+    of_bsn_tlv_fail_count_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_fail_count_value_get(
+    of_bsn_tlv_fail_count_t *obj,
+    uint64_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_flood */
 
@@ -24724,6 +24799,15 @@ extern void of_bsn_tlv_lag_options_flags_set(
 extern void of_bsn_tlv_lag_options_flags_get(
     of_bsn_tlv_lag_options_t *obj,
     uint16_t *flags);
+
+/* Unified accessor functions for of_bsn_tlv_link_state */
+
+extern void of_bsn_tlv_link_state_value_set(
+    of_bsn_tlv_link_state_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_link_state_value_get(
+    of_bsn_tlv_link_state_t *obj,
+    uint8_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_loopback_mode */
 

@@ -20105,6 +20105,20 @@ of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
+of_bsn_tlv_active_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_octets_t octets;
+
+    of_bsn_tlv_active_value_get(obj, &octets);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_octets(writer, cookie, octets);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_actor_key_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -20650,6 +20664,20 @@ of_bsn_tlv_fabric_port_role_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
     of_bsn_tlv_fabric_port_role_value_get(obj, &val16);
     out += writer(cookie, "value=");
     out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_fail_count_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint64_t val64;
+
+    of_bsn_tlv_fail_count_value_get(obj, &val64);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
     out += writer(cookie, " ");
 
     return out;
@@ -21265,6 +21293,20 @@ of_bsn_tlv_lag_options_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
     of_bsn_tlv_lag_options_flags_get(obj, &val16);
     out += writer(cookie, "flags=");
     out += LOCI_SHOW_x16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_link_state_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_bsn_tlv_link_state_value_get(obj, &val8);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
     out += writer(cookie, " ");
 
     return out;
@@ -34582,6 +34624,20 @@ of_bsn_table_checksum_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void
 }
 
 int
+of_bsn_tlv_active_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_octets_t octets;
+
+    of_bsn_tlv_active_value_get(obj, &octets);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_octets(writer, cookie, octets);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_actor_key_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -35127,6 +35183,20 @@ of_bsn_tlv_fabric_port_role_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
     of_bsn_tlv_fabric_port_role_value_get(obj, &val16);
     out += writer(cookie, "value=");
     out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_fail_count_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint64_t val64;
+
+    of_bsn_tlv_fail_count_value_get(obj, &val64);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
     out += writer(cookie, " ");
 
     return out;
@@ -35742,6 +35812,20 @@ of_bsn_tlv_lag_options_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
     of_bsn_tlv_lag_options_flags_get(obj, &val16);
     out += writer(cookie, "flags=");
     out += LOCI_SHOW_x16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_link_state_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_bsn_tlv_link_state_value_get(obj, &val8);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u8(writer, cookie, val8);
     out += writer(cookie, " ");
 
     return out;
@@ -43721,6 +43805,9 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_0_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_show,
     unknown_show,
@@ -44389,6 +44476,9 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_bsn_interface_OF_VERSION_1_1_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -45455,6 +45545,9 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_2_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_show,
     unknown_show,
@@ -46128,6 +46221,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_show,
     of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show,
     unknown_show,
+    of_bsn_tlv_active_OF_VERSION_1_3_show,
     of_bsn_tlv_actor_key_OF_VERSION_1_3_show,
     of_bsn_tlv_actor_port_num_OF_VERSION_1_3_show,
     of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_show,
@@ -46170,6 +46264,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_external_mac_OF_VERSION_1_3_show,
     of_bsn_tlv_external_netmask_OF_VERSION_1_3_show,
     of_bsn_tlv_fabric_port_role_OF_VERSION_1_3_show,
+    of_bsn_tlv_fail_count_OF_VERSION_1_3_show,
     of_bsn_tlv_flood_OF_VERSION_1_3_show,
     of_bsn_tlv_flow_classifier_OF_VERSION_1_3_show,
     of_bsn_tlv_flow_classify_OF_VERSION_1_3_show,
@@ -46215,6 +46310,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_3_show,
     of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3_show,
     of_bsn_tlv_lag_options_OF_VERSION_1_3_show,
+    of_bsn_tlv_link_state_OF_VERSION_1_3_show,
     of_bsn_tlv_loopback_mode_OF_VERSION_1_3_show,
     of_bsn_tlv_loopback_port_OF_VERSION_1_3_show,
     of_bsn_tlv_lossless_OF_VERSION_1_3_show,
@@ -46995,6 +47091,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_4_show,
     of_bsn_table_checksum_stats_entry_OF_VERSION_1_4_show,
     unknown_show,
+    of_bsn_tlv_active_OF_VERSION_1_4_show,
     of_bsn_tlv_actor_key_OF_VERSION_1_4_show,
     of_bsn_tlv_actor_port_num_OF_VERSION_1_4_show,
     of_bsn_tlv_actor_port_priority_OF_VERSION_1_4_show,
@@ -47037,6 +47134,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_external_mac_OF_VERSION_1_4_show,
     of_bsn_tlv_external_netmask_OF_VERSION_1_4_show,
     of_bsn_tlv_fabric_port_role_OF_VERSION_1_4_show,
+    of_bsn_tlv_fail_count_OF_VERSION_1_4_show,
     of_bsn_tlv_flood_OF_VERSION_1_4_show,
     of_bsn_tlv_flow_classifier_OF_VERSION_1_4_show,
     of_bsn_tlv_flow_classify_OF_VERSION_1_4_show,
@@ -47082,6 +47180,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_4_show,
     of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4_show,
     of_bsn_tlv_lag_options_OF_VERSION_1_4_show,
+    of_bsn_tlv_link_state_OF_VERSION_1_4_show,
     of_bsn_tlv_loopback_mode_OF_VERSION_1_4_show,
     of_bsn_tlv_loopback_port_OF_VERSION_1_4_show,
     of_bsn_tlv_lossless_OF_VERSION_1_4_show,

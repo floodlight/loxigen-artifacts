@@ -6800,6 +6800,15 @@ extern int of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_check_scalars(
     of_bsn_table_checksum_stats_entry_t *obj, int value);
 
+extern int of_bsn_tlv_active_OF_VERSION_1_3_populate(
+    of_bsn_tlv_active_t *obj, int value);
+extern int of_bsn_tlv_active_OF_VERSION_1_3_check(
+    of_bsn_tlv_active_t *obj, int value);
+extern int of_bsn_tlv_active_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_active_t *obj, int value);
+extern int of_bsn_tlv_active_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_active_t *obj, int value);
+
 extern int of_bsn_tlv_actor_key_OF_VERSION_1_3_populate(
     of_bsn_tlv_actor_key_t *obj, int value);
 extern int of_bsn_tlv_actor_key_OF_VERSION_1_3_check(
@@ -7177,6 +7186,15 @@ extern int of_bsn_tlv_fabric_port_role_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_fabric_port_role_t *obj, int value);
 extern int of_bsn_tlv_fabric_port_role_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_fabric_port_role_t *obj, int value);
+
+extern int of_bsn_tlv_fail_count_OF_VERSION_1_3_populate(
+    of_bsn_tlv_fail_count_t *obj, int value);
+extern int of_bsn_tlv_fail_count_OF_VERSION_1_3_check(
+    of_bsn_tlv_fail_count_t *obj, int value);
+extern int of_bsn_tlv_fail_count_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_fail_count_t *obj, int value);
+extern int of_bsn_tlv_fail_count_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_fail_count_t *obj, int value);
 
 extern int of_bsn_tlv_flood_OF_VERSION_1_3_populate(
     of_bsn_tlv_flood_t *obj, int value);
@@ -7582,6 +7600,15 @@ extern int of_bsn_tlv_lag_options_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_lag_options_t *obj, int value);
 extern int of_bsn_tlv_lag_options_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_lag_options_t *obj, int value);
+
+extern int of_bsn_tlv_link_state_OF_VERSION_1_3_populate(
+    of_bsn_tlv_link_state_t *obj, int value);
+extern int of_bsn_tlv_link_state_OF_VERSION_1_3_check(
+    of_bsn_tlv_link_state_t *obj, int value);
+extern int of_bsn_tlv_link_state_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_link_state_t *obj, int value);
+extern int of_bsn_tlv_link_state_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_link_state_t *obj, int value);
 
 extern int of_bsn_tlv_loopback_mode_OF_VERSION_1_3_populate(
     of_bsn_tlv_loopback_mode_t *obj, int value);
@@ -13388,6 +13415,15 @@ extern int of_bsn_table_checksum_stats_entry_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_table_checksum_stats_entry_OF_VERSION_1_4_check_scalars(
     of_bsn_table_checksum_stats_entry_t *obj, int value);
 
+extern int of_bsn_tlv_active_OF_VERSION_1_4_populate(
+    of_bsn_tlv_active_t *obj, int value);
+extern int of_bsn_tlv_active_OF_VERSION_1_4_check(
+    of_bsn_tlv_active_t *obj, int value);
+extern int of_bsn_tlv_active_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_active_t *obj, int value);
+extern int of_bsn_tlv_active_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_active_t *obj, int value);
+
 extern int of_bsn_tlv_actor_key_OF_VERSION_1_4_populate(
     of_bsn_tlv_actor_key_t *obj, int value);
 extern int of_bsn_tlv_actor_key_OF_VERSION_1_4_check(
@@ -13765,6 +13801,15 @@ extern int of_bsn_tlv_fabric_port_role_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_fabric_port_role_t *obj, int value);
 extern int of_bsn_tlv_fabric_port_role_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_fabric_port_role_t *obj, int value);
+
+extern int of_bsn_tlv_fail_count_OF_VERSION_1_4_populate(
+    of_bsn_tlv_fail_count_t *obj, int value);
+extern int of_bsn_tlv_fail_count_OF_VERSION_1_4_check(
+    of_bsn_tlv_fail_count_t *obj, int value);
+extern int of_bsn_tlv_fail_count_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_fail_count_t *obj, int value);
+extern int of_bsn_tlv_fail_count_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_fail_count_t *obj, int value);
 
 extern int of_bsn_tlv_flood_OF_VERSION_1_4_populate(
     of_bsn_tlv_flood_t *obj, int value);
@@ -14170,6 +14215,15 @@ extern int of_bsn_tlv_lag_options_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_lag_options_t *obj, int value);
 extern int of_bsn_tlv_lag_options_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_lag_options_t *obj, int value);
+
+extern int of_bsn_tlv_link_state_OF_VERSION_1_4_populate(
+    of_bsn_tlv_link_state_t *obj, int value);
+extern int of_bsn_tlv_link_state_OF_VERSION_1_4_check(
+    of_bsn_tlv_link_state_t *obj, int value);
+extern int of_bsn_tlv_link_state_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_link_state_t *obj, int value);
+extern int of_bsn_tlv_link_state_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_link_state_t *obj, int value);
 
 extern int of_bsn_tlv_loopback_mode_OF_VERSION_1_4_populate(
     of_bsn_tlv_loopback_mode_t *obj, int value);

@@ -31,6 +31,8 @@ import java.util.List;
 public interface OFBsnTlvs {
     // Subfactories
 
+    OFBsnTlvActive.Builder buildActive() throws UnsupportedOperationException;
+    OFBsnTlvActive active(byte[] value);
     OFBsnTlvActorKey.Builder buildActorKey() throws UnsupportedOperationException;
     OFBsnTlvActorKey actorKey(int value);
     OFBsnTlvActorPortNum.Builder buildActorPortNum() throws UnsupportedOperationException;
@@ -108,6 +110,8 @@ public interface OFBsnTlvs {
     OFBsnTlvExternalNetmask externalNetmask(IPv4Address value);
     OFBsnTlvFabricPortRole.Builder buildFabricPortRole() throws UnsupportedOperationException;
     OFBsnTlvFabricPortRole fabricPortRole(OFBsnFabricPortRole value);
+    OFBsnTlvFailCount.Builder buildFailCount() throws UnsupportedOperationException;
+    OFBsnTlvFailCount failCount(U64 value);
     OFBsnTlvFlood flood();
     OFBsnTlvFlowClassifier.Builder buildFlowClassifier() throws UnsupportedOperationException;
     OFBsnTlvFlowClassifier flowClassifier(OFBsnFlowClassifier value);
@@ -190,6 +194,8 @@ public interface OFBsnTlvs {
     OFBsnTlvL3SrcClassId l3SrcClassId(long value);
     OFBsnTlvLagOptions.Builder buildLagOptions() throws UnsupportedOperationException;
     OFBsnTlvLagOptions lagOptions(Set<OFBsnLagFlag> flags);
+    OFBsnTlvLinkState.Builder buildLinkState() throws UnsupportedOperationException;
+    OFBsnTlvLinkState linkState(OFBsnLinkState value);
     OFBsnTlvLoopbackMode.Builder buildLoopbackMode() throws UnsupportedOperationException;
     OFBsnTlvLoopbackMode loopbackMode(OFBsnLoopbackMode value);
     OFBsnTlvLoopbackPort.Builder buildLoopbackPort() throws UnsupportedOperationException;
