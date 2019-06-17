@@ -742,6 +742,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_table_set_buckets_size_O
 static int __attribute__((unused)) loci_validate_of_bsn_time_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_time_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_active_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_actor_key_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_actor_port_num_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_actor_port_priority_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -784,6 +785,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_ip_OF_VERSI
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_netmask_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_fabric_port_role_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_fail_count_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_flood_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_flow_classifier_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_flow_classify_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -829,6 +831,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_l3_dst_class_id_OF_V
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_lag_options_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_link_up_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_loopback_mode_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_loopback_port_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_lossless_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1460,6 +1463,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_takeover_OF_VERSION_1_4(
 static int __attribute__((unused)) loci_validate_of_bsn_time_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_time_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_active_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_actor_key_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_actor_port_num_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_actor_port_priority_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -1502,6 +1506,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_ip_OF_VERSI
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_mac_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_netmask_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_fabric_port_role_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_fail_count_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_flood_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_flow_classifier_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_flow_classify_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -1547,6 +1552,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_l3_dst_class_id_OF_V
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_l3_interface_class_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_lag_options_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_link_up_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_loopback_mode_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_loopback_port_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_lossless_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -21011,6 +21017,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
+    case 0xc0:
+        return loci_validate_of_bsn_tlv_active_OF_VERSION_1_3(data, len, out_len);
     case 0x2c:
         return loci_validate_of_bsn_tlv_actor_key_OF_VERSION_1_3(data, len, out_len);
     case 0x2b:
@@ -21095,6 +21103,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_external_netmask_OF_VERSION_1_3(data, len, out_len);
     case 0xa5:
         return loci_validate_of_bsn_tlv_fabric_port_role_OF_VERSION_1_3(data, len, out_len);
+    case 0xc2:
+        return loci_validate_of_bsn_tlv_fail_count_OF_VERSION_1_3(data, len, out_len);
     case 0xa3:
         return loci_validate_of_bsn_tlv_flood_OF_VERSION_1_3(data, len, out_len);
     case 0xb8:
@@ -21185,6 +21195,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_l3_src_class_id_OF_VERSION_1_3(data, len, out_len);
     case 0xa0:
         return loci_validate_of_bsn_tlv_lag_options_OF_VERSION_1_3(data, len, out_len);
+    case 0xc1:
+        return loci_validate_of_bsn_tlv_link_up_OF_VERSION_1_3(data, len, out_len);
     case 0x92:
         return loci_validate_of_bsn_tlv_loopback_mode_OF_VERSION_1_3(data, len, out_len);
     case 0x6e:
@@ -21394,6 +21406,28 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     case 0x75:
         return loci_validate_of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_3(data, len, out_len);
     }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_active_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+
 
 
     *out_len = len;
@@ -22323,6 +22357,28 @@ loci_validate_of_bsn_tlv_fabric_port_role_OF_VERSION_1_3(uint8_t *data, int len,
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_fail_count_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 12) {
         return -1;
     }
 
@@ -23313,6 +23369,28 @@ loci_validate_of_bsn_tlv_lag_options_OF_VERSION_1_3(uint8_t *data, int len, int 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_link_up_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
         return -1;
     }
 
@@ -38667,6 +38745,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
+    case 0xc0:
+        return loci_validate_of_bsn_tlv_active_OF_VERSION_1_4(data, len, out_len);
     case 0x2c:
         return loci_validate_of_bsn_tlv_actor_key_OF_VERSION_1_4(data, len, out_len);
     case 0x2b:
@@ -38751,6 +38831,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_external_netmask_OF_VERSION_1_4(data, len, out_len);
     case 0xa5:
         return loci_validate_of_bsn_tlv_fabric_port_role_OF_VERSION_1_4(data, len, out_len);
+    case 0xc2:
+        return loci_validate_of_bsn_tlv_fail_count_OF_VERSION_1_4(data, len, out_len);
     case 0xa3:
         return loci_validate_of_bsn_tlv_flood_OF_VERSION_1_4(data, len, out_len);
     case 0xb8:
@@ -38841,6 +38923,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_l3_src_class_id_OF_VERSION_1_4(data, len, out_len);
     case 0xa0:
         return loci_validate_of_bsn_tlv_lag_options_OF_VERSION_1_4(data, len, out_len);
+    case 0xc1:
+        return loci_validate_of_bsn_tlv_link_up_OF_VERSION_1_4(data, len, out_len);
     case 0x92:
         return loci_validate_of_bsn_tlv_loopback_mode_OF_VERSION_1_4(data, len, out_len);
     case 0x6e:
@@ -39050,6 +39134,28 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
     case 0x75:
         return loci_validate_of_bsn_tlv_vxlan_egress_lag_OF_VERSION_1_4(data, len, out_len);
     }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_active_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+
 
 
     *out_len = len;
@@ -39979,6 +40085,28 @@ loci_validate_of_bsn_tlv_fabric_port_role_OF_VERSION_1_4(uint8_t *data, int len,
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_fail_count_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 12) {
         return -1;
     }
 
@@ -40969,6 +41097,28 @@ loci_validate_of_bsn_tlv_lag_options_OF_VERSION_1_4(uint8_t *data, int len, int 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_link_up_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+    len = 4;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
         return -1;
     }
 

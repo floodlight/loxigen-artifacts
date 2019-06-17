@@ -8810,6 +8810,8 @@ fields['of13.bsn_time_request.experimenter'] = ProtoField.uint32("of13.bsn_time_
 fields['of13.bsn_time_request.subtype'] = ProtoField.uint32("of13.bsn_time_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_tlv.type'] = ProtoField.uint16("of13.bsn_tlv.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv.length'] = ProtoField.uint16("of13.bsn_tlv.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_active.type'] = ProtoField.uint16("of13.bsn_tlv_active.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_active.length'] = ProtoField.uint16("of13.bsn_tlv_active.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_actor_key.type'] = ProtoField.uint16("of13.bsn_tlv_actor_key.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_actor_key.length'] = ProtoField.uint16("of13.bsn_tlv_actor_key.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_actor_key.value'] = ProtoField.uint16("of13.bsn_tlv_actor_key.value", "value", base.DEC, nil)
@@ -8929,6 +8931,9 @@ fields['of13.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of13.bsn_tlv_ex
 fields['of13.bsn_tlv_fabric_port_role.type'] = ProtoField.uint16("of13.bsn_tlv_fabric_port_role.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_fabric_port_role.length'] = ProtoField.uint16("of13.bsn_tlv_fabric_port_role.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_fabric_port_role.value'] = ProtoField.uint32("of13.bsn_tlv_fabric_port_role.value", "value", base.DEC, enum_v4_ofp_bsn_fabric_port_role)
+fields['of13.bsn_tlv_fail_count.type'] = ProtoField.uint16("of13.bsn_tlv_fail_count.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_fail_count.length'] = ProtoField.uint16("of13.bsn_tlv_fail_count.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_fail_count.value'] = ProtoField.uint64("of13.bsn_tlv_fail_count.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_flood.type'] = ProtoField.uint16("of13.bsn_tlv_flood.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_flood.length'] = ProtoField.uint16("of13.bsn_tlv_flood.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_flow_classifier.type'] = ProtoField.uint16("of13.bsn_tlv_flow_classifier.type", "type", base.DEC, nil)
@@ -9062,6 +9067,8 @@ fields['of13.bsn_tlv_l3_src_class_id.value'] = ProtoField.uint32("of13.bsn_tlv_l
 fields['of13.bsn_tlv_lag_options.type'] = ProtoField.uint16("of13.bsn_tlv_lag_options.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_lag_options.length'] = ProtoField.uint16("of13.bsn_tlv_lag_options.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_lag_options.flags'] = ProtoField.uint32("of13.bsn_tlv_lag_options.flags", "flags", base.HEX, enum_v4_ofp_bsn_lag_flag)
+fields['of13.bsn_tlv_link_up.type'] = ProtoField.uint16("of13.bsn_tlv_link_up.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_link_up.length'] = ProtoField.uint16("of13.bsn_tlv_link_up.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_mode.type'] = ProtoField.uint16("of13.bsn_tlv_loopback_mode.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_mode.length'] = ProtoField.uint16("of13.bsn_tlv_loopback_mode.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of13.bsn_tlv_loopback_mode.value", "value", base.DEC, enum_v4_ofp_bsn_loopback_mode)
@@ -11864,6 +11871,8 @@ fields['of14.bsn_time_request.experimenter'] = ProtoField.uint32("of14.bsn_time_
 fields['of14.bsn_time_request.subtype'] = ProtoField.uint32("of14.bsn_time_request.subtype", "subtype", base.DEC, nil)
 fields['of14.bsn_tlv.type'] = ProtoField.uint16("of14.bsn_tlv.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv.length'] = ProtoField.uint16("of14.bsn_tlv.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_active.type'] = ProtoField.uint16("of14.bsn_tlv_active.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_active.length'] = ProtoField.uint16("of14.bsn_tlv_active.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_actor_key.type'] = ProtoField.uint16("of14.bsn_tlv_actor_key.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_actor_key.length'] = ProtoField.uint16("of14.bsn_tlv_actor_key.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_actor_key.value'] = ProtoField.uint16("of14.bsn_tlv_actor_key.value", "value", base.DEC, nil)
@@ -11983,6 +11992,9 @@ fields['of14.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of14.bsn_tlv_ex
 fields['of14.bsn_tlv_fabric_port_role.type'] = ProtoField.uint16("of14.bsn_tlv_fabric_port_role.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_fabric_port_role.length'] = ProtoField.uint16("of14.bsn_tlv_fabric_port_role.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_fabric_port_role.value'] = ProtoField.uint32("of14.bsn_tlv_fabric_port_role.value", "value", base.DEC, enum_v5_ofp_bsn_fabric_port_role)
+fields['of14.bsn_tlv_fail_count.type'] = ProtoField.uint16("of14.bsn_tlv_fail_count.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_fail_count.length'] = ProtoField.uint16("of14.bsn_tlv_fail_count.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_fail_count.value'] = ProtoField.uint64("of14.bsn_tlv_fail_count.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_flood.type'] = ProtoField.uint16("of14.bsn_tlv_flood.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_flood.length'] = ProtoField.uint16("of14.bsn_tlv_flood.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_flow_classifier.type'] = ProtoField.uint16("of14.bsn_tlv_flow_classifier.type", "type", base.DEC, nil)
@@ -12116,6 +12128,8 @@ fields['of14.bsn_tlv_l3_src_class_id.value'] = ProtoField.uint32("of14.bsn_tlv_l
 fields['of14.bsn_tlv_lag_options.type'] = ProtoField.uint16("of14.bsn_tlv_lag_options.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_lag_options.length'] = ProtoField.uint16("of14.bsn_tlv_lag_options.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_lag_options.flags'] = ProtoField.uint32("of14.bsn_tlv_lag_options.flags", "flags", base.HEX, enum_v5_ofp_bsn_lag_flag)
+fields['of14.bsn_tlv_link_up.type'] = ProtoField.uint16("of14.bsn_tlv_link_up.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_link_up.length'] = ProtoField.uint16("of14.bsn_tlv_link_up.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_mode.type'] = ProtoField.uint16("of14.bsn_tlv_loopback_mode.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_mode.length'] = ProtoField.uint16("of14.bsn_tlv_loopback_mode.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of14.bsn_tlv_loopback_mode.value", "value", base.DEC, enum_v5_ofp_bsn_loopback_mode)
@@ -15204,6 +15218,8 @@ fields['of15.bsn_time_request.experimenter'] = ProtoField.uint32("of15.bsn_time_
 fields['of15.bsn_time_request.subtype'] = ProtoField.uint32("of15.bsn_time_request.subtype", "subtype", base.DEC, nil)
 fields['of15.bsn_tlv.type'] = ProtoField.uint16("of15.bsn_tlv.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv.length'] = ProtoField.uint16("of15.bsn_tlv.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_active.type'] = ProtoField.uint16("of15.bsn_tlv_active.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_active.length'] = ProtoField.uint16("of15.bsn_tlv_active.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_actor_key.type'] = ProtoField.uint16("of15.bsn_tlv_actor_key.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_actor_key.length'] = ProtoField.uint16("of15.bsn_tlv_actor_key.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_actor_key.value'] = ProtoField.uint16("of15.bsn_tlv_actor_key.value", "value", base.DEC, nil)
@@ -15323,6 +15339,9 @@ fields['of15.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of15.bsn_tlv_ex
 fields['of15.bsn_tlv_fabric_port_role.type'] = ProtoField.uint16("of15.bsn_tlv_fabric_port_role.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_fabric_port_role.length'] = ProtoField.uint16("of15.bsn_tlv_fabric_port_role.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_fabric_port_role.value'] = ProtoField.uint32("of15.bsn_tlv_fabric_port_role.value", "value", base.DEC, enum_v6_ofp_bsn_fabric_port_role)
+fields['of15.bsn_tlv_fail_count.type'] = ProtoField.uint16("of15.bsn_tlv_fail_count.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_fail_count.length'] = ProtoField.uint16("of15.bsn_tlv_fail_count.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_fail_count.value'] = ProtoField.uint64("of15.bsn_tlv_fail_count.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_flood.type'] = ProtoField.uint16("of15.bsn_tlv_flood.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_flood.length'] = ProtoField.uint16("of15.bsn_tlv_flood.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_flow_classifier.type'] = ProtoField.uint16("of15.bsn_tlv_flow_classifier.type", "type", base.DEC, nil)
@@ -15456,6 +15475,8 @@ fields['of15.bsn_tlv_l3_src_class_id.value'] = ProtoField.uint32("of15.bsn_tlv_l
 fields['of15.bsn_tlv_lag_options.type'] = ProtoField.uint16("of15.bsn_tlv_lag_options.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_lag_options.length'] = ProtoField.uint16("of15.bsn_tlv_lag_options.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_lag_options.flags'] = ProtoField.uint32("of15.bsn_tlv_lag_options.flags", "flags", base.HEX, enum_v6_ofp_bsn_lag_flag)
+fields['of15.bsn_tlv_link_up.type'] = ProtoField.uint16("of15.bsn_tlv_link_up.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_link_up.length'] = ProtoField.uint16("of15.bsn_tlv_link_up.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_mode.type'] = ProtoField.uint16("of15.bsn_tlv_loopback_mode.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_mode.length'] = ProtoField.uint16("of15.bsn_tlv_loopback_mode.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_loopback_mode.value'] = ProtoField.uint32("of15.bsn_tlv_loopback_mode.value", "value", base.DEC, enum_v6_ofp_bsn_loopback_mode)
@@ -21831,6 +21852,8 @@ p_of.fields = {
     fields['of13.bsn_time_request.subtype'],
     fields['of13.bsn_tlv.type'],
     fields['of13.bsn_tlv.length'],
+    fields['of13.bsn_tlv_active.type'],
+    fields['of13.bsn_tlv_active.length'],
     fields['of13.bsn_tlv_actor_key.type'],
     fields['of13.bsn_tlv_actor_key.length'],
     fields['of13.bsn_tlv_actor_key.value'],
@@ -21950,6 +21973,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_fabric_port_role.type'],
     fields['of13.bsn_tlv_fabric_port_role.length'],
     fields['of13.bsn_tlv_fabric_port_role.value'],
+    fields['of13.bsn_tlv_fail_count.type'],
+    fields['of13.bsn_tlv_fail_count.length'],
+    fields['of13.bsn_tlv_fail_count.value'],
     fields['of13.bsn_tlv_flood.type'],
     fields['of13.bsn_tlv_flood.length'],
     fields['of13.bsn_tlv_flow_classifier.type'],
@@ -22083,6 +22109,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_lag_options.type'],
     fields['of13.bsn_tlv_lag_options.length'],
     fields['of13.bsn_tlv_lag_options.flags'],
+    fields['of13.bsn_tlv_link_up.type'],
+    fields['of13.bsn_tlv_link_up.length'],
     fields['of13.bsn_tlv_loopback_mode.type'],
     fields['of13.bsn_tlv_loopback_mode.length'],
     fields['of13.bsn_tlv_loopback_mode.value'],
@@ -24885,6 +24913,8 @@ p_of.fields = {
     fields['of14.bsn_time_request.subtype'],
     fields['of14.bsn_tlv.type'],
     fields['of14.bsn_tlv.length'],
+    fields['of14.bsn_tlv_active.type'],
+    fields['of14.bsn_tlv_active.length'],
     fields['of14.bsn_tlv_actor_key.type'],
     fields['of14.bsn_tlv_actor_key.length'],
     fields['of14.bsn_tlv_actor_key.value'],
@@ -25004,6 +25034,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_fabric_port_role.type'],
     fields['of14.bsn_tlv_fabric_port_role.length'],
     fields['of14.bsn_tlv_fabric_port_role.value'],
+    fields['of14.bsn_tlv_fail_count.type'],
+    fields['of14.bsn_tlv_fail_count.length'],
+    fields['of14.bsn_tlv_fail_count.value'],
     fields['of14.bsn_tlv_flood.type'],
     fields['of14.bsn_tlv_flood.length'],
     fields['of14.bsn_tlv_flow_classifier.type'],
@@ -25137,6 +25170,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_lag_options.type'],
     fields['of14.bsn_tlv_lag_options.length'],
     fields['of14.bsn_tlv_lag_options.flags'],
+    fields['of14.bsn_tlv_link_up.type'],
+    fields['of14.bsn_tlv_link_up.length'],
     fields['of14.bsn_tlv_loopback_mode.type'],
     fields['of14.bsn_tlv_loopback_mode.length'],
     fields['of14.bsn_tlv_loopback_mode.value'],
@@ -28225,6 +28260,8 @@ p_of.fields = {
     fields['of15.bsn_time_request.subtype'],
     fields['of15.bsn_tlv.type'],
     fields['of15.bsn_tlv.length'],
+    fields['of15.bsn_tlv_active.type'],
+    fields['of15.bsn_tlv_active.length'],
     fields['of15.bsn_tlv_actor_key.type'],
     fields['of15.bsn_tlv_actor_key.length'],
     fields['of15.bsn_tlv_actor_key.value'],
@@ -28344,6 +28381,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_fabric_port_role.type'],
     fields['of15.bsn_tlv_fabric_port_role.length'],
     fields['of15.bsn_tlv_fabric_port_role.value'],
+    fields['of15.bsn_tlv_fail_count.type'],
+    fields['of15.bsn_tlv_fail_count.length'],
+    fields['of15.bsn_tlv_fail_count.value'],
     fields['of15.bsn_tlv_flood.type'],
     fields['of15.bsn_tlv_flood.length'],
     fields['of15.bsn_tlv_flow_classifier.type'],
@@ -28477,6 +28517,8 @@ p_of.fields = {
     fields['of15.bsn_tlv_lag_options.type'],
     fields['of15.bsn_tlv_lag_options.length'],
     fields['of15.bsn_tlv_lag_options.flags'],
+    fields['of15.bsn_tlv_link_up.type'],
+    fields['of15.bsn_tlv_link_up.length'],
     fields['of15.bsn_tlv_loopback_mode.type'],
     fields['of15.bsn_tlv_loopback_mode.length'],
     fields['of15.bsn_tlv_loopback_mode.value'],
@@ -40342,6 +40384,15 @@ of_bsn_header_v4_dissectors[44] = dissect_of_bsn_time_request_v4
 function dissect_of_bsn_tlv_v4(reader, subtree)
     return of_bsn_tlv_v4_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
+-- child class of_bsn_tlv_active
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_active_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_active.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_active.length')
+    return 'of_bsn_tlv_active'
+end
+of_bsn_tlv_v4_dissectors[192] = dissect_of_bsn_tlv_active_v4
+
 -- child class of_bsn_tlv_actor_key
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_actor_key_v4(reader, subtree)
@@ -40766,6 +40817,16 @@ function dissect_of_bsn_tlv_fabric_port_role_v4(reader, subtree)
     return 'of_bsn_tlv_fabric_port_role'
 end
 of_bsn_tlv_v4_dissectors[165] = dissect_of_bsn_tlv_fabric_port_role_v4
+
+-- child class of_bsn_tlv_fail_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_fail_count_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_fail_count.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_fail_count.length')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_tlv_fail_count.value')
+    return 'of_bsn_tlv_fail_count'
+end
+of_bsn_tlv_v4_dissectors[194] = dissect_of_bsn_tlv_fail_count_v4
 
 -- child class of_bsn_tlv_flood
 -- Child of of_bsn_tlv
@@ -41214,6 +41275,15 @@ function dissect_of_bsn_tlv_lag_options_v4(reader, subtree)
     return 'of_bsn_tlv_lag_options'
 end
 of_bsn_tlv_v4_dissectors[160] = dissect_of_bsn_tlv_lag_options_v4
+
+-- child class of_bsn_tlv_link_up
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_link_up_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_link_up.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_link_up.length')
+    return 'of_bsn_tlv_link_up'
+end
+of_bsn_tlv_v4_dissectors[193] = dissect_of_bsn_tlv_link_up_v4
 
 -- child class of_bsn_tlv_loopback_mode
 -- Child of of_bsn_tlv
@@ -48689,6 +48759,15 @@ of_bsn_header_v5_dissectors[44] = dissect_of_bsn_time_request_v5
 function dissect_of_bsn_tlv_v5(reader, subtree)
     return of_bsn_tlv_v5_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
+-- child class of_bsn_tlv_active
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_active_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_active.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_active.length')
+    return 'of_bsn_tlv_active'
+end
+of_bsn_tlv_v5_dissectors[192] = dissect_of_bsn_tlv_active_v5
+
 -- child class of_bsn_tlv_actor_key
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_actor_key_v5(reader, subtree)
@@ -49113,6 +49192,16 @@ function dissect_of_bsn_tlv_fabric_port_role_v5(reader, subtree)
     return 'of_bsn_tlv_fabric_port_role'
 end
 of_bsn_tlv_v5_dissectors[165] = dissect_of_bsn_tlv_fabric_port_role_v5
+
+-- child class of_bsn_tlv_fail_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_fail_count_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_fail_count.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_fail_count.length')
+    read_uint64_t(reader, 5, subtree, 'of14.bsn_tlv_fail_count.value')
+    return 'of_bsn_tlv_fail_count'
+end
+of_bsn_tlv_v5_dissectors[194] = dissect_of_bsn_tlv_fail_count_v5
 
 -- child class of_bsn_tlv_flood
 -- Child of of_bsn_tlv
@@ -49561,6 +49650,15 @@ function dissect_of_bsn_tlv_lag_options_v5(reader, subtree)
     return 'of_bsn_tlv_lag_options'
 end
 of_bsn_tlv_v5_dissectors[160] = dissect_of_bsn_tlv_lag_options_v5
+
+-- child class of_bsn_tlv_link_up
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_link_up_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_link_up.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_link_up.length')
+    return 'of_bsn_tlv_link_up'
+end
+of_bsn_tlv_v5_dissectors[193] = dissect_of_bsn_tlv_link_up_v5
 
 -- child class of_bsn_tlv_loopback_mode
 -- Child of of_bsn_tlv
@@ -57698,6 +57796,15 @@ of_bsn_header_v6_dissectors[44] = dissect_of_bsn_time_request_v6
 function dissect_of_bsn_tlv_v6(reader, subtree)
     return of_bsn_tlv_v6_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
+-- child class of_bsn_tlv_active
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_active_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_active.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_active.length')
+    return 'of_bsn_tlv_active'
+end
+of_bsn_tlv_v6_dissectors[192] = dissect_of_bsn_tlv_active_v6
+
 -- child class of_bsn_tlv_actor_key
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_actor_key_v6(reader, subtree)
@@ -58122,6 +58229,16 @@ function dissect_of_bsn_tlv_fabric_port_role_v6(reader, subtree)
     return 'of_bsn_tlv_fabric_port_role'
 end
 of_bsn_tlv_v6_dissectors[165] = dissect_of_bsn_tlv_fabric_port_role_v6
+
+-- child class of_bsn_tlv_fail_count
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_fail_count_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_fail_count.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_fail_count.length')
+    read_uint64_t(reader, 6, subtree, 'of15.bsn_tlv_fail_count.value')
+    return 'of_bsn_tlv_fail_count'
+end
+of_bsn_tlv_v6_dissectors[194] = dissect_of_bsn_tlv_fail_count_v6
 
 -- child class of_bsn_tlv_flood
 -- Child of of_bsn_tlv
@@ -58570,6 +58687,15 @@ function dissect_of_bsn_tlv_lag_options_v6(reader, subtree)
     return 'of_bsn_tlv_lag_options'
 end
 of_bsn_tlv_v6_dissectors[160] = dissect_of_bsn_tlv_lag_options_v6
+
+-- child class of_bsn_tlv_link_up
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_link_up_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_link_up.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_link_up.length')
+    return 'of_bsn_tlv_link_up'
+end
+of_bsn_tlv_v6_dissectors[193] = dissect_of_bsn_tlv_link_up_v6
 
 -- child class of_bsn_tlv_loopback_mode
 -- Child of of_bsn_tlv

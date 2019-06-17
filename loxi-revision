@@ -1,1 +1,1 @@
-98cfdf2312d9b3e33708f41527622dca2868ded9 SWL-4344: New port features - AN and FEC Configurable & Conflict changes (#650)
+dd36e28da992ad04765f240bcefccac616cb8bfc Change "active" tlv to boolean Change "link_state" tlv to "link_up" boolean tlv
