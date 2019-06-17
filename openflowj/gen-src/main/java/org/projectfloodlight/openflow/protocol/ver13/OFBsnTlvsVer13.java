@@ -35,6 +35,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
 
 
 
+    public OFBsnTlvActive active() {
+        return OFBsnTlvActiveVer13.INSTANCE;
+    }
+
     public OFBsnTlvActorKey.Builder buildActorKey() {
         return new OFBsnTlvActorKeyVer13.Builder();
     }
@@ -374,6 +378,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvFabricPortRole fabricPortRole(OFBsnFabricPortRole value) {
         return new OFBsnTlvFabricPortRoleVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvFailCount.Builder buildFailCount() {
+        return new OFBsnTlvFailCountVer13.Builder();
+    }
+    public OFBsnTlvFailCount failCount(U64 value) {
+        return new OFBsnTlvFailCountVer13(
                 value
                     );
     }
@@ -744,6 +757,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return new OFBsnTlvLagOptionsVer13(
                 flags
                     );
+    }
+
+    public OFBsnTlvLinkUp linkUp() {
+        return OFBsnTlvLinkUpVer13.INSTANCE;
     }
 
     public OFBsnTlvLoopbackMode.Builder buildLoopbackMode() {
