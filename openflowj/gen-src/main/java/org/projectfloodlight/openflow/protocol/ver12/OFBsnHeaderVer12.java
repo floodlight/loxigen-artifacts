@@ -36,9 +36,9 @@ abstract class OFBsnHeaderVer12 {
 
     public final static OFBsnHeaderVer12.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFBsnHeader> {
+    static class Reader extends AbstractOFMessageReader<OFBsnHeader> {
         @Override
-        public OFBsnHeader readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnHeader readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
@@ -53,83 +53,112 @@ abstract class OFBsnHeaderVer12 {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            if( ( bb.readableBytes() + (bb.readerIndex() - start)) < length ) {
+                // message not yet fully read
+                bb.readerIndex(start);
+                return null;
+            }
             U32.f(bb.readInt());
             // fixed value property experimenter == 0x5c16c7L
             int experimenter = bb.readInt();
             if(experimenter != 0x5c16c7)
                 throw new OFParseError("Wrong experimenter: Expected=0x5c16c7L(0x5c16c7L), got="+experimenter);
             int subtype = bb.readInt();
-            bb.readerIndex(start);
             switch(subtype) {
                case 0x16:
+                   bb.readerIndex(start);
                    // discriminator value 0x16L=0x16L for class OFBsnBwClearDataReplyVer12
-                   return OFBsnBwClearDataReplyVer12.READER.readFrom(bb);
+                   return OFBsnBwClearDataReplyVer12.READER.readFrom(context, bb);
                case 0x15:
+                   bb.readerIndex(start);
                    // discriminator value 0x15L=0x15L for class OFBsnBwClearDataRequestVer12
-                   return OFBsnBwClearDataRequestVer12.READER.readFrom(bb);
+                   return OFBsnBwClearDataRequestVer12.READER.readFrom(context, bb);
                case 0x14:
+                   bb.readerIndex(start);
                    // discriminator value 0x14L=0x14L for class OFBsnBwEnableGetReplyVer12
-                   return OFBsnBwEnableGetReplyVer12.READER.readFrom(bb);
+                   return OFBsnBwEnableGetReplyVer12.READER.readFrom(context, bb);
                case 0x13:
+                   bb.readerIndex(start);
                    // discriminator value 0x13L=0x13L for class OFBsnBwEnableGetRequestVer12
-                   return OFBsnBwEnableGetRequestVer12.READER.readFrom(bb);
+                   return OFBsnBwEnableGetRequestVer12.READER.readFrom(context, bb);
                case 0x17:
+                   bb.readerIndex(start);
                    // discriminator value 0x17L=0x17L for class OFBsnBwEnableSetReplyVer12
-                   return OFBsnBwEnableSetReplyVer12.READER.readFrom(bb);
+                   return OFBsnBwEnableSetReplyVer12.READER.readFrom(context, bb);
                case 0x12:
+                   bb.readerIndex(start);
                    // discriminator value 0x12L=0x12L for class OFBsnBwEnableSetRequestVer12
-                   return OFBsnBwEnableSetRequestVer12.READER.readFrom(bb);
+                   return OFBsnBwEnableSetRequestVer12.READER.readFrom(context, bb);
                case 0xa:
+                   bb.readerIndex(start);
                    // discriminator value 0xaL=0xaL for class OFBsnGetInterfacesReplyVer12
-                   return OFBsnGetInterfacesReplyVer12.READER.readFrom(bb);
+                   return OFBsnGetInterfacesReplyVer12.READER.readFrom(context, bb);
                case 0x9:
+                   bb.readerIndex(start);
                    // discriminator value 0x9L=0x9L for class OFBsnGetInterfacesRequestVer12
-                   return OFBsnGetInterfacesRequestVer12.READER.readFrom(bb);
+                   return OFBsnGetInterfacesRequestVer12.READER.readFrom(context, bb);
                case 0x5:
+                   bb.readerIndex(start);
                    // discriminator value 0x5L=0x5L for class OFBsnGetMirroringReplyVer12
-                   return OFBsnGetMirroringReplyVer12.READER.readFrom(bb);
+                   return OFBsnGetMirroringReplyVer12.READER.readFrom(context, bb);
                case 0x4:
+                   bb.readerIndex(start);
                    // discriminator value 0x4L=0x4L for class OFBsnGetMirroringRequestVer12
-                   return OFBsnGetMirroringRequestVer12.READER.readFrom(bb);
+                   return OFBsnGetMirroringRequestVer12.READER.readFrom(context, bb);
                case 0x22:
+                   bb.readerIndex(start);
                    // discriminator value 0x22L=0x22L for class OFBsnPduRxReplyVer12
-                   return OFBsnPduRxReplyVer12.READER.readFrom(bb);
+                   return OFBsnPduRxReplyVer12.READER.readFrom(context, bb);
                case 0x21:
+                   bb.readerIndex(start);
                    // discriminator value 0x21L=0x21L for class OFBsnPduRxRequestVer12
-                   return OFBsnPduRxRequestVer12.READER.readFrom(bb);
+                   return OFBsnPduRxRequestVer12.READER.readFrom(context, bb);
                case 0x23:
+                   bb.readerIndex(start);
                    // discriminator value 0x23L=0x23L for class OFBsnPduRxTimeoutVer12
-                   return OFBsnPduRxTimeoutVer12.READER.readFrom(bb);
+                   return OFBsnPduRxTimeoutVer12.READER.readFrom(context, bb);
                case 0x20:
+                   bb.readerIndex(start);
                    // discriminator value 0x20L=0x20L for class OFBsnPduTxReplyVer12
-                   return OFBsnPduTxReplyVer12.READER.readFrom(bb);
+                   return OFBsnPduTxReplyVer12.READER.readFrom(context, bb);
                case 0x1f:
+                   bb.readerIndex(start);
                    // discriminator value 0x1fL=0x1fL for class OFBsnPduTxRequestVer12
-                   return OFBsnPduTxRequestVer12.READER.readFrom(bb);
+                   return OFBsnPduTxRequestVer12.READER.readFrom(context, bb);
                case 0x3:
+                   bb.readerIndex(start);
                    // discriminator value 0x3L=0x3L for class OFBsnSetMirroringVer12
-                   return OFBsnSetMirroringVer12.READER.readFrom(bb);
+                   return OFBsnSetMirroringVer12.READER.readFrom(context, bb);
                case 0x19:
+                   bb.readerIndex(start);
                    // discriminator value 0x19L=0x19L for class OFBsnSetPktinSuppressionReplyVer12
-                   return OFBsnSetPktinSuppressionReplyVer12.READER.readFrom(bb);
+                   return OFBsnSetPktinSuppressionReplyVer12.READER.readFrom(context, bb);
                case 0xb:
+                   bb.readerIndex(start);
                    // discriminator value 0xbL=0xbL for class OFBsnSetPktinSuppressionRequestVer12
-                   return OFBsnSetPktinSuppressionRequestVer12.READER.readFrom(bb);
+                   return OFBsnSetPktinSuppressionRequestVer12.READER.readFrom(context, bb);
                case 0x10:
+                   bb.readerIndex(start);
                    // discriminator value 0x10L=0x10L for class OFBsnVirtualPortCreateReplyVer12
-                   return OFBsnVirtualPortCreateReplyVer12.READER.readFrom(bb);
+                   return OFBsnVirtualPortCreateReplyVer12.READER.readFrom(context, bb);
                case 0xf:
+                   bb.readerIndex(start);
                    // discriminator value 0xfL=0xfL for class OFBsnVirtualPortCreateRequestVer12
-                   return OFBsnVirtualPortCreateRequestVer12.READER.readFrom(bb);
+                   return OFBsnVirtualPortCreateRequestVer12.READER.readFrom(context, bb);
                case 0x1a:
+                   bb.readerIndex(start);
                    // discriminator value 0x1aL=0x1aL for class OFBsnVirtualPortRemoveReplyVer12
-                   return OFBsnVirtualPortRemoveReplyVer12.READER.readFrom(bb);
+                   return OFBsnVirtualPortRemoveReplyVer12.READER.readFrom(context, bb);
                case 0x11:
+                   bb.readerIndex(start);
                    // discriminator value 0x11L=0x11L for class OFBsnVirtualPortRemoveRequestVer12
-                   return OFBsnVirtualPortRemoveRequestVer12.READER.readFrom(bb);
+                   return OFBsnVirtualPortRemoveRequestVer12.READER.readFrom(context, bb);
                default:
-                   throw new OFParseError("Unknown value for discriminator subtype of class OFBsnHeaderVer12: " + subtype);
+                   context.getUnparsedHandler().unparsedMessage(OFBsnHeaderVer12.class, "subtype", subtype);
             }
+            // will only reach here if the discriminator turns up nothing.
+            bb.skipBytes(length - (bb.readerIndex() - start));
+            return null;
         }
     }
 }

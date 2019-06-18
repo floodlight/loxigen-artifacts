@@ -35,18 +35,22 @@ abstract class OFHeaderTypeVer15 {
 
     public final static OFHeaderTypeVer15.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFHeaderType> {
+    static class Reader extends AbstractOFMessageReader<OFHeaderType> {
         @Override
-        public OFHeaderType readFrom(ByteBuf bb) throws OFParseError {
+        public OFHeaderType readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();
             OFHeaderTypeNamespace namespace = OFHeaderTypeNamespaceSerializerVer15.readFrom(bb);
-            bb.readerIndex(start);
             switch(namespace) {
                default:
-                   throw new OFParseError("Unknown value for discriminator namespace of class OFHeaderTypeVer15: " + namespace);
+                   context.getUnparsedHandler().unparsedMessage(OFHeaderTypeVer15.class, "namespace", namespace);
             }
+            U16.f(bb.readShort());
+            // will only reach here if the discriminator turns up nothing.
+                   // OFHeaderTypeVer15 is variable length, and length field not read before discriminator.
+                   // Cannot carry on after parse error
+            throw new OFParseError("Could not parse message version and length not known, so cannot be skipped");
         }
     }
 }

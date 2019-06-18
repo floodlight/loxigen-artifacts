@@ -513,9 +513,11 @@ class OFPacketInVer15 implements OFPacketIn {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFPacketIn> {
+    static class Reader extends AbstractOFMessageReader<OFPacketIn> {
         @Override
-        public OFPacketIn readFrom(ByteBuf bb) throws OFParseError {
+        public OFPacketIn readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 6
             byte version = bb.readByte();
@@ -528,6 +530,7 @@ class OFPacketInVer15 implements OFPacketIn {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -541,7 +544,7 @@ class OFPacketInVer15 implements OFPacketIn {
             OFPacketInReason reason = OFPacketInReasonSerializerVer15.readFrom(bb);
             TableId tableId = TableId.readByte(bb);
             U64 cookie = U64.ofRaw(bb.readLong());
-            Match match = ChannelUtilsVer15.readOFMatch(bb);
+            Match match = ChannelUtilsVer15.readOFMatch(context, bb);
             // pad: 2 bytes
             bb.skipBytes(2);
             byte[] data = ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));

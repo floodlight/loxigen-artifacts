@@ -70,9 +70,11 @@ class OFActionIdDecNwTtlVer13 implements OFActionIdDecNwTtl {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFActionIdDecNwTtl> {
+    static class Reader extends AbstractOFMessageReader<OFActionIdDecNwTtl> {
         @Override
-        public OFActionIdDecNwTtl readFrom(ByteBuf bb) throws OFParseError {
+        public OFActionIdDecNwTtl readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 24
             short type = bb.readShort();
@@ -81,6 +83,7 @@ class OFActionIdDecNwTtlVer13 implements OFActionIdDecNwTtl {
             int length = U16.f(bb.readShort());
             if(length != 4)
                 throw new OFParseError("Wrong length: Expected=4(4), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

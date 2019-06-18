@@ -26,19 +26,41 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.junit.Test;
+import org.junit.runners.Parameterized.Parameters;
+import java.util.List;
+import com.google.common.collect.ImmutableList;
 import org.junit.Before;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
-
+@RunWith(Parameterized.class)
 public class OFOxmBsnL3SrcClassIdVer13Test {
     OFOxms factory;
 
     final static byte[] OXM_BSN_L3_SRC_CLASS_ID_SERIALIZED =
         new byte[] { 0x0, 0x3, 0xa, 0x4, 0x12, 0x34, 0x56, 0x78 };
+
+
+    private final static int[] PREFIX_BYTES = { 0, 1, 4, 255, 65335 };
+    private final static byte[] EMPTY_BYTES = new byte[65535];
+
+    private final OFMessageReader<?> messageReader;
+
+    @Parameters(name="{index}.MessageReader={0}")
+    public static Iterable<Object> data() {
+        return ImmutableList.<Object>of(
+                OFOxmBsnL3SrcClassIdVer13.READER, OFOxmVer13.READER
+        );
+    }
+
+    public OFOxmBsnL3SrcClassIdVer13Test(OFMessageReader<?> messageReader) {
+        this.messageReader = messageReader;
+    }
 
     @Before
     public void setup() {
@@ -58,19 +80,48 @@ public class OFOxmBsnL3SrcClassIdVer13Test {
         assertThat(written, CoreMatchers.equalTo(OXM_BSN_L3_SRC_CLASS_ID_SERIALIZED));
     }
 
+
     @Test
     public void testRead() throws Exception {
+        ByteBuf input = Unpooled.copiedBuffer(OXM_BSN_L3_SRC_CLASS_ID_SERIALIZED);
+
+        Object oxmBsnL3SrcClassIdRead = messageReader.readFrom(input);
+        assertThat(oxmBsnL3SrcClassIdRead, CoreMatchers.instanceOf(OFOxmBsnL3SrcClassIdVer13.class));
         OFOxmBsnL3SrcClassId.Builder builder = factory.buildBsnL3SrcClassId();
         builder.setValue(ClassId.of(0x12345678));
         OFOxmBsnL3SrcClassId oxmBsnL3SrcClassIdBuilt = builder.build();
 
-        ByteBuf input = Unpooled.copiedBuffer(OXM_BSN_L3_SRC_CLASS_ID_SERIALIZED);
-
-        // FIXME should invoke the overall reader once implemented
-        OFOxmBsnL3SrcClassId oxmBsnL3SrcClassIdRead = OFOxmBsnL3SrcClassIdVer13.READER.readFrom(input);
         assertEquals(OXM_BSN_L3_SRC_CLASS_ID_SERIALIZED.length, input.readerIndex());
 
         assertEquals(oxmBsnL3SrcClassIdBuilt, oxmBsnL3SrcClassIdRead);
+        // FIXME: No java stanza in test_data for this class. Add to enable validation of read message
+   }
+
+    /**
+     * Validates Reader handling of partial messages in the buffer.
+     *
+     * Ensures that readers deal with partially available messages, and that buffers
+     * are returned unmodified. Also checks compatibility when the data is not at the start of
+     * the buffer (readerIndex=0), but somewhere else (with the readerIndex appropriately set).
+     */
+   @Test
+   public void testPartialRead() throws Exception {
+       ByteBuf msgBuffer = Unpooled.copiedBuffer(OXM_BSN_L3_SRC_CLASS_ID_SERIALIZED);
+       for (int prefixLength: PREFIX_BYTES) {
+           ByteBuf prefixBuffer = Unpooled.wrappedBuffer(EMPTY_BYTES).slice(0, prefixLength);
+           ByteBuf wholeBuffer = Unpooled.wrappedBuffer(prefixBuffer, msgBuffer);
+           for (int partialLength = 0; partialLength < OXM_BSN_L3_SRC_CLASS_ID_SERIALIZED.length - 1; partialLength++) {
+               int length = prefixLength + partialLength;
+               ByteBuf slice = wholeBuffer.slice(0, length);
+               slice.readerIndex(prefixLength);
+
+               Object read = messageReader.readFrom(slice);
+
+               assertNull("partial message should not be read", read);
+               assertEquals("Reader index should be back at the start", prefixLength, slice.readerIndex());
+           }
+
+       }
    }
 
    @Test
@@ -78,7 +129,7 @@ public class OFOxmBsnL3SrcClassIdVer13Test {
        ByteBuf input = Unpooled.copiedBuffer(OXM_BSN_L3_SRC_CLASS_ID_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
-       OFOxmBsnL3SrcClassId oxmBsnL3SrcClassId = OFOxmBsnL3SrcClassIdVer13.READER.readFrom(input);
+       OFOxmBsnL3SrcClassId oxmBsnL3SrcClassId = (OFOxmBsnL3SrcClassId) messageReader.readFrom(input);
        assertEquals(OXM_BSN_L3_SRC_CLASS_ID_SERIALIZED.length, input.readerIndex());
 
        // write message again

@@ -229,9 +229,11 @@ class OFOxmArpThaVer13 implements OFOxmArpTha {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFOxmArpTha> {
+    static class Reader extends AbstractOFMessageReader<OFOxmArpTha> {
         @Override
-        public OFOxmArpTha readFrom(ByteBuf bb) throws OFParseError {
+        public OFOxmArpTha readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             // fixed value property typeLen == 0x80003206L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80003206)

@@ -156,13 +156,16 @@ class OFBsnGenericStatsEntryVer13 implements OFBsnGenericStatsEntry {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGenericStatsEntry> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGenericStatsEntry> {
         @Override
-        public OFBsnGenericStatsEntry readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGenericStatsEntry readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -170,7 +173,7 @@ class OFBsnGenericStatsEntryVer13 implements OFBsnGenericStatsEntry {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            List<OFBsnTlv> tlvs = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnTlvVer13.READER);
+            List<OFBsnTlv> tlvs = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnTlvVer13.READER);
 
             OFBsnGenericStatsEntryVer13 bsnGenericStatsEntryVer13 = new OFBsnGenericStatsEntryVer13(
                     tlvs

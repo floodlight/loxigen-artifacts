@@ -285,9 +285,11 @@ class OFBsnControllerConnectionVer15 implements OFBsnControllerConnection {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnControllerConnection> {
+    static class Reader extends AbstractOFMessageReader<OFBsnControllerConnection> {
         @Override
-        public OFBsnControllerConnection readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnControllerConnection readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             OFBsnControllerConnectionState state = OFBsnControllerConnectionStateSerializerVer15.readFrom(bb);
             OFAuxId auxiliaryId = OFAuxId.readByte(bb);
             // pad: 2 bytes

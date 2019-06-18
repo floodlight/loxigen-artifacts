@@ -284,9 +284,11 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGenericAsync> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGenericAsync> {
         @Override
-        public OFBsnGenericAsync readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGenericAsync readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -299,6 +301,7 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -316,7 +319,7 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
             if(subtype != 0x44)
                 throw new OFParseError("Wrong subtype: Expected=0x44L(0x44L), got="+subtype);
             String name = ChannelUtils.readFixedLengthString(bb, 64);
-            List<OFBsnTlv> tlvs = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnTlvVer14.READER);
+            List<OFBsnTlv> tlvs = ChannelUtils.readList(context, bb, length - (bb.readerIndex() - start), OFBsnTlvVer14.READER);
 
             OFBsnGenericAsyncVer14 bsnGenericAsyncVer14 = new OFBsnGenericAsyncVer14(
                     xid,

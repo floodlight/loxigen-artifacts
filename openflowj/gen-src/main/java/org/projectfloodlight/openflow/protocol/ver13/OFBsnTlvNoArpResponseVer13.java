@@ -70,9 +70,11 @@ class OFBsnTlvNoArpResponseVer13 implements OFBsnTlvNoArpResponse {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnTlvNoArpResponse> {
+    static class Reader extends AbstractOFMessageReader<OFBsnTlvNoArpResponse> {
         @Override
-        public OFBsnTlvNoArpResponse readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnTlvNoArpResponse readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property type == 0x93
             short type = bb.readShort();
@@ -81,6 +83,7 @@ class OFBsnTlvNoArpResponseVer13 implements OFBsnTlvNoArpResponse {
             int length = U16.f(bb.readShort());
             if(length != 4)
                 throw new OFParseError("Wrong length: Expected=4(4), got="+length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);

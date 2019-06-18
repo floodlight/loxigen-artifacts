@@ -391,9 +391,11 @@ class OFBsnGentableErrorVer14 implements OFBsnGentableError {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBsnGentableError> {
+    static class Reader extends AbstractOFMessageReader<OFBsnGentableError> {
         @Override
-        public OFBsnGentableError readFrom(ByteBuf bb) throws OFParseError {
+        public OFBsnGentableError readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -406,6 +408,7 @@ class OFBsnGentableErrorVer14 implements OFBsnGentableError {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -429,7 +432,7 @@ class OFBsnGentableErrorVer14 implements OFBsnGentableError {
             OFBsnGentableErrorCode errorCode = OFBsnGentableErrorCodeSerializerVer14.readFrom(bb);
             GenTableId tableId = GenTableId.read2Bytes(bb);
             String errMsg = ChannelUtils.readFixedLengthString(bb, 256);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_14);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_14);
 
             OFBsnGentableErrorVer14 bsnGentableErrorVer14 = new OFBsnGentableErrorVer14(
                     xid,

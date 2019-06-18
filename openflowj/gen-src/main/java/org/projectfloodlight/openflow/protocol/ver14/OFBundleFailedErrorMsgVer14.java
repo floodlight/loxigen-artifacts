@@ -263,9 +263,11 @@ class OFBundleFailedErrorMsgVer14 implements OFBundleFailedErrorMsg {
 
 
     final static Reader READER = new Reader();
-    static class Reader implements OFMessageReader<OFBundleFailedErrorMsg> {
+    static class Reader extends AbstractOFMessageReader<OFBundleFailedErrorMsg> {
         @Override
-        public OFBundleFailedErrorMsg readFrom(ByteBuf bb) throws OFParseError {
+        public OFBundleFailedErrorMsg readFrom(OFMessageReaderContext context, ByteBuf bb) throws OFParseError {
+            if(bb.readableBytes() < MINIMUM_LENGTH)
+                return null;
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -278,6 +280,7 @@ class OFBundleFailedErrorMsgVer14 implements OFBundleFailedErrorMsg {
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
+            //
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -291,7 +294,7 @@ class OFBundleFailedErrorMsgVer14 implements OFBundleFailedErrorMsg {
             if(errType != (short) 0x11)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.BUNDLE_FAILED(17), got="+errType);
             OFBundleFailedCode code = OFBundleFailedCodeSerializerVer14.readFrom(bb);
-            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_14);
+            OFErrorCauseData data = OFErrorCauseData.read(context, bb, length - (bb.readerIndex() - start), OFVersion.OF_14);
 
             OFBundleFailedErrorMsgVer14 bundleFailedErrorMsgVer14 = new OFBundleFailedErrorMsgVer14(
                     xid,
