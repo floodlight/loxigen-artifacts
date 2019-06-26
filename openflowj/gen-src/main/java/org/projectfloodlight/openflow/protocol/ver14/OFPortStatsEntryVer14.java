@@ -105,8 +105,8 @@ class OFPortStatsEntryVer14 implements OFPortStatsEntry {
             throw new NullPointerException("OFPortStatsEntryVer14: property properties cannot be null");
         }
         this.portNo = portNo;
-        this.durationSec = durationSec;
-        this.durationNsec = durationNsec;
+        this.durationSec = U32.normalize(durationSec);
+        this.durationNsec = U32.normalize(durationNsec);
         this.rxPackets = rxPackets;
         this.txPackets = txPackets;
         this.rxBytes = rxBytes;

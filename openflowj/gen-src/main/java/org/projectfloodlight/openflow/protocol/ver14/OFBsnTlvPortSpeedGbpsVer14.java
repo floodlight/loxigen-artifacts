@@ -50,7 +50,7 @@ class OFBsnTlvPortSpeedGbpsVer14 implements OFBsnTlvPortSpeedGbps {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvPortSpeedGbpsVer14(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

@@ -86,7 +86,7 @@ class OFAggregateStatsRequestVer15 implements OFAggregateStatsRequest {
         if(match == null) {
             throw new NullPointerException("OFAggregateStatsRequestVer15: property match cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.tableId = tableId;
         this.outPort = outPort;

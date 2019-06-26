@@ -56,7 +56,7 @@ class OFBsnDebugCounterStatsRequestVer14 implements OFBsnDebugCounterStatsReques
         if(flags == null) {
             throw new NullPointerException("OFBsnDebugCounterStatsRequestVer14: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
     }
 

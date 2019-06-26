@@ -56,7 +56,7 @@ class OFEchoRequestVer10 implements OFEchoRequest {
         if(data == null) {
             throw new NullPointerException("OFEchoRequestVer10: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.data = data;
     }
 

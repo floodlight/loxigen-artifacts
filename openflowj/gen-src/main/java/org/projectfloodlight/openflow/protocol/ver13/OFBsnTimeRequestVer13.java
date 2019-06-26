@@ -50,7 +50,7 @@ class OFBsnTimeRequestVer13 implements OFBsnTimeRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTimeRequestVer13(long xid) {
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
     }
 
     // Accessors for OF message fields

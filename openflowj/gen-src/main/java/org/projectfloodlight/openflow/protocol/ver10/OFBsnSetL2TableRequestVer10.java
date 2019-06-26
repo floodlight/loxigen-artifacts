@@ -54,9 +54,9 @@ class OFBsnSetL2TableRequestVer10 implements OFBsnSetL2TableRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnSetL2TableRequestVer10(long xid, boolean l2TableEnable, int l2TablePriority) {
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.l2TableEnable = l2TableEnable;
-        this.l2TablePriority = l2TablePriority;
+        this.l2TablePriority = U16.normalize(l2TablePriority);
     }
 
     // Accessors for OF message fields

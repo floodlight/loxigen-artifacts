@@ -55,7 +55,7 @@ class OFTableModFailedErrorMsgVer14 implements OFTableModFailedErrorMsg {
         if(data == null) {
             throw new NullPointerException("OFTableModFailedErrorMsgVer14: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.code = code;
         this.data = data;
     }

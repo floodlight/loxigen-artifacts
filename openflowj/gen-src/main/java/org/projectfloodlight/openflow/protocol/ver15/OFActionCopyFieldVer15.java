@@ -60,9 +60,9 @@ class OFActionCopyFieldVer15 implements OFActionCopyField {
         if(oxmIds == null) {
             throw new NullPointerException("OFActionCopyFieldVer15: property oxmIds cannot be null");
         }
-        this.nBits = nBits;
-        this.srcOffset = srcOffset;
-        this.dstOffset = dstOffset;
+        this.nBits = U16.normalize(nBits);
+        this.srcOffset = U16.normalize(srcOffset);
+        this.dstOffset = U16.normalize(dstOffset);
         this.oxmIds = oxmIds;
     }
 

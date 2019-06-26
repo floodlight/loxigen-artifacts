@@ -50,7 +50,7 @@ class OFActionBsnSetTunnelDstVer10 implements OFActionBsnSetTunnelDst {
 
     // package private constructor - used by readers, builders, and factory
     OFActionBsnSetTunnelDstVer10(long dst) {
-        this.dst = dst;
+        this.dst = U32.normalize(dst);
     }
 
     // Accessors for OF message fields

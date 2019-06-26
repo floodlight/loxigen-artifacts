@@ -63,11 +63,11 @@ class OFBsnVportQInQVer15 implements OFBsnVportQInQ {
         if(ifName == null) {
             throw new NullPointerException("OFBsnVportQInQVer15: property ifName cannot be null");
         }
-        this.portNo = portNo;
-        this.ingressTpid = ingressTpid;
-        this.ingressVlanId = ingressVlanId;
-        this.egressTpid = egressTpid;
-        this.egressVlanId = egressVlanId;
+        this.portNo = U32.normalize(portNo);
+        this.ingressTpid = U16.normalize(ingressTpid);
+        this.ingressVlanId = U16.normalize(ingressVlanId);
+        this.egressTpid = U16.normalize(egressTpid);
+        this.egressVlanId = U16.normalize(egressVlanId);
         this.ifName = ifName;
     }
 

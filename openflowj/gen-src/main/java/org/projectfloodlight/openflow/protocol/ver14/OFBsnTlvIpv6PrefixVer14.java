@@ -56,7 +56,7 @@ class OFBsnTlvIpv6PrefixVer14 implements OFBsnTlvIpv6Prefix {
             throw new NullPointerException("OFBsnTlvIpv6PrefixVer14: property value cannot be null");
         }
         this.value = value;
-        this.prefixLength = prefixLength;
+        this.prefixLength = U8.normalize(prefixLength);
     }
 
     // Accessors for OF message fields

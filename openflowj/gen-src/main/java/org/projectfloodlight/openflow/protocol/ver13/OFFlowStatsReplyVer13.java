@@ -63,7 +63,7 @@ class OFFlowStatsReplyVer13 implements OFFlowStatsReply {
         if(entries == null) {
             throw new NullPointerException("OFFlowStatsReplyVer13: property entries cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.entries = entries;
     }

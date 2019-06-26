@@ -55,7 +55,7 @@ class OFBadInstructionErrorMsgVer13 implements OFBadInstructionErrorMsg {
         if(data == null) {
             throw new NullPointerException("OFBadInstructionErrorMsgVer13: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.code = code;
         this.data = data;
     }

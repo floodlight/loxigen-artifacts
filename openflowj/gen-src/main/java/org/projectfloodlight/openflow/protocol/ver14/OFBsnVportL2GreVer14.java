@@ -104,10 +104,10 @@ class OFBsnVportL2GreVer14 implements OFBsnVportL2Gre {
         this.nhMac = nhMac;
         this.srcIp = srcIp;
         this.dstIp = dstIp;
-        this.dscp = dscp;
-        this.ttl = ttl;
-        this.vpn = vpn;
-        this.rateLimit = rateLimit;
+        this.dscp = U8.normalize(dscp);
+        this.ttl = U8.normalize(ttl);
+        this.vpn = U32.normalize(vpn);
+        this.rateLimit = U32.normalize(rateLimit);
         this.ifName = ifName;
     }
 

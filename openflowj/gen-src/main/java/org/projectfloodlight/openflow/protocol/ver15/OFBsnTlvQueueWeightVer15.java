@@ -50,7 +50,7 @@ class OFBsnTlvQueueWeightVer15 implements OFBsnTlvQueueWeight {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvQueueWeightVer15(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

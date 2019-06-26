@@ -56,7 +56,7 @@ class OFBsnSwitchPipelineStatsRequestVer14 implements OFBsnSwitchPipelineStatsRe
         if(flags == null) {
             throw new NullPointerException("OFBsnSwitchPipelineStatsRequestVer14: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
     }
 

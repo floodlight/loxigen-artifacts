@@ -71,7 +71,7 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
         if(outPort == null) {
             throw new NullPointerException("OFAggregateStatsRequestVer10: property outPort cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.match = match;
         this.tableId = tableId;

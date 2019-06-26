@@ -57,8 +57,8 @@ class OFBsnSetLacpReplyVer13 implements OFBsnSetLacpReply {
         if(portNo == null) {
             throw new NullPointerException("OFBsnSetLacpReplyVer13: property portNo cannot be null");
         }
-        this.xid = xid;
-        this.status = status;
+        this.xid = U32.normalize(xid);
+        this.status = U32.normalize(status);
         this.portNo = portNo;
     }
 

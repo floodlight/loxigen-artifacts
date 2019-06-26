@@ -59,10 +59,10 @@ class OFBsnPduTxReplyVer10 implements OFBsnPduTxReply {
         if(portNo == null) {
             throw new NullPointerException("OFBsnPduTxReplyVer10: property portNo cannot be null");
         }
-        this.xid = xid;
-        this.status = status;
+        this.xid = U32.normalize(xid);
+        this.status = U32.normalize(status);
         this.portNo = portNo;
-        this.slotNum = slotNum;
+        this.slotNum = U8.normalize(slotNum);
     }
 
     // Accessors for OF message fields

@@ -50,7 +50,7 @@ class OFBsnTlvQueueIdVer13 implements OFBsnTlvQueueId {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvQueueIdVer13(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

@@ -51,7 +51,7 @@ class OFPortDescPropBsnForwardErrorCorrectionVer15 implements OFPortDescPropBsnF
             throw new NullPointerException("OFPortDescPropBsnForwardErrorCorrectionVer15: property configured cannot be null");
         }
         this.configured = configured;
-        this.enabled = enabled;
+        this.enabled = U32.normalize(enabled);
     }
 
     // Accessors for OF message fields

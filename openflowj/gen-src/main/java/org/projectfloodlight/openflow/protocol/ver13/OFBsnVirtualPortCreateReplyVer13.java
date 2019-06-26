@@ -54,9 +54,9 @@ class OFBsnVirtualPortCreateReplyVer13 implements OFBsnVirtualPortCreateReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnVirtualPortCreateReplyVer13(long xid, long status, long vportNo) {
-        this.xid = xid;
-        this.status = status;
-        this.vportNo = vportNo;
+        this.xid = U32.normalize(xid);
+        this.status = U32.normalize(status);
+        this.vportNo = U32.normalize(vportNo);
     }
 
     // Accessors for OF message fields

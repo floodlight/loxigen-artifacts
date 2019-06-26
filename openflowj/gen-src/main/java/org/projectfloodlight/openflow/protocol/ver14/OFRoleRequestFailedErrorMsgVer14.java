@@ -55,7 +55,7 @@ class OFRoleRequestFailedErrorMsgVer14 implements OFRoleRequestFailedErrorMsg {
         if(data == null) {
             throw new NullPointerException("OFRoleRequestFailedErrorMsgVer14: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.code = code;
         this.data = data;
     }

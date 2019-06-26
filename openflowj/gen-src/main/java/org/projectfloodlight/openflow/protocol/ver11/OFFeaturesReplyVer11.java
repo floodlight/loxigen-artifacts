@@ -74,12 +74,12 @@ class OFFeaturesReplyVer11 implements OFFeaturesReply {
         if(ports == null) {
             throw new NullPointerException("OFFeaturesReplyVer11: property ports cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.datapathId = datapathId;
-        this.nBuffers = nBuffers;
-        this.nTables = nTables;
+        this.nBuffers = U32.normalize(nBuffers);
+        this.nTables = U8.normalize(nTables);
         this.capabilities = capabilities;
-        this.reserved = reserved;
+        this.reserved = U32.normalize(reserved);
         this.ports = ports;
     }
 

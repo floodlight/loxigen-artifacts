@@ -70,17 +70,17 @@ class OFPortStatsPropOpticalVer14 implements OFPortStatsPropOptical {
 
     // package private constructor - used by readers, builders, and factory
     OFPortStatsPropOpticalVer14(long flags, long txFreqLmda, long txOffset, long txGridSpan, long rxFreqLmda, long rxOffset, long rxGridSpan, int txPwr, int rxPwr, int biasCurrent, int temperature) {
-        this.flags = flags;
-        this.txFreqLmda = txFreqLmda;
-        this.txOffset = txOffset;
-        this.txGridSpan = txGridSpan;
-        this.rxFreqLmda = rxFreqLmda;
-        this.rxOffset = rxOffset;
-        this.rxGridSpan = rxGridSpan;
-        this.txPwr = txPwr;
-        this.rxPwr = rxPwr;
-        this.biasCurrent = biasCurrent;
-        this.temperature = temperature;
+        this.flags = U32.normalize(flags);
+        this.txFreqLmda = U32.normalize(txFreqLmda);
+        this.txOffset = U32.normalize(txOffset);
+        this.txGridSpan = U32.normalize(txGridSpan);
+        this.rxFreqLmda = U32.normalize(rxFreqLmda);
+        this.rxOffset = U32.normalize(rxOffset);
+        this.rxGridSpan = U32.normalize(rxGridSpan);
+        this.txPwr = U16.normalize(txPwr);
+        this.rxPwr = U16.normalize(rxPwr);
+        this.biasCurrent = U16.normalize(biasCurrent);
+        this.temperature = U16.normalize(temperature);
     }
 
     // Accessors for OF message fields

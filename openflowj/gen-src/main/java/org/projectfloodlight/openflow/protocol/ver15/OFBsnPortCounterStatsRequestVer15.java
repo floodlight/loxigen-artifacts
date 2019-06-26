@@ -61,7 +61,7 @@ class OFBsnPortCounterStatsRequestVer15 implements OFBsnPortCounterStatsRequest 
         if(portNo == null) {
             throw new NullPointerException("OFBsnPortCounterStatsRequestVer15: property portNo cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.portNo = portNo;
     }

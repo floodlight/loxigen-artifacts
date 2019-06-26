@@ -57,7 +57,7 @@ class OFBsnGentableEntryDeleteVer15 implements OFBsnGentableEntryDelete {
         if(key == null) {
             throw new NullPointerException("OFBsnGentableEntryDeleteVer15: property key cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.tableId = tableId;
         this.key = key;
     }

@@ -63,7 +63,7 @@ class OFTableFeaturesStatsReplyVer13 implements OFTableFeaturesStatsReply {
         if(entries == null) {
             throw new NullPointerException("OFTableFeaturesStatsReplyVer13: property entries cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.entries = entries;
     }

@@ -63,7 +63,7 @@ class OFGroupStatsReplyVer14 implements OFGroupStatsReply {
         if(entries == null) {
             throw new NullPointerException("OFGroupStatsReplyVer14: property entries cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.entries = entries;
     }

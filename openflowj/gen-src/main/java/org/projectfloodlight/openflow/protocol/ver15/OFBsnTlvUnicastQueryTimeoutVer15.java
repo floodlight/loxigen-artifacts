@@ -50,7 +50,7 @@ class OFBsnTlvUnicastQueryTimeoutVer15 implements OFBsnTlvUnicastQueryTimeout {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvUnicastQueryTimeoutVer15(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

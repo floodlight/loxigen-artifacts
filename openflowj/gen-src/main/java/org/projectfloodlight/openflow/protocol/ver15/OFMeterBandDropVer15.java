@@ -52,8 +52,8 @@ class OFMeterBandDropVer15 implements OFMeterBandDrop {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterBandDropVer15(long rate, long burstSize) {
-        this.rate = rate;
-        this.burstSize = burstSize;
+        this.rate = U32.normalize(rate);
+        this.burstSize = U32.normalize(burstSize);
     }
 
     // Accessors for OF message fields

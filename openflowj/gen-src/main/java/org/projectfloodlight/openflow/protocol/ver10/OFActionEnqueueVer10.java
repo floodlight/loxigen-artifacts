@@ -56,7 +56,7 @@ class OFActionEnqueueVer10 implements OFActionEnqueue {
             throw new NullPointerException("OFActionEnqueueVer10: property port cannot be null");
         }
         this.port = port;
-        this.queueId = queueId;
+        this.queueId = U32.normalize(queueId);
     }
 
     // Accessors for OF message fields

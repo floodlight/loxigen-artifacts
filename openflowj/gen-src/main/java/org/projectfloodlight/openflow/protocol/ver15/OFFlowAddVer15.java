@@ -107,18 +107,18 @@ class OFFlowAddVer15 implements OFFlowAdd {
         if(instructions == null) {
             throw new NullPointerException("OFFlowAddVer15: property instructions cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.cookie = cookie;
         this.cookieMask = cookieMask;
         this.tableId = tableId;
-        this.idleTimeout = idleTimeout;
-        this.hardTimeout = hardTimeout;
-        this.priority = priority;
+        this.idleTimeout = U16.normalize(idleTimeout);
+        this.hardTimeout = U16.normalize(hardTimeout);
+        this.priority = U16.normalize(priority);
         this.bufferId = bufferId;
         this.outPort = outPort;
         this.outGroup = outGroup;
         this.flags = flags;
-        this.importance = importance;
+        this.importance = U16.normalize(importance);
         this.match = match;
         this.instructions = instructions;
     }

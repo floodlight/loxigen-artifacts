@@ -50,7 +50,7 @@ class OFBsnTlvEthTypeVer14 implements OFBsnTlvEthType {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvEthTypeVer14(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

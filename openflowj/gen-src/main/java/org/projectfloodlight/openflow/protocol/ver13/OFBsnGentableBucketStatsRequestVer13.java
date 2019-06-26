@@ -56,7 +56,7 @@ class OFBsnGentableBucketStatsRequestVer13 implements OFBsnGentableBucketStatsRe
         if(tableId == null) {
             throw new NullPointerException("OFBsnGentableBucketStatsRequestVer13: property tableId cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.tableId = tableId;
     }

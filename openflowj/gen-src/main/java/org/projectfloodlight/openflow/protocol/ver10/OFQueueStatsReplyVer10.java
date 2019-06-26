@@ -63,7 +63,7 @@ class OFQueueStatsReplyVer10 implements OFQueueStatsReply {
         if(entries == null) {
             throw new NullPointerException("OFQueueStatsReplyVer10: property entries cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.entries = entries;
     }

@@ -63,7 +63,7 @@ class OFTableDescStatsReplyVer14 implements OFTableDescStatsReply {
         if(entries == null) {
             throw new NullPointerException("OFTableDescStatsReplyVer14: property entries cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.entries = entries;
     }

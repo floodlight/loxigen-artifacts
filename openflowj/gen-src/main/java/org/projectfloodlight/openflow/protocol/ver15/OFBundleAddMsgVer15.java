@@ -67,7 +67,7 @@ class OFBundleAddMsgVer15 implements OFBundleAddMsg {
         if(properties == null) {
             throw new NullPointerException("OFBundleAddMsgVer15: property properties cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.bundleId = bundleId;
         this.flags = flags;
         this.message = message;

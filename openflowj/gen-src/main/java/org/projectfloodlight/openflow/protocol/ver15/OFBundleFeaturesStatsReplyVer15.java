@@ -68,7 +68,7 @@ class OFBundleFeaturesStatsReplyVer15 implements OFBundleFeaturesStatsReply {
         if(properties == null) {
             throw new NullPointerException("OFBundleFeaturesStatsReplyVer15: property properties cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.capabilities = capabilities;
         this.properties = properties;

@@ -67,7 +67,7 @@ class OFBsnGentableEntryAddVer14 implements OFBsnGentableEntryAdd {
         if(value == null) {
             throw new NullPointerException("OFBsnGentableEntryAddVer14: property value cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.tableId = tableId;
         this.checksum = checksum;
         this.key = key;

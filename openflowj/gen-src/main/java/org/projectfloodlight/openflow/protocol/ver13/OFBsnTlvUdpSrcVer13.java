@@ -50,7 +50,7 @@ class OFBsnTlvUdpSrcVer13 implements OFBsnTlvUdpSrc {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvUdpSrcVer13(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

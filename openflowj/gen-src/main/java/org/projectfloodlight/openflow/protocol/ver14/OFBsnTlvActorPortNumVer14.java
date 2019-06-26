@@ -50,7 +50,7 @@ class OFBsnTlvActorPortNumVer14 implements OFBsnTlvActorPortNum {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvActorPortNumVer14(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

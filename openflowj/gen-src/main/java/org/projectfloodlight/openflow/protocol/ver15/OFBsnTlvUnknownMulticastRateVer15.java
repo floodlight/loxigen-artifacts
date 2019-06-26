@@ -50,7 +50,7 @@ class OFBsnTlvUnknownMulticastRateVer15 implements OFBsnTlvUnknownMulticastRate 
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvUnknownMulticastRateVer15(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

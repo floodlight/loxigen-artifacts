@@ -62,7 +62,7 @@ class OFQueueGetConfigReplyVer13 implements OFQueueGetConfigReply {
         if(queues == null) {
             throw new NullPointerException("OFQueueGetConfigReplyVer13: property queues cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.port = port;
         this.queues = queues;
     }

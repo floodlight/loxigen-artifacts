@@ -50,7 +50,7 @@ class OFActionMeterVer15 implements OFActionMeter {
 
     // package private constructor - used by readers, builders, and factory
     OFActionMeterVer15(long meterId) {
-        this.meterId = meterId;
+        this.meterId = U32.normalize(meterId);
     }
 
     // Accessors for OF message fields

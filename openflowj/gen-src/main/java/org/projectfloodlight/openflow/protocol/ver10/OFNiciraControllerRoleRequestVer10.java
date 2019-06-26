@@ -50,7 +50,7 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
         if(role == null) {
             throw new NullPointerException("OFNiciraControllerRoleRequestVer10: property role cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.role = role;
     }
 

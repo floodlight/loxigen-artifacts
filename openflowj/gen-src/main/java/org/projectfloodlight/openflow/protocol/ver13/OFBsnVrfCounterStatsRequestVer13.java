@@ -58,9 +58,9 @@ class OFBsnVrfCounterStatsRequestVer13 implements OFBsnVrfCounterStatsRequest {
         if(flags == null) {
             throw new NullPointerException("OFBsnVrfCounterStatsRequestVer13: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
-        this.vrf = vrf;
+        this.vrf = U32.normalize(vrf);
     }
 
     // Accessors for OF message fields

@@ -73,7 +73,7 @@ class OFPacketOutVer12 implements OFPacketOut {
         if(data == null) {
             throw new NullPointerException("OFPacketOutVer12: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.bufferId = bufferId;
         this.inPort = inPort;
         this.actions = actions;

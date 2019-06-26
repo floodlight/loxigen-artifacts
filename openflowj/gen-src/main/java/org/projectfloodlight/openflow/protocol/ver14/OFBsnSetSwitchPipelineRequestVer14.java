@@ -55,7 +55,7 @@ class OFBsnSetSwitchPipelineRequestVer14 implements OFBsnSetSwitchPipelineReques
         if(pipeline == null) {
             throw new NullPointerException("OFBsnSetSwitchPipelineRequestVer14: property pipeline cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.pipeline = pipeline;
     }
 

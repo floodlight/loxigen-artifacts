@@ -131,8 +131,8 @@ class OFPortStatsEntryVer13 implements OFPortStatsEntry {
         this.rxOverErr = rxOverErr;
         this.rxCrcErr = rxCrcErr;
         this.collisions = collisions;
-        this.durationSec = durationSec;
-        this.durationNsec = durationNsec;
+        this.durationSec = U32.normalize(durationSec);
+        this.durationNsec = U32.normalize(durationNsec);
     }
 
     // Accessors for OF message fields

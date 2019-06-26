@@ -54,9 +54,9 @@ class OFMeterBandExperimenterVer15 implements OFMeterBandExperimenter {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterBandExperimenterVer15(long rate, long burstSize, long experimenter) {
-        this.rate = rate;
-        this.burstSize = burstSize;
-        this.experimenter = experimenter;
+        this.rate = U32.normalize(rate);
+        this.burstSize = U32.normalize(burstSize);
+        this.experimenter = U32.normalize(experimenter);
     }
 
     // Accessors for OF message fields

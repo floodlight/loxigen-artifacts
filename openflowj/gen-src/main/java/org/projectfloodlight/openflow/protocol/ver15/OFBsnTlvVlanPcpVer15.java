@@ -50,7 +50,7 @@ class OFBsnTlvVlanPcpVer15 implements OFBsnTlvVlanPcp {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvVlanPcpVer15(short value) {
-        this.value = value;
+        this.value = U8.normalize(value);
     }
 
     // Accessors for OF message fields

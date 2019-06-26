@@ -63,7 +63,7 @@ class OFBsnVrfCounterStatsReplyVer14 implements OFBsnVrfCounterStatsReply {
         if(entries == null) {
             throw new NullPointerException("OFBsnVrfCounterStatsReplyVer14: property entries cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.entries = entries;
     }

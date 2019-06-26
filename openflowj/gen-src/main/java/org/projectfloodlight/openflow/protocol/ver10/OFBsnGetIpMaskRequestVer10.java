@@ -52,8 +52,8 @@ class OFBsnGetIpMaskRequestVer10 implements OFBsnGetIpMaskRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGetIpMaskRequestVer10(long xid, short index) {
-        this.xid = xid;
-        this.index = index;
+        this.xid = U32.normalize(xid);
+        this.index = U8.normalize(index);
     }
 
     // Accessors for OF message fields

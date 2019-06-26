@@ -67,9 +67,9 @@ class OFBsnFlowIdleVer15 implements OFBsnFlowIdle {
         if(match == null) {
             throw new NullPointerException("OFBsnFlowIdleVer15: property match cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.cookie = cookie;
-        this.priority = priority;
+        this.priority = U16.normalize(priority);
         this.tableId = tableId;
         this.match = match;
     }

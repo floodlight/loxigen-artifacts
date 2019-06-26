@@ -56,7 +56,7 @@ class OFActionOutputVer12 implements OFActionOutput {
             throw new NullPointerException("OFActionOutputVer12: property port cannot be null");
         }
         this.port = port;
-        this.maxLen = maxLen;
+        this.maxLen = U16.normalize(maxLen);
     }
 
     // Accessors for OF message fields

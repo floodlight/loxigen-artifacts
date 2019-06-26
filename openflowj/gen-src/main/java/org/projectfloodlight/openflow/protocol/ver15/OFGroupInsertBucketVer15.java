@@ -71,7 +71,7 @@ class OFGroupInsertBucketVer15 implements OFGroupInsertBucket {
         if(properties == null) {
             throw new NullPointerException("OFGroupInsertBucketVer15: property properties cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.groupType = groupType;
         this.group = group;
         this.commandBucketId = commandBucketId;

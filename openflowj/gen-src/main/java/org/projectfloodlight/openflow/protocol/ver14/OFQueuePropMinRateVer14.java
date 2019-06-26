@@ -50,7 +50,7 @@ class OFQueuePropMinRateVer14 implements OFQueuePropMinRate {
 
     // package private constructor - used by readers, builders, and factory
     OFQueuePropMinRateVer14(int rate) {
-        this.rate = rate;
+        this.rate = U16.normalize(rate);
     }
 
     // Accessors for OF message fields

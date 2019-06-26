@@ -61,7 +61,7 @@ class OFBsnFlowChecksumBucketStatsRequestVer15 implements OFBsnFlowChecksumBucke
         if(tableId == null) {
             throw new NullPointerException("OFBsnFlowChecksumBucketStatsRequestVer15: property tableId cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.tableId = tableId;
     }

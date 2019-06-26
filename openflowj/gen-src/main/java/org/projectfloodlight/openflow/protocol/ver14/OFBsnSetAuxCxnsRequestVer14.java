@@ -52,8 +52,8 @@ class OFBsnSetAuxCxnsRequestVer14 implements OFBsnSetAuxCxnsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnSetAuxCxnsRequestVer14(long xid, long numAux) {
-        this.xid = xid;
-        this.numAux = numAux;
+        this.xid = U32.normalize(xid);
+        this.numAux = U32.normalize(numAux);
     }
 
     // Accessors for OF message fields

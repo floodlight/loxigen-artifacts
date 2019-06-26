@@ -50,7 +50,7 @@ class OFBsnTlvIntervalVer14 implements OFBsnTlvInterval {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvIntervalVer14(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

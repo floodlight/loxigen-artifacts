@@ -63,7 +63,7 @@ class OFBsnGentableDescStatsReplyVer15 implements OFBsnGentableDescStatsReply {
         if(entries == null) {
             throw new NullPointerException("OFBsnGentableDescStatsReplyVer15: property entries cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.entries = entries;
     }

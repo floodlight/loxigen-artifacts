@@ -50,7 +50,7 @@ class OFBsnTlvActorKeyVer15 implements OFBsnTlvActorKey {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvActorKeyVer15(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

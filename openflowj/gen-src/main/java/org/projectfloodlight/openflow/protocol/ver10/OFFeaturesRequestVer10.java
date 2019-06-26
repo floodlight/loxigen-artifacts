@@ -50,7 +50,7 @@ class OFFeaturesRequestVer10 implements OFFeaturesRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFFeaturesRequestVer10(long xid) {
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
     }
 
     // Accessors for OF message fields

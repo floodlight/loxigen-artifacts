@@ -65,10 +65,10 @@ class OFBsnPduRxRequestVer11 implements OFBsnPduRxRequest {
         if(data == null) {
             throw new NullPointerException("OFBsnPduRxRequestVer11: property data cannot be null");
         }
-        this.xid = xid;
-        this.timeoutMs = timeoutMs;
+        this.xid = U32.normalize(xid);
+        this.timeoutMs = U32.normalize(timeoutMs);
         this.portNo = portNo;
-        this.slotNum = slotNum;
+        this.slotNum = U8.normalize(slotNum);
         this.data = data;
     }
 

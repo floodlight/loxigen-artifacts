@@ -50,7 +50,7 @@ class OFBsnTlvVpnKeyVer13 implements OFBsnTlvVpnKey {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvVpnKeyVer13(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields
