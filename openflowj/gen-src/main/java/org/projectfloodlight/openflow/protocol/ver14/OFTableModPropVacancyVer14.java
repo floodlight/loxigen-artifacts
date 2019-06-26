@@ -54,9 +54,9 @@ class OFTableModPropVacancyVer14 implements OFTableModPropVacancy {
 
     // package private constructor - used by readers, builders, and factory
     OFTableModPropVacancyVer14(short vacancyDown, short vacancyUp, short vacancy) {
-        this.vacancyDown = vacancyDown;
-        this.vacancyUp = vacancyUp;
-        this.vacancy = vacancy;
+        this.vacancyDown = U8.normalize(vacancyDown);
+        this.vacancyUp = U8.normalize(vacancyUp);
+        this.vacancy = U8.normalize(vacancy);
     }
 
     // Accessors for OF message fields

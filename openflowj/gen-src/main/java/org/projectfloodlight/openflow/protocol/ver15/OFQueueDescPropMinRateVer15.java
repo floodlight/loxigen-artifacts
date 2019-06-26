@@ -50,7 +50,7 @@ class OFQueueDescPropMinRateVer15 implements OFQueueDescPropMinRate {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueDescPropMinRateVer15(int rate) {
-        this.rate = rate;
+        this.rate = U16.normalize(rate);
     }
 
     // Accessors for OF message fields

@@ -50,7 +50,7 @@ class OFBsnTakeoverVer14 implements OFBsnTakeover {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTakeoverVer14(long xid) {
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
     }
 
     // Accessors for OF message fields

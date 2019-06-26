@@ -50,7 +50,7 @@ class OFBsnTlvPartnerPortNumVer13 implements OFBsnTlvPartnerPortNum {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvPartnerPortNumVer13(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

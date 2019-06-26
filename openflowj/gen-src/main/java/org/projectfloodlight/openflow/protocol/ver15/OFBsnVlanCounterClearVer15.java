@@ -52,8 +52,8 @@ class OFBsnVlanCounterClearVer15 implements OFBsnVlanCounterClear {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnVlanCounterClearVer15(long xid, int vlanVid) {
-        this.xid = xid;
-        this.vlanVid = vlanVid;
+        this.xid = U32.normalize(xid);
+        this.vlanVid = U16.normalize(vlanVid);
     }
 
     // Accessors for OF message fields

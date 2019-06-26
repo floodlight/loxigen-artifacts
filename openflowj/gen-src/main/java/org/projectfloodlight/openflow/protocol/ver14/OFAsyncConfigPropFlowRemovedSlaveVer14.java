@@ -50,7 +50,7 @@ class OFAsyncConfigPropFlowRemovedSlaveVer14 implements OFAsyncConfigPropFlowRem
 
     // package private constructor - used by readers, builders, and factory
     OFAsyncConfigPropFlowRemovedSlaveVer14(long mask) {
-        this.mask = mask;
+        this.mask = U32.normalize(mask);
     }
 
     // Accessors for OF message fields

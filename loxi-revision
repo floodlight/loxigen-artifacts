@@ -1,1 +1,1 @@
-01f6f0a9a1136e34e19cc5ed5aa841d5333a6b3a Merge pull request #651 from kenchiang/underlay
+4725f41929fdaf2346ac3e9917aa37ae4ecde2cf LOXI-83: normalize uint{8,16,32}_t values in ctors

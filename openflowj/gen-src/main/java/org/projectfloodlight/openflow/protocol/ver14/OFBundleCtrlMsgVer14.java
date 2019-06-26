@@ -67,7 +67,7 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
         if(properties == null) {
             throw new NullPointerException("OFBundleCtrlMsgVer14: property properties cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.bundleId = bundleId;
         this.bundleCtrlType = bundleCtrlType;
         this.flags = flags;

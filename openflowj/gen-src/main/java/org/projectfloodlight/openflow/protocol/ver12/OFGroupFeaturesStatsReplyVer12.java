@@ -79,18 +79,18 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
         if(capabilities == null) {
             throw new NullPointerException("OFGroupFeaturesStatsReplyVer12: property capabilities cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
-        this.types = types;
+        this.types = U32.normalize(types);
         this.capabilities = capabilities;
-        this.maxGroupsAll = maxGroupsAll;
-        this.maxGroupsSelect = maxGroupsSelect;
-        this.maxGroupsIndirect = maxGroupsIndirect;
-        this.maxGroupsFf = maxGroupsFf;
-        this.actionsAll = actionsAll;
-        this.actionsSelect = actionsSelect;
-        this.actionsIndirect = actionsIndirect;
-        this.actionsFf = actionsFf;
+        this.maxGroupsAll = U32.normalize(maxGroupsAll);
+        this.maxGroupsSelect = U32.normalize(maxGroupsSelect);
+        this.maxGroupsIndirect = U32.normalize(maxGroupsIndirect);
+        this.maxGroupsFf = U32.normalize(maxGroupsFf);
+        this.actionsAll = U32.normalize(actionsAll);
+        this.actionsSelect = U32.normalize(actionsSelect);
+        this.actionsIndirect = U32.normalize(actionsIndirect);
+        this.actionsFf = U32.normalize(actionsFf);
     }
 
     // Accessors for OF message fields

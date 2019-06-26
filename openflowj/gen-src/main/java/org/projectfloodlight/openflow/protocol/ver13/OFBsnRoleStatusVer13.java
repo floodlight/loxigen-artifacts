@@ -59,7 +59,7 @@ class OFBsnRoleStatusVer13 implements OFBsnRoleStatus {
         if(generationId == null) {
             throw new NullPointerException("OFBsnRoleStatusVer13: property generationId cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.role = role;
         this.reason = reason;
         this.generationId = generationId;

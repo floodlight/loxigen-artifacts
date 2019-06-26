@@ -54,9 +54,9 @@ class OFBsnSetAuxCxnsReplyVer14 implements OFBsnSetAuxCxnsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnSetAuxCxnsReplyVer14(long xid, long numAux, long status) {
-        this.xid = xid;
-        this.numAux = numAux;
-        this.status = status;
+        this.xid = U32.normalize(xid);
+        this.numAux = U32.normalize(numAux);
+        this.status = U32.normalize(status);
     }
 
     // Accessors for OF message fields

@@ -106,16 +106,16 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
         this.name = name;
         this.match = match;
         this.wildcards = wildcards;
-        this.writeActions = writeActions;
-        this.applyActions = applyActions;
+        this.writeActions = U32.normalize(writeActions);
+        this.applyActions = U32.normalize(applyActions);
         this.writeSetfields = writeSetfields;
         this.applySetfields = applySetfields;
         this.metadataMatch = metadataMatch;
         this.metadataWrite = metadataWrite;
-        this.instructions = instructions;
-        this.config = config;
-        this.maxEntries = maxEntries;
-        this.activeCount = activeCount;
+        this.instructions = U32.normalize(instructions);
+        this.config = U32.normalize(config);
+        this.maxEntries = U32.normalize(maxEntries);
+        this.activeCount = U32.normalize(activeCount);
         this.lookupCount = lookupCount;
         this.matchedCount = matchedCount;
     }

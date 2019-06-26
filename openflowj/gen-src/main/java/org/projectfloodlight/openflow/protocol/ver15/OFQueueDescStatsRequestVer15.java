@@ -63,10 +63,10 @@ class OFQueueDescStatsRequestVer15 implements OFQueueDescStatsRequest {
         if(portNo == null) {
             throw new NullPointerException("OFQueueDescStatsRequestVer15: property portNo cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.portNo = portNo;
-        this.queueId = queueId;
+        this.queueId = U32.normalize(queueId);
     }
 
     // Accessors for OF message fields

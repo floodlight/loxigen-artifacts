@@ -50,7 +50,7 @@ class OFBarrierRequestVer14 implements OFBarrierRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBarrierRequestVer14(long xid) {
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
     }
 
     // Accessors for OF message fields

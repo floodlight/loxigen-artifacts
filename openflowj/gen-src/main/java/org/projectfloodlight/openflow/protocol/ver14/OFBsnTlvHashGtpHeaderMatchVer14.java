@@ -52,8 +52,8 @@ class OFBsnTlvHashGtpHeaderMatchVer14 implements OFBsnTlvHashGtpHeaderMatch {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvHashGtpHeaderMatchVer14(short firstHeaderByte, short firstHeaderMask) {
-        this.firstHeaderByte = firstHeaderByte;
-        this.firstHeaderMask = firstHeaderMask;
+        this.firstHeaderByte = U8.normalize(firstHeaderByte);
+        this.firstHeaderMask = U8.normalize(firstHeaderMask);
     }
 
     // Accessors for OF message fields

@@ -50,7 +50,7 @@ class OFGroupBucketPropWatchPortVer15 implements OFGroupBucketPropWatchPort {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupBucketPropWatchPortVer15(long watch) {
-        this.watch = watch;
+        this.watch = U32.normalize(watch);
     }
 
     // Accessors for OF message fields

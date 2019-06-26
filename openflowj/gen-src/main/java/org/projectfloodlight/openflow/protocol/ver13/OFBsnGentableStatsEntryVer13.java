@@ -56,7 +56,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
             throw new NullPointerException("OFBsnGentableStatsEntryVer13: property checksum cannot be null");
         }
         this.tableId = tableId;
-        this.entryCount = entryCount;
+        this.entryCount = U32.normalize(entryCount);
         this.checksum = checksum;
     }
 

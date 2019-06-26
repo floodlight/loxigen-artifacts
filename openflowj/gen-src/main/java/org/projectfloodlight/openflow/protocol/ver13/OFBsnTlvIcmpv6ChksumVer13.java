@@ -50,7 +50,7 @@ class OFBsnTlvIcmpv6ChksumVer13 implements OFBsnTlvIcmpv6Chksum {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvIcmpv6ChksumVer13(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

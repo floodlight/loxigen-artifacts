@@ -59,8 +59,8 @@ class OFQueueDescVer15 implements OFQueueDesc {
         if(properties == null) {
             throw new NullPointerException("OFQueueDescVer15: property properties cannot be null");
         }
-        this.portNo = portNo;
-        this.queueId = queueId;
+        this.portNo = U32.normalize(portNo);
+        this.queueId = U32.normalize(queueId);
         this.properties = properties;
     }
 

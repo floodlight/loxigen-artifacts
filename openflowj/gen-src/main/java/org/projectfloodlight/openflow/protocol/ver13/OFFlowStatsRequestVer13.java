@@ -86,7 +86,7 @@ class OFFlowStatsRequestVer13 implements OFFlowStatsRequest {
         if(match == null) {
             throw new NullPointerException("OFFlowStatsRequestVer13: property match cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.tableId = tableId;
         this.outPort = outPort;

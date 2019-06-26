@@ -82,12 +82,12 @@ class OFQueueStatsEntryVer14 implements OFQueueStatsEntry {
             throw new NullPointerException("OFQueueStatsEntryVer14: property properties cannot be null");
         }
         this.portNo = portNo;
-        this.queueId = queueId;
+        this.queueId = U32.normalize(queueId);
         this.txBytes = txBytes;
         this.txPackets = txPackets;
         this.txErrors = txErrors;
-        this.durationSec = durationSec;
-        this.durationNsec = durationNsec;
+        this.durationSec = U32.normalize(durationSec);
+        this.durationNsec = U32.normalize(durationNsec);
         this.properties = properties;
     }
 

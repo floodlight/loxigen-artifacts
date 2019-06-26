@@ -74,12 +74,12 @@ class OFPortModVer10 implements OFPortMod {
         if(mask == null) {
             throw new NullPointerException("OFPortModVer10: property mask cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.portNo = portNo;
         this.hwAddr = hwAddr;
         this.config = config;
         this.mask = mask;
-        this.advertise = advertise;
+        this.advertise = U32.normalize(advertise);
     }
 
     // Accessors for OF message fields

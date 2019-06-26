@@ -70,9 +70,9 @@ class OFFlowMonitorEntryVer15 implements OFFlowMonitorEntry {
         if(match == null) {
             throw new NullPointerException("OFFlowMonitorEntryVer15: property match cannot be null");
         }
-        this.monitorId = monitorId;
-        this.outPort = outPort;
-        this.outGroup = outGroup;
+        this.monitorId = U32.normalize(monitorId);
+        this.outPort = U32.normalize(outPort);
+        this.outGroup = U32.normalize(outGroup);
         this.flags = flags;
         this.tableId = tableId;
         this.command = command;

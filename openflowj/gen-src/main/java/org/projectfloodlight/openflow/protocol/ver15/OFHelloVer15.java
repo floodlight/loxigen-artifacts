@@ -57,7 +57,7 @@ class OFHelloVer15 implements OFHello {
         if(elements == null) {
             throw new NullPointerException("OFHelloVer15: property elements cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.elements = elements;
     }
 

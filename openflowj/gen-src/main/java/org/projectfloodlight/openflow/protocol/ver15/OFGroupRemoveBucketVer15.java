@@ -71,7 +71,7 @@ class OFGroupRemoveBucketVer15 implements OFGroupRemoveBucket {
         if(properties == null) {
             throw new NullPointerException("OFGroupRemoveBucketVer15: property properties cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.groupType = groupType;
         this.group = group;
         this.commandBucketId = commandBucketId;

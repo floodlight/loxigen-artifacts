@@ -50,7 +50,7 @@ class OFAsyncConfigPropPacketInMasterVer15 implements OFAsyncConfigPropPacketInM
 
     // package private constructor - used by readers, builders, and factory
     OFAsyncConfigPropPacketInMasterVer15(long mask) {
-        this.mask = mask;
+        this.mask = U32.normalize(mask);
     }
 
     // Accessors for OF message fields

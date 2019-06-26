@@ -52,8 +52,8 @@ class OFBsnTlvHashSeedVer14 implements OFBsnTlvHashSeed {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvHashSeedVer14(long seed1, long seed2) {
-        this.seed1 = seed1;
-        this.seed2 = seed2;
+        this.seed1 = U32.normalize(seed1);
+        this.seed2 = U32.normalize(seed2);
     }
 
     // Accessors for OF message fields

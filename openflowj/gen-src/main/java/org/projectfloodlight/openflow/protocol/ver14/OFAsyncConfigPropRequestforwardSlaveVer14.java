@@ -50,7 +50,7 @@ class OFAsyncConfigPropRequestforwardSlaveVer14 implements OFAsyncConfigPropRequ
 
     // package private constructor - used by readers, builders, and factory
     OFAsyncConfigPropRequestforwardSlaveVer14(long mask) {
-        this.mask = mask;
+        this.mask = U32.normalize(mask);
     }
 
     // Accessors for OF message fields

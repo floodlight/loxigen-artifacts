@@ -65,10 +65,10 @@ class OFBsnPduTxRequestVer14 implements OFBsnPduTxRequest {
         if(data == null) {
             throw new NullPointerException("OFBsnPduTxRequestVer14: property data cannot be null");
         }
-        this.xid = xid;
-        this.txIntervalMs = txIntervalMs;
+        this.xid = U32.normalize(xid);
+        this.txIntervalMs = U32.normalize(txIntervalMs);
         this.portNo = portNo;
-        this.slotNum = slotNum;
+        this.slotNum = U8.normalize(slotNum);
         this.data = data;
     }
 

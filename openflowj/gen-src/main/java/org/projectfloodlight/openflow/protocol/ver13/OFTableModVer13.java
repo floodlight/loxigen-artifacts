@@ -58,9 +58,9 @@ class OFTableModVer13 implements OFTableMod {
         if(tableId == null) {
             throw new NullPointerException("OFTableModVer13: property tableId cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.tableId = tableId;
-        this.config = config;
+        this.config = U32.normalize(config);
     }
 
     // Accessors for OF message fields

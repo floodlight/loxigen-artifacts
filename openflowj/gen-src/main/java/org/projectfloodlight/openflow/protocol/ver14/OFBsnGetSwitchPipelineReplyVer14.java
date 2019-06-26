@@ -55,7 +55,7 @@ class OFBsnGetSwitchPipelineReplyVer14 implements OFBsnGetSwitchPipelineReply {
         if(pipeline == null) {
             throw new NullPointerException("OFBsnGetSwitchPipelineReplyVer14: property pipeline cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.pipeline = pipeline;
     }
 

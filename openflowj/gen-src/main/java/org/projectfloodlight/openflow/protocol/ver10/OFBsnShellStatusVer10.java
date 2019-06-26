@@ -52,8 +52,8 @@ class OFBsnShellStatusVer10 implements OFBsnShellStatus {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnShellStatusVer10(long xid, long status) {
-        this.xid = xid;
-        this.status = status;
+        this.xid = U32.normalize(xid);
+        this.status = U32.normalize(status);
     }
 
     // Accessors for OF message fields

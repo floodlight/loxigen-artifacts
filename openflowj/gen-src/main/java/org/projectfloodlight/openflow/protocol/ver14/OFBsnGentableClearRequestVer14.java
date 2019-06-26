@@ -60,7 +60,7 @@ class OFBsnGentableClearRequestVer14 implements OFBsnGentableClearRequest {
         if(checksumMask == null) {
             throw new NullPointerException("OFBsnGentableClearRequestVer14: property checksumMask cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.tableId = tableId;
         this.checksum = checksum;
         this.checksumMask = checksumMask;

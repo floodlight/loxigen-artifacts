@@ -68,7 +68,7 @@ class OFBsnGenericStatsRequestVer13 implements OFBsnGenericStatsRequest {
         if(tlvs == null) {
             throw new NullPointerException("OFBsnGenericStatsRequestVer13: property tlvs cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.name = name;
         this.tlvs = tlvs;

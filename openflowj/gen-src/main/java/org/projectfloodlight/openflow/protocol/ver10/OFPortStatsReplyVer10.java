@@ -63,7 +63,7 @@ class OFPortStatsReplyVer10 implements OFPortStatsReply {
         if(entries == null) {
             throw new NullPointerException("OFPortStatsReplyVer10: property entries cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.entries = entries;
     }

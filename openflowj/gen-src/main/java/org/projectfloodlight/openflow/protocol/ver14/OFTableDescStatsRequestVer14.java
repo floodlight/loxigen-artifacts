@@ -56,7 +56,7 @@ class OFTableDescStatsRequestVer14 implements OFTableDescStatsRequest {
         if(flags == null) {
             throw new NullPointerException("OFTableDescStatsRequestVer14: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
     }
 

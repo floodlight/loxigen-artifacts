@@ -66,7 +66,7 @@ class OFRoleStatusVer15 implements OFRoleStatus {
         if(properties == null) {
             throw new NullPointerException("OFRoleStatusVer15: property properties cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.role = role;
         this.reason = reason;
         this.generationId = generationId;

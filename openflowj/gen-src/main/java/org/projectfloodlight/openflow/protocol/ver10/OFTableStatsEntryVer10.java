@@ -77,8 +77,8 @@ class OFTableStatsEntryVer10 implements OFTableStatsEntry {
         this.tableId = tableId;
         this.name = name;
         this.wildcards = wildcards;
-        this.maxEntries = maxEntries;
-        this.activeCount = activeCount;
+        this.maxEntries = U32.normalize(maxEntries);
+        this.activeCount = U32.normalize(activeCount);
         this.lookupCount = lookupCount;
         this.matchedCount = matchedCount;
     }

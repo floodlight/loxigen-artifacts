@@ -50,7 +50,7 @@ class OFBsnTlvBroadcastRateVer13 implements OFBsnTlvBroadcastRate {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvBroadcastRateVer13(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

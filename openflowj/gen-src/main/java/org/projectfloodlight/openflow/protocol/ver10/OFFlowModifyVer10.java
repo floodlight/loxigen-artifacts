@@ -89,12 +89,12 @@ class OFFlowModifyVer10 implements OFFlowModify {
         if(actions == null) {
             throw new NullPointerException("OFFlowModifyVer10: property actions cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.match = match;
         this.cookie = cookie;
-        this.idleTimeout = idleTimeout;
-        this.hardTimeout = hardTimeout;
-        this.priority = priority;
+        this.idleTimeout = U16.normalize(idleTimeout);
+        this.hardTimeout = U16.normalize(hardTimeout);
+        this.priority = U16.normalize(priority);
         this.bufferId = bufferId;
         this.outPort = outPort;
         this.flags = flags;

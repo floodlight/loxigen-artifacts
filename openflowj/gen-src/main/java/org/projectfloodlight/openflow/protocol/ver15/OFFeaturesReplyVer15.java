@@ -73,13 +73,13 @@ class OFFeaturesReplyVer15 implements OFFeaturesReply {
         if(capabilities == null) {
             throw new NullPointerException("OFFeaturesReplyVer15: property capabilities cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.datapathId = datapathId;
-        this.nBuffers = nBuffers;
-        this.nTables = nTables;
+        this.nBuffers = U32.normalize(nBuffers);
+        this.nTables = U8.normalize(nTables);
         this.auxiliaryId = auxiliaryId;
         this.capabilities = capabilities;
-        this.reserved = reserved;
+        this.reserved = U32.normalize(reserved);
     }
 
     // Accessors for OF message fields

@@ -58,8 +58,8 @@ class OFActionBsnMirrorVer15 implements OFActionBsnMirror {
             throw new NullPointerException("OFActionBsnMirrorVer15: property destPort cannot be null");
         }
         this.destPort = destPort;
-        this.vlanTag = vlanTag;
-        this.copyStage = copyStage;
+        this.vlanTag = U32.normalize(vlanTag);
+        this.copyStage = U8.normalize(copyStage);
     }
 
     // Accessors for OF message fields

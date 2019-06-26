@@ -57,7 +57,7 @@ class OFAsyncGetRequestVer15 implements OFAsyncGetRequest {
         if(properties == null) {
             throw new NullPointerException("OFAsyncGetRequestVer15: property properties cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.properties = properties;
     }
 

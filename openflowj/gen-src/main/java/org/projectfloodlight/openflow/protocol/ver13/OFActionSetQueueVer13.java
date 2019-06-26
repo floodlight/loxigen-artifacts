@@ -50,7 +50,7 @@ class OFActionSetQueueVer13 implements OFActionSetQueue {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetQueueVer13(long queueId) {
-        this.queueId = queueId;
+        this.queueId = U32.normalize(queueId);
     }
 
     // Accessors for OF message fields

@@ -82,17 +82,17 @@ class OFBsnLacpStatsEntryVer15 implements OFBsnLacpStatsEntry {
             throw new NullPointerException("OFBsnLacpStatsEntryVer15: property partnerSysMac cannot be null");
         }
         this.portNo = portNo;
-        this.actorSysPriority = actorSysPriority;
+        this.actorSysPriority = U16.normalize(actorSysPriority);
         this.actorSysMac = actorSysMac;
-        this.actorPortPriority = actorPortPriority;
-        this.actorPortNum = actorPortNum;
-        this.actorKey = actorKey;
-        this.convergenceStatus = convergenceStatus;
-        this.partnerSysPriority = partnerSysPriority;
+        this.actorPortPriority = U16.normalize(actorPortPriority);
+        this.actorPortNum = U16.normalize(actorPortNum);
+        this.actorKey = U16.normalize(actorKey);
+        this.convergenceStatus = U8.normalize(convergenceStatus);
+        this.partnerSysPriority = U16.normalize(partnerSysPriority);
         this.partnerSysMac = partnerSysMac;
-        this.partnerPortPriority = partnerPortPriority;
-        this.partnerPortNum = partnerPortNum;
-        this.partnerKey = partnerKey;
+        this.partnerPortPriority = U16.normalize(partnerPortPriority);
+        this.partnerPortNum = U16.normalize(partnerPortNum);
+        this.partnerKey = U16.normalize(partnerKey);
     }
 
     // Accessors for OF message fields

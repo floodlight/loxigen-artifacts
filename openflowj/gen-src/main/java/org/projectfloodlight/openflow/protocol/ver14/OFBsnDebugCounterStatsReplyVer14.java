@@ -63,7 +63,7 @@ class OFBsnDebugCounterStatsReplyVer14 implements OFBsnDebugCounterStatsReply {
         if(entries == null) {
             throw new NullPointerException("OFBsnDebugCounterStatsReplyVer14: property entries cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.entries = entries;
     }

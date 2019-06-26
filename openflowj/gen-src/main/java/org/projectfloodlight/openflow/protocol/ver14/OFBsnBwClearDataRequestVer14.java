@@ -50,7 +50,7 @@ class OFBsnBwClearDataRequestVer14 implements OFBsnBwClearDataRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnBwClearDataRequestVer14(long xid) {
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
     }
 
     // Accessors for OF message fields

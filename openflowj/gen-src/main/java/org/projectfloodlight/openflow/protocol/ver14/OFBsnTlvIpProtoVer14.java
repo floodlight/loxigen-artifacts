@@ -50,7 +50,7 @@ class OFBsnTlvIpProtoVer14 implements OFBsnTlvIpProto {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvIpProtoVer14(short value) {
-        this.value = value;
+        this.value = U8.normalize(value);
     }
 
     // Accessors for OF message fields

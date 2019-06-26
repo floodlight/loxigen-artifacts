@@ -50,7 +50,7 @@ class OFActionSetMplsTtlVer13 implements OFActionSetMplsTtl {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetMplsTtlVer13(short mplsTtl) {
-        this.mplsTtl = mplsTtl;
+        this.mplsTtl = U8.normalize(mplsTtl);
     }
 
     // Accessors for OF message fields

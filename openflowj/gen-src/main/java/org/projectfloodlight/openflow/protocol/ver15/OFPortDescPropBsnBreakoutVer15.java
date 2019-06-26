@@ -52,8 +52,8 @@ class OFPortDescPropBsnBreakoutVer15 implements OFPortDescPropBsnBreakout {
 
     // package private constructor - used by readers, builders, and factory
     OFPortDescPropBsnBreakoutVer15(int subInterfaceCount, int subInterfaceSpeedGbps) {
-        this.subInterfaceCount = subInterfaceCount;
-        this.subInterfaceSpeedGbps = subInterfaceSpeedGbps;
+        this.subInterfaceCount = U16.normalize(subInterfaceCount);
+        this.subInterfaceSpeedGbps = U16.normalize(subInterfaceSpeedGbps);
     }
 
     // Accessors for OF message fields

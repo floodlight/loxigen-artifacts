@@ -50,7 +50,7 @@ class OFInstructionMeterVer13 implements OFInstructionMeter {
 
     // package private constructor - used by readers, builders, and factory
     OFInstructionMeterVer13(long meterId) {
-        this.meterId = meterId;
+        this.meterId = U32.normalize(meterId);
     }
 
     // Accessors for OF message fields

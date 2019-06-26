@@ -52,8 +52,8 @@ class OFBsnVirtualPortRemoveReplyVer12 implements OFBsnVirtualPortRemoveReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnVirtualPortRemoveReplyVer12(long xid, long status) {
-        this.xid = xid;
-        this.status = status;
+        this.xid = U32.normalize(xid);
+        this.status = U32.normalize(status);
     }
 
     // Accessors for OF message fields

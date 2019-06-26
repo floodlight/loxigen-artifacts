@@ -56,7 +56,7 @@ class OFPortDescStatsRequestVer13 implements OFPortDescStatsRequest {
         if(flags == null) {
             throw new NullPointerException("OFPortDescStatsRequestVer13: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
     }
 

@@ -83,14 +83,14 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         if(match == null) {
             throw new NullPointerException("OFFlowRemovedVer11: property match cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.cookie = cookie;
-        this.priority = priority;
+        this.priority = U16.normalize(priority);
         this.reason = reason;
         this.tableId = tableId;
-        this.durationSec = durationSec;
-        this.durationNsec = durationNsec;
-        this.idleTimeout = idleTimeout;
+        this.durationSec = U32.normalize(durationSec);
+        this.durationNsec = U32.normalize(durationNsec);
+        this.idleTimeout = U16.normalize(idleTimeout);
         this.packetCount = packetCount;
         this.byteCount = byteCount;
         this.match = match;

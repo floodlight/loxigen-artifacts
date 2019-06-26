@@ -50,7 +50,7 @@ class OFBsnTlvTcpFlagsVer13 implements OFBsnTlvTcpFlags {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvTcpFlagsVer13(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

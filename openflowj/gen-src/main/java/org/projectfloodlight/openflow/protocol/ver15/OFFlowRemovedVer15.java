@@ -75,12 +75,12 @@ class OFFlowRemovedVer15 implements OFFlowRemoved {
         if(stats == null) {
             throw new NullPointerException("OFFlowRemovedVer15: property stats cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.tableId = tableId;
         this.reason = reason;
-        this.priority = priority;
-        this.idleTimeout = idleTimeout;
-        this.hardTimeout = hardTimeout;
+        this.priority = U16.normalize(priority);
+        this.idleTimeout = U16.normalize(idleTimeout);
+        this.hardTimeout = U16.normalize(hardTimeout);
         this.cookie = cookie;
         this.match = match;
         this.stats = stats;

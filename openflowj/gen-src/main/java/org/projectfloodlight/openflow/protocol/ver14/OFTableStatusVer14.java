@@ -56,8 +56,8 @@ class OFTableStatusVer14 implements OFTableStatus {
         if(table == null) {
             throw new NullPointerException("OFTableStatusVer14: property table cannot be null");
         }
-        this.xid = xid;
-        this.role = role;
+        this.xid = U32.normalize(xid);
+        this.role = U32.normalize(role);
         this.reason = reason;
         this.table = table;
     }

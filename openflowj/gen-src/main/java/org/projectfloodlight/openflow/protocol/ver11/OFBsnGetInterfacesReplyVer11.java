@@ -57,7 +57,7 @@ class OFBsnGetInterfacesReplyVer11 implements OFBsnGetInterfacesReply {
         if(interfaces == null) {
             throw new NullPointerException("OFBsnGetInterfacesReplyVer11: property interfaces cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.interfaces = interfaces;
     }
 

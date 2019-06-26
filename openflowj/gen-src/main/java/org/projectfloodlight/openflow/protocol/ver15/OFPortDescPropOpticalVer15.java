@@ -66,15 +66,15 @@ class OFPortDescPropOpticalVer15 implements OFPortDescPropOptical {
 
     // package private constructor - used by readers, builders, and factory
     OFPortDescPropOpticalVer15(long supported, long txMinFreqLmda, long txMaxFreqLmda, long txGridFreqLmda, long rxMinFreqLmda, long rxMaxFreqLmda, long rxGridFreqLmda, long txPwrMin, long txPwrMax) {
-        this.supported = supported;
-        this.txMinFreqLmda = txMinFreqLmda;
-        this.txMaxFreqLmda = txMaxFreqLmda;
-        this.txGridFreqLmda = txGridFreqLmda;
-        this.rxMinFreqLmda = rxMinFreqLmda;
-        this.rxMaxFreqLmda = rxMaxFreqLmda;
-        this.rxGridFreqLmda = rxGridFreqLmda;
-        this.txPwrMin = txPwrMin;
-        this.txPwrMax = txPwrMax;
+        this.supported = U32.normalize(supported);
+        this.txMinFreqLmda = U32.normalize(txMinFreqLmda);
+        this.txMaxFreqLmda = U32.normalize(txMaxFreqLmda);
+        this.txGridFreqLmda = U32.normalize(txGridFreqLmda);
+        this.rxMinFreqLmda = U32.normalize(rxMinFreqLmda);
+        this.rxMaxFreqLmda = U32.normalize(rxMaxFreqLmda);
+        this.rxGridFreqLmda = U32.normalize(rxGridFreqLmda);
+        this.txPwrMin = U32.normalize(txPwrMin);
+        this.txPwrMax = U32.normalize(txPwrMax);
     }
 
     // Accessors for OF message fields

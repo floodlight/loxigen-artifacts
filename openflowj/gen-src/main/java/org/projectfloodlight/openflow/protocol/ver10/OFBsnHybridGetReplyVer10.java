@@ -54,9 +54,9 @@ class OFBsnHybridGetReplyVer10 implements OFBsnHybridGetReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnHybridGetReplyVer10(long xid, short hybridEnable, int hybridVersion) {
-        this.xid = xid;
-        this.hybridEnable = hybridEnable;
-        this.hybridVersion = hybridVersion;
+        this.xid = U32.normalize(xid);
+        this.hybridEnable = U8.normalize(hybridEnable);
+        this.hybridVersion = U16.normalize(hybridVersion);
     }
 
     // Accessors for OF message fields

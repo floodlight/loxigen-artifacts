@@ -50,7 +50,7 @@ class OFBsnVirtualPortCreateRequestVer12 implements OFBsnVirtualPortCreateReques
         if(vport == null) {
             throw new NullPointerException("OFBsnVirtualPortCreateRequestVer12: property vport cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.vport = vport;
     }
 

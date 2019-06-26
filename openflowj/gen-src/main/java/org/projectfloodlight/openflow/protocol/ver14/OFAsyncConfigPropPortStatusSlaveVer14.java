@@ -50,7 +50,7 @@ class OFAsyncConfigPropPortStatusSlaveVer14 implements OFAsyncConfigPropPortStat
 
     // package private constructor - used by readers, builders, and factory
     OFAsyncConfigPropPortStatusSlaveVer14(long mask) {
-        this.mask = mask;
+        this.mask = U32.normalize(mask);
     }
 
     // Accessors for OF message fields

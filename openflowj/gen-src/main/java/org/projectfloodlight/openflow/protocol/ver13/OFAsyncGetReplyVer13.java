@@ -63,13 +63,13 @@ class OFAsyncGetReplyVer13 implements OFAsyncGetReply {
 
     // package private constructor - used by readers, builders, and factory
     OFAsyncGetReplyVer13(long xid, long packetInMaskEqualMaster, long packetInMaskSlave, long portStatusMaskEqualMaster, long portStatusMaskSlave, long flowRemovedMaskEqualMaster, long flowRemovedMaskSlave) {
-        this.xid = xid;
-        this.packetInMaskEqualMaster = packetInMaskEqualMaster;
-        this.packetInMaskSlave = packetInMaskSlave;
-        this.portStatusMaskEqualMaster = portStatusMaskEqualMaster;
-        this.portStatusMaskSlave = portStatusMaskSlave;
-        this.flowRemovedMaskEqualMaster = flowRemovedMaskEqualMaster;
-        this.flowRemovedMaskSlave = flowRemovedMaskSlave;
+        this.xid = U32.normalize(xid);
+        this.packetInMaskEqualMaster = U32.normalize(packetInMaskEqualMaster);
+        this.packetInMaskSlave = U32.normalize(packetInMaskSlave);
+        this.portStatusMaskEqualMaster = U32.normalize(portStatusMaskEqualMaster);
+        this.portStatusMaskSlave = U32.normalize(portStatusMaskSlave);
+        this.flowRemovedMaskEqualMaster = U32.normalize(flowRemovedMaskEqualMaster);
+        this.flowRemovedMaskSlave = U32.normalize(flowRemovedMaskSlave);
     }
 
     // Accessors for OF message fields

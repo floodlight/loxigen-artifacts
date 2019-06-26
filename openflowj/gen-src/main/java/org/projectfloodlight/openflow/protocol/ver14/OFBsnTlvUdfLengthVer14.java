@@ -50,7 +50,7 @@ class OFBsnTlvUdfLengthVer14 implements OFBsnTlvUdfLength {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvUdfLengthVer14(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

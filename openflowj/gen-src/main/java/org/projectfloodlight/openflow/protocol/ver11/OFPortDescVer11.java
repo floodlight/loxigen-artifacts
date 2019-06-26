@@ -109,8 +109,8 @@ class OFPortDescVer11 implements OFPortDesc {
         this.advertised = advertised;
         this.supported = supported;
         this.peer = peer;
-        this.currSpeed = currSpeed;
-        this.maxSpeed = maxSpeed;
+        this.currSpeed = U32.normalize(currSpeed);
+        this.maxSpeed = U32.normalize(maxSpeed);
     }
 
     // Accessors for OF message fields

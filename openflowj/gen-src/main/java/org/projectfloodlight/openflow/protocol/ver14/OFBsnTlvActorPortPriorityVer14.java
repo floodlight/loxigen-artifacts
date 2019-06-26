@@ -50,7 +50,7 @@ class OFBsnTlvActorPortPriorityVer14 implements OFBsnTlvActorPortPriority {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvActorPortPriorityVer14(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

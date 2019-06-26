@@ -78,11 +78,11 @@ class OFPacketInVer11 implements OFPacketIn {
         if(data == null) {
             throw new NullPointerException("OFPacketInVer11: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.bufferId = bufferId;
         this.inPort = inPort;
         this.inPhyPort = inPhyPort;
-        this.totalLen = totalLen;
+        this.totalLen = U16.normalize(totalLen);
         this.reason = reason;
         this.tableId = tableId;
         this.data = data;

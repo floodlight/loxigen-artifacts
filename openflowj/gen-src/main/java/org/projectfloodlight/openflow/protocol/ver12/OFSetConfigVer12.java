@@ -58,9 +58,9 @@ class OFSetConfigVer12 implements OFSetConfig {
         if(flags == null) {
             throw new NullPointerException("OFSetConfigVer12: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
-        this.missSendLen = missSendLen;
+        this.missSendLen = U16.normalize(missSendLen);
     }
 
     // Accessors for OF message fields

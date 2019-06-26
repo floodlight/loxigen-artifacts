@@ -56,7 +56,7 @@ class OFMeterFeaturesStatsRequestVer13 implements OFMeterFeaturesStatsRequest {
         if(flags == null) {
             throw new NullPointerException("OFMeterFeaturesStatsRequestVer13: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
     }
 

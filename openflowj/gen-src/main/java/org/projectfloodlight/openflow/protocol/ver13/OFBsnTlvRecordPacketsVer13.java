@@ -50,7 +50,7 @@ class OFBsnTlvRecordPacketsVer13 implements OFBsnTlvRecordPackets {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvRecordPacketsVer13(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

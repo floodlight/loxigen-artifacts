@@ -50,7 +50,7 @@ class OFBsnTlvHeaderSizeVer13 implements OFBsnTlvHeaderSize {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvHeaderSizeVer13(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

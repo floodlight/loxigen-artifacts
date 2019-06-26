@@ -59,8 +59,8 @@ class OFBsnGentableDescStatsEntryVer15 implements OFBsnGentableDescStatsEntry {
         }
         this.tableId = tableId;
         this.name = name;
-        this.bucketsSize = bucketsSize;
-        this.maxEntries = maxEntries;
+        this.bucketsSize = U32.normalize(bucketsSize);
+        this.maxEntries = U32.normalize(maxEntries);
     }
 
     // Accessors for OF message fields

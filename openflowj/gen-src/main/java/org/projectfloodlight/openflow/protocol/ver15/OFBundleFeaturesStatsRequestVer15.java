@@ -68,7 +68,7 @@ class OFBundleFeaturesStatsRequestVer15 implements OFBundleFeaturesStatsRequest 
         if(properties == null) {
             throw new NullPointerException("OFBundleFeaturesStatsRequestVer15: property properties cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.featureRequestFlags = featureRequestFlags;
         this.properties = properties;

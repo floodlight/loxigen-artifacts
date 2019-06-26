@@ -56,7 +56,7 @@ class OFGroupDescStatsRequestVer14 implements OFGroupDescStatsRequest {
         if(flags == null) {
             throw new NullPointerException("OFGroupDescStatsRequestVer14: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
     }
 

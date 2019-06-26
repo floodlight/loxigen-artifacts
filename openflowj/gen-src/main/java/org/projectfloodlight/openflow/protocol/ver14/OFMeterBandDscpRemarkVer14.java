@@ -54,9 +54,9 @@ class OFMeterBandDscpRemarkVer14 implements OFMeterBandDscpRemark {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterBandDscpRemarkVer14(long rate, long burstSize, short precLevel) {
-        this.rate = rate;
-        this.burstSize = burstSize;
-        this.precLevel = precLevel;
+        this.rate = U32.normalize(rate);
+        this.burstSize = U32.normalize(burstSize);
+        this.precLevel = U8.normalize(precLevel);
     }
 
     // Accessors for OF message fields

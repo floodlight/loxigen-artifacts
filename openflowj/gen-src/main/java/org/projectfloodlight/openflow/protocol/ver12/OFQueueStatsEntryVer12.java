@@ -72,7 +72,7 @@ class OFQueueStatsEntryVer12 implements OFQueueStatsEntry {
             throw new NullPointerException("OFQueueStatsEntryVer12: property txErrors cannot be null");
         }
         this.portNo = portNo;
-        this.queueId = queueId;
+        this.queueId = U32.normalize(queueId);
         this.txBytes = txBytes;
         this.txPackets = txPackets;
         this.txErrors = txErrors;

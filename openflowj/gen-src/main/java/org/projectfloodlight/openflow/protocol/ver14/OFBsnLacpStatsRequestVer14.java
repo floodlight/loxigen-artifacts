@@ -56,7 +56,7 @@ class OFBsnLacpStatsRequestVer14 implements OFBsnLacpStatsRequest {
         if(flags == null) {
             throw new NullPointerException("OFBsnLacpStatsRequestVer14: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
     }
 

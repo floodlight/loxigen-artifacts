@@ -66,7 +66,7 @@ class OFTableStatsEntryVer15 implements OFTableStatsEntry {
             throw new NullPointerException("OFTableStatsEntryVer15: property matchedCount cannot be null");
         }
         this.tableId = tableId;
-        this.activeCount = activeCount;
+        this.activeCount = U32.normalize(activeCount);
         this.lookupCount = lookupCount;
         this.matchedCount = matchedCount;
     }

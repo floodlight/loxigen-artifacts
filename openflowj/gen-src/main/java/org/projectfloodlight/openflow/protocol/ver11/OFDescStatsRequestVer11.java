@@ -56,7 +56,7 @@ class OFDescStatsRequestVer11 implements OFDescStatsRequest {
         if(flags == null) {
             throw new NullPointerException("OFDescStatsRequestVer11: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
     }
 

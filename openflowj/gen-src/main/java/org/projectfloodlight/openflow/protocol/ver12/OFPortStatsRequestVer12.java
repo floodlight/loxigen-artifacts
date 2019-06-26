@@ -61,7 +61,7 @@ class OFPortStatsRequestVer12 implements OFPortStatsRequest {
         if(portNo == null) {
             throw new NullPointerException("OFPortStatsRequestVer12: property portNo cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.portNo = portNo;
     }

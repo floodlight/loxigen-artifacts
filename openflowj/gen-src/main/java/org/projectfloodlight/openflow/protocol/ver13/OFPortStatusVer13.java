@@ -54,7 +54,7 @@ class OFPortStatusVer13 implements OFPortStatus {
         if(desc == null) {
             throw new NullPointerException("OFPortStatusVer13: property desc cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.reason = reason;
         this.desc = desc;
     }

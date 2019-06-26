@@ -50,7 +50,7 @@ class OFBsnTlvActorSystemPriorityVer14 implements OFBsnTlvActorSystemPriority {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvActorSystemPriorityVer14(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

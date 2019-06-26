@@ -56,7 +56,7 @@ class OFBsnImageDescStatsRequestVer13 implements OFBsnImageDescStatsRequest {
         if(flags == null) {
             throw new NullPointerException("OFBsnImageDescStatsRequestVer13: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
     }
 
