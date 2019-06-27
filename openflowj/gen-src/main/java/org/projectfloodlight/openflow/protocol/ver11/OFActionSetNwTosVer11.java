@@ -50,7 +50,7 @@ class OFActionSetNwTosVer11 implements OFActionSetNwTos {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetNwTosVer11(short nwTos) {
-        this.nwTos = nwTos;
+        this.nwTos = U8.normalize(nwTos);
     }
 
     // Accessors for OF message fields

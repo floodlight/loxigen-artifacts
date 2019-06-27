@@ -50,7 +50,7 @@ class OFBsnTlvDscpVer15 implements OFBsnTlvDscp {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvDscpVer15(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

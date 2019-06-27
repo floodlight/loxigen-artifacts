@@ -56,7 +56,7 @@ class OFBsnGentableDescStatsRequestVer15 implements OFBsnGentableDescStatsReques
         if(flags == null) {
             throw new NullPointerException("OFBsnGentableDescStatsRequestVer15: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
     }
 

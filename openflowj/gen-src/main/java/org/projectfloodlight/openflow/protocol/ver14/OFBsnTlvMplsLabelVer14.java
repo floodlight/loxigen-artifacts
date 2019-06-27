@@ -50,7 +50,7 @@ class OFBsnTlvMplsLabelVer14 implements OFBsnTlvMplsLabel {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvMplsLabelVer14(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

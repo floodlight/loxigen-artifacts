@@ -56,7 +56,7 @@ class OFBsnTableChecksumStatsRequestVer15 implements OFBsnTableChecksumStatsRequ
         if(flags == null) {
             throw new NullPointerException("OFBsnTableChecksumStatsRequestVer15: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
     }
 

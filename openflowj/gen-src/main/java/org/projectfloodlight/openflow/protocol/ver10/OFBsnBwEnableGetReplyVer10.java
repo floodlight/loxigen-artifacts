@@ -52,8 +52,8 @@ class OFBsnBwEnableGetReplyVer10 implements OFBsnBwEnableGetReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnBwEnableGetReplyVer10(long xid, long enabled) {
-        this.xid = xid;
-        this.enabled = enabled;
+        this.xid = U32.normalize(xid);
+        this.enabled = U32.normalize(enabled);
     }
 
     // Accessors for OF message fields

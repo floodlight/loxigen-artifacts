@@ -78,9 +78,9 @@ class OFPacketInVer13 implements OFPacketIn {
         if(data == null) {
             throw new NullPointerException("OFPacketInVer13: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.bufferId = bufferId;
-        this.totalLen = totalLen;
+        this.totalLen = U16.normalize(totalLen);
         this.reason = reason;
         this.tableId = tableId;
         this.cookie = cookie;

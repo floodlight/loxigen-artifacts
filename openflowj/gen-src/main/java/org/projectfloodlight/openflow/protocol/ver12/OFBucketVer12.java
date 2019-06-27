@@ -67,7 +67,7 @@ class OFBucketVer12 implements OFBucket {
         if(actions == null) {
             throw new NullPointerException("OFBucketVer12: property actions cannot be null");
         }
-        this.weight = weight;
+        this.weight = U16.normalize(weight);
         this.watchPort = watchPort;
         this.watchGroup = watchGroup;
         this.actions = actions;

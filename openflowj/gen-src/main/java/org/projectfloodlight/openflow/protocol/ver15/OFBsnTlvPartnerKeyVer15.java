@@ -50,7 +50,7 @@ class OFBsnTlvPartnerKeyVer15 implements OFBsnTlvPartnerKey {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvPartnerKeyVer15(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

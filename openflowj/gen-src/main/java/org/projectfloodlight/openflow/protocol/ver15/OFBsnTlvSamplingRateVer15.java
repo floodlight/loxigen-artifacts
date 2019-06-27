@@ -50,7 +50,7 @@ class OFBsnTlvSamplingRateVer15 implements OFBsnTlvSamplingRate {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvSamplingRateVer15(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

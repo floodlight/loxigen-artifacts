@@ -95,7 +95,7 @@ class OFTableFeaturesVer15 implements OFTableFeatures {
         this.metadataMatch = metadataMatch;
         this.metadataWrite = metadataWrite;
         this.capabilities = capabilities;
-        this.maxEntries = maxEntries;
+        this.maxEntries = U32.normalize(maxEntries);
         this.properties = properties;
     }
 

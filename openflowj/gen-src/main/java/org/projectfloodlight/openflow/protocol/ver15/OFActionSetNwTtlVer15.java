@@ -50,7 +50,7 @@ class OFActionSetNwTtlVer15 implements OFActionSetNwTtl {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetNwTtlVer15(short nwTtl) {
-        this.nwTtl = nwTtl;
+        this.nwTtl = U8.normalize(nwTtl);
     }
 
     // Accessors for OF message fields

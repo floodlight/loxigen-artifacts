@@ -50,7 +50,7 @@ class OFBsnTlvTcpSrcVer14 implements OFBsnTlvTcpSrc {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvTcpSrcVer14(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

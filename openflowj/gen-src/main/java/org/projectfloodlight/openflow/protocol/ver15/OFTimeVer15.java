@@ -56,7 +56,7 @@ class OFTimeVer15 implements OFTime {
             throw new NullPointerException("OFTimeVer15: property seconds cannot be null");
         }
         this.seconds = seconds;
-        this.nanoseconds = nanoseconds;
+        this.nanoseconds = U32.normalize(nanoseconds);
     }
 
     // Accessors for OF message fields

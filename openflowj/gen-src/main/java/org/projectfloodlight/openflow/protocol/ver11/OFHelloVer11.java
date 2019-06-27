@@ -51,7 +51,7 @@ class OFHelloVer11 implements OFHello {
 
     // package private constructor - used by readers, builders, and factory
     OFHelloVer11(long xid) {
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
     }
 
     // Accessors for OF message fields

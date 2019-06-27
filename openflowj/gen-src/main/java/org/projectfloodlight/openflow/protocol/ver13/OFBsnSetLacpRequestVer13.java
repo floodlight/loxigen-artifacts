@@ -70,14 +70,14 @@ class OFBsnSetLacpRequestVer13 implements OFBsnSetLacpRequest {
         if(actorSysMac == null) {
             throw new NullPointerException("OFBsnSetLacpRequestVer13: property actorSysMac cannot be null");
         }
-        this.xid = xid;
-        this.enabled = enabled;
+        this.xid = U32.normalize(xid);
+        this.enabled = U8.normalize(enabled);
         this.portNo = portNo;
-        this.actorSysPriority = actorSysPriority;
+        this.actorSysPriority = U16.normalize(actorSysPriority);
         this.actorSysMac = actorSysMac;
-        this.actorPortPriority = actorPortPriority;
-        this.actorPortNum = actorPortNum;
-        this.actorKey = actorKey;
+        this.actorPortPriority = U16.normalize(actorPortPriority);
+        this.actorPortNum = U16.normalize(actorPortNum);
+        this.actorKey = U16.normalize(actorKey);
     }
 
     // Accessors for OF message fields

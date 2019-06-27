@@ -61,7 +61,7 @@ class OFGroupStatsRequestVer12 implements OFGroupStatsRequest {
         if(group == null) {
             throw new NullPointerException("OFGroupStatsRequestVer12: property group cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.group = group;
     }

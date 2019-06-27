@@ -58,9 +58,9 @@ class OFMeterStatsRequestVer15 implements OFMeterStatsRequest {
         if(flags == null) {
             throw new NullPointerException("OFMeterStatsRequestVer15: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
-        this.meterId = meterId;
+        this.meterId = U32.normalize(meterId);
     }
 
     // Accessors for OF message fields

@@ -57,7 +57,7 @@ class OFAsyncGetReplyVer15 implements OFAsyncGetReply {
         if(properties == null) {
             throw new NullPointerException("OFAsyncGetReplyVer15: property properties cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.properties = properties;
     }
 

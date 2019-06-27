@@ -53,8 +53,8 @@ class OFBsnTlvHashGtpPortMatchVer14 implements OFBsnTlvHashGtpPortMatch {
             throw new NullPointerException("OFBsnTlvHashGtpPortMatchVer14: property match cannot be null");
         }
         this.match = match;
-        this.srcPort = srcPort;
-        this.dstPort = dstPort;
+        this.srcPort = U16.normalize(srcPort);
+        this.dstPort = U16.normalize(dstPort);
     }
 
     // Accessors for OF message fields

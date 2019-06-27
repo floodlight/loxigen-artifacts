@@ -62,7 +62,7 @@ class OFBsnGenericAsyncVer14 implements OFBsnGenericAsync {
         if(tlvs == null) {
             throw new NullPointerException("OFBsnGenericAsyncVer14: property tlvs cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.name = name;
         this.tlvs = tlvs;
     }

@@ -58,9 +58,9 @@ class OFBsnVlanCounterStatsRequestVer14 implements OFBsnVlanCounterStatsRequest 
         if(flags == null) {
             throw new NullPointerException("OFBsnVlanCounterStatsRequestVer14: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
-        this.vlanVid = vlanVid;
+        this.vlanVid = U16.normalize(vlanVid);
     }
 
     // Accessors for OF message fields

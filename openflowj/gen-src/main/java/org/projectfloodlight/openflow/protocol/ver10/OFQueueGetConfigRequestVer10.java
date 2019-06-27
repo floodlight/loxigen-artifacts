@@ -55,7 +55,7 @@ class OFQueueGetConfigRequestVer10 implements OFQueueGetConfigRequest {
         if(port == null) {
             throw new NullPointerException("OFQueueGetConfigRequestVer10: property port cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.port = port;
     }
 

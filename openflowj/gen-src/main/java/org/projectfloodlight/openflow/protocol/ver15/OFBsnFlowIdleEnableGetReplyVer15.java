@@ -52,8 +52,8 @@ class OFBsnFlowIdleEnableGetReplyVer15 implements OFBsnFlowIdleEnableGetReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnFlowIdleEnableGetReplyVer15(long xid, long enabled) {
-        this.xid = xid;
-        this.enabled = enabled;
+        this.xid = U32.normalize(xid);
+        this.enabled = U32.normalize(enabled);
     }
 
     // Accessors for OF message fields

@@ -50,7 +50,7 @@ class OFBsnTlvIcmpCodeVer13 implements OFBsnTlvIcmpCode {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvIcmpCodeVer13(short value) {
-        this.value = value;
+        this.value = U8.normalize(value);
     }
 
     // Accessors for OF message fields

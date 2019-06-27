@@ -78,14 +78,14 @@ class OFFlowRemovedVer10 implements OFFlowRemoved {
         if(byteCount == null) {
             throw new NullPointerException("OFFlowRemovedVer10: property byteCount cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.match = match;
         this.cookie = cookie;
-        this.priority = priority;
+        this.priority = U16.normalize(priority);
         this.reason = reason;
-        this.durationSec = durationSec;
-        this.durationNsec = durationNsec;
-        this.idleTimeout = idleTimeout;
+        this.durationSec = U32.normalize(durationSec);
+        this.durationNsec = U32.normalize(durationNsec);
+        this.idleTimeout = U16.normalize(idleTimeout);
         this.packetCount = packetCount;
         this.byteCount = byteCount;
     }

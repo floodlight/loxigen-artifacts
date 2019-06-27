@@ -56,7 +56,7 @@ class OFTableStatsRequestVer10 implements OFTableStatsRequest {
         if(flags == null) {
             throw new NullPointerException("OFTableStatsRequestVer10: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
     }
 

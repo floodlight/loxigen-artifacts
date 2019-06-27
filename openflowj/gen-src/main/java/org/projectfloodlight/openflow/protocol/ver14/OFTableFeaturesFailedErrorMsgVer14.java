@@ -55,7 +55,7 @@ class OFTableFeaturesFailedErrorMsgVer14 implements OFTableFeaturesFailedErrorMs
         if(data == null) {
             throw new NullPointerException("OFTableFeaturesFailedErrorMsgVer14: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.code = code;
         this.data = data;
     }

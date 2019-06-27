@@ -50,7 +50,7 @@ class OFBsnTlvVfpClassIdVer15 implements OFBsnTlvVfpClassId {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvVfpClassIdVer15(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

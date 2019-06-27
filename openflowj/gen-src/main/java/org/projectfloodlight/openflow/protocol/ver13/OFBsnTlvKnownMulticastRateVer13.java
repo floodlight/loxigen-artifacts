@@ -50,7 +50,7 @@ class OFBsnTlvKnownMulticastRateVer13 implements OFBsnTlvKnownMulticastRate {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvKnownMulticastRateVer13(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

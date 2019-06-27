@@ -56,7 +56,7 @@ class OFBsnLuaNotificationVer15 implements OFBsnLuaNotification {
         if(data == null) {
             throw new NullPointerException("OFBsnLuaNotificationVer15: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.data = data;
     }
 

@@ -57,7 +57,7 @@ class OFBsnControllerConnectionsReplyVer14 implements OFBsnControllerConnections
         if(connections == null) {
             throw new NullPointerException("OFBsnControllerConnectionsReplyVer14: property connections cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.connections = connections;
     }
 

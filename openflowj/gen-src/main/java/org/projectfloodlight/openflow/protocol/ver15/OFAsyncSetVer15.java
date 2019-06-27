@@ -57,7 +57,7 @@ class OFAsyncSetVer15 implements OFAsyncSet {
         if(properties == null) {
             throw new NullPointerException("OFAsyncSetVer15: property properties cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.properties = properties;
     }
 

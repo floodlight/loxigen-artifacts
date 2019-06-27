@@ -92,11 +92,11 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
         }
         this.tableId = tableId;
         this.match = match;
-        this.durationSec = durationSec;
-        this.durationNsec = durationNsec;
-        this.priority = priority;
-        this.idleTimeout = idleTimeout;
-        this.hardTimeout = hardTimeout;
+        this.durationSec = U32.normalize(durationSec);
+        this.durationNsec = U32.normalize(durationNsec);
+        this.priority = U16.normalize(priority);
+        this.idleTimeout = U16.normalize(idleTimeout);
+        this.hardTimeout = U16.normalize(hardTimeout);
         this.cookie = cookie;
         this.packetCount = packetCount;
         this.byteCount = byteCount;

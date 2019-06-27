@@ -54,9 +54,9 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGetL2TableReplyVer10(long xid, short l2TableEnable, int l2TablePriority) {
-        this.xid = xid;
-        this.l2TableEnable = l2TableEnable;
-        this.l2TablePriority = l2TablePriority;
+        this.xid = U32.normalize(xid);
+        this.l2TableEnable = U8.normalize(l2TableEnable);
+        this.l2TablePriority = U16.normalize(l2TablePriority);
     }
 
     // Accessors for OF message fields

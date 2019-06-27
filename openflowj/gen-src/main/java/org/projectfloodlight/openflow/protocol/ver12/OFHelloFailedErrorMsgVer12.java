@@ -55,7 +55,7 @@ class OFHelloFailedErrorMsgVer12 implements OFHelloFailedErrorMsg {
         if(data == null) {
             throw new NullPointerException("OFHelloFailedErrorMsgVer12: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.code = code;
         this.data = data;
     }

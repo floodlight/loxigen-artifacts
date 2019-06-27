@@ -50,7 +50,7 @@ class OFBsnFlowIdleEnableGetRequestVer14 implements OFBsnFlowIdleEnableGetReques
 
     // package private constructor - used by readers, builders, and factory
     OFBsnFlowIdleEnableGetRequestVer14(long xid) {
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
     }
 
     // Accessors for OF message fields

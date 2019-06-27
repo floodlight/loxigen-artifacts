@@ -52,8 +52,8 @@ class OFBsnFlowIdleEnableSetRequestVer13 implements OFBsnFlowIdleEnableSetReques
 
     // package private constructor - used by readers, builders, and factory
     OFBsnFlowIdleEnableSetRequestVer13(long xid, long enable) {
-        this.xid = xid;
-        this.enable = enable;
+        this.xid = U32.normalize(xid);
+        this.enable = U32.normalize(enable);
     }
 
     // Accessors for OF message fields

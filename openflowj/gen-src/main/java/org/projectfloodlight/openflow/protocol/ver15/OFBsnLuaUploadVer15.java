@@ -67,7 +67,7 @@ class OFBsnLuaUploadVer15 implements OFBsnLuaUpload {
         if(data == null) {
             throw new NullPointerException("OFBsnLuaUploadVer15: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.filename = filename;
         this.data = data;

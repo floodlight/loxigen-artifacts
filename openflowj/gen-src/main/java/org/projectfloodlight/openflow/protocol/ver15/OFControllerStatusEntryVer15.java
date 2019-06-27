@@ -65,7 +65,7 @@ class OFControllerStatusEntryVer15 implements OFControllerStatusEntry {
         if(properties == null) {
             throw new NullPointerException("OFControllerStatusEntryVer15: property properties cannot be null");
         }
-        this.shortId = shortId;
+        this.shortId = U16.normalize(shortId);
         this.role = role;
         this.reason = reason;
         this.channelStatus = channelStatus;

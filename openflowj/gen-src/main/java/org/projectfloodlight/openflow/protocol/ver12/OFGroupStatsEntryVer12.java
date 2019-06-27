@@ -73,7 +73,7 @@ class OFGroupStatsEntryVer12 implements OFGroupStatsEntry {
             throw new NullPointerException("OFGroupStatsEntryVer12: property bucketStats cannot be null");
         }
         this.group = group;
-        this.refCount = refCount;
+        this.refCount = U32.normalize(refCount);
         this.packetCount = packetCount;
         this.byteCount = byteCount;
         this.bucketStats = bucketStats;

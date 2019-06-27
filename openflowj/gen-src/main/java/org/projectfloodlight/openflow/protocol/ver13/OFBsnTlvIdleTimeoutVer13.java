@@ -50,7 +50,7 @@ class OFBsnTlvIdleTimeoutVer13 implements OFBsnTlvIdleTimeout {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvIdleTimeoutVer13(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

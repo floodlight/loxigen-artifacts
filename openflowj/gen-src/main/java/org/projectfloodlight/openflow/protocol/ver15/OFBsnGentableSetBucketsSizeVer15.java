@@ -52,9 +52,9 @@ class OFBsnGentableSetBucketsSizeVer15 implements OFBsnGentableSetBucketsSize {
         if(tableId == null) {
             throw new NullPointerException("OFBsnGentableSetBucketsSizeVer15: property tableId cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.tableId = tableId;
-        this.bucketsSize = bucketsSize;
+        this.bucketsSize = U32.normalize(bucketsSize);
     }
 
     // Accessors for OF message fields

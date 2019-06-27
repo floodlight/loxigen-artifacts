@@ -55,7 +55,7 @@ class OFBsnVlanMacVer15 implements OFBsnVlanMac {
         if(mac == null) {
             throw new NullPointerException("OFBsnVlanMacVer15: property mac cannot be null");
         }
-        this.vlanVid = vlanVid;
+        this.vlanVid = U16.normalize(vlanVid);
         this.mac = mac;
     }
 

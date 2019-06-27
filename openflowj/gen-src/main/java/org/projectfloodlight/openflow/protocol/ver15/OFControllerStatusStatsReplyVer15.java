@@ -63,7 +63,7 @@ class OFControllerStatusStatsReplyVer15 implements OFControllerStatusStatsReply 
         if(controllerStatus == null) {
             throw new NullPointerException("OFControllerStatusStatsReplyVer15: property controllerStatus cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.controllerStatus = controllerStatus;
     }

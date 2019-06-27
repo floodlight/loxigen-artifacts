@@ -50,7 +50,7 @@ class OFActionSetMplsLabelVer11 implements OFActionSetMplsLabel {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetMplsLabelVer11(long mplsLabel) {
-        this.mplsLabel = mplsLabel;
+        this.mplsLabel = U32.normalize(mplsLabel);
     }
 
     // Accessors for OF message fields

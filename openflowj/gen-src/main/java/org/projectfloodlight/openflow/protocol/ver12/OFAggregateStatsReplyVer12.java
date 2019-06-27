@@ -68,11 +68,11 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
         if(byteCount == null) {
             throw new NullPointerException("OFAggregateStatsReplyVer12: property byteCount cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.packetCount = packetCount;
         this.byteCount = byteCount;
-        this.flowCount = flowCount;
+        this.flowCount = U32.normalize(flowCount);
     }
 
     // Accessors for OF message fields

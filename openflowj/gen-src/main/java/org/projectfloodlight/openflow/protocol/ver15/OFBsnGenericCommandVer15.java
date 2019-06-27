@@ -62,7 +62,7 @@ class OFBsnGenericCommandVer15 implements OFBsnGenericCommand {
         if(tlvs == null) {
             throw new NullPointerException("OFBsnGenericCommandVer15: property tlvs cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.name = name;
         this.tlvs = tlvs;
     }

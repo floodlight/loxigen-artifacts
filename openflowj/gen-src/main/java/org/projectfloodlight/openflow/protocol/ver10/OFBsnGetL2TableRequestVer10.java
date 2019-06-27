@@ -50,7 +50,7 @@ class OFBsnGetL2TableRequestVer10 implements OFBsnGetL2TableRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGetL2TableRequestVer10(long xid) {
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
     }
 
     // Accessors for OF message fields

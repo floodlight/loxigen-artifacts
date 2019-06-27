@@ -50,7 +50,7 @@ class OFControllerStatusVer15 implements OFControllerStatus {
         if(entry == null) {
             throw new NullPointerException("OFControllerStatusVer15: property entry cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.entry = entry;
     }
 

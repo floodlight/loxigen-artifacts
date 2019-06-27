@@ -55,7 +55,7 @@ class OFBsnLogVer15 implements OFBsnLog {
         if(data == null) {
             throw new NullPointerException("OFBsnLogVer15: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.loglevel = loglevel;
         this.data = data;
     }

@@ -50,7 +50,7 @@ class OFBsnTlvRateLimitVer15 implements OFBsnTlvRateLimit {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvRateLimitVer15(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

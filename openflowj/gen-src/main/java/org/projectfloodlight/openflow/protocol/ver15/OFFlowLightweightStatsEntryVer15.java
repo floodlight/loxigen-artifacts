@@ -66,7 +66,7 @@ class OFFlowLightweightStatsEntryVer15 implements OFFlowLightweightStatsEntry {
         }
         this.tableId = tableId;
         this.reason = reason;
-        this.priority = priority;
+        this.priority = U16.normalize(priority);
         this.match = match;
         this.stats = stats;
     }

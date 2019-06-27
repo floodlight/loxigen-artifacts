@@ -58,9 +58,9 @@ class OFGetConfigReplyVer11 implements OFGetConfigReply {
         if(flags == null) {
             throw new NullPointerException("OFGetConfigReplyVer11: property flags cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
-        this.missSendLen = missSendLen;
+        this.missSendLen = U16.normalize(missSendLen);
     }
 
     // Accessors for OF message fields

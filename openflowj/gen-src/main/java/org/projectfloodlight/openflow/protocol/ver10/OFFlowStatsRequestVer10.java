@@ -71,7 +71,7 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
         if(outPort == null) {
             throw new NullPointerException("OFFlowStatsRequestVer10: property outPort cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.match = match;
         this.tableId = tableId;

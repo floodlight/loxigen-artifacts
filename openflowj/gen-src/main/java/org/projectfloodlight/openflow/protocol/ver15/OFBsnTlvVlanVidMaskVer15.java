@@ -50,7 +50,7 @@ class OFBsnTlvVlanVidMaskVer15 implements OFBsnTlvVlanVidMask {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvVlanVidMaskVer15(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

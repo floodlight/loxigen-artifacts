@@ -54,9 +54,9 @@ class OFBsnFlowIdleEnableSetReplyVer13 implements OFBsnFlowIdleEnableSetReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnFlowIdleEnableSetReplyVer13(long xid, long enable, long status) {
-        this.xid = xid;
-        this.enable = enable;
-        this.status = status;
+        this.xid = U32.normalize(xid);
+        this.enable = U32.normalize(enable);
+        this.status = U32.normalize(status);
     }
 
     // Accessors for OF message fields

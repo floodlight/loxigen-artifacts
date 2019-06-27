@@ -63,7 +63,7 @@ class OFBsnSwitchPipelineStatsReplyVer14 implements OFBsnSwitchPipelineStatsRepl
         if(entries == null) {
             throw new NullPointerException("OFBsnSwitchPipelineStatsReplyVer14: property entries cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.entries = entries;
     }

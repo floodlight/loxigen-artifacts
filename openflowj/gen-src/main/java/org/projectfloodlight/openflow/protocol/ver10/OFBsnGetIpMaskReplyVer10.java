@@ -54,9 +54,9 @@ class OFBsnGetIpMaskReplyVer10 implements OFBsnGetIpMaskReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGetIpMaskReplyVer10(long xid, short index, long mask) {
-        this.xid = xid;
-        this.index = index;
-        this.mask = mask;
+        this.xid = U32.normalize(xid);
+        this.index = U8.normalize(index);
+        this.mask = U32.normalize(mask);
     }
 
     // Accessors for OF message fields

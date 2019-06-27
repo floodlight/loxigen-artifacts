@@ -54,10 +54,10 @@ class OFBsnGentableClearReplyVer15 implements OFBsnGentableClearReply {
         if(tableId == null) {
             throw new NullPointerException("OFBsnGentableClearReplyVer15: property tableId cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.tableId = tableId;
-        this.deletedCount = deletedCount;
-        this.errorCount = errorCount;
+        this.deletedCount = U32.normalize(deletedCount);
+        this.errorCount = U32.normalize(errorCount);
     }
 
     // Accessors for OF message fields

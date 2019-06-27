@@ -50,7 +50,7 @@ class OFGroupBucketPropWeightVer15 implements OFGroupBucketPropWeight {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupBucketPropWeightVer15(int weight) {
-        this.weight = weight;
+        this.weight = U16.normalize(weight);
     }
 
     // Accessors for OF message fields

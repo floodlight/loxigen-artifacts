@@ -50,7 +50,7 @@ class OFBsnTlvQosPriorityVer15 implements OFBsnTlvQosPriority {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvQosPriorityVer15(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

@@ -50,7 +50,7 @@ class OFBsnTlvConvergenceStatusVer14 implements OFBsnTlvConvergenceStatus {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvConvergenceStatusVer14(short value) {
-        this.value = value;
+        this.value = U8.normalize(value);
     }
 
     // Accessors for OF message fields

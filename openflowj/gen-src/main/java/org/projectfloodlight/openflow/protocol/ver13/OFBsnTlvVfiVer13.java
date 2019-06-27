@@ -50,7 +50,7 @@ class OFBsnTlvVfiVer13 implements OFBsnTlvVfi {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvVfiVer13(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

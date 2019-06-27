@@ -56,10 +56,10 @@ class OFBsnSetL2TableReplyVer10 implements OFBsnSetL2TableReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnSetL2TableReplyVer10(long xid, boolean l2TableEnable, int l2TablePriority, long status) {
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.l2TableEnable = l2TableEnable;
-        this.l2TablePriority = l2TablePriority;
-        this.status = status;
+        this.l2TablePriority = U16.normalize(l2TablePriority);
+        this.status = U32.normalize(status);
     }
 
     // Accessors for OF message fields

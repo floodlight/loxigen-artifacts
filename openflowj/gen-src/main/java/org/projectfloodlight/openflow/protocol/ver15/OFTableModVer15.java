@@ -64,9 +64,9 @@ class OFTableModVer15 implements OFTableMod {
         if(properties == null) {
             throw new NullPointerException("OFTableModVer15: property properties cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.tableId = tableId;
-        this.config = config;
+        this.config = U32.normalize(config);
         this.properties = properties;
     }
 

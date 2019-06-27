@@ -55,7 +55,7 @@ class OFRoleReplyVer13 implements OFRoleReply {
         if(generationId == null) {
             throw new NullPointerException("OFRoleReplyVer13: property generationId cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.role = role;
         this.generationId = generationId;
     }

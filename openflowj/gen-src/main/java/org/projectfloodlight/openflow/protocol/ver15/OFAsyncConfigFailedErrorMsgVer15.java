@@ -55,7 +55,7 @@ class OFAsyncConfigFailedErrorMsgVer15 implements OFAsyncConfigFailedErrorMsg {
         if(data == null) {
             throw new NullPointerException("OFAsyncConfigFailedErrorMsgVer15: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.code = code;
         this.data = data;
     }

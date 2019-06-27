@@ -58,11 +58,11 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterFeaturesVer13(long maxMeter, long bandTypes, long capabilities, short maxBands, short maxColor) {
-        this.maxMeter = maxMeter;
-        this.bandTypes = bandTypes;
-        this.capabilities = capabilities;
-        this.maxBands = maxBands;
-        this.maxColor = maxColor;
+        this.maxMeter = U32.normalize(maxMeter);
+        this.bandTypes = U32.normalize(bandTypes);
+        this.capabilities = U32.normalize(capabilities);
+        this.maxBands = U8.normalize(maxBands);
+        this.maxColor = U8.normalize(maxColor);
     }
 
     // Accessors for OF message fields
