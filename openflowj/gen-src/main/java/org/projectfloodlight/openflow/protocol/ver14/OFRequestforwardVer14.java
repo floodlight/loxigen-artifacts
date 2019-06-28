@@ -58,8 +58,8 @@ class OFRequestforwardVer14 implements OFRequestforward {
         if(data == null) {
             throw new NullPointerException("OFRequestforwardVer14: property data cannot be null");
         }
-        this.xid = xid;
-        this.role = role;
+        this.xid = U32.normalize(xid);
+        this.role = U32.normalize(role);
         this.data = data;
     }
 

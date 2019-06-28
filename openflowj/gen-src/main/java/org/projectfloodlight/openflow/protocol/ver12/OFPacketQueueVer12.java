@@ -62,7 +62,7 @@ class OFPacketQueueVer12 implements OFPacketQueue {
         if(properties == null) {
             throw new NullPointerException("OFPacketQueueVer12: property properties cannot be null");
         }
-        this.queueId = queueId;
+        this.queueId = U32.normalize(queueId);
         this.port = port;
         this.properties = properties;
     }

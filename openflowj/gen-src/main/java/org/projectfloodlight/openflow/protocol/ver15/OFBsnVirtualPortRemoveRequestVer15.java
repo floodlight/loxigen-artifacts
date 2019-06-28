@@ -52,8 +52,8 @@ class OFBsnVirtualPortRemoveRequestVer15 implements OFBsnVirtualPortRemoveReques
 
     // package private constructor - used by readers, builders, and factory
     OFBsnVirtualPortRemoveRequestVer15(long xid, long vportNo) {
-        this.xid = xid;
-        this.vportNo = vportNo;
+        this.xid = U32.normalize(xid);
+        this.vportNo = U32.normalize(vportNo);
     }
 
     // Accessors for OF message fields

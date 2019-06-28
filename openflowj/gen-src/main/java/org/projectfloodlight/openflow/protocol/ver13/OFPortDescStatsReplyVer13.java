@@ -63,7 +63,7 @@ class OFPortDescStatsReplyVer13 implements OFPortDescStatsReply {
         if(entries == null) {
             throw new NullPointerException("OFPortDescStatsReplyVer13: property entries cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.entries = entries;
     }

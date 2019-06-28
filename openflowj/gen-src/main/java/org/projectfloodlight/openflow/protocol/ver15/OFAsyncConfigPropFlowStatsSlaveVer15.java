@@ -50,7 +50,7 @@ class OFAsyncConfigPropFlowStatsSlaveVer15 implements OFAsyncConfigPropFlowStats
 
     // package private constructor - used by readers, builders, and factory
     OFAsyncConfigPropFlowStatsSlaveVer15(long mask) {
-        this.mask = mask;
+        this.mask = U32.normalize(mask);
     }
 
     // Accessors for OF message fields

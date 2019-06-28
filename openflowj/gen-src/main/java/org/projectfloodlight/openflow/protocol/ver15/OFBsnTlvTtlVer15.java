@@ -50,7 +50,7 @@ class OFBsnTlvTtlVer15 implements OFBsnTlvTtl {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvTtlVer15(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

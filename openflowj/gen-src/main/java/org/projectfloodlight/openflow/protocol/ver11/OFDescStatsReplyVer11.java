@@ -81,7 +81,7 @@ class OFDescStatsReplyVer11 implements OFDescStatsReply {
         if(dpDesc == null) {
             throw new NullPointerException("OFDescStatsReplyVer11: property dpDesc cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.mfrDesc = mfrDesc;
         this.hwDesc = hwDesc;

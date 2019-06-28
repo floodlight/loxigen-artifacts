@@ -56,7 +56,7 @@ class OFBsnLuaCommandReplyVer13 implements OFBsnLuaCommandReply {
         if(data == null) {
             throw new NullPointerException("OFBsnLuaCommandReplyVer13: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.data = data;
     }
 

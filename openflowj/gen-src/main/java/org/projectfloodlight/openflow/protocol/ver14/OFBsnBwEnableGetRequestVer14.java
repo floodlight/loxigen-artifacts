@@ -50,7 +50,7 @@ class OFBsnBwEnableGetRequestVer14 implements OFBsnBwEnableGetRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnBwEnableGetRequestVer14(long xid) {
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
     }
 
     // Accessors for OF message fields

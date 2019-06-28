@@ -50,7 +50,7 @@ class OFBsnTlvSubAgentIdVer13 implements OFBsnTlvSubAgentId {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvSubAgentIdVer13(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

@@ -50,7 +50,7 @@ class OFBsnTlvIdentifierVer15 implements OFBsnTlvIdentifier {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvIdentifierVer15(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

@@ -56,7 +56,7 @@ class OFMeterFeaturesStatsReplyVer13 implements OFMeterFeaturesStatsReply {
         if(features == null) {
             throw new NullPointerException("OFMeterFeaturesStatsReplyVer13: property features cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.features = features;
     }

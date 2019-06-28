@@ -50,7 +50,7 @@ class OFBsnTlvL3InterfaceClassIdVer13 implements OFBsnTlvL3InterfaceClassId {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvL3InterfaceClassIdVer13(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

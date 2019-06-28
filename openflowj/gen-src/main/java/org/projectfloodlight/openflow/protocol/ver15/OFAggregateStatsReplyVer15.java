@@ -56,7 +56,7 @@ class OFAggregateStatsReplyVer15 implements OFAggregateStatsReply {
         if(stats == null) {
             throw new NullPointerException("OFAggregateStatsReplyVer15: property stats cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.stats = stats;
     }

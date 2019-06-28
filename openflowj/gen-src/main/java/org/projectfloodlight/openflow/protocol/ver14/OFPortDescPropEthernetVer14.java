@@ -60,12 +60,12 @@ class OFPortDescPropEthernetVer14 implements OFPortDescPropEthernet {
 
     // package private constructor - used by readers, builders, and factory
     OFPortDescPropEthernetVer14(long curr, long advertised, long supported, long peer, long currSpeed, long maxSpeed) {
-        this.curr = curr;
-        this.advertised = advertised;
-        this.supported = supported;
-        this.peer = peer;
-        this.currSpeed = currSpeed;
-        this.maxSpeed = maxSpeed;
+        this.curr = U32.normalize(curr);
+        this.advertised = U32.normalize(advertised);
+        this.supported = U32.normalize(supported);
+        this.peer = U32.normalize(peer);
+        this.currSpeed = U32.normalize(currSpeed);
+        this.maxSpeed = U32.normalize(maxSpeed);
     }
 
     // Accessors for OF message fields

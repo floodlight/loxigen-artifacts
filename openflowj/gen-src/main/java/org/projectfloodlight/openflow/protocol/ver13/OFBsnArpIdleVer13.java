@@ -57,8 +57,8 @@ class OFBsnArpIdleVer13 implements OFBsnArpIdle {
         if(ipv4Addr == null) {
             throw new NullPointerException("OFBsnArpIdleVer13: property ipv4Addr cannot be null");
         }
-        this.xid = xid;
-        this.vlanVid = vlanVid;
+        this.xid = U32.normalize(xid);
+        this.vlanVid = U16.normalize(vlanVid);
         this.ipv4Addr = ipv4Addr;
     }
 

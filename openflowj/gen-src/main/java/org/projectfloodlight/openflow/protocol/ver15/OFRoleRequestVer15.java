@@ -57,9 +57,9 @@ class OFRoleRequestVer15 implements OFRoleRequest {
         if(generationId == null) {
             throw new NullPointerException("OFRoleRequestVer15: property generationId cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.role = role;
-        this.shortId = shortId;
+        this.shortId = U16.normalize(shortId);
         this.generationId = generationId;
     }
 

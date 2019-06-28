@@ -64,7 +64,7 @@ class OFBsnGentableErrorVer14 implements OFBsnGentableError {
         if(data == null) {
             throw new NullPointerException("OFBsnGentableErrorVer14: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.errorCode = errorCode;
         this.tableId = tableId;
         this.errMsg = errMsg;

@@ -66,7 +66,7 @@ class OFBsnImageDescStatsReplyVer14 implements OFBsnImageDescStatsReply {
         if(startupConfigChecksum == null) {
             throw new NullPointerException("OFBsnImageDescStatsReplyVer14: property startupConfigChecksum cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.imageChecksum = imageChecksum;
         this.startupConfigChecksum = startupConfigChecksum;

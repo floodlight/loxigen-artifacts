@@ -63,11 +63,11 @@ class OFBsnSetPktinSuppressionRequestVer12 implements OFBsnSetPktinSuppressionRe
         if(cookie == null) {
             throw new NullPointerException("OFBsnSetPktinSuppressionRequestVer12: property cookie cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.enabled = enabled;
-        this.idleTimeout = idleTimeout;
-        this.hardTimeout = hardTimeout;
-        this.priority = priority;
+        this.idleTimeout = U16.normalize(idleTimeout);
+        this.hardTimeout = U16.normalize(hardTimeout);
+        this.priority = U16.normalize(priority);
         this.cookie = cookie;
     }
 

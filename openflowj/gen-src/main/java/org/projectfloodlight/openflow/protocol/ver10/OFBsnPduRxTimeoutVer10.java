@@ -57,9 +57,9 @@ class OFBsnPduRxTimeoutVer10 implements OFBsnPduRxTimeout {
         if(portNo == null) {
             throw new NullPointerException("OFBsnPduRxTimeoutVer10: property portNo cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.portNo = portNo;
-        this.slotNum = slotNum;
+        this.slotNum = U8.normalize(slotNum);
     }
 
     // Accessors for OF message fields

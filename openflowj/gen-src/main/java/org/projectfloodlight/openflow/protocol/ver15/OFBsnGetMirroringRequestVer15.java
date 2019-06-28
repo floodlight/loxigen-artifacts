@@ -52,8 +52,8 @@ class OFBsnGetMirroringRequestVer15 implements OFBsnGetMirroringRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGetMirroringRequestVer15(long xid, short reportMirrorPorts) {
-        this.xid = xid;
-        this.reportMirrorPorts = reportMirrorPorts;
+        this.xid = U32.normalize(xid);
+        this.reportMirrorPorts = U8.normalize(reportMirrorPorts);
     }
 
     // Accessors for OF message fields

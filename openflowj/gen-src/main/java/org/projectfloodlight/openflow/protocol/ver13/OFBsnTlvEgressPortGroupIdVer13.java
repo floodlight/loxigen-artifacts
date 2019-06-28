@@ -50,7 +50,7 @@ class OFBsnTlvEgressPortGroupIdVer13 implements OFBsnTlvEgressPortGroupId {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvEgressPortGroupIdVer13(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

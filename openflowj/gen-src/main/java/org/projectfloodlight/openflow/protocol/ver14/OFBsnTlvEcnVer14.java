@@ -50,7 +50,7 @@ class OFBsnTlvEcnVer14 implements OFBsnTlvEcn {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvEcnVer14(short value) {
-        this.value = value;
+        this.value = U8.normalize(value);
     }
 
     // Accessors for OF message fields

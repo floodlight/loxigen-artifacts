@@ -58,11 +58,11 @@ class OFPortModPropOpticalVer14 implements OFPortModPropOptical {
 
     // package private constructor - used by readers, builders, and factory
     OFPortModPropOpticalVer14(long configure, long freqLdma, long flOffset, long gridSpan, long txPwr) {
-        this.configure = configure;
-        this.freqLdma = freqLdma;
-        this.flOffset = flOffset;
-        this.gridSpan = gridSpan;
-        this.txPwr = txPwr;
+        this.configure = U32.normalize(configure);
+        this.freqLdma = U32.normalize(freqLdma);
+        this.flOffset = U32.normalize(flOffset);
+        this.gridSpan = U32.normalize(gridSpan);
+        this.txPwr = U32.normalize(txPwr);
     }
 
     // Accessors for OF message fields

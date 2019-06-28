@@ -73,12 +73,12 @@ class OFMeterStatsVer15 implements OFMeterStats {
         if(bandStats == null) {
             throw new NullPointerException("OFMeterStatsVer15: property bandStats cannot be null");
         }
-        this.meterId = meterId;
-        this.refCount = refCount;
+        this.meterId = U32.normalize(meterId);
+        this.refCount = U32.normalize(refCount);
         this.packetInCount = packetInCount;
         this.byteInCount = byteInCount;
-        this.durationSec = durationSec;
-        this.durationNsec = durationNsec;
+        this.durationSec = U32.normalize(durationSec);
+        this.durationNsec = U32.normalize(durationNsec);
         this.bandStats = bandStats;
     }
 

@@ -62,7 +62,7 @@ class OFGroupDeleteVer13 implements OFGroupDelete {
         if(buckets == null) {
             throw new NullPointerException("OFGroupDeleteVer13: property buckets cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.groupType = groupType;
         this.group = group;
         this.buckets = buckets;

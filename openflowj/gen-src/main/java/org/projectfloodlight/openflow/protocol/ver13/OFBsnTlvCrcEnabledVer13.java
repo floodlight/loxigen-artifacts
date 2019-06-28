@@ -50,7 +50,7 @@ class OFBsnTlvCrcEnabledVer13 implements OFBsnTlvCrcEnabled {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvCrcEnabledVer13(short value) {
-        this.value = value;
+        this.value = U8.normalize(value);
     }
 
     // Accessors for OF message fields

@@ -50,7 +50,7 @@ class OFAsyncConfigPropRoleStatusMasterVer15 implements OFAsyncConfigPropRoleSta
 
     // package private constructor - used by readers, builders, and factory
     OFAsyncConfigPropRoleStatusMasterVer15(long mask) {
-        this.mask = mask;
+        this.mask = U32.normalize(mask);
     }
 
     // Accessors for OF message fields

@@ -66,7 +66,7 @@ class OFBsnGentableEntryDescStatsRequestVer15 implements OFBsnGentableEntryDescS
         if(checksumMask == null) {
             throw new NullPointerException("OFBsnGentableEntryDescStatsRequestVer15: property checksumMask cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.tableId = tableId;
         this.checksum = checksum;

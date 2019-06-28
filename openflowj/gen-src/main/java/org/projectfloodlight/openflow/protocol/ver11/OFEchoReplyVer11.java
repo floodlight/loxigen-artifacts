@@ -56,7 +56,7 @@ class OFEchoReplyVer11 implements OFEchoReply {
         if(data == null) {
             throw new NullPointerException("OFEchoReplyVer11: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.data = data;
     }
 

@@ -50,7 +50,7 @@ class OFBsnTlvFlowIdentifierVer14 implements OFBsnTlvFlowIdentifier {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvFlowIdentifierVer14(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

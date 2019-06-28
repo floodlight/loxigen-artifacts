@@ -50,7 +50,7 @@ class OFBsnControllerConnectionsRequestVer14 implements OFBsnControllerConnectio
 
     // package private constructor - used by readers, builders, and factory
     OFBsnControllerConnectionsRequestVer14(long xid) {
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
     }
 
     // Accessors for OF message fields

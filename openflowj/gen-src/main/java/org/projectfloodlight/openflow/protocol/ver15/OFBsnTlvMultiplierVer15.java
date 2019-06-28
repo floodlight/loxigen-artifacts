@@ -50,7 +50,7 @@ class OFBsnTlvMultiplierVer15 implements OFBsnTlvMultiplier {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvMultiplierVer15(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

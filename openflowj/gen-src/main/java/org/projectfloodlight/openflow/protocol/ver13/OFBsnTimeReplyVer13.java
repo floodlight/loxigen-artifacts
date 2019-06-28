@@ -55,7 +55,7 @@ class OFBsnTimeReplyVer13 implements OFBsnTimeReply {
         if(timeMs == null) {
             throw new NullPointerException("OFBsnTimeReplyVer13: property timeMs cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.timeMs = timeMs;
     }
 

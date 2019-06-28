@@ -58,8 +58,8 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
         if(data == null) {
             throw new NullPointerException("OFBsnShellCommandVer10: property data cannot be null");
         }
-        this.xid = xid;
-        this.service = service;
+        this.xid = U32.normalize(xid);
+        this.service = U32.normalize(service);
         this.data = data;
     }
 

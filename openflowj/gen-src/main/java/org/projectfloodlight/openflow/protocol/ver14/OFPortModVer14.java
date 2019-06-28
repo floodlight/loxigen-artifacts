@@ -78,7 +78,7 @@ class OFPortModVer14 implements OFPortMod {
         if(properties == null) {
             throw new NullPointerException("OFPortModVer14: property properties cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.portNo = portNo;
         this.hwAddr = hwAddr;
         this.config = config;

@@ -57,7 +57,7 @@ class OFActionBsnGentableVer13 implements OFActionBsnGentable {
         if(key == null) {
             throw new NullPointerException("OFActionBsnGentableVer13: property key cannot be null");
         }
-        this.tableId = tableId;
+        this.tableId = U32.normalize(tableId);
         this.key = key;
     }
 

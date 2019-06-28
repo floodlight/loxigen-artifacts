@@ -50,7 +50,7 @@ class OFBsnTlvUint32Ver14 implements OFBsnTlvUint32 {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvUint32Ver14(long value) {
-        this.value = value;
+        this.value = U32.normalize(value);
     }
 
     // Accessors for OF message fields

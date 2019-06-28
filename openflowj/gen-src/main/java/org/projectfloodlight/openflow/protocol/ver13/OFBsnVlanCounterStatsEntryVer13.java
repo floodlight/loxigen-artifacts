@@ -57,7 +57,7 @@ class OFBsnVlanCounterStatsEntryVer13 implements OFBsnVlanCounterStatsEntry {
         if(values == null) {
             throw new NullPointerException("OFBsnVlanCounterStatsEntryVer13: property values cannot be null");
         }
-        this.vlanVid = vlanVid;
+        this.vlanVid = U16.normalize(vlanVid);
         this.values = values;
     }
 

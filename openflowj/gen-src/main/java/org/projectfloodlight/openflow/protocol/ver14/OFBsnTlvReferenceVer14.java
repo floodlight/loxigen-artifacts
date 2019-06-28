@@ -57,7 +57,7 @@ class OFBsnTlvReferenceVer14 implements OFBsnTlvReference {
         if(key == null) {
             throw new NullPointerException("OFBsnTlvReferenceVer14: property key cannot be null");
         }
-        this.tableId = tableId;
+        this.tableId = U16.normalize(tableId);
         this.key = key;
     }
 

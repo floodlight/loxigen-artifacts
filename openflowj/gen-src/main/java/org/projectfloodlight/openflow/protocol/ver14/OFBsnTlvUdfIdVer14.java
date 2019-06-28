@@ -50,7 +50,7 @@ class OFBsnTlvUdfIdVer14 implements OFBsnTlvUdfId {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvUdfIdVer14(int value) {
-        this.value = value;
+        this.value = U16.normalize(value);
     }
 
     // Accessors for OF message fields

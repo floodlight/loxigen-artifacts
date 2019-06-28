@@ -50,7 +50,7 @@ class OFAsyncConfigPropRequestforwardMasterVer15 implements OFAsyncConfigPropReq
 
     // package private constructor - used by readers, builders, and factory
     OFAsyncConfigPropRequestforwardMasterVer15(long mask) {
-        this.mask = mask;
+        this.mask = U32.normalize(mask);
     }
 
     // Accessors for OF message fields

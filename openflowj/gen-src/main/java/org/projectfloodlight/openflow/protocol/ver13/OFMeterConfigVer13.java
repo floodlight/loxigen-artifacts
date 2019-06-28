@@ -64,7 +64,7 @@ class OFMeterConfigVer13 implements OFMeterConfig {
             throw new NullPointerException("OFMeterConfigVer13: property entries cannot be null");
         }
         this.flags = flags;
-        this.meterId = meterId;
+        this.meterId = U32.normalize(meterId);
         this.entries = entries;
     }
 

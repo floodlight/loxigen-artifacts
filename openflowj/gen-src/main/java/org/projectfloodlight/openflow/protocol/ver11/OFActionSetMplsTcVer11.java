@@ -50,7 +50,7 @@ class OFActionSetMplsTcVer11 implements OFActionSetMplsTc {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetMplsTcVer11(short mplsTc) {
-        this.mplsTc = mplsTc;
+        this.mplsTc = U8.normalize(mplsTc);
     }
 
     // Accessors for OF message fields

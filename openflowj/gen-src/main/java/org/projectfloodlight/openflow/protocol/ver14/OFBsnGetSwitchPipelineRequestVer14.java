@@ -50,7 +50,7 @@ class OFBsnGetSwitchPipelineRequestVer14 implements OFBsnGetSwitchPipelineReques
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGetSwitchPipelineRequestVer14(long xid) {
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
     }
 
     // Accessors for OF message fields

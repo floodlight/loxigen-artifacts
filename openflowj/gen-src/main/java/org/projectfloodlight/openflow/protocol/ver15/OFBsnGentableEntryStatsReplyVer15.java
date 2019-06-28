@@ -63,7 +63,7 @@ class OFBsnGentableEntryStatsReplyVer15 implements OFBsnGentableEntryStatsReply 
         if(entries == null) {
             throw new NullPointerException("OFBsnGentableEntryStatsReplyVer15: property entries cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.flags = flags;
         this.entries = entries;
     }

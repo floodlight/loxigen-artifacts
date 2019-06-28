@@ -50,7 +50,7 @@ class OFRequestforwardVer15 implements OFRequestforward {
         if(request == null) {
             throw new NullPointerException("OFRequestforwardVer15: property request cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.request = request;
     }
 

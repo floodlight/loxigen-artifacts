@@ -65,10 +65,10 @@ class OFMeterModVer15 implements OFMeterMod {
         if(bands == null) {
             throw new NullPointerException("OFMeterModVer15: property bands cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.command = command;
         this.flags = flags;
-        this.meterId = meterId;
+        this.meterId = U32.normalize(meterId);
         this.bands = bands;
     }
 

@@ -57,7 +57,7 @@ class OFBsnVrfCounterStatsEntryVer15 implements OFBsnVrfCounterStatsEntry {
         if(values == null) {
             throw new NullPointerException("OFBsnVrfCounterStatsEntryVer15: property values cannot be null");
         }
-        this.vrf = vrf;
+        this.vrf = U32.normalize(vrf);
         this.values = values;
     }
 

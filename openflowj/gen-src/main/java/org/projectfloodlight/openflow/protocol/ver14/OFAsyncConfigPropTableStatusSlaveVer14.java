@@ -50,7 +50,7 @@ class OFAsyncConfigPropTableStatusSlaveVer14 implements OFAsyncConfigPropTableSt
 
     // package private constructor - used by readers, builders, and factory
     OFAsyncConfigPropTableStatusSlaveVer14(long mask) {
-        this.mask = mask;
+        this.mask = U32.normalize(mask);
     }
 
     // Accessors for OF message fields

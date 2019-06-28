@@ -65,10 +65,10 @@ class OFMeterModVer13 implements OFMeterMod {
         if(meters == null) {
             throw new NullPointerException("OFMeterModVer13: property meters cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.command = command;
         this.flags = flags;
-        this.meterId = meterId;
+        this.meterId = U32.normalize(meterId);
         this.meters = meters;
     }
 

@@ -50,7 +50,7 @@ class OFNiciraControllerRoleReplyVer10 implements OFNiciraControllerRoleReply {
         if(role == null) {
             throw new NullPointerException("OFNiciraControllerRoleReplyVer10: property role cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.role = role;
     }
 

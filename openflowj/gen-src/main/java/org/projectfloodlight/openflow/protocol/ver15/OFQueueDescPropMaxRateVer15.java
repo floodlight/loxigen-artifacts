@@ -50,7 +50,7 @@ class OFQueueDescPropMaxRateVer15 implements OFQueueDescPropMaxRate {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueDescPropMaxRateVer15(int rate) {
-        this.rate = rate;
+        this.rate = U16.normalize(rate);
     }
 
     // Accessors for OF message fields

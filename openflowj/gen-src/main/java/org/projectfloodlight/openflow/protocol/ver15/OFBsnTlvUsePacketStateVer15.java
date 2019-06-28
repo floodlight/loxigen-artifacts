@@ -50,7 +50,7 @@ class OFBsnTlvUsePacketStateVer15 implements OFBsnTlvUsePacketState {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvUsePacketStateVer15(short value) {
-        this.value = value;
+        this.value = U8.normalize(value);
     }
 
     // Accessors for OF message fields

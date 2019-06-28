@@ -60,7 +60,7 @@ class OFBsnErrorVer13 implements OFBsnError {
         if(data == null) {
             throw new NullPointerException("OFBsnErrorVer13: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.errMsg = errMsg;
         this.data = data;
     }

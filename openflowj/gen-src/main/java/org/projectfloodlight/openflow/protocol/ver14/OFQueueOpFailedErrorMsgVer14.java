@@ -55,7 +55,7 @@ class OFQueueOpFailedErrorMsgVer14 implements OFQueueOpFailedErrorMsg {
         if(data == null) {
             throw new NullPointerException("OFQueueOpFailedErrorMsgVer14: property data cannot be null");
         }
-        this.xid = xid;
+        this.xid = U32.normalize(xid);
         this.code = code;
         this.data = data;
     }

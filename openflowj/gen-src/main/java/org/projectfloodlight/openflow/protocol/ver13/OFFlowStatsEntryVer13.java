@@ -97,11 +97,11 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             throw new NullPointerException("OFFlowStatsEntryVer13: property instructions cannot be null");
         }
         this.tableId = tableId;
-        this.durationSec = durationSec;
-        this.durationNsec = durationNsec;
-        this.priority = priority;
-        this.idleTimeout = idleTimeout;
-        this.hardTimeout = hardTimeout;
+        this.durationSec = U32.normalize(durationSec);
+        this.durationNsec = U32.normalize(durationNsec);
+        this.priority = U16.normalize(priority);
+        this.idleTimeout = U16.normalize(idleTimeout);
+        this.hardTimeout = U16.normalize(hardTimeout);
         this.flags = flags;
         this.cookie = cookie;
         this.packetCount = packetCount;
