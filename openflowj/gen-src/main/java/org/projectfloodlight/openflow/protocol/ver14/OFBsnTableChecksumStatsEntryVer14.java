@@ -37,6 +37,8 @@ class OFBsnTableChecksumStatsEntryVer14 implements OFBsnTableChecksumStatsEntry 
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int LENGTH = 9;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static TableId DEFAULT_TABLE_ID = TableId.ALL;
         private final static U64 DEFAULT_CHECKSUM = U64.ZERO;

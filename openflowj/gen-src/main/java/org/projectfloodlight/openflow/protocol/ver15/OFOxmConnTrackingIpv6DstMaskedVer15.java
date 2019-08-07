@@ -37,6 +37,8 @@ class OFOxmConnTrackingIpv6DstMaskedVer15 implements OFOxmConnTrackingIpv6DstMas
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int LENGTH = 36;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static IPv6Address DEFAULT_VALUE = IPv6Address.NONE;
         private final static IPv6Address DEFAULT_VALUE_MASK = IPv6Address.NONE;

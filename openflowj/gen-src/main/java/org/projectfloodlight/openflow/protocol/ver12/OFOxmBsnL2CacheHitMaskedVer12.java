@@ -37,6 +37,8 @@ class OFOxmBsnL2CacheHitMaskedVer12 implements OFOxmBsnL2CacheHitMasked {
     // version: 1.2
     final static byte WIRE_VERSION = 3;
     final static int LENGTH = 6;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static OFBooleanValue DEFAULT_VALUE = OFBooleanValue.FALSE;
         private final static OFBooleanValue DEFAULT_VALUE_MASK = OFBooleanValue.FALSE;

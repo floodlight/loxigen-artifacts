@@ -38,6 +38,8 @@ class OFPortDescPropIngressVer15 implements OFPortDescPropIngress {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 4;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static byte[] DEFAULT_OXM_IDS = new byte[0];
 
@@ -235,6 +237,9 @@ class OFPortDescPropIngressVer15 implements OFPortDescPropIngress {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFPortDescPropIngressVer15: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

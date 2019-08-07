@@ -1,1 +1,1 @@
-000de58ec736794870a4738d25daaa641599edbb Merge pull request #655 from andi-bigswitch/loxi-83-normalize-uint
+0b653c3e02ab1a2348814a85876a67095cc39034 LOXI-84: enforce maximum OF message length while writing to buffer

@@ -37,6 +37,8 @@ class OFBsnVportQInQVer14 implements OFBsnVportQInQ {
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int LENGTH = 32;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_PORT_NO = 0x0L;
         private final static int DEFAULT_INGRESS_TPID = 0x0;

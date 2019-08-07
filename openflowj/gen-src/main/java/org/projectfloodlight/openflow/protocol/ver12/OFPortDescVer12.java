@@ -40,6 +40,8 @@ class OFPortDescVer12 implements OFPortDesc {
     // version: 1.2
     final static byte WIRE_VERSION = 3;
     final static int LENGTH = 64;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static OFPort DEFAULT_PORT_NO = OFPort.ANY;
         private final static MacAddress DEFAULT_HW_ADDR = MacAddress.NONE;

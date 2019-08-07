@@ -39,6 +39,8 @@ class OFBsnPortCounterStatsEntryVer13 implements OFBsnPortCounterStatsEntry {
     // version: 1.3
     final static byte WIRE_VERSION = 4;
     final static int MINIMUM_LENGTH = 8;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static OFPort DEFAULT_PORT_NO = OFPort.ANY;
         private final static List<U64> DEFAULT_VALUES = ImmutableList.<U64>of();
@@ -267,6 +269,9 @@ class OFBsnPortCounterStatsEntryVer13 implements OFBsnPortCounterStatsEntry {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFBsnPortCounterStatsEntryVer13: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

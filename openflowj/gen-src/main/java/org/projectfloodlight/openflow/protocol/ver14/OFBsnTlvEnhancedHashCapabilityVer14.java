@@ -38,6 +38,8 @@ class OFBsnTlvEnhancedHashCapabilityVer14 implements OFBsnTlvEnhancedHashCapabil
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int LENGTH = 12;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static Set<OFBsnEnhancedHashType> DEFAULT_VALUE = ImmutableSet.<OFBsnEnhancedHashType>of();
 

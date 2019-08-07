@@ -37,6 +37,8 @@ class OFBsnTlvHashSeedVer14 implements OFBsnTlvHashSeed {
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int LENGTH = 12;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_SEED1 = 0x0L;
         private final static long DEFAULT_SEED2 = 0x0L;

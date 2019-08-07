@@ -37,6 +37,8 @@ class OFOxmIpDscpVer12 implements OFOxmIpDscp {
     // version: 1.2
     final static byte WIRE_VERSION = 3;
     final static int LENGTH = 5;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static IpDscp DEFAULT_VALUE = IpDscp.NONE;
 

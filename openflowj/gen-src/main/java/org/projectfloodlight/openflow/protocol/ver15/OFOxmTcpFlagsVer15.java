@@ -37,6 +37,8 @@ class OFOxmTcpFlagsVer15 implements OFOxmTcpFlags {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int LENGTH = 5;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static U16 DEFAULT_VALUE = U16.ZERO;
 

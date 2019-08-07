@@ -37,6 +37,8 @@ class OFMatchV2Ver11 implements OFMatchV2 {
     // version: 1.1
     final static byte WIRE_VERSION = 2;
     final static int LENGTH = 88;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static OFPort DEFAULT_IN_PORT = OFPort.ANY;
         private final static int DEFAULT_WILDCARDS = OFFlowWildcardsSerializerVer11.ALL_VAL;

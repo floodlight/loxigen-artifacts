@@ -37,6 +37,8 @@ class OFOxmBsnUdf7Ver12 implements OFOxmBsnUdf7 {
     // version: 1.2
     final static byte WIRE_VERSION = 3;
     final static int LENGTH = 8;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static UDF DEFAULT_VALUE = UDF.ZERO;
 

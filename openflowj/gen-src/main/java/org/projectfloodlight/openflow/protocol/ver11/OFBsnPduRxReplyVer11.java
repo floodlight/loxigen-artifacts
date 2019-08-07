@@ -37,6 +37,8 @@ class OFBsnPduRxReplyVer11 implements OFBsnPduRxReply {
     // version: 1.1
     final static byte WIRE_VERSION = 2;
     final static int LENGTH = 25;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static long DEFAULT_STATUS = 0x0L;

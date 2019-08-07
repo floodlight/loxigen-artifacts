@@ -37,6 +37,8 @@ class OFOxmBsnEgrPortGroupIdMaskedVer12 implements OFOxmBsnEgrPortGroupIdMasked 
     // version: 1.2
     final static byte WIRE_VERSION = 3;
     final static int LENGTH = 12;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static ClassId DEFAULT_VALUE = ClassId.NONE;
         private final static ClassId DEFAULT_VALUE_MASK = ClassId.NONE;

@@ -37,6 +37,8 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
     // version: 1.1
     final static byte WIRE_VERSION = 2;
     final static int LENGTH = 136;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static U64 DEFAULT_COOKIE = U64.ZERO;

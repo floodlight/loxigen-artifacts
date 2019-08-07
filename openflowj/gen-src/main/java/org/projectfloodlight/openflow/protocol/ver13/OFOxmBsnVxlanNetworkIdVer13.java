@@ -37,6 +37,8 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
     // version: 1.3
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 8;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static VxlanNI DEFAULT_VALUE = VxlanNI.ZERO;
 

@@ -37,6 +37,8 @@ class OFBsnTlvIpv6PrefixVer14 implements OFBsnTlvIpv6Prefix {
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int LENGTH = 21;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static IPv6Address DEFAULT_VALUE = IPv6Address.NONE;
         private final static short DEFAULT_PREFIX_LENGTH = (short) 0x0;

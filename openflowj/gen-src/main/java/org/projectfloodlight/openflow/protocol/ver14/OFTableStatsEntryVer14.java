@@ -37,6 +37,8 @@ class OFTableStatsEntryVer14 implements OFTableStatsEntry {
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int LENGTH = 24;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static TableId DEFAULT_TABLE_ID = TableId.ALL;
         private final static long DEFAULT_ACTIVE_COUNT = 0x0L;

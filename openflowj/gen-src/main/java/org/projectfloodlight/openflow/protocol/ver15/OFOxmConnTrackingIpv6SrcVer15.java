@@ -37,6 +37,8 @@ class OFOxmConnTrackingIpv6SrcVer15 implements OFOxmConnTrackingIpv6Src {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int LENGTH = 20;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static IPv6Address DEFAULT_VALUE = IPv6Address.NONE;
 

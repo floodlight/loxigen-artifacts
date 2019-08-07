@@ -37,6 +37,8 @@ class OFBsnSetL2TableRequestVer10 implements OFBsnSetL2TableRequest {
     // version: 1.0
     final static byte WIRE_VERSION = 1;
     final static int LENGTH = 24;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static boolean DEFAULT_L2_TABLE_ENABLE = false;

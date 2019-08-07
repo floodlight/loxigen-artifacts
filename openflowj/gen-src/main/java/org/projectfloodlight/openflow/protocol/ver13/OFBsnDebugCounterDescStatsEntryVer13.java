@@ -37,6 +37,8 @@ class OFBsnDebugCounterDescStatsEntryVer13 implements OFBsnDebugCounterDescStats
     // version: 1.3
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 328;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static U64 DEFAULT_COUNTER_ID = U64.ZERO;
         private final static String DEFAULT_NAME = "";

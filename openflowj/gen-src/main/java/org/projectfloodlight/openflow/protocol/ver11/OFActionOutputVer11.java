@@ -37,6 +37,8 @@ class OFActionOutputVer11 implements OFActionOutput {
     // version: 1.1
     final static byte WIRE_VERSION = 2;
     final static int LENGTH = 16;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static OFPort DEFAULT_PORT = OFPort.ANY;
         private final static int DEFAULT_MAX_LEN = 0x0;

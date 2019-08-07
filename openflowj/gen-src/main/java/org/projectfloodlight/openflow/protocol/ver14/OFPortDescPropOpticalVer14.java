@@ -37,6 +37,8 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int LENGTH = 44;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_SUPPORTED = 0x0L;
         private final static long DEFAULT_TX_MIN_FREQ_LMDA = 0x0L;

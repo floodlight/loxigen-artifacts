@@ -37,6 +37,8 @@ class OFOxmIpv6FlabelMaskedVer13 implements OFOxmIpv6FlabelMasked {
     // version: 1.3
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 12;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static IPv6FlowLabel DEFAULT_VALUE = IPv6FlowLabel.NONE;
         private final static IPv6FlowLabel DEFAULT_VALUE_MASK = IPv6FlowLabel.NONE;

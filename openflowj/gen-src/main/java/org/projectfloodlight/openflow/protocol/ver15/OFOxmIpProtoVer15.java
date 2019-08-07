@@ -37,6 +37,8 @@ class OFOxmIpProtoVer15 implements OFOxmIpProto {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int LENGTH = 5;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static IpProtocol DEFAULT_VALUE = IpProtocol.NONE;
 

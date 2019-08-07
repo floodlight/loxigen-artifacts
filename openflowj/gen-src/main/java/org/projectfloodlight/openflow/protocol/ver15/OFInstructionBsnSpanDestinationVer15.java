@@ -36,6 +36,8 @@ class OFInstructionBsnSpanDestinationVer15 implements OFInstructionBsnSpanDestin
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int LENGTH = 16;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
 
     // OF message fields

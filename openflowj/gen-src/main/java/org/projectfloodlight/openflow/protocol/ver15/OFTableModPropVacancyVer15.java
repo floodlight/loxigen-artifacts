@@ -37,6 +37,8 @@ class OFTableModPropVacancyVer15 implements OFTableModPropVacancy {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int LENGTH = 8;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static short DEFAULT_VACANCY_DOWN = (short) 0x0;
         private final static short DEFAULT_VACANCY_UP = (short) 0x0;

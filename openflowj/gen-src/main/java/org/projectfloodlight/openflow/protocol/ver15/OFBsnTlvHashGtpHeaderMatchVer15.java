@@ -37,6 +37,8 @@ class OFBsnTlvHashGtpHeaderMatchVer15 implements OFBsnTlvHashGtpHeaderMatch {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int LENGTH = 6;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static short DEFAULT_FIRST_HEADER_BYTE = (short) 0x0;
         private final static short DEFAULT_FIRST_HEADER_MASK = (short) 0x0;

@@ -37,6 +37,8 @@ class OFActionSetVlanPcpVer11 implements OFActionSetVlanPcp {
     // version: 1.1
     final static byte WIRE_VERSION = 2;
     final static int LENGTH = 8;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static VlanPcp DEFAULT_VLAN_PCP = VlanPcp.NONE;
 

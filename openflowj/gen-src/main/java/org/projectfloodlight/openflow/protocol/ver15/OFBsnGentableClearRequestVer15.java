@@ -37,6 +37,8 @@ class OFBsnGentableClearRequestVer15 implements OFBsnGentableClearRequest {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int LENGTH = 52;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static U128 DEFAULT_CHECKSUM = U128.ZERO;

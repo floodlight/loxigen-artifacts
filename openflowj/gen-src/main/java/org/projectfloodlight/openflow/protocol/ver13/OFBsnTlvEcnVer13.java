@@ -37,6 +37,8 @@ class OFBsnTlvEcnVer13 implements OFBsnTlvEcn {
     // version: 1.3
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 5;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static short DEFAULT_VALUE = (short) 0x0;
 

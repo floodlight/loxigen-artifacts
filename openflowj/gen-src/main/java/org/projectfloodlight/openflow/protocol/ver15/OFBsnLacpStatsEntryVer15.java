@@ -37,6 +37,8 @@ class OFBsnLacpStatsEntryVer15 implements OFBsnLacpStatsEntry {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int LENGTH = 36;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static OFPort DEFAULT_PORT_NO = OFPort.ANY;
         private final static int DEFAULT_ACTOR_SYS_PRIORITY = 0x0;

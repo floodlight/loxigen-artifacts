@@ -37,6 +37,8 @@ class OFOxmMplsTcVer14 implements OFOxmMplsTc {
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int LENGTH = 5;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static U8 DEFAULT_VALUE = U8.ZERO;
 

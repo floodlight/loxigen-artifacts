@@ -37,6 +37,8 @@ class OFOxmBsnInPorts128Ver13 implements OFOxmBsnInPorts128 {
     // version: 1.3
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 20;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static OFBitMask128 DEFAULT_VALUE = OFBitMask128.NONE;
 

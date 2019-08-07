@@ -37,6 +37,8 @@ class OFOxmBsnInPorts512MaskedVer12 implements OFOxmBsnInPorts512Masked {
     // version: 1.2
     final static byte WIRE_VERSION = 3;
     final static int LENGTH = 132;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static OFBitMask512 DEFAULT_VALUE = OFBitMask512.NONE;
         private final static OFBitMask512 DEFAULT_VALUE_MASK = OFBitMask512.NONE;

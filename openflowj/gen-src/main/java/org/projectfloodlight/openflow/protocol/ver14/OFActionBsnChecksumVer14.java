@@ -37,6 +37,8 @@ class OFActionBsnChecksumVer14 implements OFActionBsnChecksum {
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int LENGTH = 28;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static U128 DEFAULT_CHECKSUM = U128.ZERO;
 

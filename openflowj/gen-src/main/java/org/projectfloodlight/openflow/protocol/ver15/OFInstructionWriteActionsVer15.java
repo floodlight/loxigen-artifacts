@@ -39,6 +39,8 @@ class OFInstructionWriteActionsVer15 implements OFInstructionWriteActions {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 8;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static List<OFAction> DEFAULT_ACTIONS = ImmutableList.<OFAction>of();
 
@@ -241,6 +243,9 @@ class OFInstructionWriteActionsVer15 implements OFInstructionWriteActions {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFInstructionWriteActionsVer15: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

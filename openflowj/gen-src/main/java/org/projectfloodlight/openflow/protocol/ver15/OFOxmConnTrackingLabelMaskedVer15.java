@@ -37,6 +37,8 @@ class OFOxmConnTrackingLabelMaskedVer15 implements OFOxmConnTrackingLabelMasked 
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int LENGTH = 36;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static U128 DEFAULT_VALUE = U128.ZERO;
         private final static U128 DEFAULT_VALUE_MASK = U128.ZERO;

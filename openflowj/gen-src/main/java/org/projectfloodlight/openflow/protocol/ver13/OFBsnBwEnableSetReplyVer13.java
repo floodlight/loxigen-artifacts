@@ -37,6 +37,8 @@ class OFBsnBwEnableSetReplyVer13 implements OFBsnBwEnableSetReply {
     // version: 1.3
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 24;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static long DEFAULT_ENABLE = 0x0L;

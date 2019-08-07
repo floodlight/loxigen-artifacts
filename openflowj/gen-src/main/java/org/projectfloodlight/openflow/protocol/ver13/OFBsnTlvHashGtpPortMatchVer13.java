@@ -37,6 +37,8 @@ class OFBsnTlvHashGtpPortMatchVer13 implements OFBsnTlvHashGtpPortMatch {
     // version: 1.3
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 9;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static int DEFAULT_SRC_PORT = 0x0;
         private final static int DEFAULT_DST_PORT = 0x0;

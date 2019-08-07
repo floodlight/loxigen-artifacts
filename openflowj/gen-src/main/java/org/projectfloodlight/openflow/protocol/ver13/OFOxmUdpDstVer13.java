@@ -37,6 +37,8 @@ class OFOxmUdpDstVer13 implements OFOxmUdpDst {
     // version: 1.3
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 6;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static TransportPort DEFAULT_VALUE = TransportPort.NONE;
 

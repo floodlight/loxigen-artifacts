@@ -37,6 +37,8 @@ class OFBsnVirtualPortRemoveRequestVer10 implements OFBsnVirtualPortRemoveReques
     // version: 1.0
     final static byte WIRE_VERSION = 1;
     final static int LENGTH = 20;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static long DEFAULT_VPORT_NO = 0x0L;

@@ -39,6 +39,8 @@ class OFPacketQueueVer11 implements OFPacketQueue {
     // version: 1.1
     final static byte WIRE_VERSION = 2;
     final static int MINIMUM_LENGTH = 8;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_QUEUE_ID = 0x0L;
         private final static List<OFQueueProp> DEFAULT_PROPERTIES = ImmutableList.<OFQueueProp>of();
@@ -283,6 +285,9 @@ class OFPacketQueueVer11 implements OFPacketQueue {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFPacketQueueVer11: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

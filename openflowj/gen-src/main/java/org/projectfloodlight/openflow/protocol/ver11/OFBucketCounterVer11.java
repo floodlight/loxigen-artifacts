@@ -37,6 +37,8 @@ class OFBucketCounterVer11 implements OFBucketCounter {
     // version: 1.1
     final static byte WIRE_VERSION = 2;
     final static int LENGTH = 16;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static U64 DEFAULT_PACKET_COUNT = U64.ZERO;
         private final static U64 DEFAULT_BYTE_COUNT = U64.ZERO;

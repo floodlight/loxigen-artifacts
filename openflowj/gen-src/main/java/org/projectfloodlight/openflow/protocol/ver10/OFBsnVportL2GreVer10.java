@@ -38,6 +38,8 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
     // version: 1.0
     final static byte WIRE_VERSION = 1;
     final static int LENGTH = 60;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static Set<OFBsnVportL2GreFlags> DEFAULT_FLAGS = ImmutableSet.<OFBsnVportL2GreFlags>of();
         private final static OFPort DEFAULT_PORT_NO = OFPort.ANY;

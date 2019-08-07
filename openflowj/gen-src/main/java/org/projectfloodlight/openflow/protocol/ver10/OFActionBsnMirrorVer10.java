@@ -37,6 +37,8 @@ class OFActionBsnMirrorVer10 implements OFActionBsnMirror {
     // version: 1.0
     final static byte WIRE_VERSION = 1;
     final static int LENGTH = 24;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static OFPort DEFAULT_DEST_PORT = OFPort.ANY;
         private final static long DEFAULT_VLAN_TAG = 0x0L;

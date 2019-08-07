@@ -36,6 +36,8 @@ class OFActionIdNiciraDecTtlVer14 implements OFActionIdNiciraDecTtl {
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int LENGTH = 10;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
 
     // OF message fields

@@ -39,6 +39,8 @@ class OFHelloElemVersionbitmapVer15 implements OFHelloElemVersionbitmap {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 4;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static List<U32> DEFAULT_BITMAPS = ImmutableList.<U32>of();
 
@@ -236,6 +238,9 @@ class OFHelloElemVersionbitmapVer15 implements OFHelloElemVersionbitmap {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFHelloElemVersionbitmapVer15: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

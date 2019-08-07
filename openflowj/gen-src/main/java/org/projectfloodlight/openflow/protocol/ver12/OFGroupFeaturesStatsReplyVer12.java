@@ -38,6 +38,8 @@ class OFGroupFeaturesStatsReplyVer12 implements OFGroupFeaturesStatsReply {
     // version: 1.2
     final static byte WIRE_VERSION = 3;
     final static int LENGTH = 56;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static Set<OFStatsReplyFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsReplyFlags>of();

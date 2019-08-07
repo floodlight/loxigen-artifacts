@@ -37,6 +37,8 @@ class OFOxmSctpSrcMaskedVer13 implements OFOxmSctpSrcMasked {
     // version: 1.3
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 8;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static TransportPort DEFAULT_VALUE = TransportPort.NONE;
         private final static TransportPort DEFAULT_VALUE_MASK = TransportPort.NONE;

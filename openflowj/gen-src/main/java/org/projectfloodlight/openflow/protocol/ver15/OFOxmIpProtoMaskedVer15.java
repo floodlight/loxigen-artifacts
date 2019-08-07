@@ -37,6 +37,8 @@ class OFOxmIpProtoMaskedVer15 implements OFOxmIpProtoMasked {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int LENGTH = 6;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static IpProtocol DEFAULT_VALUE = IpProtocol.NONE;
         private final static IpProtocol DEFAULT_VALUE_MASK = IpProtocol.NONE;

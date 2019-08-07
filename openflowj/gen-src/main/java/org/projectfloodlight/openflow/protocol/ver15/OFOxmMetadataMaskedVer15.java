@@ -37,6 +37,8 @@ class OFOxmMetadataMaskedVer15 implements OFOxmMetadataMasked {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int LENGTH = 20;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static OFMetadata DEFAULT_VALUE = OFMetadata.NONE;
         private final static OFMetadata DEFAULT_VALUE_MASK = OFMetadata.NONE;

@@ -37,6 +37,8 @@ class OFOxmIcmpv4TypeMaskedVer12 implements OFOxmIcmpv4TypeMasked {
     // version: 1.2
     final static byte WIRE_VERSION = 3;
     final static int LENGTH = 6;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static ICMPv4Type DEFAULT_VALUE = ICMPv4Type.NONE;
         private final static ICMPv4Type DEFAULT_VALUE_MASK = ICMPv4Type.NONE;
