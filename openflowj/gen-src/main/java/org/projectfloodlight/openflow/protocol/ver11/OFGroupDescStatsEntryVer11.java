@@ -39,6 +39,8 @@ class OFGroupDescStatsEntryVer11 implements OFGroupDescStatsEntry {
     // version: 1.1
     final static byte WIRE_VERSION = 2;
     final static int MINIMUM_LENGTH = 8;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static OFGroup DEFAULT_GROUP_ID = OFGroup.ALL;
         private final static List<OFBucket> DEFAULT_BUCKETS = ImmutableList.<OFBucket>of();
@@ -335,6 +337,9 @@ class OFGroupDescStatsEntryVer11 implements OFGroupDescStatsEntry {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFGroupDescStatsEntryVer11: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

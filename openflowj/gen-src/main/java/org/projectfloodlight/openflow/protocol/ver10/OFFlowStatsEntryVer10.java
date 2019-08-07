@@ -39,6 +39,8 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
     // version: 1.0
     final static byte WIRE_VERSION = 1;
     final static int MINIMUM_LENGTH = 88;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static TableId DEFAULT_TABLE_ID = TableId.ALL;
         private final static Match DEFAULT_MATCH = OFFactoryVer10.MATCH_WILDCARD_ALL;
@@ -770,6 +772,9 @@ class OFFlowStatsEntryVer10 implements OFFlowStatsEntry {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFFlowStatsEntryVer10: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

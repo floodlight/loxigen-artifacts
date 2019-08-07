@@ -38,6 +38,8 @@ class OFBsnPduRxRequestVer14 implements OFBsnPduRxRequest {
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int MINIMUM_LENGTH = 28;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static long DEFAULT_TIMEOUT_MS = 0x0L;
@@ -469,6 +471,9 @@ class OFBsnPduRxRequestVer14 implements OFBsnPduRxRequest {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFBsnPduRxRequestVer14: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

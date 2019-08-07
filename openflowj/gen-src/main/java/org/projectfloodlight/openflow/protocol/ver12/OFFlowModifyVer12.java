@@ -41,6 +41,8 @@ class OFFlowModifyVer12 implements OFFlowModify {
     // version: 1.2
     final static byte WIRE_VERSION = 3;
     final static int MINIMUM_LENGTH = 56;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static U64 DEFAULT_COOKIE = U64.ZERO;
@@ -917,6 +919,9 @@ class OFFlowModifyVer12 implements OFFlowModify {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFFlowModifyVer12: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

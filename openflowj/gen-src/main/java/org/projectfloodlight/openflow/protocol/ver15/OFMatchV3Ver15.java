@@ -40,6 +40,8 @@ class OFMatchV3Ver15 implements OFMatchV3 {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 4;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static OFOxmList DEFAULT_OXM_LIST = OFOxmList.EMPTY;
 
@@ -643,6 +645,9 @@ class OFMatchV3Ver15 implements OFMatchV3 {
             // update length field
             int length = bb.writerIndex() - startIndex;
             int alignedLength = ((length + 7)/8 * 8);
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFMatchV3Ver15: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
             // align message to 8 bytes
             bb.writeZero(alignedLength - length);
