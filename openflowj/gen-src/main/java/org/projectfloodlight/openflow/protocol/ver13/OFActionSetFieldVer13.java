@@ -37,6 +37,8 @@ class OFActionSetFieldVer13 implements OFActionSetField {
     // version: 1.3
     final static byte WIRE_VERSION = 4;
     final static int MINIMUM_LENGTH = 8;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
 
     // OF message fields
@@ -233,6 +235,9 @@ class OFActionSetFieldVer13 implements OFActionSetField {
             // update length field
             int length = bb.writerIndex() - startIndex;
             int alignedLength = ((length + 7)/8 * 8);
+            if (alignedLength > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFActionSetFieldVer13: message length (" + alignedLength + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, alignedLength);
             // align message to 8 bytes
             bb.writeZero(alignedLength - length);

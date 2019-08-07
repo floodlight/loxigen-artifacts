@@ -39,6 +39,8 @@ class OFTableFeaturePropMatchVer15 implements OFTableFeaturePropMatch {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 4;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static List<U32> DEFAULT_OXM_IDS = ImmutableList.<U32>of();
 
@@ -236,6 +238,9 @@ class OFTableFeaturePropMatchVer15 implements OFTableFeaturePropMatch {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFTableFeaturePropMatchVer15: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

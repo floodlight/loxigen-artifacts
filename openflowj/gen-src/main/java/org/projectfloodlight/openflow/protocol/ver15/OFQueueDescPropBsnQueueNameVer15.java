@@ -38,6 +38,8 @@ class OFQueueDescPropBsnQueueNameVer15 implements OFQueueDescPropBsnQueueName {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 12;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static byte[] DEFAULT_NAME = new byte[0];
 
@@ -289,6 +291,9 @@ class OFQueueDescPropBsnQueueNameVer15 implements OFQueueDescPropBsnQueueName {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFQueueDescPropBsnQueueNameVer15: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

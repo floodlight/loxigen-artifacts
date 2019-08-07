@@ -40,6 +40,8 @@ class OFGroupDescStatsReplyVer14 implements OFGroupDescStatsReply {
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int MINIMUM_LENGTH = 16;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static Set<OFStatsReplyFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsReplyFlags>of();
@@ -364,6 +366,9 @@ class OFGroupDescStatsReplyVer14 implements OFGroupDescStatsReply {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFGroupDescStatsReplyVer14: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

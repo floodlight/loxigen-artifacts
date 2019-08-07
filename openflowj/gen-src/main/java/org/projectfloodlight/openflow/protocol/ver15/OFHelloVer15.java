@@ -39,6 +39,8 @@ class OFHelloVer15 implements OFHello {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 8;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static List<OFHelloElem> DEFAULT_ELEMENTS = ImmutableList.<OFHelloElem>of();
@@ -286,6 +288,9 @@ class OFHelloVer15 implements OFHello {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFHelloVer15: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

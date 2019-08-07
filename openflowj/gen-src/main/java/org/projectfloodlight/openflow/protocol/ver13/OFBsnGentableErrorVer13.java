@@ -37,6 +37,8 @@ class OFBsnGentableErrorVer13 implements OFBsnGentableError {
     // version: 1.3
     final static byte WIRE_VERSION = 4;
     final static int MINIMUM_LENGTH = 276;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static String DEFAULT_ERR_MSG = "";
@@ -504,6 +506,9 @@ class OFBsnGentableErrorVer13 implements OFBsnGentableError {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFBsnGentableErrorVer13: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

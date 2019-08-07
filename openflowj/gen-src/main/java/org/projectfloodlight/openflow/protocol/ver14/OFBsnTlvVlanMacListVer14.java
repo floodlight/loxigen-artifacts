@@ -39,6 +39,8 @@ class OFBsnTlvVlanMacListVer14 implements OFBsnTlvVlanMacList {
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int MINIMUM_LENGTH = 4;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static List<OFBsnVlanMac> DEFAULT_KEY = ImmutableList.<OFBsnVlanMac>of();
 
@@ -236,6 +238,9 @@ class OFBsnTlvVlanMacListVer14 implements OFBsnTlvVlanMacList {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFBsnTlvVlanMacListVer14: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

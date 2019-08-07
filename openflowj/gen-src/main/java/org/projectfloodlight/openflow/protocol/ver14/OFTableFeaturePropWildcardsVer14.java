@@ -39,6 +39,8 @@ class OFTableFeaturePropWildcardsVer14 implements OFTableFeaturePropWildcards {
     // version: 1.4
     final static byte WIRE_VERSION = 5;
     final static int MINIMUM_LENGTH = 4;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static List<U32> DEFAULT_OXM_IDS = ImmutableList.<U32>of();
 
@@ -239,6 +241,9 @@ class OFTableFeaturePropWildcardsVer14 implements OFTableFeaturePropWildcards {
             // update length field
             int length = bb.writerIndex() - startIndex;
             int alignedLength = ((length + 7)/8 * 8);
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFTableFeaturePropWildcardsVer14: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
             // align message to 8 bytes
             bb.writeZero(alignedLength - length);

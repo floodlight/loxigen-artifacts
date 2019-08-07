@@ -39,6 +39,8 @@ class OFInstructionStatTriggerVer15 implements OFInstructionStatTrigger {
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 8;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static Set<OFStatTriggerFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatTriggerFlags>of();
         private final static OFOxsList DEFAULT_THRESHOLDS = OFOxsList.EMPTY;
@@ -285,6 +287,9 @@ class OFInstructionStatTriggerVer15 implements OFInstructionStatTrigger {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFInstructionStatTriggerVer15: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }
