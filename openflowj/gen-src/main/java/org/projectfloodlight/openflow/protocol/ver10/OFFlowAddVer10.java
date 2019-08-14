@@ -40,6 +40,8 @@ class OFFlowAddVer10 implements OFFlowAdd {
     // version: 1.0
     final static byte WIRE_VERSION = 1;
     final static int MINIMUM_LENGTH = 72;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static Match DEFAULT_MATCH = OFFactoryVer10.MATCH_WILDCARD_ALL;
@@ -796,6 +798,9 @@ class OFFlowAddVer10 implements OFFlowAdd {
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFFlowAddVer10: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

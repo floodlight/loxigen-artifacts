@@ -40,6 +40,8 @@ class OFBundleFeaturesStatsRequestVer15 implements OFBundleFeaturesStatsRequest 
     // version: 1.5
     final static byte WIRE_VERSION = 6;
     final static int MINIMUM_LENGTH = 24;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static Set<OFStatsRequestFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsRequestFlags>of();
@@ -418,6 +420,9 @@ class OFBundleFeaturesStatsRequestVer15 implements OFBundleFeaturesStatsRequest 
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFBundleFeaturesStatsRequestVer15: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }

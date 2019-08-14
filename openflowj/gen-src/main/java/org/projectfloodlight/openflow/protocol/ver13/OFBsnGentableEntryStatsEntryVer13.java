@@ -39,6 +39,8 @@ class OFBsnGentableEntryStatsEntryVer13 implements OFBsnGentableEntryStatsEntry 
     // version: 1.3
     final static byte WIRE_VERSION = 4;
     final static int MINIMUM_LENGTH = 4;
+    // maximum OF message length: 16 bit, unsigned
+    final static int MAXIMUM_LENGTH = 0xFFFF;
 
         private final static List<OFBsnTlv> DEFAULT_KEY = ImmutableList.<OFBsnTlv>of();
         private final static List<OFBsnTlv> DEFAULT_STATS = ImmutableList.<OFBsnTlv>of();
@@ -272,6 +274,9 @@ class OFBsnGentableEntryStatsEntryVer13 implements OFBsnGentableEntryStatsEntry 
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            if (length > MAXIMUM_LENGTH) {
+                throw new IllegalArgumentException("OFBsnGentableEntryStatsEntryVer13: message length (" + length + ") exceeds maximum (0xFFFF)");
+            }
             bb.setShort(lengthIndex, length);
 
         }
