@@ -343,6 +343,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_ecn",
     "of_bsn_tlv_egress_only",
     "of_bsn_tlv_egress_port_group_id",
+    "of_bsn_tlv_egress_sampling_rate",
     "of_bsn_tlv_encap",
     "of_bsn_tlv_enhanced_hash_capability",
     "of_bsn_tlv_eth_dst",

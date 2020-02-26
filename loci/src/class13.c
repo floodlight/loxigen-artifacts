@@ -4293,6 +4293,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xc2:
             *id = OF_BSN_TLV_FAIL_COUNT;
             break;
+        case 0xc3:
+            *id = OF_BSN_TLV_EGRESS_SAMPLING_RATE;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -4883,6 +4886,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xc2:
             *id = OF_BSN_TLV_FAIL_COUNT;
+            break;
+        case 0xc3:
+            *id = OF_BSN_TLV_EGRESS_SAMPLING_RATE;
             break;
         default:
             *id = OF_BSN_TLV;

@@ -8898,6 +8898,9 @@ fields['of13.bsn_tlv_egress_only.length'] = ProtoField.uint16("of13.bsn_tlv_egre
 fields['of13.bsn_tlv_egress_port_group_id.type'] = ProtoField.uint16("of13.bsn_tlv_egress_port_group_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_egress_port_group_id.length'] = ProtoField.uint16("of13.bsn_tlv_egress_port_group_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_egress_port_group_id.value'] = ProtoField.uint32("of13.bsn_tlv_egress_port_group_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_egress_sampling_rate.type'] = ProtoField.uint16("of13.bsn_tlv_egress_sampling_rate.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_egress_sampling_rate.length'] = ProtoField.uint16("of13.bsn_tlv_egress_sampling_rate.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_egress_sampling_rate.value'] = ProtoField.uint32("of13.bsn_tlv_egress_sampling_rate.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_encap.type'] = ProtoField.uint16("of13.bsn_tlv_encap.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_encap.length'] = ProtoField.uint16("of13.bsn_tlv_encap.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_encap.value'] = ProtoField.uint32("of13.bsn_tlv_encap.value", "value", base.DEC, enum_v4_ofp_bsn_encap)
@@ -11959,6 +11962,9 @@ fields['of14.bsn_tlv_egress_only.length'] = ProtoField.uint16("of14.bsn_tlv_egre
 fields['of14.bsn_tlv_egress_port_group_id.type'] = ProtoField.uint16("of14.bsn_tlv_egress_port_group_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_egress_port_group_id.length'] = ProtoField.uint16("of14.bsn_tlv_egress_port_group_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_egress_port_group_id.value'] = ProtoField.uint32("of14.bsn_tlv_egress_port_group_id.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_egress_sampling_rate.type'] = ProtoField.uint16("of14.bsn_tlv_egress_sampling_rate.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_egress_sampling_rate.length'] = ProtoField.uint16("of14.bsn_tlv_egress_sampling_rate.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_egress_sampling_rate.value'] = ProtoField.uint32("of14.bsn_tlv_egress_sampling_rate.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_encap.type'] = ProtoField.uint16("of14.bsn_tlv_encap.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_encap.length'] = ProtoField.uint16("of14.bsn_tlv_encap.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_encap.value'] = ProtoField.uint32("of14.bsn_tlv_encap.value", "value", base.DEC, enum_v5_ofp_bsn_encap)
@@ -15306,6 +15312,9 @@ fields['of15.bsn_tlv_egress_only.length'] = ProtoField.uint16("of15.bsn_tlv_egre
 fields['of15.bsn_tlv_egress_port_group_id.type'] = ProtoField.uint16("of15.bsn_tlv_egress_port_group_id.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_egress_port_group_id.length'] = ProtoField.uint16("of15.bsn_tlv_egress_port_group_id.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_egress_port_group_id.value'] = ProtoField.uint32("of15.bsn_tlv_egress_port_group_id.value", "value", base.DEC, nil)
+fields['of15.bsn_tlv_egress_sampling_rate.type'] = ProtoField.uint16("of15.bsn_tlv_egress_sampling_rate.type", "type", base.DEC, nil)
+fields['of15.bsn_tlv_egress_sampling_rate.length'] = ProtoField.uint16("of15.bsn_tlv_egress_sampling_rate.length", "length", base.DEC, nil)
+fields['of15.bsn_tlv_egress_sampling_rate.value'] = ProtoField.uint32("of15.bsn_tlv_egress_sampling_rate.value", "value", base.DEC, nil)
 fields['of15.bsn_tlv_encap.type'] = ProtoField.uint16("of15.bsn_tlv_encap.type", "type", base.DEC, nil)
 fields['of15.bsn_tlv_encap.length'] = ProtoField.uint16("of15.bsn_tlv_encap.length", "length", base.DEC, nil)
 fields['of15.bsn_tlv_encap.value'] = ProtoField.uint32("of15.bsn_tlv_encap.value", "value", base.DEC, enum_v6_ofp_bsn_encap)
@@ -21940,6 +21949,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_egress_port_group_id.type'],
     fields['of13.bsn_tlv_egress_port_group_id.length'],
     fields['of13.bsn_tlv_egress_port_group_id.value'],
+    fields['of13.bsn_tlv_egress_sampling_rate.type'],
+    fields['of13.bsn_tlv_egress_sampling_rate.length'],
+    fields['of13.bsn_tlv_egress_sampling_rate.value'],
     fields['of13.bsn_tlv_encap.type'],
     fields['of13.bsn_tlv_encap.length'],
     fields['of13.bsn_tlv_encap.value'],
@@ -25001,6 +25013,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_egress_port_group_id.type'],
     fields['of14.bsn_tlv_egress_port_group_id.length'],
     fields['of14.bsn_tlv_egress_port_group_id.value'],
+    fields['of14.bsn_tlv_egress_sampling_rate.type'],
+    fields['of14.bsn_tlv_egress_sampling_rate.length'],
+    fields['of14.bsn_tlv_egress_sampling_rate.value'],
     fields['of14.bsn_tlv_encap.type'],
     fields['of14.bsn_tlv_encap.length'],
     fields['of14.bsn_tlv_encap.value'],
@@ -28348,6 +28363,9 @@ p_of.fields = {
     fields['of15.bsn_tlv_egress_port_group_id.type'],
     fields['of15.bsn_tlv_egress_port_group_id.length'],
     fields['of15.bsn_tlv_egress_port_group_id.value'],
+    fields['of15.bsn_tlv_egress_sampling_rate.type'],
+    fields['of15.bsn_tlv_egress_sampling_rate.length'],
+    fields['of15.bsn_tlv_egress_sampling_rate.value'],
     fields['of15.bsn_tlv_encap.type'],
     fields['of15.bsn_tlv_encap.length'],
     fields['of15.bsn_tlv_encap.value'],
@@ -40708,6 +40726,16 @@ function dissect_of_bsn_tlv_egress_port_group_id_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[139] = dissect_of_bsn_tlv_egress_port_group_id_v4
 
+-- child class of_bsn_tlv_egress_sampling_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_egress_sampling_rate_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_egress_sampling_rate.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_egress_sampling_rate.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_egress_sampling_rate.value')
+    return 'of_bsn_tlv_egress_sampling_rate'
+end
+of_bsn_tlv_v4_dissectors[195] = dissect_of_bsn_tlv_egress_sampling_rate_v4
+
 -- child class of_bsn_tlv_encap
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_encap_v4(reader, subtree)
@@ -49082,6 +49110,16 @@ function dissect_of_bsn_tlv_egress_port_group_id_v5(reader, subtree)
     return 'of_bsn_tlv_egress_port_group_id'
 end
 of_bsn_tlv_v5_dissectors[139] = dissect_of_bsn_tlv_egress_port_group_id_v5
+
+-- child class of_bsn_tlv_egress_sampling_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_egress_sampling_rate_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_egress_sampling_rate.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_egress_sampling_rate.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_egress_sampling_rate.value')
+    return 'of_bsn_tlv_egress_sampling_rate'
+end
+of_bsn_tlv_v5_dissectors[195] = dissect_of_bsn_tlv_egress_sampling_rate_v5
 
 -- child class of_bsn_tlv_encap
 -- Child of of_bsn_tlv
@@ -58119,6 +58157,16 @@ function dissect_of_bsn_tlv_egress_port_group_id_v6(reader, subtree)
     return 'of_bsn_tlv_egress_port_group_id'
 end
 of_bsn_tlv_v6_dissectors[139] = dissect_of_bsn_tlv_egress_port_group_id_v6
+
+-- child class of_bsn_tlv_egress_sampling_rate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_egress_sampling_rate_v6(reader, subtree)
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_egress_sampling_rate.type')
+    read_uint16_t(reader, 6, subtree, 'of15.bsn_tlv_egress_sampling_rate.length')
+    read_uint32_t(reader, 6, subtree, 'of15.bsn_tlv_egress_sampling_rate.value')
+    return 'of_bsn_tlv_egress_sampling_rate'
+end
+of_bsn_tlv_v6_dissectors[195] = dissect_of_bsn_tlv_egress_sampling_rate_v6
 
 -- child class of_bsn_tlv_encap
 -- Child of of_bsn_tlv

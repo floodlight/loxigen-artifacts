@@ -283,6 +283,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvEgressSamplingRate.Builder buildEgressSamplingRate() {
+        return new OFBsnTlvEgressSamplingRateVer14.Builder();
+    }
+    public OFBsnTlvEgressSamplingRate egressSamplingRate(long value) {
+        return new OFBsnTlvEgressSamplingRateVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvEncap.Builder buildEncap() {
         return new OFBsnTlvEncapVer14.Builder();
     }

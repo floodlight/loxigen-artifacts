@@ -774,6 +774,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_dscp_OF_VERSION_1_3(
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_ecn_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_egress_only_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_encap_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1495,6 +1496,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_dscp_OF_VERSION_1_4(
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_ecn_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_egress_only_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_encap_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_enhanced_hash_capability_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -21081,6 +21083,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_egress_only_OF_VERSION_1_3(data, len, out_len);
     case 0x8b:
         return loci_validate_of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3(data, len, out_len);
+    case 0xc3:
+        return loci_validate_of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_3(data, len, out_len);
     case 0xaf:
         return loci_validate_of_bsn_tlv_encap_OF_VERSION_1_3(data, len, out_len);
     case 0x8f:
@@ -22105,6 +22109,28 @@ loci_validate_of_bsn_tlv_egress_only_OF_VERSION_1_3(uint8_t *data, int len, int 
 
 static int
 loci_validate_of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 8) {
         return -1;
@@ -38809,6 +38835,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_egress_only_OF_VERSION_1_4(data, len, out_len);
     case 0x8b:
         return loci_validate_of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4(data, len, out_len);
+    case 0xc3:
+        return loci_validate_of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_4(data, len, out_len);
     case 0xaf:
         return loci_validate_of_bsn_tlv_encap_OF_VERSION_1_4(data, len, out_len);
     case 0x8f:
@@ -39833,6 +39861,28 @@ loci_validate_of_bsn_tlv_egress_only_OF_VERSION_1_4(uint8_t *data, int len, int 
 
 static int
 loci_validate_of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 8) {
         return -1;

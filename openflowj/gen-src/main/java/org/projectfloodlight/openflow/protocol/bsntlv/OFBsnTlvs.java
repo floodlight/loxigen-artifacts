@@ -87,6 +87,8 @@ public interface OFBsnTlvs {
     OFBsnTlvEgressOnly egressOnly();
     OFBsnTlvEgressPortGroupId.Builder buildEgressPortGroupId() throws UnsupportedOperationException;
     OFBsnTlvEgressPortGroupId egressPortGroupId(long value);
+    OFBsnTlvEgressSamplingRate.Builder buildEgressSamplingRate() throws UnsupportedOperationException;
+    OFBsnTlvEgressSamplingRate egressSamplingRate(long value);
     OFBsnTlvEncap.Builder buildEncap() throws UnsupportedOperationException;
     OFBsnTlvEncap encap(OFBsnEncap value);
     OFBsnTlvEnhancedHashCapability.Builder buildEnhancedHashCapability() throws UnsupportedOperationException;

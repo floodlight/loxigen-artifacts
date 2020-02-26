@@ -235,6 +235,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvEgressPortGroupId not supported in version 1.1");
     }
 
+    public OFBsnTlvEgressSamplingRate.Builder buildEgressSamplingRate() {
+        throw new UnsupportedOperationException("OFBsnTlvEgressSamplingRate not supported in version 1.1");
+    }
+    public OFBsnTlvEgressSamplingRate egressSamplingRate(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvEgressSamplingRate not supported in version 1.1");
+    }
+
     public OFBsnTlvEncap.Builder buildEncap() {
         throw new UnsupportedOperationException("OFBsnTlvEncap not supported in version 1.1");
     }

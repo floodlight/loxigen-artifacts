@@ -6729,6 +6729,17 @@ typedef struct of_bsn_tlv_egress_only_s of_bsn_tlv_egress_only_t;
 typedef struct of_bsn_tlv_egress_port_group_id_s of_bsn_tlv_egress_port_group_id_t;
 
 /**
+ * Structure for of_bsn_tlv_egress_sampling_rate object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_egress_sampling_rate_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_egress_sampling_rate_s of_bsn_tlv_egress_sampling_rate_t;
+
+/**
  * Structure for of_bsn_tlv_encap object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

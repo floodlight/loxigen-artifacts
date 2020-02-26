@@ -28210,6 +28210,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_mac_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_EGRESS_SAMPLING_RATE) {
+        return of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
         return of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(src);
     }
@@ -29182,6 +29186,31 @@ of_bsn_tlv_egress_port_group_id_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_egress_port_group_id_value_get(src, &val32);
     of_bsn_tlv_egress_port_group_id_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_egress_sampling_rate
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_egress_sampling_rate.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_egress_sampling_rate_t *
+of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_3_dup(
+    of_bsn_tlv_egress_sampling_rate_t *src)
+{
+    of_bsn_tlv_egress_sampling_rate_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_egress_sampling_rate_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_egress_sampling_rate_value_get(src, &val32);
+    of_bsn_tlv_egress_sampling_rate_value_set(dst, val32);
 
     return dst;
 }
@@ -52729,6 +52758,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_mac_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_EGRESS_SAMPLING_RATE) {
+        return of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
         return of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_dup(src);
     }
@@ -53701,6 +53734,31 @@ of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_egress_port_group_id_value_get(src, &val32);
     of_bsn_tlv_egress_port_group_id_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_egress_sampling_rate
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_egress_sampling_rate.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_egress_sampling_rate_t *
+of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_4_dup(
+    of_bsn_tlv_egress_sampling_rate_t *src)
+{
+    of_bsn_tlv_egress_sampling_rate_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_egress_sampling_rate_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_egress_sampling_rate_value_get(src, &val32);
+    of_bsn_tlv_egress_sampling_rate_value_set(dst, val32);
 
     return dst;
 }
@@ -75172,6 +75230,23 @@ of_bsn_tlv_egress_port_group_id_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_egress_port_group_id_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_egress_sampling_rate_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_egress_sampling_rate_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

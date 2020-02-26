@@ -346,6 +346,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_ecn_init,
     (of_object_init_f)of_bsn_tlv_egress_only_init,
     (of_object_init_f)of_bsn_tlv_egress_port_group_id_init,
+    (of_object_init_f)of_bsn_tlv_egress_sampling_rate_init,
     (of_object_init_f)of_bsn_tlv_encap_init,
     (of_object_init_f)of_bsn_tlv_enhanced_hash_capability_init,
     (of_object_init_f)of_bsn_tlv_eth_dst_init,
