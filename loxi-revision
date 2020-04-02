@@ -1,1 +1,1 @@
-cbb9142b1258ec4c20d97a794790654a9014a442 bsn_tlv: added new tlv - egress sampling rate (#658)
+94ed91809eda49a23c33283ff516a4f4e5c40e04 Added new pktin flag for sflow egress sampling
