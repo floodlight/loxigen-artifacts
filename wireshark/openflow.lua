@@ -1987,6 +1987,7 @@ enum_v4_ofp_bsn_pktin_flag = {
     [2097152] = "OFP_BSN_PKTIN_FLAG_IPMC_MISS",
     [4194304] = "OFP_BSN_PKTIN_FLAG_IPMC_RPF_FAILED",
     [8388608] = "OFP_BSN_PKTIN_FLAG_BFD_SLOWPATH",
+    [16777216] = "OFP_BSN_PKTIN_FLAG_SFLOW_EGRESS",
 }
 
 enum_v4_ofp_bad_instruction_code = {
@@ -3087,6 +3088,7 @@ enum_v5_ofp_bsn_pktin_flag = {
     [2097152] = "OFP_BSN_PKTIN_FLAG_IPMC_MISS",
     [4194304] = "OFP_BSN_PKTIN_FLAG_IPMC_RPF_FAILED",
     [8388608] = "OFP_BSN_PKTIN_FLAG_BFD_SLOWPATH",
+    [16777216] = "OFP_BSN_PKTIN_FLAG_SFLOW_EGRESS",
 }
 
 enum_v5_ofp_bad_instruction_code = {
@@ -4369,6 +4371,7 @@ enum_v6_ofp_bsn_pktin_flag = {
     [2097152] = "OFP_BSN_PKTIN_FLAG_IPMC_MISS",
     [4194304] = "OFP_BSN_PKTIN_FLAG_IPMC_RPF_FAILED",
     [8388608] = "OFP_BSN_PKTIN_FLAG_BFD_SLOWPATH",
+    [16777216] = "OFP_BSN_PKTIN_FLAG_SFLOW_EGRESS",
 }
 
 enum_v6_ofp_bad_instruction_code = {

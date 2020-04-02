@@ -59,6 +59,7 @@ public class OFBsnPktinFlagSerializerVer13 {
     public final static long BSN_PKTIN_FLAG_IPMC_MISS_VAL = 0x200000L;
     public final static long BSN_PKTIN_FLAG_IPMC_RPF_FAILED_VAL = 0x400000L;
     public final static long BSN_PKTIN_FLAG_BFD_SLOWPATH_VAL = 0x800000L;
+    public final static long BSN_PKTIN_FLAG_SFLOW_EGRESS_VAL = 0x1000000L;
 
     public static Set<OFBsnPktinFlag> readFrom(ByteBuf bb) throws OFParseError {
         try {
@@ -128,6 +129,8 @@ public class OFBsnPktinFlagSerializerVer13 {
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_IPMC_RPF_FAILED);
         if((val & BSN_PKTIN_FLAG_BFD_SLOWPATH_VAL) != 0)
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_BFD_SLOWPATH);
+        if((val & BSN_PKTIN_FLAG_SFLOW_EGRESS_VAL) != 0)
+            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_SFLOW_EGRESS);
         return Collections.unmodifiableSet(set);
     }
 
@@ -207,6 +210,9 @@ public class OFBsnPktinFlagSerializerVer13 {
                     break;
                 case BSN_PKTIN_FLAG_BFD_SLOWPATH:
                     wireValue |= BSN_PKTIN_FLAG_BFD_SLOWPATH_VAL;
+                    break;
+                case BSN_PKTIN_FLAG_SFLOW_EGRESS:
+                    wireValue |= BSN_PKTIN_FLAG_SFLOW_EGRESS_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnPktinFlag in version 1.3: " + e);
