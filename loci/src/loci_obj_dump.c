@@ -21514,6 +21514,16 @@ of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_dump(loci_writer_f writer, void*
 }
 
 int
+of_bsn_tlv_analytics_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_analytics\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_anchor_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -21556,6 +21566,38 @@ of_bsn_tlv_apply_packets_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie,
     of_bsn_tlv_apply_packets_value_get(obj, &val64);
     out += writer(cookie, "  value (uint64_t):  ");
     out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_arp_spa_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv4_t ipv4;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_arp_spa\n");
+
+    of_bsn_tlv_arp_spa_value_get(obj, &ipv4);
+    out += writer(cookie, "  value (of_ipv4_t):  ");
+    out += LOCI_DUMP_ipv4(writer, cookie, ipv4);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_arp_tpa_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv4_t ipv4;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_arp_tpa\n");
+
+    of_bsn_tlv_arp_tpa_value_get(obj, &ipv4);
+    out += writer(cookie, "  value (of_ipv4_t):  ");
+    out += LOCI_DUMP_ipv4(writer, cookie, ipv4);
     out += writer(cookie, "\n");
 
     return out;
@@ -22391,6 +22433,38 @@ of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie,
 }
 
 int
+of_bsn_tlv_icmpv6_code_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_icmpv6_code\n");
+
+    of_bsn_tlv_icmpv6_code_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_icmpv6_type_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_icmpv6_type\n");
+
+    of_bsn_tlv_icmpv6_type_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_identifier_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -22449,6 +22523,22 @@ of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, 
 }
 
 int
+of_bsn_tlv_ifp_class_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_ifp_class_id\n");
+
+    of_bsn_tlv_ifp_class_id_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_igmp_snooping_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -22469,6 +22559,22 @@ of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3_dump(loci_writer_f writer, void*
     of_bsn_tlv_ingress_port_group_id_value_get(obj, &val32);
     out += writer(cookie, "  value (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_inner_vlan_vid_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_inner_vlan_vid\n");
+
+    of_bsn_tlv_inner_vlan_vid_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
     return out;
@@ -22518,6 +22624,16 @@ of_bsn_tlv_interval_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_o
     out += writer(cookie, "  value (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_ip_fragmentation_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_ip_fragmentation\n");
 
     return out;
 }
@@ -22700,6 +22816,16 @@ of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dump(loci_writer_f writer, void* 
     out += writer(cookie, "  value (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_l2_cache_hit_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_l2_cache_hit\n");
 
     return out;
 }
@@ -23677,6 +23803,38 @@ of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie,
     of_bsn_tlv_sampling_rate_value_get(obj, &val32);
     out += writer(cookie, "  value (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_sctp_dst_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_sctp_dst\n");
+
+    of_bsn_tlv_sctp_dst_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_sctp_src_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_sctp_src\n");
+
+    of_bsn_tlv_sctp_src_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
     return out;
@@ -37324,6 +37482,16 @@ of_bsn_tlv_actor_system_priority_OF_VERSION_1_4_dump(loci_writer_f writer, void*
 }
 
 int
+of_bsn_tlv_analytics_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_analytics\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_anchor_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -37366,6 +37534,38 @@ of_bsn_tlv_apply_packets_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie,
     of_bsn_tlv_apply_packets_value_get(obj, &val64);
     out += writer(cookie, "  value (uint64_t):  ");
     out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_arp_spa_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv4_t ipv4;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_arp_spa\n");
+
+    of_bsn_tlv_arp_spa_value_get(obj, &ipv4);
+    out += writer(cookie, "  value (of_ipv4_t):  ");
+    out += LOCI_DUMP_ipv4(writer, cookie, ipv4);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_arp_tpa_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    of_ipv4_t ipv4;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_arp_tpa\n");
+
+    of_bsn_tlv_arp_tpa_value_get(obj, &ipv4);
+    out += writer(cookie, "  value (of_ipv4_t):  ");
+    out += LOCI_DUMP_ipv4(writer, cookie, ipv4);
     out += writer(cookie, "\n");
 
     return out;
@@ -38201,6 +38401,38 @@ of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie,
 }
 
 int
+of_bsn_tlv_icmpv6_code_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_icmpv6_code\n");
+
+    of_bsn_tlv_icmpv6_code_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_icmpv6_type_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_icmpv6_type\n");
+
+    of_bsn_tlv_icmpv6_type_value_get(obj, &val8);
+    out += writer(cookie, "  value (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_identifier_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -38259,6 +38491,22 @@ of_bsn_tlv_idle_timeout_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, 
 }
 
 int
+of_bsn_tlv_ifp_class_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_ifp_class_id\n");
+
+    of_bsn_tlv_ifp_class_id_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_igmp_snooping_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -38279,6 +38527,22 @@ of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4_dump(loci_writer_f writer, void*
     of_bsn_tlv_ingress_port_group_id_value_get(obj, &val32);
     out += writer(cookie, "  value (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_inner_vlan_vid_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_inner_vlan_vid\n");
+
+    of_bsn_tlv_inner_vlan_vid_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
     return out;
@@ -38328,6 +38592,16 @@ of_bsn_tlv_interval_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_o
     out += writer(cookie, "  value (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_ip_fragmentation_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_ip_fragmentation\n");
 
     return out;
 }
@@ -38510,6 +38784,16 @@ of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dump(loci_writer_f writer, void* 
     out += writer(cookie, "  value (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_l2_cache_hit_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_l2_cache_hit\n");
 
     return out;
 }
@@ -39487,6 +39771,38 @@ of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie,
     of_bsn_tlv_sampling_rate_value_get(obj, &val32);
     out += writer(cookie, "  value (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_sctp_dst_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_sctp_dst\n");
+
+    of_bsn_tlv_sctp_dst_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_sctp_src_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_sctp_src\n");
+
+    of_bsn_tlv_sctp_src_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
     return out;
@@ -47304,6 +47620,17 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_0_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -47972,6 +48299,17 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_interface_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -49046,6 +49384,17 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_2_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dump,
     unknown_dump,
@@ -49726,9 +50075,12 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_actor_state_OF_VERSION_1_3_dump,
     of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_dump,
     of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_dump,
+    of_bsn_tlv_analytics_OF_VERSION_1_3_dump,
     of_bsn_tlv_anchor_OF_VERSION_1_3_dump,
     of_bsn_tlv_apply_bytes_OF_VERSION_1_3_dump,
     of_bsn_tlv_apply_packets_OF_VERSION_1_3_dump,
+    of_bsn_tlv_arp_spa_OF_VERSION_1_3_dump,
+    of_bsn_tlv_arp_tpa_OF_VERSION_1_3_dump,
     of_bsn_tlv_auto_negotiation_OF_VERSION_1_3_dump,
     of_bsn_tlv_bfd_endpoint_OF_VERSION_1_3_dump,
     of_bsn_tlv_bfd_state_OF_VERSION_1_3_dump,
@@ -49783,15 +50135,20 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_icmp_id_OF_VERSION_1_3_dump,
     of_bsn_tlv_icmp_type_OF_VERSION_1_3_dump,
     of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_3_dump,
+    of_bsn_tlv_icmpv6_code_OF_VERSION_1_3_dump,
+    of_bsn_tlv_icmpv6_type_OF_VERSION_1_3_dump,
     of_bsn_tlv_identifier_OF_VERSION_1_3_dump,
     of_bsn_tlv_idle_notification_OF_VERSION_1_3_dump,
     of_bsn_tlv_idle_time_OF_VERSION_1_3_dump,
     of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dump,
+    of_bsn_tlv_ifp_class_id_OF_VERSION_1_3_dump,
     of_bsn_tlv_igmp_snooping_OF_VERSION_1_3_dump,
     of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3_dump,
+    of_bsn_tlv_inner_vlan_vid_OF_VERSION_1_3_dump,
     of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_dump,
     of_bsn_tlv_internal_mac_OF_VERSION_1_3_dump,
     of_bsn_tlv_interval_OF_VERSION_1_3_dump,
+    of_bsn_tlv_ip_fragmentation_OF_VERSION_1_3_dump,
     of_bsn_tlv_ip_proto_OF_VERSION_1_3_dump,
     of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_3_dump,
     of_bsn_tlv_ipv4_OF_VERSION_1_3_dump,
@@ -49803,6 +50160,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_ipv6_prefix_OF_VERSION_1_3_dump,
     of_bsn_tlv_ipv6_src_OF_VERSION_1_3_dump,
     of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dump,
+    of_bsn_tlv_l2_cache_hit_OF_VERSION_1_3_dump,
     of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_3_dump,
     of_bsn_tlv_l3_OF_VERSION_1_3_dump,
     of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_3_dump,
@@ -49871,6 +50229,8 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_rx_bytes_OF_VERSION_1_3_dump,
     of_bsn_tlv_rx_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dump,
+    of_bsn_tlv_sctp_dst_OF_VERSION_1_3_dump,
+    of_bsn_tlv_sctp_src_OF_VERSION_1_3_dump,
     of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dump,
     of_bsn_tlv_src_mac_cml_OF_VERSION_1_3_dump,
     of_bsn_tlv_status_OF_VERSION_1_3_dump,
@@ -50597,9 +50957,12 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_actor_state_OF_VERSION_1_4_dump,
     of_bsn_tlv_actor_system_mac_OF_VERSION_1_4_dump,
     of_bsn_tlv_actor_system_priority_OF_VERSION_1_4_dump,
+    of_bsn_tlv_analytics_OF_VERSION_1_4_dump,
     of_bsn_tlv_anchor_OF_VERSION_1_4_dump,
     of_bsn_tlv_apply_bytes_OF_VERSION_1_4_dump,
     of_bsn_tlv_apply_packets_OF_VERSION_1_4_dump,
+    of_bsn_tlv_arp_spa_OF_VERSION_1_4_dump,
+    of_bsn_tlv_arp_tpa_OF_VERSION_1_4_dump,
     of_bsn_tlv_auto_negotiation_OF_VERSION_1_4_dump,
     of_bsn_tlv_bfd_endpoint_OF_VERSION_1_4_dump,
     of_bsn_tlv_bfd_state_OF_VERSION_1_4_dump,
@@ -50654,15 +51017,20 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_icmp_id_OF_VERSION_1_4_dump,
     of_bsn_tlv_icmp_type_OF_VERSION_1_4_dump,
     of_bsn_tlv_icmpv6_chksum_OF_VERSION_1_4_dump,
+    of_bsn_tlv_icmpv6_code_OF_VERSION_1_4_dump,
+    of_bsn_tlv_icmpv6_type_OF_VERSION_1_4_dump,
     of_bsn_tlv_identifier_OF_VERSION_1_4_dump,
     of_bsn_tlv_idle_notification_OF_VERSION_1_4_dump,
     of_bsn_tlv_idle_time_OF_VERSION_1_4_dump,
     of_bsn_tlv_idle_timeout_OF_VERSION_1_4_dump,
+    of_bsn_tlv_ifp_class_id_OF_VERSION_1_4_dump,
     of_bsn_tlv_igmp_snooping_OF_VERSION_1_4_dump,
     of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4_dump,
+    of_bsn_tlv_inner_vlan_vid_OF_VERSION_1_4_dump,
     of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_4_dump,
     of_bsn_tlv_internal_mac_OF_VERSION_1_4_dump,
     of_bsn_tlv_interval_OF_VERSION_1_4_dump,
+    of_bsn_tlv_ip_fragmentation_OF_VERSION_1_4_dump,
     of_bsn_tlv_ip_proto_OF_VERSION_1_4_dump,
     of_bsn_tlv_ip_tunnel_type_OF_VERSION_1_4_dump,
     of_bsn_tlv_ipv4_OF_VERSION_1_4_dump,
@@ -50674,6 +51042,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_ipv6_prefix_OF_VERSION_1_4_dump,
     of_bsn_tlv_ipv6_src_OF_VERSION_1_4_dump,
     of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dump,
+    of_bsn_tlv_l2_cache_hit_OF_VERSION_1_4_dump,
     of_bsn_tlv_l2_multicast_lookup_OF_VERSION_1_4_dump,
     of_bsn_tlv_l3_OF_VERSION_1_4_dump,
     of_bsn_tlv_l3_dst_class_id_OF_VERSION_1_4_dump,
@@ -50742,6 +51111,8 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_rx_bytes_OF_VERSION_1_4_dump,
     of_bsn_tlv_rx_packets_OF_VERSION_1_4_dump,
     of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dump,
+    of_bsn_tlv_sctp_dst_OF_VERSION_1_4_dump,
+    of_bsn_tlv_sctp_src_OF_VERSION_1_4_dump,
     of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dump,
     of_bsn_tlv_src_mac_cml_OF_VERSION_1_4_dump,
     of_bsn_tlv_status_OF_VERSION_1_4_dump,
