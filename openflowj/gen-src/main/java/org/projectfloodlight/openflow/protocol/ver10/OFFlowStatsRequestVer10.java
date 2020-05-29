@@ -105,6 +105,11 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
     }
 
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -127,11 +132,6 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
     @Override
     public U64 getCookieMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
-    }
-
-    @Override
-    public Match getMatch() {
-        return match;
     }
 
 
@@ -197,6 +197,17 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowStatsRequest.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -244,17 +255,6 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
     @Override
     public OFFlowStatsRequest.Builder setCookieMask(U64 cookieMask) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowStatsRequest.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
     }
 
 
@@ -337,6 +337,17 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowStatsRequest.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public TableId getTableId() {
         return tableId;
     }
@@ -384,17 +395,6 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
     @Override
     public OFFlowStatsRequest.Builder setCookieMask(U64 cookieMask) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property cookieMask not supported in version 1.0");
-    }
-    @Override
-    public Match getMatch() {
-        return match;
-    }
-
-    @Override
-    public OFFlowStatsRequest.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
-        return this;
     }
 //
         @Override

@@ -35,9 +35,9 @@ public interface OFBundleAddMsg extends OFObject, OFMessage {
     long getXid();
     BundleId getBundleId();
     Set<OFBundleFlags> getFlags();
+    OFMessage getData() throws UnsupportedOperationException;
     OFMessage getMessage() throws UnsupportedOperationException;
     List<OFBundleProp> getProperties() throws UnsupportedOperationException;
-    OFMessage getData() throws UnsupportedOperationException;
 
     void writeTo(ByteBuf channelBuffer);
 
@@ -52,11 +52,11 @@ public interface OFBundleAddMsg extends OFObject, OFMessage {
         Builder setBundleId(BundleId bundleId);
         Set<OFBundleFlags> getFlags();
         Builder setFlags(Set<OFBundleFlags> flags);
+        OFMessage getData() throws UnsupportedOperationException;
+        Builder setData(OFMessage data) throws UnsupportedOperationException;
         OFMessage getMessage() throws UnsupportedOperationException;
         Builder setMessage(OFMessage message) throws UnsupportedOperationException;
         List<OFBundleProp> getProperties() throws UnsupportedOperationException;
         Builder setProperties(List<OFBundleProp> properties) throws UnsupportedOperationException;
-        OFMessage getData() throws UnsupportedOperationException;
-        Builder setData(OFMessage data) throws UnsupportedOperationException;
     }
 }

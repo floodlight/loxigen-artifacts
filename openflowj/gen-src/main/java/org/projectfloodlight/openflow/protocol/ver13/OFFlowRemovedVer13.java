@@ -118,6 +118,11 @@ class OFFlowRemovedVer13 implements OFFlowRemoved {
     }
 
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -130,11 +135,6 @@ class OFFlowRemovedVer13 implements OFFlowRemoved {
     @Override
     public OFFlowRemovedReason getReason() {
         return reason;
-    }
-
-    @Override
-    public TableId getTableId() {
-        return tableId;
     }
 
     @Override
@@ -153,11 +153,6 @@ class OFFlowRemovedVer13 implements OFFlowRemoved {
     }
 
     @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
     public U64 getPacketCount() {
         return packetCount;
     }
@@ -168,8 +163,13 @@ class OFFlowRemovedVer13 implements OFFlowRemoved {
     }
 
     @Override
-    public Match getMatch() {
-        return match;
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
     }
 
     @Override
@@ -238,6 +238,17 @@ class OFFlowRemovedVer13 implements OFFlowRemoved {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -268,17 +279,6 @@ class OFFlowRemovedVer13 implements OFFlowRemoved {
     public OFFlowRemoved.Builder setReason(OFFlowRemovedReason reason) {
         this.reason = reason;
         this.reasonSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -315,17 +315,6 @@ class OFFlowRemovedVer13 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
-    }
-    @Override
     public U64 getPacketCount() {
         return packetCount;
     }
@@ -348,14 +337,25 @@ class OFFlowRemovedVer13 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFFlowRemoved.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFFlowRemoved.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
         return this;
     }
     @Override
@@ -464,6 +464,17 @@ class OFFlowRemovedVer13 implements OFFlowRemoved {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -494,17 +505,6 @@ class OFFlowRemovedVer13 implements OFFlowRemoved {
     public OFFlowRemoved.Builder setReason(OFFlowRemovedReason reason) {
         this.reason = reason;
         this.reasonSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -541,17 +541,6 @@ class OFFlowRemovedVer13 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public int getHardTimeout() {
-        return hardTimeout;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) {
-        this.hardTimeout = hardTimeout;
-        this.hardTimeoutSet = true;
-        return this;
-    }
-    @Override
     public U64 getPacketCount() {
         return packetCount;
     }
@@ -574,14 +563,25 @@ class OFFlowRemovedVer13 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFFlowRemoved.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFFlowRemoved.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
+        return this;
+    }
+    @Override
+    public int getHardTimeout() {
+        return hardTimeout;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) {
+        this.hardTimeout = hardTimeout;
+        this.hardTimeoutSet = true;
         return this;
     }
     @Override

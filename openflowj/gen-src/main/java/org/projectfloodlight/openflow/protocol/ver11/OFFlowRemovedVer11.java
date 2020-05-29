@@ -113,6 +113,11 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
     }
 
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -125,11 +130,6 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
     @Override
     public OFFlowRemovedReason getReason() {
         return reason;
-    }
-
-    @Override
-    public TableId getTableId() {
-        return tableId;
     }
 
     @Override
@@ -148,11 +148,6 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
     }
 
     @Override
-    public int getHardTimeout()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.1");
-    }
-
-    @Override
     public U64 getPacketCount() {
         return packetCount;
     }
@@ -163,8 +158,13 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
     }
 
     @Override
-    public Match getMatch() {
-        return match;
+    public TableId getTableId() {
+        return tableId;
+    }
+
+    @Override
+    public int getHardTimeout()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.1");
     }
 
     @Override
@@ -231,6 +231,17 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -261,17 +272,6 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
     public OFFlowRemoved.Builder setReason(OFFlowRemovedReason reason) {
         this.reason = reason;
         this.reasonSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -308,15 +308,6 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public int getHardTimeout()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.1");
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.1");
-    }
-    @Override
     public U64 getPacketCount() {
         return packetCount;
     }
@@ -339,15 +330,24 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFFlowRemoved.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFFlowRemoved.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
+    }
+    @Override
+    public int getHardTimeout()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.1");
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.1");
     }
     @Override
     public Stat getStats()throws UnsupportedOperationException {
@@ -451,6 +451,17 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         return this;
     }
     @Override
+    public Match getMatch() {
+        return match;
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setMatch(Match match) {
+        this.match = match;
+        this.matchSet = true;
+        return this;
+    }
+    @Override
     public U64 getCookie() {
         return cookie;
     }
@@ -481,17 +492,6 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
     public OFFlowRemoved.Builder setReason(OFFlowRemovedReason reason) {
         this.reason = reason;
         this.reasonSet = true;
-        return this;
-    }
-    @Override
-    public TableId getTableId() {
-        return tableId;
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setTableId(TableId tableId) {
-        this.tableId = tableId;
-        this.tableIdSet = true;
         return this;
     }
     @Override
@@ -528,15 +528,6 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public int getHardTimeout()throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.1");
-    }
-
-    @Override
-    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) throws UnsupportedOperationException {
-            throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.1");
-    }
-    @Override
     public U64 getPacketCount() {
         return packetCount;
     }
@@ -559,15 +550,24 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         return this;
     }
     @Override
-    public Match getMatch() {
-        return match;
+    public TableId getTableId() {
+        return tableId;
     }
 
     @Override
-    public OFFlowRemoved.Builder setMatch(Match match) {
-        this.match = match;
-        this.matchSet = true;
+    public OFFlowRemoved.Builder setTableId(TableId tableId) {
+        this.tableId = tableId;
+        this.tableIdSet = true;
         return this;
+    }
+    @Override
+    public int getHardTimeout()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.1");
+    }
+
+    @Override
+    public OFFlowRemoved.Builder setHardTimeout(int hardTimeout) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property hardTimeout not supported in version 1.1");
     }
     @Override
     public Stat getStats()throws UnsupportedOperationException {

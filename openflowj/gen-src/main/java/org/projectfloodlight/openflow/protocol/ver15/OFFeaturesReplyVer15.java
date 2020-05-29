@@ -114,18 +114,8 @@ class OFFeaturesReplyVer15 implements OFFeaturesReply {
     }
 
     @Override
-    public OFAuxId getAuxiliaryId() {
-        return auxiliaryId;
-    }
-
-    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
-    }
-
-    @Override
-    public long getReserved() {
-        return reserved;
     }
 
     @Override
@@ -136,6 +126,16 @@ class OFFeaturesReplyVer15 implements OFFeaturesReply {
     @Override
     public List<OFPortDesc> getPorts()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property ports not supported in version 1.5");
+    }
+
+    @Override
+    public long getReserved() {
+        return reserved;
+    }
+
+    @Override
+    public OFAuxId getAuxiliaryId() {
+        return auxiliaryId;
     }
 
 
@@ -222,17 +222,6 @@ class OFFeaturesReplyVer15 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public OFAuxId getAuxiliaryId() {
-        return auxiliaryId;
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) {
-        this.auxiliaryId = auxiliaryId;
-        this.auxiliaryIdSet = true;
-        return this;
-    }
-    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
     }
@@ -241,17 +230,6 @@ class OFFeaturesReplyVer15 implements OFFeaturesReply {
     public OFFeaturesReply.Builder setCapabilities(Set<OFCapabilities> capabilities) {
         this.capabilities = capabilities;
         this.capabilitiesSet = true;
-        return this;
-    }
-    @Override
-    public long getReserved() {
-        return reserved;
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setReserved(long reserved) {
-        this.reserved = reserved;
-        this.reservedSet = true;
         return this;
     }
     @Override
@@ -271,6 +249,28 @@ class OFFeaturesReplyVer15 implements OFFeaturesReply {
     @Override
     public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property ports not supported in version 1.5");
+    }
+    @Override
+    public long getReserved() {
+        return reserved;
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setReserved(long reserved) {
+        this.reserved = reserved;
+        this.reservedSet = true;
+        return this;
+    }
+    @Override
+    public OFAuxId getAuxiliaryId() {
+        return auxiliaryId;
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) {
+        this.auxiliaryId = auxiliaryId;
+        this.auxiliaryIdSet = true;
+        return this;
     }
 
 
@@ -376,17 +376,6 @@ class OFFeaturesReplyVer15 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public OFAuxId getAuxiliaryId() {
-        return auxiliaryId;
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) {
-        this.auxiliaryId = auxiliaryId;
-        this.auxiliaryIdSet = true;
-        return this;
-    }
-    @Override
     public Set<OFCapabilities> getCapabilities() {
         return capabilities;
     }
@@ -395,17 +384,6 @@ class OFFeaturesReplyVer15 implements OFFeaturesReply {
     public OFFeaturesReply.Builder setCapabilities(Set<OFCapabilities> capabilities) {
         this.capabilities = capabilities;
         this.capabilitiesSet = true;
-        return this;
-    }
-    @Override
-    public long getReserved() {
-        return reserved;
-    }
-
-    @Override
-    public OFFeaturesReply.Builder setReserved(long reserved) {
-        this.reserved = reserved;
-        this.reservedSet = true;
         return this;
     }
     @Override
@@ -425,6 +403,28 @@ class OFFeaturesReplyVer15 implements OFFeaturesReply {
     @Override
     public OFFeaturesReply.Builder setPorts(List<OFPortDesc> ports) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property ports not supported in version 1.5");
+    }
+    @Override
+    public long getReserved() {
+        return reserved;
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setReserved(long reserved) {
+        this.reserved = reserved;
+        this.reservedSet = true;
+        return this;
+    }
+    @Override
+    public OFAuxId getAuxiliaryId() {
+        return auxiliaryId;
+    }
+
+    @Override
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) {
+        this.auxiliaryId = auxiliaryId;
+        this.auxiliaryIdSet = true;
+        return this;
     }
 //
         @Override
