@@ -93,6 +93,10 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvAnalytics analytics() {
+        return OFBsnTlvAnalyticsVer15.INSTANCE;
+    }
+
     public OFBsnTlvAnchor.Builder buildAnchor() {
         return new OFBsnTlvAnchorVer15.Builder();
     }
@@ -116,6 +120,24 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
     }
     public OFBsnTlvApplyPackets applyPackets(U64 value) {
         return new OFBsnTlvApplyPacketsVer15(
+                value
+                    );
+    }
+
+    public OFBsnTlvArpSpa.Builder buildArpSpa() {
+        return new OFBsnTlvArpSpaVer15.Builder();
+    }
+    public OFBsnTlvArpSpa arpSpa(IPv4Address value) {
+        return new OFBsnTlvArpSpaVer15(
+                value
+                    );
+    }
+
+    public OFBsnTlvArpTpa.Builder buildArpTpa() {
+        return new OFBsnTlvArpTpaVer15.Builder();
+    }
+    public OFBsnTlvArpTpa arpTpa(IPv4Address value) {
+        return new OFBsnTlvArpTpaVer15(
                 value
                     );
     }
@@ -553,6 +575,24 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvIcmpv6Code.Builder buildIcmpv6Code() {
+        return new OFBsnTlvIcmpv6CodeVer15.Builder();
+    }
+    public OFBsnTlvIcmpv6Code icmpv6Code(short value) {
+        return new OFBsnTlvIcmpv6CodeVer15(
+                value
+                    );
+    }
+
+    public OFBsnTlvIcmpv6Type.Builder buildIcmpv6Type() {
+        return new OFBsnTlvIcmpv6TypeVer15.Builder();
+    }
+    public OFBsnTlvIcmpv6Type icmpv6Type(short value) {
+        return new OFBsnTlvIcmpv6TypeVer15(
+                value
+                    );
+    }
+
     public OFBsnTlvIdentifier.Builder buildIdentifier() {
         return new OFBsnTlvIdentifierVer15.Builder();
     }
@@ -584,6 +624,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvIfpClassId.Builder buildIfpClassId() {
+        return new OFBsnTlvIfpClassIdVer15.Builder();
+    }
+    public OFBsnTlvIfpClassId ifpClassId(long value) {
+        return new OFBsnTlvIfpClassIdVer15(
+                value
+                    );
+    }
+
     public OFBsnTlvIgmpSnooping igmpSnooping() {
         return OFBsnTlvIgmpSnoopingVer15.INSTANCE;
     }
@@ -593,6 +642,15 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
     }
     public OFBsnTlvIngressPortGroupId ingressPortGroupId(long value) {
         return new OFBsnTlvIngressPortGroupIdVer15(
+                value
+                    );
+    }
+
+    public OFBsnTlvInnerVlanVid.Builder buildInnerVlanVid() {
+        return new OFBsnTlvInnerVlanVidVer15.Builder();
+    }
+    public OFBsnTlvInnerVlanVid innerVlanVid(int value) {
+        return new OFBsnTlvInnerVlanVidVer15(
                 value
                     );
     }
@@ -622,6 +680,10 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
         return new OFBsnTlvIntervalVer15(
                 value
                     );
+    }
+
+    public OFBsnTlvIpFragmentation ipFragmentation() {
+        return OFBsnTlvIpFragmentationVer15.INSTANCE;
     }
 
     public OFBsnTlvIpProto.Builder buildIpProto() {
@@ -722,6 +784,10 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
         return new OFBsnTlvKnownMulticastRateVer15(
                 value
                     );
+    }
+
+    public OFBsnTlvL2CacheHit l2CacheHit() {
+        return OFBsnTlvL2CacheHitVer15.INSTANCE;
     }
 
     public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
@@ -1233,6 +1299,24 @@ public class OFBsnTlvsVer15 implements OFBsnTlvs {
     }
     public OFBsnTlvSamplingRate samplingRate(long value) {
         return new OFBsnTlvSamplingRateVer15(
+                value
+                    );
+    }
+
+    public OFBsnTlvSctpDst.Builder buildSctpDst() {
+        return new OFBsnTlvSctpDstVer15.Builder();
+    }
+    public OFBsnTlvSctpDst sctpDst(int value) {
+        return new OFBsnTlvSctpDstVer15(
+                value
+                    );
+    }
+
+    public OFBsnTlvSctpSrc.Builder buildSctpSrc() {
+        return new OFBsnTlvSctpSrcVer15.Builder();
+    }
+    public OFBsnTlvSctpSrc sctpSrc(int value) {
+        return new OFBsnTlvSctpSrcVer15(
                 value
                     );
     }

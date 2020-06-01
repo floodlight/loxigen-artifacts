@@ -1251,6 +1251,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_analytics_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_anchor_dup(
         of_object_t *src);
 
@@ -1260,6 +1264,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_apply_packets_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_arp_spa_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_arp_tpa_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1479,6 +1491,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_icmpv6_code_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_icmpv6_type_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_identifier_dup(
         of_object_t *src);
 
@@ -1495,11 +1515,19 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_ifp_class_id_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_igmp_snooping_dup(
         of_object_t *src);
 
 extern of_object_t *
     of_bsn_tlv_ingress_port_group_id_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_inner_vlan_vid_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1512,6 +1540,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_interval_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ip_fragmentation_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1556,6 +1588,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_known_multicast_rate_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_l2_cache_hit_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1828,6 +1864,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_sampling_rate_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_sctp_dst_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_sctp_src_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6575,6 +6619,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_analytics_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_anchor_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6584,6 +6632,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_apply_packets_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_arp_spa_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_arp_tpa_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6803,6 +6859,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_icmpv6_code_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_icmpv6_type_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_identifier_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6819,11 +6883,19 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_ifp_class_id_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_igmp_snooping_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
     of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_inner_vlan_vid_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6836,6 +6908,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_interval_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ip_fragmentation_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6880,6 +6956,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_known_multicast_rate_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_l2_cache_hit_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7152,6 +7232,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_sctp_dst_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_sctp_src_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9571,6 +9659,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_analytics_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_anchor_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -9580,6 +9672,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_apply_packets_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_arp_spa_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_arp_tpa_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9799,6 +9899,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_icmpv6_code_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_icmpv6_type_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_identifier_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -9815,11 +9923,19 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_ifp_class_id_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_igmp_snooping_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
     of_bsn_tlv_ingress_port_group_id_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_inner_vlan_vid_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9832,6 +9948,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_interval_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_ip_fragmentation_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9876,6 +9996,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_known_multicast_rate_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_l2_cache_hit_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -10148,6 +10272,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_sctp_dst_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_sctp_src_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
