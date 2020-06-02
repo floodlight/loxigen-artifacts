@@ -1198,9 +1198,9 @@ extern const char *const of_object_id_str[];
  *
  ****************************************************************/
 
-#define OF_EXPERIMENTER_ID_OPENFLOW 0x000026e1
-#define OF_EXPERIMENTER_ID_NICIRA 0x00002320
 #define OF_EXPERIMENTER_ID_BSN 0x005c16c7
+#define OF_EXPERIMENTER_ID_NICIRA 0x00002320
+#define OF_EXPERIMENTER_ID_OPENFLOW 0x000026e1
 
 /****************************************************************
  *
@@ -1383,352 +1383,33 @@ extern const char *const of_object_id_str[];
  * bitmasks for active and masked values
  */
 
-/* Mask/value check/set macros for ovs_tcp_flags */
+/* Mask/value check/set macros for arp_op */
 
 /**
- * Set the mask for an exact match of ovs_tcp_flags
+ * Set the mask for an exact match of arp_op
  */
-#define OF_MATCH_MASK_OVS_TCP_FLAGS_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.ovs_tcp_flags, 0xff, \
-        sizeof(((_match)->masks).ovs_tcp_flags))
+#define OF_MATCH_MASK_ARP_OP_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.arp_op, 0xff, \
+        sizeof(((_match)->masks).arp_op))
 
 /**
- * Clear the mask for ovs_tcp_flags making that field inactive for the match
+ * Clear the mask for arp_op making that field inactive for the match
  */
-#define OF_MATCH_MASK_OVS_TCP_FLAGS_CLEAR(_match) \
-    MEMSET(&(_match)->masks.ovs_tcp_flags, 0, \
-        sizeof(((_match)->masks).ovs_tcp_flags))
+#define OF_MATCH_MASK_ARP_OP_CLEAR(_match) \
+    MEMSET(&(_match)->masks.arp_op, 0, \
+        sizeof(((_match)->masks).arp_op))
 
 /**
- * Test whether the match is exact for ovs_tcp_flags
+ * Test whether the match is exact for arp_op
  */
-#define OF_MATCH_MASK_OVS_TCP_FLAGS_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ovs_tcp_flags))
+#define OF_MATCH_MASK_ARP_OP_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).arp_op))
 
 /**
- * Test whether key ovs_tcp_flags is being checked in the match
+ * Test whether key arp_op is being checked in the match
  */
-#define OF_MATCH_MASK_OVS_TCP_FLAGS_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ovs_tcp_flags))
-
-
-/* Mask/value check/set macros for ipv6_flabel */
-
-/**
- * Set the mask for an exact match of ipv6_flabel
- */
-#define OF_MATCH_MASK_IPV6_FLABEL_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.ipv6_flabel, 0xff, \
-        sizeof(((_match)->masks).ipv6_flabel))
-
-/**
- * Clear the mask for ipv6_flabel making that field inactive for the match
- */
-#define OF_MATCH_MASK_IPV6_FLABEL_CLEAR(_match) \
-    MEMSET(&(_match)->masks.ipv6_flabel, 0, \
-        sizeof(((_match)->masks).ipv6_flabel))
-
-/**
- * Test whether the match is exact for ipv6_flabel
- */
-#define OF_MATCH_MASK_IPV6_FLABEL_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv6_flabel))
-
-/**
- * Test whether key ipv6_flabel is being checked in the match
- */
-#define OF_MATCH_MASK_IPV6_FLABEL_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv6_flabel))
-
-
-/* Mask/value check/set macros for bsn_lag_id */
-
-/**
- * Set the mask for an exact match of bsn_lag_id
- */
-#define OF_MATCH_MASK_BSN_LAG_ID_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_lag_id, 0xff, \
-        sizeof(((_match)->masks).bsn_lag_id))
-
-/**
- * Clear the mask for bsn_lag_id making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_LAG_ID_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_lag_id, 0, \
-        sizeof(((_match)->masks).bsn_lag_id))
-
-/**
- * Test whether the match is exact for bsn_lag_id
- */
-#define OF_MATCH_MASK_BSN_LAG_ID_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_lag_id))
-
-/**
- * Test whether key bsn_lag_id is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_LAG_ID_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_lag_id))
-
-
-/* Mask/value check/set macros for bsn_ifp_class_id */
-
-/**
- * Set the mask for an exact match of bsn_ifp_class_id
- */
-#define OF_MATCH_MASK_BSN_IFP_CLASS_ID_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_ifp_class_id, 0xff, \
-        sizeof(((_match)->masks).bsn_ifp_class_id))
-
-/**
- * Clear the mask for bsn_ifp_class_id making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_IFP_CLASS_ID_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_ifp_class_id, 0, \
-        sizeof(((_match)->masks).bsn_ifp_class_id))
-
-/**
- * Test whether the match is exact for bsn_ifp_class_id
- */
-#define OF_MATCH_MASK_BSN_IFP_CLASS_ID_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_ifp_class_id))
-
-/**
- * Test whether key bsn_ifp_class_id is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_IFP_CLASS_ID_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_ifp_class_id))
-
-
-/* Mask/value check/set macros for vlan_pcp */
-
-/**
- * Set the mask for an exact match of vlan_pcp
- */
-#define OF_MATCH_MASK_VLAN_PCP_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.vlan_pcp, 0xff, \
-        sizeof(((_match)->masks).vlan_pcp))
-
-/**
- * Clear the mask for vlan_pcp making that field inactive for the match
- */
-#define OF_MATCH_MASK_VLAN_PCP_CLEAR(_match) \
-    MEMSET(&(_match)->masks.vlan_pcp, 0, \
-        sizeof(((_match)->masks).vlan_pcp))
-
-/**
- * Test whether the match is exact for vlan_pcp
- */
-#define OF_MATCH_MASK_VLAN_PCP_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).vlan_pcp))
-
-/**
- * Test whether key vlan_pcp is being checked in the match
- */
-#define OF_MATCH_MASK_VLAN_PCP_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).vlan_pcp))
-
-
-/* Mask/value check/set macros for ipv6_exthdr */
-
-/**
- * Set the mask for an exact match of ipv6_exthdr
- */
-#define OF_MATCH_MASK_IPV6_EXTHDR_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.ipv6_exthdr, 0xff, \
-        sizeof(((_match)->masks).ipv6_exthdr))
-
-/**
- * Clear the mask for ipv6_exthdr making that field inactive for the match
- */
-#define OF_MATCH_MASK_IPV6_EXTHDR_CLEAR(_match) \
-    MEMSET(&(_match)->masks.ipv6_exthdr, 0, \
-        sizeof(((_match)->masks).ipv6_exthdr))
-
-/**
- * Test whether the match is exact for ipv6_exthdr
- */
-#define OF_MATCH_MASK_IPV6_EXTHDR_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv6_exthdr))
-
-/**
- * Test whether key ipv6_exthdr is being checked in the match
- */
-#define OF_MATCH_MASK_IPV6_EXTHDR_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv6_exthdr))
-
-
-/* Mask/value check/set macros for bsn_inner_eth_dst */
-
-/**
- * Set the mask for an exact match of bsn_inner_eth_dst
- */
-#define OF_MATCH_MASK_BSN_INNER_ETH_DST_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_inner_eth_dst, 0xff, \
-        sizeof(((_match)->masks).bsn_inner_eth_dst))
-
-/**
- * Clear the mask for bsn_inner_eth_dst making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_INNER_ETH_DST_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_inner_eth_dst, 0, \
-        sizeof(((_match)->masks).bsn_inner_eth_dst))
-
-/**
- * Test whether the match is exact for bsn_inner_eth_dst
- */
-#define OF_MATCH_MASK_BSN_INNER_ETH_DST_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_inner_eth_dst))
-
-/**
- * Test whether key bsn_inner_eth_dst is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_INNER_ETH_DST_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_inner_eth_dst))
-
-
-/* Mask/value check/set macros for ipv4_src */
-
-/**
- * Set the mask for an exact match of ipv4_src
- */
-#define OF_MATCH_MASK_IPV4_SRC_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.ipv4_src, 0xff, \
-        sizeof(((_match)->masks).ipv4_src))
-
-/**
- * Clear the mask for ipv4_src making that field inactive for the match
- */
-#define OF_MATCH_MASK_IPV4_SRC_CLEAR(_match) \
-    MEMSET(&(_match)->masks.ipv4_src, 0, \
-        sizeof(((_match)->masks).ipv4_src))
-
-/**
- * Test whether the match is exact for ipv4_src
- */
-#define OF_MATCH_MASK_IPV4_SRC_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv4_src))
-
-/**
- * Test whether key ipv4_src is being checked in the match
- */
-#define OF_MATCH_MASK_IPV4_SRC_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv4_src))
-
-
-/* Mask/value check/set macros for conn_tracking_nw_src */
-
-/**
- * Set the mask for an exact match of conn_tracking_nw_src
- */
-#define OF_MATCH_MASK_CONN_TRACKING_NW_SRC_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.conn_tracking_nw_src, 0xff, \
-        sizeof(((_match)->masks).conn_tracking_nw_src))
-
-/**
- * Clear the mask for conn_tracking_nw_src making that field inactive for the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_NW_SRC_CLEAR(_match) \
-    MEMSET(&(_match)->masks.conn_tracking_nw_src, 0, \
-        sizeof(((_match)->masks).conn_tracking_nw_src))
-
-/**
- * Test whether the match is exact for conn_tracking_nw_src
- */
-#define OF_MATCH_MASK_CONN_TRACKING_NW_SRC_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_nw_src))
-
-/**
- * Test whether key conn_tracking_nw_src is being checked in the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_NW_SRC_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_nw_src))
-
-
-/* Mask/value check/set macros for arp_tpa */
-
-/**
- * Set the mask for an exact match of arp_tpa
- */
-#define OF_MATCH_MASK_ARP_TPA_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.arp_tpa, 0xff, \
-        sizeof(((_match)->masks).arp_tpa))
-
-/**
- * Clear the mask for arp_tpa making that field inactive for the match
- */
-#define OF_MATCH_MASK_ARP_TPA_CLEAR(_match) \
-    MEMSET(&(_match)->masks.arp_tpa, 0, \
-        sizeof(((_match)->masks).arp_tpa))
-
-/**
- * Test whether the match is exact for arp_tpa
- */
-#define OF_MATCH_MASK_ARP_TPA_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).arp_tpa))
-
-/**
- * Test whether key arp_tpa is being checked in the match
- */
-#define OF_MATCH_MASK_ARP_TPA_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).arp_tpa))
-
-
-/* Mask/value check/set macros for conn_tracking_zone */
-
-/**
- * Set the mask for an exact match of conn_tracking_zone
- */
-#define OF_MATCH_MASK_CONN_TRACKING_ZONE_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.conn_tracking_zone, 0xff, \
-        sizeof(((_match)->masks).conn_tracking_zone))
-
-/**
- * Clear the mask for conn_tracking_zone making that field inactive for the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_ZONE_CLEAR(_match) \
-    MEMSET(&(_match)->masks.conn_tracking_zone, 0, \
-        sizeof(((_match)->masks).conn_tracking_zone))
-
-/**
- * Test whether the match is exact for conn_tracking_zone
- */
-#define OF_MATCH_MASK_CONN_TRACKING_ZONE_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_zone))
-
-/**
- * Test whether key conn_tracking_zone is being checked in the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_ZONE_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_zone))
-
-
-/* Mask/value check/set macros for bsn_in_ports_128 */
-
-/**
- * Set the mask for an exact match of bsn_in_ports_128
- */
-#define OF_MATCH_MASK_BSN_IN_PORTS_128_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_in_ports_128, 0xff, \
-        sizeof(((_match)->masks).bsn_in_ports_128))
-
-/**
- * Clear the mask for bsn_in_ports_128 making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_IN_PORTS_128_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_in_ports_128, 0, \
-        sizeof(((_match)->masks).bsn_in_ports_128))
-
-/**
- * Test whether the match is exact for bsn_in_ports_128
- */
-#define OF_MATCH_MASK_BSN_IN_PORTS_128_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_in_ports_128))
-
-/**
- * Test whether key bsn_in_ports_128 is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_IN_PORTS_128_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_in_ports_128))
+#define OF_MATCH_MASK_ARP_OP_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).arp_op))
 
 
 /* Mask/value check/set macros for arp_sha */
@@ -1760,642 +1441,33 @@ extern const char *const of_object_id_str[];
     OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).arp_sha))
 
 
-/* Mask/value check/set macros for conn_tracking_nw_dst */
+/* Mask/value check/set macros for arp_spa */
 
 /**
- * Set the mask for an exact match of conn_tracking_nw_dst
+ * Set the mask for an exact match of arp_spa
  */
-#define OF_MATCH_MASK_CONN_TRACKING_NW_DST_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.conn_tracking_nw_dst, 0xff, \
-        sizeof(((_match)->masks).conn_tracking_nw_dst))
+#define OF_MATCH_MASK_ARP_SPA_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.arp_spa, 0xff, \
+        sizeof(((_match)->masks).arp_spa))
 
 /**
- * Clear the mask for conn_tracking_nw_dst making that field inactive for the match
+ * Clear the mask for arp_spa making that field inactive for the match
  */
-#define OF_MATCH_MASK_CONN_TRACKING_NW_DST_CLEAR(_match) \
-    MEMSET(&(_match)->masks.conn_tracking_nw_dst, 0, \
-        sizeof(((_match)->masks).conn_tracking_nw_dst))
+#define OF_MATCH_MASK_ARP_SPA_CLEAR(_match) \
+    MEMSET(&(_match)->masks.arp_spa, 0, \
+        sizeof(((_match)->masks).arp_spa))
 
 /**
- * Test whether the match is exact for conn_tracking_nw_dst
+ * Test whether the match is exact for arp_spa
  */
-#define OF_MATCH_MASK_CONN_TRACKING_NW_DST_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_nw_dst))
+#define OF_MATCH_MASK_ARP_SPA_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).arp_spa))
 
 /**
- * Test whether key conn_tracking_nw_dst is being checked in the match
+ * Test whether key arp_spa is being checked in the match
  */
-#define OF_MATCH_MASK_CONN_TRACKING_NW_DST_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_nw_dst))
-
-
-/* Mask/value check/set macros for eth_src */
-
-/**
- * Set the mask for an exact match of eth_src
- */
-#define OF_MATCH_MASK_ETH_SRC_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.eth_src, 0xff, \
-        sizeof(((_match)->masks).eth_src))
-
-/**
- * Clear the mask for eth_src making that field inactive for the match
- */
-#define OF_MATCH_MASK_ETH_SRC_CLEAR(_match) \
-    MEMSET(&(_match)->masks.eth_src, 0, \
-        sizeof(((_match)->masks).eth_src))
-
-/**
- * Test whether the match is exact for eth_src
- */
-#define OF_MATCH_MASK_ETH_SRC_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).eth_src))
-
-/**
- * Test whether key eth_src is being checked in the match
- */
-#define OF_MATCH_MASK_ETH_SRC_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).eth_src))
-
-
-/* Mask/value check/set macros for icmpv6_code */
-
-/**
- * Set the mask for an exact match of icmpv6_code
- */
-#define OF_MATCH_MASK_ICMPV6_CODE_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.icmpv6_code, 0xff, \
-        sizeof(((_match)->masks).icmpv6_code))
-
-/**
- * Clear the mask for icmpv6_code making that field inactive for the match
- */
-#define OF_MATCH_MASK_ICMPV6_CODE_CLEAR(_match) \
-    MEMSET(&(_match)->masks.icmpv6_code, 0, \
-        sizeof(((_match)->masks).icmpv6_code))
-
-/**
- * Test whether the match is exact for icmpv6_code
- */
-#define OF_MATCH_MASK_ICMPV6_CODE_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).icmpv6_code))
-
-/**
- * Test whether key icmpv6_code is being checked in the match
- */
-#define OF_MATCH_MASK_ICMPV6_CODE_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).icmpv6_code))
-
-
-/* Mask/value check/set macros for conn_tracking_ipv6_src */
-
-/**
- * Set the mask for an exact match of conn_tracking_ipv6_src
- */
-#define OF_MATCH_MASK_CONN_TRACKING_IPV6_SRC_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.conn_tracking_ipv6_src, 0xff, \
-        sizeof(((_match)->masks).conn_tracking_ipv6_src))
-
-/**
- * Clear the mask for conn_tracking_ipv6_src making that field inactive for the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_IPV6_SRC_CLEAR(_match) \
-    MEMSET(&(_match)->masks.conn_tracking_ipv6_src, 0, \
-        sizeof(((_match)->masks).conn_tracking_ipv6_src))
-
-/**
- * Test whether the match is exact for conn_tracking_ipv6_src
- */
-#define OF_MATCH_MASK_CONN_TRACKING_IPV6_SRC_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_ipv6_src))
-
-/**
- * Test whether key conn_tracking_ipv6_src is being checked in the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_IPV6_SRC_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_ipv6_src))
-
-
-/* Mask/value check/set macros for bsn_in_ports_512 */
-
-/**
- * Set the mask for an exact match of bsn_in_ports_512
- */
-#define OF_MATCH_MASK_BSN_IN_PORTS_512_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_in_ports_512, 0xff, \
-        sizeof(((_match)->masks).bsn_in_ports_512))
-
-/**
- * Clear the mask for bsn_in_ports_512 making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_IN_PORTS_512_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_in_ports_512, 0, \
-        sizeof(((_match)->masks).bsn_in_ports_512))
-
-/**
- * Test whether the match is exact for bsn_in_ports_512
- */
-#define OF_MATCH_MASK_BSN_IN_PORTS_512_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_in_ports_512))
-
-/**
- * Test whether key bsn_in_ports_512 is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_IN_PORTS_512_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_in_ports_512))
-
-
-/* Mask/value check/set macros for mpls_bos */
-
-/**
- * Set the mask for an exact match of mpls_bos
- */
-#define OF_MATCH_MASK_MPLS_BOS_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.mpls_bos, 0xff, \
-        sizeof(((_match)->masks).mpls_bos))
-
-/**
- * Clear the mask for mpls_bos making that field inactive for the match
- */
-#define OF_MATCH_MASK_MPLS_BOS_CLEAR(_match) \
-    MEMSET(&(_match)->masks.mpls_bos, 0, \
-        sizeof(((_match)->masks).mpls_bos))
-
-/**
- * Test whether the match is exact for mpls_bos
- */
-#define OF_MATCH_MASK_MPLS_BOS_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).mpls_bos))
-
-/**
- * Test whether key mpls_bos is being checked in the match
- */
-#define OF_MATCH_MASK_MPLS_BOS_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).mpls_bos))
-
-
-/* Mask/value check/set macros for conn_tracking_mark */
-
-/**
- * Set the mask for an exact match of conn_tracking_mark
- */
-#define OF_MATCH_MASK_CONN_TRACKING_MARK_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.conn_tracking_mark, 0xff, \
-        sizeof(((_match)->masks).conn_tracking_mark))
-
-/**
- * Clear the mask for conn_tracking_mark making that field inactive for the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_MARK_CLEAR(_match) \
-    MEMSET(&(_match)->masks.conn_tracking_mark, 0, \
-        sizeof(((_match)->masks).conn_tracking_mark))
-
-/**
- * Test whether the match is exact for conn_tracking_mark
- */
-#define OF_MATCH_MASK_CONN_TRACKING_MARK_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_mark))
-
-/**
- * Test whether key conn_tracking_mark is being checked in the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_MARK_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_mark))
-
-
-/* Mask/value check/set macros for eth_dst */
-
-/**
- * Set the mask for an exact match of eth_dst
- */
-#define OF_MATCH_MASK_ETH_DST_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.eth_dst, 0xff, \
-        sizeof(((_match)->masks).eth_dst))
-
-/**
- * Clear the mask for eth_dst making that field inactive for the match
- */
-#define OF_MATCH_MASK_ETH_DST_CLEAR(_match) \
-    MEMSET(&(_match)->masks.eth_dst, 0, \
-        sizeof(((_match)->masks).eth_dst))
-
-/**
- * Test whether the match is exact for eth_dst
- */
-#define OF_MATCH_MASK_ETH_DST_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).eth_dst))
-
-/**
- * Test whether key eth_dst is being checked in the match
- */
-#define OF_MATCH_MASK_ETH_DST_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).eth_dst))
-
-
-/* Mask/value check/set macros for udp_src */
-
-/**
- * Set the mask for an exact match of udp_src
- */
-#define OF_MATCH_MASK_UDP_SRC_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.udp_src, 0xff, \
-        sizeof(((_match)->masks).udp_src))
-
-/**
- * Clear the mask for udp_src making that field inactive for the match
- */
-#define OF_MATCH_MASK_UDP_SRC_CLEAR(_match) \
-    MEMSET(&(_match)->masks.udp_src, 0, \
-        sizeof(((_match)->masks).udp_src))
-
-/**
- * Test whether the match is exact for udp_src
- */
-#define OF_MATCH_MASK_UDP_SRC_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).udp_src))
-
-/**
- * Test whether key udp_src is being checked in the match
- */
-#define OF_MATCH_MASK_UDP_SRC_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).udp_src))
-
-
-/* Mask/value check/set macros for udp_dst */
-
-/**
- * Set the mask for an exact match of udp_dst
- */
-#define OF_MATCH_MASK_UDP_DST_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.udp_dst, 0xff, \
-        sizeof(((_match)->masks).udp_dst))
-
-/**
- * Clear the mask for udp_dst making that field inactive for the match
- */
-#define OF_MATCH_MASK_UDP_DST_CLEAR(_match) \
-    MEMSET(&(_match)->masks.udp_dst, 0, \
-        sizeof(((_match)->masks).udp_dst))
-
-/**
- * Test whether the match is exact for udp_dst
- */
-#define OF_MATCH_MASK_UDP_DST_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).udp_dst))
-
-/**
- * Test whether key udp_dst is being checked in the match
- */
-#define OF_MATCH_MASK_UDP_DST_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).udp_dst))
-
-
-/* Mask/value check/set macros for conn_tracking_nw_proto */
-
-/**
- * Set the mask for an exact match of conn_tracking_nw_proto
- */
-#define OF_MATCH_MASK_CONN_TRACKING_NW_PROTO_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.conn_tracking_nw_proto, 0xff, \
-        sizeof(((_match)->masks).conn_tracking_nw_proto))
-
-/**
- * Clear the mask for conn_tracking_nw_proto making that field inactive for the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_NW_PROTO_CLEAR(_match) \
-    MEMSET(&(_match)->masks.conn_tracking_nw_proto, 0, \
-        sizeof(((_match)->masks).conn_tracking_nw_proto))
-
-/**
- * Test whether the match is exact for conn_tracking_nw_proto
- */
-#define OF_MATCH_MASK_CONN_TRACKING_NW_PROTO_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_nw_proto))
-
-/**
- * Test whether key conn_tracking_nw_proto is being checked in the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_NW_PROTO_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_nw_proto))
-
-
-/* Mask/value check/set macros for bsn_udf0 */
-
-/**
- * Set the mask for an exact match of bsn_udf0
- */
-#define OF_MATCH_MASK_BSN_UDF0_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_udf0, 0xff, \
-        sizeof(((_match)->masks).bsn_udf0))
-
-/**
- * Clear the mask for bsn_udf0 making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_UDF0_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_udf0, 0, \
-        sizeof(((_match)->masks).bsn_udf0))
-
-/**
- * Test whether the match is exact for bsn_udf0
- */
-#define OF_MATCH_MASK_BSN_UDF0_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf0))
-
-/**
- * Test whether key bsn_udf0 is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_UDF0_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf0))
-
-
-/* Mask/value check/set macros for ip_proto */
-
-/**
- * Set the mask for an exact match of ip_proto
- */
-#define OF_MATCH_MASK_IP_PROTO_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.ip_proto, 0xff, \
-        sizeof(((_match)->masks).ip_proto))
-
-/**
- * Clear the mask for ip_proto making that field inactive for the match
- */
-#define OF_MATCH_MASK_IP_PROTO_CLEAR(_match) \
-    MEMSET(&(_match)->masks.ip_proto, 0, \
-        sizeof(((_match)->masks).ip_proto))
-
-/**
- * Test whether the match is exact for ip_proto
- */
-#define OF_MATCH_MASK_IP_PROTO_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ip_proto))
-
-/**
- * Test whether key ip_proto is being checked in the match
- */
-#define OF_MATCH_MASK_IP_PROTO_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ip_proto))
-
-
-/* Mask/value check/set macros for bsn_ingress_port_group_id */
-
-/**
- * Set the mask for an exact match of bsn_ingress_port_group_id
- */
-#define OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_ingress_port_group_id, 0xff, \
-        sizeof(((_match)->masks).bsn_ingress_port_group_id))
-
-/**
- * Clear the mask for bsn_ingress_port_group_id making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_ingress_port_group_id, 0, \
-        sizeof(((_match)->masks).bsn_ingress_port_group_id))
-
-/**
- * Test whether the match is exact for bsn_ingress_port_group_id
- */
-#define OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_ingress_port_group_id))
-
-/**
- * Test whether key bsn_ingress_port_group_id is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_ingress_port_group_id))
-
-
-/* Mask/value check/set macros for ipv6_nd_tll */
-
-/**
- * Set the mask for an exact match of ipv6_nd_tll
- */
-#define OF_MATCH_MASK_IPV6_ND_TLL_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.ipv6_nd_tll, 0xff, \
-        sizeof(((_match)->masks).ipv6_nd_tll))
-
-/**
- * Clear the mask for ipv6_nd_tll making that field inactive for the match
- */
-#define OF_MATCH_MASK_IPV6_ND_TLL_CLEAR(_match) \
-    MEMSET(&(_match)->masks.ipv6_nd_tll, 0, \
-        sizeof(((_match)->masks).ipv6_nd_tll))
-
-/**
- * Test whether the match is exact for ipv6_nd_tll
- */
-#define OF_MATCH_MASK_IPV6_ND_TLL_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv6_nd_tll))
-
-/**
- * Test whether key ipv6_nd_tll is being checked in the match
- */
-#define OF_MATCH_MASK_IPV6_ND_TLL_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv6_nd_tll))
-
-
-/* Mask/value check/set macros for conn_tracking_tp_dst */
-
-/**
- * Set the mask for an exact match of conn_tracking_tp_dst
- */
-#define OF_MATCH_MASK_CONN_TRACKING_TP_DST_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.conn_tracking_tp_dst, 0xff, \
-        sizeof(((_match)->masks).conn_tracking_tp_dst))
-
-/**
- * Clear the mask for conn_tracking_tp_dst making that field inactive for the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_TP_DST_CLEAR(_match) \
-    MEMSET(&(_match)->masks.conn_tracking_tp_dst, 0, \
-        sizeof(((_match)->masks).conn_tracking_tp_dst))
-
-/**
- * Test whether the match is exact for conn_tracking_tp_dst
- */
-#define OF_MATCH_MASK_CONN_TRACKING_TP_DST_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_tp_dst))
-
-/**
- * Test whether key conn_tracking_tp_dst is being checked in the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_TP_DST_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_tp_dst))
-
-
-/* Mask/value check/set macros for sctp_src */
-
-/**
- * Set the mask for an exact match of sctp_src
- */
-#define OF_MATCH_MASK_SCTP_SRC_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.sctp_src, 0xff, \
-        sizeof(((_match)->masks).sctp_src))
-
-/**
- * Clear the mask for sctp_src making that field inactive for the match
- */
-#define OF_MATCH_MASK_SCTP_SRC_CLEAR(_match) \
-    MEMSET(&(_match)->masks.sctp_src, 0, \
-        sizeof(((_match)->masks).sctp_src))
-
-/**
- * Test whether the match is exact for sctp_src
- */
-#define OF_MATCH_MASK_SCTP_SRC_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).sctp_src))
-
-/**
- * Test whether key sctp_src is being checked in the match
- */
-#define OF_MATCH_MASK_SCTP_SRC_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).sctp_src))
-
-
-/* Mask/value check/set macros for bsn_egr_port_group_id */
-
-/**
- * Set the mask for an exact match of bsn_egr_port_group_id
- */
-#define OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_egr_port_group_id, 0xff, \
-        sizeof(((_match)->masks).bsn_egr_port_group_id))
-
-/**
- * Clear the mask for bsn_egr_port_group_id making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_egr_port_group_id, 0, \
-        sizeof(((_match)->masks).bsn_egr_port_group_id))
-
-/**
- * Test whether the match is exact for bsn_egr_port_group_id
- */
-#define OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_egr_port_group_id))
-
-/**
- * Test whether key bsn_egr_port_group_id is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_egr_port_group_id))
-
-
-/* Mask/value check/set macros for icmpv4_type */
-
-/**
- * Set the mask for an exact match of icmpv4_type
- */
-#define OF_MATCH_MASK_ICMPV4_TYPE_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.icmpv4_type, 0xff, \
-        sizeof(((_match)->masks).icmpv4_type))
-
-/**
- * Clear the mask for icmpv4_type making that field inactive for the match
- */
-#define OF_MATCH_MASK_ICMPV4_TYPE_CLEAR(_match) \
-    MEMSET(&(_match)->masks.icmpv4_type, 0, \
-        sizeof(((_match)->masks).icmpv4_type))
-
-/**
- * Test whether the match is exact for icmpv4_type
- */
-#define OF_MATCH_MASK_ICMPV4_TYPE_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).icmpv4_type))
-
-/**
- * Test whether key icmpv4_type is being checked in the match
- */
-#define OF_MATCH_MASK_ICMPV4_TYPE_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).icmpv4_type))
-
-
-/* Mask/value check/set macros for eth_type */
-
-/**
- * Set the mask for an exact match of eth_type
- */
-#define OF_MATCH_MASK_ETH_TYPE_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.eth_type, 0xff, \
-        sizeof(((_match)->masks).eth_type))
-
-/**
- * Clear the mask for eth_type making that field inactive for the match
- */
-#define OF_MATCH_MASK_ETH_TYPE_CLEAR(_match) \
-    MEMSET(&(_match)->masks.eth_type, 0, \
-        sizeof(((_match)->masks).eth_type))
-
-/**
- * Test whether the match is exact for eth_type
- */
-#define OF_MATCH_MASK_ETH_TYPE_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).eth_type))
-
-/**
- * Test whether key eth_type is being checked in the match
- */
-#define OF_MATCH_MASK_ETH_TYPE_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).eth_type))
-
-
-/* Mask/value check/set macros for arp_op */
-
-/**
- * Set the mask for an exact match of arp_op
- */
-#define OF_MATCH_MASK_ARP_OP_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.arp_op, 0xff, \
-        sizeof(((_match)->masks).arp_op))
-
-/**
- * Clear the mask for arp_op making that field inactive for the match
- */
-#define OF_MATCH_MASK_ARP_OP_CLEAR(_match) \
-    MEMSET(&(_match)->masks.arp_op, 0, \
-        sizeof(((_match)->masks).arp_op))
-
-/**
- * Test whether the match is exact for arp_op
- */
-#define OF_MATCH_MASK_ARP_OP_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).arp_op))
-
-/**
- * Test whether key arp_op is being checked in the match
- */
-#define OF_MATCH_MASK_ARP_OP_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).arp_op))
-
-
-/* Mask/value check/set macros for mpls_label */
-
-/**
- * Set the mask for an exact match of mpls_label
- */
-#define OF_MATCH_MASK_MPLS_LABEL_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.mpls_label, 0xff, \
-        sizeof(((_match)->masks).mpls_label))
-
-/**
- * Clear the mask for mpls_label making that field inactive for the match
- */
-#define OF_MATCH_MASK_MPLS_LABEL_CLEAR(_match) \
-    MEMSET(&(_match)->masks.mpls_label, 0, \
-        sizeof(((_match)->masks).mpls_label))
-
-/**
- * Test whether the match is exact for mpls_label
- */
-#define OF_MATCH_MASK_MPLS_LABEL_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).mpls_label))
-
-/**
- * Test whether key mpls_label is being checked in the match
- */
-#define OF_MATCH_MASK_MPLS_LABEL_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).mpls_label))
+#define OF_MATCH_MASK_ARP_SPA_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).arp_spa))
 
 
 /* Mask/value check/set macros for arp_tha */
@@ -2427,33 +1499,265 @@ extern const char *const of_object_id_str[];
     OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).arp_tha))
 
 
-/* Mask/value check/set macros for in_port */
+/* Mask/value check/set macros for arp_tpa */
 
 /**
- * Set the mask for an exact match of in_port
+ * Set the mask for an exact match of arp_tpa
  */
-#define OF_MATCH_MASK_IN_PORT_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.in_port, 0xff, \
-        sizeof(((_match)->masks).in_port))
+#define OF_MATCH_MASK_ARP_TPA_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.arp_tpa, 0xff, \
+        sizeof(((_match)->masks).arp_tpa))
 
 /**
- * Clear the mask for in_port making that field inactive for the match
+ * Clear the mask for arp_tpa making that field inactive for the match
  */
-#define OF_MATCH_MASK_IN_PORT_CLEAR(_match) \
-    MEMSET(&(_match)->masks.in_port, 0, \
-        sizeof(((_match)->masks).in_port))
+#define OF_MATCH_MASK_ARP_TPA_CLEAR(_match) \
+    MEMSET(&(_match)->masks.arp_tpa, 0, \
+        sizeof(((_match)->masks).arp_tpa))
 
 /**
- * Test whether the match is exact for in_port
+ * Test whether the match is exact for arp_tpa
  */
-#define OF_MATCH_MASK_IN_PORT_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).in_port))
+#define OF_MATCH_MASK_ARP_TPA_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).arp_tpa))
 
 /**
- * Test whether key in_port is being checked in the match
+ * Test whether key arp_tpa is being checked in the match
  */
-#define OF_MATCH_MASK_IN_PORT_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).in_port))
+#define OF_MATCH_MASK_ARP_TPA_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).arp_tpa))
+
+
+/* Mask/value check/set macros for bsn_egr_port_group_id */
+
+/**
+ * Set the mask for an exact match of bsn_egr_port_group_id
+ */
+#define OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_egr_port_group_id, 0xff, \
+        sizeof(((_match)->masks).bsn_egr_port_group_id))
+
+/**
+ * Clear the mask for bsn_egr_port_group_id making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_egr_port_group_id, 0, \
+        sizeof(((_match)->masks).bsn_egr_port_group_id))
+
+/**
+ * Test whether the match is exact for bsn_egr_port_group_id
+ */
+#define OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_egr_port_group_id))
+
+/**
+ * Test whether key bsn_egr_port_group_id is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_egr_port_group_id))
+
+
+/* Mask/value check/set macros for bsn_global_vrf_allowed */
+
+/**
+ * Set the mask for an exact match of bsn_global_vrf_allowed
+ */
+#define OF_MATCH_MASK_BSN_GLOBAL_VRF_ALLOWED_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_global_vrf_allowed, 0xff, \
+        sizeof(((_match)->masks).bsn_global_vrf_allowed))
+
+/**
+ * Clear the mask for bsn_global_vrf_allowed making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_GLOBAL_VRF_ALLOWED_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_global_vrf_allowed, 0, \
+        sizeof(((_match)->masks).bsn_global_vrf_allowed))
+
+/**
+ * Test whether the match is exact for bsn_global_vrf_allowed
+ */
+#define OF_MATCH_MASK_BSN_GLOBAL_VRF_ALLOWED_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_global_vrf_allowed))
+
+/**
+ * Test whether key bsn_global_vrf_allowed is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_GLOBAL_VRF_ALLOWED_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_global_vrf_allowed))
+
+
+/* Mask/value check/set macros for bsn_in_ports_128 */
+
+/**
+ * Set the mask for an exact match of bsn_in_ports_128
+ */
+#define OF_MATCH_MASK_BSN_IN_PORTS_128_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_in_ports_128, 0xff, \
+        sizeof(((_match)->masks).bsn_in_ports_128))
+
+/**
+ * Clear the mask for bsn_in_ports_128 making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_IN_PORTS_128_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_in_ports_128, 0, \
+        sizeof(((_match)->masks).bsn_in_ports_128))
+
+/**
+ * Test whether the match is exact for bsn_in_ports_128
+ */
+#define OF_MATCH_MASK_BSN_IN_PORTS_128_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_in_ports_128))
+
+/**
+ * Test whether key bsn_in_ports_128 is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_IN_PORTS_128_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_in_ports_128))
+
+
+/* Mask/value check/set macros for bsn_in_ports_512 */
+
+/**
+ * Set the mask for an exact match of bsn_in_ports_512
+ */
+#define OF_MATCH_MASK_BSN_IN_PORTS_512_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_in_ports_512, 0xff, \
+        sizeof(((_match)->masks).bsn_in_ports_512))
+
+/**
+ * Clear the mask for bsn_in_ports_512 making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_IN_PORTS_512_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_in_ports_512, 0, \
+        sizeof(((_match)->masks).bsn_in_ports_512))
+
+/**
+ * Test whether the match is exact for bsn_in_ports_512
+ */
+#define OF_MATCH_MASK_BSN_IN_PORTS_512_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_in_ports_512))
+
+/**
+ * Test whether key bsn_in_ports_512 is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_IN_PORTS_512_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_in_ports_512))
+
+
+/* Mask/value check/set macros for bsn_ingress_port_group_id */
+
+/**
+ * Set the mask for an exact match of bsn_ingress_port_group_id
+ */
+#define OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_ingress_port_group_id, 0xff, \
+        sizeof(((_match)->masks).bsn_ingress_port_group_id))
+
+/**
+ * Clear the mask for bsn_ingress_port_group_id making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_ingress_port_group_id, 0, \
+        sizeof(((_match)->masks).bsn_ingress_port_group_id))
+
+/**
+ * Test whether the match is exact for bsn_ingress_port_group_id
+ */
+#define OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_ingress_port_group_id))
+
+/**
+ * Test whether key bsn_ingress_port_group_id is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_ingress_port_group_id))
+
+
+/* Mask/value check/set macros for bsn_ip_fragmentation */
+
+/**
+ * Set the mask for an exact match of bsn_ip_fragmentation
+ */
+#define OF_MATCH_MASK_BSN_IP_FRAGMENTATION_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_ip_fragmentation, 0xff, \
+        sizeof(((_match)->masks).bsn_ip_fragmentation))
+
+/**
+ * Clear the mask for bsn_ip_fragmentation making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_IP_FRAGMENTATION_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_ip_fragmentation, 0, \
+        sizeof(((_match)->masks).bsn_ip_fragmentation))
+
+/**
+ * Test whether the match is exact for bsn_ip_fragmentation
+ */
+#define OF_MATCH_MASK_BSN_IP_FRAGMENTATION_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_ip_fragmentation))
+
+/**
+ * Test whether key bsn_ip_fragmentation is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_IP_FRAGMENTATION_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_ip_fragmentation))
+
+
+/* Mask/value check/set macros for bsn_l2_cache_hit */
+
+/**
+ * Set the mask for an exact match of bsn_l2_cache_hit
+ */
+#define OF_MATCH_MASK_BSN_L2_CACHE_HIT_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_l2_cache_hit, 0xff, \
+        sizeof(((_match)->masks).bsn_l2_cache_hit))
+
+/**
+ * Clear the mask for bsn_l2_cache_hit making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_L2_CACHE_HIT_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_l2_cache_hit, 0, \
+        sizeof(((_match)->masks).bsn_l2_cache_hit))
+
+/**
+ * Test whether the match is exact for bsn_l2_cache_hit
+ */
+#define OF_MATCH_MASK_BSN_L2_CACHE_HIT_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_l2_cache_hit))
+
+/**
+ * Test whether key bsn_l2_cache_hit is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_L2_CACHE_HIT_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_l2_cache_hit))
+
+
+/* Mask/value check/set macros for bsn_l3_dst_class_id */
+
+/**
+ * Set the mask for an exact match of bsn_l3_dst_class_id
+ */
+#define OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_l3_dst_class_id, 0xff, \
+        sizeof(((_match)->masks).bsn_l3_dst_class_id))
+
+/**
+ * Clear the mask for bsn_l3_dst_class_id making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_l3_dst_class_id, 0, \
+        sizeof(((_match)->masks).bsn_l3_dst_class_id))
+
+/**
+ * Test whether the match is exact for bsn_l3_dst_class_id
+ */
+#define OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_l3_dst_class_id))
+
+/**
+ * Test whether key bsn_l3_dst_class_id is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_l3_dst_class_id))
 
 
 /* Mask/value check/set macros for bsn_l3_interface_class_id */
@@ -2485,6 +1789,1108 @@ extern const char *const of_object_id_str[];
     OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_l3_interface_class_id))
 
 
+/* Mask/value check/set macros for bsn_l3_src_class_id */
+
+/**
+ * Set the mask for an exact match of bsn_l3_src_class_id
+ */
+#define OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_l3_src_class_id, 0xff, \
+        sizeof(((_match)->masks).bsn_l3_src_class_id))
+
+/**
+ * Clear the mask for bsn_l3_src_class_id making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_l3_src_class_id, 0, \
+        sizeof(((_match)->masks).bsn_l3_src_class_id))
+
+/**
+ * Test whether the match is exact for bsn_l3_src_class_id
+ */
+#define OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_l3_src_class_id))
+
+/**
+ * Test whether key bsn_l3_src_class_id is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_l3_src_class_id))
+
+
+/* Mask/value check/set macros for bsn_lag_id */
+
+/**
+ * Set the mask for an exact match of bsn_lag_id
+ */
+#define OF_MATCH_MASK_BSN_LAG_ID_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_lag_id, 0xff, \
+        sizeof(((_match)->masks).bsn_lag_id))
+
+/**
+ * Clear the mask for bsn_lag_id making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_LAG_ID_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_lag_id, 0, \
+        sizeof(((_match)->masks).bsn_lag_id))
+
+/**
+ * Test whether the match is exact for bsn_lag_id
+ */
+#define OF_MATCH_MASK_BSN_LAG_ID_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_lag_id))
+
+/**
+ * Test whether key bsn_lag_id is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_LAG_ID_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_lag_id))
+
+
+/* Mask/value check/set macros for bsn_tcp_flags */
+
+/**
+ * Set the mask for an exact match of bsn_tcp_flags
+ */
+#define OF_MATCH_MASK_BSN_TCP_FLAGS_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_tcp_flags, 0xff, \
+        sizeof(((_match)->masks).bsn_tcp_flags))
+
+/**
+ * Clear the mask for bsn_tcp_flags making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_TCP_FLAGS_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_tcp_flags, 0, \
+        sizeof(((_match)->masks).bsn_tcp_flags))
+
+/**
+ * Test whether the match is exact for bsn_tcp_flags
+ */
+#define OF_MATCH_MASK_BSN_TCP_FLAGS_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_tcp_flags))
+
+/**
+ * Test whether key bsn_tcp_flags is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_TCP_FLAGS_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_tcp_flags))
+
+
+/* Mask/value check/set macros for bsn_udf0 */
+
+/**
+ * Set the mask for an exact match of bsn_udf0
+ */
+#define OF_MATCH_MASK_BSN_UDF0_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_udf0, 0xff, \
+        sizeof(((_match)->masks).bsn_udf0))
+
+/**
+ * Clear the mask for bsn_udf0 making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_UDF0_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_udf0, 0, \
+        sizeof(((_match)->masks).bsn_udf0))
+
+/**
+ * Test whether the match is exact for bsn_udf0
+ */
+#define OF_MATCH_MASK_BSN_UDF0_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf0))
+
+/**
+ * Test whether key bsn_udf0 is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_UDF0_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf0))
+
+
+/* Mask/value check/set macros for bsn_udf1 */
+
+/**
+ * Set the mask for an exact match of bsn_udf1
+ */
+#define OF_MATCH_MASK_BSN_UDF1_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_udf1, 0xff, \
+        sizeof(((_match)->masks).bsn_udf1))
+
+/**
+ * Clear the mask for bsn_udf1 making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_UDF1_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_udf1, 0, \
+        sizeof(((_match)->masks).bsn_udf1))
+
+/**
+ * Test whether the match is exact for bsn_udf1
+ */
+#define OF_MATCH_MASK_BSN_UDF1_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf1))
+
+/**
+ * Test whether key bsn_udf1 is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_UDF1_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf1))
+
+
+/* Mask/value check/set macros for bsn_udf2 */
+
+/**
+ * Set the mask for an exact match of bsn_udf2
+ */
+#define OF_MATCH_MASK_BSN_UDF2_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_udf2, 0xff, \
+        sizeof(((_match)->masks).bsn_udf2))
+
+/**
+ * Clear the mask for bsn_udf2 making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_UDF2_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_udf2, 0, \
+        sizeof(((_match)->masks).bsn_udf2))
+
+/**
+ * Test whether the match is exact for bsn_udf2
+ */
+#define OF_MATCH_MASK_BSN_UDF2_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf2))
+
+/**
+ * Test whether key bsn_udf2 is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_UDF2_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf2))
+
+
+/* Mask/value check/set macros for bsn_udf3 */
+
+/**
+ * Set the mask for an exact match of bsn_udf3
+ */
+#define OF_MATCH_MASK_BSN_UDF3_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_udf3, 0xff, \
+        sizeof(((_match)->masks).bsn_udf3))
+
+/**
+ * Clear the mask for bsn_udf3 making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_UDF3_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_udf3, 0, \
+        sizeof(((_match)->masks).bsn_udf3))
+
+/**
+ * Test whether the match is exact for bsn_udf3
+ */
+#define OF_MATCH_MASK_BSN_UDF3_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf3))
+
+/**
+ * Test whether key bsn_udf3 is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_UDF3_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf3))
+
+
+/* Mask/value check/set macros for bsn_udf4 */
+
+/**
+ * Set the mask for an exact match of bsn_udf4
+ */
+#define OF_MATCH_MASK_BSN_UDF4_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_udf4, 0xff, \
+        sizeof(((_match)->masks).bsn_udf4))
+
+/**
+ * Clear the mask for bsn_udf4 making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_UDF4_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_udf4, 0, \
+        sizeof(((_match)->masks).bsn_udf4))
+
+/**
+ * Test whether the match is exact for bsn_udf4
+ */
+#define OF_MATCH_MASK_BSN_UDF4_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf4))
+
+/**
+ * Test whether key bsn_udf4 is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_UDF4_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf4))
+
+
+/* Mask/value check/set macros for bsn_udf5 */
+
+/**
+ * Set the mask for an exact match of bsn_udf5
+ */
+#define OF_MATCH_MASK_BSN_UDF5_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_udf5, 0xff, \
+        sizeof(((_match)->masks).bsn_udf5))
+
+/**
+ * Clear the mask for bsn_udf5 making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_UDF5_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_udf5, 0, \
+        sizeof(((_match)->masks).bsn_udf5))
+
+/**
+ * Test whether the match is exact for bsn_udf5
+ */
+#define OF_MATCH_MASK_BSN_UDF5_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf5))
+
+/**
+ * Test whether key bsn_udf5 is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_UDF5_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf5))
+
+
+/* Mask/value check/set macros for bsn_udf6 */
+
+/**
+ * Set the mask for an exact match of bsn_udf6
+ */
+#define OF_MATCH_MASK_BSN_UDF6_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_udf6, 0xff, \
+        sizeof(((_match)->masks).bsn_udf6))
+
+/**
+ * Clear the mask for bsn_udf6 making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_UDF6_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_udf6, 0, \
+        sizeof(((_match)->masks).bsn_udf6))
+
+/**
+ * Test whether the match is exact for bsn_udf6
+ */
+#define OF_MATCH_MASK_BSN_UDF6_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf6))
+
+/**
+ * Test whether key bsn_udf6 is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_UDF6_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf6))
+
+
+/* Mask/value check/set macros for bsn_udf7 */
+
+/**
+ * Set the mask for an exact match of bsn_udf7
+ */
+#define OF_MATCH_MASK_BSN_UDF7_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_udf7, 0xff, \
+        sizeof(((_match)->masks).bsn_udf7))
+
+/**
+ * Clear the mask for bsn_udf7 making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_UDF7_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_udf7, 0, \
+        sizeof(((_match)->masks).bsn_udf7))
+
+/**
+ * Test whether the match is exact for bsn_udf7
+ */
+#define OF_MATCH_MASK_BSN_UDF7_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf7))
+
+/**
+ * Test whether key bsn_udf7 is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_UDF7_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf7))
+
+
+/* Mask/value check/set macros for bsn_vlan_xlate_port_group_id */
+
+/**
+ * Set the mask for an exact match of bsn_vlan_xlate_port_group_id
+ */
+#define OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_vlan_xlate_port_group_id, 0xff, \
+        sizeof(((_match)->masks).bsn_vlan_xlate_port_group_id))
+
+/**
+ * Clear the mask for bsn_vlan_xlate_port_group_id making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_vlan_xlate_port_group_id, 0, \
+        sizeof(((_match)->masks).bsn_vlan_xlate_port_group_id))
+
+/**
+ * Test whether the match is exact for bsn_vlan_xlate_port_group_id
+ */
+#define OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_vlan_xlate_port_group_id))
+
+/**
+ * Test whether key bsn_vlan_xlate_port_group_id is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_vlan_xlate_port_group_id))
+
+
+/* Mask/value check/set macros for bsn_vrf */
+
+/**
+ * Set the mask for an exact match of bsn_vrf
+ */
+#define OF_MATCH_MASK_BSN_VRF_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_vrf, 0xff, \
+        sizeof(((_match)->masks).bsn_vrf))
+
+/**
+ * Clear the mask for bsn_vrf making that field inactive for the match
+ */
+#define OF_MATCH_MASK_BSN_VRF_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_vrf, 0, \
+        sizeof(((_match)->masks).bsn_vrf))
+
+/**
+ * Test whether the match is exact for bsn_vrf
+ */
+#define OF_MATCH_MASK_BSN_VRF_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_vrf))
+
+/**
+ * Test whether key bsn_vrf is being checked in the match
+ */
+#define OF_MATCH_MASK_BSN_VRF_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_vrf))
+
+
+/* Mask/value check/set macros for conn_tracking_ipv6_dst */
+
+/**
+ * Set the mask for an exact match of conn_tracking_ipv6_dst
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_IPV6_DST_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.conn_tracking_ipv6_dst, 0xff, \
+        sizeof(((_match)->masks).conn_tracking_ipv6_dst))
+
+/**
+ * Clear the mask for conn_tracking_ipv6_dst making that field inactive for the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_IPV6_DST_CLEAR(_match) \
+    MEMSET(&(_match)->masks.conn_tracking_ipv6_dst, 0, \
+        sizeof(((_match)->masks).conn_tracking_ipv6_dst))
+
+/**
+ * Test whether the match is exact for conn_tracking_ipv6_dst
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_IPV6_DST_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_ipv6_dst))
+
+/**
+ * Test whether key conn_tracking_ipv6_dst is being checked in the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_IPV6_DST_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_ipv6_dst))
+
+
+/* Mask/value check/set macros for conn_tracking_ipv6_src */
+
+/**
+ * Set the mask for an exact match of conn_tracking_ipv6_src
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_IPV6_SRC_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.conn_tracking_ipv6_src, 0xff, \
+        sizeof(((_match)->masks).conn_tracking_ipv6_src))
+
+/**
+ * Clear the mask for conn_tracking_ipv6_src making that field inactive for the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_IPV6_SRC_CLEAR(_match) \
+    MEMSET(&(_match)->masks.conn_tracking_ipv6_src, 0, \
+        sizeof(((_match)->masks).conn_tracking_ipv6_src))
+
+/**
+ * Test whether the match is exact for conn_tracking_ipv6_src
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_IPV6_SRC_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_ipv6_src))
+
+/**
+ * Test whether key conn_tracking_ipv6_src is being checked in the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_IPV6_SRC_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_ipv6_src))
+
+
+/* Mask/value check/set macros for conn_tracking_label */
+
+/**
+ * Set the mask for an exact match of conn_tracking_label
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_LABEL_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.conn_tracking_label, 0xff, \
+        sizeof(((_match)->masks).conn_tracking_label))
+
+/**
+ * Clear the mask for conn_tracking_label making that field inactive for the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_LABEL_CLEAR(_match) \
+    MEMSET(&(_match)->masks.conn_tracking_label, 0, \
+        sizeof(((_match)->masks).conn_tracking_label))
+
+/**
+ * Test whether the match is exact for conn_tracking_label
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_LABEL_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_label))
+
+/**
+ * Test whether key conn_tracking_label is being checked in the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_LABEL_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_label))
+
+
+/* Mask/value check/set macros for conn_tracking_mark */
+
+/**
+ * Set the mask for an exact match of conn_tracking_mark
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_MARK_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.conn_tracking_mark, 0xff, \
+        sizeof(((_match)->masks).conn_tracking_mark))
+
+/**
+ * Clear the mask for conn_tracking_mark making that field inactive for the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_MARK_CLEAR(_match) \
+    MEMSET(&(_match)->masks.conn_tracking_mark, 0, \
+        sizeof(((_match)->masks).conn_tracking_mark))
+
+/**
+ * Test whether the match is exact for conn_tracking_mark
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_MARK_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_mark))
+
+/**
+ * Test whether key conn_tracking_mark is being checked in the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_MARK_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_mark))
+
+
+/* Mask/value check/set macros for conn_tracking_nw_dst */
+
+/**
+ * Set the mask for an exact match of conn_tracking_nw_dst
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_NW_DST_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.conn_tracking_nw_dst, 0xff, \
+        sizeof(((_match)->masks).conn_tracking_nw_dst))
+
+/**
+ * Clear the mask for conn_tracking_nw_dst making that field inactive for the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_NW_DST_CLEAR(_match) \
+    MEMSET(&(_match)->masks.conn_tracking_nw_dst, 0, \
+        sizeof(((_match)->masks).conn_tracking_nw_dst))
+
+/**
+ * Test whether the match is exact for conn_tracking_nw_dst
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_NW_DST_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_nw_dst))
+
+/**
+ * Test whether key conn_tracking_nw_dst is being checked in the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_NW_DST_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_nw_dst))
+
+
+/* Mask/value check/set macros for conn_tracking_nw_proto */
+
+/**
+ * Set the mask for an exact match of conn_tracking_nw_proto
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_NW_PROTO_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.conn_tracking_nw_proto, 0xff, \
+        sizeof(((_match)->masks).conn_tracking_nw_proto))
+
+/**
+ * Clear the mask for conn_tracking_nw_proto making that field inactive for the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_NW_PROTO_CLEAR(_match) \
+    MEMSET(&(_match)->masks.conn_tracking_nw_proto, 0, \
+        sizeof(((_match)->masks).conn_tracking_nw_proto))
+
+/**
+ * Test whether the match is exact for conn_tracking_nw_proto
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_NW_PROTO_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_nw_proto))
+
+/**
+ * Test whether key conn_tracking_nw_proto is being checked in the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_NW_PROTO_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_nw_proto))
+
+
+/* Mask/value check/set macros for conn_tracking_nw_src */
+
+/**
+ * Set the mask for an exact match of conn_tracking_nw_src
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_NW_SRC_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.conn_tracking_nw_src, 0xff, \
+        sizeof(((_match)->masks).conn_tracking_nw_src))
+
+/**
+ * Clear the mask for conn_tracking_nw_src making that field inactive for the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_NW_SRC_CLEAR(_match) \
+    MEMSET(&(_match)->masks.conn_tracking_nw_src, 0, \
+        sizeof(((_match)->masks).conn_tracking_nw_src))
+
+/**
+ * Test whether the match is exact for conn_tracking_nw_src
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_NW_SRC_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_nw_src))
+
+/**
+ * Test whether key conn_tracking_nw_src is being checked in the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_NW_SRC_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_nw_src))
+
+
+/* Mask/value check/set macros for conn_tracking_state */
+
+/**
+ * Set the mask for an exact match of conn_tracking_state
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_STATE_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.conn_tracking_state, 0xff, \
+        sizeof(((_match)->masks).conn_tracking_state))
+
+/**
+ * Clear the mask for conn_tracking_state making that field inactive for the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_STATE_CLEAR(_match) \
+    MEMSET(&(_match)->masks.conn_tracking_state, 0, \
+        sizeof(((_match)->masks).conn_tracking_state))
+
+/**
+ * Test whether the match is exact for conn_tracking_state
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_STATE_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_state))
+
+/**
+ * Test whether key conn_tracking_state is being checked in the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_STATE_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_state))
+
+
+/* Mask/value check/set macros for conn_tracking_tp_dst */
+
+/**
+ * Set the mask for an exact match of conn_tracking_tp_dst
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_TP_DST_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.conn_tracking_tp_dst, 0xff, \
+        sizeof(((_match)->masks).conn_tracking_tp_dst))
+
+/**
+ * Clear the mask for conn_tracking_tp_dst making that field inactive for the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_TP_DST_CLEAR(_match) \
+    MEMSET(&(_match)->masks.conn_tracking_tp_dst, 0, \
+        sizeof(((_match)->masks).conn_tracking_tp_dst))
+
+/**
+ * Test whether the match is exact for conn_tracking_tp_dst
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_TP_DST_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_tp_dst))
+
+/**
+ * Test whether key conn_tracking_tp_dst is being checked in the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_TP_DST_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_tp_dst))
+
+
+/* Mask/value check/set macros for conn_tracking_tp_src */
+
+/**
+ * Set the mask for an exact match of conn_tracking_tp_src
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_TP_SRC_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.conn_tracking_tp_src, 0xff, \
+        sizeof(((_match)->masks).conn_tracking_tp_src))
+
+/**
+ * Clear the mask for conn_tracking_tp_src making that field inactive for the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_TP_SRC_CLEAR(_match) \
+    MEMSET(&(_match)->masks.conn_tracking_tp_src, 0, \
+        sizeof(((_match)->masks).conn_tracking_tp_src))
+
+/**
+ * Test whether the match is exact for conn_tracking_tp_src
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_TP_SRC_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_tp_src))
+
+/**
+ * Test whether key conn_tracking_tp_src is being checked in the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_TP_SRC_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_tp_src))
+
+
+/* Mask/value check/set macros for conn_tracking_zone */
+
+/**
+ * Set the mask for an exact match of conn_tracking_zone
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_ZONE_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.conn_tracking_zone, 0xff, \
+        sizeof(((_match)->masks).conn_tracking_zone))
+
+/**
+ * Clear the mask for conn_tracking_zone making that field inactive for the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_ZONE_CLEAR(_match) \
+    MEMSET(&(_match)->masks.conn_tracking_zone, 0, \
+        sizeof(((_match)->masks).conn_tracking_zone))
+
+/**
+ * Test whether the match is exact for conn_tracking_zone
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_ZONE_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_zone))
+
+/**
+ * Test whether key conn_tracking_zone is being checked in the match
+ */
+#define OF_MATCH_MASK_CONN_TRACKING_ZONE_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_zone))
+
+
+/* Mask/value check/set macros for eth_dst */
+
+/**
+ * Set the mask for an exact match of eth_dst
+ */
+#define OF_MATCH_MASK_ETH_DST_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.eth_dst, 0xff, \
+        sizeof(((_match)->masks).eth_dst))
+
+/**
+ * Clear the mask for eth_dst making that field inactive for the match
+ */
+#define OF_MATCH_MASK_ETH_DST_CLEAR(_match) \
+    MEMSET(&(_match)->masks.eth_dst, 0, \
+        sizeof(((_match)->masks).eth_dst))
+
+/**
+ * Test whether the match is exact for eth_dst
+ */
+#define OF_MATCH_MASK_ETH_DST_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).eth_dst))
+
+/**
+ * Test whether key eth_dst is being checked in the match
+ */
+#define OF_MATCH_MASK_ETH_DST_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).eth_dst))
+
+
+/* Mask/value check/set macros for eth_src */
+
+/**
+ * Set the mask for an exact match of eth_src
+ */
+#define OF_MATCH_MASK_ETH_SRC_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.eth_src, 0xff, \
+        sizeof(((_match)->masks).eth_src))
+
+/**
+ * Clear the mask for eth_src making that field inactive for the match
+ */
+#define OF_MATCH_MASK_ETH_SRC_CLEAR(_match) \
+    MEMSET(&(_match)->masks.eth_src, 0, \
+        sizeof(((_match)->masks).eth_src))
+
+/**
+ * Test whether the match is exact for eth_src
+ */
+#define OF_MATCH_MASK_ETH_SRC_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).eth_src))
+
+/**
+ * Test whether key eth_src is being checked in the match
+ */
+#define OF_MATCH_MASK_ETH_SRC_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).eth_src))
+
+
+/* Mask/value check/set macros for eth_type */
+
+/**
+ * Set the mask for an exact match of eth_type
+ */
+#define OF_MATCH_MASK_ETH_TYPE_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.eth_type, 0xff, \
+        sizeof(((_match)->masks).eth_type))
+
+/**
+ * Clear the mask for eth_type making that field inactive for the match
+ */
+#define OF_MATCH_MASK_ETH_TYPE_CLEAR(_match) \
+    MEMSET(&(_match)->masks.eth_type, 0, \
+        sizeof(((_match)->masks).eth_type))
+
+/**
+ * Test whether the match is exact for eth_type
+ */
+#define OF_MATCH_MASK_ETH_TYPE_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).eth_type))
+
+/**
+ * Test whether key eth_type is being checked in the match
+ */
+#define OF_MATCH_MASK_ETH_TYPE_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).eth_type))
+
+
+/* Mask/value check/set macros for icmpv4_code */
+
+/**
+ * Set the mask for an exact match of icmpv4_code
+ */
+#define OF_MATCH_MASK_ICMPV4_CODE_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.icmpv4_code, 0xff, \
+        sizeof(((_match)->masks).icmpv4_code))
+
+/**
+ * Clear the mask for icmpv4_code making that field inactive for the match
+ */
+#define OF_MATCH_MASK_ICMPV4_CODE_CLEAR(_match) \
+    MEMSET(&(_match)->masks.icmpv4_code, 0, \
+        sizeof(((_match)->masks).icmpv4_code))
+
+/**
+ * Test whether the match is exact for icmpv4_code
+ */
+#define OF_MATCH_MASK_ICMPV4_CODE_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).icmpv4_code))
+
+/**
+ * Test whether key icmpv4_code is being checked in the match
+ */
+#define OF_MATCH_MASK_ICMPV4_CODE_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).icmpv4_code))
+
+
+/* Mask/value check/set macros for icmpv4_type */
+
+/**
+ * Set the mask for an exact match of icmpv4_type
+ */
+#define OF_MATCH_MASK_ICMPV4_TYPE_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.icmpv4_type, 0xff, \
+        sizeof(((_match)->masks).icmpv4_type))
+
+/**
+ * Clear the mask for icmpv4_type making that field inactive for the match
+ */
+#define OF_MATCH_MASK_ICMPV4_TYPE_CLEAR(_match) \
+    MEMSET(&(_match)->masks.icmpv4_type, 0, \
+        sizeof(((_match)->masks).icmpv4_type))
+
+/**
+ * Test whether the match is exact for icmpv4_type
+ */
+#define OF_MATCH_MASK_ICMPV4_TYPE_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).icmpv4_type))
+
+/**
+ * Test whether key icmpv4_type is being checked in the match
+ */
+#define OF_MATCH_MASK_ICMPV4_TYPE_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).icmpv4_type))
+
+
+/* Mask/value check/set macros for icmpv6_code */
+
+/**
+ * Set the mask for an exact match of icmpv6_code
+ */
+#define OF_MATCH_MASK_ICMPV6_CODE_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.icmpv6_code, 0xff, \
+        sizeof(((_match)->masks).icmpv6_code))
+
+/**
+ * Clear the mask for icmpv6_code making that field inactive for the match
+ */
+#define OF_MATCH_MASK_ICMPV6_CODE_CLEAR(_match) \
+    MEMSET(&(_match)->masks.icmpv6_code, 0, \
+        sizeof(((_match)->masks).icmpv6_code))
+
+/**
+ * Test whether the match is exact for icmpv6_code
+ */
+#define OF_MATCH_MASK_ICMPV6_CODE_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).icmpv6_code))
+
+/**
+ * Test whether key icmpv6_code is being checked in the match
+ */
+#define OF_MATCH_MASK_ICMPV6_CODE_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).icmpv6_code))
+
+
+/* Mask/value check/set macros for icmpv6_type */
+
+/**
+ * Set the mask for an exact match of icmpv6_type
+ */
+#define OF_MATCH_MASK_ICMPV6_TYPE_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.icmpv6_type, 0xff, \
+        sizeof(((_match)->masks).icmpv6_type))
+
+/**
+ * Clear the mask for icmpv6_type making that field inactive for the match
+ */
+#define OF_MATCH_MASK_ICMPV6_TYPE_CLEAR(_match) \
+    MEMSET(&(_match)->masks.icmpv6_type, 0, \
+        sizeof(((_match)->masks).icmpv6_type))
+
+/**
+ * Test whether the match is exact for icmpv6_type
+ */
+#define OF_MATCH_MASK_ICMPV6_TYPE_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).icmpv6_type))
+
+/**
+ * Test whether key icmpv6_type is being checked in the match
+ */
+#define OF_MATCH_MASK_ICMPV6_TYPE_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).icmpv6_type))
+
+
+/* Mask/value check/set macros for in_phy_port */
+
+/**
+ * Set the mask for an exact match of in_phy_port
+ */
+#define OF_MATCH_MASK_IN_PHY_PORT_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.in_phy_port, 0xff, \
+        sizeof(((_match)->masks).in_phy_port))
+
+/**
+ * Clear the mask for in_phy_port making that field inactive for the match
+ */
+#define OF_MATCH_MASK_IN_PHY_PORT_CLEAR(_match) \
+    MEMSET(&(_match)->masks.in_phy_port, 0, \
+        sizeof(((_match)->masks).in_phy_port))
+
+/**
+ * Test whether the match is exact for in_phy_port
+ */
+#define OF_MATCH_MASK_IN_PHY_PORT_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).in_phy_port))
+
+/**
+ * Test whether key in_phy_port is being checked in the match
+ */
+#define OF_MATCH_MASK_IN_PHY_PORT_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).in_phy_port))
+
+
+/* Mask/value check/set macros for in_port */
+
+/**
+ * Set the mask for an exact match of in_port
+ */
+#define OF_MATCH_MASK_IN_PORT_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.in_port, 0xff, \
+        sizeof(((_match)->masks).in_port))
+
+/**
+ * Clear the mask for in_port making that field inactive for the match
+ */
+#define OF_MATCH_MASK_IN_PORT_CLEAR(_match) \
+    MEMSET(&(_match)->masks.in_port, 0, \
+        sizeof(((_match)->masks).in_port))
+
+/**
+ * Test whether the match is exact for in_port
+ */
+#define OF_MATCH_MASK_IN_PORT_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).in_port))
+
+/**
+ * Test whether key in_port is being checked in the match
+ */
+#define OF_MATCH_MASK_IN_PORT_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).in_port))
+
+
+/* Mask/value check/set macros for ip_dscp */
+
+/**
+ * Set the mask for an exact match of ip_dscp
+ */
+#define OF_MATCH_MASK_IP_DSCP_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.ip_dscp, 0xff, \
+        sizeof(((_match)->masks).ip_dscp))
+
+/**
+ * Clear the mask for ip_dscp making that field inactive for the match
+ */
+#define OF_MATCH_MASK_IP_DSCP_CLEAR(_match) \
+    MEMSET(&(_match)->masks.ip_dscp, 0, \
+        sizeof(((_match)->masks).ip_dscp))
+
+/**
+ * Test whether the match is exact for ip_dscp
+ */
+#define OF_MATCH_MASK_IP_DSCP_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ip_dscp))
+
+/**
+ * Test whether key ip_dscp is being checked in the match
+ */
+#define OF_MATCH_MASK_IP_DSCP_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ip_dscp))
+
+
+/* Mask/value check/set macros for ip_ecn */
+
+/**
+ * Set the mask for an exact match of ip_ecn
+ */
+#define OF_MATCH_MASK_IP_ECN_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.ip_ecn, 0xff, \
+        sizeof(((_match)->masks).ip_ecn))
+
+/**
+ * Clear the mask for ip_ecn making that field inactive for the match
+ */
+#define OF_MATCH_MASK_IP_ECN_CLEAR(_match) \
+    MEMSET(&(_match)->masks.ip_ecn, 0, \
+        sizeof(((_match)->masks).ip_ecn))
+
+/**
+ * Test whether the match is exact for ip_ecn
+ */
+#define OF_MATCH_MASK_IP_ECN_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ip_ecn))
+
+/**
+ * Test whether key ip_ecn is being checked in the match
+ */
+#define OF_MATCH_MASK_IP_ECN_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ip_ecn))
+
+
+/* Mask/value check/set macros for ip_proto */
+
+/**
+ * Set the mask for an exact match of ip_proto
+ */
+#define OF_MATCH_MASK_IP_PROTO_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.ip_proto, 0xff, \
+        sizeof(((_match)->masks).ip_proto))
+
+/**
+ * Clear the mask for ip_proto making that field inactive for the match
+ */
+#define OF_MATCH_MASK_IP_PROTO_CLEAR(_match) \
+    MEMSET(&(_match)->masks.ip_proto, 0, \
+        sizeof(((_match)->masks).ip_proto))
+
+/**
+ * Test whether the match is exact for ip_proto
+ */
+#define OF_MATCH_MASK_IP_PROTO_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ip_proto))
+
+/**
+ * Test whether key ip_proto is being checked in the match
+ */
+#define OF_MATCH_MASK_IP_PROTO_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ip_proto))
+
+
+/* Mask/value check/set macros for ipv4_dst */
+
+/**
+ * Set the mask for an exact match of ipv4_dst
+ */
+#define OF_MATCH_MASK_IPV4_DST_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.ipv4_dst, 0xff, \
+        sizeof(((_match)->masks).ipv4_dst))
+
+/**
+ * Clear the mask for ipv4_dst making that field inactive for the match
+ */
+#define OF_MATCH_MASK_IPV4_DST_CLEAR(_match) \
+    MEMSET(&(_match)->masks.ipv4_dst, 0, \
+        sizeof(((_match)->masks).ipv4_dst))
+
+/**
+ * Test whether the match is exact for ipv4_dst
+ */
+#define OF_MATCH_MASK_IPV4_DST_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv4_dst))
+
+/**
+ * Test whether key ipv4_dst is being checked in the match
+ */
+#define OF_MATCH_MASK_IPV4_DST_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv4_dst))
+
+
+/* Mask/value check/set macros for ipv4_src */
+
+/**
+ * Set the mask for an exact match of ipv4_src
+ */
+#define OF_MATCH_MASK_IPV4_SRC_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.ipv4_src, 0xff, \
+        sizeof(((_match)->masks).ipv4_src))
+
+/**
+ * Clear the mask for ipv4_src making that field inactive for the match
+ */
+#define OF_MATCH_MASK_IPV4_SRC_CLEAR(_match) \
+    MEMSET(&(_match)->masks.ipv4_src, 0, \
+        sizeof(((_match)->masks).ipv4_src))
+
+/**
+ * Test whether the match is exact for ipv4_src
+ */
+#define OF_MATCH_MASK_IPV4_SRC_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv4_src))
+
+/**
+ * Test whether key ipv4_src is being checked in the match
+ */
+#define OF_MATCH_MASK_IPV4_SRC_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv4_src))
+
+
 /* Mask/value check/set macros for ipv6_dst */
 
 /**
@@ -2514,6 +2920,35 @@ extern const char *const of_object_id_str[];
     OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv6_dst))
 
 
+/* Mask/value check/set macros for ipv6_flabel */
+
+/**
+ * Set the mask for an exact match of ipv6_flabel
+ */
+#define OF_MATCH_MASK_IPV6_FLABEL_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.ipv6_flabel, 0xff, \
+        sizeof(((_match)->masks).ipv6_flabel))
+
+/**
+ * Clear the mask for ipv6_flabel making that field inactive for the match
+ */
+#define OF_MATCH_MASK_IPV6_FLABEL_CLEAR(_match) \
+    MEMSET(&(_match)->masks.ipv6_flabel, 0, \
+        sizeof(((_match)->masks).ipv6_flabel))
+
+/**
+ * Test whether the match is exact for ipv6_flabel
+ */
+#define OF_MATCH_MASK_IPV6_FLABEL_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv6_flabel))
+
+/**
+ * Test whether key ipv6_flabel is being checked in the match
+ */
+#define OF_MATCH_MASK_IPV6_FLABEL_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv6_flabel))
+
+
 /* Mask/value check/set macros for ipv6_nd_sll */
 
 /**
@@ -2541,6 +2976,267 @@ extern const char *const of_object_id_str[];
  */
 #define OF_MATCH_MASK_IPV6_ND_SLL_ACTIVE_TEST(_match) \
     OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv6_nd_sll))
+
+
+/* Mask/value check/set macros for ipv6_nd_target */
+
+/**
+ * Set the mask for an exact match of ipv6_nd_target
+ */
+#define OF_MATCH_MASK_IPV6_ND_TARGET_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.ipv6_nd_target, 0xff, \
+        sizeof(((_match)->masks).ipv6_nd_target))
+
+/**
+ * Clear the mask for ipv6_nd_target making that field inactive for the match
+ */
+#define OF_MATCH_MASK_IPV6_ND_TARGET_CLEAR(_match) \
+    MEMSET(&(_match)->masks.ipv6_nd_target, 0, \
+        sizeof(((_match)->masks).ipv6_nd_target))
+
+/**
+ * Test whether the match is exact for ipv6_nd_target
+ */
+#define OF_MATCH_MASK_IPV6_ND_TARGET_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv6_nd_target))
+
+/**
+ * Test whether key ipv6_nd_target is being checked in the match
+ */
+#define OF_MATCH_MASK_IPV6_ND_TARGET_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv6_nd_target))
+
+
+/* Mask/value check/set macros for ipv6_nd_tll */
+
+/**
+ * Set the mask for an exact match of ipv6_nd_tll
+ */
+#define OF_MATCH_MASK_IPV6_ND_TLL_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.ipv6_nd_tll, 0xff, \
+        sizeof(((_match)->masks).ipv6_nd_tll))
+
+/**
+ * Clear the mask for ipv6_nd_tll making that field inactive for the match
+ */
+#define OF_MATCH_MASK_IPV6_ND_TLL_CLEAR(_match) \
+    MEMSET(&(_match)->masks.ipv6_nd_tll, 0, \
+        sizeof(((_match)->masks).ipv6_nd_tll))
+
+/**
+ * Test whether the match is exact for ipv6_nd_tll
+ */
+#define OF_MATCH_MASK_IPV6_ND_TLL_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv6_nd_tll))
+
+/**
+ * Test whether key ipv6_nd_tll is being checked in the match
+ */
+#define OF_MATCH_MASK_IPV6_ND_TLL_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv6_nd_tll))
+
+
+/* Mask/value check/set macros for ipv6_src */
+
+/**
+ * Set the mask for an exact match of ipv6_src
+ */
+#define OF_MATCH_MASK_IPV6_SRC_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.ipv6_src, 0xff, \
+        sizeof(((_match)->masks).ipv6_src))
+
+/**
+ * Clear the mask for ipv6_src making that field inactive for the match
+ */
+#define OF_MATCH_MASK_IPV6_SRC_CLEAR(_match) \
+    MEMSET(&(_match)->masks.ipv6_src, 0, \
+        sizeof(((_match)->masks).ipv6_src))
+
+/**
+ * Test whether the match is exact for ipv6_src
+ */
+#define OF_MATCH_MASK_IPV6_SRC_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv6_src))
+
+/**
+ * Test whether key ipv6_src is being checked in the match
+ */
+#define OF_MATCH_MASK_IPV6_SRC_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv6_src))
+
+
+/* Mask/value check/set macros for metadata */
+
+/**
+ * Set the mask for an exact match of metadata
+ */
+#define OF_MATCH_MASK_METADATA_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.metadata, 0xff, \
+        sizeof(((_match)->masks).metadata))
+
+/**
+ * Clear the mask for metadata making that field inactive for the match
+ */
+#define OF_MATCH_MASK_METADATA_CLEAR(_match) \
+    MEMSET(&(_match)->masks.metadata, 0, \
+        sizeof(((_match)->masks).metadata))
+
+/**
+ * Test whether the match is exact for metadata
+ */
+#define OF_MATCH_MASK_METADATA_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).metadata))
+
+/**
+ * Test whether key metadata is being checked in the match
+ */
+#define OF_MATCH_MASK_METADATA_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).metadata))
+
+
+/* Mask/value check/set macros for mpls_label */
+
+/**
+ * Set the mask for an exact match of mpls_label
+ */
+#define OF_MATCH_MASK_MPLS_LABEL_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.mpls_label, 0xff, \
+        sizeof(((_match)->masks).mpls_label))
+
+/**
+ * Clear the mask for mpls_label making that field inactive for the match
+ */
+#define OF_MATCH_MASK_MPLS_LABEL_CLEAR(_match) \
+    MEMSET(&(_match)->masks.mpls_label, 0, \
+        sizeof(((_match)->masks).mpls_label))
+
+/**
+ * Test whether the match is exact for mpls_label
+ */
+#define OF_MATCH_MASK_MPLS_LABEL_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).mpls_label))
+
+/**
+ * Test whether key mpls_label is being checked in the match
+ */
+#define OF_MATCH_MASK_MPLS_LABEL_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).mpls_label))
+
+
+/* Mask/value check/set macros for mpls_tc */
+
+/**
+ * Set the mask for an exact match of mpls_tc
+ */
+#define OF_MATCH_MASK_MPLS_TC_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.mpls_tc, 0xff, \
+        sizeof(((_match)->masks).mpls_tc))
+
+/**
+ * Clear the mask for mpls_tc making that field inactive for the match
+ */
+#define OF_MATCH_MASK_MPLS_TC_CLEAR(_match) \
+    MEMSET(&(_match)->masks.mpls_tc, 0, \
+        sizeof(((_match)->masks).mpls_tc))
+
+/**
+ * Test whether the match is exact for mpls_tc
+ */
+#define OF_MATCH_MASK_MPLS_TC_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).mpls_tc))
+
+/**
+ * Test whether key mpls_tc is being checked in the match
+ */
+#define OF_MATCH_MASK_MPLS_TC_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).mpls_tc))
+
+
+/* Mask/value check/set macros for ovs_tcp_flags */
+
+/**
+ * Set the mask for an exact match of ovs_tcp_flags
+ */
+#define OF_MATCH_MASK_OVS_TCP_FLAGS_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.ovs_tcp_flags, 0xff, \
+        sizeof(((_match)->masks).ovs_tcp_flags))
+
+/**
+ * Clear the mask for ovs_tcp_flags making that field inactive for the match
+ */
+#define OF_MATCH_MASK_OVS_TCP_FLAGS_CLEAR(_match) \
+    MEMSET(&(_match)->masks.ovs_tcp_flags, 0, \
+        sizeof(((_match)->masks).ovs_tcp_flags))
+
+/**
+ * Test whether the match is exact for ovs_tcp_flags
+ */
+#define OF_MATCH_MASK_OVS_TCP_FLAGS_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ovs_tcp_flags))
+
+/**
+ * Test whether key ovs_tcp_flags is being checked in the match
+ */
+#define OF_MATCH_MASK_OVS_TCP_FLAGS_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ovs_tcp_flags))
+
+
+/* Mask/value check/set macros for sctp_dst */
+
+/**
+ * Set the mask for an exact match of sctp_dst
+ */
+#define OF_MATCH_MASK_SCTP_DST_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.sctp_dst, 0xff, \
+        sizeof(((_match)->masks).sctp_dst))
+
+/**
+ * Clear the mask for sctp_dst making that field inactive for the match
+ */
+#define OF_MATCH_MASK_SCTP_DST_CLEAR(_match) \
+    MEMSET(&(_match)->masks.sctp_dst, 0, \
+        sizeof(((_match)->masks).sctp_dst))
+
+/**
+ * Test whether the match is exact for sctp_dst
+ */
+#define OF_MATCH_MASK_SCTP_DST_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).sctp_dst))
+
+/**
+ * Test whether key sctp_dst is being checked in the match
+ */
+#define OF_MATCH_MASK_SCTP_DST_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).sctp_dst))
+
+
+/* Mask/value check/set macros for sctp_src */
+
+/**
+ * Set the mask for an exact match of sctp_src
+ */
+#define OF_MATCH_MASK_SCTP_SRC_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.sctp_src, 0xff, \
+        sizeof(((_match)->masks).sctp_src))
+
+/**
+ * Clear the mask for sctp_src making that field inactive for the match
+ */
+#define OF_MATCH_MASK_SCTP_SRC_CLEAR(_match) \
+    MEMSET(&(_match)->masks.sctp_src, 0, \
+        sizeof(((_match)->masks).sctp_src))
+
+/**
+ * Test whether the match is exact for sctp_src
+ */
+#define OF_MATCH_MASK_SCTP_SRC_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).sctp_src))
+
+/**
+ * Test whether key sctp_src is being checked in the match
+ */
+#define OF_MATCH_MASK_SCTP_SRC_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).sctp_src))
 
 
 /* Mask/value check/set macros for tcp_dst */
@@ -2630,62 +3326,120 @@ extern const char *const of_object_id_str[];
     OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).tunnel_ipv4_dst))
 
 
-/* Mask/value check/set macros for icmpv4_code */
+/* Mask/value check/set macros for tunnel_ipv4_src */
 
 /**
- * Set the mask for an exact match of icmpv4_code
+ * Set the mask for an exact match of tunnel_ipv4_src
  */
-#define OF_MATCH_MASK_ICMPV4_CODE_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.icmpv4_code, 0xff, \
-        sizeof(((_match)->masks).icmpv4_code))
+#define OF_MATCH_MASK_TUNNEL_IPV4_SRC_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.tunnel_ipv4_src, 0xff, \
+        sizeof(((_match)->masks).tunnel_ipv4_src))
 
 /**
- * Clear the mask for icmpv4_code making that field inactive for the match
+ * Clear the mask for tunnel_ipv4_src making that field inactive for the match
  */
-#define OF_MATCH_MASK_ICMPV4_CODE_CLEAR(_match) \
-    MEMSET(&(_match)->masks.icmpv4_code, 0, \
-        sizeof(((_match)->masks).icmpv4_code))
+#define OF_MATCH_MASK_TUNNEL_IPV4_SRC_CLEAR(_match) \
+    MEMSET(&(_match)->masks.tunnel_ipv4_src, 0, \
+        sizeof(((_match)->masks).tunnel_ipv4_src))
 
 /**
- * Test whether the match is exact for icmpv4_code
+ * Test whether the match is exact for tunnel_ipv4_src
  */
-#define OF_MATCH_MASK_ICMPV4_CODE_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).icmpv4_code))
+#define OF_MATCH_MASK_TUNNEL_IPV4_SRC_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).tunnel_ipv4_src))
 
 /**
- * Test whether key icmpv4_code is being checked in the match
+ * Test whether key tunnel_ipv4_src is being checked in the match
  */
-#define OF_MATCH_MASK_ICMPV4_CODE_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).icmpv4_code))
+#define OF_MATCH_MASK_TUNNEL_IPV4_SRC_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).tunnel_ipv4_src))
 
 
-/* Mask/value check/set macros for sctp_dst */
+/* Mask/value check/set macros for udp_dst */
 
 /**
- * Set the mask for an exact match of sctp_dst
+ * Set the mask for an exact match of udp_dst
  */
-#define OF_MATCH_MASK_SCTP_DST_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.sctp_dst, 0xff, \
-        sizeof(((_match)->masks).sctp_dst))
+#define OF_MATCH_MASK_UDP_DST_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.udp_dst, 0xff, \
+        sizeof(((_match)->masks).udp_dst))
 
 /**
- * Clear the mask for sctp_dst making that field inactive for the match
+ * Clear the mask for udp_dst making that field inactive for the match
  */
-#define OF_MATCH_MASK_SCTP_DST_CLEAR(_match) \
-    MEMSET(&(_match)->masks.sctp_dst, 0, \
-        sizeof(((_match)->masks).sctp_dst))
+#define OF_MATCH_MASK_UDP_DST_CLEAR(_match) \
+    MEMSET(&(_match)->masks.udp_dst, 0, \
+        sizeof(((_match)->masks).udp_dst))
 
 /**
- * Test whether the match is exact for sctp_dst
+ * Test whether the match is exact for udp_dst
  */
-#define OF_MATCH_MASK_SCTP_DST_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).sctp_dst))
+#define OF_MATCH_MASK_UDP_DST_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).udp_dst))
 
 /**
- * Test whether key sctp_dst is being checked in the match
+ * Test whether key udp_dst is being checked in the match
  */
-#define OF_MATCH_MASK_SCTP_DST_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).sctp_dst))
+#define OF_MATCH_MASK_UDP_DST_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).udp_dst))
+
+
+/* Mask/value check/set macros for udp_src */
+
+/**
+ * Set the mask for an exact match of udp_src
+ */
+#define OF_MATCH_MASK_UDP_SRC_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.udp_src, 0xff, \
+        sizeof(((_match)->masks).udp_src))
+
+/**
+ * Clear the mask for udp_src making that field inactive for the match
+ */
+#define OF_MATCH_MASK_UDP_SRC_CLEAR(_match) \
+    MEMSET(&(_match)->masks.udp_src, 0, \
+        sizeof(((_match)->masks).udp_src))
+
+/**
+ * Test whether the match is exact for udp_src
+ */
+#define OF_MATCH_MASK_UDP_SRC_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).udp_src))
+
+/**
+ * Test whether key udp_src is being checked in the match
+ */
+#define OF_MATCH_MASK_UDP_SRC_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).udp_src))
+
+
+/* Mask/value check/set macros for vlan_pcp */
+
+/**
+ * Set the mask for an exact match of vlan_pcp
+ */
+#define OF_MATCH_MASK_VLAN_PCP_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.vlan_pcp, 0xff, \
+        sizeof(((_match)->masks).vlan_pcp))
+
+/**
+ * Clear the mask for vlan_pcp making that field inactive for the match
+ */
+#define OF_MATCH_MASK_VLAN_PCP_CLEAR(_match) \
+    MEMSET(&(_match)->masks.vlan_pcp, 0, \
+        sizeof(((_match)->masks).vlan_pcp))
+
+/**
+ * Test whether the match is exact for vlan_pcp
+ */
+#define OF_MATCH_MASK_VLAN_PCP_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).vlan_pcp))
+
+/**
+ * Test whether key vlan_pcp is being checked in the match
+ */
+#define OF_MATCH_MASK_VLAN_PCP_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).vlan_pcp))
 
 
 /* Mask/value check/set macros for vlan_vid */
@@ -2717,381 +3471,33 @@ extern const char *const of_object_id_str[];
     OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).vlan_vid))
 
 
-/* Mask/value check/set macros for bsn_l3_src_class_id */
+/* Mask/value check/set macros for bsn_inner_eth_dst */
 
 /**
- * Set the mask for an exact match of bsn_l3_src_class_id
+ * Set the mask for an exact match of bsn_inner_eth_dst
  */
-#define OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_l3_src_class_id, 0xff, \
-        sizeof(((_match)->masks).bsn_l3_src_class_id))
+#define OF_MATCH_MASK_BSN_INNER_ETH_DST_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_inner_eth_dst, 0xff, \
+        sizeof(((_match)->masks).bsn_inner_eth_dst))
 
 /**
- * Clear the mask for bsn_l3_src_class_id making that field inactive for the match
+ * Clear the mask for bsn_inner_eth_dst making that field inactive for the match
  */
-#define OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_l3_src_class_id, 0, \
-        sizeof(((_match)->masks).bsn_l3_src_class_id))
+#define OF_MATCH_MASK_BSN_INNER_ETH_DST_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_inner_eth_dst, 0, \
+        sizeof(((_match)->masks).bsn_inner_eth_dst))
 
 /**
- * Test whether the match is exact for bsn_l3_src_class_id
+ * Test whether the match is exact for bsn_inner_eth_dst
  */
-#define OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_l3_src_class_id))
+#define OF_MATCH_MASK_BSN_INNER_ETH_DST_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_inner_eth_dst))
 
 /**
- * Test whether key bsn_l3_src_class_id is being checked in the match
+ * Test whether key bsn_inner_eth_dst is being checked in the match
  */
-#define OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_l3_src_class_id))
-
-
-/* Mask/value check/set macros for bsn_vrf */
-
-/**
- * Set the mask for an exact match of bsn_vrf
- */
-#define OF_MATCH_MASK_BSN_VRF_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_vrf, 0xff, \
-        sizeof(((_match)->masks).bsn_vrf))
-
-/**
- * Clear the mask for bsn_vrf making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_VRF_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_vrf, 0, \
-        sizeof(((_match)->masks).bsn_vrf))
-
-/**
- * Test whether the match is exact for bsn_vrf
- */
-#define OF_MATCH_MASK_BSN_VRF_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_vrf))
-
-/**
- * Test whether key bsn_vrf is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_VRF_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_vrf))
-
-
-/* Mask/value check/set macros for bsn_inner_vlan_vid */
-
-/**
- * Set the mask for an exact match of bsn_inner_vlan_vid
- */
-#define OF_MATCH_MASK_BSN_INNER_VLAN_VID_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_inner_vlan_vid, 0xff, \
-        sizeof(((_match)->masks).bsn_inner_vlan_vid))
-
-/**
- * Clear the mask for bsn_inner_vlan_vid making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_INNER_VLAN_VID_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_inner_vlan_vid, 0, \
-        sizeof(((_match)->masks).bsn_inner_vlan_vid))
-
-/**
- * Test whether the match is exact for bsn_inner_vlan_vid
- */
-#define OF_MATCH_MASK_BSN_INNER_VLAN_VID_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_inner_vlan_vid))
-
-/**
- * Test whether key bsn_inner_vlan_vid is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_INNER_VLAN_VID_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_inner_vlan_vid))
-
-
-/* Mask/value check/set macros for arp_spa */
-
-/**
- * Set the mask for an exact match of arp_spa
- */
-#define OF_MATCH_MASK_ARP_SPA_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.arp_spa, 0xff, \
-        sizeof(((_match)->masks).arp_spa))
-
-/**
- * Clear the mask for arp_spa making that field inactive for the match
- */
-#define OF_MATCH_MASK_ARP_SPA_CLEAR(_match) \
-    MEMSET(&(_match)->masks.arp_spa, 0, \
-        sizeof(((_match)->masks).arp_spa))
-
-/**
- * Test whether the match is exact for arp_spa
- */
-#define OF_MATCH_MASK_ARP_SPA_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).arp_spa))
-
-/**
- * Test whether key arp_spa is being checked in the match
- */
-#define OF_MATCH_MASK_ARP_SPA_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).arp_spa))
-
-
-/* Mask/value check/set macros for bsn_ip_fragmentation */
-
-/**
- * Set the mask for an exact match of bsn_ip_fragmentation
- */
-#define OF_MATCH_MASK_BSN_IP_FRAGMENTATION_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_ip_fragmentation, 0xff, \
-        sizeof(((_match)->masks).bsn_ip_fragmentation))
-
-/**
- * Clear the mask for bsn_ip_fragmentation making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_IP_FRAGMENTATION_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_ip_fragmentation, 0, \
-        sizeof(((_match)->masks).bsn_ip_fragmentation))
-
-/**
- * Test whether the match is exact for bsn_ip_fragmentation
- */
-#define OF_MATCH_MASK_BSN_IP_FRAGMENTATION_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_ip_fragmentation))
-
-/**
- * Test whether key bsn_ip_fragmentation is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_IP_FRAGMENTATION_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_ip_fragmentation))
-
-
-/* Mask/value check/set macros for ip_ecn */
-
-/**
- * Set the mask for an exact match of ip_ecn
- */
-#define OF_MATCH_MASK_IP_ECN_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.ip_ecn, 0xff, \
-        sizeof(((_match)->masks).ip_ecn))
-
-/**
- * Clear the mask for ip_ecn making that field inactive for the match
- */
-#define OF_MATCH_MASK_IP_ECN_CLEAR(_match) \
-    MEMSET(&(_match)->masks.ip_ecn, 0, \
-        sizeof(((_match)->masks).ip_ecn))
-
-/**
- * Test whether the match is exact for ip_ecn
- */
-#define OF_MATCH_MASK_IP_ECN_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ip_ecn))
-
-/**
- * Test whether key ip_ecn is being checked in the match
- */
-#define OF_MATCH_MASK_IP_ECN_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ip_ecn))
-
-
-/* Mask/value check/set macros for pbb_uca */
-
-/**
- * Set the mask for an exact match of pbb_uca
- */
-#define OF_MATCH_MASK_PBB_UCA_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.pbb_uca, 0xff, \
-        sizeof(((_match)->masks).pbb_uca))
-
-/**
- * Clear the mask for pbb_uca making that field inactive for the match
- */
-#define OF_MATCH_MASK_PBB_UCA_CLEAR(_match) \
-    MEMSET(&(_match)->masks.pbb_uca, 0, \
-        sizeof(((_match)->masks).pbb_uca))
-
-/**
- * Test whether the match is exact for pbb_uca
- */
-#define OF_MATCH_MASK_PBB_UCA_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).pbb_uca))
-
-/**
- * Test whether key pbb_uca is being checked in the match
- */
-#define OF_MATCH_MASK_PBB_UCA_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).pbb_uca))
-
-
-/* Mask/value check/set macros for conn_tracking_tp_src */
-
-/**
- * Set the mask for an exact match of conn_tracking_tp_src
- */
-#define OF_MATCH_MASK_CONN_TRACKING_TP_SRC_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.conn_tracking_tp_src, 0xff, \
-        sizeof(((_match)->masks).conn_tracking_tp_src))
-
-/**
- * Clear the mask for conn_tracking_tp_src making that field inactive for the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_TP_SRC_CLEAR(_match) \
-    MEMSET(&(_match)->masks.conn_tracking_tp_src, 0, \
-        sizeof(((_match)->masks).conn_tracking_tp_src))
-
-/**
- * Test whether the match is exact for conn_tracking_tp_src
- */
-#define OF_MATCH_MASK_CONN_TRACKING_TP_SRC_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_tp_src))
-
-/**
- * Test whether key conn_tracking_tp_src is being checked in the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_TP_SRC_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_tp_src))
-
-
-/* Mask/value check/set macros for tunnel_ipv4_src */
-
-/**
- * Set the mask for an exact match of tunnel_ipv4_src
- */
-#define OF_MATCH_MASK_TUNNEL_IPV4_SRC_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.tunnel_ipv4_src, 0xff, \
-        sizeof(((_match)->masks).tunnel_ipv4_src))
-
-/**
- * Clear the mask for tunnel_ipv4_src making that field inactive for the match
- */
-#define OF_MATCH_MASK_TUNNEL_IPV4_SRC_CLEAR(_match) \
-    MEMSET(&(_match)->masks.tunnel_ipv4_src, 0, \
-        sizeof(((_match)->masks).tunnel_ipv4_src))
-
-/**
- * Test whether the match is exact for tunnel_ipv4_src
- */
-#define OF_MATCH_MASK_TUNNEL_IPV4_SRC_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).tunnel_ipv4_src))
-
-/**
- * Test whether key tunnel_ipv4_src is being checked in the match
- */
-#define OF_MATCH_MASK_TUNNEL_IPV4_SRC_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).tunnel_ipv4_src))
-
-
-/* Mask/value check/set macros for bsn_global_vrf_allowed */
-
-/**
- * Set the mask for an exact match of bsn_global_vrf_allowed
- */
-#define OF_MATCH_MASK_BSN_GLOBAL_VRF_ALLOWED_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_global_vrf_allowed, 0xff, \
-        sizeof(((_match)->masks).bsn_global_vrf_allowed))
-
-/**
- * Clear the mask for bsn_global_vrf_allowed making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_GLOBAL_VRF_ALLOWED_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_global_vrf_allowed, 0, \
-        sizeof(((_match)->masks).bsn_global_vrf_allowed))
-
-/**
- * Test whether the match is exact for bsn_global_vrf_allowed
- */
-#define OF_MATCH_MASK_BSN_GLOBAL_VRF_ALLOWED_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_global_vrf_allowed))
-
-/**
- * Test whether key bsn_global_vrf_allowed is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_GLOBAL_VRF_ALLOWED_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_global_vrf_allowed))
-
-
-/* Mask/value check/set macros for ipv6_src */
-
-/**
- * Set the mask for an exact match of ipv6_src
- */
-#define OF_MATCH_MASK_IPV6_SRC_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.ipv6_src, 0xff, \
-        sizeof(((_match)->masks).ipv6_src))
-
-/**
- * Clear the mask for ipv6_src making that field inactive for the match
- */
-#define OF_MATCH_MASK_IPV6_SRC_CLEAR(_match) \
-    MEMSET(&(_match)->masks.ipv6_src, 0, \
-        sizeof(((_match)->masks).ipv6_src))
-
-/**
- * Test whether the match is exact for ipv6_src
- */
-#define OF_MATCH_MASK_IPV6_SRC_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv6_src))
-
-/**
- * Test whether key ipv6_src is being checked in the match
- */
-#define OF_MATCH_MASK_IPV6_SRC_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv6_src))
-
-
-/* Mask/value check/set macros for conn_tracking_state */
-
-/**
- * Set the mask for an exact match of conn_tracking_state
- */
-#define OF_MATCH_MASK_CONN_TRACKING_STATE_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.conn_tracking_state, 0xff, \
-        sizeof(((_match)->masks).conn_tracking_state))
-
-/**
- * Clear the mask for conn_tracking_state making that field inactive for the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_STATE_CLEAR(_match) \
-    MEMSET(&(_match)->masks.conn_tracking_state, 0, \
-        sizeof(((_match)->masks).conn_tracking_state))
-
-/**
- * Test whether the match is exact for conn_tracking_state
- */
-#define OF_MATCH_MASK_CONN_TRACKING_STATE_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_state))
-
-/**
- * Test whether key conn_tracking_state is being checked in the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_STATE_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_state))
-
-
-/* Mask/value check/set macros for ipv6_nd_target */
-
-/**
- * Set the mask for an exact match of ipv6_nd_target
- */
-#define OF_MATCH_MASK_IPV6_ND_TARGET_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.ipv6_nd_target, 0xff, \
-        sizeof(((_match)->masks).ipv6_nd_target))
-
-/**
- * Clear the mask for ipv6_nd_target making that field inactive for the match
- */
-#define OF_MATCH_MASK_IPV6_ND_TARGET_CLEAR(_match) \
-    MEMSET(&(_match)->masks.ipv6_nd_target, 0, \
-        sizeof(((_match)->masks).ipv6_nd_target))
-
-/**
- * Test whether the match is exact for ipv6_nd_target
- */
-#define OF_MATCH_MASK_IPV6_ND_TARGET_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv6_nd_target))
-
-/**
- * Test whether key ipv6_nd_target is being checked in the match
- */
-#define OF_MATCH_MASK_IPV6_ND_TARGET_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv6_nd_target))
+#define OF_MATCH_MASK_BSN_INNER_ETH_DST_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_inner_eth_dst))
 
 
 /* Mask/value check/set macros for bsn_inner_eth_src */
@@ -3123,178 +3529,33 @@ extern const char *const of_object_id_str[];
     OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_inner_eth_src))
 
 
-/* Mask/value check/set macros for in_phy_port */
+/* Mask/value check/set macros for bsn_inner_vlan_vid */
 
 /**
- * Set the mask for an exact match of in_phy_port
+ * Set the mask for an exact match of bsn_inner_vlan_vid
  */
-#define OF_MATCH_MASK_IN_PHY_PORT_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.in_phy_port, 0xff, \
-        sizeof(((_match)->masks).in_phy_port))
+#define OF_MATCH_MASK_BSN_INNER_VLAN_VID_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_inner_vlan_vid, 0xff, \
+        sizeof(((_match)->masks).bsn_inner_vlan_vid))
 
 /**
- * Clear the mask for in_phy_port making that field inactive for the match
+ * Clear the mask for bsn_inner_vlan_vid making that field inactive for the match
  */
-#define OF_MATCH_MASK_IN_PHY_PORT_CLEAR(_match) \
-    MEMSET(&(_match)->masks.in_phy_port, 0, \
-        sizeof(((_match)->masks).in_phy_port))
+#define OF_MATCH_MASK_BSN_INNER_VLAN_VID_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_inner_vlan_vid, 0, \
+        sizeof(((_match)->masks).bsn_inner_vlan_vid))
 
 /**
- * Test whether the match is exact for in_phy_port
+ * Test whether the match is exact for bsn_inner_vlan_vid
  */
-#define OF_MATCH_MASK_IN_PHY_PORT_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).in_phy_port))
+#define OF_MATCH_MASK_BSN_INNER_VLAN_VID_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_inner_vlan_vid))
 
 /**
- * Test whether key in_phy_port is being checked in the match
+ * Test whether key bsn_inner_vlan_vid is being checked in the match
  */
-#define OF_MATCH_MASK_IN_PHY_PORT_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).in_phy_port))
-
-
-/* Mask/value check/set macros for ipv4_dst */
-
-/**
- * Set the mask for an exact match of ipv4_dst
- */
-#define OF_MATCH_MASK_IPV4_DST_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.ipv4_dst, 0xff, \
-        sizeof(((_match)->masks).ipv4_dst))
-
-/**
- * Clear the mask for ipv4_dst making that field inactive for the match
- */
-#define OF_MATCH_MASK_IPV4_DST_CLEAR(_match) \
-    MEMSET(&(_match)->masks.ipv4_dst, 0, \
-        sizeof(((_match)->masks).ipv4_dst))
-
-/**
- * Test whether the match is exact for ipv4_dst
- */
-#define OF_MATCH_MASK_IPV4_DST_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv4_dst))
-
-/**
- * Test whether key ipv4_dst is being checked in the match
- */
-#define OF_MATCH_MASK_IPV4_DST_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv4_dst))
-
-
-/* Mask/value check/set macros for bsn_vxlan_network_id */
-
-/**
- * Set the mask for an exact match of bsn_vxlan_network_id
- */
-#define OF_MATCH_MASK_BSN_VXLAN_NETWORK_ID_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_vxlan_network_id, 0xff, \
-        sizeof(((_match)->masks).bsn_vxlan_network_id))
-
-/**
- * Clear the mask for bsn_vxlan_network_id making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_VXLAN_NETWORK_ID_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_vxlan_network_id, 0, \
-        sizeof(((_match)->masks).bsn_vxlan_network_id))
-
-/**
- * Test whether the match is exact for bsn_vxlan_network_id
- */
-#define OF_MATCH_MASK_BSN_VXLAN_NETWORK_ID_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_vxlan_network_id))
-
-/**
- * Test whether key bsn_vxlan_network_id is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_VXLAN_NETWORK_ID_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_vxlan_network_id))
-
-
-/* Mask/value check/set macros for bsn_vlan_xlate_port_group_id */
-
-/**
- * Set the mask for an exact match of bsn_vlan_xlate_port_group_id
- */
-#define OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_vlan_xlate_port_group_id, 0xff, \
-        sizeof(((_match)->masks).bsn_vlan_xlate_port_group_id))
-
-/**
- * Clear the mask for bsn_vlan_xlate_port_group_id making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_vlan_xlate_port_group_id, 0, \
-        sizeof(((_match)->masks).bsn_vlan_xlate_port_group_id))
-
-/**
- * Test whether the match is exact for bsn_vlan_xlate_port_group_id
- */
-#define OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_vlan_xlate_port_group_id))
-
-/**
- * Test whether key bsn_vlan_xlate_port_group_id is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_vlan_xlate_port_group_id))
-
-
-/* Mask/value check/set macros for icmpv6_type */
-
-/**
- * Set the mask for an exact match of icmpv6_type
- */
-#define OF_MATCH_MASK_ICMPV6_TYPE_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.icmpv6_type, 0xff, \
-        sizeof(((_match)->masks).icmpv6_type))
-
-/**
- * Clear the mask for icmpv6_type making that field inactive for the match
- */
-#define OF_MATCH_MASK_ICMPV6_TYPE_CLEAR(_match) \
-    MEMSET(&(_match)->masks.icmpv6_type, 0, \
-        sizeof(((_match)->masks).icmpv6_type))
-
-/**
- * Test whether the match is exact for icmpv6_type
- */
-#define OF_MATCH_MASK_ICMPV6_TYPE_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).icmpv6_type))
-
-/**
- * Test whether key icmpv6_type is being checked in the match
- */
-#define OF_MATCH_MASK_ICMPV6_TYPE_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).icmpv6_type))
-
-
-/* Mask/value check/set macros for mpls_tc */
-
-/**
- * Set the mask for an exact match of mpls_tc
- */
-#define OF_MATCH_MASK_MPLS_TC_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.mpls_tc, 0xff, \
-        sizeof(((_match)->masks).mpls_tc))
-
-/**
- * Clear the mask for mpls_tc making that field inactive for the match
- */
-#define OF_MATCH_MASK_MPLS_TC_CLEAR(_match) \
-    MEMSET(&(_match)->masks.mpls_tc, 0, \
-        sizeof(((_match)->masks).mpls_tc))
-
-/**
- * Test whether the match is exact for mpls_tc
- */
-#define OF_MATCH_MASK_MPLS_TC_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).mpls_tc))
-
-/**
- * Test whether key mpls_tc is being checked in the match
- */
-#define OF_MATCH_MASK_MPLS_TC_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).mpls_tc))
+#define OF_MATCH_MASK_BSN_INNER_VLAN_VID_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_inner_vlan_vid))
 
 
 /* Mask/value check/set macros for bsn_vfi */
@@ -3326,323 +3587,91 @@ extern const char *const of_object_id_str[];
     OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_vfi))
 
 
-/* Mask/value check/set macros for metadata */
+/* Mask/value check/set macros for bsn_vxlan_network_id */
 
 /**
- * Set the mask for an exact match of metadata
+ * Set the mask for an exact match of bsn_vxlan_network_id
  */
-#define OF_MATCH_MASK_METADATA_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.metadata, 0xff, \
-        sizeof(((_match)->masks).metadata))
+#define OF_MATCH_MASK_BSN_VXLAN_NETWORK_ID_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_vxlan_network_id, 0xff, \
+        sizeof(((_match)->masks).bsn_vxlan_network_id))
 
 /**
- * Clear the mask for metadata making that field inactive for the match
+ * Clear the mask for bsn_vxlan_network_id making that field inactive for the match
  */
-#define OF_MATCH_MASK_METADATA_CLEAR(_match) \
-    MEMSET(&(_match)->masks.metadata, 0, \
-        sizeof(((_match)->masks).metadata))
+#define OF_MATCH_MASK_BSN_VXLAN_NETWORK_ID_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_vxlan_network_id, 0, \
+        sizeof(((_match)->masks).bsn_vxlan_network_id))
 
 /**
- * Test whether the match is exact for metadata
+ * Test whether the match is exact for bsn_vxlan_network_id
  */
-#define OF_MATCH_MASK_METADATA_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).metadata))
+#define OF_MATCH_MASK_BSN_VXLAN_NETWORK_ID_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_vxlan_network_id))
 
 /**
- * Test whether key metadata is being checked in the match
+ * Test whether key bsn_vxlan_network_id is being checked in the match
  */
-#define OF_MATCH_MASK_METADATA_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).metadata))
+#define OF_MATCH_MASK_BSN_VXLAN_NETWORK_ID_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_vxlan_network_id))
 
 
-/* Mask/value check/set macros for bsn_l2_cache_hit */
+/* Mask/value check/set macros for ipv6_exthdr */
 
 /**
- * Set the mask for an exact match of bsn_l2_cache_hit
+ * Set the mask for an exact match of ipv6_exthdr
  */
-#define OF_MATCH_MASK_BSN_L2_CACHE_HIT_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_l2_cache_hit, 0xff, \
-        sizeof(((_match)->masks).bsn_l2_cache_hit))
+#define OF_MATCH_MASK_IPV6_EXTHDR_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.ipv6_exthdr, 0xff, \
+        sizeof(((_match)->masks).ipv6_exthdr))
 
 /**
- * Clear the mask for bsn_l2_cache_hit making that field inactive for the match
+ * Clear the mask for ipv6_exthdr making that field inactive for the match
  */
-#define OF_MATCH_MASK_BSN_L2_CACHE_HIT_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_l2_cache_hit, 0, \
-        sizeof(((_match)->masks).bsn_l2_cache_hit))
+#define OF_MATCH_MASK_IPV6_EXTHDR_CLEAR(_match) \
+    MEMSET(&(_match)->masks.ipv6_exthdr, 0, \
+        sizeof(((_match)->masks).ipv6_exthdr))
 
 /**
- * Test whether the match is exact for bsn_l2_cache_hit
+ * Test whether the match is exact for ipv6_exthdr
  */
-#define OF_MATCH_MASK_BSN_L2_CACHE_HIT_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_l2_cache_hit))
+#define OF_MATCH_MASK_IPV6_EXTHDR_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ipv6_exthdr))
 
 /**
- * Test whether key bsn_l2_cache_hit is being checked in the match
+ * Test whether key ipv6_exthdr is being checked in the match
  */
-#define OF_MATCH_MASK_BSN_L2_CACHE_HIT_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_l2_cache_hit))
+#define OF_MATCH_MASK_IPV6_EXTHDR_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ipv6_exthdr))
 
 
-/* Mask/value check/set macros for bsn_udf1 */
+/* Mask/value check/set macros for mpls_bos */
 
 /**
- * Set the mask for an exact match of bsn_udf1
+ * Set the mask for an exact match of mpls_bos
  */
-#define OF_MATCH_MASK_BSN_UDF1_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_udf1, 0xff, \
-        sizeof(((_match)->masks).bsn_udf1))
+#define OF_MATCH_MASK_MPLS_BOS_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.mpls_bos, 0xff, \
+        sizeof(((_match)->masks).mpls_bos))
 
 /**
- * Clear the mask for bsn_udf1 making that field inactive for the match
+ * Clear the mask for mpls_bos making that field inactive for the match
  */
-#define OF_MATCH_MASK_BSN_UDF1_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_udf1, 0, \
-        sizeof(((_match)->masks).bsn_udf1))
+#define OF_MATCH_MASK_MPLS_BOS_CLEAR(_match) \
+    MEMSET(&(_match)->masks.mpls_bos, 0, \
+        sizeof(((_match)->masks).mpls_bos))
 
 /**
- * Test whether the match is exact for bsn_udf1
+ * Test whether the match is exact for mpls_bos
  */
-#define OF_MATCH_MASK_BSN_UDF1_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf1))
+#define OF_MATCH_MASK_MPLS_BOS_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).mpls_bos))
 
 /**
- * Test whether key bsn_udf1 is being checked in the match
+ * Test whether key mpls_bos is being checked in the match
  */
-#define OF_MATCH_MASK_BSN_UDF1_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf1))
-
-
-/* Mask/value check/set macros for bsn_l3_dst_class_id */
-
-/**
- * Set the mask for an exact match of bsn_l3_dst_class_id
- */
-#define OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_l3_dst_class_id, 0xff, \
-        sizeof(((_match)->masks).bsn_l3_dst_class_id))
-
-/**
- * Clear the mask for bsn_l3_dst_class_id making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_l3_dst_class_id, 0, \
-        sizeof(((_match)->masks).bsn_l3_dst_class_id))
-
-/**
- * Test whether the match is exact for bsn_l3_dst_class_id
- */
-#define OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_l3_dst_class_id))
-
-/**
- * Test whether key bsn_l3_dst_class_id is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_l3_dst_class_id))
-
-
-/* Mask/value check/set macros for bsn_udf3 */
-
-/**
- * Set the mask for an exact match of bsn_udf3
- */
-#define OF_MATCH_MASK_BSN_UDF3_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_udf3, 0xff, \
-        sizeof(((_match)->masks).bsn_udf3))
-
-/**
- * Clear the mask for bsn_udf3 making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_UDF3_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_udf3, 0, \
-        sizeof(((_match)->masks).bsn_udf3))
-
-/**
- * Test whether the match is exact for bsn_udf3
- */
-#define OF_MATCH_MASK_BSN_UDF3_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf3))
-
-/**
- * Test whether key bsn_udf3 is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_UDF3_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf3))
-
-
-/* Mask/value check/set macros for bsn_udf2 */
-
-/**
- * Set the mask for an exact match of bsn_udf2
- */
-#define OF_MATCH_MASK_BSN_UDF2_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_udf2, 0xff, \
-        sizeof(((_match)->masks).bsn_udf2))
-
-/**
- * Clear the mask for bsn_udf2 making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_UDF2_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_udf2, 0, \
-        sizeof(((_match)->masks).bsn_udf2))
-
-/**
- * Test whether the match is exact for bsn_udf2
- */
-#define OF_MATCH_MASK_BSN_UDF2_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf2))
-
-/**
- * Test whether key bsn_udf2 is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_UDF2_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf2))
-
-
-/* Mask/value check/set macros for bsn_udf5 */
-
-/**
- * Set the mask for an exact match of bsn_udf5
- */
-#define OF_MATCH_MASK_BSN_UDF5_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_udf5, 0xff, \
-        sizeof(((_match)->masks).bsn_udf5))
-
-/**
- * Clear the mask for bsn_udf5 making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_UDF5_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_udf5, 0, \
-        sizeof(((_match)->masks).bsn_udf5))
-
-/**
- * Test whether the match is exact for bsn_udf5
- */
-#define OF_MATCH_MASK_BSN_UDF5_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf5))
-
-/**
- * Test whether key bsn_udf5 is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_UDF5_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf5))
-
-
-/* Mask/value check/set macros for bsn_udf4 */
-
-/**
- * Set the mask for an exact match of bsn_udf4
- */
-#define OF_MATCH_MASK_BSN_UDF4_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_udf4, 0xff, \
-        sizeof(((_match)->masks).bsn_udf4))
-
-/**
- * Clear the mask for bsn_udf4 making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_UDF4_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_udf4, 0, \
-        sizeof(((_match)->masks).bsn_udf4))
-
-/**
- * Test whether the match is exact for bsn_udf4
- */
-#define OF_MATCH_MASK_BSN_UDF4_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf4))
-
-/**
- * Test whether key bsn_udf4 is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_UDF4_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf4))
-
-
-/* Mask/value check/set macros for bsn_udf7 */
-
-/**
- * Set the mask for an exact match of bsn_udf7
- */
-#define OF_MATCH_MASK_BSN_UDF7_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_udf7, 0xff, \
-        sizeof(((_match)->masks).bsn_udf7))
-
-/**
- * Clear the mask for bsn_udf7 making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_UDF7_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_udf7, 0, \
-        sizeof(((_match)->masks).bsn_udf7))
-
-/**
- * Test whether the match is exact for bsn_udf7
- */
-#define OF_MATCH_MASK_BSN_UDF7_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf7))
-
-/**
- * Test whether key bsn_udf7 is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_UDF7_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf7))
-
-
-/* Mask/value check/set macros for bsn_udf6 */
-
-/**
- * Set the mask for an exact match of bsn_udf6
- */
-#define OF_MATCH_MASK_BSN_UDF6_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_udf6, 0xff, \
-        sizeof(((_match)->masks).bsn_udf6))
-
-/**
- * Clear the mask for bsn_udf6 making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_UDF6_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_udf6, 0, \
-        sizeof(((_match)->masks).bsn_udf6))
-
-/**
- * Test whether the match is exact for bsn_udf6
- */
-#define OF_MATCH_MASK_BSN_UDF6_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_udf6))
-
-/**
- * Test whether key bsn_udf6 is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_UDF6_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_udf6))
-
-
-/* Mask/value check/set macros for bsn_tcp_flags */
-
-/**
- * Set the mask for an exact match of bsn_tcp_flags
- */
-#define OF_MATCH_MASK_BSN_TCP_FLAGS_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.bsn_tcp_flags, 0xff, \
-        sizeof(((_match)->masks).bsn_tcp_flags))
-
-/**
- * Clear the mask for bsn_tcp_flags making that field inactive for the match
- */
-#define OF_MATCH_MASK_BSN_TCP_FLAGS_CLEAR(_match) \
-    MEMSET(&(_match)->masks.bsn_tcp_flags, 0, \
-        sizeof(((_match)->masks).bsn_tcp_flags))
-
-/**
- * Test whether the match is exact for bsn_tcp_flags
- */
-#define OF_MATCH_MASK_BSN_TCP_FLAGS_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_tcp_flags))
-
-/**
- * Test whether key bsn_tcp_flags is being checked in the match
- */
-#define OF_MATCH_MASK_BSN_TCP_FLAGS_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_tcp_flags))
+#define OF_MATCH_MASK_MPLS_BOS_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).mpls_bos))
 
 
 /* Mask/value check/set macros for tunnel_id */
@@ -3674,91 +3703,62 @@ extern const char *const of_object_id_str[];
     OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).tunnel_id))
 
 
-/* Mask/value check/set macros for conn_tracking_label */
+/* Mask/value check/set macros for bsn_ifp_class_id */
 
 /**
- * Set the mask for an exact match of conn_tracking_label
+ * Set the mask for an exact match of bsn_ifp_class_id
  */
-#define OF_MATCH_MASK_CONN_TRACKING_LABEL_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.conn_tracking_label, 0xff, \
-        sizeof(((_match)->masks).conn_tracking_label))
+#define OF_MATCH_MASK_BSN_IFP_CLASS_ID_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.bsn_ifp_class_id, 0xff, \
+        sizeof(((_match)->masks).bsn_ifp_class_id))
 
 /**
- * Clear the mask for conn_tracking_label making that field inactive for the match
+ * Clear the mask for bsn_ifp_class_id making that field inactive for the match
  */
-#define OF_MATCH_MASK_CONN_TRACKING_LABEL_CLEAR(_match) \
-    MEMSET(&(_match)->masks.conn_tracking_label, 0, \
-        sizeof(((_match)->masks).conn_tracking_label))
+#define OF_MATCH_MASK_BSN_IFP_CLASS_ID_CLEAR(_match) \
+    MEMSET(&(_match)->masks.bsn_ifp_class_id, 0, \
+        sizeof(((_match)->masks).bsn_ifp_class_id))
 
 /**
- * Test whether the match is exact for conn_tracking_label
+ * Test whether the match is exact for bsn_ifp_class_id
  */
-#define OF_MATCH_MASK_CONN_TRACKING_LABEL_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_label))
+#define OF_MATCH_MASK_BSN_IFP_CLASS_ID_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).bsn_ifp_class_id))
 
 /**
- * Test whether key conn_tracking_label is being checked in the match
+ * Test whether key bsn_ifp_class_id is being checked in the match
  */
-#define OF_MATCH_MASK_CONN_TRACKING_LABEL_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_label))
+#define OF_MATCH_MASK_BSN_IFP_CLASS_ID_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).bsn_ifp_class_id))
 
 
-/* Mask/value check/set macros for ip_dscp */
+/* Mask/value check/set macros for pbb_uca */
 
 /**
- * Set the mask for an exact match of ip_dscp
+ * Set the mask for an exact match of pbb_uca
  */
-#define OF_MATCH_MASK_IP_DSCP_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.ip_dscp, 0xff, \
-        sizeof(((_match)->masks).ip_dscp))
+#define OF_MATCH_MASK_PBB_UCA_EXACT_SET(_match)   \
+    MEMSET(&(_match)->masks.pbb_uca, 0xff, \
+        sizeof(((_match)->masks).pbb_uca))
 
 /**
- * Clear the mask for ip_dscp making that field inactive for the match
+ * Clear the mask for pbb_uca making that field inactive for the match
  */
-#define OF_MATCH_MASK_IP_DSCP_CLEAR(_match) \
-    MEMSET(&(_match)->masks.ip_dscp, 0, \
-        sizeof(((_match)->masks).ip_dscp))
+#define OF_MATCH_MASK_PBB_UCA_CLEAR(_match) \
+    MEMSET(&(_match)->masks.pbb_uca, 0, \
+        sizeof(((_match)->masks).pbb_uca))
 
 /**
- * Test whether the match is exact for ip_dscp
+ * Test whether the match is exact for pbb_uca
  */
-#define OF_MATCH_MASK_IP_DSCP_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).ip_dscp))
+#define OF_MATCH_MASK_PBB_UCA_EXACT_TEST(_match) \
+    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).pbb_uca))
 
 /**
- * Test whether key ip_dscp is being checked in the match
+ * Test whether key pbb_uca is being checked in the match
  */
-#define OF_MATCH_MASK_IP_DSCP_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).ip_dscp))
-
-
-/* Mask/value check/set macros for conn_tracking_ipv6_dst */
-
-/**
- * Set the mask for an exact match of conn_tracking_ipv6_dst
- */
-#define OF_MATCH_MASK_CONN_TRACKING_IPV6_DST_EXACT_SET(_match)   \
-    MEMSET(&(_match)->masks.conn_tracking_ipv6_dst, 0xff, \
-        sizeof(((_match)->masks).conn_tracking_ipv6_dst))
-
-/**
- * Clear the mask for conn_tracking_ipv6_dst making that field inactive for the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_IPV6_DST_CLEAR(_match) \
-    MEMSET(&(_match)->masks.conn_tracking_ipv6_dst, 0, \
-        sizeof(((_match)->masks).conn_tracking_ipv6_dst))
-
-/**
- * Test whether the match is exact for conn_tracking_ipv6_dst
- */
-#define OF_MATCH_MASK_CONN_TRACKING_IPV6_DST_EXACT_TEST(_match) \
-    OF_VARIABLE_IS_ALL_ONES(&(((_match)->masks).conn_tracking_ipv6_dst))
-
-/**
- * Test whether key conn_tracking_ipv6_dst is being checked in the match
- */
-#define OF_MATCH_MASK_CONN_TRACKING_IPV6_DST_ACTIVE_TEST(_match) \
-    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).conn_tracking_ipv6_dst))
+#define OF_MATCH_MASK_PBB_UCA_ACTIVE_TEST(_match) \
+    OF_VARIABLE_IS_NON_ZERO(&(((_match)->masks).pbb_uca))
 
 
 #endif /* Base header file */

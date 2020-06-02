@@ -31,9 +31,9 @@ public interface OFRequestforward extends OFObject, OFMessage {
     OFVersion getVersion();
     OFType getType();
     long getXid();
-    OFMessage getRequest() throws UnsupportedOperationException;
     long getRole() throws UnsupportedOperationException;
     byte[] getData() throws UnsupportedOperationException;
+    OFMessage getRequest() throws UnsupportedOperationException;
 
     void writeTo(ByteBuf channelBuffer);
 
@@ -44,11 +44,11 @@ public interface OFRequestforward extends OFObject, OFMessage {
         OFType getType();
         long getXid();
         Builder setXid(long xid);
-        OFMessage getRequest() throws UnsupportedOperationException;
-        Builder setRequest(OFMessage request) throws UnsupportedOperationException;
         long getRole() throws UnsupportedOperationException;
         Builder setRole(long role) throws UnsupportedOperationException;
         byte[] getData() throws UnsupportedOperationException;
         Builder setData(byte[] data) throws UnsupportedOperationException;
+        OFMessage getRequest() throws UnsupportedOperationException;
+        Builder setRequest(OFMessage request) throws UnsupportedOperationException;
     }
 }
